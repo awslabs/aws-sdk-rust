@@ -140,7 +140,7 @@ impl AdminLinkProviderForUserInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::admin_link_provider_for_user::AdminLinkProviderForUserInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::admin_link_provider_for_user::AdminLinkProviderForUserInput {
             user_pool_id: self.user_pool_id,

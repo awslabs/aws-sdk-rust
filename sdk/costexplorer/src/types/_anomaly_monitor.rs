@@ -396,11 +396,11 @@ impl AnomalyMonitorBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`monitor_name`](crate::types::builders::AnomalyMonitorBuilder::monitor_name)
     /// - [`monitor_type`](crate::types::builders::AnomalyMonitorBuilder::monitor_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::AnomalyMonitor, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AnomalyMonitor, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AnomalyMonitor {
             monitor_arn: self.monitor_arn,
             monitor_name: self.monitor_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "monitor_name",
                     "monitor_name was not specified but it is required when building AnomalyMonitor",
                 )
@@ -409,7 +409,7 @@ impl AnomalyMonitorBuilder {
             last_updated_date: self.last_updated_date,
             last_evaluated_date: self.last_evaluated_date,
             monitor_type: self.monitor_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "monitor_type",
                     "monitor_type was not specified but it is required when building AnomalyMonitor",
                 )

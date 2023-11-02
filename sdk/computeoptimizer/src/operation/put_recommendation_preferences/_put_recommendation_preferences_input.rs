@@ -205,7 +205,7 @@ impl PutRecommendationPreferencesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_recommendation_preferences::PutRecommendationPreferencesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_recommendation_preferences::PutRecommendationPreferencesInput {
             resource_type: self.resource_type,

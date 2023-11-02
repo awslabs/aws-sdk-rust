@@ -100,7 +100,7 @@ impl DescribeLaunchConfigurationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_launch_configurations::DescribeLaunchConfigurationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_launch_configurations::DescribeLaunchConfigurationsInput {
             launch_configuration_names: self.launch_configuration_names,

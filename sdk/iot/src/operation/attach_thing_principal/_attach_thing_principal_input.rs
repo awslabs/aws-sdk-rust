@@ -67,7 +67,7 @@ impl AttachThingPrincipalInputBuilder {
     /// Consumes the builder and constructs a [`AttachThingPrincipalInput`](crate::operation::attach_thing_principal::AttachThingPrincipalInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::attach_thing_principal::AttachThingPrincipalInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::attach_thing_principal::AttachThingPrincipalInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::attach_thing_principal::AttachThingPrincipalInput {
             thing_name: self.thing_name,

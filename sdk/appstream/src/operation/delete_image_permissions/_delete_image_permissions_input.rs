@@ -66,8 +66,10 @@ impl DeleteImagePermissionsInputBuilder {
     /// Consumes the builder and constructs a [`DeleteImagePermissionsInput`](crate::operation::delete_image_permissions::DeleteImagePermissionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_image_permissions::DeleteImagePermissionsInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::delete_image_permissions::DeleteImagePermissionsInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::delete_image_permissions::DeleteImagePermissionsInput {
             name: self.name,
             shared_account_id: self.shared_account_id,

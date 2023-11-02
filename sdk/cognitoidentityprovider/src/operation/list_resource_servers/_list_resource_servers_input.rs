@@ -86,7 +86,7 @@ impl ListResourceServersInputBuilder {
     /// Consumes the builder and constructs a [`ListResourceServersInput`](crate::operation::list_resource_servers::ListResourceServersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_resource_servers::ListResourceServersInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_resource_servers::ListResourceServersInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_resource_servers::ListResourceServersInput {
             user_pool_id: self.user_pool_id,

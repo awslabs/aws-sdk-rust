@@ -89,10 +89,10 @@ impl HoursOfOperationConfigBuilder {
     /// Consumes the builder and constructs a [`HoursOfOperationConfig`](crate::types::HoursOfOperationConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`day`](crate::types::builders::HoursOfOperationConfigBuilder::day)
-    pub fn build(self) -> ::std::result::Result<crate::types::HoursOfOperationConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::HoursOfOperationConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::HoursOfOperationConfig {
             day: self.day.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "day",
                     "day was not specified but it is required when building HoursOfOperationConfig",
                 )

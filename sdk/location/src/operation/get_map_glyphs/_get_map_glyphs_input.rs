@@ -234,7 +234,7 @@ impl GetMapGlyphsInputBuilder {
     /// Consumes the builder and constructs a [`GetMapGlyphsInput`](crate::operation::get_map_glyphs::GetMapGlyphsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_map_glyphs::GetMapGlyphsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_map_glyphs::GetMapGlyphsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_map_glyphs::GetMapGlyphsInput {
             map_name: self.map_name,
             font_stack: self.font_stack,

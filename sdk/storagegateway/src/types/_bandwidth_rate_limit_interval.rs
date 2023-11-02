@@ -210,34 +210,34 @@ impl BandwidthRateLimitIntervalBuilder {
     /// - [`end_hour_of_day`](crate::types::builders::BandwidthRateLimitIntervalBuilder::end_hour_of_day)
     /// - [`end_minute_of_hour`](crate::types::builders::BandwidthRateLimitIntervalBuilder::end_minute_of_hour)
     /// - [`days_of_week`](crate::types::builders::BandwidthRateLimitIntervalBuilder::days_of_week)
-    pub fn build(self) -> ::std::result::Result<crate::types::BandwidthRateLimitInterval, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::BandwidthRateLimitInterval, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::BandwidthRateLimitInterval {
             start_hour_of_day: self.start_hour_of_day.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "start_hour_of_day",
                     "start_hour_of_day was not specified but it is required when building BandwidthRateLimitInterval",
                 )
             })?,
             start_minute_of_hour: self.start_minute_of_hour.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "start_minute_of_hour",
                     "start_minute_of_hour was not specified but it is required when building BandwidthRateLimitInterval",
                 )
             })?,
             end_hour_of_day: self.end_hour_of_day.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "end_hour_of_day",
                     "end_hour_of_day was not specified but it is required when building BandwidthRateLimitInterval",
                 )
             })?,
             end_minute_of_hour: self.end_minute_of_hour.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "end_minute_of_hour",
                     "end_minute_of_hour was not specified but it is required when building BandwidthRateLimitInterval",
                 )
             })?,
             days_of_week: self.days_of_week.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "days_of_week",
                     "days_of_week was not specified but it is required when building BandwidthRateLimitInterval",
                 )

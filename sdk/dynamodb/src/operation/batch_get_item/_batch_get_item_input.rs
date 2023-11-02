@@ -219,7 +219,7 @@ impl BatchGetItemInputBuilder {
     /// Consumes the builder and constructs a [`BatchGetItemInput`](crate::operation::batch_get_item::BatchGetItemInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_get_item::BatchGetItemInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::batch_get_item::BatchGetItemInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::batch_get_item::BatchGetItemInput {
             request_items: self.request_items,
             return_consumed_capacity: self.return_consumed_capacity,

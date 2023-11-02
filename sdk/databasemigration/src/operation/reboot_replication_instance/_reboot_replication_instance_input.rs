@@ -88,7 +88,7 @@ impl RebootReplicationInstanceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reboot_replication_instance::RebootReplicationInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::reboot_replication_instance::RebootReplicationInstanceInput {
             replication_instance_arn: self.replication_instance_arn,

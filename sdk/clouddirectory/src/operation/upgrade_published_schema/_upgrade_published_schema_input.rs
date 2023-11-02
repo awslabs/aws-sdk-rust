@@ -109,8 +109,10 @@ impl UpgradePublishedSchemaInputBuilder {
     /// Consumes the builder and constructs a [`UpgradePublishedSchemaInput`](crate::operation::upgrade_published_schema::UpgradePublishedSchemaInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::upgrade_published_schema::UpgradePublishedSchemaInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::upgrade_published_schema::UpgradePublishedSchemaInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::upgrade_published_schema::UpgradePublishedSchemaInput {
             development_schema_arn: self.development_schema_arn,
             published_schema_arn: self.published_schema_arn,

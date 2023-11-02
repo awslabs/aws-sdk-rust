@@ -2,7 +2,7 @@
 pub fn ser_asset_bundle_import_job_theme_override_parameters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AssetBundleImportJobThemeOverrideParameters,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("ThemeId").string(input.theme_id.as_str());
     }

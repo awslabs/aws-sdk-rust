@@ -73,7 +73,7 @@ impl DetectStackDriftInputBuilder {
     /// Consumes the builder and constructs a [`DetectStackDriftInput`](crate::operation::detect_stack_drift::DetectStackDriftInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::detect_stack_drift::DetectStackDriftInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::detect_stack_drift::DetectStackDriftInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::detect_stack_drift::DetectStackDriftInput {
             stack_name: self.stack_name,
             logical_resource_ids: self.logical_resource_ids,

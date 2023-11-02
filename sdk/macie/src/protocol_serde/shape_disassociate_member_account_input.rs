@@ -2,7 +2,7 @@
 pub fn ser_disassociate_member_account_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::disassociate_member_account::DisassociateMemberAccountInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.member_account_id {
         object.key("memberAccountId").string(var_1.as_str());
     }

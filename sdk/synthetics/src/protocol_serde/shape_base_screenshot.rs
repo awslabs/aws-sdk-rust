@@ -2,7 +2,7 @@
 pub fn ser_base_screenshot(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BaseScreenshot,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("ScreenshotName").string(input.screenshot_name.as_str());
     }

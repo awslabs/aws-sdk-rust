@@ -65,7 +65,9 @@ impl DeleteBudgetInputBuilder {
         &self.budget_name
     }
     /// Consumes the builder and constructs a [`DeleteBudgetInput`](crate::operation::delete_budget::DeleteBudgetInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_budget::DeleteBudgetInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_budget::DeleteBudgetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_budget::DeleteBudgetInput {
             account_id: self.account_id,
             budget_name: self.budget_name,

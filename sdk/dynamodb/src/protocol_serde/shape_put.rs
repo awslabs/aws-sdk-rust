@@ -2,7 +2,7 @@
 pub fn ser_put(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Put,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         #[allow(unused_mut)]
         let mut object_1 = object.key("Item").start_object();

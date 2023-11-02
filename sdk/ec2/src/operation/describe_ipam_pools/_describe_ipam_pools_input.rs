@@ -143,7 +143,7 @@ impl DescribeIpamPoolsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeIpamPoolsInput`](crate::operation::describe_ipam_pools::DescribeIpamPoolsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_ipam_pools::DescribeIpamPoolsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_ipam_pools::DescribeIpamPoolsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_ipam_pools::DescribeIpamPoolsInput {
             dry_run: self.dry_run,
             filters: self.filters,

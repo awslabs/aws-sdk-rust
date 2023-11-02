@@ -89,7 +89,7 @@ impl GetDeviceDefinitionVersionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_device_definition_version::GetDeviceDefinitionVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_device_definition_version::GetDeviceDefinitionVersionInput {
             device_definition_id: self.device_definition_id,

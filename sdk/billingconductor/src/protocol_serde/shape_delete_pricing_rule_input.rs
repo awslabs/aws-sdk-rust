@@ -2,7 +2,7 @@
 pub fn ser_delete_pricing_rule_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_pricing_rule::DeletePricingRuleInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.arn {
         object.key("Arn").string(var_1.as_str());
     }

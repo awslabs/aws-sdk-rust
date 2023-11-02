@@ -2,7 +2,7 @@
 pub fn ser_table_side_border_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TableSideBorderOptions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.inner_vertical {
         #[allow(unused_mut)]
         let mut object_2 = object.key("InnerVertical").start_object();

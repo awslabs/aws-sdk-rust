@@ -88,10 +88,10 @@ impl NotifyEmailTypeBuilder {
     /// Consumes the builder and constructs a [`NotifyEmailType`](crate::types::NotifyEmailType).
     /// This method will fail if any of the following fields are not set:
     /// - [`subject`](crate::types::builders::NotifyEmailTypeBuilder::subject)
-    pub fn build(self) -> ::std::result::Result<crate::types::NotifyEmailType, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::NotifyEmailType, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::NotifyEmailType {
             subject: self.subject.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "subject",
                     "subject was not specified but it is required when building NotifyEmailType",
                 )

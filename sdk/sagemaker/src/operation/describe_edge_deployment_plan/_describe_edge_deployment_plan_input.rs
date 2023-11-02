@@ -88,7 +88,7 @@ impl DescribeEdgeDeploymentPlanInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_edge_deployment_plan::DescribeEdgeDeploymentPlanInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_edge_deployment_plan::DescribeEdgeDeploymentPlanInput {
             edge_deployment_plan_name: self.edge_deployment_plan_name,

@@ -42,7 +42,7 @@ impl DeleteFlowInputBuilder {
         &self.flow_arn
     }
     /// Consumes the builder and constructs a [`DeleteFlowInput`](crate::operation::delete_flow::DeleteFlowInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_flow::DeleteFlowInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_flow::DeleteFlowInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_flow::DeleteFlowInput { flow_arn: self.flow_arn })
     }
 }

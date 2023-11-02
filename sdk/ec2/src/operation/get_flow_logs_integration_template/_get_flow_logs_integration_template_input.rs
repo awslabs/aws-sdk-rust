@@ -111,7 +111,7 @@ impl GetFlowLogsIntegrationTemplateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_flow_logs_integration_template::GetFlowLogsIntegrationTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_flow_logs_integration_template::GetFlowLogsIntegrationTemplateInput {

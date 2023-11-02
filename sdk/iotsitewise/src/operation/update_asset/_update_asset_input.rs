@@ -106,7 +106,7 @@ impl UpdateAssetInputBuilder {
         &self.asset_description
     }
     /// Consumes the builder and constructs a [`UpdateAssetInput`](crate::operation::update_asset::UpdateAssetInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_asset::UpdateAssetInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_asset::UpdateAssetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_asset::UpdateAssetInput {
             asset_id: self.asset_id,
             asset_name: self.asset_name,

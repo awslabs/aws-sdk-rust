@@ -45,7 +45,7 @@ impl DescribeAgentInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAgentInput`](crate::operation::describe_agent::DescribeAgentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_agent::DescribeAgentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_agent::DescribeAgentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_agent::DescribeAgentInput { agent_arn: self.agent_arn })
     }
 }

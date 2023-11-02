@@ -274,10 +274,10 @@ impl KeysAndAttributesBuilder {
     /// Consumes the builder and constructs a [`KeysAndAttributes`](crate::types::KeysAndAttributes).
     /// This method will fail if any of the following fields are not set:
     /// - [`keys`](crate::types::builders::KeysAndAttributesBuilder::keys)
-    pub fn build(self) -> ::std::result::Result<crate::types::KeysAndAttributes, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::KeysAndAttributes, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::KeysAndAttributes {
             keys: self.keys.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "keys",
                     "keys was not specified but it is required when building KeysAndAttributes",
                 )

@@ -106,7 +106,7 @@ impl DescribeAssociationInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAssociationInput`](crate::operation::describe_association::DescribeAssociationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_association::DescribeAssociationInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_association::DescribeAssociationInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_association::DescribeAssociationInput {
             name: self.name,

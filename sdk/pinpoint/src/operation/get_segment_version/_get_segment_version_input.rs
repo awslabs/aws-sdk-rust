@@ -88,7 +88,7 @@ impl GetSegmentVersionInputBuilder {
     /// Consumes the builder and constructs a [`GetSegmentVersionInput`](crate::operation::get_segment_version::GetSegmentVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_segment_version::GetSegmentVersionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_segment_version::GetSegmentVersionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_segment_version::GetSegmentVersionInput {
             application_id: self.application_id,
             segment_id: self.segment_id,

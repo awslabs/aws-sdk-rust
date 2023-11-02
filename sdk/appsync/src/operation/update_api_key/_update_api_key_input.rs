@@ -108,7 +108,7 @@ impl UpdateApiKeyInputBuilder {
     /// Consumes the builder and constructs a [`UpdateApiKeyInput`](crate::operation::update_api_key::UpdateApiKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_api_key::UpdateApiKeyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_api_key::UpdateApiKeyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_api_key::UpdateApiKeyInput {
             api_id: self.api_id,
             id: self.id,

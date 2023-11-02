@@ -94,10 +94,10 @@ impl AwsJobExponentialRolloutRateBuilder {
     /// Consumes the builder and constructs a [`AwsJobExponentialRolloutRate`](crate::types::AwsJobExponentialRolloutRate).
     /// This method will fail if any of the following fields are not set:
     /// - [`base_rate_per_minute`](crate::types::builders::AwsJobExponentialRolloutRateBuilder::base_rate_per_minute)
-    pub fn build(self) -> ::std::result::Result<crate::types::AwsJobExponentialRolloutRate, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AwsJobExponentialRolloutRate, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AwsJobExponentialRolloutRate {
             base_rate_per_minute: self.base_rate_per_minute.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "base_rate_per_minute",
                     "base_rate_per_minute was not specified but it is required when building AwsJobExponentialRolloutRate",
                 )

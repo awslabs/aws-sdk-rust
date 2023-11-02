@@ -64,7 +64,7 @@ impl ListOutpostsWithS3InputBuilder {
     /// Consumes the builder and constructs a [`ListOutpostsWithS3Input`](crate::operation::list_outposts_with_s3::ListOutpostsWithS3Input).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_outposts_with_s3::ListOutpostsWithS3Input, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_outposts_with_s3::ListOutpostsWithS3Input, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_outposts_with_s3::ListOutpostsWithS3Input {
             next_token: self.next_token,

@@ -290,7 +290,7 @@ impl ModifyTrafficMirrorFilterRuleInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_traffic_mirror_filter_rule::ModifyTrafficMirrorFilterRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::modify_traffic_mirror_filter_rule::ModifyTrafficMirrorFilterRuleInput {
             traffic_mirror_filter_rule_id: self.traffic_mirror_filter_rule_id,

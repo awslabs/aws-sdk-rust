@@ -102,17 +102,17 @@ impl LaunchGroupBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::LaunchGroupBuilder::name)
     /// - [`feature_variations`](crate::types::builders::LaunchGroupBuilder::feature_variations)
-    pub fn build(self) -> ::std::result::Result<crate::types::LaunchGroup, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::LaunchGroup, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::LaunchGroup {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building LaunchGroup",
                 )
             })?,
             description: self.description,
             feature_variations: self.feature_variations.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "feature_variations",
                     "feature_variations was not specified but it is required when building LaunchGroup",
                 )

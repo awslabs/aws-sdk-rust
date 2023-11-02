@@ -194,7 +194,7 @@ impl AssociateFirewallRuleGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_firewall_rule_group::AssociateFirewallRuleGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::associate_firewall_rule_group::AssociateFirewallRuleGroupInput {
             creator_request_id: self.creator_request_id,

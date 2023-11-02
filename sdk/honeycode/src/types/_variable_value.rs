@@ -53,10 +53,10 @@ impl VariableValueBuilder {
     /// Consumes the builder and constructs a [`VariableValue`](crate::types::VariableValue).
     /// This method will fail if any of the following fields are not set:
     /// - [`raw_value`](crate::types::builders::VariableValueBuilder::raw_value)
-    pub fn build(self) -> ::std::result::Result<crate::types::VariableValue, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::VariableValue, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::VariableValue {
             raw_value: self.raw_value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "raw_value",
                     "raw_value was not specified but it is required when building VariableValue",
                 )

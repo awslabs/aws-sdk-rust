@@ -2,7 +2,7 @@
 pub fn ser_word_cloud_sort_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::WordCloudSortConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.category_items_limit {
         #[allow(unused_mut)]
         let mut object_2 = object.key("CategoryItemsLimit").start_object();

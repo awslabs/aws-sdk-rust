@@ -2,7 +2,7 @@
 pub fn ser_allowed_statistics(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AllowedStatistics,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("Statistics").start_array();
         for item_2 in &input.statistics {

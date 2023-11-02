@@ -56,7 +56,7 @@ where
 pub fn ser_block_public_access_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BlockPublicAccessConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.block_public_security_group_rules {
         object.key("BlockPublicSecurityGroupRules").boolean(*var_1);
     }

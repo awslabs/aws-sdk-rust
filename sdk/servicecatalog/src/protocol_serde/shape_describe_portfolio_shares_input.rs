@@ -2,7 +2,7 @@
 pub fn ser_describe_portfolio_shares_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_portfolio_shares::DescribePortfolioSharesInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.portfolio_id {
         object.key("PortfolioId").string(var_1.as_str());
     }

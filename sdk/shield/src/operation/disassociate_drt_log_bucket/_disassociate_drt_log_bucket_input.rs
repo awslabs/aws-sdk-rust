@@ -46,7 +46,7 @@ impl DisassociateDrtLogBucketInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_drt_log_bucket::DisassociateDrtLogBucketInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disassociate_drt_log_bucket::DisassociateDrtLogBucketInput { log_bucket: self.log_bucket })
     }

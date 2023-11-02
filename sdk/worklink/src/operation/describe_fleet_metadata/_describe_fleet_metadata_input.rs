@@ -44,7 +44,7 @@ impl DescribeFleetMetadataInputBuilder {
     /// Consumes the builder and constructs a [`DescribeFleetMetadataInput`](crate::operation::describe_fleet_metadata::DescribeFleetMetadataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_fleet_metadata::DescribeFleetMetadataInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_fleet_metadata::DescribeFleetMetadataInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_fleet_metadata::DescribeFleetMetadataInput { fleet_arn: self.fleet_arn })
     }

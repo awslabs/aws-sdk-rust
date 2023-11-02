@@ -44,10 +44,10 @@ impl UpdateProactiveJoinBuilder {
     /// Consumes the builder and constructs a [`UpdateProactiveJoin`](crate::types::UpdateProactiveJoin).
     /// This method will fail if any of the following fields are not set:
     /// - [`enabled_by_motion`](crate::types::builders::UpdateProactiveJoinBuilder::enabled_by_motion)
-    pub fn build(self) -> ::std::result::Result<crate::types::UpdateProactiveJoin, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::UpdateProactiveJoin, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::UpdateProactiveJoin {
             enabled_by_motion: self.enabled_by_motion.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "enabled_by_motion",
                     "enabled_by_motion was not specified but it is required when building UpdateProactiveJoin",
                 )

@@ -85,7 +85,7 @@ impl GetAssetInputBuilder {
         &self.revision
     }
     /// Consumes the builder and constructs a [`GetAssetInput`](crate::operation::get_asset::GetAssetInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_asset::GetAssetInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_asset::GetAssetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_asset::GetAssetInput {
             domain_identifier: self.domain_identifier,
             identifier: self.identifier,

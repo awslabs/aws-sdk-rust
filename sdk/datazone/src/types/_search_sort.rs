@@ -67,10 +67,10 @@ impl SearchSortBuilder {
     /// Consumes the builder and constructs a [`SearchSort`](crate::types::SearchSort).
     /// This method will fail if any of the following fields are not set:
     /// - [`attribute`](crate::types::builders::SearchSortBuilder::attribute)
-    pub fn build(self) -> ::std::result::Result<crate::types::SearchSort, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SearchSort, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SearchSort {
             attribute: self.attribute.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "attribute",
                     "attribute was not specified but it is required when building SearchSort",
                 )

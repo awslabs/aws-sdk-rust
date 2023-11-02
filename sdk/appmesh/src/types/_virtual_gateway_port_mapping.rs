@@ -67,11 +67,11 @@ impl VirtualGatewayPortMappingBuilder {
     /// Consumes the builder and constructs a [`VirtualGatewayPortMapping`](crate::types::VirtualGatewayPortMapping).
     /// This method will fail if any of the following fields are not set:
     /// - [`protocol`](crate::types::builders::VirtualGatewayPortMappingBuilder::protocol)
-    pub fn build(self) -> ::std::result::Result<crate::types::VirtualGatewayPortMapping, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::VirtualGatewayPortMapping, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::VirtualGatewayPortMapping {
             port: self.port.unwrap_or_default(),
             protocol: self.protocol.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "protocol",
                     "protocol was not specified but it is required when building VirtualGatewayPortMapping",
                 )

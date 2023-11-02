@@ -106,7 +106,7 @@ impl UpdateServiceInputBuilder {
     /// Consumes the builder and constructs a [`UpdateServiceInput`](crate::operation::update_service::UpdateServiceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_service::UpdateServiceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_service::UpdateServiceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_service::UpdateServiceInput {
             service_identifier: self.service_identifier,
             certificate_arn: self.certificate_arn,

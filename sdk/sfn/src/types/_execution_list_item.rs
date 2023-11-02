@@ -305,34 +305,34 @@ impl ExecutionListItemBuilder {
     /// - [`name`](crate::types::builders::ExecutionListItemBuilder::name)
     /// - [`status`](crate::types::builders::ExecutionListItemBuilder::status)
     /// - [`start_date`](crate::types::builders::ExecutionListItemBuilder::start_date)
-    pub fn build(self) -> ::std::result::Result<crate::types::ExecutionListItem, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ExecutionListItem, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ExecutionListItem {
             execution_arn: self.execution_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "execution_arn",
                     "execution_arn was not specified but it is required when building ExecutionListItem",
                 )
             })?,
             state_machine_arn: self.state_machine_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "state_machine_arn",
                     "state_machine_arn was not specified but it is required when building ExecutionListItem",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building ExecutionListItem",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building ExecutionListItem",
                 )
             })?,
             start_date: self.start_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "start_date",
                     "start_date was not specified but it is required when building ExecutionListItem",
                 )

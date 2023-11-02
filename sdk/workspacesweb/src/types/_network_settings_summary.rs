@@ -67,10 +67,10 @@ impl NetworkSettingsSummaryBuilder {
     /// Consumes the builder and constructs a [`NetworkSettingsSummary`](crate::types::NetworkSettingsSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`network_settings_arn`](crate::types::builders::NetworkSettingsSummaryBuilder::network_settings_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::NetworkSettingsSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::NetworkSettingsSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::NetworkSettingsSummary {
             network_settings_arn: self.network_settings_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "network_settings_arn",
                     "network_settings_arn was not specified but it is required when building NetworkSettingsSummary",
                 )

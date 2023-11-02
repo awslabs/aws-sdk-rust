@@ -66,7 +66,7 @@ impl UpdateTargetGroupInputBuilder {
     /// Consumes the builder and constructs a [`UpdateTargetGroupInput`](crate::operation::update_target_group::UpdateTargetGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_target_group::UpdateTargetGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_target_group::UpdateTargetGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_target_group::UpdateTargetGroupInput {
             target_group_identifier: self.target_group_identifier,
             health_check: self.health_check,

@@ -192,7 +192,7 @@ impl DeleteFileInputBuilder {
         &self.email
     }
     /// Consumes the builder and constructs a [`DeleteFileInput`](crate::operation::delete_file::DeleteFileInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_file::DeleteFileInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_file::DeleteFileInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_file::DeleteFileInput {
             repository_name: self.repository_name,
             branch_name: self.branch_name,

@@ -215,10 +215,10 @@ impl TopBottomMoversComputationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`computation_id`](crate::types::builders::TopBottomMoversComputationBuilder::computation_id)
     /// - [`r#type`](crate::types::builders::TopBottomMoversComputationBuilder::r#type)
-    pub fn build(self) -> ::std::result::Result<crate::types::TopBottomMoversComputation, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TopBottomMoversComputation, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TopBottomMoversComputation {
             computation_id: self.computation_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "computation_id",
                     "computation_id was not specified but it is required when building TopBottomMoversComputation",
                 )
@@ -230,7 +230,7 @@ impl TopBottomMoversComputationBuilder {
             mover_size: self.mover_size,
             sort_order: self.sort_order,
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building TopBottomMoversComputation",
                 )

@@ -54,7 +54,7 @@ impl GetIdentityNotificationAttributesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_identity_notification_attributes::GetIdentityNotificationAttributesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_identity_notification_attributes::GetIdentityNotificationAttributesInput { identities: self.identities },

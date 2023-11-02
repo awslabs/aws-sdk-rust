@@ -88,7 +88,7 @@ impl UpdateSiteAddressInputBuilder {
     /// Consumes the builder and constructs a [`UpdateSiteAddressInput`](crate::operation::update_site_address::UpdateSiteAddressInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_site_address::UpdateSiteAddressInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_site_address::UpdateSiteAddressInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_site_address::UpdateSiteAddressInput {
             site_id: self.site_id,
             address_type: self.address_type,

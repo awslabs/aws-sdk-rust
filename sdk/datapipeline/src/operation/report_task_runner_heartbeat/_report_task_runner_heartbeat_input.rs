@@ -89,7 +89,7 @@ impl ReportTaskRunnerHeartbeatInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::report_task_runner_heartbeat::ReportTaskRunnerHeartbeatInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::report_task_runner_heartbeat::ReportTaskRunnerHeartbeatInput {
             taskrunner_id: self.taskrunner_id,

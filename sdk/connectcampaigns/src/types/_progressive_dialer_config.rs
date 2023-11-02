@@ -66,10 +66,10 @@ impl ProgressiveDialerConfigBuilder {
     /// Consumes the builder and constructs a [`ProgressiveDialerConfig`](crate::types::ProgressiveDialerConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`bandwidth_allocation`](crate::types::builders::ProgressiveDialerConfigBuilder::bandwidth_allocation)
-    pub fn build(self) -> ::std::result::Result<crate::types::ProgressiveDialerConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ProgressiveDialerConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ProgressiveDialerConfig {
             bandwidth_allocation: self.bandwidth_allocation.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "bandwidth_allocation",
                     "bandwidth_allocation was not specified but it is required when building ProgressiveDialerConfig",
                 )

@@ -67,7 +67,7 @@ impl PutAutoTerminationPolicyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_auto_termination_policy::PutAutoTerminationPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_auto_termination_policy::PutAutoTerminationPolicyInput {
             cluster_id: self.cluster_id,

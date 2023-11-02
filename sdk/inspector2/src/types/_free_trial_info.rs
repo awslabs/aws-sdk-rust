@@ -114,28 +114,28 @@ impl FreeTrialInfoBuilder {
     /// - [`start`](crate::types::builders::FreeTrialInfoBuilder::start)
     /// - [`end`](crate::types::builders::FreeTrialInfoBuilder::end)
     /// - [`status`](crate::types::builders::FreeTrialInfoBuilder::status)
-    pub fn build(self) -> ::std::result::Result<crate::types::FreeTrialInfo, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::FreeTrialInfo, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FreeTrialInfo {
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building FreeTrialInfo",
                 )
             })?,
             start: self.start.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "start",
                     "start was not specified but it is required when building FreeTrialInfo",
                 )
             })?,
             end: self.end.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "end",
                     "end was not specified but it is required when building FreeTrialInfo",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building FreeTrialInfo",
                 )

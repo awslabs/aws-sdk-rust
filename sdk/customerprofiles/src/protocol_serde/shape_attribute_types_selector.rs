@@ -2,7 +2,7 @@
 pub fn ser_attribute_types_selector(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AttributeTypesSelector,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("AttributeMatchingModel").string(input.attribute_matching_model.as_str());
     }

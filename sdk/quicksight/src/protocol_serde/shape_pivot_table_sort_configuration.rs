@@ -2,7 +2,7 @@
 pub fn ser_pivot_table_sort_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PivotTableSortConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.field_sort_options {
         let mut array_2 = object.key("FieldSortOptions").start_array();
         for item_3 in var_1 {

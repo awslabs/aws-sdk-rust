@@ -47,7 +47,7 @@ impl GetConfigurationSetEventDestinationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_configuration_set_event_destinations::GetConfigurationSetEventDestinationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_configuration_set_event_destinations::GetConfigurationSetEventDestinationsInput {

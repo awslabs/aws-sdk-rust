@@ -165,7 +165,7 @@ impl ModifySpotFleetRequestInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_spot_fleet_request::ModifySpotFleetRequestInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::modify_spot_fleet_request::ModifySpotFleetRequestInput {
             excess_capacity_termination_policy: self.excess_capacity_termination_policy,

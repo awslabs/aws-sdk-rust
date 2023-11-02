@@ -63,7 +63,7 @@ impl DisableUserInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`DisableUserInput`](crate::operation::disable_user::DisableUserInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::disable_user::DisableUserInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::disable_user::DisableUserInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::disable_user::DisableUserInput {
             user_id: self.user_id,
             client_token: self.client_token,

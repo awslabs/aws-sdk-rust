@@ -65,7 +65,7 @@ impl CancelOpenCypherQueryInputBuilder {
     /// Consumes the builder and constructs a [`CancelOpenCypherQueryInput`](crate::operation::cancel_open_cypher_query::CancelOpenCypherQueryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::cancel_open_cypher_query::CancelOpenCypherQueryInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::cancel_open_cypher_query::CancelOpenCypherQueryInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::cancel_open_cypher_query::CancelOpenCypherQueryInput {
             query_id: self.query_id,

@@ -303,10 +303,10 @@ impl GetDomainOutputBuilder {
     /// - [`id`](crate::operation::get_domain::builders::GetDomainOutputBuilder::id)
     /// - [`domain_execution_role`](crate::operation::get_domain::builders::GetDomainOutputBuilder::domain_execution_role)
     /// - [`status`](crate::operation::get_domain::builders::GetDomainOutputBuilder::status)
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_domain::GetDomainOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_domain::GetDomainOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_domain::GetDomainOutput {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building GetDomainOutput",
                 )
@@ -315,7 +315,7 @@ impl GetDomainOutputBuilder {
             description: self.description,
             single_sign_on: self.single_sign_on,
             domain_execution_role: self.domain_execution_role.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "domain_execution_role",
                     "domain_execution_role was not specified but it is required when building GetDomainOutput",
                 )
@@ -323,7 +323,7 @@ impl GetDomainOutputBuilder {
             arn: self.arn,
             kms_key_identifier: self.kms_key_identifier,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building GetDomainOutput",
                 )

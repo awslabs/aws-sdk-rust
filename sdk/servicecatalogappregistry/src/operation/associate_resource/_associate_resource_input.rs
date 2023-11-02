@@ -88,7 +88,7 @@ impl AssociateResourceInputBuilder {
     /// Consumes the builder and constructs a [`AssociateResourceInput`](crate::operation::associate_resource::AssociateResourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::associate_resource::AssociateResourceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::associate_resource::AssociateResourceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::associate_resource::AssociateResourceInput {
             application: self.application,
             resource_type: self.resource_type,

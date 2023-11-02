@@ -2,7 +2,7 @@
 pub fn ser_feature_activations(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FeatureActivations,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.input_prepare_schedule_actions {
         object.key("inputPrepareScheduleActions").string(var_1.as_str());
     }

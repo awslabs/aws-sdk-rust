@@ -258,7 +258,9 @@ impl ModifyVolumeInputBuilder {
         &self.multi_attach_enabled
     }
     /// Consumes the builder and constructs a [`ModifyVolumeInput`](crate::operation::modify_volume::ModifyVolumeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::modify_volume::ModifyVolumeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::modify_volume::ModifyVolumeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::modify_volume::ModifyVolumeInput {
             dry_run: self.dry_run,
             volume_id: self.volume_id,

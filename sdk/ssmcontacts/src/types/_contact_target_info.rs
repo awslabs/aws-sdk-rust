@@ -66,11 +66,11 @@ impl ContactTargetInfoBuilder {
     /// Consumes the builder and constructs a [`ContactTargetInfo`](crate::types::ContactTargetInfo).
     /// This method will fail if any of the following fields are not set:
     /// - [`is_essential`](crate::types::builders::ContactTargetInfoBuilder::is_essential)
-    pub fn build(self) -> ::std::result::Result<crate::types::ContactTargetInfo, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ContactTargetInfo, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ContactTargetInfo {
             contact_id: self.contact_id,
             is_essential: self.is_essential.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "is_essential",
                     "is_essential was not specified but it is required when building ContactTargetInfo",
                 )

@@ -140,7 +140,7 @@ impl SearchGroupProfilesInputBuilder {
     /// Consumes the builder and constructs a [`SearchGroupProfilesInput`](crate::operation::search_group_profiles::SearchGroupProfilesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::search_group_profiles::SearchGroupProfilesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::search_group_profiles::SearchGroupProfilesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::search_group_profiles::SearchGroupProfilesInput {
             domain_identifier: self.domain_identifier,

@@ -101,7 +101,7 @@ impl CreateDhcpOptionsInputBuilder {
     /// Consumes the builder and constructs a [`CreateDhcpOptionsInput`](crate::operation::create_dhcp_options::CreateDhcpOptionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_dhcp_options::CreateDhcpOptionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_dhcp_options::CreateDhcpOptionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_dhcp_options::CreateDhcpOptionsInput {
             dhcp_configurations: self.dhcp_configurations,
             tag_specifications: self.tag_specifications,

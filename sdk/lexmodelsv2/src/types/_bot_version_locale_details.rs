@@ -46,10 +46,10 @@ impl BotVersionLocaleDetailsBuilder {
     /// Consumes the builder and constructs a [`BotVersionLocaleDetails`](crate::types::BotVersionLocaleDetails).
     /// This method will fail if any of the following fields are not set:
     /// - [`source_bot_version`](crate::types::builders::BotVersionLocaleDetailsBuilder::source_bot_version)
-    pub fn build(self) -> ::std::result::Result<crate::types::BotVersionLocaleDetails, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::BotVersionLocaleDetails, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::BotVersionLocaleDetails {
             source_bot_version: self.source_bot_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source_bot_version",
                     "source_bot_version was not specified but it is required when building BotVersionLocaleDetails",
                 )

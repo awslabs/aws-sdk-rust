@@ -2,7 +2,7 @@
 pub fn ser_selected_video_streams(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SelectedVideoStreams,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.attendee_ids {
         let mut array_2 = object.key("AttendeeIds").start_array();
         for item_3 in var_1 {

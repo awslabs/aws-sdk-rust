@@ -386,7 +386,7 @@ impl CreateSimulationJobInputBuilder {
     /// Consumes the builder and constructs a [`CreateSimulationJobInput`](crate::operation::create_simulation_job::CreateSimulationJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_simulation_job::CreateSimulationJobInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_simulation_job::CreateSimulationJobInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_simulation_job::CreateSimulationJobInput {
             client_request_token: self.client_request_token,

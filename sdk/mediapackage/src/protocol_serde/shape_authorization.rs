@@ -49,7 +49,7 @@ where
 pub fn ser_authorization(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Authorization,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.cdn_identifier_secret {
         object.key("cdnIdentifierSecret").string(var_1.as_str());
     }

@@ -79,16 +79,16 @@ impl RegexPatternSetSummaryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`regex_pattern_set_id`](crate::types::builders::RegexPatternSetSummaryBuilder::regex_pattern_set_id)
     /// - [`name`](crate::types::builders::RegexPatternSetSummaryBuilder::name)
-    pub fn build(self) -> ::std::result::Result<crate::types::RegexPatternSetSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RegexPatternSetSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RegexPatternSetSummary {
             regex_pattern_set_id: self.regex_pattern_set_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "regex_pattern_set_id",
                     "regex_pattern_set_id was not specified but it is required when building RegexPatternSetSummary",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building RegexPatternSetSummary",
                 )

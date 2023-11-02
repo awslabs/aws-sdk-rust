@@ -109,7 +109,7 @@ impl SetLoadBasedAutoScalingInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_load_based_auto_scaling::SetLoadBasedAutoScalingInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::set_load_based_auto_scaling::SetLoadBasedAutoScalingInput {
             layer_id: self.layer_id,

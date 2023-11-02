@@ -2,7 +2,7 @@
 pub fn ser_result_reuse_by_age_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ResultReuseByAgeConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Enabled").boolean(input.enabled);
     }

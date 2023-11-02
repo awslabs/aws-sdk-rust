@@ -67,7 +67,7 @@ where
 pub fn ser_conversation_logs_data_source(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ConversationLogsDataSource,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("botId").string(input.bot_id.as_str());
     }

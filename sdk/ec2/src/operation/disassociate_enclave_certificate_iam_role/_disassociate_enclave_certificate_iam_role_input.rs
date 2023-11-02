@@ -89,7 +89,7 @@ impl DisassociateEnclaveCertificateIamRoleInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_enclave_certificate_iam_role::DisassociateEnclaveCertificateIamRoleInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::disassociate_enclave_certificate_iam_role::DisassociateEnclaveCertificateIamRoleInput {

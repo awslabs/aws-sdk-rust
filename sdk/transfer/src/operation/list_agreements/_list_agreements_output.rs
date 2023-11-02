@@ -89,11 +89,11 @@ impl ListAgreementsOutputBuilder {
     /// - [`agreements`](crate::operation::list_agreements::builders::ListAgreementsOutputBuilder::agreements)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_agreements::ListAgreementsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_agreements::ListAgreementsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_agreements::ListAgreementsOutput {
             next_token: self.next_token,
             agreements: self.agreements.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "agreements",
                     "agreements was not specified but it is required when building ListAgreementsOutput",
                 )

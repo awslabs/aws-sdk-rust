@@ -44,7 +44,7 @@ impl GetUploadStatusInputBuilder {
     /// Consumes the builder and constructs a [`GetUploadStatusInput`](crate::operation::get_upload_status::GetUploadStatusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_upload_status::GetUploadStatusInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_upload_status::GetUploadStatusInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_upload_status::GetUploadStatusInput { upload_id: self.upload_id })
     }
 }

@@ -93,22 +93,22 @@ impl ResponseHeadersPolicyCustomHeaderBuilder {
     /// - [`header`](crate::types::builders::ResponseHeadersPolicyCustomHeaderBuilder::header)
     /// - [`value`](crate::types::builders::ResponseHeadersPolicyCustomHeaderBuilder::value)
     /// - [`r#override`](crate::types::builders::ResponseHeadersPolicyCustomHeaderBuilder::r#override)
-    pub fn build(self) -> ::std::result::Result<crate::types::ResponseHeadersPolicyCustomHeader, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ResponseHeadersPolicyCustomHeader, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ResponseHeadersPolicyCustomHeader {
             header: self.header.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "header",
                     "header was not specified but it is required when building ResponseHeadersPolicyCustomHeader",
                 )
             })?,
             value: self.value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "value",
                     "value was not specified but it is required when building ResponseHeadersPolicyCustomHeader",
                 )
             })?,
             r#override: self.r#override.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#override",
                     "r#override was not specified but it is required when building ResponseHeadersPolicyCustomHeader",
                 )

@@ -181,7 +181,7 @@ impl CreateHitTypeInputBuilder {
     /// Consumes the builder and constructs a [`CreateHitTypeInput`](crate::operation::create_hit_type::CreateHitTypeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_hit_type::CreateHitTypeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_hit_type::CreateHitTypeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_hit_type::CreateHitTypeInput {
             auto_approval_delay_in_seconds: self.auto_approval_delay_in_seconds,
             assignment_duration_in_seconds: self.assignment_duration_in_seconds,

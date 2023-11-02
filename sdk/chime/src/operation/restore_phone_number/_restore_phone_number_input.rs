@@ -44,7 +44,8 @@ impl RestorePhoneNumberInputBuilder {
     /// Consumes the builder and constructs a [`RestorePhoneNumberInput`](crate::operation::restore_phone_number::RestorePhoneNumberInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::restore_phone_number::RestorePhoneNumberInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::restore_phone_number::RestorePhoneNumberInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::restore_phone_number::RestorePhoneNumberInput {
             phone_number_id: self.phone_number_id,
         })

@@ -175,7 +175,7 @@ impl ImportAsProvisionedProductInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::import_as_provisioned_product::ImportAsProvisionedProductInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::import_as_provisioned_product::ImportAsProvisionedProductInput {
             accept_language: self.accept_language,

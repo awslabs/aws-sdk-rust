@@ -2,7 +2,7 @@
 pub fn ser_associate_wireless_gateway_with_certificate_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::associate_wireless_gateway_with_certificate::AssociateWirelessGatewayWithCertificateInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.iot_certificate_id {
         object.key("IotCertificateId").string(var_1.as_str());
     }

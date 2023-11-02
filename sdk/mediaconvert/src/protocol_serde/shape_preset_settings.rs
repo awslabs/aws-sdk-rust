@@ -2,7 +2,7 @@
 pub fn ser_preset_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PresetSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.audio_descriptions {
         let mut array_2 = object.key("audioDescriptions").start_array();
         for item_3 in var_1 {

@@ -249,7 +249,7 @@ impl ScheduleBuilder {
     /// Consumes the builder and constructs a [`Schedule`](crate::types::Schedule).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::ScheduleBuilder::name)
-    pub fn build(self) -> ::std::result::Result<crate::types::Schedule, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Schedule, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Schedule {
             account_id: self.account_id,
             created_by: self.created_by,
@@ -261,7 +261,7 @@ impl ScheduleBuilder {
             cron_expression: self.cron_expression,
             tags: self.tags,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building Schedule",
                 )

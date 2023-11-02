@@ -159,7 +159,8 @@ impl UpdateModelVersionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateModelVersionInput`](crate::operation::update_model_version::UpdateModelVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_model_version::UpdateModelVersionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_model_version::UpdateModelVersionInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::update_model_version::UpdateModelVersionInput {
             model_id: self.model_id,
             model_type: self.model_type,

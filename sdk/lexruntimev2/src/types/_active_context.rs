@@ -109,17 +109,17 @@ impl ActiveContextBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::ActiveContextBuilder::name)
     /// - [`context_attributes`](crate::types::builders::ActiveContextBuilder::context_attributes)
-    pub fn build(self) -> ::std::result::Result<crate::types::ActiveContext, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ActiveContext, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ActiveContext {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building ActiveContext",
                 )
             })?,
             time_to_live: self.time_to_live,
             context_attributes: self.context_attributes.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "context_attributes",
                     "context_attributes was not specified but it is required when building ActiveContext",
                 )

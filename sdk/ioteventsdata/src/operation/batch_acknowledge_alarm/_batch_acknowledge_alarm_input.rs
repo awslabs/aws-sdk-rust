@@ -54,7 +54,7 @@ impl BatchAcknowledgeAlarmInputBuilder {
     /// Consumes the builder and constructs a [`BatchAcknowledgeAlarmInput`](crate::operation::batch_acknowledge_alarm::BatchAcknowledgeAlarmInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_acknowledge_alarm::BatchAcknowledgeAlarmInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::batch_acknowledge_alarm::BatchAcknowledgeAlarmInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::batch_acknowledge_alarm::BatchAcknowledgeAlarmInput {
             acknowledge_action_requests: self.acknowledge_action_requests,

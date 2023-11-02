@@ -46,7 +46,7 @@ impl GetModelPackageGroupPolicyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_model_package_group_policy::GetModelPackageGroupPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_model_package_group_policy::GetModelPackageGroupPolicyInput {
             model_package_group_name: self.model_package_group_name,

@@ -92,16 +92,17 @@ impl ListTagsForStreamOutputBuilder {
     /// - [`has_more_tags`](crate::operation::list_tags_for_stream::builders::ListTagsForStreamOutputBuilder::has_more_tags)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_tags_for_stream::ListTagsForStreamOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_tags_for_stream::ListTagsForStreamOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::list_tags_for_stream::ListTagsForStreamOutput {
             tags: self.tags.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "tags",
                     "tags was not specified but it is required when building ListTagsForStreamOutput",
                 )
             })?,
             has_more_tags: self.has_more_tags.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "has_more_tags",
                     "has_more_tags was not specified but it is required when building ListTagsForStreamOutput",
                 )

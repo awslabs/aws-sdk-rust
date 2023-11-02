@@ -44,7 +44,7 @@ impl DeletePlaceIndexInputBuilder {
     /// Consumes the builder and constructs a [`DeletePlaceIndexInput`](crate::operation::delete_place_index::DeletePlaceIndexInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_place_index::DeletePlaceIndexInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_place_index::DeletePlaceIndexInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_place_index::DeletePlaceIndexInput { index_name: self.index_name })
     }
 }

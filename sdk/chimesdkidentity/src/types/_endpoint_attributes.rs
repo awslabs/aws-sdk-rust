@@ -75,10 +75,10 @@ impl EndpointAttributesBuilder {
     /// Consumes the builder and constructs a [`EndpointAttributes`](crate::types::EndpointAttributes).
     /// This method will fail if any of the following fields are not set:
     /// - [`device_token`](crate::types::builders::EndpointAttributesBuilder::device_token)
-    pub fn build(self) -> ::std::result::Result<crate::types::EndpointAttributes, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::EndpointAttributes, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EndpointAttributes {
             device_token: self.device_token.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "device_token",
                     "device_token was not specified but it is required when building EndpointAttributes",
                 )

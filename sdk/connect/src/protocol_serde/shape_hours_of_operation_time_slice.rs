@@ -2,7 +2,7 @@
 pub fn ser_hours_of_operation_time_slice(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::HoursOfOperationTimeSlice,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Hours").number(
             #[allow(clippy::useless_conversion)]

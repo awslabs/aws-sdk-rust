@@ -2,7 +2,7 @@
 pub fn ser_list_page_receipts_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_page_receipts::ListPageReceiptsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.page_id {
         object.key("PageId").string(var_1.as_str());
     }

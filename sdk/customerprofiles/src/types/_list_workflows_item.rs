@@ -162,40 +162,40 @@ impl ListWorkflowsItemBuilder {
     /// - [`status_description`](crate::types::builders::ListWorkflowsItemBuilder::status_description)
     /// - [`created_at`](crate::types::builders::ListWorkflowsItemBuilder::created_at)
     /// - [`last_updated_at`](crate::types::builders::ListWorkflowsItemBuilder::last_updated_at)
-    pub fn build(self) -> ::std::result::Result<crate::types::ListWorkflowsItem, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ListWorkflowsItem, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ListWorkflowsItem {
             workflow_type: self.workflow_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "workflow_type",
                     "workflow_type was not specified but it is required when building ListWorkflowsItem",
                 )
             })?,
             workflow_id: self.workflow_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "workflow_id",
                     "workflow_id was not specified but it is required when building ListWorkflowsItem",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building ListWorkflowsItem",
                 )
             })?,
             status_description: self.status_description.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status_description",
                     "status_description was not specified but it is required when building ListWorkflowsItem",
                 )
             })?,
             created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
                     "created_at was not specified but it is required when building ListWorkflowsItem",
                 )
             })?,
             last_updated_at: self.last_updated_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_updated_at",
                     "last_updated_at was not specified but it is required when building ListWorkflowsItem",
                 )

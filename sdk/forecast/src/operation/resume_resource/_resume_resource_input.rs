@@ -44,7 +44,7 @@ impl ResumeResourceInputBuilder {
     /// Consumes the builder and constructs a [`ResumeResourceInput`](crate::operation::resume_resource::ResumeResourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::resume_resource::ResumeResourceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::resume_resource::ResumeResourceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::resume_resource::ResumeResourceInput {
             resource_arn: self.resource_arn,
         })

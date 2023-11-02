@@ -56,7 +56,7 @@ where
 pub fn ser_quota_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::QuotaSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.limit != 0 {
         object.key("limit").number(
             #[allow(clippy::useless_conversion)]

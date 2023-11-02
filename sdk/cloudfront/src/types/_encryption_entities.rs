@@ -74,10 +74,10 @@ impl EncryptionEntitiesBuilder {
     /// Consumes the builder and constructs a [`EncryptionEntities`](crate::types::EncryptionEntities).
     /// This method will fail if any of the following fields are not set:
     /// - [`quantity`](crate::types::builders::EncryptionEntitiesBuilder::quantity)
-    pub fn build(self) -> ::std::result::Result<crate::types::EncryptionEntities, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::EncryptionEntities, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EncryptionEntities {
             quantity: self.quantity.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "quantity",
                     "quantity was not specified but it is required when building EncryptionEntities",
                 )

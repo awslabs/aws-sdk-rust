@@ -67,7 +67,7 @@ impl ExportClientVpnClientConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::export_client_vpn_client_configuration::ExportClientVpnClientConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::export_client_vpn_client_configuration::ExportClientVpnClientConfigurationInput {

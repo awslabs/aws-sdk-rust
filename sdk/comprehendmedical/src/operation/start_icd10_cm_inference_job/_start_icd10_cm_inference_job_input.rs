@@ -175,7 +175,7 @@ impl StartIcd10CmInferenceJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_icd10_cm_inference_job::StartIcd10CmInferenceJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_icd10_cm_inference_job::StartIcd10CmInferenceJobInput {
             input_data_config: self.input_data_config,

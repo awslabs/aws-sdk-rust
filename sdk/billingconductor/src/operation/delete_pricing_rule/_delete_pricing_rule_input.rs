@@ -44,7 +44,7 @@ impl DeletePricingRuleInputBuilder {
     /// Consumes the builder and constructs a [`DeletePricingRuleInput`](crate::operation::delete_pricing_rule::DeletePricingRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_pricing_rule::DeletePricingRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_pricing_rule::DeletePricingRuleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_pricing_rule::DeletePricingRuleInput { arn: self.arn })
     }
 }

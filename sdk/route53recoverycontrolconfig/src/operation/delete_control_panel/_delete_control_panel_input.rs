@@ -44,7 +44,8 @@ impl DeleteControlPanelInputBuilder {
     /// Consumes the builder and constructs a [`DeleteControlPanelInput`](crate::operation::delete_control_panel::DeleteControlPanelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_control_panel::DeleteControlPanelInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_control_panel::DeleteControlPanelInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::delete_control_panel::DeleteControlPanelInput {
             control_panel_arn: self.control_panel_arn,
         })

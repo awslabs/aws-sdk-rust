@@ -227,7 +227,7 @@ impl UpdateQuerySuggestionsConfigInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_query_suggestions_config::UpdateQuerySuggestionsConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_query_suggestions_config::UpdateQuerySuggestionsConfigInput {
             index_id: self.index_id,

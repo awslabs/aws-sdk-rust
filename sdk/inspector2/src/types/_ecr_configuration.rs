@@ -45,10 +45,10 @@ impl EcrConfigurationBuilder {
     /// Consumes the builder and constructs a [`EcrConfiguration`](crate::types::EcrConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`rescan_duration`](crate::types::builders::EcrConfigurationBuilder::rescan_duration)
-    pub fn build(self) -> ::std::result::Result<crate::types::EcrConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::EcrConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EcrConfiguration {
             rescan_duration: self.rescan_duration.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "rescan_duration",
                     "rescan_duration was not specified but it is required when building EcrConfiguration",
                 )

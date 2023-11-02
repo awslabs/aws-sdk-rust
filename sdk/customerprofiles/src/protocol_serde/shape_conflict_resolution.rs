@@ -2,7 +2,7 @@
 pub fn ser_conflict_resolution(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ConflictResolution,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("ConflictResolvingModel").string(input.conflict_resolving_model.as_str());
     }

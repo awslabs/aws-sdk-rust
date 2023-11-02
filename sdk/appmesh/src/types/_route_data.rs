@@ -160,22 +160,22 @@ impl RouteDataBuilder {
     /// - [`mesh_name`](crate::types::builders::RouteDataBuilder::mesh_name)
     /// - [`virtual_router_name`](crate::types::builders::RouteDataBuilder::virtual_router_name)
     /// - [`route_name`](crate::types::builders::RouteDataBuilder::route_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::RouteData, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RouteData, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RouteData {
             mesh_name: self.mesh_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "mesh_name",
                     "mesh_name was not specified but it is required when building RouteData",
                 )
             })?,
             virtual_router_name: self.virtual_router_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "virtual_router_name",
                     "virtual_router_name was not specified but it is required when building RouteData",
                 )
             })?,
             route_name: self.route_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "route_name",
                     "route_name was not specified but it is required when building RouteData",
                 )

@@ -85,7 +85,7 @@ impl ExecuteFastResetInputBuilder {
     /// Consumes the builder and constructs a [`ExecuteFastResetInput`](crate::operation::execute_fast_reset::ExecuteFastResetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::execute_fast_reset::ExecuteFastResetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::execute_fast_reset::ExecuteFastResetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::execute_fast_reset::ExecuteFastResetInput {
             action: self.action,
             token: self.token,

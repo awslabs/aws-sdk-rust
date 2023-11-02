@@ -107,10 +107,10 @@ impl HttpEndpointConfigurationBuilder {
     /// Consumes the builder and constructs a [`HttpEndpointConfiguration`](crate::types::HttpEndpointConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`url`](crate::types::builders::HttpEndpointConfigurationBuilder::url)
-    pub fn build(self) -> ::std::result::Result<crate::types::HttpEndpointConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::HttpEndpointConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::HttpEndpointConfiguration {
             url: self.url.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "url",
                     "url was not specified but it is required when building HttpEndpointConfiguration",
                 )

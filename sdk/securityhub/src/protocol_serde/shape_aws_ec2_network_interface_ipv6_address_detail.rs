@@ -2,7 +2,7 @@
 pub fn ser_aws_ec2_network_interface_ipv6_address_detail(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEc2NetworkInterfaceIpV6AddressDetail,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.ipv6_address {
         object.key("IpV6Address").string(var_1.as_str());
     }

@@ -161,8 +161,10 @@ impl ContinueUpdateRollbackInputBuilder {
     /// Consumes the builder and constructs a [`ContinueUpdateRollbackInput`](crate::operation::continue_update_rollback::ContinueUpdateRollbackInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::continue_update_rollback::ContinueUpdateRollbackInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::continue_update_rollback::ContinueUpdateRollbackInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::continue_update_rollback::ContinueUpdateRollbackInput {
             stack_name: self.stack_name,
             role_arn: self.role_arn,

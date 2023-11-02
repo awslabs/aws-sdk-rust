@@ -42,7 +42,9 @@ impl DeleteLedgerInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`DeleteLedgerInput`](crate::operation::delete_ledger::DeleteLedgerInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_ledger::DeleteLedgerInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_ledger::DeleteLedgerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_ledger::DeleteLedgerInput { name: self.name })
     }
 }

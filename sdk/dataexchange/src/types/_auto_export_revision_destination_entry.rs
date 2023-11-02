@@ -67,10 +67,10 @@ impl AutoExportRevisionDestinationEntryBuilder {
     /// Consumes the builder and constructs a [`AutoExportRevisionDestinationEntry`](crate::types::AutoExportRevisionDestinationEntry).
     /// This method will fail if any of the following fields are not set:
     /// - [`bucket`](crate::types::builders::AutoExportRevisionDestinationEntryBuilder::bucket)
-    pub fn build(self) -> ::std::result::Result<crate::types::AutoExportRevisionDestinationEntry, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AutoExportRevisionDestinationEntry, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AutoExportRevisionDestinationEntry {
             bucket: self.bucket.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "bucket",
                     "bucket was not specified but it is required when building AutoExportRevisionDestinationEntry",
                 )

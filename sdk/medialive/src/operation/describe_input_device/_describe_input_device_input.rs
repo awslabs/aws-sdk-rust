@@ -45,7 +45,7 @@ impl DescribeInputDeviceInputBuilder {
     /// Consumes the builder and constructs a [`DescribeInputDeviceInput`](crate::operation::describe_input_device::DescribeInputDeviceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_input_device::DescribeInputDeviceInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_input_device::DescribeInputDeviceInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_input_device::DescribeInputDeviceInput {
             input_device_id: self.input_device_id,

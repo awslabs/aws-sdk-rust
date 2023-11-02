@@ -162,16 +162,16 @@ impl RotationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`rotation_arn`](crate::types::builders::RotationBuilder::rotation_arn)
     /// - [`name`](crate::types::builders::RotationBuilder::name)
-    pub fn build(self) -> ::std::result::Result<crate::types::Rotation, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Rotation, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Rotation {
             rotation_arn: self.rotation_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "rotation_arn",
                     "rotation_arn was not specified but it is required when building Rotation",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building Rotation",
                 )

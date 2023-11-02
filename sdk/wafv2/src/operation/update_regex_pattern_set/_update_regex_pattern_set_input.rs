@@ -185,7 +185,7 @@ impl UpdateRegexPatternSetInputBuilder {
     /// Consumes the builder and constructs a [`UpdateRegexPatternSetInput`](crate::operation::update_regex_pattern_set::UpdateRegexPatternSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_regex_pattern_set::UpdateRegexPatternSetInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_regex_pattern_set::UpdateRegexPatternSetInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_regex_pattern_set::UpdateRegexPatternSetInput {
             name: self.name,

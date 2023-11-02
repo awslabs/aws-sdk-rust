@@ -87,7 +87,7 @@ impl DeleteVirtualServiceInputBuilder {
     /// Consumes the builder and constructs a [`DeleteVirtualServiceInput`](crate::operation::delete_virtual_service::DeleteVirtualServiceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_virtual_service::DeleteVirtualServiceInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_virtual_service::DeleteVirtualServiceInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_virtual_service::DeleteVirtualServiceInput {
             virtual_service_name: self.virtual_service_name,

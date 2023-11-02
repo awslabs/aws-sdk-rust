@@ -177,7 +177,7 @@ impl GetSessionEmbedUrlInputBuilder {
     /// Consumes the builder and constructs a [`GetSessionEmbedUrlInput`](crate::operation::get_session_embed_url::GetSessionEmbedUrlInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_session_embed_url::GetSessionEmbedUrlInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_session_embed_url::GetSessionEmbedUrlInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_session_embed_url::GetSessionEmbedUrlInput {
             aws_account_id: self.aws_account_id,

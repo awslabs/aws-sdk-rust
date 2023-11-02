@@ -85,7 +85,7 @@ impl ListEventActionsInputBuilder {
     /// Consumes the builder and constructs a [`ListEventActionsInput`](crate::operation::list_event_actions::ListEventActionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_event_actions::ListEventActionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_event_actions::ListEventActionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_event_actions::ListEventActionsInput {
             event_source_id: self.event_source_id,
             max_results: self.max_results,

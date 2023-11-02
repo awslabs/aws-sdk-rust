@@ -75,7 +75,7 @@ impl RestoreDocumentVersionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::restore_document_versions::RestoreDocumentVersionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::restore_document_versions::RestoreDocumentVersionsInput {
             authentication_token: self.authentication_token,

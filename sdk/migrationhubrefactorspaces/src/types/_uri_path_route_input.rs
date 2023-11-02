@@ -140,16 +140,16 @@ impl UriPathRouteInputBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`source_path`](crate::types::builders::UriPathRouteInputBuilder::source_path)
     /// - [`activation_state`](crate::types::builders::UriPathRouteInputBuilder::activation_state)
-    pub fn build(self) -> ::std::result::Result<crate::types::UriPathRouteInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::UriPathRouteInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::UriPathRouteInput {
             source_path: self.source_path.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source_path",
                     "source_path was not specified but it is required when building UriPathRouteInput",
                 )
             })?,
             activation_state: self.activation_state.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "activation_state",
                     "activation_state was not specified but it is required when building UriPathRouteInput",
                 )

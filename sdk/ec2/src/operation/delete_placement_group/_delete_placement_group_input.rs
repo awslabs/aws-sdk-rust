@@ -65,7 +65,7 @@ impl DeletePlacementGroupInputBuilder {
     /// Consumes the builder and constructs a [`DeletePlacementGroupInput`](crate::operation::delete_placement_group::DeletePlacementGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_placement_group::DeletePlacementGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_placement_group::DeletePlacementGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_placement_group::DeletePlacementGroupInput {
             dry_run: self.dry_run,

@@ -89,7 +89,7 @@ impl ValidateSolFunctionPackageContentInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::validate_sol_function_package_content::ValidateSolFunctionPackageContentInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::validate_sol_function_package_content::ValidateSolFunctionPackageContentInput {

@@ -2,7 +2,7 @@
 pub fn ser_follow_mode_schedule_action_start_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FollowModeScheduleActionStartSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.follow_point {
         object.key("followPoint").string(var_1.as_str());
     }

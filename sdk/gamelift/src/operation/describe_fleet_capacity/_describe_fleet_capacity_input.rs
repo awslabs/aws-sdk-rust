@@ -93,7 +93,7 @@ impl DescribeFleetCapacityInputBuilder {
     /// Consumes the builder and constructs a [`DescribeFleetCapacityInput`](crate::operation::describe_fleet_capacity::DescribeFleetCapacityInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_fleet_capacity::DescribeFleetCapacityInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_fleet_capacity::DescribeFleetCapacityInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_fleet_capacity::DescribeFleetCapacityInput {
             fleet_ids: self.fleet_ids,

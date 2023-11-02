@@ -2,7 +2,7 @@
 pub fn ser_ttml_destination_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TtmlDestinationSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.style_passthrough {
         object.key("stylePassthrough").string(var_1.as_str());
     }

@@ -106,7 +106,7 @@ impl ListDatabasesInputBuilder {
     /// Consumes the builder and constructs a [`ListDatabasesInput`](crate::operation::list_databases::ListDatabasesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_databases::ListDatabasesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_databases::ListDatabasesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_databases::ListDatabasesInput {
             application_id: self.application_id,
             component_id: self.component_id,

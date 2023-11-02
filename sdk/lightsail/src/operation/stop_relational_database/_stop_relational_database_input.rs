@@ -65,8 +65,10 @@ impl StopRelationalDatabaseInputBuilder {
     /// Consumes the builder and constructs a [`StopRelationalDatabaseInput`](crate::operation::stop_relational_database::StopRelationalDatabaseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_relational_database::StopRelationalDatabaseInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::stop_relational_database::StopRelationalDatabaseInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::stop_relational_database::StopRelationalDatabaseInput {
             relational_database_name: self.relational_database_name,
             relational_database_snapshot_name: self.relational_database_snapshot_name,

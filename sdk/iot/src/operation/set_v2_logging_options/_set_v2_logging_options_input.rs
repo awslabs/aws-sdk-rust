@@ -85,7 +85,7 @@ impl SetV2LoggingOptionsInputBuilder {
     /// Consumes the builder and constructs a [`SetV2LoggingOptionsInput`](crate::operation::set_v2_logging_options::SetV2LoggingOptionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::set_v2_logging_options::SetV2LoggingOptionsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::set_v2_logging_options::SetV2LoggingOptionsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::set_v2_logging_options::SetV2LoggingOptionsInput {
             role_arn: self.role_arn,

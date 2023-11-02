@@ -88,7 +88,7 @@ impl RemoveFacetFromObjectInputBuilder {
     /// Consumes the builder and constructs a [`RemoveFacetFromObjectInput`](crate::operation::remove_facet_from_object::RemoveFacetFromObjectInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::remove_facet_from_object::RemoveFacetFromObjectInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::remove_facet_from_object::RemoveFacetFromObjectInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::remove_facet_from_object::RemoveFacetFromObjectInput {
             directory_arn: self.directory_arn,

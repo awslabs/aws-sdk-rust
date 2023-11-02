@@ -97,16 +97,16 @@ impl ChildShardBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`shard_id`](crate::types::builders::ChildShardBuilder::shard_id)
     /// - [`parent_shards`](crate::types::builders::ChildShardBuilder::parent_shards)
-    pub fn build(self) -> ::std::result::Result<crate::types::ChildShard, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ChildShard, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ChildShard {
             shard_id: self.shard_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "shard_id",
                     "shard_id was not specified but it is required when building ChildShard",
                 )
             })?,
             parent_shards: self.parent_shards.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "parent_shards",
                     "parent_shards was not specified but it is required when building ChildShard",
                 )

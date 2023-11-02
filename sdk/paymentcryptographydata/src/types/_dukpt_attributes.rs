@@ -69,16 +69,16 @@ impl DukptAttributesBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`key_serial_number`](crate::types::builders::DukptAttributesBuilder::key_serial_number)
     /// - [`dukpt_derivation_type`](crate::types::builders::DukptAttributesBuilder::dukpt_derivation_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::DukptAttributes, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DukptAttributes, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DukptAttributes {
             key_serial_number: self.key_serial_number.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "key_serial_number",
                     "key_serial_number was not specified but it is required when building DukptAttributes",
                 )
             })?,
             dukpt_derivation_type: self.dukpt_derivation_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "dukpt_derivation_type",
                     "dukpt_derivation_type was not specified but it is required when building DukptAttributes",
                 )

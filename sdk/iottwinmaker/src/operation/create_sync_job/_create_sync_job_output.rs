@@ -109,22 +109,22 @@ impl CreateSyncJobOutputBuilder {
     /// - [`state`](crate::operation::create_sync_job::builders::CreateSyncJobOutputBuilder::state)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_sync_job::CreateSyncJobOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_sync_job::CreateSyncJobOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_sync_job::CreateSyncJobOutput {
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building CreateSyncJobOutput",
                 )
             })?,
             creation_date_time: self.creation_date_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_date_time",
                     "creation_date_time was not specified but it is required when building CreateSyncJobOutput",
                 )
             })?,
             state: self.state.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "state",
                     "state was not specified but it is required when building CreateSyncJobOutput",
                 )

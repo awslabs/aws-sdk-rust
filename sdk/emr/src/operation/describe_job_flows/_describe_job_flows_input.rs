@@ -123,7 +123,7 @@ impl DescribeJobFlowsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeJobFlowsInput`](crate::operation::describe_job_flows::DescribeJobFlowsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_job_flows::DescribeJobFlowsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_job_flows::DescribeJobFlowsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_job_flows::DescribeJobFlowsInput {
             created_after: self.created_after,
             created_before: self.created_before,

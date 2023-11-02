@@ -89,7 +89,7 @@ impl AssociateWebsiteAuthorizationProviderInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_website_authorization_provider::AssociateWebsiteAuthorizationProviderInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::associate_website_authorization_provider::AssociateWebsiteAuthorizationProviderInput {

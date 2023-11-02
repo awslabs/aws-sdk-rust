@@ -67,10 +67,10 @@ impl S3ResourceBuilder {
     /// Consumes the builder and constructs a [`S3Resource`](crate::types::S3Resource).
     /// This method will fail if any of the following fields are not set:
     /// - [`bucket_name`](crate::types::builders::S3ResourceBuilder::bucket_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::S3Resource, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::S3Resource, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::S3Resource {
             bucket_name: self.bucket_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "bucket_name",
                     "bucket_name was not specified but it is required when building S3Resource",
                 )

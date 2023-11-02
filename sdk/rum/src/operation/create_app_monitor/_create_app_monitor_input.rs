@@ -191,7 +191,7 @@ impl CreateAppMonitorInputBuilder {
     /// Consumes the builder and constructs a [`CreateAppMonitorInput`](crate::operation::create_app_monitor::CreateAppMonitorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_app_monitor::CreateAppMonitorInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_app_monitor::CreateAppMonitorInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_app_monitor::CreateAppMonitorInput {
             name: self.name,
             domain: self.domain,

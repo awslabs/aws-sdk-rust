@@ -335,17 +335,17 @@ impl RecognizeUtteranceFluentBuilder {
         self.inner.get_response_content_type()
     }
     /// <p>User input in PCM or Opus audio format or text format as described in the <code>requestContentType</code> parameter.</p>
-    pub fn input_stream(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
+    pub fn input_stream(mut self, input: ::aws_smithy_types::byte_stream::ByteStream) -> Self {
         self.inner = self.inner.input_stream(input);
         self
     }
     /// <p>User input in PCM or Opus audio format or text format as described in the <code>requestContentType</code> parameter.</p>
-    pub fn set_input_stream(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
+    pub fn set_input_stream(mut self, input: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>) -> Self {
         self.inner = self.inner.set_input_stream(input);
         self
     }
     /// <p>User input in PCM or Opus audio format or text format as described in the <code>requestContentType</code> parameter.</p>
-    pub fn get_input_stream(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+    pub fn get_input_stream(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
         self.inner.get_input_stream()
     }
 }

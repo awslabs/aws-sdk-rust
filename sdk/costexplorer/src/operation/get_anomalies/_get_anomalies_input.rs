@@ -147,7 +147,9 @@ impl GetAnomaliesInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`GetAnomaliesInput`](crate::operation::get_anomalies::GetAnomaliesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_anomalies::GetAnomaliesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_anomalies::GetAnomaliesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_anomalies::GetAnomaliesInput {
             monitor_arn: self.monitor_arn,
             date_interval: self.date_interval,

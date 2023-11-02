@@ -2,7 +2,7 @@
 pub fn ser_virtual_gateway_http2_connection_pool(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VirtualGatewayHttp2ConnectionPool,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("maxRequests").number(
             #[allow(clippy::useless_conversion)]

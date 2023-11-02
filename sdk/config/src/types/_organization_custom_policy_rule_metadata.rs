@@ -308,7 +308,9 @@ impl OrganizationCustomPolicyRuleMetadataBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`policy_runtime`](crate::types::builders::OrganizationCustomPolicyRuleMetadataBuilder::policy_runtime)
     /// - [`policy_text`](crate::types::builders::OrganizationCustomPolicyRuleMetadataBuilder::policy_text)
-    pub fn build(self) -> ::std::result::Result<crate::types::OrganizationCustomPolicyRuleMetadata, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::OrganizationCustomPolicyRuleMetadata, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::OrganizationCustomPolicyRuleMetadata {
             description: self.description,
             organization_config_rule_trigger_types: self.organization_config_rule_trigger_types,
@@ -319,13 +321,13 @@ impl OrganizationCustomPolicyRuleMetadataBuilder {
             tag_key_scope: self.tag_key_scope,
             tag_value_scope: self.tag_value_scope,
             policy_runtime: self.policy_runtime.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "policy_runtime",
                     "policy_runtime was not specified but it is required when building OrganizationCustomPolicyRuleMetadata",
                 )
             })?,
             policy_text: self.policy_text.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "policy_text",
                     "policy_text was not specified but it is required when building OrganizationCustomPolicyRuleMetadata",
                 )

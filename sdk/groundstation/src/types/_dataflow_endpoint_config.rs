@@ -67,10 +67,10 @@ impl DataflowEndpointConfigBuilder {
     /// Consumes the builder and constructs a [`DataflowEndpointConfig`](crate::types::DataflowEndpointConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`dataflow_endpoint_name`](crate::types::builders::DataflowEndpointConfigBuilder::dataflow_endpoint_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::DataflowEndpointConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DataflowEndpointConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DataflowEndpointConfig {
             dataflow_endpoint_name: self.dataflow_endpoint_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "dataflow_endpoint_name",
                     "dataflow_endpoint_name was not specified but it is required when building DataflowEndpointConfig",
                 )

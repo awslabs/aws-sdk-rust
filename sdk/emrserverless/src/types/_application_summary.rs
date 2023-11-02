@@ -250,48 +250,48 @@ impl ApplicationSummaryBuilder {
     /// - [`state`](crate::types::builders::ApplicationSummaryBuilder::state)
     /// - [`created_at`](crate::types::builders::ApplicationSummaryBuilder::created_at)
     /// - [`updated_at`](crate::types::builders::ApplicationSummaryBuilder::updated_at)
-    pub fn build(self) -> ::std::result::Result<crate::types::ApplicationSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ApplicationSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ApplicationSummary {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building ApplicationSummary",
                 )
             })?,
             name: self.name,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building ApplicationSummary",
                 )
             })?,
             release_label: self.release_label.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "release_label",
                     "release_label was not specified but it is required when building ApplicationSummary",
                 )
             })?,
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building ApplicationSummary",
                 )
             })?,
             state: self.state.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "state",
                     "state was not specified but it is required when building ApplicationSummary",
                 )
             })?,
             state_details: self.state_details,
             created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
                     "created_at was not specified but it is required when building ApplicationSummary",
                 )
             })?,
             updated_at: self.updated_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "updated_at",
                     "updated_at was not specified but it is required when building ApplicationSummary",
                 )

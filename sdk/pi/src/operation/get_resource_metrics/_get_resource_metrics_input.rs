@@ -298,7 +298,8 @@ impl GetResourceMetricsInputBuilder {
     /// Consumes the builder and constructs a [`GetResourceMetricsInput`](crate::operation::get_resource_metrics::GetResourceMetricsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_resource_metrics::GetResourceMetricsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_resource_metrics::GetResourceMetricsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::get_resource_metrics::GetResourceMetricsInput {
             service_type: self.service_type,
             identifier: self.identifier,

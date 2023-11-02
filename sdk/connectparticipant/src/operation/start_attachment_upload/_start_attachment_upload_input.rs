@@ -132,7 +132,7 @@ impl StartAttachmentUploadInputBuilder {
     /// Consumes the builder and constructs a [`StartAttachmentUploadInput`](crate::operation::start_attachment_upload::StartAttachmentUploadInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_attachment_upload::StartAttachmentUploadInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::start_attachment_upload::StartAttachmentUploadInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_attachment_upload::StartAttachmentUploadInput {
             content_type: self.content_type,

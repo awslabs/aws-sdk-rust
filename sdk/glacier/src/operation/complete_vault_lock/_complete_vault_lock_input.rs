@@ -94,7 +94,7 @@ impl CompleteVaultLockInputBuilder {
     /// Consumes the builder and constructs a [`CompleteVaultLockInput`](crate::operation::complete_vault_lock::CompleteVaultLockInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::complete_vault_lock::CompleteVaultLockInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::complete_vault_lock::CompleteVaultLockInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::complete_vault_lock::CompleteVaultLockInput {
             account_id: self.account_id,
             vault_name: self.vault_name,

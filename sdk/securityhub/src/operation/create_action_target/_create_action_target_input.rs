@@ -88,7 +88,8 @@ impl CreateActionTargetInputBuilder {
     /// Consumes the builder and constructs a [`CreateActionTargetInput`](crate::operation::create_action_target::CreateActionTargetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_action_target::CreateActionTargetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_action_target::CreateActionTargetInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_action_target::CreateActionTargetInput {
             name: self.name,
             description: self.description,

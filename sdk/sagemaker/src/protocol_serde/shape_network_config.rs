@@ -2,7 +2,7 @@
 pub fn ser_network_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::NetworkConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.enable_inter_container_traffic_encryption {
         object.key("EnableInterContainerTrafficEncryption").boolean(*var_1);
     }

@@ -2,7 +2,7 @@
 pub fn ser_pager_duty_incident_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PagerDutyIncidentConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("serviceId").string(input.service_id.as_str());
     }

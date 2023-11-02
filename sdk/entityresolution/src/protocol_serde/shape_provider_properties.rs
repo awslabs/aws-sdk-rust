@@ -52,7 +52,7 @@ where
 pub fn ser_provider_properties(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ProviderProperties,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("providerServiceArn").string(input.provider_service_arn.as_str());
     }

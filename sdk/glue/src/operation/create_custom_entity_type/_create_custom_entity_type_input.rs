@@ -129,7 +129,7 @@ impl CreateCustomEntityTypeInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_custom_entity_type::CreateCustomEntityTypeInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_custom_entity_type::CreateCustomEntityTypeInput {
             name: self.name,

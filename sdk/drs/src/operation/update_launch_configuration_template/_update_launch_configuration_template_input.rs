@@ -217,7 +217,7 @@ impl UpdateLaunchConfigurationTemplateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_launch_configuration_template::UpdateLaunchConfigurationTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::update_launch_configuration_template::UpdateLaunchConfigurationTemplateInput {

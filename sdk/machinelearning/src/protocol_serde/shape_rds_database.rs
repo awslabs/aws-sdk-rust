@@ -2,7 +2,7 @@
 pub fn ser_rds_database(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RdsDatabase,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("InstanceIdentifier").string(input.instance_identifier.as_str());
     }

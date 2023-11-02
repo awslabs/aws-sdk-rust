@@ -194,7 +194,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for StartSingleW
             fn uri_base(
                 _input: &crate::operation::start_single_wireless_device_import_task::StartSingleWirelessDeviceImportTaskInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 use ::std::fmt::Write as _;
                 ::std::write!(output, "/wireless_single_device_import_task").expect("formatting should succeed");
                 ::std::result::Result::Ok(())
@@ -203,7 +203,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for StartSingleW
             fn update_http_builder(
                 input: &crate::operation::start_single_wireless_device_import_task::StartSingleWirelessDeviceImportTaskInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 ::std::result::Result::Ok(builder.method("POST").uri(uri))
@@ -212,7 +212,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for StartSingleW
             builder = _header_serialization_settings.set_default_header(builder, ::http::header::CONTENT_TYPE, "application/json");
             builder
         };
-        let body = ::aws_smithy_http::body::SdkBody::from(
+        let body = ::aws_smithy_types::body::SdkBody::from(
             crate::protocol_serde::shape_start_single_wireless_device_import_task::ser_start_single_wireless_device_import_task_input(&input)?,
         );
         if let Some(content_length) = body.content_length() {

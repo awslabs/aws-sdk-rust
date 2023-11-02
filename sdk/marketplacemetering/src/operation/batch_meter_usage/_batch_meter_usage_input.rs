@@ -74,7 +74,7 @@ impl BatchMeterUsageInputBuilder {
     /// Consumes the builder and constructs a [`BatchMeterUsageInput`](crate::operation::batch_meter_usage::BatchMeterUsageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_meter_usage::BatchMeterUsageInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::batch_meter_usage::BatchMeterUsageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::batch_meter_usage::BatchMeterUsageInput {
             usage_records: self.usage_records,
             product_code: self.product_code,

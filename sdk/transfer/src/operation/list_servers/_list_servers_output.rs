@@ -87,11 +87,11 @@ impl ListServersOutputBuilder {
     /// Consumes the builder and constructs a [`ListServersOutput`](crate::operation::list_servers::ListServersOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`servers`](crate::operation::list_servers::builders::ListServersOutputBuilder::servers)
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_servers::ListServersOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_servers::ListServersOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_servers::ListServersOutput {
             next_token: self.next_token,
             servers: self.servers.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "servers",
                     "servers was not specified but it is required when building ListServersOutput",
                 )

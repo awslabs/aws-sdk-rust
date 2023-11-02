@@ -114,7 +114,7 @@ impl GetSdkInputBuilder {
         &self.parameters
     }
     /// Consumes the builder and constructs a [`GetSdkInput`](crate::operation::get_sdk::GetSdkInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_sdk::GetSdkInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_sdk::GetSdkInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_sdk::GetSdkInput {
             rest_api_id: self.rest_api_id,
             stage_name: self.stage_name,

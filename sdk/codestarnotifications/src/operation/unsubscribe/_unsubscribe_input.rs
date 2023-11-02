@@ -72,7 +72,7 @@ impl UnsubscribeInputBuilder {
         &self.target_address
     }
     /// Consumes the builder and constructs a [`UnsubscribeInput`](crate::operation::unsubscribe::UnsubscribeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::unsubscribe::UnsubscribeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::unsubscribe::UnsubscribeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::unsubscribe::UnsubscribeInput {
             arn: self.arn,
             target_address: self.target_address,

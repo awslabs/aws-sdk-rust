@@ -2,7 +2,7 @@
 pub fn ser_update_host_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_host::UpdateHostInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.host_arn {
         object.key("HostArn").string(var_1.as_str());
     }

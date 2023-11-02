@@ -66,10 +66,10 @@ impl AlertManagerDefinitionStatusBuilder {
     /// Consumes the builder and constructs a [`AlertManagerDefinitionStatus`](crate::types::AlertManagerDefinitionStatus).
     /// This method will fail if any of the following fields are not set:
     /// - [`status_code`](crate::types::builders::AlertManagerDefinitionStatusBuilder::status_code)
-    pub fn build(self) -> ::std::result::Result<crate::types::AlertManagerDefinitionStatus, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AlertManagerDefinitionStatus, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AlertManagerDefinitionStatus {
             status_code: self.status_code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status_code",
                     "status_code was not specified but it is required when building AlertManagerDefinitionStatus",
                 )

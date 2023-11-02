@@ -89,7 +89,7 @@ impl CreateAdditionalAssignmentsForHitInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_additional_assignments_for_hit::CreateAdditionalAssignmentsForHitInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::create_additional_assignments_for_hit::CreateAdditionalAssignmentsForHitInput {

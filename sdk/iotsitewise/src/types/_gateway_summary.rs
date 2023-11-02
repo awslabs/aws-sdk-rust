@@ -166,16 +166,16 @@ impl GatewaySummaryBuilder {
     /// - [`gateway_name`](crate::types::builders::GatewaySummaryBuilder::gateway_name)
     /// - [`creation_date`](crate::types::builders::GatewaySummaryBuilder::creation_date)
     /// - [`last_update_date`](crate::types::builders::GatewaySummaryBuilder::last_update_date)
-    pub fn build(self) -> ::std::result::Result<crate::types::GatewaySummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::GatewaySummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::GatewaySummary {
             gateway_id: self.gateway_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "gateway_id",
                     "gateway_id was not specified but it is required when building GatewaySummary",
                 )
             })?,
             gateway_name: self.gateway_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "gateway_name",
                     "gateway_name was not specified but it is required when building GatewaySummary",
                 )
@@ -183,13 +183,13 @@ impl GatewaySummaryBuilder {
             gateway_platform: self.gateway_platform,
             gateway_capability_summaries: self.gateway_capability_summaries,
             creation_date: self.creation_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_date",
                     "creation_date was not specified but it is required when building GatewaySummary",
                 )
             })?,
             last_update_date: self.last_update_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_update_date",
                     "last_update_date was not specified but it is required when building GatewaySummary",
                 )

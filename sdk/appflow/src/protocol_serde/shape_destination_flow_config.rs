@@ -2,7 +2,7 @@
 pub fn ser_destination_flow_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DestinationFlowConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("connectorType").string(input.connector_type.as_str());
     }

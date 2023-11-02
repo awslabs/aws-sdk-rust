@@ -44,7 +44,7 @@ impl DeleteReplicationSetInputBuilder {
     /// Consumes the builder and constructs a [`DeleteReplicationSetInput`](crate::operation::delete_replication_set::DeleteReplicationSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_replication_set::DeleteReplicationSetInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_replication_set::DeleteReplicationSetInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_replication_set::DeleteReplicationSetInput { arn: self.arn })
     }

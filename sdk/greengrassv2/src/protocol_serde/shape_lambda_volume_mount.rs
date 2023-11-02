@@ -2,7 +2,7 @@
 pub fn ser_lambda_volume_mount(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LambdaVolumeMount,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("sourcePath").string(input.source_path.as_str());
     }

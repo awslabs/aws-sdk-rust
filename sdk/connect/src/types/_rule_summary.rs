@@ -215,52 +215,52 @@ impl RuleSummaryBuilder {
     /// - [`action_summaries`](crate::types::builders::RuleSummaryBuilder::action_summaries)
     /// - [`created_time`](crate::types::builders::RuleSummaryBuilder::created_time)
     /// - [`last_updated_time`](crate::types::builders::RuleSummaryBuilder::last_updated_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::RuleSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RuleSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RuleSummary {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building RuleSummary",
                 )
             })?,
             rule_id: self.rule_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "rule_id",
                     "rule_id was not specified but it is required when building RuleSummary",
                 )
             })?,
             rule_arn: self.rule_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "rule_arn",
                     "rule_arn was not specified but it is required when building RuleSummary",
                 )
             })?,
             event_source_name: self.event_source_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "event_source_name",
                     "event_source_name was not specified but it is required when building RuleSummary",
                 )
             })?,
             publish_status: self.publish_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "publish_status",
                     "publish_status was not specified but it is required when building RuleSummary",
                 )
             })?,
             action_summaries: self.action_summaries.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "action_summaries",
                     "action_summaries was not specified but it is required when building RuleSummary",
                 )
             })?,
             created_time: self.created_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_time",
                     "created_time was not specified but it is required when building RuleSummary",
                 )
             })?,
             last_updated_time: self.last_updated_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_updated_time",
                     "last_updated_time was not specified but it is required when building RuleSummary",
                 )

@@ -2,7 +2,7 @@
 pub fn ser_dataset_content_version_value(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DatasetContentVersionValue,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("datasetName").string(input.dataset_name.as_str());
     }

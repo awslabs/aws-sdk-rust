@@ -201,42 +201,42 @@ impl GetReportDefinitionOutputBuilder {
     /// - [`last_updated`](crate::operation::get_report_definition::builders::GetReportDefinitionOutputBuilder::last_updated)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_report_definition::GetReportDefinitionOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_report_definition::GetReportDefinitionOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_report_definition::GetReportDefinitionOutput {
             report_id: self.report_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "report_id",
                     "report_id was not specified but it is required when building GetReportDefinitionOutput",
                 )
             })?,
             report_description: self.report_description.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "report_description",
                     "report_description was not specified but it is required when building GetReportDefinitionOutput",
                 )
             })?,
             report_frequency: self.report_frequency.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "report_frequency",
                     "report_frequency was not specified but it is required when building GetReportDefinitionOutput",
                 )
             })?,
             format: self.format.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "format",
                     "format was not specified but it is required when building GetReportDefinitionOutput",
                 )
             })?,
             destination_s3_location: self.destination_s3_location,
             created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
                     "created_at was not specified but it is required when building GetReportDefinitionOutput",
                 )
             })?,
             last_updated: self.last_updated.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_updated",
                     "last_updated was not specified but it is required when building GetReportDefinitionOutput",
                 )

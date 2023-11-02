@@ -66,7 +66,7 @@ impl CancelMlTaskRunInputBuilder {
     /// Consumes the builder and constructs a [`CancelMlTaskRunInput`](crate::operation::cancel_ml_task_run::CancelMlTaskRunInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::cancel_ml_task_run::CancelMlTaskRunInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::cancel_ml_task_run::CancelMlTaskRunInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::cancel_ml_task_run::CancelMlTaskRunInput {
             transform_id: self.transform_id,
             task_run_id: self.task_run_id,

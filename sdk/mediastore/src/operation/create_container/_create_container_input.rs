@@ -73,7 +73,7 @@ impl CreateContainerInputBuilder {
     /// Consumes the builder and constructs a [`CreateContainerInput`](crate::operation::create_container::CreateContainerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_container::CreateContainerInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_container::CreateContainerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_container::CreateContainerInput {
             container_name: self.container_name,
             tags: self.tags,

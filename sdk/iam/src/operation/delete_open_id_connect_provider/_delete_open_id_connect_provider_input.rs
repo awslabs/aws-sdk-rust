@@ -46,7 +46,7 @@ impl DeleteOpenIdConnectProviderInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_open_id_connect_provider::DeleteOpenIdConnectProviderInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_open_id_connect_provider::DeleteOpenIdConnectProviderInput {
             open_id_connect_provider_arn: self.open_id_connect_provider_arn,

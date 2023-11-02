@@ -42,7 +42,9 @@ impl GetMigrationInputBuilder {
         &self.migration_id
     }
     /// Consumes the builder and constructs a [`GetMigrationInput`](crate::operation::get_migration::GetMigrationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_migration::GetMigrationInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_migration::GetMigrationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_migration::GetMigrationInput {
             migration_id: self.migration_id,
         })

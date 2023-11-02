@@ -115,8 +115,10 @@ impl CreateSignalingChannelInputBuilder {
     /// Consumes the builder and constructs a [`CreateSignalingChannelInput`](crate::operation::create_signaling_channel::CreateSignalingChannelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_signaling_channel::CreateSignalingChannelInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::create_signaling_channel::CreateSignalingChannelInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::create_signaling_channel::CreateSignalingChannelInput {
             channel_name: self.channel_name,
             channel_type: self.channel_type,

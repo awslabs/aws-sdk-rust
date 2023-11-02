@@ -206,7 +206,7 @@ impl UpdatePortfolioInputBuilder {
     /// Consumes the builder and constructs a [`UpdatePortfolioInput`](crate::operation::update_portfolio::UpdatePortfolioInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_portfolio::UpdatePortfolioInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_portfolio::UpdatePortfolioInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_portfolio::UpdatePortfolioInput {
             accept_language: self.accept_language,
             id: self.id,

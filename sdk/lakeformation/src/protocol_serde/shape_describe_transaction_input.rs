@@ -2,7 +2,7 @@
 pub fn ser_describe_transaction_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_transaction::DescribeTransactionInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.transaction_id {
         object.key("TransactionId").string(var_1.as_str());
     }

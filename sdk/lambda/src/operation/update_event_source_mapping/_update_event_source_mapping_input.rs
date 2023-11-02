@@ -480,7 +480,7 @@ impl UpdateEventSourceMappingInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_event_source_mapping::UpdateEventSourceMappingInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_event_source_mapping::UpdateEventSourceMappingInput {
             uuid: self.uuid,

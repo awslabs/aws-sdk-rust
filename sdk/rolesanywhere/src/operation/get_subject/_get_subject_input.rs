@@ -42,7 +42,7 @@ impl GetSubjectInputBuilder {
         &self.subject_id
     }
     /// Consumes the builder and constructs a [`GetSubjectInput`](crate::operation::get_subject::GetSubjectInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_subject::GetSubjectInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_subject::GetSubjectInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_subject::GetSubjectInput { subject_id: self.subject_id })
     }
 }

@@ -111,7 +111,7 @@ impl StartConfigurationSessionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_configuration_session::StartConfigurationSessionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_configuration_session::StartConfigurationSessionInput {
             application_identifier: self.application_identifier,

@@ -69,16 +69,16 @@ impl InputLogEventBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`timestamp`](crate::types::builders::InputLogEventBuilder::timestamp)
     /// - [`message`](crate::types::builders::InputLogEventBuilder::message)
-    pub fn build(self) -> ::std::result::Result<crate::types::InputLogEvent, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::InputLogEvent, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::InputLogEvent {
             timestamp: self.timestamp.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "timestamp",
                     "timestamp was not specified but it is required when building InputLogEvent",
                 )
             })?,
             message: self.message.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "message",
                     "message was not specified but it is required when building InputLogEvent",
                 )

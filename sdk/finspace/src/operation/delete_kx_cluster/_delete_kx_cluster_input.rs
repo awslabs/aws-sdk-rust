@@ -87,7 +87,7 @@ impl DeleteKxClusterInputBuilder {
     /// Consumes the builder and constructs a [`DeleteKxClusterInput`](crate::operation::delete_kx_cluster::DeleteKxClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_kx_cluster::DeleteKxClusterInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_kx_cluster::DeleteKxClusterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_kx_cluster::DeleteKxClusterInput {
             environment_id: self.environment_id,
             cluster_name: self.cluster_name,

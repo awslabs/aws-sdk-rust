@@ -67,11 +67,11 @@ impl DatabaseResourceBuilder {
     /// Consumes the builder and constructs a [`DatabaseResource`](crate::types::DatabaseResource).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::DatabaseResourceBuilder::name)
-    pub fn build(self) -> ::std::result::Result<crate::types::DatabaseResource, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DatabaseResource, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DatabaseResource {
             catalog_id: self.catalog_id,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building DatabaseResource",
                 )

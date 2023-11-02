@@ -193,40 +193,40 @@ impl TimelineEventBuilder {
     /// - [`event_updated_time`](crate::types::builders::TimelineEventBuilder::event_updated_time)
     /// - [`event_type`](crate::types::builders::TimelineEventBuilder::event_type)
     /// - [`event_data`](crate::types::builders::TimelineEventBuilder::event_data)
-    pub fn build(self) -> ::std::result::Result<crate::types::TimelineEvent, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TimelineEvent, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TimelineEvent {
             incident_record_arn: self.incident_record_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "incident_record_arn",
                     "incident_record_arn was not specified but it is required when building TimelineEvent",
                 )
             })?,
             event_id: self.event_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "event_id",
                     "event_id was not specified but it is required when building TimelineEvent",
                 )
             })?,
             event_time: self.event_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "event_time",
                     "event_time was not specified but it is required when building TimelineEvent",
                 )
             })?,
             event_updated_time: self.event_updated_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "event_updated_time",
                     "event_updated_time was not specified but it is required when building TimelineEvent",
                 )
             })?,
             event_type: self.event_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "event_type",
                     "event_type was not specified but it is required when building TimelineEvent",
                 )
             })?,
             event_data: self.event_data.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "event_data",
                     "event_data was not specified but it is required when building TimelineEvent",
                 )

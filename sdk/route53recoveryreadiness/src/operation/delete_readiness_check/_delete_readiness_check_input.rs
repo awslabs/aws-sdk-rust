@@ -44,7 +44,7 @@ impl DeleteReadinessCheckInputBuilder {
     /// Consumes the builder and constructs a [`DeleteReadinessCheckInput`](crate::operation::delete_readiness_check::DeleteReadinessCheckInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_readiness_check::DeleteReadinessCheckInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_readiness_check::DeleteReadinessCheckInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_readiness_check::DeleteReadinessCheckInput {
             readiness_check_name: self.readiness_check_name,

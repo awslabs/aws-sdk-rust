@@ -2,7 +2,7 @@
 pub fn ser_time_series_replacements_data_source(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TimeSeriesReplacementsDataSource,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.s3_config {
         #[allow(unused_mut)]
         let mut object_2 = object.key("S3Config").start_object();

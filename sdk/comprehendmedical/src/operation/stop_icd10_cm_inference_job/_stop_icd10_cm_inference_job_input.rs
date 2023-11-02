@@ -46,7 +46,7 @@ impl StopIcd10CmInferenceJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_icd10_cm_inference_job::StopIcd10CmInferenceJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::stop_icd10_cm_inference_job::StopIcd10CmInferenceJobInput { job_id: self.job_id })
     }

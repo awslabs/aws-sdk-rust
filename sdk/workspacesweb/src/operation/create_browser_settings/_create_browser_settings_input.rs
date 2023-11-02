@@ -167,7 +167,7 @@ impl CreateBrowserSettingsInputBuilder {
     /// Consumes the builder and constructs a [`CreateBrowserSettingsInput`](crate::operation::create_browser_settings::CreateBrowserSettingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_browser_settings::CreateBrowserSettingsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_browser_settings::CreateBrowserSettingsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_browser_settings::CreateBrowserSettingsInput {
             tags: self.tags,

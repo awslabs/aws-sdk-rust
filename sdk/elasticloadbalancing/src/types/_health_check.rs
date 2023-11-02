@@ -163,34 +163,34 @@ impl HealthCheckBuilder {
     /// - [`timeout`](crate::types::builders::HealthCheckBuilder::timeout)
     /// - [`unhealthy_threshold`](crate::types::builders::HealthCheckBuilder::unhealthy_threshold)
     /// - [`healthy_threshold`](crate::types::builders::HealthCheckBuilder::healthy_threshold)
-    pub fn build(self) -> ::std::result::Result<crate::types::HealthCheck, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::HealthCheck, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::HealthCheck {
             target: self.target.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "target",
                     "target was not specified but it is required when building HealthCheck",
                 )
             })?,
             interval: self.interval.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "interval",
                     "interval was not specified but it is required when building HealthCheck",
                 )
             })?,
             timeout: self.timeout.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "timeout",
                     "timeout was not specified but it is required when building HealthCheck",
                 )
             })?,
             unhealthy_threshold: self.unhealthy_threshold.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "unhealthy_threshold",
                     "unhealthy_threshold was not specified but it is required when building HealthCheck",
                 )
             })?,
             healthy_threshold: self.healthy_threshold.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "healthy_threshold",
                     "healthy_threshold was not specified but it is required when building HealthCheck",
                 )

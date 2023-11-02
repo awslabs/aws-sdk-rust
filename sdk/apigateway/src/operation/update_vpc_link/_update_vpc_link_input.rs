@@ -74,7 +74,7 @@ impl UpdateVpcLinkInputBuilder {
     /// Consumes the builder and constructs a [`UpdateVpcLinkInput`](crate::operation::update_vpc_link::UpdateVpcLinkInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_vpc_link::UpdateVpcLinkInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_vpc_link::UpdateVpcLinkInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_vpc_link::UpdateVpcLinkInput {
             vpc_link_id: self.vpc_link_id,
             patch_operations: self.patch_operations,

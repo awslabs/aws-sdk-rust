@@ -114,23 +114,23 @@ impl RepositorySyncEventBuilder {
     /// - [`r#type`](crate::types::builders::RepositorySyncEventBuilder::r#type)
     /// - [`time`](crate::types::builders::RepositorySyncEventBuilder::time)
     /// - [`event`](crate::types::builders::RepositorySyncEventBuilder::event)
-    pub fn build(self) -> ::std::result::Result<crate::types::RepositorySyncEvent, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RepositorySyncEvent, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RepositorySyncEvent {
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building RepositorySyncEvent",
                 )
             })?,
             external_id: self.external_id,
             time: self.time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "time",
                     "time was not specified but it is required when building RepositorySyncEvent",
                 )
             })?,
             event: self.event.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "event",
                     "event was not specified but it is required when building RepositorySyncEvent",
                 )

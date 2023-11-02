@@ -108,7 +108,7 @@ impl UpdateContactFlowNameInputBuilder {
     /// Consumes the builder and constructs a [`UpdateContactFlowNameInput`](crate::operation::update_contact_flow_name::UpdateContactFlowNameInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_contact_flow_name::UpdateContactFlowNameInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_contact_flow_name::UpdateContactFlowNameInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_contact_flow_name::UpdateContactFlowNameInput {
             instance_id: self.instance_id,

@@ -120,22 +120,22 @@ impl IsAuthorizedOutputBuilder {
     /// - [`errors`](crate::operation::is_authorized::builders::IsAuthorizedOutputBuilder::errors)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::is_authorized::IsAuthorizedOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::is_authorized::IsAuthorizedOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::is_authorized::IsAuthorizedOutput {
             decision: self.decision.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "decision",
                     "decision was not specified but it is required when building IsAuthorizedOutput",
                 )
             })?,
             determining_policies: self.determining_policies.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "determining_policies",
                     "determining_policies was not specified but it is required when building IsAuthorizedOutput",
                 )
             })?,
             errors: self.errors.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "errors",
                     "errors was not specified but it is required when building IsAuthorizedOutput",
                 )

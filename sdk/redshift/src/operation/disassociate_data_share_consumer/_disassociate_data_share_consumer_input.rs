@@ -109,7 +109,7 @@ impl DisassociateDataShareConsumerInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_data_share_consumer::DisassociateDataShareConsumerInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disassociate_data_share_consumer::DisassociateDataShareConsumerInput {
             data_share_arn: self.data_share_arn,

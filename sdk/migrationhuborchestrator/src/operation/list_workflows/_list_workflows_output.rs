@@ -89,11 +89,11 @@ impl ListWorkflowsOutputBuilder {
     /// - [`migration_workflow_summary`](crate::operation::list_workflows::builders::ListWorkflowsOutputBuilder::migration_workflow_summary)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_workflows::ListWorkflowsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_workflows::ListWorkflowsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_workflows::ListWorkflowsOutput {
             next_token: self.next_token,
             migration_workflow_summary: self.migration_workflow_summary.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "migration_workflow_summary",
                     "migration_workflow_summary was not specified but it is required when building ListWorkflowsOutput",
                 )

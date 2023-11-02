@@ -51,10 +51,10 @@ impl DnsConfigChangeBuilder {
     /// Consumes the builder and constructs a [`DnsConfigChange`](crate::types::DnsConfigChange).
     /// This method will fail if any of the following fields are not set:
     /// - [`dns_records`](crate::types::builders::DnsConfigChangeBuilder::dns_records)
-    pub fn build(self) -> ::std::result::Result<crate::types::DnsConfigChange, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DnsConfigChange, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DnsConfigChange {
             dns_records: self.dns_records.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "dns_records",
                     "dns_records was not specified but it is required when building DnsConfigChange",
                 )

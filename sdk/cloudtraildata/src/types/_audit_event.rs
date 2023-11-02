@@ -96,16 +96,16 @@ impl AuditEventBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::AuditEventBuilder::id)
     /// - [`event_data`](crate::types::builders::AuditEventBuilder::event_data)
-    pub fn build(self) -> ::std::result::Result<crate::types::AuditEvent, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AuditEvent, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AuditEvent {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building AuditEvent",
                 )
             })?,
             event_data: self.event_data.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "event_data",
                     "event_data was not specified but it is required when building AuditEvent",
                 )

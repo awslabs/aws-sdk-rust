@@ -93,22 +93,22 @@ impl PropertyValidationExceptionPropertyBuilder {
     /// - [`property_path`](crate::types::builders::PropertyValidationExceptionPropertyBuilder::property_path)
     /// - [`reason`](crate::types::builders::PropertyValidationExceptionPropertyBuilder::reason)
     /// - [`message`](crate::types::builders::PropertyValidationExceptionPropertyBuilder::message)
-    pub fn build(self) -> ::std::result::Result<crate::types::PropertyValidationExceptionProperty, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PropertyValidationExceptionProperty, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PropertyValidationExceptionProperty {
             property_path: self.property_path.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "property_path",
                     "property_path was not specified but it is required when building PropertyValidationExceptionProperty",
                 )
             })?,
             reason: self.reason.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "reason",
                     "reason was not specified but it is required when building PropertyValidationExceptionProperty",
                 )
             })?,
             message: self.message.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "message",
                     "message was not specified but it is required when building PropertyValidationExceptionProperty",
                 )

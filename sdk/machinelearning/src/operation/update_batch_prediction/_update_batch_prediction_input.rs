@@ -66,7 +66,7 @@ impl UpdateBatchPredictionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateBatchPredictionInput`](crate::operation::update_batch_prediction::UpdateBatchPredictionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_batch_prediction::UpdateBatchPredictionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_batch_prediction::UpdateBatchPredictionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_batch_prediction::UpdateBatchPredictionInput {
             batch_prediction_id: self.batch_prediction_id,

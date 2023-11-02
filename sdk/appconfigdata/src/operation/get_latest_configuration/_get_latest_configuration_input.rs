@@ -54,8 +54,10 @@ impl GetLatestConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`GetLatestConfigurationInput`](crate::operation::get_latest_configuration::GetLatestConfigurationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_latest_configuration::GetLatestConfigurationInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::get_latest_configuration::GetLatestConfigurationInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::get_latest_configuration::GetLatestConfigurationInput {
             configuration_token: self.configuration_token,
         })

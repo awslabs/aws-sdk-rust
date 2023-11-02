@@ -26,7 +26,7 @@ pub fn de_notification_configuration_filter(
 pub fn ser_notification_configuration_filter(
     input: &crate::types::NotificationConfigurationFilter,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_2) = &input.key {

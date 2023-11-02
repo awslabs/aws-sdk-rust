@@ -44,7 +44,7 @@ impl StopRecommenderInputBuilder {
     /// Consumes the builder and constructs a [`StopRecommenderInput`](crate::operation::stop_recommender::StopRecommenderInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_recommender::StopRecommenderInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::stop_recommender::StopRecommenderInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_recommender::StopRecommenderInput {
             recommender_arn: self.recommender_arn,
         })

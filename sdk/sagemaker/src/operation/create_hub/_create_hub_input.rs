@@ -164,7 +164,7 @@ impl CreateHubInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateHubInput`](crate::operation::create_hub::CreateHubInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_hub::CreateHubInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_hub::CreateHubInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_hub::CreateHubInput {
             hub_name: self.hub_name,
             hub_description: self.hub_description,

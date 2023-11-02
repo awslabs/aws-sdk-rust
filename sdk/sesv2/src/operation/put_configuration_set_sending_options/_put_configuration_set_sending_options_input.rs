@@ -68,7 +68,7 @@ impl PutConfigurationSetSendingOptionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_configuration_set_sending_options::PutConfigurationSetSendingOptionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::put_configuration_set_sending_options::PutConfigurationSetSendingOptionsInput {

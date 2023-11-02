@@ -66,7 +66,7 @@ impl PutRawMessageContentInputBuilder {
     /// Consumes the builder and constructs a [`PutRawMessageContentInput`](crate::operation::put_raw_message_content::PutRawMessageContentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_raw_message_content::PutRawMessageContentInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::put_raw_message_content::PutRawMessageContentInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::put_raw_message_content::PutRawMessageContentInput {
             message_id: self.message_id,

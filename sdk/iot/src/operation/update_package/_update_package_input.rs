@@ -149,7 +149,7 @@ impl UpdatePackageInputBuilder {
     /// Consumes the builder and constructs a [`UpdatePackageInput`](crate::operation::update_package::UpdatePackageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_package::UpdatePackageInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_package::UpdatePackageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_package::UpdatePackageInput {
             package_name: self.package_name,
             description: self.description,

@@ -44,7 +44,7 @@ impl GetAutoSnapshotsInputBuilder {
     /// Consumes the builder and constructs a [`GetAutoSnapshotsInput`](crate::operation::get_auto_snapshots::GetAutoSnapshotsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_auto_snapshots::GetAutoSnapshotsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_auto_snapshots::GetAutoSnapshotsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_auto_snapshots::GetAutoSnapshotsInput {
             resource_name: self.resource_name,
         })

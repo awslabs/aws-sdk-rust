@@ -158,7 +158,7 @@ impl AcceptPredictionsInputBuilder {
     /// Consumes the builder and constructs a [`AcceptPredictionsInput`](crate::operation::accept_predictions::AcceptPredictionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::accept_predictions::AcceptPredictionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::accept_predictions::AcceptPredictionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::accept_predictions::AcceptPredictionsInput {
             domain_identifier: self.domain_identifier,
             identifier: self.identifier,

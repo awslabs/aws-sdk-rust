@@ -271,7 +271,7 @@ impl UpdateGraphqlApiInputBuilder {
     /// Consumes the builder and constructs a [`UpdateGraphqlApiInput`](crate::operation::update_graphql_api::UpdateGraphqlApiInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_graphql_api::UpdateGraphqlApiInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_graphql_api::UpdateGraphqlApiInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_graphql_api::UpdateGraphqlApiInput {
             api_id: self.api_id,
             name: self.name,

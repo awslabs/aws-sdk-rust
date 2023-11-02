@@ -44,7 +44,7 @@ impl GetDataQualityResultInputBuilder {
     /// Consumes the builder and constructs a [`GetDataQualityResultInput`](crate::operation::get_data_quality_result::GetDataQualityResultInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_data_quality_result::GetDataQualityResultInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_data_quality_result::GetDataQualityResultInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_data_quality_result::GetDataQualityResultInput { result_id: self.result_id })
     }

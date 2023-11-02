@@ -109,7 +109,7 @@ impl DescribeGatewayRouteInputBuilder {
     /// Consumes the builder and constructs a [`DescribeGatewayRouteInput`](crate::operation::describe_gateway_route::DescribeGatewayRouteInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_gateway_route::DescribeGatewayRouteInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_gateway_route::DescribeGatewayRouteInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_gateway_route::DescribeGatewayRouteInput {
             gateway_route_name: self.gateway_route_name,

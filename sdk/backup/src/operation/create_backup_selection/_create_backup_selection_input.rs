@@ -92,7 +92,7 @@ impl CreateBackupSelectionInputBuilder {
     /// Consumes the builder and constructs a [`CreateBackupSelectionInput`](crate::operation::create_backup_selection::CreateBackupSelectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_backup_selection::CreateBackupSelectionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_backup_selection::CreateBackupSelectionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_backup_selection::CreateBackupSelectionInput {
             backup_plan_id: self.backup_plan_id,

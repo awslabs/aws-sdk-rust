@@ -142,7 +142,7 @@ impl PutJobSuccessResultInputBuilder {
     /// Consumes the builder and constructs a [`PutJobSuccessResultInput`](crate::operation::put_job_success_result::PutJobSuccessResultInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_job_success_result::PutJobSuccessResultInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::put_job_success_result::PutJobSuccessResultInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::put_job_success_result::PutJobSuccessResultInput {
             job_id: self.job_id,

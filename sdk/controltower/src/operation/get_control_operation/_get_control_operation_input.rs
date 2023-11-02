@@ -44,7 +44,7 @@ impl GetControlOperationInputBuilder {
     /// Consumes the builder and constructs a [`GetControlOperationInput`](crate::operation::get_control_operation::GetControlOperationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_control_operation::GetControlOperationInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_control_operation::GetControlOperationInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_control_operation::GetControlOperationInput {
             operation_identifier: self.operation_identifier,

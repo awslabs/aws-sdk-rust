@@ -74,7 +74,8 @@ impl StartQueryPlanningInputBuilder {
     /// Consumes the builder and constructs a [`StartQueryPlanningInput`](crate::operation::start_query_planning::StartQueryPlanningInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_query_planning::StartQueryPlanningInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_query_planning::StartQueryPlanningInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::start_query_planning::StartQueryPlanningInput {
             query_planning_context: self.query_planning_context,
             query_string: self.query_string,

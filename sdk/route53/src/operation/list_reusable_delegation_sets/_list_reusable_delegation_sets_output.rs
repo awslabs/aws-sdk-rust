@@ -161,17 +161,17 @@ impl ListReusableDelegationSetsOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_reusable_delegation_sets::ListReusableDelegationSetsOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_reusable_delegation_sets::ListReusableDelegationSetsOutput {
             delegation_sets: self.delegation_sets.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "delegation_sets",
                     "delegation_sets was not specified but it is required when building ListReusableDelegationSetsOutput",
                 )
             })?,
             marker: self.marker.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "marker",
                     "marker was not specified but it is required when building ListReusableDelegationSetsOutput",
                 )
@@ -179,7 +179,7 @@ impl ListReusableDelegationSetsOutputBuilder {
             is_truncated: self.is_truncated.unwrap_or_default(),
             next_marker: self.next_marker,
             max_items: self.max_items.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "max_items",
                     "max_items was not specified but it is required when building ListReusableDelegationSetsOutput",
                 )

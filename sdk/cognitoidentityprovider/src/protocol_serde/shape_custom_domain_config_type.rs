@@ -2,7 +2,7 @@
 pub fn ser_custom_domain_config_type(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CustomDomainConfigType,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("CertificateArn").string(input.certificate_arn.as_str());
     }

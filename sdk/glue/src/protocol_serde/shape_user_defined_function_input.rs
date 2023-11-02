@@ -2,7 +2,7 @@
 pub fn ser_user_defined_function_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UserDefinedFunctionInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.function_name {
         object.key("FunctionName").string(var_1.as_str());
     }

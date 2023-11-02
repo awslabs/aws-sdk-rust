@@ -2,7 +2,7 @@
 pub fn ser_customized_load_metric_specification(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CustomizedLoadMetricSpecification,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("MetricName").string(input.metric_name.as_str());
     }

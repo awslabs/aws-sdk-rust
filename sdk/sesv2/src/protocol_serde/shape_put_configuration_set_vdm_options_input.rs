@@ -2,7 +2,7 @@
 pub fn ser_put_configuration_set_vdm_options_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_configuration_set_vdm_options::PutConfigurationSetVdmOptionsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.vdm_options {
         #[allow(unused_mut)]
         let mut object_2 = object.key("VdmOptions").start_object();

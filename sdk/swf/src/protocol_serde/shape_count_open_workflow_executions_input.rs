@@ -2,7 +2,7 @@
 pub fn ser_count_open_workflow_executions_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::count_open_workflow_executions::CountOpenWorkflowExecutionsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.domain {
         object.key("domain").string(var_1.as_str());
     }

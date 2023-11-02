@@ -44,7 +44,7 @@ impl DeprecateDomainInputBuilder {
     /// Consumes the builder and constructs a [`DeprecateDomainInput`](crate::operation::deprecate_domain::DeprecateDomainInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::deprecate_domain::DeprecateDomainInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::deprecate_domain::DeprecateDomainInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::deprecate_domain::DeprecateDomainInput { name: self.name })
     }
 }

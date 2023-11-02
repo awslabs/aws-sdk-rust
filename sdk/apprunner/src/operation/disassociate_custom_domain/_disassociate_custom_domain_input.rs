@@ -68,7 +68,7 @@ impl DisassociateCustomDomainInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_custom_domain::DisassociateCustomDomainInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disassociate_custom_domain::DisassociateCustomDomainInput {
             service_arn: self.service_arn,

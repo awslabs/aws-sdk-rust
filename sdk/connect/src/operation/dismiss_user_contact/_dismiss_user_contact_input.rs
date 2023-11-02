@@ -88,7 +88,8 @@ impl DismissUserContactInputBuilder {
     /// Consumes the builder and constructs a [`DismissUserContactInput`](crate::operation::dismiss_user_contact::DismissUserContactInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::dismiss_user_contact::DismissUserContactInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::dismiss_user_contact::DismissUserContactInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::dismiss_user_contact::DismissUserContactInput {
             user_id: self.user_id,
             instance_id: self.instance_id,

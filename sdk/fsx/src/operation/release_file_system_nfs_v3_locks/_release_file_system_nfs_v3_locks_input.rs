@@ -67,7 +67,7 @@ impl ReleaseFileSystemNfsV3LocksInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::release_file_system_nfs_v3_locks::ReleaseFileSystemNfsV3LocksInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::release_file_system_nfs_v3_locks::ReleaseFileSystemNfsV3LocksInput {
             file_system_id: self.file_system_id,

@@ -115,18 +115,18 @@ impl ListUnsupportedAppVersionResourcesOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_unsupported_app_version_resources::ListUnsupportedAppVersionResourcesOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_unsupported_app_version_resources::ListUnsupportedAppVersionResourcesOutput {
                 unsupported_resources: self.unsupported_resources.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
                         "unsupported_resources",
                         "unsupported_resources was not specified but it is required when building ListUnsupportedAppVersionResourcesOutput",
                     )
                 })?,
                 resolution_id: self.resolution_id.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
                         "resolution_id",
                         "resolution_id was not specified but it is required when building ListUnsupportedAppVersionResourcesOutput",
                     )

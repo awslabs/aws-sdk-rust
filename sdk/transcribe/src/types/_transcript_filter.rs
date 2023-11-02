@@ -170,10 +170,10 @@ impl TranscriptFilterBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`transcript_filter_type`](crate::types::builders::TranscriptFilterBuilder::transcript_filter_type)
     /// - [`targets`](crate::types::builders::TranscriptFilterBuilder::targets)
-    pub fn build(self) -> ::std::result::Result<crate::types::TranscriptFilter, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TranscriptFilter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TranscriptFilter {
             transcript_filter_type: self.transcript_filter_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "transcript_filter_type",
                     "transcript_filter_type was not specified but it is required when building TranscriptFilter",
                 )
@@ -183,7 +183,7 @@ impl TranscriptFilterBuilder {
             participant_role: self.participant_role,
             negate: self.negate,
             targets: self.targets.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "targets",
                     "targets was not specified but it is required when building TranscriptFilter",
                 )

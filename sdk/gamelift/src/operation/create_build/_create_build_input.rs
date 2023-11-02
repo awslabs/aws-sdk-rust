@@ -169,7 +169,7 @@ impl CreateBuildInputBuilder {
         &self.server_sdk_version
     }
     /// Consumes the builder and constructs a [`CreateBuildInput`](crate::operation::create_build::CreateBuildInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_build::CreateBuildInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_build::CreateBuildInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_build::CreateBuildInput {
             name: self.name,
             version: self.version,

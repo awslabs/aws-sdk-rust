@@ -85,7 +85,7 @@ impl DescribeServiceActionInputBuilder {
     /// Consumes the builder and constructs a [`DescribeServiceActionInput`](crate::operation::describe_service_action::DescribeServiceActionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_service_action::DescribeServiceActionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_service_action::DescribeServiceActionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_service_action::DescribeServiceActionInput {
             id: self.id,

@@ -284,7 +284,7 @@ impl UpdateOriginEndpointInputBuilder {
     /// Consumes the builder and constructs a [`UpdateOriginEndpointInput`](crate::operation::update_origin_endpoint::UpdateOriginEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_origin_endpoint::UpdateOriginEndpointInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_origin_endpoint::UpdateOriginEndpointInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_origin_endpoint::UpdateOriginEndpointInput {
             authorization: self.authorization,

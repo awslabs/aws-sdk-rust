@@ -567,7 +567,7 @@ impl PutItemInputBuilder {
         &self.return_values_on_condition_check_failure
     }
     /// Consumes the builder and constructs a [`PutItemInput`](crate::operation::put_item::PutItemInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_item::PutItemInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_item::PutItemInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_item::PutItemInput {
             table_name: self.table_name,
             item: self.item,

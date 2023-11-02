@@ -129,7 +129,7 @@ impl GetServiceGraphInputBuilder {
     /// Consumes the builder and constructs a [`GetServiceGraphInput`](crate::operation::get_service_graph::GetServiceGraphInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_service_graph::GetServiceGraphInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_service_graph::GetServiceGraphInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_service_graph::GetServiceGraphInput {
             start_time: self.start_time,
             end_time: self.end_time,

@@ -156,29 +156,29 @@ impl ConversationLevelTestResultItemBuilder {
     /// - [`end_to_end_result`](crate::types::builders::ConversationLevelTestResultItemBuilder::end_to_end_result)
     /// - [`intent_classification_results`](crate::types::builders::ConversationLevelTestResultItemBuilder::intent_classification_results)
     /// - [`slot_resolution_results`](crate::types::builders::ConversationLevelTestResultItemBuilder::slot_resolution_results)
-    pub fn build(self) -> ::std::result::Result<crate::types::ConversationLevelTestResultItem, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ConversationLevelTestResultItem, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ConversationLevelTestResultItem {
             conversation_id: self.conversation_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "conversation_id",
                     "conversation_id was not specified but it is required when building ConversationLevelTestResultItem",
                 )
             })?,
             end_to_end_result: self.end_to_end_result.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "end_to_end_result",
                     "end_to_end_result was not specified but it is required when building ConversationLevelTestResultItem",
                 )
             })?,
             speech_transcription_result: self.speech_transcription_result,
             intent_classification_results: self.intent_classification_results.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "intent_classification_results",
                     "intent_classification_results was not specified but it is required when building ConversationLevelTestResultItem",
                 )
             })?,
             slot_resolution_results: self.slot_resolution_results.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "slot_resolution_results",
                     "slot_resolution_results was not specified but it is required when building ConversationLevelTestResultItem",
                 )

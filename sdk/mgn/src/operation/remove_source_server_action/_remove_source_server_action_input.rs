@@ -89,7 +89,7 @@ impl RemoveSourceServerActionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_source_server_action::RemoveSourceServerActionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::remove_source_server_action::RemoveSourceServerActionInput {
             source_server_id: self.source_server_id,

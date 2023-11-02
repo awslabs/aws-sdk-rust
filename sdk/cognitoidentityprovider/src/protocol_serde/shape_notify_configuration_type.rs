@@ -2,7 +2,7 @@
 pub fn ser_notify_configuration_type(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::NotifyConfigurationType,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.from {
         object.key("From").string(var_1.as_str());
     }

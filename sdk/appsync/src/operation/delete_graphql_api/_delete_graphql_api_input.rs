@@ -44,7 +44,7 @@ impl DeleteGraphqlApiInputBuilder {
     /// Consumes the builder and constructs a [`DeleteGraphqlApiInput`](crate::operation::delete_graphql_api::DeleteGraphqlApiInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_graphql_api::DeleteGraphqlApiInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_graphql_api::DeleteGraphqlApiInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_graphql_api::DeleteGraphqlApiInput { api_id: self.api_id })
     }
 }

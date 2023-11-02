@@ -42,7 +42,7 @@ impl GetCellInputBuilder {
         &self.cell_name
     }
     /// Consumes the builder and constructs a [`GetCellInput`](crate::operation::get_cell::GetCellInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_cell::GetCellInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_cell::GetCellInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_cell::GetCellInput { cell_name: self.cell_name })
     }
 }

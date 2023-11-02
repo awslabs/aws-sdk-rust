@@ -2,7 +2,7 @@
 pub fn ser_asset_bundle_import_job_data_source_credential_pair(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AssetBundleImportJobDataSourceCredentialPair,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Username").string(input.username.as_str());
     }

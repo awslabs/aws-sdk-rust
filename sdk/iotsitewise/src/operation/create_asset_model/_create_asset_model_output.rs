@@ -114,16 +114,16 @@ impl CreateAssetModelOutputBuilder {
     /// - [`asset_model_arn`](crate::operation::create_asset_model::builders::CreateAssetModelOutputBuilder::asset_model_arn)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_asset_model::CreateAssetModelOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_asset_model::CreateAssetModelOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_asset_model::CreateAssetModelOutput {
             asset_model_id: self.asset_model_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "asset_model_id",
                     "asset_model_id was not specified but it is required when building CreateAssetModelOutput",
                 )
             })?,
             asset_model_arn: self.asset_model_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "asset_model_arn",
                     "asset_model_arn was not specified but it is required when building CreateAssetModelOutput",
                 )

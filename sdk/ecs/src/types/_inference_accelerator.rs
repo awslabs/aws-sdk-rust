@@ -70,16 +70,16 @@ impl InferenceAcceleratorBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`device_name`](crate::types::builders::InferenceAcceleratorBuilder::device_name)
     /// - [`device_type`](crate::types::builders::InferenceAcceleratorBuilder::device_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::InferenceAccelerator, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::InferenceAccelerator, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::InferenceAccelerator {
             device_name: self.device_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "device_name",
                     "device_name was not specified but it is required when building InferenceAccelerator",
                 )
             })?,
             device_type: self.device_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "device_type",
                     "device_type was not specified but it is required when building InferenceAccelerator",
                 )

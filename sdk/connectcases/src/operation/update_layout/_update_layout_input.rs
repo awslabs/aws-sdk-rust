@@ -106,7 +106,9 @@ impl UpdateLayoutInputBuilder {
         &self.content
     }
     /// Consumes the builder and constructs a [`UpdateLayoutInput`](crate::operation::update_layout::UpdateLayoutInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_layout::UpdateLayoutInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_layout::UpdateLayoutInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_layout::UpdateLayoutInput {
             domain_id: self.domain_id,
             layout_id: self.layout_id,

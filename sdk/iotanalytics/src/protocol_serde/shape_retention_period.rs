@@ -45,7 +45,7 @@ where
 pub fn ser_retention_period(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RetentionPeriod,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.unlimited {
         object.key("unlimited").boolean(input.unlimited);
     }

@@ -67,7 +67,7 @@ impl EnableDelegatedAdminAccountInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::enable_delegated_admin_account::EnableDelegatedAdminAccountInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::enable_delegated_admin_account::EnableDelegatedAdminAccountInput {
             delegated_admin_account_id: self.delegated_admin_account_id,

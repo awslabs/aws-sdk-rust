@@ -44,7 +44,7 @@ impl StartDbInstanceInputBuilder {
     /// Consumes the builder and constructs a [`StartDbInstanceInput`](crate::operation::start_db_instance::StartDbInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_db_instance::StartDbInstanceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_db_instance::StartDbInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_db_instance::StartDbInstanceInput {
             db_instance_identifier: self.db_instance_identifier,
         })

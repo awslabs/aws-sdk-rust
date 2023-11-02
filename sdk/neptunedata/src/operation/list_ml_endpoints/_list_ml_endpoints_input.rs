@@ -64,7 +64,7 @@ impl ListMlEndpointsInputBuilder {
     /// Consumes the builder and constructs a [`ListMlEndpointsInput`](crate::operation::list_ml_endpoints::ListMlEndpointsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_ml_endpoints::ListMlEndpointsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_ml_endpoints::ListMlEndpointsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_ml_endpoints::ListMlEndpointsInput {
             max_items: self.max_items,
             neptune_iam_role_arn: self.neptune_iam_role_arn,

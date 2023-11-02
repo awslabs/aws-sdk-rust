@@ -67,10 +67,12 @@ impl ClusterServiceConnectDefaultsRequestBuilder {
     /// Consumes the builder and constructs a [`ClusterServiceConnectDefaultsRequest`](crate::types::ClusterServiceConnectDefaultsRequest).
     /// This method will fail if any of the following fields are not set:
     /// - [`namespace`](crate::types::builders::ClusterServiceConnectDefaultsRequestBuilder::namespace)
-    pub fn build(self) -> ::std::result::Result<crate::types::ClusterServiceConnectDefaultsRequest, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::ClusterServiceConnectDefaultsRequest, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ClusterServiceConnectDefaultsRequest {
             namespace: self.namespace.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "namespace",
                     "namespace was not specified but it is required when building ClusterServiceConnectDefaultsRequest",
                 )

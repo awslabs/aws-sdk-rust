@@ -2,7 +2,7 @@
 pub fn ser_describe_workspace_bundles_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_workspace_bundles::DescribeWorkspaceBundlesInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.bundle_ids {
         let mut array_2 = object.key("BundleIds").start_array();
         for item_3 in var_1 {

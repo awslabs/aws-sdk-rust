@@ -211,7 +211,7 @@ impl UpdateTaskInputBuilder {
         &self.task_report_config
     }
     /// Consumes the builder and constructs a [`UpdateTaskInput`](crate::operation::update_task::UpdateTaskInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_task::UpdateTaskInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_task::UpdateTaskInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_task::UpdateTaskInput {
             task_arn: self.task_arn,
             options: self.options,

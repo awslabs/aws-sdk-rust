@@ -112,17 +112,17 @@ impl ListHostedZonesByVpcOutputBuilder {
     /// - [`max_items`](crate::operation::list_hosted_zones_by_vpc::builders::ListHostedZonesByVpcOutputBuilder::max_items)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_hosted_zones_by_vpc::ListHostedZonesByVpcOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_hosted_zones_by_vpc::ListHostedZonesByVpcOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_hosted_zones_by_vpc::ListHostedZonesByVpcOutput {
             hosted_zone_summaries: self.hosted_zone_summaries.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "hosted_zone_summaries",
                     "hosted_zone_summaries was not specified but it is required when building ListHostedZonesByVpcOutput",
                 )
             })?,
             max_items: self.max_items.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "max_items",
                     "max_items was not specified but it is required when building ListHostedZonesByVpcOutput",
                 )

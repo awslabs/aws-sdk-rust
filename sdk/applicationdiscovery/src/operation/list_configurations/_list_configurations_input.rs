@@ -154,7 +154,7 @@ impl ListConfigurationsInputBuilder {
     /// Consumes the builder and constructs a [`ListConfigurationsInput`](crate::operation::list_configurations::ListConfigurationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_configurations::ListConfigurationsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_configurations::ListConfigurationsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_configurations::ListConfigurationsInput {
             configuration_type: self.configuration_type,
             filters: self.filters,

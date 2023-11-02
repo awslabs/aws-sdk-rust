@@ -123,7 +123,7 @@ impl ListExplainabilitiesInputBuilder {
     /// Consumes the builder and constructs a [`ListExplainabilitiesInput`](crate::operation::list_explainabilities::ListExplainabilitiesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_explainabilities::ListExplainabilitiesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_explainabilities::ListExplainabilitiesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_explainabilities::ListExplainabilitiesInput {
             next_token: self.next_token,

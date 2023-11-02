@@ -89,7 +89,7 @@ impl DeleteDatasetInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDatasetInput`](crate::operation::delete_dataset::DeleteDatasetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_dataset::DeleteDatasetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_dataset::DeleteDatasetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_dataset::DeleteDatasetInput {
             identity_pool_id: self.identity_pool_id,
             identity_id: self.identity_id,

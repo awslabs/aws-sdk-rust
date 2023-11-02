@@ -42,7 +42,7 @@ impl GetDnssecInputBuilder {
         &self.hosted_zone_id
     }
     /// Consumes the builder and constructs a [`GetDnssecInput`](crate::operation::get_dnssec::GetDnssecInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_dnssec::GetDnssecInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_dnssec::GetDnssecInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_dnssec::GetDnssecInput {
             hosted_zone_id: self.hosted_zone_id,
         })

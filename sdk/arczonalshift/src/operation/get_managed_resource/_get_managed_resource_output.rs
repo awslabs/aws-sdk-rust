@@ -138,19 +138,19 @@ impl GetManagedResourceOutputBuilder {
     /// - [`zonal_shifts`](crate::operation::get_managed_resource::builders::GetManagedResourceOutputBuilder::zonal_shifts)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_managed_resource::GetManagedResourceOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_managed_resource::GetManagedResourceOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_managed_resource::GetManagedResourceOutput {
             arn: self.arn,
             name: self.name,
             applied_weights: self.applied_weights.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "applied_weights",
                     "applied_weights was not specified but it is required when building GetManagedResourceOutput",
                 )
             })?,
             zonal_shifts: self.zonal_shifts.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "zonal_shifts",
                     "zonal_shifts was not specified but it is required when building GetManagedResourceOutput",
                 )

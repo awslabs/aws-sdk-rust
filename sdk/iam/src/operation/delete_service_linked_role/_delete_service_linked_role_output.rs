@@ -100,11 +100,11 @@ impl DeleteServiceLinkedRoleOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_service_linked_role::DeleteServiceLinkedRoleOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_service_linked_role::DeleteServiceLinkedRoleOutput {
             deletion_task_id: self.deletion_task_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "deletion_task_id",
                     "deletion_task_id was not specified but it is required when building DeleteServiceLinkedRoleOutput",
                 )

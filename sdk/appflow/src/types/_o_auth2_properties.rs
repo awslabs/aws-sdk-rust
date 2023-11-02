@@ -105,16 +105,16 @@ impl OAuth2PropertiesBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`token_url`](crate::types::builders::OAuth2PropertiesBuilder::token_url)
     /// - [`o_auth2_grant_type`](crate::types::builders::OAuth2PropertiesBuilder::o_auth2_grant_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::OAuth2Properties, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::OAuth2Properties, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::OAuth2Properties {
             token_url: self.token_url.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "token_url",
                     "token_url was not specified but it is required when building OAuth2Properties",
                 )
             })?,
             o_auth2_grant_type: self.o_auth2_grant_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "o_auth2_grant_type",
                     "o_auth2_grant_type was not specified but it is required when building OAuth2Properties",
                 )

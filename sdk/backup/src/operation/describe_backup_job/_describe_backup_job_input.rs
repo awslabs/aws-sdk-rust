@@ -44,7 +44,7 @@ impl DescribeBackupJobInputBuilder {
     /// Consumes the builder and constructs a [`DescribeBackupJobInput`](crate::operation::describe_backup_job::DescribeBackupJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_backup_job::DescribeBackupJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_backup_job::DescribeBackupJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_backup_job::DescribeBackupJobInput {
             backup_job_id: self.backup_job_id,
         })

@@ -267,7 +267,9 @@ impl ListPackagesInputBuilder {
         &self.upstream
     }
     /// Consumes the builder and constructs a [`ListPackagesInput`](crate::operation::list_packages::ListPackagesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_packages::ListPackagesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_packages::ListPackagesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_packages::ListPackagesInput {
             domain: self.domain,
             domain_owner: self.domain_owner,

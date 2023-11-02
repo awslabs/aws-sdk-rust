@@ -78,8 +78,10 @@ impl UntagServerCertificateInputBuilder {
     /// Consumes the builder and constructs a [`UntagServerCertificateInput`](crate::operation::untag_server_certificate::UntagServerCertificateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::untag_server_certificate::UntagServerCertificateInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::untag_server_certificate::UntagServerCertificateInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::untag_server_certificate::UntagServerCertificateInput {
             server_certificate_name: self.server_certificate_name,
             tag_keys: self.tag_keys,

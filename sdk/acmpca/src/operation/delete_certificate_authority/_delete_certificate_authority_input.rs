@@ -72,7 +72,7 @@ impl DeleteCertificateAuthorityInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_certificate_authority::DeleteCertificateAuthorityInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_certificate_authority::DeleteCertificateAuthorityInput {
             certificate_authority_arn: self.certificate_authority_arn,

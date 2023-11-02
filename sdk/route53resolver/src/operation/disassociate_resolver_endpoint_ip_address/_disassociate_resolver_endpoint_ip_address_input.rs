@@ -68,7 +68,7 @@ impl DisassociateResolverEndpointIpAddressInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_resolver_endpoint_ip_address::DisassociateResolverEndpointIpAddressInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::disassociate_resolver_endpoint_ip_address::DisassociateResolverEndpointIpAddressInput {

@@ -174,10 +174,10 @@ impl JobErrorBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`code`](crate::types::builders::JobErrorBuilder::code)
     /// - [`message`](crate::types::builders::JobErrorBuilder::message)
-    pub fn build(self) -> ::std::result::Result<crate::types::JobError, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::JobError, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::JobError {
             code: self.code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "code",
                     "code was not specified but it is required when building JobError",
                 )
@@ -186,7 +186,7 @@ impl JobErrorBuilder {
             limit_name: self.limit_name,
             limit_value: self.limit_value.unwrap_or_default(),
             message: self.message.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "message",
                     "message was not specified but it is required when building JobError",
                 )

@@ -67,10 +67,10 @@ impl S3BucketAclGrantConfigurationBuilder {
     /// Consumes the builder and constructs a [`S3BucketAclGrantConfiguration`](crate::types::S3BucketAclGrantConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`permission`](crate::types::builders::S3BucketAclGrantConfigurationBuilder::permission)
-    pub fn build(self) -> ::std::result::Result<crate::types::S3BucketAclGrantConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::S3BucketAclGrantConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::S3BucketAclGrantConfiguration {
             permission: self.permission.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "permission",
                     "permission was not specified but it is required when building S3BucketAclGrantConfiguration",
                 )

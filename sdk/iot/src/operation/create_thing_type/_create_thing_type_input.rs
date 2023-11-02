@@ -95,7 +95,7 @@ impl CreateThingTypeInputBuilder {
     /// Consumes the builder and constructs a [`CreateThingTypeInput`](crate::operation::create_thing_type::CreateThingTypeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_thing_type::CreateThingTypeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_thing_type::CreateThingTypeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_thing_type::CreateThingTypeInput {
             thing_type_name: self.thing_type_name,
             thing_type_properties: self.thing_type_properties,

@@ -199,7 +199,7 @@ impl ExportImageInputBuilder {
         &self.tag_specifications
     }
     /// Consumes the builder and constructs a [`ExportImageInput`](crate::operation::export_image::ExportImageInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::export_image::ExportImageInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::export_image::ExportImageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::export_image::ExportImageInput {
             client_token: self.client_token,
             description: self.description,

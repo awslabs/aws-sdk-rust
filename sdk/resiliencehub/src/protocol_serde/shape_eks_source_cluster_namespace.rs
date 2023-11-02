@@ -2,7 +2,7 @@
 pub fn ser_eks_source_cluster_namespace(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EksSourceClusterNamespace,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("eksClusterArn").string(input.eks_cluster_arn.as_str());
     }

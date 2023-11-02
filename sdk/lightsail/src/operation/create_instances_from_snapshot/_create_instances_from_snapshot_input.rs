@@ -462,7 +462,7 @@ impl CreateInstancesFromSnapshotInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_instances_from_snapshot::CreateInstancesFromSnapshotInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_instances_from_snapshot::CreateInstancesFromSnapshotInput {
             instance_names: self.instance_names,

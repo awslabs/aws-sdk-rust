@@ -88,7 +88,7 @@ impl ImportApiKeysInputBuilder {
     /// Consumes the builder and constructs a [`ImportApiKeysInput`](crate::operation::import_api_keys::ImportApiKeysInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::import_api_keys::ImportApiKeysInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::import_api_keys::ImportApiKeysInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::import_api_keys::ImportApiKeysInput {
             body: self.body,
             format: self.format,

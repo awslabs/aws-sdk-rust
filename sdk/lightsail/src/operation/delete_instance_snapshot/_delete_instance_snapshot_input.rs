@@ -44,8 +44,10 @@ impl DeleteInstanceSnapshotInputBuilder {
     /// Consumes the builder and constructs a [`DeleteInstanceSnapshotInput`](crate::operation::delete_instance_snapshot::DeleteInstanceSnapshotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_instance_snapshot::DeleteInstanceSnapshotInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::delete_instance_snapshot::DeleteInstanceSnapshotInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::delete_instance_snapshot::DeleteInstanceSnapshotInput {
             instance_snapshot_name: self.instance_snapshot_name,
         })

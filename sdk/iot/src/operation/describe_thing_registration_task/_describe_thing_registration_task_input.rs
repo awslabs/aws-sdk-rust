@@ -46,7 +46,7 @@ impl DescribeThingRegistrationTaskInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_thing_registration_task::DescribeThingRegistrationTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_thing_registration_task::DescribeThingRegistrationTaskInput { task_id: self.task_id })
     }

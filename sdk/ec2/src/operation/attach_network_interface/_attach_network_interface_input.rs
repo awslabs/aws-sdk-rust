@@ -152,8 +152,10 @@ impl AttachNetworkInterfaceInputBuilder {
     /// Consumes the builder and constructs a [`AttachNetworkInterfaceInput`](crate::operation::attach_network_interface::AttachNetworkInterfaceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::attach_network_interface::AttachNetworkInterfaceInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::attach_network_interface::AttachNetworkInterfaceInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::attach_network_interface::AttachNetworkInterfaceInput {
             device_index: self.device_index,
             dry_run: self.dry_run,

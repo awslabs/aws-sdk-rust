@@ -161,7 +161,7 @@ impl CreateImpersonationRoleInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_impersonation_role::CreateImpersonationRoleInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_impersonation_role::CreateImpersonationRoleInput {
             client_token: self.client_token,

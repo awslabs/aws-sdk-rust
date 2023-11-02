@@ -107,17 +107,17 @@ impl StartFhirExportJobOutputBuilder {
     /// - [`job_status`](crate::operation::start_fhir_export_job::builders::StartFhirExportJobOutputBuilder::job_status)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_fhir_export_job::StartFhirExportJobOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::start_fhir_export_job::StartFhirExportJobOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_fhir_export_job::StartFhirExportJobOutput {
             job_id: self.job_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "job_id",
                     "job_id was not specified but it is required when building StartFhirExportJobOutput",
                 )
             })?,
             job_status: self.job_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "job_status",
                     "job_status was not specified but it is required when building StartFhirExportJobOutput",
                 )

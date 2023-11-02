@@ -53,7 +53,7 @@ where
 pub fn ser_image_generation_destination_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ImageGenerationDestinationConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Uri").string(input.uri.as_str());
     }

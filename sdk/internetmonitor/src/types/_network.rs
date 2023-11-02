@@ -69,16 +69,16 @@ impl NetworkBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`as_name`](crate::types::builders::NetworkBuilder::as_name)
     /// - [`as_number`](crate::types::builders::NetworkBuilder::as_number)
-    pub fn build(self) -> ::std::result::Result<crate::types::Network, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Network, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Network {
             as_name: self.as_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "as_name",
                     "as_name was not specified but it is required when building Network",
                 )
             })?,
             as_number: self.as_number.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "as_number",
                     "as_number was not specified but it is required when building Network",
                 )

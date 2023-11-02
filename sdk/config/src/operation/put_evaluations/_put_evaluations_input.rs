@@ -105,7 +105,7 @@ impl PutEvaluationsInputBuilder {
     /// Consumes the builder and constructs a [`PutEvaluationsInput`](crate::operation::put_evaluations::PutEvaluationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_evaluations::PutEvaluationsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_evaluations::PutEvaluationsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_evaluations::PutEvaluationsInput {
             evaluations: self.evaluations,
             result_token: self.result_token,

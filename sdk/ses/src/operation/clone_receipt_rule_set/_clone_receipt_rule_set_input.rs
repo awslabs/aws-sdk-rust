@@ -92,7 +92,7 @@ impl CloneReceiptRuleSetInputBuilder {
     /// Consumes the builder and constructs a [`CloneReceiptRuleSetInput`](crate::operation::clone_receipt_rule_set::CloneReceiptRuleSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::clone_receipt_rule_set::CloneReceiptRuleSetInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::clone_receipt_rule_set::CloneReceiptRuleSetInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::clone_receipt_rule_set::CloneReceiptRuleSetInput {
             rule_set_name: self.rule_set_name,

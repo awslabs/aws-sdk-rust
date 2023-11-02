@@ -139,7 +139,7 @@ impl GetEventPredictionMetadataInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_event_prediction_metadata::GetEventPredictionMetadataInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_event_prediction_metadata::GetEventPredictionMetadataInput {
             event_id: self.event_id,

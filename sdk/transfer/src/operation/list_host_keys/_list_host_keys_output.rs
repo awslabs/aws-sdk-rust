@@ -113,17 +113,17 @@ impl ListHostKeysOutputBuilder {
     /// - [`host_keys`](crate::operation::list_host_keys::builders::ListHostKeysOutputBuilder::host_keys)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_host_keys::ListHostKeysOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_host_keys::ListHostKeysOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_host_keys::ListHostKeysOutput {
             next_token: self.next_token,
             server_id: self.server_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "server_id",
                     "server_id was not specified but it is required when building ListHostKeysOutput",
                 )
             })?,
             host_keys: self.host_keys.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "host_keys",
                     "host_keys was not specified but it is required when building ListHostKeysOutput",
                 )

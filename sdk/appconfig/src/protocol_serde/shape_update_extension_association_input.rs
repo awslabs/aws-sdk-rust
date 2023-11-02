@@ -2,7 +2,7 @@
 pub fn ser_update_extension_association_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_extension_association::UpdateExtensionAssociationInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.parameters {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Parameters").start_object();

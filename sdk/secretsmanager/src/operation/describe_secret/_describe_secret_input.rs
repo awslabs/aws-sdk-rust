@@ -49,7 +49,7 @@ impl DescribeSecretInputBuilder {
     /// Consumes the builder and constructs a [`DescribeSecretInput`](crate::operation::describe_secret::DescribeSecretInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_secret::DescribeSecretInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_secret::DescribeSecretInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_secret::DescribeSecretInput { secret_id: self.secret_id })
     }
 }

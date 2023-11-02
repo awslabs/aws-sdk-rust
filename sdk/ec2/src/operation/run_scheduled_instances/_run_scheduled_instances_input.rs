@@ -146,7 +146,7 @@ impl RunScheduledInstancesInputBuilder {
     /// Consumes the builder and constructs a [`RunScheduledInstancesInput`](crate::operation::run_scheduled_instances::RunScheduledInstancesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::run_scheduled_instances::RunScheduledInstancesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::run_scheduled_instances::RunScheduledInstancesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::run_scheduled_instances::RunScheduledInstancesInput {
             client_token: self.client_token,

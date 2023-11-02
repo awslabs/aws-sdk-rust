@@ -2,7 +2,7 @@
 pub fn ser_custom_routing_destination_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CustomRoutingDestinationConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("FromPort").number(
             #[allow(clippy::useless_conversion)]

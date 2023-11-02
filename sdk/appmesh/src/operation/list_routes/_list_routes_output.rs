@@ -87,10 +87,10 @@ impl ListRoutesOutputBuilder {
     /// Consumes the builder and constructs a [`ListRoutesOutput`](crate::operation::list_routes::ListRoutesOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`routes`](crate::operation::list_routes::builders::ListRoutesOutputBuilder::routes)
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_routes::ListRoutesOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_routes::ListRoutesOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_routes::ListRoutesOutput {
             routes: self.routes.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "routes",
                     "routes was not specified but it is required when building ListRoutesOutput",
                 )

@@ -43,7 +43,7 @@ impl DeleteTrailInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`DeleteTrailInput`](crate::operation::delete_trail::DeleteTrailInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_trail::DeleteTrailInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_trail::DeleteTrailInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_trail::DeleteTrailInput { name: self.name })
     }
 }

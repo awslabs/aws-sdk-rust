@@ -2,7 +2,7 @@
 pub fn ser_compromised_credentials_actions_type(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CompromisedCredentialsActionsType,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("EventAction").string(input.event_action.as_str());
     }

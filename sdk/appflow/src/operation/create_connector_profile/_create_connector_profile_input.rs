@@ -183,8 +183,10 @@ impl CreateConnectorProfileInputBuilder {
     /// Consumes the builder and constructs a [`CreateConnectorProfileInput`](crate::operation::create_connector_profile::CreateConnectorProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_connector_profile::CreateConnectorProfileInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::create_connector_profile::CreateConnectorProfileInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::create_connector_profile::CreateConnectorProfileInput {
             connector_profile_name: self.connector_profile_name,
             kms_arn: self.kms_arn,

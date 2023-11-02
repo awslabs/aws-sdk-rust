@@ -44,7 +44,7 @@ impl DeleteLogSubscriptionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteLogSubscriptionInput`](crate::operation::delete_log_subscription::DeleteLogSubscriptionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_log_subscription::DeleteLogSubscriptionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_log_subscription::DeleteLogSubscriptionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_log_subscription::DeleteLogSubscriptionInput {
             directory_id: self.directory_id,

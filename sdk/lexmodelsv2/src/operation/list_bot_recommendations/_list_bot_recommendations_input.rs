@@ -130,8 +130,10 @@ impl ListBotRecommendationsInputBuilder {
     /// Consumes the builder and constructs a [`ListBotRecommendationsInput`](crate::operation::list_bot_recommendations::ListBotRecommendationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_bot_recommendations::ListBotRecommendationsInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::list_bot_recommendations::ListBotRecommendationsInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::list_bot_recommendations::ListBotRecommendationsInput {
             bot_id: self.bot_id,
             bot_version: self.bot_version,

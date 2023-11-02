@@ -69,7 +69,7 @@ impl DescribeMultiplexProgramInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_multiplex_program::DescribeMultiplexProgramInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_multiplex_program::DescribeMultiplexProgramInput {
             multiplex_id: self.multiplex_id,

@@ -65,7 +65,7 @@ impl ExecuteGremlinQueryInputBuilder {
     /// Consumes the builder and constructs a [`ExecuteGremlinQueryInput`](crate::operation::execute_gremlin_query::ExecuteGremlinQueryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::execute_gremlin_query::ExecuteGremlinQueryInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::execute_gremlin_query::ExecuteGremlinQueryInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::execute_gremlin_query::ExecuteGremlinQueryInput {
             gremlin_query: self.gremlin_query,

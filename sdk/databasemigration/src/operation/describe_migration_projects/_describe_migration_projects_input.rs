@@ -100,7 +100,7 @@ impl DescribeMigrationProjectsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_migration_projects::DescribeMigrationProjectsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_migration_projects::DescribeMigrationProjectsInput {
             filters: self.filters,

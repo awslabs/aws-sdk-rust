@@ -86,7 +86,7 @@ impl UpdateAddressBookInputBuilder {
     /// Consumes the builder and constructs a [`UpdateAddressBookInput`](crate::operation::update_address_book::UpdateAddressBookInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_address_book::UpdateAddressBookInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_address_book::UpdateAddressBookInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_address_book::UpdateAddressBookInput {
             address_book_arn: self.address_book_arn,
             name: self.name,

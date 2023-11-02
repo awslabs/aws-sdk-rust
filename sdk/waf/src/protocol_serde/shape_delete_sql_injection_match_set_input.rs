@@ -2,7 +2,7 @@
 pub fn ser_delete_sql_injection_match_set_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_sql_injection_match_set::DeleteSqlInjectionMatchSetInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.sql_injection_match_set_id {
         object.key("SqlInjectionMatchSetId").string(var_1.as_str());
     }

@@ -120,7 +120,7 @@ impl SearchRoomsInputBuilder {
         &self.sort_criteria
     }
     /// Consumes the builder and constructs a [`SearchRoomsInput`](crate::operation::search_rooms::SearchRoomsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::search_rooms::SearchRoomsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::search_rooms::SearchRoomsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_rooms::SearchRoomsInput {
             next_token: self.next_token,
             max_results: self.max_results,

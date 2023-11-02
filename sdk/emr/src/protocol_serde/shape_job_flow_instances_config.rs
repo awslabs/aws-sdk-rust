@@ -2,7 +2,7 @@
 pub fn ser_job_flow_instances_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::JobFlowInstancesConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.master_instance_type {
         object.key("MasterInstanceType").string(var_1.as_str());
     }

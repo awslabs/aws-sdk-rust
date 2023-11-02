@@ -106,8 +106,8 @@ pub fn de_get_service_settings_http_response(
 
 pub fn ser_get_service_settings_input(
     _input: &crate::operation::get_service_settings::GetServiceSettingsInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
-    Ok(::aws_smithy_http::body::SdkBody::from("{}"))
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+    Ok(::aws_smithy_types::body::SdkBody::from("{}"))
 }
 
 pub(crate) fn de_get_service_settings(

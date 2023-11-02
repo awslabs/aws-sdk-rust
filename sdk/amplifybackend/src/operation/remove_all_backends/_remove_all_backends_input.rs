@@ -66,7 +66,7 @@ impl RemoveAllBackendsInputBuilder {
     /// Consumes the builder and constructs a [`RemoveAllBackendsInput`](crate::operation::remove_all_backends::RemoveAllBackendsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::remove_all_backends::RemoveAllBackendsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::remove_all_backends::RemoveAllBackendsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::remove_all_backends::RemoveAllBackendsInput {
             app_id: self.app_id,
             clean_amplify_app: self.clean_amplify_app,

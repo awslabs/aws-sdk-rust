@@ -2,7 +2,7 @@
 pub fn ser_deregister_ecs_cluster_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::deregister_ecs_cluster::DeregisterEcsClusterInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.ecs_cluster_arn {
         object.key("EcsClusterArn").string(var_1.as_str());
     }

@@ -54,7 +54,7 @@ impl PutAccountPreferencesInputBuilder {
     /// Consumes the builder and constructs a [`PutAccountPreferencesInput`](crate::operation::put_account_preferences::PutAccountPreferencesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_account_preferences::PutAccountPreferencesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::put_account_preferences::PutAccountPreferencesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::put_account_preferences::PutAccountPreferencesInput {
             resource_id_type: self.resource_id_type,

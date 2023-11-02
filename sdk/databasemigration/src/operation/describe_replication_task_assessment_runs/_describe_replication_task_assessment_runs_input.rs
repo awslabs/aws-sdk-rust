@@ -101,7 +101,7 @@ impl DescribeReplicationTaskAssessmentRunsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_replication_task_assessment_runs::DescribeReplicationTaskAssessmentRunsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_replication_task_assessment_runs::DescribeReplicationTaskAssessmentRunsInput {

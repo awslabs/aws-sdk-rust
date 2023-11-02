@@ -177,11 +177,11 @@ impl AssetBundleImportJobVpcConnectionOverrideParametersBuilder {
     /// - [`vpc_connection_id`](crate::types::builders::AssetBundleImportJobVpcConnectionOverrideParametersBuilder::vpc_connection_id)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::AssetBundleImportJobVpcConnectionOverrideParameters, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::types::AssetBundleImportJobVpcConnectionOverrideParameters, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::types::AssetBundleImportJobVpcConnectionOverrideParameters {
             vpc_connection_id: self.vpc_connection_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "vpc_connection_id",
                     "vpc_connection_id was not specified but it is required when building AssetBundleImportJobVpcConnectionOverrideParameters",
                 )

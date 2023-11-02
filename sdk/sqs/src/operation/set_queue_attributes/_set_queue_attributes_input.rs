@@ -390,7 +390,8 @@ impl SetQueueAttributesInputBuilder {
     /// Consumes the builder and constructs a [`SetQueueAttributesInput`](crate::operation::set_queue_attributes::SetQueueAttributesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::set_queue_attributes::SetQueueAttributesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::set_queue_attributes::SetQueueAttributesInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::set_queue_attributes::SetQueueAttributesInput {
             queue_url: self.queue_url,
             attributes: self.attributes,

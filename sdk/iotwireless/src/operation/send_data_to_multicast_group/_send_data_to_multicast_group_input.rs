@@ -90,7 +90,7 @@ impl SendDataToMulticastGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::send_data_to_multicast_group::SendDataToMulticastGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::send_data_to_multicast_group::SendDataToMulticastGroupInput {
             id: self.id,

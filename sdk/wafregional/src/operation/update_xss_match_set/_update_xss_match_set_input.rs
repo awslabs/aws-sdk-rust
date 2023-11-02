@@ -121,7 +121,7 @@ impl UpdateXssMatchSetInputBuilder {
     /// Consumes the builder and constructs a [`UpdateXssMatchSetInput`](crate::operation::update_xss_match_set::UpdateXssMatchSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_xss_match_set::UpdateXssMatchSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_xss_match_set::UpdateXssMatchSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_xss_match_set::UpdateXssMatchSetInput {
             xss_match_set_id: self.xss_match_set_id,
             change_token: self.change_token,

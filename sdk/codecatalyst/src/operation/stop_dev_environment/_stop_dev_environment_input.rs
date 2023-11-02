@@ -88,7 +88,8 @@ impl StopDevEnvironmentInputBuilder {
     /// Consumes the builder and constructs a [`StopDevEnvironmentInput`](crate::operation::stop_dev_environment::StopDevEnvironmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_dev_environment::StopDevEnvironmentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::stop_dev_environment::StopDevEnvironmentInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::stop_dev_environment::StopDevEnvironmentInput {
             space_name: self.space_name,
             project_name: self.project_name,

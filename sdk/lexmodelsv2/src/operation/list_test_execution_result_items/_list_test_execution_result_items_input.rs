@@ -110,7 +110,7 @@ impl ListTestExecutionResultItemsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_test_execution_result_items::ListTestExecutionResultItemsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_test_execution_result_items::ListTestExecutionResultItemsInput {
             test_execution_id: self.test_execution_id,

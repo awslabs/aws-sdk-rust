@@ -140,7 +140,7 @@ impl DescribeCommentsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeCommentsInput`](crate::operation::describe_comments::DescribeCommentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_comments::DescribeCommentsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_comments::DescribeCommentsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_comments::DescribeCommentsInput {
             authentication_token: self.authentication_token,
             document_id: self.document_id,

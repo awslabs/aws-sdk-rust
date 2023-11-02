@@ -135,7 +135,7 @@ impl CreateTargetGroupInputBuilder {
     /// Consumes the builder and constructs a [`CreateTargetGroupInput`](crate::operation::create_target_group::CreateTargetGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_target_group::CreateTargetGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_target_group::CreateTargetGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_target_group::CreateTargetGroupInput {
             name: self.name,
             r#type: self.r#type,

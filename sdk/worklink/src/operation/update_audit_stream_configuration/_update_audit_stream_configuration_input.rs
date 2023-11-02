@@ -67,7 +67,7 @@ impl UpdateAuditStreamConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_audit_stream_configuration::UpdateAuditStreamConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_audit_stream_configuration::UpdateAuditStreamConfigurationInput {
             fleet_arn: self.fleet_arn,

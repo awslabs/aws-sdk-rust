@@ -157,7 +157,9 @@ impl IsAuthorizedInputBuilder {
         &self.entities
     }
     /// Consumes the builder and constructs a [`IsAuthorizedInput`](crate::operation::is_authorized::IsAuthorizedInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::is_authorized::IsAuthorizedInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::is_authorized::IsAuthorizedInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::is_authorized::IsAuthorizedInput {
             policy_store_id: self.policy_store_id,
             principal: self.principal,

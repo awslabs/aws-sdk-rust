@@ -91,7 +91,7 @@ impl AssociateWebAclInputBuilder {
     /// Consumes the builder and constructs a [`AssociateWebAclInput`](crate::operation::associate_web_acl::AssociateWebAclInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::associate_web_acl::AssociateWebAclInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::associate_web_acl::AssociateWebAclInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::associate_web_acl::AssociateWebAclInput {
             web_acl_id: self.web_acl_id,
             resource_arn: self.resource_arn,

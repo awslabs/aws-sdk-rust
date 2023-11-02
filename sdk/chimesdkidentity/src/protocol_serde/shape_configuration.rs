@@ -2,7 +2,7 @@
 pub fn ser_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Configuration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.lex {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Lex").start_object();

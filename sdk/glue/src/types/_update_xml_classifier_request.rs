@@ -98,10 +98,10 @@ impl UpdateXmlClassifierRequestBuilder {
     /// Consumes the builder and constructs a [`UpdateXmlClassifierRequest`](crate::types::UpdateXmlClassifierRequest).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::UpdateXmlClassifierRequestBuilder::name)
-    pub fn build(self) -> ::std::result::Result<crate::types::UpdateXmlClassifierRequest, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::UpdateXmlClassifierRequest, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::UpdateXmlClassifierRequest {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building UpdateXmlClassifierRequest",
                 )

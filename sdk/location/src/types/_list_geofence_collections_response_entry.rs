@@ -168,16 +168,18 @@ impl ListGeofenceCollectionsResponseEntryBuilder {
     /// - [`description`](crate::types::builders::ListGeofenceCollectionsResponseEntryBuilder::description)
     /// - [`create_time`](crate::types::builders::ListGeofenceCollectionsResponseEntryBuilder::create_time)
     /// - [`update_time`](crate::types::builders::ListGeofenceCollectionsResponseEntryBuilder::update_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::ListGeofenceCollectionsResponseEntry, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::ListGeofenceCollectionsResponseEntry, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ListGeofenceCollectionsResponseEntry {
             collection_name: self.collection_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "collection_name",
                     "collection_name was not specified but it is required when building ListGeofenceCollectionsResponseEntry",
                 )
             })?,
             description: self.description.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "description",
                     "description was not specified but it is required when building ListGeofenceCollectionsResponseEntry",
                 )
@@ -185,13 +187,13 @@ impl ListGeofenceCollectionsResponseEntryBuilder {
             pricing_plan: self.pricing_plan,
             pricing_plan_data_source: self.pricing_plan_data_source,
             create_time: self.create_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "create_time",
                     "create_time was not specified but it is required when building ListGeofenceCollectionsResponseEntry",
                 )
             })?,
             update_time: self.update_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "update_time",
                     "update_time was not specified but it is required when building ListGeofenceCollectionsResponseEntry",
                 )

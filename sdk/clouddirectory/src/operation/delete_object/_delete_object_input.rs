@@ -64,7 +64,9 @@ impl DeleteObjectInputBuilder {
         &self.object_reference
     }
     /// Consumes the builder and constructs a [`DeleteObjectInput`](crate::operation::delete_object::DeleteObjectInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_object::DeleteObjectInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_object::DeleteObjectInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_object::DeleteObjectInput {
             directory_arn: self.directory_arn,
             object_reference: self.object_reference,

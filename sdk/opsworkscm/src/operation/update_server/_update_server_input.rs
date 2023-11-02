@@ -136,7 +136,9 @@ impl UpdateServerInputBuilder {
         &self.preferred_backup_window
     }
     /// Consumes the builder and constructs a [`UpdateServerInput`](crate::operation::update_server::UpdateServerInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_server::UpdateServerInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_server::UpdateServerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_server::UpdateServerInput {
             disable_automated_backup: self.disable_automated_backup,
             backup_retention_count: self.backup_retention_count,

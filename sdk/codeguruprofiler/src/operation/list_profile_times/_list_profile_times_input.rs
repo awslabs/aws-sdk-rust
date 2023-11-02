@@ -209,7 +209,7 @@ impl ListProfileTimesInputBuilder {
     /// Consumes the builder and constructs a [`ListProfileTimesInput`](crate::operation::list_profile_times::ListProfileTimesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_profile_times::ListProfileTimesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_profile_times::ListProfileTimesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_profile_times::ListProfileTimesInput {
             profiling_group_name: self.profiling_group_name,
             start_time: self.start_time,

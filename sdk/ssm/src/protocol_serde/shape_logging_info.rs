@@ -58,7 +58,7 @@ where
 pub fn ser_logging_info(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LoggingInfo,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("S3BucketName").string(input.s3_bucket_name.as_str());
     }

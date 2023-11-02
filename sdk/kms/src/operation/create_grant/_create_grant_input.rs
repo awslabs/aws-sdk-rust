@@ -321,7 +321,7 @@ impl CreateGrantInputBuilder {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`CreateGrantInput`](crate::operation::create_grant::CreateGrantInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_grant::CreateGrantInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_grant::CreateGrantInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_grant::CreateGrantInput {
             key_id: self.key_id,
             grantee_principal: self.grantee_principal,

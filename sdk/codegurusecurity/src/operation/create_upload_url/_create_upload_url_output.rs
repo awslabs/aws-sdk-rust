@@ -132,22 +132,22 @@ impl CreateUploadUrlOutputBuilder {
     /// - [`code_artifact_id`](crate::operation::create_upload_url::builders::CreateUploadUrlOutputBuilder::code_artifact_id)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_upload_url::CreateUploadUrlOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_upload_url::CreateUploadUrlOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_upload_url::CreateUploadUrlOutput {
             s3_url: self.s3_url.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "s3_url",
                     "s3_url was not specified but it is required when building CreateUploadUrlOutput",
                 )
             })?,
             request_headers: self.request_headers.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "request_headers",
                     "request_headers was not specified but it is required when building CreateUploadUrlOutput",
                 )
             })?,
             code_artifact_id: self.code_artifact_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "code_artifact_id",
                     "code_artifact_id was not specified but it is required when building CreateUploadUrlOutput",
                 )

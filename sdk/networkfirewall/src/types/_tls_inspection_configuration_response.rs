@@ -278,22 +278,22 @@ impl TlsInspectionConfigurationResponseBuilder {
     /// - [`tls_inspection_configuration_arn`](crate::types::builders::TlsInspectionConfigurationResponseBuilder::tls_inspection_configuration_arn)
     /// - [`tls_inspection_configuration_name`](crate::types::builders::TlsInspectionConfigurationResponseBuilder::tls_inspection_configuration_name)
     /// - [`tls_inspection_configuration_id`](crate::types::builders::TlsInspectionConfigurationResponseBuilder::tls_inspection_configuration_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::TlsInspectionConfigurationResponse, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TlsInspectionConfigurationResponse, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TlsInspectionConfigurationResponse {
             tls_inspection_configuration_arn: self.tls_inspection_configuration_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "tls_inspection_configuration_arn",
                     "tls_inspection_configuration_arn was not specified but it is required when building TlsInspectionConfigurationResponse",
                 )
             })?,
             tls_inspection_configuration_name: self.tls_inspection_configuration_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "tls_inspection_configuration_name",
                     "tls_inspection_configuration_name was not specified but it is required when building TlsInspectionConfigurationResponse",
                 )
             })?,
             tls_inspection_configuration_id: self.tls_inspection_configuration_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "tls_inspection_configuration_id",
                     "tls_inspection_configuration_id was not specified but it is required when building TlsInspectionConfigurationResponse",
                 )

@@ -42,7 +42,7 @@ impl GetMeetingInputBuilder {
         &self.meeting_id
     }
     /// Consumes the builder and constructs a [`GetMeetingInput`](crate::operation::get_meeting::GetMeetingInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_meeting::GetMeetingInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_meeting::GetMeetingInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_meeting::GetMeetingInput { meeting_id: self.meeting_id })
     }
 }

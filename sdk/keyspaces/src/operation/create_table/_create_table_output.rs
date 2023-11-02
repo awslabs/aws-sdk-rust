@@ -61,10 +61,10 @@ impl CreateTableOutputBuilder {
     /// Consumes the builder and constructs a [`CreateTableOutput`](crate::operation::create_table::CreateTableOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`resource_arn`](crate::operation::create_table::builders::CreateTableOutputBuilder::resource_arn)
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_table::CreateTableOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_table::CreateTableOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_table::CreateTableOutput {
             resource_arn: self.resource_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_arn",
                     "resource_arn was not specified but it is required when building CreateTableOutput",
                 )

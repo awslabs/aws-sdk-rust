@@ -67,7 +67,7 @@ impl CancelRetrievalInputBuilder {
     /// Consumes the builder and constructs a [`CancelRetrievalInput`](crate::operation::cancel_retrieval::CancelRetrievalInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::cancel_retrieval::CancelRetrievalInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::cancel_retrieval::CancelRetrievalInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::cancel_retrieval::CancelRetrievalInput {
             gateway_arn: self.gateway_arn,
             tape_arn: self.tape_arn,

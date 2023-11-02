@@ -65,7 +65,8 @@ impl StopActivityStreamInputBuilder {
     /// Consumes the builder and constructs a [`StopActivityStreamInput`](crate::operation::stop_activity_stream::StopActivityStreamInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_activity_stream::StopActivityStreamInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::stop_activity_stream::StopActivityStreamInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::stop_activity_stream::StopActivityStreamInput {
             resource_arn: self.resource_arn,
             apply_immediately: self.apply_immediately,

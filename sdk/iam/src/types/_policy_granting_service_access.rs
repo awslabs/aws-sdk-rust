@@ -148,16 +148,16 @@ impl PolicyGrantingServiceAccessBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`policy_name`](crate::types::builders::PolicyGrantingServiceAccessBuilder::policy_name)
     /// - [`policy_type`](crate::types::builders::PolicyGrantingServiceAccessBuilder::policy_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::PolicyGrantingServiceAccess, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PolicyGrantingServiceAccess, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PolicyGrantingServiceAccess {
             policy_name: self.policy_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "policy_name",
                     "policy_name was not specified but it is required when building PolicyGrantingServiceAccess",
                 )
             })?,
             policy_type: self.policy_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "policy_type",
                     "policy_type was not specified but it is required when building PolicyGrantingServiceAccess",
                 )

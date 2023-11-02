@@ -2,7 +2,7 @@
 pub fn ser_export_revisions_to_s3_request_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ExportRevisionsToS3RequestDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("DataSetId").string(input.data_set_id.as_str());
     }

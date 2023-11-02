@@ -87,7 +87,7 @@ impl ResetDeploymentsInputBuilder {
     /// Consumes the builder and constructs a [`ResetDeploymentsInput`](crate::operation::reset_deployments::ResetDeploymentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::reset_deployments::ResetDeploymentsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::reset_deployments::ResetDeploymentsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::reset_deployments::ResetDeploymentsInput {
             amzn_client_token: self.amzn_client_token,
             force: self.force,

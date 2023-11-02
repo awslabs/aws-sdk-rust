@@ -139,11 +139,11 @@ impl GetStatementResultOutputBuilder {
     /// - [`records`](crate::operation::get_statement_result::builders::GetStatementResultOutputBuilder::records)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_statement_result::GetStatementResultOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_statement_result::GetStatementResultOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_statement_result::GetStatementResultOutput {
             records: self.records.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "records",
                     "records was not specified but it is required when building GetStatementResultOutput",
                 )

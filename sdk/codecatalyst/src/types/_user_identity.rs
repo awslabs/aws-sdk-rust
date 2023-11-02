@@ -111,16 +111,16 @@ impl UserIdentityBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`user_type`](crate::types::builders::UserIdentityBuilder::user_type)
     /// - [`principal_id`](crate::types::builders::UserIdentityBuilder::principal_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::UserIdentity, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::UserIdentity, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::UserIdentity {
             user_type: self.user_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "user_type",
                     "user_type was not specified but it is required when building UserIdentity",
                 )
             })?,
             principal_id: self.principal_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "principal_id",
                     "principal_id was not specified but it is required when building UserIdentity",
                 )

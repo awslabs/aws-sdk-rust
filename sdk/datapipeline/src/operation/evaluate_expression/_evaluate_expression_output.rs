@@ -64,10 +64,11 @@ impl EvaluateExpressionOutputBuilder {
     /// - [`evaluated_expression`](crate::operation::evaluate_expression::builders::EvaluateExpressionOutputBuilder::evaluated_expression)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::evaluate_expression::EvaluateExpressionOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::evaluate_expression::EvaluateExpressionOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::evaluate_expression::EvaluateExpressionOutput {
             evaluated_expression: self.evaluated_expression.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "evaluated_expression",
                     "evaluated_expression was not specified but it is required when building EvaluateExpressionOutput",
                 )

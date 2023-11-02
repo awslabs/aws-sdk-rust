@@ -374,7 +374,7 @@ impl CreateCloudFormationChangeSetInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_cloud_formation_change_set::CreateCloudFormationChangeSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_cloud_formation_change_set::CreateCloudFormationChangeSetInput {
             application_id: self.application_id,

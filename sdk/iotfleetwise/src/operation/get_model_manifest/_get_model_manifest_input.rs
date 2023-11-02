@@ -44,7 +44,7 @@ impl GetModelManifestInputBuilder {
     /// Consumes the builder and constructs a [`GetModelManifestInput`](crate::operation::get_model_manifest::GetModelManifestInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_model_manifest::GetModelManifestInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_model_manifest::GetModelManifestInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_model_manifest::GetModelManifestInput { name: self.name })
     }
 }

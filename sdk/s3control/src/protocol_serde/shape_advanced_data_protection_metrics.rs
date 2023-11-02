@@ -2,7 +2,7 @@
 pub fn ser_advanced_data_protection_metrics(
     input: &crate::types::AdvancedDataProtectionMetrics,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if input.is_enabled {

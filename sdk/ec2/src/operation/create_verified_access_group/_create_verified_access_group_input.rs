@@ -180,7 +180,7 @@ impl CreateVerifiedAccessGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_verified_access_group::CreateVerifiedAccessGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_verified_access_group::CreateVerifiedAccessGroupInput {
             verified_access_instance_id: self.verified_access_instance_id,

@@ -93,7 +93,7 @@ impl StartDeviceSyncInputBuilder {
     /// Consumes the builder and constructs a [`StartDeviceSyncInput`](crate::operation::start_device_sync::StartDeviceSyncInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_device_sync::StartDeviceSyncInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_device_sync::StartDeviceSyncInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_device_sync::StartDeviceSyncInput {
             room_arn: self.room_arn,
             device_arn: self.device_arn,

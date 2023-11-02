@@ -68,7 +68,7 @@ impl CreateTransitVirtualInterfaceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterfaceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterfaceInput {
             connection_id: self.connection_id,

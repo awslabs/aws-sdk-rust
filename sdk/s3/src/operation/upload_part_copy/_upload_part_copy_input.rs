@@ -601,7 +601,7 @@ impl UploadPartCopyInputBuilder {
     /// Consumes the builder and constructs a [`UploadPartCopyInput`](crate::operation::upload_part_copy::UploadPartCopyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::upload_part_copy::UploadPartCopyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::upload_part_copy::UploadPartCopyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::upload_part_copy::UploadPartCopyInput {
             bucket: self.bucket,
             copy_source: self.copy_source,

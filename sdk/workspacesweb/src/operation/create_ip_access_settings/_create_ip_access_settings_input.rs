@@ -220,7 +220,7 @@ impl CreateIpAccessSettingsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_ip_access_settings::CreateIpAccessSettingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_ip_access_settings::CreateIpAccessSettingsInput {
             display_name: self.display_name,

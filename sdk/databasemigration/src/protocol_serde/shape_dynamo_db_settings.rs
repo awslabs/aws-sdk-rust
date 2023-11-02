@@ -2,7 +2,7 @@
 pub fn ser_dynamo_db_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DynamoDbSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("ServiceAccessRoleArn").string(input.service_access_role_arn.as_str());
     }

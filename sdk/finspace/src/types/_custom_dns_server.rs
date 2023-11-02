@@ -70,16 +70,16 @@ impl CustomDnsServerBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`custom_dns_server_name`](crate::types::builders::CustomDnsServerBuilder::custom_dns_server_name)
     /// - [`custom_dns_server_ip`](crate::types::builders::CustomDnsServerBuilder::custom_dns_server_ip)
-    pub fn build(self) -> ::std::result::Result<crate::types::CustomDnsServer, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CustomDnsServer, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CustomDnsServer {
             custom_dns_server_name: self.custom_dns_server_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "custom_dns_server_name",
                     "custom_dns_server_name was not specified but it is required when building CustomDnsServer",
                 )
             })?,
             custom_dns_server_ip: self.custom_dns_server_ip.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "custom_dns_server_ip",
                     "custom_dns_server_ip was not specified but it is required when building CustomDnsServer",
                 )

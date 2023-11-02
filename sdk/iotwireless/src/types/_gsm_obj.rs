@@ -206,19 +206,28 @@ impl GsmObjBuilder {
     /// - [`mnc`](crate::types::builders::GsmObjBuilder::mnc)
     /// - [`lac`](crate::types::builders::GsmObjBuilder::lac)
     /// - [`geran_cid`](crate::types::builders::GsmObjBuilder::geran_cid)
-    pub fn build(self) -> ::std::result::Result<crate::types::GsmObj, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::GsmObj, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::GsmObj {
             mcc: self.mcc.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field("mcc", "mcc was not specified but it is required when building GsmObj")
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "mcc",
+                    "mcc was not specified but it is required when building GsmObj",
+                )
             })?,
             mnc: self.mnc.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field("mnc", "mnc was not specified but it is required when building GsmObj")
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "mnc",
+                    "mnc was not specified but it is required when building GsmObj",
+                )
             })?,
             lac: self.lac.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field("lac", "lac was not specified but it is required when building GsmObj")
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "lac",
+                    "lac was not specified but it is required when building GsmObj",
+                )
             })?,
             geran_cid: self.geran_cid.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "geran_cid",
                     "geran_cid was not specified but it is required when building GsmObj",
                 )

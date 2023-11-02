@@ -76,7 +76,7 @@ impl UntagPolicyInputBuilder {
         &self.tag_keys
     }
     /// Consumes the builder and constructs a [`UntagPolicyInput`](crate::operation::untag_policy::UntagPolicyInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::untag_policy::UntagPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::untag_policy::UntagPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::untag_policy::UntagPolicyInput {
             policy_arn: self.policy_arn,
             tag_keys: self.tag_keys,

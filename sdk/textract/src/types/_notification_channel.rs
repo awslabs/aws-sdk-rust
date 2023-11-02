@@ -70,16 +70,16 @@ impl NotificationChannelBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`sns_topic_arn`](crate::types::builders::NotificationChannelBuilder::sns_topic_arn)
     /// - [`role_arn`](crate::types::builders::NotificationChannelBuilder::role_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::NotificationChannel, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::NotificationChannel, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::NotificationChannel {
             sns_topic_arn: self.sns_topic_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "sns_topic_arn",
                     "sns_topic_arn was not specified but it is required when building NotificationChannel",
                 )
             })?,
             role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role_arn",
                     "role_arn was not specified but it is required when building NotificationChannel",
                 )

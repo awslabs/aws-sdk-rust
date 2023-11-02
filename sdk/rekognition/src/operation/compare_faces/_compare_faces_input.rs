@@ -121,7 +121,9 @@ impl CompareFacesInputBuilder {
         &self.quality_filter
     }
     /// Consumes the builder and constructs a [`CompareFacesInput`](crate::operation::compare_faces::CompareFacesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::compare_faces::CompareFacesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::compare_faces::CompareFacesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::compare_faces::CompareFacesInput {
             source_image: self.source_image,
             target_image: self.target_image,

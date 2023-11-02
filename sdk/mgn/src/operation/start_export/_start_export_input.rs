@@ -86,7 +86,7 @@ impl StartExportInputBuilder {
         &self.s3_bucket_owner
     }
     /// Consumes the builder and constructs a [`StartExportInput`](crate::operation::start_export::StartExportInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::start_export::StartExportInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_export::StartExportInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_export::StartExportInput {
             s3_bucket: self.s3_bucket,
             s3_key: self.s3_key,

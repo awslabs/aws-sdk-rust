@@ -44,7 +44,7 @@ impl DeleteAttachmentInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAttachmentInput`](crate::operation::delete_attachment::DeleteAttachmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_attachment::DeleteAttachmentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_attachment::DeleteAttachmentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_attachment::DeleteAttachmentInput {
             attachment_id: self.attachment_id,
         })

@@ -271,7 +271,8 @@ impl ListSessionMetricsInputBuilder {
     /// Consumes the builder and constructs a [`ListSessionMetricsInput`](crate::operation::list_session_metrics::ListSessionMetricsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_session_metrics::ListSessionMetricsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_session_metrics::ListSessionMetricsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::list_session_metrics::ListSessionMetricsInput {
             bot_id: self.bot_id,
             start_date_time: self.start_date_time,

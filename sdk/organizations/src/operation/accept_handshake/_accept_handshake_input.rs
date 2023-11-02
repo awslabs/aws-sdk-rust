@@ -49,7 +49,7 @@ impl AcceptHandshakeInputBuilder {
     /// Consumes the builder and constructs a [`AcceptHandshakeInput`](crate::operation::accept_handshake::AcceptHandshakeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::accept_handshake::AcceptHandshakeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::accept_handshake::AcceptHandshakeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::accept_handshake::AcceptHandshakeInput {
             handshake_id: self.handshake_id,
         })

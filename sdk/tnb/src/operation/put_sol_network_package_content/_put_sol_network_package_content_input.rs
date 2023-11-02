@@ -89,7 +89,7 @@ impl PutSolNetworkPackageContentInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_sol_network_package_content::PutSolNetworkPackageContentInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_sol_network_package_content::PutSolNetworkPackageContentInput {
             nsd_info_id: self.nsd_info_id,

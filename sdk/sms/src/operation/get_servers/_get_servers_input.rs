@@ -91,7 +91,7 @@ impl GetServersInputBuilder {
         &self.vm_server_address_list
     }
     /// Consumes the builder and constructs a [`GetServersInput`](crate::operation::get_servers::GetServersInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_servers::GetServersInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_servers::GetServersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_servers::GetServersInput {
             next_token: self.next_token,
             max_results: self.max_results,

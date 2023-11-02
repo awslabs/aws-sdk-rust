@@ -130,7 +130,7 @@ impl StartAuditMitigationActionsTaskInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_audit_mitigation_actions_task::StartAuditMitigationActionsTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::start_audit_mitigation_actions_task::StartAuditMitigationActionsTaskInput {

@@ -101,7 +101,7 @@ impl ListTargetsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListTargetsInput`](crate::operation::list_targets::ListTargetsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_targets::ListTargetsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_targets::ListTargetsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_targets::ListTargetsInput {
             filters: self.filters,
             next_token: self.next_token,

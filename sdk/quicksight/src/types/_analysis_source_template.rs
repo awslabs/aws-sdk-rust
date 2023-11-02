@@ -75,16 +75,16 @@ impl AnalysisSourceTemplateBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`data_set_references`](crate::types::builders::AnalysisSourceTemplateBuilder::data_set_references)
     /// - [`arn`](crate::types::builders::AnalysisSourceTemplateBuilder::arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::AnalysisSourceTemplate, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AnalysisSourceTemplate, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AnalysisSourceTemplate {
             data_set_references: self.data_set_references.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_set_references",
                     "data_set_references was not specified but it is required when building AnalysisSourceTemplate",
                 )
             })?,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building AnalysisSourceTemplate",
                 )

@@ -2,7 +2,7 @@
 pub fn ser_human_loop_request_source(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::HumanLoopRequestSource,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.aws_managed_human_loop_request_source {
         object.key("AwsManagedHumanLoopRequestSource").string(var_1.as_str());
     }

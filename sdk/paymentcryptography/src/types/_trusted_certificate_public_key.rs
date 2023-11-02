@@ -104,17 +104,17 @@ impl TrustedCertificatePublicKeyBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`public_key_certificate`](crate::types::builders::TrustedCertificatePublicKeyBuilder::public_key_certificate)
     /// - [`certificate_authority_public_key_identifier`](crate::types::builders::TrustedCertificatePublicKeyBuilder::certificate_authority_public_key_identifier)
-    pub fn build(self) -> ::std::result::Result<crate::types::TrustedCertificatePublicKey, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TrustedCertificatePublicKey, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TrustedCertificatePublicKey {
             key_attributes: self.key_attributes,
             public_key_certificate: self.public_key_certificate.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "public_key_certificate",
                     "public_key_certificate was not specified but it is required when building TrustedCertificatePublicKey",
                 )
             })?,
             certificate_authority_public_key_identifier: self.certificate_authority_public_key_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "certificate_authority_public_key_identifier",
                     "certificate_authority_public_key_identifier was not specified but it is required when building TrustedCertificatePublicKey",
                 )

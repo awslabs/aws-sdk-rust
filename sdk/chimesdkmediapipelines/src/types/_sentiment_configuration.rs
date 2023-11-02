@@ -92,22 +92,22 @@ impl SentimentConfigurationBuilder {
     /// - [`rule_name`](crate::types::builders::SentimentConfigurationBuilder::rule_name)
     /// - [`sentiment_type`](crate::types::builders::SentimentConfigurationBuilder::sentiment_type)
     /// - [`time_period`](crate::types::builders::SentimentConfigurationBuilder::time_period)
-    pub fn build(self) -> ::std::result::Result<crate::types::SentimentConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SentimentConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SentimentConfiguration {
             rule_name: self.rule_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "rule_name",
                     "rule_name was not specified but it is required when building SentimentConfiguration",
                 )
             })?,
             sentiment_type: self.sentiment_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "sentiment_type",
                     "sentiment_type was not specified but it is required when building SentimentConfiguration",
                 )
             })?,
             time_period: self.time_period.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "time_period",
                     "time_period was not specified but it is required when building SentimentConfiguration",
                 )

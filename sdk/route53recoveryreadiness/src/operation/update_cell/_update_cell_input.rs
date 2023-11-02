@@ -71,7 +71,7 @@ impl UpdateCellInputBuilder {
         &self.cells
     }
     /// Consumes the builder and constructs a [`UpdateCellInput`](crate::operation::update_cell::UpdateCellInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_cell::UpdateCellInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_cell::UpdateCellInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_cell::UpdateCellInput {
             cell_name: self.cell_name,
             cells: self.cells,

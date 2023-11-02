@@ -192,7 +192,7 @@ impl GetIpamAddressHistoryInputBuilder {
     /// Consumes the builder and constructs a [`GetIpamAddressHistoryInput`](crate::operation::get_ipam_address_history::GetIpamAddressHistoryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_ipam_address_history::GetIpamAddressHistoryInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_ipam_address_history::GetIpamAddressHistoryInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_ipam_address_history::GetIpamAddressHistoryInput {
             dry_run: self.dry_run,

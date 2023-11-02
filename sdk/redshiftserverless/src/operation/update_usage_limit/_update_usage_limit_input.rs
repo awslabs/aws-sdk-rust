@@ -86,7 +86,7 @@ impl UpdateUsageLimitInputBuilder {
     /// Consumes the builder and constructs a [`UpdateUsageLimitInput`](crate::operation::update_usage_limit::UpdateUsageLimitInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_usage_limit::UpdateUsageLimitInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_usage_limit::UpdateUsageLimitInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_usage_limit::UpdateUsageLimitInput {
             usage_limit_id: self.usage_limit_id,
             amount: self.amount,

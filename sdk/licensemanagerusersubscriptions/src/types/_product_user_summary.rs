@@ -200,23 +200,23 @@ impl ProductUserSummaryBuilder {
     /// - [`username`](crate::types::builders::ProductUserSummaryBuilder::username)
     /// - [`product`](crate::types::builders::ProductUserSummaryBuilder::product)
     /// - [`status`](crate::types::builders::ProductUserSummaryBuilder::status)
-    pub fn build(self) -> ::std::result::Result<crate::types::ProductUserSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ProductUserSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ProductUserSummary {
             username: self.username.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "username",
                     "username was not specified but it is required when building ProductUserSummary",
                 )
             })?,
             product: self.product.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "product",
                     "product was not specified but it is required when building ProductUserSummary",
                 )
             })?,
             identity_provider: self.identity_provider,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building ProductUserSummary",
                 )

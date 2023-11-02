@@ -149,7 +149,9 @@ impl GetInventoryInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`GetInventoryInput`](crate::operation::get_inventory::GetInventoryInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_inventory::GetInventoryInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_inventory::GetInventoryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_inventory::GetInventoryInput {
             filters: self.filters,
             aggregators: self.aggregators,

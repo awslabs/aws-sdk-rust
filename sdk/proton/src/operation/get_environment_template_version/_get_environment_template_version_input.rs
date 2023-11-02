@@ -90,7 +90,7 @@ impl GetEnvironmentTemplateVersionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_environment_template_version::GetEnvironmentTemplateVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_environment_template_version::GetEnvironmentTemplateVersionInput {
             template_name: self.template_name,

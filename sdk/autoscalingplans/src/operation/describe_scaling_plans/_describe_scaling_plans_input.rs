@@ -153,7 +153,7 @@ impl DescribeScalingPlansInputBuilder {
     /// Consumes the builder and constructs a [`DescribeScalingPlansInput`](crate::operation::describe_scaling_plans::DescribeScalingPlansInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_scaling_plans::DescribeScalingPlansInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_scaling_plans::DescribeScalingPlansInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_scaling_plans::DescribeScalingPlansInput {
             scaling_plan_names: self.scaling_plan_names,

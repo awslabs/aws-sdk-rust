@@ -151,10 +151,10 @@ impl TopicRefreshScheduleBuilder {
     /// Consumes the builder and constructs a [`TopicRefreshSchedule`](crate::types::TopicRefreshSchedule).
     /// This method will fail if any of the following fields are not set:
     /// - [`is_enabled`](crate::types::builders::TopicRefreshScheduleBuilder::is_enabled)
-    pub fn build(self) -> ::std::result::Result<crate::types::TopicRefreshSchedule, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TopicRefreshSchedule, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TopicRefreshSchedule {
             is_enabled: self.is_enabled.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "is_enabled",
                     "is_enabled was not specified but it is required when building TopicRefreshSchedule",
                 )

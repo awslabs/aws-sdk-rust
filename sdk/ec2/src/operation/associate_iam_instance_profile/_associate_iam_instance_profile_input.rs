@@ -68,7 +68,7 @@ impl AssociateIamInstanceProfileInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_iam_instance_profile::AssociateIamInstanceProfileInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::associate_iam_instance_profile::AssociateIamInstanceProfileInput {
             iam_instance_profile: self.iam_instance_profile,

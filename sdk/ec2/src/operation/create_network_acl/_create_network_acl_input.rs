@@ -94,7 +94,7 @@ impl CreateNetworkAclInputBuilder {
     /// Consumes the builder and constructs a [`CreateNetworkAclInput`](crate::operation::create_network_acl::CreateNetworkAclInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_network_acl::CreateNetworkAclInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_network_acl::CreateNetworkAclInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_network_acl::CreateNetworkAclInput {
             dry_run: self.dry_run,
             vpc_id: self.vpc_id,

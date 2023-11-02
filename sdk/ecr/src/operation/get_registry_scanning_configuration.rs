@@ -181,7 +181,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetRegistryS
             fn uri_base(
                 _input: &crate::operation::get_registry_scanning_configuration::GetRegistryScanningConfigurationInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 use ::std::fmt::Write as _;
                 ::std::write!(output, "/").expect("formatting should succeed");
                 ::std::result::Result::Ok(())
@@ -190,7 +190,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetRegistryS
             fn update_http_builder(
                 input: &crate::operation::get_registry_scanning_configuration::GetRegistryScanningConfigurationInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 ::std::result::Result::Ok(builder.method("POST").uri(uri))
@@ -204,7 +204,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetRegistryS
             );
             builder
         };
-        let body = ::aws_smithy_http::body::SdkBody::from(
+        let body = ::aws_smithy_types::body::SdkBody::from(
             crate::protocol_serde::shape_get_registry_scanning_configuration::ser_get_registry_scanning_configuration_input(&input)?,
         );
 

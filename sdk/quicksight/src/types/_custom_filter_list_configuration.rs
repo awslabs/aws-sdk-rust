@@ -158,10 +158,10 @@ impl CustomFilterListConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`match_operator`](crate::types::builders::CustomFilterListConfigurationBuilder::match_operator)
     /// - [`null_option`](crate::types::builders::CustomFilterListConfigurationBuilder::null_option)
-    pub fn build(self) -> ::std::result::Result<crate::types::CustomFilterListConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CustomFilterListConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CustomFilterListConfiguration {
             match_operator: self.match_operator.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "match_operator",
                     "match_operator was not specified but it is required when building CustomFilterListConfiguration",
                 )
@@ -169,7 +169,7 @@ impl CustomFilterListConfigurationBuilder {
             category_values: self.category_values,
             select_all_options: self.select_all_options,
             null_option: self.null_option.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "null_option",
                     "null_option was not specified but it is required when building CustomFilterListConfiguration",
                 )

@@ -120,7 +120,7 @@ impl PutDestinationInputBuilder {
     /// Consumes the builder and constructs a [`PutDestinationInput`](crate::operation::put_destination::PutDestinationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_destination::PutDestinationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_destination::PutDestinationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_destination::PutDestinationInput {
             destination_name: self.destination_name,
             target_arn: self.target_arn,

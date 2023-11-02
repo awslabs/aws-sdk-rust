@@ -133,7 +133,8 @@ impl ListImagePipelinesInputBuilder {
     /// Consumes the builder and constructs a [`ListImagePipelinesInput`](crate::operation::list_image_pipelines::ListImagePipelinesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_image_pipelines::ListImagePipelinesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_image_pipelines::ListImagePipelinesInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::list_image_pipelines::ListImagePipelinesInput {
             filters: self.filters,
             max_results: self.max_results,

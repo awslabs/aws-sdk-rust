@@ -2,7 +2,7 @@
 pub fn ser_update_abp_v1_1(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UpdateAbpV11,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.f_cnt_start {
         object.key("FCntStart").number(
             #[allow(clippy::useless_conversion)]

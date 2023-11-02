@@ -90,10 +90,10 @@ impl ListWebhooksOutputBuilder {
     /// - [`webhooks`](crate::operation::list_webhooks::builders::ListWebhooksOutputBuilder::webhooks)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_webhooks::ListWebhooksOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_webhooks::ListWebhooksOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_webhooks::ListWebhooksOutput {
             webhooks: self.webhooks.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "webhooks",
                     "webhooks was not specified but it is required when building ListWebhooksOutput",
                 )

@@ -66,7 +66,7 @@ impl DeregisterMailDomainInputBuilder {
     /// Consumes the builder and constructs a [`DeregisterMailDomainInput`](crate::operation::deregister_mail_domain::DeregisterMailDomainInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::deregister_mail_domain::DeregisterMailDomainInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::deregister_mail_domain::DeregisterMailDomainInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::deregister_mail_domain::DeregisterMailDomainInput {
             organization_id: self.organization_id,

@@ -173,7 +173,7 @@ impl StartPhiDetectionJobInputBuilder {
     /// Consumes the builder and constructs a [`StartPhiDetectionJobInput`](crate::operation::start_phi_detection_job::StartPhiDetectionJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_phi_detection_job::StartPhiDetectionJobInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::start_phi_detection_job::StartPhiDetectionJobInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_phi_detection_job::StartPhiDetectionJobInput {
             input_data_config: self.input_data_config,

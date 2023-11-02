@@ -2,7 +2,7 @@
 pub fn ser_lo_ra_wan_device_profile(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LoRaWanDeviceProfile,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.supports_class_b {
         object.key("SupportsClassB").boolean(input.supports_class_b);
     }

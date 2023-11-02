@@ -2,7 +2,7 @@
 pub fn ser_key_schema_element(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::KeySchemaElement,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("AttributeName").string(input.attribute_name.as_str());
     }

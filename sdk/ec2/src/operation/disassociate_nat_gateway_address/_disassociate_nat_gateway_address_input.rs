@@ -117,7 +117,7 @@ impl DisassociateNatGatewayAddressInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_nat_gateway_address::DisassociateNatGatewayAddressInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disassociate_nat_gateway_address::DisassociateNatGatewayAddressInput {
             nat_gateway_id: self.nat_gateway_id,

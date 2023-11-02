@@ -2,7 +2,7 @@
 pub fn ser_message_insights_filters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MessageInsightsFilters,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.from_email_address {
         let mut array_2 = object.key("FromEmailAddress").start_array();
         for item_3 in var_1 {

@@ -89,12 +89,12 @@ impl ListProtectedQueriesOutputBuilder {
     /// - [`protected_queries`](crate::operation::list_protected_queries::builders::ListProtectedQueriesOutputBuilder::protected_queries)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_protected_queries::ListProtectedQueriesOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_protected_queries::ListProtectedQueriesOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_protected_queries::ListProtectedQueriesOutput {
             next_token: self.next_token,
             protected_queries: self.protected_queries.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "protected_queries",
                     "protected_queries was not specified but it is required when building ListProtectedQueriesOutput",
                 )

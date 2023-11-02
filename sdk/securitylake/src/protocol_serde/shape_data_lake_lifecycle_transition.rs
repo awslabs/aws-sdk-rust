@@ -2,7 +2,7 @@
 pub fn ser_data_lake_lifecycle_transition(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DataLakeLifecycleTransition,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.storage_class {
         object.key("storageClass").string(var_1.as_str());
     }

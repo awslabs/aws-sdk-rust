@@ -235,22 +235,22 @@ impl GetTemplateOutputBuilder {
     /// - [`template_arn`](crate::operation::get_template::builders::GetTemplateOutputBuilder::template_arn)
     /// - [`name`](crate::operation::get_template::builders::GetTemplateOutputBuilder::name)
     /// - [`status`](crate::operation::get_template::builders::GetTemplateOutputBuilder::status)
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_template::GetTemplateOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_template::GetTemplateOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_template::GetTemplateOutput {
             template_id: self.template_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "template_id",
                     "template_id was not specified but it is required when building GetTemplateOutput",
                 )
             })?,
             template_arn: self.template_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "template_arn",
                     "template_arn was not specified but it is required when building GetTemplateOutput",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building GetTemplateOutput",
                 )
@@ -260,7 +260,7 @@ impl GetTemplateOutputBuilder {
             required_fields: self.required_fields,
             tags: self.tags,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building GetTemplateOutput",
                 )

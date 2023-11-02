@@ -238,20 +238,20 @@ impl ColumnInfoBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::ColumnInfoBuilder::name)
     /// - [`r#type`](crate::types::builders::ColumnInfoBuilder::r#type)
-    pub fn build(self) -> ::std::result::Result<crate::types::ColumnInfo, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ColumnInfo, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ColumnInfo {
             catalog_name: self.catalog_name,
             schema_name: self.schema_name,
             table_name: self.table_name,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building ColumnInfo",
                 )
             })?,
             label: self.label,
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building ColumnInfo",
                 )

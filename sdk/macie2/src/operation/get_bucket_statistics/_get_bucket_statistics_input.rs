@@ -43,7 +43,7 @@ impl GetBucketStatisticsInputBuilder {
     /// Consumes the builder and constructs a [`GetBucketStatisticsInput`](crate::operation::get_bucket_statistics::GetBucketStatisticsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_bucket_statistics::GetBucketStatisticsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_bucket_statistics::GetBucketStatisticsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_bucket_statistics::GetBucketStatisticsInput { account_id: self.account_id })
     }

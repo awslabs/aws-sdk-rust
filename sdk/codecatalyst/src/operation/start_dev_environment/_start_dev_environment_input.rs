@@ -159,7 +159,7 @@ impl StartDevEnvironmentInputBuilder {
     /// Consumes the builder and constructs a [`StartDevEnvironmentInput`](crate::operation::start_dev_environment::StartDevEnvironmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_dev_environment::StartDevEnvironmentInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::start_dev_environment::StartDevEnvironmentInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_dev_environment::StartDevEnvironmentInput {
             space_name: self.space_name,

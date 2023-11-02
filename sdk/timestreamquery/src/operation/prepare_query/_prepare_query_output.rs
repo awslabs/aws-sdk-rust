@@ -131,22 +131,22 @@ impl PrepareQueryOutputBuilder {
     /// - [`parameters`](crate::operation::prepare_query::builders::PrepareQueryOutputBuilder::parameters)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::prepare_query::PrepareQueryOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::prepare_query::PrepareQueryOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::prepare_query::PrepareQueryOutput {
             query_string: self.query_string.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "query_string",
                     "query_string was not specified but it is required when building PrepareQueryOutput",
                 )
             })?,
             columns: self.columns.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "columns",
                     "columns was not specified but it is required when building PrepareQueryOutput",
                 )
             })?,
             parameters: self.parameters.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "parameters",
                     "parameters was not specified but it is required when building PrepareQueryOutput",
                 )

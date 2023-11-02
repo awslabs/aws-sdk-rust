@@ -2,7 +2,7 @@
 pub fn ser_destination(
     object_2: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Destination,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::Destination::S3Bucket(inner) => {
             #[allow(unused_mut)]
@@ -16,7 +16,7 @@ pub fn ser_destination(
             crate::protocol_serde::shape_firehose_stream::ser_firehose_stream(&mut object_2, inner)?;
             object_2.finish();
         }
-        crate::types::Destination::Unknown => return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant("Destination")),
+        crate::types::Destination::Unknown => return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("Destination")),
     }
     Ok(())
 }
@@ -34,12 +34,17 @@ where
             match tokens.next().transpose()? {
                 Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                 Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                    let key = key.to_unescaped()?;
+                    if key == "__type" {
+                        ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                        continue;
+                    }
                     if variant.is_some() {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
                             "encountered mixed variants in union",
                         ));
                     }
-                    variant = match key.to_unescaped()?.as_ref() {
+                    variant = match key.as_ref() {
                         "s3Bucket" => Some(crate::types::Destination::S3Bucket(
                             crate::protocol_serde::shape_s3_bucket::de_s3_bucket(tokens)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 's3Bucket' cannot be null")

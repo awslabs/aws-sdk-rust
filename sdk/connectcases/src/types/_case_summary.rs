@@ -70,16 +70,16 @@ impl CaseSummaryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`case_id`](crate::types::builders::CaseSummaryBuilder::case_id)
     /// - [`template_id`](crate::types::builders::CaseSummaryBuilder::template_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::CaseSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CaseSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CaseSummary {
             case_id: self.case_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "case_id",
                     "case_id was not specified but it is required when building CaseSummary",
                 )
             })?,
             template_id: self.template_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "template_id",
                     "template_id was not specified but it is required when building CaseSummary",
                 )

@@ -69,16 +69,16 @@ impl AuthenticationConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`role_arn`](crate::types::builders::AuthenticationConfigurationBuilder::role_arn)
     /// - [`connectivity`](crate::types::builders::AuthenticationConfigurationBuilder::connectivity)
-    pub fn build(self) -> ::std::result::Result<crate::types::AuthenticationConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AuthenticationConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AuthenticationConfiguration {
             role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role_arn",
                     "role_arn was not specified but it is required when building AuthenticationConfiguration",
                 )
             })?,
             connectivity: self.connectivity.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "connectivity",
                     "connectivity was not specified but it is required when building AuthenticationConfiguration",
                 )

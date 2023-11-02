@@ -52,7 +52,7 @@ impl BatchGetMetricDataInputBuilder {
     /// Consumes the builder and constructs a [`BatchGetMetricDataInput`](crate::operation::batch_get_metric_data::BatchGetMetricDataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_get_metric_data::BatchGetMetricDataInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::batch_get_metric_data::BatchGetMetricDataInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::batch_get_metric_data::BatchGetMetricDataInput { queries: self.queries })
     }

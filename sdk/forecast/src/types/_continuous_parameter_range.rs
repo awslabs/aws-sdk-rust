@@ -258,22 +258,22 @@ impl ContinuousParameterRangeBuilder {
     /// - [`name`](crate::types::builders::ContinuousParameterRangeBuilder::name)
     /// - [`max_value`](crate::types::builders::ContinuousParameterRangeBuilder::max_value)
     /// - [`min_value`](crate::types::builders::ContinuousParameterRangeBuilder::min_value)
-    pub fn build(self) -> ::std::result::Result<crate::types::ContinuousParameterRange, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ContinuousParameterRange, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ContinuousParameterRange {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building ContinuousParameterRange",
                 )
             })?,
             max_value: self.max_value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "max_value",
                     "max_value was not specified but it is required when building ContinuousParameterRange",
                 )
             })?,
             min_value: self.min_value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "min_value",
                     "min_value was not specified but it is required when building ContinuousParameterRange",
                 )

@@ -181,7 +181,7 @@ impl UpdateVpcEndpointInputBuilder {
     /// Consumes the builder and constructs a [`UpdateVpcEndpointInput`](crate::operation::update_vpc_endpoint::UpdateVpcEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_vpc_endpoint::UpdateVpcEndpointInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_vpc_endpoint::UpdateVpcEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_vpc_endpoint::UpdateVpcEndpointInput {
             id: self.id,
             add_subnet_ids: self.add_subnet_ids,

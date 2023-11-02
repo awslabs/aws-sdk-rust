@@ -64,7 +64,7 @@ impl GetBackendInputBuilder {
         &self.backend_environment_name
     }
     /// Consumes the builder and constructs a [`GetBackendInput`](crate::operation::get_backend::GetBackendInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_backend::GetBackendInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_backend::GetBackendInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_backend::GetBackendInput {
             app_id: self.app_id,
             backend_environment_name: self.backend_environment_name,

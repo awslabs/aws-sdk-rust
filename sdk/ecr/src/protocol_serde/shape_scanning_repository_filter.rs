@@ -2,7 +2,7 @@
 pub fn ser_scanning_repository_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ScanningRepositoryFilter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("filter").string(input.filter.as_str());
     }

@@ -135,16 +135,16 @@ impl SnoozeAlarmActionRequestBuilder {
     /// - [`request_id`](crate::types::builders::SnoozeAlarmActionRequestBuilder::request_id)
     /// - [`alarm_model_name`](crate::types::builders::SnoozeAlarmActionRequestBuilder::alarm_model_name)
     /// - [`snooze_duration`](crate::types::builders::SnoozeAlarmActionRequestBuilder::snooze_duration)
-    pub fn build(self) -> ::std::result::Result<crate::types::SnoozeAlarmActionRequest, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SnoozeAlarmActionRequest, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SnoozeAlarmActionRequest {
             request_id: self.request_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "request_id",
                     "request_id was not specified but it is required when building SnoozeAlarmActionRequest",
                 )
             })?,
             alarm_model_name: self.alarm_model_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "alarm_model_name",
                     "alarm_model_name was not specified but it is required when building SnoozeAlarmActionRequest",
                 )
@@ -152,7 +152,7 @@ impl SnoozeAlarmActionRequestBuilder {
             key_value: self.key_value,
             note: self.note,
             snooze_duration: self.snooze_duration.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "snooze_duration",
                     "snooze_duration was not specified but it is required when building SnoozeAlarmActionRequest",
                 )

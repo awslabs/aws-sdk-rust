@@ -106,7 +106,7 @@ impl ListTypesInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListTypesInput`](crate::operation::list_types::ListTypesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_types::ListTypesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_types::ListTypesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_types::ListTypesInput {
             api_id: self.api_id,
             format: self.format,

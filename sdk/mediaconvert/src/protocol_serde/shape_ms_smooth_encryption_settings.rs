@@ -2,7 +2,7 @@
 pub fn ser_ms_smooth_encryption_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MsSmoothEncryptionSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.speke_key_provider {
         #[allow(unused_mut)]
         let mut object_2 = object.key("spekeKeyProvider").start_object();

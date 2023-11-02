@@ -124,7 +124,7 @@ impl BatchGetDeploymentTargetsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_deployment_targets::BatchGetDeploymentTargetsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::batch_get_deployment_targets::BatchGetDeploymentTargetsInput {
             deployment_id: self.deployment_id,

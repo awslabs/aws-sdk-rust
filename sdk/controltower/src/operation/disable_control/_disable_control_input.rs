@@ -66,7 +66,7 @@ impl DisableControlInputBuilder {
     /// Consumes the builder and constructs a [`DisableControlInput`](crate::operation::disable_control::DisableControlInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::disable_control::DisableControlInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::disable_control::DisableControlInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::disable_control::DisableControlInput {
             control_identifier: self.control_identifier,
             target_identifier: self.target_identifier,

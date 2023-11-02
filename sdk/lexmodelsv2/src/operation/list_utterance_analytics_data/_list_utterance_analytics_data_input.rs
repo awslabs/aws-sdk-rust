@@ -187,7 +187,7 @@ impl ListUtteranceAnalyticsDataInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_utterance_analytics_data::ListUtteranceAnalyticsDataInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_utterance_analytics_data::ListUtteranceAnalyticsDataInput {
             bot_id: self.bot_id,

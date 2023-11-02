@@ -65,8 +65,10 @@ impl UpdateEventIntegrationInputBuilder {
     /// Consumes the builder and constructs a [`UpdateEventIntegrationInput`](crate::operation::update_event_integration::UpdateEventIntegrationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_event_integration::UpdateEventIntegrationInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::update_event_integration::UpdateEventIntegrationInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::update_event_integration::UpdateEventIntegrationInput {
             name: self.name,
             description: self.description,

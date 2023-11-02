@@ -110,7 +110,7 @@ impl DeleteHubContentInputBuilder {
     /// Consumes the builder and constructs a [`DeleteHubContentInput`](crate::operation::delete_hub_content::DeleteHubContentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_hub_content::DeleteHubContentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_hub_content::DeleteHubContentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_hub_content::DeleteHubContentInput {
             hub_name: self.hub_name,
             hub_content_type: self.hub_content_type,

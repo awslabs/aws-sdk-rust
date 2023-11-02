@@ -50,10 +50,10 @@ impl ImmunityTimePropertyBuilder {
     /// Consumes the builder and constructs a [`ImmunityTimeProperty`](crate::types::ImmunityTimeProperty).
     /// This method will fail if any of the following fields are not set:
     /// - [`immunity_time`](crate::types::builders::ImmunityTimePropertyBuilder::immunity_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::ImmunityTimeProperty, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ImmunityTimeProperty, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ImmunityTimeProperty {
             immunity_time: self.immunity_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "immunity_time",
                     "immunity_time was not specified but it is required when building ImmunityTimeProperty",
                 )

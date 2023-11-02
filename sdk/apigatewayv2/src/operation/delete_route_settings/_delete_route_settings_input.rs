@@ -88,7 +88,7 @@ impl DeleteRouteSettingsInputBuilder {
     /// Consumes the builder and constructs a [`DeleteRouteSettingsInput`](crate::operation::delete_route_settings::DeleteRouteSettingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_route_settings::DeleteRouteSettingsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_route_settings::DeleteRouteSettingsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_route_settings::DeleteRouteSettingsInput {
             api_id: self.api_id,

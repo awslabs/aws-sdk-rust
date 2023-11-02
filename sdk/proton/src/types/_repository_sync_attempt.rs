@@ -97,22 +97,22 @@ impl RepositorySyncAttemptBuilder {
     /// - [`started_at`](crate::types::builders::RepositorySyncAttemptBuilder::started_at)
     /// - [`status`](crate::types::builders::RepositorySyncAttemptBuilder::status)
     /// - [`events`](crate::types::builders::RepositorySyncAttemptBuilder::events)
-    pub fn build(self) -> ::std::result::Result<crate::types::RepositorySyncAttempt, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RepositorySyncAttempt, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RepositorySyncAttempt {
             started_at: self.started_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "started_at",
                     "started_at was not specified but it is required when building RepositorySyncAttempt",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building RepositorySyncAttempt",
                 )
             })?,
             events: self.events.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "events",
                     "events was not specified but it is required when building RepositorySyncAttempt",
                 )

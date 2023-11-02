@@ -210,11 +210,11 @@ impl ResourceSetBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::ResourceSetBuilder::name)
     /// - [`resource_type_list`](crate::types::builders::ResourceSetBuilder::resource_type_list)
-    pub fn build(self) -> ::std::result::Result<crate::types::ResourceSet, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ResourceSet, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ResourceSet {
             id: self.id,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building ResourceSet",
                 )
@@ -222,7 +222,7 @@ impl ResourceSetBuilder {
             description: self.description,
             update_token: self.update_token,
             resource_type_list: self.resource_type_list.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_type_list",
                     "resource_type_list was not specified but it is required when building ResourceSet",
                 )

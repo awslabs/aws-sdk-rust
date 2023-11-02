@@ -67,10 +67,10 @@ impl VectorEnrichmentJobInputConfigBuilder {
     /// Consumes the builder and constructs a [`VectorEnrichmentJobInputConfig`](crate::types::VectorEnrichmentJobInputConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`document_type`](crate::types::builders::VectorEnrichmentJobInputConfigBuilder::document_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::VectorEnrichmentJobInputConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::VectorEnrichmentJobInputConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::VectorEnrichmentJobInputConfig {
             document_type: self.document_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "document_type",
                     "document_type was not specified but it is required when building VectorEnrichmentJobInputConfig",
                 )

@@ -13,7 +13,6 @@ use ::aws_smithy_runtime::client::retries::classifiers::{
     HttpStatusCodeClassifier, TransientErrorClassifier,
 };
 use aws_smithy_async::rt::sleep::TokioSleep;
-use aws_smithy_http::body::{BoxBody, SdkBody};
 use aws_smithy_runtime::client::http::hyper_014::HyperClientBuilder;
 use aws_smithy_runtime::client::http::test_util::wire::{
     RecordedEvent, ReplayedEvent, WireMockServer,
@@ -24,6 +23,7 @@ use aws_smithy_runtime::{ev, match_events};
 use aws_smithy_runtime_api::client::interceptors::context::InterceptorContext;
 use aws_smithy_runtime_api::client::orchestrator::OrchestratorError;
 use aws_smithy_runtime_api::client::retries::classifiers::{ClassifyRetry, RetryAction};
+use aws_smithy_types::body::{BoxBody, SdkBody};
 use aws_smithy_types::retry::{ErrorKind, ProvideErrorKind, ReconnectMode, RetryConfig};
 use aws_smithy_types::timeout::TimeoutConfig;
 use hyper::client::Builder as HyperBuilder;

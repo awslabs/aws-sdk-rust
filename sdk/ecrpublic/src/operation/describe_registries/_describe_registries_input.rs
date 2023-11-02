@@ -74,7 +74,7 @@ impl DescribeRegistriesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeRegistriesInput`](crate::operation::describe_registries::DescribeRegistriesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_registries::DescribeRegistriesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_registries::DescribeRegistriesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_registries::DescribeRegistriesInput {
             next_token: self.next_token,
             max_results: self.max_results,

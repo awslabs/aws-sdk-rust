@@ -51,7 +51,7 @@ impl BatchGetViewInputBuilder {
     /// Consumes the builder and constructs a [`BatchGetViewInput`](crate::operation::batch_get_view::BatchGetViewInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_get_view::BatchGetViewInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::batch_get_view::BatchGetViewInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::batch_get_view::BatchGetViewInput { view_arns: self.view_arns })
     }
 }

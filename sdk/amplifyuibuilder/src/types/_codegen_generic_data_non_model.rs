@@ -53,10 +53,10 @@ impl CodegenGenericDataNonModelBuilder {
     /// Consumes the builder and constructs a [`CodegenGenericDataNonModel`](crate::types::CodegenGenericDataNonModel).
     /// This method will fail if any of the following fields are not set:
     /// - [`fields`](crate::types::builders::CodegenGenericDataNonModelBuilder::fields)
-    pub fn build(self) -> ::std::result::Result<crate::types::CodegenGenericDataNonModel, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CodegenGenericDataNonModel, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CodegenGenericDataNonModel {
             fields: self.fields.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "fields",
                     "fields was not specified but it is required when building CodegenGenericDataNonModel",
                 )

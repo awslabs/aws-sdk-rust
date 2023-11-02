@@ -86,7 +86,7 @@ impl ListAttendeesInputBuilder {
     /// Consumes the builder and constructs a [`ListAttendeesInput`](crate::operation::list_attendees::ListAttendeesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_attendees::ListAttendeesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_attendees::ListAttendeesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_attendees::ListAttendeesInput {
             meeting_id: self.meeting_id,
             next_token: self.next_token,

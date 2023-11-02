@@ -113,22 +113,22 @@ impl PrincipalBuilder {
     /// - [`name`](crate::types::builders::PrincipalBuilder::name)
     /// - [`r#type`](crate::types::builders::PrincipalBuilder::r#type)
     /// - [`access`](crate::types::builders::PrincipalBuilder::access)
-    pub fn build(self) -> ::std::result::Result<crate::types::Principal, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Principal, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Principal {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building Principal",
                 )
             })?,
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building Principal",
                 )
             })?,
             access: self.access.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "access",
                     "access was not specified but it is required when building Principal",
                 )

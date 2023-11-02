@@ -154,7 +154,7 @@ impl AcceptPageInputBuilder {
         &self.accept_code_validation
     }
     /// Consumes the builder and constructs a [`AcceptPageInput`](crate::operation::accept_page::AcceptPageInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::accept_page::AcceptPageInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::accept_page::AcceptPageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::accept_page::AcceptPageInput {
             page_id: self.page_id,
             contact_channel_id: self.contact_channel_id,

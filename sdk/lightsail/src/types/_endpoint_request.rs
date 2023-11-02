@@ -90,16 +90,16 @@ impl EndpointRequestBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`container_name`](crate::types::builders::EndpointRequestBuilder::container_name)
     /// - [`container_port`](crate::types::builders::EndpointRequestBuilder::container_port)
-    pub fn build(self) -> ::std::result::Result<crate::types::EndpointRequest, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::EndpointRequest, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EndpointRequest {
             container_name: self.container_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "container_name",
                     "container_name was not specified but it is required when building EndpointRequest",
                 )
             })?,
             container_port: self.container_port.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "container_port",
                     "container_port was not specified but it is required when building EndpointRequest",
                 )

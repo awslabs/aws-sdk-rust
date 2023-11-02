@@ -2,7 +2,7 @@
 pub fn ser_ec2_tag_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Ec2TagFilter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.key {
         object.key("Key").string(var_1.as_str());
     }

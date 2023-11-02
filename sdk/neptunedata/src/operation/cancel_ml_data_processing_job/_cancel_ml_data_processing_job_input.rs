@@ -88,7 +88,7 @@ impl CancelMlDataProcessingJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_ml_data_processing_job::CancelMlDataProcessingJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::cancel_ml_data_processing_job::CancelMlDataProcessingJobInput {
             id: self.id,

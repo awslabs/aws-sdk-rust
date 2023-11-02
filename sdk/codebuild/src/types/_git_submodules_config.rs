@@ -45,10 +45,10 @@ impl GitSubmodulesConfigBuilder {
     /// Consumes the builder and constructs a [`GitSubmodulesConfig`](crate::types::GitSubmodulesConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`fetch_submodules`](crate::types::builders::GitSubmodulesConfigBuilder::fetch_submodules)
-    pub fn build(self) -> ::std::result::Result<crate::types::GitSubmodulesConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::GitSubmodulesConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::GitSubmodulesConfig {
             fetch_submodules: self.fetch_submodules.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "fetch_submodules",
                     "fetch_submodules was not specified but it is required when building GitSubmodulesConfig",
                 )

@@ -182,7 +182,7 @@ impl DescribePackageInputBuilder {
     /// Consumes the builder and constructs a [`DescribePackageInput`](crate::operation::describe_package::DescribePackageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_package::DescribePackageInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_package::DescribePackageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_package::DescribePackageInput {
             domain: self.domain,
             domain_owner: self.domain_owner,

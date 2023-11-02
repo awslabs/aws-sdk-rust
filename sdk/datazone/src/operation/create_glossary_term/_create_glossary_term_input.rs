@@ -207,7 +207,8 @@ impl CreateGlossaryTermInputBuilder {
     /// Consumes the builder and constructs a [`CreateGlossaryTermInput`](crate::operation::create_glossary_term::CreateGlossaryTermInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_glossary_term::CreateGlossaryTermInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_glossary_term::CreateGlossaryTermInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_glossary_term::CreateGlossaryTermInput {
             domain_identifier: self.domain_identifier,
             glossary_identifier: self.glossary_identifier,

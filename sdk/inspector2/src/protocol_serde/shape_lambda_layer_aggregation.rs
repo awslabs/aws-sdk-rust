@@ -2,7 +2,7 @@
 pub fn ser_lambda_layer_aggregation(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LambdaLayerAggregation,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.function_names {
         let mut array_2 = object.key("functionNames").start_array();
         for item_3 in var_1 {

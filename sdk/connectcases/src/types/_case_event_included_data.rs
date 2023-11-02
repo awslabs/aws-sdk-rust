@@ -51,10 +51,10 @@ impl CaseEventIncludedDataBuilder {
     /// Consumes the builder and constructs a [`CaseEventIncludedData`](crate::types::CaseEventIncludedData).
     /// This method will fail if any of the following fields are not set:
     /// - [`fields`](crate::types::builders::CaseEventIncludedDataBuilder::fields)
-    pub fn build(self) -> ::std::result::Result<crate::types::CaseEventIncludedData, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CaseEventIncludedData, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CaseEventIncludedData {
             fields: self.fields.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "fields",
                     "fields was not specified but it is required when building CaseEventIncludedData",
                 )

@@ -72,17 +72,17 @@ impl ApplicationMaintenanceConfigurationDescriptionBuilder {
     /// - [`application_maintenance_window_end_time`](crate::types::builders::ApplicationMaintenanceConfigurationDescriptionBuilder::application_maintenance_window_end_time)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::ApplicationMaintenanceConfigurationDescription, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::ApplicationMaintenanceConfigurationDescription, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::types::ApplicationMaintenanceConfigurationDescription {
                 application_maintenance_window_start_time: self.application_maintenance_window_start_time
                     .ok_or_else(||
-                        ::aws_smithy_http::operation::error::BuildError::missing_field("application_maintenance_window_start_time", "application_maintenance_window_start_time was not specified but it is required when building ApplicationMaintenanceConfigurationDescription")
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("application_maintenance_window_start_time", "application_maintenance_window_start_time was not specified but it is required when building ApplicationMaintenanceConfigurationDescription")
                     )?
                 ,
                 application_maintenance_window_end_time: self.application_maintenance_window_end_time
                     .ok_or_else(||
-                        ::aws_smithy_http::operation::error::BuildError::missing_field("application_maintenance_window_end_time", "application_maintenance_window_end_time was not specified but it is required when building ApplicationMaintenanceConfigurationDescription")
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("application_maintenance_window_end_time", "application_maintenance_window_end_time was not specified but it is required when building ApplicationMaintenanceConfigurationDescription")
                     )?
                 ,
             }

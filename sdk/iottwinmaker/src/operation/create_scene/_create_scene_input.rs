@@ -197,7 +197,7 @@ impl CreateSceneInputBuilder {
         &self.scene_metadata
     }
     /// Consumes the builder and constructs a [`CreateSceneInput`](crate::operation::create_scene::CreateSceneInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_scene::CreateSceneInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_scene::CreateSceneInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_scene::CreateSceneInput {
             workspace_id: self.workspace_id,
             scene_id: self.scene_id,

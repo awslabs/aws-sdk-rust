@@ -70,16 +70,16 @@ impl AlarmBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`alarm_name`](crate::types::builders::AlarmBuilder::alarm_name)
     /// - [`alarm_arn`](crate::types::builders::AlarmBuilder::alarm_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::Alarm, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Alarm, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Alarm {
             alarm_name: self.alarm_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "alarm_name",
                     "alarm_name was not specified but it is required when building Alarm",
                 )
             })?,
             alarm_arn: self.alarm_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "alarm_arn",
                     "alarm_arn was not specified but it is required when building Alarm",
                 )

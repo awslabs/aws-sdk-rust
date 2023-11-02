@@ -88,7 +88,7 @@ impl AttachToIndexInputBuilder {
     /// Consumes the builder and constructs a [`AttachToIndexInput`](crate::operation::attach_to_index::AttachToIndexInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::attach_to_index::AttachToIndexInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::attach_to_index::AttachToIndexInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::attach_to_index::AttachToIndexInput {
             directory_arn: self.directory_arn,
             index_reference: self.index_reference,

@@ -44,7 +44,7 @@ impl DescribeClusterInputBuilder {
     /// Consumes the builder and constructs a [`DescribeClusterInput`](crate::operation::describe_cluster::DescribeClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_cluster::DescribeClusterInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_cluster::DescribeClusterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_cluster::DescribeClusterInput { cluster_id: self.cluster_id })
     }
 }

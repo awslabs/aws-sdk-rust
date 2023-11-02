@@ -116,7 +116,7 @@ impl CreateRobotInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateRobotInput`](crate::operation::create_robot::CreateRobotInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_robot::CreateRobotInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_robot::CreateRobotInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_robot::CreateRobotInput {
             name: self.name,
             architecture: self.architecture,

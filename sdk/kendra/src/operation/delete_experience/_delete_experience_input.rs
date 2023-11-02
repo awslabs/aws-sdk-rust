@@ -66,7 +66,7 @@ impl DeleteExperienceInputBuilder {
     /// Consumes the builder and constructs a [`DeleteExperienceInput`](crate::operation::delete_experience::DeleteExperienceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_experience::DeleteExperienceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_experience::DeleteExperienceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_experience::DeleteExperienceInput {
             id: self.id,
             index_id: self.index_id,

@@ -2,7 +2,7 @@
 pub fn ser_tracing_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TracingConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.enabled {
         object.key("enabled").boolean(input.enabled);
     }

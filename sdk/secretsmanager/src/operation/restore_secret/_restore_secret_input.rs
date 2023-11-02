@@ -49,7 +49,7 @@ impl RestoreSecretInputBuilder {
     /// Consumes the builder and constructs a [`RestoreSecretInput`](crate::operation::restore_secret::RestoreSecretInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::restore_secret::RestoreSecretInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::restore_secret::RestoreSecretInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::restore_secret::RestoreSecretInput { secret_id: self.secret_id })
     }
 }

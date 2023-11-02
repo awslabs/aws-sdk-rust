@@ -46,7 +46,7 @@ impl DeleteOrganizationConfigRuleInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_organization_config_rule::DeleteOrganizationConfigRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_organization_config_rule::DeleteOrganizationConfigRuleInput {
             organization_config_rule_name: self.organization_config_rule_name,

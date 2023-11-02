@@ -2,7 +2,7 @@
 pub fn ser_text_transformation(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TextTransformation,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Priority").number(
             #[allow(clippy::useless_conversion)]

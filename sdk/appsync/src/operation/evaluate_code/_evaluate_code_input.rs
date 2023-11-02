@@ -107,7 +107,9 @@ impl EvaluateCodeInputBuilder {
         &self.function
     }
     /// Consumes the builder and constructs a [`EvaluateCodeInput`](crate::operation::evaluate_code::EvaluateCodeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::evaluate_code::EvaluateCodeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::evaluate_code::EvaluateCodeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::evaluate_code::EvaluateCodeInput {
             runtime: self.runtime,
             code: self.code,

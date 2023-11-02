@@ -93,22 +93,22 @@ impl RepositoryBranchInputBuilder {
     /// - [`provider`](crate::types::builders::RepositoryBranchInputBuilder::provider)
     /// - [`name`](crate::types::builders::RepositoryBranchInputBuilder::name)
     /// - [`branch`](crate::types::builders::RepositoryBranchInputBuilder::branch)
-    pub fn build(self) -> ::std::result::Result<crate::types::RepositoryBranchInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RepositoryBranchInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RepositoryBranchInput {
             provider: self.provider.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "provider",
                     "provider was not specified but it is required when building RepositoryBranchInput",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building RepositoryBranchInput",
                 )
             })?,
             branch: self.branch.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "branch",
                     "branch was not specified but it is required when building RepositoryBranchInput",
                 )

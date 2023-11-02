@@ -68,7 +68,7 @@ impl DetectTextInputBuilder {
         &self.filters
     }
     /// Consumes the builder and constructs a [`DetectTextInput`](crate::operation::detect_text::DetectTextInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::detect_text::DetectTextInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::detect_text::DetectTextInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::detect_text::DetectTextInput {
             image: self.image,
             filters: self.filters,

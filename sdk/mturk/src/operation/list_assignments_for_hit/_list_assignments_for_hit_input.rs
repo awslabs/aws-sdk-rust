@@ -115,7 +115,7 @@ impl ListAssignmentsForHitInputBuilder {
     /// Consumes the builder and constructs a [`ListAssignmentsForHitInput`](crate::operation::list_assignments_for_hit::ListAssignmentsForHitInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_assignments_for_hit::ListAssignmentsForHitInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_assignments_for_hit::ListAssignmentsForHitInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_assignments_for_hit::ListAssignmentsForHitInput {
             hit_id: self.hit_id,

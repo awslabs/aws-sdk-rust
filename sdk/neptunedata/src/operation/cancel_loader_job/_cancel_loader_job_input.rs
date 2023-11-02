@@ -44,7 +44,7 @@ impl CancelLoaderJobInputBuilder {
     /// Consumes the builder and constructs a [`CancelLoaderJobInput`](crate::operation::cancel_loader_job::CancelLoaderJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::cancel_loader_job::CancelLoaderJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::cancel_loader_job::CancelLoaderJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::cancel_loader_job::CancelLoaderJobInput { load_id: self.load_id })
     }
 }

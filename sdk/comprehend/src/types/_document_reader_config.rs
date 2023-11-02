@@ -163,10 +163,10 @@ impl DocumentReaderConfigBuilder {
     /// Consumes the builder and constructs a [`DocumentReaderConfig`](crate::types::DocumentReaderConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`document_read_action`](crate::types::builders::DocumentReaderConfigBuilder::document_read_action)
-    pub fn build(self) -> ::std::result::Result<crate::types::DocumentReaderConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DocumentReaderConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DocumentReaderConfig {
             document_read_action: self.document_read_action.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "document_read_action",
                     "document_read_action was not specified but it is required when building DocumentReaderConfig",
                 )

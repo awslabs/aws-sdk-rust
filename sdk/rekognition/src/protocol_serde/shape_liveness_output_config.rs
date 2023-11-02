@@ -2,7 +2,7 @@
 pub fn ser_liveness_output_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LivenessOutputConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("S3Bucket").string(input.s3_bucket.as_str());
     }

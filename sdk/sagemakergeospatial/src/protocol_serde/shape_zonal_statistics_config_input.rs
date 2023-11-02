@@ -61,7 +61,7 @@ where
 pub fn ser_zonal_statistics_config_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ZonalStatisticsConfigInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("ZoneS3Path").string(input.zone_s3_path.as_str());
     }

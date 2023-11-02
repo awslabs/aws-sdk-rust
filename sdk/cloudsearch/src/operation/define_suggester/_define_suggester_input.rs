@@ -67,7 +67,7 @@ impl DefineSuggesterInputBuilder {
     /// Consumes the builder and constructs a [`DefineSuggesterInput`](crate::operation::define_suggester::DefineSuggesterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::define_suggester::DefineSuggesterInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::define_suggester::DefineSuggesterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::define_suggester::DefineSuggesterInput {
             domain_name: self.domain_name,
             suggester: self.suggester,

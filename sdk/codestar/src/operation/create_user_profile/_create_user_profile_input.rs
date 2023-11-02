@@ -119,7 +119,7 @@ impl CreateUserProfileInputBuilder {
     /// Consumes the builder and constructs a [`CreateUserProfileInput`](crate::operation::create_user_profile::CreateUserProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_user_profile::CreateUserProfileInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_user_profile::CreateUserProfileInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_user_profile::CreateUserProfileInput {
             user_arn: self.user_arn,
             display_name: self.display_name,

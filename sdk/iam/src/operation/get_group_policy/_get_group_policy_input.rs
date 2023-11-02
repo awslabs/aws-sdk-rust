@@ -76,7 +76,7 @@ impl GetGroupPolicyInputBuilder {
     /// Consumes the builder and constructs a [`GetGroupPolicyInput`](crate::operation::get_group_policy::GetGroupPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_group_policy::GetGroupPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_group_policy::GetGroupPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_group_policy::GetGroupPolicyInput {
             group_name: self.group_name,
             policy_name: self.policy_name,

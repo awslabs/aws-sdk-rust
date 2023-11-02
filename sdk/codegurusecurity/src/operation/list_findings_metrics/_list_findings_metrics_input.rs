@@ -108,7 +108,7 @@ impl ListFindingsMetricsInputBuilder {
     /// Consumes the builder and constructs a [`ListFindingsMetricsInput`](crate::operation::list_findings_metrics::ListFindingsMetricsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_findings_metrics::ListFindingsMetricsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_findings_metrics::ListFindingsMetricsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_findings_metrics::ListFindingsMetricsInput {
             next_token: self.next_token,

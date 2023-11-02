@@ -154,25 +154,25 @@ impl IndexConfigurationSummaryBuilder {
     /// - [`created_at`](crate::types::builders::IndexConfigurationSummaryBuilder::created_at)
     /// - [`updated_at`](crate::types::builders::IndexConfigurationSummaryBuilder::updated_at)
     /// - [`status`](crate::types::builders::IndexConfigurationSummaryBuilder::status)
-    pub fn build(self) -> ::std::result::Result<crate::types::IndexConfigurationSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::IndexConfigurationSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::IndexConfigurationSummary {
             name: self.name,
             id: self.id,
             edition: self.edition,
             created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
                     "created_at was not specified but it is required when building IndexConfigurationSummary",
                 )
             })?,
             updated_at: self.updated_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "updated_at",
                     "updated_at was not specified but it is required when building IndexConfigurationSummary",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building IndexConfigurationSummary",
                 )

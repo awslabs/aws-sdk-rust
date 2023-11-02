@@ -114,22 +114,22 @@ impl MonitorBuilder {
     /// - [`monitor_name`](crate::types::builders::MonitorBuilder::monitor_name)
     /// - [`monitor_arn`](crate::types::builders::MonitorBuilder::monitor_arn)
     /// - [`status`](crate::types::builders::MonitorBuilder::status)
-    pub fn build(self) -> ::std::result::Result<crate::types::Monitor, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Monitor, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Monitor {
             monitor_name: self.monitor_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "monitor_name",
                     "monitor_name was not specified but it is required when building Monitor",
                 )
             })?,
             monitor_arn: self.monitor_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "monitor_arn",
                     "monitor_arn was not specified but it is required when building Monitor",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building Monitor",
                 )

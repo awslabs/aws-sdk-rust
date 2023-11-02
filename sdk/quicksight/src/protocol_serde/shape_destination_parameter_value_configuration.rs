@@ -2,7 +2,7 @@
 pub fn ser_destination_parameter_value_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DestinationParameterValueConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.custom_values_configuration {
         #[allow(unused_mut)]
         let mut object_2 = object.key("CustomValuesConfiguration").start_object();

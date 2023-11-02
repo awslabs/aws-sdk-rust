@@ -220,7 +220,7 @@ impl AddStorageSystemInputBuilder {
     /// Consumes the builder and constructs a [`AddStorageSystemInput`](crate::operation::add_storage_system::AddStorageSystemInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::add_storage_system::AddStorageSystemInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::add_storage_system::AddStorageSystemInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::add_storage_system::AddStorageSystemInput {
             server_configuration: self.server_configuration,
             system_type: self.system_type,

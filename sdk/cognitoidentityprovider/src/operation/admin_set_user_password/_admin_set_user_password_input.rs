@@ -119,7 +119,7 @@ impl AdminSetUserPasswordInputBuilder {
     /// Consumes the builder and constructs a [`AdminSetUserPasswordInput`](crate::operation::admin_set_user_password::AdminSetUserPasswordInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::admin_set_user_password::AdminSetUserPasswordInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::admin_set_user_password::AdminSetUserPasswordInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::admin_set_user_password::AdminSetUserPasswordInput {
             user_pool_id: self.user_pool_id,

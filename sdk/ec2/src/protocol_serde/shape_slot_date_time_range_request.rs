@@ -3,7 +3,7 @@
 pub fn ser_slot_date_time_range_request(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::SlotDateTimeRangeRequest,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("EarliestTime");
     if let Some(var_2) = &input.earliest_time {

@@ -90,10 +90,10 @@ impl ListFindingsOutputBuilder {
     /// - [`findings`](crate::operation::list_findings::builders::ListFindingsOutputBuilder::findings)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_findings::ListFindingsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_findings::ListFindingsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_findings::ListFindingsOutput {
             findings: self.findings.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "findings",
                     "findings was not specified but it is required when building ListFindingsOutput",
                 )

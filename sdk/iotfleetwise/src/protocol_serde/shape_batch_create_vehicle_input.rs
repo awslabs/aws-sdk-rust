@@ -2,7 +2,7 @@
 pub fn ser_batch_create_vehicle_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::batch_create_vehicle::BatchCreateVehicleInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.vehicles {
         let mut array_2 = object.key("vehicles").start_array();
         for item_3 in var_1 {

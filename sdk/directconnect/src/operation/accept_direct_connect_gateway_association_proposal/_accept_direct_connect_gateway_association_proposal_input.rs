@@ -131,7 +131,7 @@ impl AcceptDirectConnectGatewayAssociationProposalInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::accept_direct_connect_gateway_association_proposal::AcceptDirectConnectGatewayAssociationProposalInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::accept_direct_connect_gateway_association_proposal::AcceptDirectConnectGatewayAssociationProposalInput {

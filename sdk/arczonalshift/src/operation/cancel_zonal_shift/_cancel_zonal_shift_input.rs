@@ -44,7 +44,7 @@ impl CancelZonalShiftInputBuilder {
     /// Consumes the builder and constructs a [`CancelZonalShiftInput`](crate::operation::cancel_zonal_shift::CancelZonalShiftInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::cancel_zonal_shift::CancelZonalShiftInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::cancel_zonal_shift::CancelZonalShiftInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::cancel_zonal_shift::CancelZonalShiftInput {
             zonal_shift_id: self.zonal_shift_id,
         })

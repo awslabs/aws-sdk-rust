@@ -45,7 +45,7 @@ impl DescribeOfferingInputBuilder {
     /// Consumes the builder and constructs a [`DescribeOfferingInput`](crate::operation::describe_offering::DescribeOfferingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_offering::DescribeOfferingInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_offering::DescribeOfferingInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_offering::DescribeOfferingInput {
             offering_id: self.offering_id,
         })

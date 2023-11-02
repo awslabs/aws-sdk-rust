@@ -88,10 +88,10 @@ impl KendraConfigurationBuilder {
     /// Consumes the builder and constructs a [`KendraConfiguration`](crate::types::KendraConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`kendra_index`](crate::types::builders::KendraConfigurationBuilder::kendra_index)
-    pub fn build(self) -> ::std::result::Result<crate::types::KendraConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::KendraConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::KendraConfiguration {
             kendra_index: self.kendra_index.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "kendra_index",
                     "kendra_index was not specified but it is required when building KendraConfiguration",
                 )

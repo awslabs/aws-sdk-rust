@@ -175,11 +175,11 @@ impl EvaluationResultBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`feature`](crate::types::builders::EvaluationResultBuilder::feature)
     /// - [`entity_id`](crate::types::builders::EvaluationResultBuilder::entity_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::EvaluationResult, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::EvaluationResult, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EvaluationResult {
             project: self.project,
             feature: self.feature.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "feature",
                     "feature was not specified but it is required when building EvaluationResult",
                 )
@@ -187,7 +187,7 @@ impl EvaluationResultBuilder {
             variation: self.variation,
             value: self.value,
             entity_id: self.entity_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "entity_id",
                     "entity_id was not specified but it is required when building EvaluationResult",
                 )

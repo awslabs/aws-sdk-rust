@@ -114,28 +114,28 @@ impl DataEncryptionMetadataBuilder {
     /// - [`allow_duplicates`](crate::types::builders::DataEncryptionMetadataBuilder::allow_duplicates)
     /// - [`allow_joins_on_columns_with_different_names`](crate::types::builders::DataEncryptionMetadataBuilder::allow_joins_on_columns_with_different_names)
     /// - [`preserve_nulls`](crate::types::builders::DataEncryptionMetadataBuilder::preserve_nulls)
-    pub fn build(self) -> ::std::result::Result<crate::types::DataEncryptionMetadata, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DataEncryptionMetadata, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DataEncryptionMetadata {
             allow_cleartext: self.allow_cleartext.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "allow_cleartext",
                     "allow_cleartext was not specified but it is required when building DataEncryptionMetadata",
                 )
             })?,
             allow_duplicates: self.allow_duplicates.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "allow_duplicates",
                     "allow_duplicates was not specified but it is required when building DataEncryptionMetadata",
                 )
             })?,
             allow_joins_on_columns_with_different_names: self.allow_joins_on_columns_with_different_names.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "allow_joins_on_columns_with_different_names",
                     "allow_joins_on_columns_with_different_names was not specified but it is required when building DataEncryptionMetadata",
                 )
             })?,
             preserve_nulls: self.preserve_nulls.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "preserve_nulls",
                     "preserve_nulls was not specified but it is required when building DataEncryptionMetadata",
                 )

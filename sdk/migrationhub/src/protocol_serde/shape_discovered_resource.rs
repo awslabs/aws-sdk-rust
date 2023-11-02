@@ -2,7 +2,7 @@
 pub fn ser_discovered_resource(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DiscoveredResource,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("ConfigurationId").string(input.configuration_id.as_str());
     }

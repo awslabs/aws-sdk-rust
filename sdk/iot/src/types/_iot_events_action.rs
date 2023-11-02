@@ -132,10 +132,10 @@ impl IotEventsActionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`input_name`](crate::types::builders::IotEventsActionBuilder::input_name)
     /// - [`role_arn`](crate::types::builders::IotEventsActionBuilder::role_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::IotEventsAction, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::IotEventsAction, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::IotEventsAction {
             input_name: self.input_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "input_name",
                     "input_name was not specified but it is required when building IotEventsAction",
                 )
@@ -143,7 +143,7 @@ impl IotEventsActionBuilder {
             message_id: self.message_id,
             batch_mode: self.batch_mode,
             role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role_arn",
                     "role_arn was not specified but it is required when building IotEventsAction",
                 )

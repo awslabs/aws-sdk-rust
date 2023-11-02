@@ -111,7 +111,9 @@ impl ListServicesInputBuilder {
         &self.filters
     }
     /// Consumes the builder and constructs a [`ListServicesInput`](crate::operation::list_services::ListServicesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_services::ListServicesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_services::ListServicesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_services::ListServicesInput {
             next_token: self.next_token,
             max_results: self.max_results,

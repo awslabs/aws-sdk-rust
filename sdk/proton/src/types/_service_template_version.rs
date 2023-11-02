@@ -361,29 +361,29 @@ impl ServiceTemplateVersionBuilder {
     /// - [`created_at`](crate::types::builders::ServiceTemplateVersionBuilder::created_at)
     /// - [`last_modified_at`](crate::types::builders::ServiceTemplateVersionBuilder::last_modified_at)
     /// - [`compatible_environment_templates`](crate::types::builders::ServiceTemplateVersionBuilder::compatible_environment_templates)
-    pub fn build(self) -> ::std::result::Result<crate::types::ServiceTemplateVersion, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ServiceTemplateVersion, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ServiceTemplateVersion {
             template_name: self.template_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "template_name",
                     "template_name was not specified but it is required when building ServiceTemplateVersion",
                 )
             })?,
             major_version: self.major_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "major_version",
                     "major_version was not specified but it is required when building ServiceTemplateVersion",
                 )
             })?,
             minor_version: self.minor_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "minor_version",
                     "minor_version was not specified but it is required when building ServiceTemplateVersion",
                 )
             })?,
             recommended_minor_version: self.recommended_minor_version,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building ServiceTemplateVersion",
                 )
@@ -391,25 +391,25 @@ impl ServiceTemplateVersionBuilder {
             status_message: self.status_message,
             description: self.description,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building ServiceTemplateVersion",
                 )
             })?,
             created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
                     "created_at was not specified but it is required when building ServiceTemplateVersion",
                 )
             })?,
             last_modified_at: self.last_modified_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_modified_at",
                     "last_modified_at was not specified but it is required when building ServiceTemplateVersion",
                 )
             })?,
             compatible_environment_templates: self.compatible_environment_templates.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "compatible_environment_templates",
                     "compatible_environment_templates was not specified but it is required when building ServiceTemplateVersion",
                 )

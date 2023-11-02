@@ -151,7 +151,7 @@ impl StartMediaAnalysisJobInputBuilder {
     /// Consumes the builder and constructs a [`StartMediaAnalysisJobInput`](crate::operation::start_media_analysis_job::StartMediaAnalysisJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_media_analysis_job::StartMediaAnalysisJobInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::start_media_analysis_job::StartMediaAnalysisJobInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_media_analysis_job::StartMediaAnalysisJobInput {
             client_request_token: self.client_request_token,

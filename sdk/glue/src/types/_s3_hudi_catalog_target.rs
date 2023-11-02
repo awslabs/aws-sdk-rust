@@ -208,35 +208,35 @@ impl S3HudiCatalogTargetBuilder {
     /// - [`table`](crate::types::builders::S3HudiCatalogTargetBuilder::table)
     /// - [`database`](crate::types::builders::S3HudiCatalogTargetBuilder::database)
     /// - [`additional_options`](crate::types::builders::S3HudiCatalogTargetBuilder::additional_options)
-    pub fn build(self) -> ::std::result::Result<crate::types::S3HudiCatalogTarget, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::S3HudiCatalogTarget, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::S3HudiCatalogTarget {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building S3HudiCatalogTarget",
                 )
             })?,
             inputs: self.inputs.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "inputs",
                     "inputs was not specified but it is required when building S3HudiCatalogTarget",
                 )
             })?,
             partition_keys: self.partition_keys,
             table: self.table.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "table",
                     "table was not specified but it is required when building S3HudiCatalogTarget",
                 )
             })?,
             database: self.database.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "database",
                     "database was not specified but it is required when building S3HudiCatalogTarget",
                 )
             })?,
             additional_options: self.additional_options.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "additional_options",
                     "additional_options was not specified but it is required when building S3HudiCatalogTarget",
                 )

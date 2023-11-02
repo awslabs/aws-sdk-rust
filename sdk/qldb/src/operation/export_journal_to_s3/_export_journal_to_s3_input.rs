@@ -213,7 +213,7 @@ impl ExportJournalToS3InputBuilder {
     /// Consumes the builder and constructs a [`ExportJournalToS3Input`](crate::operation::export_journal_to_s3::ExportJournalToS3Input).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::export_journal_to_s3::ExportJournalToS3Input, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::export_journal_to_s3::ExportJournalToS3Input, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::export_journal_to_s3::ExportJournalToS3Input {
             name: self.name,
             inclusive_start_time: self.inclusive_start_time,

@@ -94,7 +94,9 @@ impl CreateExportInputBuilder {
         &self.file_password
     }
     /// Consumes the builder and constructs a [`CreateExportInput`](crate::operation::create_export::CreateExportInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_export::CreateExportInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_export::CreateExportInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_export::CreateExportInput {
             resource_specification: self.resource_specification,
             file_format: self.file_format,

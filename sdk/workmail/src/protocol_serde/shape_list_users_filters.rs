@@ -2,7 +2,7 @@
 pub fn ser_list_users_filters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ListUsersFilters,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.username_prefix {
         object.key("UsernamePrefix").string(var_1.as_str());
     }

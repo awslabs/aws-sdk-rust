@@ -88,7 +88,7 @@ impl GetImageFrameInputBuilder {
     /// Consumes the builder and constructs a [`GetImageFrameInput`](crate::operation::get_image_frame::GetImageFrameInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_image_frame::GetImageFrameInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_image_frame::GetImageFrameInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_image_frame::GetImageFrameInput {
             datastore_id: self.datastore_id,
             image_set_id: self.image_set_id,

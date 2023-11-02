@@ -2,7 +2,7 @@
 pub fn ser_conformance_pack_input_parameter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ConformancePackInputParameter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("ParameterName").string(input.parameter_name.as_str());
     }

@@ -65,8 +65,10 @@ impl DisassociateFileSystemInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateFileSystemInput`](crate::operation::disassociate_file_system::DisassociateFileSystemInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::disassociate_file_system::DisassociateFileSystemInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_file_system::DisassociateFileSystemInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::disassociate_file_system::DisassociateFileSystemInput {
             file_system_association_arn: self.file_system_association_arn,
             force_delete: self.force_delete,

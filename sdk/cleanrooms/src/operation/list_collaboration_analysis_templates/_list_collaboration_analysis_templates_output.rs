@@ -96,7 +96,7 @@ impl ListCollaborationAnalysisTemplatesOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_collaboration_analysis_templates::ListCollaborationAnalysisTemplatesOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_collaboration_analysis_templates::ListCollaborationAnalysisTemplatesOutput {
@@ -104,7 +104,7 @@ impl ListCollaborationAnalysisTemplatesOutputBuilder {
                 ,
                 collaboration_analysis_template_summaries: self.collaboration_analysis_template_summaries
                     .ok_or_else(||
-                        ::aws_smithy_http::operation::error::BuildError::missing_field("collaboration_analysis_template_summaries", "collaboration_analysis_template_summaries was not specified but it is required when building ListCollaborationAnalysisTemplatesOutput")
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("collaboration_analysis_template_summaries", "collaboration_analysis_template_summaries was not specified but it is required when building ListCollaborationAnalysisTemplatesOutput")
                     )?
                 ,
                 _request_id: self._request_id,

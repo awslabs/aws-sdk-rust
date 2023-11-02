@@ -96,7 +96,7 @@ impl CreateModelPackageGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_model_package_group::CreateModelPackageGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_model_package_group::CreateModelPackageGroupInput {
             model_package_group_name: self.model_package_group_name,

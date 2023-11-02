@@ -68,10 +68,10 @@ impl CustomPluginBuilder {
     /// Consumes the builder and constructs a [`CustomPlugin`](crate::types::CustomPlugin).
     /// This method will fail if any of the following fields are not set:
     /// - [`custom_plugin_arn`](crate::types::builders::CustomPluginBuilder::custom_plugin_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::CustomPlugin, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CustomPlugin, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CustomPlugin {
             custom_plugin_arn: self.custom_plugin_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "custom_plugin_arn",
                     "custom_plugin_arn was not specified but it is required when building CustomPlugin",
                 )

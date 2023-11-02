@@ -117,7 +117,7 @@ impl DescribeSharedDirectoriesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_shared_directories::DescribeSharedDirectoriesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_shared_directories::DescribeSharedDirectoriesInput {
             owner_directory_id: self.owner_directory_id,

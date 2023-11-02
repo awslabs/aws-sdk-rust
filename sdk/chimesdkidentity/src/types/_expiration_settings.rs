@@ -68,16 +68,16 @@ impl ExpirationSettingsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`expiration_days`](crate::types::builders::ExpirationSettingsBuilder::expiration_days)
     /// - [`expiration_criterion`](crate::types::builders::ExpirationSettingsBuilder::expiration_criterion)
-    pub fn build(self) -> ::std::result::Result<crate::types::ExpirationSettings, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ExpirationSettings, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ExpirationSettings {
             expiration_days: self.expiration_days.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "expiration_days",
                     "expiration_days was not specified but it is required when building ExpirationSettings",
                 )
             })?,
             expiration_criterion: self.expiration_criterion.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "expiration_criterion",
                     "expiration_criterion was not specified but it is required when building ExpirationSettings",
                 )

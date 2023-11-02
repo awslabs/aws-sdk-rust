@@ -148,7 +148,9 @@ impl UpdateFilterInputBuilder {
         &self.finding_criteria
     }
     /// Consumes the builder and constructs a [`UpdateFilterInput`](crate::operation::update_filter::UpdateFilterInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_filter::UpdateFilterInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_filter::UpdateFilterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_filter::UpdateFilterInput {
             detector_id: self.detector_id,
             filter_name: self.filter_name,

@@ -86,7 +86,7 @@ impl ListDataSetRevisionsInputBuilder {
     /// Consumes the builder and constructs a [`ListDataSetRevisionsInput`](crate::operation::list_data_set_revisions::ListDataSetRevisionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_data_set_revisions::ListDataSetRevisionsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_data_set_revisions::ListDataSetRevisionsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_data_set_revisions::ListDataSetRevisionsInput {
             data_set_id: self.data_set_id,

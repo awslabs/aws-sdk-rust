@@ -220,7 +220,7 @@ impl SearchTypesInputBuilder {
         &self.managed
     }
     /// Consumes the builder and constructs a [`SearchTypesInput`](crate::operation::search_types::SearchTypesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::search_types::SearchTypesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::search_types::SearchTypesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_types::SearchTypesInput {
             domain_identifier: self.domain_identifier,
             max_results: self.max_results,

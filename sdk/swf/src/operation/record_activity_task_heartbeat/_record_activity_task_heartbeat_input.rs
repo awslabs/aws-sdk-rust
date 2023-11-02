@@ -77,7 +77,7 @@ impl RecordActivityTaskHeartbeatInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::record_activity_task_heartbeat::RecordActivityTaskHeartbeatInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::record_activity_task_heartbeat::RecordActivityTaskHeartbeatInput {
             task_token: self.task_token,

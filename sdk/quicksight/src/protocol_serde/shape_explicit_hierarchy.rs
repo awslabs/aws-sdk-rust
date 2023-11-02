@@ -2,7 +2,7 @@
 pub fn ser_explicit_hierarchy(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ExplicitHierarchy,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("HierarchyId").string(input.hierarchy_id.as_str());
     }

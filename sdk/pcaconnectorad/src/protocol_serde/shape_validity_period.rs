@@ -2,7 +2,7 @@
 pub fn ser_validity_period(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ValidityPeriod,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("PeriodType").string(input.period_type.as_str());
     }

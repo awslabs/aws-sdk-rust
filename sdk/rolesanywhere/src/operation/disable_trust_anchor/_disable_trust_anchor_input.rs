@@ -44,7 +44,8 @@ impl DisableTrustAnchorInputBuilder {
     /// Consumes the builder and constructs a [`DisableTrustAnchorInput`](crate::operation::disable_trust_anchor::DisableTrustAnchorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::disable_trust_anchor::DisableTrustAnchorInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::disable_trust_anchor::DisableTrustAnchorInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::disable_trust_anchor::DisableTrustAnchorInput {
             trust_anchor_id: self.trust_anchor_id,
         })

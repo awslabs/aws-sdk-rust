@@ -295,23 +295,23 @@ impl DescribeGeofenceCollectionOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_geofence_collection::DescribeGeofenceCollectionOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_geofence_collection::DescribeGeofenceCollectionOutput {
             collection_name: self.collection_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "collection_name",
                     "collection_name was not specified but it is required when building DescribeGeofenceCollectionOutput",
                 )
             })?,
             collection_arn: self.collection_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "collection_arn",
                     "collection_arn was not specified but it is required when building DescribeGeofenceCollectionOutput",
                 )
             })?,
             description: self.description.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "description",
                     "description was not specified but it is required when building DescribeGeofenceCollectionOutput",
                 )
@@ -321,13 +321,13 @@ impl DescribeGeofenceCollectionOutputBuilder {
             kms_key_id: self.kms_key_id,
             tags: self.tags,
             create_time: self.create_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "create_time",
                     "create_time was not specified but it is required when building DescribeGeofenceCollectionOutput",
                 )
             })?,
             update_time: self.update_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "update_time",
                     "update_time was not specified but it is required when building DescribeGeofenceCollectionOutput",
                 )

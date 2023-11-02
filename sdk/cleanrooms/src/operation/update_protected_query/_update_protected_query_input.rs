@@ -88,7 +88,7 @@ impl UpdateProtectedQueryInputBuilder {
     /// Consumes the builder and constructs a [`UpdateProtectedQueryInput`](crate::operation::update_protected_query::UpdateProtectedQueryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_protected_query::UpdateProtectedQueryInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_protected_query::UpdateProtectedQueryInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_protected_query::UpdateProtectedQueryInput {
             membership_identifier: self.membership_identifier,

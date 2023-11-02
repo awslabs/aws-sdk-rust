@@ -63,7 +63,7 @@ impl DisableRuleInputBuilder {
         &self.event_bus_name
     }
     /// Consumes the builder and constructs a [`DisableRuleInput`](crate::operation::disable_rule::DisableRuleInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::disable_rule::DisableRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::disable_rule::DisableRuleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::disable_rule::DisableRuleInput {
             name: self.name,
             event_bus_name: self.event_bus_name,

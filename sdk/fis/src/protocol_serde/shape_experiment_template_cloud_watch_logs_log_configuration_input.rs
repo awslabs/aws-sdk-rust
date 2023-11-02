@@ -2,7 +2,7 @@
 pub fn ser_experiment_template_cloud_watch_logs_log_configuration_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ExperimentTemplateCloudWatchLogsLogConfigurationInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("logGroupArn").string(input.log_group_arn.as_str());
     }

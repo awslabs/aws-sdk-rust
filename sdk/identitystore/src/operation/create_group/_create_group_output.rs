@@ -85,16 +85,16 @@ impl CreateGroupOutputBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`group_id`](crate::operation::create_group::builders::CreateGroupOutputBuilder::group_id)
     /// - [`identity_store_id`](crate::operation::create_group::builders::CreateGroupOutputBuilder::identity_store_id)
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_group::CreateGroupOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_group::CreateGroupOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_group::CreateGroupOutput {
             group_id: self.group_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "group_id",
                     "group_id was not specified but it is required when building CreateGroupOutput",
                 )
             })?,
             identity_store_id: self.identity_store_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "identity_store_id",
                     "identity_store_id was not specified but it is required when building CreateGroupOutput",
                 )

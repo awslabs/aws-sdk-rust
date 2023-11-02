@@ -62,10 +62,10 @@ impl UpdateWorkspaceOutputBuilder {
     /// - [`update_date_time`](crate::operation::update_workspace::builders::UpdateWorkspaceOutputBuilder::update_date_time)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_workspace::UpdateWorkspaceOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_workspace::UpdateWorkspaceOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_workspace::UpdateWorkspaceOutput {
             update_date_time: self.update_date_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "update_date_time",
                     "update_date_time was not specified but it is required when building UpdateWorkspaceOutput",
                 )

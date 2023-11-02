@@ -2,7 +2,7 @@
 pub fn ser_table_inline_visualization(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TableInlineVisualization,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.data_bars {
         #[allow(unused_mut)]
         let mut object_2 = object.key("DataBars").start_object();

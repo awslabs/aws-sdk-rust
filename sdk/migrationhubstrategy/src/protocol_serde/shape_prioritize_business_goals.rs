@@ -38,7 +38,7 @@ where
 pub fn ser_prioritize_business_goals(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PrioritizeBusinessGoals,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.business_goals {
         #[allow(unused_mut)]
         let mut object_2 = object.key("businessGoals").start_object();

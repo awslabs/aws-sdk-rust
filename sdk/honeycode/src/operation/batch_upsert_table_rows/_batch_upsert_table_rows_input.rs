@@ -136,7 +136,7 @@ impl BatchUpsertTableRowsInputBuilder {
     /// Consumes the builder and constructs a [`BatchUpsertTableRowsInput`](crate::operation::batch_upsert_table_rows::BatchUpsertTableRowsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_upsert_table_rows::BatchUpsertTableRowsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::batch_upsert_table_rows::BatchUpsertTableRowsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::batch_upsert_table_rows::BatchUpsertTableRowsInput {
             workbook_id: self.workbook_id,

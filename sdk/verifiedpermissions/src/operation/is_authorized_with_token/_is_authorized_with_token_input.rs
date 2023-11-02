@@ -213,7 +213,7 @@ impl IsAuthorizedWithTokenInputBuilder {
     /// Consumes the builder and constructs a [`IsAuthorizedWithTokenInput`](crate::operation::is_authorized_with_token::IsAuthorizedWithTokenInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::is_authorized_with_token::IsAuthorizedWithTokenInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::is_authorized_with_token::IsAuthorizedWithTokenInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::is_authorized_with_token::IsAuthorizedWithTokenInput {
             policy_store_id: self.policy_store_id,

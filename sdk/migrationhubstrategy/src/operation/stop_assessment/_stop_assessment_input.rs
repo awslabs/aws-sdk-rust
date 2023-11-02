@@ -44,7 +44,7 @@ impl StopAssessmentInputBuilder {
     /// Consumes the builder and constructs a [`StopAssessmentInput`](crate::operation::stop_assessment::StopAssessmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_assessment::StopAssessmentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::stop_assessment::StopAssessmentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_assessment::StopAssessmentInput {
             assessment_id: self.assessment_id,
         })

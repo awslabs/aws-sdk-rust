@@ -463,7 +463,7 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::restore_db_cluster_from_snapshot::RestoreDbClusterFromSnapshotInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::restore_db_cluster_from_snapshot::RestoreDbClusterFromSnapshotInput {
             availability_zones: self.availability_zones,

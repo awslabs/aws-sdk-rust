@@ -280,28 +280,31 @@ impl RoleBuilder {
     /// - [`role_id`](crate::types::builders::RoleBuilder::role_id)
     /// - [`arn`](crate::types::builders::RoleBuilder::arn)
     /// - [`create_date`](crate::types::builders::RoleBuilder::create_date)
-    pub fn build(self) -> ::std::result::Result<crate::types::Role, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Role, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Role {
             path: self.path.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field("path", "path was not specified but it is required when building Role")
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "path",
+                    "path was not specified but it is required when building Role",
+                )
             })?,
             role_name: self.role_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role_name",
                     "role_name was not specified but it is required when building Role",
                 )
             })?,
             role_id: self.role_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role_id",
                     "role_id was not specified but it is required when building Role",
                 )
             })?,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field("arn", "arn was not specified but it is required when building Role")
+                ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building Role")
             })?,
             create_date: self.create_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "create_date",
                     "create_date was not specified but it is required when building Role",
                 )

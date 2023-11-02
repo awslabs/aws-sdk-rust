@@ -97,22 +97,22 @@ impl IntentFilterBuilder {
     /// - [`name`](crate::types::builders::IntentFilterBuilder::name)
     /// - [`values`](crate::types::builders::IntentFilterBuilder::values)
     /// - [`operator`](crate::types::builders::IntentFilterBuilder::operator)
-    pub fn build(self) -> ::std::result::Result<crate::types::IntentFilter, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::IntentFilter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::IntentFilter {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building IntentFilter",
                 )
             })?,
             values: self.values.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "values",
                     "values was not specified but it is required when building IntentFilter",
                 )
             })?,
             operator: self.operator.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "operator",
                     "operator was not specified but it is required when building IntentFilter",
                 )

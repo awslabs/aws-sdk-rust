@@ -102,7 +102,7 @@ impl RegisterDevicesInputBuilder {
     /// Consumes the builder and constructs a [`RegisterDevicesInput`](crate::operation::register_devices::RegisterDevicesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::register_devices::RegisterDevicesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::register_devices::RegisterDevicesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::register_devices::RegisterDevicesInput {
             device_fleet_name: self.device_fleet_name,
             devices: self.devices,

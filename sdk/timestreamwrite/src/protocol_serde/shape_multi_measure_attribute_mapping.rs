@@ -2,7 +2,7 @@
 pub fn ser_multi_measure_attribute_mapping(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MultiMeasureAttributeMapping,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("SourceColumn").string(input.source_column.as_str());
     }

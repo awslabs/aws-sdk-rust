@@ -67,10 +67,10 @@ impl DiscoveryServerConfigurationBuilder {
     /// Consumes the builder and constructs a [`DiscoveryServerConfiguration`](crate::types::DiscoveryServerConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`server_hostname`](crate::types::builders::DiscoveryServerConfigurationBuilder::server_hostname)
-    pub fn build(self) -> ::std::result::Result<crate::types::DiscoveryServerConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DiscoveryServerConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DiscoveryServerConfiguration {
             server_hostname: self.server_hostname.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "server_hostname",
                     "server_hostname was not specified but it is required when building DiscoveryServerConfiguration",
                 )

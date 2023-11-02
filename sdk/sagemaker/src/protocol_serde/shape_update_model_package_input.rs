@@ -2,7 +2,7 @@
 pub fn ser_update_model_package_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_model_package::UpdateModelPackageInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.model_package_arn {
         object.key("ModelPackageArn").string(var_1.as_str());
     }

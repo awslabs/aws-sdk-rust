@@ -96,22 +96,22 @@ impl BatchGetCollaborationAnalysisTemplateErrorBuilder {
     /// - [`message`](crate::types::builders::BatchGetCollaborationAnalysisTemplateErrorBuilder::message)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::BatchGetCollaborationAnalysisTemplateError, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::BatchGetCollaborationAnalysisTemplateError, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::BatchGetCollaborationAnalysisTemplateError {
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building BatchGetCollaborationAnalysisTemplateError",
                 )
             })?,
             code: self.code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "code",
                     "code was not specified but it is required when building BatchGetCollaborationAnalysisTemplateError",
                 )
             })?,
             message: self.message.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "message",
                     "message was not specified but it is required when building BatchGetCollaborationAnalysisTemplateError",
                 )

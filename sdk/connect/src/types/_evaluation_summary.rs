@@ -232,53 +232,53 @@ impl EvaluationSummaryBuilder {
     /// - [`evaluator_arn`](crate::types::builders::EvaluationSummaryBuilder::evaluator_arn)
     /// - [`created_time`](crate::types::builders::EvaluationSummaryBuilder::created_time)
     /// - [`last_modified_time`](crate::types::builders::EvaluationSummaryBuilder::last_modified_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::EvaluationSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::EvaluationSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EvaluationSummary {
             evaluation_id: self.evaluation_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "evaluation_id",
                     "evaluation_id was not specified but it is required when building EvaluationSummary",
                 )
             })?,
             evaluation_arn: self.evaluation_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "evaluation_arn",
                     "evaluation_arn was not specified but it is required when building EvaluationSummary",
                 )
             })?,
             evaluation_form_title: self.evaluation_form_title.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "evaluation_form_title",
                     "evaluation_form_title was not specified but it is required when building EvaluationSummary",
                 )
             })?,
             evaluation_form_id: self.evaluation_form_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "evaluation_form_id",
                     "evaluation_form_id was not specified but it is required when building EvaluationSummary",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building EvaluationSummary",
                 )
             })?,
             evaluator_arn: self.evaluator_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "evaluator_arn",
                     "evaluator_arn was not specified but it is required when building EvaluationSummary",
                 )
             })?,
             score: self.score,
             created_time: self.created_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_time",
                     "created_time was not specified but it is required when building EvaluationSummary",
                 )
             })?,
             last_modified_time: self.last_modified_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_modified_time",
                     "last_modified_time was not specified but it is required when building EvaluationSummary",
                 )

@@ -383,22 +383,22 @@ impl SharePointConfigurationBuilder {
     /// - [`share_point_version`](crate::types::builders::SharePointConfigurationBuilder::share_point_version)
     /// - [`urls`](crate::types::builders::SharePointConfigurationBuilder::urls)
     /// - [`secret_arn`](crate::types::builders::SharePointConfigurationBuilder::secret_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::SharePointConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SharePointConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SharePointConfiguration {
             share_point_version: self.share_point_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "share_point_version",
                     "share_point_version was not specified but it is required when building SharePointConfiguration",
                 )
             })?,
             urls: self.urls.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "urls",
                     "urls was not specified but it is required when building SharePointConfiguration",
                 )
             })?,
             secret_arn: self.secret_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "secret_arn",
                     "secret_arn was not specified but it is required when building SharePointConfiguration",
                 )

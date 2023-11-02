@@ -75,16 +75,16 @@ impl LoggingFilterBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`filters`](crate::types::builders::LoggingFilterBuilder::filters)
     /// - [`default_behavior`](crate::types::builders::LoggingFilterBuilder::default_behavior)
-    pub fn build(self) -> ::std::result::Result<crate::types::LoggingFilter, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::LoggingFilter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::LoggingFilter {
             filters: self.filters.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "filters",
                     "filters was not specified but it is required when building LoggingFilter",
                 )
             })?,
             default_behavior: self.default_behavior.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "default_behavior",
                     "default_behavior was not specified but it is required when building LoggingFilter",
                 )

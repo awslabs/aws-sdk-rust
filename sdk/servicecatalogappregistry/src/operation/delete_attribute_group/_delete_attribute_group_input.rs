@@ -44,7 +44,7 @@ impl DeleteAttributeGroupInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAttributeGroupInput`](crate::operation::delete_attribute_group::DeleteAttributeGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_attribute_group::DeleteAttributeGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_attribute_group::DeleteAttributeGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_attribute_group::DeleteAttributeGroupInput {
             attribute_group: self.attribute_group,

@@ -180,16 +180,16 @@ impl GetHlsManifestConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`manifest_name`](crate::types::builders::GetHlsManifestConfigurationBuilder::manifest_name)
     /// - [`url`](crate::types::builders::GetHlsManifestConfigurationBuilder::url)
-    pub fn build(self) -> ::std::result::Result<crate::types::GetHlsManifestConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::GetHlsManifestConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::GetHlsManifestConfiguration {
             manifest_name: self.manifest_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "manifest_name",
                     "manifest_name was not specified but it is required when building GetHlsManifestConfiguration",
                 )
             })?,
             url: self.url.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "url",
                     "url was not specified but it is required when building GetHlsManifestConfiguration",
                 )

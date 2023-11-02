@@ -305,16 +305,16 @@ impl ExtendedS3DestinationDescriptionBuilder {
     /// - [`role_arn`](crate::types::builders::ExtendedS3DestinationDescriptionBuilder::role_arn)
     /// - [`bucket_arn`](crate::types::builders::ExtendedS3DestinationDescriptionBuilder::bucket_arn)
     /// - [`compression_format`](crate::types::builders::ExtendedS3DestinationDescriptionBuilder::compression_format)
-    pub fn build(self) -> ::std::result::Result<crate::types::ExtendedS3DestinationDescription, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ExtendedS3DestinationDescription, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ExtendedS3DestinationDescription {
             role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role_arn",
                     "role_arn was not specified but it is required when building ExtendedS3DestinationDescription",
                 )
             })?,
             bucket_arn: self.bucket_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "bucket_arn",
                     "bucket_arn was not specified but it is required when building ExtendedS3DestinationDescription",
                 )
@@ -323,7 +323,7 @@ impl ExtendedS3DestinationDescriptionBuilder {
             error_output_prefix: self.error_output_prefix,
             buffering_hints: self.buffering_hints,
             compression_format: self.compression_format.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "compression_format",
                     "compression_format was not specified but it is required when building ExtendedS3DestinationDescription",
                 )

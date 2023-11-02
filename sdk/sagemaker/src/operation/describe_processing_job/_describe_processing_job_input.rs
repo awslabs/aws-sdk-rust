@@ -44,7 +44,7 @@ impl DescribeProcessingJobInputBuilder {
     /// Consumes the builder and constructs a [`DescribeProcessingJobInput`](crate::operation::describe_processing_job::DescribeProcessingJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_processing_job::DescribeProcessingJobInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_processing_job::DescribeProcessingJobInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_processing_job::DescribeProcessingJobInput {
             processing_job_name: self.processing_job_name,

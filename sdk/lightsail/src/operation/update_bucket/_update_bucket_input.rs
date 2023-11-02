@@ -164,7 +164,9 @@ impl UpdateBucketInputBuilder {
         &self.access_log_config
     }
     /// Consumes the builder and constructs a [`UpdateBucketInput`](crate::operation::update_bucket::UpdateBucketInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_bucket::UpdateBucketInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_bucket::UpdateBucketInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_bucket::UpdateBucketInput {
             bucket_name: self.bucket_name,
             access_rules: self.access_rules,

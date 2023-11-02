@@ -94,13 +94,13 @@ impl ListSlackChannelConfigurationsOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_slack_channel_configurations::ListSlackChannelConfigurationsOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_slack_channel_configurations::ListSlackChannelConfigurationsOutput {
                 next_token: self.next_token,
                 slack_channel_configurations: self.slack_channel_configurations.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
                         "slack_channel_configurations",
                         "slack_channel_configurations was not specified but it is required when building ListSlackChannelConfigurationsOutput",
                     )

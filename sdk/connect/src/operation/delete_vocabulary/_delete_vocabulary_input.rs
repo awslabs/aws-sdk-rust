@@ -66,7 +66,7 @@ impl DeleteVocabularyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteVocabularyInput`](crate::operation::delete_vocabulary::DeleteVocabularyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_vocabulary::DeleteVocabularyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_vocabulary::DeleteVocabularyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_vocabulary::DeleteVocabularyInput {
             instance_id: self.instance_id,
             vocabulary_id: self.vocabulary_id,

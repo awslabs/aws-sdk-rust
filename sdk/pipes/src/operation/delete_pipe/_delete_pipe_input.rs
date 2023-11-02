@@ -42,7 +42,7 @@ impl DeletePipeInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`DeletePipeInput`](crate::operation::delete_pipe::DeletePipeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_pipe::DeletePipeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_pipe::DeletePipeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_pipe::DeletePipeInput { name: self.name })
     }
 }

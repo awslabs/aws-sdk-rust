@@ -116,28 +116,28 @@ impl CodeFilePathBuilder {
     /// - [`file_path`](crate::types::builders::CodeFilePathBuilder::file_path)
     /// - [`start_line`](crate::types::builders::CodeFilePathBuilder::start_line)
     /// - [`end_line`](crate::types::builders::CodeFilePathBuilder::end_line)
-    pub fn build(self) -> ::std::result::Result<crate::types::CodeFilePath, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CodeFilePath, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CodeFilePath {
             file_name: self.file_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "file_name",
                     "file_name was not specified but it is required when building CodeFilePath",
                 )
             })?,
             file_path: self.file_path.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "file_path",
                     "file_path was not specified but it is required when building CodeFilePath",
                 )
             })?,
             start_line: self.start_line.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "start_line",
                     "start_line was not specified but it is required when building CodeFilePath",
                 )
             })?,
             end_line: self.end_line.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "end_line",
                     "end_line was not specified but it is required when building CodeFilePath",
                 )

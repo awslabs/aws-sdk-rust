@@ -45,10 +45,10 @@ impl RetryPolicyConfigurationBuilder {
     /// Consumes the builder and constructs a [`RetryPolicyConfiguration`](crate::types::RetryPolicyConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`max_attempts`](crate::types::builders::RetryPolicyConfigurationBuilder::max_attempts)
-    pub fn build(self) -> ::std::result::Result<crate::types::RetryPolicyConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RetryPolicyConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RetryPolicyConfiguration {
             max_attempts: self.max_attempts.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "max_attempts",
                     "max_attempts was not specified but it is required when building RetryPolicyConfiguration",
                 )

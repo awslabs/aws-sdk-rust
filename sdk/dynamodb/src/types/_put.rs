@@ -192,13 +192,13 @@ impl PutBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`item`](crate::types::builders::PutBuilder::item)
     /// - [`table_name`](crate::types::builders::PutBuilder::table_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::Put, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Put, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Put {
             item: self.item.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field("item", "item was not specified but it is required when building Put")
+                ::aws_smithy_types::error::operation::BuildError::missing_field("item", "item was not specified but it is required when building Put")
             })?,
             table_name: self.table_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "table_name",
                     "table_name was not specified but it is required when building Put",
                 )

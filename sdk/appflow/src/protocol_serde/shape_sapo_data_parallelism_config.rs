@@ -2,7 +2,7 @@
 pub fn ser_sapo_data_parallelism_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SapoDataParallelismConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("maxParallelism").number(
             #[allow(clippy::useless_conversion)]

@@ -85,7 +85,7 @@ impl UntagResourcesInputBuilder {
     /// Consumes the builder and constructs a [`UntagResourcesInput`](crate::operation::untag_resources::UntagResourcesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::untag_resources::UntagResourcesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::untag_resources::UntagResourcesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::untag_resources::UntagResourcesInput {
             resource_arn_list: self.resource_arn_list,
             tag_keys: self.tag_keys,

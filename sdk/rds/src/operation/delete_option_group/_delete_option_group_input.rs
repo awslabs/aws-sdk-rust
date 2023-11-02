@@ -55,7 +55,7 @@ impl DeleteOptionGroupInputBuilder {
     /// Consumes the builder and constructs a [`DeleteOptionGroupInput`](crate::operation::delete_option_group::DeleteOptionGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_option_group::DeleteOptionGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_option_group::DeleteOptionGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_option_group::DeleteOptionGroupInput {
             option_group_name: self.option_group_name,
         })

@@ -87,10 +87,10 @@ impl ListAppsOutputBuilder {
     /// Consumes the builder and constructs a [`ListAppsOutput`](crate::operation::list_apps::ListAppsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`app_summaries`](crate::operation::list_apps::builders::ListAppsOutputBuilder::app_summaries)
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_apps::ListAppsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_apps::ListAppsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_apps::ListAppsOutput {
             app_summaries: self.app_summaries.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "app_summaries",
                     "app_summaries was not specified but it is required when building ListAppsOutput",
                 )

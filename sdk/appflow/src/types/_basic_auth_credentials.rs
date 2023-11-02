@@ -78,16 +78,16 @@ impl BasicAuthCredentialsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`username`](crate::types::builders::BasicAuthCredentialsBuilder::username)
     /// - [`password`](crate::types::builders::BasicAuthCredentialsBuilder::password)
-    pub fn build(self) -> ::std::result::Result<crate::types::BasicAuthCredentials, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::BasicAuthCredentials, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::BasicAuthCredentials {
             username: self.username.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "username",
                     "username was not specified but it is required when building BasicAuthCredentials",
                 )
             })?,
             password: self.password.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "password",
                     "password was not specified but it is required when building BasicAuthCredentials",
                 )

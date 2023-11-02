@@ -5,8 +5,8 @@
 
 use aws_sdk_dynamodb as dynamodb;
 use aws_smithy_async::assert_elapsed;
-use aws_smithy_http::body::SdkBody;
 use aws_smithy_runtime::client::http::test_util::{ReplayEvent, StaticReplayClient};
+use aws_smithy_types::body::SdkBody;
 use dynamodb::config::{Credentials, Region};
 use dynamodb::operation::query::QueryOutput;
 use dynamodb::types::{

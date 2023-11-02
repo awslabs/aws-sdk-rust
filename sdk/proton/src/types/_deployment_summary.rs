@@ -359,53 +359,53 @@ impl DeploymentSummaryBuilder {
     /// - [`last_modified_at`](crate::types::builders::DeploymentSummaryBuilder::last_modified_at)
     /// - [`environment_name`](crate::types::builders::DeploymentSummaryBuilder::environment_name)
     /// - [`deployment_status`](crate::types::builders::DeploymentSummaryBuilder::deployment_status)
-    pub fn build(self) -> ::std::result::Result<crate::types::DeploymentSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DeploymentSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DeploymentSummary {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building DeploymentSummary",
                 )
             })?,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building DeploymentSummary",
                 )
             })?,
             target_arn: self.target_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "target_arn",
                     "target_arn was not specified but it is required when building DeploymentSummary",
                 )
             })?,
             target_resource_created_at: self.target_resource_created_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "target_resource_created_at",
                     "target_resource_created_at was not specified but it is required when building DeploymentSummary",
                 )
             })?,
             target_resource_type: self.target_resource_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "target_resource_type",
                     "target_resource_type was not specified but it is required when building DeploymentSummary",
                 )
             })?,
             created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
                     "created_at was not specified but it is required when building DeploymentSummary",
                 )
             })?,
             last_modified_at: self.last_modified_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_modified_at",
                     "last_modified_at was not specified but it is required when building DeploymentSummary",
                 )
             })?,
             completed_at: self.completed_at,
             environment_name: self.environment_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "environment_name",
                     "environment_name was not specified but it is required when building DeploymentSummary",
                 )
@@ -416,7 +416,7 @@ impl DeploymentSummaryBuilder {
             last_attempted_deployment_id: self.last_attempted_deployment_id,
             last_succeeded_deployment_id: self.last_succeeded_deployment_id,
             deployment_status: self.deployment_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "deployment_status",
                     "deployment_status was not specified but it is required when building DeploymentSummary",
                 )

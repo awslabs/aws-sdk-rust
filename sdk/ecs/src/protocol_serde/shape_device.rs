@@ -2,7 +2,7 @@
 pub fn ser_device(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Device,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("hostPath").string(input.host_path.as_str());
     }

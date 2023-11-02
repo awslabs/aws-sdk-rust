@@ -2,7 +2,7 @@
 pub fn ser_contact_channel_address(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ContactChannelAddress,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.simple_address {
         object.key("SimpleAddress").string(var_1.as_str());
     }

@@ -100,7 +100,7 @@ impl ModifyRuleInputBuilder {
         &self.actions
     }
     /// Consumes the builder and constructs a [`ModifyRuleInput`](crate::operation::modify_rule::ModifyRuleInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::modify_rule::ModifyRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_rule::ModifyRuleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::modify_rule::ModifyRuleInput {
             rule_arn: self.rule_arn,
             conditions: self.conditions,

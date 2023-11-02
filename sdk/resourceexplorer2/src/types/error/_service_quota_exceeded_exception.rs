@@ -129,22 +129,24 @@ impl ServiceQuotaExceededExceptionBuilder {
     /// - [`message`](crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::message)
     /// - [`name`](crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::name)
     /// - [`value`](crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::value)
-    pub fn build(self) -> ::std::result::Result<crate::types::error::ServiceQuotaExceededException, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::error::ServiceQuotaExceededException, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::error::ServiceQuotaExceededException {
             message: self.message.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "message",
                     "message was not specified but it is required when building ServiceQuotaExceededException",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building ServiceQuotaExceededException",
                 )
             })?,
             value: self.value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "value",
                     "value was not specified but it is required when building ServiceQuotaExceededException",
                 )

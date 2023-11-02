@@ -86,7 +86,7 @@ impl GetOpsMetadataInputBuilder {
     /// Consumes the builder and constructs a [`GetOpsMetadataInput`](crate::operation::get_ops_metadata::GetOpsMetadataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_ops_metadata::GetOpsMetadataInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_ops_metadata::GetOpsMetadataInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_ops_metadata::GetOpsMetadataInput {
             ops_metadata_arn: self.ops_metadata_arn,
             max_results: self.max_results,

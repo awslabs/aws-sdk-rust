@@ -2,7 +2,7 @@
 pub fn ser_send_data_to_multicast_group_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::send_data_to_multicast_group::SendDataToMulticastGroupInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.payload_data {
         object.key("PayloadData").string(var_1.as_str());
     }

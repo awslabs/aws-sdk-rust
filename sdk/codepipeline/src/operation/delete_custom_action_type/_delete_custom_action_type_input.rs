@@ -91,7 +91,7 @@ impl DeleteCustomActionTypeInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_custom_action_type::DeleteCustomActionTypeInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_custom_action_type::DeleteCustomActionTypeInput {
             category: self.category,

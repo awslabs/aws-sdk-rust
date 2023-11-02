@@ -64,7 +64,7 @@ impl ListLoggerDefinitionsInputBuilder {
     /// Consumes the builder and constructs a [`ListLoggerDefinitionsInput`](crate::operation::list_logger_definitions::ListLoggerDefinitionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_logger_definitions::ListLoggerDefinitionsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_logger_definitions::ListLoggerDefinitionsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_logger_definitions::ListLoggerDefinitionsInput {
             max_results: self.max_results,

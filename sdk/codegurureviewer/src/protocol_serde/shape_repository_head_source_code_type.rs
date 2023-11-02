@@ -2,7 +2,7 @@
 pub fn ser_repository_head_source_code_type(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RepositoryHeadSourceCodeType,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("BranchName").string(input.branch_name.as_str());
     }

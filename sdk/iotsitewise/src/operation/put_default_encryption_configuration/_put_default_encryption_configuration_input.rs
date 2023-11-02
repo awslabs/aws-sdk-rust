@@ -67,7 +67,7 @@ impl PutDefaultEncryptionConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationInput {

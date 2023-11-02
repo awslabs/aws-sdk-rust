@@ -94,7 +94,7 @@ impl ConnectAppAuthorizationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::connect_app_authorization::ConnectAppAuthorizationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::connect_app_authorization::ConnectAppAuthorizationInput {
             app_bundle_identifier: self.app_bundle_identifier,

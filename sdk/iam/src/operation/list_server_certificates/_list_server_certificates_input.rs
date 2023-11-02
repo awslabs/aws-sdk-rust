@@ -95,8 +95,10 @@ impl ListServerCertificatesInputBuilder {
     /// Consumes the builder and constructs a [`ListServerCertificatesInput`](crate::operation::list_server_certificates::ListServerCertificatesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_server_certificates::ListServerCertificatesInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::list_server_certificates::ListServerCertificatesInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::list_server_certificates::ListServerCertificatesInput {
             path_prefix: self.path_prefix,
             marker: self.marker,

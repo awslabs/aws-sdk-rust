@@ -89,10 +89,10 @@ impl ListVpcConnectorsOutputBuilder {
     /// - [`vpc_connectors`](crate::operation::list_vpc_connectors::builders::ListVpcConnectorsOutputBuilder::vpc_connectors)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_vpc_connectors::ListVpcConnectorsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_vpc_connectors::ListVpcConnectorsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_vpc_connectors::ListVpcConnectorsOutput {
             vpc_connectors: self.vpc_connectors.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "vpc_connectors",
                     "vpc_connectors was not specified but it is required when building ListVpcConnectorsOutput",
                 )

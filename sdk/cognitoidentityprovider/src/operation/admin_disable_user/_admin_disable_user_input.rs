@@ -75,7 +75,7 @@ impl AdminDisableUserInputBuilder {
     /// Consumes the builder and constructs a [`AdminDisableUserInput`](crate::operation::admin_disable_user::AdminDisableUserInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::admin_disable_user::AdminDisableUserInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::admin_disable_user::AdminDisableUserInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::admin_disable_user::AdminDisableUserInput {
             user_pool_id: self.user_pool_id,
             username: self.username,

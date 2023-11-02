@@ -64,10 +64,10 @@ impl SendRawEmailOutputBuilder {
     /// - [`message_id`](crate::operation::send_raw_email::builders::SendRawEmailOutputBuilder::message_id)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::send_raw_email::SendRawEmailOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::send_raw_email::SendRawEmailOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::send_raw_email::SendRawEmailOutput {
             message_id: self.message_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "message_id",
                     "message_id was not specified but it is required when building SendRawEmailOutput",
                 )

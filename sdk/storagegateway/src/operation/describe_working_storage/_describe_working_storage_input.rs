@@ -45,8 +45,10 @@ impl DescribeWorkingStorageInputBuilder {
     /// Consumes the builder and constructs a [`DescribeWorkingStorageInput`](crate::operation::describe_working_storage::DescribeWorkingStorageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_working_storage::DescribeWorkingStorageInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::describe_working_storage::DescribeWorkingStorageInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::describe_working_storage::DescribeWorkingStorageInput {
             gateway_arn: self.gateway_arn,
         })

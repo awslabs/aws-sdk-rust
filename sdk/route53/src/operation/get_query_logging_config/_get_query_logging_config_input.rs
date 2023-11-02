@@ -44,7 +44,7 @@ impl GetQueryLoggingConfigInputBuilder {
     /// Consumes the builder and constructs a [`GetQueryLoggingConfigInput`](crate::operation::get_query_logging_config::GetQueryLoggingConfigInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_query_logging_config::GetQueryLoggingConfigInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_query_logging_config::GetQueryLoggingConfigInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_query_logging_config::GetQueryLoggingConfigInput { id: self.id })
     }

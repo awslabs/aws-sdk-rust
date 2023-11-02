@@ -155,7 +155,7 @@ impl VerifyAuthRequestCryptogramInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramInput {
             key_identifier: self.key_identifier,

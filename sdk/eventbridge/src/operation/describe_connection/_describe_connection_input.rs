@@ -44,7 +44,7 @@ impl DescribeConnectionInputBuilder {
     /// Consumes the builder and constructs a [`DescribeConnectionInput`](crate::operation::describe_connection::DescribeConnectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_connection::DescribeConnectionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_connection::DescribeConnectionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_connection::DescribeConnectionInput { name: self.name })
     }
 }

@@ -99,7 +99,7 @@ impl DescribeDirectoriesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDirectoriesInput`](crate::operation::describe_directories::DescribeDirectoriesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_directories::DescribeDirectoriesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_directories::DescribeDirectoriesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_directories::DescribeDirectoriesInput {
             directory_ids: self.directory_ids,

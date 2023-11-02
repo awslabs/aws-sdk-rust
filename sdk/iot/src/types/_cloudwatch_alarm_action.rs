@@ -118,28 +118,28 @@ impl CloudwatchAlarmActionBuilder {
     /// - [`alarm_name`](crate::types::builders::CloudwatchAlarmActionBuilder::alarm_name)
     /// - [`state_reason`](crate::types::builders::CloudwatchAlarmActionBuilder::state_reason)
     /// - [`state_value`](crate::types::builders::CloudwatchAlarmActionBuilder::state_value)
-    pub fn build(self) -> ::std::result::Result<crate::types::CloudwatchAlarmAction, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CloudwatchAlarmAction, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CloudwatchAlarmAction {
             role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role_arn",
                     "role_arn was not specified but it is required when building CloudwatchAlarmAction",
                 )
             })?,
             alarm_name: self.alarm_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "alarm_name",
                     "alarm_name was not specified but it is required when building CloudwatchAlarmAction",
                 )
             })?,
             state_reason: self.state_reason.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "state_reason",
                     "state_reason was not specified but it is required when building CloudwatchAlarmAction",
                 )
             })?,
             state_value: self.state_value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "state_value",
                     "state_value was not specified but it is required when building CloudwatchAlarmAction",
                 )

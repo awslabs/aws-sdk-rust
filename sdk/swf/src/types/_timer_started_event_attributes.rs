@@ -118,17 +118,17 @@ impl TimerStartedEventAttributesBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`timer_id`](crate::types::builders::TimerStartedEventAttributesBuilder::timer_id)
     /// - [`start_to_fire_timeout`](crate::types::builders::TimerStartedEventAttributesBuilder::start_to_fire_timeout)
-    pub fn build(self) -> ::std::result::Result<crate::types::TimerStartedEventAttributes, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TimerStartedEventAttributes, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TimerStartedEventAttributes {
             timer_id: self.timer_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "timer_id",
                     "timer_id was not specified but it is required when building TimerStartedEventAttributes",
                 )
             })?,
             control: self.control,
             start_to_fire_timeout: self.start_to_fire_timeout.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "start_to_fire_timeout",
                     "start_to_fire_timeout was not specified but it is required when building TimerStartedEventAttributes",
                 )

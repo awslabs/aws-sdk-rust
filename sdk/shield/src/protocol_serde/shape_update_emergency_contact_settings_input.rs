@@ -2,7 +2,7 @@
 pub fn ser_update_emergency_contact_settings_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_emergency_contact_settings::UpdateEmergencyContactSettingsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.emergency_contact_list {
         let mut array_2 = object.key("EmergencyContactList").start_array();
         for item_3 in var_1 {

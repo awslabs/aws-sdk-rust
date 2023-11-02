@@ -307,17 +307,17 @@ impl DescribeIdentityPoolOutputBuilder {
     /// - [`identity_pool_name`](crate::operation::describe_identity_pool::builders::DescribeIdentityPoolOutputBuilder::identity_pool_name)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_identity_pool::DescribeIdentityPoolOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_identity_pool::DescribeIdentityPoolOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_identity_pool::DescribeIdentityPoolOutput {
             identity_pool_id: self.identity_pool_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "identity_pool_id",
                     "identity_pool_id was not specified but it is required when building DescribeIdentityPoolOutput",
                 )
             })?,
             identity_pool_name: self.identity_pool_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "identity_pool_name",
                     "identity_pool_name was not specified but it is required when building DescribeIdentityPoolOutput",
                 )

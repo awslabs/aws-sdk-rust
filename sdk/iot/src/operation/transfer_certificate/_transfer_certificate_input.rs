@@ -88,7 +88,7 @@ impl TransferCertificateInputBuilder {
     /// Consumes the builder and constructs a [`TransferCertificateInput`](crate::operation::transfer_certificate::TransferCertificateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::transfer_certificate::TransferCertificateInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::transfer_certificate::TransferCertificateInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::transfer_certificate::TransferCertificateInput {
             certificate_id: self.certificate_id,

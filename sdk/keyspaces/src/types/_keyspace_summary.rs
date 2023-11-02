@@ -122,22 +122,22 @@ impl KeyspaceSummaryBuilder {
     /// - [`keyspace_name`](crate::types::builders::KeyspaceSummaryBuilder::keyspace_name)
     /// - [`resource_arn`](crate::types::builders::KeyspaceSummaryBuilder::resource_arn)
     /// - [`replication_strategy`](crate::types::builders::KeyspaceSummaryBuilder::replication_strategy)
-    pub fn build(self) -> ::std::result::Result<crate::types::KeyspaceSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::KeyspaceSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::KeyspaceSummary {
             keyspace_name: self.keyspace_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "keyspace_name",
                     "keyspace_name was not specified but it is required when building KeyspaceSummary",
                 )
             })?,
             resource_arn: self.resource_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_arn",
                     "resource_arn was not specified but it is required when building KeyspaceSummary",
                 )
             })?,
             replication_strategy: self.replication_strategy.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "replication_strategy",
                     "replication_strategy was not specified but it is required when building KeyspaceSummary",
                 )

@@ -60,10 +60,10 @@ impl UpdateSceneOutputBuilder {
     /// Consumes the builder and constructs a [`UpdateSceneOutput`](crate::operation::update_scene::UpdateSceneOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`update_date_time`](crate::operation::update_scene::builders::UpdateSceneOutputBuilder::update_date_time)
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_scene::UpdateSceneOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_scene::UpdateSceneOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_scene::UpdateSceneOutput {
             update_date_time: self.update_date_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "update_date_time",
                     "update_date_time was not specified but it is required when building UpdateSceneOutput",
                 )

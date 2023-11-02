@@ -2,7 +2,7 @@
 pub fn ser_patch_rule_group(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PatchRuleGroup,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("PatchRules").start_array();
         for item_2 in &input.patch_rules {

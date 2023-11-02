@@ -209,47 +209,47 @@ impl AppflowIntegrationWorkflowStepBuilder {
     /// - [`batch_records_end_time`](crate::types::builders::AppflowIntegrationWorkflowStepBuilder::batch_records_end_time)
     /// - [`created_at`](crate::types::builders::AppflowIntegrationWorkflowStepBuilder::created_at)
     /// - [`last_updated_at`](crate::types::builders::AppflowIntegrationWorkflowStepBuilder::last_updated_at)
-    pub fn build(self) -> ::std::result::Result<crate::types::AppflowIntegrationWorkflowStep, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AppflowIntegrationWorkflowStep, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AppflowIntegrationWorkflowStep {
             flow_name: self.flow_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "flow_name",
                     "flow_name was not specified but it is required when building AppflowIntegrationWorkflowStep",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building AppflowIntegrationWorkflowStep",
                 )
             })?,
             execution_message: self.execution_message.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "execution_message",
                     "execution_message was not specified but it is required when building AppflowIntegrationWorkflowStep",
                 )
             })?,
             records_processed: self.records_processed.unwrap_or_default(),
             batch_records_start_time: self.batch_records_start_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "batch_records_start_time",
                     "batch_records_start_time was not specified but it is required when building AppflowIntegrationWorkflowStep",
                 )
             })?,
             batch_records_end_time: self.batch_records_end_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "batch_records_end_time",
                     "batch_records_end_time was not specified but it is required when building AppflowIntegrationWorkflowStep",
                 )
             })?,
             created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
                     "created_at was not specified but it is required when building AppflowIntegrationWorkflowStep",
                 )
             })?,
             last_updated_at: self.last_updated_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_updated_at",
                     "last_updated_at was not specified but it is required when building AppflowIntegrationWorkflowStep",
                 )

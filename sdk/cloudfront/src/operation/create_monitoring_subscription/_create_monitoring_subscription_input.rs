@@ -68,7 +68,7 @@ impl CreateMonitoringSubscriptionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_monitoring_subscription::CreateMonitoringSubscriptionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_monitoring_subscription::CreateMonitoringSubscriptionInput {
             distribution_id: self.distribution_id,

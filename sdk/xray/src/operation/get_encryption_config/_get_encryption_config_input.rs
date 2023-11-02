@@ -18,7 +18,7 @@ impl GetEncryptionConfigInputBuilder {
     /// Consumes the builder and constructs a [`GetEncryptionConfigInput`](crate::operation::get_encryption_config::GetEncryptionConfigInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_encryption_config::GetEncryptionConfigInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_encryption_config::GetEncryptionConfigInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_encryption_config::GetEncryptionConfigInput {})
     }

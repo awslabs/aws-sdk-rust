@@ -270,30 +270,30 @@ impl ImportReadSetSourceItemBuilder {
     /// - [`status`](crate::types::builders::ImportReadSetSourceItemBuilder::status)
     /// - [`subject_id`](crate::types::builders::ImportReadSetSourceItemBuilder::subject_id)
     /// - [`sample_id`](crate::types::builders::ImportReadSetSourceItemBuilder::sample_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::ImportReadSetSourceItem, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ImportReadSetSourceItem, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ImportReadSetSourceItem {
             source_files: self.source_files,
             source_file_type: self.source_file_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source_file_type",
                     "source_file_type was not specified but it is required when building ImportReadSetSourceItem",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building ImportReadSetSourceItem",
                 )
             })?,
             status_message: self.status_message,
             subject_id: self.subject_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "subject_id",
                     "subject_id was not specified but it is required when building ImportReadSetSourceItem",
                 )
             })?,
             sample_id: self.sample_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "sample_id",
                     "sample_id was not specified but it is required when building ImportReadSetSourceItem",
                 )

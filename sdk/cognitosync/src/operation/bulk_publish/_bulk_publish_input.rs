@@ -43,7 +43,7 @@ impl BulkPublishInputBuilder {
         &self.identity_pool_id
     }
     /// Consumes the builder and constructs a [`BulkPublishInput`](crate::operation::bulk_publish::BulkPublishInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::bulk_publish::BulkPublishInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::bulk_publish::BulkPublishInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::bulk_publish::BulkPublishInput {
             identity_pool_id: self.identity_pool_id,
         })

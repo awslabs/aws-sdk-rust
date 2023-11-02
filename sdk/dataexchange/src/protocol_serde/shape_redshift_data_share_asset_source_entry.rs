@@ -2,7 +2,7 @@
 pub fn ser_redshift_data_share_asset_source_entry(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RedshiftDataShareAssetSourceEntry,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("DataShareArn").string(input.data_share_arn.as_str());
     }

@@ -89,12 +89,14 @@ impl ListMediaAnalysisJobsOutputBuilder {
     /// - [`media_analysis_jobs`](crate::operation::list_media_analysis_jobs::builders::ListMediaAnalysisJobsOutputBuilder::media_analysis_jobs)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_media_analysis_jobs::ListMediaAnalysisJobsOutput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::list_media_analysis_jobs::ListMediaAnalysisJobsOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::list_media_analysis_jobs::ListMediaAnalysisJobsOutput {
             next_token: self.next_token,
             media_analysis_jobs: self.media_analysis_jobs.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "media_analysis_jobs",
                     "media_analysis_jobs was not specified but it is required when building ListMediaAnalysisJobsOutput",
                 )

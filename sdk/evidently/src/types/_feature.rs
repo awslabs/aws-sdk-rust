@@ -382,54 +382,54 @@ impl FeatureBuilder {
     /// - [`evaluation_strategy`](crate::types::builders::FeatureBuilder::evaluation_strategy)
     /// - [`value_type`](crate::types::builders::FeatureBuilder::value_type)
     /// - [`variations`](crate::types::builders::FeatureBuilder::variations)
-    pub fn build(self) -> ::std::result::Result<crate::types::Feature, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Feature, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Feature {
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building Feature",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building Feature",
                 )
             })?,
             project: self.project,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building Feature",
                 )
             })?,
             created_time: self.created_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_time",
                     "created_time was not specified but it is required when building Feature",
                 )
             })?,
             last_updated_time: self.last_updated_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_updated_time",
                     "last_updated_time was not specified but it is required when building Feature",
                 )
             })?,
             description: self.description,
             evaluation_strategy: self.evaluation_strategy.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "evaluation_strategy",
                     "evaluation_strategy was not specified but it is required when building Feature",
                 )
             })?,
             value_type: self.value_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "value_type",
                     "value_type was not specified but it is required when building Feature",
                 )
             })?,
             variations: self.variations.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "variations",
                     "variations was not specified but it is required when building Feature",
                 )

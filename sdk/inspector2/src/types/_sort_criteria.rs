@@ -68,16 +68,16 @@ impl SortCriteriaBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`field`](crate::types::builders::SortCriteriaBuilder::field)
     /// - [`sort_order`](crate::types::builders::SortCriteriaBuilder::sort_order)
-    pub fn build(self) -> ::std::result::Result<crate::types::SortCriteria, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SortCriteria, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SortCriteria {
             field: self.field.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "field",
                     "field was not specified but it is required when building SortCriteria",
                 )
             })?,
             sort_order: self.sort_order.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "sort_order",
                     "sort_order was not specified but it is required when building SortCriteria",
                 )

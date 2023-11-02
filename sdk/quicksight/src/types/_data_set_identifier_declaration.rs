@@ -70,16 +70,16 @@ impl DataSetIdentifierDeclarationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`identifier`](crate::types::builders::DataSetIdentifierDeclarationBuilder::identifier)
     /// - [`data_set_arn`](crate::types::builders::DataSetIdentifierDeclarationBuilder::data_set_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::DataSetIdentifierDeclaration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DataSetIdentifierDeclaration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DataSetIdentifierDeclaration {
             identifier: self.identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "identifier",
                     "identifier was not specified but it is required when building DataSetIdentifierDeclaration",
                 )
             })?,
             data_set_arn: self.data_set_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_set_arn",
                     "data_set_arn was not specified but it is required when building DataSetIdentifierDeclaration",
                 )

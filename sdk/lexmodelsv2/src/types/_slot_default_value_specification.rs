@@ -51,10 +51,10 @@ impl SlotDefaultValueSpecificationBuilder {
     /// Consumes the builder and constructs a [`SlotDefaultValueSpecification`](crate::types::SlotDefaultValueSpecification).
     /// This method will fail if any of the following fields are not set:
     /// - [`default_value_list`](crate::types::builders::SlotDefaultValueSpecificationBuilder::default_value_list)
-    pub fn build(self) -> ::std::result::Result<crate::types::SlotDefaultValueSpecification, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SlotDefaultValueSpecification, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SlotDefaultValueSpecification {
             default_value_list: self.default_value_list.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "default_value_list",
                     "default_value_list was not specified but it is required when building SlotDefaultValueSpecification",
                 )

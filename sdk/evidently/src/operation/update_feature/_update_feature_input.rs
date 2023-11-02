@@ -231,7 +231,7 @@ impl UpdateFeatureInputBuilder {
     /// Consumes the builder and constructs a [`UpdateFeatureInput`](crate::operation::update_feature::UpdateFeatureInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_feature::UpdateFeatureInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_feature::UpdateFeatureInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_feature::UpdateFeatureInput {
             project: self.project,
             feature: self.feature,

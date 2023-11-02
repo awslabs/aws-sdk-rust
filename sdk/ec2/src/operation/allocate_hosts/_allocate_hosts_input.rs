@@ -315,7 +315,7 @@ impl AllocateHostsInputBuilder {
     /// Consumes the builder and constructs a [`AllocateHostsInput`](crate::operation::allocate_hosts::AllocateHostsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::allocate_hosts::AllocateHostsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::allocate_hosts::AllocateHostsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::allocate_hosts::AllocateHostsInput {
             auto_placement: self.auto_placement,
             availability_zone: self.availability_zone,

@@ -87,8 +87,10 @@ impl GetIntrospectionSchemaInputBuilder {
     /// Consumes the builder and constructs a [`GetIntrospectionSchemaInput`](crate::operation::get_introspection_schema::GetIntrospectionSchemaInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_introspection_schema::GetIntrospectionSchemaInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::get_introspection_schema::GetIntrospectionSchemaInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::get_introspection_schema::GetIntrospectionSchemaInput {
             api_id: self.api_id,
             format: self.format,

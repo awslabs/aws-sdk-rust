@@ -46,7 +46,7 @@ impl CreateGuiSessionAccessDetailsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_gui_session_access_details::CreateGuiSessionAccessDetailsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_gui_session_access_details::CreateGuiSessionAccessDetailsInput {
             resource_name: self.resource_name,

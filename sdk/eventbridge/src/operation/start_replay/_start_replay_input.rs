@@ -151,7 +151,7 @@ impl StartReplayInputBuilder {
         &self.destination
     }
     /// Consumes the builder and constructs a [`StartReplayInput`](crate::operation::start_replay::StartReplayInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::start_replay::StartReplayInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_replay::StartReplayInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_replay::StartReplayInput {
             replay_name: self.replay_name,
             description: self.description,

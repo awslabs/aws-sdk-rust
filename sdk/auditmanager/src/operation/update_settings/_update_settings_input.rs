@@ -200,7 +200,7 @@ impl UpdateSettingsInputBuilder {
     /// Consumes the builder and constructs a [`UpdateSettingsInput`](crate::operation::update_settings::UpdateSettingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_settings::UpdateSettingsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_settings::UpdateSettingsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_settings::UpdateSettingsInput {
             sns_topic: self.sns_topic,
             default_assessment_reports_destination: self.default_assessment_reports_destination,

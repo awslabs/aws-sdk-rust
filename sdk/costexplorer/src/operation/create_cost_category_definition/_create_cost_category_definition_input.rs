@@ -247,7 +247,7 @@ impl CreateCostCategoryDefinitionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_cost_category_definition::CreateCostCategoryDefinitionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_cost_category_definition::CreateCostCategoryDefinitionInput {
             name: self.name,

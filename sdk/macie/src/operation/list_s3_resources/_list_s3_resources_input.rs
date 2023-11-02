@@ -85,7 +85,7 @@ impl ListS3ResourcesInputBuilder {
     /// Consumes the builder and constructs a [`ListS3ResourcesInput`](crate::operation::list_s3_resources::ListS3ResourcesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_s3_resources::ListS3ResourcesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_s3_resources::ListS3ResourcesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_s3_resources::ListS3ResourcesInput {
             member_account_id: self.member_account_id,
             next_token: self.next_token,

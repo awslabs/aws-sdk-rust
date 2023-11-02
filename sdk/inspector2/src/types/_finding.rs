@@ -491,28 +491,28 @@ impl FindingBuilder {
     /// - [`last_observed_at`](crate::types::builders::FindingBuilder::last_observed_at)
     /// - [`status`](crate::types::builders::FindingBuilder::status)
     /// - [`resources`](crate::types::builders::FindingBuilder::resources)
-    pub fn build(self) -> ::std::result::Result<crate::types::Finding, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Finding, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Finding {
             finding_arn: self.finding_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "finding_arn",
                     "finding_arn was not specified but it is required when building Finding",
                 )
             })?,
             aws_account_id: self.aws_account_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "aws_account_id",
                     "aws_account_id was not specified but it is required when building Finding",
                 )
             })?,
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building Finding",
                 )
             })?,
             description: self.description.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "description",
                     "description was not specified but it is required when building Finding",
                 )
@@ -520,32 +520,32 @@ impl FindingBuilder {
             title: self.title,
             remediation: self.remediation,
             severity: self.severity.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "severity",
                     "severity was not specified but it is required when building Finding",
                 )
             })?,
             first_observed_at: self.first_observed_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "first_observed_at",
                     "first_observed_at was not specified but it is required when building Finding",
                 )
             })?,
             last_observed_at: self.last_observed_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_observed_at",
                     "last_observed_at was not specified but it is required when building Finding",
                 )
             })?,
             updated_at: self.updated_at,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building Finding",
                 )
             })?,
             resources: self.resources.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resources",
                     "resources was not specified but it is required when building Finding",
                 )

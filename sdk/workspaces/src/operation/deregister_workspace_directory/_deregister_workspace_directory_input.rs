@@ -46,7 +46,7 @@ impl DeregisterWorkspaceDirectoryInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_workspace_directory::DeregisterWorkspaceDirectoryInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::deregister_workspace_directory::DeregisterWorkspaceDirectoryInput {
             directory_id: self.directory_id,

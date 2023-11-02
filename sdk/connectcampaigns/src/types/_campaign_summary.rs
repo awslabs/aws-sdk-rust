@@ -118,28 +118,28 @@ impl CampaignSummaryBuilder {
     /// - [`arn`](crate::types::builders::CampaignSummaryBuilder::arn)
     /// - [`name`](crate::types::builders::CampaignSummaryBuilder::name)
     /// - [`connect_instance_id`](crate::types::builders::CampaignSummaryBuilder::connect_instance_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::CampaignSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CampaignSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CampaignSummary {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building CampaignSummary",
                 )
             })?,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building CampaignSummary",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building CampaignSummary",
                 )
             })?,
             connect_instance_id: self.connect_instance_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "connect_instance_id",
                     "connect_instance_id was not specified but it is required when building CampaignSummary",
                 )

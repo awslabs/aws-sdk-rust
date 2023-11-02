@@ -46,7 +46,7 @@ impl ValidateAssessmentReportIntegrityInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::validate_assessment_report_integrity::ValidateAssessmentReportIntegrityInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::validate_assessment_report_integrity::ValidateAssessmentReportIntegrityInput {

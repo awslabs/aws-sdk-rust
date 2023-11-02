@@ -65,7 +65,7 @@ impl DeletePublicIpv4PoolInputBuilder {
     /// Consumes the builder and constructs a [`DeletePublicIpv4PoolInput`](crate::operation::delete_public_ipv4_pool::DeletePublicIpv4PoolInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_public_ipv4_pool::DeletePublicIpv4PoolInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_public_ipv4_pool::DeletePublicIpv4PoolInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_public_ipv4_pool::DeletePublicIpv4PoolInput {
             dry_run: self.dry_run,

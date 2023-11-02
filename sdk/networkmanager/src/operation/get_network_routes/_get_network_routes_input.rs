@@ -303,7 +303,7 @@ impl GetNetworkRoutesInputBuilder {
     /// Consumes the builder and constructs a [`GetNetworkRoutesInput`](crate::operation::get_network_routes::GetNetworkRoutesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_network_routes::GetNetworkRoutesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_network_routes::GetNetworkRoutesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_network_routes::GetNetworkRoutesInput {
             global_network_id: self.global_network_id,
             route_table_identifier: self.route_table_identifier,

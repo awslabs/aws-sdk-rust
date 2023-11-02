@@ -331,7 +331,7 @@ impl UpdateProductInputBuilder {
     /// Consumes the builder and constructs a [`UpdateProductInput`](crate::operation::update_product::UpdateProductInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_product::UpdateProductInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_product::UpdateProductInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_product::UpdateProductInput {
             accept_language: self.accept_language,
             id: self.id,

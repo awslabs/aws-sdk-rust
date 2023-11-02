@@ -90,7 +90,7 @@ impl PutMultiRegionAccessPointPolicyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_multi_region_access_point_policy::PutMultiRegionAccessPointPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::put_multi_region_access_point_policy::PutMultiRegionAccessPointPolicyInput {

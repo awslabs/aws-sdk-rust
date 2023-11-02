@@ -163,24 +163,24 @@ impl WorkspaceSummaryBuilder {
     /// - [`workspace_id`](crate::types::builders::WorkspaceSummaryBuilder::workspace_id)
     /// - [`arn`](crate::types::builders::WorkspaceSummaryBuilder::arn)
     /// - [`created_at`](crate::types::builders::WorkspaceSummaryBuilder::created_at)
-    pub fn build(self) -> ::std::result::Result<crate::types::WorkspaceSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::WorkspaceSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::WorkspaceSummary {
             workspace_id: self.workspace_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "workspace_id",
                     "workspace_id was not specified but it is required when building WorkspaceSummary",
                 )
             })?,
             alias: self.alias,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building WorkspaceSummary",
                 )
             })?,
             status: self.status,
             created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
                     "created_at was not specified but it is required when building WorkspaceSummary",
                 )

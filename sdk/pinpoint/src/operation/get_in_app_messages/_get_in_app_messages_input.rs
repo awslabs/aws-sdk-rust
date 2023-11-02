@@ -66,7 +66,7 @@ impl GetInAppMessagesInputBuilder {
     /// Consumes the builder and constructs a [`GetInAppMessagesInput`](crate::operation::get_in_app_messages::GetInAppMessagesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_in_app_messages::GetInAppMessagesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_in_app_messages::GetInAppMessagesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_in_app_messages::GetInAppMessagesInput {
             application_id: self.application_id,
             endpoint_id: self.endpoint_id,

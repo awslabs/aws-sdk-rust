@@ -245,17 +245,17 @@ impl EventDestinationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::EventDestinationBuilder::name)
     /// - [`matching_event_types`](crate::types::builders::EventDestinationBuilder::matching_event_types)
-    pub fn build(self) -> ::std::result::Result<crate::types::EventDestination, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::EventDestination, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EventDestination {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building EventDestination",
                 )
             })?,
             enabled: self.enabled.unwrap_or_default(),
             matching_event_types: self.matching_event_types.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "matching_event_types",
                     "matching_event_types was not specified but it is required when building EventDestination",
                 )

@@ -2,7 +2,7 @@
 pub fn ser_connection_alias_permission(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ConnectionAliasPermission,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("SharedAccountId").string(input.shared_account_id.as_str());
     }

@@ -152,8 +152,10 @@ impl ListRecommendedIntentsInputBuilder {
     /// Consumes the builder and constructs a [`ListRecommendedIntentsInput`](crate::operation::list_recommended_intents::ListRecommendedIntentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_recommended_intents::ListRecommendedIntentsInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::list_recommended_intents::ListRecommendedIntentsInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::list_recommended_intents::ListRecommendedIntentsInput {
             bot_id: self.bot_id,
             bot_version: self.bot_version,

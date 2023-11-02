@@ -86,7 +86,7 @@ impl ListPagesByEngagementInputBuilder {
     /// Consumes the builder and constructs a [`ListPagesByEngagementInput`](crate::operation::list_pages_by_engagement::ListPagesByEngagementInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_pages_by_engagement::ListPagesByEngagementInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_pages_by_engagement::ListPagesByEngagementInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_pages_by_engagement::ListPagesByEngagementInput {
             engagement_id: self.engagement_id,

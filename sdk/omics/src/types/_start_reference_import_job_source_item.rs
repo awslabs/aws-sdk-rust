@@ -118,16 +118,16 @@ impl StartReferenceImportJobSourceItemBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`source_file`](crate::types::builders::StartReferenceImportJobSourceItemBuilder::source_file)
     /// - [`name`](crate::types::builders::StartReferenceImportJobSourceItemBuilder::name)
-    pub fn build(self) -> ::std::result::Result<crate::types::StartReferenceImportJobSourceItem, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::StartReferenceImportJobSourceItem, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::StartReferenceImportJobSourceItem {
             source_file: self.source_file.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source_file",
                     "source_file was not specified but it is required when building StartReferenceImportJobSourceItem",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building StartReferenceImportJobSourceItem",
                 )

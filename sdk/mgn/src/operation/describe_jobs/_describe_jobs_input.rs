@@ -104,7 +104,9 @@ impl DescribeJobsInputBuilder {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`DescribeJobsInput`](crate::operation::describe_jobs::DescribeJobsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_jobs::DescribeJobsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::describe_jobs::DescribeJobsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_jobs::DescribeJobsInput {
             filters: self.filters,
             max_results: self.max_results,

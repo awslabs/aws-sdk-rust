@@ -373,20 +373,23 @@ impl LaunchBuilder {
     /// - [`created_time`](crate::types::builders::LaunchBuilder::created_time)
     /// - [`last_updated_time`](crate::types::builders::LaunchBuilder::last_updated_time)
     /// - [`r#type`](crate::types::builders::LaunchBuilder::r#type)
-    pub fn build(self) -> ::std::result::Result<crate::types::Launch, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Launch, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Launch {
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field("arn", "arn was not specified but it is required when building Launch")
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building Launch",
+                )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building Launch",
                 )
             })?,
             project: self.project,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building Launch",
                 )
@@ -394,13 +397,13 @@ impl LaunchBuilder {
             status_reason: self.status_reason,
             description: self.description,
             created_time: self.created_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_time",
                     "created_time was not specified but it is required when building Launch",
                 )
             })?,
             last_updated_time: self.last_updated_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_updated_time",
                     "last_updated_time was not specified but it is required when building Launch",
                 )
@@ -410,7 +413,7 @@ impl LaunchBuilder {
             metric_monitors: self.metric_monitors,
             randomization_salt: self.randomization_salt,
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building Launch",
                 )

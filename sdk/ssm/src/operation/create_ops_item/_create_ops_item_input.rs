@@ -479,7 +479,7 @@ impl CreateOpsItemInputBuilder {
     /// Consumes the builder and constructs a [`CreateOpsItemInput`](crate::operation::create_ops_item::CreateOpsItemInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_ops_item::CreateOpsItemInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_ops_item::CreateOpsItemInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_ops_item::CreateOpsItemInput {
             description: self.description,
             ops_item_type: self.ops_item_type,

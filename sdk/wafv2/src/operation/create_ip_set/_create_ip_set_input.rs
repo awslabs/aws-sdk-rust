@@ -265,7 +265,7 @@ impl CreateIpSetInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateIpSetInput`](crate::operation::create_ip_set::CreateIpSetInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_ip_set::CreateIpSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_ip_set::CreateIpSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_ip_set::CreateIpSetInput {
             name: self.name,
             scope: self.scope,

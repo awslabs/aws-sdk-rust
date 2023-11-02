@@ -102,7 +102,7 @@ impl DeleteFunctionUrlConfigInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_function_url_config::DeleteFunctionUrlConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_function_url_config::DeleteFunctionUrlConfigInput {
             function_name: self.function_name,

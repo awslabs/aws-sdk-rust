@@ -158,29 +158,29 @@ impl ScanSummaryBuilder {
     /// - [`created_at`](crate::types::builders::ScanSummaryBuilder::created_at)
     /// - [`scan_name`](crate::types::builders::ScanSummaryBuilder::scan_name)
     /// - [`run_id`](crate::types::builders::ScanSummaryBuilder::run_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::ScanSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ScanSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ScanSummary {
             scan_state: self.scan_state.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "scan_state",
                     "scan_state was not specified but it is required when building ScanSummary",
                 )
             })?,
             created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
                     "created_at was not specified but it is required when building ScanSummary",
                 )
             })?,
             updated_at: self.updated_at,
             scan_name: self.scan_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "scan_name",
                     "scan_name was not specified but it is required when building ScanSummary",
                 )
             })?,
             run_id: self.run_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "run_id",
                     "run_id was not specified but it is required when building ScanSummary",
                 )

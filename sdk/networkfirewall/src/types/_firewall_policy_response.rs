@@ -280,22 +280,22 @@ impl FirewallPolicyResponseBuilder {
     /// - [`firewall_policy_name`](crate::types::builders::FirewallPolicyResponseBuilder::firewall_policy_name)
     /// - [`firewall_policy_arn`](crate::types::builders::FirewallPolicyResponseBuilder::firewall_policy_arn)
     /// - [`firewall_policy_id`](crate::types::builders::FirewallPolicyResponseBuilder::firewall_policy_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::FirewallPolicyResponse, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::FirewallPolicyResponse, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FirewallPolicyResponse {
             firewall_policy_name: self.firewall_policy_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "firewall_policy_name",
                     "firewall_policy_name was not specified but it is required when building FirewallPolicyResponse",
                 )
             })?,
             firewall_policy_arn: self.firewall_policy_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "firewall_policy_arn",
                     "firewall_policy_arn was not specified but it is required when building FirewallPolicyResponse",
                 )
             })?,
             firewall_policy_id: self.firewall_policy_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "firewall_policy_id",
                     "firewall_policy_id was not specified but it is required when building FirewallPolicyResponse",
                 )

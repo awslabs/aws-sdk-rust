@@ -93,7 +93,8 @@ impl DescribeElasticIpsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeElasticIpsInput`](crate::operation::describe_elastic_ips::DescribeElasticIpsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_elastic_ips::DescribeElasticIpsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_elastic_ips::DescribeElasticIpsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::describe_elastic_ips::DescribeElasticIpsInput {
             instance_id: self.instance_id,
             stack_id: self.stack_id,

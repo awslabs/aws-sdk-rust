@@ -168,7 +168,7 @@ impl GetEbsVolumeRecommendationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_ebs_volume_recommendations::GetEbsVolumeRecommendationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_ebs_volume_recommendations::GetEbsVolumeRecommendationsInput {
             volume_arns: self.volume_arns,

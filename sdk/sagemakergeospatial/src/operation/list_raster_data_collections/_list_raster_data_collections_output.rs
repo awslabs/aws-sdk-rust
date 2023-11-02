@@ -103,11 +103,11 @@ impl ListRasterDataCollectionsOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_raster_data_collections::ListRasterDataCollectionsOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_raster_data_collections::ListRasterDataCollectionsOutput {
             raster_data_collection_summaries: self.raster_data_collection_summaries.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "raster_data_collection_summaries",
                     "raster_data_collection_summaries was not specified but it is required when building ListRasterDataCollectionsOutput",
                 )

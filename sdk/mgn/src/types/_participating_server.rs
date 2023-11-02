@@ -109,10 +109,10 @@ impl ParticipatingServerBuilder {
     /// Consumes the builder and constructs a [`ParticipatingServer`](crate::types::ParticipatingServer).
     /// This method will fail if any of the following fields are not set:
     /// - [`source_server_id`](crate::types::builders::ParticipatingServerBuilder::source_server_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::ParticipatingServer, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ParticipatingServer, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ParticipatingServer {
             source_server_id: self.source_server_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source_server_id",
                     "source_server_id was not specified but it is required when building ParticipatingServer",
                 )

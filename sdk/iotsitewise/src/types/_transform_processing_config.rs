@@ -66,10 +66,10 @@ impl TransformProcessingConfigBuilder {
     /// Consumes the builder and constructs a [`TransformProcessingConfig`](crate::types::TransformProcessingConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`compute_location`](crate::types::builders::TransformProcessingConfigBuilder::compute_location)
-    pub fn build(self) -> ::std::result::Result<crate::types::TransformProcessingConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TransformProcessingConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TransformProcessingConfig {
             compute_location: self.compute_location.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "compute_location",
                     "compute_location was not specified but it is required when building TransformProcessingConfig",
                 )

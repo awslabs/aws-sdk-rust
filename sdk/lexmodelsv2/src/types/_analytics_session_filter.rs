@@ -269,22 +269,22 @@ impl AnalyticsSessionFilterBuilder {
     /// - [`name`](crate::types::builders::AnalyticsSessionFilterBuilder::name)
     /// - [`operator`](crate::types::builders::AnalyticsSessionFilterBuilder::operator)
     /// - [`values`](crate::types::builders::AnalyticsSessionFilterBuilder::values)
-    pub fn build(self) -> ::std::result::Result<crate::types::AnalyticsSessionFilter, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AnalyticsSessionFilter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AnalyticsSessionFilter {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building AnalyticsSessionFilter",
                 )
             })?,
             operator: self.operator.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "operator",
                     "operator was not specified but it is required when building AnalyticsSessionFilter",
                 )
             })?,
             values: self.values.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "values",
                     "values was not specified but it is required when building AnalyticsSessionFilter",
                 )

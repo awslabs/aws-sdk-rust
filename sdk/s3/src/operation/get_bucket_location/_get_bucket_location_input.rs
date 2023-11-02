@@ -75,7 +75,7 @@ impl GetBucketLocationInputBuilder {
     /// Consumes the builder and constructs a [`GetBucketLocationInput`](crate::operation::get_bucket_location::GetBucketLocationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_bucket_location::GetBucketLocationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_bucket_location::GetBucketLocationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_bucket_location::GetBucketLocationInput {
             bucket: self.bucket,
             expected_bucket_owner: self.expected_bucket_owner,

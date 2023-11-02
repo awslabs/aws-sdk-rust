@@ -94,22 +94,22 @@ impl OracleSqlCatalogSourceBuilder {
     /// - [`name`](crate::types::builders::OracleSqlCatalogSourceBuilder::name)
     /// - [`database`](crate::types::builders::OracleSqlCatalogSourceBuilder::database)
     /// - [`table`](crate::types::builders::OracleSqlCatalogSourceBuilder::table)
-    pub fn build(self) -> ::std::result::Result<crate::types::OracleSqlCatalogSource, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::OracleSqlCatalogSource, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::OracleSqlCatalogSource {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building OracleSqlCatalogSource",
                 )
             })?,
             database: self.database.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "database",
                     "database was not specified but it is required when building OracleSqlCatalogSource",
                 )
             })?,
             table: self.table.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "table",
                     "table was not specified but it is required when building OracleSqlCatalogSource",
                 )

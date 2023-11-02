@@ -238,7 +238,7 @@ impl CreateMediaInsightsPipelineInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_media_insights_pipeline::CreateMediaInsightsPipelineInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_media_insights_pipeline::CreateMediaInsightsPipelineInput {
             media_insights_pipeline_configuration_arn: self.media_insights_pipeline_configuration_arn,

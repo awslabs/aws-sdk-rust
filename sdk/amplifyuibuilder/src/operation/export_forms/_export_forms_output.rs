@@ -87,10 +87,10 @@ impl ExportFormsOutputBuilder {
     /// Consumes the builder and constructs a [`ExportFormsOutput`](crate::operation::export_forms::ExportFormsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`entities`](crate::operation::export_forms::builders::ExportFormsOutputBuilder::entities)
-    pub fn build(self) -> ::std::result::Result<crate::operation::export_forms::ExportFormsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::export_forms::ExportFormsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::export_forms::ExportFormsOutput {
             entities: self.entities.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "entities",
                     "entities was not specified but it is required when building ExportFormsOutput",
                 )

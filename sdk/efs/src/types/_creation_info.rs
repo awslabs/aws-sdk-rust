@@ -95,22 +95,22 @@ impl CreationInfoBuilder {
     /// - [`owner_uid`](crate::types::builders::CreationInfoBuilder::owner_uid)
     /// - [`owner_gid`](crate::types::builders::CreationInfoBuilder::owner_gid)
     /// - [`permissions`](crate::types::builders::CreationInfoBuilder::permissions)
-    pub fn build(self) -> ::std::result::Result<crate::types::CreationInfo, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CreationInfo, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CreationInfo {
             owner_uid: self.owner_uid.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "owner_uid",
                     "owner_uid was not specified but it is required when building CreationInfo",
                 )
             })?,
             owner_gid: self.owner_gid.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "owner_gid",
                     "owner_gid was not specified but it is required when building CreationInfo",
                 )
             })?,
             permissions: self.permissions.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "permissions",
                     "permissions was not specified but it is required when building CreationInfo",
                 )

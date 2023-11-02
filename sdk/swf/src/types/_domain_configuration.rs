@@ -46,10 +46,10 @@ impl DomainConfigurationBuilder {
     /// Consumes the builder and constructs a [`DomainConfiguration`](crate::types::DomainConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`workflow_execution_retention_period_in_days`](crate::types::builders::DomainConfigurationBuilder::workflow_execution_retention_period_in_days)
-    pub fn build(self) -> ::std::result::Result<crate::types::DomainConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DomainConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DomainConfiguration {
             workflow_execution_retention_period_in_days: self.workflow_execution_retention_period_in_days.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "workflow_execution_retention_period_in_days",
                     "workflow_execution_retention_period_in_days was not specified but it is required when building DomainConfiguration",
                 )

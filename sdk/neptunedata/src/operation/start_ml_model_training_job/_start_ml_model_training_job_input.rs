@@ -420,7 +420,7 @@ impl StartMlModelTrainingJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_ml_model_training_job::StartMlModelTrainingJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_ml_model_training_job::StartMlModelTrainingJobInput {
             id: self.id,

@@ -211,52 +211,52 @@ impl EnvironmentSummaryBuilder {
     /// - [`engine_type`](crate::types::builders::EnvironmentSummaryBuilder::engine_type)
     /// - [`engine_version`](crate::types::builders::EnvironmentSummaryBuilder::engine_version)
     /// - [`creation_time`](crate::types::builders::EnvironmentSummaryBuilder::creation_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::EnvironmentSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::EnvironmentSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EnvironmentSummary {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building EnvironmentSummary",
                 )
             })?,
             environment_arn: self.environment_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "environment_arn",
                     "environment_arn was not specified but it is required when building EnvironmentSummary",
                 )
             })?,
             environment_id: self.environment_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "environment_id",
                     "environment_id was not specified but it is required when building EnvironmentSummary",
                 )
             })?,
             instance_type: self.instance_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "instance_type",
                     "instance_type was not specified but it is required when building EnvironmentSummary",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building EnvironmentSummary",
                 )
             })?,
             engine_type: self.engine_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "engine_type",
                     "engine_type was not specified but it is required when building EnvironmentSummary",
                 )
             })?,
             engine_version: self.engine_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "engine_version",
                     "engine_version was not specified but it is required when building EnvironmentSummary",
                 )
             })?,
             creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_time",
                     "creation_time was not specified but it is required when building EnvironmentSummary",
                 )

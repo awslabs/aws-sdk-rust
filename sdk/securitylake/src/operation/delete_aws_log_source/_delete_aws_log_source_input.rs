@@ -51,7 +51,7 @@ impl DeleteAwsLogSourceInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAwsLogSourceInput`](crate::operation::delete_aws_log_source::DeleteAwsLogSourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_aws_log_source::DeleteAwsLogSourceInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_aws_log_source::DeleteAwsLogSourceInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_aws_log_source::DeleteAwsLogSourceInput { sources: self.sources })
     }

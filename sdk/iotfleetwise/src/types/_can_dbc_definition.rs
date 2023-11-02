@@ -105,16 +105,16 @@ impl CanDbcDefinitionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`network_interface`](crate::types::builders::CanDbcDefinitionBuilder::network_interface)
     /// - [`can_dbc_files`](crate::types::builders::CanDbcDefinitionBuilder::can_dbc_files)
-    pub fn build(self) -> ::std::result::Result<crate::types::CanDbcDefinition, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CanDbcDefinition, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CanDbcDefinition {
             network_interface: self.network_interface.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "network_interface",
                     "network_interface was not specified but it is required when building CanDbcDefinition",
                 )
             })?,
             can_dbc_files: self.can_dbc_files.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "can_dbc_files",
                     "can_dbc_files was not specified but it is required when building CanDbcDefinition",
                 )

@@ -2,7 +2,7 @@
 pub fn ser_session(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Session,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.duration {
         object.key("Duration").number(
             #[allow(clippy::useless_conversion)]

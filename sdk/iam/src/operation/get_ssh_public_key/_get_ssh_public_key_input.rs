@@ -98,7 +98,7 @@ impl GetSshPublicKeyInputBuilder {
     /// Consumes the builder and constructs a [`GetSshPublicKeyInput`](crate::operation::get_ssh_public_key::GetSshPublicKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_ssh_public_key::GetSshPublicKeyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_ssh_public_key::GetSshPublicKeyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_ssh_public_key::GetSshPublicKeyInput {
             user_name: self.user_name,
             ssh_public_key_id: self.ssh_public_key_id,

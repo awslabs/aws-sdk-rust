@@ -171,7 +171,7 @@ impl GetDifferencesInputBuilder {
     /// Consumes the builder and constructs a [`GetDifferencesInput`](crate::operation::get_differences::GetDifferencesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_differences::GetDifferencesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_differences::GetDifferencesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_differences::GetDifferencesInput {
             repository_name: self.repository_name,
             before_commit_specifier: self.before_commit_specifier,

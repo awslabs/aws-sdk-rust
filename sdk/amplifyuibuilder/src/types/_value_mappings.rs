@@ -90,10 +90,10 @@ impl ValueMappingsBuilder {
     /// Consumes the builder and constructs a [`ValueMappings`](crate::types::ValueMappings).
     /// This method will fail if any of the following fields are not set:
     /// - [`values`](crate::types::builders::ValueMappingsBuilder::values)
-    pub fn build(self) -> ::std::result::Result<crate::types::ValueMappings, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ValueMappings, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ValueMappings {
             values: self.values.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "values",
                     "values was not specified but it is required when building ValueMappings",
                 )

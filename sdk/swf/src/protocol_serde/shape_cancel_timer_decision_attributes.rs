@@ -2,7 +2,7 @@
 pub fn ser_cancel_timer_decision_attributes(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CancelTimerDecisionAttributes,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("timerId").string(input.timer_id.as_str());
     }

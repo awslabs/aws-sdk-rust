@@ -116,7 +116,7 @@ impl CreateUserHierarchyGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_user_hierarchy_group::CreateUserHierarchyGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_user_hierarchy_group::CreateUserHierarchyGroupInput {
             name: self.name,

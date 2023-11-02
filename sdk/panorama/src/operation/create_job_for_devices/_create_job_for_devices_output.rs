@@ -68,11 +68,11 @@ impl CreateJobForDevicesOutputBuilder {
     /// - [`jobs`](crate::operation::create_job_for_devices::builders::CreateJobForDevicesOutputBuilder::jobs)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_job_for_devices::CreateJobForDevicesOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_job_for_devices::CreateJobForDevicesOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_job_for_devices::CreateJobForDevicesOutput {
             jobs: self.jobs.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "jobs",
                     "jobs was not specified but it is required when building CreateJobForDevicesOutput",
                 )

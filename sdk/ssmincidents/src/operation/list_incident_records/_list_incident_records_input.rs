@@ -153,7 +153,7 @@ impl ListIncidentRecordsInputBuilder {
     /// Consumes the builder and constructs a [`ListIncidentRecordsInput`](crate::operation::list_incident_records::ListIncidentRecordsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_incident_records::ListIncidentRecordsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_incident_records::ListIncidentRecordsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_incident_records::ListIncidentRecordsInput {
             filters: self.filters,

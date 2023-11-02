@@ -69,7 +69,7 @@ impl VerifyOtpMessageInputBuilder {
     /// Consumes the builder and constructs a [`VerifyOtpMessageInput`](crate::operation::verify_otp_message::VerifyOtpMessageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::verify_otp_message::VerifyOtpMessageInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::verify_otp_message::VerifyOtpMessageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::verify_otp_message::VerifyOtpMessageInput {
             application_id: self.application_id,
             verify_otp_message_request_parameters: self.verify_otp_message_request_parameters,

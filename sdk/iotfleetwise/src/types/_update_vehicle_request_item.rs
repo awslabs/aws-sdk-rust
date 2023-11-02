@@ -146,10 +146,10 @@ impl UpdateVehicleRequestItemBuilder {
     /// Consumes the builder and constructs a [`UpdateVehicleRequestItem`](crate::types::UpdateVehicleRequestItem).
     /// This method will fail if any of the following fields are not set:
     /// - [`vehicle_name`](crate::types::builders::UpdateVehicleRequestItemBuilder::vehicle_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::UpdateVehicleRequestItem, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::UpdateVehicleRequestItem, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::UpdateVehicleRequestItem {
             vehicle_name: self.vehicle_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "vehicle_name",
                     "vehicle_name was not specified but it is required when building UpdateVehicleRequestItem",
                 )

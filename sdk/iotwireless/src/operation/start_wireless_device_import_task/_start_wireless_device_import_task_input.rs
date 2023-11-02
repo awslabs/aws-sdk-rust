@@ -118,7 +118,7 @@ impl StartWirelessDeviceImportTaskInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_wireless_device_import_task::StartWirelessDeviceImportTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_wireless_device_import_task::StartWirelessDeviceImportTaskInput {
             destination_name: self.destination_name,

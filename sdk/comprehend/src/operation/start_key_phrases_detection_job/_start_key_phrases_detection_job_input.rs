@@ -245,7 +245,7 @@ impl StartKeyPhrasesDetectionJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_key_phrases_detection_job::StartKeyPhrasesDetectionJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_key_phrases_detection_job::StartKeyPhrasesDetectionJobInput {
             input_data_config: self.input_data_config,

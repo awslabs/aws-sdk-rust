@@ -156,16 +156,16 @@ impl TimestreamRegistrationResponseBuilder {
     /// - [`timestream_database_name`](crate::types::builders::TimestreamRegistrationResponseBuilder::timestream_database_name)
     /// - [`timestream_table_name`](crate::types::builders::TimestreamRegistrationResponseBuilder::timestream_table_name)
     /// - [`registration_status`](crate::types::builders::TimestreamRegistrationResponseBuilder::registration_status)
-    pub fn build(self) -> ::std::result::Result<crate::types::TimestreamRegistrationResponse, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TimestreamRegistrationResponse, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TimestreamRegistrationResponse {
             timestream_database_name: self.timestream_database_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "timestream_database_name",
                     "timestream_database_name was not specified but it is required when building TimestreamRegistrationResponse",
                 )
             })?,
             timestream_table_name: self.timestream_table_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "timestream_table_name",
                     "timestream_table_name was not specified but it is required when building TimestreamRegistrationResponse",
                 )
@@ -173,7 +173,7 @@ impl TimestreamRegistrationResponseBuilder {
             timestream_database_arn: self.timestream_database_arn,
             timestream_table_arn: self.timestream_table_arn,
             registration_status: self.registration_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "registration_status",
                     "registration_status was not specified but it is required when building TimestreamRegistrationResponse",
                 )

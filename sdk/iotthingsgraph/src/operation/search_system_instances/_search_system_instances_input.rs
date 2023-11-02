@@ -98,7 +98,7 @@ impl SearchSystemInstancesInputBuilder {
     /// Consumes the builder and constructs a [`SearchSystemInstancesInput`](crate::operation::search_system_instances::SearchSystemInstancesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::search_system_instances::SearchSystemInstancesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::search_system_instances::SearchSystemInstancesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::search_system_instances::SearchSystemInstancesInput {
             filters: self.filters,

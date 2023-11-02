@@ -2,7 +2,7 @@
 pub fn ser_otaa_v1_0_x(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::OtaaV10X,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.app_key {
         object.key("AppKey").string(var_1.as_str());
     }

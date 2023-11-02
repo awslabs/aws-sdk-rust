@@ -2,7 +2,7 @@
 pub fn ser_cloud_watch_logs_log_delivery(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CloudWatchLogsLogDelivery,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("enabled").boolean(input.enabled);
     }

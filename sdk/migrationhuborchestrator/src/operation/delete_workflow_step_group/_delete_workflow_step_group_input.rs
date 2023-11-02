@@ -68,7 +68,7 @@ impl DeleteWorkflowStepGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_workflow_step_group::DeleteWorkflowStepGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_workflow_step_group::DeleteWorkflowStepGroupInput {
             workflow_id: self.workflow_id,

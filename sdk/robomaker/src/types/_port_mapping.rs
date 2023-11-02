@@ -89,16 +89,16 @@ impl PortMappingBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`job_port`](crate::types::builders::PortMappingBuilder::job_port)
     /// - [`application_port`](crate::types::builders::PortMappingBuilder::application_port)
-    pub fn build(self) -> ::std::result::Result<crate::types::PortMapping, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PortMapping, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PortMapping {
             job_port: self.job_port.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "job_port",
                     "job_port was not specified but it is required when building PortMapping",
                 )
             })?,
             application_port: self.application_port.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "application_port",
                     "application_port was not specified but it is required when building PortMapping",
                 )

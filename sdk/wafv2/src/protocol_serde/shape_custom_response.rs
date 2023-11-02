@@ -2,7 +2,7 @@
 pub fn ser_custom_response(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CustomResponse,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("ResponseCode").number(
             #[allow(clippy::useless_conversion)]

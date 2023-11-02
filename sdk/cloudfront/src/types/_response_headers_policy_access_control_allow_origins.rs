@@ -77,16 +77,16 @@ impl ResponseHeadersPolicyAccessControlAllowOriginsBuilder {
     /// - [`items`](crate::types::builders::ResponseHeadersPolicyAccessControlAllowOriginsBuilder::items)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::ResponseHeadersPolicyAccessControlAllowOrigins, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::ResponseHeadersPolicyAccessControlAllowOrigins, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ResponseHeadersPolicyAccessControlAllowOrigins {
             quantity: self.quantity.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "quantity",
                     "quantity was not specified but it is required when building ResponseHeadersPolicyAccessControlAllowOrigins",
                 )
             })?,
             items: self.items.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "items",
                     "items was not specified but it is required when building ResponseHeadersPolicyAccessControlAllowOrigins",
                 )

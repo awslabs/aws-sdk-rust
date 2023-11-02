@@ -284,10 +284,10 @@ impl MediaAnalysisJobDescriptionBuilder {
     /// - [`job_id`](crate::types::builders::MediaAnalysisJobDescriptionBuilder::job_id)
     /// - [`status`](crate::types::builders::MediaAnalysisJobDescriptionBuilder::status)
     /// - [`creation_timestamp`](crate::types::builders::MediaAnalysisJobDescriptionBuilder::creation_timestamp)
-    pub fn build(self) -> ::std::result::Result<crate::types::MediaAnalysisJobDescription, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::MediaAnalysisJobDescription, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MediaAnalysisJobDescription {
             job_id: self.job_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "job_id",
                     "job_id was not specified but it is required when building MediaAnalysisJobDescription",
                 )
@@ -295,14 +295,14 @@ impl MediaAnalysisJobDescriptionBuilder {
             job_name: self.job_name,
             operations_config: self.operations_config,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building MediaAnalysisJobDescription",
                 )
             })?,
             failure_details: self.failure_details,
             creation_timestamp: self.creation_timestamp.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_timestamp",
                     "creation_timestamp was not specified but it is required when building MediaAnalysisJobDescription",
                 )

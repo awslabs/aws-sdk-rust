@@ -598,22 +598,22 @@ impl DeviceFilterBuilder {
     /// - [`attribute`](crate::types::builders::DeviceFilterBuilder::attribute)
     /// - [`operator`](crate::types::builders::DeviceFilterBuilder::operator)
     /// - [`values`](crate::types::builders::DeviceFilterBuilder::values)
-    pub fn build(self) -> ::std::result::Result<crate::types::DeviceFilter, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DeviceFilter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DeviceFilter {
             attribute: self.attribute.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "attribute",
                     "attribute was not specified but it is required when building DeviceFilter",
                 )
             })?,
             operator: self.operator.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "operator",
                     "operator was not specified but it is required when building DeviceFilter",
                 )
             })?,
             values: self.values.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "values",
                     "values was not specified but it is required when building DeviceFilter",
                 )

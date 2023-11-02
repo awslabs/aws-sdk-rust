@@ -46,7 +46,7 @@ impl DescribeNotebookInstanceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_notebook_instance::DescribeNotebookInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_notebook_instance::DescribeNotebookInstanceInput {
             notebook_instance_name: self.notebook_instance_name,

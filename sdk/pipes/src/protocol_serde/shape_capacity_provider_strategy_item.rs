@@ -2,7 +2,7 @@
 pub fn ser_capacity_provider_strategy_item(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CapacityProviderStrategyItem,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("capacityProvider").string(input.capacity_provider.as_str());
     }

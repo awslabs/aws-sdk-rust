@@ -2,7 +2,7 @@
 pub fn ser_get_schema_versions_diff_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_schema_versions_diff::GetSchemaVersionsDiffInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.schema_id {
         #[allow(unused_mut)]
         let mut object_2 = object.key("SchemaId").start_object();

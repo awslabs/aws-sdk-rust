@@ -2,7 +2,7 @@
 pub fn ser_asset_bundle_import_job_data_set_override_parameters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AssetBundleImportJobDataSetOverrideParameters,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("DataSetId").string(input.data_set_id.as_str());
     }

@@ -68,16 +68,16 @@ impl RetryCriteriaBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`failure_type`](crate::types::builders::RetryCriteriaBuilder::failure_type)
     /// - [`number_of_retries`](crate::types::builders::RetryCriteriaBuilder::number_of_retries)
-    pub fn build(self) -> ::std::result::Result<crate::types::RetryCriteria, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RetryCriteria, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RetryCriteria {
             failure_type: self.failure_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "failure_type",
                     "failure_type was not specified but it is required when building RetryCriteria",
                 )
             })?,
             number_of_retries: self.number_of_retries.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "number_of_retries",
                     "number_of_retries was not specified but it is required when building RetryCriteria",
                 )

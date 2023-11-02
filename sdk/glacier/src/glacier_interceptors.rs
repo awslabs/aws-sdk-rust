@@ -16,13 +16,12 @@ use ring::digest::{Context, Digest, SHA256};
 
 use aws_runtime::auth::SigV4OperationSigningConfig;
 use aws_sigv4::http_request::SignableBody;
-use aws_smithy_http::byte_stream;
 use aws_smithy_runtime_api::box_error::BoxError;
 use aws_smithy_runtime_api::client::interceptors::context::{BeforeSerializationInterceptorContextMut, BeforeTransmitInterceptorContextMut};
 use aws_smithy_runtime_api::client::interceptors::Intercept;
-
 use aws_smithy_runtime_api::client::orchestrator::{HttpRequest, LoadedRequestBody};
 use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
+use aws_smithy_types::byte_stream;
 use aws_smithy_types::config_bag::ConfigBag;
 
 /// The default account ID when none is set on an input

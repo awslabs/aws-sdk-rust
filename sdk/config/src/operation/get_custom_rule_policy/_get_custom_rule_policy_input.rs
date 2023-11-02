@@ -43,7 +43,7 @@ impl GetCustomRulePolicyInputBuilder {
     /// Consumes the builder and constructs a [`GetCustomRulePolicyInput`](crate::operation::get_custom_rule_policy::GetCustomRulePolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_custom_rule_policy::GetCustomRulePolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_custom_rule_policy::GetCustomRulePolicyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_custom_rule_policy::GetCustomRulePolicyInput {
             config_rule_name: self.config_rule_name,

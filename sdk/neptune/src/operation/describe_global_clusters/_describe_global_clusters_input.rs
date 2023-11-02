@@ -100,8 +100,10 @@ impl DescribeGlobalClustersInputBuilder {
     /// Consumes the builder and constructs a [`DescribeGlobalClustersInput`](crate::operation::describe_global_clusters::DescribeGlobalClustersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_global_clusters::DescribeGlobalClustersInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::describe_global_clusters::DescribeGlobalClustersInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::describe_global_clusters::DescribeGlobalClustersInput {
             global_cluster_identifier: self.global_cluster_identifier,
             max_records: self.max_records,

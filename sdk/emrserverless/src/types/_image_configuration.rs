@@ -67,10 +67,10 @@ impl ImageConfigurationBuilder {
     /// Consumes the builder and constructs a [`ImageConfiguration`](crate::types::ImageConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`image_uri`](crate::types::builders::ImageConfigurationBuilder::image_uri)
-    pub fn build(self) -> ::std::result::Result<crate::types::ImageConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ImageConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ImageConfiguration {
             image_uri: self.image_uri.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "image_uri",
                     "image_uri was not specified but it is required when building ImageConfiguration",
                 )

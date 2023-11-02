@@ -44,7 +44,7 @@ impl DeleteImagePipelineInputBuilder {
     /// Consumes the builder and constructs a [`DeleteImagePipelineInput`](crate::operation::delete_image_pipeline::DeleteImagePipelineInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_image_pipeline::DeleteImagePipelineInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_image_pipeline::DeleteImagePipelineInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_image_pipeline::DeleteImagePipelineInput {
             image_pipeline_arn: self.image_pipeline_arn,

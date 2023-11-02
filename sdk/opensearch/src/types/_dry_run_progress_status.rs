@@ -147,28 +147,28 @@ impl DryRunProgressStatusBuilder {
     /// - [`dry_run_status`](crate::types::builders::DryRunProgressStatusBuilder::dry_run_status)
     /// - [`creation_date`](crate::types::builders::DryRunProgressStatusBuilder::creation_date)
     /// - [`update_date`](crate::types::builders::DryRunProgressStatusBuilder::update_date)
-    pub fn build(self) -> ::std::result::Result<crate::types::DryRunProgressStatus, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DryRunProgressStatus, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DryRunProgressStatus {
             dry_run_id: self.dry_run_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "dry_run_id",
                     "dry_run_id was not specified but it is required when building DryRunProgressStatus",
                 )
             })?,
             dry_run_status: self.dry_run_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "dry_run_status",
                     "dry_run_status was not specified but it is required when building DryRunProgressStatus",
                 )
             })?,
             creation_date: self.creation_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_date",
                     "creation_date was not specified but it is required when building DryRunProgressStatus",
                 )
             })?,
             update_date: self.update_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "update_date",
                     "update_date was not specified but it is required when building DryRunProgressStatus",
                 )

@@ -105,17 +105,17 @@ impl RegexPatternSetBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`regex_pattern_set_id`](crate::types::builders::RegexPatternSetBuilder::regex_pattern_set_id)
     /// - [`regex_pattern_strings`](crate::types::builders::RegexPatternSetBuilder::regex_pattern_strings)
-    pub fn build(self) -> ::std::result::Result<crate::types::RegexPatternSet, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RegexPatternSet, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RegexPatternSet {
             regex_pattern_set_id: self.regex_pattern_set_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "regex_pattern_set_id",
                     "regex_pattern_set_id was not specified but it is required when building RegexPatternSet",
                 )
             })?,
             name: self.name,
             regex_pattern_strings: self.regex_pattern_strings.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "regex_pattern_strings",
                     "regex_pattern_strings was not specified but it is required when building RegexPatternSet",
                 )

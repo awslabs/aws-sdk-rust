@@ -65,7 +65,7 @@ impl InitiateLayerUploadInputBuilder {
     /// Consumes the builder and constructs a [`InitiateLayerUploadInput`](crate::operation::initiate_layer_upload::InitiateLayerUploadInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::initiate_layer_upload::InitiateLayerUploadInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::initiate_layer_upload::InitiateLayerUploadInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::initiate_layer_upload::InitiateLayerUploadInput {
             registry_id: self.registry_id,

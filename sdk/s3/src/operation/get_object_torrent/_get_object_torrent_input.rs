@@ -108,7 +108,7 @@ impl GetObjectTorrentInputBuilder {
     /// Consumes the builder and constructs a [`GetObjectTorrentInput`](crate::operation::get_object_torrent::GetObjectTorrentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_object_torrent::GetObjectTorrentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_object_torrent::GetObjectTorrentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_object_torrent::GetObjectTorrentInput {
             bucket: self.bucket,
             key: self.key,

@@ -12,12 +12,17 @@ where
             match tokens.next().transpose()? {
                 Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                 Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                    let key = key.to_unescaped()?;
+                    if key == "__type" {
+                        ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                        continue;
+                    }
                     if variant.is_some() {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
                             "encountered mixed variants in union",
                         ));
                     }
-                    variant = match key.to_unescaped()?.as_ref() {
+                    variant = match key.as_ref() {
                         "referenceArn" => Some(crate::types::ReferenceItem::ReferenceArn(
                             ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                 .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -52,13 +57,13 @@ where
 pub fn ser_reference_item(
     object_4: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ReferenceItem,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::ReferenceItem::ReferenceArn(inner) => {
             object_4.key("referenceArn").string(inner.as_str());
         }
         crate::types::ReferenceItem::Unknown => {
-            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant("ReferenceItem"))
+            return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("ReferenceItem"))
         }
     }
     Ok(())

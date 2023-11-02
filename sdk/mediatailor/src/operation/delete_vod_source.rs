@@ -172,15 +172,15 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteVodSou
             fn uri_base(
                 _input: &crate::operation::delete_vod_source::DeleteVodSourceInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 use ::std::fmt::Write as _;
                 let input_1 = &_input.source_location_name;
                 let input_1 = input_1.as_ref().ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field("source_location_name", "cannot be empty or unset")
+                    ::aws_smithy_types::error::operation::BuildError::missing_field("source_location_name", "cannot be empty or unset")
                 })?;
                 let source_location_name = ::aws_smithy_http::label::fmt_string(input_1, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if source_location_name.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "source_location_name",
                         "cannot be empty or unset",
                     ));
@@ -188,10 +188,10 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteVodSou
                 let input_2 = &_input.vod_source_name;
                 let input_2 = input_2
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("vod_source_name", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("vod_source_name", "cannot be empty or unset"))?;
                 let vod_source_name = ::aws_smithy_http::label::fmt_string(input_2, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if vod_source_name.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "vod_source_name",
                         "cannot be empty or unset",
                     ));
@@ -209,7 +209,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteVodSou
             fn update_http_builder(
                 input: &crate::operation::delete_vod_source::DeleteVodSourceInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 ::std::result::Result::Ok(builder.method("DELETE").uri(uri))
@@ -217,7 +217,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteVodSou
             let mut builder = update_http_builder(&input, ::http::request::Builder::new())?;
             builder
         };
-        let body = ::aws_smithy_http::body::SdkBody::from("");
+        let body = ::aws_smithy_types::body::SdkBody::from("");
 
         ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }

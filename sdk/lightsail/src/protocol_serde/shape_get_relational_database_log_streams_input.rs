@@ -2,7 +2,7 @@
 pub fn ser_get_relational_database_log_streams_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_relational_database_log_streams::GetRelationalDatabaseLogStreamsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.relational_database_name {
         object.key("relationalDatabaseName").string(var_1.as_str());
     }

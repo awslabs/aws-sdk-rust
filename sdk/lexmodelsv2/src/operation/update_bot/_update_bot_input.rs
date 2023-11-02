@@ -211,7 +211,7 @@ impl UpdateBotInputBuilder {
         &self.bot_members
     }
     /// Consumes the builder and constructs a [`UpdateBotInput`](crate::operation::update_bot::UpdateBotInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_bot::UpdateBotInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_bot::UpdateBotInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_bot::UpdateBotInput {
             bot_id: self.bot_id,
             bot_name: self.bot_name,

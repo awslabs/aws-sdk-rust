@@ -70,16 +70,16 @@ impl ExternalEventsDetailBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`data_location`](crate::types::builders::ExternalEventsDetailBuilder::data_location)
     /// - [`data_access_role_arn`](crate::types::builders::ExternalEventsDetailBuilder::data_access_role_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::ExternalEventsDetail, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ExternalEventsDetail, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ExternalEventsDetail {
             data_location: self.data_location.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_location",
                     "data_location was not specified but it is required when building ExternalEventsDetail",
                 )
             })?,
             data_access_role_arn: self.data_access_role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_access_role_arn",
                     "data_access_role_arn was not specified but it is required when building ExternalEventsDetail",
                 )

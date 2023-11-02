@@ -2,7 +2,7 @@
 pub fn ser_update_resource_profile_detections_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_resource_profile_detections::UpdateResourceProfileDetectionsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.suppress_data_identifiers {
         let mut array_2 = object.key("suppressDataIdentifiers").start_array();
         for item_3 in var_1 {

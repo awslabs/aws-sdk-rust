@@ -247,7 +247,7 @@ impl GenerateDataKeyWithoutPlaintextInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::generate_data_key_without_plaintext::GenerateDataKeyWithoutPlaintextInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::generate_data_key_without_plaintext::GenerateDataKeyWithoutPlaintextInput {

@@ -68,7 +68,7 @@ impl DeleteTemplateSyncConfigInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_template_sync_config::DeleteTemplateSyncConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_template_sync_config::DeleteTemplateSyncConfigInput {
             template_name: self.template_name,

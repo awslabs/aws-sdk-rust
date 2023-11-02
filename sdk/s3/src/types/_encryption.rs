@@ -96,10 +96,10 @@ impl EncryptionBuilder {
     /// Consumes the builder and constructs a [`Encryption`](crate::types::Encryption).
     /// This method will fail if any of the following fields are not set:
     /// - [`encryption_type`](crate::types::builders::EncryptionBuilder::encryption_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::Encryption, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Encryption, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Encryption {
             encryption_type: self.encryption_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "encryption_type",
                     "encryption_type was not specified but it is required when building Encryption",
                 )

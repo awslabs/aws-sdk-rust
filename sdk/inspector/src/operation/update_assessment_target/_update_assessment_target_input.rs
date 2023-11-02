@@ -87,8 +87,10 @@ impl UpdateAssessmentTargetInputBuilder {
     /// Consumes the builder and constructs a [`UpdateAssessmentTargetInput`](crate::operation::update_assessment_target::UpdateAssessmentTargetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_assessment_target::UpdateAssessmentTargetInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::update_assessment_target::UpdateAssessmentTargetInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::update_assessment_target::UpdateAssessmentTargetInput {
             assessment_target_arn: self.assessment_target_arn,
             assessment_target_name: self.assessment_target_name,

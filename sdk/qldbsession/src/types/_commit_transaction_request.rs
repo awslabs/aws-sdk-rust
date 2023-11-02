@@ -74,16 +74,16 @@ impl CommitTransactionRequestBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`transaction_id`](crate::types::builders::CommitTransactionRequestBuilder::transaction_id)
     /// - [`commit_digest`](crate::types::builders::CommitTransactionRequestBuilder::commit_digest)
-    pub fn build(self) -> ::std::result::Result<crate::types::CommitTransactionRequest, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CommitTransactionRequest, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CommitTransactionRequest {
             transaction_id: self.transaction_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "transaction_id",
                     "transaction_id was not specified but it is required when building CommitTransactionRequest",
                 )
             })?,
             commit_digest: self.commit_digest.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "commit_digest",
                     "commit_digest was not specified but it is required when building CommitTransactionRequest",
                 )

@@ -214,22 +214,22 @@ impl AnalyticsPathFilterBuilder {
     /// - [`name`](crate::types::builders::AnalyticsPathFilterBuilder::name)
     /// - [`operator`](crate::types::builders::AnalyticsPathFilterBuilder::operator)
     /// - [`values`](crate::types::builders::AnalyticsPathFilterBuilder::values)
-    pub fn build(self) -> ::std::result::Result<crate::types::AnalyticsPathFilter, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AnalyticsPathFilter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AnalyticsPathFilter {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building AnalyticsPathFilter",
                 )
             })?,
             operator: self.operator.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "operator",
                     "operator was not specified but it is required when building AnalyticsPathFilter",
                 )
             })?,
             values: self.values.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "values",
                     "values was not specified but it is required when building AnalyticsPathFilter",
                 )

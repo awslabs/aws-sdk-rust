@@ -46,7 +46,7 @@ impl DisassociateUserAccessLoggingSettingsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_user_access_logging_settings::DisassociateUserAccessLoggingSettingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::disassociate_user_access_logging_settings::DisassociateUserAccessLoggingSettingsInput { portal_arn: self.portal_arn },

@@ -10,7 +10,7 @@ pub struct PutChunkInput {
     /// Describes this chunk's position relative to the other chunks
     pub chunk_index: ::std::option::Option<i64>,
     /// Data to be uploaded
-    pub data: ::aws_smithy_http::byte_stream::ByteStream,
+    pub data: ::aws_smithy_types::byte_stream::ByteStream,
     /// Data length
     pub length: ::std::option::Option<i64>,
     /// Data checksum
@@ -32,7 +32,7 @@ impl PutChunkInput {
         self.chunk_index
     }
     /// Data to be uploaded
-    pub fn data(&self) -> &::aws_smithy_http::byte_stream::ByteStream {
+    pub fn data(&self) -> &::aws_smithy_types::byte_stream::ByteStream {
         &self.data
     }
     /// Data length
@@ -62,7 +62,7 @@ pub struct PutChunkInputBuilder {
     pub(crate) backup_job_id: ::std::option::Option<::std::string::String>,
     pub(crate) upload_id: ::std::option::Option<::std::string::String>,
     pub(crate) chunk_index: ::std::option::Option<i64>,
-    pub(crate) data: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
+    pub(crate) data: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>,
     pub(crate) length: ::std::option::Option<i64>,
     pub(crate) checksum: ::std::option::Option<::std::string::String>,
     pub(crate) checksum_algorithm: ::std::option::Option<crate::types::DataChecksumAlgorithm>,
@@ -115,17 +115,17 @@ impl PutChunkInputBuilder {
     }
     /// Data to be uploaded
     /// This field is required.
-    pub fn data(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
+    pub fn data(mut self, input: ::aws_smithy_types::byte_stream::ByteStream) -> Self {
         self.data = ::std::option::Option::Some(input);
         self
     }
     /// Data to be uploaded
-    pub fn set_data(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
+    pub fn set_data(mut self, input: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>) -> Self {
         self.data = input;
         self
     }
     /// Data to be uploaded
-    pub fn get_data(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+    pub fn get_data(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
         &self.data
     }
     /// Data length
@@ -174,7 +174,7 @@ impl PutChunkInputBuilder {
         &self.checksum_algorithm
     }
     /// Consumes the builder and constructs a [`PutChunkInput`](crate::operation::put_chunk::PutChunkInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_chunk::PutChunkInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_chunk::PutChunkInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_chunk::PutChunkInput {
             backup_job_id: self.backup_job_id,
             upload_id: self.upload_id,

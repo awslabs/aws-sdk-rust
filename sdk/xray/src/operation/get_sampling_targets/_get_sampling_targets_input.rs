@@ -54,7 +54,8 @@ impl GetSamplingTargetsInputBuilder {
     /// Consumes the builder and constructs a [`GetSamplingTargetsInput`](crate::operation::get_sampling_targets::GetSamplingTargetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_sampling_targets::GetSamplingTargetsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_sampling_targets::GetSamplingTargetsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::get_sampling_targets::GetSamplingTargetsInput {
             sampling_statistics_documents: self.sampling_statistics_documents,
         })

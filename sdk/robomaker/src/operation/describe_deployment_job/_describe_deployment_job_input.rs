@@ -47,7 +47,7 @@ impl DescribeDeploymentJobInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDeploymentJobInput`](crate::operation::describe_deployment_job::DescribeDeploymentJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_deployment_job::DescribeDeploymentJobInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_deployment_job::DescribeDeploymentJobInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_deployment_job::DescribeDeploymentJobInput { job: self.job })
     }

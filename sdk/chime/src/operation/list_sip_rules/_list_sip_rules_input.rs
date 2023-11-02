@@ -85,7 +85,7 @@ impl ListSipRulesInputBuilder {
     /// Consumes the builder and constructs a [`ListSipRulesInput`](crate::operation::list_sip_rules::ListSipRulesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_sip_rules::ListSipRulesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_sip_rules::ListSipRulesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_sip_rules::ListSipRulesInput {
             sip_media_application_id: self.sip_media_application_id,
             max_results: self.max_results,

@@ -46,10 +46,10 @@ impl StartSessionRequestBuilder {
     /// Consumes the builder and constructs a [`StartSessionRequest`](crate::types::StartSessionRequest).
     /// This method will fail if any of the following fields are not set:
     /// - [`ledger_name`](crate::types::builders::StartSessionRequestBuilder::ledger_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::StartSessionRequest, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::StartSessionRequest, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::StartSessionRequest {
             ledger_name: self.ledger_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "ledger_name",
                     "ledger_name was not specified but it is required when building StartSessionRequest",
                 )

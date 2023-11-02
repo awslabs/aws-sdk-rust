@@ -198,7 +198,7 @@ impl GetPlanInputBuilder {
         &self.additional_plan_options_map
     }
     /// Consumes the builder and constructs a [`GetPlanInput`](crate::operation::get_plan::GetPlanInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_plan::GetPlanInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_plan::GetPlanInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_plan::GetPlanInput {
             mapping: self.mapping,
             source: self.source,

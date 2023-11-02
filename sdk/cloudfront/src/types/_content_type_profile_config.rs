@@ -66,10 +66,10 @@ impl ContentTypeProfileConfigBuilder {
     /// Consumes the builder and constructs a [`ContentTypeProfileConfig`](crate::types::ContentTypeProfileConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`forward_when_content_type_is_unknown`](crate::types::builders::ContentTypeProfileConfigBuilder::forward_when_content_type_is_unknown)
-    pub fn build(self) -> ::std::result::Result<crate::types::ContentTypeProfileConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ContentTypeProfileConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ContentTypeProfileConfig {
             forward_when_content_type_is_unknown: self.forward_when_content_type_is_unknown.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "forward_when_content_type_is_unknown",
                     "forward_when_content_type_is_unknown was not specified but it is required when building ContentTypeProfileConfig",
                 )

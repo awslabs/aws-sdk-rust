@@ -422,35 +422,35 @@ impl CreateFileSystemOutputBuilder {
     /// - [`tags`](crate::operation::create_file_system::builders::CreateFileSystemOutputBuilder::tags)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_file_system::CreateFileSystemOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_file_system::CreateFileSystemOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_file_system::CreateFileSystemOutput {
             owner_id: self.owner_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "owner_id",
                     "owner_id was not specified but it is required when building CreateFileSystemOutput",
                 )
             })?,
             creation_token: self.creation_token.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_token",
                     "creation_token was not specified but it is required when building CreateFileSystemOutput",
                 )
             })?,
             file_system_id: self.file_system_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "file_system_id",
                     "file_system_id was not specified but it is required when building CreateFileSystemOutput",
                 )
             })?,
             file_system_arn: self.file_system_arn,
             creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_time",
                     "creation_time was not specified but it is required when building CreateFileSystemOutput",
                 )
             })?,
             life_cycle_state: self.life_cycle_state.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "life_cycle_state",
                     "life_cycle_state was not specified but it is required when building CreateFileSystemOutput",
                 )
@@ -459,7 +459,7 @@ impl CreateFileSystemOutputBuilder {
             number_of_mount_targets: self.number_of_mount_targets.unwrap_or_default(),
             size_in_bytes: self.size_in_bytes,
             performance_mode: self.performance_mode.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "performance_mode",
                     "performance_mode was not specified but it is required when building CreateFileSystemOutput",
                 )
@@ -471,7 +471,7 @@ impl CreateFileSystemOutputBuilder {
             availability_zone_name: self.availability_zone_name,
             availability_zone_id: self.availability_zone_id,
             tags: self.tags.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "tags",
                     "tags was not specified but it is required when building CreateFileSystemOutput",
                 )

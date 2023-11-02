@@ -44,7 +44,7 @@ impl UpdateDataCellsFilterInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDataCellsFilterInput`](crate::operation::update_data_cells_filter::UpdateDataCellsFilterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_data_cells_filter::UpdateDataCellsFilterInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_data_cells_filter::UpdateDataCellsFilterInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_data_cells_filter::UpdateDataCellsFilterInput { table_data: self.table_data })
     }

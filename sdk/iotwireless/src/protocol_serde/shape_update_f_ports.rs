@@ -2,7 +2,7 @@
 pub fn ser_update_f_ports(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UpdateFPorts,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.positioning {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Positioning").start_object();

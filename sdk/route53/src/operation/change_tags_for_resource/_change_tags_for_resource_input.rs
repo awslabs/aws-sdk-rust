@@ -150,7 +150,7 @@ impl ChangeTagsForResourceInputBuilder {
     /// Consumes the builder and constructs a [`ChangeTagsForResourceInput`](crate::operation::change_tags_for_resource::ChangeTagsForResourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::change_tags_for_resource::ChangeTagsForResourceInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::change_tags_for_resource::ChangeTagsForResourceInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::change_tags_for_resource::ChangeTagsForResourceInput {
             resource_type: self.resource_type,

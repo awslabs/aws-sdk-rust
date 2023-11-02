@@ -64,7 +64,7 @@ impl GetFeatureInputBuilder {
         &self.feature
     }
     /// Consumes the builder and constructs a [`GetFeatureInput`](crate::operation::get_feature::GetFeatureInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_feature::GetFeatureInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_feature::GetFeatureInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_feature::GetFeatureInput {
             project: self.project,
             feature: self.feature,

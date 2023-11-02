@@ -70,16 +70,16 @@ impl AssumedRoleUserBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`assumed_role_id`](crate::types::builders::AssumedRoleUserBuilder::assumed_role_id)
     /// - [`arn`](crate::types::builders::AssumedRoleUserBuilder::arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::AssumedRoleUser, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AssumedRoleUser, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AssumedRoleUser {
             assumed_role_id: self.assumed_role_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "assumed_role_id",
                     "assumed_role_id was not specified but it is required when building AssumedRoleUser",
                 )
             })?,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building AssumedRoleUser",
                 )

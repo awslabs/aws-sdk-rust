@@ -372,7 +372,7 @@ impl StartExecutionInputBuilder {
     /// Consumes the builder and constructs a [`StartExecutionInput`](crate::operation::start_execution::StartExecutionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_execution::StartExecutionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_execution::StartExecutionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_execution::StartExecutionInput {
             state_machine_arn: self.state_machine_arn,
             name: self.name,

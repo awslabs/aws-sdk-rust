@@ -93,7 +93,7 @@ impl AcceptMatchInputBuilder {
         &self.acceptance_type
     }
     /// Consumes the builder and constructs a [`AcceptMatchInput`](crate::operation::accept_match::AcceptMatchInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::accept_match::AcceptMatchInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::accept_match::AcceptMatchInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::accept_match::AcceptMatchInput {
             ticket_id: self.ticket_id,
             player_ids: self.player_ids,

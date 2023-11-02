@@ -85,7 +85,7 @@ impl CancelImportTaskInputBuilder {
     /// Consumes the builder and constructs a [`CancelImportTaskInput`](crate::operation::cancel_import_task::CancelImportTaskInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::cancel_import_task::CancelImportTaskInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::cancel_import_task::CancelImportTaskInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::cancel_import_task::CancelImportTaskInput {
             cancel_reason: self.cancel_reason,
             dry_run: self.dry_run,

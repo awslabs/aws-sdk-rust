@@ -51,7 +51,7 @@ impl PurchaseProvisionedCapacityInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityInput { account_id: self.account_id })
     }

@@ -88,7 +88,8 @@ impl DisassociateLexBotInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateLexBotInput`](crate::operation::disassociate_lex_bot::DisassociateLexBotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::disassociate_lex_bot::DisassociateLexBotInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::disassociate_lex_bot::DisassociateLexBotInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::disassociate_lex_bot::DisassociateLexBotInput {
             instance_id: self.instance_id,
             bot_name: self.bot_name,

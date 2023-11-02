@@ -42,7 +42,9 @@ impl ApproveSkillInputBuilder {
         &self.skill_id
     }
     /// Consumes the builder and constructs a [`ApproveSkillInput`](crate::operation::approve_skill::ApproveSkillInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::approve_skill::ApproveSkillInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::approve_skill::ApproveSkillInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::approve_skill::ApproveSkillInput { skill_id: self.skill_id })
     }
 }

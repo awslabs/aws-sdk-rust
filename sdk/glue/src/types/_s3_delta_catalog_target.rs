@@ -207,29 +207,29 @@ impl S3DeltaCatalogTargetBuilder {
     /// - [`inputs`](crate::types::builders::S3DeltaCatalogTargetBuilder::inputs)
     /// - [`table`](crate::types::builders::S3DeltaCatalogTargetBuilder::table)
     /// - [`database`](crate::types::builders::S3DeltaCatalogTargetBuilder::database)
-    pub fn build(self) -> ::std::result::Result<crate::types::S3DeltaCatalogTarget, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::S3DeltaCatalogTarget, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::S3DeltaCatalogTarget {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building S3DeltaCatalogTarget",
                 )
             })?,
             inputs: self.inputs.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "inputs",
                     "inputs was not specified but it is required when building S3DeltaCatalogTarget",
                 )
             })?,
             partition_keys: self.partition_keys,
             table: self.table.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "table",
                     "table was not specified but it is required when building S3DeltaCatalogTarget",
                 )
             })?,
             database: self.database.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "database",
                     "database was not specified but it is required when building S3DeltaCatalogTarget",
                 )

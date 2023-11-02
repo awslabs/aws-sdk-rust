@@ -89,16 +89,16 @@ impl ContactListDestinationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`contact_list_name`](crate::types::builders::ContactListDestinationBuilder::contact_list_name)
     /// - [`contact_list_import_action`](crate::types::builders::ContactListDestinationBuilder::contact_list_import_action)
-    pub fn build(self) -> ::std::result::Result<crate::types::ContactListDestination, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ContactListDestination, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ContactListDestination {
             contact_list_name: self.contact_list_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "contact_list_name",
                     "contact_list_name was not specified but it is required when building ContactListDestination",
                 )
             })?,
             contact_list_import_action: self.contact_list_import_action.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "contact_list_import_action",
                     "contact_list_import_action was not specified but it is required when building ContactListDestination",
                 )

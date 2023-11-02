@@ -153,7 +153,7 @@ impl UpdateInAppTemplateInputBuilder {
     /// Consumes the builder and constructs a [`UpdateInAppTemplateInput`](crate::operation::update_in_app_template::UpdateInAppTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_in_app_template::UpdateInAppTemplateInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_in_app_template::UpdateInAppTemplateInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_in_app_template::UpdateInAppTemplateInput {
             create_new_version: self.create_new_version,

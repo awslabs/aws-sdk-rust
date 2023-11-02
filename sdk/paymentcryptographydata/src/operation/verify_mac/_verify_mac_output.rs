@@ -85,16 +85,16 @@ impl VerifyMacOutputBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`key_arn`](crate::operation::verify_mac::builders::VerifyMacOutputBuilder::key_arn)
     /// - [`key_check_value`](crate::operation::verify_mac::builders::VerifyMacOutputBuilder::key_check_value)
-    pub fn build(self) -> ::std::result::Result<crate::operation::verify_mac::VerifyMacOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::verify_mac::VerifyMacOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::verify_mac::VerifyMacOutput {
             key_arn: self.key_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "key_arn",
                     "key_arn was not specified but it is required when building VerifyMacOutput",
                 )
             })?,
             key_check_value: self.key_check_value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "key_check_value",
                     "key_check_value was not specified but it is required when building VerifyMacOutput",
                 )

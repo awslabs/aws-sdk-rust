@@ -170,16 +170,16 @@ impl IncidentTemplateBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`title`](crate::types::builders::IncidentTemplateBuilder::title)
     /// - [`impact`](crate::types::builders::IncidentTemplateBuilder::impact)
-    pub fn build(self) -> ::std::result::Result<crate::types::IncidentTemplate, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::IncidentTemplate, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::IncidentTemplate {
             title: self.title.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "title",
                     "title was not specified but it is required when building IncidentTemplate",
                 )
             })?,
             impact: self.impact.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "impact",
                     "impact was not specified but it is required when building IncidentTemplate",
                 )

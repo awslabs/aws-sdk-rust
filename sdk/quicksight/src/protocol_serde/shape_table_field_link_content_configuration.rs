@@ -2,7 +2,7 @@
 pub fn ser_table_field_link_content_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TableFieldLinkContentConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.custom_text_content {
         #[allow(unused_mut)]
         let mut object_2 = object.key("CustomTextContent").start_object();

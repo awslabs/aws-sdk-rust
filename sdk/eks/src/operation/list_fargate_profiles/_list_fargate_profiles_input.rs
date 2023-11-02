@@ -86,7 +86,7 @@ impl ListFargateProfilesInputBuilder {
     /// Consumes the builder and constructs a [`ListFargateProfilesInput`](crate::operation::list_fargate_profiles::ListFargateProfilesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_fargate_profiles::ListFargateProfilesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_fargate_profiles::ListFargateProfilesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_fargate_profiles::ListFargateProfilesInput {
             cluster_name: self.cluster_name,

@@ -124,8 +124,10 @@ impl UpdateThemePermissionsInputBuilder {
     /// Consumes the builder and constructs a [`UpdateThemePermissionsInput`](crate::operation::update_theme_permissions::UpdateThemePermissionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_theme_permissions::UpdateThemePermissionsInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::update_theme_permissions::UpdateThemePermissionsInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::update_theme_permissions::UpdateThemePermissionsInput {
             aws_account_id: self.aws_account_id,
             theme_id: self.theme_id,

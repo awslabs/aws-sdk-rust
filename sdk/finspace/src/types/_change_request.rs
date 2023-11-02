@@ -110,17 +110,17 @@ impl ChangeRequestBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`change_type`](crate::types::builders::ChangeRequestBuilder::change_type)
     /// - [`db_path`](crate::types::builders::ChangeRequestBuilder::db_path)
-    pub fn build(self) -> ::std::result::Result<crate::types::ChangeRequest, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ChangeRequest, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ChangeRequest {
             change_type: self.change_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "change_type",
                     "change_type was not specified but it is required when building ChangeRequest",
                 )
             })?,
             s3_path: self.s3_path,
             db_path: self.db_path.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "db_path",
                     "db_path was not specified but it is required when building ChangeRequest",
                 )

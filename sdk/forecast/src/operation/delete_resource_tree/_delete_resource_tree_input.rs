@@ -44,7 +44,8 @@ impl DeleteResourceTreeInputBuilder {
     /// Consumes the builder and constructs a [`DeleteResourceTreeInput`](crate::operation::delete_resource_tree::DeleteResourceTreeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_resource_tree::DeleteResourceTreeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_resource_tree::DeleteResourceTreeInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::delete_resource_tree::DeleteResourceTreeInput {
             resource_arn: self.resource_arn,
         })

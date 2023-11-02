@@ -128,7 +128,7 @@ impl UpdateFleetCapacityInputBuilder {
     /// Consumes the builder and constructs a [`UpdateFleetCapacityInput`](crate::operation::update_fleet_capacity::UpdateFleetCapacityInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_fleet_capacity::UpdateFleetCapacityInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_fleet_capacity::UpdateFleetCapacityInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_fleet_capacity::UpdateFleetCapacityInput {
             fleet_id: self.fleet_id,

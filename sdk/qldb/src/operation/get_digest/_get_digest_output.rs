@@ -91,10 +91,10 @@ impl GetDigestOutputBuilder {
     /// Consumes the builder and constructs a [`GetDigestOutput`](crate::operation::get_digest::GetDigestOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`digest`](crate::operation::get_digest::builders::GetDigestOutputBuilder::digest)
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_digest::GetDigestOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_digest::GetDigestOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_digest::GetDigestOutput {
             digest: self.digest.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "digest",
                     "digest was not specified but it is required when building GetDigestOutput",
                 )

@@ -51,7 +51,7 @@ impl SetRulePrioritiesInputBuilder {
     /// Consumes the builder and constructs a [`SetRulePrioritiesInput`](crate::operation::set_rule_priorities::SetRulePrioritiesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::set_rule_priorities::SetRulePrioritiesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::set_rule_priorities::SetRulePrioritiesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::set_rule_priorities::SetRulePrioritiesInput {
             rule_priorities: self.rule_priorities,
         })

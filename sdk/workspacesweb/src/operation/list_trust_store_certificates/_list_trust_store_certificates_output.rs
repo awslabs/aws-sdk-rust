@@ -115,12 +115,12 @@ impl ListTrustStoreCertificatesOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_trust_store_certificates::ListTrustStoreCertificatesOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_trust_store_certificates::ListTrustStoreCertificatesOutput {
             certificate_list: self.certificate_list,
             trust_store_arn: self.trust_store_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "trust_store_arn",
                     "trust_store_arn was not specified but it is required when building ListTrustStoreCertificatesOutput",
                 )

@@ -179,7 +179,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetAssetProp
             fn uri_base(
                 _input: &crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 use ::std::fmt::Write as _;
                 ::std::write!(output, "/properties/aggregates").expect("formatting should succeed");
                 ::std::result::Result::Ok(())
@@ -187,7 +187,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetAssetProp
             fn uri_query(
                 _input: &crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesInput,
                 mut output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_1) = &_input.asset_id {
                     {
@@ -207,16 +207,16 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetAssetProp
                 let inner_4 = &_input.aggregate_types;
                 let inner_4 = inner_4
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("aggregate_types", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("aggregate_types", "cannot be empty or unset"))?;
                 for inner_5 in inner_4 {
                     query.push_kv("aggregateTypes", &::aws_smithy_http::query::fmt_string(&inner_5));
                 }
                 let inner_6 = &_input.resolution;
                 let inner_6 = inner_6
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("resolution", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("resolution", "cannot be empty or unset"))?;
                 if inner_6.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "resolution",
                         "cannot be empty or unset",
                     ));
@@ -232,7 +232,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetAssetProp
                 let inner_9 = &_input.start_date;
                 let inner_9 = inner_9
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("start_date", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("start_date", "cannot be empty or unset"))?;
                 query.push_kv(
                     "startDate",
                     &::aws_smithy_http::query::fmt_timestamp(inner_9, ::aws_smithy_types::date_time::Format::DateTime)?,
@@ -240,7 +240,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetAssetProp
                 let inner_10 = &_input.end_date;
                 let inner_10 = inner_10
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("end_date", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("end_date", "cannot be empty or unset"))?;
                 query.push_kv(
                     "endDate",
                     &::aws_smithy_http::query::fmt_timestamp(inner_10, ::aws_smithy_types::date_time::Format::DateTime)?,
@@ -266,7 +266,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetAssetProp
             fn update_http_builder(
                 input: &crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -275,7 +275,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetAssetProp
             let mut builder = update_http_builder(&input, ::http::request::Builder::new())?;
             builder
         };
-        let body = ::aws_smithy_http::body::SdkBody::from("");
+        let body = ::aws_smithy_types::body::SdkBody::from("");
 
         ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }

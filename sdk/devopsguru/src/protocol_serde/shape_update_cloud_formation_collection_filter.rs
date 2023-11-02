@@ -2,7 +2,7 @@
 pub fn ser_update_cloud_formation_collection_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UpdateCloudFormationCollectionFilter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.stack_names {
         let mut array_2 = object.key("StackNames").start_array();
         for item_3 in var_1 {

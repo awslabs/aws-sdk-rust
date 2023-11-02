@@ -73,11 +73,11 @@ impl BatchGetLinkAttributesBuilder {
     /// Consumes the builder and constructs a [`BatchGetLinkAttributes`](crate::types::BatchGetLinkAttributes).
     /// This method will fail if any of the following fields are not set:
     /// - [`attribute_names`](crate::types::builders::BatchGetLinkAttributesBuilder::attribute_names)
-    pub fn build(self) -> ::std::result::Result<crate::types::BatchGetLinkAttributes, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::BatchGetLinkAttributes, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::BatchGetLinkAttributes {
             typed_link_specifier: self.typed_link_specifier,
             attribute_names: self.attribute_names.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "attribute_names",
                     "attribute_names was not specified but it is required when building BatchGetLinkAttributes",
                 )

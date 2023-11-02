@@ -221,7 +221,7 @@ impl CreateWirelessDeviceInputBuilder {
     /// Consumes the builder and constructs a [`CreateWirelessDeviceInput`](crate::operation::create_wireless_device::CreateWirelessDeviceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_wireless_device::CreateWirelessDeviceInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_wireless_device::CreateWirelessDeviceInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_wireless_device::CreateWirelessDeviceInput {
             r#type: self.r#type,

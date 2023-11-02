@@ -234,7 +234,9 @@ impl UpdateAnswerInputBuilder {
         &self.reason
     }
     /// Consumes the builder and constructs a [`UpdateAnswerInput`](crate::operation::update_answer::UpdateAnswerInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_answer::UpdateAnswerInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_answer::UpdateAnswerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_answer::UpdateAnswerInput {
             workload_id: self.workload_id,
             lens_alias: self.lens_alias,

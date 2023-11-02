@@ -134,7 +134,7 @@ impl CompleteSnapshotInputBuilder {
     /// Consumes the builder and constructs a [`CompleteSnapshotInput`](crate::operation::complete_snapshot::CompleteSnapshotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::complete_snapshot::CompleteSnapshotInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::complete_snapshot::CompleteSnapshotInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::complete_snapshot::CompleteSnapshotInput {
             snapshot_id: self.snapshot_id,
             changed_blocks_count: self.changed_blocks_count,

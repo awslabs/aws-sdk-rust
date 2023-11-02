@@ -91,7 +91,7 @@ impl AcknowledgeThirdPartyJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::acknowledge_third_party_job::AcknowledgeThirdPartyJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::acknowledge_third_party_job::AcknowledgeThirdPartyJobInput {
             job_id: self.job_id,

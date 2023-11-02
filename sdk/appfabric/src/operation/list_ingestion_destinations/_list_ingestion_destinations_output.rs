@@ -91,11 +91,11 @@ impl ListIngestionDestinationsOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_ingestion_destinations::ListIngestionDestinationsOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_ingestion_destinations::ListIngestionDestinationsOutput {
             ingestion_destinations: self.ingestion_destinations.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "ingestion_destinations",
                     "ingestion_destinations was not specified but it is required when building ListIngestionDestinationsOutput",
                 )

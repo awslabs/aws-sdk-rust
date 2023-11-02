@@ -115,8 +115,10 @@ impl CreatePlatformEndpointInputBuilder {
     /// Consumes the builder and constructs a [`CreatePlatformEndpointInput`](crate::operation::create_platform_endpoint::CreatePlatformEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_platform_endpoint::CreatePlatformEndpointInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::create_platform_endpoint::CreatePlatformEndpointInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::create_platform_endpoint::CreatePlatformEndpointInput {
             platform_application_arn: self.platform_application_arn,
             token: self.token,

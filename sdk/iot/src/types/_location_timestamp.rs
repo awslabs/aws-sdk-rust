@@ -72,10 +72,10 @@ impl LocationTimestampBuilder {
     /// Consumes the builder and constructs a [`LocationTimestamp`](crate::types::LocationTimestamp).
     /// This method will fail if any of the following fields are not set:
     /// - [`value`](crate::types::builders::LocationTimestampBuilder::value)
-    pub fn build(self) -> ::std::result::Result<crate::types::LocationTimestamp, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::LocationTimestamp, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::LocationTimestamp {
             value: self.value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "value",
                     "value was not specified but it is required when building LocationTimestamp",
                 )

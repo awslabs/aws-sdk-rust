@@ -161,35 +161,35 @@ impl ConfiguredTableAnalysisRuleBuilder {
     /// - [`r#type`](crate::types::builders::ConfiguredTableAnalysisRuleBuilder::r#type)
     /// - [`create_time`](crate::types::builders::ConfiguredTableAnalysisRuleBuilder::create_time)
     /// - [`update_time`](crate::types::builders::ConfiguredTableAnalysisRuleBuilder::update_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::ConfiguredTableAnalysisRule, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ConfiguredTableAnalysisRule, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ConfiguredTableAnalysisRule {
             configured_table_id: self.configured_table_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "configured_table_id",
                     "configured_table_id was not specified but it is required when building ConfiguredTableAnalysisRule",
                 )
             })?,
             configured_table_arn: self.configured_table_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "configured_table_arn",
                     "configured_table_arn was not specified but it is required when building ConfiguredTableAnalysisRule",
                 )
             })?,
             policy: self.policy,
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building ConfiguredTableAnalysisRule",
                 )
             })?,
             create_time: self.create_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "create_time",
                     "create_time was not specified but it is required when building ConfiguredTableAnalysisRule",
                 )
             })?,
             update_time: self.update_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "update_time",
                     "update_time was not specified but it is required when building ConfiguredTableAnalysisRule",
                 )

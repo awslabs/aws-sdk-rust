@@ -46,7 +46,7 @@ impl SetVoiceMessageSpendLimitOverrideInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_voice_message_spend_limit_override::SetVoiceMessageSpendLimitOverrideInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::set_voice_message_spend_limit_override::SetVoiceMessageSpendLimitOverrideInput {

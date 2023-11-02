@@ -67,10 +67,10 @@ impl SortDefinitionBuilder {
     /// Consumes the builder and constructs a [`SortDefinition`](crate::types::SortDefinition).
     /// This method will fail if any of the following fields are not set:
     /// - [`key`](crate::types::builders::SortDefinitionBuilder::key)
-    pub fn build(self) -> ::std::result::Result<crate::types::SortDefinition, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SortDefinition, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SortDefinition {
             key: self.key.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "key",
                     "key was not specified but it is required when building SortDefinition",
                 )

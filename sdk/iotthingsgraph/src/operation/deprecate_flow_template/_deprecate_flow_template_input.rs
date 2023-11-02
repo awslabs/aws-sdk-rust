@@ -54,7 +54,7 @@ impl DeprecateFlowTemplateInputBuilder {
     /// Consumes the builder and constructs a [`DeprecateFlowTemplateInput`](crate::operation::deprecate_flow_template::DeprecateFlowTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::deprecate_flow_template::DeprecateFlowTemplateInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::deprecate_flow_template::DeprecateFlowTemplateInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::deprecate_flow_template::DeprecateFlowTemplateInput { id: self.id })
     }

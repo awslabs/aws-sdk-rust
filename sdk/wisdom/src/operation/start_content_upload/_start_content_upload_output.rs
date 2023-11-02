@@ -156,29 +156,29 @@ impl StartContentUploadOutputBuilder {
     /// - [`headers_to_include`](crate::operation::start_content_upload::builders::StartContentUploadOutputBuilder::headers_to_include)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_content_upload::StartContentUploadOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::start_content_upload::StartContentUploadOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_content_upload::StartContentUploadOutput {
             upload_id: self.upload_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "upload_id",
                     "upload_id was not specified but it is required when building StartContentUploadOutput",
                 )
             })?,
             url: self.url.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "url",
                     "url was not specified but it is required when building StartContentUploadOutput",
                 )
             })?,
             url_expiry: self.url_expiry.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "url_expiry",
                     "url_expiry was not specified but it is required when building StartContentUploadOutput",
                 )
             })?,
             headers_to_include: self.headers_to_include.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "headers_to_include",
                     "headers_to_include was not specified but it is required when building StartContentUploadOutput",
                 )

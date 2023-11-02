@@ -44,7 +44,7 @@ impl GetAddressBookInputBuilder {
     /// Consumes the builder and constructs a [`GetAddressBookInput`](crate::operation::get_address_book::GetAddressBookInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_address_book::GetAddressBookInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_address_book::GetAddressBookInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_address_book::GetAddressBookInput {
             address_book_arn: self.address_book_arn,
         })

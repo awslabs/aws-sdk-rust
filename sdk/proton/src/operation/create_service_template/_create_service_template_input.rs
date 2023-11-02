@@ -174,7 +174,7 @@ impl CreateServiceTemplateInputBuilder {
     /// Consumes the builder and constructs a [`CreateServiceTemplateInput`](crate::operation::create_service_template::CreateServiceTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_service_template::CreateServiceTemplateInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_service_template::CreateServiceTemplateInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_service_template::CreateServiceTemplateInput {
             name: self.name,

@@ -152,22 +152,22 @@ impl SourceBuildInformationBuilder {
     /// - [`source_type`](crate::types::builders::SourceBuildInformationBuilder::source_type)
     /// - [`source_repository`](crate::types::builders::SourceBuildInformationBuilder::source_repository)
     /// - [`source_location`](crate::types::builders::SourceBuildInformationBuilder::source_location)
-    pub fn build(self) -> ::std::result::Result<crate::types::SourceBuildInformation, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SourceBuildInformation, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SourceBuildInformation {
             source_type: self.source_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source_type",
                     "source_type was not specified but it is required when building SourceBuildInformation",
                 )
             })?,
             source_repository: self.source_repository.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source_repository",
                     "source_repository was not specified but it is required when building SourceBuildInformation",
                 )
             })?,
             source_location: self.source_location.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source_location",
                     "source_location was not specified but it is required when building SourceBuildInformation",
                 )

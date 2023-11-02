@@ -72,7 +72,8 @@ impl BatchUpdateClusterInputBuilder {
     /// Consumes the builder and constructs a [`BatchUpdateClusterInput`](crate::operation::batch_update_cluster::BatchUpdateClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_update_cluster::BatchUpdateClusterInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::batch_update_cluster::BatchUpdateClusterInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::batch_update_cluster::BatchUpdateClusterInput {
             cluster_names: self.cluster_names,
             service_update: self.service_update,

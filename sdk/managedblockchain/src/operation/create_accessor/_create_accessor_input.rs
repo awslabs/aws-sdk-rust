@@ -113,7 +113,7 @@ impl CreateAccessorInputBuilder {
     /// Consumes the builder and constructs a [`CreateAccessorInput`](crate::operation::create_accessor::CreateAccessorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_accessor::CreateAccessorInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_accessor::CreateAccessorInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_accessor::CreateAccessorInput {
             client_request_token: self.client_request_token,
             accessor_type: self.accessor_type,

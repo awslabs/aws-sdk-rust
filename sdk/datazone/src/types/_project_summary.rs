@@ -194,29 +194,29 @@ impl ProjectSummaryBuilder {
     /// - [`id`](crate::types::builders::ProjectSummaryBuilder::id)
     /// - [`name`](crate::types::builders::ProjectSummaryBuilder::name)
     /// - [`created_by`](crate::types::builders::ProjectSummaryBuilder::created_by)
-    pub fn build(self) -> ::std::result::Result<crate::types::ProjectSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ProjectSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ProjectSummary {
             domain_id: self.domain_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "domain_id",
                     "domain_id was not specified but it is required when building ProjectSummary",
                 )
             })?,
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building ProjectSummary",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building ProjectSummary",
                 )
             })?,
             description: self.description,
             created_by: self.created_by.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_by",
                     "created_by was not specified but it is required when building ProjectSummary",
                 )

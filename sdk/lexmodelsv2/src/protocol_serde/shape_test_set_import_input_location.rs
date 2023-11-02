@@ -53,7 +53,7 @@ where
 pub fn ser_test_set_import_input_location(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TestSetImportInputLocation,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("s3BucketName").string(input.s3_bucket_name.as_str());
     }

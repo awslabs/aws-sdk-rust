@@ -46,7 +46,7 @@ impl DisassociateSkillFromUsersInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_skill_from_users::DisassociateSkillFromUsersInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disassociate_skill_from_users::DisassociateSkillFromUsersInput { skill_id: self.skill_id })
     }

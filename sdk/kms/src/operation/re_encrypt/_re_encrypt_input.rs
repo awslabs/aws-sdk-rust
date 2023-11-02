@@ -409,7 +409,7 @@ impl ReEncryptInputBuilder {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`ReEncryptInput`](crate::operation::re_encrypt::ReEncryptInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::re_encrypt::ReEncryptInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::re_encrypt::ReEncryptInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::re_encrypt::ReEncryptInput {
             ciphertext_blob: self.ciphertext_blob,
             source_encryption_context: self.source_encryption_context,

@@ -162,7 +162,7 @@ impl UpdateInstanceProfileInputBuilder {
     /// Consumes the builder and constructs a [`UpdateInstanceProfileInput`](crate::operation::update_instance_profile::UpdateInstanceProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_instance_profile::UpdateInstanceProfileInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_instance_profile::UpdateInstanceProfileInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_instance_profile::UpdateInstanceProfileInput {
             arn: self.arn,

@@ -2,7 +2,7 @@
 pub fn ser_origin_request_policy_cookies_config(
     input: &crate::types::OriginRequestPolicyCookiesConfig,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     {

@@ -68,7 +68,7 @@ impl PutVoiceConnectorLoggingConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_voice_connector_logging_configuration::PutVoiceConnectorLoggingConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::put_voice_connector_logging_configuration::PutVoiceConnectorLoggingConfigurationInput {

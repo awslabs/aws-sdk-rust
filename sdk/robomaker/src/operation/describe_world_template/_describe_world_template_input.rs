@@ -44,7 +44,7 @@ impl DescribeWorldTemplateInputBuilder {
     /// Consumes the builder and constructs a [`DescribeWorldTemplateInput`](crate::operation::describe_world_template::DescribeWorldTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_world_template::DescribeWorldTemplateInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_world_template::DescribeWorldTemplateInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_world_template::DescribeWorldTemplateInput { template: self.template })
     }

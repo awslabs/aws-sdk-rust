@@ -151,7 +151,7 @@ impl UpdateChapCredentialsInputBuilder {
     /// Consumes the builder and constructs a [`UpdateChapCredentialsInput`](crate::operation::update_chap_credentials::UpdateChapCredentialsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_chap_credentials::UpdateChapCredentialsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_chap_credentials::UpdateChapCredentialsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_chap_credentials::UpdateChapCredentialsInput {
             target_arn: self.target_arn,

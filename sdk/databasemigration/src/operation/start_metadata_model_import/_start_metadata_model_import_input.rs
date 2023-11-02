@@ -111,7 +111,7 @@ impl StartMetadataModelImportInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_metadata_model_import::StartMetadataModelImportInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_metadata_model_import::StartMetadataModelImportInput {
             migration_project_identifier: self.migration_project_identifier,

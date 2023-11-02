@@ -173,7 +173,7 @@ impl DecoderManifestSummaryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`creation_time`](crate::types::builders::DecoderManifestSummaryBuilder::creation_time)
     /// - [`last_modification_time`](crate::types::builders::DecoderManifestSummaryBuilder::last_modification_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::DecoderManifestSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DecoderManifestSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DecoderManifestSummary {
             name: self.name,
             arn: self.arn,
@@ -181,13 +181,13 @@ impl DecoderManifestSummaryBuilder {
             description: self.description,
             status: self.status,
             creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_time",
                     "creation_time was not specified but it is required when building DecoderManifestSummary",
                 )
             })?,
             last_modification_time: self.last_modification_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_modification_time",
                     "last_modification_time was not specified but it is required when building DecoderManifestSummary",
                 )

@@ -2,7 +2,7 @@
 pub fn ser_data_destination(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DataDestination,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.s3_config {
         #[allow(unused_mut)]
         let mut object_2 = object.key("S3Config").start_object();

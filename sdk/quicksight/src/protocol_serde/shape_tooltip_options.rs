@@ -2,7 +2,7 @@
 pub fn ser_tooltip_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TooltipOptions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.tooltip_visibility {
         object.key("TooltipVisibility").string(var_1.as_str());
     }

@@ -92,22 +92,22 @@ impl EventBuilder {
     /// - [`timestamp`](crate::types::builders::EventBuilder::timestamp)
     /// - [`r#type`](crate::types::builders::EventBuilder::r#type)
     /// - [`data`](crate::types::builders::EventBuilder::data)
-    pub fn build(self) -> ::std::result::Result<crate::types::Event, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Event, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Event {
             timestamp: self.timestamp.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "timestamp",
                     "timestamp was not specified but it is required when building Event",
                 )
             })?,
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building Event",
                 )
             })?,
             data: self.data.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data",
                     "data was not specified but it is required when building Event",
                 )

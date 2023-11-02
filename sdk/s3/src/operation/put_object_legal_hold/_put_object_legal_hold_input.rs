@@ -207,7 +207,7 @@ impl PutObjectLegalHoldInputBuilder {
     /// Consumes the builder and constructs a [`PutObjectLegalHoldInput`](crate::operation::put_object_legal_hold::PutObjectLegalHoldInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_object_legal_hold::PutObjectLegalHoldInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::put_object_legal_hold::PutObjectLegalHoldInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::put_object_legal_hold::PutObjectLegalHoldInput {
             bucket: self.bucket,

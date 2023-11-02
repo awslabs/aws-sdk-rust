@@ -2,7 +2,7 @@
 pub fn ser_artifact_config_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ArtifactConfigInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.s3_encryption {
         #[allow(unused_mut)]
         let mut object_2 = object.key("S3Encryption").start_object();

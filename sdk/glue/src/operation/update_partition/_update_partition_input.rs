@@ -143,7 +143,7 @@ impl UpdatePartitionInputBuilder {
     /// Consumes the builder and constructs a [`UpdatePartitionInput`](crate::operation::update_partition::UpdatePartitionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_partition::UpdatePartitionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_partition::UpdatePartitionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_partition::UpdatePartitionInput {
             catalog_id: self.catalog_id,
             database_name: self.database_name,

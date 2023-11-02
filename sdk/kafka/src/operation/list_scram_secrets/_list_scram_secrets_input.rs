@@ -86,7 +86,7 @@ impl ListScramSecretsInputBuilder {
     /// Consumes the builder and constructs a [`ListScramSecretsInput`](crate::operation::list_scram_secrets::ListScramSecretsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_scram_secrets::ListScramSecretsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_scram_secrets::ListScramSecretsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_scram_secrets::ListScramSecretsInput {
             cluster_arn: self.cluster_arn,
             max_results: self.max_results,

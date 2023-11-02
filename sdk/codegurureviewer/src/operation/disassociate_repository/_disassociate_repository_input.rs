@@ -44,7 +44,7 @@ impl DisassociateRepositoryInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateRepositoryInput`](crate::operation::disassociate_repository::DisassociateRepositoryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::disassociate_repository::DisassociateRepositoryInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::disassociate_repository::DisassociateRepositoryInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::disassociate_repository::DisassociateRepositoryInput {
             association_arn: self.association_arn,

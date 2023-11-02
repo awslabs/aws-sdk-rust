@@ -111,17 +111,17 @@ impl DeactivateEvaluationFormOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deactivate_evaluation_form::DeactivateEvaluationFormOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::deactivate_evaluation_form::DeactivateEvaluationFormOutput {
             evaluation_form_id: self.evaluation_form_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "evaluation_form_id",
                     "evaluation_form_id was not specified but it is required when building DeactivateEvaluationFormOutput",
                 )
             })?,
             evaluation_form_arn: self.evaluation_form_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "evaluation_form_arn",
                     "evaluation_form_arn was not specified but it is required when building DeactivateEvaluationFormOutput",
                 )

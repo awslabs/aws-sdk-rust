@@ -100,17 +100,17 @@ impl DnisEmergencyCallingConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`emergency_phone_number`](crate::types::builders::DnisEmergencyCallingConfigurationBuilder::emergency_phone_number)
     /// - [`calling_country`](crate::types::builders::DnisEmergencyCallingConfigurationBuilder::calling_country)
-    pub fn build(self) -> ::std::result::Result<crate::types::DnisEmergencyCallingConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DnisEmergencyCallingConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DnisEmergencyCallingConfiguration {
             emergency_phone_number: self.emergency_phone_number.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "emergency_phone_number",
                     "emergency_phone_number was not specified but it is required when building DnisEmergencyCallingConfiguration",
                 )
             })?,
             test_phone_number: self.test_phone_number,
             calling_country: self.calling_country.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "calling_country",
                     "calling_country was not specified but it is required when building DnisEmergencyCallingConfiguration",
                 )

@@ -95,10 +95,10 @@ impl DisableOutputBuilder {
     /// Consumes the builder and constructs a [`DisableOutput`](crate::operation::disable::DisableOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`accounts`](crate::operation::disable::builders::DisableOutputBuilder::accounts)
-    pub fn build(self) -> ::std::result::Result<crate::operation::disable::DisableOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::disable::DisableOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::disable::DisableOutput {
             accounts: self.accounts.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "accounts",
                     "accounts was not specified but it is required when building DisableOutput",
                 )

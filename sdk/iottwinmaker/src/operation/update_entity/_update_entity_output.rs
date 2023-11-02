@@ -85,16 +85,16 @@ impl UpdateEntityOutputBuilder {
     /// - [`state`](crate::operation::update_entity::builders::UpdateEntityOutputBuilder::state)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_entity::UpdateEntityOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_entity::UpdateEntityOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_entity::UpdateEntityOutput {
             update_date_time: self.update_date_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "update_date_time",
                     "update_date_time was not specified but it is required when building UpdateEntityOutput",
                 )
             })?,
             state: self.state.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "state",
                     "state was not specified but it is required when building UpdateEntityOutput",
                 )

@@ -80,11 +80,11 @@ impl VpcBuilder {
     /// Consumes the builder and constructs a [`Vpc`](crate::types::Vpc).
     /// This method will fail if any of the following fields are not set:
     /// - [`subnets`](crate::types::builders::VpcBuilder::subnets)
-    pub fn build(self) -> ::std::result::Result<crate::types::Vpc, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Vpc, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Vpc {
             security_groups: self.security_groups,
             subnets: self.subnets.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "subnets",
                     "subnets was not specified but it is required when building Vpc",
                 )

@@ -301,41 +301,43 @@ impl GetSolNetworkInstanceOutputBuilder {
     /// - [`nsd_info_id`](crate::operation::get_sol_network_instance::builders::GetSolNetworkInstanceOutputBuilder::nsd_info_id)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_sol_network_instance::GetSolNetworkInstanceOutput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::get_sol_network_instance::GetSolNetworkInstanceOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::get_sol_network_instance::GetSolNetworkInstanceOutput {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building GetSolNetworkInstanceOutput",
                 )
             })?,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building GetSolNetworkInstanceOutput",
                 )
             })?,
             ns_instance_name: self.ns_instance_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "ns_instance_name",
                     "ns_instance_name was not specified but it is required when building GetSolNetworkInstanceOutput",
                 )
             })?,
             ns_instance_description: self.ns_instance_description.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "ns_instance_description",
                     "ns_instance_description was not specified but it is required when building GetSolNetworkInstanceOutput",
                 )
             })?,
             nsd_id: self.nsd_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "nsd_id",
                     "nsd_id was not specified but it is required when building GetSolNetworkInstanceOutput",
                 )
             })?,
             nsd_info_id: self.nsd_info_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "nsd_info_id",
                     "nsd_info_id was not specified but it is required when building GetSolNetworkInstanceOutput",
                 )

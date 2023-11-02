@@ -92,7 +92,7 @@ impl ModifyHapgInputBuilder {
         &self.partition_serial_list
     }
     /// Consumes the builder and constructs a [`ModifyHapgInput`](crate::operation::modify_hapg::ModifyHapgInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::modify_hapg::ModifyHapgInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_hapg::ModifyHapgInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::modify_hapg::ModifyHapgInput {
             hapg_arn: self.hapg_arn,
             label: self.label,

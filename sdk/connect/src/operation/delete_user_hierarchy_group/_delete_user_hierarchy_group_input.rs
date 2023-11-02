@@ -68,7 +68,7 @@ impl DeleteUserHierarchyGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_user_hierarchy_group::DeleteUserHierarchyGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_user_hierarchy_group::DeleteUserHierarchyGroupInput {
             hierarchy_group_id: self.hierarchy_group_id,

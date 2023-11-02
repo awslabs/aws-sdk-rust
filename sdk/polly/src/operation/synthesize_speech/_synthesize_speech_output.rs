@@ -4,7 +4,7 @@
 #[derive(::std::fmt::Debug)]
 pub struct SynthesizeSpeechOutput {
     /// <p> Stream containing the synthesized speech. </p>
-    pub audio_stream: ::aws_smithy_http::byte_stream::ByteStream,
+    pub audio_stream: ::aws_smithy_types::byte_stream::ByteStream,
     /// <p> Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request. </p>
     /// <ul>
     /// <li> <p> If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg. </p> </li>
@@ -20,7 +20,7 @@ pub struct SynthesizeSpeechOutput {
 }
 impl SynthesizeSpeechOutput {
     /// <p> Stream containing the synthesized speech. </p>
-    pub fn audio_stream(&self) -> &::aws_smithy_http::byte_stream::ByteStream {
+    pub fn audio_stream(&self) -> &::aws_smithy_types::byte_stream::ByteStream {
         &self.audio_stream
     }
     /// <p> Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request. </p>
@@ -55,24 +55,24 @@ impl SynthesizeSpeechOutput {
 #[non_exhaustive]
 #[derive(::std::default::Default, ::std::fmt::Debug)]
 pub struct SynthesizeSpeechOutputBuilder {
-    pub(crate) audio_stream: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
+    pub(crate) audio_stream: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>,
     pub(crate) content_type: ::std::option::Option<::std::string::String>,
     pub(crate) request_characters: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
 impl SynthesizeSpeechOutputBuilder {
     /// <p> Stream containing the synthesized speech. </p>
-    pub fn audio_stream(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
+    pub fn audio_stream(mut self, input: ::aws_smithy_types::byte_stream::ByteStream) -> Self {
         self.audio_stream = ::std::option::Option::Some(input);
         self
     }
     /// <p> Stream containing the synthesized speech. </p>
-    pub fn set_audio_stream(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
+    pub fn set_audio_stream(mut self, input: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>) -> Self {
         self.audio_stream = input;
         self
     }
     /// <p> Stream containing the synthesized speech. </p>
-    pub fn get_audio_stream(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+    pub fn get_audio_stream(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
         &self.audio_stream
     }
     /// <p> Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request. </p>

@@ -96,7 +96,7 @@ impl CreateCoreDefinitionVersionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_core_definition_version::CreateCoreDefinitionVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_core_definition_version::CreateCoreDefinitionVersionInput {
             amzn_client_token: self.amzn_client_token,

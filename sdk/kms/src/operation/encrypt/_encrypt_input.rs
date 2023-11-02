@@ -266,7 +266,7 @@ impl EncryptInputBuilder {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`EncryptInput`](crate::operation::encrypt::EncryptInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::encrypt::EncryptInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::encrypt::EncryptInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::encrypt::EncryptInput {
             key_id: self.key_id,
             plaintext: self.plaintext,

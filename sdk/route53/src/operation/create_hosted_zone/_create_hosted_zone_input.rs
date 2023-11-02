@@ -175,7 +175,7 @@ impl CreateHostedZoneInputBuilder {
     /// Consumes the builder and constructs a [`CreateHostedZoneInput`](crate::operation::create_hosted_zone::CreateHostedZoneInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_hosted_zone::CreateHostedZoneInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_hosted_zone::CreateHostedZoneInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_hosted_zone::CreateHostedZoneInput {
             name: self.name,
             vpc: self.vpc,

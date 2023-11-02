@@ -46,7 +46,7 @@ impl GetTopicRuleDestinationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_topic_rule_destination::GetTopicRuleDestinationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_topic_rule_destination::GetTopicRuleDestinationInput { arn: self.arn })
     }

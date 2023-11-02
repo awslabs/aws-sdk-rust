@@ -167,28 +167,28 @@ impl SparkSqlBuilder {
     /// - [`inputs`](crate::types::builders::SparkSqlBuilder::inputs)
     /// - [`sql_query`](crate::types::builders::SparkSqlBuilder::sql_query)
     /// - [`sql_aliases`](crate::types::builders::SparkSqlBuilder::sql_aliases)
-    pub fn build(self) -> ::std::result::Result<crate::types::SparkSql, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SparkSql, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SparkSql {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building SparkSql",
                 )
             })?,
             inputs: self.inputs.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "inputs",
                     "inputs was not specified but it is required when building SparkSql",
                 )
             })?,
             sql_query: self.sql_query.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "sql_query",
                     "sql_query was not specified but it is required when building SparkSql",
                 )
             })?,
             sql_aliases: self.sql_aliases.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "sql_aliases",
                     "sql_aliases was not specified but it is required when building SparkSql",
                 )

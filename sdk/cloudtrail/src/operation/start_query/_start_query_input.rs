@@ -112,7 +112,7 @@ impl StartQueryInputBuilder {
         &self.query_parameters
     }
     /// Consumes the builder and constructs a [`StartQueryInput`](crate::operation::start_query::StartQueryInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::start_query::StartQueryInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_query::StartQueryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_query::StartQueryInput {
             query_statement: self.query_statement,
             delivery_s3_uri: self.delivery_s3_uri,

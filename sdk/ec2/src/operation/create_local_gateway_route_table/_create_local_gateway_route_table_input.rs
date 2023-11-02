@@ -117,7 +117,7 @@ impl CreateLocalGatewayRouteTableInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_local_gateway_route_table::CreateLocalGatewayRouteTableInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_local_gateway_route_table::CreateLocalGatewayRouteTableInput {
             local_gateway_id: self.local_gateway_id,

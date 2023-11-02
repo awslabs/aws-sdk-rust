@@ -63,11 +63,11 @@ impl CreateUserSettingsOutputBuilder {
     /// - [`user_settings_arn`](crate::operation::create_user_settings::builders::CreateUserSettingsOutputBuilder::user_settings_arn)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_user_settings::CreateUserSettingsOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_user_settings::CreateUserSettingsOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_user_settings::CreateUserSettingsOutput {
             user_settings_arn: self.user_settings_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "user_settings_arn",
                     "user_settings_arn was not specified but it is required when building CreateUserSettingsOutput",
                 )

@@ -87,7 +87,7 @@ impl ListSentimentDetectionJobsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_sentiment_detection_jobs::ListSentimentDetectionJobsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_sentiment_detection_jobs::ListSentimentDetectionJobsInput {
             filter: self.filter,

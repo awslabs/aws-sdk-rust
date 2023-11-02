@@ -170,13 +170,13 @@ pub fn de_disassociate_channel_flow_http_response(
 pub fn ser_disassociate_channel_flow_headers(
     input: &crate::operation::disassociate_channel_flow::DisassociateChannelFlowInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.chime_bearer {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
             let header_value = formatted_2;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "chime_bearer",
                     format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )

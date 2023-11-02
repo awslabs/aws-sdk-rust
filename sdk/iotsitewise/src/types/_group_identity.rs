@@ -46,10 +46,10 @@ impl GroupIdentityBuilder {
     /// Consumes the builder and constructs a [`GroupIdentity`](crate::types::GroupIdentity).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::GroupIdentityBuilder::id)
-    pub fn build(self) -> ::std::result::Result<crate::types::GroupIdentity, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::GroupIdentity, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::GroupIdentity {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building GroupIdentity",
                 )

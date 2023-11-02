@@ -2,7 +2,7 @@
 pub fn ser_batch_update_findings_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::batch_update_findings::BatchUpdateFindingsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.confidence {
         object.key("Confidence").number(
             #[allow(clippy::useless_conversion)]

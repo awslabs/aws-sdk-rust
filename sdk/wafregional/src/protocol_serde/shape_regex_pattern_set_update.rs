@@ -2,7 +2,7 @@
 pub fn ser_regex_pattern_set_update(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RegexPatternSetUpdate,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Action").string(input.action.as_str());
     }

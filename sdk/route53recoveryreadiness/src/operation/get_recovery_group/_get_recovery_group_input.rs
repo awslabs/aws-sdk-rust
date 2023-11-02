@@ -44,7 +44,7 @@ impl GetRecoveryGroupInputBuilder {
     /// Consumes the builder and constructs a [`GetRecoveryGroupInput`](crate::operation::get_recovery_group::GetRecoveryGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_recovery_group::GetRecoveryGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_recovery_group::GetRecoveryGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_recovery_group::GetRecoveryGroupInput {
             recovery_group_name: self.recovery_group_name,
         })

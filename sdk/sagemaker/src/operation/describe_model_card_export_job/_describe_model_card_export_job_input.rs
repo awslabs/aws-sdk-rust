@@ -46,7 +46,7 @@ impl DescribeModelCardExportJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_model_card_export_job::DescribeModelCardExportJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_model_card_export_job::DescribeModelCardExportJobInput {
             model_card_export_job_arn: self.model_card_export_job_arn,

@@ -86,7 +86,7 @@ impl ListAgreementsInputBuilder {
     /// Consumes the builder and constructs a [`ListAgreementsInput`](crate::operation::list_agreements::ListAgreementsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_agreements::ListAgreementsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_agreements::ListAgreementsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_agreements::ListAgreementsInput {
             max_results: self.max_results,
             next_token: self.next_token,

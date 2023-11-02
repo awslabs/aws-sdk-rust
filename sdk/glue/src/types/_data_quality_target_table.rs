@@ -91,16 +91,16 @@ impl DataQualityTargetTableBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`table_name`](crate::types::builders::DataQualityTargetTableBuilder::table_name)
     /// - [`database_name`](crate::types::builders::DataQualityTargetTableBuilder::database_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::DataQualityTargetTable, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DataQualityTargetTable, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DataQualityTargetTable {
             table_name: self.table_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "table_name",
                     "table_name was not specified but it is required when building DataQualityTargetTable",
                 )
             })?,
             database_name: self.database_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "database_name",
                     "database_name was not specified but it is required when building DataQualityTargetTable",
                 )

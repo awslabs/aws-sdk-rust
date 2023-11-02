@@ -141,34 +141,34 @@ impl ClusterSnapshotInListBuilder {
     /// - [`cluster_arn`](crate::types::builders::ClusterSnapshotInListBuilder::cluster_arn)
     /// - [`status`](crate::types::builders::ClusterSnapshotInListBuilder::status)
     /// - [`snapshot_creation_time`](crate::types::builders::ClusterSnapshotInListBuilder::snapshot_creation_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::ClusterSnapshotInList, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ClusterSnapshotInList, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ClusterSnapshotInList {
             snapshot_name: self.snapshot_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "snapshot_name",
                     "snapshot_name was not specified but it is required when building ClusterSnapshotInList",
                 )
             })?,
             snapshot_arn: self.snapshot_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "snapshot_arn",
                     "snapshot_arn was not specified but it is required when building ClusterSnapshotInList",
                 )
             })?,
             cluster_arn: self.cluster_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "cluster_arn",
                     "cluster_arn was not specified but it is required when building ClusterSnapshotInList",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building ClusterSnapshotInList",
                 )
             })?,
             snapshot_creation_time: self.snapshot_creation_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "snapshot_creation_time",
                     "snapshot_creation_time was not specified but it is required when building ClusterSnapshotInList",
                 )

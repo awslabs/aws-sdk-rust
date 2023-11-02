@@ -108,7 +108,7 @@ impl SearchSessionsInputBuilder {
     /// Consumes the builder and constructs a [`SearchSessionsInput`](crate::operation::search_sessions::SearchSessionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::search_sessions::SearchSessionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::search_sessions::SearchSessionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_sessions::SearchSessionsInput {
             next_token: self.next_token,
             max_results: self.max_results,

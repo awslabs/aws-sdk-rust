@@ -68,7 +68,7 @@ impl DetectStackResourceDriftInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::detect_stack_resource_drift::DetectStackResourceDriftInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::detect_stack_resource_drift::DetectStackResourceDriftInput {
             stack_name: self.stack_name,

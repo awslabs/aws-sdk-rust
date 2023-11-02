@@ -46,10 +46,10 @@ impl ComputationPreferenceBuilder {
     /// Consumes the builder and constructs a [`ComputationPreference`](crate::types::ComputationPreference).
     /// This method will fail if any of the following fields are not set:
     /// - [`pricing_plan_arn`](crate::types::builders::ComputationPreferenceBuilder::pricing_plan_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::ComputationPreference, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ComputationPreference, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ComputationPreference {
             pricing_plan_arn: self.pricing_plan_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "pricing_plan_arn",
                     "pricing_plan_arn was not specified but it is required when building ComputationPreference",
                 )

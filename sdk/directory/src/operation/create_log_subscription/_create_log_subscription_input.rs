@@ -66,7 +66,7 @@ impl CreateLogSubscriptionInputBuilder {
     /// Consumes the builder and constructs a [`CreateLogSubscriptionInput`](crate::operation::create_log_subscription::CreateLogSubscriptionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_log_subscription::CreateLogSubscriptionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_log_subscription::CreateLogSubscriptionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_log_subscription::CreateLogSubscriptionInput {
             directory_id: self.directory_id,

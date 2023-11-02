@@ -146,34 +146,34 @@ impl RegistryBuilder {
     /// - [`registry_uri`](crate::types::builders::RegistryBuilder::registry_uri)
     /// - [`verified`](crate::types::builders::RegistryBuilder::verified)
     /// - [`aliases`](crate::types::builders::RegistryBuilder::aliases)
-    pub fn build(self) -> ::std::result::Result<crate::types::Registry, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Registry, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Registry {
             registry_id: self.registry_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "registry_id",
                     "registry_id was not specified but it is required when building Registry",
                 )
             })?,
             registry_arn: self.registry_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "registry_arn",
                     "registry_arn was not specified but it is required when building Registry",
                 )
             })?,
             registry_uri: self.registry_uri.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "registry_uri",
                     "registry_uri was not specified but it is required when building Registry",
                 )
             })?,
             verified: self.verified.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "verified",
                     "verified was not specified but it is required when building Registry",
                 )
             })?,
             aliases: self.aliases.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "aliases",
                     "aliases was not specified but it is required when building Registry",
                 )

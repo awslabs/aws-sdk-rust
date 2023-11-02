@@ -673,22 +673,22 @@ impl DomainStatusBuilder {
     /// - [`domain_id`](crate::types::builders::DomainStatusBuilder::domain_id)
     /// - [`domain_name`](crate::types::builders::DomainStatusBuilder::domain_name)
     /// - [`arn`](crate::types::builders::DomainStatusBuilder::arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::DomainStatus, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DomainStatus, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DomainStatus {
             domain_id: self.domain_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "domain_id",
                     "domain_id was not specified but it is required when building DomainStatus",
                 )
             })?,
             domain_name: self.domain_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "domain_name",
                     "domain_name was not specified but it is required when building DomainStatus",
                 )
             })?,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building DomainStatus",
                 )

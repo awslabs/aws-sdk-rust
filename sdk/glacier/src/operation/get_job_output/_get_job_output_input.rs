@@ -150,7 +150,7 @@ impl GetJobOutputInputBuilder {
     /// Consumes the builder and constructs a [`GetJobOutputInput`](crate::operation::get_job_output::GetJobOutputInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_job_output::GetJobOutputInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_job_output::GetJobOutputInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_job_output::GetJobOutputInput {
             account_id: self.account_id,
             vault_name: self.vault_name,

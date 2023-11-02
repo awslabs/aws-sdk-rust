@@ -198,10 +198,10 @@ impl ScheduledTriggerPropertiesBuilder {
     /// Consumes the builder and constructs a [`ScheduledTriggerProperties`](crate::types::ScheduledTriggerProperties).
     /// This method will fail if any of the following fields are not set:
     /// - [`schedule_expression`](crate::types::builders::ScheduledTriggerPropertiesBuilder::schedule_expression)
-    pub fn build(self) -> ::std::result::Result<crate::types::ScheduledTriggerProperties, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ScheduledTriggerProperties, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ScheduledTriggerProperties {
             schedule_expression: self.schedule_expression.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "schedule_expression",
                     "schedule_expression was not specified but it is required when building ScheduledTriggerProperties",
                 )

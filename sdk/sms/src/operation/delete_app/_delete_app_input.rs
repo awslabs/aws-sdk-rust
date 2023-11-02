@@ -83,7 +83,7 @@ impl DeleteAppInputBuilder {
         &self.force_terminate_app
     }
     /// Consumes the builder and constructs a [`DeleteAppInput`](crate::operation::delete_app::DeleteAppInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_app::DeleteAppInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_app::DeleteAppInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_app::DeleteAppInput {
             app_id: self.app_id,
             force_stop_app_replication: self.force_stop_app_replication,

@@ -174,11 +174,11 @@ impl CachePolicyConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::CachePolicyConfigBuilder::name)
     /// - [`min_ttl`](crate::types::builders::CachePolicyConfigBuilder::min_ttl)
-    pub fn build(self) -> ::std::result::Result<crate::types::CachePolicyConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CachePolicyConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CachePolicyConfig {
             comment: self.comment,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building CachePolicyConfig",
                 )
@@ -186,7 +186,7 @@ impl CachePolicyConfigBuilder {
             default_ttl: self.default_ttl,
             max_ttl: self.max_ttl,
             min_ttl: self.min_ttl.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "min_ttl",
                     "min_ttl was not specified but it is required when building CachePolicyConfig",
                 )

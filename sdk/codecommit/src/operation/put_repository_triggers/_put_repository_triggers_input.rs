@@ -74,7 +74,7 @@ impl PutRepositoryTriggersInputBuilder {
     /// Consumes the builder and constructs a [`PutRepositoryTriggersInput`](crate::operation::put_repository_triggers::PutRepositoryTriggersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_repository_triggers::PutRepositoryTriggersInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::put_repository_triggers::PutRepositoryTriggersInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::put_repository_triggers::PutRepositoryTriggersInput {
             repository_name: self.repository_name,

@@ -118,7 +118,7 @@ impl DeleteLensShareInputBuilder {
     /// Consumes the builder and constructs a [`DeleteLensShareInput`](crate::operation::delete_lens_share::DeleteLensShareInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_lens_share::DeleteLensShareInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_lens_share::DeleteLensShareInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_lens_share::DeleteLensShareInput {
             share_id: self.share_id,
             lens_alias: self.lens_alias,

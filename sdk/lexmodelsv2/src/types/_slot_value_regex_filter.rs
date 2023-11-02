@@ -116,10 +116,10 @@ impl SlotValueRegexFilterBuilder {
     /// Consumes the builder and constructs a [`SlotValueRegexFilter`](crate::types::SlotValueRegexFilter).
     /// This method will fail if any of the following fields are not set:
     /// - [`pattern`](crate::types::builders::SlotValueRegexFilterBuilder::pattern)
-    pub fn build(self) -> ::std::result::Result<crate::types::SlotValueRegexFilter, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SlotValueRegexFilter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SlotValueRegexFilter {
             pattern: self.pattern.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "pattern",
                     "pattern was not specified but it is required when building SlotValueRegexFilter",
                 )

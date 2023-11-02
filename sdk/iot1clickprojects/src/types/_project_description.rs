@@ -182,24 +182,24 @@ impl ProjectDescriptionBuilder {
     /// - [`project_name`](crate::types::builders::ProjectDescriptionBuilder::project_name)
     /// - [`created_date`](crate::types::builders::ProjectDescriptionBuilder::created_date)
     /// - [`updated_date`](crate::types::builders::ProjectDescriptionBuilder::updated_date)
-    pub fn build(self) -> ::std::result::Result<crate::types::ProjectDescription, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ProjectDescription, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ProjectDescription {
             arn: self.arn,
             project_name: self.project_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "project_name",
                     "project_name was not specified but it is required when building ProjectDescription",
                 )
             })?,
             description: self.description,
             created_date: self.created_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_date",
                     "created_date was not specified but it is required when building ProjectDescription",
                 )
             })?,
             updated_date: self.updated_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "updated_date",
                     "updated_date was not specified but it is required when building ProjectDescription",
                 )

@@ -242,7 +242,7 @@ impl CreateNetworkAclEntryInputBuilder {
     /// Consumes the builder and constructs a [`CreateNetworkAclEntryInput`](crate::operation::create_network_acl_entry::CreateNetworkAclEntryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_network_acl_entry::CreateNetworkAclEntryInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_network_acl_entry::CreateNetworkAclEntryInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_network_acl_entry::CreateNetworkAclEntryInput {
             cidr_block: self.cidr_block,

@@ -44,7 +44,7 @@ impl DeleteContactChannelInputBuilder {
     /// Consumes the builder and constructs a [`DeleteContactChannelInput`](crate::operation::delete_contact_channel::DeleteContactChannelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_contact_channel::DeleteContactChannelInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_contact_channel::DeleteContactChannelInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_contact_channel::DeleteContactChannelInput {
             contact_channel_id: self.contact_channel_id,

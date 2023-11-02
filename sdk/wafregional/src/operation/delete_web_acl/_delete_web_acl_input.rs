@@ -66,7 +66,7 @@ impl DeleteWebAclInputBuilder {
     /// Consumes the builder and constructs a [`DeleteWebAclInput`](crate::operation::delete_web_acl::DeleteWebAclInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_web_acl::DeleteWebAclInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_web_acl::DeleteWebAclInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_web_acl::DeleteWebAclInput {
             web_acl_id: self.web_acl_id,
             change_token: self.change_token,

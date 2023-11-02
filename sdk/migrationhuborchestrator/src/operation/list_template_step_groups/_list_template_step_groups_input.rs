@@ -88,7 +88,7 @@ impl ListTemplateStepGroupsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_template_step_groups::ListTemplateStepGroupsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_template_step_groups::ListTemplateStepGroupsInput {
             max_results: self.max_results,

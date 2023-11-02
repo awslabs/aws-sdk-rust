@@ -46,10 +46,10 @@ impl GroupDetailsBuilder {
     /// Consumes the builder and constructs a [`GroupDetails`](crate::types::GroupDetails).
     /// This method will fail if any of the following fields are not set:
     /// - [`group_id`](crate::types::builders::GroupDetailsBuilder::group_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::GroupDetails, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::GroupDetails, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::GroupDetails {
             group_id: self.group_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "group_id",
                     "group_id was not specified but it is required when building GroupDetails",
                 )

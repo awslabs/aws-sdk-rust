@@ -206,35 +206,35 @@ impl BackupDetailsBuilder {
     /// - [`backup_status`](crate::types::builders::BackupDetailsBuilder::backup_status)
     /// - [`backup_type`](crate::types::builders::BackupDetailsBuilder::backup_type)
     /// - [`backup_creation_date_time`](crate::types::builders::BackupDetailsBuilder::backup_creation_date_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::BackupDetails, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::BackupDetails, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::BackupDetails {
             backup_arn: self.backup_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "backup_arn",
                     "backup_arn was not specified but it is required when building BackupDetails",
                 )
             })?,
             backup_name: self.backup_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "backup_name",
                     "backup_name was not specified but it is required when building BackupDetails",
                 )
             })?,
             backup_size_bytes: self.backup_size_bytes,
             backup_status: self.backup_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "backup_status",
                     "backup_status was not specified but it is required when building BackupDetails",
                 )
             })?,
             backup_type: self.backup_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "backup_type",
                     "backup_type was not specified but it is required when building BackupDetails",
                 )
             })?,
             backup_creation_date_time: self.backup_creation_date_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "backup_creation_date_time",
                     "backup_creation_date_time was not specified but it is required when building BackupDetails",
                 )

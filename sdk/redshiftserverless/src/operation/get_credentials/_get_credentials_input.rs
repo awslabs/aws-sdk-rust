@@ -146,7 +146,7 @@ impl GetCredentialsInputBuilder {
     /// Consumes the builder and constructs a [`GetCredentialsInput`](crate::operation::get_credentials::GetCredentialsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_credentials::GetCredentialsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_credentials::GetCredentialsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_credentials::GetCredentialsInput {
             db_name: self.db_name,
             duration_seconds: self.duration_seconds,

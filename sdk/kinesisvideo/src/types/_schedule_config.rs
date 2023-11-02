@@ -76,16 +76,16 @@ impl ScheduleConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`schedule_expression`](crate::types::builders::ScheduleConfigBuilder::schedule_expression)
     /// - [`duration_in_seconds`](crate::types::builders::ScheduleConfigBuilder::duration_in_seconds)
-    pub fn build(self) -> ::std::result::Result<crate::types::ScheduleConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ScheduleConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ScheduleConfig {
             schedule_expression: self.schedule_expression.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "schedule_expression",
                     "schedule_expression was not specified but it is required when building ScheduleConfig",
                 )
             })?,
             duration_in_seconds: self.duration_in_seconds.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "duration_in_seconds",
                     "duration_in_seconds was not specified but it is required when building ScheduleConfig",
                 )

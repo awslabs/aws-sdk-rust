@@ -68,7 +68,7 @@ impl DeleteLakeFormationOptInInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_lake_formation_opt_in::DeleteLakeFormationOptInInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_lake_formation_opt_in::DeleteLakeFormationOptInInput {
             principal: self.principal,

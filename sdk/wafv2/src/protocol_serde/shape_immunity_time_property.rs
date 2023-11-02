@@ -2,7 +2,7 @@
 pub fn ser_immunity_time_property(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ImmunityTimeProperty,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("ImmunityTime").number(
             #[allow(clippy::useless_conversion)]

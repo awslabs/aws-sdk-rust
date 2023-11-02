@@ -92,22 +92,22 @@ impl OutputContextBuilder {
     /// - [`name`](crate::types::builders::OutputContextBuilder::name)
     /// - [`time_to_live_in_seconds`](crate::types::builders::OutputContextBuilder::time_to_live_in_seconds)
     /// - [`turns_to_live`](crate::types::builders::OutputContextBuilder::turns_to_live)
-    pub fn build(self) -> ::std::result::Result<crate::types::OutputContext, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::OutputContext, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::OutputContext {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building OutputContext",
                 )
             })?,
             time_to_live_in_seconds: self.time_to_live_in_seconds.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "time_to_live_in_seconds",
                     "time_to_live_in_seconds was not specified but it is required when building OutputContext",
                 )
             })?,
             turns_to_live: self.turns_to_live.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "turns_to_live",
                     "turns_to_live was not specified but it is required when building OutputContext",
                 )

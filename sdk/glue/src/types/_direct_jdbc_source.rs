@@ -162,34 +162,34 @@ impl DirectJdbcSourceBuilder {
     /// - [`table`](crate::types::builders::DirectJdbcSourceBuilder::table)
     /// - [`connection_name`](crate::types::builders::DirectJdbcSourceBuilder::connection_name)
     /// - [`connection_type`](crate::types::builders::DirectJdbcSourceBuilder::connection_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::DirectJdbcSource, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DirectJdbcSource, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DirectJdbcSource {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building DirectJdbcSource",
                 )
             })?,
             database: self.database.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "database",
                     "database was not specified but it is required when building DirectJdbcSource",
                 )
             })?,
             table: self.table.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "table",
                     "table was not specified but it is required when building DirectJdbcSource",
                 )
             })?,
             connection_name: self.connection_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "connection_name",
                     "connection_name was not specified but it is required when building DirectJdbcSource",
                 )
             })?,
             connection_type: self.connection_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "connection_type",
                     "connection_type was not specified but it is required when building DirectJdbcSource",
                 )

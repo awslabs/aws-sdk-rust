@@ -2,7 +2,7 @@
 pub fn ser_interpolation_parameters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::InterpolationParameters,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.interpolation_type {
         object.key("interpolationType").string(var_1.as_str());
     }

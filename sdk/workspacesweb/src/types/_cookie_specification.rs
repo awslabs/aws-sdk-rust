@@ -88,10 +88,10 @@ impl CookieSpecificationBuilder {
     /// Consumes the builder and constructs a [`CookieSpecification`](crate::types::CookieSpecification).
     /// This method will fail if any of the following fields are not set:
     /// - [`domain`](crate::types::builders::CookieSpecificationBuilder::domain)
-    pub fn build(self) -> ::std::result::Result<crate::types::CookieSpecification, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CookieSpecification, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CookieSpecification {
             domain: self.domain.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "domain",
                     "domain was not specified but it is required when building CookieSpecification",
                 )

@@ -2,7 +2,7 @@
 pub fn ser_datastore_storage(
     object_5: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DatastoreStorage,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::DatastoreStorage::ServiceManagedS3(inner) => {
             #[allow(unused_mut)]
@@ -26,7 +26,7 @@ pub fn ser_datastore_storage(
             object_3.finish();
         }
         crate::types::DatastoreStorage::Unknown => {
-            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+            return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "DatastoreStorage",
             ))
         }
@@ -48,12 +48,17 @@ where
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        let key = key.to_unescaped()?;
+                        if key == "__type" {
+                            ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                            continue;
+                        }
                         if variant.is_some() {
                             return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
                                 "encountered mixed variants in union",
                             ));
                         }
-                        variant = match key.to_unescaped()?.as_ref() {
+                        variant = match key.as_ref() {
                             "serviceManagedS3" => {
                                 Some(crate::types::DatastoreStorage::ServiceManagedS3(
                                     crate::protocol_serde::shape_service_managed_datastore_s3_storage::de_service_managed_datastore_s3_storage(tokens)?

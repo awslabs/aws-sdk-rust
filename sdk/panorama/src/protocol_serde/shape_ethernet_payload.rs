@@ -49,7 +49,7 @@ where
 pub fn ser_ethernet_payload(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EthernetPayload,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("ConnectionType").string(input.connection_type.as_str());
     }

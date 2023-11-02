@@ -69,16 +69,16 @@ impl HdfsNameNodeBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`hostname`](crate::types::builders::HdfsNameNodeBuilder::hostname)
     /// - [`port`](crate::types::builders::HdfsNameNodeBuilder::port)
-    pub fn build(self) -> ::std::result::Result<crate::types::HdfsNameNode, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::HdfsNameNode, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::HdfsNameNode {
             hostname: self.hostname.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "hostname",
                     "hostname was not specified but it is required when building HdfsNameNode",
                 )
             })?,
             port: self.port.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "port",
                     "port was not specified but it is required when building HdfsNameNode",
                 )

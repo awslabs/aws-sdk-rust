@@ -63,7 +63,7 @@ impl StopSessionInputBuilder {
         &self.request_origin
     }
     /// Consumes the builder and constructs a [`StopSessionInput`](crate::operation::stop_session::StopSessionInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::stop_session::StopSessionInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_session::StopSessionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_session::StopSessionInput {
             id: self.id,
             request_origin: self.request_origin,

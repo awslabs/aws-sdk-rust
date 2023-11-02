@@ -117,7 +117,7 @@ impl UpdateResourceServerInputBuilder {
     /// Consumes the builder and constructs a [`UpdateResourceServerInput`](crate::operation::update_resource_server::UpdateResourceServerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_resource_server::UpdateResourceServerInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_resource_server::UpdateResourceServerInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_resource_server::UpdateResourceServerInput {
             user_pool_id: self.user_pool_id,

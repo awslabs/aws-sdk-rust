@@ -91,7 +91,7 @@ impl SearchJobsInputBuilder {
         &self.filters
     }
     /// Consumes the builder and constructs a [`SearchJobsInput`](crate::operation::search_jobs::SearchJobsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::search_jobs::SearchJobsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::search_jobs::SearchJobsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_jobs::SearchJobsInput {
             next_token: self.next_token,
             max_results: self.max_results,

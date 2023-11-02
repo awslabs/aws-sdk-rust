@@ -105,7 +105,7 @@ impl GetCredentialsForIdentityInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_credentials_for_identity::GetCredentialsForIdentityInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_credentials_for_identity::GetCredentialsForIdentityInput {
             identity_id: self.identity_id,

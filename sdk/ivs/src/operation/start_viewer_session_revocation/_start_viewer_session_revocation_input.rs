@@ -89,7 +89,7 @@ impl StartViewerSessionRevocationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_viewer_session_revocation::StartViewerSessionRevocationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_viewer_session_revocation::StartViewerSessionRevocationInput {
             channel_arn: self.channel_arn,

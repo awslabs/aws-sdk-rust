@@ -66,7 +66,8 @@ impl DeleteGlossaryTermInputBuilder {
     /// Consumes the builder and constructs a [`DeleteGlossaryTermInput`](crate::operation::delete_glossary_term::DeleteGlossaryTermInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_glossary_term::DeleteGlossaryTermInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_glossary_term::DeleteGlossaryTermInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::delete_glossary_term::DeleteGlossaryTermInput {
             domain_identifier: self.domain_identifier,
             identifier: self.identifier,

@@ -228,7 +228,7 @@ impl ListObjectsInputBuilder {
         &self.optional_object_attributes
     }
     /// Consumes the builder and constructs a [`ListObjectsInput`](crate::operation::list_objects::ListObjectsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_objects::ListObjectsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_objects::ListObjectsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_objects::ListObjectsInput {
             bucket: self.bucket,
             delimiter: self.delimiter,

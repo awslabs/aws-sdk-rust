@@ -90,17 +90,17 @@ impl RoutingProfileQueueConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`priority`](crate::types::builders::RoutingProfileQueueConfigBuilder::priority)
     /// - [`delay`](crate::types::builders::RoutingProfileQueueConfigBuilder::delay)
-    pub fn build(self) -> ::std::result::Result<crate::types::RoutingProfileQueueConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RoutingProfileQueueConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RoutingProfileQueueConfig {
             queue_reference: self.queue_reference,
             priority: self.priority.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "priority",
                     "priority was not specified but it is required when building RoutingProfileQueueConfig",
                 )
             })?,
             delay: self.delay.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "delay",
                     "delay was not specified but it is required when building RoutingProfileQueueConfig",
                 )

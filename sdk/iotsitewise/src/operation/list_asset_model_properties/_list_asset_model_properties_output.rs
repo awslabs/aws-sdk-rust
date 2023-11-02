@@ -94,11 +94,11 @@ impl ListAssetModelPropertiesOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_asset_model_properties::ListAssetModelPropertiesOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_asset_model_properties::ListAssetModelPropertiesOutput {
             asset_model_property_summaries: self.asset_model_property_summaries.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "asset_model_property_summaries",
                     "asset_model_property_summaries was not specified but it is required when building ListAssetModelPropertiesOutput",
                 )

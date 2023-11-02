@@ -167,22 +167,22 @@ impl SendMessageBatchResultEntryBuilder {
     /// - [`id`](crate::types::builders::SendMessageBatchResultEntryBuilder::id)
     /// - [`message_id`](crate::types::builders::SendMessageBatchResultEntryBuilder::message_id)
     /// - [`md5_of_message_body`](crate::types::builders::SendMessageBatchResultEntryBuilder::md5_of_message_body)
-    pub fn build(self) -> ::std::result::Result<crate::types::SendMessageBatchResultEntry, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SendMessageBatchResultEntry, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SendMessageBatchResultEntry {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building SendMessageBatchResultEntry",
                 )
             })?,
             message_id: self.message_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "message_id",
                     "message_id was not specified but it is required when building SendMessageBatchResultEntry",
                 )
             })?,
             md5_of_message_body: self.md5_of_message_body.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "md5_of_message_body",
                     "md5_of_message_body was not specified but it is required when building SendMessageBatchResultEntry",
                 )

@@ -93,22 +93,22 @@ impl DatabricksParametersBuilder {
     /// - [`host`](crate::types::builders::DatabricksParametersBuilder::host)
     /// - [`port`](crate::types::builders::DatabricksParametersBuilder::port)
     /// - [`sql_endpoint_path`](crate::types::builders::DatabricksParametersBuilder::sql_endpoint_path)
-    pub fn build(self) -> ::std::result::Result<crate::types::DatabricksParameters, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DatabricksParameters, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DatabricksParameters {
             host: self.host.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "host",
                     "host was not specified but it is required when building DatabricksParameters",
                 )
             })?,
             port: self.port.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "port",
                     "port was not specified but it is required when building DatabricksParameters",
                 )
             })?,
             sql_endpoint_path: self.sql_endpoint_path.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "sql_endpoint_path",
                     "sql_endpoint_path was not specified but it is required when building DatabricksParameters",
                 )

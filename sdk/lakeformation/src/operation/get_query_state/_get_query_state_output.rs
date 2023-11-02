@@ -114,11 +114,11 @@ impl GetQueryStateOutputBuilder {
     /// - [`state`](crate::operation::get_query_state::builders::GetQueryStateOutputBuilder::state)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_query_state::GetQueryStateOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_query_state::GetQueryStateOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_query_state::GetQueryStateOutput {
             error: self.error,
             state: self.state.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "state",
                     "state was not specified but it is required when building GetQueryStateOutput",
                 )

@@ -127,7 +127,7 @@ impl ListAuditSuppressionsInputBuilder {
     /// Consumes the builder and constructs a [`ListAuditSuppressionsInput`](crate::operation::list_audit_suppressions::ListAuditSuppressionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_audit_suppressions::ListAuditSuppressionsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_audit_suppressions::ListAuditSuppressionsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_audit_suppressions::ListAuditSuppressionsInput {
             check_name: self.check_name,

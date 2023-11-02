@@ -131,28 +131,28 @@ impl DescribeLimitsOutputBuilder {
     /// - [`on_demand_stream_count_limit`](crate::operation::describe_limits::builders::DescribeLimitsOutputBuilder::on_demand_stream_count_limit)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_limits::DescribeLimitsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_limits::DescribeLimitsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_limits::DescribeLimitsOutput {
             shard_limit: self.shard_limit.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "shard_limit",
                     "shard_limit was not specified but it is required when building DescribeLimitsOutput",
                 )
             })?,
             open_shard_count: self.open_shard_count.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "open_shard_count",
                     "open_shard_count was not specified but it is required when building DescribeLimitsOutput",
                 )
             })?,
             on_demand_stream_count: self.on_demand_stream_count.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "on_demand_stream_count",
                     "on_demand_stream_count was not specified but it is required when building DescribeLimitsOutput",
                 )
             })?,
             on_demand_stream_count_limit: self.on_demand_stream_count_limit.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "on_demand_stream_count_limit",
                     "on_demand_stream_count_limit was not specified but it is required when building DescribeLimitsOutput",
                 )

@@ -150,7 +150,7 @@ impl CopyFpgaImageInputBuilder {
     /// Consumes the builder and constructs a [`CopyFpgaImageInput`](crate::operation::copy_fpga_image::CopyFpgaImageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::copy_fpga_image::CopyFpgaImageInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::copy_fpga_image::CopyFpgaImageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::copy_fpga_image::CopyFpgaImageInput {
             dry_run: self.dry_run,
             source_fpga_image_id: self.source_fpga_image_id,

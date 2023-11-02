@@ -67,7 +67,7 @@ impl DeleteSubnetCidrReservationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_subnet_cidr_reservation::DeleteSubnetCidrReservationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_subnet_cidr_reservation::DeleteSubnetCidrReservationInput {
             subnet_cidr_reservation_id: self.subnet_cidr_reservation_id,

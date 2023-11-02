@@ -20,7 +20,7 @@ impl ListAvailableSolutionStacksInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_available_solution_stacks::ListAvailableSolutionStacksInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_available_solution_stacks::ListAvailableSolutionStacksInput {})
     }

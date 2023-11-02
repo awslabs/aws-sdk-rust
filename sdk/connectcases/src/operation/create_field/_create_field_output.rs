@@ -85,16 +85,16 @@ impl CreateFieldOutputBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`field_id`](crate::operation::create_field::builders::CreateFieldOutputBuilder::field_id)
     /// - [`field_arn`](crate::operation::create_field::builders::CreateFieldOutputBuilder::field_arn)
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_field::CreateFieldOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_field::CreateFieldOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_field::CreateFieldOutput {
             field_id: self.field_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "field_id",
                     "field_id was not specified but it is required when building CreateFieldOutput",
                 )
             })?,
             field_arn: self.field_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "field_arn",
                     "field_arn was not specified but it is required when building CreateFieldOutput",
                 )

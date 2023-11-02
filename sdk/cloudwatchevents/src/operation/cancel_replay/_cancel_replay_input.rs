@@ -42,7 +42,9 @@ impl CancelReplayInputBuilder {
         &self.replay_name
     }
     /// Consumes the builder and constructs a [`CancelReplayInput`](crate::operation::cancel_replay::CancelReplayInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_replay::CancelReplayInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::cancel_replay::CancelReplayInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::cancel_replay::CancelReplayInput {
             replay_name: self.replay_name,
         })

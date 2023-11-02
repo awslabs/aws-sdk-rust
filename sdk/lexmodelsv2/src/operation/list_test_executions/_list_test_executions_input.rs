@@ -85,7 +85,8 @@ impl ListTestExecutionsInputBuilder {
     /// Consumes the builder and constructs a [`ListTestExecutionsInput`](crate::operation::list_test_executions::ListTestExecutionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_test_executions::ListTestExecutionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_test_executions::ListTestExecutionsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::list_test_executions::ListTestExecutionsInput {
             sort_by: self.sort_by,
             max_results: self.max_results,

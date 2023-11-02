@@ -44,7 +44,7 @@ impl DisassociateConnectorInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateConnectorInput`](crate::operation::disassociate_connector::DisassociateConnectorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::disassociate_connector::DisassociateConnectorInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::disassociate_connector::DisassociateConnectorInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::disassociate_connector::DisassociateConnectorInput {
             connector_id: self.connector_id,

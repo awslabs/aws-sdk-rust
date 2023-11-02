@@ -2,7 +2,7 @@
 pub fn ser_attribute_key(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AttributeKey,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("SchemaArn").string(input.schema_arn.as_str());
     }

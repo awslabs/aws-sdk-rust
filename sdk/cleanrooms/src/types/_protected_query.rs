@@ -261,35 +261,35 @@ impl ProtectedQueryBuilder {
     /// - [`membership_arn`](crate::types::builders::ProtectedQueryBuilder::membership_arn)
     /// - [`create_time`](crate::types::builders::ProtectedQueryBuilder::create_time)
     /// - [`status`](crate::types::builders::ProtectedQueryBuilder::status)
-    pub fn build(self) -> ::std::result::Result<crate::types::ProtectedQuery, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ProtectedQuery, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ProtectedQuery {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building ProtectedQuery",
                 )
             })?,
             membership_id: self.membership_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "membership_id",
                     "membership_id was not specified but it is required when building ProtectedQuery",
                 )
             })?,
             membership_arn: self.membership_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "membership_arn",
                     "membership_arn was not specified but it is required when building ProtectedQuery",
                 )
             })?,
             create_time: self.create_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "create_time",
                     "create_time was not specified but it is required when building ProtectedQuery",
                 )
             })?,
             sql_parameters: self.sql_parameters,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building ProtectedQuery",
                 )

@@ -161,7 +161,7 @@ impl UpdateGameServerGroupInputBuilder {
     /// Consumes the builder and constructs a [`UpdateGameServerGroupInput`](crate::operation::update_game_server_group::UpdateGameServerGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_game_server_group::UpdateGameServerGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_game_server_group::UpdateGameServerGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_game_server_group::UpdateGameServerGroupInput {
             game_server_group_name: self.game_server_group_name,

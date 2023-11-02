@@ -47,7 +47,7 @@ impl GetCustomVerificationEmailTemplateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_custom_verification_email_template::GetCustomVerificationEmailTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_custom_verification_email_template::GetCustomVerificationEmailTemplateInput {

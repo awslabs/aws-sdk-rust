@@ -2,7 +2,7 @@
 pub fn ser_environment_template_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EnvironmentTemplateFilter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("templateName").string(input.template_name.as_str());
     }

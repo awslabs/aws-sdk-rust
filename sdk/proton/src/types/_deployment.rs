@@ -446,40 +446,40 @@ impl DeploymentBuilder {
     /// - [`deployment_status`](crate::types::builders::DeploymentBuilder::deployment_status)
     /// - [`created_at`](crate::types::builders::DeploymentBuilder::created_at)
     /// - [`last_modified_at`](crate::types::builders::DeploymentBuilder::last_modified_at)
-    pub fn build(self) -> ::std::result::Result<crate::types::Deployment, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Deployment, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Deployment {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building Deployment",
                 )
             })?,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building Deployment",
                 )
             })?,
             target_arn: self.target_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "target_arn",
                     "target_arn was not specified but it is required when building Deployment",
                 )
             })?,
             target_resource_created_at: self.target_resource_created_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "target_resource_created_at",
                     "target_resource_created_at was not specified but it is required when building Deployment",
                 )
             })?,
             target_resource_type: self.target_resource_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "target_resource_type",
                     "target_resource_type was not specified but it is required when building Deployment",
                 )
             })?,
             environment_name: self.environment_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "environment_name",
                     "environment_name was not specified but it is required when building Deployment",
                 )
@@ -488,20 +488,20 @@ impl DeploymentBuilder {
             service_instance_name: self.service_instance_name,
             component_name: self.component_name,
             deployment_status: self.deployment_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "deployment_status",
                     "deployment_status was not specified but it is required when building Deployment",
                 )
             })?,
             deployment_status_message: self.deployment_status_message,
             created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
                     "created_at was not specified but it is required when building Deployment",
                 )
             })?,
             last_modified_at: self.last_modified_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_modified_at",
                     "last_modified_at was not specified but it is required when building Deployment",
                 )

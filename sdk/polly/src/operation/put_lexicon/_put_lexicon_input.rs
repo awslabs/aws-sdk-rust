@@ -72,7 +72,7 @@ impl PutLexiconInputBuilder {
         &self.content
     }
     /// Consumes the builder and constructs a [`PutLexiconInput`](crate::operation::put_lexicon::PutLexiconInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_lexicon::PutLexiconInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_lexicon::PutLexiconInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_lexicon::PutLexiconInput {
             name: self.name,
             content: self.content,

@@ -140,7 +140,7 @@ impl GetUnfilteredTableMetadataInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_unfiltered_table_metadata::GetUnfilteredTableMetadataInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_unfiltered_table_metadata::GetUnfilteredTableMetadataInput {
             catalog_id: self.catalog_id,

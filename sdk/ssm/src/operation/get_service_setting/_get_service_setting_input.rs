@@ -95,7 +95,7 @@ impl GetServiceSettingInputBuilder {
     /// Consumes the builder and constructs a [`GetServiceSettingInput`](crate::operation::get_service_setting::GetServiceSettingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_service_setting::GetServiceSettingInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_service_setting::GetServiceSettingInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_service_setting::GetServiceSettingInput { setting_id: self.setting_id })
     }
 }

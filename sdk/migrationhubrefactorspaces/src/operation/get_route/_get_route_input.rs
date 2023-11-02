@@ -86,7 +86,7 @@ impl GetRouteInputBuilder {
         &self.route_identifier
     }
     /// Consumes the builder and constructs a [`GetRouteInput`](crate::operation::get_route::GetRouteInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_route::GetRouteInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_route::GetRouteInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_route::GetRouteInput {
             environment_identifier: self.environment_identifier,
             application_identifier: self.application_identifier,

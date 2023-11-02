@@ -2,7 +2,7 @@
 pub fn ser_input_file_location(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::InputFileLocation,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.s3_file_location {
         #[allow(unused_mut)]
         let mut object_2 = object.key("S3FileLocation").start_object();

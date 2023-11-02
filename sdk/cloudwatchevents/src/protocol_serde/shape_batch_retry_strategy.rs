@@ -2,7 +2,7 @@
 pub fn ser_batch_retry_strategy(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BatchRetryStrategy,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.attempts != 0 {
         object.key("Attempts").number(
             #[allow(clippy::useless_conversion)]

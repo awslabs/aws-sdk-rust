@@ -2,7 +2,7 @@
 pub fn ser_evaluation_form_numeric_question_option(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EvaluationFormNumericQuestionOption,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("MinValue").number(
             #[allow(clippy::useless_conversion)]

@@ -130,7 +130,7 @@ impl UpdateLogPatternInputBuilder {
     /// Consumes the builder and constructs a [`UpdateLogPatternInput`](crate::operation::update_log_pattern::UpdateLogPatternInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_log_pattern::UpdateLogPatternInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_log_pattern::UpdateLogPatternInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_log_pattern::UpdateLogPatternInput {
             resource_group_name: self.resource_group_name,
             pattern_set_name: self.pattern_set_name,

@@ -64,7 +64,7 @@ impl RebootDbClusterInputBuilder {
     /// Consumes the builder and constructs a [`RebootDbClusterInput`](crate::operation::reboot_db_cluster::RebootDbClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::reboot_db_cluster::RebootDbClusterInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::reboot_db_cluster::RebootDbClusterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::reboot_db_cluster::RebootDbClusterInput {
             db_cluster_identifier: self.db_cluster_identifier,
         })

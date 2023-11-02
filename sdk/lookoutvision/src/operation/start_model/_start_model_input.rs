@@ -138,7 +138,7 @@ impl StartModelInputBuilder {
         &self.max_inference_units
     }
     /// Consumes the builder and constructs a [`StartModelInput`](crate::operation::start_model::StartModelInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::start_model::StartModelInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_model::StartModelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_model::StartModelInput {
             project_name: self.project_name,
             model_version: self.model_version,

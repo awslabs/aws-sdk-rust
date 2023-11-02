@@ -88,7 +88,7 @@ impl ResetImageAttributeInputBuilder {
     /// Consumes the builder and constructs a [`ResetImageAttributeInput`](crate::operation::reset_image_attribute::ResetImageAttributeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::reset_image_attribute::ResetImageAttributeInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::reset_image_attribute::ResetImageAttributeInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::reset_image_attribute::ResetImageAttributeInput {
             attribute: self.attribute,

@@ -159,16 +159,16 @@ impl JoinInstructionBuilder {
     /// - [`right_operand`](crate::types::builders::JoinInstructionBuilder::right_operand)
     /// - [`r#type`](crate::types::builders::JoinInstructionBuilder::r#type)
     /// - [`on_clause`](crate::types::builders::JoinInstructionBuilder::on_clause)
-    pub fn build(self) -> ::std::result::Result<crate::types::JoinInstruction, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::JoinInstruction, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::JoinInstruction {
             left_operand: self.left_operand.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "left_operand",
                     "left_operand was not specified but it is required when building JoinInstruction",
                 )
             })?,
             right_operand: self.right_operand.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "right_operand",
                     "right_operand was not specified but it is required when building JoinInstruction",
                 )
@@ -176,13 +176,13 @@ impl JoinInstructionBuilder {
             left_join_key_properties: self.left_join_key_properties,
             right_join_key_properties: self.right_join_key_properties,
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building JoinInstruction",
                 )
             })?,
             on_clause: self.on_clause.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "on_clause",
                     "on_clause was not specified but it is required when building JoinInstruction",
                 )

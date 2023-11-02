@@ -76,7 +76,7 @@ impl DetectTargetedSentimentInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::detect_targeted_sentiment::DetectTargetedSentimentInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::detect_targeted_sentiment::DetectTargetedSentimentInput {
             text: self.text,

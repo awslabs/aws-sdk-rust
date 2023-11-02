@@ -305,10 +305,10 @@ impl InsightBuilder {
     /// Consumes the builder and constructs a [`Insight`](crate::types::Insight).
     /// This method will fail if any of the following fields are not set:
     /// - [`insight_id`](crate::types::builders::InsightBuilder::insight_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::Insight, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Insight, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Insight {
             insight_id: self.insight_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "insight_id",
                     "insight_id was not specified but it is required when building Insight",
                 )

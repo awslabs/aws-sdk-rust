@@ -84,7 +84,7 @@ impl ListDevicesInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListDevicesInput`](crate::operation::list_devices::ListDevicesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_devices::ListDevicesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_devices::ListDevicesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_devices::ListDevicesInput {
             fleet_arn: self.fleet_arn,
             next_token: self.next_token,

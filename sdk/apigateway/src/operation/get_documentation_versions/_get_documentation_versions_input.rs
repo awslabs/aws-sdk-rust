@@ -89,7 +89,7 @@ impl GetDocumentationVersionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_documentation_versions::GetDocumentationVersionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_documentation_versions::GetDocumentationVersionsInput {
             rest_api_id: self.rest_api_id,

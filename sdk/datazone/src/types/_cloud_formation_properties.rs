@@ -46,10 +46,10 @@ impl CloudFormationPropertiesBuilder {
     /// Consumes the builder and constructs a [`CloudFormationProperties`](crate::types::CloudFormationProperties).
     /// This method will fail if any of the following fields are not set:
     /// - [`template_url`](crate::types::builders::CloudFormationPropertiesBuilder::template_url)
-    pub fn build(self) -> ::std::result::Result<crate::types::CloudFormationProperties, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CloudFormationProperties, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CloudFormationProperties {
             template_url: self.template_url.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "template_url",
                     "template_url was not specified but it is required when building CloudFormationProperties",
                 )

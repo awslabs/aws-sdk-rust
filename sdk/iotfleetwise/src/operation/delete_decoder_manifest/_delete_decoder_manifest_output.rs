@@ -87,17 +87,17 @@ impl DeleteDecoderManifestOutputBuilder {
     /// - [`arn`](crate::operation::delete_decoder_manifest::builders::DeleteDecoderManifestOutputBuilder::arn)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_decoder_manifest::DeleteDecoderManifestOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_decoder_manifest::DeleteDecoderManifestOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_decoder_manifest::DeleteDecoderManifestOutput {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building DeleteDecoderManifestOutput",
                 )
             })?,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building DeleteDecoderManifestOutput",
                 )

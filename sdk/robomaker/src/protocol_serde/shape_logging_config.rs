@@ -38,7 +38,7 @@ where
 pub fn ser_logging_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LoggingConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.record_all_ros_topics {
         object.key("recordAllRosTopics").boolean(*var_1);
     }

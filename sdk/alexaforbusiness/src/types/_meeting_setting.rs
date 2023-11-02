@@ -50,10 +50,10 @@ impl MeetingSettingBuilder {
     /// Consumes the builder and constructs a [`MeetingSetting`](crate::types::MeetingSetting).
     /// This method will fail if any of the following fields are not set:
     /// - [`require_pin`](crate::types::builders::MeetingSettingBuilder::require_pin)
-    pub fn build(self) -> ::std::result::Result<crate::types::MeetingSetting, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::MeetingSetting, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MeetingSetting {
             require_pin: self.require_pin.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "require_pin",
                     "require_pin was not specified but it is required when building MeetingSetting",
                 )

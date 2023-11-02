@@ -498,7 +498,7 @@ impl DescribeImagesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeImagesInput`](crate::operation::describe_images::DescribeImagesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_images::DescribeImagesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_images::DescribeImagesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_images::DescribeImagesInput {
             executable_users: self.executable_users,
             filters: self.filters,

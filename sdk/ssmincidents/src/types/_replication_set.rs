@@ -214,47 +214,47 @@ impl ReplicationSetBuilder {
     /// - [`created_by`](crate::types::builders::ReplicationSetBuilder::created_by)
     /// - [`last_modified_time`](crate::types::builders::ReplicationSetBuilder::last_modified_time)
     /// - [`last_modified_by`](crate::types::builders::ReplicationSetBuilder::last_modified_by)
-    pub fn build(self) -> ::std::result::Result<crate::types::ReplicationSet, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ReplicationSet, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ReplicationSet {
             arn: self.arn,
             region_map: self.region_map.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "region_map",
                     "region_map was not specified but it is required when building ReplicationSet",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building ReplicationSet",
                 )
             })?,
             deletion_protected: self.deletion_protected.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "deletion_protected",
                     "deletion_protected was not specified but it is required when building ReplicationSet",
                 )
             })?,
             created_time: self.created_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_time",
                     "created_time was not specified but it is required when building ReplicationSet",
                 )
             })?,
             created_by: self.created_by.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_by",
                     "created_by was not specified but it is required when building ReplicationSet",
                 )
             })?,
             last_modified_time: self.last_modified_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_modified_time",
                     "last_modified_time was not specified but it is required when building ReplicationSet",
                 )
             })?,
             last_modified_by: self.last_modified_by.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_modified_by",
                     "last_modified_by was not specified but it is required when building ReplicationSet",
                 )

@@ -127,7 +127,7 @@ impl ExportServerEngineAttributeInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::export_server_engine_attribute::ExportServerEngineAttributeInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::export_server_engine_attribute::ExportServerEngineAttributeInput {
             export_attribute_name: self.export_attribute_name,

@@ -173,7 +173,7 @@ impl CreatePlatformVersionInputBuilder {
     /// Consumes the builder and constructs a [`CreatePlatformVersionInput`](crate::operation::create_platform_version::CreatePlatformVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_platform_version::CreatePlatformVersionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_platform_version::CreatePlatformVersionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_platform_version::CreatePlatformVersionInput {
             platform_name: self.platform_name,

@@ -66,7 +66,7 @@ impl SetV2LoggingLevelInputBuilder {
     /// Consumes the builder and constructs a [`SetV2LoggingLevelInput`](crate::operation::set_v2_logging_level::SetV2LoggingLevelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::set_v2_logging_level::SetV2LoggingLevelInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::set_v2_logging_level::SetV2LoggingLevelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::set_v2_logging_level::SetV2LoggingLevelInput {
             log_target: self.log_target,
             log_level: self.log_level,

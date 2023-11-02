@@ -2,7 +2,7 @@
 pub fn ser_wcdma_local_id(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::WcdmaLocalId,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Uarfcndl").number(
             #[allow(clippy::useless_conversion)]

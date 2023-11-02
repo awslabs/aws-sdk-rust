@@ -2,7 +2,7 @@
 pub fn ser_list_children_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_children::ListChildrenInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.parent_id {
         object.key("ParentId").string(var_1.as_str());
     }

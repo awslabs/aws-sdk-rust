@@ -2,7 +2,7 @@
 pub fn ser_labeling_job_algorithms_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LabelingJobAlgorithmsConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.labeling_job_algorithm_specification_arn {
         object.key("LabelingJobAlgorithmSpecificationArn").string(var_1.as_str());
     }

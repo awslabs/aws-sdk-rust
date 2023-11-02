@@ -2,7 +2,7 @@
 pub fn ser_snowflake_connector_profile_credentials(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SnowflakeConnectorProfileCredentials,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("username").string(input.username.as_str());
     }

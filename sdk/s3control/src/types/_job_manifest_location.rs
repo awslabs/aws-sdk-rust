@@ -101,17 +101,17 @@ impl JobManifestLocationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`object_arn`](crate::types::builders::JobManifestLocationBuilder::object_arn)
     /// - [`e_tag`](crate::types::builders::JobManifestLocationBuilder::e_tag)
-    pub fn build(self) -> ::std::result::Result<crate::types::JobManifestLocation, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::JobManifestLocation, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::JobManifestLocation {
             object_arn: self.object_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "object_arn",
                     "object_arn was not specified but it is required when building JobManifestLocation",
                 )
             })?,
             object_version_id: self.object_version_id,
             e_tag: self.e_tag.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "e_tag",
                     "e_tag was not specified but it is required when building JobManifestLocation",
                 )

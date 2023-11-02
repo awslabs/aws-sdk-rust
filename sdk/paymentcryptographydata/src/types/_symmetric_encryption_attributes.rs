@@ -96,10 +96,10 @@ impl SymmetricEncryptionAttributesBuilder {
     /// Consumes the builder and constructs a [`SymmetricEncryptionAttributes`](crate::types::SymmetricEncryptionAttributes).
     /// This method will fail if any of the following fields are not set:
     /// - [`mode`](crate::types::builders::SymmetricEncryptionAttributesBuilder::mode)
-    pub fn build(self) -> ::std::result::Result<crate::types::SymmetricEncryptionAttributes, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SymmetricEncryptionAttributes, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SymmetricEncryptionAttributes {
             mode: self.mode.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "mode",
                     "mode was not specified but it is required when building SymmetricEncryptionAttributes",
                 )

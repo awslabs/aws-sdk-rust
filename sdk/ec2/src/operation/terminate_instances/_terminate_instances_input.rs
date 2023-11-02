@@ -77,7 +77,7 @@ impl TerminateInstancesInputBuilder {
     /// Consumes the builder and constructs a [`TerminateInstancesInput`](crate::operation::terminate_instances::TerminateInstancesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::terminate_instances::TerminateInstancesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::terminate_instances::TerminateInstancesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::terminate_instances::TerminateInstancesInput {
             instance_ids: self.instance_ids,
             dry_run: self.dry_run,

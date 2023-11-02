@@ -149,16 +149,16 @@ impl ColumnConfigurationBuilder {
     /// - [`document_id_column_name`](crate::types::builders::ColumnConfigurationBuilder::document_id_column_name)
     /// - [`document_data_column_name`](crate::types::builders::ColumnConfigurationBuilder::document_data_column_name)
     /// - [`change_detecting_columns`](crate::types::builders::ColumnConfigurationBuilder::change_detecting_columns)
-    pub fn build(self) -> ::std::result::Result<crate::types::ColumnConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ColumnConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ColumnConfiguration {
             document_id_column_name: self.document_id_column_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "document_id_column_name",
                     "document_id_column_name was not specified but it is required when building ColumnConfiguration",
                 )
             })?,
             document_data_column_name: self.document_data_column_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "document_data_column_name",
                     "document_data_column_name was not specified but it is required when building ColumnConfiguration",
                 )
@@ -166,7 +166,7 @@ impl ColumnConfigurationBuilder {
             document_title_column_name: self.document_title_column_name,
             field_mappings: self.field_mappings,
             change_detecting_columns: self.change_detecting_columns.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "change_detecting_columns",
                     "change_detecting_columns was not specified but it is required when building ColumnConfiguration",
                 )

@@ -65,7 +65,7 @@ impl PutDataLakeSettingsInputBuilder {
     /// Consumes the builder and constructs a [`PutDataLakeSettingsInput`](crate::operation::put_data_lake_settings::PutDataLakeSettingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_data_lake_settings::PutDataLakeSettingsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::put_data_lake_settings::PutDataLakeSettingsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::put_data_lake_settings::PutDataLakeSettingsInput {
             catalog_id: self.catalog_id,

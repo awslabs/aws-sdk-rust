@@ -44,7 +44,7 @@ impl DeleteBackupVaultInputBuilder {
     /// Consumes the builder and constructs a [`DeleteBackupVaultInput`](crate::operation::delete_backup_vault::DeleteBackupVaultInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_backup_vault::DeleteBackupVaultInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_backup_vault::DeleteBackupVaultInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_backup_vault::DeleteBackupVaultInput {
             backup_vault_name: self.backup_vault_name,
         })

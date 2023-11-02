@@ -121,7 +121,7 @@ impl IncreaseNodeGroupsInGlobalReplicationGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::increase_node_groups_in_global_replication_group::IncreaseNodeGroupsInGlobalReplicationGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::increase_node_groups_in_global_replication_group::IncreaseNodeGroupsInGlobalReplicationGroupInput {

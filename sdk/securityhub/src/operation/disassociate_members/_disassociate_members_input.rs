@@ -51,7 +51,7 @@ impl DisassociateMembersInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateMembersInput`](crate::operation::disassociate_members::DisassociateMembersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::disassociate_members::DisassociateMembersInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::disassociate_members::DisassociateMembersInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::disassociate_members::DisassociateMembersInput {
             account_ids: self.account_ids,

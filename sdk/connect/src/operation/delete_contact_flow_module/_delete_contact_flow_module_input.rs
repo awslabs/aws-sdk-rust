@@ -68,7 +68,7 @@ impl DeleteContactFlowModuleInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_contact_flow_module::DeleteContactFlowModuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_contact_flow_module::DeleteContactFlowModuleInput {
             instance_id: self.instance_id,

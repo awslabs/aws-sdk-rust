@@ -105,7 +105,7 @@ impl ListComputeInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListComputeInput`](crate::operation::list_compute::ListComputeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_compute::ListComputeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_compute::ListComputeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_compute::ListComputeInput {
             fleet_id: self.fleet_id,
             location: self.location,

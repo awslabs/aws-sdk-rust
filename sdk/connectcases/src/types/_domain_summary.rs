@@ -94,22 +94,22 @@ impl DomainSummaryBuilder {
     /// - [`domain_id`](crate::types::builders::DomainSummaryBuilder::domain_id)
     /// - [`domain_arn`](crate::types::builders::DomainSummaryBuilder::domain_arn)
     /// - [`name`](crate::types::builders::DomainSummaryBuilder::name)
-    pub fn build(self) -> ::std::result::Result<crate::types::DomainSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DomainSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DomainSummary {
             domain_id: self.domain_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "domain_id",
                     "domain_id was not specified but it is required when building DomainSummary",
                 )
             })?,
             domain_arn: self.domain_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "domain_arn",
                     "domain_arn was not specified but it is required when building DomainSummary",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building DomainSummary",
                 )

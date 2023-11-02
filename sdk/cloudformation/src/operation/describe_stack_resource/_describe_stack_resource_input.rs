@@ -97,7 +97,7 @@ impl DescribeStackResourceInputBuilder {
     /// Consumes the builder and constructs a [`DescribeStackResourceInput`](crate::operation::describe_stack_resource::DescribeStackResourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_stack_resource::DescribeStackResourceInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_stack_resource::DescribeStackResourceInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_stack_resource::DescribeStackResourceInput {
             stack_name: self.stack_name,

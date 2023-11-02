@@ -2,7 +2,7 @@
 pub fn ser_ews_availability_provider(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EwsAvailabilityProvider,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("EwsEndpoint").string(input.ews_endpoint.as_str());
     }

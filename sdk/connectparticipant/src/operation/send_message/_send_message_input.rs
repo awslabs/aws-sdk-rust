@@ -132,7 +132,7 @@ impl SendMessageInputBuilder {
         &self.connection_token
     }
     /// Consumes the builder and constructs a [`SendMessageInput`](crate::operation::send_message::SendMessageInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::send_message::SendMessageInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::send_message::SendMessageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::send_message::SendMessageInput {
             content_type: self.content_type,
             content: self.content,

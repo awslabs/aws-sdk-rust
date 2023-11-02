@@ -2,7 +2,7 @@
 pub fn ser_finding_provider_severity(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FindingProviderSeverity,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.label {
         object.key("Label").string(var_1.as_str());
     }

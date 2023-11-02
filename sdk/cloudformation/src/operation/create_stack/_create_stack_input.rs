@@ -605,7 +605,7 @@ impl CreateStackInputBuilder {
         &self.retain_except_on_create
     }
     /// Consumes the builder and constructs a [`CreateStackInput`](crate::operation::create_stack::CreateStackInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_stack::CreateStackInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_stack::CreateStackInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_stack::CreateStackInput {
             stack_name: self.stack_name,
             template_body: self.template_body,

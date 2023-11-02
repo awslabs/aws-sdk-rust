@@ -45,7 +45,7 @@ impl DescribeLocationNfsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeLocationNfsInput`](crate::operation::describe_location_nfs::DescribeLocationNfsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_location_nfs::DescribeLocationNfsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_location_nfs::DescribeLocationNfsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_location_nfs::DescribeLocationNfsInput {
             location_arn: self.location_arn,

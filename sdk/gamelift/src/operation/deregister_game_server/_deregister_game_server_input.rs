@@ -66,7 +66,7 @@ impl DeregisterGameServerInputBuilder {
     /// Consumes the builder and constructs a [`DeregisterGameServerInput`](crate::operation::deregister_game_server::DeregisterGameServerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::deregister_game_server::DeregisterGameServerInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::deregister_game_server::DeregisterGameServerInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::deregister_game_server::DeregisterGameServerInput {
             game_server_group_name: self.game_server_group_name,

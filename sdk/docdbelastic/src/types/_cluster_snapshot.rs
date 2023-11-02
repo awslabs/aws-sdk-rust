@@ -271,64 +271,64 @@ impl ClusterSnapshotBuilder {
     /// - [`vpc_security_group_ids`](crate::types::builders::ClusterSnapshotBuilder::vpc_security_group_ids)
     /// - [`admin_user_name`](crate::types::builders::ClusterSnapshotBuilder::admin_user_name)
     /// - [`kms_key_id`](crate::types::builders::ClusterSnapshotBuilder::kms_key_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::ClusterSnapshot, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ClusterSnapshot, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ClusterSnapshot {
             subnet_ids: self.subnet_ids.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "subnet_ids",
                     "subnet_ids was not specified but it is required when building ClusterSnapshot",
                 )
             })?,
             snapshot_name: self.snapshot_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "snapshot_name",
                     "snapshot_name was not specified but it is required when building ClusterSnapshot",
                 )
             })?,
             snapshot_arn: self.snapshot_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "snapshot_arn",
                     "snapshot_arn was not specified but it is required when building ClusterSnapshot",
                 )
             })?,
             snapshot_creation_time: self.snapshot_creation_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "snapshot_creation_time",
                     "snapshot_creation_time was not specified but it is required when building ClusterSnapshot",
                 )
             })?,
             cluster_arn: self.cluster_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "cluster_arn",
                     "cluster_arn was not specified but it is required when building ClusterSnapshot",
                 )
             })?,
             cluster_creation_time: self.cluster_creation_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "cluster_creation_time",
                     "cluster_creation_time was not specified but it is required when building ClusterSnapshot",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building ClusterSnapshot",
                 )
             })?,
             vpc_security_group_ids: self.vpc_security_group_ids.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "vpc_security_group_ids",
                     "vpc_security_group_ids was not specified but it is required when building ClusterSnapshot",
                 )
             })?,
             admin_user_name: self.admin_user_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "admin_user_name",
                     "admin_user_name was not specified but it is required when building ClusterSnapshot",
                 )
             })?,
             kms_key_id: self.kms_key_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "kms_key_id",
                     "kms_key_id was not specified but it is required when building ClusterSnapshot",
                 )

@@ -137,28 +137,28 @@ impl ChannelGroupListConfigurationBuilder {
     /// - [`arn`](crate::types::builders::ChannelGroupListConfigurationBuilder::arn)
     /// - [`created_at`](crate::types::builders::ChannelGroupListConfigurationBuilder::created_at)
     /// - [`modified_at`](crate::types::builders::ChannelGroupListConfigurationBuilder::modified_at)
-    pub fn build(self) -> ::std::result::Result<crate::types::ChannelGroupListConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ChannelGroupListConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ChannelGroupListConfiguration {
             channel_group_name: self.channel_group_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "channel_group_name",
                     "channel_group_name was not specified but it is required when building ChannelGroupListConfiguration",
                 )
             })?,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building ChannelGroupListConfiguration",
                 )
             })?,
             created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
                     "created_at was not specified but it is required when building ChannelGroupListConfiguration",
                 )
             })?,
             modified_at: self.modified_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "modified_at",
                     "modified_at was not specified but it is required when building ChannelGroupListConfiguration",
                 )

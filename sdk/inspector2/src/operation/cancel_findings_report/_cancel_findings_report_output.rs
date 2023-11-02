@@ -63,11 +63,11 @@ impl CancelFindingsReportOutputBuilder {
     /// - [`report_id`](crate::operation::cancel_findings_report::builders::CancelFindingsReportOutputBuilder::report_id)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::cancel_findings_report::CancelFindingsReportOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::cancel_findings_report::CancelFindingsReportOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::cancel_findings_report::CancelFindingsReportOutput {
             report_id: self.report_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "report_id",
                     "report_id was not specified but it is required when building CancelFindingsReportOutput",
                 )

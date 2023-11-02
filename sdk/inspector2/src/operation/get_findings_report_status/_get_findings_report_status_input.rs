@@ -45,7 +45,7 @@ impl GetFindingsReportStatusInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_findings_report_status::GetFindingsReportStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_findings_report_status::GetFindingsReportStatusInput { report_id: self.report_id })
     }

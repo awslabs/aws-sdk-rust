@@ -68,10 +68,10 @@ impl VersionStatusBuilder {
     /// Consumes the builder and constructs a [`VersionStatus`](crate::types::VersionStatus).
     /// This method will fail if any of the following fields are not set:
     /// - [`options`](crate::types::builders::VersionStatusBuilder::options)
-    pub fn build(self) -> ::std::result::Result<crate::types::VersionStatus, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::VersionStatus, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::VersionStatus {
             options: self.options.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "options",
                     "options was not specified but it is required when building VersionStatus",
                 )

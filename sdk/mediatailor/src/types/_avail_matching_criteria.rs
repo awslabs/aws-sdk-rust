@@ -76,16 +76,16 @@ impl AvailMatchingCriteriaBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`dynamic_variable`](crate::types::builders::AvailMatchingCriteriaBuilder::dynamic_variable)
     /// - [`operator`](crate::types::builders::AvailMatchingCriteriaBuilder::operator)
-    pub fn build(self) -> ::std::result::Result<crate::types::AvailMatchingCriteria, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AvailMatchingCriteria, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AvailMatchingCriteria {
             dynamic_variable: self.dynamic_variable.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "dynamic_variable",
                     "dynamic_variable was not specified but it is required when building AvailMatchingCriteria",
                 )
             })?,
             operator: self.operator.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "operator",
                     "operator was not specified but it is required when building AvailMatchingCriteria",
                 )

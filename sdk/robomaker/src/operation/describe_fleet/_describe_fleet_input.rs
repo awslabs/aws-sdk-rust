@@ -47,7 +47,7 @@ impl DescribeFleetInputBuilder {
     /// Consumes the builder and constructs a [`DescribeFleetInput`](crate::operation::describe_fleet::DescribeFleetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_fleet::DescribeFleetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_fleet::DescribeFleetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_fleet::DescribeFleetInput { fleet: self.fleet })
     }
 }

@@ -66,7 +66,7 @@ impl SetDefaultMessageTypeInputBuilder {
     /// Consumes the builder and constructs a [`SetDefaultMessageTypeInput`](crate::operation::set_default_message_type::SetDefaultMessageTypeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::set_default_message_type::SetDefaultMessageTypeInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::set_default_message_type::SetDefaultMessageTypeInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::set_default_message_type::SetDefaultMessageTypeInput {
             configuration_set_name: self.configuration_set_name,

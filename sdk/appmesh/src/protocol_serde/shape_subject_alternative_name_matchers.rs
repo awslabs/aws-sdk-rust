@@ -2,7 +2,7 @@
 pub fn ser_subject_alternative_name_matchers(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SubjectAlternativeNameMatchers,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("exact").start_array();
         for item_2 in &input.exact {

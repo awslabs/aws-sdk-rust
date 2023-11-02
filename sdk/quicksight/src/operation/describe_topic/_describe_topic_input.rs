@@ -66,7 +66,7 @@ impl DescribeTopicInputBuilder {
     /// Consumes the builder and constructs a [`DescribeTopicInput`](crate::operation::describe_topic::DescribeTopicInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_topic::DescribeTopicInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_topic::DescribeTopicInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_topic::DescribeTopicInput {
             aws_account_id: self.aws_account_id,
             topic_id: self.topic_id,

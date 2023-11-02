@@ -4,7 +4,7 @@
 #[derive(::std::fmt::Debug)]
 pub struct PutObjectInput {
     /// <p>The bytes to be stored. </p>
-    pub body: ::aws_smithy_http::byte_stream::ByteStream,
+    pub body: ::aws_smithy_types::byte_stream::ByteStream,
     /// <p>The path (including the file name) where the object is stored in the container. Format: <folder name>
     /// /
     /// <folder name>
@@ -32,7 +32,7 @@ pub struct PutObjectInput {
 }
 impl PutObjectInput {
     /// <p>The bytes to be stored. </p>
-    pub fn body(&self) -> &::aws_smithy_http::byte_stream::ByteStream {
+    pub fn body(&self) -> &::aws_smithy_types::byte_stream::ByteStream {
         &self.body
     }
     /// <p>The path (including the file name) where the object is stored in the container. Format: <folder name>
@@ -81,7 +81,7 @@ impl PutObjectInput {
 #[non_exhaustive]
 #[derive(::std::default::Default, ::std::fmt::Debug)]
 pub struct PutObjectInputBuilder {
-    pub(crate) body: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
+    pub(crate) body: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>,
     pub(crate) path: ::std::option::Option<::std::string::String>,
     pub(crate) content_type: ::std::option::Option<::std::string::String>,
     pub(crate) cache_control: ::std::option::Option<::std::string::String>,
@@ -91,17 +91,17 @@ pub struct PutObjectInputBuilder {
 impl PutObjectInputBuilder {
     /// <p>The bytes to be stored. </p>
     /// This field is required.
-    pub fn body(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
+    pub fn body(mut self, input: ::aws_smithy_types::byte_stream::ByteStream) -> Self {
         self.body = ::std::option::Option::Some(input);
         self
     }
     /// <p>The bytes to be stored. </p>
-    pub fn set_body(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
+    pub fn set_body(mut self, input: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>) -> Self {
         self.body = input;
         self
     }
     /// <p>The bytes to be stored. </p>
-    pub fn get_body(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+    pub fn get_body(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
         &self.body
     }
     /// <p>The path (including the file name) where the object is stored in the container. Format: <folder name>
@@ -218,7 +218,7 @@ impl PutObjectInputBuilder {
         &self.upload_availability
     }
     /// Consumes the builder and constructs a [`PutObjectInput`](crate::operation::put_object::PutObjectInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_object::PutObjectInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_object::PutObjectInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_object::PutObjectInput {
             body: self.body.unwrap_or_default(),
             path: self.path,

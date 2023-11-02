@@ -186,7 +186,7 @@ impl CreateBatchLoadTaskInputBuilder {
     /// Consumes the builder and constructs a [`CreateBatchLoadTaskInput`](crate::operation::create_batch_load_task::CreateBatchLoadTaskInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_batch_load_task::CreateBatchLoadTaskInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_batch_load_task::CreateBatchLoadTaskInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_batch_load_task::CreateBatchLoadTaskInput {
             client_token: self.client_token,

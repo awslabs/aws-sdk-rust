@@ -148,7 +148,7 @@ impl TranslateDocumentInputBuilder {
     /// Consumes the builder and constructs a [`TranslateDocumentInput`](crate::operation::translate_document::TranslateDocumentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::translate_document::TranslateDocumentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::translate_document::TranslateDocumentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::translate_document::TranslateDocumentInput {
             document: self.document,
             terminology_names: self.terminology_names,

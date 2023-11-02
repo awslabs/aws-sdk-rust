@@ -95,7 +95,7 @@ impl RegisterClientInputBuilder {
     /// Consumes the builder and constructs a [`RegisterClientInput`](crate::operation::register_client::RegisterClientInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::register_client::RegisterClientInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::register_client::RegisterClientInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::register_client::RegisterClientInput {
             client_name: self.client_name,
             client_type: self.client_type,

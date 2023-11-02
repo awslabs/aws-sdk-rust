@@ -77,16 +77,16 @@ impl AppInstanceStreamingConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`app_instance_data_type`](crate::types::builders::AppInstanceStreamingConfigurationBuilder::app_instance_data_type)
     /// - [`resource_arn`](crate::types::builders::AppInstanceStreamingConfigurationBuilder::resource_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::AppInstanceStreamingConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AppInstanceStreamingConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AppInstanceStreamingConfiguration {
             app_instance_data_type: self.app_instance_data_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "app_instance_data_type",
                     "app_instance_data_type was not specified but it is required when building AppInstanceStreamingConfiguration",
                 )
             })?,
             resource_arn: self.resource_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_arn",
                     "resource_arn was not specified but it is required when building AppInstanceStreamingConfiguration",
                 )

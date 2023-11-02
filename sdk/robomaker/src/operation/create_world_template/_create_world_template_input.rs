@@ -133,7 +133,7 @@ impl CreateWorldTemplateInputBuilder {
     /// Consumes the builder and constructs a [`CreateWorldTemplateInput`](crate::operation::create_world_template::CreateWorldTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_world_template::CreateWorldTemplateInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_world_template::CreateWorldTemplateInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_world_template::CreateWorldTemplateInput {
             client_request_token: self.client_request_token,

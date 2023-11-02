@@ -66,7 +66,7 @@ impl CreateBackendConfigInputBuilder {
     /// Consumes the builder and constructs a [`CreateBackendConfigInput`](crate::operation::create_backend_config::CreateBackendConfigInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_backend_config::CreateBackendConfigInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_backend_config::CreateBackendConfigInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_backend_config::CreateBackendConfigInput {
             app_id: self.app_id,

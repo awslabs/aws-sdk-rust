@@ -171,7 +171,7 @@ impl CreateAppInstanceBotInputBuilder {
     /// Consumes the builder and constructs a [`CreateAppInstanceBotInput`](crate::operation::create_app_instance_bot::CreateAppInstanceBotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_app_instance_bot::CreateAppInstanceBotInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_app_instance_bot::CreateAppInstanceBotInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_app_instance_bot::CreateAppInstanceBotInput {
             app_instance_arn: self.app_instance_arn,

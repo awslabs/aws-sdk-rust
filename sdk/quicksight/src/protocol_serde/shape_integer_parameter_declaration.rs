@@ -2,7 +2,7 @@
 pub fn ser_integer_parameter_declaration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IntegerParameterDeclaration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("ParameterValueType").string(input.parameter_value_type.as_str());
     }

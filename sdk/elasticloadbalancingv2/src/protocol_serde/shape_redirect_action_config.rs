@@ -3,7 +3,7 @@
 pub fn ser_redirect_action_config(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::RedirectActionConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Protocol");
     if let Some(var_2) = &input.protocol {

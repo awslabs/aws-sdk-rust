@@ -87,7 +87,7 @@ impl GetServiceQuotaInputBuilder {
     /// Consumes the builder and constructs a [`GetServiceQuotaInput`](crate::operation::get_service_quota::GetServiceQuotaInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_service_quota::GetServiceQuotaInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_service_quota::GetServiceQuotaInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_service_quota::GetServiceQuotaInput {
             service_code: self.service_code,
             quota_code: self.quota_code,

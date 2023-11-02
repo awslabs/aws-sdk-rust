@@ -75,7 +75,7 @@ impl GetRemainingFreeTrialDaysInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_remaining_free_trial_days::GetRemainingFreeTrialDaysInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_remaining_free_trial_days::GetRemainingFreeTrialDaysInput {
             detector_id: self.detector_id,

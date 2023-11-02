@@ -64,7 +64,7 @@ impl ListAssessmentReportsInputBuilder {
     /// Consumes the builder and constructs a [`ListAssessmentReportsInput`](crate::operation::list_assessment_reports::ListAssessmentReportsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_assessment_reports::ListAssessmentReportsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_assessment_reports::ListAssessmentReportsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_assessment_reports::ListAssessmentReportsInput {
             next_token: self.next_token,

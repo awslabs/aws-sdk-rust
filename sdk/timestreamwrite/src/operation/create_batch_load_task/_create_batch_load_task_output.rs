@@ -63,11 +63,11 @@ impl CreateBatchLoadTaskOutputBuilder {
     /// - [`task_id`](crate::operation::create_batch_load_task::builders::CreateBatchLoadTaskOutputBuilder::task_id)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_batch_load_task::CreateBatchLoadTaskOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_batch_load_task::CreateBatchLoadTaskOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_batch_load_task::CreateBatchLoadTaskOutput {
             task_id: self.task_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "task_id",
                     "task_id was not specified but it is required when building CreateBatchLoadTaskOutput",
                 )

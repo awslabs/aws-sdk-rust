@@ -140,7 +140,8 @@ impl CreateDiskSnapshotInputBuilder {
     /// Consumes the builder and constructs a [`CreateDiskSnapshotInput`](crate::operation::create_disk_snapshot::CreateDiskSnapshotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_disk_snapshot::CreateDiskSnapshotInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_disk_snapshot::CreateDiskSnapshotInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_disk_snapshot::CreateDiskSnapshotInput {
             disk_name: self.disk_name,
             disk_snapshot_name: self.disk_snapshot_name,

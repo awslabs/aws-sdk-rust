@@ -2,7 +2,7 @@
 pub fn ser_get_query_statistics_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_query_statistics::GetQueryStatisticsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.query_id {
         object.key("QueryId").string(var_1.as_str());
     }

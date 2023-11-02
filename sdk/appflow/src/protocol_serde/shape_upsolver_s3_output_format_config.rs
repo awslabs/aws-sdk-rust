@@ -2,7 +2,7 @@
 pub fn ser_upsolver_s3_output_format_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UpsolverS3OutputFormatConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.file_type {
         object.key("fileType").string(var_1.as_str());
     }

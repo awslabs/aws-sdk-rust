@@ -86,8 +86,10 @@ impl ListSopRecommendationsInputBuilder {
     /// Consumes the builder and constructs a [`ListSopRecommendationsInput`](crate::operation::list_sop_recommendations::ListSopRecommendationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_sop_recommendations::ListSopRecommendationsInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::list_sop_recommendations::ListSopRecommendationsInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::list_sop_recommendations::ListSopRecommendationsInput {
             next_token: self.next_token,
             max_results: self.max_results,

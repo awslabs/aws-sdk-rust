@@ -193,7 +193,7 @@ impl CreatePermissionInputBuilder {
     /// Consumes the builder and constructs a [`CreatePermissionInput`](crate::operation::create_permission::CreatePermissionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_permission::CreatePermissionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_permission::CreatePermissionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_permission::CreatePermissionInput {
             name: self.name,
             resource_type: self.resource_type,

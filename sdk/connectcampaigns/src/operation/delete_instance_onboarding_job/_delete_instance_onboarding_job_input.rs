@@ -47,7 +47,7 @@ impl DeleteInstanceOnboardingJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_instance_onboarding_job::DeleteInstanceOnboardingJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_instance_onboarding_job::DeleteInstanceOnboardingJobInput {
             connect_instance_id: self.connect_instance_id,

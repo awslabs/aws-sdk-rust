@@ -94,7 +94,7 @@ impl CreateRoomInputBuilder {
         &self.client_request_token
     }
     /// Consumes the builder and constructs a [`CreateRoomInput`](crate::operation::create_room::CreateRoomInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_room::CreateRoomInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_room::CreateRoomInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_room::CreateRoomInput {
             account_id: self.account_id,
             name: self.name,

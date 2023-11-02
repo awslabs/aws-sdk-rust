@@ -96,10 +96,10 @@ impl UserAccessLoggingSettingsBuilder {
     /// Consumes the builder and constructs a [`UserAccessLoggingSettings`](crate::types::UserAccessLoggingSettings).
     /// This method will fail if any of the following fields are not set:
     /// - [`user_access_logging_settings_arn`](crate::types::builders::UserAccessLoggingSettingsBuilder::user_access_logging_settings_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::UserAccessLoggingSettings, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::UserAccessLoggingSettings, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::UserAccessLoggingSettings {
             user_access_logging_settings_arn: self.user_access_logging_settings_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "user_access_logging_settings_arn",
                     "user_access_logging_settings_arn was not specified but it is required when building UserAccessLoggingSettings",
                 )

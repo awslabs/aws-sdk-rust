@@ -221,7 +221,8 @@ impl CreateProxySessionInputBuilder {
     /// Consumes the builder and constructs a [`CreateProxySessionInput`](crate::operation::create_proxy_session::CreateProxySessionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_proxy_session::CreateProxySessionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_proxy_session::CreateProxySessionInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_proxy_session::CreateProxySessionInput {
             voice_connector_id: self.voice_connector_id,
             participant_phone_numbers: self.participant_phone_numbers,

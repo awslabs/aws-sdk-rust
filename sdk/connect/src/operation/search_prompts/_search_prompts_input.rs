@@ -128,7 +128,7 @@ impl SearchPromptsInputBuilder {
     /// Consumes the builder and constructs a [`SearchPromptsInput`](crate::operation::search_prompts::SearchPromptsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::search_prompts::SearchPromptsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::search_prompts::SearchPromptsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_prompts::SearchPromptsInput {
             instance_id: self.instance_id,
             next_token: self.next_token,

@@ -46,10 +46,10 @@ impl MemberUserBuilder {
     /// Consumes the builder and constructs a [`MemberUser`](crate::types::MemberUser).
     /// This method will fail if any of the following fields are not set:
     /// - [`user_id`](crate::types::builders::MemberUserBuilder::user_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::MemberUser, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::MemberUser, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MemberUser {
             user_id: self.user_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "user_id",
                     "user_id was not specified but it is required when building MemberUser",
                 )

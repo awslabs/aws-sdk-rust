@@ -187,30 +187,30 @@ impl EvaluationFormContentBuilder {
     /// - [`evaluation_form_arn`](crate::types::builders::EvaluationFormContentBuilder::evaluation_form_arn)
     /// - [`title`](crate::types::builders::EvaluationFormContentBuilder::title)
     /// - [`items`](crate::types::builders::EvaluationFormContentBuilder::items)
-    pub fn build(self) -> ::std::result::Result<crate::types::EvaluationFormContent, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::EvaluationFormContent, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EvaluationFormContent {
             evaluation_form_version: self.evaluation_form_version.unwrap_or_default(),
             evaluation_form_id: self.evaluation_form_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "evaluation_form_id",
                     "evaluation_form_id was not specified but it is required when building EvaluationFormContent",
                 )
             })?,
             evaluation_form_arn: self.evaluation_form_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "evaluation_form_arn",
                     "evaluation_form_arn was not specified but it is required when building EvaluationFormContent",
                 )
             })?,
             title: self.title.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "title",
                     "title was not specified but it is required when building EvaluationFormContent",
                 )
             })?,
             description: self.description,
             items: self.items.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "items",
                     "items was not specified but it is required when building EvaluationFormContent",
                 )

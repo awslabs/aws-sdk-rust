@@ -88,11 +88,11 @@ impl AwsDomainInformationBuilder {
     /// Consumes the builder and constructs a [`AwsDomainInformation`](crate::types::AwsDomainInformation).
     /// This method will fail if any of the following fields are not set:
     /// - [`domain_name`](crate::types::builders::AwsDomainInformationBuilder::domain_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::AwsDomainInformation, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AwsDomainInformation, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AwsDomainInformation {
             owner_id: self.owner_id,
             domain_name: self.domain_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "domain_name",
                     "domain_name was not specified but it is required when building AwsDomainInformation",
                 )

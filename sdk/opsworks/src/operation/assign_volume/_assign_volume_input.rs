@@ -63,7 +63,9 @@ impl AssignVolumeInputBuilder {
         &self.instance_id
     }
     /// Consumes the builder and constructs a [`AssignVolumeInput`](crate::operation::assign_volume::AssignVolumeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::assign_volume::AssignVolumeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::assign_volume::AssignVolumeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::assign_volume::AssignVolumeInput {
             volume_id: self.volume_id,
             instance_id: self.instance_id,

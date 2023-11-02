@@ -65,7 +65,7 @@ impl GetSearchSuggestionsInputBuilder {
     /// Consumes the builder and constructs a [`GetSearchSuggestionsInput`](crate::operation::get_search_suggestions::GetSearchSuggestionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_search_suggestions::GetSearchSuggestionsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_search_suggestions::GetSearchSuggestionsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_search_suggestions::GetSearchSuggestionsInput {
             resource: self.resource,

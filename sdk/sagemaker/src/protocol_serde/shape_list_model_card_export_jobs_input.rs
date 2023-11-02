@@ -2,7 +2,7 @@
 pub fn ser_list_model_card_export_jobs_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_model_card_export_jobs::ListModelCardExportJobsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.model_card_name {
         object.key("ModelCardName").string(var_1.as_str());
     }

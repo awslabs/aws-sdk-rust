@@ -69,7 +69,7 @@ impl StartInstanceOnboardingJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJobInput {
             connect_instance_id: self.connect_instance_id,

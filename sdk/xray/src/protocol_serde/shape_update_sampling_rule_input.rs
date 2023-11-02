@@ -2,7 +2,7 @@
 pub fn ser_update_sampling_rule_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_sampling_rule::UpdateSamplingRuleInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.sampling_rule_update {
         #[allow(unused_mut)]
         let mut object_2 = object.key("SamplingRuleUpdate").start_object();

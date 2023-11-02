@@ -118,10 +118,10 @@ impl CopyCommandBuilder {
     /// Consumes the builder and constructs a [`CopyCommand`](crate::types::CopyCommand).
     /// This method will fail if any of the following fields are not set:
     /// - [`data_table_name`](crate::types::builders::CopyCommandBuilder::data_table_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::CopyCommand, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CopyCommand, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CopyCommand {
             data_table_name: self.data_table_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_table_name",
                     "data_table_name was not specified but it is required when building CopyCommand",
                 )

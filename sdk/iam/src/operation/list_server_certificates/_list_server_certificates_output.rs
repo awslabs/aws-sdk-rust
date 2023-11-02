@@ -116,11 +116,11 @@ impl ListServerCertificatesOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_server_certificates::ListServerCertificatesOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_server_certificates::ListServerCertificatesOutput {
             server_certificate_metadata_list: self.server_certificate_metadata_list.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "server_certificate_metadata_list",
                     "server_certificate_metadata_list was not specified but it is required when building ListServerCertificatesOutput",
                 )

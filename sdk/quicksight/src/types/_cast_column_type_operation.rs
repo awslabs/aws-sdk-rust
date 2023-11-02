@@ -90,16 +90,16 @@ impl CastColumnTypeOperationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`column_name`](crate::types::builders::CastColumnTypeOperationBuilder::column_name)
     /// - [`new_column_type`](crate::types::builders::CastColumnTypeOperationBuilder::new_column_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::CastColumnTypeOperation, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CastColumnTypeOperation, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CastColumnTypeOperation {
             column_name: self.column_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "column_name",
                     "column_name was not specified but it is required when building CastColumnTypeOperation",
                 )
             })?,
             new_column_type: self.new_column_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "new_column_type",
                     "new_column_type was not specified but it is required when building CastColumnTypeOperation",
                 )

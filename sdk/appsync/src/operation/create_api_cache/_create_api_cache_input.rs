@@ -283,7 +283,7 @@ impl CreateApiCacheInputBuilder {
     /// Consumes the builder and constructs a [`CreateApiCacheInput`](crate::operation::create_api_cache::CreateApiCacheInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_api_cache::CreateApiCacheInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_api_cache::CreateApiCacheInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_api_cache::CreateApiCacheInput {
             api_id: self.api_id,
             ttl: self.ttl,

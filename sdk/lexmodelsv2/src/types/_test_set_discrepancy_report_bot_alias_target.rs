@@ -96,22 +96,22 @@ impl TestSetDiscrepancyReportBotAliasTargetBuilder {
     /// - [`locale_id`](crate::types::builders::TestSetDiscrepancyReportBotAliasTargetBuilder::locale_id)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::TestSetDiscrepancyReportBotAliasTarget, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::TestSetDiscrepancyReportBotAliasTarget, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TestSetDiscrepancyReportBotAliasTarget {
             bot_id: self.bot_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "bot_id",
                     "bot_id was not specified but it is required when building TestSetDiscrepancyReportBotAliasTarget",
                 )
             })?,
             bot_alias_id: self.bot_alias_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "bot_alias_id",
                     "bot_alias_id was not specified but it is required when building TestSetDiscrepancyReportBotAliasTarget",
                 )
             })?,
             locale_id: self.locale_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "locale_id",
                     "locale_id was not specified but it is required when building TestSetDiscrepancyReportBotAliasTarget",
                 )

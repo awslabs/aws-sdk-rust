@@ -2,7 +2,7 @@
 pub fn ser_aws_iam_policy_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsIamPolicyDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.attachment_count {
         object.key("AttachmentCount").number(
             #[allow(clippy::useless_conversion)]

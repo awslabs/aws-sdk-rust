@@ -128,7 +128,9 @@ impl QueryObjectsInputBuilder {
         &self.limit
     }
     /// Consumes the builder and constructs a [`QueryObjectsInput`](crate::operation::query_objects::QueryObjectsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::query_objects::QueryObjectsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::query_objects::QueryObjectsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::query_objects::QueryObjectsInput {
             pipeline_id: self.pipeline_id,
             query: self.query,

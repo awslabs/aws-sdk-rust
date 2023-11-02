@@ -46,7 +46,7 @@ impl DescribeRepositoryAssociationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_repository_association::DescribeRepositoryAssociationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_repository_association::DescribeRepositoryAssociationInput {
             association_arn: self.association_arn,

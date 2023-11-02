@@ -219,7 +219,7 @@ impl GetNetworkResourceCountsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_network_resource_counts::GetNetworkResourceCountsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_network_resource_counts::GetNetworkResourceCountsInput {
             global_network_id: self.global_network_id,

@@ -2,7 +2,7 @@
 pub fn ser_cidr_authorization_context(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CidrAuthorizationContext,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Message").string(input.message.as_str());
     }

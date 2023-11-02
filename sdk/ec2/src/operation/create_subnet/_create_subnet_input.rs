@@ -243,7 +243,9 @@ impl CreateSubnetInputBuilder {
         &self.ipv6_native
     }
     /// Consumes the builder and constructs a [`CreateSubnetInput`](crate::operation::create_subnet::CreateSubnetInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_subnet::CreateSubnetInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_subnet::CreateSubnetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_subnet::CreateSubnetInput {
             tag_specifications: self.tag_specifications,
             availability_zone: self.availability_zone,

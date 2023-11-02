@@ -44,7 +44,7 @@ impl DeleteSipRuleInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSipRuleInput`](crate::operation::delete_sip_rule::DeleteSipRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_sip_rule::DeleteSipRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_sip_rule::DeleteSipRuleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_sip_rule::DeleteSipRuleInput {
             sip_rule_id: self.sip_rule_id,
         })

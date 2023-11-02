@@ -66,7 +66,7 @@ impl StartRecommendationsInputBuilder {
     /// Consumes the builder and constructs a [`StartRecommendationsInput`](crate::operation::start_recommendations::StartRecommendationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_recommendations::StartRecommendationsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::start_recommendations::StartRecommendationsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_recommendations::StartRecommendationsInput {
             database_id: self.database_id,

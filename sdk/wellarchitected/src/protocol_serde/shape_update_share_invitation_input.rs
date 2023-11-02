@@ -2,7 +2,7 @@
 pub fn ser_update_share_invitation_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_share_invitation::UpdateShareInvitationInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.share_invitation_action {
         object.key("ShareInvitationAction").string(var_1.as_str());
     }

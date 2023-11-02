@@ -46,7 +46,7 @@ impl DeregisterTaskDefinitionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_task_definition::DeregisterTaskDefinitionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::deregister_task_definition::DeregisterTaskDefinitionInput {
             task_definition: self.task_definition,

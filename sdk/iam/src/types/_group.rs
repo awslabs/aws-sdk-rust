@@ -147,31 +147,31 @@ impl GroupBuilder {
     /// - [`group_id`](crate::types::builders::GroupBuilder::group_id)
     /// - [`arn`](crate::types::builders::GroupBuilder::arn)
     /// - [`create_date`](crate::types::builders::GroupBuilder::create_date)
-    pub fn build(self) -> ::std::result::Result<crate::types::Group, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Group, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Group {
             path: self.path.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "path",
                     "path was not specified but it is required when building Group",
                 )
             })?,
             group_name: self.group_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "group_name",
                     "group_name was not specified but it is required when building Group",
                 )
             })?,
             group_id: self.group_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "group_id",
                     "group_id was not specified but it is required when building Group",
                 )
             })?,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field("arn", "arn was not specified but it is required when building Group")
+                ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building Group")
             })?,
             create_date: self.create_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "create_date",
                     "create_date was not specified but it is required when building Group",
                 )

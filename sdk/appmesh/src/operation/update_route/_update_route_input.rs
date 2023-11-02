@@ -150,7 +150,7 @@ impl UpdateRouteInputBuilder {
         &self.mesh_owner
     }
     /// Consumes the builder and constructs a [`UpdateRouteInput`](crate::operation::update_route::UpdateRouteInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_route::UpdateRouteInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_route::UpdateRouteInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_route::UpdateRouteInput {
             route_name: self.route_name,
             mesh_name: self.mesh_name,

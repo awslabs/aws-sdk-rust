@@ -130,7 +130,7 @@ impl ListReportsForReportGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_reports_for_report_group::ListReportsForReportGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_reports_for_report_group::ListReportsForReportGroupInput {
             report_group_arn: self.report_group_arn,

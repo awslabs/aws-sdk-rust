@@ -75,7 +75,7 @@ impl GetFlowTemplateInputBuilder {
     /// Consumes the builder and constructs a [`GetFlowTemplateInput`](crate::operation::get_flow_template::GetFlowTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_flow_template::GetFlowTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_flow_template::GetFlowTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_flow_template::GetFlowTemplateInput {
             id: self.id,
             revision_number: self.revision_number,

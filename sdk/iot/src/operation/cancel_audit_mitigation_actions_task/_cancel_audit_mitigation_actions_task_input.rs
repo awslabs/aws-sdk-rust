@@ -46,7 +46,7 @@ impl CancelAuditMitigationActionsTaskInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_audit_mitigation_actions_task::CancelAuditMitigationActionsTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::cancel_audit_mitigation_actions_task::CancelAuditMitigationActionsTaskInput { task_id: self.task_id },

@@ -66,7 +66,7 @@ impl DeleteAdapterVersionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAdapterVersionInput`](crate::operation::delete_adapter_version::DeleteAdapterVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_adapter_version::DeleteAdapterVersionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_adapter_version::DeleteAdapterVersionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_adapter_version::DeleteAdapterVersionInput {
             adapter_id: self.adapter_id,

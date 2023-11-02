@@ -173,7 +173,7 @@ impl CreateDetectorInputBuilder {
     /// Consumes the builder and constructs a [`CreateDetectorInput`](crate::operation::create_detector::CreateDetectorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_detector::CreateDetectorInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_detector::CreateDetectorInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_detector::CreateDetectorInput {
             enable: self.enable,
             client_token: self.client_token,

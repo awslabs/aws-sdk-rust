@@ -44,7 +44,7 @@ impl DeleteWorkspaceImageInputBuilder {
     /// Consumes the builder and constructs a [`DeleteWorkspaceImageInput`](crate::operation::delete_workspace_image::DeleteWorkspaceImageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_workspace_image::DeleteWorkspaceImageInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_workspace_image::DeleteWorkspaceImageInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_workspace_image::DeleteWorkspaceImageInput { image_id: self.image_id })
     }

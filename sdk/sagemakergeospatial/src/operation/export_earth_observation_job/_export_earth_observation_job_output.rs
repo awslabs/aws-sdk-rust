@@ -178,29 +178,29 @@ impl ExportEarthObservationJobOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::export_earth_observation_job::ExportEarthObservationJobOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::export_earth_observation_job::ExportEarthObservationJobOutput {
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building ExportEarthObservationJobOutput",
                 )
             })?,
             creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_time",
                     "creation_time was not specified but it is required when building ExportEarthObservationJobOutput",
                 )
             })?,
             export_status: self.export_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "export_status",
                     "export_status was not specified but it is required when building ExportEarthObservationJobOutput",
                 )
             })?,
             execution_role_arn: self.execution_role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "execution_role_arn",
                     "execution_role_arn was not specified but it is required when building ExportEarthObservationJobOutput",
                 )

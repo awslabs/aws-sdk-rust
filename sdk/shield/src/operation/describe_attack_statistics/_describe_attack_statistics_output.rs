@@ -92,12 +92,12 @@ impl DescribeAttackStatisticsOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_attack_statistics::DescribeAttackStatisticsOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_attack_statistics::DescribeAttackStatisticsOutput {
             time_range: self.time_range,
             data_items: self.data_items.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_items",
                     "data_items was not specified but it is required when building DescribeAttackStatisticsOutput",
                 )

@@ -100,7 +100,7 @@ impl UpdateBrowserSettingsInputBuilder {
     /// Consumes the builder and constructs a [`UpdateBrowserSettingsInput`](crate::operation::update_browser_settings::UpdateBrowserSettingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_browser_settings::UpdateBrowserSettingsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_browser_settings::UpdateBrowserSettingsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_browser_settings::UpdateBrowserSettingsInput {
             browser_settings_arn: self.browser_settings_arn,

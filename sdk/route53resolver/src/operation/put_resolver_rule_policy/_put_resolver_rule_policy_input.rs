@@ -106,7 +106,7 @@ impl PutResolverRulePolicyInputBuilder {
     /// Consumes the builder and constructs a [`PutResolverRulePolicyInput`](crate::operation::put_resolver_rule_policy::PutResolverRulePolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_resolver_rule_policy::PutResolverRulePolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::put_resolver_rule_policy::PutResolverRulePolicyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::put_resolver_rule_policy::PutResolverRulePolicyInput {
             arn: self.arn,

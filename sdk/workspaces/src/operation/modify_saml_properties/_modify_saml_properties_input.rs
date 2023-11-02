@@ -119,7 +119,7 @@ impl ModifySamlPropertiesInputBuilder {
     /// Consumes the builder and constructs a [`ModifySamlPropertiesInput`](crate::operation::modify_saml_properties::ModifySamlPropertiesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::modify_saml_properties::ModifySamlPropertiesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::modify_saml_properties::ModifySamlPropertiesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::modify_saml_properties::ModifySamlPropertiesInput {
             resource_id: self.resource_id,

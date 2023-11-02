@@ -122,7 +122,7 @@ impl DescribeVolumesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeVolumesInput`](crate::operation::describe_volumes::DescribeVolumesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_volumes::DescribeVolumesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_volumes::DescribeVolumesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_volumes::DescribeVolumesInput {
             volume_ids: self.volume_ids,
             filters: self.filters,

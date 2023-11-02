@@ -2,7 +2,7 @@
 pub fn ser_auto_ml_problem_type_config(
     object_9: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AutoMlProblemTypeConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::AutoMlProblemTypeConfig::ImageClassificationJobConfig(inner) => {
             #[allow(unused_mut)]
@@ -35,7 +35,7 @@ pub fn ser_auto_ml_problem_type_config(
             object_5.finish();
         }
         crate::types::AutoMlProblemTypeConfig::Unknown => {
-            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+            return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "AutoMlProblemTypeConfig",
             ))
         }
@@ -56,12 +56,17 @@ where
             match tokens.next().transpose()? {
                 Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                 Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                    let key = key.to_unescaped()?;
+                    if key == "__type" {
+                        ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                        continue;
+                    }
                     if variant.is_some() {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
                             "encountered mixed variants in union",
                         ));
                     }
-                    variant = match key.to_unescaped()?.as_ref() {
+                    variant = match key.as_ref() {
                         "ImageClassificationJobConfig" => Some(crate::types::AutoMlProblemTypeConfig::ImageClassificationJobConfig(
                             crate::protocol_serde::shape_image_classification_job_config::de_image_classification_job_config(tokens)?.ok_or_else(
                                 || {

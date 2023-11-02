@@ -44,7 +44,7 @@ impl DeleteAddressBookInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAddressBookInput`](crate::operation::delete_address_book::DeleteAddressBookInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_address_book::DeleteAddressBookInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_address_book::DeleteAddressBookInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_address_book::DeleteAddressBookInput {
             address_book_arn: self.address_book_arn,
         })

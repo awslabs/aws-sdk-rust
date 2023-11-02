@@ -173,17 +173,17 @@ impl StartChildWorkflowExecutionFailedEventAttributesBuilder {
     /// - [`workflow_id`](crate::types::builders::StartChildWorkflowExecutionFailedEventAttributesBuilder::workflow_id)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::StartChildWorkflowExecutionFailedEventAttributes, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::StartChildWorkflowExecutionFailedEventAttributes, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::StartChildWorkflowExecutionFailedEventAttributes {
             workflow_type: self.workflow_type,
             cause: self.cause.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "cause",
                     "cause was not specified but it is required when building StartChildWorkflowExecutionFailedEventAttributes",
                 )
             })?,
             workflow_id: self.workflow_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "workflow_id",
                     "workflow_id was not specified but it is required when building StartChildWorkflowExecutionFailedEventAttributes",
                 )

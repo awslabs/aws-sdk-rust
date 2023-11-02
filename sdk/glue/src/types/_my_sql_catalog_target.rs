@@ -123,28 +123,28 @@ impl MySqlCatalogTargetBuilder {
     /// - [`inputs`](crate::types::builders::MySqlCatalogTargetBuilder::inputs)
     /// - [`database`](crate::types::builders::MySqlCatalogTargetBuilder::database)
     /// - [`table`](crate::types::builders::MySqlCatalogTargetBuilder::table)
-    pub fn build(self) -> ::std::result::Result<crate::types::MySqlCatalogTarget, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::MySqlCatalogTarget, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MySqlCatalogTarget {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building MySqlCatalogTarget",
                 )
             })?,
             inputs: self.inputs.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "inputs",
                     "inputs was not specified but it is required when building MySqlCatalogTarget",
                 )
             })?,
             database: self.database.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "database",
                     "database was not specified but it is required when building MySqlCatalogTarget",
                 )
             })?,
             table: self.table.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "table",
                     "table was not specified but it is required when building MySqlCatalogTarget",
                 )

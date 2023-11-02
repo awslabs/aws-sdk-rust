@@ -68,7 +68,7 @@ impl GetParametersForExportInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_parameters_for_export::GetParametersForExportInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_parameters_for_export::GetParametersForExportInput {
             key_material_type: self.key_material_type,

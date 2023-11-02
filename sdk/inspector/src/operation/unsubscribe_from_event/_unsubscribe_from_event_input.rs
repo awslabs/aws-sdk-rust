@@ -88,7 +88,7 @@ impl UnsubscribeFromEventInputBuilder {
     /// Consumes the builder and constructs a [`UnsubscribeFromEventInput`](crate::operation::unsubscribe_from_event::UnsubscribeFromEventInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::unsubscribe_from_event::UnsubscribeFromEventInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::unsubscribe_from_event::UnsubscribeFromEventInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::unsubscribe_from_event::UnsubscribeFromEventInput {
             resource_arn: self.resource_arn,

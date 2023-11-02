@@ -137,7 +137,8 @@ impl SearchRelatedItemsInputBuilder {
     /// Consumes the builder and constructs a [`SearchRelatedItemsInput`](crate::operation::search_related_items::SearchRelatedItemsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::search_related_items::SearchRelatedItemsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::search_related_items::SearchRelatedItemsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::search_related_items::SearchRelatedItemsInput {
             domain_id: self.domain_id,
             case_id: self.case_id,

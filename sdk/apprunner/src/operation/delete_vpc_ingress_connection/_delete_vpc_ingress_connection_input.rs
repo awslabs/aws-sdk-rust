@@ -46,7 +46,7 @@ impl DeleteVpcIngressConnectionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_vpc_ingress_connection::DeleteVpcIngressConnectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_vpc_ingress_connection::DeleteVpcIngressConnectionInput {
             vpc_ingress_connection_arn: self.vpc_ingress_connection_arn,

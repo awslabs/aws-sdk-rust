@@ -338,7 +338,7 @@ impl StartChangeRequestExecutionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_change_request_execution::StartChangeRequestExecutionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_change_request_execution::StartChangeRequestExecutionInput {
             scheduled_time: self.scheduled_time,

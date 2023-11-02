@@ -66,7 +66,7 @@ impl DeleteRecipeVersionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteRecipeVersionInput`](crate::operation::delete_recipe_version::DeleteRecipeVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_recipe_version::DeleteRecipeVersionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_recipe_version::DeleteRecipeVersionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_recipe_version::DeleteRecipeVersionInput {
             name: self.name,

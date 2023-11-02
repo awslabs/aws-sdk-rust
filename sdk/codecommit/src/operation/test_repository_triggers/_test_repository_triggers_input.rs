@@ -74,8 +74,10 @@ impl TestRepositoryTriggersInputBuilder {
     /// Consumes the builder and constructs a [`TestRepositoryTriggersInput`](crate::operation::test_repository_triggers::TestRepositoryTriggersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::test_repository_triggers::TestRepositoryTriggersInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::test_repository_triggers::TestRepositoryTriggersInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::test_repository_triggers::TestRepositoryTriggersInput {
             repository_name: self.repository_name,
             triggers: self.triggers,

@@ -103,7 +103,8 @@ impl CreateProfileShareInputBuilder {
     /// Consumes the builder and constructs a [`CreateProfileShareInput`](crate::operation::create_profile_share::CreateProfileShareInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_profile_share::CreateProfileShareInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_profile_share::CreateProfileShareInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_profile_share::CreateProfileShareInput {
             profile_arn: self.profile_arn,
             shared_with: self.shared_with,

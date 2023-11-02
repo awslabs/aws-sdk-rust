@@ -92,7 +92,7 @@ impl PutOutcomeInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`PutOutcomeInput`](crate::operation::put_outcome::PutOutcomeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_outcome::PutOutcomeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_outcome::PutOutcomeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_outcome::PutOutcomeInput {
             name: self.name,
             description: self.description,

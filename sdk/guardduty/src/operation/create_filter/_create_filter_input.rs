@@ -672,7 +672,9 @@ impl CreateFilterInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateFilterInput`](crate::operation::create_filter::CreateFilterInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_filter::CreateFilterInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_filter::CreateFilterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_filter::CreateFilterInput {
             detector_id: self.detector_id,
             name: self.name,

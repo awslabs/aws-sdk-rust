@@ -2,7 +2,7 @@
 pub fn ser_cost_allocation_tag_status_entry(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CostAllocationTagStatusEntry,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("TagKey").string(input.tag_key.as_str());
     }

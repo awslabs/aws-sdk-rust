@@ -45,7 +45,7 @@ impl DeleteReceiptFilterInputBuilder {
     /// Consumes the builder and constructs a [`DeleteReceiptFilterInput`](crate::operation::delete_receipt_filter::DeleteReceiptFilterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_receipt_filter::DeleteReceiptFilterInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_receipt_filter::DeleteReceiptFilterInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_receipt_filter::DeleteReceiptFilterInput {
             filter_name: self.filter_name,

@@ -160,7 +160,7 @@ impl UpdateAssetPropertyInputBuilder {
     /// Consumes the builder and constructs a [`UpdateAssetPropertyInput`](crate::operation::update_asset_property::UpdateAssetPropertyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_asset_property::UpdateAssetPropertyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_asset_property::UpdateAssetPropertyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_asset_property::UpdateAssetPropertyInput {
             asset_id: self.asset_id,

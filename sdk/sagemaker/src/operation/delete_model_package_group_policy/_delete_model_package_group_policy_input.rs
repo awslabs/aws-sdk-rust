@@ -46,7 +46,7 @@ impl DeleteModelPackageGroupPolicyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_model_package_group_policy::DeleteModelPackageGroupPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_model_package_group_policy::DeleteModelPackageGroupPolicyInput {
             model_package_group_name: self.model_package_group_name,

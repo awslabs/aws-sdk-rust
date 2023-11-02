@@ -94,7 +94,7 @@ impl BatchDeleteDocumentInputBuilder {
     /// Consumes the builder and constructs a [`BatchDeleteDocumentInput`](crate::operation::batch_delete_document::BatchDeleteDocumentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_delete_document::BatchDeleteDocumentInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::batch_delete_document::BatchDeleteDocumentInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::batch_delete_document::BatchDeleteDocumentInput {
             index_id: self.index_id,

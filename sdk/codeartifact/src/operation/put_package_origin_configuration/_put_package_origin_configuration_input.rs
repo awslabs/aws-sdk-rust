@@ -211,7 +211,7 @@ impl PutPackageOriginConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_package_origin_configuration::PutPackageOriginConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_package_origin_configuration::PutPackageOriginConfigurationInput {
             domain: self.domain,

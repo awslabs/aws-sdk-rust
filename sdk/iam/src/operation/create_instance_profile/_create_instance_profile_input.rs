@@ -119,7 +119,7 @@ impl CreateInstanceProfileInputBuilder {
     /// Consumes the builder and constructs a [`CreateInstanceProfileInput`](crate::operation::create_instance_profile::CreateInstanceProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_instance_profile::CreateInstanceProfileInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_instance_profile::CreateInstanceProfileInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_instance_profile::CreateInstanceProfileInput {
             instance_profile_name: self.instance_profile_name,

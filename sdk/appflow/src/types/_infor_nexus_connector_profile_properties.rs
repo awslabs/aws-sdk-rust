@@ -46,10 +46,12 @@ impl InforNexusConnectorProfilePropertiesBuilder {
     /// Consumes the builder and constructs a [`InforNexusConnectorProfileProperties`](crate::types::InforNexusConnectorProfileProperties).
     /// This method will fail if any of the following fields are not set:
     /// - [`instance_url`](crate::types::builders::InforNexusConnectorProfilePropertiesBuilder::instance_url)
-    pub fn build(self) -> ::std::result::Result<crate::types::InforNexusConnectorProfileProperties, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::InforNexusConnectorProfileProperties, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::InforNexusConnectorProfileProperties {
             instance_url: self.instance_url.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "instance_url",
                     "instance_url was not specified but it is required when building InforNexusConnectorProfileProperties",
                 )

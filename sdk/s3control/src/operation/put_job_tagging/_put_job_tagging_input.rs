@@ -95,7 +95,7 @@ impl PutJobTaggingInputBuilder {
     /// Consumes the builder and constructs a [`PutJobTaggingInput`](crate::operation::put_job_tagging::PutJobTaggingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_job_tagging::PutJobTaggingInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_job_tagging::PutJobTaggingInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_job_tagging::PutJobTaggingInput {
             account_id: self.account_id,
             job_id: self.job_id,

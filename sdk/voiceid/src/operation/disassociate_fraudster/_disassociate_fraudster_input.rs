@@ -97,7 +97,7 @@ impl DisassociateFraudsterInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateFraudsterInput`](crate::operation::disassociate_fraudster::DisassociateFraudsterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::disassociate_fraudster::DisassociateFraudsterInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::disassociate_fraudster::DisassociateFraudsterInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::disassociate_fraudster::DisassociateFraudsterInput {
             domain_id: self.domain_id,

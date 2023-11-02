@@ -2,7 +2,7 @@
 pub fn ser_customer_profiles_destination_properties(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CustomerProfilesDestinationProperties,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("domainName").string(input.domain_name.as_str());
     }

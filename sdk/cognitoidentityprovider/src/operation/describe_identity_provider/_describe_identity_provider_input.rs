@@ -68,7 +68,7 @@ impl DescribeIdentityProviderInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_identity_provider::DescribeIdentityProviderInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_identity_provider::DescribeIdentityProviderInput {
             user_pool_id: self.user_pool_id,

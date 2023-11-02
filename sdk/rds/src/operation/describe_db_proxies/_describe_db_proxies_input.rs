@@ -124,7 +124,7 @@ impl DescribeDbProxiesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDbProxiesInput`](crate::operation::describe_db_proxies::DescribeDbProxiesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_db_proxies::DescribeDbProxiesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_db_proxies::DescribeDbProxiesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_db_proxies::DescribeDbProxiesInput {
             db_proxy_name: self.db_proxy_name,
             filters: self.filters,

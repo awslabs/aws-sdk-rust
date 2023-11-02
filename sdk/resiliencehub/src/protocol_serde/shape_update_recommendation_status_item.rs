@@ -2,7 +2,7 @@
 pub fn ser_update_recommendation_status_item(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UpdateRecommendationStatusItem,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.resource_id {
         object.key("resourceId").string(var_1.as_str());
     }

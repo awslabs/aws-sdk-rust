@@ -2,7 +2,7 @@
 pub fn ser_start_source_network_recovery_request_network_entry(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::StartSourceNetworkRecoveryRequestNetworkEntry,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("sourceNetworkID").string(input.source_network_id.as_str());
     }

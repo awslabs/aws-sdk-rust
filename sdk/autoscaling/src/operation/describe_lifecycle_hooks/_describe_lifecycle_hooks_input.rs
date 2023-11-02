@@ -73,8 +73,10 @@ impl DescribeLifecycleHooksInputBuilder {
     /// Consumes the builder and constructs a [`DescribeLifecycleHooksInput`](crate::operation::describe_lifecycle_hooks::DescribeLifecycleHooksInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_lifecycle_hooks::DescribeLifecycleHooksInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::describe_lifecycle_hooks::DescribeLifecycleHooksInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::describe_lifecycle_hooks::DescribeLifecycleHooksInput {
             auto_scaling_group_name: self.auto_scaling_group_name,
             lifecycle_hook_names: self.lifecycle_hook_names,

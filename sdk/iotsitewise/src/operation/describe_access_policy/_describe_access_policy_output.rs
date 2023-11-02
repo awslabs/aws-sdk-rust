@@ -205,17 +205,17 @@ impl DescribeAccessPolicyOutputBuilder {
     /// - [`access_policy_last_update_date`](crate::operation::describe_access_policy::builders::DescribeAccessPolicyOutputBuilder::access_policy_last_update_date)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_access_policy::DescribeAccessPolicyOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_access_policy::DescribeAccessPolicyOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_access_policy::DescribeAccessPolicyOutput {
             access_policy_id: self.access_policy_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "access_policy_id",
                     "access_policy_id was not specified but it is required when building DescribeAccessPolicyOutput",
                 )
             })?,
             access_policy_arn: self.access_policy_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "access_policy_arn",
                     "access_policy_arn was not specified but it is required when building DescribeAccessPolicyOutput",
                 )
@@ -223,19 +223,19 @@ impl DescribeAccessPolicyOutputBuilder {
             access_policy_identity: self.access_policy_identity,
             access_policy_resource: self.access_policy_resource,
             access_policy_permission: self.access_policy_permission.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "access_policy_permission",
                     "access_policy_permission was not specified but it is required when building DescribeAccessPolicyOutput",
                 )
             })?,
             access_policy_creation_date: self.access_policy_creation_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "access_policy_creation_date",
                     "access_policy_creation_date was not specified but it is required when building DescribeAccessPolicyOutput",
                 )
             })?,
             access_policy_last_update_date: self.access_policy_last_update_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "access_policy_last_update_date",
                     "access_policy_last_update_date was not specified but it is required when building DescribeAccessPolicyOutput",
                 )

@@ -48,10 +48,10 @@ impl ReferenceLineCustomLabelConfigurationBuilder {
     /// - [`custom_label`](crate::types::builders::ReferenceLineCustomLabelConfigurationBuilder::custom_label)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::ReferenceLineCustomLabelConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::ReferenceLineCustomLabelConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ReferenceLineCustomLabelConfiguration {
             custom_label: self.custom_label.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "custom_label",
                     "custom_label was not specified but it is required when building ReferenceLineCustomLabelConfiguration",
                 )

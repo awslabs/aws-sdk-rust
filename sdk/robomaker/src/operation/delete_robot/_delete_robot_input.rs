@@ -45,7 +45,7 @@ impl DeleteRobotInputBuilder {
         &self.robot
     }
     /// Consumes the builder and constructs a [`DeleteRobotInput`](crate::operation::delete_robot::DeleteRobotInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_robot::DeleteRobotInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_robot::DeleteRobotInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_robot::DeleteRobotInput { robot: self.robot })
     }
 }

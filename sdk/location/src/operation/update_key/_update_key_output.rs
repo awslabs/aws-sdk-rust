@@ -123,22 +123,22 @@ impl UpdateKeyOutputBuilder {
     /// - [`key_arn`](crate::operation::update_key::builders::UpdateKeyOutputBuilder::key_arn)
     /// - [`key_name`](crate::operation::update_key::builders::UpdateKeyOutputBuilder::key_name)
     /// - [`update_time`](crate::operation::update_key::builders::UpdateKeyOutputBuilder::update_time)
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_key::UpdateKeyOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_key::UpdateKeyOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_key::UpdateKeyOutput {
             key_arn: self.key_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "key_arn",
                     "key_arn was not specified but it is required when building UpdateKeyOutput",
                 )
             })?,
             key_name: self.key_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "key_name",
                     "key_name was not specified but it is required when building UpdateKeyOutput",
                 )
             })?,
             update_time: self.update_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "update_time",
                     "update_time was not specified but it is required when building UpdateKeyOutput",
                 )

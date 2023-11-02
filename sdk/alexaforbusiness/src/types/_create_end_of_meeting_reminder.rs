@@ -97,22 +97,22 @@ impl CreateEndOfMeetingReminderBuilder {
     /// - [`reminder_at_minutes`](crate::types::builders::CreateEndOfMeetingReminderBuilder::reminder_at_minutes)
     /// - [`reminder_type`](crate::types::builders::CreateEndOfMeetingReminderBuilder::reminder_type)
     /// - [`enabled`](crate::types::builders::CreateEndOfMeetingReminderBuilder::enabled)
-    pub fn build(self) -> ::std::result::Result<crate::types::CreateEndOfMeetingReminder, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CreateEndOfMeetingReminder, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CreateEndOfMeetingReminder {
             reminder_at_minutes: self.reminder_at_minutes.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "reminder_at_minutes",
                     "reminder_at_minutes was not specified but it is required when building CreateEndOfMeetingReminder",
                 )
             })?,
             reminder_type: self.reminder_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "reminder_type",
                     "reminder_type was not specified but it is required when building CreateEndOfMeetingReminder",
                 )
             })?,
             enabled: self.enabled.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "enabled",
                     "enabled was not specified but it is required when building CreateEndOfMeetingReminder",
                 )

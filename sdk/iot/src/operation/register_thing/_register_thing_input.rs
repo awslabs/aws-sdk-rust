@@ -71,7 +71,7 @@ impl RegisterThingInputBuilder {
     /// Consumes the builder and constructs a [`RegisterThingInput`](crate::operation::register_thing::RegisterThingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::register_thing::RegisterThingInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::register_thing::RegisterThingInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::register_thing::RegisterThingInput {
             template_body: self.template_body,
             parameters: self.parameters,

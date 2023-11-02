@@ -277,7 +277,7 @@ impl UpdateImagePipelineInputBuilder {
     /// Consumes the builder and constructs a [`UpdateImagePipelineInput`](crate::operation::update_image_pipeline::UpdateImagePipelineInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_image_pipeline::UpdateImagePipelineInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_image_pipeline::UpdateImagePipelineInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_image_pipeline::UpdateImagePipelineInput {
             image_pipeline_arn: self.image_pipeline_arn,

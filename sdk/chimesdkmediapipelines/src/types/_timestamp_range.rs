@@ -68,16 +68,16 @@ impl TimestampRangeBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`start_timestamp`](crate::types::builders::TimestampRangeBuilder::start_timestamp)
     /// - [`end_timestamp`](crate::types::builders::TimestampRangeBuilder::end_timestamp)
-    pub fn build(self) -> ::std::result::Result<crate::types::TimestampRange, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TimestampRange, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TimestampRange {
             start_timestamp: self.start_timestamp.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "start_timestamp",
                     "start_timestamp was not specified but it is required when building TimestampRange",
                 )
             })?,
             end_timestamp: self.end_timestamp.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "end_timestamp",
                     "end_timestamp was not specified but it is required when building TimestampRange",
                 )

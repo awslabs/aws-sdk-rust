@@ -272,16 +272,16 @@ impl CustomRuleBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`source`](crate::types::builders::CustomRuleBuilder::source)
     /// - [`target`](crate::types::builders::CustomRuleBuilder::target)
-    pub fn build(self) -> ::std::result::Result<crate::types::CustomRule, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CustomRule, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CustomRule {
             source: self.source.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source",
                     "source was not specified but it is required when building CustomRule",
                 )
             })?,
             target: self.target.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "target",
                     "target was not specified but it is required when building CustomRule",
                 )

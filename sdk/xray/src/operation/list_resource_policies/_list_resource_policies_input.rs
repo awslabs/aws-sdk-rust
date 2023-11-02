@@ -43,7 +43,7 @@ impl ListResourcePoliciesInputBuilder {
     /// Consumes the builder and constructs a [`ListResourcePoliciesInput`](crate::operation::list_resource_policies::ListResourcePoliciesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_resource_policies::ListResourcePoliciesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_resource_policies::ListResourcePoliciesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_resource_policies::ListResourcePoliciesInput { next_token: self.next_token })
     }

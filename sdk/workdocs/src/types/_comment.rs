@@ -229,10 +229,10 @@ impl CommentBuilder {
     /// Consumes the builder and constructs a [`Comment`](crate::types::Comment).
     /// This method will fail if any of the following fields are not set:
     /// - [`comment_id`](crate::types::builders::CommentBuilder::comment_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::Comment, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Comment, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Comment {
             comment_id: self.comment_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "comment_id",
                     "comment_id was not specified but it is required when building Comment",
                 )

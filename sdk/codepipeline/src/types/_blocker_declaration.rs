@@ -69,16 +69,16 @@ impl BlockerDeclarationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::BlockerDeclarationBuilder::name)
     /// - [`r#type`](crate::types::builders::BlockerDeclarationBuilder::r#type)
-    pub fn build(self) -> ::std::result::Result<crate::types::BlockerDeclaration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::BlockerDeclaration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::BlockerDeclaration {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building BlockerDeclaration",
                 )
             })?,
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building BlockerDeclaration",
                 )

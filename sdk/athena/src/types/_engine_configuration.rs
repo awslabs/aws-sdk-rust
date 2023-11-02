@@ -160,11 +160,11 @@ impl EngineConfigurationBuilder {
     /// Consumes the builder and constructs a [`EngineConfiguration`](crate::types::EngineConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`max_concurrent_dpus`](crate::types::builders::EngineConfigurationBuilder::max_concurrent_dpus)
-    pub fn build(self) -> ::std::result::Result<crate::types::EngineConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::EngineConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EngineConfiguration {
             coordinator_dpu_size: self.coordinator_dpu_size,
             max_concurrent_dpus: self.max_concurrent_dpus.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "max_concurrent_dpus",
                     "max_concurrent_dpus was not specified but it is required when building EngineConfiguration",
                 )

@@ -127,7 +127,7 @@ impl ListRoutesInputBuilder {
         &self.mesh_owner
     }
     /// Consumes the builder and constructs a [`ListRoutesInput`](crate::operation::list_routes::ListRoutesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_routes::ListRoutesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_routes::ListRoutesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_routes::ListRoutesInput {
             mesh_name: self.mesh_name,
             virtual_router_name: self.virtual_router_name,

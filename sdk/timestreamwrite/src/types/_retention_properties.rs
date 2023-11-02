@@ -68,16 +68,16 @@ impl RetentionPropertiesBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`memory_store_retention_period_in_hours`](crate::types::builders::RetentionPropertiesBuilder::memory_store_retention_period_in_hours)
     /// - [`magnetic_store_retention_period_in_days`](crate::types::builders::RetentionPropertiesBuilder::magnetic_store_retention_period_in_days)
-    pub fn build(self) -> ::std::result::Result<crate::types::RetentionProperties, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RetentionProperties, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RetentionProperties {
             memory_store_retention_period_in_hours: self.memory_store_retention_period_in_hours.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "memory_store_retention_period_in_hours",
                     "memory_store_retention_period_in_hours was not specified but it is required when building RetentionProperties",
                 )
             })?,
             magnetic_store_retention_period_in_days: self.magnetic_store_retention_period_in_days.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "magnetic_store_retention_period_in_days",
                     "magnetic_store_retention_period_in_days was not specified but it is required when building RetentionProperties",
                 )

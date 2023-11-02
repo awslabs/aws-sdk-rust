@@ -2,7 +2,7 @@
 pub fn ser_axis_tick_label_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AxisTickLabelOptions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.label_options {
         #[allow(unused_mut)]
         let mut object_2 = object.key("LabelOptions").start_object();

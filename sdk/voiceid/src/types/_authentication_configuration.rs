@@ -45,10 +45,10 @@ impl AuthenticationConfigurationBuilder {
     /// Consumes the builder and constructs a [`AuthenticationConfiguration`](crate::types::AuthenticationConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`acceptance_threshold`](crate::types::builders::AuthenticationConfigurationBuilder::acceptance_threshold)
-    pub fn build(self) -> ::std::result::Result<crate::types::AuthenticationConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AuthenticationConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AuthenticationConfiguration {
             acceptance_threshold: self.acceptance_threshold.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "acceptance_threshold",
                     "acceptance_threshold was not specified but it is required when building AuthenticationConfiguration",
                 )

@@ -53,7 +53,7 @@ impl BatchStartRecommendationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_start_recommendations::BatchStartRecommendationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::batch_start_recommendations::BatchStartRecommendationsInput { data: self.data })
     }

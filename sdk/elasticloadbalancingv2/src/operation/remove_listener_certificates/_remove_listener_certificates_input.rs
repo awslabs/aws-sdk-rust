@@ -75,7 +75,7 @@ impl RemoveListenerCertificatesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_listener_certificates::RemoveListenerCertificatesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::remove_listener_certificates::RemoveListenerCertificatesInput {
             listener_arn: self.listener_arn,

@@ -176,7 +176,7 @@ impl ModifyIpamResourceCidrInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_ipam_resource_cidr::ModifyIpamResourceCidrInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::modify_ipam_resource_cidr::ModifyIpamResourceCidrInput {
             dry_run: self.dry_run,

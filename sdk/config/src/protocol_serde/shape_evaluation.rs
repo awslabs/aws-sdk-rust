@@ -2,7 +2,7 @@
 pub fn ser_evaluation(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Evaluation,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("ComplianceResourceType").string(input.compliance_resource_type.as_str());
     }

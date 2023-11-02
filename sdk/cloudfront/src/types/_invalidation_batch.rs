@@ -78,11 +78,11 @@ impl InvalidationBatchBuilder {
     /// Consumes the builder and constructs a [`InvalidationBatch`](crate::types::InvalidationBatch).
     /// This method will fail if any of the following fields are not set:
     /// - [`caller_reference`](crate::types::builders::InvalidationBatchBuilder::caller_reference)
-    pub fn build(self) -> ::std::result::Result<crate::types::InvalidationBatch, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::InvalidationBatch, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::InvalidationBatch {
             paths: self.paths,
             caller_reference: self.caller_reference.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "caller_reference",
                     "caller_reference was not specified but it is required when building InvalidationBatch",
                 )

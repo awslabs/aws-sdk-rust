@@ -2,7 +2,7 @@
 pub fn ser_get_compliance_detail_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_compliance_detail::GetComplianceDetailInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.policy_id {
         object.key("PolicyId").string(var_1.as_str());
     }

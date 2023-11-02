@@ -96,13 +96,13 @@ impl ListConfiguredTableAssociationsOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_configured_table_associations::ListConfiguredTableAssociationsOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_configured_table_associations::ListConfiguredTableAssociationsOutput {
                 configured_table_association_summaries: self.configured_table_association_summaries
                     .ok_or_else(||
-                        ::aws_smithy_http::operation::error::BuildError::missing_field("configured_table_association_summaries", "configured_table_association_summaries was not specified but it is required when building ListConfiguredTableAssociationsOutput")
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("configured_table_association_summaries", "configured_table_association_summaries was not specified but it is required when building ListConfiguredTableAssociationsOutput")
                     )?
                 ,
                 next_token: self.next_token

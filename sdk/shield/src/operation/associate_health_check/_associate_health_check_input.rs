@@ -66,7 +66,7 @@ impl AssociateHealthCheckInputBuilder {
     /// Consumes the builder and constructs a [`AssociateHealthCheckInput`](crate::operation::associate_health_check::AssociateHealthCheckInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::associate_health_check::AssociateHealthCheckInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::associate_health_check::AssociateHealthCheckInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::associate_health_check::AssociateHealthCheckInput {
             protection_id: self.protection_id,

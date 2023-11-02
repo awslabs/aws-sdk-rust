@@ -137,29 +137,29 @@ impl GetOriginEndpointPolicyOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_origin_endpoint_policy::GetOriginEndpointPolicyOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_origin_endpoint_policy::GetOriginEndpointPolicyOutput {
             channel_group_name: self.channel_group_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "channel_group_name",
                     "channel_group_name was not specified but it is required when building GetOriginEndpointPolicyOutput",
                 )
             })?,
             channel_name: self.channel_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "channel_name",
                     "channel_name was not specified but it is required when building GetOriginEndpointPolicyOutput",
                 )
             })?,
             origin_endpoint_name: self.origin_endpoint_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "origin_endpoint_name",
                     "origin_endpoint_name was not specified but it is required when building GetOriginEndpointPolicyOutput",
                 )
             })?,
             policy: self.policy.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "policy",
                     "policy was not specified but it is required when building GetOriginEndpointPolicyOutput",
                 )

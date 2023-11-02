@@ -131,16 +131,16 @@ impl MessageInsightsDataSourceBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`start_date`](crate::types::builders::MessageInsightsDataSourceBuilder::start_date)
     /// - [`end_date`](crate::types::builders::MessageInsightsDataSourceBuilder::end_date)
-    pub fn build(self) -> ::std::result::Result<crate::types::MessageInsightsDataSource, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::MessageInsightsDataSource, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MessageInsightsDataSource {
             start_date: self.start_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "start_date",
                     "start_date was not specified but it is required when building MessageInsightsDataSource",
                 )
             })?,
             end_date: self.end_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "end_date",
                     "end_date was not specified but it is required when building MessageInsightsDataSource",
                 )

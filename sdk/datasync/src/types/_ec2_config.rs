@@ -110,16 +110,16 @@ impl Ec2ConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`subnet_arn`](crate::types::builders::Ec2ConfigBuilder::subnet_arn)
     /// - [`security_group_arns`](crate::types::builders::Ec2ConfigBuilder::security_group_arns)
-    pub fn build(self) -> ::std::result::Result<crate::types::Ec2Config, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Ec2Config, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Ec2Config {
             subnet_arn: self.subnet_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "subnet_arn",
                     "subnet_arn was not specified but it is required when building Ec2Config",
                 )
             })?,
             security_group_arns: self.security_group_arns.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "security_group_arns",
                     "security_group_arns was not specified but it is required when building Ec2Config",
                 )

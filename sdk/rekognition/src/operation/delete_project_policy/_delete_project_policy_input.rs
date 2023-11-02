@@ -87,7 +87,7 @@ impl DeleteProjectPolicyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteProjectPolicyInput`](crate::operation::delete_project_policy::DeleteProjectPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_project_policy::DeleteProjectPolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_project_policy::DeleteProjectPolicyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_project_policy::DeleteProjectPolicyInput {
             project_arn: self.project_arn,

@@ -123,16 +123,16 @@ impl RegistryAliasBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::RegistryAliasBuilder::name)
     /// - [`status`](crate::types::builders::RegistryAliasBuilder::status)
-    pub fn build(self) -> ::std::result::Result<crate::types::RegistryAlias, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RegistryAlias, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RegistryAlias {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building RegistryAlias",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building RegistryAlias",
                 )

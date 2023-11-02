@@ -87,8 +87,10 @@ impl DeleteStreamingSessionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteStreamingSessionInput`](crate::operation::delete_streaming_session::DeleteStreamingSessionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_streaming_session::DeleteStreamingSessionInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::delete_streaming_session::DeleteStreamingSessionInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::delete_streaming_session::DeleteStreamingSessionInput {
             client_token: self.client_token,
             session_id: self.session_id,

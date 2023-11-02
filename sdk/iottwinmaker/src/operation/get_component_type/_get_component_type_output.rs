@@ -435,17 +435,17 @@ impl GetComponentTypeOutputBuilder {
     /// - [`arn`](crate::operation::get_component_type::builders::GetComponentTypeOutputBuilder::arn)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_component_type::GetComponentTypeOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_component_type::GetComponentTypeOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_component_type::GetComponentTypeOutput {
             workspace_id: self.workspace_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "workspace_id",
                     "workspace_id was not specified but it is required when building GetComponentTypeOutput",
                 )
             })?,
             is_singleton: self.is_singleton,
             component_type_id: self.component_type_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "component_type_id",
                     "component_type_id was not specified but it is required when building GetComponentTypeOutput",
                 )
@@ -455,19 +455,19 @@ impl GetComponentTypeOutputBuilder {
             extends_from: self.extends_from,
             functions: self.functions,
             creation_date_time: self.creation_date_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_date_time",
                     "creation_date_time was not specified but it is required when building GetComponentTypeOutput",
                 )
             })?,
             update_date_time: self.update_date_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "update_date_time",
                     "update_date_time was not specified but it is required when building GetComponentTypeOutput",
                 )
             })?,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building GetComponentTypeOutput",
                 )

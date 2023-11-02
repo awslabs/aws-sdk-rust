@@ -44,8 +44,10 @@ impl CancelPolicyGenerationInputBuilder {
     /// Consumes the builder and constructs a [`CancelPolicyGenerationInput`](crate::operation::cancel_policy_generation::CancelPolicyGenerationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::cancel_policy_generation::CancelPolicyGenerationInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::cancel_policy_generation::CancelPolicyGenerationInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::cancel_policy_generation::CancelPolicyGenerationInput { job_id: self.job_id })
     }
 }

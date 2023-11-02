@@ -210,7 +210,7 @@ impl CreateCustomerGatewayInputBuilder {
     /// Consumes the builder and constructs a [`CreateCustomerGatewayInput`](crate::operation::create_customer_gateway::CreateCustomerGatewayInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_customer_gateway::CreateCustomerGatewayInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_customer_gateway::CreateCustomerGatewayInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_customer_gateway::CreateCustomerGatewayInput {
             bgp_asn: self.bgp_asn,

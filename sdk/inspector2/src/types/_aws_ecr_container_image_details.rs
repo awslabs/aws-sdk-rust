@@ -207,10 +207,10 @@ impl AwsEcrContainerImageDetailsBuilder {
     /// - [`repository_name`](crate::types::builders::AwsEcrContainerImageDetailsBuilder::repository_name)
     /// - [`image_hash`](crate::types::builders::AwsEcrContainerImageDetailsBuilder::image_hash)
     /// - [`registry`](crate::types::builders::AwsEcrContainerImageDetailsBuilder::registry)
-    pub fn build(self) -> ::std::result::Result<crate::types::AwsEcrContainerImageDetails, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AwsEcrContainerImageDetails, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AwsEcrContainerImageDetails {
             repository_name: self.repository_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "repository_name",
                     "repository_name was not specified but it is required when building AwsEcrContainerImageDetails",
                 )
@@ -220,13 +220,13 @@ impl AwsEcrContainerImageDetailsBuilder {
             author: self.author,
             architecture: self.architecture,
             image_hash: self.image_hash.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "image_hash",
                     "image_hash was not specified but it is required when building AwsEcrContainerImageDetails",
                 )
             })?,
             registry: self.registry.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "registry",
                     "registry was not specified but it is required when building AwsEcrContainerImageDetails",
                 )

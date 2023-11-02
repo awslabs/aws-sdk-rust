@@ -68,7 +68,7 @@ impl DisassociateTrialComponentInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_trial_component::DisassociateTrialComponentInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disassociate_trial_component::DisassociateTrialComponentInput {
             trial_component_name: self.trial_component_name,

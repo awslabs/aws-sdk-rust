@@ -92,22 +92,22 @@ impl AggregationConstraintBuilder {
     /// - [`column_name`](crate::types::builders::AggregationConstraintBuilder::column_name)
     /// - [`minimum`](crate::types::builders::AggregationConstraintBuilder::minimum)
     /// - [`r#type`](crate::types::builders::AggregationConstraintBuilder::r#type)
-    pub fn build(self) -> ::std::result::Result<crate::types::AggregationConstraint, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AggregationConstraint, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AggregationConstraint {
             column_name: self.column_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "column_name",
                     "column_name was not specified but it is required when building AggregationConstraint",
                 )
             })?,
             minimum: self.minimum.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "minimum",
                     "minimum was not specified but it is required when building AggregationConstraint",
                 )
             })?,
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building AggregationConstraint",
                 )

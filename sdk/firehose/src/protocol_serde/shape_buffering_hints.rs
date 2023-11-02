@@ -2,7 +2,7 @@
 pub fn ser_buffering_hints(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BufferingHints,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.size_in_mbs {
         object.key("SizeInMBs").number(
             #[allow(clippy::useless_conversion)]

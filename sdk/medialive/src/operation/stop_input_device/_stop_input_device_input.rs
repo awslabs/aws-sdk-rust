@@ -45,7 +45,7 @@ impl StopInputDeviceInputBuilder {
     /// Consumes the builder and constructs a [`StopInputDeviceInput`](crate::operation::stop_input_device::StopInputDeviceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_input_device::StopInputDeviceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::stop_input_device::StopInputDeviceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_input_device::StopInputDeviceInput {
             input_device_id: self.input_device_id,
         })

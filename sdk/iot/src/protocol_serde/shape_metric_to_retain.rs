@@ -2,7 +2,7 @@
 pub fn ser_metric_to_retain(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MetricToRetain,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("metric").string(input.metric.as_str());
     }

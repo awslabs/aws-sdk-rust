@@ -277,7 +277,7 @@ impl CreateHitWithHitTypeInputBuilder {
     /// Consumes the builder and constructs a [`CreateHitWithHitTypeInput`](crate::operation::create_hit_with_hit_type::CreateHitWithHitTypeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_hit_with_hit_type::CreateHitWithHitTypeInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_hit_with_hit_type::CreateHitWithHitTypeInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_hit_with_hit_type::CreateHitWithHitTypeInput {
             hit_type_id: self.hit_type_id,

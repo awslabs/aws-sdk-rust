@@ -46,7 +46,7 @@ impl DisassociateUserSettingsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_user_settings::DisassociateUserSettingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disassociate_user_settings::DisassociateUserSettingsInput { portal_arn: self.portal_arn })
     }

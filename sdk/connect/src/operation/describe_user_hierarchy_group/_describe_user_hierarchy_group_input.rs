@@ -68,7 +68,7 @@ impl DescribeUserHierarchyGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_user_hierarchy_group::DescribeUserHierarchyGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_user_hierarchy_group::DescribeUserHierarchyGroupInput {
             hierarchy_group_id: self.hierarchy_group_id,

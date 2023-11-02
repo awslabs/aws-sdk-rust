@@ -246,7 +246,7 @@ impl ExportAutoScalingGroupRecommendationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::export_auto_scaling_group_recommendations::ExportAutoScalingGroupRecommendationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::export_auto_scaling_group_recommendations::ExportAutoScalingGroupRecommendationsInput {

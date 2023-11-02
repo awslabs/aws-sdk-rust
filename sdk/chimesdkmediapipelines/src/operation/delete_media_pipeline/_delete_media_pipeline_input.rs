@@ -44,7 +44,7 @@ impl DeleteMediaPipelineInputBuilder {
     /// Consumes the builder and constructs a [`DeleteMediaPipelineInput`](crate::operation::delete_media_pipeline::DeleteMediaPipelineInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_media_pipeline::DeleteMediaPipelineInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_media_pipeline::DeleteMediaPipelineInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_media_pipeline::DeleteMediaPipelineInput {
             media_pipeline_id: self.media_pipeline_id,

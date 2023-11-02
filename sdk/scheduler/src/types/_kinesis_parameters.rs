@@ -46,10 +46,10 @@ impl KinesisParametersBuilder {
     /// Consumes the builder and constructs a [`KinesisParameters`](crate::types::KinesisParameters).
     /// This method will fail if any of the following fields are not set:
     /// - [`partition_key`](crate::types::builders::KinesisParametersBuilder::partition_key)
-    pub fn build(self) -> ::std::result::Result<crate::types::KinesisParameters, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::KinesisParameters, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::KinesisParameters {
             partition_key: self.partition_key.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "partition_key",
                     "partition_key was not specified but it is required when building KinesisParameters",
                 )

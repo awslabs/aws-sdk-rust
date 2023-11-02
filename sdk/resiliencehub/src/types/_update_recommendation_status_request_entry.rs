@@ -148,23 +148,23 @@ impl UpdateRecommendationStatusRequestEntryBuilder {
     /// - [`excluded`](crate::types::builders::UpdateRecommendationStatusRequestEntryBuilder::excluded)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::UpdateRecommendationStatusRequestEntry, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::UpdateRecommendationStatusRequestEntry, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::UpdateRecommendationStatusRequestEntry {
             entry_id: self.entry_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "entry_id",
                     "entry_id was not specified but it is required when building UpdateRecommendationStatusRequestEntry",
                 )
             })?,
             reference_id: self.reference_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "reference_id",
                     "reference_id was not specified but it is required when building UpdateRecommendationStatusRequestEntry",
                 )
             })?,
             item: self.item,
             excluded: self.excluded.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "excluded",
                     "excluded was not specified but it is required when building UpdateRecommendationStatusRequestEntry",
                 )

@@ -68,7 +68,7 @@ impl DeleteNotificationConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_notification_configuration::DeleteNotificationConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_notification_configuration::DeleteNotificationConfigurationInput {

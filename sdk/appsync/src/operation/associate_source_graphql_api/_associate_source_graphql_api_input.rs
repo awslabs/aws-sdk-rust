@@ -110,7 +110,7 @@ impl AssociateSourceGraphqlApiInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_source_graphql_api::AssociateSourceGraphqlApiInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::associate_source_graphql_api::AssociateSourceGraphqlApiInput {
             merged_api_identifier: self.merged_api_identifier,

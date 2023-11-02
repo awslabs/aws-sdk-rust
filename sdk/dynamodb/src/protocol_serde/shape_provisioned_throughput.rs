@@ -2,7 +2,7 @@
 pub fn ser_provisioned_throughput(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ProvisionedThroughput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("ReadCapacityUnits").number(
             #[allow(clippy::useless_conversion)]

@@ -218,7 +218,7 @@ impl CreateHsmInputBuilder {
         &self.syslog_ip
     }
     /// Consumes the builder and constructs a [`CreateHsmInput`](crate::operation::create_hsm::CreateHsmInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_hsm::CreateHsmInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_hsm::CreateHsmInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_hsm::CreateHsmInput {
             subnet_id: self.subnet_id,
             ssh_key: self.ssh_key,

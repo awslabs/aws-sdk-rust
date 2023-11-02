@@ -274,31 +274,31 @@ impl AnomalySubscriptionBuilder {
     /// - [`subscribers`](crate::types::builders::AnomalySubscriptionBuilder::subscribers)
     /// - [`frequency`](crate::types::builders::AnomalySubscriptionBuilder::frequency)
     /// - [`subscription_name`](crate::types::builders::AnomalySubscriptionBuilder::subscription_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::AnomalySubscription, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AnomalySubscription, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AnomalySubscription {
             subscription_arn: self.subscription_arn,
             account_id: self.account_id,
             monitor_arn_list: self.monitor_arn_list.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "monitor_arn_list",
                     "monitor_arn_list was not specified but it is required when building AnomalySubscription",
                 )
             })?,
             subscribers: self.subscribers.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "subscribers",
                     "subscribers was not specified but it is required when building AnomalySubscription",
                 )
             })?,
             threshold: self.threshold,
             frequency: self.frequency.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "frequency",
                     "frequency was not specified but it is required when building AnomalySubscription",
                 )
             })?,
             subscription_name: self.subscription_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "subscription_name",
                     "subscription_name was not specified but it is required when building AnomalySubscription",
                 )

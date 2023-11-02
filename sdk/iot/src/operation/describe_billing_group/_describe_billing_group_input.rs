@@ -44,7 +44,7 @@ impl DescribeBillingGroupInputBuilder {
     /// Consumes the builder and constructs a [`DescribeBillingGroupInput`](crate::operation::describe_billing_group::DescribeBillingGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_billing_group::DescribeBillingGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_billing_group::DescribeBillingGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_billing_group::DescribeBillingGroupInput {
             billing_group_name: self.billing_group_name,

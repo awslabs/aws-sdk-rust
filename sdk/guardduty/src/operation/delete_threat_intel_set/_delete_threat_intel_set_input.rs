@@ -66,7 +66,7 @@ impl DeleteThreatIntelSetInputBuilder {
     /// Consumes the builder and constructs a [`DeleteThreatIntelSetInput`](crate::operation::delete_threat_intel_set::DeleteThreatIntelSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_threat_intel_set::DeleteThreatIntelSetInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_threat_intel_set::DeleteThreatIntelSetInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_threat_intel_set::DeleteThreatIntelSetInput {
             detector_id: self.detector_id,

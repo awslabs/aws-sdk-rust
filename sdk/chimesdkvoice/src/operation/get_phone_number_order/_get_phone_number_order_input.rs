@@ -44,7 +44,7 @@ impl GetPhoneNumberOrderInputBuilder {
     /// Consumes the builder and constructs a [`GetPhoneNumberOrderInput`](crate::operation::get_phone_number_order::GetPhoneNumberOrderInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_phone_number_order::GetPhoneNumberOrderInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_phone_number_order::GetPhoneNumberOrderInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_phone_number_order::GetPhoneNumberOrderInput {
             phone_number_order_id: self.phone_number_order_id,

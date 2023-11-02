@@ -66,7 +66,7 @@ impl StopPipelineExecutionInputBuilder {
     /// Consumes the builder and constructs a [`StopPipelineExecutionInput`](crate::operation::stop_pipeline_execution::StopPipelineExecutionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_pipeline_execution::StopPipelineExecutionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::stop_pipeline_execution::StopPipelineExecutionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::stop_pipeline_execution::StopPipelineExecutionInput {
             pipeline_execution_arn: self.pipeline_execution_arn,

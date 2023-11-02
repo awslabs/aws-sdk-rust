@@ -131,7 +131,7 @@ impl UpdateTableReplicaAutoScalingInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_table_replica_auto_scaling::UpdateTableReplicaAutoScalingInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_table_replica_auto_scaling::UpdateTableReplicaAutoScalingInput {
             global_secondary_index_updates: self.global_secondary_index_updates,

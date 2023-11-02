@@ -64,7 +64,7 @@ impl ListByteMatchSetsInputBuilder {
     /// Consumes the builder and constructs a [`ListByteMatchSetsInput`](crate::operation::list_byte_match_sets::ListByteMatchSetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_byte_match_sets::ListByteMatchSetsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_byte_match_sets::ListByteMatchSetsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_byte_match_sets::ListByteMatchSetsInput {
             next_marker: self.next_marker,
             limit: self.limit,

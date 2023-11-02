@@ -172,15 +172,15 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for UpdateGroupR
             fn uri_base(
                 _input: &crate::operation::update_group::UpdateGroupInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 use ::std::fmt::Write as _;
                 let input_1 = &_input.group_id;
                 let input_1 = input_1
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("group_id", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("group_id", "cannot be empty or unset"))?;
                 let group_id = ::aws_smithy_http::label::fmt_string(input_1, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if group_id.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "group_id",
                         "cannot be empty or unset",
                     ));
@@ -192,7 +192,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for UpdateGroupR
             fn update_http_builder(
                 input: &crate::operation::update_group::UpdateGroupInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 ::std::result::Result::Ok(builder.method("PUT").uri(uri))
@@ -201,7 +201,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for UpdateGroupR
             builder = _header_serialization_settings.set_default_header(builder, ::http::header::CONTENT_TYPE, "application/json");
             builder
         };
-        let body = ::aws_smithy_http::body::SdkBody::from(crate::protocol_serde::shape_update_group::ser_update_group_input(&input)?);
+        let body = ::aws_smithy_types::body::SdkBody::from(crate::protocol_serde::shape_update_group::ser_update_group_input(&input)?);
         if let Some(content_length) = body.content_length() {
             let content_length = content_length.to_string();
             request_builder = _header_serialization_settings.set_default_header(request_builder, ::http::header::CONTENT_LENGTH, &content_length);

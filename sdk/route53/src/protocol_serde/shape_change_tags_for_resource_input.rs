@@ -2,7 +2,7 @@
 pub fn ser_change_tags_for_resource_input_input(
     input: &crate::operation::change_tags_for_resource::ChangeTagsForResourceInput,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_1) = &input.add_tags {

@@ -78,16 +78,16 @@ impl CapacityUnitsConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`storage_capacity_units`](crate::types::builders::CapacityUnitsConfigurationBuilder::storage_capacity_units)
     /// - [`query_capacity_units`](crate::types::builders::CapacityUnitsConfigurationBuilder::query_capacity_units)
-    pub fn build(self) -> ::std::result::Result<crate::types::CapacityUnitsConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CapacityUnitsConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CapacityUnitsConfiguration {
             storage_capacity_units: self.storage_capacity_units.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "storage_capacity_units",
                     "storage_capacity_units was not specified but it is required when building CapacityUnitsConfiguration",
                 )
             })?,
             query_capacity_units: self.query_capacity_units.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "query_capacity_units",
                     "query_capacity_units was not specified but it is required when building CapacityUnitsConfiguration",
                 )

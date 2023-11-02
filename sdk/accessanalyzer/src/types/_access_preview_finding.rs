@@ -409,10 +409,10 @@ impl AccessPreviewFindingBuilder {
     /// - [`change_type`](crate::types::builders::AccessPreviewFindingBuilder::change_type)
     /// - [`status`](crate::types::builders::AccessPreviewFindingBuilder::status)
     /// - [`resource_owner_account`](crate::types::builders::AccessPreviewFindingBuilder::resource_owner_account)
-    pub fn build(self) -> ::std::result::Result<crate::types::AccessPreviewFinding, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AccessPreviewFinding, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AccessPreviewFinding {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building AccessPreviewFinding",
                 )
@@ -425,31 +425,31 @@ impl AccessPreviewFindingBuilder {
             resource: self.resource,
             is_public: self.is_public,
             resource_type: self.resource_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_type",
                     "resource_type was not specified but it is required when building AccessPreviewFinding",
                 )
             })?,
             created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
                     "created_at was not specified but it is required when building AccessPreviewFinding",
                 )
             })?,
             change_type: self.change_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "change_type",
                     "change_type was not specified but it is required when building AccessPreviewFinding",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building AccessPreviewFinding",
                 )
             })?,
             resource_owner_account: self.resource_owner_account.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_owner_account",
                     "resource_owner_account was not specified but it is required when building AccessPreviewFinding",
                 )

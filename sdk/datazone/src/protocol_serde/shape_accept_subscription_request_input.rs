@@ -2,7 +2,7 @@
 pub fn ser_accept_subscription_request_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::accept_subscription_request::AcceptSubscriptionRequestInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.decision_comment {
         object.key("decisionComment").string(var_1.as_str());
     }

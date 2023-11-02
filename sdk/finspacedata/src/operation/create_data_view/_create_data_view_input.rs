@@ -188,7 +188,7 @@ impl CreateDataViewInputBuilder {
     /// Consumes the builder and constructs a [`CreateDataViewInput`](crate::operation::create_data_view::CreateDataViewInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_data_view::CreateDataViewInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_data_view::CreateDataViewInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_data_view::CreateDataViewInput {
             client_token: self.client_token,
             dataset_id: self.dataset_id,

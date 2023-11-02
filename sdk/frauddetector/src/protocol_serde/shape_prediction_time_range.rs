@@ -2,7 +2,7 @@
 pub fn ser_prediction_time_range(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PredictionTimeRange,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("startTime").string(input.start_time.as_str());
     }

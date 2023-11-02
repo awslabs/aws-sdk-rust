@@ -121,7 +121,7 @@ impl DeregisterTypeInputBuilder {
     /// Consumes the builder and constructs a [`DeregisterTypeInput`](crate::operation::deregister_type::DeregisterTypeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::deregister_type::DeregisterTypeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::deregister_type::DeregisterTypeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::deregister_type::DeregisterTypeInput {
             arn: self.arn,
             r#type: self.r#type,

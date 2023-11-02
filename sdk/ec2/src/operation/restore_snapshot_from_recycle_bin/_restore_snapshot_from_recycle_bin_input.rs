@@ -67,7 +67,7 @@ impl RestoreSnapshotFromRecycleBinInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::restore_snapshot_from_recycle_bin::RestoreSnapshotFromRecycleBinInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::restore_snapshot_from_recycle_bin::RestoreSnapshotFromRecycleBinInput {
             snapshot_id: self.snapshot_id,

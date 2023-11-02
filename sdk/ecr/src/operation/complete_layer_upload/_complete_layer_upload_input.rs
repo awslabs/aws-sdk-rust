@@ -116,7 +116,7 @@ impl CompleteLayerUploadInputBuilder {
     /// Consumes the builder and constructs a [`CompleteLayerUploadInput`](crate::operation::complete_layer_upload::CompleteLayerUploadInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::complete_layer_upload::CompleteLayerUploadInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::complete_layer_upload::CompleteLayerUploadInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::complete_layer_upload::CompleteLayerUploadInput {
             registry_id: self.registry_id,

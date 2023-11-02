@@ -71,7 +71,7 @@ impl DescribeAllManagedProductsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_all_managed_products::DescribeAllManagedProductsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_all_managed_products::DescribeAllManagedProductsInput { scope: self.scope })
     }

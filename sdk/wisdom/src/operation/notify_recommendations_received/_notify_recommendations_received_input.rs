@@ -97,7 +97,7 @@ impl NotifyRecommendationsReceivedInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::notify_recommendations_received::NotifyRecommendationsReceivedInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::notify_recommendations_received::NotifyRecommendationsReceivedInput {
             assistant_id: self.assistant_id,

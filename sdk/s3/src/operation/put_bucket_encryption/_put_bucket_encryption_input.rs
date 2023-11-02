@@ -139,7 +139,7 @@ impl PutBucketEncryptionInputBuilder {
     /// Consumes the builder and constructs a [`PutBucketEncryptionInput`](crate::operation::put_bucket_encryption::PutBucketEncryptionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_bucket_encryption::PutBucketEncryptionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::put_bucket_encryption::PutBucketEncryptionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::put_bucket_encryption::PutBucketEncryptionInput {
             bucket: self.bucket,

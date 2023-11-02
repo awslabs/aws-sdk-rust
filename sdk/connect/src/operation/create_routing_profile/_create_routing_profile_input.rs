@@ -221,7 +221,7 @@ impl CreateRoutingProfileInputBuilder {
     /// Consumes the builder and constructs a [`CreateRoutingProfileInput`](crate::operation::create_routing_profile::CreateRoutingProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_routing_profile::CreateRoutingProfileInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_routing_profile::CreateRoutingProfileInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_routing_profile::CreateRoutingProfileInput {
             instance_id: self.instance_id,

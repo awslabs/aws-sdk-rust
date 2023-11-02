@@ -142,7 +142,7 @@ impl ListAssetsInputBuilder {
         &self.status_filter
     }
     /// Consumes the builder and constructs a [`ListAssetsInput`](crate::operation::list_assets::ListAssetsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_assets::ListAssetsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_assets::ListAssetsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_assets::ListAssetsInput {
             outpost_identifier: self.outpost_identifier,
             host_id_filter: self.host_id_filter,

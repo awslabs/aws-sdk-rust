@@ -44,7 +44,7 @@ impl GetResolverEndpointInputBuilder {
     /// Consumes the builder and constructs a [`GetResolverEndpointInput`](crate::operation::get_resolver_endpoint::GetResolverEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_resolver_endpoint::GetResolverEndpointInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_resolver_endpoint::GetResolverEndpointInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_resolver_endpoint::GetResolverEndpointInput {
             resolver_endpoint_id: self.resolver_endpoint_id,

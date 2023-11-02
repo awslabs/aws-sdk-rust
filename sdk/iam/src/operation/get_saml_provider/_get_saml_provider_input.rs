@@ -49,7 +49,7 @@ impl GetSamlProviderInputBuilder {
     /// Consumes the builder and constructs a [`GetSamlProviderInput`](crate::operation::get_saml_provider::GetSamlProviderInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_saml_provider::GetSamlProviderInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_saml_provider::GetSamlProviderInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_saml_provider::GetSamlProviderInput {
             saml_provider_arn: self.saml_provider_arn,
         })

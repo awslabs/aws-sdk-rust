@@ -66,7 +66,7 @@ impl DeleteListingInputBuilder {
     /// Consumes the builder and constructs a [`DeleteListingInput`](crate::operation::delete_listing::DeleteListingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_listing::DeleteListingInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_listing::DeleteListingInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_listing::DeleteListingInput {
             domain_identifier: self.domain_identifier,
             identifier: self.identifier,

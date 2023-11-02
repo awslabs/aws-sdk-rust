@@ -2,7 +2,7 @@
 pub fn ser_gateway_route_hostname_rewrite(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GatewayRouteHostnameRewrite,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.default_target_hostname {
         object.key("defaultTargetHostname").string(var_1.as_str());
     }

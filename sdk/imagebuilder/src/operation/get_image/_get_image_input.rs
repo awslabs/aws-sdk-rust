@@ -42,7 +42,7 @@ impl GetImageInputBuilder {
         &self.image_build_version_arn
     }
     /// Consumes the builder and constructs a [`GetImageInput`](crate::operation::get_image::GetImageInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_image::GetImageInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_image::GetImageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_image::GetImageInput {
             image_build_version_arn: self.image_build_version_arn,
         })

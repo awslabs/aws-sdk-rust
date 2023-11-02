@@ -45,10 +45,10 @@ impl InitializationConfigurationBuilder {
     /// Consumes the builder and constructs a [`InitializationConfiguration`](crate::types::InitializationConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`disabled_on_initialization`](crate::types::builders::InitializationConfigurationBuilder::disabled_on_initialization)
-    pub fn build(self) -> ::std::result::Result<crate::types::InitializationConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::InitializationConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::InitializationConfiguration {
             disabled_on_initialization: self.disabled_on_initialization.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "disabled_on_initialization",
                     "disabled_on_initialization was not specified but it is required when building InitializationConfiguration",
                 )

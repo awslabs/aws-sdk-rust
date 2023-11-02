@@ -227,7 +227,8 @@ impl CreateBudgetActionInputBuilder {
     /// Consumes the builder and constructs a [`CreateBudgetActionInput`](crate::operation::create_budget_action::CreateBudgetActionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_budget_action::CreateBudgetActionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_budget_action::CreateBudgetActionInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_budget_action::CreateBudgetActionInput {
             account_id: self.account_id,
             budget_name: self.budget_name,

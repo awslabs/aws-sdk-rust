@@ -93,7 +93,7 @@ impl GetFolderInputBuilder {
         &self.include_custom_metadata
     }
     /// Consumes the builder and constructs a [`GetFolderInput`](crate::operation::get_folder::GetFolderInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_folder::GetFolderInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_folder::GetFolderInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_folder::GetFolderInput {
             authentication_token: self.authentication_token,
             folder_id: self.folder_id,

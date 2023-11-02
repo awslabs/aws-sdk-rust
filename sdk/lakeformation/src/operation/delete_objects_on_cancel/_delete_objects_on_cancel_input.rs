@@ -138,7 +138,7 @@ impl DeleteObjectsOnCancelInputBuilder {
     /// Consumes the builder and constructs a [`DeleteObjectsOnCancelInput`](crate::operation::delete_objects_on_cancel::DeleteObjectsOnCancelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_objects_on_cancel::DeleteObjectsOnCancelInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_objects_on_cancel::DeleteObjectsOnCancelInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_objects_on_cancel::DeleteObjectsOnCancelInput {
             catalog_id: self.catalog_id,

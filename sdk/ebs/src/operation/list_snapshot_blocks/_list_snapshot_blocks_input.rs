@@ -127,7 +127,8 @@ impl ListSnapshotBlocksInputBuilder {
     /// Consumes the builder and constructs a [`ListSnapshotBlocksInput`](crate::operation::list_snapshot_blocks::ListSnapshotBlocksInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_snapshot_blocks::ListSnapshotBlocksInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_snapshot_blocks::ListSnapshotBlocksInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::list_snapshot_blocks::ListSnapshotBlocksInput {
             snapshot_id: self.snapshot_id,
             next_token: self.next_token,

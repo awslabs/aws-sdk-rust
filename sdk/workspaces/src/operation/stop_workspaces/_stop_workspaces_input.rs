@@ -51,7 +51,7 @@ impl StopWorkspacesInputBuilder {
     /// Consumes the builder and constructs a [`StopWorkspacesInput`](crate::operation::stop_workspaces::StopWorkspacesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_workspaces::StopWorkspacesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::stop_workspaces::StopWorkspacesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_workspaces::StopWorkspacesInput {
             stop_workspace_requests: self.stop_workspace_requests,
         })

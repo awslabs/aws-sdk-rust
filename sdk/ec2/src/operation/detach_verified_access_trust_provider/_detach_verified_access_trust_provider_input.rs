@@ -110,7 +110,7 @@ impl DetachVerifiedAccessTrustProviderInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::detach_verified_access_trust_provider::DetachVerifiedAccessTrustProviderInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::detach_verified_access_trust_provider::DetachVerifiedAccessTrustProviderInput {

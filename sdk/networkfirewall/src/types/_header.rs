@@ -254,40 +254,40 @@ impl HeaderBuilder {
     /// - [`direction`](crate::types::builders::HeaderBuilder::direction)
     /// - [`destination`](crate::types::builders::HeaderBuilder::destination)
     /// - [`destination_port`](crate::types::builders::HeaderBuilder::destination_port)
-    pub fn build(self) -> ::std::result::Result<crate::types::Header, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Header, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Header {
             protocol: self.protocol.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "protocol",
                     "protocol was not specified but it is required when building Header",
                 )
             })?,
             source: self.source.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source",
                     "source was not specified but it is required when building Header",
                 )
             })?,
             source_port: self.source_port.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source_port",
                     "source_port was not specified but it is required when building Header",
                 )
             })?,
             direction: self.direction.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "direction",
                     "direction was not specified but it is required when building Header",
                 )
             })?,
             destination: self.destination.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "destination",
                     "destination was not specified but it is required when building Header",
                 )
             })?,
             destination_port: self.destination_port.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "destination_port",
                     "destination_port was not specified but it is required when building Header",
                 )

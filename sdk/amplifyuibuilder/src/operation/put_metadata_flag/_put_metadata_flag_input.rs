@@ -110,7 +110,7 @@ impl PutMetadataFlagInputBuilder {
     /// Consumes the builder and constructs a [`PutMetadataFlagInput`](crate::operation::put_metadata_flag::PutMetadataFlagInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_metadata_flag::PutMetadataFlagInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_metadata_flag::PutMetadataFlagInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_metadata_flag::PutMetadataFlagInput {
             app_id: self.app_id,
             environment_name: self.environment_name,

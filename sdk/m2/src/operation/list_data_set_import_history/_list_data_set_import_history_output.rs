@@ -91,11 +91,11 @@ impl ListDataSetImportHistoryOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_data_set_import_history::ListDataSetImportHistoryOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_data_set_import_history::ListDataSetImportHistoryOutput {
             data_set_import_tasks: self.data_set_import_tasks.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_set_import_tasks",
                     "data_set_import_tasks was not specified but it is required when building ListDataSetImportHistoryOutput",
                 )

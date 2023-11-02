@@ -51,10 +51,10 @@ impl QueriesConfigBuilder {
     /// Consumes the builder and constructs a [`QueriesConfig`](crate::types::QueriesConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`queries`](crate::types::builders::QueriesConfigBuilder::queries)
-    pub fn build(self) -> ::std::result::Result<crate::types::QueriesConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::QueriesConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::QueriesConfig {
             queries: self.queries.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "queries",
                     "queries was not specified but it is required when building QueriesConfig",
                 )

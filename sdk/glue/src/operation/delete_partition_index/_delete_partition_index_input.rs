@@ -109,7 +109,7 @@ impl DeletePartitionIndexInputBuilder {
     /// Consumes the builder and constructs a [`DeletePartitionIndexInput`](crate::operation::delete_partition_index::DeletePartitionIndexInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_partition_index::DeletePartitionIndexInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_partition_index::DeletePartitionIndexInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_partition_index::DeletePartitionIndexInput {
             catalog_id: self.catalog_id,

@@ -105,7 +105,7 @@ impl UnassignPrivateIpAddressesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::unassign_private_ip_addresses::UnassignPrivateIpAddressesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::unassign_private_ip_addresses::UnassignPrivateIpAddressesInput {
             network_interface_id: self.network_interface_id,

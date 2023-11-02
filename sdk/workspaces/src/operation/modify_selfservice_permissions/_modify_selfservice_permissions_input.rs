@@ -68,7 +68,7 @@ impl ModifySelfservicePermissionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_selfservice_permissions::ModifySelfservicePermissionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::modify_selfservice_permissions::ModifySelfservicePermissionsInput {
             resource_id: self.resource_id,

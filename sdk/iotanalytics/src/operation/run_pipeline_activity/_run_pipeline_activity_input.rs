@@ -73,7 +73,7 @@ impl RunPipelineActivityInputBuilder {
     /// Consumes the builder and constructs a [`RunPipelineActivityInput`](crate::operation::run_pipeline_activity::RunPipelineActivityInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::run_pipeline_activity::RunPipelineActivityInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::run_pipeline_activity::RunPipelineActivityInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::run_pipeline_activity::RunPipelineActivityInput {
             pipeline_activity: self.pipeline_activity,

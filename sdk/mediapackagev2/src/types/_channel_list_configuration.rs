@@ -161,34 +161,34 @@ impl ChannelListConfigurationBuilder {
     /// - [`channel_group_name`](crate::types::builders::ChannelListConfigurationBuilder::channel_group_name)
     /// - [`created_at`](crate::types::builders::ChannelListConfigurationBuilder::created_at)
     /// - [`modified_at`](crate::types::builders::ChannelListConfigurationBuilder::modified_at)
-    pub fn build(self) -> ::std::result::Result<crate::types::ChannelListConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ChannelListConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ChannelListConfiguration {
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building ChannelListConfiguration",
                 )
             })?,
             channel_name: self.channel_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "channel_name",
                     "channel_name was not specified but it is required when building ChannelListConfiguration",
                 )
             })?,
             channel_group_name: self.channel_group_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "channel_group_name",
                     "channel_group_name was not specified but it is required when building ChannelListConfiguration",
                 )
             })?,
             created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
                     "created_at was not specified but it is required when building ChannelListConfiguration",
                 )
             })?,
             modified_at: self.modified_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "modified_at",
                     "modified_at was not specified but it is required when building ChannelListConfiguration",
                 )

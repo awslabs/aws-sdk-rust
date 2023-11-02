@@ -103,10 +103,10 @@ impl RuleGroupBuilder {
     /// Consumes the builder and constructs a [`RuleGroup`](crate::types::RuleGroup).
     /// This method will fail if any of the following fields are not set:
     /// - [`rule_group_id`](crate::types::builders::RuleGroupBuilder::rule_group_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::RuleGroup, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RuleGroup, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RuleGroup {
             rule_group_id: self.rule_group_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "rule_group_id",
                     "rule_group_id was not specified but it is required when building RuleGroup",
                 )

@@ -186,7 +186,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for CreateVpcEnd
             fn uri_base(
                 _input: &crate::operation::create_vpc_endpoint_service_configuration::CreateVpcEndpointServiceConfigurationInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 use ::std::fmt::Write as _;
                 ::std::write!(output, "/").expect("formatting should succeed");
                 ::std::result::Result::Ok(())
@@ -195,7 +195,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for CreateVpcEnd
             fn update_http_builder(
                 input: &crate::operation::create_vpc_endpoint_service_configuration::CreateVpcEndpointServiceConfigurationInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 ::std::result::Result::Ok(builder.method("POST").uri(uri))
@@ -204,7 +204,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for CreateVpcEnd
             builder = _header_serialization_settings.set_default_header(builder, ::http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
-        let body = ::aws_smithy_http::body::SdkBody::from(
+        let body = ::aws_smithy_types::body::SdkBody::from(
             crate::protocol_serde::shape_create_vpc_endpoint_service_configuration_input::ser_create_vpc_endpoint_service_configuration_input_input(
                 &input,
             )?,

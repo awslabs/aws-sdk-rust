@@ -2,7 +2,7 @@
 pub fn ser_auto_ml_job_channel(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AutoMlJobChannel,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.channel_type {
         object.key("ChannelType").string(var_1.as_str());
     }

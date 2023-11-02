@@ -77,7 +77,7 @@ impl AddAttachmentsToSetInputBuilder {
     /// Consumes the builder and constructs a [`AddAttachmentsToSetInput`](crate::operation::add_attachments_to_set::AddAttachmentsToSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::add_attachments_to_set::AddAttachmentsToSetInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::add_attachments_to_set::AddAttachmentsToSetInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::add_attachments_to_set::AddAttachmentsToSetInput {
             attachment_set_id: self.attachment_set_id,

@@ -44,7 +44,7 @@ impl UnassignVolumeInputBuilder {
     /// Consumes the builder and constructs a [`UnassignVolumeInput`](crate::operation::unassign_volume::UnassignVolumeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::unassign_volume::UnassignVolumeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::unassign_volume::UnassignVolumeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::unassign_volume::UnassignVolumeInput { volume_id: self.volume_id })
     }
 }

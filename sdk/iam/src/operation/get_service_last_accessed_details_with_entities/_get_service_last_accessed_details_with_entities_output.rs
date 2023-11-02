@@ -208,30 +208,30 @@ impl GetServiceLastAccessedDetailsWithEntitiesOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_service_last_accessed_details_with_entities::GetServiceLastAccessedDetailsWithEntitiesOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_service_last_accessed_details_with_entities::GetServiceLastAccessedDetailsWithEntitiesOutput {
                 job_status: self.job_status.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
                         "job_status",
                         "job_status was not specified but it is required when building GetServiceLastAccessedDetailsWithEntitiesOutput",
                     )
                 })?,
                 job_creation_date: self.job_creation_date.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
                         "job_creation_date",
                         "job_creation_date was not specified but it is required when building GetServiceLastAccessedDetailsWithEntitiesOutput",
                     )
                 })?,
                 job_completion_date: self.job_completion_date.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
                         "job_completion_date",
                         "job_completion_date was not specified but it is required when building GetServiceLastAccessedDetailsWithEntitiesOutput",
                     )
                 })?,
                 entity_details_list: self.entity_details_list.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
                         "entity_details_list",
                         "entity_details_list was not specified but it is required when building GetServiceLastAccessedDetailsWithEntitiesOutput",
                     )

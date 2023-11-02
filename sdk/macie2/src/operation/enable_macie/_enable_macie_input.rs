@@ -83,7 +83,7 @@ impl EnableMacieInputBuilder {
         &self.status
     }
     /// Consumes the builder and constructs a [`EnableMacieInput`](crate::operation::enable_macie::EnableMacieInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::enable_macie::EnableMacieInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::enable_macie::EnableMacieInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::enable_macie::EnableMacieInput {
             client_token: self.client_token,
             finding_publishing_frequency: self.finding_publishing_frequency,

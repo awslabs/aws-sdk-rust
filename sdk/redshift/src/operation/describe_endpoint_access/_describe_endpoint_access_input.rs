@@ -148,8 +148,10 @@ impl DescribeEndpointAccessInputBuilder {
     /// Consumes the builder and constructs a [`DescribeEndpointAccessInput`](crate::operation::describe_endpoint_access::DescribeEndpointAccessInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_endpoint_access::DescribeEndpointAccessInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::describe_endpoint_access::DescribeEndpointAccessInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::describe_endpoint_access::DescribeEndpointAccessInput {
             cluster_identifier: self.cluster_identifier,
             resource_owner: self.resource_owner,

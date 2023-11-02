@@ -44,7 +44,7 @@ impl CreateAddressInputBuilder {
     /// Consumes the builder and constructs a [`CreateAddressInput`](crate::operation::create_address::CreateAddressInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_address::CreateAddressInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_address::CreateAddressInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_address::CreateAddressInput { address: self.address })
     }
 }

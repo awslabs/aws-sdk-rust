@@ -44,7 +44,7 @@ impl GetImageRecipeInputBuilder {
     /// Consumes the builder and constructs a [`GetImageRecipeInput`](crate::operation::get_image_recipe::GetImageRecipeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_image_recipe::GetImageRecipeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_image_recipe::GetImageRecipeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_image_recipe::GetImageRecipeInput {
             image_recipe_arn: self.image_recipe_arn,
         })

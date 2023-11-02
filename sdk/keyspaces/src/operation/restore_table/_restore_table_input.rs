@@ -316,7 +316,9 @@ impl RestoreTableInputBuilder {
         &self.tags_override
     }
     /// Consumes the builder and constructs a [`RestoreTableInput`](crate::operation::restore_table::RestoreTableInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::restore_table::RestoreTableInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::restore_table::RestoreTableInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::restore_table::RestoreTableInput {
             source_keyspace_name: self.source_keyspace_name,
             source_table_name: self.source_table_name,

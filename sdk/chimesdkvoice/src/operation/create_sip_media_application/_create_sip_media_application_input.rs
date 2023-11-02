@@ -126,7 +126,7 @@ impl CreateSipMediaApplicationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_sip_media_application::CreateSipMediaApplicationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_sip_media_application::CreateSipMediaApplicationInput {
             aws_region: self.aws_region,

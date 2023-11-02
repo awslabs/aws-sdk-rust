@@ -141,10 +141,10 @@ impl RequestInspectionBuilder {
     /// Consumes the builder and constructs a [`RequestInspection`](crate::types::RequestInspection).
     /// This method will fail if any of the following fields are not set:
     /// - [`payload_type`](crate::types::builders::RequestInspectionBuilder::payload_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::RequestInspection, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RequestInspection, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RequestInspection {
             payload_type: self.payload_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "payload_type",
                     "payload_type was not specified but it is required when building RequestInspection",
                 )

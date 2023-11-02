@@ -44,7 +44,7 @@ impl StopSimulationInputBuilder {
     /// Consumes the builder and constructs a [`StopSimulationInput`](crate::operation::stop_simulation::StopSimulationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_simulation::StopSimulationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::stop_simulation::StopSimulationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_simulation::StopSimulationInput { simulation: self.simulation })
     }
 }

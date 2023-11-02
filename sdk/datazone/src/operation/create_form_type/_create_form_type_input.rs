@@ -164,7 +164,7 @@ impl CreateFormTypeInputBuilder {
     /// Consumes the builder and constructs a [`CreateFormTypeInput`](crate::operation::create_form_type::CreateFormTypeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_form_type::CreateFormTypeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_form_type::CreateFormTypeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_form_type::CreateFormTypeInput {
             domain_identifier: self.domain_identifier,
             name: self.name,

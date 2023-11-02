@@ -2,7 +2,7 @@
 pub fn ser_auto_scaling_settings_update(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AutoScalingSettingsUpdate,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.minimum_units {
         object.key("MinimumUnits").number(
             #[allow(clippy::useless_conversion)]

@@ -109,7 +109,7 @@ impl ChannelFlowCallbackInputBuilder {
     /// Consumes the builder and constructs a [`ChannelFlowCallbackInput`](crate::operation::channel_flow_callback::ChannelFlowCallbackInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::channel_flow_callback::ChannelFlowCallbackInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::channel_flow_callback::ChannelFlowCallbackInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::channel_flow_callback::ChannelFlowCallbackInput {
             callback_id: self.callback_id,

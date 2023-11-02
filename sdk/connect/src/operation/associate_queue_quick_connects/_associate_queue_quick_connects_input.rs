@@ -97,7 +97,7 @@ impl AssociateQueueQuickConnectsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_queue_quick_connects::AssociateQueueQuickConnectsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::associate_queue_quick_connects::AssociateQueueQuickConnectsInput {
             instance_id: self.instance_id,

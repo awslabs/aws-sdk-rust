@@ -46,7 +46,7 @@ impl GetMediaInsightsPipelineConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_media_insights_pipeline_configuration::GetMediaInsightsPipelineConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_media_insights_pipeline_configuration::GetMediaInsightsPipelineConfigurationInput { identifier: self.identifier },

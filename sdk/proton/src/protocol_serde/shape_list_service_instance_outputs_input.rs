@@ -2,7 +2,7 @@
 pub fn ser_list_service_instance_outputs_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_service_instance_outputs::ListServiceInstanceOutputsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.service_instance_name {
         object.key("serviceInstanceName").string(var_1.as_str());
     }

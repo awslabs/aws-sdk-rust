@@ -75,7 +75,7 @@ impl BatchGetPreparedStatementInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_prepared_statement::BatchGetPreparedStatementInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::batch_get_prepared_statement::BatchGetPreparedStatementInput {
             prepared_statement_names: self.prepared_statement_names,

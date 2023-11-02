@@ -118,28 +118,28 @@ impl ProviderMarketplaceConfigurationBuilder {
     /// - [`revision_id`](crate::types::builders::ProviderMarketplaceConfigurationBuilder::revision_id)
     /// - [`asset_id`](crate::types::builders::ProviderMarketplaceConfigurationBuilder::asset_id)
     /// - [`listing_id`](crate::types::builders::ProviderMarketplaceConfigurationBuilder::listing_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::ProviderMarketplaceConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ProviderMarketplaceConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ProviderMarketplaceConfiguration {
             data_set_id: self.data_set_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_set_id",
                     "data_set_id was not specified but it is required when building ProviderMarketplaceConfiguration",
                 )
             })?,
             revision_id: self.revision_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "revision_id",
                     "revision_id was not specified but it is required when building ProviderMarketplaceConfiguration",
                 )
             })?,
             asset_id: self.asset_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "asset_id",
                     "asset_id was not specified but it is required when building ProviderMarketplaceConfiguration",
                 )
             })?,
             listing_id: self.listing_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "listing_id",
                     "listing_id was not specified but it is required when building ProviderMarketplaceConfiguration",
                 )

@@ -68,7 +68,7 @@ impl DeleteVpcPeeringAuthorizationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_vpc_peering_authorization::DeleteVpcPeeringAuthorizationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_vpc_peering_authorization::DeleteVpcPeeringAuthorizationInput {
             game_lift_aws_account_id: self.game_lift_aws_account_id,

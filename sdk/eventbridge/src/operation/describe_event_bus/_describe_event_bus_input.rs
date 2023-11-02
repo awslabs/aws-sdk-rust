@@ -43,7 +43,7 @@ impl DescribeEventBusInputBuilder {
     /// Consumes the builder and constructs a [`DescribeEventBusInput`](crate::operation::describe_event_bus::DescribeEventBusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_event_bus::DescribeEventBusInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_event_bus::DescribeEventBusInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_event_bus::DescribeEventBusInput { name: self.name })
     }
 }

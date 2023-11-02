@@ -373,7 +373,7 @@ impl ModifyVpcEndpointInputBuilder {
     /// Consumes the builder and constructs a [`ModifyVpcEndpointInput`](crate::operation::modify_vpc_endpoint::ModifyVpcEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::modify_vpc_endpoint::ModifyVpcEndpointInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::modify_vpc_endpoint::ModifyVpcEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::modify_vpc_endpoint::ModifyVpcEndpointInput {
             dry_run: self.dry_run,
             vpc_endpoint_id: self.vpc_endpoint_id,

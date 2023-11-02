@@ -44,7 +44,7 @@ impl ReverseReplicationInputBuilder {
     /// Consumes the builder and constructs a [`ReverseReplicationInput`](crate::operation::reverse_replication::ReverseReplicationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::reverse_replication::ReverseReplicationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::reverse_replication::ReverseReplicationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::reverse_replication::ReverseReplicationInput {
             recovery_instance_id: self.recovery_instance_id,
         })

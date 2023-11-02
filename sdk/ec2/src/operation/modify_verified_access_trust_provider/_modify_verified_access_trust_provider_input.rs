@@ -151,7 +151,7 @@ impl ModifyVerifiedAccessTrustProviderInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_verified_access_trust_provider::ModifyVerifiedAccessTrustProviderInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::modify_verified_access_trust_provider::ModifyVerifiedAccessTrustProviderInput {

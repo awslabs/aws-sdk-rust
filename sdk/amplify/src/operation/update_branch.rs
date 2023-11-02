@@ -173,15 +173,15 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for UpdateBranch
             fn uri_base(
                 _input: &crate::operation::update_branch::UpdateBranchInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 use ::std::fmt::Write as _;
                 let input_1 = &_input.app_id;
                 let input_1 = input_1
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("app_id", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("app_id", "cannot be empty or unset"))?;
                 let app_id = ::aws_smithy_http::label::fmt_string(input_1, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if app_id.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "app_id",
                         "cannot be empty or unset",
                     ));
@@ -189,10 +189,10 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for UpdateBranch
                 let input_2 = &_input.branch_name;
                 let input_2 = input_2
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("branch_name", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("branch_name", "cannot be empty or unset"))?;
                 let branch_name = ::aws_smithy_http::label::fmt_string(input_2, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if branch_name.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "branch_name",
                         "cannot be empty or unset",
                     ));
@@ -205,7 +205,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for UpdateBranch
             fn update_http_builder(
                 input: &crate::operation::update_branch::UpdateBranchInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 ::std::result::Result::Ok(builder.method("POST").uri(uri))
@@ -214,7 +214,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for UpdateBranch
             builder = _header_serialization_settings.set_default_header(builder, ::http::header::CONTENT_TYPE, "application/json");
             builder
         };
-        let body = ::aws_smithy_http::body::SdkBody::from(crate::protocol_serde::shape_update_branch::ser_update_branch_input(&input)?);
+        let body = ::aws_smithy_types::body::SdkBody::from(crate::protocol_serde::shape_update_branch::ser_update_branch_input(&input)?);
         if let Some(content_length) = body.content_length() {
             let content_length = content_length.to_string();
             request_builder = _header_serialization_settings.set_default_header(request_builder, ::http::header::CONTENT_LENGTH, &content_length);

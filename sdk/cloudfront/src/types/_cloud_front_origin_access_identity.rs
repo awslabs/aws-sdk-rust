@@ -94,16 +94,16 @@ impl CloudFrontOriginAccessIdentityBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::CloudFrontOriginAccessIdentityBuilder::id)
     /// - [`s3_canonical_user_id`](crate::types::builders::CloudFrontOriginAccessIdentityBuilder::s3_canonical_user_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::CloudFrontOriginAccessIdentity, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CloudFrontOriginAccessIdentity, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CloudFrontOriginAccessIdentity {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building CloudFrontOriginAccessIdentity",
                 )
             })?,
             s3_canonical_user_id: self.s3_canonical_user_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "s3_canonical_user_id",
                     "s3_canonical_user_id was not specified but it is required when building CloudFrontOriginAccessIdentity",
                 )

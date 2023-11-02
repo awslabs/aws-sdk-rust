@@ -66,7 +66,7 @@ impl GetDeploymentStatusInputBuilder {
     /// Consumes the builder and constructs a [`GetDeploymentStatusInput`](crate::operation::get_deployment_status::GetDeploymentStatusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_deployment_status::GetDeploymentStatusInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_deployment_status::GetDeploymentStatusInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_deployment_status::GetDeploymentStatusInput {
             deployment_id: self.deployment_id,

@@ -94,22 +94,22 @@ impl AttributeKeyBuilder {
     /// - [`schema_arn`](crate::types::builders::AttributeKeyBuilder::schema_arn)
     /// - [`facet_name`](crate::types::builders::AttributeKeyBuilder::facet_name)
     /// - [`name`](crate::types::builders::AttributeKeyBuilder::name)
-    pub fn build(self) -> ::std::result::Result<crate::types::AttributeKey, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AttributeKey, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AttributeKey {
             schema_arn: self.schema_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "schema_arn",
                     "schema_arn was not specified but it is required when building AttributeKey",
                 )
             })?,
             facet_name: self.facet_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "facet_name",
                     "facet_name was not specified but it is required when building AttributeKey",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building AttributeKey",
                 )

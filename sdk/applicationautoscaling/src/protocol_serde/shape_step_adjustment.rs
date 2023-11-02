@@ -2,7 +2,7 @@
 pub fn ser_step_adjustment(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::StepAdjustment,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.metric_interval_lower_bound {
         object.key("MetricIntervalLowerBound").number(
             #[allow(clippy::useless_conversion)]

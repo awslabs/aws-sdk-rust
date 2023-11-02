@@ -147,34 +147,34 @@ impl TrustedAdvisorCheckDescriptionBuilder {
     /// - [`description`](crate::types::builders::TrustedAdvisorCheckDescriptionBuilder::description)
     /// - [`category`](crate::types::builders::TrustedAdvisorCheckDescriptionBuilder::category)
     /// - [`metadata`](crate::types::builders::TrustedAdvisorCheckDescriptionBuilder::metadata)
-    pub fn build(self) -> ::std::result::Result<crate::types::TrustedAdvisorCheckDescription, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TrustedAdvisorCheckDescription, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TrustedAdvisorCheckDescription {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building TrustedAdvisorCheckDescription",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building TrustedAdvisorCheckDescription",
                 )
             })?,
             description: self.description.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "description",
                     "description was not specified but it is required when building TrustedAdvisorCheckDescription",
                 )
             })?,
             category: self.category.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "category",
                     "category was not specified but it is required when building TrustedAdvisorCheckDescription",
                 )
             })?,
             metadata: self.metadata.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "metadata",
                     "metadata was not specified but it is required when building TrustedAdvisorCheckDescription",
                 )

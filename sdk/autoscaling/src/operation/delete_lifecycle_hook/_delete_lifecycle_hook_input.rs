@@ -66,7 +66,7 @@ impl DeleteLifecycleHookInputBuilder {
     /// Consumes the builder and constructs a [`DeleteLifecycleHookInput`](crate::operation::delete_lifecycle_hook::DeleteLifecycleHookInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_lifecycle_hook::DeleteLifecycleHookInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_lifecycle_hook::DeleteLifecycleHookInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_lifecycle_hook::DeleteLifecycleHookInput {
             lifecycle_hook_name: self.lifecycle_hook_name,

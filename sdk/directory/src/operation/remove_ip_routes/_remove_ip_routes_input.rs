@@ -73,7 +73,7 @@ impl RemoveIpRoutesInputBuilder {
     /// Consumes the builder and constructs a [`RemoveIpRoutesInput`](crate::operation::remove_ip_routes::RemoveIpRoutesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::remove_ip_routes::RemoveIpRoutesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::remove_ip_routes::RemoveIpRoutesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::remove_ip_routes::RemoveIpRoutesInput {
             directory_id: self.directory_id,
             cidr_ips: self.cidr_ips,

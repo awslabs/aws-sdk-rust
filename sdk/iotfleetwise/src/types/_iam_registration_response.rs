@@ -90,16 +90,16 @@ impl IamRegistrationResponseBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`role_arn`](crate::types::builders::IamRegistrationResponseBuilder::role_arn)
     /// - [`registration_status`](crate::types::builders::IamRegistrationResponseBuilder::registration_status)
-    pub fn build(self) -> ::std::result::Result<crate::types::IamRegistrationResponse, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::IamRegistrationResponse, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::IamRegistrationResponse {
             role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role_arn",
                     "role_arn was not specified but it is required when building IamRegistrationResponse",
                 )
             })?,
             registration_status: self.registration_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "registration_status",
                     "registration_status was not specified but it is required when building IamRegistrationResponse",
                 )

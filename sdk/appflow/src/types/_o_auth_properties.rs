@@ -99,22 +99,22 @@ impl OAuthPropertiesBuilder {
     /// - [`token_url`](crate::types::builders::OAuthPropertiesBuilder::token_url)
     /// - [`auth_code_url`](crate::types::builders::OAuthPropertiesBuilder::auth_code_url)
     /// - [`o_auth_scopes`](crate::types::builders::OAuthPropertiesBuilder::o_auth_scopes)
-    pub fn build(self) -> ::std::result::Result<crate::types::OAuthProperties, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::OAuthProperties, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::OAuthProperties {
             token_url: self.token_url.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "token_url",
                     "token_url was not specified but it is required when building OAuthProperties",
                 )
             })?,
             auth_code_url: self.auth_code_url.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "auth_code_url",
                     "auth_code_url was not specified but it is required when building OAuthProperties",
                 )
             })?,
             o_auth_scopes: self.o_auth_scopes.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "o_auth_scopes",
                     "o_auth_scopes was not specified but it is required when building OAuthProperties",
                 )

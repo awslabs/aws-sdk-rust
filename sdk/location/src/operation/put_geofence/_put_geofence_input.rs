@@ -145,7 +145,7 @@ impl PutGeofenceInputBuilder {
         &self.geofence_properties
     }
     /// Consumes the builder and constructs a [`PutGeofenceInput`](crate::operation::put_geofence::PutGeofenceInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_geofence::PutGeofenceInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_geofence::PutGeofenceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_geofence::PutGeofenceInput {
             collection_name: self.collection_name,
             geofence_id: self.geofence_id,

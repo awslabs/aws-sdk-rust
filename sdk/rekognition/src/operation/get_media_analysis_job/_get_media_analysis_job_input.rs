@@ -44,7 +44,7 @@ impl GetMediaAnalysisJobInputBuilder {
     /// Consumes the builder and constructs a [`GetMediaAnalysisJobInput`](crate::operation::get_media_analysis_job::GetMediaAnalysisJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_media_analysis_job::GetMediaAnalysisJobInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_media_analysis_job::GetMediaAnalysisJobInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_media_analysis_job::GetMediaAnalysisJobInput { job_id: self.job_id })
     }

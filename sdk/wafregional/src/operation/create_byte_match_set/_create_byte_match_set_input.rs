@@ -66,7 +66,7 @@ impl CreateByteMatchSetInputBuilder {
     /// Consumes the builder and constructs a [`CreateByteMatchSetInput`](crate::operation::create_byte_match_set::CreateByteMatchSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_byte_match_set::CreateByteMatchSetInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_byte_match_set::CreateByteMatchSetInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_byte_match_set::CreateByteMatchSetInput {
             name: self.name,

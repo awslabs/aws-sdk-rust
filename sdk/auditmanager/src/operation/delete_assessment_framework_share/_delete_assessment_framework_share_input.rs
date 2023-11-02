@@ -68,7 +68,7 @@ impl DeleteAssessmentFrameworkShareInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_assessment_framework_share::DeleteAssessmentFrameworkShareInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_assessment_framework_share::DeleteAssessmentFrameworkShareInput {
             request_id: self.request_id,

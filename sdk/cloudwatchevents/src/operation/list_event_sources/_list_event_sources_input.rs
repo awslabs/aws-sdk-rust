@@ -85,7 +85,7 @@ impl ListEventSourcesInputBuilder {
     /// Consumes the builder and constructs a [`ListEventSourcesInput`](crate::operation::list_event_sources::ListEventSourcesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_event_sources::ListEventSourcesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_event_sources::ListEventSourcesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_event_sources::ListEventSourcesInput {
             name_prefix: self.name_prefix,
             next_token: self.next_token,

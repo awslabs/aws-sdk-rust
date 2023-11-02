@@ -2,7 +2,7 @@
 pub fn ser_dynatrace_connector_profile_credentials(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DynatraceConnectorProfileCredentials,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("apiToken").string(input.api_token.as_str());
     }

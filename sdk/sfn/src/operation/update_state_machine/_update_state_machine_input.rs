@@ -188,7 +188,8 @@ impl UpdateStateMachineInputBuilder {
     /// Consumes the builder and constructs a [`UpdateStateMachineInput`](crate::operation::update_state_machine::UpdateStateMachineInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_state_machine::UpdateStateMachineInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_state_machine::UpdateStateMachineInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::update_state_machine::UpdateStateMachineInput {
             state_machine_arn: self.state_machine_arn,
             definition: self.definition,

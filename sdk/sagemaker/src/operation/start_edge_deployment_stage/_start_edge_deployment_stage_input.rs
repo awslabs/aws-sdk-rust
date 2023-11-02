@@ -68,7 +68,7 @@ impl StartEdgeDeploymentStageInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_edge_deployment_stage::StartEdgeDeploymentStageInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_edge_deployment_stage::StartEdgeDeploymentStageInput {
             edge_deployment_plan_name: self.edge_deployment_plan_name,

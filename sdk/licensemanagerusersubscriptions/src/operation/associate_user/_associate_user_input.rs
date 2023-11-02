@@ -109,7 +109,7 @@ impl AssociateUserInputBuilder {
     /// Consumes the builder and constructs a [`AssociateUserInput`](crate::operation::associate_user::AssociateUserInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::associate_user::AssociateUserInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::associate_user::AssociateUserInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::associate_user::AssociateUserInput {
             username: self.username,
             instance_id: self.instance_id,

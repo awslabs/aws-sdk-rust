@@ -101,22 +101,22 @@ impl PredicateBuilder {
     /// - [`negated`](crate::types::builders::PredicateBuilder::negated)
     /// - [`r#type`](crate::types::builders::PredicateBuilder::r#type)
     /// - [`data_id`](crate::types::builders::PredicateBuilder::data_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::Predicate, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Predicate, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Predicate {
             negated: self.negated.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "negated",
                     "negated was not specified but it is required when building Predicate",
                 )
             })?,
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building Predicate",
                 )
             })?,
             data_id: self.data_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_id",
                     "data_id was not specified but it is required when building Predicate",
                 )

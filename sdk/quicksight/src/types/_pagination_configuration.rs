@@ -68,16 +68,16 @@ impl PaginationConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`page_size`](crate::types::builders::PaginationConfigurationBuilder::page_size)
     /// - [`page_number`](crate::types::builders::PaginationConfigurationBuilder::page_number)
-    pub fn build(self) -> ::std::result::Result<crate::types::PaginationConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PaginationConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PaginationConfiguration {
             page_size: self.page_size.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "page_size",
                     "page_size was not specified but it is required when building PaginationConfiguration",
                 )
             })?,
             page_number: self.page_number.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "page_number",
                     "page_number was not specified but it is required when building PaginationConfiguration",
                 )

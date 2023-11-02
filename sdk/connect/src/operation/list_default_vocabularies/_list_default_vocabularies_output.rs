@@ -91,11 +91,11 @@ impl ListDefaultVocabulariesOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_default_vocabularies::ListDefaultVocabulariesOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_default_vocabularies::ListDefaultVocabulariesOutput {
             default_vocabulary_list: self.default_vocabulary_list.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "default_vocabulary_list",
                     "default_vocabulary_list was not specified but it is required when building ListDefaultVocabulariesOutput",
                 )

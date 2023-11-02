@@ -2,7 +2,7 @@
 pub fn ser_resend_contact_reachability_email_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::resend_contact_reachability_email::ResendContactReachabilityEmailInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.domain_name {
         object.key("domainName").string(var_1.as_str());
     }

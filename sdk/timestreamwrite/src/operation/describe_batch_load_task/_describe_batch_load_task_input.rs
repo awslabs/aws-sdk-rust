@@ -44,7 +44,7 @@ impl DescribeBatchLoadTaskInputBuilder {
     /// Consumes the builder and constructs a [`DescribeBatchLoadTaskInput`](crate::operation::describe_batch_load_task::DescribeBatchLoadTaskInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_batch_load_task::DescribeBatchLoadTaskInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_batch_load_task::DescribeBatchLoadTaskInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_batch_load_task::DescribeBatchLoadTaskInput { task_id: self.task_id })
     }

@@ -64,7 +64,7 @@ impl GetJobRunInputBuilder {
         &self.job_run_id
     }
     /// Consumes the builder and constructs a [`GetJobRunInput`](crate::operation::get_job_run::GetJobRunInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_job_run::GetJobRunInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_job_run::GetJobRunInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_job_run::GetJobRunInput {
             application_id: self.application_id,
             job_run_id: self.job_run_id,

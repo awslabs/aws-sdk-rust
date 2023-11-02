@@ -74,16 +74,16 @@ impl RegistryScanningRuleBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`scan_frequency`](crate::types::builders::RegistryScanningRuleBuilder::scan_frequency)
     /// - [`repository_filters`](crate::types::builders::RegistryScanningRuleBuilder::repository_filters)
-    pub fn build(self) -> ::std::result::Result<crate::types::RegistryScanningRule, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RegistryScanningRule, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RegistryScanningRule {
             scan_frequency: self.scan_frequency.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "scan_frequency",
                     "scan_frequency was not specified but it is required when building RegistryScanningRule",
                 )
             })?,
             repository_filters: self.repository_filters.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "repository_filters",
                     "repository_filters was not specified but it is required when building RegistryScanningRule",
                 )

@@ -2,7 +2,7 @@
 pub fn ser_subscriber(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Subscriber,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("SubscriptionType").string(input.subscription_type.as_str());
     }

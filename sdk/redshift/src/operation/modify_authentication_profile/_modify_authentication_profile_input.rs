@@ -68,7 +68,7 @@ impl ModifyAuthenticationProfileInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_authentication_profile::ModifyAuthenticationProfileInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::modify_authentication_profile::ModifyAuthenticationProfileInput {
             authentication_profile_name: self.authentication_profile_name,

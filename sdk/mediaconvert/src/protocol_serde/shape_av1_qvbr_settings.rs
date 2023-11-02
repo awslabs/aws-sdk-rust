@@ -2,7 +2,7 @@
 pub fn ser_av1_qvbr_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Av1QvbrSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.qvbr_quality_level {
         object.key("qvbrQualityLevel").number(
             #[allow(clippy::useless_conversion)]

@@ -2,7 +2,7 @@
 pub fn ser_override_button_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::OverrideButtonConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.button_action {
         object.key("ButtonAction").string(var_1.as_str());
     }

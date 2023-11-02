@@ -74,7 +74,7 @@ impl DeleteFirewallPolicyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteFirewallPolicyInput`](crate::operation::delete_firewall_policy::DeleteFirewallPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_firewall_policy::DeleteFirewallPolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_firewall_policy::DeleteFirewallPolicyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_firewall_policy::DeleteFirewallPolicyInput {
             firewall_policy_name: self.firewall_policy_name,

@@ -2,7 +2,7 @@
 pub fn ser_aws_s3_bucket_bucket_lifecycle_configuration_rules_noncurrent_version_transitions_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.days {
         object.key("Days").number(
             #[allow(clippy::useless_conversion)]

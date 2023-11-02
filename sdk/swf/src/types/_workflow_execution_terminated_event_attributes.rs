@@ -140,12 +140,12 @@ impl WorkflowExecutionTerminatedEventAttributesBuilder {
     /// - [`child_policy`](crate::types::builders::WorkflowExecutionTerminatedEventAttributesBuilder::child_policy)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::WorkflowExecutionTerminatedEventAttributes, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::WorkflowExecutionTerminatedEventAttributes, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::WorkflowExecutionTerminatedEventAttributes {
             reason: self.reason,
             details: self.details,
             child_policy: self.child_policy.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "child_policy",
                     "child_policy was not specified but it is required when building WorkflowExecutionTerminatedEventAttributes",
                 )

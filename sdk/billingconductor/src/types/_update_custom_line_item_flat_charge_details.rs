@@ -47,10 +47,10 @@ impl UpdateCustomLineItemFlatChargeDetailsBuilder {
     /// - [`charge_value`](crate::types::builders::UpdateCustomLineItemFlatChargeDetailsBuilder::charge_value)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::UpdateCustomLineItemFlatChargeDetails, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::UpdateCustomLineItemFlatChargeDetails, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::UpdateCustomLineItemFlatChargeDetails {
             charge_value: self.charge_value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "charge_value",
                     "charge_value was not specified but it is required when building UpdateCustomLineItemFlatChargeDetails",
                 )

@@ -44,7 +44,7 @@ impl GetDeviceProfileInputBuilder {
     /// Consumes the builder and constructs a [`GetDeviceProfileInput`](crate::operation::get_device_profile::GetDeviceProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_device_profile::GetDeviceProfileInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_device_profile::GetDeviceProfileInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_device_profile::GetDeviceProfileInput { id: self.id })
     }
 }

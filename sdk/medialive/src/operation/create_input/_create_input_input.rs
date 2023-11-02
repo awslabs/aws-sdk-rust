@@ -298,7 +298,7 @@ impl CreateInputInputBuilder {
         &self.vpc
     }
     /// Consumes the builder and constructs a [`CreateInputInput`](crate::operation::create_input::CreateInputInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_input::CreateInputInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_input::CreateInputInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_input::CreateInputInput {
             destinations: self.destinations,
             input_devices: self.input_devices,

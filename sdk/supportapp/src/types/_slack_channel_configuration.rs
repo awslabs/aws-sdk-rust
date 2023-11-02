@@ -196,16 +196,16 @@ impl SlackChannelConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`team_id`](crate::types::builders::SlackChannelConfigurationBuilder::team_id)
     /// - [`channel_id`](crate::types::builders::SlackChannelConfigurationBuilder::channel_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::SlackChannelConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SlackChannelConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SlackChannelConfiguration {
             team_id: self.team_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "team_id",
                     "team_id was not specified but it is required when building SlackChannelConfiguration",
                 )
             })?,
             channel_id: self.channel_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "channel_id",
                     "channel_id was not specified but it is required when building SlackChannelConfiguration",
                 )

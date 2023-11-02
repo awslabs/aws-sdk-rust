@@ -134,7 +134,7 @@ impl UpdateCaCertificateInputBuilder {
     /// Consumes the builder and constructs a [`UpdateCaCertificateInput`](crate::operation::update_ca_certificate::UpdateCaCertificateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_ca_certificate::UpdateCaCertificateInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_ca_certificate::UpdateCaCertificateInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_ca_certificate::UpdateCaCertificateInput {
             certificate_id: self.certificate_id,

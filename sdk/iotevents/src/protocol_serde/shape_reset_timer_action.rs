@@ -2,7 +2,7 @@
 pub fn ser_reset_timer_action(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ResetTimerAction,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("timerName").string(input.timer_name.as_str());
     }

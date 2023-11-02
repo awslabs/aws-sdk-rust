@@ -67,7 +67,7 @@ impl ActivateDeviceIdentifierInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::activate_device_identifier::ActivateDeviceIdentifierInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::activate_device_identifier::ActivateDeviceIdentifierInput {
             device_identifier_arn: self.device_identifier_arn,

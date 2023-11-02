@@ -2,7 +2,7 @@
 pub fn ser_input_format_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::InputFormatOptions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.csv {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Csv").start_object();

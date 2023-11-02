@@ -121,22 +121,22 @@ impl ReEncryptDataOutputBuilder {
     /// - [`cipher_text`](crate::operation::re_encrypt_data::builders::ReEncryptDataOutputBuilder::cipher_text)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::re_encrypt_data::ReEncryptDataOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::re_encrypt_data::ReEncryptDataOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::re_encrypt_data::ReEncryptDataOutput {
             key_arn: self.key_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "key_arn",
                     "key_arn was not specified but it is required when building ReEncryptDataOutput",
                 )
             })?,
             key_check_value: self.key_check_value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "key_check_value",
                     "key_check_value was not specified but it is required when building ReEncryptDataOutput",
                 )
             })?,
             cipher_text: self.cipher_text.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "cipher_text",
                     "cipher_text was not specified but it is required when building ReEncryptDataOutput",
                 )

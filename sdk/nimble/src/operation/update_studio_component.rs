@@ -181,26 +181,26 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for UpdateStudio
             fn uri_base(
                 _input: &crate::operation::update_studio_component::UpdateStudioComponentInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 use ::std::fmt::Write as _;
                 let input_1 = &_input.studio_id;
                 let input_1 = input_1
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("studio_id", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("studio_id", "cannot be empty or unset"))?;
                 let studio_id = ::aws_smithy_http::label::fmt_string(input_1, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if studio_id.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "studio_id",
                         "cannot be empty or unset",
                     ));
                 }
                 let input_2 = &_input.studio_component_id;
                 let input_2 = input_2.as_ref().ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field("studio_component_id", "cannot be empty or unset")
+                    ::aws_smithy_types::error::operation::BuildError::missing_field("studio_component_id", "cannot be empty or unset")
                 })?;
                 let studio_component_id = ::aws_smithy_http::label::fmt_string(input_2, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if studio_component_id.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "studio_component_id",
                         "cannot be empty or unset",
                     ));
@@ -218,7 +218,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for UpdateStudio
             fn update_http_builder(
                 input: &crate::operation::update_studio_component::UpdateStudioComponentInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::protocol_serde::shape_update_studio_component::ser_update_studio_component_headers(input, builder)?;
@@ -228,7 +228,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for UpdateStudio
             builder = _header_serialization_settings.set_default_header(builder, ::http::header::CONTENT_TYPE, "application/json");
             builder
         };
-        let body = ::aws_smithy_http::body::SdkBody::from(crate::protocol_serde::shape_update_studio_component::ser_update_studio_component_input(
+        let body = ::aws_smithy_types::body::SdkBody::from(crate::protocol_serde::shape_update_studio_component::ser_update_studio_component_input(
             &input,
         )?);
         if let Some(content_length) = body.content_length() {

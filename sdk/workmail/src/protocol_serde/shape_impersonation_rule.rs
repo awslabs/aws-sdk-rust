@@ -2,7 +2,7 @@
 pub fn ser_impersonation_rule(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ImpersonationRule,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("ImpersonationRuleId").string(input.impersonation_rule_id.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_outpost_config_request(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::OutpostConfigRequest,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("outpostArns").start_array();
         for item_2 in &input.outpost_arns {

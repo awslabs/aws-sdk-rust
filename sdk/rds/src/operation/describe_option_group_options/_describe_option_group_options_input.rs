@@ -219,7 +219,7 @@ impl DescribeOptionGroupOptionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_option_group_options::DescribeOptionGroupOptionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_option_group_options::DescribeOptionGroupOptionsInput {
             engine_name: self.engine_name,

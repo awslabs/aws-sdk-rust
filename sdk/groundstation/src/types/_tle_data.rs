@@ -92,16 +92,16 @@ impl TleDataBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`tle_line1`](crate::types::builders::TleDataBuilder::tle_line1)
     /// - [`tle_line2`](crate::types::builders::TleDataBuilder::tle_line2)
-    pub fn build(self) -> ::std::result::Result<crate::types::TleData, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TleData, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TleData {
             tle_line1: self.tle_line1.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "tle_line1",
                     "tle_line1 was not specified but it is required when building TleData",
                 )
             })?,
             tle_line2: self.tle_line2.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "tle_line2",
                     "tle_line2 was not specified but it is required when building TleData",
                 )

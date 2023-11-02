@@ -547,7 +547,7 @@ impl UpdateSmbFileShareInputBuilder {
     /// Consumes the builder and constructs a [`UpdateSmbFileShareInput`](crate::operation::update_smb_file_share::UpdateSmbFileShareInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_smb_file_share::UpdateSmbFileShareInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_smb_file_share::UpdateSmbFileShareInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_smb_file_share::UpdateSmbFileShareInput {
             file_share_arn: self.file_share_arn,

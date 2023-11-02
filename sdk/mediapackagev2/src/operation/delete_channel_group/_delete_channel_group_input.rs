@@ -44,7 +44,8 @@ impl DeleteChannelGroupInputBuilder {
     /// Consumes the builder and constructs a [`DeleteChannelGroupInput`](crate::operation::delete_channel_group::DeleteChannelGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_channel_group::DeleteChannelGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_channel_group::DeleteChannelGroupInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::delete_channel_group::DeleteChannelGroupInput {
             channel_group_name: self.channel_group_name,
         })

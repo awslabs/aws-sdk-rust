@@ -94,7 +94,7 @@ impl UpdateUsageInputBuilder {
         &self.patch_operations
     }
     /// Consumes the builder and constructs a [`UpdateUsageInput`](crate::operation::update_usage::UpdateUsageInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_usage::UpdateUsageInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_usage::UpdateUsageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_usage::UpdateUsageInput {
             usage_plan_id: self.usage_plan_id,
             key_id: self.key_id,

@@ -2,7 +2,7 @@
 pub fn ser_dataset_augmented_manifests_list_item(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DatasetAugmentedManifestsListItem,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("AttributeNames").start_array();
         for item_2 in &input.attribute_names {

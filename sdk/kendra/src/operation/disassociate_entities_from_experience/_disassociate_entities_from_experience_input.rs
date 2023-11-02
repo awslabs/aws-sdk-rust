@@ -97,7 +97,7 @@ impl DisassociateEntitiesFromExperienceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_entities_from_experience::DisassociateEntitiesFromExperienceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::disassociate_entities_from_experience::DisassociateEntitiesFromExperienceInput {

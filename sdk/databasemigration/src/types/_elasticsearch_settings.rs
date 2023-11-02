@@ -138,16 +138,16 @@ impl ElasticsearchSettingsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`service_access_role_arn`](crate::types::builders::ElasticsearchSettingsBuilder::service_access_role_arn)
     /// - [`endpoint_uri`](crate::types::builders::ElasticsearchSettingsBuilder::endpoint_uri)
-    pub fn build(self) -> ::std::result::Result<crate::types::ElasticsearchSettings, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ElasticsearchSettings, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ElasticsearchSettings {
             service_access_role_arn: self.service_access_role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "service_access_role_arn",
                     "service_access_role_arn was not specified but it is required when building ElasticsearchSettings",
                 )
             })?,
             endpoint_uri: self.endpoint_uri.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "endpoint_uri",
                     "endpoint_uri was not specified but it is required when building ElasticsearchSettings",
                 )

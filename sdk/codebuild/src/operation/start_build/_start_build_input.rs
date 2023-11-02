@@ -962,7 +962,7 @@ impl StartBuildInputBuilder {
         &self.debug_session_enabled
     }
     /// Consumes the builder and constructs a [`StartBuildInput`](crate::operation::start_build::StartBuildInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::start_build::StartBuildInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_build::StartBuildInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_build::StartBuildInput {
             project_name: self.project_name,
             secondary_sources_override: self.secondary_sources_override,

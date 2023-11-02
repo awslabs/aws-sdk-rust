@@ -64,7 +64,7 @@ impl ListImportFileTaskInputBuilder {
     /// Consumes the builder and constructs a [`ListImportFileTaskInput`](crate::operation::list_import_file_task::ListImportFileTaskInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_import_file_task::ListImportFileTaskInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_import_file_task::ListImportFileTaskInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_import_file_task::ListImportFileTaskInput {
             next_token: self.next_token,

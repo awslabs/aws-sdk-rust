@@ -68,7 +68,9 @@ impl DeleteCanaryInputBuilder {
         &self.delete_lambda
     }
     /// Consumes the builder and constructs a [`DeleteCanaryInput`](crate::operation::delete_canary::DeleteCanaryInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_canary::DeleteCanaryInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_canary::DeleteCanaryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_canary::DeleteCanaryInput {
             name: self.name,
             delete_lambda: self.delete_lambda,

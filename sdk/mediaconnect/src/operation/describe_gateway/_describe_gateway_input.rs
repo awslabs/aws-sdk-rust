@@ -44,7 +44,7 @@ impl DescribeGatewayInputBuilder {
     /// Consumes the builder and constructs a [`DescribeGatewayInput`](crate::operation::describe_gateway::DescribeGatewayInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_gateway::DescribeGatewayInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_gateway::DescribeGatewayInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_gateway::DescribeGatewayInput {
             gateway_arn: self.gateway_arn,
         })

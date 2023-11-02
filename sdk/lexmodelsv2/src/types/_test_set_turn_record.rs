@@ -109,10 +109,10 @@ impl TestSetTurnRecordBuilder {
     /// Consumes the builder and constructs a [`TestSetTurnRecord`](crate::types::TestSetTurnRecord).
     /// This method will fail if any of the following fields are not set:
     /// - [`record_number`](crate::types::builders::TestSetTurnRecordBuilder::record_number)
-    pub fn build(self) -> ::std::result::Result<crate::types::TestSetTurnRecord, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TestSetTurnRecord, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TestSetTurnRecord {
             record_number: self.record_number.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "record_number",
                     "record_number was not specified but it is required when building TestSetTurnRecord",
                 )

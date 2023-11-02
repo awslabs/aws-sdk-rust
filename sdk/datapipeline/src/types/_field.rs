@@ -88,10 +88,10 @@ impl FieldBuilder {
     /// Consumes the builder and constructs a [`Field`](crate::types::Field).
     /// This method will fail if any of the following fields are not set:
     /// - [`key`](crate::types::builders::FieldBuilder::key)
-    pub fn build(self) -> ::std::result::Result<crate::types::Field, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Field, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Field {
             key: self.key.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field("key", "key was not specified but it is required when building Field")
+                ::aws_smithy_types::error::operation::BuildError::missing_field("key", "key was not specified but it is required when building Field")
             })?,
             string_value: self.string_value,
             ref_value: self.ref_value,

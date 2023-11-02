@@ -93,10 +93,10 @@ impl SnapshotConfigurationBuilder {
     /// Consumes the builder and constructs a [`SnapshotConfiguration`](crate::types::SnapshotConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`file_groups`](crate::types::builders::SnapshotConfigurationBuilder::file_groups)
-    pub fn build(self) -> ::std::result::Result<crate::types::SnapshotConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SnapshotConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SnapshotConfiguration {
             file_groups: self.file_groups.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "file_groups",
                     "file_groups was not specified but it is required when building SnapshotConfiguration",
                 )

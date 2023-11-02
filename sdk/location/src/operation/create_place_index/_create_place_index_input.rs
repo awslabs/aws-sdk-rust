@@ -296,7 +296,7 @@ impl CreatePlaceIndexInputBuilder {
     /// Consumes the builder and constructs a [`CreatePlaceIndexInput`](crate::operation::create_place_index::CreatePlaceIndexInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_place_index::CreatePlaceIndexInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_place_index::CreatePlaceIndexInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_place_index::CreatePlaceIndexInput {
             index_name: self.index_name,
             data_source: self.data_source,

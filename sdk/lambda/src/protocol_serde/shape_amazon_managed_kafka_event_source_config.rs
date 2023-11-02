@@ -42,7 +42,7 @@ where
 pub fn ser_amazon_managed_kafka_event_source_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AmazonManagedKafkaEventSourceConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.consumer_group_id {
         object.key("ConsumerGroupId").string(var_1.as_str());
     }

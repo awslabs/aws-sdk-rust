@@ -1198,7 +1198,9 @@ impl RunInstancesInputBuilder {
         &self.enable_primary_ipv6
     }
     /// Consumes the builder and constructs a [`RunInstancesInput`](crate::operation::run_instances::RunInstancesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::run_instances::RunInstancesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::run_instances::RunInstancesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::run_instances::RunInstancesInput {
             block_device_mappings: self.block_device_mappings,
             image_id: self.image_id,

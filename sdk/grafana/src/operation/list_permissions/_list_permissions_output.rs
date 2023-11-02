@@ -89,11 +89,11 @@ impl ListPermissionsOutputBuilder {
     /// - [`permissions`](crate::operation::list_permissions::builders::ListPermissionsOutputBuilder::permissions)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_permissions::ListPermissionsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_permissions::ListPermissionsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_permissions::ListPermissionsOutput {
             next_token: self.next_token,
             permissions: self.permissions.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "permissions",
                     "permissions was not specified but it is required when building ListPermissionsOutput",
                 )

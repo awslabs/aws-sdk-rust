@@ -46,7 +46,7 @@ impl DescribeApplicationInstanceDetailsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_application_instance_details::DescribeApplicationInstanceDetailsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_application_instance_details::DescribeApplicationInstanceDetailsInput {

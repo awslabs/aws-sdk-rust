@@ -85,7 +85,7 @@ impl ImportApiInputBuilder {
         &self.fail_on_warnings
     }
     /// Consumes the builder and constructs a [`ImportApiInput`](crate::operation::import_api::ImportApiInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::import_api::ImportApiInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::import_api::ImportApiInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::import_api::ImportApiInput {
             basepath: self.basepath,
             body: self.body,

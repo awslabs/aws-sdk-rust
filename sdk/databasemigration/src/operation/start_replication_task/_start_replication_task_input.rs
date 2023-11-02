@@ -195,7 +195,7 @@ impl StartReplicationTaskInputBuilder {
     /// Consumes the builder and constructs a [`StartReplicationTaskInput`](crate::operation::start_replication_task::StartReplicationTaskInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_replication_task::StartReplicationTaskInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::start_replication_task::StartReplicationTaskInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_replication_task::StartReplicationTaskInput {
             replication_task_arn: self.replication_task_arn,

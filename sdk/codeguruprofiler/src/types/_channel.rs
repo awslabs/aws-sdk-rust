@@ -96,17 +96,17 @@ impl ChannelBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`uri`](crate::types::builders::ChannelBuilder::uri)
     /// - [`event_publishers`](crate::types::builders::ChannelBuilder::event_publishers)
-    pub fn build(self) -> ::std::result::Result<crate::types::Channel, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Channel, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Channel {
             id: self.id,
             uri: self.uri.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "uri",
                     "uri was not specified but it is required when building Channel",
                 )
             })?,
             event_publishers: self.event_publishers.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "event_publishers",
                     "event_publishers was not specified but it is required when building Channel",
                 )

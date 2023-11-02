@@ -68,7 +68,7 @@ impl AddClientIdToOpenIdConnectProviderInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_client_id_to_open_id_connect_provider::AddClientIdToOpenIdConnectProviderInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::add_client_id_to_open_id_connect_provider::AddClientIdToOpenIdConnectProviderInput {

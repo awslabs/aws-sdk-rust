@@ -107,7 +107,7 @@ impl GetIceServerConfigInputBuilder {
     /// Consumes the builder and constructs a [`GetIceServerConfigInput`](crate::operation::get_ice_server_config::GetIceServerConfigInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_ice_server_config::GetIceServerConfigInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_ice_server_config::GetIceServerConfigInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_ice_server_config::GetIceServerConfigInput {
             channel_arn: self.channel_arn,

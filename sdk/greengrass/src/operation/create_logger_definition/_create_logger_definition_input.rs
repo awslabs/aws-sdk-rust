@@ -112,8 +112,10 @@ impl CreateLoggerDefinitionInputBuilder {
     /// Consumes the builder and constructs a [`CreateLoggerDefinitionInput`](crate::operation::create_logger_definition::CreateLoggerDefinitionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_logger_definition::CreateLoggerDefinitionInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::create_logger_definition::CreateLoggerDefinitionInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::create_logger_definition::CreateLoggerDefinitionInput {
             amzn_client_token: self.amzn_client_token,
             initial_version: self.initial_version,

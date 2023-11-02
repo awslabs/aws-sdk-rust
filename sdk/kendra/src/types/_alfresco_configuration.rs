@@ -383,22 +383,22 @@ impl AlfrescoConfigurationBuilder {
     /// - [`site_url`](crate::types::builders::AlfrescoConfigurationBuilder::site_url)
     /// - [`site_id`](crate::types::builders::AlfrescoConfigurationBuilder::site_id)
     /// - [`secret_arn`](crate::types::builders::AlfrescoConfigurationBuilder::secret_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::AlfrescoConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AlfrescoConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AlfrescoConfiguration {
             site_url: self.site_url.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "site_url",
                     "site_url was not specified but it is required when building AlfrescoConfiguration",
                 )
             })?,
             site_id: self.site_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "site_id",
                     "site_id was not specified but it is required when building AlfrescoConfiguration",
                 )
             })?,
             secret_arn: self.secret_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "secret_arn",
                     "secret_arn was not specified but it is required when building AlfrescoConfiguration",
                 )

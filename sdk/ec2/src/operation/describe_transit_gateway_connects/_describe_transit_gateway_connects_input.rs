@@ -180,7 +180,7 @@ impl DescribeTransitGatewayConnectsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_transit_gateway_connects::DescribeTransitGatewayConnectsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_transit_gateway_connects::DescribeTransitGatewayConnectsInput {
             transit_gateway_attachment_ids: self.transit_gateway_attachment_ids,

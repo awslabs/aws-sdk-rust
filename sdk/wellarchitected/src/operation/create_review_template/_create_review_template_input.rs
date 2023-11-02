@@ -185,7 +185,7 @@ impl CreateReviewTemplateInputBuilder {
     /// Consumes the builder and constructs a [`CreateReviewTemplateInput`](crate::operation::create_review_template::CreateReviewTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_review_template::CreateReviewTemplateInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_review_template::CreateReviewTemplateInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_review_template::CreateReviewTemplateInput {
             template_name: self.template_name,

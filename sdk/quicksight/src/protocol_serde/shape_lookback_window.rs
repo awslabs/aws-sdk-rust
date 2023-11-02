@@ -58,7 +58,7 @@ where
 pub fn ser_lookback_window(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LookbackWindow,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("ColumnName").string(input.column_name.as_str());
     }

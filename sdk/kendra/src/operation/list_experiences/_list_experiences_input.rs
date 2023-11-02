@@ -86,7 +86,7 @@ impl ListExperiencesInputBuilder {
     /// Consumes the builder and constructs a [`ListExperiencesInput`](crate::operation::list_experiences::ListExperiencesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_experiences::ListExperiencesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_experiences::ListExperiencesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_experiences::ListExperiencesInput {
             index_id: self.index_id,
             next_token: self.next_token,

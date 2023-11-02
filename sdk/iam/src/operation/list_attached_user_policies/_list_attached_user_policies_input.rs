@@ -124,7 +124,7 @@ impl ListAttachedUserPoliciesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_attached_user_policies::ListAttachedUserPoliciesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_attached_user_policies::ListAttachedUserPoliciesInput {
             user_name: self.user_name,

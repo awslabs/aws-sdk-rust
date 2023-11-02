@@ -42,7 +42,7 @@ impl GetApiInputBuilder {
         &self.api_id
     }
     /// Consumes the builder and constructs a [`GetApiInput`](crate::operation::get_api::GetApiInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_api::GetApiInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_api::GetApiInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_api::GetApiInput { api_id: self.api_id })
     }
 }

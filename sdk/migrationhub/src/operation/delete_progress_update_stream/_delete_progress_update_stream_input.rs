@@ -67,7 +67,7 @@ impl DeleteProgressUpdateStreamInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_progress_update_stream::DeleteProgressUpdateStreamInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_progress_update_stream::DeleteProgressUpdateStreamInput {
             progress_update_stream_name: self.progress_update_stream_name,

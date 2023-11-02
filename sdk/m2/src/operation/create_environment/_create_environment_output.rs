@@ -63,10 +63,10 @@ impl CreateEnvironmentOutputBuilder {
     /// - [`environment_id`](crate::operation::create_environment::builders::CreateEnvironmentOutputBuilder::environment_id)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_environment::CreateEnvironmentOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_environment::CreateEnvironmentOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_environment::CreateEnvironmentOutput {
             environment_id: self.environment_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "environment_id",
                     "environment_id was not specified but it is required when building CreateEnvironmentOutput",
                 )

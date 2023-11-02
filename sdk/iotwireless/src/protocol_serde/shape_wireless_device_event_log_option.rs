@@ -2,7 +2,7 @@
 pub fn ser_wireless_device_event_log_option(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::WirelessDeviceEventLogOption,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Event").string(input.event.as_str());
     }

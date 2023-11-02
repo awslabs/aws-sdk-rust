@@ -2,7 +2,7 @@
 pub fn ser_scale(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Scale,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.value != 0.0 {
         object.key("value").number(
             #[allow(clippy::useless_conversion)]

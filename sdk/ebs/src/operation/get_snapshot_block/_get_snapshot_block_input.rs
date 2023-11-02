@@ -98,7 +98,7 @@ impl GetSnapshotBlockInputBuilder {
     /// Consumes the builder and constructs a [`GetSnapshotBlockInput`](crate::operation::get_snapshot_block::GetSnapshotBlockInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_snapshot_block::GetSnapshotBlockInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_snapshot_block::GetSnapshotBlockInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_snapshot_block::GetSnapshotBlockInput {
             snapshot_id: self.snapshot_id,
             block_index: self.block_index,

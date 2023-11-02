@@ -254,54 +254,54 @@ impl AssetEntryBuilder {
     /// - [`name`](crate::types::builders::AssetEntryBuilder::name)
     /// - [`revision_id`](crate::types::builders::AssetEntryBuilder::revision_id)
     /// - [`updated_at`](crate::types::builders::AssetEntryBuilder::updated_at)
-    pub fn build(self) -> ::std::result::Result<crate::types::AssetEntry, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AssetEntry, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AssetEntry {
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building AssetEntry",
                 )
             })?,
             asset_details: self.asset_details,
             asset_type: self.asset_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "asset_type",
                     "asset_type was not specified but it is required when building AssetEntry",
                 )
             })?,
             created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
                     "created_at was not specified but it is required when building AssetEntry",
                 )
             })?,
             data_set_id: self.data_set_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_set_id",
                     "data_set_id was not specified but it is required when building AssetEntry",
                 )
             })?,
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building AssetEntry",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building AssetEntry",
                 )
             })?,
             revision_id: self.revision_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "revision_id",
                     "revision_id was not specified but it is required when building AssetEntry",
                 )
             })?,
             source_id: self.source_id,
             updated_at: self.updated_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "updated_at",
                     "updated_at was not specified but it is required when building AssetEntry",
                 )

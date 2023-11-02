@@ -87,17 +87,17 @@ impl CreateSignalCatalogOutputBuilder {
     /// - [`arn`](crate::operation::create_signal_catalog::builders::CreateSignalCatalogOutputBuilder::arn)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_signal_catalog::CreateSignalCatalogOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_signal_catalog::CreateSignalCatalogOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_signal_catalog::CreateSignalCatalogOutput {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building CreateSignalCatalogOutput",
                 )
             })?,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building CreateSignalCatalogOutput",
                 )

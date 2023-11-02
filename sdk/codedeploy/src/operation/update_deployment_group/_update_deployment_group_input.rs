@@ -493,7 +493,7 @@ impl UpdateDeploymentGroupInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDeploymentGroupInput`](crate::operation::update_deployment_group::UpdateDeploymentGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_deployment_group::UpdateDeploymentGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_deployment_group::UpdateDeploymentGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_deployment_group::UpdateDeploymentGroupInput {
             application_name: self.application_name,

@@ -257,10 +257,10 @@ impl NumericRangeFilterBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`filter_id`](crate::types::builders::NumericRangeFilterBuilder::filter_id)
     /// - [`null_option`](crate::types::builders::NumericRangeFilterBuilder::null_option)
-    pub fn build(self) -> ::std::result::Result<crate::types::NumericRangeFilter, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::NumericRangeFilter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::NumericRangeFilter {
             filter_id: self.filter_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "filter_id",
                     "filter_id was not specified but it is required when building NumericRangeFilter",
                 )
@@ -273,7 +273,7 @@ impl NumericRangeFilterBuilder {
             select_all_options: self.select_all_options,
             aggregation_function: self.aggregation_function,
             null_option: self.null_option.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "null_option",
                     "null_option was not specified but it is required when building NumericRangeFilter",
                 )

@@ -393,7 +393,7 @@ impl PutDraftAppVersionTemplateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_draft_app_version_template::PutDraftAppVersionTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_draft_app_version_template::PutDraftAppVersionTemplateInput {
             app_arn: self.app_arn,

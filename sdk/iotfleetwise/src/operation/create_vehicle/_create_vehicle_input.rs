@@ -175,7 +175,7 @@ impl CreateVehicleInputBuilder {
     /// Consumes the builder and constructs a [`CreateVehicleInput`](crate::operation::create_vehicle::CreateVehicleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_vehicle::CreateVehicleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_vehicle::CreateVehicleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_vehicle::CreateVehicleInput {
             vehicle_name: self.vehicle_name,
             model_manifest_arn: self.model_manifest_arn,

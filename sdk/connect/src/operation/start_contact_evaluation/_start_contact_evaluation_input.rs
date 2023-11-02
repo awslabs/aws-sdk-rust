@@ -109,8 +109,10 @@ impl StartContactEvaluationInputBuilder {
     /// Consumes the builder and constructs a [`StartContactEvaluationInput`](crate::operation::start_contact_evaluation::StartContactEvaluationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_contact_evaluation::StartContactEvaluationInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::start_contact_evaluation::StartContactEvaluationInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::start_contact_evaluation::StartContactEvaluationInput {
             instance_id: self.instance_id,
             contact_id: self.contact_id,

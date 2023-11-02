@@ -2,7 +2,7 @@
 pub fn ser_asset_bundle_export_job_vpc_connection_override_properties(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AssetBundleExportJobVpcConnectionOverrideProperties,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.arn {
         object.key("Arn").string(var_1.as_str());
     }

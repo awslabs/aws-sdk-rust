@@ -65,7 +65,8 @@ impl AdvertiseByoipCidrInputBuilder {
     /// Consumes the builder and constructs a [`AdvertiseByoipCidrInput`](crate::operation::advertise_byoip_cidr::AdvertiseByoipCidrInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::advertise_byoip_cidr::AdvertiseByoipCidrInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::advertise_byoip_cidr::AdvertiseByoipCidrInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::advertise_byoip_cidr::AdvertiseByoipCidrInput {
             cidr: self.cidr,
             dry_run: self.dry_run,

@@ -67,7 +67,7 @@ impl DeleteAutoScalingGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_auto_scaling_group::DeleteAutoScalingGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_auto_scaling_group::DeleteAutoScalingGroupInput {
             auto_scaling_group_name: self.auto_scaling_group_name,

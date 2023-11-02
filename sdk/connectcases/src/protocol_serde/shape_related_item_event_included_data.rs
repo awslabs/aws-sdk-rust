@@ -42,7 +42,7 @@ where
 pub fn ser_related_item_event_included_data(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RelatedItemEventIncludedData,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("includeContent").boolean(input.include_content);
     }

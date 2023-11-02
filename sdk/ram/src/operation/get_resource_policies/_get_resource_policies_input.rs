@@ -114,7 +114,7 @@ impl GetResourcePoliciesInputBuilder {
     /// Consumes the builder and constructs a [`GetResourcePoliciesInput`](crate::operation::get_resource_policies::GetResourcePoliciesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_resource_policies::GetResourcePoliciesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_resource_policies::GetResourcePoliciesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_resource_policies::GetResourcePoliciesInput {
             resource_arns: self.resource_arns,

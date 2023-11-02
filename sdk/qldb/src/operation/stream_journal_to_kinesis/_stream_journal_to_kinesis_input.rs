@@ -212,7 +212,7 @@ impl StreamJournalToKinesisInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stream_journal_to_kinesis::StreamJournalToKinesisInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::stream_journal_to_kinesis::StreamJournalToKinesisInput {
             ledger_name: self.ledger_name,

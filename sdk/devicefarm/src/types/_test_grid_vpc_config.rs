@@ -104,22 +104,22 @@ impl TestGridVpcConfigBuilder {
     /// - [`security_group_ids`](crate::types::builders::TestGridVpcConfigBuilder::security_group_ids)
     /// - [`subnet_ids`](crate::types::builders::TestGridVpcConfigBuilder::subnet_ids)
     /// - [`vpc_id`](crate::types::builders::TestGridVpcConfigBuilder::vpc_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::TestGridVpcConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TestGridVpcConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TestGridVpcConfig {
             security_group_ids: self.security_group_ids.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "security_group_ids",
                     "security_group_ids was not specified but it is required when building TestGridVpcConfig",
                 )
             })?,
             subnet_ids: self.subnet_ids.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "subnet_ids",
                     "subnet_ids was not specified but it is required when building TestGridVpcConfig",
                 )
             })?,
             vpc_id: self.vpc_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "vpc_id",
                     "vpc_id was not specified but it is required when building TestGridVpcConfig",
                 )

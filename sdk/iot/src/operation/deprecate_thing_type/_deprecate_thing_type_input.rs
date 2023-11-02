@@ -66,7 +66,8 @@ impl DeprecateThingTypeInputBuilder {
     /// Consumes the builder and constructs a [`DeprecateThingTypeInput`](crate::operation::deprecate_thing_type::DeprecateThingTypeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::deprecate_thing_type::DeprecateThingTypeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::deprecate_thing_type::DeprecateThingTypeInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::deprecate_thing_type::DeprecateThingTypeInput {
             thing_type_name: self.thing_type_name,
             undo_deprecate: self.undo_deprecate,

@@ -130,7 +130,7 @@ impl ListUserGroupsInputBuilder {
     /// Consumes the builder and constructs a [`ListUserGroupsInput`](crate::operation::list_user_groups::ListUserGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_user_groups::ListUserGroupsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_user_groups::ListUserGroupsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_user_groups::ListUserGroupsInput {
             user_name: self.user_name,
             aws_account_id: self.aws_account_id,

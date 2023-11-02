@@ -2,7 +2,7 @@
 pub fn ser_compute_environment_order(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ComputeEnvironmentOrder,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.order {
         object.key("order").number(
             #[allow(clippy::useless_conversion)]

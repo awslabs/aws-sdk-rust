@@ -81,7 +81,7 @@ impl GetFunctionCodeSigningConfigInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_function_code_signing_config::GetFunctionCodeSigningConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_function_code_signing_config::GetFunctionCodeSigningConfigInput {
             function_name: self.function_name,

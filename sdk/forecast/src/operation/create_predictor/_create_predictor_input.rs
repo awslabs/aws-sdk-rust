@@ -550,7 +550,7 @@ impl CreatePredictorInputBuilder {
     /// Consumes the builder and constructs a [`CreatePredictorInput`](crate::operation::create_predictor::CreatePredictorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_predictor::CreatePredictorInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_predictor::CreatePredictorInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_predictor::CreatePredictorInput {
             predictor_name: self.predictor_name,
             algorithm_arn: self.algorithm_arn,

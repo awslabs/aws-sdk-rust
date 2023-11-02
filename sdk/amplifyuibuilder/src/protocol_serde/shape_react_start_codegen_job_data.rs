@@ -2,7 +2,7 @@
 pub fn ser_react_start_codegen_job_data(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ReactStartCodegenJobData,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.module {
         object.key("module").string(var_1.as_str());
     }

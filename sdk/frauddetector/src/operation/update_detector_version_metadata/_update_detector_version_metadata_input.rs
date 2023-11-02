@@ -90,7 +90,7 @@ impl UpdateDetectorVersionMetadataInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_detector_version_metadata::UpdateDetectorVersionMetadataInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_detector_version_metadata::UpdateDetectorVersionMetadataInput {
             detector_id: self.detector_id,

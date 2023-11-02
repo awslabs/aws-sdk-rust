@@ -190,7 +190,7 @@ impl ListModelCardsInputBuilder {
     /// Consumes the builder and constructs a [`ListModelCardsInput`](crate::operation::list_model_cards::ListModelCardsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_model_cards::ListModelCardsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_model_cards::ListModelCardsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_model_cards::ListModelCardsInput {
             creation_time_after: self.creation_time_after,
             creation_time_before: self.creation_time_before,

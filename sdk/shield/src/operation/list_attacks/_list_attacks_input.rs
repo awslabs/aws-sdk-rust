@@ -153,7 +153,7 @@ impl ListAttacksInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListAttacksInput`](crate::operation::list_attacks::ListAttacksInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_attacks::ListAttacksInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_attacks::ListAttacksInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_attacks::ListAttacksInput {
             resource_arns: self.resource_arns,
             start_time: self.start_time,

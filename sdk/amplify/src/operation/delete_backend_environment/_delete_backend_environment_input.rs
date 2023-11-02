@@ -69,7 +69,7 @@ impl DeleteBackendEnvironmentInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_backend_environment::DeleteBackendEnvironmentInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_backend_environment::DeleteBackendEnvironmentInput {
             app_id: self.app_id,

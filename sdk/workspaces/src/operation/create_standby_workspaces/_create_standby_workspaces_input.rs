@@ -75,7 +75,7 @@ impl CreateStandbyWorkspacesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_standby_workspaces::CreateStandbyWorkspacesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_standby_workspaces::CreateStandbyWorkspacesInput {
             primary_region: self.primary_region,

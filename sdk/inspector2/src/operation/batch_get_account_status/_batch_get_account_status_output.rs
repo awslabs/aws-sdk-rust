@@ -97,11 +97,13 @@ impl BatchGetAccountStatusOutputBuilder {
     /// - [`accounts`](crate::operation::batch_get_account_status::builders::BatchGetAccountStatusOutputBuilder::accounts)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_get_account_status::BatchGetAccountStatusOutput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::batch_get_account_status::BatchGetAccountStatusOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::batch_get_account_status::BatchGetAccountStatusOutput {
             accounts: self.accounts.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "accounts",
                     "accounts was not specified but it is required when building BatchGetAccountStatusOutput",
                 )

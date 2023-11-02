@@ -187,15 +187,15 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for SendDataSetN
             fn uri_base(
                 _input: &crate::operation::send_data_set_notification::SendDataSetNotificationInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 use ::std::fmt::Write as _;
                 let input_1 = &_input.data_set_id;
                 let input_1 = input_1
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("data_set_id", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("data_set_id", "cannot be empty or unset"))?;
                 let data_set_id = ::aws_smithy_http::label::fmt_string(input_1, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if data_set_id.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "data_set_id",
                         "cannot be empty or unset",
                     ));
@@ -207,7 +207,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for SendDataSetN
             fn update_http_builder(
                 input: &crate::operation::send_data_set_notification::SendDataSetNotificationInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 ::std::result::Result::Ok(builder.method("POST").uri(uri))
@@ -216,7 +216,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for SendDataSetN
             builder = _header_serialization_settings.set_default_header(builder, ::http::header::CONTENT_TYPE, "application/json");
             builder
         };
-        let body = ::aws_smithy_http::body::SdkBody::from(
+        let body = ::aws_smithy_types::body::SdkBody::from(
             crate::protocol_serde::shape_send_data_set_notification::ser_send_data_set_notification_input(&input)?,
         );
         if let Some(content_length) = body.content_length() {

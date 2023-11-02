@@ -90,7 +90,7 @@ impl PutEmailMonitoringConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_email_monitoring_configuration::PutEmailMonitoringConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::put_email_monitoring_configuration::PutEmailMonitoringConfigurationInput {

@@ -66,7 +66,7 @@ impl GetModelTemplateInputBuilder {
     /// Consumes the builder and constructs a [`GetModelTemplateInput`](crate::operation::get_model_template::GetModelTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_model_template::GetModelTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_model_template::GetModelTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_model_template::GetModelTemplateInput {
             api_id: self.api_id,
             model_id: self.model_id,

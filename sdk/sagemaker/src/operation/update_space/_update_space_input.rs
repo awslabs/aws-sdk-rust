@@ -85,7 +85,7 @@ impl UpdateSpaceInputBuilder {
         &self.space_settings
     }
     /// Consumes the builder and constructs a [`UpdateSpaceInput`](crate::operation::update_space::UpdateSpaceInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_space::UpdateSpaceInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_space::UpdateSpaceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_space::UpdateSpaceInput {
             domain_id: self.domain_id,
             space_name: self.space_name,

@@ -121,7 +121,7 @@ impl GenerateCardValidationDataInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::generate_card_validation_data::GenerateCardValidationDataInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::generate_card_validation_data::GenerateCardValidationDataInput {
             key_identifier: self.key_identifier,

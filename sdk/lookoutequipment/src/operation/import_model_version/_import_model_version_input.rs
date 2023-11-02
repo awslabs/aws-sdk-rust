@@ -247,7 +247,8 @@ impl ImportModelVersionInputBuilder {
     /// Consumes the builder and constructs a [`ImportModelVersionInput`](crate::operation::import_model_version::ImportModelVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::import_model_version::ImportModelVersionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::import_model_version::ImportModelVersionInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::import_model_version::ImportModelVersionInput {
             source_model_version_arn: self.source_model_version_arn,
             model_name: self.model_name,

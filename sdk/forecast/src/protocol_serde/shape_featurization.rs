@@ -2,7 +2,7 @@
 pub fn ser_featurization(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Featurization,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("AttributeName").string(input.attribute_name.as_str());
     }

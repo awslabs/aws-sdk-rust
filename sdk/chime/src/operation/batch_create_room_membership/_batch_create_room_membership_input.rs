@@ -97,7 +97,7 @@ impl BatchCreateRoomMembershipInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_create_room_membership::BatchCreateRoomMembershipInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::batch_create_room_membership::BatchCreateRoomMembershipInput {
             account_id: self.account_id,

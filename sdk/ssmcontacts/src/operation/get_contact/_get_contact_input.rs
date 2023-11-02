@@ -42,7 +42,7 @@ impl GetContactInputBuilder {
         &self.contact_id
     }
     /// Consumes the builder and constructs a [`GetContactInput`](crate::operation::get_contact::GetContactInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_contact::GetContactInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_contact::GetContactInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_contact::GetContactInput { contact_id: self.contact_id })
     }
 }

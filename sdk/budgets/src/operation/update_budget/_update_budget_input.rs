@@ -65,7 +65,9 @@ impl UpdateBudgetInputBuilder {
         &self.new_budget
     }
     /// Consumes the builder and constructs a [`UpdateBudgetInput`](crate::operation::update_budget::UpdateBudgetInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_budget::UpdateBudgetInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_budget::UpdateBudgetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_budget::UpdateBudgetInput {
             account_id: self.account_id,
             new_budget: self.new_budget,

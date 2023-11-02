@@ -378,7 +378,7 @@ impl UpdateInstanceInputBuilder {
     /// Consumes the builder and constructs a [`UpdateInstanceInput`](crate::operation::update_instance::UpdateInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_instance::UpdateInstanceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_instance::UpdateInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_instance::UpdateInstanceInput {
             instance_id: self.instance_id,
             layer_ids: self.layer_ids,

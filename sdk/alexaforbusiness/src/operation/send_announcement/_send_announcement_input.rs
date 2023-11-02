@@ -116,7 +116,7 @@ impl SendAnnouncementInputBuilder {
     /// Consumes the builder and constructs a [`SendAnnouncementInput`](crate::operation::send_announcement::SendAnnouncementInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::send_announcement::SendAnnouncementInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::send_announcement::SendAnnouncementInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::send_announcement::SendAnnouncementInput {
             room_filters: self.room_filters,
             content: self.content,

@@ -209,7 +209,7 @@ impl CreateThemeInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateThemeInput`](crate::operation::create_theme::CreateThemeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_theme::CreateThemeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_theme::CreateThemeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_theme::CreateThemeInput {
             aws_account_id: self.aws_account_id,
             theme_id: self.theme_id,

@@ -88,7 +88,7 @@ impl UpdateUserPhoneConfigInputBuilder {
     /// Consumes the builder and constructs a [`UpdateUserPhoneConfigInput`](crate::operation::update_user_phone_config::UpdateUserPhoneConfigInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_user_phone_config::UpdateUserPhoneConfigInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_user_phone_config::UpdateUserPhoneConfigInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_user_phone_config::UpdateUserPhoneConfigInput {
             phone_config: self.phone_config,

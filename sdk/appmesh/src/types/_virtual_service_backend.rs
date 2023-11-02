@@ -67,10 +67,10 @@ impl VirtualServiceBackendBuilder {
     /// Consumes the builder and constructs a [`VirtualServiceBackend`](crate::types::VirtualServiceBackend).
     /// This method will fail if any of the following fields are not set:
     /// - [`virtual_service_name`](crate::types::builders::VirtualServiceBackendBuilder::virtual_service_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::VirtualServiceBackend, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::VirtualServiceBackend, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::VirtualServiceBackend {
             virtual_service_name: self.virtual_service_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "virtual_service_name",
                     "virtual_service_name was not specified but it is required when building VirtualServiceBackend",
                 )

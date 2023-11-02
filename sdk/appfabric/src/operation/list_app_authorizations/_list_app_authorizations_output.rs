@@ -92,11 +92,11 @@ impl ListAppAuthorizationsOutputBuilder {
     /// - [`app_authorization_summary_list`](crate::operation::list_app_authorizations::builders::ListAppAuthorizationsOutputBuilder::app_authorization_summary_list)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_app_authorizations::ListAppAuthorizationsOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_app_authorizations::ListAppAuthorizationsOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_app_authorizations::ListAppAuthorizationsOutput {
             app_authorization_summary_list: self.app_authorization_summary_list.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "app_authorization_summary_list",
                     "app_authorization_summary_list was not specified but it is required when building ListAppAuthorizationsOutput",
                 )

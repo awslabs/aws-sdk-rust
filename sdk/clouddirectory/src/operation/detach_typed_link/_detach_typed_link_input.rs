@@ -66,7 +66,7 @@ impl DetachTypedLinkInputBuilder {
     /// Consumes the builder and constructs a [`DetachTypedLinkInput`](crate::operation::detach_typed_link::DetachTypedLinkInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::detach_typed_link::DetachTypedLinkInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::detach_typed_link::DetachTypedLinkInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::detach_typed_link::DetachTypedLinkInput {
             directory_arn: self.directory_arn,
             typed_link_specifier: self.typed_link_specifier,

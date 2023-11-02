@@ -2,7 +2,7 @@
 pub fn ser_aws_code_build_project_environment(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsCodeBuildProjectEnvironment,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.certificate {
         object.key("Certificate").string(var_1.as_str());
     }

@@ -90,7 +90,7 @@ impl DeleteGameServerGroupInputBuilder {
     /// Consumes the builder and constructs a [`DeleteGameServerGroupInput`](crate::operation::delete_game_server_group::DeleteGameServerGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_game_server_group::DeleteGameServerGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_game_server_group::DeleteGameServerGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_game_server_group::DeleteGameServerGroupInput {
             game_server_group_name: self.game_server_group_name,

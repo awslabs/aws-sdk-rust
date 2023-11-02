@@ -2,7 +2,7 @@
 pub fn ser_aws_dynamo_db_table_key_schema(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsDynamoDbTableKeySchema,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.attribute_name {
         object.key("AttributeName").string(var_1.as_str());
     }

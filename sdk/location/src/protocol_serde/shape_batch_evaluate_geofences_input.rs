@@ -2,7 +2,7 @@
 pub fn ser_batch_evaluate_geofences_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.device_position_updates {
         let mut array_2 = object.key("DevicePositionUpdates").start_array();
         for item_3 in var_1 {

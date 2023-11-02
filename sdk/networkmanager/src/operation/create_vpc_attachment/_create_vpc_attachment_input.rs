@@ -166,7 +166,7 @@ impl CreateVpcAttachmentInputBuilder {
     /// Consumes the builder and constructs a [`CreateVpcAttachmentInput`](crate::operation::create_vpc_attachment::CreateVpcAttachmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_vpc_attachment::CreateVpcAttachmentInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_vpc_attachment::CreateVpcAttachmentInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_vpc_attachment::CreateVpcAttachmentInput {
             core_network_id: self.core_network_id,

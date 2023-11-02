@@ -137,7 +137,7 @@ impl ListAccessPreviewFindingsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_access_preview_findings::ListAccessPreviewFindingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_access_preview_findings::ListAccessPreviewFindingsInput {
             access_preview_id: self.access_preview_id,

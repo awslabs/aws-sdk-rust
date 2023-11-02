@@ -2,7 +2,7 @@
 pub fn ser_streaming_session_storage_root(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::StreamingSessionStorageRoot,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.linux {
         object.key("linux").string(var_1.as_str());
     }

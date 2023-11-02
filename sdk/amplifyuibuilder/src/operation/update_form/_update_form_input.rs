@@ -129,7 +129,7 @@ impl UpdateFormInputBuilder {
         &self.updated_form
     }
     /// Consumes the builder and constructs a [`UpdateFormInput`](crate::operation::update_form::UpdateFormInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_form::UpdateFormInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_form::UpdateFormInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_form::UpdateFormInput {
             app_id: self.app_id,
             environment_name: self.environment_name,

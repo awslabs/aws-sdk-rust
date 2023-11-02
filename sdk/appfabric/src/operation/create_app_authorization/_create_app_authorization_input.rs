@@ -272,8 +272,10 @@ impl CreateAppAuthorizationInputBuilder {
     /// Consumes the builder and constructs a [`CreateAppAuthorizationInput`](crate::operation::create_app_authorization::CreateAppAuthorizationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_app_authorization::CreateAppAuthorizationInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::create_app_authorization::CreateAppAuthorizationInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::create_app_authorization::CreateAppAuthorizationInput {
             app_bundle_identifier: self.app_bundle_identifier,
             app: self.app,

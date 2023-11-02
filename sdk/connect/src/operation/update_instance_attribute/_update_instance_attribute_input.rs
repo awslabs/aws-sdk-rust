@@ -100,7 +100,7 @@ impl UpdateInstanceAttributeInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_instance_attribute::UpdateInstanceAttributeInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_instance_attribute::UpdateInstanceAttributeInput {
             instance_id: self.instance_id,

@@ -152,7 +152,7 @@ impl ModifyDbClusterSnapshotAttributeInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_db_cluster_snapshot_attribute::ModifyDbClusterSnapshotAttributeInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::modify_db_cluster_snapshot_attribute::ModifyDbClusterSnapshotAttributeInput {

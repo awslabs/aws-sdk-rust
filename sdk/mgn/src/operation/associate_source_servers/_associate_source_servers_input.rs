@@ -94,8 +94,10 @@ impl AssociateSourceServersInputBuilder {
     /// Consumes the builder and constructs a [`AssociateSourceServersInput`](crate::operation::associate_source_servers::AssociateSourceServersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::associate_source_servers::AssociateSourceServersInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::associate_source_servers::AssociateSourceServersInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::associate_source_servers::AssociateSourceServersInput {
             application_id: self.application_id,
             source_server_ids: self.source_server_ids,

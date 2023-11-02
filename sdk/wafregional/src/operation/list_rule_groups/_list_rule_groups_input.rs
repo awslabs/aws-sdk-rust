@@ -64,7 +64,7 @@ impl ListRuleGroupsInputBuilder {
     /// Consumes the builder and constructs a [`ListRuleGroupsInput`](crate::operation::list_rule_groups::ListRuleGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_rule_groups::ListRuleGroupsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_rule_groups::ListRuleGroupsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_rule_groups::ListRuleGroupsInput {
             next_marker: self.next_marker,
             limit: self.limit,

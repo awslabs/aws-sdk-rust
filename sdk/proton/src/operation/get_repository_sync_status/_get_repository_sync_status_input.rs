@@ -112,7 +112,7 @@ impl GetRepositorySyncStatusInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_repository_sync_status::GetRepositorySyncStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_repository_sync_status::GetRepositorySyncStatusInput {
             repository_name: self.repository_name,

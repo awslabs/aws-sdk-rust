@@ -143,7 +143,7 @@ impl StartStreamEncryptionInputBuilder {
     /// Consumes the builder and constructs a [`StartStreamEncryptionInput`](crate::operation::start_stream_encryption::StartStreamEncryptionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_stream_encryption::StartStreamEncryptionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::start_stream_encryption::StartStreamEncryptionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_stream_encryption::StartStreamEncryptionInput {
             stream_name: self.stream_name,

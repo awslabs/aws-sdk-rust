@@ -45,7 +45,7 @@ impl CreateReceiptFilterInputBuilder {
     /// Consumes the builder and constructs a [`CreateReceiptFilterInput`](crate::operation::create_receipt_filter::CreateReceiptFilterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_receipt_filter::CreateReceiptFilterInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_receipt_filter::CreateReceiptFilterInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_receipt_filter::CreateReceiptFilterInput { filter: self.filter })
     }

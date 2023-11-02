@@ -66,7 +66,7 @@ impl PutOptedOutNumberInputBuilder {
     /// Consumes the builder and constructs a [`PutOptedOutNumberInput`](crate::operation::put_opted_out_number::PutOptedOutNumberInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_opted_out_number::PutOptedOutNumberInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_opted_out_number::PutOptedOutNumberInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_opted_out_number::PutOptedOutNumberInput {
             opt_out_list_name: self.opt_out_list_name,
             opted_out_number: self.opted_out_number,

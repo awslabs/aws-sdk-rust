@@ -2,7 +2,7 @@
 pub fn ser_app_integrations_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AppIntegrationsConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("appIntegrationArn").string(input.app_integration_arn.as_str());
     }

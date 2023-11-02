@@ -68,7 +68,7 @@ impl UpdateApnsVoipSandboxChannelInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_apns_voip_sandbox_channel::UpdateApnsVoipSandboxChannelInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_apns_voip_sandbox_channel::UpdateApnsVoipSandboxChannelInput {
             apns_voip_sandbox_channel_request: self.apns_voip_sandbox_channel_request,

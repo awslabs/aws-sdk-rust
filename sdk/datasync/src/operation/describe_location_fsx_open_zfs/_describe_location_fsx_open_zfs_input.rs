@@ -46,7 +46,7 @@ impl DescribeLocationFsxOpenZfsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_location_fsx_open_zfs::DescribeLocationFsxOpenZfsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_location_fsx_open_zfs::DescribeLocationFsxOpenZfsInput {
             location_arn: self.location_arn,

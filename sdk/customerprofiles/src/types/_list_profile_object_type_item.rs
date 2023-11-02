@@ -139,16 +139,16 @@ impl ListProfileObjectTypeItemBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`object_type_name`](crate::types::builders::ListProfileObjectTypeItemBuilder::object_type_name)
     /// - [`description`](crate::types::builders::ListProfileObjectTypeItemBuilder::description)
-    pub fn build(self) -> ::std::result::Result<crate::types::ListProfileObjectTypeItem, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ListProfileObjectTypeItem, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ListProfileObjectTypeItem {
             object_type_name: self.object_type_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "object_type_name",
                     "object_type_name was not specified but it is required when building ListProfileObjectTypeItem",
                 )
             })?,
             description: self.description.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "description",
                     "description was not specified but it is required when building ListProfileObjectTypeItem",
                 )

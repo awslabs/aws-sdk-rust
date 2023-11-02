@@ -56,7 +56,7 @@ impl GetContactMethodsInputBuilder {
     /// Consumes the builder and constructs a [`GetContactMethodsInput`](crate::operation::get_contact_methods::GetContactMethodsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_contact_methods::GetContactMethodsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_contact_methods::GetContactMethodsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_contact_methods::GetContactMethodsInput { protocols: self.protocols })
     }
 }

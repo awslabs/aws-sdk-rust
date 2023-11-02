@@ -2,7 +2,7 @@
 pub fn ser_ssm_validation_parameters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SsmValidationParameters,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.source {
         #[allow(unused_mut)]
         let mut object_2 = object.key("source").start_object();

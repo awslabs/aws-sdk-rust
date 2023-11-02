@@ -2,7 +2,7 @@
 pub fn ser_property_group(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PropertyGroup,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("PropertyGroupId").string(input.property_group_id.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_analysis_rule_list(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AnalysisRuleList,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("joinColumns").start_array();
         for item_2 in &input.join_columns {

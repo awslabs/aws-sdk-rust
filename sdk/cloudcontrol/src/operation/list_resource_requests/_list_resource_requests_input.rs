@@ -90,7 +90,7 @@ impl ListResourceRequestsInputBuilder {
     /// Consumes the builder and constructs a [`ListResourceRequestsInput`](crate::operation::list_resource_requests::ListResourceRequestsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_resource_requests::ListResourceRequestsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_resource_requests::ListResourceRequestsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_resource_requests::ListResourceRequestsInput {
             max_results: self.max_results,

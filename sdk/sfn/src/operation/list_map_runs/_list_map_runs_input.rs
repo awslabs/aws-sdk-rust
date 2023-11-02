@@ -89,7 +89,7 @@ impl ListMapRunsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListMapRunsInput`](crate::operation::list_map_runs::ListMapRunsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_map_runs::ListMapRunsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_map_runs::ListMapRunsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_map_runs::ListMapRunsInput {
             execution_arn: self.execution_arn,
             max_results: self.max_results,

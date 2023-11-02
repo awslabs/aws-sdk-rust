@@ -44,7 +44,7 @@ impl GetCustomModelInputBuilder {
     /// Consumes the builder and constructs a [`GetCustomModelInput`](crate::operation::get_custom_model::GetCustomModelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_custom_model::GetCustomModelInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_custom_model::GetCustomModelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_custom_model::GetCustomModelInput {
             model_identifier: self.model_identifier,
         })

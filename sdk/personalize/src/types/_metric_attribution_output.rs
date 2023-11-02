@@ -67,11 +67,11 @@ impl MetricAttributionOutputBuilder {
     /// Consumes the builder and constructs a [`MetricAttributionOutput`](crate::types::MetricAttributionOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`role_arn`](crate::types::builders::MetricAttributionOutputBuilder::role_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::MetricAttributionOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::MetricAttributionOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MetricAttributionOutput {
             s3_data_destination: self.s3_data_destination,
             role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role_arn",
                     "role_arn was not specified but it is required when building MetricAttributionOutput",
                 )

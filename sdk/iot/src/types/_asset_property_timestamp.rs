@@ -67,10 +67,10 @@ impl AssetPropertyTimestampBuilder {
     /// Consumes the builder and constructs a [`AssetPropertyTimestamp`](crate::types::AssetPropertyTimestamp).
     /// This method will fail if any of the following fields are not set:
     /// - [`time_in_seconds`](crate::types::builders::AssetPropertyTimestampBuilder::time_in_seconds)
-    pub fn build(self) -> ::std::result::Result<crate::types::AssetPropertyTimestamp, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AssetPropertyTimestamp, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AssetPropertyTimestamp {
             time_in_seconds: self.time_in_seconds.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "time_in_seconds",
                     "time_in_seconds was not specified but it is required when building AssetPropertyTimestamp",
                 )

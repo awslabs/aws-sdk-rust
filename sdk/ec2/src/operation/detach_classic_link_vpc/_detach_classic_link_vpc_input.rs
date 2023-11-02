@@ -87,7 +87,7 @@ impl DetachClassicLinkVpcInputBuilder {
     /// Consumes the builder and constructs a [`DetachClassicLinkVpcInput`](crate::operation::detach_classic_link_vpc::DetachClassicLinkVpcInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::detach_classic_link_vpc::DetachClassicLinkVpcInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::detach_classic_link_vpc::DetachClassicLinkVpcInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::detach_classic_link_vpc::DetachClassicLinkVpcInput {
             dry_run: self.dry_run,

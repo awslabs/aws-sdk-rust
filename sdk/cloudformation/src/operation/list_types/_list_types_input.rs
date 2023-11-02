@@ -282,7 +282,7 @@ impl ListTypesInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListTypesInput`](crate::operation::list_types::ListTypesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_types::ListTypesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_types::ListTypesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_types::ListTypesInput {
             visibility: self.visibility,
             provisioning_type: self.provisioning_type,

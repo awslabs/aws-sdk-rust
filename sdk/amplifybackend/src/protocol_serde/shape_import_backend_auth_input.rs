@@ -2,7 +2,7 @@
 pub fn ser_import_backend_auth_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::import_backend_auth::ImportBackendAuthInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.identity_pool_id {
         object.key("identityPoolId").string(var_1.as_str());
     }

@@ -86,7 +86,7 @@ impl DescribeDocumentInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDocumentInput`](crate::operation::describe_document::DescribeDocumentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_document::DescribeDocumentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_document::DescribeDocumentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_document::DescribeDocumentInput {
             name: self.name,
             document_version: self.document_version,

@@ -352,7 +352,7 @@ impl PutPlaybackConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_playback_configuration::PutPlaybackConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_playback_configuration::PutPlaybackConfigurationInput {
             ad_decision_server_url: self.ad_decision_server_url,

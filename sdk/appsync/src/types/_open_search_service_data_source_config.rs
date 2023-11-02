@@ -70,16 +70,16 @@ impl OpenSearchServiceDataSourceConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`endpoint`](crate::types::builders::OpenSearchServiceDataSourceConfigBuilder::endpoint)
     /// - [`aws_region`](crate::types::builders::OpenSearchServiceDataSourceConfigBuilder::aws_region)
-    pub fn build(self) -> ::std::result::Result<crate::types::OpenSearchServiceDataSourceConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::OpenSearchServiceDataSourceConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::OpenSearchServiceDataSourceConfig {
             endpoint: self.endpoint.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "endpoint",
                     "endpoint was not specified but it is required when building OpenSearchServiceDataSourceConfig",
                 )
             })?,
             aws_region: self.aws_region.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "aws_region",
                     "aws_region was not specified but it is required when building OpenSearchServiceDataSourceConfig",
                 )

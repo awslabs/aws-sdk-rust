@@ -161,16 +161,16 @@ impl TypedLinkAttributeDefinitionBuilder {
     /// - [`name`](crate::types::builders::TypedLinkAttributeDefinitionBuilder::name)
     /// - [`r#type`](crate::types::builders::TypedLinkAttributeDefinitionBuilder::r#type)
     /// - [`required_behavior`](crate::types::builders::TypedLinkAttributeDefinitionBuilder::required_behavior)
-    pub fn build(self) -> ::std::result::Result<crate::types::TypedLinkAttributeDefinition, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TypedLinkAttributeDefinition, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TypedLinkAttributeDefinition {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building TypedLinkAttributeDefinition",
                 )
             })?,
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building TypedLinkAttributeDefinition",
                 )
@@ -179,7 +179,7 @@ impl TypedLinkAttributeDefinitionBuilder {
             is_immutable: self.is_immutable.unwrap_or_default(),
             rules: self.rules,
             required_behavior: self.required_behavior.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "required_behavior",
                     "required_behavior was not specified but it is required when building TypedLinkAttributeDefinition",
                 )

@@ -135,7 +135,9 @@ impl SearchGroupsInputBuilder {
         &self.filters
     }
     /// Consumes the builder and constructs a [`SearchGroupsInput`](crate::operation::search_groups::SearchGroupsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::search_groups::SearchGroupsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::search_groups::SearchGroupsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_groups::SearchGroupsInput {
             aws_account_id: self.aws_account_id,
             next_token: self.next_token,

@@ -51,7 +51,7 @@ where
 pub fn ser_export_s3_data_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ExportS3DataInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("S3Uri").string(input.s3_uri.as_str());
     }

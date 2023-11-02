@@ -107,7 +107,7 @@ impl ListProtectedQueriesInputBuilder {
     /// Consumes the builder and constructs a [`ListProtectedQueriesInput`](crate::operation::list_protected_queries::ListProtectedQueriesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_protected_queries::ListProtectedQueriesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_protected_queries::ListProtectedQueriesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_protected_queries::ListProtectedQueriesInput {
             membership_identifier: self.membership_identifier,

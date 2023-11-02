@@ -150,7 +150,7 @@ impl UpdateThesaurusInputBuilder {
     /// Consumes the builder and constructs a [`UpdateThesaurusInput`](crate::operation::update_thesaurus::UpdateThesaurusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_thesaurus::UpdateThesaurusInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_thesaurus::UpdateThesaurusInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_thesaurus::UpdateThesaurusInput {
             id: self.id,
             name: self.name,

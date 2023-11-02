@@ -2,7 +2,7 @@
 pub fn ser_trace_content(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TraceContent,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.wireless_device_frame_info {
         object.key("WirelessDeviceFrameInfo").string(var_1.as_str());
     }

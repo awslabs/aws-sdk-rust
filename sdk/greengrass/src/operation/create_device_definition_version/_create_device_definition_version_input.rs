@@ -96,7 +96,7 @@ impl CreateDeviceDefinitionVersionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_device_definition_version::CreateDeviceDefinitionVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_device_definition_version::CreateDeviceDefinitionVersionInput {
             amzn_client_token: self.amzn_client_token,

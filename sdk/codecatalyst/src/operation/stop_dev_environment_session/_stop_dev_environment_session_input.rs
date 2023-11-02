@@ -112,7 +112,7 @@ impl StopDevEnvironmentSessionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_dev_environment_session::StopDevEnvironmentSessionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::stop_dev_environment_session::StopDevEnvironmentSessionInput {
             space_name: self.space_name,

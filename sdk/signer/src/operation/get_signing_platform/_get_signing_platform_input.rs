@@ -44,7 +44,8 @@ impl GetSigningPlatformInputBuilder {
     /// Consumes the builder and constructs a [`GetSigningPlatformInput`](crate::operation::get_signing_platform::GetSigningPlatformInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_signing_platform::GetSigningPlatformInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_signing_platform::GetSigningPlatformInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::get_signing_platform::GetSigningPlatformInput {
             platform_id: self.platform_id,
         })

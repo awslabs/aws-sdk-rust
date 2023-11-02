@@ -66,7 +66,8 @@ impl RemoveBridgeOutputInputBuilder {
     /// Consumes the builder and constructs a [`RemoveBridgeOutputInput`](crate::operation::remove_bridge_output::RemoveBridgeOutputInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::remove_bridge_output::RemoveBridgeOutputInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::remove_bridge_output::RemoveBridgeOutputInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::remove_bridge_output::RemoveBridgeOutputInput {
             bridge_arn: self.bridge_arn,
             output_name: self.output_name,

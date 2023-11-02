@@ -70,16 +70,16 @@ impl FacetAttributeReferenceBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`target_facet_name`](crate::types::builders::FacetAttributeReferenceBuilder::target_facet_name)
     /// - [`target_attribute_name`](crate::types::builders::FacetAttributeReferenceBuilder::target_attribute_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::FacetAttributeReference, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::FacetAttributeReference, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FacetAttributeReference {
             target_facet_name: self.target_facet_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "target_facet_name",
                     "target_facet_name was not specified but it is required when building FacetAttributeReference",
                 )
             })?,
             target_attribute_name: self.target_attribute_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "target_attribute_name",
                     "target_attribute_name was not specified but it is required when building FacetAttributeReference",
                 )

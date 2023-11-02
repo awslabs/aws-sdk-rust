@@ -65,7 +65,7 @@ impl UpdateResourceProfileInputBuilder {
     /// Consumes the builder and constructs a [`UpdateResourceProfileInput`](crate::operation::update_resource_profile::UpdateResourceProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_resource_profile::UpdateResourceProfileInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_resource_profile::UpdateResourceProfileInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_resource_profile::UpdateResourceProfileInput {
             resource_arn: self.resource_arn,

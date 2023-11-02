@@ -51,10 +51,10 @@ impl DeltaTimeSessionWindowConfigurationBuilder {
     /// Consumes the builder and constructs a [`DeltaTimeSessionWindowConfiguration`](crate::types::DeltaTimeSessionWindowConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`timeout_in_minutes`](crate::types::builders::DeltaTimeSessionWindowConfigurationBuilder::timeout_in_minutes)
-    pub fn build(self) -> ::std::result::Result<crate::types::DeltaTimeSessionWindowConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DeltaTimeSessionWindowConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DeltaTimeSessionWindowConfiguration {
             timeout_in_minutes: self.timeout_in_minutes.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "timeout_in_minutes",
                     "timeout_in_minutes was not specified but it is required when building DeltaTimeSessionWindowConfiguration",
                 )

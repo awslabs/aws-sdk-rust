@@ -82,16 +82,16 @@ impl BatchUpdateRecommendationStatusFailedEntryBuilder {
     /// - [`error_message`](crate::types::builders::BatchUpdateRecommendationStatusFailedEntryBuilder::error_message)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::BatchUpdateRecommendationStatusFailedEntry, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::BatchUpdateRecommendationStatusFailedEntry, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::BatchUpdateRecommendationStatusFailedEntry {
             entry_id: self.entry_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "entry_id",
                     "entry_id was not specified but it is required when building BatchUpdateRecommendationStatusFailedEntry",
                 )
             })?,
             error_message: self.error_message.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "error_message",
                     "error_message was not specified but it is required when building BatchUpdateRecommendationStatusFailedEntry",
                 )

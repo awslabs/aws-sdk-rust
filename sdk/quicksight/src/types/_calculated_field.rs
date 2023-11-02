@@ -103,22 +103,22 @@ impl CalculatedFieldBuilder {
     /// - [`data_set_identifier`](crate::types::builders::CalculatedFieldBuilder::data_set_identifier)
     /// - [`name`](crate::types::builders::CalculatedFieldBuilder::name)
     /// - [`expression`](crate::types::builders::CalculatedFieldBuilder::expression)
-    pub fn build(self) -> ::std::result::Result<crate::types::CalculatedField, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CalculatedField, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CalculatedField {
             data_set_identifier: self.data_set_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_set_identifier",
                     "data_set_identifier was not specified but it is required when building CalculatedField",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building CalculatedField",
                 )
             })?,
             expression: self.expression.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "expression",
                     "expression was not specified but it is required when building CalculatedField",
                 )

@@ -44,7 +44,7 @@ impl DeleteDeploymentInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDeploymentInput`](crate::operation::delete_deployment::DeleteDeploymentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_deployment::DeleteDeploymentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_deployment::DeleteDeploymentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_deployment::DeleteDeploymentInput {
             deployment_id: self.deployment_id,
         })

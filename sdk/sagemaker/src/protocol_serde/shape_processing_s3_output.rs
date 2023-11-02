@@ -2,7 +2,7 @@
 pub fn ser_processing_s3_output(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ProcessingS3Output,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.s3_uri {
         object.key("S3Uri").string(var_1.as_str());
     }

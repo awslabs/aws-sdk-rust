@@ -45,10 +45,10 @@ impl TimeBasedCollectionSchemeBuilder {
     /// Consumes the builder and constructs a [`TimeBasedCollectionScheme`](crate::types::TimeBasedCollectionScheme).
     /// This method will fail if any of the following fields are not set:
     /// - [`period_ms`](crate::types::builders::TimeBasedCollectionSchemeBuilder::period_ms)
-    pub fn build(self) -> ::std::result::Result<crate::types::TimeBasedCollectionScheme, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TimeBasedCollectionScheme, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TimeBasedCollectionScheme {
             period_ms: self.period_ms.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "period_ms",
                     "period_ms was not specified but it is required when building TimeBasedCollectionScheme",
                 )

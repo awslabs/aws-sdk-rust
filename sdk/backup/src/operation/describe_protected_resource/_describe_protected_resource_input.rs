@@ -46,7 +46,7 @@ impl DescribeProtectedResourceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_protected_resource::DescribeProtectedResourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_protected_resource::DescribeProtectedResourceInput {
             resource_arn: self.resource_arn,

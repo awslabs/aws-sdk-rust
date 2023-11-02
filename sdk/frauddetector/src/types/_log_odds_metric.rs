@@ -93,22 +93,22 @@ impl LogOddsMetricBuilder {
     /// - [`variable_name`](crate::types::builders::LogOddsMetricBuilder::variable_name)
     /// - [`variable_type`](crate::types::builders::LogOddsMetricBuilder::variable_type)
     /// - [`variable_importance`](crate::types::builders::LogOddsMetricBuilder::variable_importance)
-    pub fn build(self) -> ::std::result::Result<crate::types::LogOddsMetric, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::LogOddsMetric, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::LogOddsMetric {
             variable_name: self.variable_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "variable_name",
                     "variable_name was not specified but it is required when building LogOddsMetric",
                 )
             })?,
             variable_type: self.variable_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "variable_type",
                     "variable_type was not specified but it is required when building LogOddsMetric",
                 )
             })?,
             variable_importance: self.variable_importance.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "variable_importance",
                     "variable_importance was not specified but it is required when building LogOddsMetric",
                 )

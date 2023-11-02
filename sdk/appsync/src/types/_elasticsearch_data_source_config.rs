@@ -71,16 +71,16 @@ impl ElasticsearchDataSourceConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`endpoint`](crate::types::builders::ElasticsearchDataSourceConfigBuilder::endpoint)
     /// - [`aws_region`](crate::types::builders::ElasticsearchDataSourceConfigBuilder::aws_region)
-    pub fn build(self) -> ::std::result::Result<crate::types::ElasticsearchDataSourceConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ElasticsearchDataSourceConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ElasticsearchDataSourceConfig {
             endpoint: self.endpoint.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "endpoint",
                     "endpoint was not specified but it is required when building ElasticsearchDataSourceConfig",
                 )
             })?,
             aws_region: self.aws_region.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "aws_region",
                     "aws_region was not specified but it is required when building ElasticsearchDataSourceConfig",
                 )

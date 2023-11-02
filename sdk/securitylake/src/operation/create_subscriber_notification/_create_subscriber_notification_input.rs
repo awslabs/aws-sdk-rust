@@ -68,7 +68,7 @@ impl CreateSubscriberNotificationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_subscriber_notification::CreateSubscriberNotificationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_subscriber_notification::CreateSubscriberNotificationInput {
             subscriber_id: self.subscriber_id,

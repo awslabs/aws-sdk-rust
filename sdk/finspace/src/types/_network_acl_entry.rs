@@ -158,22 +158,22 @@ impl NetworkAclEntryBuilder {
     /// - [`protocol`](crate::types::builders::NetworkAclEntryBuilder::protocol)
     /// - [`rule_action`](crate::types::builders::NetworkAclEntryBuilder::rule_action)
     /// - [`cidr_block`](crate::types::builders::NetworkAclEntryBuilder::cidr_block)
-    pub fn build(self) -> ::std::result::Result<crate::types::NetworkAclEntry, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::NetworkAclEntry, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::NetworkAclEntry {
             rule_number: self.rule_number.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "rule_number",
                     "rule_number was not specified but it is required when building NetworkAclEntry",
                 )
             })?,
             protocol: self.protocol.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "protocol",
                     "protocol was not specified but it is required when building NetworkAclEntry",
                 )
             })?,
             rule_action: self.rule_action.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "rule_action",
                     "rule_action was not specified but it is required when building NetworkAclEntry",
                 )
@@ -181,7 +181,7 @@ impl NetworkAclEntryBuilder {
             port_range: self.port_range,
             icmp_type_code: self.icmp_type_code,
             cidr_block: self.cidr_block.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "cidr_block",
                     "cidr_block was not specified but it is required when building NetworkAclEntry",
                 )

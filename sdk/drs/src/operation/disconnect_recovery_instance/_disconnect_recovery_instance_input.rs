@@ -46,7 +46,7 @@ impl DisconnectRecoveryInstanceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disconnect_recovery_instance::DisconnectRecoveryInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disconnect_recovery_instance::DisconnectRecoveryInstanceInput {
             recovery_instance_id: self.recovery_instance_id,

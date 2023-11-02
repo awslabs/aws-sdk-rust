@@ -72,7 +72,7 @@ impl BatchDeleteConnectionInputBuilder {
     /// Consumes the builder and constructs a [`BatchDeleteConnectionInput`](crate::operation::batch_delete_connection::BatchDeleteConnectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_delete_connection::BatchDeleteConnectionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::batch_delete_connection::BatchDeleteConnectionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::batch_delete_connection::BatchDeleteConnectionInput {
             catalog_id: self.catalog_id,

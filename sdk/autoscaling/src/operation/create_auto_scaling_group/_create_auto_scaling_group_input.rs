@@ -768,7 +768,7 @@ impl CreateAutoScalingGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_auto_scaling_group::CreateAutoScalingGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_auto_scaling_group::CreateAutoScalingGroupInput {
             auto_scaling_group_name: self.auto_scaling_group_name,

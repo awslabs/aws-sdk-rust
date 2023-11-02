@@ -97,7 +97,7 @@ impl ResetPasswordInputBuilder {
     /// Consumes the builder and constructs a [`ResetPasswordInput`](crate::operation::reset_password::ResetPasswordInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::reset_password::ResetPasswordInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::reset_password::ResetPasswordInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::reset_password::ResetPasswordInput {
             organization_id: self.organization_id,
             user_id: self.user_id,

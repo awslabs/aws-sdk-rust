@@ -2,7 +2,7 @@
 pub fn ser_associate_client_device_with_core_device_entry(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AssociateClientDeviceWithCoreDeviceEntry,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("thingName").string(input.thing_name.as_str());
     }

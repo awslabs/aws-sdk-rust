@@ -131,16 +131,16 @@ impl ResponseHeadersPolicyXssProtectionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`r#override`](crate::types::builders::ResponseHeadersPolicyXssProtectionBuilder::r#override)
     /// - [`protection`](crate::types::builders::ResponseHeadersPolicyXssProtectionBuilder::protection)
-    pub fn build(self) -> ::std::result::Result<crate::types::ResponseHeadersPolicyXssProtection, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ResponseHeadersPolicyXssProtection, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ResponseHeadersPolicyXssProtection {
             r#override: self.r#override.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#override",
                     "r#override was not specified but it is required when building ResponseHeadersPolicyXssProtection",
                 )
             })?,
             protection: self.protection.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "protection",
                     "protection was not specified but it is required when building ResponseHeadersPolicyXssProtection",
                 )

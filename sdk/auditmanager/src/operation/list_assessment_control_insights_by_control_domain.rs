@@ -182,7 +182,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListAssessme
             fn uri_base(
                 _input: &crate::operation::list_assessment_control_insights_by_control_domain::ListAssessmentControlInsightsByControlDomainInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 use ::std::fmt::Write as _;
                 ::std::write!(output, "/insights/controls-by-assessment").expect("formatting should succeed");
                 ::std::result::Result::Ok(())
@@ -190,14 +190,14 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListAssessme
             fn uri_query(
                 _input: &crate::operation::list_assessment_control_insights_by_control_domain::ListAssessmentControlInsightsByControlDomainInput,
                 mut output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 let inner_1 = &_input.control_domain_id;
-                let inner_1 = inner_1
-                    .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("control_domain_id", "cannot be empty or unset"))?;
+                let inner_1 = inner_1.as_ref().ok_or_else(|| {
+                    ::aws_smithy_types::error::operation::BuildError::missing_field("control_domain_id", "cannot be empty or unset")
+                })?;
                 if inner_1.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "control_domain_id",
                         "cannot be empty or unset",
                     ));
@@ -206,9 +206,9 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListAssessme
                 let inner_2 = &_input.assessment_id;
                 let inner_2 = inner_2
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("assessment_id", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("assessment_id", "cannot be empty or unset"))?;
                 if inner_2.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "assessment_id",
                         "cannot be empty or unset",
                     ));
@@ -230,7 +230,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListAssessme
             fn update_http_builder(
                 input: &crate::operation::list_assessment_control_insights_by_control_domain::ListAssessmentControlInsightsByControlDomainInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -239,7 +239,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListAssessme
             let mut builder = update_http_builder(&input, ::http::request::Builder::new())?;
             builder
         };
-        let body = ::aws_smithy_http::body::SdkBody::from("");
+        let body = ::aws_smithy_types::body::SdkBody::from("");
 
         ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }

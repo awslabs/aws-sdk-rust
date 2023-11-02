@@ -46,7 +46,7 @@ impl RemoveAutoTerminationPolicyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_auto_termination_policy::RemoveAutoTerminationPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::remove_auto_termination_policy::RemoveAutoTerminationPolicyInput { cluster_id: self.cluster_id })
     }

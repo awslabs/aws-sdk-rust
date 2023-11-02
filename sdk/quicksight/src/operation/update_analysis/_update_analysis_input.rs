@@ -198,7 +198,7 @@ impl UpdateAnalysisInputBuilder {
     /// Consumes the builder and constructs a [`UpdateAnalysisInput`](crate::operation::update_analysis::UpdateAnalysisInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_analysis::UpdateAnalysisInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_analysis::UpdateAnalysisInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_analysis::UpdateAnalysisInput {
             aws_account_id: self.aws_account_id,
             analysis_id: self.analysis_id,

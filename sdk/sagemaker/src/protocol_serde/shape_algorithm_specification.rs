@@ -2,7 +2,7 @@
 pub fn ser_algorithm_specification(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AlgorithmSpecification,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.training_image {
         object.key("TrainingImage").string(var_1.as_str());
     }

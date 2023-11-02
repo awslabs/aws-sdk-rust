@@ -2,7 +2,7 @@
 pub fn ser_data_source_sync_job_metric_target(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DataSourceSyncJobMetricTarget,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("DataSourceId").string(input.data_source_id.as_str());
     }

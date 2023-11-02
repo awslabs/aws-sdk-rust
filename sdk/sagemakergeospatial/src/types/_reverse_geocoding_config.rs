@@ -70,16 +70,16 @@ impl ReverseGeocodingConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`y_attribute_name`](crate::types::builders::ReverseGeocodingConfigBuilder::y_attribute_name)
     /// - [`x_attribute_name`](crate::types::builders::ReverseGeocodingConfigBuilder::x_attribute_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::ReverseGeocodingConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ReverseGeocodingConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ReverseGeocodingConfig {
             y_attribute_name: self.y_attribute_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "y_attribute_name",
                     "y_attribute_name was not specified but it is required when building ReverseGeocodingConfig",
                 )
             })?,
             x_attribute_name: self.x_attribute_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "x_attribute_name",
                     "x_attribute_name was not specified but it is required when building ReverseGeocodingConfig",
                 )

@@ -108,10 +108,10 @@ impl QuickConnectConfigBuilder {
     /// Consumes the builder and constructs a [`QuickConnectConfig`](crate::types::QuickConnectConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`quick_connect_type`](crate::types::builders::QuickConnectConfigBuilder::quick_connect_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::QuickConnectConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::QuickConnectConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::QuickConnectConfig {
             quick_connect_type: self.quick_connect_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "quick_connect_type",
                     "quick_connect_type was not specified but it is required when building QuickConnectConfig",
                 )

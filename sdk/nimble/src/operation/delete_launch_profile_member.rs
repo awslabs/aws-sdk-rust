@@ -181,26 +181,26 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteLaunch
             fn uri_base(
                 _input: &crate::operation::delete_launch_profile_member::DeleteLaunchProfileMemberInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 use ::std::fmt::Write as _;
                 let input_1 = &_input.studio_id;
                 let input_1 = input_1
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("studio_id", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("studio_id", "cannot be empty or unset"))?;
                 let studio_id = ::aws_smithy_http::label::fmt_string(input_1, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if studio_id.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "studio_id",
                         "cannot be empty or unset",
                     ));
                 }
                 let input_2 = &_input.launch_profile_id;
-                let input_2 = input_2
-                    .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("launch_profile_id", "cannot be empty or unset"))?;
+                let input_2 = input_2.as_ref().ok_or_else(|| {
+                    ::aws_smithy_types::error::operation::BuildError::missing_field("launch_profile_id", "cannot be empty or unset")
+                })?;
                 let launch_profile_id = ::aws_smithy_http::label::fmt_string(input_2, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if launch_profile_id.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "launch_profile_id",
                         "cannot be empty or unset",
                     ));
@@ -208,10 +208,10 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteLaunch
                 let input_3 = &_input.principal_id;
                 let input_3 = input_3
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("principal_id", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("principal_id", "cannot be empty or unset"))?;
                 let principal_id = ::aws_smithy_http::label::fmt_string(input_3, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if principal_id.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "principal_id",
                         "cannot be empty or unset",
                     ));
@@ -230,7 +230,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteLaunch
             fn update_http_builder(
                 input: &crate::operation::delete_launch_profile_member::DeleteLaunchProfileMemberInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::protocol_serde::shape_delete_launch_profile_member::ser_delete_launch_profile_member_headers(input, builder)?;
@@ -239,7 +239,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteLaunch
             let mut builder = update_http_builder(&input, ::http::request::Builder::new())?;
             builder
         };
-        let body = ::aws_smithy_http::body::SdkBody::from("");
+        let body = ::aws_smithy_types::body::SdkBody::from("");
 
         ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }

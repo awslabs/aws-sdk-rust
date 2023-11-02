@@ -105,16 +105,16 @@ impl ProjectSourceVersionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`source_identifier`](crate::types::builders::ProjectSourceVersionBuilder::source_identifier)
     /// - [`source_version`](crate::types::builders::ProjectSourceVersionBuilder::source_version)
-    pub fn build(self) -> ::std::result::Result<crate::types::ProjectSourceVersion, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ProjectSourceVersion, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ProjectSourceVersion {
             source_identifier: self.source_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source_identifier",
                     "source_identifier was not specified but it is required when building ProjectSourceVersion",
                 )
             })?,
             source_version: self.source_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source_version",
                     "source_version was not specified but it is required when building ProjectSourceVersion",
                 )

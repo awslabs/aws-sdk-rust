@@ -143,7 +143,7 @@ impl CreateIdentitySourceInputBuilder {
     /// Consumes the builder and constructs a [`CreateIdentitySourceInput`](crate::operation::create_identity_source::CreateIdentitySourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_identity_source::CreateIdentitySourceInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_identity_source::CreateIdentitySourceInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_identity_source::CreateIdentitySourceInput {
             client_token: self.client_token,

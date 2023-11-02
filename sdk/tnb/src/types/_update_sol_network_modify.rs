@@ -75,16 +75,16 @@ impl UpdateSolNetworkModifyBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`vnf_instance_id`](crate::types::builders::UpdateSolNetworkModifyBuilder::vnf_instance_id)
     /// - [`vnf_configurable_properties`](crate::types::builders::UpdateSolNetworkModifyBuilder::vnf_configurable_properties)
-    pub fn build(self) -> ::std::result::Result<crate::types::UpdateSolNetworkModify, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::UpdateSolNetworkModify, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::UpdateSolNetworkModify {
             vnf_instance_id: self.vnf_instance_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "vnf_instance_id",
                     "vnf_instance_id was not specified but it is required when building UpdateSolNetworkModify",
                 )
             })?,
             vnf_configurable_properties: self.vnf_configurable_properties.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "vnf_configurable_properties",
                     "vnf_configurable_properties was not specified but it is required when building UpdateSolNetworkModify",
                 )

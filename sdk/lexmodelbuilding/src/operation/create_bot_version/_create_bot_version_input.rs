@@ -65,7 +65,7 @@ impl CreateBotVersionInputBuilder {
     /// Consumes the builder and constructs a [`CreateBotVersionInput`](crate::operation::create_bot_version::CreateBotVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_bot_version::CreateBotVersionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_bot_version::CreateBotVersionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_bot_version::CreateBotVersionInput {
             name: self.name,
             checksum: self.checksum,

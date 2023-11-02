@@ -91,7 +91,7 @@ impl ImportClientVpnClientCertificateRevocationListInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::import_client_vpn_client_certificate_revocation_list::ImportClientVpnClientCertificateRevocationListInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::import_client_vpn_client_certificate_revocation_list::ImportClientVpnClientCertificateRevocationListInput {

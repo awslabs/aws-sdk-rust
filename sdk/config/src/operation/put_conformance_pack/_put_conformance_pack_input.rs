@@ -221,7 +221,8 @@ impl PutConformancePackInputBuilder {
     /// Consumes the builder and constructs a [`PutConformancePackInput`](crate::operation::put_conformance_pack::PutConformancePackInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_conformance_pack::PutConformancePackInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_conformance_pack::PutConformancePackInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::put_conformance_pack::PutConformancePackInput {
             conformance_pack_name: self.conformance_pack_name,
             template_s3_uri: self.template_s3_uri,

@@ -2,7 +2,7 @@
 pub fn ser_task_schedule(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TaskSchedule,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("ScheduleExpression").string(input.schedule_expression.as_str());
     }

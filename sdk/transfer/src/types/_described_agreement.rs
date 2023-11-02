@@ -268,10 +268,10 @@ impl DescribedAgreementBuilder {
     /// Consumes the builder and constructs a [`DescribedAgreement`](crate::types::DescribedAgreement).
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::DescribedAgreementBuilder::arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::DescribedAgreement, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DescribedAgreement, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DescribedAgreement {
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building DescribedAgreement",
                 )

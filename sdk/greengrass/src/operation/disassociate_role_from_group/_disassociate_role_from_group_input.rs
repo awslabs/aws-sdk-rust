@@ -46,7 +46,7 @@ impl DisassociateRoleFromGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_role_from_group::DisassociateRoleFromGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disassociate_role_from_group::DisassociateRoleFromGroupInput { group_id: self.group_id })
     }

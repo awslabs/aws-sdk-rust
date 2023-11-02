@@ -87,8 +87,10 @@ impl UpdateSignalingChannelInputBuilder {
     /// Consumes the builder and constructs a [`UpdateSignalingChannelInput`](crate::operation::update_signaling_channel::UpdateSignalingChannelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_signaling_channel::UpdateSignalingChannelInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::update_signaling_channel::UpdateSignalingChannelInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::update_signaling_channel::UpdateSignalingChannelInput {
             channel_arn: self.channel_arn,
             current_version: self.current_version,

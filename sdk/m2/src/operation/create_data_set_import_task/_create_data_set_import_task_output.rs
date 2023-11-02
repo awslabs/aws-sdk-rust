@@ -65,11 +65,11 @@ impl CreateDataSetImportTaskOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_data_set_import_task::CreateDataSetImportTaskOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_data_set_import_task::CreateDataSetImportTaskOutput {
             task_id: self.task_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "task_id",
                     "task_id was not specified but it is required when building CreateDataSetImportTaskOutput",
                 )

@@ -144,28 +144,28 @@ impl ContextDataTypeBuilder {
     /// - [`server_name`](crate::types::builders::ContextDataTypeBuilder::server_name)
     /// - [`server_path`](crate::types::builders::ContextDataTypeBuilder::server_path)
     /// - [`http_headers`](crate::types::builders::ContextDataTypeBuilder::http_headers)
-    pub fn build(self) -> ::std::result::Result<crate::types::ContextDataType, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ContextDataType, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ContextDataType {
             ip_address: self.ip_address.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "ip_address",
                     "ip_address was not specified but it is required when building ContextDataType",
                 )
             })?,
             server_name: self.server_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "server_name",
                     "server_name was not specified but it is required when building ContextDataType",
                 )
             })?,
             server_path: self.server_path.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "server_path",
                     "server_path was not specified but it is required when building ContextDataType",
                 )
             })?,
             http_headers: self.http_headers.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "http_headers",
                     "http_headers was not specified but it is required when building ContextDataType",
                 )

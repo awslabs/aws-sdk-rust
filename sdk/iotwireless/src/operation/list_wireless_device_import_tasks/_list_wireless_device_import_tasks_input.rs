@@ -66,7 +66,7 @@ impl ListWirelessDeviceImportTasksInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_wireless_device_import_tasks::ListWirelessDeviceImportTasksInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_wireless_device_import_tasks::ListWirelessDeviceImportTasksInput {
             max_results: self.max_results,

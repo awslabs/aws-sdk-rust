@@ -87,7 +87,7 @@ impl GetObjectInformationInputBuilder {
     /// Consumes the builder and constructs a [`GetObjectInformationInput`](crate::operation::get_object_information::GetObjectInformationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_object_information::GetObjectInformationInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_object_information::GetObjectInformationInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_object_information::GetObjectInformationInput {
             directory_arn: self.directory_arn,

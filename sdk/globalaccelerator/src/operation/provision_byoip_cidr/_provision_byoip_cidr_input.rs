@@ -66,7 +66,8 @@ impl ProvisionByoipCidrInputBuilder {
     /// Consumes the builder and constructs a [`ProvisionByoipCidrInput`](crate::operation::provision_byoip_cidr::ProvisionByoipCidrInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::provision_byoip_cidr::ProvisionByoipCidrInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::provision_byoip_cidr::ProvisionByoipCidrInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::provision_byoip_cidr::ProvisionByoipCidrInput {
             cidr: self.cidr,
             cidr_authorization_context: self.cidr_authorization_context,

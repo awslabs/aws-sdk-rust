@@ -49,7 +49,7 @@ where
 pub fn ser_source_server_connector_action(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SourceServerConnectorAction,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.credentials_secret_arn {
         object.key("credentialsSecretArn").string(var_1.as_str());
     }

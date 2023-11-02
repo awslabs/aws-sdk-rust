@@ -88,7 +88,7 @@ impl DetachFromIndexInputBuilder {
     /// Consumes the builder and constructs a [`DetachFromIndexInput`](crate::operation::detach_from_index::DetachFromIndexInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::detach_from_index::DetachFromIndexInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::detach_from_index::DetachFromIndexInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::detach_from_index::DetachFromIndexInput {
             directory_arn: self.directory_arn,
             index_reference: self.index_reference,

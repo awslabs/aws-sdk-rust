@@ -65,11 +65,11 @@ impl CreateWebAclMigrationStackOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_web_acl_migration_stack::CreateWebAclMigrationStackOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_web_acl_migration_stack::CreateWebAclMigrationStackOutput {
             s3_object_url: self.s3_object_url.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "s3_object_url",
                     "s3_object_url was not specified but it is required when building CreateWebAclMigrationStackOutput",
                 )

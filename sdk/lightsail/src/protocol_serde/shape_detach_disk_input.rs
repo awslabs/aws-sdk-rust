@@ -2,7 +2,7 @@
 pub fn ser_detach_disk_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::detach_disk::DetachDiskInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.disk_name {
         object.key("diskName").string(var_1.as_str());
     }

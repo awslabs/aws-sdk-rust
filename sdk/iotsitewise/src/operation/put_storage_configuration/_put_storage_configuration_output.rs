@@ -204,11 +204,11 @@ impl PutStorageConfigurationOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_storage_configuration::PutStorageConfigurationOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_storage_configuration::PutStorageConfigurationOutput {
             storage_type: self.storage_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "storage_type",
                     "storage_type was not specified but it is required when building PutStorageConfigurationOutput",
                 )

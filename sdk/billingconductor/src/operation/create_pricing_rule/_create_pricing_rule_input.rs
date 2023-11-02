@@ -311,7 +311,7 @@ impl CreatePricingRuleInputBuilder {
     /// Consumes the builder and constructs a [`CreatePricingRuleInput`](crate::operation::create_pricing_rule::CreatePricingRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_pricing_rule::CreatePricingRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_pricing_rule::CreatePricingRuleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_pricing_rule::CreatePricingRuleInput {
             client_token: self.client_token,
             name: self.name,

@@ -246,41 +246,41 @@ impl ConformancePackStatusDetailBuilder {
     /// - [`conformance_pack_state`](crate::types::builders::ConformancePackStatusDetailBuilder::conformance_pack_state)
     /// - [`stack_arn`](crate::types::builders::ConformancePackStatusDetailBuilder::stack_arn)
     /// - [`last_update_requested_time`](crate::types::builders::ConformancePackStatusDetailBuilder::last_update_requested_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::ConformancePackStatusDetail, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ConformancePackStatusDetail, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ConformancePackStatusDetail {
             conformance_pack_name: self.conformance_pack_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "conformance_pack_name",
                     "conformance_pack_name was not specified but it is required when building ConformancePackStatusDetail",
                 )
             })?,
             conformance_pack_id: self.conformance_pack_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "conformance_pack_id",
                     "conformance_pack_id was not specified but it is required when building ConformancePackStatusDetail",
                 )
             })?,
             conformance_pack_arn: self.conformance_pack_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "conformance_pack_arn",
                     "conformance_pack_arn was not specified but it is required when building ConformancePackStatusDetail",
                 )
             })?,
             conformance_pack_state: self.conformance_pack_state.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "conformance_pack_state",
                     "conformance_pack_state was not specified but it is required when building ConformancePackStatusDetail",
                 )
             })?,
             stack_arn: self.stack_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "stack_arn",
                     "stack_arn was not specified but it is required when building ConformancePackStatusDetail",
                 )
             })?,
             conformance_pack_status_reason: self.conformance_pack_status_reason,
             last_update_requested_time: self.last_update_requested_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_update_requested_time",
                     "last_update_requested_time was not specified but it is required when building ConformancePackStatusDetail",
                 )

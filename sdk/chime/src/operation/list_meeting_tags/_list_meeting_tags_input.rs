@@ -44,7 +44,7 @@ impl ListMeetingTagsInputBuilder {
     /// Consumes the builder and constructs a [`ListMeetingTagsInput`](crate::operation::list_meeting_tags::ListMeetingTagsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_meeting_tags::ListMeetingTagsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_meeting_tags::ListMeetingTagsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_meeting_tags::ListMeetingTagsInput { meeting_id: self.meeting_id })
     }
 }

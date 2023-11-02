@@ -110,7 +110,7 @@ impl ModifyDbProxyTargetGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_db_proxy_target_group::ModifyDbProxyTargetGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::modify_db_proxy_target_group::ModifyDbProxyTargetGroupInput {
             target_group_name: self.target_group_name,

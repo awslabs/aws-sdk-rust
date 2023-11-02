@@ -69,16 +69,16 @@ impl ResourceKeyBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`resource_type`](crate::types::builders::ResourceKeyBuilder::resource_type)
     /// - [`resource_id`](crate::types::builders::ResourceKeyBuilder::resource_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::ResourceKey, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ResourceKey, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ResourceKey {
             resource_type: self.resource_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_type",
                     "resource_type was not specified but it is required when building ResourceKey",
                 )
             })?,
             resource_id: self.resource_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_id",
                     "resource_id was not specified but it is required when building ResourceKey",
                 )

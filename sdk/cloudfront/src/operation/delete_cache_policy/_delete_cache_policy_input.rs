@@ -65,7 +65,7 @@ impl DeleteCachePolicyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteCachePolicyInput`](crate::operation::delete_cache_policy::DeleteCachePolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_cache_policy::DeleteCachePolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_cache_policy::DeleteCachePolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_cache_policy::DeleteCachePolicyInput {
             id: self.id,
             if_match: self.if_match,

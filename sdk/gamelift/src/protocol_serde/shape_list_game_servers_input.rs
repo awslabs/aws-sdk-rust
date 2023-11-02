@@ -2,7 +2,7 @@
 pub fn ser_list_game_servers_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_game_servers::ListGameServersInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.game_server_group_name {
         object.key("GameServerGroupName").string(var_1.as_str());
     }

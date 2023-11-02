@@ -2,7 +2,7 @@
 pub fn ser_eks_container_security_context(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EksContainerSecurityContext,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.run_as_user {
         object.key("runAsUser").number(
             #[allow(clippy::useless_conversion)]

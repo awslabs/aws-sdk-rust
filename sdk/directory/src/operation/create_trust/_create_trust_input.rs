@@ -194,7 +194,7 @@ impl CreateTrustInputBuilder {
         &self.selective_auth
     }
     /// Consumes the builder and constructs a [`CreateTrustInput`](crate::operation::create_trust::CreateTrustInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_trust::CreateTrustInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_trust::CreateTrustInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_trust::CreateTrustInput {
             directory_id: self.directory_id,
             remote_domain_name: self.remote_domain_name,

@@ -107,7 +107,7 @@ impl ListNotebookMetadataInputBuilder {
     /// Consumes the builder and constructs a [`ListNotebookMetadataInput`](crate::operation::list_notebook_metadata::ListNotebookMetadataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_notebook_metadata::ListNotebookMetadataInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_notebook_metadata::ListNotebookMetadataInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_notebook_metadata::ListNotebookMetadataInput {
             filters: self.filters,

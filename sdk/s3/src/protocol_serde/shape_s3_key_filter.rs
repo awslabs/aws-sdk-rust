@@ -33,7 +33,7 @@ pub fn de_s3_key_filter(
 pub fn ser_s3_key_filter(
     input: &crate::types::S3KeyFilter,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_3) = &input.filter_rules {

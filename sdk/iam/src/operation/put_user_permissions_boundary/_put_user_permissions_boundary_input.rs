@@ -78,7 +78,7 @@ impl PutUserPermissionsBoundaryInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_user_permissions_boundary::PutUserPermissionsBoundaryInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_user_permissions_boundary::PutUserPermissionsBoundaryInput {
             user_name: self.user_name,

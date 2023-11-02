@@ -165,29 +165,29 @@ impl DistributionListBuilder {
     /// - [`max_items`](crate::types::builders::DistributionListBuilder::max_items)
     /// - [`is_truncated`](crate::types::builders::DistributionListBuilder::is_truncated)
     /// - [`quantity`](crate::types::builders::DistributionListBuilder::quantity)
-    pub fn build(self) -> ::std::result::Result<crate::types::DistributionList, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DistributionList, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DistributionList {
             marker: self.marker.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "marker",
                     "marker was not specified but it is required when building DistributionList",
                 )
             })?,
             next_marker: self.next_marker,
             max_items: self.max_items.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "max_items",
                     "max_items was not specified but it is required when building DistributionList",
                 )
             })?,
             is_truncated: self.is_truncated.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "is_truncated",
                     "is_truncated was not specified but it is required when building DistributionList",
                 )
             })?,
             quantity: self.quantity.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "quantity",
                     "quantity was not specified but it is required when building DistributionList",
                 )

@@ -62,7 +62,9 @@ impl ListSegmentsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListSegmentsInput`](crate::operation::list_segments::ListSegmentsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_segments::ListSegmentsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_segments::ListSegmentsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_segments::ListSegmentsInput {
             max_results: self.max_results,
             next_token: self.next_token,

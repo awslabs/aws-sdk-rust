@@ -42,7 +42,9 @@ impl PauseServiceInputBuilder {
         &self.service_arn
     }
     /// Consumes the builder and constructs a [`PauseServiceInput`](crate::operation::pause_service::PauseServiceInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::pause_service::PauseServiceInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::pause_service::PauseServiceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::pause_service::PauseServiceInput {
             service_arn: self.service_arn,
         })

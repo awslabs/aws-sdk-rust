@@ -2,7 +2,7 @@
 pub fn ser_set_resource_access_for_bucket_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::set_resource_access_for_bucket::SetResourceAccessForBucketInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.resource_name {
         object.key("resourceName").string(var_1.as_str());
     }

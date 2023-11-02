@@ -77,10 +77,10 @@ impl DataSourceSyncJobMetricTargetBuilder {
     /// Consumes the builder and constructs a [`DataSourceSyncJobMetricTarget`](crate::types::DataSourceSyncJobMetricTarget).
     /// This method will fail if any of the following fields are not set:
     /// - [`data_source_id`](crate::types::builders::DataSourceSyncJobMetricTargetBuilder::data_source_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::DataSourceSyncJobMetricTarget, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DataSourceSyncJobMetricTarget, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DataSourceSyncJobMetricTarget {
             data_source_id: self.data_source_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_source_id",
                     "data_source_id was not specified but it is required when building DataSourceSyncJobMetricTarget",
                 )

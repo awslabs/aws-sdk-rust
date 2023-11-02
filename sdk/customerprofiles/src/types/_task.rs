@@ -150,19 +150,19 @@ impl TaskBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`source_fields`](crate::types::builders::TaskBuilder::source_fields)
     /// - [`task_type`](crate::types::builders::TaskBuilder::task_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::Task, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Task, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Task {
             connector_operator: self.connector_operator,
             destination_field: self.destination_field,
             source_fields: self.source_fields.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source_fields",
                     "source_fields was not specified but it is required when building Task",
                 )
             })?,
             task_properties: self.task_properties,
             task_type: self.task_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "task_type",
                     "task_type was not specified but it is required when building Task",
                 )

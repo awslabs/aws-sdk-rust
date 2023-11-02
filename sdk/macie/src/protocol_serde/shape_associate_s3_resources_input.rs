@@ -2,7 +2,7 @@
 pub fn ser_associate_s3_resources_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::associate_s3_resources::AssociateS3ResourcesInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.member_account_id {
         object.key("memberAccountId").string(var_1.as_str());
     }

@@ -103,7 +103,7 @@ impl DeleteTemplateShareInputBuilder {
     /// Consumes the builder and constructs a [`DeleteTemplateShareInput`](crate::operation::delete_template_share::DeleteTemplateShareInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_template_share::DeleteTemplateShareInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_template_share::DeleteTemplateShareInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_template_share::DeleteTemplateShareInput {
             share_id: self.share_id,

@@ -248,16 +248,16 @@ impl CreateDomainOutputBuilder {
     /// - [`last_updated_at`](crate::operation::create_domain::builders::CreateDomainOutputBuilder::last_updated_at)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_domain::CreateDomainOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_domain::CreateDomainOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_domain::CreateDomainOutput {
             domain_name: self.domain_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "domain_name",
                     "domain_name was not specified but it is required when building CreateDomainOutput",
                 )
             })?,
             default_expiration_days: self.default_expiration_days.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "default_expiration_days",
                     "default_expiration_days was not specified but it is required when building CreateDomainOutput",
                 )
@@ -267,13 +267,13 @@ impl CreateDomainOutputBuilder {
             matching: self.matching,
             rule_based_matching: self.rule_based_matching,
             created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
                     "created_at was not specified but it is required when building CreateDomainOutput",
                 )
             })?,
             last_updated_at: self.last_updated_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_updated_at",
                     "last_updated_at was not specified but it is required when building CreateDomainOutput",
                 )

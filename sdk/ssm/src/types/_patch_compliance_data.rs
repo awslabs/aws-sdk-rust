@@ -190,40 +190,40 @@ impl PatchComplianceDataBuilder {
     /// - [`severity`](crate::types::builders::PatchComplianceDataBuilder::severity)
     /// - [`state`](crate::types::builders::PatchComplianceDataBuilder::state)
     /// - [`installed_time`](crate::types::builders::PatchComplianceDataBuilder::installed_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::PatchComplianceData, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PatchComplianceData, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PatchComplianceData {
             title: self.title.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "title",
                     "title was not specified but it is required when building PatchComplianceData",
                 )
             })?,
             kb_id: self.kb_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "kb_id",
                     "kb_id was not specified but it is required when building PatchComplianceData",
                 )
             })?,
             classification: self.classification.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "classification",
                     "classification was not specified but it is required when building PatchComplianceData",
                 )
             })?,
             severity: self.severity.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "severity",
                     "severity was not specified but it is required when building PatchComplianceData",
                 )
             })?,
             state: self.state.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "state",
                     "state was not specified but it is required when building PatchComplianceData",
                 )
             })?,
             installed_time: self.installed_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "installed_time",
                     "installed_time was not specified but it is required when building PatchComplianceData",
                 )

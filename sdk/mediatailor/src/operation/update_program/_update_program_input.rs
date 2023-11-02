@@ -117,7 +117,7 @@ impl UpdateProgramInputBuilder {
     /// Consumes the builder and constructs a [`UpdateProgramInput`](crate::operation::update_program::UpdateProgramInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_program::UpdateProgramInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_program::UpdateProgramInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_program::UpdateProgramInput {
             ad_breaks: self.ad_breaks,
             channel_name: self.channel_name,

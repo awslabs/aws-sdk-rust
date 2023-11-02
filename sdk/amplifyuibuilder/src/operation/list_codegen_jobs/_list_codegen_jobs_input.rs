@@ -108,7 +108,7 @@ impl ListCodegenJobsInputBuilder {
     /// Consumes the builder and constructs a [`ListCodegenJobsInput`](crate::operation::list_codegen_jobs::ListCodegenJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_codegen_jobs::ListCodegenJobsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_codegen_jobs::ListCodegenJobsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_codegen_jobs::ListCodegenJobsInput {
             app_id: self.app_id,
             environment_name: self.environment_name,

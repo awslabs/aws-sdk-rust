@@ -2,7 +2,7 @@
 pub fn ser_tls(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Tls,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.certificate_authority_arn_list {
         let mut array_2 = object.key("certificateAuthorityArnList").start_array();
         for item_3 in var_1 {

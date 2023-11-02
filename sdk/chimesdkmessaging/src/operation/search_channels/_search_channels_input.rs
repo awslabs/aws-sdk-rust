@@ -124,7 +124,7 @@ impl SearchChannelsInputBuilder {
     /// Consumes the builder and constructs a [`SearchChannelsInput`](crate::operation::search_channels::SearchChannelsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::search_channels::SearchChannelsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::search_channels::SearchChannelsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_channels::SearchChannelsInput {
             chime_bearer: self.chime_bearer,
             fields: self.fields,

@@ -153,7 +153,8 @@ impl UpdatePushTemplateInputBuilder {
     /// Consumes the builder and constructs a [`UpdatePushTemplateInput`](crate::operation::update_push_template::UpdatePushTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_push_template::UpdatePushTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_push_template::UpdatePushTemplateInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::update_push_template::UpdatePushTemplateInput {
             create_new_version: self.create_new_version,
             push_notification_template_request: self.push_notification_template_request,

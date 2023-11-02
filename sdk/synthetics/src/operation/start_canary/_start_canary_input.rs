@@ -42,7 +42,7 @@ impl StartCanaryInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`StartCanaryInput`](crate::operation::start_canary::StartCanaryInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::start_canary::StartCanaryInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_canary::StartCanaryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_canary::StartCanaryInput { name: self.name })
     }
 }

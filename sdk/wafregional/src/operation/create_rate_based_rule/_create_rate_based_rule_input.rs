@@ -161,7 +161,7 @@ impl CreateRateBasedRuleInputBuilder {
     /// Consumes the builder and constructs a [`CreateRateBasedRuleInput`](crate::operation::create_rate_based_rule::CreateRateBasedRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_rate_based_rule::CreateRateBasedRuleInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_rate_based_rule::CreateRateBasedRuleInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_rate_based_rule::CreateRateBasedRuleInput {
             name: self.name,

@@ -2,7 +2,7 @@
 pub fn ser_delete_firewall_manager_rule_groups_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_firewall_manager_rule_groups::DeleteFirewallManagerRuleGroupsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.web_acl_arn {
         object.key("WebACLArn").string(var_1.as_str());
     }

@@ -46,7 +46,7 @@ impl DescribeDetectMitigationActionsTaskInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_detect_mitigation_actions_task::DescribeDetectMitigationActionsTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_detect_mitigation_actions_task::DescribeDetectMitigationActionsTaskInput { task_id: self.task_id },

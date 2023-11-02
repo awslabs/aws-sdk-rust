@@ -128,7 +128,7 @@ impl ValidateConfigurationSettingsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::validate_configuration_settings::ValidateConfigurationSettingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::validate_configuration_settings::ValidateConfigurationSettingsInput {
             application_name: self.application_name,

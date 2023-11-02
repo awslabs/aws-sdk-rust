@@ -303,10 +303,10 @@ impl RequestInspectionAcfpBuilder {
     /// Consumes the builder and constructs a [`RequestInspectionAcfp`](crate::types::RequestInspectionAcfp).
     /// This method will fail if any of the following fields are not set:
     /// - [`payload_type`](crate::types::builders::RequestInspectionAcfpBuilder::payload_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::RequestInspectionAcfp, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RequestInspectionAcfp, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RequestInspectionAcfp {
             payload_type: self.payload_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "payload_type",
                     "payload_type was not specified but it is required when building RequestInspectionAcfp",
                 )

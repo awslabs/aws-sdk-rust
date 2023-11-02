@@ -88,10 +88,10 @@ impl OverrideDatasetParameterOperationBuilder {
     /// Consumes the builder and constructs a [`OverrideDatasetParameterOperation`](crate::types::OverrideDatasetParameterOperation).
     /// This method will fail if any of the following fields are not set:
     /// - [`parameter_name`](crate::types::builders::OverrideDatasetParameterOperationBuilder::parameter_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::OverrideDatasetParameterOperation, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::OverrideDatasetParameterOperation, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::OverrideDatasetParameterOperation {
             parameter_name: self.parameter_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "parameter_name",
                     "parameter_name was not specified but it is required when building OverrideDatasetParameterOperation",
                 )

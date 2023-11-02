@@ -66,7 +66,7 @@ impl DeleteSecurityProfileInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSecurityProfileInput`](crate::operation::delete_security_profile::DeleteSecurityProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_security_profile::DeleteSecurityProfileInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_security_profile::DeleteSecurityProfileInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_security_profile::DeleteSecurityProfileInput {
             instance_id: self.instance_id,

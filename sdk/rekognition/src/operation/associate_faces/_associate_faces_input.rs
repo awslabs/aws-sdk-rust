@@ -137,7 +137,7 @@ impl AssociateFacesInputBuilder {
     /// Consumes the builder and constructs a [`AssociateFacesInput`](crate::operation::associate_faces::AssociateFacesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::associate_faces::AssociateFacesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::associate_faces::AssociateFacesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::associate_faces::AssociateFacesInput {
             collection_id: self.collection_id,
             user_id: self.user_id,

@@ -65,7 +65,7 @@ impl UnarchiveWaveInputBuilder {
     /// Consumes the builder and constructs a [`UnarchiveWaveInput`](crate::operation::unarchive_wave::UnarchiveWaveInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::unarchive_wave::UnarchiveWaveInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::unarchive_wave::UnarchiveWaveInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::unarchive_wave::UnarchiveWaveInput {
             wave_id: self.wave_id,
             account_id: self.account_id,

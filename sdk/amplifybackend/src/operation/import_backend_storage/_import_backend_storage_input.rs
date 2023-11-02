@@ -110,7 +110,7 @@ impl ImportBackendStorageInputBuilder {
     /// Consumes the builder and constructs a [`ImportBackendStorageInput`](crate::operation::import_backend_storage::ImportBackendStorageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::import_backend_storage::ImportBackendStorageInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::import_backend_storage::ImportBackendStorageInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::import_backend_storage::ImportBackendStorageInput {
             app_id: self.app_id,

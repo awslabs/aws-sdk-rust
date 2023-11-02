@@ -251,7 +251,7 @@ impl CreateCertificateAuthorityInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_certificate_authority::CreateCertificateAuthorityInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_certificate_authority::CreateCertificateAuthorityInput {
             certificate_authority_configuration: self.certificate_authority_configuration,

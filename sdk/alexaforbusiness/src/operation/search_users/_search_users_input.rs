@@ -120,7 +120,7 @@ impl SearchUsersInputBuilder {
         &self.sort_criteria
     }
     /// Consumes the builder and constructs a [`SearchUsersInput`](crate::operation::search_users::SearchUsersInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::search_users::SearchUsersInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::search_users::SearchUsersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_users::SearchUsersInput {
             next_token: self.next_token,
             max_results: self.max_results,

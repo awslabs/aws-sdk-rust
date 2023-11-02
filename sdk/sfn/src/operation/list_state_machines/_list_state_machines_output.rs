@@ -88,10 +88,10 @@ impl ListStateMachinesOutputBuilder {
     /// - [`state_machines`](crate::operation::list_state_machines::builders::ListStateMachinesOutputBuilder::state_machines)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_state_machines::ListStateMachinesOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_state_machines::ListStateMachinesOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_state_machines::ListStateMachinesOutput {
             state_machines: self.state_machines.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "state_machines",
                     "state_machines was not specified but it is required when building ListStateMachinesOutput",
                 )

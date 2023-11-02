@@ -68,16 +68,16 @@ impl TdscdmaLocalIdBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`uarfcn`](crate::types::builders::TdscdmaLocalIdBuilder::uarfcn)
     /// - [`cell_params`](crate::types::builders::TdscdmaLocalIdBuilder::cell_params)
-    pub fn build(self) -> ::std::result::Result<crate::types::TdscdmaLocalId, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TdscdmaLocalId, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TdscdmaLocalId {
             uarfcn: self.uarfcn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "uarfcn",
                     "uarfcn was not specified but it is required when building TdscdmaLocalId",
                 )
             })?,
             cell_params: self.cell_params.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "cell_params",
                     "cell_params was not specified but it is required when building TdscdmaLocalId",
                 )

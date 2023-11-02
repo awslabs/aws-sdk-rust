@@ -18,7 +18,7 @@ impl CreateStorageLocationInputBuilder {
     /// Consumes the builder and constructs a [`CreateStorageLocationInput`](crate::operation::create_storage_location::CreateStorageLocationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_storage_location::CreateStorageLocationInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_storage_location::CreateStorageLocationInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_storage_location::CreateStorageLocationInput {})
     }

@@ -68,7 +68,7 @@ impl DeleteStorageLensConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_storage_lens_configuration::DeleteStorageLensConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_storage_lens_configuration::DeleteStorageLensConfigurationInput {
             config_id: self.config_id,

@@ -108,11 +108,11 @@ impl UpdateServiceSyncBlockerOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_service_sync_blocker::UpdateServiceSyncBlockerOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_service_sync_blocker::UpdateServiceSyncBlockerOutput {
             service_name: self.service_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "service_name",
                     "service_name was not specified but it is required when building UpdateServiceSyncBlockerOutput",
                 )

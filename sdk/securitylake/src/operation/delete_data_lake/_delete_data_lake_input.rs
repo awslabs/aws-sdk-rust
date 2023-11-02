@@ -51,7 +51,7 @@ impl DeleteDataLakeInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDataLakeInput`](crate::operation::delete_data_lake::DeleteDataLakeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_data_lake::DeleteDataLakeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_data_lake::DeleteDataLakeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_data_lake::DeleteDataLakeInput { regions: self.regions })
     }
 }

@@ -86,7 +86,7 @@ impl GetSegmentDetectionInputBuilder {
     /// Consumes the builder and constructs a [`GetSegmentDetectionInput`](crate::operation::get_segment_detection::GetSegmentDetectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_segment_detection::GetSegmentDetectionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_segment_detection::GetSegmentDetectionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_segment_detection::GetSegmentDetectionInput {
             job_id: self.job_id,

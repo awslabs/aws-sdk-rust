@@ -107,7 +107,7 @@ impl UpdateAnomalyDetectorInputBuilder {
     /// Consumes the builder and constructs a [`UpdateAnomalyDetectorInput`](crate::operation::update_anomaly_detector::UpdateAnomalyDetectorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_anomaly_detector::UpdateAnomalyDetectorInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_anomaly_detector::UpdateAnomalyDetectorInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_anomaly_detector::UpdateAnomalyDetectorInput {
             anomaly_detector_arn: self.anomaly_detector_arn,

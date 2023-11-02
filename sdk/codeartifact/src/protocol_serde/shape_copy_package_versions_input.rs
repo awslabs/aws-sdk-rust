@@ -2,7 +2,7 @@
 pub fn ser_copy_package_versions_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::copy_package_versions::CopyPackageVersionsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.allow_overwrite {
         object.key("allowOverwrite").boolean(*var_1);
     }

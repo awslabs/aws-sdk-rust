@@ -120,23 +120,25 @@ impl IsAuthorizedWithTokenOutputBuilder {
     /// - [`errors`](crate::operation::is_authorized_with_token::builders::IsAuthorizedWithTokenOutputBuilder::errors)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::is_authorized_with_token::IsAuthorizedWithTokenOutput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::is_authorized_with_token::IsAuthorizedWithTokenOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::is_authorized_with_token::IsAuthorizedWithTokenOutput {
             decision: self.decision.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "decision",
                     "decision was not specified but it is required when building IsAuthorizedWithTokenOutput",
                 )
             })?,
             determining_policies: self.determining_policies.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "determining_policies",
                     "determining_policies was not specified but it is required when building IsAuthorizedWithTokenOutput",
                 )
             })?,
             errors: self.errors.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "errors",
                     "errors was not specified but it is required when building IsAuthorizedWithTokenOutput",
                 )

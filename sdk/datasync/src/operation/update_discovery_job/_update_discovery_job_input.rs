@@ -66,7 +66,8 @@ impl UpdateDiscoveryJobInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDiscoveryJobInput`](crate::operation::update_discovery_job::UpdateDiscoveryJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_discovery_job::UpdateDiscoveryJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_discovery_job::UpdateDiscoveryJobInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::update_discovery_job::UpdateDiscoveryJobInput {
             discovery_job_arn: self.discovery_job_arn,
             collection_duration_minutes: self.collection_duration_minutes,

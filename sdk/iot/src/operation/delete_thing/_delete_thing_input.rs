@@ -64,7 +64,7 @@ impl DeleteThingInputBuilder {
         &self.expected_version
     }
     /// Consumes the builder and constructs a [`DeleteThingInput`](crate::operation::delete_thing::DeleteThingInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_thing::DeleteThingInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_thing::DeleteThingInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_thing::DeleteThingInput {
             thing_name: self.thing_name,
             expected_version: self.expected_version,

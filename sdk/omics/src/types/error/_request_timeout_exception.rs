@@ -79,10 +79,10 @@ impl RequestTimeoutExceptionBuilder {
     /// Consumes the builder and constructs a [`RequestTimeoutException`](crate::types::error::RequestTimeoutException).
     /// This method will fail if any of the following fields are not set:
     /// - [`message`](crate::types::error::builders::RequestTimeoutExceptionBuilder::message)
-    pub fn build(self) -> ::std::result::Result<crate::types::error::RequestTimeoutException, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::error::RequestTimeoutException, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::error::RequestTimeoutException {
             message: self.message.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "message",
                     "message was not specified but it is required when building RequestTimeoutException",
                 )

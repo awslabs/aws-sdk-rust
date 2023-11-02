@@ -46,7 +46,7 @@ impl ForgetSmartHomeAppliancesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::forget_smart_home_appliances::ForgetSmartHomeAppliancesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::forget_smart_home_appliances::ForgetSmartHomeAppliancesInput { room_arn: self.room_arn })
     }

@@ -2,7 +2,7 @@
 pub fn ser_audio_dolby_e_decode(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AudioDolbyEDecode,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.program_selection {
         object.key("programSelection").string(var_1.as_str());
     }

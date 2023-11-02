@@ -67,7 +67,7 @@ impl DeregisterEventTopicInputBuilder {
     /// Consumes the builder and constructs a [`DeregisterEventTopicInput`](crate::operation::deregister_event_topic::DeregisterEventTopicInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::deregister_event_topic::DeregisterEventTopicInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::deregister_event_topic::DeregisterEventTopicInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::deregister_event_topic::DeregisterEventTopicInput {
             directory_id: self.directory_id,

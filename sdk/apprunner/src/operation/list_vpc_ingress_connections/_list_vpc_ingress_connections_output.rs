@@ -94,11 +94,11 @@ impl ListVpcIngressConnectionsOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_vpc_ingress_connections::ListVpcIngressConnectionsOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_vpc_ingress_connections::ListVpcIngressConnectionsOutput {
             vpc_ingress_connection_summary_list: self.vpc_ingress_connection_summary_list.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "vpc_ingress_connection_summary_list",
                     "vpc_ingress_connection_summary_list was not specified but it is required when building ListVpcIngressConnectionsOutput",
                 )

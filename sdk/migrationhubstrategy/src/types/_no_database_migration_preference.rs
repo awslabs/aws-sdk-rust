@@ -51,10 +51,10 @@ impl NoDatabaseMigrationPreferenceBuilder {
     /// Consumes the builder and constructs a [`NoDatabaseMigrationPreference`](crate::types::NoDatabaseMigrationPreference).
     /// This method will fail if any of the following fields are not set:
     /// - [`target_database_engine`](crate::types::builders::NoDatabaseMigrationPreferenceBuilder::target_database_engine)
-    pub fn build(self) -> ::std::result::Result<crate::types::NoDatabaseMigrationPreference, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::NoDatabaseMigrationPreference, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::NoDatabaseMigrationPreference {
             target_database_engine: self.target_database_engine.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "target_database_engine",
                     "target_database_engine was not specified but it is required when building NoDatabaseMigrationPreference",
                 )

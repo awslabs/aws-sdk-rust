@@ -96,22 +96,22 @@ impl ApplicationSummaryBuilder {
     /// - [`application_name`](crate::types::builders::ApplicationSummaryBuilder::application_name)
     /// - [`application_arn`](crate::types::builders::ApplicationSummaryBuilder::application_arn)
     /// - [`application_status`](crate::types::builders::ApplicationSummaryBuilder::application_status)
-    pub fn build(self) -> ::std::result::Result<crate::types::ApplicationSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ApplicationSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ApplicationSummary {
             application_name: self.application_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "application_name",
                     "application_name was not specified but it is required when building ApplicationSummary",
                 )
             })?,
             application_arn: self.application_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "application_arn",
                     "application_arn was not specified but it is required when building ApplicationSummary",
                 )
             })?,
             application_status: self.application_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "application_status",
                     "application_status was not specified but it is required when building ApplicationSummary",
                 )

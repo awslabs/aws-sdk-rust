@@ -2,7 +2,7 @@
 pub fn ser_describe_agent_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_agent::DescribeAgentInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.agent_arn {
         object.key("AgentArn").string(var_1.as_str());
     }

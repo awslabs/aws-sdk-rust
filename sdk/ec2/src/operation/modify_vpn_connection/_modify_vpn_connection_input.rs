@@ -128,7 +128,7 @@ impl ModifyVpnConnectionInputBuilder {
     /// Consumes the builder and constructs a [`ModifyVpnConnectionInput`](crate::operation::modify_vpn_connection::ModifyVpnConnectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::modify_vpn_connection::ModifyVpnConnectionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::modify_vpn_connection::ModifyVpnConnectionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::modify_vpn_connection::ModifyVpnConnectionInput {
             vpn_connection_id: self.vpn_connection_id,

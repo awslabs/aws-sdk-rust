@@ -2,7 +2,7 @@
 pub fn ser_update_suite_definition_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_suite_definition::UpdateSuiteDefinitionInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.suite_definition_configuration {
         #[allow(unused_mut)]
         let mut object_2 = object.key("suiteDefinitionConfiguration").start_object();

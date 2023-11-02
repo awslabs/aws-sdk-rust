@@ -229,35 +229,35 @@ impl S3DeltaDirectTargetBuilder {
     /// - [`path`](crate::types::builders::S3DeltaDirectTargetBuilder::path)
     /// - [`compression`](crate::types::builders::S3DeltaDirectTargetBuilder::compression)
     /// - [`format`](crate::types::builders::S3DeltaDirectTargetBuilder::format)
-    pub fn build(self) -> ::std::result::Result<crate::types::S3DeltaDirectTarget, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::S3DeltaDirectTarget, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::S3DeltaDirectTarget {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building S3DeltaDirectTarget",
                 )
             })?,
             inputs: self.inputs.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "inputs",
                     "inputs was not specified but it is required when building S3DeltaDirectTarget",
                 )
             })?,
             partition_keys: self.partition_keys,
             path: self.path.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "path",
                     "path was not specified but it is required when building S3DeltaDirectTarget",
                 )
             })?,
             compression: self.compression.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "compression",
                     "compression was not specified but it is required when building S3DeltaDirectTarget",
                 )
             })?,
             format: self.format.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "format",
                     "format was not specified but it is required when building S3DeltaDirectTarget",
                 )

@@ -94,7 +94,7 @@ impl AssociateApplicationsInputBuilder {
     /// Consumes the builder and constructs a [`AssociateApplicationsInput`](crate::operation::associate_applications::AssociateApplicationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::associate_applications::AssociateApplicationsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::associate_applications::AssociateApplicationsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::associate_applications::AssociateApplicationsInput {
             wave_id: self.wave_id,

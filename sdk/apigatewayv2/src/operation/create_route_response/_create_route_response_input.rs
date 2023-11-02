@@ -178,7 +178,7 @@ impl CreateRouteResponseInputBuilder {
     /// Consumes the builder and constructs a [`CreateRouteResponseInput`](crate::operation::create_route_response::CreateRouteResponseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_route_response::CreateRouteResponseInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_route_response::CreateRouteResponseInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_route_response::CreateRouteResponseInput {
             api_id: self.api_id,

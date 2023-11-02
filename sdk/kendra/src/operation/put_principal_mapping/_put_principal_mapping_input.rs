@@ -181,7 +181,7 @@ impl PutPrincipalMappingInputBuilder {
     /// Consumes the builder and constructs a [`PutPrincipalMappingInput`](crate::operation::put_principal_mapping::PutPrincipalMappingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_principal_mapping::PutPrincipalMappingInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::put_principal_mapping::PutPrincipalMappingInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::put_principal_mapping::PutPrincipalMappingInput {
             index_id: self.index_id,

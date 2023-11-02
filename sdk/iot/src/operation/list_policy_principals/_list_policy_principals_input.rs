@@ -108,7 +108,7 @@ impl ListPolicyPrincipalsInputBuilder {
     /// Consumes the builder and constructs a [`ListPolicyPrincipalsInput`](crate::operation::list_policy_principals::ListPolicyPrincipalsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_policy_principals::ListPolicyPrincipalsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_policy_principals::ListPolicyPrincipalsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_policy_principals::ListPolicyPrincipalsInput {
             policy_name: self.policy_name,

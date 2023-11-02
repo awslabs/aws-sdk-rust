@@ -959,7 +959,7 @@ impl StartBuildBatchInputBuilder {
     /// Consumes the builder and constructs a [`StartBuildBatchInput`](crate::operation::start_build_batch::StartBuildBatchInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_build_batch::StartBuildBatchInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_build_batch::StartBuildBatchInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_build_batch::StartBuildBatchInput {
             project_name: self.project_name,
             secondary_sources_override: self.secondary_sources_override,

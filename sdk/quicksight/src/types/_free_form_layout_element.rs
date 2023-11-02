@@ -299,40 +299,40 @@ impl FreeFormLayoutElementBuilder {
     /// - [`y_axis_location`](crate::types::builders::FreeFormLayoutElementBuilder::y_axis_location)
     /// - [`width`](crate::types::builders::FreeFormLayoutElementBuilder::width)
     /// - [`height`](crate::types::builders::FreeFormLayoutElementBuilder::height)
-    pub fn build(self) -> ::std::result::Result<crate::types::FreeFormLayoutElement, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::FreeFormLayoutElement, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FreeFormLayoutElement {
             element_id: self.element_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "element_id",
                     "element_id was not specified but it is required when building FreeFormLayoutElement",
                 )
             })?,
             element_type: self.element_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "element_type",
                     "element_type was not specified but it is required when building FreeFormLayoutElement",
                 )
             })?,
             x_axis_location: self.x_axis_location.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "x_axis_location",
                     "x_axis_location was not specified but it is required when building FreeFormLayoutElement",
                 )
             })?,
             y_axis_location: self.y_axis_location.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "y_axis_location",
                     "y_axis_location was not specified but it is required when building FreeFormLayoutElement",
                 )
             })?,
             width: self.width.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "width",
                     "width was not specified but it is required when building FreeFormLayoutElement",
                 )
             })?,
             height: self.height.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "height",
                     "height was not specified but it is required when building FreeFormLayoutElement",
                 )

@@ -44,7 +44,7 @@ impl DeleteRouteCalculatorInputBuilder {
     /// Consumes the builder and constructs a [`DeleteRouteCalculatorInput`](crate::operation::delete_route_calculator::DeleteRouteCalculatorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_route_calculator::DeleteRouteCalculatorInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_route_calculator::DeleteRouteCalculatorInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_route_calculator::DeleteRouteCalculatorInput {
             calculator_name: self.calculator_name,

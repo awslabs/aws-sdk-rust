@@ -198,36 +198,36 @@ impl GetApplicationVersionOutputBuilder {
     /// - [`creation_time`](crate::operation::get_application_version::builders::GetApplicationVersionOutputBuilder::creation_time)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_application_version::GetApplicationVersionOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_application_version::GetApplicationVersionOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_application_version::GetApplicationVersionOutput {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building GetApplicationVersionOutput",
                 )
             })?,
             application_version: self.application_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "application_version",
                     "application_version was not specified but it is required when building GetApplicationVersionOutput",
                 )
             })?,
             description: self.description,
             definition_content: self.definition_content.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "definition_content",
                     "definition_content was not specified but it is required when building GetApplicationVersionOutput",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building GetApplicationVersionOutput",
                 )
             })?,
             creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_time",
                     "creation_time was not specified but it is required when building GetApplicationVersionOutput",
                 )

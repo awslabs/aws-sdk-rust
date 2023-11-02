@@ -453,7 +453,7 @@ impl PutAlarmInputBuilder {
         &self.notification_enabled
     }
     /// Consumes the builder and constructs a [`PutAlarmInput`](crate::operation::put_alarm::PutAlarmInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_alarm::PutAlarmInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_alarm::PutAlarmInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_alarm::PutAlarmInput {
             alarm_name: self.alarm_name,
             metric_name: self.metric_name,

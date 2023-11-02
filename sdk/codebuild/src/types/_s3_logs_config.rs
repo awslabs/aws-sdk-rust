@@ -268,10 +268,10 @@ impl S3LogsConfigBuilder {
     /// Consumes the builder and constructs a [`S3LogsConfig`](crate::types::S3LogsConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`status`](crate::types::builders::S3LogsConfigBuilder::status)
-    pub fn build(self) -> ::std::result::Result<crate::types::S3LogsConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::S3LogsConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::S3LogsConfig {
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building S3LogsConfig",
                 )

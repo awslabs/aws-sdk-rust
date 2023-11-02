@@ -247,7 +247,7 @@ impl UpdateReplicationJobInputBuilder {
     /// Consumes the builder and constructs a [`UpdateReplicationJobInput`](crate::operation::update_replication_job::UpdateReplicationJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_replication_job::UpdateReplicationJobInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_replication_job::UpdateReplicationJobInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_replication_job::UpdateReplicationJobInput {
             replication_job_id: self.replication_job_id,

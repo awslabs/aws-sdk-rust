@@ -44,7 +44,8 @@ impl GetBatchPredictionInputBuilder {
     /// Consumes the builder and constructs a [`GetBatchPredictionInput`](crate::operation::get_batch_prediction::GetBatchPredictionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_batch_prediction::GetBatchPredictionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_batch_prediction::GetBatchPredictionInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::get_batch_prediction::GetBatchPredictionInput {
             batch_prediction_id: self.batch_prediction_id,
         })

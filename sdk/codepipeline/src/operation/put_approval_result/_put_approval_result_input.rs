@@ -133,7 +133,7 @@ impl PutApprovalResultInputBuilder {
     /// Consumes the builder and constructs a [`PutApprovalResultInput`](crate::operation::put_approval_result::PutApprovalResultInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_approval_result::PutApprovalResultInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_approval_result::PutApprovalResultInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_approval_result::PutApprovalResultInput {
             pipeline_name: self.pipeline_name,
             stage_name: self.stage_name,

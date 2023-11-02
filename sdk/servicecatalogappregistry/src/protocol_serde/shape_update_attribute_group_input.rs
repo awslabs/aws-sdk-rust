@@ -2,7 +2,7 @@
 pub fn ser_update_attribute_group_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_attribute_group::UpdateAttributeGroupInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.attributes {
         object.key("attributes").string(var_1.as_str());
     }

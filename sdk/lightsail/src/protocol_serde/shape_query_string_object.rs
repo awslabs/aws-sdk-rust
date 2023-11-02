@@ -2,7 +2,7 @@
 pub fn ser_query_string_object(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::QueryStringObject,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.option {
         object.key("option").boolean(*var_1);
     }

@@ -2,7 +2,7 @@
 pub fn ser_pin_verification_attributes(
     object_9: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PinVerificationAttributes,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::PinVerificationAttributes::VisaPin(inner) => {
             #[allow(unused_mut)]
@@ -17,7 +17,7 @@ pub fn ser_pin_verification_attributes(
             object_2.finish();
         }
         crate::types::PinVerificationAttributes::Unknown => {
-            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+            return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "PinVerificationAttributes",
             ))
         }

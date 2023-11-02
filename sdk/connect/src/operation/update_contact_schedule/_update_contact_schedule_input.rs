@@ -88,7 +88,7 @@ impl UpdateContactScheduleInputBuilder {
     /// Consumes the builder and constructs a [`UpdateContactScheduleInput`](crate::operation::update_contact_schedule::UpdateContactScheduleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_contact_schedule::UpdateContactScheduleInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_contact_schedule::UpdateContactScheduleInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_contact_schedule::UpdateContactScheduleInput {
             instance_id: self.instance_id,

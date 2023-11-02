@@ -67,7 +67,7 @@ impl DeletePullThroughCacheRuleInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_pull_through_cache_rule::DeletePullThroughCacheRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_pull_through_cache_rule::DeletePullThroughCacheRuleInput {
             ecr_repository_prefix: self.ecr_repository_prefix,

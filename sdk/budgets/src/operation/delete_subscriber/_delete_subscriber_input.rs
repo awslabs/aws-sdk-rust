@@ -111,7 +111,7 @@ impl DeleteSubscriberInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSubscriberInput`](crate::operation::delete_subscriber::DeleteSubscriberInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_subscriber::DeleteSubscriberInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_subscriber::DeleteSubscriberInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_subscriber::DeleteSubscriberInput {
             account_id: self.account_id,
             budget_name: self.budget_name,

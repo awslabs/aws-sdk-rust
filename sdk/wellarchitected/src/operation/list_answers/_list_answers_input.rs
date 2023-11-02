@@ -195,7 +195,7 @@ impl ListAnswersInputBuilder {
         &self.question_priority
     }
     /// Consumes the builder and constructs a [`ListAnswersInput`](crate::operation::list_answers::ListAnswersInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_answers::ListAnswersInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_answers::ListAnswersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_answers::ListAnswersInput {
             workload_id: self.workload_id,
             lens_alias: self.lens_alias,

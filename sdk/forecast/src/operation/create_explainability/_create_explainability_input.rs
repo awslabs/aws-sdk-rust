@@ -277,7 +277,7 @@ impl CreateExplainabilityInputBuilder {
     /// Consumes the builder and constructs a [`CreateExplainabilityInput`](crate::operation::create_explainability::CreateExplainabilityInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_explainability::CreateExplainabilityInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_explainability::CreateExplainabilityInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_explainability::CreateExplainabilityInput {
             explainability_name: self.explainability_name,

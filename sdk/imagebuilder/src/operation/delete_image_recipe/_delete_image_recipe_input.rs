@@ -44,7 +44,7 @@ impl DeleteImageRecipeInputBuilder {
     /// Consumes the builder and constructs a [`DeleteImageRecipeInput`](crate::operation::delete_image_recipe::DeleteImageRecipeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_image_recipe::DeleteImageRecipeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_image_recipe::DeleteImageRecipeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_image_recipe::DeleteImageRecipeInput {
             image_recipe_arn: self.image_recipe_arn,
         })

@@ -108,7 +108,7 @@ impl UpdateSecurityInputBuilder {
     /// Consumes the builder and constructs a [`UpdateSecurityInput`](crate::operation::update_security::UpdateSecurityInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_security::UpdateSecurityInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_security::UpdateSecurityInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_security::UpdateSecurityInput {
             client_authentication: self.client_authentication,
             cluster_arn: self.cluster_arn,

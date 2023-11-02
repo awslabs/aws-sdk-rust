@@ -139,7 +139,7 @@ impl CreateVolumeFromBackupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_volume_from_backup::CreateVolumeFromBackupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_volume_from_backup::CreateVolumeFromBackupInput {
             backup_id: self.backup_id,

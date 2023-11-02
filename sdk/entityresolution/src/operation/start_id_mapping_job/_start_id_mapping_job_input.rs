@@ -44,7 +44,7 @@ impl StartIdMappingJobInputBuilder {
     /// Consumes the builder and constructs a [`StartIdMappingJobInput`](crate::operation::start_id_mapping_job::StartIdMappingJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_id_mapping_job::StartIdMappingJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_id_mapping_job::StartIdMappingJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_id_mapping_job::StartIdMappingJobInput {
             workflow_name: self.workflow_name,
         })

@@ -44,7 +44,7 @@ impl DisableDirectoryInputBuilder {
     /// Consumes the builder and constructs a [`DisableDirectoryInput`](crate::operation::disable_directory::DisableDirectoryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::disable_directory::DisableDirectoryInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::disable_directory::DisableDirectoryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::disable_directory::DisableDirectoryInput {
             directory_arn: self.directory_arn,
         })

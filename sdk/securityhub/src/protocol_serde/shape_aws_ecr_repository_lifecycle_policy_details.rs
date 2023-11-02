@@ -2,7 +2,7 @@
 pub fn ser_aws_ecr_repository_lifecycle_policy_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEcrRepositoryLifecyclePolicyDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.lifecycle_policy_text {
         object.key("LifecyclePolicyText").string(var_1.as_str());
     }

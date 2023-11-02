@@ -169,7 +169,7 @@ impl CreateLanguageModelInputBuilder {
     /// Consumes the builder and constructs a [`CreateLanguageModelInput`](crate::operation::create_language_model::CreateLanguageModelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_language_model::CreateLanguageModelInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_language_model::CreateLanguageModelInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_language_model::CreateLanguageModelInput {
             language_code: self.language_code,

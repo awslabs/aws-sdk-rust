@@ -44,7 +44,7 @@ impl DeleteEvaluationInputBuilder {
     /// Consumes the builder and constructs a [`DeleteEvaluationInput`](crate::operation::delete_evaluation::DeleteEvaluationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_evaluation::DeleteEvaluationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_evaluation::DeleteEvaluationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_evaluation::DeleteEvaluationInput {
             evaluation_id: self.evaluation_id,
         })

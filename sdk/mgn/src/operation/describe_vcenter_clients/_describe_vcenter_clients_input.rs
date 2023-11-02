@@ -64,8 +64,10 @@ impl DescribeVcenterClientsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeVcenterClientsInput`](crate::operation::describe_vcenter_clients::DescribeVcenterClientsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_vcenter_clients::DescribeVcenterClientsInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::describe_vcenter_clients::DescribeVcenterClientsInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::describe_vcenter_clients::DescribeVcenterClientsInput {
             max_results: self.max_results,
             next_token: self.next_token,

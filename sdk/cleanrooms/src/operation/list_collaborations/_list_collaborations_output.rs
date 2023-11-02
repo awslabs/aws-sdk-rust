@@ -89,11 +89,12 @@ impl ListCollaborationsOutputBuilder {
     /// - [`collaboration_list`](crate::operation::list_collaborations::builders::ListCollaborationsOutputBuilder::collaboration_list)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_collaborations::ListCollaborationsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_collaborations::ListCollaborationsOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::list_collaborations::ListCollaborationsOutput {
             next_token: self.next_token,
             collaboration_list: self.collaboration_list.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "collaboration_list",
                     "collaboration_list was not specified but it is required when building ListCollaborationsOutput",
                 )

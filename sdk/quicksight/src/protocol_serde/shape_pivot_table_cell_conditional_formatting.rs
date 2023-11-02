@@ -2,7 +2,7 @@
 pub fn ser_pivot_table_cell_conditional_formatting(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PivotTableCellConditionalFormatting,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("FieldId").string(input.field_id.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_enable_io_t_logging_params(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EnableIoTLoggingParams,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("roleArnForLogging").string(input.role_arn_for_logging.as_str());
     }

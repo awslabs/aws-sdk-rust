@@ -2,7 +2,7 @@
 pub fn ser_section_layout_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SectionLayoutConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.free_form_layout {
         #[allow(unused_mut)]
         let mut object_2 = object.key("FreeFormLayout").start_object();

@@ -79,7 +79,7 @@ impl EnableKeyRotationInputBuilder {
     /// Consumes the builder and constructs a [`EnableKeyRotationInput`](crate::operation::enable_key_rotation::EnableKeyRotationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::enable_key_rotation::EnableKeyRotationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::enable_key_rotation::EnableKeyRotationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::enable_key_rotation::EnableKeyRotationInput { key_id: self.key_id })
     }
 }

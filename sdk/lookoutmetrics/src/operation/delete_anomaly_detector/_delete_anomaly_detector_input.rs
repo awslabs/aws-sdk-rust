@@ -44,7 +44,7 @@ impl DeleteAnomalyDetectorInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAnomalyDetectorInput`](crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorInput {
             anomaly_detector_arn: self.anomaly_detector_arn,

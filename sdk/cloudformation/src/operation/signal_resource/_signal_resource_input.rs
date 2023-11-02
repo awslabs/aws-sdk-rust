@@ -111,7 +111,7 @@ impl SignalResourceInputBuilder {
     /// Consumes the builder and constructs a [`SignalResourceInput`](crate::operation::signal_resource::SignalResourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::signal_resource::SignalResourceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::signal_resource::SignalResourceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::signal_resource::SignalResourceInput {
             stack_name: self.stack_name,
             logical_resource_id: self.logical_resource_id,

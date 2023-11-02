@@ -115,7 +115,7 @@ impl RevokeClusterSecurityGroupIngressInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::revoke_cluster_security_group_ingress::RevokeClusterSecurityGroupIngressInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::revoke_cluster_security_group_ingress::RevokeClusterSecurityGroupIngressInput {

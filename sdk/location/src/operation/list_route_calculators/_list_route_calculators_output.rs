@@ -89,11 +89,11 @@ impl ListRouteCalculatorsOutputBuilder {
     /// - [`entries`](crate::operation::list_route_calculators::builders::ListRouteCalculatorsOutputBuilder::entries)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_route_calculators::ListRouteCalculatorsOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_route_calculators::ListRouteCalculatorsOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_route_calculators::ListRouteCalculatorsOutput {
             entries: self.entries.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "entries",
                     "entries was not specified but it is required when building ListRouteCalculatorsOutput",
                 )

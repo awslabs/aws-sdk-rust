@@ -97,22 +97,22 @@ impl SegmentOverrideBuilder {
     /// - [`segment`](crate::types::builders::SegmentOverrideBuilder::segment)
     /// - [`evaluation_order`](crate::types::builders::SegmentOverrideBuilder::evaluation_order)
     /// - [`weights`](crate::types::builders::SegmentOverrideBuilder::weights)
-    pub fn build(self) -> ::std::result::Result<crate::types::SegmentOverride, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SegmentOverride, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SegmentOverride {
             segment: self.segment.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "segment",
                     "segment was not specified but it is required when building SegmentOverride",
                 )
             })?,
             evaluation_order: self.evaluation_order.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "evaluation_order",
                     "evaluation_order was not specified but it is required when building SegmentOverride",
                 )
             })?,
             weights: self.weights.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "weights",
                     "weights was not specified but it is required when building SegmentOverride",
                 )

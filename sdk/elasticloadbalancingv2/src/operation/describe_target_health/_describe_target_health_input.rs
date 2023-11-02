@@ -73,7 +73,7 @@ impl DescribeTargetHealthInputBuilder {
     /// Consumes the builder and constructs a [`DescribeTargetHealthInput`](crate::operation::describe_target_health::DescribeTargetHealthInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_target_health::DescribeTargetHealthInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_target_health::DescribeTargetHealthInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_target_health::DescribeTargetHealthInput {
             target_group_arn: self.target_group_arn,

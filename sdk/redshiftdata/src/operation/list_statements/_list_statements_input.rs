@@ -172,7 +172,7 @@ impl ListStatementsInputBuilder {
     /// Consumes the builder and constructs a [`ListStatementsInput`](crate::operation::list_statements::ListStatementsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_statements::ListStatementsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_statements::ListStatementsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_statements::ListStatementsInput {
             next_token: self.next_token,
             max_results: self.max_results,

@@ -106,7 +106,8 @@ impl ListSchemaVersionsInputBuilder {
     /// Consumes the builder and constructs a [`ListSchemaVersionsInput`](crate::operation::list_schema_versions::ListSchemaVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_schema_versions::ListSchemaVersionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_schema_versions::ListSchemaVersionsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::list_schema_versions::ListSchemaVersionsInput {
             schema_id: self.schema_id,
             max_results: self.max_results,

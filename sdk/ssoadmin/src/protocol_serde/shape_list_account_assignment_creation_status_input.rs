@@ -2,7 +2,7 @@
 pub fn ser_list_account_assignment_creation_status_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_account_assignment_creation_status::ListAccountAssignmentCreationStatusInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.instance_arn {
         object.key("InstanceArn").string(var_1.as_str());
     }

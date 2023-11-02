@@ -93,7 +93,7 @@ impl DescribeIpGroupsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeIpGroupsInput`](crate::operation::describe_ip_groups::DescribeIpGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_ip_groups::DescribeIpGroupsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_ip_groups::DescribeIpGroupsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_ip_groups::DescribeIpGroupsInput {
             group_ids: self.group_ids,
             next_token: self.next_token,

@@ -46,7 +46,7 @@ impl StartVirtualMachinesMetadataSyncInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_virtual_machines_metadata_sync::StartVirtualMachinesMetadataSyncInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::start_virtual_machines_metadata_sync::StartVirtualMachinesMetadataSyncInput {

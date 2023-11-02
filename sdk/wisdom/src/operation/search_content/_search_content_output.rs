@@ -89,10 +89,10 @@ impl SearchContentOutputBuilder {
     /// - [`content_summaries`](crate::operation::search_content::builders::SearchContentOutputBuilder::content_summaries)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::search_content::SearchContentOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::search_content::SearchContentOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_content::SearchContentOutput {
             content_summaries: self.content_summaries.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "content_summaries",
                     "content_summaries was not specified but it is required when building SearchContentOutput",
                 )

@@ -159,10 +159,10 @@ impl BackupObjectBuilder {
     /// - [`object_checksum`](crate::types::builders::BackupObjectBuilder::object_checksum)
     /// - [`object_checksum_algorithm`](crate::types::builders::BackupObjectBuilder::object_checksum_algorithm)
     /// - [`object_token`](crate::types::builders::BackupObjectBuilder::object_token)
-    pub fn build(self) -> ::std::result::Result<crate::types::BackupObject, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::BackupObject, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::BackupObject {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building BackupObject",
                 )
@@ -170,19 +170,19 @@ impl BackupObjectBuilder {
             chunks_count: self.chunks_count,
             metadata_string: self.metadata_string,
             object_checksum: self.object_checksum.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "object_checksum",
                     "object_checksum was not specified but it is required when building BackupObject",
                 )
             })?,
             object_checksum_algorithm: self.object_checksum_algorithm.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "object_checksum_algorithm",
                     "object_checksum_algorithm was not specified but it is required when building BackupObject",
                 )
             })?,
             object_token: self.object_token.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "object_token",
                     "object_token was not specified but it is required when building BackupObject",
                 )

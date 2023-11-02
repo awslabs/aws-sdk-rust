@@ -2,7 +2,7 @@
 pub fn ser_field_based_tooltip(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FieldBasedTooltip,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.aggregation_visibility {
         object.key("AggregationVisibility").string(var_1.as_str());
     }

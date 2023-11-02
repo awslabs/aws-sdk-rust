@@ -44,7 +44,7 @@ impl ReleaseStaticIpInputBuilder {
     /// Consumes the builder and constructs a [`ReleaseStaticIpInput`](crate::operation::release_static_ip::ReleaseStaticIpInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::release_static_ip::ReleaseStaticIpInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::release_static_ip::ReleaseStaticIpInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::release_static_ip::ReleaseStaticIpInput {
             static_ip_name: self.static_ip_name,
         })

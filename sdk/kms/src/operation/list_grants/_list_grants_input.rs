@@ -166,7 +166,7 @@ impl ListGrantsInputBuilder {
         &self.grantee_principal
     }
     /// Consumes the builder and constructs a [`ListGrantsInput`](crate::operation::list_grants::ListGrantsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_grants::ListGrantsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_grants::ListGrantsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_grants::ListGrantsInput {
             limit: self.limit,
             marker: self.marker,

@@ -2,7 +2,7 @@
 pub fn ser_glue_table_reference(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GlueTableReference,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("tableName").string(input.table_name.as_str());
     }

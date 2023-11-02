@@ -70,16 +70,16 @@ impl AgentAlreadyRunningAssessmentBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`agent_id`](crate::types::builders::AgentAlreadyRunningAssessmentBuilder::agent_id)
     /// - [`assessment_run_arn`](crate::types::builders::AgentAlreadyRunningAssessmentBuilder::assessment_run_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::AgentAlreadyRunningAssessment, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AgentAlreadyRunningAssessment, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AgentAlreadyRunningAssessment {
             agent_id: self.agent_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "agent_id",
                     "agent_id was not specified but it is required when building AgentAlreadyRunningAssessment",
                 )
             })?,
             assessment_run_arn: self.assessment_run_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "assessment_run_arn",
                     "assessment_run_arn was not specified but it is required when building AgentAlreadyRunningAssessment",
                 )

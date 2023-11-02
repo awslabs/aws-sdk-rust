@@ -128,7 +128,7 @@ impl ListImageScanFindingsInputBuilder {
     /// Consumes the builder and constructs a [`ListImageScanFindingsInput`](crate::operation::list_image_scan_findings::ListImageScanFindingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_image_scan_findings::ListImageScanFindingsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_image_scan_findings::ListImageScanFindingsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_image_scan_findings::ListImageScanFindingsInput {
             filters: self.filters,

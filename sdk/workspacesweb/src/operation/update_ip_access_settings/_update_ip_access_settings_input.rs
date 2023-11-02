@@ -154,7 +154,7 @@ impl UpdateIpAccessSettingsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_ip_access_settings::UpdateIpAccessSettingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_ip_access_settings::UpdateIpAccessSettingsInput {
             ip_access_settings_arn: self.ip_access_settings_arn,

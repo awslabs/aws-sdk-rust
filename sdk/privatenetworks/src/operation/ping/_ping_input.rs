@@ -16,7 +16,7 @@ impl PingInput {
 pub struct PingInputBuilder {}
 impl PingInputBuilder {
     /// Consumes the builder and constructs a [`PingInput`](crate::operation::ping::PingInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::ping::PingInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::ping::PingInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::ping::PingInput {})
     }
 }

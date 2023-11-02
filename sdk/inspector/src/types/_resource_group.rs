@@ -98,22 +98,22 @@ impl ResourceGroupBuilder {
     /// - [`arn`](crate::types::builders::ResourceGroupBuilder::arn)
     /// - [`tags`](crate::types::builders::ResourceGroupBuilder::tags)
     /// - [`created_at`](crate::types::builders::ResourceGroupBuilder::created_at)
-    pub fn build(self) -> ::std::result::Result<crate::types::ResourceGroup, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ResourceGroup, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ResourceGroup {
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building ResourceGroup",
                 )
             })?,
             tags: self.tags.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "tags",
                     "tags was not specified but it is required when building ResourceGroup",
                 )
             })?,
             created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
                     "created_at was not specified but it is required when building ResourceGroup",
                 )

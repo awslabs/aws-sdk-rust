@@ -2,7 +2,7 @@
 pub fn ser_pipe_target_sqs_queue_parameters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PipeTargetSqsQueueParameters,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.message_group_id {
         object.key("MessageGroupId").string(var_1.as_str());
     }

@@ -66,7 +66,7 @@ impl GetApiMappingInputBuilder {
     /// Consumes the builder and constructs a [`GetApiMappingInput`](crate::operation::get_api_mapping::GetApiMappingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_api_mapping::GetApiMappingInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_api_mapping::GetApiMappingInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_api_mapping::GetApiMappingInput {
             api_mapping_id: self.api_mapping_id,
             domain_name: self.domain_name,

@@ -261,7 +261,9 @@ impl DescribeVpcsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`DescribeVpcsInput`](crate::operation::describe_vpcs::DescribeVpcsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_vpcs::DescribeVpcsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::describe_vpcs::DescribeVpcsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_vpcs::DescribeVpcsInput {
             filters: self.filters,
             vpc_ids: self.vpc_ids,

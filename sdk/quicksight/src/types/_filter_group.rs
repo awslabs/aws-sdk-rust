@@ -167,16 +167,16 @@ impl FilterGroupBuilder {
     /// - [`filter_group_id`](crate::types::builders::FilterGroupBuilder::filter_group_id)
     /// - [`filters`](crate::types::builders::FilterGroupBuilder::filters)
     /// - [`cross_dataset`](crate::types::builders::FilterGroupBuilder::cross_dataset)
-    pub fn build(self) -> ::std::result::Result<crate::types::FilterGroup, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::FilterGroup, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FilterGroup {
             filter_group_id: self.filter_group_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "filter_group_id",
                     "filter_group_id was not specified but it is required when building FilterGroup",
                 )
             })?,
             filters: self.filters.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "filters",
                     "filters was not specified but it is required when building FilterGroup",
                 )
@@ -184,7 +184,7 @@ impl FilterGroupBuilder {
             scope_configuration: self.scope_configuration,
             status: self.status,
             cross_dataset: self.cross_dataset.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "cross_dataset",
                     "cross_dataset was not specified but it is required when building FilterGroup",
                 )

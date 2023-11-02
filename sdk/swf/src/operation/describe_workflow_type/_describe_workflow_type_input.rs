@@ -66,7 +66,7 @@ impl DescribeWorkflowTypeInputBuilder {
     /// Consumes the builder and constructs a [`DescribeWorkflowTypeInput`](crate::operation::describe_workflow_type::DescribeWorkflowTypeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_workflow_type::DescribeWorkflowTypeInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_workflow_type::DescribeWorkflowTypeInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_workflow_type::DescribeWorkflowTypeInput {
             domain: self.domain,

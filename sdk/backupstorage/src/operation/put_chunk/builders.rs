@@ -133,17 +133,17 @@ impl PutChunkFluentBuilder {
         self.inner.get_chunk_index()
     }
     /// Data to be uploaded
-    pub fn data(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
+    pub fn data(mut self, input: ::aws_smithy_types::byte_stream::ByteStream) -> Self {
         self.inner = self.inner.data(input);
         self
     }
     /// Data to be uploaded
-    pub fn set_data(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
+    pub fn set_data(mut self, input: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>) -> Self {
         self.inner = self.inner.set_data(input);
         self
     }
     /// Data to be uploaded
-    pub fn get_data(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+    pub fn get_data(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
         self.inner.get_data()
     }
     /// Data length

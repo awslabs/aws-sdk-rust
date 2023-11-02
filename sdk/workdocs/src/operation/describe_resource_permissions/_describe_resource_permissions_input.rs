@@ -141,7 +141,7 @@ impl DescribeResourcePermissionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_resource_permissions::DescribeResourcePermissionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_resource_permissions::DescribeResourcePermissionsInput {
             authentication_token: self.authentication_token,

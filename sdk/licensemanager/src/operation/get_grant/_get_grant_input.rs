@@ -63,7 +63,7 @@ impl GetGrantInputBuilder {
         &self.version
     }
     /// Consumes the builder and constructs a [`GetGrantInput`](crate::operation::get_grant::GetGrantInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_grant::GetGrantInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_grant::GetGrantInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_grant::GetGrantInput {
             grant_arn: self.grant_arn,
             version: self.version,

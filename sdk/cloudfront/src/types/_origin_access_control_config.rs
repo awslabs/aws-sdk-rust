@@ -166,29 +166,29 @@ impl OriginAccessControlConfigBuilder {
     /// - [`signing_protocol`](crate::types::builders::OriginAccessControlConfigBuilder::signing_protocol)
     /// - [`signing_behavior`](crate::types::builders::OriginAccessControlConfigBuilder::signing_behavior)
     /// - [`origin_access_control_origin_type`](crate::types::builders::OriginAccessControlConfigBuilder::origin_access_control_origin_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::OriginAccessControlConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::OriginAccessControlConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::OriginAccessControlConfig {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building OriginAccessControlConfig",
                 )
             })?,
             description: self.description,
             signing_protocol: self.signing_protocol.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "signing_protocol",
                     "signing_protocol was not specified but it is required when building OriginAccessControlConfig",
                 )
             })?,
             signing_behavior: self.signing_behavior.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "signing_behavior",
                     "signing_behavior was not specified but it is required when building OriginAccessControlConfig",
                 )
             })?,
             origin_access_control_origin_type: self.origin_access_control_origin_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "origin_access_control_origin_type",
                     "origin_access_control_origin_type was not specified but it is required when building OriginAccessControlConfig",
                 )

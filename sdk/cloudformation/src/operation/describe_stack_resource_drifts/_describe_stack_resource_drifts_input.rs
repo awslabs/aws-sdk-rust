@@ -150,7 +150,7 @@ impl DescribeStackResourceDriftsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_stack_resource_drifts::DescribeStackResourceDriftsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_stack_resource_drifts::DescribeStackResourceDriftsInput {
             stack_name: self.stack_name,

@@ -54,10 +54,10 @@ impl CustomActionSetParametersOperationBuilder {
     /// Consumes the builder and constructs a [`CustomActionSetParametersOperation`](crate::types::CustomActionSetParametersOperation).
     /// This method will fail if any of the following fields are not set:
     /// - [`parameter_value_configurations`](crate::types::builders::CustomActionSetParametersOperationBuilder::parameter_value_configurations)
-    pub fn build(self) -> ::std::result::Result<crate::types::CustomActionSetParametersOperation, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CustomActionSetParametersOperation, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CustomActionSetParametersOperation {
             parameter_value_configurations: self.parameter_value_configurations.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "parameter_value_configurations",
                     "parameter_value_configurations was not specified but it is required when building CustomActionSetParametersOperation",
                 )

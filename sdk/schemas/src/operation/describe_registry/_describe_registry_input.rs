@@ -44,7 +44,7 @@ impl DescribeRegistryInputBuilder {
     /// Consumes the builder and constructs a [`DescribeRegistryInput`](crate::operation::describe_registry::DescribeRegistryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_registry::DescribeRegistryInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_registry::DescribeRegistryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_registry::DescribeRegistryInput {
             registry_name: self.registry_name,
         })

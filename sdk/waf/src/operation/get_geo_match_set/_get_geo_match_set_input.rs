@@ -44,7 +44,7 @@ impl GetGeoMatchSetInputBuilder {
     /// Consumes the builder and constructs a [`GetGeoMatchSetInput`](crate::operation::get_geo_match_set::GetGeoMatchSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_geo_match_set::GetGeoMatchSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_geo_match_set::GetGeoMatchSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_geo_match_set::GetGeoMatchSetInput {
             geo_match_set_id: self.geo_match_set_id,
         })

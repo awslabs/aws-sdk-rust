@@ -158,16 +158,16 @@ impl BackendEnvironmentBuilder {
     /// - [`environment_name`](crate::types::builders::BackendEnvironmentBuilder::environment_name)
     /// - [`create_time`](crate::types::builders::BackendEnvironmentBuilder::create_time)
     /// - [`update_time`](crate::types::builders::BackendEnvironmentBuilder::update_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::BackendEnvironment, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::BackendEnvironment, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::BackendEnvironment {
             backend_environment_arn: self.backend_environment_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "backend_environment_arn",
                     "backend_environment_arn was not specified but it is required when building BackendEnvironment",
                 )
             })?,
             environment_name: self.environment_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "environment_name",
                     "environment_name was not specified but it is required when building BackendEnvironment",
                 )
@@ -175,13 +175,13 @@ impl BackendEnvironmentBuilder {
             stack_name: self.stack_name,
             deployment_artifacts: self.deployment_artifacts,
             create_time: self.create_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "create_time",
                     "create_time was not specified but it is required when building BackendEnvironment",
                 )
             })?,
             update_time: self.update_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "update_time",
                     "update_time was not specified but it is required when building BackendEnvironment",
                 )

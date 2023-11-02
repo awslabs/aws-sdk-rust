@@ -65,7 +65,7 @@ impl ArchiveApplicationInputBuilder {
     /// Consumes the builder and constructs a [`ArchiveApplicationInput`](crate::operation::archive_application::ArchiveApplicationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::archive_application::ArchiveApplicationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::archive_application::ArchiveApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::archive_application::ArchiveApplicationInput {
             application_id: self.application_id,
             account_id: self.account_id,

@@ -94,7 +94,8 @@ impl UpdateFeatureGroupInputBuilder {
     /// Consumes the builder and constructs a [`UpdateFeatureGroupInput`](crate::operation::update_feature_group::UpdateFeatureGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_feature_group::UpdateFeatureGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_feature_group::UpdateFeatureGroupInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::update_feature_group::UpdateFeatureGroupInput {
             feature_group_name: self.feature_group_name,
             feature_additions: self.feature_additions,

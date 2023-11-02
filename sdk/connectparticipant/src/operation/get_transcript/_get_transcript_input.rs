@@ -170,7 +170,7 @@ impl GetTranscriptInputBuilder {
     /// Consumes the builder and constructs a [`GetTranscriptInput`](crate::operation::get_transcript::GetTranscriptInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_transcript::GetTranscriptInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_transcript::GetTranscriptInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_transcript::GetTranscriptInput {
             contact_id: self.contact_id,
             max_results: self.max_results,

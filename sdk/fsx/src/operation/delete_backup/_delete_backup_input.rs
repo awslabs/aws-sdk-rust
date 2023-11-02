@@ -64,7 +64,9 @@ impl DeleteBackupInputBuilder {
         &self.client_request_token
     }
     /// Consumes the builder and constructs a [`DeleteBackupInput`](crate::operation::delete_backup::DeleteBackupInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_backup::DeleteBackupInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_backup::DeleteBackupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_backup::DeleteBackupInput {
             backup_id: self.backup_id,
             client_request_token: self.client_request_token,

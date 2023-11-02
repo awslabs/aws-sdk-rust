@@ -356,7 +356,7 @@ impl ImportComponentInputBuilder {
     /// Consumes the builder and constructs a [`ImportComponentInput`](crate::operation::import_component::ImportComponentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::import_component::ImportComponentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::import_component::ImportComponentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::import_component::ImportComponentInput {
             name: self.name,
             semantic_version: self.semantic_version,

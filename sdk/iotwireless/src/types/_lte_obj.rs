@@ -246,16 +246,22 @@ impl LteObjBuilder {
     /// - [`mcc`](crate::types::builders::LteObjBuilder::mcc)
     /// - [`mnc`](crate::types::builders::LteObjBuilder::mnc)
     /// - [`eutran_cid`](crate::types::builders::LteObjBuilder::eutran_cid)
-    pub fn build(self) -> ::std::result::Result<crate::types::LteObj, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::LteObj, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::LteObj {
             mcc: self.mcc.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field("mcc", "mcc was not specified but it is required when building LteObj")
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "mcc",
+                    "mcc was not specified but it is required when building LteObj",
+                )
             })?,
             mnc: self.mnc.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field("mnc", "mnc was not specified but it is required when building LteObj")
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "mnc",
+                    "mnc was not specified but it is required when building LteObj",
+                )
             })?,
             eutran_cid: self.eutran_cid.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "eutran_cid",
                     "eutran_cid was not specified but it is required when building LteObj",
                 )

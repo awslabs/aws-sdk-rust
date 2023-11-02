@@ -136,7 +136,7 @@ impl ListChangeSetsInputBuilder {
     /// Consumes the builder and constructs a [`ListChangeSetsInput`](crate::operation::list_change_sets::ListChangeSetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_change_sets::ListChangeSetsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_change_sets::ListChangeSetsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_change_sets::ListChangeSetsInput {
             catalog: self.catalog,
             filter_list: self.filter_list,

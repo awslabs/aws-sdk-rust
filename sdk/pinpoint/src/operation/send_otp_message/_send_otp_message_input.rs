@@ -66,7 +66,7 @@ impl SendOtpMessageInputBuilder {
     /// Consumes the builder and constructs a [`SendOtpMessageInput`](crate::operation::send_otp_message::SendOtpMessageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::send_otp_message::SendOtpMessageInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::send_otp_message::SendOtpMessageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::send_otp_message::SendOtpMessageInput {
             application_id: self.application_id,
             send_otp_message_request_parameters: self.send_otp_message_request_parameters,

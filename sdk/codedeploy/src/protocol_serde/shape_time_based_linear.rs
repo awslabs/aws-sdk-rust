@@ -2,7 +2,7 @@
 pub fn ser_time_based_linear(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TimeBasedLinear,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.linear_percentage != 0 {
         object.key("linearPercentage").number(
             #[allow(clippy::useless_conversion)]

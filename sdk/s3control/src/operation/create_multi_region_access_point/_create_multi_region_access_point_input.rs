@@ -90,7 +90,7 @@ impl CreateMultiRegionAccessPointInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_multi_region_access_point::CreateMultiRegionAccessPointInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_multi_region_access_point::CreateMultiRegionAccessPointInput {
             account_id: self.account_id,

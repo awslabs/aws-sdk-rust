@@ -141,7 +141,7 @@ impl PutOrganizationConfigRuleInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_organization_config_rule::PutOrganizationConfigRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_organization_config_rule::PutOrganizationConfigRuleInput {
             organization_config_rule_name: self.organization_config_rule_name,

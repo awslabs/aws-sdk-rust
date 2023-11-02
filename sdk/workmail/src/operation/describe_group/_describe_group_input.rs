@@ -96,7 +96,7 @@ impl DescribeGroupInputBuilder {
     /// Consumes the builder and constructs a [`DescribeGroupInput`](crate::operation::describe_group::DescribeGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_group::DescribeGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_group::DescribeGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_group::DescribeGroupInput {
             organization_id: self.organization_id,
             group_id: self.group_id,

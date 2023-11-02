@@ -86,7 +86,7 @@ impl PutMetricPolicyInputBuilder {
     /// Consumes the builder and constructs a [`PutMetricPolicyInput`](crate::operation::put_metric_policy::PutMetricPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_metric_policy::PutMetricPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_metric_policy::PutMetricPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_metric_policy::PutMetricPolicyInput {
             container_name: self.container_name,
             metric_policy: self.metric_policy,

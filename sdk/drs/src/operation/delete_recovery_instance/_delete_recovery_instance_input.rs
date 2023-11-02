@@ -44,8 +44,10 @@ impl DeleteRecoveryInstanceInputBuilder {
     /// Consumes the builder and constructs a [`DeleteRecoveryInstanceInput`](crate::operation::delete_recovery_instance::DeleteRecoveryInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_recovery_instance::DeleteRecoveryInstanceInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::delete_recovery_instance::DeleteRecoveryInstanceInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::delete_recovery_instance::DeleteRecoveryInstanceInput {
             recovery_instance_id: self.recovery_instance_id,
         })

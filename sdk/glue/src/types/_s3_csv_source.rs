@@ -452,16 +452,16 @@ impl S3CsvSourceBuilder {
     /// - [`paths`](crate::types::builders::S3CsvSourceBuilder::paths)
     /// - [`separator`](crate::types::builders::S3CsvSourceBuilder::separator)
     /// - [`quote_char`](crate::types::builders::S3CsvSourceBuilder::quote_char)
-    pub fn build(self) -> ::std::result::Result<crate::types::S3CsvSource, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::S3CsvSource, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::S3CsvSource {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building S3CsvSource",
                 )
             })?,
             paths: self.paths.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "paths",
                     "paths was not specified but it is required when building S3CsvSource",
                 )
@@ -475,14 +475,14 @@ impl S3CsvSourceBuilder {
             max_files_in_band: self.max_files_in_band,
             additional_options: self.additional_options,
             separator: self.separator.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "separator",
                     "separator was not specified but it is required when building S3CsvSource",
                 )
             })?,
             escaper: self.escaper,
             quote_char: self.quote_char.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "quote_char",
                     "quote_char was not specified but it is required when building S3CsvSource",
                 )

@@ -2,7 +2,7 @@
 pub fn ser_eks_source(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EksSource,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("eksClusterArn").string(input.eks_cluster_arn.as_str());
     }

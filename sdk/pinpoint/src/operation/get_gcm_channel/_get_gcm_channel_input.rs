@@ -44,7 +44,7 @@ impl GetGcmChannelInputBuilder {
     /// Consumes the builder and constructs a [`GetGcmChannelInput`](crate::operation::get_gcm_channel::GetGcmChannelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_gcm_channel::GetGcmChannelInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_gcm_channel::GetGcmChannelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_gcm_channel::GetGcmChannelInput {
             application_id: self.application_id,
         })

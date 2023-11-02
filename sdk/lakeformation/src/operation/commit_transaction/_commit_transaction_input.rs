@@ -44,7 +44,7 @@ impl CommitTransactionInputBuilder {
     /// Consumes the builder and constructs a [`CommitTransactionInput`](crate::operation::commit_transaction::CommitTransactionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::commit_transaction::CommitTransactionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::commit_transaction::CommitTransactionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::commit_transaction::CommitTransactionInput {
             transaction_id: self.transaction_id,
         })

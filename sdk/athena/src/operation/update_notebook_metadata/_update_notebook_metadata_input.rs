@@ -97,8 +97,10 @@ impl UpdateNotebookMetadataInputBuilder {
     /// Consumes the builder and constructs a [`UpdateNotebookMetadataInput`](crate::operation::update_notebook_metadata::UpdateNotebookMetadataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_notebook_metadata::UpdateNotebookMetadataInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::update_notebook_metadata::UpdateNotebookMetadataInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::update_notebook_metadata::UpdateNotebookMetadataInput {
             notebook_id: self.notebook_id,
             client_request_token: self.client_request_token,

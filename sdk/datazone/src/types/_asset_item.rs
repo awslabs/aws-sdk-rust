@@ -362,34 +362,34 @@ impl AssetItemBuilder {
     /// - [`type_identifier`](crate::types::builders::AssetItemBuilder::type_identifier)
     /// - [`type_revision`](crate::types::builders::AssetItemBuilder::type_revision)
     /// - [`owning_project_id`](crate::types::builders::AssetItemBuilder::owning_project_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::AssetItem, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AssetItem, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AssetItem {
             domain_id: self.domain_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "domain_id",
                     "domain_id was not specified but it is required when building AssetItem",
                 )
             })?,
             identifier: self.identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "identifier",
                     "identifier was not specified but it is required when building AssetItem",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building AssetItem",
                 )
             })?,
             type_identifier: self.type_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "type_identifier",
                     "type_identifier was not specified but it is required when building AssetItem",
                 )
             })?,
             type_revision: self.type_revision.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "type_revision",
                     "type_revision was not specified but it is required when building AssetItem",
                 )
@@ -402,7 +402,7 @@ impl AssetItemBuilder {
             first_revision_created_by: self.first_revision_created_by,
             glossary_terms: self.glossary_terms,
             owning_project_id: self.owning_project_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "owning_project_id",
                     "owning_project_id was not specified but it is required when building AssetItem",
                 )

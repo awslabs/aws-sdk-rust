@@ -105,7 +105,7 @@ impl UpdateRuleGroupInputBuilder {
     /// Consumes the builder and constructs a [`UpdateRuleGroupInput`](crate::operation::update_rule_group::UpdateRuleGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_rule_group::UpdateRuleGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_rule_group::UpdateRuleGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_rule_group::UpdateRuleGroupInput {
             rule_group_id: self.rule_group_id,
             updates: self.updates,

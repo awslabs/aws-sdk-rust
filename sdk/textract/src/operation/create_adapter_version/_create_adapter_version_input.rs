@@ -172,7 +172,7 @@ impl CreateAdapterVersionInputBuilder {
     /// Consumes the builder and constructs a [`CreateAdapterVersionInput`](crate::operation::create_adapter_version::CreateAdapterVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_adapter_version::CreateAdapterVersionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_adapter_version::CreateAdapterVersionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_adapter_version::CreateAdapterVersionInput {
             adapter_id: self.adapter_id,

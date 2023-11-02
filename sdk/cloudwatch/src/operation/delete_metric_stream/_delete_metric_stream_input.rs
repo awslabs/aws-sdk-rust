@@ -44,7 +44,8 @@ impl DeleteMetricStreamInputBuilder {
     /// Consumes the builder and constructs a [`DeleteMetricStreamInput`](crate::operation::delete_metric_stream::DeleteMetricStreamInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_metric_stream::DeleteMetricStreamInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_metric_stream::DeleteMetricStreamInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::delete_metric_stream::DeleteMetricStreamInput { name: self.name })
     }
 }

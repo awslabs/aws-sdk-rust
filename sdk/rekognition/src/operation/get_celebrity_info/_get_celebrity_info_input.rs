@@ -44,7 +44,7 @@ impl GetCelebrityInfoInputBuilder {
     /// Consumes the builder and constructs a [`GetCelebrityInfoInput`](crate::operation::get_celebrity_info::GetCelebrityInfoInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_celebrity_info::GetCelebrityInfoInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_celebrity_info::GetCelebrityInfoInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_celebrity_info::GetCelebrityInfoInput { id: self.id })
     }
 }

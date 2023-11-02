@@ -46,7 +46,7 @@ impl GetResourceEvaluationSummaryInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_resource_evaluation_summary::GetResourceEvaluationSummaryInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_resource_evaluation_summary::GetResourceEvaluationSummaryInput {
             resource_evaluation_id: self.resource_evaluation_id,

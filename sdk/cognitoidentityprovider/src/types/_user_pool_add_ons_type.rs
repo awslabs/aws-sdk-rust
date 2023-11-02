@@ -46,10 +46,10 @@ impl UserPoolAddOnsTypeBuilder {
     /// Consumes the builder and constructs a [`UserPoolAddOnsType`](crate::types::UserPoolAddOnsType).
     /// This method will fail if any of the following fields are not set:
     /// - [`advanced_security_mode`](crate::types::builders::UserPoolAddOnsTypeBuilder::advanced_security_mode)
-    pub fn build(self) -> ::std::result::Result<crate::types::UserPoolAddOnsType, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::UserPoolAddOnsType, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::UserPoolAddOnsType {
             advanced_security_mode: self.advanced_security_mode.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "advanced_security_mode",
                     "advanced_security_mode was not specified but it is required when building UserPoolAddOnsType",
                 )

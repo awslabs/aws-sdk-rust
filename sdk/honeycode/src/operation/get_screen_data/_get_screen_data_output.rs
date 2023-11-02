@@ -110,10 +110,10 @@ impl GetScreenDataOutputBuilder {
     /// - [`results`](crate::operation::get_screen_data::builders::GetScreenDataOutputBuilder::results)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_screen_data::GetScreenDataOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_screen_data::GetScreenDataOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_screen_data::GetScreenDataOutput {
             results: self.results.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "results",
                     "results was not specified but it is required when building GetScreenDataOutput",
                 )

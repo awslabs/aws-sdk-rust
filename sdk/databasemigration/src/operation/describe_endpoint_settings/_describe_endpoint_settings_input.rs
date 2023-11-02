@@ -88,7 +88,7 @@ impl DescribeEndpointSettingsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_endpoint_settings::DescribeEndpointSettingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_endpoint_settings::DescribeEndpointSettingsInput {
             engine_name: self.engine_name,

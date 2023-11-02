@@ -42,7 +42,7 @@ pub fn de_condition(
 pub fn ser_condition(
     input: &crate::types::Condition,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_3) = &input.http_error_code_returned_equals {

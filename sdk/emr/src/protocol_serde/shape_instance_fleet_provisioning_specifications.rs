@@ -2,7 +2,7 @@
 pub fn ser_instance_fleet_provisioning_specifications(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::InstanceFleetProvisioningSpecifications,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.spot_specification {
         #[allow(unused_mut)]
         let mut object_2 = object.key("SpotSpecification").start_object();

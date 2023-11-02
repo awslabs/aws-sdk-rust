@@ -82,16 +82,16 @@ impl CircleBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`center`](crate::types::builders::CircleBuilder::center)
     /// - [`radius`](crate::types::builders::CircleBuilder::radius)
-    pub fn build(self) -> ::std::result::Result<crate::types::Circle, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Circle, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Circle {
             center: self.center.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "center",
                     "center was not specified but it is required when building Circle",
                 )
             })?,
             radius: self.radius.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "radius",
                     "radius was not specified but it is required when building Circle",
                 )

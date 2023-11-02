@@ -86,7 +86,7 @@ impl ListPlacementsInputBuilder {
     /// Consumes the builder and constructs a [`ListPlacementsInput`](crate::operation::list_placements::ListPlacementsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_placements::ListPlacementsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_placements::ListPlacementsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_placements::ListPlacementsInput {
             project_name: self.project_name,
             next_token: self.next_token,

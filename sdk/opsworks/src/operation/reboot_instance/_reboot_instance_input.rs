@@ -44,7 +44,7 @@ impl RebootInstanceInputBuilder {
     /// Consumes the builder and constructs a [`RebootInstanceInput`](crate::operation::reboot_instance::RebootInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::reboot_instance::RebootInstanceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::reboot_instance::RebootInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::reboot_instance::RebootInstanceInput {
             instance_id: self.instance_id,
         })

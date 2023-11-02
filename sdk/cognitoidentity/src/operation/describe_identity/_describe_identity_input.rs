@@ -45,7 +45,7 @@ impl DescribeIdentityInputBuilder {
     /// Consumes the builder and constructs a [`DescribeIdentityInput`](crate::operation::describe_identity::DescribeIdentityInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_identity::DescribeIdentityInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_identity::DescribeIdentityInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_identity::DescribeIdentityInput {
             identity_id: self.identity_id,
         })

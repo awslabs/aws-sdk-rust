@@ -44,7 +44,7 @@ impl DeactivateEventSourceInputBuilder {
     /// Consumes the builder and constructs a [`DeactivateEventSourceInput`](crate::operation::deactivate_event_source::DeactivateEventSourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::deactivate_event_source::DeactivateEventSourceInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::deactivate_event_source::DeactivateEventSourceInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::deactivate_event_source::DeactivateEventSourceInput { name: self.name })
     }

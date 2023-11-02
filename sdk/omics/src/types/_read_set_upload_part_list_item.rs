@@ -157,28 +157,28 @@ impl ReadSetUploadPartListItemBuilder {
     /// - [`part_size`](crate::types::builders::ReadSetUploadPartListItemBuilder::part_size)
     /// - [`part_source`](crate::types::builders::ReadSetUploadPartListItemBuilder::part_source)
     /// - [`checksum`](crate::types::builders::ReadSetUploadPartListItemBuilder::checksum)
-    pub fn build(self) -> ::std::result::Result<crate::types::ReadSetUploadPartListItem, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ReadSetUploadPartListItem, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ReadSetUploadPartListItem {
             part_number: self.part_number.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "part_number",
                     "part_number was not specified but it is required when building ReadSetUploadPartListItem",
                 )
             })?,
             part_size: self.part_size.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "part_size",
                     "part_size was not specified but it is required when building ReadSetUploadPartListItem",
                 )
             })?,
             part_source: self.part_source.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "part_source",
                     "part_source was not specified but it is required when building ReadSetUploadPartListItem",
                 )
             })?,
             checksum: self.checksum.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "checksum",
                     "checksum was not specified but it is required when building ReadSetUploadPartListItem",
                 )

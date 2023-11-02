@@ -177,10 +177,10 @@ impl ListGeoLocationsOutputBuilder {
     /// - [`max_items`](crate::operation::list_geo_locations::builders::ListGeoLocationsOutputBuilder::max_items)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_geo_locations::ListGeoLocationsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_geo_locations::ListGeoLocationsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_geo_locations::ListGeoLocationsOutput {
             geo_location_details_list: self.geo_location_details_list.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "geo_location_details_list",
                     "geo_location_details_list was not specified but it is required when building ListGeoLocationsOutput",
                 )
@@ -190,7 +190,7 @@ impl ListGeoLocationsOutputBuilder {
             next_country_code: self.next_country_code,
             next_subdivision_code: self.next_subdivision_code,
             max_items: self.max_items.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "max_items",
                     "max_items was not specified but it is required when building ListGeoLocationsOutput",
                 )

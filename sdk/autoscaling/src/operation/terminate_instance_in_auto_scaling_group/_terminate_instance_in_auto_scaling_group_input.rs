@@ -68,7 +68,7 @@ impl TerminateInstanceInAutoScalingGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::terminate_instance_in_auto_scaling_group::TerminateInstanceInAutoScalingGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::terminate_instance_in_auto_scaling_group::TerminateInstanceInAutoScalingGroupInput {

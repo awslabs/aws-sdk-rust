@@ -196,22 +196,22 @@ impl AgentDetailsBuilder {
     /// - [`instance_id`](crate::types::builders::AgentDetailsBuilder::instance_id)
     /// - [`instance_type`](crate::types::builders::AgentDetailsBuilder::instance_type)
     /// - [`component_versions`](crate::types::builders::AgentDetailsBuilder::component_versions)
-    pub fn build(self) -> ::std::result::Result<crate::types::AgentDetails, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AgentDetails, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AgentDetails {
             agent_version: self.agent_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "agent_version",
                     "agent_version was not specified but it is required when building AgentDetails",
                 )
             })?,
             instance_id: self.instance_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "instance_id",
                     "instance_id was not specified but it is required when building AgentDetails",
                 )
             })?,
             instance_type: self.instance_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "instance_type",
                     "instance_type was not specified but it is required when building AgentDetails",
                 )
@@ -219,7 +219,7 @@ impl AgentDetailsBuilder {
             reserved_cpu_cores: self.reserved_cpu_cores,
             agent_cpu_cores: self.agent_cpu_cores,
             component_versions: self.component_versions.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "component_versions",
                     "component_versions was not specified but it is required when building AgentDetails",
                 )

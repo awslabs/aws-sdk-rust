@@ -69,10 +69,10 @@ impl DescribeDomainsOutputBuilder {
     /// - [`domain_status_list`](crate::operation::describe_domains::builders::DescribeDomainsOutputBuilder::domain_status_list)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_domains::DescribeDomainsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_domains::DescribeDomainsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_domains::DescribeDomainsOutput {
             domain_status_list: self.domain_status_list.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "domain_status_list",
                     "domain_status_list was not specified but it is required when building DescribeDomainsOutput",
                 )

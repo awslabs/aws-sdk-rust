@@ -2,7 +2,7 @@
 pub fn ser_vpc_connection_properties(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VpcConnectionProperties,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("VpcConnectionArn").string(input.vpc_connection_arn.as_str());
     }

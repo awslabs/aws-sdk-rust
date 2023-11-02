@@ -2,7 +2,7 @@
 pub fn ser_window_start_time(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::WindowStartTime,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Hours").number(
             #[allow(clippy::useless_conversion)]

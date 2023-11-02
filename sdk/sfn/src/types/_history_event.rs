@@ -845,16 +845,16 @@ impl HistoryEventBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`timestamp`](crate::types::builders::HistoryEventBuilder::timestamp)
     /// - [`r#type`](crate::types::builders::HistoryEventBuilder::r#type)
-    pub fn build(self) -> ::std::result::Result<crate::types::HistoryEvent, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::HistoryEvent, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::HistoryEvent {
             timestamp: self.timestamp.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "timestamp",
                     "timestamp was not specified but it is required when building HistoryEvent",
                 )
             })?,
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building HistoryEvent",
                 )

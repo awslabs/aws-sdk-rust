@@ -120,16 +120,16 @@ impl InputDataConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`s3_uri`](crate::types::builders::InputDataConfigBuilder::s3_uri)
     /// - [`content_type`](crate::types::builders::InputDataConfigBuilder::content_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::InputDataConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::InputDataConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::InputDataConfig {
             s3_uri: self.s3_uri.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "s3_uri",
                     "s3_uri was not specified but it is required when building InputDataConfig",
                 )
             })?,
             content_type: self.content_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "content_type",
                     "content_type was not specified but it is required when building InputDataConfig",
                 )

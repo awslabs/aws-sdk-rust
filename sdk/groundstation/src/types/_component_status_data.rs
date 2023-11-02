@@ -180,22 +180,22 @@ impl ComponentStatusDataBuilder {
     /// - [`capability_arn`](crate::types::builders::ComponentStatusDataBuilder::capability_arn)
     /// - [`status`](crate::types::builders::ComponentStatusDataBuilder::status)
     /// - [`dataflow_id`](crate::types::builders::ComponentStatusDataBuilder::dataflow_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::ComponentStatusData, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ComponentStatusData, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ComponentStatusData {
             component_type: self.component_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "component_type",
                     "component_type was not specified but it is required when building ComponentStatusData",
                 )
             })?,
             capability_arn: self.capability_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "capability_arn",
                     "capability_arn was not specified but it is required when building ComponentStatusData",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building ComponentStatusData",
                 )
@@ -204,7 +204,7 @@ impl ComponentStatusDataBuilder {
             bytes_received: self.bytes_received,
             packets_dropped: self.packets_dropped,
             dataflow_id: self.dataflow_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "dataflow_id",
                     "dataflow_id was not specified but it is required when building ComponentStatusData",
                 )

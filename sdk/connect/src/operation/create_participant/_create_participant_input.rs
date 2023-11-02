@@ -124,7 +124,7 @@ impl CreateParticipantInputBuilder {
     /// Consumes the builder and constructs a [`CreateParticipantInput`](crate::operation::create_participant::CreateParticipantInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_participant::CreateParticipantInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_participant::CreateParticipantInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_participant::CreateParticipantInput {
             instance_id: self.instance_id,
             contact_id: self.contact_id,

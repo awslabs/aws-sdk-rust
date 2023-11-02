@@ -139,7 +139,7 @@ impl GetProductsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`GetProductsInput`](crate::operation::get_products::GetProductsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_products::GetProductsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_products::GetProductsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_products::GetProductsInput {
             service_code: self.service_code,
             filters: self.filters,

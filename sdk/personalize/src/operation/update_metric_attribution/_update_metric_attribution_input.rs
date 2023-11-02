@@ -124,7 +124,7 @@ impl UpdateMetricAttributionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_metric_attribution::UpdateMetricAttributionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_metric_attribution::UpdateMetricAttributionInput {
             add_metrics: self.add_metrics,

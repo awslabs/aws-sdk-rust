@@ -144,7 +144,7 @@ impl QueryWhatIfForecastInputBuilder {
     /// Consumes the builder and constructs a [`QueryWhatIfForecastInput`](crate::operation::query_what_if_forecast::QueryWhatIfForecastInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::query_what_if_forecast::QueryWhatIfForecastInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::query_what_if_forecast::QueryWhatIfForecastInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::query_what_if_forecast::QueryWhatIfForecastInput {
             what_if_forecast_arn: self.what_if_forecast_arn,

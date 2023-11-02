@@ -45,7 +45,7 @@ impl GetSerialConsoleAccessStatusInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_serial_console_access_status::GetSerialConsoleAccessStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_serial_console_access_status::GetSerialConsoleAccessStatusInput { dry_run: self.dry_run })
     }

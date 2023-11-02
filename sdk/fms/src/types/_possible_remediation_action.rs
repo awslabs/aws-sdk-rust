@@ -96,11 +96,11 @@ impl PossibleRemediationActionBuilder {
     /// Consumes the builder and constructs a [`PossibleRemediationAction`](crate::types::PossibleRemediationAction).
     /// This method will fail if any of the following fields are not set:
     /// - [`ordered_remediation_actions`](crate::types::builders::PossibleRemediationActionBuilder::ordered_remediation_actions)
-    pub fn build(self) -> ::std::result::Result<crate::types::PossibleRemediationAction, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PossibleRemediationAction, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PossibleRemediationAction {
             description: self.description,
             ordered_remediation_actions: self.ordered_remediation_actions.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "ordered_remediation_actions",
                     "ordered_remediation_actions was not specified but it is required when building PossibleRemediationAction",
                 )

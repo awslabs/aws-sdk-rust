@@ -188,10 +188,10 @@ impl ReportSettingBuilder {
     /// Consumes the builder and constructs a [`ReportSetting`](crate::types::ReportSetting).
     /// This method will fail if any of the following fields are not set:
     /// - [`report_template`](crate::types::builders::ReportSettingBuilder::report_template)
-    pub fn build(self) -> ::std::result::Result<crate::types::ReportSetting, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ReportSetting, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ReportSetting {
             report_template: self.report_template.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "report_template",
                     "report_template was not specified but it is required when building ReportSetting",
                 )

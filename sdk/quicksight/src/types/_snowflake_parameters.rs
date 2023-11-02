@@ -94,22 +94,22 @@ impl SnowflakeParametersBuilder {
     /// - [`host`](crate::types::builders::SnowflakeParametersBuilder::host)
     /// - [`database`](crate::types::builders::SnowflakeParametersBuilder::database)
     /// - [`warehouse`](crate::types::builders::SnowflakeParametersBuilder::warehouse)
-    pub fn build(self) -> ::std::result::Result<crate::types::SnowflakeParameters, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SnowflakeParameters, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SnowflakeParameters {
             host: self.host.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "host",
                     "host was not specified but it is required when building SnowflakeParameters",
                 )
             })?,
             database: self.database.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "database",
                     "database was not specified but it is required when building SnowflakeParameters",
                 )
             })?,
             warehouse: self.warehouse.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "warehouse",
                     "warehouse was not specified but it is required when building SnowflakeParameters",
                 )

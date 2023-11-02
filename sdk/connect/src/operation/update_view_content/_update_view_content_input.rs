@@ -115,7 +115,7 @@ impl UpdateViewContentInputBuilder {
     /// Consumes the builder and constructs a [`UpdateViewContentInput`](crate::operation::update_view_content::UpdateViewContentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_view_content::UpdateViewContentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_view_content::UpdateViewContentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_view_content::UpdateViewContentInput {
             instance_id: self.instance_id,
             view_id: self.view_id,

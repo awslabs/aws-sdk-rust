@@ -115,7 +115,7 @@ impl BatchDeleteTableInputBuilder {
     /// Consumes the builder and constructs a [`BatchDeleteTableInput`](crate::operation::batch_delete_table::BatchDeleteTableInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_delete_table::BatchDeleteTableInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::batch_delete_table::BatchDeleteTableInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::batch_delete_table::BatchDeleteTableInput {
             catalog_id: self.catalog_id,
             database_name: self.database_name,

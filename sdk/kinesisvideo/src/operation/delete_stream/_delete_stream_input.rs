@@ -73,7 +73,9 @@ impl DeleteStreamInputBuilder {
         &self.current_version
     }
     /// Consumes the builder and constructs a [`DeleteStreamInput`](crate::operation::delete_stream::DeleteStreamInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_stream::DeleteStreamInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_stream::DeleteStreamInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_stream::DeleteStreamInput {
             stream_arn: self.stream_arn,
             current_version: self.current_version,

@@ -74,7 +74,7 @@ impl AddFlowOutputsInputBuilder {
     /// Consumes the builder and constructs a [`AddFlowOutputsInput`](crate::operation::add_flow_outputs::AddFlowOutputsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::add_flow_outputs::AddFlowOutputsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::add_flow_outputs::AddFlowOutputsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::add_flow_outputs::AddFlowOutputsInput {
             flow_arn: self.flow_arn,
             outputs: self.outputs,

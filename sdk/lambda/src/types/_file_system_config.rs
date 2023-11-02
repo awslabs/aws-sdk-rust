@@ -70,16 +70,16 @@ impl FileSystemConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::FileSystemConfigBuilder::arn)
     /// - [`local_mount_path`](crate::types::builders::FileSystemConfigBuilder::local_mount_path)
-    pub fn build(self) -> ::std::result::Result<crate::types::FileSystemConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::FileSystemConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FileSystemConfig {
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building FileSystemConfig",
                 )
             })?,
             local_mount_path: self.local_mount_path.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "local_mount_path",
                     "local_mount_path was not specified but it is required when building FileSystemConfig",
                 )

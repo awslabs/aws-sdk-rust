@@ -70,16 +70,16 @@ impl HostEntryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`hostname`](crate::types::builders::HostEntryBuilder::hostname)
     /// - [`ip_address`](crate::types::builders::HostEntryBuilder::ip_address)
-    pub fn build(self) -> ::std::result::Result<crate::types::HostEntry, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::HostEntry, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::HostEntry {
             hostname: self.hostname.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "hostname",
                     "hostname was not specified but it is required when building HostEntry",
                 )
             })?,
             ip_address: self.ip_address.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "ip_address",
                     "ip_address was not specified but it is required when building HostEntry",
                 )

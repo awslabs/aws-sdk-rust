@@ -2,7 +2,7 @@
 pub fn ser_identity_provider_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IdentityProviderConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("AuthorizationStrategy").string(input.authorization_strategy.as_str());
     }

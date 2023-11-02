@@ -88,7 +88,7 @@ impl GetSchemaAnalysisRuleInputBuilder {
     /// Consumes the builder and constructs a [`GetSchemaAnalysisRuleInput`](crate::operation::get_schema_analysis_rule::GetSchemaAnalysisRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_schema_analysis_rule::GetSchemaAnalysisRuleInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_schema_analysis_rule::GetSchemaAnalysisRuleInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_schema_analysis_rule::GetSchemaAnalysisRuleInput {
             collaboration_identifier: self.collaboration_identifier,

@@ -83,7 +83,7 @@ impl AddTagsToCertificateInputBuilder {
     /// Consumes the builder and constructs a [`AddTagsToCertificateInput`](crate::operation::add_tags_to_certificate::AddTagsToCertificateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::add_tags_to_certificate::AddTagsToCertificateInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::add_tags_to_certificate::AddTagsToCertificateInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::add_tags_to_certificate::AddTagsToCertificateInput {
             certificate_arn: self.certificate_arn,

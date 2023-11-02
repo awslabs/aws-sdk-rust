@@ -88,7 +88,7 @@ impl ListSourceApiAssociationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_source_api_associations::ListSourceApiAssociationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_source_api_associations::ListSourceApiAssociationsInput {
             api_id: self.api_id,

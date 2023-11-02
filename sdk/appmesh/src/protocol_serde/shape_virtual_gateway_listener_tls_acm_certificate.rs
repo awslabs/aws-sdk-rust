@@ -2,7 +2,7 @@
 pub fn ser_virtual_gateway_listener_tls_acm_certificate(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VirtualGatewayListenerTlsAcmCertificate,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("certificateArn").string(input.certificate_arn.as_str());
     }

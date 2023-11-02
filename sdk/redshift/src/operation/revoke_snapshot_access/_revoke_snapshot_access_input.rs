@@ -108,7 +108,7 @@ impl RevokeSnapshotAccessInputBuilder {
     /// Consumes the builder and constructs a [`RevokeSnapshotAccessInput`](crate::operation::revoke_snapshot_access::RevokeSnapshotAccessInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::revoke_snapshot_access::RevokeSnapshotAccessInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::revoke_snapshot_access::RevokeSnapshotAccessInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::revoke_snapshot_access::RevokeSnapshotAccessInput {
             snapshot_identifier: self.snapshot_identifier,

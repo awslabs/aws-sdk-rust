@@ -206,10 +206,10 @@ impl SopRecommendationBuilder {
     /// - [`service_type`](crate::types::builders::SopRecommendationBuilder::service_type)
     /// - [`recommendation_id`](crate::types::builders::SopRecommendationBuilder::recommendation_id)
     /// - [`reference_id`](crate::types::builders::SopRecommendationBuilder::reference_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::SopRecommendation, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SopRecommendation, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SopRecommendation {
             service_type: self.service_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "service_type",
                     "service_type was not specified but it is required when building SopRecommendation",
                 )
@@ -217,7 +217,7 @@ impl SopRecommendationBuilder {
             app_component_name: self.app_component_name,
             description: self.description,
             recommendation_id: self.recommendation_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "recommendation_id",
                     "recommendation_id was not specified but it is required when building SopRecommendation",
                 )
@@ -225,7 +225,7 @@ impl SopRecommendationBuilder {
             name: self.name,
             items: self.items,
             reference_id: self.reference_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "reference_id",
                     "reference_id was not specified but it is required when building SopRecommendation",
                 )

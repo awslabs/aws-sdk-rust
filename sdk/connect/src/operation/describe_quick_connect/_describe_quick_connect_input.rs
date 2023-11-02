@@ -66,7 +66,7 @@ impl DescribeQuickConnectInputBuilder {
     /// Consumes the builder and constructs a [`DescribeQuickConnectInput`](crate::operation::describe_quick_connect::DescribeQuickConnectInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_quick_connect::DescribeQuickConnectInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_quick_connect::DescribeQuickConnectInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_quick_connect::DescribeQuickConnectInput {
             instance_id: self.instance_id,

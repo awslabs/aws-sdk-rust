@@ -101,7 +101,7 @@ impl CreateEmailIdentityPolicyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_email_identity_policy::CreateEmailIdentityPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_email_identity_policy::CreateEmailIdentityPolicyInput {
             email_identity: self.email_identity,

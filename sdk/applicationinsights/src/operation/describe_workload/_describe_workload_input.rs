@@ -109,7 +109,7 @@ impl DescribeWorkloadInputBuilder {
     /// Consumes the builder and constructs a [`DescribeWorkloadInput`](crate::operation::describe_workload::DescribeWorkloadInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_workload::DescribeWorkloadInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_workload::DescribeWorkloadInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_workload::DescribeWorkloadInput {
             resource_group_name: self.resource_group_name,
             component_name: self.component_name,

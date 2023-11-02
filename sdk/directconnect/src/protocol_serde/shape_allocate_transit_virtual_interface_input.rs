@@ -2,7 +2,7 @@
 pub fn ser_allocate_transit_virtual_interface_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::allocate_transit_virtual_interface::AllocateTransitVirtualInterfaceInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.connection_id {
         object.key("connectionId").string(var_1.as_str());
     }

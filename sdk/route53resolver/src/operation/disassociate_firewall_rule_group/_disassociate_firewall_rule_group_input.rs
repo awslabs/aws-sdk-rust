@@ -46,7 +46,7 @@ impl DisassociateFirewallRuleGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_firewall_rule_group::DisassociateFirewallRuleGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disassociate_firewall_rule_group::DisassociateFirewallRuleGroupInput {
             firewall_rule_group_association_id: self.firewall_rule_group_association_id,

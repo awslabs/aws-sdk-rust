@@ -64,7 +64,7 @@ impl ListSourceLocationsInputBuilder {
     /// Consumes the builder and constructs a [`ListSourceLocationsInput`](crate::operation::list_source_locations::ListSourceLocationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_source_locations::ListSourceLocationsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_source_locations::ListSourceLocationsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_source_locations::ListSourceLocationsInput {
             max_results: self.max_results,

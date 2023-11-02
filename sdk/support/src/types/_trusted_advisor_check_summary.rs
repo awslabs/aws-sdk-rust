@@ -159,22 +159,22 @@ impl TrustedAdvisorCheckSummaryBuilder {
     /// - [`check_id`](crate::types::builders::TrustedAdvisorCheckSummaryBuilder::check_id)
     /// - [`timestamp`](crate::types::builders::TrustedAdvisorCheckSummaryBuilder::timestamp)
     /// - [`status`](crate::types::builders::TrustedAdvisorCheckSummaryBuilder::status)
-    pub fn build(self) -> ::std::result::Result<crate::types::TrustedAdvisorCheckSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TrustedAdvisorCheckSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TrustedAdvisorCheckSummary {
             check_id: self.check_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "check_id",
                     "check_id was not specified but it is required when building TrustedAdvisorCheckSummary",
                 )
             })?,
             timestamp: self.timestamp.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "timestamp",
                     "timestamp was not specified but it is required when building TrustedAdvisorCheckSummary",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building TrustedAdvisorCheckSummary",
                 )

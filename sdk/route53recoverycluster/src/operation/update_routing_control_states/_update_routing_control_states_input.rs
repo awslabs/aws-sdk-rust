@@ -90,7 +90,7 @@ impl UpdateRoutingControlStatesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_routing_control_states::UpdateRoutingControlStatesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_routing_control_states::UpdateRoutingControlStatesInput {
             update_routing_control_state_entries: self.update_routing_control_state_entries,

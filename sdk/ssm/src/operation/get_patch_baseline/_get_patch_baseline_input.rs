@@ -54,7 +54,7 @@ impl GetPatchBaselineInputBuilder {
     /// Consumes the builder and constructs a [`GetPatchBaselineInput`](crate::operation::get_patch_baseline::GetPatchBaselineInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_patch_baseline::GetPatchBaselineInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_patch_baseline::GetPatchBaselineInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_patch_baseline::GetPatchBaselineInput {
             baseline_id: self.baseline_id,
         })

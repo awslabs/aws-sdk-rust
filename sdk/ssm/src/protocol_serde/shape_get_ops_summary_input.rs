@@ -2,7 +2,7 @@
 pub fn ser_get_ops_summary_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_ops_summary::GetOpsSummaryInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.sync_name {
         object.key("SyncName").string(var_1.as_str());
     }

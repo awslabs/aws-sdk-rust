@@ -44,7 +44,7 @@ impl RejectSharedDirectoryInputBuilder {
     /// Consumes the builder and constructs a [`RejectSharedDirectoryInput`](crate::operation::reject_shared_directory::RejectSharedDirectoryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::reject_shared_directory::RejectSharedDirectoryInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::reject_shared_directory::RejectSharedDirectoryInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::reject_shared_directory::RejectSharedDirectoryInput {
             shared_directory_id: self.shared_directory_id,

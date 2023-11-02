@@ -141,22 +141,22 @@ impl InstanceSummaryBuilder {
     /// - [`instance_id`](crate::types::builders::InstanceSummaryBuilder::instance_id)
     /// - [`status`](crate::types::builders::InstanceSummaryBuilder::status)
     /// - [`products`](crate::types::builders::InstanceSummaryBuilder::products)
-    pub fn build(self) -> ::std::result::Result<crate::types::InstanceSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::InstanceSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::InstanceSummary {
             instance_id: self.instance_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "instance_id",
                     "instance_id was not specified but it is required when building InstanceSummary",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building InstanceSummary",
                 )
             })?,
             products: self.products.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "products",
                     "products was not specified but it is required when building InstanceSummary",
                 )

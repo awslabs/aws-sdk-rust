@@ -72,7 +72,7 @@ impl DescribeFindingsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeFindingsInput`](crate::operation::describe_findings::DescribeFindingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_findings::DescribeFindingsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_findings::DescribeFindingsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_findings::DescribeFindingsInput {
             finding_arns: self.finding_arns,
             locale: self.locale,

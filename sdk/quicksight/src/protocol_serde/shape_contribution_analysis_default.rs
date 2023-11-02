@@ -2,7 +2,7 @@
 pub fn ser_contribution_analysis_default(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ContributionAnalysisDefault,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("MeasureFieldId").string(input.measure_field_id.as_str());
     }

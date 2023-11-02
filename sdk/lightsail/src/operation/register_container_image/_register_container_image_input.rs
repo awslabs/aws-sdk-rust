@@ -143,8 +143,10 @@ impl RegisterContainerImageInputBuilder {
     /// Consumes the builder and constructs a [`RegisterContainerImageInput`](crate::operation::register_container_image::RegisterContainerImageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::register_container_image::RegisterContainerImageInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::register_container_image::RegisterContainerImageInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::register_container_image::RegisterContainerImageInput {
             service_name: self.service_name,
             label: self.label,

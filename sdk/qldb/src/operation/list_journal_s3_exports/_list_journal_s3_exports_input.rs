@@ -64,7 +64,7 @@ impl ListJournalS3ExportsInputBuilder {
     /// Consumes the builder and constructs a [`ListJournalS3ExportsInput`](crate::operation::list_journal_s3_exports::ListJournalS3ExportsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_journal_s3_exports::ListJournalS3ExportsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_journal_s3_exports::ListJournalS3ExportsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_journal_s3_exports::ListJournalS3ExportsInput {
             max_results: self.max_results,

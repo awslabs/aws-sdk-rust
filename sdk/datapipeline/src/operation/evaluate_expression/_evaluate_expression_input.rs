@@ -89,7 +89,7 @@ impl EvaluateExpressionInputBuilder {
     /// Consumes the builder and constructs a [`EvaluateExpressionInput`](crate::operation::evaluate_expression::EvaluateExpressionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::evaluate_expression::EvaluateExpressionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::evaluate_expression::EvaluateExpressionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::evaluate_expression::EvaluateExpressionInput {
             pipeline_id: self.pipeline_id,
             object_id: self.object_id,

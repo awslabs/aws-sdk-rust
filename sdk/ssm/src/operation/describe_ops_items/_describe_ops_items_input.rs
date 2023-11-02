@@ -183,7 +183,7 @@ impl DescribeOpsItemsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeOpsItemsInput`](crate::operation::describe_ops_items::DescribeOpsItemsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_ops_items::DescribeOpsItemsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_ops_items::DescribeOpsItemsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_ops_items::DescribeOpsItemsInput {
             ops_item_filters: self.ops_item_filters,
             max_results: self.max_results,

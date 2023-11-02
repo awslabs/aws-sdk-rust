@@ -254,23 +254,23 @@ impl ByteMatchStatementBuilder {
     /// - [`search_string`](crate::types::builders::ByteMatchStatementBuilder::search_string)
     /// - [`text_transformations`](crate::types::builders::ByteMatchStatementBuilder::text_transformations)
     /// - [`positional_constraint`](crate::types::builders::ByteMatchStatementBuilder::positional_constraint)
-    pub fn build(self) -> ::std::result::Result<crate::types::ByteMatchStatement, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ByteMatchStatement, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ByteMatchStatement {
             search_string: self.search_string.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "search_string",
                     "search_string was not specified but it is required when building ByteMatchStatement",
                 )
             })?,
             field_to_match: self.field_to_match,
             text_transformations: self.text_transformations.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "text_transformations",
                     "text_transformations was not specified but it is required when building ByteMatchStatement",
                 )
             })?,
             positional_constraint: self.positional_constraint.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "positional_constraint",
                     "positional_constraint was not specified but it is required when building ByteMatchStatement",
                 )

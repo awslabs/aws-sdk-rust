@@ -88,7 +88,7 @@ impl DescribeInterconnectLoaInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_interconnect_loa::DescribeInterconnectLoaInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_interconnect_loa::DescribeInterconnectLoaInput {
             interconnect_id: self.interconnect_id,

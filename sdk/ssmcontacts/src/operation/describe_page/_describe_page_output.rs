@@ -309,40 +309,40 @@ impl DescribePageOutputBuilder {
     /// - [`content`](crate::operation::describe_page::builders::DescribePageOutputBuilder::content)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_page::DescribePageOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_page::DescribePageOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_page::DescribePageOutput {
             page_arn: self.page_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "page_arn",
                     "page_arn was not specified but it is required when building DescribePageOutput",
                 )
             })?,
             engagement_arn: self.engagement_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "engagement_arn",
                     "engagement_arn was not specified but it is required when building DescribePageOutput",
                 )
             })?,
             contact_arn: self.contact_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "contact_arn",
                     "contact_arn was not specified but it is required when building DescribePageOutput",
                 )
             })?,
             sender: self.sender.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "sender",
                     "sender was not specified but it is required when building DescribePageOutput",
                 )
             })?,
             subject: self.subject.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "subject",
                     "subject was not specified but it is required when building DescribePageOutput",
                 )
             })?,
             content: self.content.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "content",
                     "content was not specified but it is required when building DescribePageOutput",
                 )

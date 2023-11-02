@@ -2,7 +2,7 @@
 pub fn ser_update_program_transition(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UpdateProgramTransition,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.scheduled_start_time_millis != 0 {
         object.key("ScheduledStartTimeMillis").number(
             #[allow(clippy::useless_conversion)]

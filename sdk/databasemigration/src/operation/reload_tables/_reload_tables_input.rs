@@ -102,7 +102,9 @@ impl ReloadTablesInputBuilder {
         &self.reload_option
     }
     /// Consumes the builder and constructs a [`ReloadTablesInput`](crate::operation::reload_tables::ReloadTablesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::reload_tables::ReloadTablesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::reload_tables::ReloadTablesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::reload_tables::ReloadTablesInput {
             replication_task_arn: self.replication_task_arn,
             tables_to_reload: self.tables_to_reload,

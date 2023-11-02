@@ -137,7 +137,7 @@ impl ListFieldOptionsInputBuilder {
     /// Consumes the builder and constructs a [`ListFieldOptionsInput`](crate::operation::list_field_options::ListFieldOptionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_field_options::ListFieldOptionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_field_options::ListFieldOptionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_field_options::ListFieldOptionsInput {
             domain_id: self.domain_id,
             field_id: self.field_id,

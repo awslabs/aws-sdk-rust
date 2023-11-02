@@ -90,7 +90,7 @@ impl GetAlternateContactInputBuilder {
     /// Consumes the builder and constructs a [`GetAlternateContactInput`](crate::operation::get_alternate_contact::GetAlternateContactInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_alternate_contact::GetAlternateContactInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_alternate_contact::GetAlternateContactInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_alternate_contact::GetAlternateContactInput {
             alternate_contact_type: self.alternate_contact_type,

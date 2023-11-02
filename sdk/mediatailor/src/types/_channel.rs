@@ -293,22 +293,22 @@ impl ChannelBuilder {
     /// - [`outputs`](crate::types::builders::ChannelBuilder::outputs)
     /// - [`playback_mode`](crate::types::builders::ChannelBuilder::playback_mode)
     /// - [`tier`](crate::types::builders::ChannelBuilder::tier)
-    pub fn build(self) -> ::std::result::Result<crate::types::Channel, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Channel, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Channel {
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building Channel",
                 )
             })?,
             channel_name: self.channel_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "channel_name",
                     "channel_name was not specified but it is required when building Channel",
                 )
             })?,
             channel_state: self.channel_state.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "channel_state",
                     "channel_state was not specified but it is required when building Channel",
                 )
@@ -317,20 +317,20 @@ impl ChannelBuilder {
             filler_slate: self.filler_slate,
             last_modified_time: self.last_modified_time,
             outputs: self.outputs.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "outputs",
                     "outputs was not specified but it is required when building Channel",
                 )
             })?,
             playback_mode: self.playback_mode.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "playback_mode",
                     "playback_mode was not specified but it is required when building Channel",
                 )
             })?,
             tags: self.tags,
             tier: self.tier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "tier",
                     "tier was not specified but it is required when building Channel",
                 )

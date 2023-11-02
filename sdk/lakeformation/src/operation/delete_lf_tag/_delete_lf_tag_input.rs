@@ -63,7 +63,7 @@ impl DeleteLfTagInputBuilder {
         &self.tag_key
     }
     /// Consumes the builder and constructs a [`DeleteLfTagInput`](crate::operation::delete_lf_tag::DeleteLfTagInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_lf_tag::DeleteLfTagInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_lf_tag::DeleteLfTagInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_lf_tag::DeleteLfTagInput {
             catalog_id: self.catalog_id,
             tag_key: self.tag_key,

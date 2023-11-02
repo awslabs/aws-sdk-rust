@@ -226,8 +226,10 @@ impl PutIntegrationResponseInputBuilder {
     /// Consumes the builder and constructs a [`PutIntegrationResponseInput`](crate::operation::put_integration_response::PutIntegrationResponseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_integration_response::PutIntegrationResponseInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::put_integration_response::PutIntegrationResponseInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::put_integration_response::PutIntegrationResponseInput {
             rest_api_id: self.rest_api_id,
             resource_id: self.resource_id,

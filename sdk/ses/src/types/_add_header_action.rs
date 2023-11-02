@@ -71,16 +71,16 @@ impl AddHeaderActionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`header_name`](crate::types::builders::AddHeaderActionBuilder::header_name)
     /// - [`header_value`](crate::types::builders::AddHeaderActionBuilder::header_value)
-    pub fn build(self) -> ::std::result::Result<crate::types::AddHeaderAction, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AddHeaderAction, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AddHeaderAction {
             header_name: self.header_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "header_name",
                     "header_name was not specified but it is required when building AddHeaderAction",
                 )
             })?,
             header_value: self.header_value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "header_value",
                     "header_value was not specified but it is required when building AddHeaderAction",
                 )

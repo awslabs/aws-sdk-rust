@@ -110,7 +110,7 @@ impl UpdateTaskSetInputBuilder {
     /// Consumes the builder and constructs a [`UpdateTaskSetInput`](crate::operation::update_task_set::UpdateTaskSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_task_set::UpdateTaskSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_task_set::UpdateTaskSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_task_set::UpdateTaskSetInput {
             cluster: self.cluster,
             service: self.service,

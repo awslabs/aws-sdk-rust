@@ -2,7 +2,7 @@
 pub fn ser_pipeline_output_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PipelineOutputConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.bucket {
         object.key("Bucket").string(var_1.as_str());
     }

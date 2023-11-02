@@ -68,16 +68,16 @@ impl ViewSunAzimuthInputBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`lower_bound`](crate::types::builders::ViewSunAzimuthInputBuilder::lower_bound)
     /// - [`upper_bound`](crate::types::builders::ViewSunAzimuthInputBuilder::upper_bound)
-    pub fn build(self) -> ::std::result::Result<crate::types::ViewSunAzimuthInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ViewSunAzimuthInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ViewSunAzimuthInput {
             lower_bound: self.lower_bound.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "lower_bound",
                     "lower_bound was not specified but it is required when building ViewSunAzimuthInput",
                 )
             })?,
             upper_bound: self.upper_bound.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "upper_bound",
                     "upper_bound was not specified but it is required when building ViewSunAzimuthInput",
                 )

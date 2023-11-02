@@ -68,16 +68,16 @@ impl AllowedInputTypesBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`allow_audio_input`](crate::types::builders::AllowedInputTypesBuilder::allow_audio_input)
     /// - [`allow_dtmf_input`](crate::types::builders::AllowedInputTypesBuilder::allow_dtmf_input)
-    pub fn build(self) -> ::std::result::Result<crate::types::AllowedInputTypes, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AllowedInputTypes, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AllowedInputTypes {
             allow_audio_input: self.allow_audio_input.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "allow_audio_input",
                     "allow_audio_input was not specified but it is required when building AllowedInputTypes",
                 )
             })?,
             allow_dtmf_input: self.allow_dtmf_input.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "allow_dtmf_input",
                     "allow_dtmf_input was not specified but it is required when building AllowedInputTypes",
                 )

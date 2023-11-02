@@ -48,12 +48,12 @@ impl ApplicationMaintenanceConfigurationUpdateBuilder {
     /// - [`application_maintenance_window_start_time_update`](crate::types::builders::ApplicationMaintenanceConfigurationUpdateBuilder::application_maintenance_window_start_time_update)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::ApplicationMaintenanceConfigurationUpdate, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::ApplicationMaintenanceConfigurationUpdate, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::types::ApplicationMaintenanceConfigurationUpdate {
                 application_maintenance_window_start_time_update: self.application_maintenance_window_start_time_update
                     .ok_or_else(||
-                        ::aws_smithy_http::operation::error::BuildError::missing_field("application_maintenance_window_start_time_update", "application_maintenance_window_start_time_update was not specified but it is required when building ApplicationMaintenanceConfigurationUpdate")
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("application_maintenance_window_start_time_update", "application_maintenance_window_start_time_update was not specified but it is required when building ApplicationMaintenanceConfigurationUpdate")
                     )?
                 ,
             }

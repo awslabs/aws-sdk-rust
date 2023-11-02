@@ -44,7 +44,7 @@ impl DeleteExplainabilityInputBuilder {
     /// Consumes the builder and constructs a [`DeleteExplainabilityInput`](crate::operation::delete_explainability::DeleteExplainabilityInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_explainability::DeleteExplainabilityInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_explainability::DeleteExplainabilityInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_explainability::DeleteExplainabilityInput {
             explainability_arn: self.explainability_arn,

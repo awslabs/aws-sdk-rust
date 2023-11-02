@@ -95,7 +95,7 @@ impl DescribeGameSessionQueuesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_game_session_queues::DescribeGameSessionQueuesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_game_session_queues::DescribeGameSessionQueuesInput {
             names: self.names,

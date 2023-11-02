@@ -136,7 +136,7 @@ impl GetGeoLocationInputBuilder {
     /// Consumes the builder and constructs a [`GetGeoLocationInput`](crate::operation::get_geo_location::GetGeoLocationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_geo_location::GetGeoLocationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_geo_location::GetGeoLocationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_geo_location::GetGeoLocationInput {
             continent_code: self.continent_code,
             country_code: self.country_code,

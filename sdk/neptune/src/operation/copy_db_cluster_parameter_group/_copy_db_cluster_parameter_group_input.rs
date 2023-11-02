@@ -189,7 +189,7 @@ impl CopyDbClusterParameterGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::copy_db_cluster_parameter_group::CopyDbClusterParameterGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::copy_db_cluster_parameter_group::CopyDbClusterParameterGroupInput {
             source_db_cluster_parameter_group_identifier: self.source_db_cluster_parameter_group_identifier,

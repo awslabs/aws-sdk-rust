@@ -89,7 +89,7 @@ impl AssociateEnclaveCertificateIamRoleInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_enclave_certificate_iam_role::AssociateEnclaveCertificateIamRoleInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::associate_enclave_certificate_iam_role::AssociateEnclaveCertificateIamRoleInput {

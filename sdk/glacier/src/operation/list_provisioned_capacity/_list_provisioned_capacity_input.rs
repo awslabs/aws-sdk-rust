@@ -51,7 +51,7 @@ impl ListProvisionedCapacityInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_provisioned_capacity::ListProvisionedCapacityInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_provisioned_capacity::ListProvisionedCapacityInput { account_id: self.account_id })
     }

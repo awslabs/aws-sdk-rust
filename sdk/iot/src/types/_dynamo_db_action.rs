@@ -250,29 +250,29 @@ impl DynamoDbActionBuilder {
     /// - [`role_arn`](crate::types::builders::DynamoDbActionBuilder::role_arn)
     /// - [`hash_key_field`](crate::types::builders::DynamoDbActionBuilder::hash_key_field)
     /// - [`hash_key_value`](crate::types::builders::DynamoDbActionBuilder::hash_key_value)
-    pub fn build(self) -> ::std::result::Result<crate::types::DynamoDbAction, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DynamoDbAction, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DynamoDbAction {
             table_name: self.table_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "table_name",
                     "table_name was not specified but it is required when building DynamoDbAction",
                 )
             })?,
             role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role_arn",
                     "role_arn was not specified but it is required when building DynamoDbAction",
                 )
             })?,
             operation: self.operation,
             hash_key_field: self.hash_key_field.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "hash_key_field",
                     "hash_key_field was not specified but it is required when building DynamoDbAction",
                 )
             })?,
             hash_key_value: self.hash_key_value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "hash_key_value",
                     "hash_key_value was not specified but it is required when building DynamoDbAction",
                 )

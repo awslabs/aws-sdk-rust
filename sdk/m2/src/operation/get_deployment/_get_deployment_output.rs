@@ -201,40 +201,40 @@ impl GetDeploymentOutputBuilder {
     /// - [`creation_time`](crate::operation::get_deployment::builders::GetDeploymentOutputBuilder::creation_time)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_deployment::GetDeploymentOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_deployment::GetDeploymentOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_deployment::GetDeploymentOutput {
             deployment_id: self.deployment_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "deployment_id",
                     "deployment_id was not specified but it is required when building GetDeploymentOutput",
                 )
             })?,
             application_id: self.application_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "application_id",
                     "application_id was not specified but it is required when building GetDeploymentOutput",
                 )
             })?,
             environment_id: self.environment_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "environment_id",
                     "environment_id was not specified but it is required when building GetDeploymentOutput",
                 )
             })?,
             application_version: self.application_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "application_version",
                     "application_version was not specified but it is required when building GetDeploymentOutput",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building GetDeploymentOutput",
                 )
             })?,
             creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_time",
                     "creation_time was not specified but it is required when building GetDeploymentOutput",
                 )

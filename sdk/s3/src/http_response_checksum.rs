@@ -9,13 +9,13 @@
 //! Interceptor for handling Smithy `@httpChecksum` response checksumming
 
 use aws_smithy_checksums::ChecksumAlgorithm;
-use aws_smithy_http::body::{BoxBody, SdkBody};
 use aws_smithy_runtime_api::box_error::BoxError;
 use aws_smithy_runtime_api::client::interceptors::context::{
     BeforeDeserializationInterceptorContextMut, BeforeSerializationInterceptorContextRef, Input,
 };
 use aws_smithy_runtime_api::client::interceptors::Intercept;
 use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
+use aws_smithy_types::body::{BoxBody, SdkBody};
 use aws_smithy_types::config_bag::{ConfigBag, Layer, Storable, StoreReplace};
 use http::HeaderValue;
 use std::{fmt, mem};
@@ -203,8 +203,8 @@ fn is_part_level_checksum(checksum: &str) -> bool {
 #[cfg(test)]
 mod tests {
     use super::{is_part_level_checksum, wrap_body_with_checksum_validator};
-    use aws_smithy_http::body::SdkBody;
-    use aws_smithy_http::byte_stream::ByteStream;
+    use aws_smithy_types::body::SdkBody;
+    use aws_smithy_types::byte_stream::ByteStream;
     use aws_smithy_types::error::display::DisplayErrorContext;
     use bytes::Bytes;
 

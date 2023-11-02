@@ -155,11 +155,11 @@ impl HttpRetryPolicyBuilder {
     /// Consumes the builder and constructs a [`HttpRetryPolicy`](crate::types::HttpRetryPolicy).
     /// This method will fail if any of the following fields are not set:
     /// - [`max_retries`](crate::types::builders::HttpRetryPolicyBuilder::max_retries)
-    pub fn build(self) -> ::std::result::Result<crate::types::HttpRetryPolicy, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::HttpRetryPolicy, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::HttpRetryPolicy {
             per_retry_timeout: self.per_retry_timeout,
             max_retries: self.max_retries.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "max_retries",
                     "max_retries was not specified but it is required when building HttpRetryPolicy",
                 )

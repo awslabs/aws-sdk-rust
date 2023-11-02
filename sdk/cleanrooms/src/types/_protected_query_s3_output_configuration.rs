@@ -90,16 +90,16 @@ impl ProtectedQueryS3OutputConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`result_format`](crate::types::builders::ProtectedQueryS3OutputConfigurationBuilder::result_format)
     /// - [`bucket`](crate::types::builders::ProtectedQueryS3OutputConfigurationBuilder::bucket)
-    pub fn build(self) -> ::std::result::Result<crate::types::ProtectedQueryS3OutputConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ProtectedQueryS3OutputConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ProtectedQueryS3OutputConfiguration {
             result_format: self.result_format.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "result_format",
                     "result_format was not specified but it is required when building ProtectedQueryS3OutputConfiguration",
                 )
             })?,
             bucket: self.bucket.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "bucket",
                     "bucket was not specified but it is required when building ProtectedQueryS3OutputConfiguration",
                 )

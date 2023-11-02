@@ -2,7 +2,7 @@
 pub fn ser_put_conference_preference_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_conference_preference::PutConferencePreferenceInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.conference_preference {
         #[allow(unused_mut)]
         let mut object_2 = object.key("ConferencePreference").start_object();

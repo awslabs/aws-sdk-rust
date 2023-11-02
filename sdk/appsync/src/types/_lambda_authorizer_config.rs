@@ -98,11 +98,11 @@ impl LambdaAuthorizerConfigBuilder {
     /// Consumes the builder and constructs a [`LambdaAuthorizerConfig`](crate::types::LambdaAuthorizerConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`authorizer_uri`](crate::types::builders::LambdaAuthorizerConfigBuilder::authorizer_uri)
-    pub fn build(self) -> ::std::result::Result<crate::types::LambdaAuthorizerConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::LambdaAuthorizerConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::LambdaAuthorizerConfig {
             authorizer_result_ttl_in_seconds: self.authorizer_result_ttl_in_seconds.unwrap_or_default(),
             authorizer_uri: self.authorizer_uri.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "authorizer_uri",
                     "authorizer_uri was not specified but it is required when building LambdaAuthorizerConfig",
                 )

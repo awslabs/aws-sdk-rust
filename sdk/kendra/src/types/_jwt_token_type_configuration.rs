@@ -171,10 +171,10 @@ impl JwtTokenTypeConfigurationBuilder {
     /// Consumes the builder and constructs a [`JwtTokenTypeConfiguration`](crate::types::JwtTokenTypeConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`key_location`](crate::types::builders::JwtTokenTypeConfigurationBuilder::key_location)
-    pub fn build(self) -> ::std::result::Result<crate::types::JwtTokenTypeConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::JwtTokenTypeConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::JwtTokenTypeConfiguration {
             key_location: self.key_location.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "key_location",
                     "key_location was not specified but it is required when building JwtTokenTypeConfiguration",
                 )

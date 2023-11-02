@@ -2,7 +2,7 @@
 pub fn ser_lambda_authorizer_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LambdaAuthorizerConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.authorizer_result_ttl_in_seconds != 0 {
         object.key("authorizerResultTtlInSeconds").number(
             #[allow(clippy::useless_conversion)]

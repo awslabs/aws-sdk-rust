@@ -70,7 +70,7 @@ impl DeleteReportGroupInputBuilder {
     /// Consumes the builder and constructs a [`DeleteReportGroupInput`](crate::operation::delete_report_group::DeleteReportGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_report_group::DeleteReportGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_report_group::DeleteReportGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_report_group::DeleteReportGroupInput {
             arn: self.arn,
             delete_reports: self.delete_reports,

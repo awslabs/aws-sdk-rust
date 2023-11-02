@@ -75,7 +75,7 @@ impl RebuildEnvironmentInputBuilder {
     /// Consumes the builder and constructs a [`RebuildEnvironmentInput`](crate::operation::rebuild_environment::RebuildEnvironmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::rebuild_environment::RebuildEnvironmentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::rebuild_environment::RebuildEnvironmentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::rebuild_environment::RebuildEnvironmentInput {
             environment_id: self.environment_id,
             environment_name: self.environment_name,

@@ -129,7 +129,7 @@ impl ModifyOptionGroupInputBuilder {
     /// Consumes the builder and constructs a [`ModifyOptionGroupInput`](crate::operation::modify_option_group::ModifyOptionGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::modify_option_group::ModifyOptionGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::modify_option_group::ModifyOptionGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::modify_option_group::ModifyOptionGroupInput {
             option_group_name: self.option_group_name,
             options_to_include: self.options_to_include,

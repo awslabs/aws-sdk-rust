@@ -184,17 +184,17 @@ impl WorkspaceDescriptionBuilder {
     /// - [`workspace_id`](crate::types::builders::WorkspaceDescriptionBuilder::workspace_id)
     /// - [`arn`](crate::types::builders::WorkspaceDescriptionBuilder::arn)
     /// - [`created_at`](crate::types::builders::WorkspaceDescriptionBuilder::created_at)
-    pub fn build(self) -> ::std::result::Result<crate::types::WorkspaceDescription, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::WorkspaceDescription, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::WorkspaceDescription {
             workspace_id: self.workspace_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "workspace_id",
                     "workspace_id was not specified but it is required when building WorkspaceDescription",
                 )
             })?,
             alias: self.alias,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building WorkspaceDescription",
                 )
@@ -202,7 +202,7 @@ impl WorkspaceDescriptionBuilder {
             status: self.status,
             prometheus_endpoint: self.prometheus_endpoint,
             created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
                     "created_at was not specified but it is required when building WorkspaceDescription",
                 )

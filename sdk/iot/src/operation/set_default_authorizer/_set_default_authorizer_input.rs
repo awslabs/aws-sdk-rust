@@ -44,7 +44,7 @@ impl SetDefaultAuthorizerInputBuilder {
     /// Consumes the builder and constructs a [`SetDefaultAuthorizerInput`](crate::operation::set_default_authorizer::SetDefaultAuthorizerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::set_default_authorizer::SetDefaultAuthorizerInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::set_default_authorizer::SetDefaultAuthorizerInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::set_default_authorizer::SetDefaultAuthorizerInput {
             authorizer_name: self.authorizer_name,

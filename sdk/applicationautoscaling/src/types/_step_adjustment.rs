@@ -104,12 +104,12 @@ impl StepAdjustmentBuilder {
     /// Consumes the builder and constructs a [`StepAdjustment`](crate::types::StepAdjustment).
     /// This method will fail if any of the following fields are not set:
     /// - [`scaling_adjustment`](crate::types::builders::StepAdjustmentBuilder::scaling_adjustment)
-    pub fn build(self) -> ::std::result::Result<crate::types::StepAdjustment, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::StepAdjustment, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::StepAdjustment {
             metric_interval_lower_bound: self.metric_interval_lower_bound,
             metric_interval_upper_bound: self.metric_interval_upper_bound,
             scaling_adjustment: self.scaling_adjustment.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "scaling_adjustment",
                     "scaling_adjustment was not specified but it is required when building StepAdjustment",
                 )

@@ -107,7 +107,9 @@ impl AttachVolumeInputBuilder {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`AttachVolumeInput`](crate::operation::attach_volume::AttachVolumeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::attach_volume::AttachVolumeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::attach_volume::AttachVolumeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::attach_volume::AttachVolumeInput {
             device: self.device,
             instance_id: self.instance_id,

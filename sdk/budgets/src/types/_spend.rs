@@ -80,16 +80,16 @@ impl SpendBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`amount`](crate::types::builders::SpendBuilder::amount)
     /// - [`unit`](crate::types::builders::SpendBuilder::unit)
-    pub fn build(self) -> ::std::result::Result<crate::types::Spend, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Spend, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Spend {
             amount: self.amount.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "amount",
                     "amount was not specified but it is required when building Spend",
                 )
             })?,
             unit: self.unit.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "unit",
                     "unit was not specified but it is required when building Spend",
                 )

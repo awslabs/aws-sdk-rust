@@ -136,7 +136,8 @@ impl SearchResourceTagsInputBuilder {
     /// Consumes the builder and constructs a [`SearchResourceTagsInput`](crate::operation::search_resource_tags::SearchResourceTagsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::search_resource_tags::SearchResourceTagsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::search_resource_tags::SearchResourceTagsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::search_resource_tags::SearchResourceTagsInput {
             instance_id: self.instance_id,
             resource_types: self.resource_types,

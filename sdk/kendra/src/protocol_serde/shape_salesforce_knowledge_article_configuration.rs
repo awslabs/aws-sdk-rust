@@ -2,7 +2,7 @@
 pub fn ser_salesforce_knowledge_article_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SalesforceKnowledgeArticleConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("IncludedStates").start_array();
         for item_2 in &input.included_states {

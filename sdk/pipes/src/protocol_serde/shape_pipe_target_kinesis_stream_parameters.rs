@@ -2,7 +2,7 @@
 pub fn ser_pipe_target_kinesis_stream_parameters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PipeTargetKinesisStreamParameters,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("PartitionKey").string(input.partition_key.as_str());
     }

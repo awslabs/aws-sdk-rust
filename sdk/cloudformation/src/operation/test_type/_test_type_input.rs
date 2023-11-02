@@ -185,7 +185,7 @@ impl TestTypeInputBuilder {
         &self.log_delivery_bucket
     }
     /// Consumes the builder and constructs a [`TestTypeInput`](crate::operation::test_type::TestTypeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::test_type::TestTypeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::test_type::TestTypeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::test_type::TestTypeInput {
             arn: self.arn,
             r#type: self.r#type,

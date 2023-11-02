@@ -98,17 +98,17 @@ impl DeleteMessageBatchOutputBuilder {
     /// - [`failed`](crate::operation::delete_message_batch::builders::DeleteMessageBatchOutputBuilder::failed)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_message_batch::DeleteMessageBatchOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_message_batch::DeleteMessageBatchOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_message_batch::DeleteMessageBatchOutput {
             successful: self.successful.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "successful",
                     "successful was not specified but it is required when building DeleteMessageBatchOutput",
                 )
             })?,
             failed: self.failed.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "failed",
                     "failed was not specified but it is required when building DeleteMessageBatchOutput",
                 )

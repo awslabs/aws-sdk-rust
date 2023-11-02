@@ -90,7 +90,7 @@ impl CreateAlertManagerDefinitionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_alert_manager_definition::CreateAlertManagerDefinitionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_alert_manager_definition::CreateAlertManagerDefinitionInput {
             workspace_id: self.workspace_id,

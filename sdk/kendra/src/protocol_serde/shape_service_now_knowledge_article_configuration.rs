@@ -2,7 +2,7 @@
 pub fn ser_service_now_knowledge_article_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ServiceNowKnowledgeArticleConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.crawl_attachments {
         object.key("CrawlAttachments").boolean(input.crawl_attachments);
     }

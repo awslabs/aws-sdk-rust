@@ -126,17 +126,17 @@ impl StatefulRuleBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`action`](crate::types::builders::StatefulRuleBuilder::action)
     /// - [`rule_options`](crate::types::builders::StatefulRuleBuilder::rule_options)
-    pub fn build(self) -> ::std::result::Result<crate::types::StatefulRule, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::StatefulRule, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::StatefulRule {
             action: self.action.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "action",
                     "action was not specified but it is required when building StatefulRule",
                 )
             })?,
             header: self.header,
             rule_options: self.rule_options.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "rule_options",
                     "rule_options was not specified but it is required when building StatefulRule",
                 )

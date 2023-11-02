@@ -119,7 +119,7 @@ impl CreateKeyspaceInputBuilder {
     /// Consumes the builder and constructs a [`CreateKeyspaceInput`](crate::operation::create_keyspace::CreateKeyspaceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_keyspace::CreateKeyspaceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_keyspace::CreateKeyspaceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_keyspace::CreateKeyspaceInput {
             keyspace_name: self.keyspace_name,
             tags: self.tags,

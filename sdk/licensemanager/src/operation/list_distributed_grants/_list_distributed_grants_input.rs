@@ -157,7 +157,7 @@ impl ListDistributedGrantsInputBuilder {
     /// Consumes the builder and constructs a [`ListDistributedGrantsInput`](crate::operation::list_distributed_grants::ListDistributedGrantsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_distributed_grants::ListDistributedGrantsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_distributed_grants::ListDistributedGrantsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_distributed_grants::ListDistributedGrantsInput {
             grant_arns: self.grant_arns,

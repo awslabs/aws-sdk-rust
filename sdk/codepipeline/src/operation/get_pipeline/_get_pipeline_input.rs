@@ -64,7 +64,7 @@ impl GetPipelineInputBuilder {
         &self.version
     }
     /// Consumes the builder and constructs a [`GetPipelineInput`](crate::operation::get_pipeline::GetPipelineInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_pipeline::GetPipelineInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_pipeline::GetPipelineInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_pipeline::GetPipelineInput {
             name: self.name,
             version: self.version,

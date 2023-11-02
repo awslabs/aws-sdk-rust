@@ -235,58 +235,58 @@ impl RouteRefBuilder {
     /// - [`version`](crate::types::builders::RouteRefBuilder::version)
     /// - [`created_at`](crate::types::builders::RouteRefBuilder::created_at)
     /// - [`last_updated_at`](crate::types::builders::RouteRefBuilder::last_updated_at)
-    pub fn build(self) -> ::std::result::Result<crate::types::RouteRef, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RouteRef, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RouteRef {
             mesh_name: self.mesh_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "mesh_name",
                     "mesh_name was not specified but it is required when building RouteRef",
                 )
             })?,
             virtual_router_name: self.virtual_router_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "virtual_router_name",
                     "virtual_router_name was not specified but it is required when building RouteRef",
                 )
             })?,
             route_name: self.route_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "route_name",
                     "route_name was not specified but it is required when building RouteRef",
                 )
             })?,
             mesh_owner: self.mesh_owner.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "mesh_owner",
                     "mesh_owner was not specified but it is required when building RouteRef",
                 )
             })?,
             resource_owner: self.resource_owner.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_owner",
                     "resource_owner was not specified but it is required when building RouteRef",
                 )
             })?,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building RouteRef",
                 )
             })?,
             version: self.version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "version",
                     "version was not specified but it is required when building RouteRef",
                 )
             })?,
             created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
                     "created_at was not specified but it is required when building RouteRef",
                 )
             })?,
             last_updated_at: self.last_updated_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_updated_at",
                     "last_updated_at was not specified but it is required when building RouteRef",
                 )

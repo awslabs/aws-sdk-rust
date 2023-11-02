@@ -75,7 +75,7 @@ impl PutMessagingStreamingConfigurationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_messaging_streaming_configurations::PutMessagingStreamingConfigurationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::put_messaging_streaming_configurations::PutMessagingStreamingConfigurationsInput {

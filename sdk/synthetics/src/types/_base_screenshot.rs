@@ -75,10 +75,10 @@ impl BaseScreenshotBuilder {
     /// Consumes the builder and constructs a [`BaseScreenshot`](crate::types::BaseScreenshot).
     /// This method will fail if any of the following fields are not set:
     /// - [`screenshot_name`](crate::types::builders::BaseScreenshotBuilder::screenshot_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::BaseScreenshot, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::BaseScreenshot, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::BaseScreenshot {
             screenshot_name: self.screenshot_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "screenshot_name",
                     "screenshot_name was not specified but it is required when building BaseScreenshot",
                 )

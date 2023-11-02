@@ -109,22 +109,24 @@ impl StartJobRunOutputBuilder {
     /// - [`application_id`](crate::operation::start_job_run::builders::StartJobRunOutputBuilder::application_id)
     /// - [`job_run_id`](crate::operation::start_job_run::builders::StartJobRunOutputBuilder::job_run_id)
     /// - [`arn`](crate::operation::start_job_run::builders::StartJobRunOutputBuilder::arn)
-    pub fn build(self) -> ::std::result::Result<crate::operation::start_job_run::StartJobRunOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::start_job_run::StartJobRunOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_job_run::StartJobRunOutput {
             application_id: self.application_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "application_id",
                     "application_id was not specified but it is required when building StartJobRunOutput",
                 )
             })?,
             job_run_id: self.job_run_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "job_run_id",
                     "job_run_id was not specified but it is required when building StartJobRunOutput",
                 )
             })?,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building StartJobRunOutput",
                 )

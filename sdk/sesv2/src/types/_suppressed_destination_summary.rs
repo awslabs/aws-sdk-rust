@@ -92,22 +92,22 @@ impl SuppressedDestinationSummaryBuilder {
     /// - [`email_address`](crate::types::builders::SuppressedDestinationSummaryBuilder::email_address)
     /// - [`reason`](crate::types::builders::SuppressedDestinationSummaryBuilder::reason)
     /// - [`last_update_time`](crate::types::builders::SuppressedDestinationSummaryBuilder::last_update_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::SuppressedDestinationSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SuppressedDestinationSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SuppressedDestinationSummary {
             email_address: self.email_address.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "email_address",
                     "email_address was not specified but it is required when building SuppressedDestinationSummary",
                 )
             })?,
             reason: self.reason.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "reason",
                     "reason was not specified but it is required when building SuppressedDestinationSummary",
                 )
             })?,
             last_update_time: self.last_update_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_update_time",
                     "last_update_time was not specified but it is required when building SuppressedDestinationSummary",
                 )

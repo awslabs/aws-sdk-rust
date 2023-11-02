@@ -2,7 +2,7 @@
 pub fn ser_alexa_for_business_metadata(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AlexaForBusinessMetadata,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.is_alexa_for_business_enabled {
         object.key("IsAlexaForBusinessEnabled").boolean(*var_1);
     }

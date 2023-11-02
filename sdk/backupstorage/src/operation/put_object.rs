@@ -170,15 +170,15 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for PutObjectReq
             fn uri_base(
                 _input: &crate::operation::put_object::PutObjectInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 use ::std::fmt::Write as _;
                 let input_1 = &_input.backup_job_id;
                 let input_1 = input_1
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("backup_job_id", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("backup_job_id", "cannot be empty or unset"))?;
                 let backup_job_id = ::aws_smithy_http::label::fmt_string(input_1, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if backup_job_id.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "backup_job_id",
                         "cannot be empty or unset",
                     ));
@@ -186,10 +186,10 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for PutObjectReq
                 let input_2 = &_input.object_name;
                 let input_2 = input_2
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("object_name", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("object_name", "cannot be empty or unset"))?;
                 let object_name = ::aws_smithy_http::label::fmt_string(input_2, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if object_name.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "object_name",
                         "cannot be empty or unset",
                     ));
@@ -206,7 +206,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for PutObjectReq
             fn uri_query(
                 _input: &crate::operation::put_object::PutObjectInput,
                 mut output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_3) = &_input.metadata_string {
                     {
@@ -249,7 +249,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for PutObjectReq
             fn update_http_builder(
                 input: &crate::operation::put_object::PutObjectInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;

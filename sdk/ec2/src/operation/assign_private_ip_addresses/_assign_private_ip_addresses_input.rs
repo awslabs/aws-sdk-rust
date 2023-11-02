@@ -173,7 +173,7 @@ impl AssignPrivateIpAddressesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::assign_private_ip_addresses::AssignPrivateIpAddressesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::assign_private_ip_addresses::AssignPrivateIpAddressesInput {
             allow_reassignment: self.allow_reassignment,

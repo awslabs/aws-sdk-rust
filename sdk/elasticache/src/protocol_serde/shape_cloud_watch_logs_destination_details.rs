@@ -3,7 +3,7 @@
 pub fn ser_cloud_watch_logs_destination_details(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::CloudWatchLogsDestinationDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("LogGroup");
     if let Some(var_2) = &input.log_group {

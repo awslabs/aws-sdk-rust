@@ -45,10 +45,10 @@ impl SoaChangeBuilder {
     /// Consumes the builder and constructs a [`SoaChange`](crate::types::SoaChange).
     /// This method will fail if any of the following fields are not set:
     /// - [`ttl`](crate::types::builders::SoaChangeBuilder::ttl)
-    pub fn build(self) -> ::std::result::Result<crate::types::SoaChange, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SoaChange, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SoaChange {
             ttl: self.ttl.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "ttl",
                     "ttl was not specified but it is required when building SoaChange",
                 )

@@ -79,16 +79,16 @@ impl SizeConstraintSetSummaryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`size_constraint_set_id`](crate::types::builders::SizeConstraintSetSummaryBuilder::size_constraint_set_id)
     /// - [`name`](crate::types::builders::SizeConstraintSetSummaryBuilder::name)
-    pub fn build(self) -> ::std::result::Result<crate::types::SizeConstraintSetSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SizeConstraintSetSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SizeConstraintSetSummary {
             size_constraint_set_id: self.size_constraint_set_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "size_constraint_set_id",
                     "size_constraint_set_id was not specified but it is required when building SizeConstraintSetSummary",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building SizeConstraintSetSummary",
                 )

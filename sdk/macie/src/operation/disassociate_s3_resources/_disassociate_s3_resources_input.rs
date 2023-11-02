@@ -74,7 +74,7 @@ impl DisassociateS3ResourcesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_s3_resources::DisassociateS3ResourcesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disassociate_s3_resources::DisassociateS3ResourcesInput {
             member_account_id: self.member_account_id,

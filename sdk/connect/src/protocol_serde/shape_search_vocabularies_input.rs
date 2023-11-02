@@ -2,7 +2,7 @@
 pub fn ser_search_vocabularies_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::search_vocabularies::SearchVocabulariesInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.language_code {
         object.key("LanguageCode").string(var_1.as_str());
     }

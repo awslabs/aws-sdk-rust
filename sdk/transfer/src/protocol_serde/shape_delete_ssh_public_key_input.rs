@@ -2,7 +2,7 @@
 pub fn ser_delete_ssh_public_key_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_ssh_public_key::DeleteSshPublicKeyInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.server_id {
         object.key("ServerId").string(var_1.as_str());
     }

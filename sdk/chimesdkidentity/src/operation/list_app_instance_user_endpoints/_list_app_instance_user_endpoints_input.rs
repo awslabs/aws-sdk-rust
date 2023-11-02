@@ -97,7 +97,7 @@ impl ListAppInstanceUserEndpointsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsInput {
             app_instance_user_arn: self.app_instance_user_arn,

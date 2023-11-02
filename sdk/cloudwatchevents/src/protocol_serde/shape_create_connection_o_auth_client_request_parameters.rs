@@ -2,7 +2,7 @@
 pub fn ser_create_connection_o_auth_client_request_parameters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CreateConnectionOAuthClientRequestParameters,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("ClientID").string(input.client_id.as_str());
     }

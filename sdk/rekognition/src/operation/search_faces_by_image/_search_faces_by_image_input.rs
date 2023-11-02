@@ -139,7 +139,7 @@ impl SearchFacesByImageInputBuilder {
     /// Consumes the builder and constructs a [`SearchFacesByImageInput`](crate::operation::search_faces_by_image::SearchFacesByImageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::search_faces_by_image::SearchFacesByImageInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::search_faces_by_image::SearchFacesByImageInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::search_faces_by_image::SearchFacesByImageInput {
             collection_id: self.collection_id,

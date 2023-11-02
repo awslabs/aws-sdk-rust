@@ -130,7 +130,7 @@ impl UpdateVirtualGatewayInputBuilder {
     /// Consumes the builder and constructs a [`UpdateVirtualGatewayInput`](crate::operation::update_virtual_gateway::UpdateVirtualGatewayInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_virtual_gateway::UpdateVirtualGatewayInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_virtual_gateway::UpdateVirtualGatewayInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_virtual_gateway::UpdateVirtualGatewayInput {
             virtual_gateway_name: self.virtual_gateway_name,

@@ -44,7 +44,7 @@ impl DeleteFrameworkInputBuilder {
     /// Consumes the builder and constructs a [`DeleteFrameworkInput`](crate::operation::delete_framework::DeleteFrameworkInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_framework::DeleteFrameworkInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_framework::DeleteFrameworkInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_framework::DeleteFrameworkInput {
             framework_name: self.framework_name,
         })

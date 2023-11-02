@@ -117,13 +117,13 @@ impl TypedLinkSpecifierBuilder {
     /// Consumes the builder and constructs a [`TypedLinkSpecifier`](crate::types::TypedLinkSpecifier).
     /// This method will fail if any of the following fields are not set:
     /// - [`identity_attribute_values`](crate::types::builders::TypedLinkSpecifierBuilder::identity_attribute_values)
-    pub fn build(self) -> ::std::result::Result<crate::types::TypedLinkSpecifier, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TypedLinkSpecifier, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TypedLinkSpecifier {
             typed_link_facet: self.typed_link_facet,
             source_object_reference: self.source_object_reference,
             target_object_reference: self.target_object_reference,
             identity_attribute_values: self.identity_attribute_values.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "identity_attribute_values",
                     "identity_attribute_values was not specified but it is required when building TypedLinkSpecifier",
                 )

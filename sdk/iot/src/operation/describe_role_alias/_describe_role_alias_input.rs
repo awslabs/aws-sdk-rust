@@ -44,7 +44,7 @@ impl DescribeRoleAliasInputBuilder {
     /// Consumes the builder and constructs a [`DescribeRoleAliasInput`](crate::operation::describe_role_alias::DescribeRoleAliasInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_role_alias::DescribeRoleAliasInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_role_alias::DescribeRoleAliasInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_role_alias::DescribeRoleAliasInput { role_alias: self.role_alias })
     }
 }

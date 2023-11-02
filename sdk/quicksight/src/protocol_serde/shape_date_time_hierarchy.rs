@@ -2,7 +2,7 @@
 pub fn ser_date_time_hierarchy(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DateTimeHierarchy,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("HierarchyId").string(input.hierarchy_id.as_str());
     }

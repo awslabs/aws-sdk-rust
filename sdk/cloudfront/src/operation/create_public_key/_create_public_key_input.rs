@@ -44,7 +44,7 @@ impl CreatePublicKeyInputBuilder {
     /// Consumes the builder and constructs a [`CreatePublicKeyInput`](crate::operation::create_public_key::CreatePublicKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_public_key::CreatePublicKeyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_public_key::CreatePublicKeyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_public_key::CreatePublicKeyInput {
             public_key_config: self.public_key_config,
         })

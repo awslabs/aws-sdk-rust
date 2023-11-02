@@ -112,7 +112,7 @@ impl PublishStateMachineVersionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::publish_state_machine_version::PublishStateMachineVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::publish_state_machine_version::PublishStateMachineVersionInput {
             state_machine_arn: self.state_machine_arn,

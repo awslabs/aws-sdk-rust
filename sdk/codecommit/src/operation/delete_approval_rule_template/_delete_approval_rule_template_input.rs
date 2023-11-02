@@ -46,7 +46,7 @@ impl DeleteApprovalRuleTemplateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_approval_rule_template::DeleteApprovalRuleTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_approval_rule_template::DeleteApprovalRuleTemplateInput {
             approval_rule_template_name: self.approval_rule_template_name,

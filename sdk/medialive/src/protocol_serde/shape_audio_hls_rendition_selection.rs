@@ -2,7 +2,7 @@
 pub fn ser_audio_hls_rendition_selection(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AudioHlsRenditionSelection,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.group_id {
         object.key("groupId").string(var_1.as_str());
     }

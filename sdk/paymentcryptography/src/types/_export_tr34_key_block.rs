@@ -152,28 +152,28 @@ impl ExportTr34KeyBlockBuilder {
     /// - [`wrapping_key_certificate`](crate::types::builders::ExportTr34KeyBlockBuilder::wrapping_key_certificate)
     /// - [`export_token`](crate::types::builders::ExportTr34KeyBlockBuilder::export_token)
     /// - [`key_block_format`](crate::types::builders::ExportTr34KeyBlockBuilder::key_block_format)
-    pub fn build(self) -> ::std::result::Result<crate::types::ExportTr34KeyBlock, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ExportTr34KeyBlock, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ExportTr34KeyBlock {
             certificate_authority_public_key_identifier: self.certificate_authority_public_key_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "certificate_authority_public_key_identifier",
                     "certificate_authority_public_key_identifier was not specified but it is required when building ExportTr34KeyBlock",
                 )
             })?,
             wrapping_key_certificate: self.wrapping_key_certificate.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "wrapping_key_certificate",
                     "wrapping_key_certificate was not specified but it is required when building ExportTr34KeyBlock",
                 )
             })?,
             export_token: self.export_token.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "export_token",
                     "export_token was not specified but it is required when building ExportTr34KeyBlock",
                 )
             })?,
             key_block_format: self.key_block_format.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "key_block_format",
                     "key_block_format was not specified but it is required when building ExportTr34KeyBlock",
                 )

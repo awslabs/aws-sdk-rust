@@ -92,7 +92,7 @@ impl InviteUsersInputBuilder {
         &self.user_type
     }
     /// Consumes the builder and constructs a [`InviteUsersInput`](crate::operation::invite_users::InviteUsersInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::invite_users::InviteUsersInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::invite_users::InviteUsersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::invite_users::InviteUsersInput {
             account_id: self.account_id,
             user_email_list: self.user_email_list,

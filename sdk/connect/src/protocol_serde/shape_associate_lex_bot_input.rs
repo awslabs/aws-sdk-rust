@@ -2,7 +2,7 @@
 pub fn ser_associate_lex_bot_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::associate_lex_bot::AssociateLexBotInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.lex_bot {
         #[allow(unused_mut)]
         let mut object_2 = object.key("LexBot").start_object();

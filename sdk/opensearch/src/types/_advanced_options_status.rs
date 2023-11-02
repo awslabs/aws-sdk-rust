@@ -79,10 +79,10 @@ impl AdvancedOptionsStatusBuilder {
     /// Consumes the builder and constructs a [`AdvancedOptionsStatus`](crate::types::AdvancedOptionsStatus).
     /// This method will fail if any of the following fields are not set:
     /// - [`options`](crate::types::builders::AdvancedOptionsStatusBuilder::options)
-    pub fn build(self) -> ::std::result::Result<crate::types::AdvancedOptionsStatus, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AdvancedOptionsStatus, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AdvancedOptionsStatus {
             options: self.options.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "options",
                     "options was not specified but it is required when building AdvancedOptionsStatus",
                 )

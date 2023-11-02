@@ -196,7 +196,8 @@ impl PutComplianceItemsInputBuilder {
     /// Consumes the builder and constructs a [`PutComplianceItemsInput`](crate::operation::put_compliance_items::PutComplianceItemsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_compliance_items::PutComplianceItemsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_compliance_items::PutComplianceItemsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::put_compliance_items::PutComplianceItemsInput {
             resource_id: self.resource_id,
             resource_type: self.resource_type,

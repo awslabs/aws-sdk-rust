@@ -66,8 +66,10 @@ impl GetDashboardForJobRunInputBuilder {
     /// Consumes the builder and constructs a [`GetDashboardForJobRunInput`](crate::operation::get_dashboard_for_job_run::GetDashboardForJobRunInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_dashboard_for_job_run::GetDashboardForJobRunInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::get_dashboard_for_job_run::GetDashboardForJobRunInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::get_dashboard_for_job_run::GetDashboardForJobRunInput {
             application_id: self.application_id,
             job_run_id: self.job_run_id,

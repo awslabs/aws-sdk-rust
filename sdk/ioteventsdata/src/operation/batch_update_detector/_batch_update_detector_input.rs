@@ -51,7 +51,7 @@ impl BatchUpdateDetectorInputBuilder {
     /// Consumes the builder and constructs a [`BatchUpdateDetectorInput`](crate::operation::batch_update_detector::BatchUpdateDetectorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_update_detector::BatchUpdateDetectorInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::batch_update_detector::BatchUpdateDetectorInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::batch_update_detector::BatchUpdateDetectorInput { detectors: self.detectors })
     }

@@ -69,16 +69,16 @@ impl GatewayListItemBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`gateway_id`](crate::types::builders::GatewayListItemBuilder::gateway_id)
     /// - [`downlink_frequency`](crate::types::builders::GatewayListItemBuilder::downlink_frequency)
-    pub fn build(self) -> ::std::result::Result<crate::types::GatewayListItem, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::GatewayListItem, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::GatewayListItem {
             gateway_id: self.gateway_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "gateway_id",
                     "gateway_id was not specified but it is required when building GatewayListItem",
                 )
             })?,
             downlink_frequency: self.downlink_frequency.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "downlink_frequency",
                     "downlink_frequency was not specified but it is required when building GatewayListItem",
                 )

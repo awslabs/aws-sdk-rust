@@ -215,8 +215,10 @@ impl CreateMatchingWorkflowInputBuilder {
     /// Consumes the builder and constructs a [`CreateMatchingWorkflowInput`](crate::operation::create_matching_workflow::CreateMatchingWorkflowInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_matching_workflow::CreateMatchingWorkflowInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::create_matching_workflow::CreateMatchingWorkflowInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::create_matching_workflow::CreateMatchingWorkflowInput {
             workflow_name: self.workflow_name,
             description: self.description,

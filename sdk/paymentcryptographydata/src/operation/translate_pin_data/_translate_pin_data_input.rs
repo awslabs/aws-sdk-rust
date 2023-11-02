@@ -187,7 +187,7 @@ impl TranslatePinDataInputBuilder {
     /// Consumes the builder and constructs a [`TranslatePinDataInput`](crate::operation::translate_pin_data::TranslatePinDataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::translate_pin_data::TranslatePinDataInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::translate_pin_data::TranslatePinDataInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::translate_pin_data::TranslatePinDataInput {
             incoming_key_identifier: self.incoming_key_identifier,
             outgoing_key_identifier: self.outgoing_key_identifier,

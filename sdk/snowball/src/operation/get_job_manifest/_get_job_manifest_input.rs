@@ -44,7 +44,7 @@ impl GetJobManifestInputBuilder {
     /// Consumes the builder and constructs a [`GetJobManifestInput`](crate::operation::get_job_manifest::GetJobManifestInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_job_manifest::GetJobManifestInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_job_manifest::GetJobManifestInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_job_manifest::GetJobManifestInput { job_id: self.job_id })
     }
 }

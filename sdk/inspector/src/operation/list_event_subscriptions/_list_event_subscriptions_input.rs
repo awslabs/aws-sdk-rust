@@ -85,8 +85,10 @@ impl ListEventSubscriptionsInputBuilder {
     /// Consumes the builder and constructs a [`ListEventSubscriptionsInput`](crate::operation::list_event_subscriptions::ListEventSubscriptionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_event_subscriptions::ListEventSubscriptionsInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::list_event_subscriptions::ListEventSubscriptionsInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::list_event_subscriptions::ListEventSubscriptionsInput {
             resource_arn: self.resource_arn,
             next_token: self.next_token,

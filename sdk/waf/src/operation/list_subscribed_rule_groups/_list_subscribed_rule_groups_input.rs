@@ -66,7 +66,7 @@ impl ListSubscribedRuleGroupsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_subscribed_rule_groups::ListSubscribedRuleGroupsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_subscribed_rule_groups::ListSubscribedRuleGroupsInput {
             next_marker: self.next_marker,

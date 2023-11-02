@@ -130,7 +130,7 @@ impl StartActivityStreamInputBuilder {
     /// Consumes the builder and constructs a [`StartActivityStreamInput`](crate::operation::start_activity_stream::StartActivityStreamInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_activity_stream::StartActivityStreamInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::start_activity_stream::StartActivityStreamInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_activity_stream::StartActivityStreamInput {
             resource_arn: self.resource_arn,

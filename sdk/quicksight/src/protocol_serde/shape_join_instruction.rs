@@ -2,7 +2,7 @@
 pub fn ser_join_instruction(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::JoinInstruction,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("LeftOperand").string(input.left_operand.as_str());
     }

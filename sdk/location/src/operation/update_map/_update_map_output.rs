@@ -123,22 +123,22 @@ impl UpdateMapOutputBuilder {
     /// - [`map_name`](crate::operation::update_map::builders::UpdateMapOutputBuilder::map_name)
     /// - [`map_arn`](crate::operation::update_map::builders::UpdateMapOutputBuilder::map_arn)
     /// - [`update_time`](crate::operation::update_map::builders::UpdateMapOutputBuilder::update_time)
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_map::UpdateMapOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_map::UpdateMapOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_map::UpdateMapOutput {
             map_name: self.map_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "map_name",
                     "map_name was not specified but it is required when building UpdateMapOutput",
                 )
             })?,
             map_arn: self.map_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "map_arn",
                     "map_arn was not specified but it is required when building UpdateMapOutput",
                 )
             })?,
             update_time: self.update_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "update_time",
                     "update_time was not specified but it is required when building UpdateMapOutput",
                 )

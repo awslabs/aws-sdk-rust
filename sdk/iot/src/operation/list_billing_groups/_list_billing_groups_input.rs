@@ -85,7 +85,7 @@ impl ListBillingGroupsInputBuilder {
     /// Consumes the builder and constructs a [`ListBillingGroupsInput`](crate::operation::list_billing_groups::ListBillingGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_billing_groups::ListBillingGroupsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_billing_groups::ListBillingGroupsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_billing_groups::ListBillingGroupsInput {
             next_token: self.next_token,
             max_results: self.max_results,

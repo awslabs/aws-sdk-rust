@@ -95,16 +95,16 @@ impl ColorScaleBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`colors`](crate::types::builders::ColorScaleBuilder::colors)
     /// - [`color_fill_type`](crate::types::builders::ColorScaleBuilder::color_fill_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::ColorScale, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ColorScale, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ColorScale {
             colors: self.colors.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "colors",
                     "colors was not specified but it is required when building ColorScale",
                 )
             })?,
             color_fill_type: self.color_fill_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "color_fill_type",
                     "color_fill_type was not specified but it is required when building ColorScale",
                 )

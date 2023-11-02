@@ -49,7 +49,7 @@ impl GetAccessKeyInfoInputBuilder {
     /// Consumes the builder and constructs a [`GetAccessKeyInfoInput`](crate::operation::get_access_key_info::GetAccessKeyInfoInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_access_key_info::GetAccessKeyInfoInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_access_key_info::GetAccessKeyInfoInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_access_key_info::GetAccessKeyInfoInput {
             access_key_id: self.access_key_id,
         })

@@ -66,7 +66,7 @@ impl GetTemplateStepGroupInputBuilder {
     /// Consumes the builder and constructs a [`GetTemplateStepGroupInput`](crate::operation::get_template_step_group::GetTemplateStepGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_template_step_group::GetTemplateStepGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_template_step_group::GetTemplateStepGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_template_step_group::GetTemplateStepGroupInput {
             template_id: self.template_id,

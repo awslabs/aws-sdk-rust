@@ -273,7 +273,7 @@ impl PostTextInputBuilder {
         &self.active_contexts
     }
     /// Consumes the builder and constructs a [`PostTextInput`](crate::operation::post_text::PostTextInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::post_text::PostTextInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::post_text::PostTextInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::post_text::PostTextInput {
             bot_name: self.bot_name,
             bot_alias: self.bot_alias,

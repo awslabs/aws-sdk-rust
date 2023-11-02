@@ -221,7 +221,7 @@ impl CreateAccessPointInputBuilder {
     /// Consumes the builder and constructs a [`CreateAccessPointInput`](crate::operation::create_access_point::CreateAccessPointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_access_point::CreateAccessPointInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_access_point::CreateAccessPointInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_access_point::CreateAccessPointInput {
             account_id: self.account_id,
             name: self.name,

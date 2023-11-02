@@ -213,7 +213,7 @@ impl StartDataQualityRulesetEvaluationRunInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_data_quality_ruleset_evaluation_run::StartDataQualityRulesetEvaluationRunInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::start_data_quality_ruleset_evaluation_run::StartDataQualityRulesetEvaluationRunInput {

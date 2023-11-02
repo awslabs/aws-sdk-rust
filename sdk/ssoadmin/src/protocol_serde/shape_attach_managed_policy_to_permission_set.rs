@@ -167,7 +167,7 @@ pub fn de_attach_managed_policy_to_permission_set_http_response(
 
 pub fn ser_attach_managed_policy_to_permission_set_input(
     input: &crate::operation::attach_managed_policy_to_permission_set::AttachManagedPolicyToPermissionSetInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_attach_managed_policy_to_permission_set_input::ser_attach_managed_policy_to_permission_set_input(
@@ -175,5 +175,5 @@ pub fn ser_attach_managed_policy_to_permission_set_input(
         input,
     )?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

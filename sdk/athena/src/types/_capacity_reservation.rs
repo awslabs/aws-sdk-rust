@@ -180,28 +180,28 @@ impl CapacityReservationBuilder {
     /// - [`target_dpus`](crate::types::builders::CapacityReservationBuilder::target_dpus)
     /// - [`allocated_dpus`](crate::types::builders::CapacityReservationBuilder::allocated_dpus)
     /// - [`creation_time`](crate::types::builders::CapacityReservationBuilder::creation_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::CapacityReservation, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CapacityReservation, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CapacityReservation {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building CapacityReservation",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building CapacityReservation",
                 )
             })?,
             target_dpus: self.target_dpus.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "target_dpus",
                     "target_dpus was not specified but it is required when building CapacityReservation",
                 )
             })?,
             allocated_dpus: self.allocated_dpus.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "allocated_dpus",
                     "allocated_dpus was not specified but it is required when building CapacityReservation",
                 )
@@ -209,7 +209,7 @@ impl CapacityReservationBuilder {
             last_allocation: self.last_allocation,
             last_successful_allocation_time: self.last_successful_allocation_time,
             creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_time",
                     "creation_time was not specified but it is required when building CapacityReservation",
                 )

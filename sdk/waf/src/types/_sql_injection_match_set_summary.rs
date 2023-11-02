@@ -79,16 +79,16 @@ impl SqlInjectionMatchSetSummaryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`sql_injection_match_set_id`](crate::types::builders::SqlInjectionMatchSetSummaryBuilder::sql_injection_match_set_id)
     /// - [`name`](crate::types::builders::SqlInjectionMatchSetSummaryBuilder::name)
-    pub fn build(self) -> ::std::result::Result<crate::types::SqlInjectionMatchSetSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SqlInjectionMatchSetSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SqlInjectionMatchSetSummary {
             sql_injection_match_set_id: self.sql_injection_match_set_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "sql_injection_match_set_id",
                     "sql_injection_match_set_id was not specified but it is required when building SqlInjectionMatchSetSummary",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building SqlInjectionMatchSetSummary",
                 )

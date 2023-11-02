@@ -88,7 +88,7 @@ impl AddTagsToOnPremisesInstancesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_tags_to_on_premises_instances::AddTagsToOnPremisesInstancesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::add_tags_to_on_premises_instances::AddTagsToOnPremisesInstancesInput {
             tags: self.tags,

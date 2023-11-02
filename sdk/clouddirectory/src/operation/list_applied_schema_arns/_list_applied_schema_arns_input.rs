@@ -107,7 +107,7 @@ impl ListAppliedSchemaArnsInputBuilder {
     /// Consumes the builder and constructs a [`ListAppliedSchemaArnsInput`](crate::operation::list_applied_schema_arns::ListAppliedSchemaArnsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_applied_schema_arns::ListAppliedSchemaArnsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_applied_schema_arns::ListAppliedSchemaArnsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_applied_schema_arns::ListAppliedSchemaArnsInput {
             directory_arn: self.directory_arn,

@@ -2,7 +2,7 @@
 pub fn ser_uplink_echo_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UplinkEchoConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("enabled").boolean(input.enabled);
     }

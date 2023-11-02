@@ -169,7 +169,7 @@ impl DescribeGameSessionsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeGameSessionsInput`](crate::operation::describe_game_sessions::DescribeGameSessionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_game_sessions::DescribeGameSessionsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_game_sessions::DescribeGameSessionsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_game_sessions::DescribeGameSessionsInput {
             fleet_id: self.fleet_id,

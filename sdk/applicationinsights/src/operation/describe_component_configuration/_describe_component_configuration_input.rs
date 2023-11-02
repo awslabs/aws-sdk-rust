@@ -89,7 +89,7 @@ impl DescribeComponentConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_component_configuration::DescribeComponentConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_component_configuration::DescribeComponentConfigurationInput {
             resource_group_name: self.resource_group_name,

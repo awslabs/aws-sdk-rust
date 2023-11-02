@@ -112,7 +112,7 @@ impl AssociateDeviceWithPlacementInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_device_with_placement::AssociateDeviceWithPlacementInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::associate_device_with_placement::AssociateDeviceWithPlacementInput {
             project_name: self.project_name,

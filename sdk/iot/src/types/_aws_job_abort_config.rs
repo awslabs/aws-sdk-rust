@@ -51,10 +51,10 @@ impl AwsJobAbortConfigBuilder {
     /// Consumes the builder and constructs a [`AwsJobAbortConfig`](crate::types::AwsJobAbortConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`abort_criteria_list`](crate::types::builders::AwsJobAbortConfigBuilder::abort_criteria_list)
-    pub fn build(self) -> ::std::result::Result<crate::types::AwsJobAbortConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AwsJobAbortConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AwsJobAbortConfig {
             abort_criteria_list: self.abort_criteria_list.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "abort_criteria_list",
                     "abort_criteria_list was not specified but it is required when building AwsJobAbortConfig",
                 )

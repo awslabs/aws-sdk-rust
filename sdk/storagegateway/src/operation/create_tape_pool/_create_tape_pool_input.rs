@@ -147,7 +147,7 @@ impl CreateTapePoolInputBuilder {
     /// Consumes the builder and constructs a [`CreateTapePoolInput`](crate::operation::create_tape_pool::CreateTapePoolInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_tape_pool::CreateTapePoolInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_tape_pool::CreateTapePoolInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_tape_pool::CreateTapePoolInput {
             pool_name: self.pool_name,
             storage_class: self.storage_class,

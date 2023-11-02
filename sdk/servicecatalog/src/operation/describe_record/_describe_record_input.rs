@@ -127,7 +127,7 @@ impl DescribeRecordInputBuilder {
     /// Consumes the builder and constructs a [`DescribeRecordInput`](crate::operation::describe_record::DescribeRecordInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_record::DescribeRecordInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_record::DescribeRecordInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_record::DescribeRecordInput {
             accept_language: self.accept_language,
             id: self.id,

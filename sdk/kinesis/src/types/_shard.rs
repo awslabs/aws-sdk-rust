@@ -132,10 +132,10 @@ impl ShardBuilder {
     /// Consumes the builder and constructs a [`Shard`](crate::types::Shard).
     /// This method will fail if any of the following fields are not set:
     /// - [`shard_id`](crate::types::builders::ShardBuilder::shard_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::Shard, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Shard, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Shard {
             shard_id: self.shard_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "shard_id",
                     "shard_id was not specified but it is required when building Shard",
                 )

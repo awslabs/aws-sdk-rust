@@ -74,10 +74,10 @@ impl StreamChannelDefinitionBuilder {
     /// Consumes the builder and constructs a [`StreamChannelDefinition`](crate::types::StreamChannelDefinition).
     /// This method will fail if any of the following fields are not set:
     /// - [`number_of_channels`](crate::types::builders::StreamChannelDefinitionBuilder::number_of_channels)
-    pub fn build(self) -> ::std::result::Result<crate::types::StreamChannelDefinition, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::StreamChannelDefinition, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::StreamChannelDefinition {
             number_of_channels: self.number_of_channels.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "number_of_channels",
                     "number_of_channels was not specified but it is required when building StreamChannelDefinition",
                 )

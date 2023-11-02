@@ -217,34 +217,34 @@ impl GetScanOutputBuilder {
     /// - [`scan_state`](crate::operation::get_scan::builders::GetScanOutputBuilder::scan_state)
     /// - [`created_at`](crate::operation::get_scan::builders::GetScanOutputBuilder::created_at)
     /// - [`analysis_type`](crate::operation::get_scan::builders::GetScanOutputBuilder::analysis_type)
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_scan::GetScanOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_scan::GetScanOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_scan::GetScanOutput {
             scan_name: self.scan_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "scan_name",
                     "scan_name was not specified but it is required when building GetScanOutput",
                 )
             })?,
             run_id: self.run_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "run_id",
                     "run_id was not specified but it is required when building GetScanOutput",
                 )
             })?,
             scan_state: self.scan_state.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "scan_state",
                     "scan_state was not specified but it is required when building GetScanOutput",
                 )
             })?,
             created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
                     "created_at was not specified but it is required when building GetScanOutput",
                 )
             })?,
             analysis_type: self.analysis_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "analysis_type",
                     "analysis_type was not specified but it is required when building GetScanOutput",
                 )

@@ -65,7 +65,7 @@ impl ListVpcEndpointAccessInputBuilder {
     /// Consumes the builder and constructs a [`ListVpcEndpointAccessInput`](crate::operation::list_vpc_endpoint_access::ListVpcEndpointAccessInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_vpc_endpoint_access::ListVpcEndpointAccessInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_vpc_endpoint_access::ListVpcEndpointAccessInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_vpc_endpoint_access::ListVpcEndpointAccessInput {
             domain_name: self.domain_name,

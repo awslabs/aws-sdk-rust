@@ -88,10 +88,10 @@ impl HttpGatewayRouteHeaderBuilder {
     /// Consumes the builder and constructs a [`HttpGatewayRouteHeader`](crate::types::HttpGatewayRouteHeader).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::HttpGatewayRouteHeaderBuilder::name)
-    pub fn build(self) -> ::std::result::Result<crate::types::HttpGatewayRouteHeader, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::HttpGatewayRouteHeader, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::HttpGatewayRouteHeader {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building HttpGatewayRouteHeader",
                 )

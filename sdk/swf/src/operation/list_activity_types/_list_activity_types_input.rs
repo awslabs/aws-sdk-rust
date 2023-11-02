@@ -155,7 +155,7 @@ impl ListActivityTypesInputBuilder {
     /// Consumes the builder and constructs a [`ListActivityTypesInput`](crate::operation::list_activity_types::ListActivityTypesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_activity_types::ListActivityTypesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_activity_types::ListActivityTypesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_activity_types::ListActivityTypesInput {
             domain: self.domain,
             name: self.name,

@@ -157,28 +157,28 @@ impl ActionTypeIdentifierBuilder {
     /// - [`owner`](crate::types::builders::ActionTypeIdentifierBuilder::owner)
     /// - [`provider`](crate::types::builders::ActionTypeIdentifierBuilder::provider)
     /// - [`version`](crate::types::builders::ActionTypeIdentifierBuilder::version)
-    pub fn build(self) -> ::std::result::Result<crate::types::ActionTypeIdentifier, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ActionTypeIdentifier, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ActionTypeIdentifier {
             category: self.category.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "category",
                     "category was not specified but it is required when building ActionTypeIdentifier",
                 )
             })?,
             owner: self.owner.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "owner",
                     "owner was not specified but it is required when building ActionTypeIdentifier",
                 )
             })?,
             provider: self.provider.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "provider",
                     "provider was not specified but it is required when building ActionTypeIdentifier",
                 )
             })?,
             version: self.version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "version",
                     "version was not specified but it is required when building ActionTypeIdentifier",
                 )

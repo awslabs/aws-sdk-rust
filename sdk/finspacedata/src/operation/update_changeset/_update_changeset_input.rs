@@ -228,7 +228,7 @@ impl UpdateChangesetInputBuilder {
     /// Consumes the builder and constructs a [`UpdateChangesetInput`](crate::operation::update_changeset::UpdateChangesetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_changeset::UpdateChangesetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_changeset::UpdateChangesetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_changeset::UpdateChangesetInput {
             client_token: self.client_token,
             dataset_id: self.dataset_id,

@@ -179,7 +179,7 @@ impl GetInsightSummariesInputBuilder {
     /// Consumes the builder and constructs a [`GetInsightSummariesInput`](crate::operation::get_insight_summaries::GetInsightSummariesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_insight_summaries::GetInsightSummariesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_insight_summaries::GetInsightSummariesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_insight_summaries::GetInsightSummariesInput {
             states: self.states,

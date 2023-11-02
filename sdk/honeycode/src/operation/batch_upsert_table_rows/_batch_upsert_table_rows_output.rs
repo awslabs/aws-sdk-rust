@@ -121,11 +121,11 @@ impl BatchUpsertTableRowsOutputBuilder {
     /// - [`rows`](crate::operation::batch_upsert_table_rows::builders::BatchUpsertTableRowsOutputBuilder::rows)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_upsert_table_rows::BatchUpsertTableRowsOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::batch_upsert_table_rows::BatchUpsertTableRowsOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::batch_upsert_table_rows::BatchUpsertTableRowsOutput {
             rows: self.rows.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "rows",
                     "rows was not specified but it is required when building BatchUpsertTableRowsOutput",
                 )

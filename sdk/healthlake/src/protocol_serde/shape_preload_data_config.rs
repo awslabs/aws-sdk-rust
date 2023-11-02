@@ -2,7 +2,7 @@
 pub fn ser_preload_data_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PreloadDataConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("PreloadDataType").string(input.preload_data_type.as_str());
     }

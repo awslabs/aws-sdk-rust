@@ -97,10 +97,10 @@ impl LogicalTableBuilder {
     /// Consumes the builder and constructs a [`LogicalTable`](crate::types::LogicalTable).
     /// This method will fail if any of the following fields are not set:
     /// - [`alias`](crate::types::builders::LogicalTableBuilder::alias)
-    pub fn build(self) -> ::std::result::Result<crate::types::LogicalTable, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::LogicalTable, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::LogicalTable {
             alias: self.alias.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "alias",
                     "alias was not specified but it is required when building LogicalTable",
                 )

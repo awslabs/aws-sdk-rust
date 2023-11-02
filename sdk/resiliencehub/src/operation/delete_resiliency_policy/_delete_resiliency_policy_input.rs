@@ -65,8 +65,10 @@ impl DeleteResiliencyPolicyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteResiliencyPolicyInput`](crate::operation::delete_resiliency_policy::DeleteResiliencyPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_resiliency_policy::DeleteResiliencyPolicyInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::delete_resiliency_policy::DeleteResiliencyPolicyInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::delete_resiliency_policy::DeleteResiliencyPolicyInput {
             policy_arn: self.policy_arn,
             client_token: self.client_token,

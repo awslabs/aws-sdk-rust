@@ -2,7 +2,7 @@
 pub fn ser_uplink_spectrum_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UplinkSpectrumConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.center_frequency {
         #[allow(unused_mut)]
         let mut object_2 = object.key("centerFrequency").start_object();

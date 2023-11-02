@@ -68,7 +68,7 @@ impl AssociateVirtualInterfaceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_virtual_interface::AssociateVirtualInterfaceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::associate_virtual_interface::AssociateVirtualInterfaceInput {
             virtual_interface_id: self.virtual_interface_id,

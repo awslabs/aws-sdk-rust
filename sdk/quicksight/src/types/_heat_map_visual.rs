@@ -168,10 +168,10 @@ impl HeatMapVisualBuilder {
     /// Consumes the builder and constructs a [`HeatMapVisual`](crate::types::HeatMapVisual).
     /// This method will fail if any of the following fields are not set:
     /// - [`visual_id`](crate::types::builders::HeatMapVisualBuilder::visual_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::HeatMapVisual, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::HeatMapVisual, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::HeatMapVisual {
             visual_id: self.visual_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "visual_id",
                     "visual_id was not specified but it is required when building HeatMapVisual",
                 )

@@ -92,16 +92,16 @@ impl CreateGatewayOutputBuilder {
     /// - [`gateway_arn`](crate::operation::create_gateway::builders::CreateGatewayOutputBuilder::gateway_arn)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_gateway::CreateGatewayOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_gateway::CreateGatewayOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_gateway::CreateGatewayOutput {
             gateway_id: self.gateway_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "gateway_id",
                     "gateway_id was not specified but it is required when building CreateGatewayOutput",
                 )
             })?,
             gateway_arn: self.gateway_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "gateway_arn",
                     "gateway_arn was not specified but it is required when building CreateGatewayOutput",
                 )

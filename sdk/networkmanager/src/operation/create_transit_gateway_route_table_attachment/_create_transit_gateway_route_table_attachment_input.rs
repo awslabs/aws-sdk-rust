@@ -119,7 +119,7 @@ impl CreateTransitGatewayRouteTableAttachmentInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_transit_gateway_route_table_attachment::CreateTransitGatewayRouteTableAttachmentInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::create_transit_gateway_route_table_attachment::CreateTransitGatewayRouteTableAttachmentInput {

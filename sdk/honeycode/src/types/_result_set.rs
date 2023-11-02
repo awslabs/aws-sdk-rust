@@ -85,16 +85,16 @@ impl ResultSetBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`headers`](crate::types::builders::ResultSetBuilder::headers)
     /// - [`rows`](crate::types::builders::ResultSetBuilder::rows)
-    pub fn build(self) -> ::std::result::Result<crate::types::ResultSet, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ResultSet, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ResultSet {
             headers: self.headers.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "headers",
                     "headers was not specified but it is required when building ResultSet",
                 )
             })?,
             rows: self.rows.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "rows",
                     "rows was not specified but it is required when building ResultSet",
                 )

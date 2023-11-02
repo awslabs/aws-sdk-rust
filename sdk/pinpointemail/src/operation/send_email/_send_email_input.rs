@@ -186,7 +186,7 @@ impl SendEmailInputBuilder {
         &self.configuration_set_name
     }
     /// Consumes the builder and constructs a [`SendEmailInput`](crate::operation::send_email::SendEmailInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::send_email::SendEmailInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::send_email::SendEmailInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::send_email::SendEmailInput {
             from_email_address: self.from_email_address,
             destination: self.destination,

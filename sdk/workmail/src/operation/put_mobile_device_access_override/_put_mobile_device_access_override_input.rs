@@ -158,7 +158,7 @@ impl PutMobileDeviceAccessOverrideInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideInput {
             organization_id: self.organization_id,

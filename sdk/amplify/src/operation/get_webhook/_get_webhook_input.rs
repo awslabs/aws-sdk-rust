@@ -43,7 +43,7 @@ impl GetWebhookInputBuilder {
         &self.webhook_id
     }
     /// Consumes the builder and constructs a [`GetWebhookInput`](crate::operation::get_webhook::GetWebhookInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_webhook::GetWebhookInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_webhook::GetWebhookInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_webhook::GetWebhookInput { webhook_id: self.webhook_id })
     }
 }

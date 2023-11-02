@@ -207,22 +207,22 @@ impl WorkspaceRequestBuilder {
     /// - [`directory_id`](crate::types::builders::WorkspaceRequestBuilder::directory_id)
     /// - [`user_name`](crate::types::builders::WorkspaceRequestBuilder::user_name)
     /// - [`bundle_id`](crate::types::builders::WorkspaceRequestBuilder::bundle_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::WorkspaceRequest, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::WorkspaceRequest, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::WorkspaceRequest {
             directory_id: self.directory_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "directory_id",
                     "directory_id was not specified but it is required when building WorkspaceRequest",
                 )
             })?,
             user_name: self.user_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "user_name",
                     "user_name was not specified but it is required when building WorkspaceRequest",
                 )
             })?,
             bundle_id: self.bundle_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "bundle_id",
                     "bundle_id was not specified but it is required when building WorkspaceRequest",
                 )

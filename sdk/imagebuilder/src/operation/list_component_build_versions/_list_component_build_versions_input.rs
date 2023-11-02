@@ -88,7 +88,7 @@ impl ListComponentBuildVersionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_component_build_versions::ListComponentBuildVersionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_component_build_versions::ListComponentBuildVersionsInput {
             component_version_arn: self.component_version_arn,

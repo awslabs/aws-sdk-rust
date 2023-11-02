@@ -333,7 +333,7 @@ impl GenerateDataSetInputBuilder {
     /// Consumes the builder and constructs a [`GenerateDataSetInput`](crate::operation::generate_data_set::GenerateDataSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::generate_data_set::GenerateDataSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::generate_data_set::GenerateDataSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::generate_data_set::GenerateDataSetInput {
             data_set_type: self.data_set_type,
             data_set_publication_date: self.data_set_publication_date,

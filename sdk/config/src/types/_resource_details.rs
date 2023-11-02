@@ -130,22 +130,22 @@ impl ResourceDetailsBuilder {
     /// - [`resource_id`](crate::types::builders::ResourceDetailsBuilder::resource_id)
     /// - [`resource_type`](crate::types::builders::ResourceDetailsBuilder::resource_type)
     /// - [`resource_configuration`](crate::types::builders::ResourceDetailsBuilder::resource_configuration)
-    pub fn build(self) -> ::std::result::Result<crate::types::ResourceDetails, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ResourceDetails, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ResourceDetails {
             resource_id: self.resource_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_id",
                     "resource_id was not specified but it is required when building ResourceDetails",
                 )
             })?,
             resource_type: self.resource_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_type",
                     "resource_type was not specified but it is required when building ResourceDetails",
                 )
             })?,
             resource_configuration: self.resource_configuration.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_configuration",
                     "resource_configuration was not specified but it is required when building ResourceDetails",
                 )

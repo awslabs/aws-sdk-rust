@@ -44,7 +44,7 @@ impl GetEventActionInputBuilder {
     /// Consumes the builder and constructs a [`GetEventActionInput`](crate::operation::get_event_action::GetEventActionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_event_action::GetEventActionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_event_action::GetEventActionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_event_action::GetEventActionInput {
             event_action_id: self.event_action_id,
         })

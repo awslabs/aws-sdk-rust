@@ -161,7 +161,7 @@ impl ListPriceListsInputBuilder {
     /// Consumes the builder and constructs a [`ListPriceListsInput`](crate::operation::list_price_lists::ListPriceListsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_price_lists::ListPriceListsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_price_lists::ListPriceListsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_price_lists::ListPriceListsInput {
             service_code: self.service_code,
             effective_date: self.effective_date,

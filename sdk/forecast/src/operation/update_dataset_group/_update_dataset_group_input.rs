@@ -73,7 +73,8 @@ impl UpdateDatasetGroupInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDatasetGroupInput`](crate::operation::update_dataset_group::UpdateDatasetGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_dataset_group::UpdateDatasetGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_dataset_group::UpdateDatasetGroupInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::update_dataset_group::UpdateDatasetGroupInput {
             dataset_group_arn: self.dataset_group_arn,
             dataset_arns: self.dataset_arns,

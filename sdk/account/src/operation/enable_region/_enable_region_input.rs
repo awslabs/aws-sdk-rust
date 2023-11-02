@@ -78,7 +78,9 @@ impl EnableRegionInputBuilder {
         &self.region_name
     }
     /// Consumes the builder and constructs a [`EnableRegionInput`](crate::operation::enable_region::EnableRegionInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::enable_region::EnableRegionInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::enable_region::EnableRegionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::enable_region::EnableRegionInput {
             account_id: self.account_id,
             region_name: self.region_name,

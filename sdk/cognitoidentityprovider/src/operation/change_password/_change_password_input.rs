@@ -98,7 +98,7 @@ impl ChangePasswordInputBuilder {
     /// Consumes the builder and constructs a [`ChangePasswordInput`](crate::operation::change_password::ChangePasswordInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::change_password::ChangePasswordInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::change_password::ChangePasswordInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::change_password::ChangePasswordInput {
             previous_password: self.previous_password,
             proposed_password: self.proposed_password,

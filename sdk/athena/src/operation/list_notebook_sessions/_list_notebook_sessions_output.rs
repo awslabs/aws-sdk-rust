@@ -89,11 +89,11 @@ impl ListNotebookSessionsOutputBuilder {
     /// - [`notebook_sessions_list`](crate::operation::list_notebook_sessions::builders::ListNotebookSessionsOutputBuilder::notebook_sessions_list)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_notebook_sessions::ListNotebookSessionsOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_notebook_sessions::ListNotebookSessionsOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_notebook_sessions::ListNotebookSessionsOutput {
             notebook_sessions_list: self.notebook_sessions_list.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "notebook_sessions_list",
                     "notebook_sessions_list was not specified but it is required when building ListNotebookSessionsOutput",
                 )

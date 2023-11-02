@@ -44,7 +44,7 @@ impl StopNotebookExecutionInputBuilder {
     /// Consumes the builder and constructs a [`StopNotebookExecutionInput`](crate::operation::stop_notebook_execution::StopNotebookExecutionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_notebook_execution::StopNotebookExecutionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::stop_notebook_execution::StopNotebookExecutionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::stop_notebook_execution::StopNotebookExecutionInput {
             notebook_execution_id: self.notebook_execution_id,

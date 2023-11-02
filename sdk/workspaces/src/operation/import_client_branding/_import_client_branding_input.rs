@@ -170,7 +170,7 @@ impl ImportClientBrandingInputBuilder {
     /// Consumes the builder and constructs a [`ImportClientBrandingInput`](crate::operation::import_client_branding::ImportClientBrandingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::import_client_branding::ImportClientBrandingInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::import_client_branding::ImportClientBrandingInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::import_client_branding::ImportClientBrandingInput {
             resource_id: self.resource_id,

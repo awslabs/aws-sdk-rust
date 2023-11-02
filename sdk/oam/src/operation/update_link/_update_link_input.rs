@@ -76,7 +76,7 @@ impl UpdateLinkInputBuilder {
         &self.resource_types
     }
     /// Consumes the builder and constructs a [`UpdateLinkInput`](crate::operation::update_link::UpdateLinkInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_link::UpdateLinkInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_link::UpdateLinkInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_link::UpdateLinkInput {
             identifier: self.identifier,
             resource_types: self.resource_types,

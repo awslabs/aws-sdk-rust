@@ -417,7 +417,7 @@ impl CreateCustomKeyStoreInputBuilder {
     /// Consumes the builder and constructs a [`CreateCustomKeyStoreInput`](crate::operation::create_custom_key_store::CreateCustomKeyStoreInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_custom_key_store::CreateCustomKeyStoreInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_custom_key_store::CreateCustomKeyStoreInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_custom_key_store::CreateCustomKeyStoreInput {
             custom_key_store_name: self.custom_key_store_name,

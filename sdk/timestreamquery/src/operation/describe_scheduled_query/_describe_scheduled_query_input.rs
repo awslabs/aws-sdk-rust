@@ -44,8 +44,10 @@ impl DescribeScheduledQueryInputBuilder {
     /// Consumes the builder and constructs a [`DescribeScheduledQueryInput`](crate::operation::describe_scheduled_query::DescribeScheduledQueryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_scheduled_query::DescribeScheduledQueryInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::describe_scheduled_query::DescribeScheduledQueryInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::describe_scheduled_query::DescribeScheduledQueryInput {
             scheduled_query_arn: self.scheduled_query_arn,
         })

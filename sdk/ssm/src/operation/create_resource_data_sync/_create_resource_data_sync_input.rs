@@ -109,7 +109,7 @@ impl CreateResourceDataSyncInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_resource_data_sync::CreateResourceDataSyncInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_resource_data_sync::CreateResourceDataSyncInput {
             sync_name: self.sync_name,

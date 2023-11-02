@@ -47,10 +47,10 @@ impl UserGroupResolutionConfigurationBuilder {
     /// Consumes the builder and constructs a [`UserGroupResolutionConfiguration`](crate::types::UserGroupResolutionConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`user_group_resolution_mode`](crate::types::builders::UserGroupResolutionConfigurationBuilder::user_group_resolution_mode)
-    pub fn build(self) -> ::std::result::Result<crate::types::UserGroupResolutionConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::UserGroupResolutionConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::UserGroupResolutionConfiguration {
             user_group_resolution_mode: self.user_group_resolution_mode.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "user_group_resolution_mode",
                     "user_group_resolution_mode was not specified but it is required when building UserGroupResolutionConfiguration",
                 )

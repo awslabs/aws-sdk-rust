@@ -2,7 +2,7 @@
 pub fn ser_pivot_table_field_option(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PivotTableFieldOption,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("FieldId").string(input.field_id.as_str());
     }

@@ -87,7 +87,7 @@ impl UpdatePublicKeyInputBuilder {
     /// Consumes the builder and constructs a [`UpdatePublicKeyInput`](crate::operation::update_public_key::UpdatePublicKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_public_key::UpdatePublicKeyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_public_key::UpdatePublicKeyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_public_key::UpdatePublicKeyInput {
             public_key_config: self.public_key_config,
             id: self.id,

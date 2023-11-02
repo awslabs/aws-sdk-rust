@@ -87,10 +87,10 @@ impl AudioAndDtmfInputSpecificationBuilder {
     /// Consumes the builder and constructs a [`AudioAndDtmfInputSpecification`](crate::types::AudioAndDtmfInputSpecification).
     /// This method will fail if any of the following fields are not set:
     /// - [`start_timeout_ms`](crate::types::builders::AudioAndDtmfInputSpecificationBuilder::start_timeout_ms)
-    pub fn build(self) -> ::std::result::Result<crate::types::AudioAndDtmfInputSpecification, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AudioAndDtmfInputSpecification, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AudioAndDtmfInputSpecification {
             start_timeout_ms: self.start_timeout_ms.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "start_timeout_ms",
                     "start_timeout_ms was not specified but it is required when building AudioAndDtmfInputSpecification",
                 )

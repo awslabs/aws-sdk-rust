@@ -51,8 +51,10 @@ impl BatchGetFreeTrialInfoInputBuilder {
     /// Consumes the builder and constructs a [`BatchGetFreeTrialInfoInput`](crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoInput {
             account_ids: self.account_ids,
         })

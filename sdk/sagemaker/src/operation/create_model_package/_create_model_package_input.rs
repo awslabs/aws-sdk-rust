@@ -517,7 +517,8 @@ impl CreateModelPackageInputBuilder {
     /// Consumes the builder and constructs a [`CreateModelPackageInput`](crate::operation::create_model_package::CreateModelPackageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_model_package::CreateModelPackageInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_model_package::CreateModelPackageInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_model_package::CreateModelPackageInput {
             model_package_name: self.model_package_name,
             model_package_group_name: self.model_package_group_name,

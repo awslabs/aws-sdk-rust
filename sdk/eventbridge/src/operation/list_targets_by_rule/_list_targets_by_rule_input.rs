@@ -107,7 +107,7 @@ impl ListTargetsByRuleInputBuilder {
     /// Consumes the builder and constructs a [`ListTargetsByRuleInput`](crate::operation::list_targets_by_rule::ListTargetsByRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_targets_by_rule::ListTargetsByRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_targets_by_rule::ListTargetsByRuleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_targets_by_rule::ListTargetsByRuleInput {
             rule: self.rule,
             event_bus_name: self.event_bus_name,

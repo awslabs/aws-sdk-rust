@@ -73,7 +73,7 @@ impl GenerateClientCertificateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::generate_client_certificate::GenerateClientCertificateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::generate_client_certificate::GenerateClientCertificateInput {
             description: self.description,

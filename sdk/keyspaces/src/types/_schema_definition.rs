@@ -138,16 +138,16 @@ impl SchemaDefinitionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`all_columns`](crate::types::builders::SchemaDefinitionBuilder::all_columns)
     /// - [`partition_keys`](crate::types::builders::SchemaDefinitionBuilder::partition_keys)
-    pub fn build(self) -> ::std::result::Result<crate::types::SchemaDefinition, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SchemaDefinition, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SchemaDefinition {
             all_columns: self.all_columns.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "all_columns",
                     "all_columns was not specified but it is required when building SchemaDefinition",
                 )
             })?,
             partition_keys: self.partition_keys.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "partition_keys",
                     "partition_keys was not specified but it is required when building SchemaDefinition",
                 )

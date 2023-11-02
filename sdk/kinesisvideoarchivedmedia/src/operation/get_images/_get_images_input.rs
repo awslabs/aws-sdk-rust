@@ -305,7 +305,7 @@ impl GetImagesInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`GetImagesInput`](crate::operation::get_images::GetImagesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_images::GetImagesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_images::GetImagesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_images::GetImagesInput {
             stream_name: self.stream_name,
             stream_arn: self.stream_arn,

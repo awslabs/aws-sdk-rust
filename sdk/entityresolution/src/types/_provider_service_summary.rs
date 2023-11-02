@@ -141,34 +141,34 @@ impl ProviderServiceSummaryBuilder {
     /// - [`provider_service_display_name`](crate::types::builders::ProviderServiceSummaryBuilder::provider_service_display_name)
     /// - [`provider_service_name`](crate::types::builders::ProviderServiceSummaryBuilder::provider_service_name)
     /// - [`provider_service_type`](crate::types::builders::ProviderServiceSummaryBuilder::provider_service_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::ProviderServiceSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ProviderServiceSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ProviderServiceSummary {
             provider_service_arn: self.provider_service_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "provider_service_arn",
                     "provider_service_arn was not specified but it is required when building ProviderServiceSummary",
                 )
             })?,
             provider_name: self.provider_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "provider_name",
                     "provider_name was not specified but it is required when building ProviderServiceSummary",
                 )
             })?,
             provider_service_display_name: self.provider_service_display_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "provider_service_display_name",
                     "provider_service_display_name was not specified but it is required when building ProviderServiceSummary",
                 )
             })?,
             provider_service_name: self.provider_service_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "provider_service_name",
                     "provider_service_name was not specified but it is required when building ProviderServiceSummary",
                 )
             })?,
             provider_service_type: self.provider_service_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "provider_service_type",
                     "provider_service_type was not specified but it is required when building ProviderServiceSummary",
                 )

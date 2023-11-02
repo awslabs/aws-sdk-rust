@@ -2,7 +2,7 @@
 pub fn ser_list_fleets_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_fleets::ListFleetsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.build_id {
         object.key("BuildId").string(var_1.as_str());
     }

@@ -91,12 +91,12 @@ impl ListTemplateStepGroupsOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_template_step_groups::ListTemplateStepGroupsOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_template_step_groups::ListTemplateStepGroupsOutput {
             next_token: self.next_token,
             template_step_group_summary: self.template_step_group_summary.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "template_step_group_summary",
                     "template_step_group_summary was not specified but it is required when building ListTemplateStepGroupsOutput",
                 )

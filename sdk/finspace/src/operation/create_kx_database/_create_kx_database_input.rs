@@ -136,7 +136,7 @@ impl CreateKxDatabaseInputBuilder {
     /// Consumes the builder and constructs a [`CreateKxDatabaseInput`](crate::operation::create_kx_database::CreateKxDatabaseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_kx_database::CreateKxDatabaseInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_kx_database::CreateKxDatabaseInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_kx_database::CreateKxDatabaseInput {
             environment_id: self.environment_id,
             database_name: self.database_name,

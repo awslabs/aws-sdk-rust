@@ -117,28 +117,28 @@ impl RepositoryBranchBuilder {
     /// - [`provider`](crate::types::builders::RepositoryBranchBuilder::provider)
     /// - [`name`](crate::types::builders::RepositoryBranchBuilder::name)
     /// - [`branch`](crate::types::builders::RepositoryBranchBuilder::branch)
-    pub fn build(self) -> ::std::result::Result<crate::types::RepositoryBranch, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RepositoryBranch, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RepositoryBranch {
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building RepositoryBranch",
                 )
             })?,
             provider: self.provider.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "provider",
                     "provider was not specified but it is required when building RepositoryBranch",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building RepositoryBranch",
                 )
             })?,
             branch: self.branch.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "branch",
                     "branch was not specified but it is required when building RepositoryBranch",
                 )

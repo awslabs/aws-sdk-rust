@@ -107,7 +107,7 @@ impl SignPayloadInputBuilder {
         &self.payload_format
     }
     /// Consumes the builder and constructs a [`SignPayloadInput`](crate::operation::sign_payload::SignPayloadInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::sign_payload::SignPayloadInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::sign_payload::SignPayloadInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::sign_payload::SignPayloadInput {
             profile_name: self.profile_name,
             profile_owner: self.profile_owner,

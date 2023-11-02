@@ -76,7 +76,7 @@ impl DeactivateMfaDeviceInputBuilder {
     /// Consumes the builder and constructs a [`DeactivateMfaDeviceInput`](crate::operation::deactivate_mfa_device::DeactivateMfaDeviceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::deactivate_mfa_device::DeactivateMfaDeviceInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::deactivate_mfa_device::DeactivateMfaDeviceInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::deactivate_mfa_device::DeactivateMfaDeviceInput {
             user_name: self.user_name,

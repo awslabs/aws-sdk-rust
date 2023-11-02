@@ -220,28 +220,28 @@ impl ScheduledActionBuilder {
     /// - [`r#type`](crate::types::builders::ScheduledActionBuilder::r#type)
     /// - [`severity`](crate::types::builders::ScheduledActionBuilder::severity)
     /// - [`scheduled_time`](crate::types::builders::ScheduledActionBuilder::scheduled_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::ScheduledAction, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ScheduledAction, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ScheduledAction {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building ScheduledAction",
                 )
             })?,
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building ScheduledAction",
                 )
             })?,
             severity: self.severity.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "severity",
                     "severity was not specified but it is required when building ScheduledAction",
                 )
             })?,
             scheduled_time: self.scheduled_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "scheduled_time",
                     "scheduled_time was not specified but it is required when building ScheduledAction",
                 )

@@ -113,7 +113,7 @@ impl ProvisionDeviceInputBuilder {
     /// Consumes the builder and constructs a [`ProvisionDeviceInput`](crate::operation::provision_device::ProvisionDeviceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::provision_device::ProvisionDeviceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::provision_device::ProvisionDeviceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::provision_device::ProvisionDeviceInput {
             name: self.name,
             description: self.description,

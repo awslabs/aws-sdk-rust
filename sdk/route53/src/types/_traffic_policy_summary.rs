@@ -139,34 +139,34 @@ impl TrafficPolicySummaryBuilder {
     /// - [`r#type`](crate::types::builders::TrafficPolicySummaryBuilder::r#type)
     /// - [`latest_version`](crate::types::builders::TrafficPolicySummaryBuilder::latest_version)
     /// - [`traffic_policy_count`](crate::types::builders::TrafficPolicySummaryBuilder::traffic_policy_count)
-    pub fn build(self) -> ::std::result::Result<crate::types::TrafficPolicySummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TrafficPolicySummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TrafficPolicySummary {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building TrafficPolicySummary",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building TrafficPolicySummary",
                 )
             })?,
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building TrafficPolicySummary",
                 )
             })?,
             latest_version: self.latest_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "latest_version",
                     "latest_version was not specified but it is required when building TrafficPolicySummary",
                 )
             })?,
             traffic_policy_count: self.traffic_policy_count.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "traffic_policy_count",
                     "traffic_policy_count was not specified but it is required when building TrafficPolicySummary",
                 )

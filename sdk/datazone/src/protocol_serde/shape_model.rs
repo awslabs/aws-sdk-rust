@@ -2,12 +2,12 @@
 pub fn ser_model(
     object_3: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Model,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::Model::Smithy(inner) => {
             object_3.key("smithy").string(inner.as_str());
         }
-        crate::types::Model::Unknown => return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant("Model")),
+        crate::types::Model::Unknown => return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("Model")),
     }
     Ok(())
 }
@@ -25,12 +25,17 @@ where
             match tokens.next().transpose()? {
                 Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                 Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                    let key = key.to_unescaped()?;
+                    if key == "__type" {
+                        ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                        continue;
+                    }
                     if variant.is_some() {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
                             "encountered mixed variants in union",
                         ));
                     }
-                    variant = match key.to_unescaped()?.as_ref() {
+                    variant = match key.as_ref() {
                         "smithy" => Some(crate::types::Model::Smithy(
                             ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                 .map(|s| s.to_unescaped().map(|u| u.into_owned()))

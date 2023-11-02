@@ -164,7 +164,7 @@ impl CreateArtifactInputBuilder {
     /// Consumes the builder and constructs a [`CreateArtifactInput`](crate::operation::create_artifact::CreateArtifactInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_artifact::CreateArtifactInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_artifact::CreateArtifactInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_artifact::CreateArtifactInput {
             artifact_name: self.artifact_name,
             source: self.source,

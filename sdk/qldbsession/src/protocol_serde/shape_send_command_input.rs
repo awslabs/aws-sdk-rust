@@ -2,7 +2,7 @@
 pub fn ser_send_command_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::send_command::SendCommandInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.session_token {
         object.key("SessionToken").string(var_1.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_remix_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RemixSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.channel_mapping {
         #[allow(unused_mut)]
         let mut object_2 = object.key("channelMapping").start_object();

@@ -105,7 +105,9 @@ impl DeleteVolumeInputBuilder {
         &self.open_zfs_configuration
     }
     /// Consumes the builder and constructs a [`DeleteVolumeInput`](crate::operation::delete_volume::DeleteVolumeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_volume::DeleteVolumeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_volume::DeleteVolumeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_volume::DeleteVolumeInput {
             client_request_token: self.client_request_token,
             volume_id: self.volume_id,

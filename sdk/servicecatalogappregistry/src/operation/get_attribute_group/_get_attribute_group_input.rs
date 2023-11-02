@@ -44,7 +44,7 @@ impl GetAttributeGroupInputBuilder {
     /// Consumes the builder and constructs a [`GetAttributeGroupInput`](crate::operation::get_attribute_group::GetAttributeGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_attribute_group::GetAttributeGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_attribute_group::GetAttributeGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_attribute_group::GetAttributeGroupInput {
             attribute_group: self.attribute_group,
         })

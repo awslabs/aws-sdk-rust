@@ -2,7 +2,7 @@
 pub fn ser_configuration(
     object_7: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Configuration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::Configuration::EbsSnapshot(inner) => {
             #[allow(unused_mut)]
@@ -71,7 +71,7 @@ pub fn ser_configuration(
             object_11.finish();
         }
         crate::types::Configuration::Unknown => {
-            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant("Configuration"))
+            return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("Configuration"))
         }
     }
     Ok(())
@@ -90,12 +90,17 @@ where
             match tokens.next().transpose()? {
                 Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                 Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                    let key = key.to_unescaped()?;
+                    if key == "__type" {
+                        ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                        continue;
+                    }
                     if variant.is_some() {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
                             "encountered mixed variants in union",
                         ));
                     }
-                    variant = match key.to_unescaped()?.as_ref() {
+                    variant = match key.as_ref() {
                         "ebsSnapshot" => Some(crate::types::Configuration::EbsSnapshot(
                             crate::protocol_serde::shape_ebs_snapshot_configuration::de_ebs_snapshot_configuration(tokens)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'ebsSnapshot' cannot be null")

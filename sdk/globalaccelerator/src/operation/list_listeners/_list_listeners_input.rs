@@ -86,7 +86,7 @@ impl ListListenersInputBuilder {
     /// Consumes the builder and constructs a [`ListListenersInput`](crate::operation::list_listeners::ListListenersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_listeners::ListListenersInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_listeners::ListListenersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_listeners::ListListenersInput {
             accelerator_arn: self.accelerator_arn,
             max_results: self.max_results,

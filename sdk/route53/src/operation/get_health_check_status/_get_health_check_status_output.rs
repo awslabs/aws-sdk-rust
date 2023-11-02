@@ -69,11 +69,11 @@ impl GetHealthCheckStatusOutputBuilder {
     /// - [`health_check_observations`](crate::operation::get_health_check_status::builders::GetHealthCheckStatusOutputBuilder::health_check_observations)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_health_check_status::GetHealthCheckStatusOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_health_check_status::GetHealthCheckStatusOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_health_check_status::GetHealthCheckStatusOutput {
             health_check_observations: self.health_check_observations.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "health_check_observations",
                     "health_check_observations was not specified but it is required when building GetHealthCheckStatusOutput",
                 )

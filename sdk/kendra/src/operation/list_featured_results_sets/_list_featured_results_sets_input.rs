@@ -88,7 +88,7 @@ impl ListFeaturedResultsSetsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_featured_results_sets::ListFeaturedResultsSetsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_featured_results_sets::ListFeaturedResultsSetsInput {
             index_id: self.index_id,

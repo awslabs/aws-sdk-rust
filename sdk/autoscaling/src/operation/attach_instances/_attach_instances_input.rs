@@ -73,7 +73,7 @@ impl AttachInstancesInputBuilder {
     /// Consumes the builder and constructs a [`AttachInstancesInput`](crate::operation::attach_instances::AttachInstancesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::attach_instances::AttachInstancesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::attach_instances::AttachInstancesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::attach_instances::AttachInstancesInput {
             instance_ids: self.instance_ids,
             auto_scaling_group_name: self.auto_scaling_group_name,

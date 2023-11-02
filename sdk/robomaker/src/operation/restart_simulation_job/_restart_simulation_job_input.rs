@@ -44,7 +44,7 @@ impl RestartSimulationJobInputBuilder {
     /// Consumes the builder and constructs a [`RestartSimulationJobInput`](crate::operation::restart_simulation_job::RestartSimulationJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::restart_simulation_job::RestartSimulationJobInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::restart_simulation_job::RestartSimulationJobInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::restart_simulation_job::RestartSimulationJobInput { job: self.job })
     }

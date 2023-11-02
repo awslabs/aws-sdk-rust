@@ -117,7 +117,7 @@ impl CreateWorkspaceImageInputBuilder {
     /// Consumes the builder and constructs a [`CreateWorkspaceImageInput`](crate::operation::create_workspace_image::CreateWorkspaceImageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_workspace_image::CreateWorkspaceImageInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_workspace_image::CreateWorkspaceImageInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_workspace_image::CreateWorkspaceImageInput {
             name: self.name,

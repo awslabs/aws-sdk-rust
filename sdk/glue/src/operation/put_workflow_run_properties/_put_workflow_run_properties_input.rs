@@ -102,7 +102,7 @@ impl PutWorkflowRunPropertiesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_workflow_run_properties::PutWorkflowRunPropertiesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_workflow_run_properties::PutWorkflowRunPropertiesInput {
             name: self.name,

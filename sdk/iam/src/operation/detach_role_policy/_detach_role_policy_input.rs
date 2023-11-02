@@ -76,7 +76,7 @@ impl DetachRolePolicyInputBuilder {
     /// Consumes the builder and constructs a [`DetachRolePolicyInput`](crate::operation::detach_role_policy::DetachRolePolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::detach_role_policy::DetachRolePolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::detach_role_policy::DetachRolePolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::detach_role_policy::DetachRolePolicyInput {
             role_name: self.role_name,
             policy_arn: self.policy_arn,

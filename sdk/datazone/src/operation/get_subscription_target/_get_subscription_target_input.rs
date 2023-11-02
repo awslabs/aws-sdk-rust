@@ -88,7 +88,7 @@ impl GetSubscriptionTargetInputBuilder {
     /// Consumes the builder and constructs a [`GetSubscriptionTargetInput`](crate::operation::get_subscription_target::GetSubscriptionTargetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_subscription_target::GetSubscriptionTargetInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_subscription_target::GetSubscriptionTargetInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_subscription_target::GetSubscriptionTargetInput {
             domain_identifier: self.domain_identifier,

@@ -71,7 +71,7 @@ impl CreateResourcePolicyInputBuilder {
     /// Consumes the builder and constructs a [`CreateResourcePolicyInput`](crate::operation::create_resource_policy::CreateResourcePolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_resource_policy::CreateResourcePolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_resource_policy::CreateResourcePolicyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_resource_policy::CreateResourcePolicyInput {
             resource_arn: self.resource_arn,

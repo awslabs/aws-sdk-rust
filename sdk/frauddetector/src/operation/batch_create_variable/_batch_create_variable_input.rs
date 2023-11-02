@@ -80,7 +80,7 @@ impl BatchCreateVariableInputBuilder {
     /// Consumes the builder and constructs a [`BatchCreateVariableInput`](crate::operation::batch_create_variable::BatchCreateVariableInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_create_variable::BatchCreateVariableInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::batch_create_variable::BatchCreateVariableInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::batch_create_variable::BatchCreateVariableInput {
             variable_entries: self.variable_entries,

@@ -79,7 +79,7 @@ impl CreateSinkInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateSinkInput`](crate::operation::create_sink::CreateSinkInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_sink::CreateSinkInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_sink::CreateSinkInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_sink::CreateSinkInput {
             name: self.name,
             tags: self.tags,

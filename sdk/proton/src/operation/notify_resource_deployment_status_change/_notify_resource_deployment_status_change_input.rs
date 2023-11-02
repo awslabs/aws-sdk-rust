@@ -149,7 +149,7 @@ impl NotifyResourceDeploymentStatusChangeInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::notify_resource_deployment_status_change::NotifyResourceDeploymentStatusChangeInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::notify_resource_deployment_status_change::NotifyResourceDeploymentStatusChangeInput {

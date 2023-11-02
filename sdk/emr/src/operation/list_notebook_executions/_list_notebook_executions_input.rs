@@ -208,8 +208,10 @@ impl ListNotebookExecutionsInputBuilder {
     /// Consumes the builder and constructs a [`ListNotebookExecutionsInput`](crate::operation::list_notebook_executions::ListNotebookExecutionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_notebook_executions::ListNotebookExecutionsInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::list_notebook_executions::ListNotebookExecutionsInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::list_notebook_executions::ListNotebookExecutionsInput {
             editor_id: self.editor_id,
             status: self.status,

@@ -45,7 +45,7 @@ impl DeleteReceiptRuleSetInputBuilder {
     /// Consumes the builder and constructs a [`DeleteReceiptRuleSetInput`](crate::operation::delete_receipt_rule_set::DeleteReceiptRuleSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_receipt_rule_set::DeleteReceiptRuleSetInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_receipt_rule_set::DeleteReceiptRuleSetInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_receipt_rule_set::DeleteReceiptRuleSetInput {
             rule_set_name: self.rule_set_name,

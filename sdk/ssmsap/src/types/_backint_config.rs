@@ -68,16 +68,16 @@ impl BackintConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`backint_mode`](crate::types::builders::BackintConfigBuilder::backint_mode)
     /// - [`ensure_no_backup_in_process`](crate::types::builders::BackintConfigBuilder::ensure_no_backup_in_process)
-    pub fn build(self) -> ::std::result::Result<crate::types::BackintConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::BackintConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::BackintConfig {
             backint_mode: self.backint_mode.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "backint_mode",
                     "backint_mode was not specified but it is required when building BackintConfig",
                 )
             })?,
             ensure_no_backup_in_process: self.ensure_no_backup_in_process.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "ensure_no_backup_in_process",
                     "ensure_no_backup_in_process was not specified but it is required when building BackintConfig",
                 )

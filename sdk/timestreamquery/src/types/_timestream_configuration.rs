@@ -194,28 +194,28 @@ impl TimestreamConfigurationBuilder {
     /// - [`table_name`](crate::types::builders::TimestreamConfigurationBuilder::table_name)
     /// - [`time_column`](crate::types::builders::TimestreamConfigurationBuilder::time_column)
     /// - [`dimension_mappings`](crate::types::builders::TimestreamConfigurationBuilder::dimension_mappings)
-    pub fn build(self) -> ::std::result::Result<crate::types::TimestreamConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TimestreamConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TimestreamConfiguration {
             database_name: self.database_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "database_name",
                     "database_name was not specified but it is required when building TimestreamConfiguration",
                 )
             })?,
             table_name: self.table_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "table_name",
                     "table_name was not specified but it is required when building TimestreamConfiguration",
                 )
             })?,
             time_column: self.time_column.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "time_column",
                     "time_column was not specified but it is required when building TimestreamConfiguration",
                 )
             })?,
             dimension_mappings: self.dimension_mappings.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "dimension_mappings",
                     "dimension_mappings was not specified but it is required when building TimestreamConfiguration",
                 )

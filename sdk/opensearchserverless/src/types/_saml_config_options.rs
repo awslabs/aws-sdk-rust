@@ -109,10 +109,10 @@ impl SamlConfigOptionsBuilder {
     /// Consumes the builder and constructs a [`SamlConfigOptions`](crate::types::SamlConfigOptions).
     /// This method will fail if any of the following fields are not set:
     /// - [`metadata`](crate::types::builders::SamlConfigOptionsBuilder::metadata)
-    pub fn build(self) -> ::std::result::Result<crate::types::SamlConfigOptions, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SamlConfigOptions, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SamlConfigOptions {
             metadata: self.metadata.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "metadata",
                     "metadata was not specified but it is required when building SamlConfigOptions",
                 )

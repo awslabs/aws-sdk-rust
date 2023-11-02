@@ -91,16 +91,16 @@ impl CognitoUserPoolConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`user_pool_id`](crate::types::builders::CognitoUserPoolConfigBuilder::user_pool_id)
     /// - [`aws_region`](crate::types::builders::CognitoUserPoolConfigBuilder::aws_region)
-    pub fn build(self) -> ::std::result::Result<crate::types::CognitoUserPoolConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CognitoUserPoolConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CognitoUserPoolConfig {
             user_pool_id: self.user_pool_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "user_pool_id",
                     "user_pool_id was not specified but it is required when building CognitoUserPoolConfig",
                 )
             })?,
             aws_region: self.aws_region.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "aws_region",
                     "aws_region was not specified but it is required when building CognitoUserPoolConfig",
                 )

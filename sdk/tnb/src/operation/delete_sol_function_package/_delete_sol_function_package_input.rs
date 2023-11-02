@@ -46,7 +46,7 @@ impl DeleteSolFunctionPackageInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_sol_function_package::DeleteSolFunctionPackageInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_sol_function_package::DeleteSolFunctionPackageInput { vnf_pkg_id: self.vnf_pkg_id })
     }

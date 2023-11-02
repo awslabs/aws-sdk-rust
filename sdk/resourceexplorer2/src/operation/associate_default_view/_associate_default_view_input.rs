@@ -44,7 +44,7 @@ impl AssociateDefaultViewInputBuilder {
     /// Consumes the builder and constructs a [`AssociateDefaultViewInput`](crate::operation::associate_default_view::AssociateDefaultViewInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::associate_default_view::AssociateDefaultViewInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::associate_default_view::AssociateDefaultViewInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::associate_default_view::AssociateDefaultViewInput { view_arn: self.view_arn })
     }

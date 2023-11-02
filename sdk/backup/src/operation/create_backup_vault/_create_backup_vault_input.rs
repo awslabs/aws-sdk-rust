@@ -135,7 +135,7 @@ impl CreateBackupVaultInputBuilder {
     /// Consumes the builder and constructs a [`CreateBackupVaultInput`](crate::operation::create_backup_vault::CreateBackupVaultInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_backup_vault::CreateBackupVaultInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_backup_vault::CreateBackupVaultInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_backup_vault::CreateBackupVaultInput {
             backup_vault_name: self.backup_vault_name,
             backup_vault_tags: self.backup_vault_tags,

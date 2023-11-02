@@ -49,7 +49,7 @@ where
 pub fn ser_maintenance_window_step_functions_parameters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MaintenanceWindowStepFunctionsParameters,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.input {
         object.key("Input").string(var_1.as_str());
     }

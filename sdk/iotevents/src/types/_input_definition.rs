@@ -51,10 +51,10 @@ impl InputDefinitionBuilder {
     /// Consumes the builder and constructs a [`InputDefinition`](crate::types::InputDefinition).
     /// This method will fail if any of the following fields are not set:
     /// - [`attributes`](crate::types::builders::InputDefinitionBuilder::attributes)
-    pub fn build(self) -> ::std::result::Result<crate::types::InputDefinition, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::InputDefinition, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::InputDefinition {
             attributes: self.attributes.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "attributes",
                     "attributes was not specified but it is required when building InputDefinition",
                 )

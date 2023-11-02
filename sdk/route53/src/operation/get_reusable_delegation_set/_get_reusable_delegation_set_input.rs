@@ -47,7 +47,7 @@ impl GetReusableDelegationSetInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_reusable_delegation_set::GetReusableDelegationSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_reusable_delegation_set::GetReusableDelegationSetInput { id: self.id })
     }

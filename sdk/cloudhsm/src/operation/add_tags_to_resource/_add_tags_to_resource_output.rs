@@ -63,10 +63,11 @@ impl AddTagsToResourceOutputBuilder {
     /// - [`status`](crate::operation::add_tags_to_resource::builders::AddTagsToResourceOutputBuilder::status)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::add_tags_to_resource::AddTagsToResourceOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::add_tags_to_resource::AddTagsToResourceOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::add_tags_to_resource::AddTagsToResourceOutput {
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building AddTagsToResourceOutput",
                 )

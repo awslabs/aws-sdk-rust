@@ -114,7 +114,7 @@ impl DeletePermissionVersionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_permission_version::DeletePermissionVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_permission_version::DeletePermissionVersionInput {
             permission_arn: self.permission_arn,

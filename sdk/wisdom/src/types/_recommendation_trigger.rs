@@ -163,29 +163,29 @@ impl RecommendationTriggerBuilder {
     /// - [`r#type`](crate::types::builders::RecommendationTriggerBuilder::r#type)
     /// - [`source`](crate::types::builders::RecommendationTriggerBuilder::source)
     /// - [`recommendation_ids`](crate::types::builders::RecommendationTriggerBuilder::recommendation_ids)
-    pub fn build(self) -> ::std::result::Result<crate::types::RecommendationTrigger, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RecommendationTrigger, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RecommendationTrigger {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building RecommendationTrigger",
                 )
             })?,
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building RecommendationTrigger",
                 )
             })?,
             source: self.source.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source",
                     "source was not specified but it is required when building RecommendationTrigger",
                 )
             })?,
             data: self.data,
             recommendation_ids: self.recommendation_ids.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "recommendation_ids",
                     "recommendation_ids was not specified but it is required when building RecommendationTrigger",
                 )

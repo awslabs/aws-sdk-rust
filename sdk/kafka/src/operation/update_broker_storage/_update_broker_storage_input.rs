@@ -95,7 +95,7 @@ impl UpdateBrokerStorageInputBuilder {
     /// Consumes the builder and constructs a [`UpdateBrokerStorageInput`](crate::operation::update_broker_storage::UpdateBrokerStorageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_broker_storage::UpdateBrokerStorageInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_broker_storage::UpdateBrokerStorageInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_broker_storage::UpdateBrokerStorageInput {
             cluster_arn: self.cluster_arn,

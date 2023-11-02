@@ -90,16 +90,16 @@ impl S3OriginBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`domain_name`](crate::types::builders::S3OriginBuilder::domain_name)
     /// - [`origin_access_identity`](crate::types::builders::S3OriginBuilder::origin_access_identity)
-    pub fn build(self) -> ::std::result::Result<crate::types::S3Origin, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::S3Origin, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::S3Origin {
             domain_name: self.domain_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "domain_name",
                     "domain_name was not specified but it is required when building S3Origin",
                 )
             })?,
             origin_access_identity: self.origin_access_identity.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "origin_access_identity",
                     "origin_access_identity was not specified but it is required when building S3Origin",
                 )

@@ -106,7 +106,8 @@ impl ListReviewableHiTsInputBuilder {
     /// Consumes the builder and constructs a [`ListReviewableHiTsInput`](crate::operation::list_reviewable_hits::ListReviewableHiTsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_reviewable_hits::ListReviewableHiTsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_reviewable_hits::ListReviewableHiTsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::list_reviewable_hits::ListReviewableHiTsInput {
             hit_type_id: self.hit_type_id,
             status: self.status,

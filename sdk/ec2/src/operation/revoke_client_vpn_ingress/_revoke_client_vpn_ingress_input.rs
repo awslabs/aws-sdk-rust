@@ -131,7 +131,7 @@ impl RevokeClientVpnIngressInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::revoke_client_vpn_ingress::RevokeClientVpnIngressInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::revoke_client_vpn_ingress::RevokeClientVpnIngressInput {
             client_vpn_endpoint_id: self.client_vpn_endpoint_id,

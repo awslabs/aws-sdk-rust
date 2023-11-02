@@ -92,7 +92,7 @@ impl DeletePermissionInputBuilder {
     /// Consumes the builder and constructs a [`DeletePermissionInput`](crate::operation::delete_permission::DeletePermissionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_permission::DeletePermissionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_permission::DeletePermissionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_permission::DeletePermissionInput {
             certificate_authority_arn: self.certificate_authority_arn,
             principal: self.principal,

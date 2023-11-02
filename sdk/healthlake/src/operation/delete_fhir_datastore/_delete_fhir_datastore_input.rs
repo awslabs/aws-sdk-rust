@@ -44,7 +44,7 @@ impl DeleteFhirDatastoreInputBuilder {
     /// Consumes the builder and constructs a [`DeleteFhirDatastoreInput`](crate::operation::delete_fhir_datastore::DeleteFhirDatastoreInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_fhir_datastore::DeleteFhirDatastoreInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_fhir_datastore::DeleteFhirDatastoreInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_fhir_datastore::DeleteFhirDatastoreInput {
             datastore_id: self.datastore_id,

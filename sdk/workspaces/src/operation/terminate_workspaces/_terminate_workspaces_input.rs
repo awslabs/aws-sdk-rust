@@ -51,7 +51,7 @@ impl TerminateWorkspacesInputBuilder {
     /// Consumes the builder and constructs a [`TerminateWorkspacesInput`](crate::operation::terminate_workspaces::TerminateWorkspacesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::terminate_workspaces::TerminateWorkspacesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::terminate_workspaces::TerminateWorkspacesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::terminate_workspaces::TerminateWorkspacesInput {
             terminate_workspace_requests: self.terminate_workspace_requests,

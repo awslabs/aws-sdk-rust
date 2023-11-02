@@ -136,22 +136,22 @@ impl FieldLevelEncryptionProfileSummaryBuilder {
     /// - [`id`](crate::types::builders::FieldLevelEncryptionProfileSummaryBuilder::id)
     /// - [`last_modified_time`](crate::types::builders::FieldLevelEncryptionProfileSummaryBuilder::last_modified_time)
     /// - [`name`](crate::types::builders::FieldLevelEncryptionProfileSummaryBuilder::name)
-    pub fn build(self) -> ::std::result::Result<crate::types::FieldLevelEncryptionProfileSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::FieldLevelEncryptionProfileSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FieldLevelEncryptionProfileSummary {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building FieldLevelEncryptionProfileSummary",
                 )
             })?,
             last_modified_time: self.last_modified_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_modified_time",
                     "last_modified_time was not specified but it is required when building FieldLevelEncryptionProfileSummary",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building FieldLevelEncryptionProfileSummary",
                 )

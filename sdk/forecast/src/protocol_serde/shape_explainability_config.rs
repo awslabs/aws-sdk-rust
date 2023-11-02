@@ -2,7 +2,7 @@
 pub fn ser_explainability_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ExplainabilityConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("TimeSeriesGranularity").string(input.time_series_granularity.as_str());
     }

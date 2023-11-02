@@ -220,7 +220,7 @@ impl CopyProductInputBuilder {
         &self.idempotency_token
     }
     /// Consumes the builder and constructs a [`CopyProductInput`](crate::operation::copy_product::CopyProductInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::copy_product::CopyProductInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::copy_product::CopyProductInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::copy_product::CopyProductInput {
             accept_language: self.accept_language,
             source_product_arn: self.source_product_arn,

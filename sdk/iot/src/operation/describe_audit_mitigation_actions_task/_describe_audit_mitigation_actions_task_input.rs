@@ -46,7 +46,7 @@ impl DescribeAuditMitigationActionsTaskInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_audit_mitigation_actions_task::DescribeAuditMitigationActionsTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_audit_mitigation_actions_task::DescribeAuditMitigationActionsTaskInput { task_id: self.task_id },

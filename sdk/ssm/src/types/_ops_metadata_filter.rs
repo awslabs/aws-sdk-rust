@@ -75,16 +75,16 @@ impl OpsMetadataFilterBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`key`](crate::types::builders::OpsMetadataFilterBuilder::key)
     /// - [`values`](crate::types::builders::OpsMetadataFilterBuilder::values)
-    pub fn build(self) -> ::std::result::Result<crate::types::OpsMetadataFilter, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::OpsMetadataFilter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::OpsMetadataFilter {
             key: self.key.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "key",
                     "key was not specified but it is required when building OpsMetadataFilter",
                 )
             })?,
             values: self.values.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "values",
                     "values was not specified but it is required when building OpsMetadataFilter",
                 )

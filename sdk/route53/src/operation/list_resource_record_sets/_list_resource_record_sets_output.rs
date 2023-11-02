@@ -194,11 +194,11 @@ impl ListResourceRecordSetsOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_resource_record_sets::ListResourceRecordSetsOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_resource_record_sets::ListResourceRecordSetsOutput {
             resource_record_sets: self.resource_record_sets.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_record_sets",
                     "resource_record_sets was not specified but it is required when building ListResourceRecordSetsOutput",
                 )
@@ -208,7 +208,7 @@ impl ListResourceRecordSetsOutputBuilder {
             next_record_type: self.next_record_type,
             next_record_identifier: self.next_record_identifier,
             max_items: self.max_items.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "max_items",
                     "max_items was not specified but it is required when building ListResourceRecordSetsOutput",
                 )

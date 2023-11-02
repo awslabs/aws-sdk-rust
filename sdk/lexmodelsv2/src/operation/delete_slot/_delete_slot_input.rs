@@ -130,7 +130,7 @@ impl DeleteSlotInputBuilder {
         &self.intent_id
     }
     /// Consumes the builder and constructs a [`DeleteSlotInput`](crate::operation::delete_slot::DeleteSlotInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_slot::DeleteSlotInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_slot::DeleteSlotInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_slot::DeleteSlotInput {
             slot_id: self.slot_id,
             bot_id: self.bot_id,

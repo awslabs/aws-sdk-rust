@@ -68,7 +68,7 @@ impl SendTestEventNotificationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::send_test_event_notification::SendTestEventNotificationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::send_test_event_notification::SendTestEventNotificationInput {
             notification: self.notification,

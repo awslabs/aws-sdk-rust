@@ -12,8 +12,6 @@ use crate::client::orchestrator::endpoints::orchestrate_endpoint;
 use crate::client::orchestrator::http::{log_response_body, read_body};
 use crate::client::timeout::{MaybeTimeout, MaybeTimeoutConfig, TimeoutKind};
 use aws_smithy_async::rt::sleep::AsyncSleep;
-use aws_smithy_http::body::SdkBody;
-use aws_smithy_http::byte_stream::ByteStream;
 use aws_smithy_http::result::SdkError;
 use aws_smithy_runtime_api::box_error::BoxError;
 use aws_smithy_runtime_api::client::http::{HttpClient, HttpConnector, HttpConnectorSettings};
@@ -29,6 +27,8 @@ use aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins;
 use aws_smithy_runtime_api::client::ser_de::{
     DeserializeResponse, SerializeRequest, SharedRequestSerializer, SharedResponseDeserializer,
 };
+use aws_smithy_types::body::SdkBody;
+use aws_smithy_types::byte_stream::ByteStream;
 use aws_smithy_types::config_bag::ConfigBag;
 use aws_smithy_types::timeout::TimeoutConfig;
 use std::mem;

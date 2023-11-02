@@ -42,7 +42,7 @@ impl GetDetectorInputBuilder {
         &self.detector_id
     }
     /// Consumes the builder and constructs a [`GetDetectorInput`](crate::operation::get_detector::GetDetectorInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_detector::GetDetectorInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_detector::GetDetectorInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_detector::GetDetectorInput {
             detector_id: self.detector_id,
         })

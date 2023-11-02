@@ -44,7 +44,7 @@ impl ClearQuerySuggestionsInputBuilder {
     /// Consumes the builder and constructs a [`ClearQuerySuggestionsInput`](crate::operation::clear_query_suggestions::ClearQuerySuggestionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::clear_query_suggestions::ClearQuerySuggestionsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::clear_query_suggestions::ClearQuerySuggestionsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::clear_query_suggestions::ClearQuerySuggestionsInput { index_id: self.index_id })
     }

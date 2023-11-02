@@ -51,10 +51,10 @@ impl TagFilterBuilder {
     /// Consumes the builder and constructs a [`TagFilter`](crate::types::TagFilter).
     /// This method will fail if any of the following fields are not set:
     /// - [`tag`](crate::types::builders::TagFilterBuilder::tag)
-    pub fn build(self) -> ::std::result::Result<crate::types::TagFilter, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TagFilter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TagFilter {
             tag: self.tag.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "tag",
                     "tag was not specified but it is required when building TagFilter",
                 )

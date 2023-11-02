@@ -46,7 +46,7 @@ impl DescribeLocationFsxWindowsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_location_fsx_windows::DescribeLocationFsxWindowsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_location_fsx_windows::DescribeLocationFsxWindowsInput {
             location_arn: self.location_arn,

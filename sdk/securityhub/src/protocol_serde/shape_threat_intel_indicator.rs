@@ -2,7 +2,7 @@
 pub fn ser_threat_intel_indicator(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ThreatIntelIndicator,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.r#type {
         object.key("Type").string(var_1.as_str());
     }

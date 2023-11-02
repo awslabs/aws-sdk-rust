@@ -104,22 +104,22 @@ impl TimeSeriesBuilder {
     /// - [`time_series_id`](crate::types::builders::TimeSeriesBuilder::time_series_id)
     /// - [`dimension_list`](crate::types::builders::TimeSeriesBuilder::dimension_list)
     /// - [`metric_value_list`](crate::types::builders::TimeSeriesBuilder::metric_value_list)
-    pub fn build(self) -> ::std::result::Result<crate::types::TimeSeries, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TimeSeries, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TimeSeries {
             time_series_id: self.time_series_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "time_series_id",
                     "time_series_id was not specified but it is required when building TimeSeries",
                 )
             })?,
             dimension_list: self.dimension_list.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "dimension_list",
                     "dimension_list was not specified but it is required when building TimeSeries",
                 )
             })?,
             metric_value_list: self.metric_value_list.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "metric_value_list",
                     "metric_value_list was not specified but it is required when building TimeSeries",
                 )

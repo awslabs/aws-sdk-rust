@@ -2,7 +2,7 @@
 pub fn ser_slot_default_value(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SlotDefaultValue,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("defaultValue").string(input.default_value.as_str());
     }

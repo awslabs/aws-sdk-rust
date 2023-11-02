@@ -2,7 +2,7 @@
 pub fn ser_gateway_list_item(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GatewayListItem,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("GatewayId").string(input.gateway_id.as_str());
     }

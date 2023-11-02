@@ -78,7 +78,7 @@ impl CreateQueryLoggingConfigInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_query_logging_config::CreateQueryLoggingConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_query_logging_config::CreateQueryLoggingConfigInput {
             hosted_zone_id: self.hosted_zone_id,

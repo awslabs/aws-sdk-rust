@@ -138,7 +138,7 @@ impl SearchRoutingProfilesInputBuilder {
     /// Consumes the builder and constructs a [`SearchRoutingProfilesInput`](crate::operation::search_routing_profiles::SearchRoutingProfilesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::search_routing_profiles::SearchRoutingProfilesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::search_routing_profiles::SearchRoutingProfilesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::search_routing_profiles::SearchRoutingProfilesInput {
             instance_id: self.instance_id,

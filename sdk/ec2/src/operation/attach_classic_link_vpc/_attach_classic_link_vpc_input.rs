@@ -116,7 +116,7 @@ impl AttachClassicLinkVpcInputBuilder {
     /// Consumes the builder and constructs a [`AttachClassicLinkVpcInput`](crate::operation::attach_classic_link_vpc::AttachClassicLinkVpcInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::attach_classic_link_vpc::AttachClassicLinkVpcInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::attach_classic_link_vpc::AttachClassicLinkVpcInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::attach_classic_link_vpc::AttachClassicLinkVpcInput {
             dry_run: self.dry_run,

@@ -85,7 +85,7 @@ impl ListRotationsInputBuilder {
     /// Consumes the builder and constructs a [`ListRotationsInput`](crate::operation::list_rotations::ListRotationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_rotations::ListRotationsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_rotations::ListRotationsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_rotations::ListRotationsInput {
             rotation_name_prefix: self.rotation_name_prefix,
             next_token: self.next_token,

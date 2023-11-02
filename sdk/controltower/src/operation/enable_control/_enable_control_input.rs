@@ -66,7 +66,7 @@ impl EnableControlInputBuilder {
     /// Consumes the builder and constructs a [`EnableControlInput`](crate::operation::enable_control::EnableControlInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::enable_control::EnableControlInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::enable_control::EnableControlInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::enable_control::EnableControlInput {
             control_identifier: self.control_identifier,
             target_identifier: self.target_identifier,

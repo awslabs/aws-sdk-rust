@@ -44,7 +44,7 @@ impl DeleteRoutingControlInputBuilder {
     /// Consumes the builder and constructs a [`DeleteRoutingControlInput`](crate::operation::delete_routing_control::DeleteRoutingControlInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_routing_control::DeleteRoutingControlInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_routing_control::DeleteRoutingControlInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_routing_control::DeleteRoutingControlInput {
             routing_control_arn: self.routing_control_arn,

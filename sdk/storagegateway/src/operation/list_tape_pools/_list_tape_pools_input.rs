@@ -93,7 +93,7 @@ impl ListTapePoolsInputBuilder {
     /// Consumes the builder and constructs a [`ListTapePoolsInput`](crate::operation::list_tape_pools::ListTapePoolsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_tape_pools::ListTapePoolsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_tape_pools::ListTapePoolsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_tape_pools::ListTapePoolsInput {
             pool_arns: self.pool_arns,
             marker: self.marker,

@@ -44,7 +44,7 @@ impl DeleteArchiveInputBuilder {
     /// Consumes the builder and constructs a [`DeleteArchiveInput`](crate::operation::delete_archive::DeleteArchiveInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_archive::DeleteArchiveInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_archive::DeleteArchiveInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_archive::DeleteArchiveInput {
             archive_name: self.archive_name,
         })

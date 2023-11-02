@@ -2,7 +2,7 @@
 pub fn ser_total_aggregation_function(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TotalAggregationFunction,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.simple_total_aggregation_function {
         object.key("SimpleTotalAggregationFunction").string(var_1.as_str());
     }

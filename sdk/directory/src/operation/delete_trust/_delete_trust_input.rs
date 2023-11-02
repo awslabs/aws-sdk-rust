@@ -64,7 +64,7 @@ impl DeleteTrustInputBuilder {
         &self.delete_associated_conditional_forwarder
     }
     /// Consumes the builder and constructs a [`DeleteTrustInput`](crate::operation::delete_trust::DeleteTrustInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_trust::DeleteTrustInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_trust::DeleteTrustInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_trust::DeleteTrustInput {
             trust_id: self.trust_id,
             delete_associated_conditional_forwarder: self.delete_associated_conditional_forwarder,

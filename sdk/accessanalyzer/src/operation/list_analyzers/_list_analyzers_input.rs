@@ -86,7 +86,7 @@ impl ListAnalyzersInputBuilder {
     /// Consumes the builder and constructs a [`ListAnalyzersInput`](crate::operation::list_analyzers::ListAnalyzersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_analyzers::ListAnalyzersInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_analyzers::ListAnalyzersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_analyzers::ListAnalyzersInput {
             next_token: self.next_token,
             max_results: self.max_results,

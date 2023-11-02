@@ -181,7 +181,7 @@ impl CheckoutLicenseInputBuilder {
     /// Consumes the builder and constructs a [`CheckoutLicenseInput`](crate::operation::checkout_license::CheckoutLicenseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::checkout_license::CheckoutLicenseInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::checkout_license::CheckoutLicenseInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::checkout_license::CheckoutLicenseInput {
             product_sku: self.product_sku,
             checkout_type: self.checkout_type,

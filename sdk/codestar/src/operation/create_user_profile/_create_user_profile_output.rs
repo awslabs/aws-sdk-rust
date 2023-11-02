@@ -181,10 +181,10 @@ impl CreateUserProfileOutputBuilder {
     /// - [`user_arn`](crate::operation::create_user_profile::builders::CreateUserProfileOutputBuilder::user_arn)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_user_profile::CreateUserProfileOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_user_profile::CreateUserProfileOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_user_profile::CreateUserProfileOutput {
             user_arn: self.user_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "user_arn",
                     "user_arn was not specified but it is required when building CreateUserProfileOutput",
                 )

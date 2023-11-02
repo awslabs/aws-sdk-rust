@@ -46,7 +46,7 @@ impl GetTestExecutionArtifactsUrlInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_test_execution_artifacts_url::GetTestExecutionArtifactsUrlInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_test_execution_artifacts_url::GetTestExecutionArtifactsUrlInput {
             test_execution_id: self.test_execution_id,

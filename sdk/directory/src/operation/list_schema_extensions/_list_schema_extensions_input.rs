@@ -86,7 +86,7 @@ impl ListSchemaExtensionsInputBuilder {
     /// Consumes the builder and constructs a [`ListSchemaExtensionsInput`](crate::operation::list_schema_extensions::ListSchemaExtensionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_schema_extensions::ListSchemaExtensionsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_schema_extensions::ListSchemaExtensionsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_schema_extensions::ListSchemaExtensionsInput {
             directory_id: self.directory_id,

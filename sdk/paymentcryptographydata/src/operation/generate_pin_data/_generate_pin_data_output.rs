@@ -181,34 +181,34 @@ impl GeneratePinDataOutputBuilder {
     /// - [`encrypted_pin_block`](crate::operation::generate_pin_data::builders::GeneratePinDataOutputBuilder::encrypted_pin_block)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::generate_pin_data::GeneratePinDataOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::generate_pin_data::GeneratePinDataOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::generate_pin_data::GeneratePinDataOutput {
             generation_key_arn: self.generation_key_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "generation_key_arn",
                     "generation_key_arn was not specified but it is required when building GeneratePinDataOutput",
                 )
             })?,
             generation_key_check_value: self.generation_key_check_value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "generation_key_check_value",
                     "generation_key_check_value was not specified but it is required when building GeneratePinDataOutput",
                 )
             })?,
             encryption_key_arn: self.encryption_key_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "encryption_key_arn",
                     "encryption_key_arn was not specified but it is required when building GeneratePinDataOutput",
                 )
             })?,
             encryption_key_check_value: self.encryption_key_check_value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "encryption_key_check_value",
                     "encryption_key_check_value was not specified but it is required when building GeneratePinDataOutput",
                 )
             })?,
             encrypted_pin_block: self.encrypted_pin_block.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "encrypted_pin_block",
                     "encrypted_pin_block was not specified but it is required when building GeneratePinDataOutput",
                 )

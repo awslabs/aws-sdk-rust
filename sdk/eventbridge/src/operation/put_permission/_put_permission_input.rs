@@ -173,7 +173,7 @@ impl PutPermissionInputBuilder {
     /// Consumes the builder and constructs a [`PutPermissionInput`](crate::operation::put_permission::PutPermissionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_permission::PutPermissionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_permission::PutPermissionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_permission::PutPermissionInput {
             event_bus_name: self.event_bus_name,
             action: self.action,

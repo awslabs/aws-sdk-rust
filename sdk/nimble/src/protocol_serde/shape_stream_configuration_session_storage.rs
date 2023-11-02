@@ -2,7 +2,7 @@
 pub fn ser_stream_configuration_session_storage(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::StreamConfigurationSessionStorage,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.root {
         #[allow(unused_mut)]
         let mut object_2 = object.key("root").start_object();

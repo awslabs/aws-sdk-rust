@@ -68,16 +68,16 @@ impl HoursOfOperationTimeSliceBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`hours`](crate::types::builders::HoursOfOperationTimeSliceBuilder::hours)
     /// - [`minutes`](crate::types::builders::HoursOfOperationTimeSliceBuilder::minutes)
-    pub fn build(self) -> ::std::result::Result<crate::types::HoursOfOperationTimeSlice, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::HoursOfOperationTimeSlice, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::HoursOfOperationTimeSlice {
             hours: self.hours.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "hours",
                     "hours was not specified but it is required when building HoursOfOperationTimeSlice",
                 )
             })?,
             minutes: self.minutes.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "minutes",
                     "minutes was not specified but it is required when building HoursOfOperationTimeSlice",
                 )

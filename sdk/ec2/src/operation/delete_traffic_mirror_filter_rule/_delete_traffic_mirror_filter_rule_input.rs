@@ -67,7 +67,7 @@ impl DeleteTrafficMirrorFilterRuleInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_traffic_mirror_filter_rule::DeleteTrafficMirrorFilterRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_traffic_mirror_filter_rule::DeleteTrafficMirrorFilterRuleInput {
             traffic_mirror_filter_rule_id: self.traffic_mirror_filter_rule_id,

@@ -173,17 +173,17 @@ impl CreateReferenceStoreOutputBuilder {
     /// - [`creation_time`](crate::operation::create_reference_store::builders::CreateReferenceStoreOutputBuilder::creation_time)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_reference_store::CreateReferenceStoreOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_reference_store::CreateReferenceStoreOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_reference_store::CreateReferenceStoreOutput {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building CreateReferenceStoreOutput",
                 )
             })?,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building CreateReferenceStoreOutput",
                 )
@@ -192,7 +192,7 @@ impl CreateReferenceStoreOutputBuilder {
             description: self.description,
             sse_config: self.sse_config,
             creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_time",
                     "creation_time was not specified but it is required when building CreateReferenceStoreOutput",
                 )

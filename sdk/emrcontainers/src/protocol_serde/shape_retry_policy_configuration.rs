@@ -2,7 +2,7 @@
 pub fn ser_retry_policy_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RetryPolicyConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("maxAttempts").number(
             #[allow(clippy::useless_conversion)]

@@ -78,16 +78,16 @@ impl DevEnvironmentAccessDetailsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`stream_url`](crate::types::builders::DevEnvironmentAccessDetailsBuilder::stream_url)
     /// - [`token_value`](crate::types::builders::DevEnvironmentAccessDetailsBuilder::token_value)
-    pub fn build(self) -> ::std::result::Result<crate::types::DevEnvironmentAccessDetails, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DevEnvironmentAccessDetails, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DevEnvironmentAccessDetails {
             stream_url: self.stream_url.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "stream_url",
                     "stream_url was not specified but it is required when building DevEnvironmentAccessDetails",
                 )
             })?,
             token_value: self.token_value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "token_value",
                     "token_value was not specified but it is required when building DevEnvironmentAccessDetails",
                 )

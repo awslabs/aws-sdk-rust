@@ -2,7 +2,7 @@
 pub fn ser_table_cell_style(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TableCellStyle,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.visibility {
         object.key("Visibility").string(var_1.as_str());
     }

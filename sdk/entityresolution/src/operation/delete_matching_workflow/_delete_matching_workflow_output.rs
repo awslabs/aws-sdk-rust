@@ -65,11 +65,11 @@ impl DeleteMatchingWorkflowOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_matching_workflow::DeleteMatchingWorkflowOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_matching_workflow::DeleteMatchingWorkflowOutput {
             message: self.message.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "message",
                     "message was not specified but it is required when building DeleteMatchingWorkflowOutput",
                 )

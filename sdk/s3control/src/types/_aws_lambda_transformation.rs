@@ -67,10 +67,10 @@ impl AwsLambdaTransformationBuilder {
     /// Consumes the builder and constructs a [`AwsLambdaTransformation`](crate::types::AwsLambdaTransformation).
     /// This method will fail if any of the following fields are not set:
     /// - [`function_arn`](crate::types::builders::AwsLambdaTransformationBuilder::function_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::AwsLambdaTransformation, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AwsLambdaTransformation, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AwsLambdaTransformation {
             function_arn: self.function_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "function_arn",
                     "function_arn was not specified but it is required when building AwsLambdaTransformation",
                 )

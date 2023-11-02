@@ -183,7 +183,7 @@ impl ListIntentsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListIntentsInput`](crate::operation::list_intents::ListIntentsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_intents::ListIntentsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_intents::ListIntentsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_intents::ListIntentsInput {
             bot_id: self.bot_id,
             bot_version: self.bot_version,

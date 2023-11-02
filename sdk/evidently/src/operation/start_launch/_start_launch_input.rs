@@ -64,7 +64,7 @@ impl StartLaunchInputBuilder {
         &self.launch
     }
     /// Consumes the builder and constructs a [`StartLaunchInput`](crate::operation::start_launch::StartLaunchInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::start_launch::StartLaunchInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_launch::StartLaunchInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_launch::StartLaunchInput {
             project: self.project,
             launch: self.launch,

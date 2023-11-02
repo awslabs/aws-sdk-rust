@@ -44,7 +44,7 @@ impl StopAccessLoggingInputBuilder {
     /// Consumes the builder and constructs a [`StopAccessLoggingInput`](crate::operation::stop_access_logging::StopAccessLoggingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_access_logging::StopAccessLoggingInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::stop_access_logging::StopAccessLoggingInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_access_logging::StopAccessLoggingInput {
             container_name: self.container_name,
         })

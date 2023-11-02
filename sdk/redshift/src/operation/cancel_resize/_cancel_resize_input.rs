@@ -42,7 +42,9 @@ impl CancelResizeInputBuilder {
         &self.cluster_identifier
     }
     /// Consumes the builder and constructs a [`CancelResizeInput`](crate::operation::cancel_resize::CancelResizeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_resize::CancelResizeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::cancel_resize::CancelResizeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::cancel_resize::CancelResizeInput {
             cluster_identifier: self.cluster_identifier,
         })

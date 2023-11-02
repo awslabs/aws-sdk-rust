@@ -46,7 +46,7 @@ impl DescribeClusterOperationV2InputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_cluster_operation_v2::DescribeClusterOperationV2Input,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_cluster_operation_v2::DescribeClusterOperationV2Input {
             cluster_operation_arn: self.cluster_operation_arn,

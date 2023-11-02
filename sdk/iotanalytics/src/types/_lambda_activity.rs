@@ -119,22 +119,22 @@ impl LambdaActivityBuilder {
     /// - [`name`](crate::types::builders::LambdaActivityBuilder::name)
     /// - [`lambda_name`](crate::types::builders::LambdaActivityBuilder::lambda_name)
     /// - [`batch_size`](crate::types::builders::LambdaActivityBuilder::batch_size)
-    pub fn build(self) -> ::std::result::Result<crate::types::LambdaActivity, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::LambdaActivity, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::LambdaActivity {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building LambdaActivity",
                 )
             })?,
             lambda_name: self.lambda_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "lambda_name",
                     "lambda_name was not specified but it is required when building LambdaActivity",
                 )
             })?,
             batch_size: self.batch_size.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "batch_size",
                     "batch_size was not specified but it is required when building LambdaActivity",
                 )

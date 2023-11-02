@@ -91,11 +91,11 @@ impl ListAlarmRecommendationsOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_alarm_recommendations::ListAlarmRecommendationsOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_alarm_recommendations::ListAlarmRecommendationsOutput {
             alarm_recommendations: self.alarm_recommendations.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "alarm_recommendations",
                     "alarm_recommendations was not specified but it is required when building ListAlarmRecommendationsOutput",
                 )

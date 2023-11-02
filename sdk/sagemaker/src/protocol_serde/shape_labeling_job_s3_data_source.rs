@@ -2,7 +2,7 @@
 pub fn ser_labeling_job_s3_data_source(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LabelingJobS3DataSource,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.manifest_s3_uri {
         object.key("ManifestS3Uri").string(var_1.as_str());
     }

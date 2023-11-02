@@ -288,7 +288,9 @@ impl CreateUploadInputBuilder {
         &self.content_type
     }
     /// Consumes the builder and constructs a [`CreateUploadInput`](crate::operation::create_upload::CreateUploadInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_upload::CreateUploadInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_upload::CreateUploadInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_upload::CreateUploadInput {
             project_arn: self.project_arn,
             name: self.name,

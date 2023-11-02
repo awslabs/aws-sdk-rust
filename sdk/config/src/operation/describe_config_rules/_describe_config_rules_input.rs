@@ -94,7 +94,7 @@ impl DescribeConfigRulesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeConfigRulesInput`](crate::operation::describe_config_rules::DescribeConfigRulesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_config_rules::DescribeConfigRulesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_config_rules::DescribeConfigRulesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_config_rules::DescribeConfigRulesInput {
             config_rule_names: self.config_rule_names,

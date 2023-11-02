@@ -68,7 +68,7 @@ impl CreateVpcPeeringAuthorizationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_vpc_peering_authorization::CreateVpcPeeringAuthorizationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_vpc_peering_authorization::CreateVpcPeeringAuthorizationInput {
             game_lift_aws_account_id: self.game_lift_aws_account_id,

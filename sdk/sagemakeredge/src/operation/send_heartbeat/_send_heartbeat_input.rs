@@ -167,7 +167,7 @@ impl SendHeartbeatInputBuilder {
     /// Consumes the builder and constructs a [`SendHeartbeatInput`](crate::operation::send_heartbeat::SendHeartbeatInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::send_heartbeat::SendHeartbeatInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::send_heartbeat::SendHeartbeatInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::send_heartbeat::SendHeartbeatInput {
             agent_metrics: self.agent_metrics,
             models: self.models,

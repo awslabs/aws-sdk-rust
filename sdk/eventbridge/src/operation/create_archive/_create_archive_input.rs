@@ -129,7 +129,7 @@ impl CreateArchiveInputBuilder {
     /// Consumes the builder and constructs a [`CreateArchiveInput`](crate::operation::create_archive::CreateArchiveInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_archive::CreateArchiveInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_archive::CreateArchiveInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_archive::CreateArchiveInput {
             archive_name: self.archive_name,
             event_source_arn: self.event_source_arn,

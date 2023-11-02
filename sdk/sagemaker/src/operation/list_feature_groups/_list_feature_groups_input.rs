@@ -211,7 +211,7 @@ impl ListFeatureGroupsInputBuilder {
     /// Consumes the builder and constructs a [`ListFeatureGroupsInput`](crate::operation::list_feature_groups::ListFeatureGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_feature_groups::ListFeatureGroupsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_feature_groups::ListFeatureGroupsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_feature_groups::ListFeatureGroupsInput {
             name_contains: self.name_contains,
             feature_group_status_equals: self.feature_group_status_equals,

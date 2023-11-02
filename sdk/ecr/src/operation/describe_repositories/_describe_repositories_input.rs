@@ -124,7 +124,7 @@ impl DescribeRepositoriesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeRepositoriesInput`](crate::operation::describe_repositories::DescribeRepositoriesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_repositories::DescribeRepositoriesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_repositories::DescribeRepositoriesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_repositories::DescribeRepositoriesInput {
             registry_id: self.registry_id,

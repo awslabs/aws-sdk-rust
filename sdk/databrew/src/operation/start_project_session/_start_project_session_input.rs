@@ -65,7 +65,7 @@ impl StartProjectSessionInputBuilder {
     /// Consumes the builder and constructs a [`StartProjectSessionInput`](crate::operation::start_project_session::StartProjectSessionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_project_session::StartProjectSessionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::start_project_session::StartProjectSessionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_project_session::StartProjectSessionInput {
             name: self.name,

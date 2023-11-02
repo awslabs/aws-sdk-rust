@@ -112,7 +112,7 @@ impl UpdateWorkforceInputBuilder {
     /// Consumes the builder and constructs a [`UpdateWorkforceInput`](crate::operation::update_workforce::UpdateWorkforceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_workforce::UpdateWorkforceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_workforce::UpdateWorkforceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_workforce::UpdateWorkforceInput {
             workforce_name: self.workforce_name,
             source_ip_config: self.source_ip_config,

@@ -64,7 +64,8 @@ impl UpdateMacieSessionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateMacieSessionInput`](crate::operation::update_macie_session::UpdateMacieSessionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_macie_session::UpdateMacieSessionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_macie_session::UpdateMacieSessionInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::update_macie_session::UpdateMacieSessionInput {
             finding_publishing_frequency: self.finding_publishing_frequency,
             status: self.status,

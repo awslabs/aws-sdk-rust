@@ -72,11 +72,11 @@ impl AuthInfoBuilder {
     /// Consumes the builder and constructs a [`AuthInfo`](crate::types::AuthInfo).
     /// This method will fail if any of the following fields are not set:
     /// - [`resources`](crate::types::builders::AuthInfoBuilder::resources)
-    pub fn build(self) -> ::std::result::Result<crate::types::AuthInfo, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AuthInfo, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AuthInfo {
             action_type: self.action_type,
             resources: self.resources.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resources",
                     "resources was not specified but it is required when building AuthInfo",
                 )

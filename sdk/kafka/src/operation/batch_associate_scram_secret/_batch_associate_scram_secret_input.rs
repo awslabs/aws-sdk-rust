@@ -76,7 +76,7 @@ impl BatchAssociateScramSecretInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_associate_scram_secret::BatchAssociateScramSecretInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::batch_associate_scram_secret::BatchAssociateScramSecretInput {
             cluster_arn: self.cluster_arn,

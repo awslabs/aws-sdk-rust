@@ -134,7 +134,7 @@ impl ListPartsInputBuilder {
         &self.limit
     }
     /// Consumes the builder and constructs a [`ListPartsInput`](crate::operation::list_parts::ListPartsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_parts::ListPartsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_parts::ListPartsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_parts::ListPartsInput {
             account_id: self.account_id,
             vault_name: self.vault_name,

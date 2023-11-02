@@ -180,7 +180,7 @@ impl DescribeStoreImageTasksInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_store_image_tasks::DescribeStoreImageTasksInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_store_image_tasks::DescribeStoreImageTasksInput {
             image_ids: self.image_ids,

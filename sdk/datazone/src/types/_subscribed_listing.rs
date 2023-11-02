@@ -195,30 +195,30 @@ impl SubscribedListingBuilder {
     /// - [`name`](crate::types::builders::SubscribedListingBuilder::name)
     /// - [`description`](crate::types::builders::SubscribedListingBuilder::description)
     /// - [`owner_project_id`](crate::types::builders::SubscribedListingBuilder::owner_project_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::SubscribedListing, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SubscribedListing, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SubscribedListing {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building SubscribedListing",
                 )
             })?,
             revision: self.revision,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building SubscribedListing",
                 )
             })?,
             description: self.description.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "description",
                     "description was not specified but it is required when building SubscribedListing",
                 )
             })?,
             item: self.item,
             owner_project_id: self.owner_project_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "owner_project_id",
                     "owner_project_id was not specified but it is required when building SubscribedListing",
                 )

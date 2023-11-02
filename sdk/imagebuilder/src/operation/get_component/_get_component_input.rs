@@ -42,7 +42,9 @@ impl GetComponentInputBuilder {
         &self.component_build_version_arn
     }
     /// Consumes the builder and constructs a [`GetComponentInput`](crate::operation::get_component::GetComponentInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_component::GetComponentInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_component::GetComponentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_component::GetComponentInput {
             component_build_version_arn: self.component_build_version_arn,
         })

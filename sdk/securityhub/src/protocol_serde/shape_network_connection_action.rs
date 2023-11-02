@@ -2,7 +2,7 @@
 pub fn ser_network_connection_action(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::NetworkConnectionAction,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.connection_direction {
         object.key("ConnectionDirection").string(var_1.as_str());
     }

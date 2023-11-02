@@ -166,7 +166,7 @@ impl CreateBatchImportJobInputBuilder {
     /// Consumes the builder and constructs a [`CreateBatchImportJobInput`](crate::operation::create_batch_import_job::CreateBatchImportJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_batch_import_job::CreateBatchImportJobInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_batch_import_job::CreateBatchImportJobInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_batch_import_job::CreateBatchImportJobInput {
             job_id: self.job_id,

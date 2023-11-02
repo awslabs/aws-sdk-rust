@@ -66,7 +66,7 @@ impl GetAccessPreviewInputBuilder {
     /// Consumes the builder and constructs a [`GetAccessPreviewInput`](crate::operation::get_access_preview::GetAccessPreviewInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_access_preview::GetAccessPreviewInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_access_preview::GetAccessPreviewInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_access_preview::GetAccessPreviewInput {
             access_preview_id: self.access_preview_id,
             analyzer_arn: self.analyzer_arn,

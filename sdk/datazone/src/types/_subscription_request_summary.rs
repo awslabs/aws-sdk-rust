@@ -326,59 +326,59 @@ impl SubscriptionRequestSummaryBuilder {
     /// - [`request_reason`](crate::types::builders::SubscriptionRequestSummaryBuilder::request_reason)
     /// - [`subscribed_principals`](crate::types::builders::SubscriptionRequestSummaryBuilder::subscribed_principals)
     /// - [`subscribed_listings`](crate::types::builders::SubscriptionRequestSummaryBuilder::subscribed_listings)
-    pub fn build(self) -> ::std::result::Result<crate::types::SubscriptionRequestSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SubscriptionRequestSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SubscriptionRequestSummary {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building SubscriptionRequestSummary",
                 )
             })?,
             created_by: self.created_by.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_by",
                     "created_by was not specified but it is required when building SubscriptionRequestSummary",
                 )
             })?,
             updated_by: self.updated_by,
             domain_id: self.domain_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "domain_id",
                     "domain_id was not specified but it is required when building SubscriptionRequestSummary",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building SubscriptionRequestSummary",
                 )
             })?,
             created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
                     "created_at was not specified but it is required when building SubscriptionRequestSummary",
                 )
             })?,
             updated_at: self.updated_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "updated_at",
                     "updated_at was not specified but it is required when building SubscriptionRequestSummary",
                 )
             })?,
             request_reason: self.request_reason.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "request_reason",
                     "request_reason was not specified but it is required when building SubscriptionRequestSummary",
                 )
             })?,
             subscribed_principals: self.subscribed_principals.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "subscribed_principals",
                     "subscribed_principals was not specified but it is required when building SubscriptionRequestSummary",
                 )
             })?,
             subscribed_listings: self.subscribed_listings.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "subscribed_listings",
                     "subscribed_listings was not specified but it is required when building SubscriptionRequestSummary",
                 )

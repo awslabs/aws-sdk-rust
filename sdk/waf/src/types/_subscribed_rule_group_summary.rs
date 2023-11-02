@@ -98,22 +98,22 @@ impl SubscribedRuleGroupSummaryBuilder {
     /// - [`rule_group_id`](crate::types::builders::SubscribedRuleGroupSummaryBuilder::rule_group_id)
     /// - [`name`](crate::types::builders::SubscribedRuleGroupSummaryBuilder::name)
     /// - [`metric_name`](crate::types::builders::SubscribedRuleGroupSummaryBuilder::metric_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::SubscribedRuleGroupSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SubscribedRuleGroupSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SubscribedRuleGroupSummary {
             rule_group_id: self.rule_group_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "rule_group_id",
                     "rule_group_id was not specified but it is required when building SubscribedRuleGroupSummary",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building SubscribedRuleGroupSummary",
                 )
             })?,
             metric_name: self.metric_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "metric_name",
                     "metric_name was not specified but it is required when building SubscribedRuleGroupSummary",
                 )

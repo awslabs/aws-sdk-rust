@@ -690,7 +690,8 @@ impl GetDimensionValuesInputBuilder {
     /// Consumes the builder and constructs a [`GetDimensionValuesInput`](crate::operation::get_dimension_values::GetDimensionValuesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_dimension_values::GetDimensionValuesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_dimension_values::GetDimensionValuesInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::get_dimension_values::GetDimensionValuesInput {
             search_string: self.search_string,
             time_period: self.time_period,

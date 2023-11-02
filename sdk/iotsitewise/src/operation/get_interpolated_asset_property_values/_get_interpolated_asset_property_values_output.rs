@@ -94,13 +94,13 @@ impl GetInterpolatedAssetPropertyValuesOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_interpolated_asset_property_values::GetInterpolatedAssetPropertyValuesOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_interpolated_asset_property_values::GetInterpolatedAssetPropertyValuesOutput {
                 interpolated_asset_property_values: self.interpolated_asset_property_values
                     .ok_or_else(||
-                        ::aws_smithy_http::operation::error::BuildError::missing_field("interpolated_asset_property_values", "interpolated_asset_property_values was not specified but it is required when building GetInterpolatedAssetPropertyValuesOutput")
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("interpolated_asset_property_values", "interpolated_asset_property_values was not specified but it is required when building GetInterpolatedAssetPropertyValuesOutput")
                     )?
                 ,
                 next_token: self.next_token

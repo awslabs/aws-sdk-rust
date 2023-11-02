@@ -85,8 +85,10 @@ impl DescribeStreamConsumerInputBuilder {
     /// Consumes the builder and constructs a [`DescribeStreamConsumerInput`](crate::operation::describe_stream_consumer::DescribeStreamConsumerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_stream_consumer::DescribeStreamConsumerInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::describe_stream_consumer::DescribeStreamConsumerInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::describe_stream_consumer::DescribeStreamConsumerInput {
             stream_arn: self.stream_arn,
             consumer_name: self.consumer_name,

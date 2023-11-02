@@ -112,16 +112,16 @@ impl CustomVocabularyItemBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`item_id`](crate::types::builders::CustomVocabularyItemBuilder::item_id)
     /// - [`phrase`](crate::types::builders::CustomVocabularyItemBuilder::phrase)
-    pub fn build(self) -> ::std::result::Result<crate::types::CustomVocabularyItem, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CustomVocabularyItem, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CustomVocabularyItem {
             item_id: self.item_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "item_id",
                     "item_id was not specified but it is required when building CustomVocabularyItem",
                 )
             })?,
             phrase: self.phrase.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "phrase",
                     "phrase was not specified but it is required when building CustomVocabularyItem",
                 )

@@ -189,7 +189,7 @@ impl RestoreTableFromBackupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::restore_table_from_backup::RestoreTableFromBackupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::restore_table_from_backup::RestoreTableFromBackupInput {
             target_table_name: self.target_table_name,

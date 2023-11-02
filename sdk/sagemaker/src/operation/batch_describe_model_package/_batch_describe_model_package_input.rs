@@ -53,7 +53,7 @@ impl BatchDescribeModelPackageInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_describe_model_package::BatchDescribeModelPackageInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::batch_describe_model_package::BatchDescribeModelPackageInput {
             model_package_arn_list: self.model_package_arn_list,

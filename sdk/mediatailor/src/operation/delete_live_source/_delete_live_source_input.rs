@@ -66,7 +66,7 @@ impl DeleteLiveSourceInputBuilder {
     /// Consumes the builder and constructs a [`DeleteLiveSourceInput`](crate::operation::delete_live_source::DeleteLiveSourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_live_source::DeleteLiveSourceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_live_source::DeleteLiveSourceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_live_source::DeleteLiveSourceInput {
             live_source_name: self.live_source_name,
             source_location_name: self.source_location_name,

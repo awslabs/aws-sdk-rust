@@ -73,7 +73,7 @@ impl PutProtocolsListInputBuilder {
     /// Consumes the builder and constructs a [`PutProtocolsListInput`](crate::operation::put_protocols_list::PutProtocolsListInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_protocols_list::PutProtocolsListInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_protocols_list::PutProtocolsListInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_protocols_list::PutProtocolsListInput {
             protocols_list: self.protocols_list,
             tag_list: self.tag_list,

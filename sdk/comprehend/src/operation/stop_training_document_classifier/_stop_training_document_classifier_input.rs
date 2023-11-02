@@ -46,7 +46,7 @@ impl StopTrainingDocumentClassifierInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_training_document_classifier::StopTrainingDocumentClassifierInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::stop_training_document_classifier::StopTrainingDocumentClassifierInput {
             document_classifier_arn: self.document_classifier_arn,

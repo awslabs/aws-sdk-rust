@@ -109,7 +109,7 @@ impl DeleteLocalGatewayRouteInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_local_gateway_route::DeleteLocalGatewayRouteInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_local_gateway_route::DeleteLocalGatewayRouteInput {
             destination_cidr_block: self.destination_cidr_block,

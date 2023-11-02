@@ -119,22 +119,22 @@ impl CloudTrailDetailsBuilder {
     /// - [`trails`](crate::types::builders::CloudTrailDetailsBuilder::trails)
     /// - [`access_role`](crate::types::builders::CloudTrailDetailsBuilder::access_role)
     /// - [`start_time`](crate::types::builders::CloudTrailDetailsBuilder::start_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::CloudTrailDetails, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CloudTrailDetails, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CloudTrailDetails {
             trails: self.trails.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "trails",
                     "trails was not specified but it is required when building CloudTrailDetails",
                 )
             })?,
             access_role: self.access_role.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "access_role",
                     "access_role was not specified but it is required when building CloudTrailDetails",
                 )
             })?,
             start_time: self.start_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "start_time",
                     "start_time was not specified but it is required when building CloudTrailDetails",
                 )

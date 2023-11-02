@@ -85,7 +85,7 @@ impl ListBulkImportJobsInputBuilder {
     /// Consumes the builder and constructs a [`ListBulkImportJobsInput`](crate::operation::list_bulk_import_jobs::ListBulkImportJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_bulk_import_jobs::ListBulkImportJobsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_bulk_import_jobs::ListBulkImportJobsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_bulk_import_jobs::ListBulkImportJobsInput {
             next_token: self.next_token,

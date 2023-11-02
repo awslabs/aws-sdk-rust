@@ -64,7 +64,9 @@ impl TestFailoverInputBuilder {
         &self.node_group_id
     }
     /// Consumes the builder and constructs a [`TestFailoverInput`](crate::operation::test_failover::TestFailoverInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::test_failover::TestFailoverInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::test_failover::TestFailoverInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::test_failover::TestFailoverInput {
             replication_group_id: self.replication_group_id,
             node_group_id: self.node_group_id,

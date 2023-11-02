@@ -68,7 +68,7 @@ impl PutVoiceConnectorTerminationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_voice_connector_termination::PutVoiceConnectorTerminationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_voice_connector_termination::PutVoiceConnectorTerminationInput {
             voice_connector_id: self.voice_connector_id,

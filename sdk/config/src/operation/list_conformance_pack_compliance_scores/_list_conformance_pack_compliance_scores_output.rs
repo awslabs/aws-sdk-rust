@@ -94,7 +94,7 @@ impl ListConformancePackComplianceScoresOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_conformance_pack_compliance_scores::ListConformancePackComplianceScoresOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_conformance_pack_compliance_scores::ListConformancePackComplianceScoresOutput {
@@ -102,7 +102,7 @@ impl ListConformancePackComplianceScoresOutputBuilder {
                 ,
                 conformance_pack_compliance_scores: self.conformance_pack_compliance_scores
                     .ok_or_else(||
-                        ::aws_smithy_http::operation::error::BuildError::missing_field("conformance_pack_compliance_scores", "conformance_pack_compliance_scores was not specified but it is required when building ListConformancePackComplianceScoresOutput")
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("conformance_pack_compliance_scores", "conformance_pack_compliance_scores was not specified but it is required when building ListConformancePackComplianceScoresOutput")
                     )?
                 ,
                 _request_id: self._request_id,

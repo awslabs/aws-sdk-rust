@@ -94,22 +94,22 @@ impl BatchDescribeMergeConflictsErrorBuilder {
     /// - [`file_path`](crate::types::builders::BatchDescribeMergeConflictsErrorBuilder::file_path)
     /// - [`exception_name`](crate::types::builders::BatchDescribeMergeConflictsErrorBuilder::exception_name)
     /// - [`message`](crate::types::builders::BatchDescribeMergeConflictsErrorBuilder::message)
-    pub fn build(self) -> ::std::result::Result<crate::types::BatchDescribeMergeConflictsError, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::BatchDescribeMergeConflictsError, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::BatchDescribeMergeConflictsError {
             file_path: self.file_path.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "file_path",
                     "file_path was not specified but it is required when building BatchDescribeMergeConflictsError",
                 )
             })?,
             exception_name: self.exception_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "exception_name",
                     "exception_name was not specified but it is required when building BatchDescribeMergeConflictsError",
                 )
             })?,
             message: self.message.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "message",
                     "message was not specified but it is required when building BatchDescribeMergeConflictsError",
                 )

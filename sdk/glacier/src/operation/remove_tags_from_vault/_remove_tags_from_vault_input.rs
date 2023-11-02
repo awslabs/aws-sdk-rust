@@ -101,7 +101,7 @@ impl RemoveTagsFromVaultInputBuilder {
     /// Consumes the builder and constructs a [`RemoveTagsFromVaultInput`](crate::operation::remove_tags_from_vault::RemoveTagsFromVaultInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::remove_tags_from_vault::RemoveTagsFromVaultInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::remove_tags_from_vault::RemoveTagsFromVaultInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::remove_tags_from_vault::RemoveTagsFromVaultInput {
             account_id: self.account_id,

@@ -51,7 +51,7 @@ where
 pub fn ser_fulfillment_code_hook_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FulfillmentCodeHookSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("enabled").boolean(input.enabled);
     }

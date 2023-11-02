@@ -67,7 +67,7 @@ impl PutAppInstanceUserExpirationSettingsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_app_instance_user_expiration_settings::PutAppInstanceUserExpirationSettingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::put_app_instance_user_expiration_settings::PutAppInstanceUserExpirationSettingsInput {

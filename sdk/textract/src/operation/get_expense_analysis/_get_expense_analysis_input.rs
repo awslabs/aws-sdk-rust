@@ -86,7 +86,8 @@ impl GetExpenseAnalysisInputBuilder {
     /// Consumes the builder and constructs a [`GetExpenseAnalysisInput`](crate::operation::get_expense_analysis::GetExpenseAnalysisInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_expense_analysis::GetExpenseAnalysisInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_expense_analysis::GetExpenseAnalysisInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::get_expense_analysis::GetExpenseAnalysisInput {
             job_id: self.job_id,
             max_results: self.max_results,

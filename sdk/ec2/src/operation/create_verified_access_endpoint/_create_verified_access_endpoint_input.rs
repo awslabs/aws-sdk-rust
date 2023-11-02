@@ -361,7 +361,7 @@ impl CreateVerifiedAccessEndpointInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_verified_access_endpoint::CreateVerifiedAccessEndpointInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_verified_access_endpoint::CreateVerifiedAccessEndpointInput {
             verified_access_group_id: self.verified_access_group_id,

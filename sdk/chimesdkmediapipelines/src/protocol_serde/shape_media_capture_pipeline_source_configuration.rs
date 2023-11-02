@@ -2,7 +2,7 @@
 pub fn ser_media_capture_pipeline_source_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MediaCapturePipelineSourceConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("MediaPipelineArn").string(input.media_pipeline_arn.as_str());
     }

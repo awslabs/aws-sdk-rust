@@ -44,7 +44,7 @@ impl DeleteTriggerInputBuilder {
     /// Consumes the builder and constructs a [`DeleteTriggerInput`](crate::operation::delete_trigger::DeleteTriggerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_trigger::DeleteTriggerInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_trigger::DeleteTriggerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_trigger::DeleteTriggerInput { name: self.name })
     }
 }

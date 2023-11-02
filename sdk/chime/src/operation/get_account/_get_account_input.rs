@@ -42,7 +42,7 @@ impl GetAccountInputBuilder {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`GetAccountInput`](crate::operation::get_account::GetAccountInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_account::GetAccountInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_account::GetAccountInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_account::GetAccountInput { account_id: self.account_id })
     }
 }

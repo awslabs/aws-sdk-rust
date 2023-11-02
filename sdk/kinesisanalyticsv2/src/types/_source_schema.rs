@@ -94,12 +94,12 @@ impl SourceSchemaBuilder {
     /// Consumes the builder and constructs a [`SourceSchema`](crate::types::SourceSchema).
     /// This method will fail if any of the following fields are not set:
     /// - [`record_columns`](crate::types::builders::SourceSchemaBuilder::record_columns)
-    pub fn build(self) -> ::std::result::Result<crate::types::SourceSchema, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SourceSchema, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SourceSchema {
             record_format: self.record_format,
             record_encoding: self.record_encoding,
             record_columns: self.record_columns.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "record_columns",
                     "record_columns was not specified but it is required when building SourceSchema",
                 )

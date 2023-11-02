@@ -46,10 +46,10 @@ impl OwnerFilterBuilder {
     /// Consumes the builder and constructs a [`OwnerFilter`](crate::types::OwnerFilter).
     /// This method will fail if any of the following fields are not set:
     /// - [`address`](crate::types::builders::OwnerFilterBuilder::address)
-    pub fn build(self) -> ::std::result::Result<crate::types::OwnerFilter, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::OwnerFilter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::OwnerFilter {
             address: self.address.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "address",
                     "address was not specified but it is required when building OwnerFilter",
                 )

@@ -122,7 +122,7 @@ impl ListPrefetchSchedulesInputBuilder {
     /// Consumes the builder and constructs a [`ListPrefetchSchedulesInput`](crate::operation::list_prefetch_schedules::ListPrefetchSchedulesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_prefetch_schedules::ListPrefetchSchedulesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_prefetch_schedules::ListPrefetchSchedulesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_prefetch_schedules::ListPrefetchSchedulesInput {
             max_results: self.max_results,

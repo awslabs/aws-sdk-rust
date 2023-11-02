@@ -89,10 +89,10 @@ impl ExportThemesOutputBuilder {
     /// - [`entities`](crate::operation::export_themes::builders::ExportThemesOutputBuilder::entities)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::export_themes::ExportThemesOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::export_themes::ExportThemesOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::export_themes::ExportThemesOutput {
             entities: self.entities.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "entities",
                     "entities was not specified but it is required when building ExportThemesOutput",
                 )

@@ -112,7 +112,7 @@ impl UpdateLocationNfsInputBuilder {
     /// Consumes the builder and constructs a [`UpdateLocationNfsInput`](crate::operation::update_location_nfs::UpdateLocationNfsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_location_nfs::UpdateLocationNfsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_location_nfs::UpdateLocationNfsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_location_nfs::UpdateLocationNfsInput {
             location_arn: self.location_arn,
             subdirectory: self.subdirectory,

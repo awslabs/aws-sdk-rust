@@ -181,7 +181,7 @@ impl CreatePlacementGroupInputBuilder {
     /// Consumes the builder and constructs a [`CreatePlacementGroupInput`](crate::operation::create_placement_group::CreatePlacementGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_placement_group::CreatePlacementGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_placement_group::CreatePlacementGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_placement_group::CreatePlacementGroupInput {
             dry_run: self.dry_run,

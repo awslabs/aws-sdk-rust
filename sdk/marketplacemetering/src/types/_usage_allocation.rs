@@ -75,10 +75,10 @@ impl UsageAllocationBuilder {
     /// Consumes the builder and constructs a [`UsageAllocation`](crate::types::UsageAllocation).
     /// This method will fail if any of the following fields are not set:
     /// - [`allocated_usage_quantity`](crate::types::builders::UsageAllocationBuilder::allocated_usage_quantity)
-    pub fn build(self) -> ::std::result::Result<crate::types::UsageAllocation, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::UsageAllocation, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::UsageAllocation {
             allocated_usage_quantity: self.allocated_usage_quantity.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "allocated_usage_quantity",
                     "allocated_usage_quantity was not specified but it is required when building UsageAllocation",
                 )

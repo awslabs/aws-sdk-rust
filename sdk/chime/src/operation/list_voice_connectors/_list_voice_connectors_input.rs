@@ -64,7 +64,7 @@ impl ListVoiceConnectorsInputBuilder {
     /// Consumes the builder and constructs a [`ListVoiceConnectorsInput`](crate::operation::list_voice_connectors::ListVoiceConnectorsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_voice_connectors::ListVoiceConnectorsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_voice_connectors::ListVoiceConnectorsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_voice_connectors::ListVoiceConnectorsInput {
             next_token: self.next_token,

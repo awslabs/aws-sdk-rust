@@ -69,7 +69,7 @@ impl DeleteDbSubnetGroupInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDbSubnetGroupInput`](crate::operation::delete_db_subnet_group::DeleteDbSubnetGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_db_subnet_group::DeleteDbSubnetGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_db_subnet_group::DeleteDbSubnetGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_db_subnet_group::DeleteDbSubnetGroupInput {
             db_subnet_group_name: self.db_subnet_group_name,

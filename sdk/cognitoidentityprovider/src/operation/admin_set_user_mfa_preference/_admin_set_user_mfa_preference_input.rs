@@ -120,7 +120,7 @@ impl AdminSetUserMfaPreferenceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::admin_set_user_mfa_preference::AdminSetUserMfaPreferenceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::admin_set_user_mfa_preference::AdminSetUserMfaPreferenceInput {
             sms_mfa_settings: self.sms_mfa_settings,

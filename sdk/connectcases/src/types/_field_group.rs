@@ -72,11 +72,11 @@ impl FieldGroupBuilder {
     /// Consumes the builder and constructs a [`FieldGroup`](crate::types::FieldGroup).
     /// This method will fail if any of the following fields are not set:
     /// - [`fields`](crate::types::builders::FieldGroupBuilder::fields)
-    pub fn build(self) -> ::std::result::Result<crate::types::FieldGroup, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::FieldGroup, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FieldGroup {
             name: self.name,
             fields: self.fields.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "fields",
                     "fields was not specified but it is required when building FieldGroup",
                 )

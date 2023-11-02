@@ -86,7 +86,7 @@ impl ListBotAliasesInputBuilder {
     /// Consumes the builder and constructs a [`ListBotAliasesInput`](crate::operation::list_bot_aliases::ListBotAliasesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_bot_aliases::ListBotAliasesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_bot_aliases::ListBotAliasesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_bot_aliases::ListBotAliasesInput {
             bot_id: self.bot_id,
             max_results: self.max_results,

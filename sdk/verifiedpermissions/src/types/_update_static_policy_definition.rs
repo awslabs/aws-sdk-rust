@@ -140,11 +140,11 @@ impl UpdateStaticPolicyDefinitionBuilder {
     /// Consumes the builder and constructs a [`UpdateStaticPolicyDefinition`](crate::types::UpdateStaticPolicyDefinition).
     /// This method will fail if any of the following fields are not set:
     /// - [`statement`](crate::types::builders::UpdateStaticPolicyDefinitionBuilder::statement)
-    pub fn build(self) -> ::std::result::Result<crate::types::UpdateStaticPolicyDefinition, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::UpdateStaticPolicyDefinition, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::UpdateStaticPolicyDefinition {
             description: self.description,
             statement: self.statement.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "statement",
                     "statement was not specified but it is required when building UpdateStaticPolicyDefinition",
                 )

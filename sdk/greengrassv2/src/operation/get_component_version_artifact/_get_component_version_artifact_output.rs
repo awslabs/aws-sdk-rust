@@ -65,11 +65,11 @@ impl GetComponentVersionArtifactOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_component_version_artifact::GetComponentVersionArtifactOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_component_version_artifact::GetComponentVersionArtifactOutput {
             pre_signed_url: self.pre_signed_url.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "pre_signed_url",
                     "pre_signed_url was not specified but it is required when building GetComponentVersionArtifactOutput",
                 )

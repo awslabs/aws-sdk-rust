@@ -97,7 +97,7 @@ impl CreateContainerServiceDeploymentInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentInput {

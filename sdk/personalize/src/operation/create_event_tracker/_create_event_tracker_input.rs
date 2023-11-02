@@ -95,7 +95,8 @@ impl CreateEventTrackerInputBuilder {
     /// Consumes the builder and constructs a [`CreateEventTrackerInput`](crate::operation::create_event_tracker::CreateEventTrackerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_event_tracker::CreateEventTrackerInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_event_tracker::CreateEventTrackerInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_event_tracker::CreateEventTrackerInput {
             name: self.name,
             dataset_group_arn: self.dataset_group_arn,

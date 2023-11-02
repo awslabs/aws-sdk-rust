@@ -93,7 +93,7 @@ impl ListApplicationStatesInputBuilder {
     /// Consumes the builder and constructs a [`ListApplicationStatesInput`](crate::operation::list_application_states::ListApplicationStatesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_application_states::ListApplicationStatesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_application_states::ListApplicationStatesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_application_states::ListApplicationStatesInput {
             application_ids: self.application_ids,

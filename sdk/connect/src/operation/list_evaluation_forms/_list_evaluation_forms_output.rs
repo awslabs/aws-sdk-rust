@@ -89,11 +89,11 @@ impl ListEvaluationFormsOutputBuilder {
     /// - [`evaluation_form_summary_list`](crate::operation::list_evaluation_forms::builders::ListEvaluationFormsOutputBuilder::evaluation_form_summary_list)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_evaluation_forms::ListEvaluationFormsOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_evaluation_forms::ListEvaluationFormsOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_evaluation_forms::ListEvaluationFormsOutput {
             evaluation_form_summary_list: self.evaluation_form_summary_list.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "evaluation_form_summary_list",
                     "evaluation_form_summary_list was not specified but it is required when building ListEvaluationFormsOutput",
                 )

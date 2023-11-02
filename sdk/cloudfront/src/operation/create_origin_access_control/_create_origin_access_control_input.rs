@@ -46,7 +46,7 @@ impl CreateOriginAccessControlInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_origin_access_control::CreateOriginAccessControlInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_origin_access_control::CreateOriginAccessControlInput {
             origin_access_control_config: self.origin_access_control_config,

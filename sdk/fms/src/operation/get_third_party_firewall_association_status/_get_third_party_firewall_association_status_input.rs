@@ -46,7 +46,7 @@ impl GetThirdPartyFirewallAssociationStatusInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_third_party_firewall_association_status::GetThirdPartyFirewallAssociationStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_third_party_firewall_association_status::GetThirdPartyFirewallAssociationStatusInput {

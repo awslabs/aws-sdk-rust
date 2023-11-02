@@ -68,7 +68,7 @@ impl CancelBatchJobExecutionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_batch_job_execution::CancelBatchJobExecutionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::cancel_batch_job_execution::CancelBatchJobExecutionInput {
             application_id: self.application_id,

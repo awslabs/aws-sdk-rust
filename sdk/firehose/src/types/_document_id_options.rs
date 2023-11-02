@@ -51,10 +51,10 @@ impl DocumentIdOptionsBuilder {
     /// Consumes the builder and constructs a [`DocumentIdOptions`](crate::types::DocumentIdOptions).
     /// This method will fail if any of the following fields are not set:
     /// - [`default_document_id_format`](crate::types::builders::DocumentIdOptionsBuilder::default_document_id_format)
-    pub fn build(self) -> ::std::result::Result<crate::types::DocumentIdOptions, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DocumentIdOptions, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DocumentIdOptions {
             default_document_id_format: self.default_document_id_format.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "default_document_id_format",
                     "default_document_id_format was not specified but it is required when building DocumentIdOptions",
                 )

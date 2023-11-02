@@ -152,7 +152,7 @@ impl AddProfilePermissionInputBuilder {
     /// Consumes the builder and constructs a [`AddProfilePermissionInput`](crate::operation::add_profile_permission::AddProfilePermissionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::add_profile_permission::AddProfilePermissionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::add_profile_permission::AddProfilePermissionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::add_profile_permission::AddProfilePermissionInput {
             profile_name: self.profile_name,

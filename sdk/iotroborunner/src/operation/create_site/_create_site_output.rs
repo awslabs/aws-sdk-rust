@@ -131,28 +131,28 @@ impl CreateSiteOutputBuilder {
     /// - [`id`](crate::operation::create_site::builders::CreateSiteOutputBuilder::id)
     /// - [`created_at`](crate::operation::create_site::builders::CreateSiteOutputBuilder::created_at)
     /// - [`updated_at`](crate::operation::create_site::builders::CreateSiteOutputBuilder::updated_at)
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_site::CreateSiteOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_site::CreateSiteOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_site::CreateSiteOutput {
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building CreateSiteOutput",
                 )
             })?,
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building CreateSiteOutput",
                 )
             })?,
             created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
                     "created_at was not specified but it is required when building CreateSiteOutput",
                 )
             })?,
             updated_at: self.updated_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "updated_at",
                     "updated_at was not specified but it is required when building CreateSiteOutput",
                 )

@@ -66,7 +66,7 @@ impl GetThingShadowInputBuilder {
     /// Consumes the builder and constructs a [`GetThingShadowInput`](crate::operation::get_thing_shadow::GetThingShadowInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_thing_shadow::GetThingShadowInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_thing_shadow::GetThingShadowInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_thing_shadow::GetThingShadowInput {
             thing_name: self.thing_name,
             shadow_name: self.shadow_name,

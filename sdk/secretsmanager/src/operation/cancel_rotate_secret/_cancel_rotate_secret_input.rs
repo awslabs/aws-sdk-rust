@@ -49,7 +49,8 @@ impl CancelRotateSecretInputBuilder {
     /// Consumes the builder and constructs a [`CancelRotateSecretInput`](crate::operation::cancel_rotate_secret::CancelRotateSecretInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::cancel_rotate_secret::CancelRotateSecretInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::cancel_rotate_secret::CancelRotateSecretInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::cancel_rotate_secret::CancelRotateSecretInput { secret_id: self.secret_id })
     }
 }

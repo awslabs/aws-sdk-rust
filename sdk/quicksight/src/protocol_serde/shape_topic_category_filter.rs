@@ -2,7 +2,7 @@
 pub fn ser_topic_category_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TopicCategoryFilter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.category_filter_function {
         object.key("CategoryFilterFunction").string(var_1.as_str());
     }

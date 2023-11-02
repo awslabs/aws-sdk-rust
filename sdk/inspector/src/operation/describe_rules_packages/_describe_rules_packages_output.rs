@@ -99,17 +99,17 @@ impl DescribeRulesPackagesOutputBuilder {
     /// - [`failed_items`](crate::operation::describe_rules_packages::builders::DescribeRulesPackagesOutputBuilder::failed_items)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_rules_packages::DescribeRulesPackagesOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_rules_packages::DescribeRulesPackagesOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_rules_packages::DescribeRulesPackagesOutput {
             rules_packages: self.rules_packages.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "rules_packages",
                     "rules_packages was not specified but it is required when building DescribeRulesPackagesOutput",
                 )
             })?,
             failed_items: self.failed_items.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "failed_items",
                     "failed_items was not specified but it is required when building DescribeRulesPackagesOutput",
                 )

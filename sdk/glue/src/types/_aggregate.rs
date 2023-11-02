@@ -133,28 +133,28 @@ impl AggregateBuilder {
     /// - [`inputs`](crate::types::builders::AggregateBuilder::inputs)
     /// - [`groups`](crate::types::builders::AggregateBuilder::groups)
     /// - [`aggs`](crate::types::builders::AggregateBuilder::aggs)
-    pub fn build(self) -> ::std::result::Result<crate::types::Aggregate, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Aggregate, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Aggregate {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building Aggregate",
                 )
             })?,
             inputs: self.inputs.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "inputs",
                     "inputs was not specified but it is required when building Aggregate",
                 )
             })?,
             groups: self.groups.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "groups",
                     "groups was not specified but it is required when building Aggregate",
                 )
             })?,
             aggs: self.aggs.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "aggs",
                     "aggs was not specified but it is required when building Aggregate",
                 )

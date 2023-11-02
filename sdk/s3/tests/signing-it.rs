@@ -8,8 +8,8 @@
 use aws_credential_types::provider::SharedCredentialsProvider;
 use aws_sdk_s3::config::{Credentials, Region};
 use aws_sdk_s3::{Client, Config};
-use aws_smithy_http::body::SdkBody;
 use aws_smithy_runtime::client::http::test_util::{ReplayEvent, StaticReplayClient};
+use aws_smithy_types::body::SdkBody;
 
 #[tokio::test]
 async fn test_signer() {

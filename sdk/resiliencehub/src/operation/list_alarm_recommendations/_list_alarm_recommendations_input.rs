@@ -88,7 +88,7 @@ impl ListAlarmRecommendationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_alarm_recommendations::ListAlarmRecommendationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_alarm_recommendations::ListAlarmRecommendationsInput {
             assessment_arn: self.assessment_arn,

@@ -86,7 +86,7 @@ impl DisableFastLaunchInputBuilder {
     /// Consumes the builder and constructs a [`DisableFastLaunchInput`](crate::operation::disable_fast_launch::DisableFastLaunchInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::disable_fast_launch::DisableFastLaunchInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::disable_fast_launch::DisableFastLaunchInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::disable_fast_launch::DisableFastLaunchInput {
             image_id: self.image_id,
             force: self.force,

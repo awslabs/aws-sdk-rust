@@ -54,7 +54,7 @@ impl StartReportCreationInputBuilder {
     /// Consumes the builder and constructs a [`StartReportCreationInput`](crate::operation::start_report_creation::StartReportCreationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_report_creation::StartReportCreationInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::start_report_creation::StartReportCreationInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_report_creation::StartReportCreationInput { s3_bucket: self.s3_bucket })
     }

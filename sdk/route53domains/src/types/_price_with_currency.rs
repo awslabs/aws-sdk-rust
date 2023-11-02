@@ -68,11 +68,11 @@ impl PriceWithCurrencyBuilder {
     /// Consumes the builder and constructs a [`PriceWithCurrency`](crate::types::PriceWithCurrency).
     /// This method will fail if any of the following fields are not set:
     /// - [`currency`](crate::types::builders::PriceWithCurrencyBuilder::currency)
-    pub fn build(self) -> ::std::result::Result<crate::types::PriceWithCurrency, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PriceWithCurrency, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PriceWithCurrency {
             price: self.price.unwrap_or_default(),
             currency: self.currency.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "currency",
                     "currency was not specified but it is required when building PriceWithCurrency",
                 )

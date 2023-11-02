@@ -161,7 +161,7 @@ impl AssociateResourceSharePermissionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_resource_share_permission::AssociateResourceSharePermissionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::associate_resource_share_permission::AssociateResourceSharePermissionInput {

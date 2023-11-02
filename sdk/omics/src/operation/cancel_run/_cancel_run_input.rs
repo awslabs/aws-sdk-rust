@@ -42,7 +42,7 @@ impl CancelRunInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`CancelRunInput`](crate::operation::cancel_run::CancelRunInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_run::CancelRunInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_run::CancelRunInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::cancel_run::CancelRunInput { id: self.id })
     }
 }

@@ -65,7 +65,7 @@ impl DeleteNatGatewayInputBuilder {
     /// Consumes the builder and constructs a [`DeleteNatGatewayInput`](crate::operation::delete_nat_gateway::DeleteNatGatewayInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_nat_gateway::DeleteNatGatewayInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_nat_gateway::DeleteNatGatewayInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_nat_gateway::DeleteNatGatewayInput {
             dry_run: self.dry_run,
             nat_gateway_id: self.nat_gateway_id,

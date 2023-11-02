@@ -63,7 +63,7 @@ impl GetVpcLinksInputBuilder {
         &self.limit
     }
     /// Consumes the builder and constructs a [`GetVpcLinksInput`](crate::operation::get_vpc_links::GetVpcLinksInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_vpc_links::GetVpcLinksInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_vpc_links::GetVpcLinksInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_vpc_links::GetVpcLinksInput {
             position: self.position,
             limit: self.limit,

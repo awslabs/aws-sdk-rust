@@ -44,7 +44,7 @@ impl DeleteFindingsFilterInputBuilder {
     /// Consumes the builder and constructs a [`DeleteFindingsFilterInput`](crate::operation::delete_findings_filter::DeleteFindingsFilterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_findings_filter::DeleteFindingsFilterInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_findings_filter::DeleteFindingsFilterInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_findings_filter::DeleteFindingsFilterInput { id: self.id })
     }

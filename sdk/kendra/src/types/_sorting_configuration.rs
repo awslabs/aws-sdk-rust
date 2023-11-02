@@ -119,16 +119,16 @@ impl SortingConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`document_attribute_key`](crate::types::builders::SortingConfigurationBuilder::document_attribute_key)
     /// - [`sort_order`](crate::types::builders::SortingConfigurationBuilder::sort_order)
-    pub fn build(self) -> ::std::result::Result<crate::types::SortingConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SortingConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SortingConfiguration {
             document_attribute_key: self.document_attribute_key.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "document_attribute_key",
                     "document_attribute_key was not specified but it is required when building SortingConfiguration",
                 )
             })?,
             sort_order: self.sort_order.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "sort_order",
                     "sort_order was not specified but it is required when building SortingConfiguration",
                 )

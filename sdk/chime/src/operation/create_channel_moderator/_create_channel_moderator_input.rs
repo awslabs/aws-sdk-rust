@@ -87,8 +87,10 @@ impl CreateChannelModeratorInputBuilder {
     /// Consumes the builder and constructs a [`CreateChannelModeratorInput`](crate::operation::create_channel_moderator::CreateChannelModeratorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_channel_moderator::CreateChannelModeratorInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::create_channel_moderator::CreateChannelModeratorInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::create_channel_moderator::CreateChannelModeratorInput {
             channel_arn: self.channel_arn,
             channel_moderator_arn: self.channel_moderator_arn,

@@ -94,16 +94,16 @@ impl GatewayCapabilitySummaryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`capability_namespace`](crate::types::builders::GatewayCapabilitySummaryBuilder::capability_namespace)
     /// - [`capability_sync_status`](crate::types::builders::GatewayCapabilitySummaryBuilder::capability_sync_status)
-    pub fn build(self) -> ::std::result::Result<crate::types::GatewayCapabilitySummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::GatewayCapabilitySummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::GatewayCapabilitySummary {
             capability_namespace: self.capability_namespace.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "capability_namespace",
                     "capability_namespace was not specified but it is required when building GatewayCapabilitySummary",
                 )
             })?,
             capability_sync_status: self.capability_sync_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "capability_sync_status",
                     "capability_sync_status was not specified but it is required when building GatewayCapabilitySummary",
                 )

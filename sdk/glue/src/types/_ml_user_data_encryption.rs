@@ -86,10 +86,10 @@ impl MlUserDataEncryptionBuilder {
     /// Consumes the builder and constructs a [`MlUserDataEncryption`](crate::types::MlUserDataEncryption).
     /// This method will fail if any of the following fields are not set:
     /// - [`ml_user_data_encryption_mode`](crate::types::builders::MlUserDataEncryptionBuilder::ml_user_data_encryption_mode)
-    pub fn build(self) -> ::std::result::Result<crate::types::MlUserDataEncryption, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::MlUserDataEncryption, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MlUserDataEncryption {
             ml_user_data_encryption_mode: self.ml_user_data_encryption_mode.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "ml_user_data_encryption_mode",
                     "ml_user_data_encryption_mode was not specified but it is required when building MlUserDataEncryption",
                 )

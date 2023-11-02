@@ -118,28 +118,28 @@ impl PstnDialInBuilder {
     /// - [`phone_number`](crate::types::builders::PstnDialInBuilder::phone_number)
     /// - [`one_click_id_delay`](crate::types::builders::PstnDialInBuilder::one_click_id_delay)
     /// - [`one_click_pin_delay`](crate::types::builders::PstnDialInBuilder::one_click_pin_delay)
-    pub fn build(self) -> ::std::result::Result<crate::types::PstnDialIn, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PstnDialIn, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PstnDialIn {
             country_code: self.country_code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "country_code",
                     "country_code was not specified but it is required when building PstnDialIn",
                 )
             })?,
             phone_number: self.phone_number.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "phone_number",
                     "phone_number was not specified but it is required when building PstnDialIn",
                 )
             })?,
             one_click_id_delay: self.one_click_id_delay.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "one_click_id_delay",
                     "one_click_id_delay was not specified but it is required when building PstnDialIn",
                 )
             })?,
             one_click_pin_delay: self.one_click_pin_delay.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "one_click_pin_delay",
                     "one_click_pin_delay was not specified but it is required when building PstnDialIn",
                 )

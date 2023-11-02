@@ -2,7 +2,7 @@
 pub fn ser_journey_email_message(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::JourneyEmailMessage,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.from_address {
         object.key("FromAddress").string(var_1.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_aws_ec2_launch_template_data_instance_requirements_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.accelerator_count {
         #[allow(unused_mut)]
         let mut object_2 = object.key("AcceleratorCount").start_object();

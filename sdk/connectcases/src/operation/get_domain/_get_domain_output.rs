@@ -187,34 +187,34 @@ impl GetDomainOutputBuilder {
     /// - [`name`](crate::operation::get_domain::builders::GetDomainOutputBuilder::name)
     /// - [`created_time`](crate::operation::get_domain::builders::GetDomainOutputBuilder::created_time)
     /// - [`domain_status`](crate::operation::get_domain::builders::GetDomainOutputBuilder::domain_status)
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_domain::GetDomainOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_domain::GetDomainOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_domain::GetDomainOutput {
             domain_id: self.domain_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "domain_id",
                     "domain_id was not specified but it is required when building GetDomainOutput",
                 )
             })?,
             domain_arn: self.domain_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "domain_arn",
                     "domain_arn was not specified but it is required when building GetDomainOutput",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building GetDomainOutput",
                 )
             })?,
             created_time: self.created_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_time",
                     "created_time was not specified but it is required when building GetDomainOutput",
                 )
             })?,
             domain_status: self.domain_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "domain_status",
                     "domain_status was not specified but it is required when building GetDomainOutput",
                 )

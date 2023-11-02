@@ -89,7 +89,7 @@ impl ChangeServerLifeCycleStateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::change_server_life_cycle_state::ChangeServerLifeCycleStateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::change_server_life_cycle_state::ChangeServerLifeCycleStateInput {
             source_server_id: self.source_server_id,

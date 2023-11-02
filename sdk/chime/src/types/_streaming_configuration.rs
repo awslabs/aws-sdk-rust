@@ -98,10 +98,10 @@ impl StreamingConfigurationBuilder {
     /// Consumes the builder and constructs a [`StreamingConfiguration`](crate::types::StreamingConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`data_retention_in_hours`](crate::types::builders::StreamingConfigurationBuilder::data_retention_in_hours)
-    pub fn build(self) -> ::std::result::Result<crate::types::StreamingConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::StreamingConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::StreamingConfiguration {
             data_retention_in_hours: self.data_retention_in_hours.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_retention_in_hours",
                     "data_retention_in_hours was not specified but it is required when building StreamingConfiguration",
                 )

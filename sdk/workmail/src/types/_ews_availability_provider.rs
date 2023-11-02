@@ -103,22 +103,22 @@ impl EwsAvailabilityProviderBuilder {
     /// - [`ews_endpoint`](crate::types::builders::EwsAvailabilityProviderBuilder::ews_endpoint)
     /// - [`ews_username`](crate::types::builders::EwsAvailabilityProviderBuilder::ews_username)
     /// - [`ews_password`](crate::types::builders::EwsAvailabilityProviderBuilder::ews_password)
-    pub fn build(self) -> ::std::result::Result<crate::types::EwsAvailabilityProvider, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::EwsAvailabilityProvider, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EwsAvailabilityProvider {
             ews_endpoint: self.ews_endpoint.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "ews_endpoint",
                     "ews_endpoint was not specified but it is required when building EwsAvailabilityProvider",
                 )
             })?,
             ews_username: self.ews_username.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "ews_username",
                     "ews_username was not specified but it is required when building EwsAvailabilityProvider",
                 )
             })?,
             ews_password: self.ews_password.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "ews_password",
                     "ews_password was not specified but it is required when building EwsAvailabilityProvider",
                 )

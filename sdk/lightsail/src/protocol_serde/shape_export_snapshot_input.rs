@@ -2,7 +2,7 @@
 pub fn ser_export_snapshot_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::export_snapshot::ExportSnapshotInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.source_snapshot_name {
         object.key("sourceSnapshotName").string(var_1.as_str());
     }

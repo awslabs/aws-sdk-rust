@@ -2,7 +2,7 @@
 pub fn ser_abort_incomplete_multipart_upload(
     input: &crate::types::AbortIncompleteMultipartUpload,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if input.days_after_initiation != 0 {

@@ -68,16 +68,16 @@ impl MissingSensorDataBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`affected_sensor_count`](crate::types::builders::MissingSensorDataBuilder::affected_sensor_count)
     /// - [`total_number_of_missing_values`](crate::types::builders::MissingSensorDataBuilder::total_number_of_missing_values)
-    pub fn build(self) -> ::std::result::Result<crate::types::MissingSensorData, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::MissingSensorData, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MissingSensorData {
             affected_sensor_count: self.affected_sensor_count.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "affected_sensor_count",
                     "affected_sensor_count was not specified but it is required when building MissingSensorData",
                 )
             })?,
             total_number_of_missing_values: self.total_number_of_missing_values.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "total_number_of_missing_values",
                     "total_number_of_missing_values was not specified but it is required when building MissingSensorData",
                 )

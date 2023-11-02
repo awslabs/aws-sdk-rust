@@ -2,7 +2,7 @@
 pub fn ser_aws_ecs_service_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEcsServiceDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.capacity_provider_strategy {
         let mut array_2 = object.key("CapacityProviderStrategy").start_array();
         for item_3 in var_1 {

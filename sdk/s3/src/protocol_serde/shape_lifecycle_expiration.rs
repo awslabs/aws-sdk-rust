@@ -60,7 +60,7 @@ pub fn de_lifecycle_expiration(
 pub fn ser_lifecycle_expiration(
     input: &crate::types::LifecycleExpiration,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_4) = &input.date {

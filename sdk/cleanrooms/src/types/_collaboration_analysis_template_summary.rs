@@ -233,52 +233,54 @@ impl CollaborationAnalysisTemplateSummaryBuilder {
     /// - [`collaboration_arn`](crate::types::builders::CollaborationAnalysisTemplateSummaryBuilder::collaboration_arn)
     /// - [`collaboration_id`](crate::types::builders::CollaborationAnalysisTemplateSummaryBuilder::collaboration_id)
     /// - [`creator_account_id`](crate::types::builders::CollaborationAnalysisTemplateSummaryBuilder::creator_account_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::CollaborationAnalysisTemplateSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::CollaborationAnalysisTemplateSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CollaborationAnalysisTemplateSummary {
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building CollaborationAnalysisTemplateSummary",
                 )
             })?,
             create_time: self.create_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "create_time",
                     "create_time was not specified but it is required when building CollaborationAnalysisTemplateSummary",
                 )
             })?,
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building CollaborationAnalysisTemplateSummary",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building CollaborationAnalysisTemplateSummary",
                 )
             })?,
             update_time: self.update_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "update_time",
                     "update_time was not specified but it is required when building CollaborationAnalysisTemplateSummary",
                 )
             })?,
             collaboration_arn: self.collaboration_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "collaboration_arn",
                     "collaboration_arn was not specified but it is required when building CollaborationAnalysisTemplateSummary",
                 )
             })?,
             collaboration_id: self.collaboration_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "collaboration_id",
                     "collaboration_id was not specified but it is required when building CollaborationAnalysisTemplateSummary",
                 )
             })?,
             creator_account_id: self.creator_account_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creator_account_id",
                     "creator_account_id was not specified but it is required when building CollaborationAnalysisTemplateSummary",
                 )

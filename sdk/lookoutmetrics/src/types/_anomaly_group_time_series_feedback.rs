@@ -93,22 +93,22 @@ impl AnomalyGroupTimeSeriesFeedbackBuilder {
     /// - [`anomaly_group_id`](crate::types::builders::AnomalyGroupTimeSeriesFeedbackBuilder::anomaly_group_id)
     /// - [`time_series_id`](crate::types::builders::AnomalyGroupTimeSeriesFeedbackBuilder::time_series_id)
     /// - [`is_anomaly`](crate::types::builders::AnomalyGroupTimeSeriesFeedbackBuilder::is_anomaly)
-    pub fn build(self) -> ::std::result::Result<crate::types::AnomalyGroupTimeSeriesFeedback, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AnomalyGroupTimeSeriesFeedback, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AnomalyGroupTimeSeriesFeedback {
             anomaly_group_id: self.anomaly_group_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "anomaly_group_id",
                     "anomaly_group_id was not specified but it is required when building AnomalyGroupTimeSeriesFeedback",
                 )
             })?,
             time_series_id: self.time_series_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "time_series_id",
                     "time_series_id was not specified but it is required when building AnomalyGroupTimeSeriesFeedback",
                 )
             })?,
             is_anomaly: self.is_anomaly.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "is_anomaly",
                     "is_anomaly was not specified but it is required when building AnomalyGroupTimeSeriesFeedback",
                 )

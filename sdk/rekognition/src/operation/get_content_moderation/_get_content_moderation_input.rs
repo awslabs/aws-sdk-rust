@@ -128,7 +128,7 @@ impl GetContentModerationInputBuilder {
     /// Consumes the builder and constructs a [`GetContentModerationInput`](crate::operation::get_content_moderation::GetContentModerationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_content_moderation::GetContentModerationInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_content_moderation::GetContentModerationInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_content_moderation::GetContentModerationInput {
             job_id: self.job_id,

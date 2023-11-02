@@ -2,7 +2,7 @@
 pub fn ser_rack_physical_properties(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RackPhysicalProperties,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.power_draw_kva {
         object.key("PowerDrawKva").string(var_1.as_str());
     }

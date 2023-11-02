@@ -42,7 +42,7 @@ impl DeleteLinkInputBuilder {
         &self.identifier
     }
     /// Consumes the builder and constructs a [`DeleteLinkInput`](crate::operation::delete_link::DeleteLinkInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_link::DeleteLinkInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_link::DeleteLinkInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_link::DeleteLinkInput { identifier: self.identifier })
     }
 }

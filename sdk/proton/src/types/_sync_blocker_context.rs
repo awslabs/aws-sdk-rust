@@ -70,16 +70,16 @@ impl SyncBlockerContextBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`key`](crate::types::builders::SyncBlockerContextBuilder::key)
     /// - [`value`](crate::types::builders::SyncBlockerContextBuilder::value)
-    pub fn build(self) -> ::std::result::Result<crate::types::SyncBlockerContext, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SyncBlockerContext, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SyncBlockerContext {
             key: self.key.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "key",
                     "key was not specified but it is required when building SyncBlockerContext",
                 )
             })?,
             value: self.value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "value",
                     "value was not specified but it is required when building SyncBlockerContext",
                 )

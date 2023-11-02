@@ -2,7 +2,7 @@
 pub fn ser_service_observability_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ServiceObservabilityConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("ObservabilityEnabled").boolean(input.observability_enabled);
     }

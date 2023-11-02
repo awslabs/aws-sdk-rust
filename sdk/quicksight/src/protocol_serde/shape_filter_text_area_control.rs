@@ -2,7 +2,7 @@
 pub fn ser_filter_text_area_control(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FilterTextAreaControl,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("FilterControlId").string(input.filter_control_id.as_str());
     }

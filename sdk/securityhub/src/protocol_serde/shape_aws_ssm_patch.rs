@@ -2,7 +2,7 @@
 pub fn ser_aws_ssm_patch(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsSsmPatch,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.compliance_summary {
         #[allow(unused_mut)]
         let mut object_2 = object.key("ComplianceSummary").start_object();

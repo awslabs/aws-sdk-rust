@@ -327,41 +327,41 @@ impl ScalingPlanResourceBuilder {
     /// - [`resource_id`](crate::types::builders::ScalingPlanResourceBuilder::resource_id)
     /// - [`scalable_dimension`](crate::types::builders::ScalingPlanResourceBuilder::scalable_dimension)
     /// - [`scaling_status_code`](crate::types::builders::ScalingPlanResourceBuilder::scaling_status_code)
-    pub fn build(self) -> ::std::result::Result<crate::types::ScalingPlanResource, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ScalingPlanResource, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ScalingPlanResource {
             scaling_plan_name: self.scaling_plan_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "scaling_plan_name",
                     "scaling_plan_name was not specified but it is required when building ScalingPlanResource",
                 )
             })?,
             scaling_plan_version: self.scaling_plan_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "scaling_plan_version",
                     "scaling_plan_version was not specified but it is required when building ScalingPlanResource",
                 )
             })?,
             service_namespace: self.service_namespace.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "service_namespace",
                     "service_namespace was not specified but it is required when building ScalingPlanResource",
                 )
             })?,
             resource_id: self.resource_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_id",
                     "resource_id was not specified but it is required when building ScalingPlanResource",
                 )
             })?,
             scalable_dimension: self.scalable_dimension.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "scalable_dimension",
                     "scalable_dimension was not specified but it is required when building ScalingPlanResource",
                 )
             })?,
             scaling_policies: self.scaling_policies,
             scaling_status_code: self.scaling_status_code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "scaling_status_code",
                     "scaling_status_code was not specified but it is required when building ScalingPlanResource",
                 )

@@ -134,7 +134,7 @@ impl CreateMedicalVocabularyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_medical_vocabulary::CreateMedicalVocabularyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_medical_vocabulary::CreateMedicalVocabularyInput {
             vocabulary_name: self.vocabulary_name,

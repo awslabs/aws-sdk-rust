@@ -233,35 +233,35 @@ impl LegBuilder {
     /// - [`distance`](crate::types::builders::LegBuilder::distance)
     /// - [`duration_seconds`](crate::types::builders::LegBuilder::duration_seconds)
     /// - [`steps`](crate::types::builders::LegBuilder::steps)
-    pub fn build(self) -> ::std::result::Result<crate::types::Leg, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Leg, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Leg {
             start_position: self.start_position.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "start_position",
                     "start_position was not specified but it is required when building Leg",
                 )
             })?,
             end_position: self.end_position.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "end_position",
                     "end_position was not specified but it is required when building Leg",
                 )
             })?,
             distance: self.distance.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "distance",
                     "distance was not specified but it is required when building Leg",
                 )
             })?,
             duration_seconds: self.duration_seconds.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "duration_seconds",
                     "duration_seconds was not specified but it is required when building Leg",
                 )
             })?,
             geometry: self.geometry,
             steps: self.steps.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "steps",
                     "steps was not specified but it is required when building Leg",
                 )

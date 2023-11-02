@@ -73,7 +73,7 @@ impl GetMlModelInputBuilder {
         &self.verbose
     }
     /// Consumes the builder and constructs a [`GetMlModelInput`](crate::operation::get_ml_model::GetMlModelInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_ml_model::GetMlModelInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_ml_model::GetMlModelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_ml_model::GetMlModelInput {
             ml_model_id: self.ml_model_id,
             verbose: self.verbose,

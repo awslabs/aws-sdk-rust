@@ -186,28 +186,28 @@ impl EventStreamSummaryBuilder {
     /// - [`event_stream_name`](crate::types::builders::EventStreamSummaryBuilder::event_stream_name)
     /// - [`event_stream_arn`](crate::types::builders::EventStreamSummaryBuilder::event_stream_arn)
     /// - [`state`](crate::types::builders::EventStreamSummaryBuilder::state)
-    pub fn build(self) -> ::std::result::Result<crate::types::EventStreamSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::EventStreamSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EventStreamSummary {
             domain_name: self.domain_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "domain_name",
                     "domain_name was not specified but it is required when building EventStreamSummary",
                 )
             })?,
             event_stream_name: self.event_stream_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "event_stream_name",
                     "event_stream_name was not specified but it is required when building EventStreamSummary",
                 )
             })?,
             event_stream_arn: self.event_stream_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "event_stream_arn",
                     "event_stream_arn was not specified but it is required when building EventStreamSummary",
                 )
             })?,
             state: self.state.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "state",
                     "state was not specified but it is required when building EventStreamSummary",
                 )

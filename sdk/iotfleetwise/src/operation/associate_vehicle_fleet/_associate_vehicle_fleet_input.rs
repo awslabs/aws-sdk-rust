@@ -66,7 +66,7 @@ impl AssociateVehicleFleetInputBuilder {
     /// Consumes the builder and constructs a [`AssociateVehicleFleetInput`](crate::operation::associate_vehicle_fleet::AssociateVehicleFleetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::associate_vehicle_fleet::AssociateVehicleFleetInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::associate_vehicle_fleet::AssociateVehicleFleetInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::associate_vehicle_fleet::AssociateVehicleFleetInput {
             vehicle_name: self.vehicle_name,

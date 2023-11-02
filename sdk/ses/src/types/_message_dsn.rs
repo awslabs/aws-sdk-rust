@@ -97,10 +97,10 @@ impl MessageDsnBuilder {
     /// Consumes the builder and constructs a [`MessageDsn`](crate::types::MessageDsn).
     /// This method will fail if any of the following fields are not set:
     /// - [`reporting_mta`](crate::types::builders::MessageDsnBuilder::reporting_mta)
-    pub fn build(self) -> ::std::result::Result<crate::types::MessageDsn, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::MessageDsn, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MessageDsn {
             reporting_mta: self.reporting_mta.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "reporting_mta",
                     "reporting_mta was not specified but it is required when building MessageDsn",
                 )

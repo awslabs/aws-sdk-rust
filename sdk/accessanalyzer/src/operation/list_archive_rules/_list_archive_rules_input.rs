@@ -87,7 +87,7 @@ impl ListArchiveRulesInputBuilder {
     /// Consumes the builder and constructs a [`ListArchiveRulesInput`](crate::operation::list_archive_rules::ListArchiveRulesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_archive_rules::ListArchiveRulesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_archive_rules::ListArchiveRulesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_archive_rules::ListArchiveRulesInput {
             analyzer_name: self.analyzer_name,
             next_token: self.next_token,

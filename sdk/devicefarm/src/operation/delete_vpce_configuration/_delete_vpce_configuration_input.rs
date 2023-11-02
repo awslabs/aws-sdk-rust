@@ -46,7 +46,7 @@ impl DeleteVpceConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_vpce_configuration::DeleteVpceConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_vpce_configuration::DeleteVpceConfigurationInput { arn: self.arn })
     }

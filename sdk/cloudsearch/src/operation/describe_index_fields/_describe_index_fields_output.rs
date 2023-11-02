@@ -69,11 +69,11 @@ impl DescribeIndexFieldsOutputBuilder {
     /// - [`index_fields`](crate::operation::describe_index_fields::builders::DescribeIndexFieldsOutputBuilder::index_fields)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_index_fields::DescribeIndexFieldsOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_index_fields::DescribeIndexFieldsOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_index_fields::DescribeIndexFieldsOutput {
             index_fields: self.index_fields.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "index_fields",
                     "index_fields was not specified but it is required when building DescribeIndexFieldsOutput",
                 )

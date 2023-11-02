@@ -259,7 +259,7 @@ impl CreateLaunchProfileInputBuilder {
     /// Consumes the builder and constructs a [`CreateLaunchProfileInput`](crate::operation::create_launch_profile::CreateLaunchProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_launch_profile::CreateLaunchProfileInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_launch_profile::CreateLaunchProfileInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_launch_profile::CreateLaunchProfileInput {
             client_token: self.client_token,

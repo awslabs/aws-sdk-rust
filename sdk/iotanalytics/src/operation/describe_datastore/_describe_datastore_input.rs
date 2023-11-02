@@ -65,7 +65,7 @@ impl DescribeDatastoreInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDatastoreInput`](crate::operation::describe_datastore::DescribeDatastoreInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_datastore::DescribeDatastoreInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_datastore::DescribeDatastoreInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_datastore::DescribeDatastoreInput {
             datastore_name: self.datastore_name,
             include_statistics: self.include_statistics,

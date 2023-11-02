@@ -46,10 +46,10 @@ impl MetricAttributionBuilder {
     /// Consumes the builder and constructs a [`MetricAttribution`](crate::types::MetricAttribution).
     /// This method will fail if any of the following fields are not set:
     /// - [`event_attribution_source`](crate::types::builders::MetricAttributionBuilder::event_attribution_source)
-    pub fn build(self) -> ::std::result::Result<crate::types::MetricAttribution, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::MetricAttribution, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MetricAttribution {
             event_attribution_source: self.event_attribution_source.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "event_attribution_source",
                     "event_attribution_source was not specified but it is required when building MetricAttribution",
                 )

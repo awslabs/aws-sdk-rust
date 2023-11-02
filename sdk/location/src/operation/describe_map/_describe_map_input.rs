@@ -42,7 +42,7 @@ impl DescribeMapInputBuilder {
         &self.map_name
     }
     /// Consumes the builder and constructs a [`DescribeMapInput`](crate::operation::describe_map::DescribeMapInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_map::DescribeMapInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_map::DescribeMapInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_map::DescribeMapInput { map_name: self.map_name })
     }
 }

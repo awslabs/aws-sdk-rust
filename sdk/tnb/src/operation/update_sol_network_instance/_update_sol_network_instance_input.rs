@@ -126,7 +126,7 @@ impl UpdateSolNetworkInstanceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_sol_network_instance::UpdateSolNetworkInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_sol_network_instance::UpdateSolNetworkInstanceInput {
             ns_instance_id: self.ns_instance_id,

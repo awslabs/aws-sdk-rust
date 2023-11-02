@@ -51,10 +51,10 @@ impl ReplicationConfigurationBuilder {
     /// Consumes the builder and constructs a [`ReplicationConfiguration`](crate::types::ReplicationConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`rules`](crate::types::builders::ReplicationConfigurationBuilder::rules)
-    pub fn build(self) -> ::std::result::Result<crate::types::ReplicationConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ReplicationConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ReplicationConfiguration {
             rules: self.rules.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "rules",
                     "rules was not specified but it is required when building ReplicationConfiguration",
                 )

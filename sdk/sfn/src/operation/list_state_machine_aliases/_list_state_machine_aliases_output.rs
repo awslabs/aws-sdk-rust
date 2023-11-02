@@ -91,11 +91,11 @@ impl ListStateMachineAliasesOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_state_machine_aliases::ListStateMachineAliasesOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_state_machine_aliases::ListStateMachineAliasesOutput {
             state_machine_aliases: self.state_machine_aliases.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "state_machine_aliases",
                     "state_machine_aliases was not specified but it is required when building ListStateMachineAliasesOutput",
                 )

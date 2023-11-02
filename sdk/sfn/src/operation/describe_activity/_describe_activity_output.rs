@@ -155,22 +155,22 @@ impl DescribeActivityOutputBuilder {
     /// - [`creation_date`](crate::operation::describe_activity::builders::DescribeActivityOutputBuilder::creation_date)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_activity::DescribeActivityOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_activity::DescribeActivityOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_activity::DescribeActivityOutput {
             activity_arn: self.activity_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "activity_arn",
                     "activity_arn was not specified but it is required when building DescribeActivityOutput",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building DescribeActivityOutput",
                 )
             })?,
             creation_date: self.creation_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_date",
                     "creation_date was not specified but it is required when building DescribeActivityOutput",
                 )

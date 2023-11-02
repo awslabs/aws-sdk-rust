@@ -288,7 +288,7 @@ impl GetInstanceMetricDataInputBuilder {
     /// Consumes the builder and constructs a [`GetInstanceMetricDataInput`](crate::operation::get_instance_metric_data::GetInstanceMetricDataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_instance_metric_data::GetInstanceMetricDataInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_instance_metric_data::GetInstanceMetricDataInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_instance_metric_data::GetInstanceMetricDataInput {
             instance_name: self.instance_name,

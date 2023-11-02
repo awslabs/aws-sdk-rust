@@ -46,10 +46,10 @@ impl ServiceNowParametersBuilder {
     /// Consumes the builder and constructs a [`ServiceNowParameters`](crate::types::ServiceNowParameters).
     /// This method will fail if any of the following fields are not set:
     /// - [`site_base_url`](crate::types::builders::ServiceNowParametersBuilder::site_base_url)
-    pub fn build(self) -> ::std::result::Result<crate::types::ServiceNowParameters, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ServiceNowParameters, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ServiceNowParameters {
             site_base_url: self.site_base_url.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "site_base_url",
                     "site_base_url was not specified but it is required when building ServiceNowParameters",
                 )

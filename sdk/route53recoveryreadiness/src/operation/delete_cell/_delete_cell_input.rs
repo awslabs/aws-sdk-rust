@@ -42,7 +42,7 @@ impl DeleteCellInputBuilder {
         &self.cell_name
     }
     /// Consumes the builder and constructs a [`DeleteCellInput`](crate::operation::delete_cell::DeleteCellInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_cell::DeleteCellInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_cell::DeleteCellInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_cell::DeleteCellInput { cell_name: self.cell_name })
     }
 }

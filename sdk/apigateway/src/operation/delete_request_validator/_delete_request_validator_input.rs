@@ -67,8 +67,10 @@ impl DeleteRequestValidatorInputBuilder {
     /// Consumes the builder and constructs a [`DeleteRequestValidatorInput`](crate::operation::delete_request_validator::DeleteRequestValidatorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_request_validator::DeleteRequestValidatorInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::delete_request_validator::DeleteRequestValidatorInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::delete_request_validator::DeleteRequestValidatorInput {
             rest_api_id: self.rest_api_id,
             request_validator_id: self.request_validator_id,

@@ -2,7 +2,7 @@
 pub fn ser_live_connector_rtmp_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LiveConnectorRtmpConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Url").string(input.url.as_str());
     }

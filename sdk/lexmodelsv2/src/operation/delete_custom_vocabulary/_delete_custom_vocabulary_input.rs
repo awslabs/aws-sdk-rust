@@ -88,8 +88,10 @@ impl DeleteCustomVocabularyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteCustomVocabularyInput`](crate::operation::delete_custom_vocabulary::DeleteCustomVocabularyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_custom_vocabulary::DeleteCustomVocabularyInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::delete_custom_vocabulary::DeleteCustomVocabularyInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::delete_custom_vocabulary::DeleteCustomVocabularyInput {
             bot_id: self.bot_id,
             bot_version: self.bot_version,

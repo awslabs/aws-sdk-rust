@@ -2,7 +2,7 @@
 pub fn ser_external_events_detail(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ExternalEventsDetail,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("dataLocation").string(input.data_location.as_str());
     }

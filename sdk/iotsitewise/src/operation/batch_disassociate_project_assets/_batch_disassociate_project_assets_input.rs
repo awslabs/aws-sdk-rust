@@ -96,7 +96,7 @@ impl BatchDisassociateProjectAssetsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_disassociate_project_assets::BatchDisassociateProjectAssetsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::batch_disassociate_project_assets::BatchDisassociateProjectAssetsInput {
             project_id: self.project_id,

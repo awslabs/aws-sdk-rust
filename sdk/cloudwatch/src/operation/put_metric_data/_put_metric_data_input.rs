@@ -78,7 +78,7 @@ impl PutMetricDataInputBuilder {
     /// Consumes the builder and constructs a [`PutMetricDataInput`](crate::operation::put_metric_data::PutMetricDataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_metric_data::PutMetricDataInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_metric_data::PutMetricDataInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_metric_data::PutMetricDataInput {
             namespace: self.namespace,
             metric_data: self.metric_data,

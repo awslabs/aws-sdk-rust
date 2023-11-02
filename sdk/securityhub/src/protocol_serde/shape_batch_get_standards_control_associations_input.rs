@@ -2,7 +2,7 @@
 pub fn ser_batch_get_standards_control_associations_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::batch_get_standards_control_associations::BatchGetStandardsControlAssociationsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.standards_control_association_ids {
         let mut array_2 = object.key("StandardsControlAssociationIds").start_array();
         for item_3 in var_1 {

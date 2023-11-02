@@ -68,7 +68,7 @@ impl DeactivateKeySigningKeyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deactivate_key_signing_key::DeactivateKeySigningKeyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::deactivate_key_signing_key::DeactivateKeySigningKeyInput {
             hosted_zone_id: self.hosted_zone_id,

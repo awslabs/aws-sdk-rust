@@ -134,22 +134,22 @@ impl JobDetailsBuilder {
     /// - [`job_id`](crate::types::builders::JobDetailsBuilder::job_id)
     /// - [`status`](crate::types::builders::JobDetailsBuilder::status)
     /// - [`started_on`](crate::types::builders::JobDetailsBuilder::started_on)
-    pub fn build(self) -> ::std::result::Result<crate::types::JobDetails, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::JobDetails, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::JobDetails {
             job_id: self.job_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "job_id",
                     "job_id was not specified but it is required when building JobDetails",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building JobDetails",
                 )
             })?,
             started_on: self.started_on.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "started_on",
                     "started_on was not specified but it is required when building JobDetails",
                 )

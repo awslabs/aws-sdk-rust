@@ -267,18 +267,18 @@ impl RedshiftDataSpecBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`select_sql_query`](crate::types::builders::RedshiftDataSpecBuilder::select_sql_query)
     /// - [`s3_staging_location`](crate::types::builders::RedshiftDataSpecBuilder::s3_staging_location)
-    pub fn build(self) -> ::std::result::Result<crate::types::RedshiftDataSpec, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RedshiftDataSpec, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RedshiftDataSpec {
             database_information: self.database_information,
             select_sql_query: self.select_sql_query.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "select_sql_query",
                     "select_sql_query was not specified but it is required when building RedshiftDataSpec",
                 )
             })?,
             database_credentials: self.database_credentials,
             s3_staging_location: self.s3_staging_location.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "s3_staging_location",
                     "s3_staging_location was not specified but it is required when building RedshiftDataSpec",
                 )

@@ -170,8 +170,10 @@ impl ListPipelineExecutionsInputBuilder {
     /// Consumes the builder and constructs a [`ListPipelineExecutionsInput`](crate::operation::list_pipeline_executions::ListPipelineExecutionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_pipeline_executions::ListPipelineExecutionsInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::list_pipeline_executions::ListPipelineExecutionsInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::list_pipeline_executions::ListPipelineExecutionsInput {
             pipeline_name: self.pipeline_name,
             created_after: self.created_after,

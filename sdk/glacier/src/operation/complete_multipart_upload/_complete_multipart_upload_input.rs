@@ -138,7 +138,7 @@ impl CompleteMultipartUploadInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::complete_multipart_upload::CompleteMultipartUploadInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::complete_multipart_upload::CompleteMultipartUploadInput {
             account_id: self.account_id,

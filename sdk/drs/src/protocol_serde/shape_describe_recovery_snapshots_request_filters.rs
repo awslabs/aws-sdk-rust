@@ -2,7 +2,7 @@
 pub fn ser_describe_recovery_snapshots_request_filters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DescribeRecoverySnapshotsRequestFilters,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.from_date_time {
         object.key("fromDateTime").string(var_1.as_str());
     }

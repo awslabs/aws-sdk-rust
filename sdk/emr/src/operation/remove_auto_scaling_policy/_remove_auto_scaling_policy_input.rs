@@ -68,7 +68,7 @@ impl RemoveAutoScalingPolicyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_auto_scaling_policy::RemoveAutoScalingPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::remove_auto_scaling_policy::RemoveAutoScalingPolicyInput {
             cluster_id: self.cluster_id,

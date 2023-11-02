@@ -69,7 +69,7 @@ impl ListStateMachinesInputBuilder {
     /// Consumes the builder and constructs a [`ListStateMachinesInput`](crate::operation::list_state_machines::ListStateMachinesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_state_machines::ListStateMachinesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_state_machines::ListStateMachinesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_state_machines::ListStateMachinesInput {
             max_results: self.max_results,
             next_token: self.next_token,

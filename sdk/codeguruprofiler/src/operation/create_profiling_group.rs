@@ -186,7 +186,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for CreateProfil
             fn uri_base(
                 _input: &crate::operation::create_profiling_group::CreateProfilingGroupInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 use ::std::fmt::Write as _;
                 ::std::write!(output, "/profilingGroups").expect("formatting should succeed");
                 ::std::result::Result::Ok(())
@@ -194,14 +194,14 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for CreateProfil
             fn uri_query(
                 _input: &crate::operation::create_profiling_group::CreateProfilingGroupInput,
                 mut output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 let inner_1 = &_input.client_token;
                 let inner_1 = inner_1
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("client_token", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("client_token", "cannot be empty or unset"))?;
                 if inner_1.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "client_token",
                         "cannot be empty or unset",
                     ));
@@ -213,7 +213,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for CreateProfil
             fn update_http_builder(
                 input: &crate::operation::create_profiling_group::CreateProfilingGroupInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -223,7 +223,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for CreateProfil
             builder = _header_serialization_settings.set_default_header(builder, ::http::header::CONTENT_TYPE, "application/json");
             builder
         };
-        let body = ::aws_smithy_http::body::SdkBody::from(crate::protocol_serde::shape_create_profiling_group::ser_create_profiling_group_input(
+        let body = ::aws_smithy_types::body::SdkBody::from(crate::protocol_serde::shape_create_profiling_group::ser_create_profiling_group_input(
             &input,
         )?);
         if let Some(content_length) = body.content_length() {

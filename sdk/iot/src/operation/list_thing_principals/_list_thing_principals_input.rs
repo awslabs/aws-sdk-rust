@@ -87,7 +87,7 @@ impl ListThingPrincipalsInputBuilder {
     /// Consumes the builder and constructs a [`ListThingPrincipalsInput`](crate::operation::list_thing_principals::ListThingPrincipalsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_thing_principals::ListThingPrincipalsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_thing_principals::ListThingPrincipalsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_thing_principals::ListThingPrincipalsInput {
             next_token: self.next_token,

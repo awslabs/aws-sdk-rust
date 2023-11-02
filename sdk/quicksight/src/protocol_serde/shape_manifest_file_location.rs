@@ -2,7 +2,7 @@
 pub fn ser_manifest_file_location(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ManifestFileLocation,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Bucket").string(input.bucket.as_str());
     }

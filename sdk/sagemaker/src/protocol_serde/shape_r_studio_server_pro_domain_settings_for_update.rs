@@ -2,7 +2,7 @@
 pub fn ser_r_studio_server_pro_domain_settings_for_update(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RStudioServerProDomainSettingsForUpdate,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.domain_execution_role_arn {
         object.key("DomainExecutionRoleArn").string(var_1.as_str());
     }

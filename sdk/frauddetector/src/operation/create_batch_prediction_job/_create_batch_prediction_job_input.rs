@@ -211,7 +211,7 @@ impl CreateBatchPredictionJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_batch_prediction_job::CreateBatchPredictionJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_batch_prediction_job::CreateBatchPredictionJobInput {
             job_id: self.job_id,

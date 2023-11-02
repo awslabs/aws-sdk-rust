@@ -51,10 +51,10 @@ impl ReportContextBuilder {
     /// Consumes the builder and constructs a [`ReportContext`](crate::types::ReportContext).
     /// This method will fail if any of the following fields are not set:
     /// - [`license_configuration_arns`](crate::types::builders::ReportContextBuilder::license_configuration_arns)
-    pub fn build(self) -> ::std::result::Result<crate::types::ReportContext, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ReportContext, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ReportContext {
             license_configuration_arns: self.license_configuration_arns.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "license_configuration_arns",
                     "license_configuration_arns was not specified but it is required when building ReportContext",
                 )

@@ -2,7 +2,7 @@
 pub fn ser_layout_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LayoutConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.grid_layout {
         #[allow(unused_mut)]
         let mut object_2 = object.key("GridLayout").start_object();

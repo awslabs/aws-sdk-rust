@@ -504,7 +504,7 @@ impl PutIntentInputBuilder {
         &self.output_contexts
     }
     /// Consumes the builder and constructs a [`PutIntentInput`](crate::operation::put_intent::PutIntentInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_intent::PutIntentInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_intent::PutIntentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_intent::PutIntentInput {
             name: self.name,
             description: self.description,

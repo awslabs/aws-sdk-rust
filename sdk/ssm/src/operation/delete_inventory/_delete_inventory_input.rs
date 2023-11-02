@@ -117,7 +117,7 @@ impl DeleteInventoryInputBuilder {
     /// Consumes the builder and constructs a [`DeleteInventoryInput`](crate::operation::delete_inventory::DeleteInventoryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_inventory::DeleteInventoryInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_inventory::DeleteInventoryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_inventory::DeleteInventoryInput {
             type_name: self.type_name,
             schema_delete_option: self.schema_delete_option,

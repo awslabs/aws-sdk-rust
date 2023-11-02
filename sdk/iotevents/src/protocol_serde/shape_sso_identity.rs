@@ -2,7 +2,7 @@
 pub fn ser_sso_identity(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SsoIdentity,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("identityStoreId").string(input.identity_store_id.as_str());
     }

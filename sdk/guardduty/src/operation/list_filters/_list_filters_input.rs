@@ -84,7 +84,7 @@ impl ListFiltersInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListFiltersInput`](crate::operation::list_filters::ListFiltersInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_filters::ListFiltersInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_filters::ListFiltersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_filters::ListFiltersInput {
             detector_id: self.detector_id,
             max_results: self.max_results,

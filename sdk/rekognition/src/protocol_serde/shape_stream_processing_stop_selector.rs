@@ -2,7 +2,7 @@
 pub fn ser_stream_processing_stop_selector(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::StreamProcessingStopSelector,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.max_duration_in_seconds {
         object.key("MaxDurationInSeconds").number(
             #[allow(clippy::useless_conversion)]

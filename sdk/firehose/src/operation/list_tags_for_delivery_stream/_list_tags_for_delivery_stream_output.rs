@@ -93,17 +93,17 @@ impl ListTagsForDeliveryStreamOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_tags_for_delivery_stream::ListTagsForDeliveryStreamOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_tags_for_delivery_stream::ListTagsForDeliveryStreamOutput {
             tags: self.tags.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "tags",
                     "tags was not specified but it is required when building ListTagsForDeliveryStreamOutput",
                 )
             })?,
             has_more_tags: self.has_more_tags.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "has_more_tags",
                     "has_more_tags was not specified but it is required when building ListTagsForDeliveryStreamOutput",
                 )

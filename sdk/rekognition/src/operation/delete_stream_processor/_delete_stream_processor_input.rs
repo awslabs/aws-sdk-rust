@@ -44,7 +44,7 @@ impl DeleteStreamProcessorInputBuilder {
     /// Consumes the builder and constructs a [`DeleteStreamProcessorInput`](crate::operation::delete_stream_processor::DeleteStreamProcessorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_stream_processor::DeleteStreamProcessorInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_stream_processor::DeleteStreamProcessorInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_stream_processor::DeleteStreamProcessorInput { name: self.name })
     }

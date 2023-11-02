@@ -131,7 +131,7 @@ impl CreatePresignedDomainUrlInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_presigned_domain_url::CreatePresignedDomainUrlInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_presigned_domain_url::CreatePresignedDomainUrlInput {
             domain_id: self.domain_id,

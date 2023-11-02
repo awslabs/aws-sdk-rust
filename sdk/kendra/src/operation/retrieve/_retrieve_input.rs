@@ -226,7 +226,7 @@ impl RetrieveInputBuilder {
         &self.user_context
     }
     /// Consumes the builder and constructs a [`RetrieveInput`](crate::operation::retrieve::RetrieveInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::retrieve::RetrieveInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::retrieve::RetrieveInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::retrieve::RetrieveInput {
             index_id: self.index_id,
             query_text: self.query_text,

@@ -132,7 +132,7 @@ impl SignalWorkflowExecutionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::signal_workflow_execution::SignalWorkflowExecutionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::signal_workflow_execution::SignalWorkflowExecutionInput {
             domain: self.domain,

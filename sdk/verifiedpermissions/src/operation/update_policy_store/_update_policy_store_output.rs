@@ -133,28 +133,28 @@ impl UpdatePolicyStoreOutputBuilder {
     /// - [`last_updated_date`](crate::operation::update_policy_store::builders::UpdatePolicyStoreOutputBuilder::last_updated_date)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_policy_store::UpdatePolicyStoreOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_policy_store::UpdatePolicyStoreOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_policy_store::UpdatePolicyStoreOutput {
             policy_store_id: self.policy_store_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "policy_store_id",
                     "policy_store_id was not specified but it is required when building UpdatePolicyStoreOutput",
                 )
             })?,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building UpdatePolicyStoreOutput",
                 )
             })?,
             created_date: self.created_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_date",
                     "created_date was not specified but it is required when building UpdatePolicyStoreOutput",
                 )
             })?,
             last_updated_date: self.last_updated_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_updated_date",
                     "last_updated_date was not specified but it is required when building UpdatePolicyStoreOutput",
                 )

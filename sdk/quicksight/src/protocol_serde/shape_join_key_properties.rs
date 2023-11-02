@@ -2,7 +2,7 @@
 pub fn ser_join_key_properties(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::JoinKeyProperties,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.unique_key {
         object.key("UniqueKey").boolean(*var_1);
     }

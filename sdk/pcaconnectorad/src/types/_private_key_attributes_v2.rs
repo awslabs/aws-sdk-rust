@@ -97,16 +97,16 @@ impl PrivateKeyAttributesV2Builder {
     /// This method will fail if any of the following fields are not set:
     /// - [`minimal_key_length`](crate::types::builders::PrivateKeyAttributesV2Builder::minimal_key_length)
     /// - [`key_spec`](crate::types::builders::PrivateKeyAttributesV2Builder::key_spec)
-    pub fn build(self) -> ::std::result::Result<crate::types::PrivateKeyAttributesV2, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PrivateKeyAttributesV2, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PrivateKeyAttributesV2 {
             minimal_key_length: self.minimal_key_length.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "minimal_key_length",
                     "minimal_key_length was not specified but it is required when building PrivateKeyAttributesV2",
                 )
             })?,
             key_spec: self.key_spec.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "key_spec",
                     "key_spec was not specified but it is required when building PrivateKeyAttributesV2",
                 )

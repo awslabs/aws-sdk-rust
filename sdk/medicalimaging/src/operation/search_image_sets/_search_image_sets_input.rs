@@ -117,7 +117,7 @@ impl SearchImageSetsInputBuilder {
     /// Consumes the builder and constructs a [`SearchImageSetsInput`](crate::operation::search_image_sets::SearchImageSetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::search_image_sets::SearchImageSetsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::search_image_sets::SearchImageSetsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_image_sets::SearchImageSetsInput {
             datastore_id: self.datastore_id,
             search_criteria: self.search_criteria,

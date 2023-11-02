@@ -46,7 +46,7 @@ impl StopReplicationToReplicaInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_replication_to_replica::StopReplicationToReplicaInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::stop_replication_to_replica::StopReplicationToReplicaInput { secret_id: self.secret_id })
     }

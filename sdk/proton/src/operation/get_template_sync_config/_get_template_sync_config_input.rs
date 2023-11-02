@@ -66,7 +66,7 @@ impl GetTemplateSyncConfigInputBuilder {
     /// Consumes the builder and constructs a [`GetTemplateSyncConfigInput`](crate::operation::get_template_sync_config::GetTemplateSyncConfigInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_template_sync_config::GetTemplateSyncConfigInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_template_sync_config::GetTemplateSyncConfigInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_template_sync_config::GetTemplateSyncConfigInput {
             template_name: self.template_name,

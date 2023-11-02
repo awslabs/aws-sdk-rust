@@ -79,16 +79,16 @@ impl ProvisionedThroughputBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`read_capacity_units`](crate::types::builders::ProvisionedThroughputBuilder::read_capacity_units)
     /// - [`write_capacity_units`](crate::types::builders::ProvisionedThroughputBuilder::write_capacity_units)
-    pub fn build(self) -> ::std::result::Result<crate::types::ProvisionedThroughput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ProvisionedThroughput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ProvisionedThroughput {
             read_capacity_units: self.read_capacity_units.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "read_capacity_units",
                     "read_capacity_units was not specified but it is required when building ProvisionedThroughput",
                 )
             })?,
             write_capacity_units: self.write_capacity_units.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "write_capacity_units",
                     "write_capacity_units was not specified but it is required when building ProvisionedThroughput",
                 )

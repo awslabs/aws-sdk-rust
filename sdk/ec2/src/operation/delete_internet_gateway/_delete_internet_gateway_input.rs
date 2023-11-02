@@ -65,7 +65,7 @@ impl DeleteInternetGatewayInputBuilder {
     /// Consumes the builder and constructs a [`DeleteInternetGatewayInput`](crate::operation::delete_internet_gateway::DeleteInternetGatewayInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_internet_gateway::DeleteInternetGatewayInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_internet_gateway::DeleteInternetGatewayInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_internet_gateway::DeleteInternetGatewayInput {
             dry_run: self.dry_run,

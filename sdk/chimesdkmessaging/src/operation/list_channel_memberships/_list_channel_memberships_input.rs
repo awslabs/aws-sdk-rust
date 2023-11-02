@@ -172,8 +172,10 @@ impl ListChannelMembershipsInputBuilder {
     /// Consumes the builder and constructs a [`ListChannelMembershipsInput`](crate::operation::list_channel_memberships::ListChannelMembershipsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_channel_memberships::ListChannelMembershipsInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::list_channel_memberships::ListChannelMembershipsInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::list_channel_memberships::ListChannelMembershipsInput {
             channel_arn: self.channel_arn,
             r#type: self.r#type,

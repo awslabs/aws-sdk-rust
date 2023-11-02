@@ -67,10 +67,10 @@ impl StorageClassAnalysisDataExportBuilder {
     /// Consumes the builder and constructs a [`StorageClassAnalysisDataExport`](crate::types::StorageClassAnalysisDataExport).
     /// This method will fail if any of the following fields are not set:
     /// - [`output_schema_version`](crate::types::builders::StorageClassAnalysisDataExportBuilder::output_schema_version)
-    pub fn build(self) -> ::std::result::Result<crate::types::StorageClassAnalysisDataExport, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::StorageClassAnalysisDataExport, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::StorageClassAnalysisDataExport {
             output_schema_version: self.output_schema_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "output_schema_version",
                     "output_schema_version was not specified but it is required when building StorageClassAnalysisDataExport",
                 )

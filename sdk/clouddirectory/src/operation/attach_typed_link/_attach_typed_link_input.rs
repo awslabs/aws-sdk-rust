@@ -139,7 +139,7 @@ impl AttachTypedLinkInputBuilder {
     /// Consumes the builder and constructs a [`AttachTypedLinkInput`](crate::operation::attach_typed_link::AttachTypedLinkInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::attach_typed_link::AttachTypedLinkInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::attach_typed_link::AttachTypedLinkInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::attach_typed_link::AttachTypedLinkInput {
             directory_arn: self.directory_arn,
             source_object_reference: self.source_object_reference,

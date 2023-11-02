@@ -96,16 +96,16 @@ impl ConditionalSpecificationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`active`](crate::types::builders::ConditionalSpecificationBuilder::active)
     /// - [`conditional_branches`](crate::types::builders::ConditionalSpecificationBuilder::conditional_branches)
-    pub fn build(self) -> ::std::result::Result<crate::types::ConditionalSpecification, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ConditionalSpecification, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ConditionalSpecification {
             active: self.active.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "active",
                     "active was not specified but it is required when building ConditionalSpecification",
                 )
             })?,
             conditional_branches: self.conditional_branches.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "conditional_branches",
                     "conditional_branches was not specified but it is required when building ConditionalSpecification",
                 )

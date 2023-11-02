@@ -94,7 +94,7 @@ impl CreateScheduleGroupInputBuilder {
     /// Consumes the builder and constructs a [`CreateScheduleGroupInput`](crate::operation::create_schedule_group::CreateScheduleGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_schedule_group::CreateScheduleGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_schedule_group::CreateScheduleGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_schedule_group::CreateScheduleGroupInput {
             name: self.name,

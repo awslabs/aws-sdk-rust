@@ -125,7 +125,7 @@ impl CreateAnomalySubscriptionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_anomaly_subscription::CreateAnomalySubscriptionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_anomaly_subscription::CreateAnomalySubscriptionInput {
             anomaly_subscription: self.anomaly_subscription,

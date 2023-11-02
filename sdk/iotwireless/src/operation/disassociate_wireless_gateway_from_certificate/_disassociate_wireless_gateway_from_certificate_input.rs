@@ -47,7 +47,7 @@ impl DisassociateWirelessGatewayFromCertificateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_wireless_gateway_from_certificate::DisassociateWirelessGatewayFromCertificateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::disassociate_wireless_gateway_from_certificate::DisassociateWirelessGatewayFromCertificateInput { id: self.id },

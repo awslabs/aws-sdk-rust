@@ -42,7 +42,7 @@ impl DeleteImageInputBuilder {
         &self.image_build_version_arn
     }
     /// Consumes the builder and constructs a [`DeleteImageInput`](crate::operation::delete_image::DeleteImageInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_image::DeleteImageInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_image::DeleteImageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_image::DeleteImageInput {
             image_build_version_arn: self.image_build_version_arn,
         })

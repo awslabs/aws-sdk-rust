@@ -157,7 +157,7 @@ impl CreatePoolInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreatePoolInput`](crate::operation::create_pool::CreatePoolInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_pool::CreatePoolInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_pool::CreatePoolInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_pool::CreatePoolInput {
             origination_identity: self.origination_identity,
             iso_country_code: self.iso_country_code,

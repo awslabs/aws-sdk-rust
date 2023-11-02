@@ -45,10 +45,10 @@ impl BusinessReportContentRangeBuilder {
     /// Consumes the builder and constructs a [`BusinessReportContentRange`](crate::types::BusinessReportContentRange).
     /// This method will fail if any of the following fields are not set:
     /// - [`interval`](crate::types::builders::BusinessReportContentRangeBuilder::interval)
-    pub fn build(self) -> ::std::result::Result<crate::types::BusinessReportContentRange, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::BusinessReportContentRange, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::BusinessReportContentRange {
             interval: self.interval.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "interval",
                     "interval was not specified but it is required when building BusinessReportContentRange",
                 )

@@ -228,7 +228,8 @@ impl PutObjectRetentionInputBuilder {
     /// Consumes the builder and constructs a [`PutObjectRetentionInput`](crate::operation::put_object_retention::PutObjectRetentionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_object_retention::PutObjectRetentionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_object_retention::PutObjectRetentionInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::put_object_retention::PutObjectRetentionInput {
             bucket: self.bucket,
             key: self.key,

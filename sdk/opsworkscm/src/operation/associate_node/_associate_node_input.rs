@@ -140,7 +140,7 @@ impl AssociateNodeInputBuilder {
     /// Consumes the builder and constructs a [`AssociateNodeInput`](crate::operation::associate_node::AssociateNodeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::associate_node::AssociateNodeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::associate_node::AssociateNodeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::associate_node::AssociateNodeInput {
             server_name: self.server_name,
             node_name: self.node_name,

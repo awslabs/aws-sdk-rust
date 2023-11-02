@@ -333,7 +333,7 @@ impl CreateOriginEndpointInputBuilder {
     /// Consumes the builder and constructs a [`CreateOriginEndpointInput`](crate::operation::create_origin_endpoint::CreateOriginEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_origin_endpoint::CreateOriginEndpointInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_origin_endpoint::CreateOriginEndpointInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_origin_endpoint::CreateOriginEndpointInput {
             authorization: self.authorization,

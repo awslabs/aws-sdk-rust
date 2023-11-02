@@ -157,30 +157,30 @@ impl GridLayoutElementBuilder {
     /// - [`element_type`](crate::types::builders::GridLayoutElementBuilder::element_type)
     /// - [`column_span`](crate::types::builders::GridLayoutElementBuilder::column_span)
     /// - [`row_span`](crate::types::builders::GridLayoutElementBuilder::row_span)
-    pub fn build(self) -> ::std::result::Result<crate::types::GridLayoutElement, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::GridLayoutElement, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::GridLayoutElement {
             element_id: self.element_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "element_id",
                     "element_id was not specified but it is required when building GridLayoutElement",
                 )
             })?,
             element_type: self.element_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "element_type",
                     "element_type was not specified but it is required when building GridLayoutElement",
                 )
             })?,
             column_index: self.column_index,
             column_span: self.column_span.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "column_span",
                     "column_span was not specified but it is required when building GridLayoutElement",
                 )
             })?,
             row_index: self.row_index,
             row_span: self.row_span.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "row_span",
                     "row_span was not specified but it is required when building GridLayoutElement",
                 )

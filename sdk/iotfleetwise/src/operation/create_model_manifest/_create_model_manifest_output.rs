@@ -87,17 +87,17 @@ impl CreateModelManifestOutputBuilder {
     /// - [`arn`](crate::operation::create_model_manifest::builders::CreateModelManifestOutputBuilder::arn)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_model_manifest::CreateModelManifestOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_model_manifest::CreateModelManifestOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_model_manifest::CreateModelManifestOutput {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building CreateModelManifestOutput",
                 )
             })?,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building CreateModelManifestOutput",
                 )

@@ -2,7 +2,7 @@
 pub fn ser_start_source_network_recovery_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_source_network_recovery::StartSourceNetworkRecoveryInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.deploy_as_new {
         object.key("deployAsNew").boolean(*var_1);
     }

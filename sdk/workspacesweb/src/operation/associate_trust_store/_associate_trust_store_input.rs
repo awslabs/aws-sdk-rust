@@ -66,7 +66,7 @@ impl AssociateTrustStoreInputBuilder {
     /// Consumes the builder and constructs a [`AssociateTrustStoreInput`](crate::operation::associate_trust_store::AssociateTrustStoreInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::associate_trust_store::AssociateTrustStoreInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::associate_trust_store::AssociateTrustStoreInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::associate_trust_store::AssociateTrustStoreInput {
             portal_arn: self.portal_arn,

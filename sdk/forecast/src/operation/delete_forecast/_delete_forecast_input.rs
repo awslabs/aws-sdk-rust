@@ -44,7 +44,7 @@ impl DeleteForecastInputBuilder {
     /// Consumes the builder and constructs a [`DeleteForecastInput`](crate::operation::delete_forecast::DeleteForecastInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_forecast::DeleteForecastInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_forecast::DeleteForecastInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_forecast::DeleteForecastInput {
             forecast_arn: self.forecast_arn,
         })

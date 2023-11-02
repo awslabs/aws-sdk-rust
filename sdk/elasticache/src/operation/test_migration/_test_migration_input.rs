@@ -73,7 +73,7 @@ impl TestMigrationInputBuilder {
     /// Consumes the builder and constructs a [`TestMigrationInput`](crate::operation::test_migration::TestMigrationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::test_migration::TestMigrationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::test_migration::TestMigrationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::test_migration::TestMigrationInput {
             replication_group_id: self.replication_group_id,
             customer_node_endpoint_list: self.customer_node_endpoint_list,

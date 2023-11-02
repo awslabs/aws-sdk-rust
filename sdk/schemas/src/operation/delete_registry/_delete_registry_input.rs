@@ -44,7 +44,7 @@ impl DeleteRegistryInputBuilder {
     /// Consumes the builder and constructs a [`DeleteRegistryInput`](crate::operation::delete_registry::DeleteRegistryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_registry::DeleteRegistryInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_registry::DeleteRegistryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_registry::DeleteRegistryInput {
             registry_name: self.registry_name,
         })

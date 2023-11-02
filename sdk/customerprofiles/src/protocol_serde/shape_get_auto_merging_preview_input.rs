@@ -2,7 +2,7 @@
 pub fn ser_get_auto_merging_preview_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_auto_merging_preview::GetAutoMergingPreviewInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.conflict_resolution {
         #[allow(unused_mut)]
         let mut object_2 = object.key("ConflictResolution").start_object();

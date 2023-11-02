@@ -206,14 +206,14 @@ impl DistributionConfigurationBuilder {
     /// Consumes the builder and constructs a [`DistributionConfiguration`](crate::types::DistributionConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`timeout_minutes`](crate::types::builders::DistributionConfigurationBuilder::timeout_minutes)
-    pub fn build(self) -> ::std::result::Result<crate::types::DistributionConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DistributionConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DistributionConfiguration {
             arn: self.arn,
             name: self.name,
             description: self.description,
             distributions: self.distributions,
             timeout_minutes: self.timeout_minutes.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "timeout_minutes",
                     "timeout_minutes was not specified but it is required when building DistributionConfiguration",
                 )

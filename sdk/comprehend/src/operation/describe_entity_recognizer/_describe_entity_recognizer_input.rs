@@ -46,7 +46,7 @@ impl DescribeEntityRecognizerInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_entity_recognizer::DescribeEntityRecognizerInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_entity_recognizer::DescribeEntityRecognizerInput {
             entity_recognizer_arn: self.entity_recognizer_arn,

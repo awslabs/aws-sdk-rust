@@ -115,7 +115,7 @@ impl CreateExperimentInputBuilder {
     /// Consumes the builder and constructs a [`CreateExperimentInput`](crate::operation::create_experiment::CreateExperimentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_experiment::CreateExperimentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_experiment::CreateExperimentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_experiment::CreateExperimentInput {
             experiment_name: self.experiment_name,
             display_name: self.display_name,

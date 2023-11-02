@@ -169,7 +169,7 @@ impl UpdatePortfolioShareInputBuilder {
     /// Consumes the builder and constructs a [`UpdatePortfolioShareInput`](crate::operation::update_portfolio_share::UpdatePortfolioShareInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_portfolio_share::UpdatePortfolioShareInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_portfolio_share::UpdatePortfolioShareInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_portfolio_share::UpdatePortfolioShareInput {
             accept_language: self.accept_language,

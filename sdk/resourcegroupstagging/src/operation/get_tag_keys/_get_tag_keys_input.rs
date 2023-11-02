@@ -41,7 +41,7 @@ impl GetTagKeysInputBuilder {
         &self.pagination_token
     }
     /// Consumes the builder and constructs a [`GetTagKeysInput`](crate::operation::get_tag_keys::GetTagKeysInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_tag_keys::GetTagKeysInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_tag_keys::GetTagKeysInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_tag_keys::GetTagKeysInput {
             pagination_token: self.pagination_token,
         })

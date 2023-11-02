@@ -607,7 +607,7 @@ impl CreateAssociationInputBuilder {
     /// Consumes the builder and constructs a [`CreateAssociationInput`](crate::operation::create_association::CreateAssociationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_association::CreateAssociationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_association::CreateAssociationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_association::CreateAssociationInput {
             name: self.name,
             document_version: self.document_version,

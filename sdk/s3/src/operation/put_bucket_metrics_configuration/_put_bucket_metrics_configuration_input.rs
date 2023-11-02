@@ -111,7 +111,7 @@ impl PutBucketMetricsConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_bucket_metrics_configuration::PutBucketMetricsConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_bucket_metrics_configuration::PutBucketMetricsConfigurationInput {
             bucket: self.bucket,

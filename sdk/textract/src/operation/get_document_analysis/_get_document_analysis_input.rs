@@ -86,7 +86,7 @@ impl GetDocumentAnalysisInputBuilder {
     /// Consumes the builder and constructs a [`GetDocumentAnalysisInput`](crate::operation::get_document_analysis::GetDocumentAnalysisInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_document_analysis::GetDocumentAnalysisInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_document_analysis::GetDocumentAnalysisInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_document_analysis::GetDocumentAnalysisInput {
             job_id: self.job_id,

@@ -121,17 +121,17 @@ impl DataFieldSeriesItemBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`field_id`](crate::types::builders::DataFieldSeriesItemBuilder::field_id)
     /// - [`axis_binding`](crate::types::builders::DataFieldSeriesItemBuilder::axis_binding)
-    pub fn build(self) -> ::std::result::Result<crate::types::DataFieldSeriesItem, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DataFieldSeriesItem, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DataFieldSeriesItem {
             field_id: self.field_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "field_id",
                     "field_id was not specified but it is required when building DataFieldSeriesItem",
                 )
             })?,
             field_value: self.field_value,
             axis_binding: self.axis_binding.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "axis_binding",
                     "axis_binding was not specified but it is required when building DataFieldSeriesItem",
                 )

@@ -66,10 +66,10 @@ impl ConversationLevelResultDetailBuilder {
     /// Consumes the builder and constructs a [`ConversationLevelResultDetail`](crate::types::ConversationLevelResultDetail).
     /// This method will fail if any of the following fields are not set:
     /// - [`end_to_end_result`](crate::types::builders::ConversationLevelResultDetailBuilder::end_to_end_result)
-    pub fn build(self) -> ::std::result::Result<crate::types::ConversationLevelResultDetail, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ConversationLevelResultDetail, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ConversationLevelResultDetail {
             end_to_end_result: self.end_to_end_result.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "end_to_end_result",
                     "end_to_end_result was not specified but it is required when building ConversationLevelResultDetail",
                 )

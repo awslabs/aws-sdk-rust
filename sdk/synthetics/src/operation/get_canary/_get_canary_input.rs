@@ -42,7 +42,7 @@ impl GetCanaryInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`GetCanaryInput`](crate::operation::get_canary::GetCanaryInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_canary::GetCanaryInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_canary::GetCanaryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_canary::GetCanaryInput { name: self.name })
     }
 }

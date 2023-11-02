@@ -63,7 +63,9 @@ impl DescribeMeshInputBuilder {
         &self.mesh_owner
     }
     /// Consumes the builder and constructs a [`DescribeMeshInput`](crate::operation::describe_mesh::DescribeMeshInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_mesh::DescribeMeshInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::describe_mesh::DescribeMeshInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_mesh::DescribeMeshInput {
             mesh_name: self.mesh_name,
             mesh_owner: self.mesh_owner,

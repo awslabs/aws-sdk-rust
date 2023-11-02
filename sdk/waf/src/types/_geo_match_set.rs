@@ -105,17 +105,17 @@ impl GeoMatchSetBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`geo_match_set_id`](crate::types::builders::GeoMatchSetBuilder::geo_match_set_id)
     /// - [`geo_match_constraints`](crate::types::builders::GeoMatchSetBuilder::geo_match_constraints)
-    pub fn build(self) -> ::std::result::Result<crate::types::GeoMatchSet, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::GeoMatchSet, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::GeoMatchSet {
             geo_match_set_id: self.geo_match_set_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "geo_match_set_id",
                     "geo_match_set_id was not specified but it is required when building GeoMatchSet",
                 )
             })?,
             name: self.name,
             geo_match_constraints: self.geo_match_constraints.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "geo_match_constraints",
                     "geo_match_constraints was not specified but it is required when building GeoMatchSet",
                 )

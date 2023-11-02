@@ -108,7 +108,7 @@ impl ListSegmentReferencesInputBuilder {
     /// Consumes the builder and constructs a [`ListSegmentReferencesInput`](crate::operation::list_segment_references::ListSegmentReferencesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_segment_references::ListSegmentReferencesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_segment_references::ListSegmentReferencesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_segment_references::ListSegmentReferencesInput {
             segment: self.segment,

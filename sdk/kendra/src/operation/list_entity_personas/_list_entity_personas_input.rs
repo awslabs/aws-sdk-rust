@@ -108,7 +108,8 @@ impl ListEntityPersonasInputBuilder {
     /// Consumes the builder and constructs a [`ListEntityPersonasInput`](crate::operation::list_entity_personas::ListEntityPersonasInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_entity_personas::ListEntityPersonasInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_entity_personas::ListEntityPersonasInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::list_entity_personas::ListEntityPersonasInput {
             id: self.id,
             index_id: self.index_id,

@@ -128,7 +128,7 @@ impl UpgradeProfileVersionInputBuilder {
     /// Consumes the builder and constructs a [`UpgradeProfileVersionInput`](crate::operation::upgrade_profile_version::UpgradeProfileVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::upgrade_profile_version::UpgradeProfileVersionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::upgrade_profile_version::UpgradeProfileVersionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::upgrade_profile_version::UpgradeProfileVersionInput {
             workload_id: self.workload_id,

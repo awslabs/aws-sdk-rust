@@ -42,7 +42,7 @@ impl DeleteHostInputBuilder {
         &self.host_arn
     }
     /// Consumes the builder and constructs a [`DeleteHostInput`](crate::operation::delete_host::DeleteHostInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_host::DeleteHostInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_host::DeleteHostInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_host::DeleteHostInput { host_arn: self.host_arn })
     }
 }

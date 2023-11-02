@@ -95,11 +95,11 @@ impl PrefetchConsumptionBuilder {
     /// Consumes the builder and constructs a [`PrefetchConsumption`](crate::types::PrefetchConsumption).
     /// This method will fail if any of the following fields are not set:
     /// - [`end_time`](crate::types::builders::PrefetchConsumptionBuilder::end_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::PrefetchConsumption, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PrefetchConsumption, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PrefetchConsumption {
             avail_matching_criteria: self.avail_matching_criteria,
             end_time: self.end_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "end_time",
                     "end_time was not specified but it is required when building PrefetchConsumption",
                 )

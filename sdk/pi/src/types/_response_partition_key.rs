@@ -50,10 +50,10 @@ impl ResponsePartitionKeyBuilder {
     /// Consumes the builder and constructs a [`ResponsePartitionKey`](crate::types::ResponsePartitionKey).
     /// This method will fail if any of the following fields are not set:
     /// - [`dimensions`](crate::types::builders::ResponsePartitionKeyBuilder::dimensions)
-    pub fn build(self) -> ::std::result::Result<crate::types::ResponsePartitionKey, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ResponsePartitionKey, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ResponsePartitionKey {
             dimensions: self.dimensions.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "dimensions",
                     "dimensions was not specified but it is required when building ResponsePartitionKey",
                 )

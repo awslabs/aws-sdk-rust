@@ -301,11 +301,11 @@ impl GetMediaAnalysisJobOutputBuilder {
     /// - [`creation_timestamp`](crate::operation::get_media_analysis_job::builders::GetMediaAnalysisJobOutputBuilder::creation_timestamp)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_media_analysis_job::GetMediaAnalysisJobOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_media_analysis_job::GetMediaAnalysisJobOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_media_analysis_job::GetMediaAnalysisJobOutput {
             job_id: self.job_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "job_id",
                     "job_id was not specified but it is required when building GetMediaAnalysisJobOutput",
                 )
@@ -313,14 +313,14 @@ impl GetMediaAnalysisJobOutputBuilder {
             job_name: self.job_name,
             operations_config: self.operations_config,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building GetMediaAnalysisJobOutput",
                 )
             })?,
             failure_details: self.failure_details,
             creation_timestamp: self.creation_timestamp.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_timestamp",
                     "creation_timestamp was not specified but it is required when building GetMediaAnalysisJobOutput",
                 )

@@ -586,10 +586,10 @@ impl DistributionConfigBuilder {
     /// - [`caller_reference`](crate::types::builders::DistributionConfigBuilder::caller_reference)
     /// - [`comment`](crate::types::builders::DistributionConfigBuilder::comment)
     /// - [`enabled`](crate::types::builders::DistributionConfigBuilder::enabled)
-    pub fn build(self) -> ::std::result::Result<crate::types::DistributionConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DistributionConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DistributionConfig {
             caller_reference: self.caller_reference.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "caller_reference",
                     "caller_reference was not specified but it is required when building DistributionConfig",
                 )
@@ -602,7 +602,7 @@ impl DistributionConfigBuilder {
             cache_behaviors: self.cache_behaviors,
             custom_error_responses: self.custom_error_responses,
             comment: self.comment.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "comment",
                     "comment was not specified but it is required when building DistributionConfig",
                 )
@@ -610,7 +610,7 @@ impl DistributionConfigBuilder {
             logging: self.logging,
             price_class: self.price_class,
             enabled: self.enabled.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "enabled",
                     "enabled was not specified but it is required when building DistributionConfig",
                 )

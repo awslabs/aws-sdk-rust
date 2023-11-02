@@ -46,10 +46,12 @@ impl DynatraceConnectorProfileCredentialsBuilder {
     /// Consumes the builder and constructs a [`DynatraceConnectorProfileCredentials`](crate::types::DynatraceConnectorProfileCredentials).
     /// This method will fail if any of the following fields are not set:
     /// - [`api_token`](crate::types::builders::DynatraceConnectorProfileCredentialsBuilder::api_token)
-    pub fn build(self) -> ::std::result::Result<crate::types::DynatraceConnectorProfileCredentials, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::DynatraceConnectorProfileCredentials, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DynatraceConnectorProfileCredentials {
             api_token: self.api_token.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "api_token",
                     "api_token was not specified but it is required when building DynatraceConnectorProfileCredentials",
                 )

@@ -89,10 +89,10 @@ impl GetMlTransformsOutputBuilder {
     /// - [`transforms`](crate::operation::get_ml_transforms::builders::GetMlTransformsOutputBuilder::transforms)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_ml_transforms::GetMlTransformsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_ml_transforms::GetMlTransformsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_ml_transforms::GetMlTransformsOutput {
             transforms: self.transforms.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "transforms",
                     "transforms was not specified but it is required when building GetMlTransformsOutput",
                 )

@@ -138,26 +138,29 @@ impl RumEventBuilder {
     /// - [`timestamp`](crate::types::builders::RumEventBuilder::timestamp)
     /// - [`r#type`](crate::types::builders::RumEventBuilder::r#type)
     /// - [`details`](crate::types::builders::RumEventBuilder::details)
-    pub fn build(self) -> ::std::result::Result<crate::types::RumEvent, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RumEvent, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RumEvent {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field("id", "id was not specified but it is required when building RumEvent")
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building RumEvent",
+                )
             })?,
             timestamp: self.timestamp.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "timestamp",
                     "timestamp was not specified but it is required when building RumEvent",
                 )
             })?,
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building RumEvent",
                 )
             })?,
             metadata: self.metadata,
             details: self.details.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "details",
                     "details was not specified but it is required when building RumEvent",
                 )

@@ -109,7 +109,7 @@ impl UpdateKxDatabaseInputBuilder {
     /// Consumes the builder and constructs a [`UpdateKxDatabaseInput`](crate::operation::update_kx_database::UpdateKxDatabaseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_kx_database::UpdateKxDatabaseInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_kx_database::UpdateKxDatabaseInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_kx_database::UpdateKxDatabaseInput {
             environment_id: self.environment_id,
             database_name: self.database_name,

@@ -3,7 +3,7 @@
 pub fn ser_cross_zone_load_balancing(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::CrossZoneLoadBalancing,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Enabled");
     {

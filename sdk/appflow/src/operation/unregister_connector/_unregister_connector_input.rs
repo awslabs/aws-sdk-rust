@@ -65,7 +65,7 @@ impl UnregisterConnectorInputBuilder {
     /// Consumes the builder and constructs a [`UnregisterConnectorInput`](crate::operation::unregister_connector::UnregisterConnectorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::unregister_connector::UnregisterConnectorInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::unregister_connector::UnregisterConnectorInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::unregister_connector::UnregisterConnectorInput {
             connector_label: self.connector_label,

@@ -66,7 +66,8 @@ impl UpdateEmailChannelInputBuilder {
     /// Consumes the builder and constructs a [`UpdateEmailChannelInput`](crate::operation::update_email_channel::UpdateEmailChannelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_email_channel::UpdateEmailChannelInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_email_channel::UpdateEmailChannelInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::update_email_channel::UpdateEmailChannelInput {
             application_id: self.application_id,
             email_channel_request: self.email_channel_request,

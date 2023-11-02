@@ -85,16 +85,16 @@ impl CreateFleetOutputBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::operation::create_fleet::builders::CreateFleetOutputBuilder::id)
     /// - [`arn`](crate::operation::create_fleet::builders::CreateFleetOutputBuilder::arn)
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_fleet::CreateFleetOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_fleet::CreateFleetOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_fleet::CreateFleetOutput {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building CreateFleetOutput",
                 )
             })?,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building CreateFleetOutput",
                 )

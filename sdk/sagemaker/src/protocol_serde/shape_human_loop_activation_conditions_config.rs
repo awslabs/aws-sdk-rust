@@ -2,7 +2,7 @@
 pub fn ser_human_loop_activation_conditions_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::HumanLoopActivationConditionsConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.human_loop_activation_conditions {
         object.key("HumanLoopActivationConditions").string(var_1.as_str());
     }

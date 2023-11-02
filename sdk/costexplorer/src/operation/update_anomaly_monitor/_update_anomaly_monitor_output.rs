@@ -63,11 +63,11 @@ impl UpdateAnomalyMonitorOutputBuilder {
     /// - [`monitor_arn`](crate::operation::update_anomaly_monitor::builders::UpdateAnomalyMonitorOutputBuilder::monitor_arn)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_anomaly_monitor::UpdateAnomalyMonitorOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_anomaly_monitor::UpdateAnomalyMonitorOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_anomaly_monitor::UpdateAnomalyMonitorOutput {
             monitor_arn: self.monitor_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "monitor_arn",
                     "monitor_arn was not specified but it is required when building UpdateAnomalyMonitorOutput",
                 )

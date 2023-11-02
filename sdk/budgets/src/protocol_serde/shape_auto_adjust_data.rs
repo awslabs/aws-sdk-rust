@@ -2,7 +2,7 @@
 pub fn ser_auto_adjust_data(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AutoAdjustData,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("AutoAdjustType").string(input.auto_adjust_type.as_str());
     }

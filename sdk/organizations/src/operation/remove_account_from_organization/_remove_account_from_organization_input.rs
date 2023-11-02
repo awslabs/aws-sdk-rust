@@ -51,7 +51,7 @@ impl RemoveAccountFromOrganizationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_account_from_organization::RemoveAccountFromOrganizationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::remove_account_from_organization::RemoveAccountFromOrganizationInput {
             account_id: self.account_id,

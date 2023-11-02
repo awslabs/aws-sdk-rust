@@ -131,7 +131,7 @@ impl RevokeDbSecurityGroupIngressInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::revoke_db_security_group_ingress::RevokeDbSecurityGroupIngressInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::revoke_db_security_group_ingress::RevokeDbSecurityGroupIngressInput {
             db_security_group_name: self.db_security_group_name,

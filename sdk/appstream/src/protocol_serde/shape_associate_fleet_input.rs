@@ -2,7 +2,7 @@
 pub fn ser_associate_fleet_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::associate_fleet::AssociateFleetInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.fleet_name {
         object.key("FleetName").string(var_1.as_str());
     }

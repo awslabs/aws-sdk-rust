@@ -68,16 +68,16 @@ impl PermissionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`service`](crate::types::builders::PermissionBuilder::service)
     /// - [`operation`](crate::types::builders::PermissionBuilder::operation)
-    pub fn build(self) -> ::std::result::Result<crate::types::Permission, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Permission, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Permission {
             service: self.service.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "service",
                     "service was not specified but it is required when building Permission",
                 )
             })?,
             operation: self.operation.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "operation",
                     "operation was not specified but it is required when building Permission",
                 )

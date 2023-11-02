@@ -47,7 +47,7 @@ impl RotateChannelCredentialsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::rotate_channel_credentials::RotateChannelCredentialsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::rotate_channel_credentials::RotateChannelCredentialsInput { id: self.id })
     }

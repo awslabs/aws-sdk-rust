@@ -240,34 +240,34 @@ impl AssistantDataBuilder {
     /// - [`name`](crate::types::builders::AssistantDataBuilder::name)
     /// - [`r#type`](crate::types::builders::AssistantDataBuilder::r#type)
     /// - [`status`](crate::types::builders::AssistantDataBuilder::status)
-    pub fn build(self) -> ::std::result::Result<crate::types::AssistantData, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AssistantData, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AssistantData {
             assistant_id: self.assistant_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "assistant_id",
                     "assistant_id was not specified but it is required when building AssistantData",
                 )
             })?,
             assistant_arn: self.assistant_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "assistant_arn",
                     "assistant_arn was not specified but it is required when building AssistantData",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building AssistantData",
                 )
             })?,
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building AssistantData",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building AssistantData",
                 )

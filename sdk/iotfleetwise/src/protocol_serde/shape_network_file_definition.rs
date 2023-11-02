@@ -2,7 +2,7 @@
 pub fn ser_network_file_definition(
     object_5: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::NetworkFileDefinition,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::NetworkFileDefinition::CanDbc(inner) => {
             #[allow(unused_mut)]
@@ -11,7 +11,7 @@ pub fn ser_network_file_definition(
             object_1.finish();
         }
         crate::types::NetworkFileDefinition::Unknown => {
-            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+            return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "NetworkFileDefinition",
             ))
         }

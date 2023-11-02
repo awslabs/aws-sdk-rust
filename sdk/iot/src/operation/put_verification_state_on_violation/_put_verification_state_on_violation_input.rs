@@ -89,7 +89,7 @@ impl PutVerificationStateOnViolationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_verification_state_on_violation::PutVerificationStateOnViolationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::put_verification_state_on_violation::PutVerificationStateOnViolationInput {

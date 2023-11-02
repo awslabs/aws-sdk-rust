@@ -89,11 +89,11 @@ impl ListPolicyGenerationsOutputBuilder {
     /// - [`policy_generations`](crate::operation::list_policy_generations::builders::ListPolicyGenerationsOutputBuilder::policy_generations)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_policy_generations::ListPolicyGenerationsOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_policy_generations::ListPolicyGenerationsOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_policy_generations::ListPolicyGenerationsOutput {
             policy_generations: self.policy_generations.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "policy_generations",
                     "policy_generations was not specified but it is required when building ListPolicyGenerationsOutput",
                 )

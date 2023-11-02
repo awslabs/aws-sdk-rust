@@ -42,7 +42,9 @@ impl DeleteWorkerInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`DeleteWorkerInput`](crate::operation::delete_worker::DeleteWorkerInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_worker::DeleteWorkerInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_worker::DeleteWorkerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_worker::DeleteWorkerInput { id: self.id })
     }
 }

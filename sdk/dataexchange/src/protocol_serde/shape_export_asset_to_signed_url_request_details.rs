@@ -2,7 +2,7 @@
 pub fn ser_export_asset_to_signed_url_request_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ExportAssetToSignedUrlRequestDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("AssetId").string(input.asset_id.as_str());
     }

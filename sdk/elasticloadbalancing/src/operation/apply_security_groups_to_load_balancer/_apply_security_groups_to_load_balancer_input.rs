@@ -76,7 +76,7 @@ impl ApplySecurityGroupsToLoadBalancerInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::apply_security_groups_to_load_balancer::ApplySecurityGroupsToLoadBalancerInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::apply_security_groups_to_load_balancer::ApplySecurityGroupsToLoadBalancerInput {

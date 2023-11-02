@@ -68,7 +68,7 @@ impl DisassociateApplicationFleetInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_application_fleet::DisassociateApplicationFleetInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disassociate_application_fleet::DisassociateApplicationFleetInput {
             fleet_name: self.fleet_name,

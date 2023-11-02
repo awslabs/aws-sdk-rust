@@ -124,7 +124,7 @@ impl ListTrafficPolicyInstancesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_traffic_policy_instances::ListTrafficPolicyInstancesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_traffic_policy_instances::ListTrafficPolicyInstancesInput {
             hosted_zone_id_marker: self.hosted_zone_id_marker,

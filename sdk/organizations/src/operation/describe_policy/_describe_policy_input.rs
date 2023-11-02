@@ -49,7 +49,7 @@ impl DescribePolicyInputBuilder {
     /// Consumes the builder and constructs a [`DescribePolicyInput`](crate::operation::describe_policy::DescribePolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_policy::DescribePolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_policy::DescribePolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_policy::DescribePolicyInput { policy_id: self.policy_id })
     }
 }

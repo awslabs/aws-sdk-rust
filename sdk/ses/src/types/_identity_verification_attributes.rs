@@ -66,10 +66,10 @@ impl IdentityVerificationAttributesBuilder {
     /// Consumes the builder and constructs a [`IdentityVerificationAttributes`](crate::types::IdentityVerificationAttributes).
     /// This method will fail if any of the following fields are not set:
     /// - [`verification_status`](crate::types::builders::IdentityVerificationAttributesBuilder::verification_status)
-    pub fn build(self) -> ::std::result::Result<crate::types::IdentityVerificationAttributes, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::IdentityVerificationAttributes, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::IdentityVerificationAttributes {
             verification_status: self.verification_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "verification_status",
                     "verification_status was not specified but it is required when building IdentityVerificationAttributes",
                 )

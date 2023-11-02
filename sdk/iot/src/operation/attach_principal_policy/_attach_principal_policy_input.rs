@@ -67,7 +67,7 @@ impl AttachPrincipalPolicyInputBuilder {
     /// Consumes the builder and constructs a [`AttachPrincipalPolicyInput`](crate::operation::attach_principal_policy::AttachPrincipalPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::attach_principal_policy::AttachPrincipalPolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::attach_principal_policy::AttachPrincipalPolicyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::attach_principal_policy::AttachPrincipalPolicyInput {
             policy_name: self.policy_name,

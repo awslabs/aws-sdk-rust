@@ -66,7 +66,8 @@ impl UpdateCustomMetricInputBuilder {
     /// Consumes the builder and constructs a [`UpdateCustomMetricInput`](crate::operation::update_custom_metric::UpdateCustomMetricInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_custom_metric::UpdateCustomMetricInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_custom_metric::UpdateCustomMetricInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::update_custom_metric::UpdateCustomMetricInput {
             metric_name: self.metric_name,
             display_name: self.display_name,

@@ -66,7 +66,7 @@ impl UpdateGatewayInstanceInputBuilder {
     /// Consumes the builder and constructs a [`UpdateGatewayInstanceInput`](crate::operation::update_gateway_instance::UpdateGatewayInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_gateway_instance::UpdateGatewayInstanceInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_gateway_instance::UpdateGatewayInstanceInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_gateway_instance::UpdateGatewayInstanceInput {
             bridge_placement: self.bridge_placement,

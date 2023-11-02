@@ -130,7 +130,7 @@ impl GetMergeCommitInputBuilder {
     /// Consumes the builder and constructs a [`GetMergeCommitInput`](crate::operation::get_merge_commit::GetMergeCommitInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_merge_commit::GetMergeCommitInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_merge_commit::GetMergeCommitInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_merge_commit::GetMergeCommitInput {
             repository_name: self.repository_name,
             source_commit_specifier: self.source_commit_specifier,

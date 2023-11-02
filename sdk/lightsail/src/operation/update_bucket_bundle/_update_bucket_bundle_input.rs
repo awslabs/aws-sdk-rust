@@ -71,7 +71,8 @@ impl UpdateBucketBundleInputBuilder {
     /// Consumes the builder and constructs a [`UpdateBucketBundleInput`](crate::operation::update_bucket_bundle::UpdateBucketBundleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_bucket_bundle::UpdateBucketBundleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_bucket_bundle::UpdateBucketBundleInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::update_bucket_bundle::UpdateBucketBundleInput {
             bucket_name: self.bucket_name,
             bundle_id: self.bundle_id,

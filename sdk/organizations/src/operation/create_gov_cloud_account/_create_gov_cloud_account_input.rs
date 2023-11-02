@@ -273,7 +273,7 @@ impl CreateGovCloudAccountInputBuilder {
     /// Consumes the builder and constructs a [`CreateGovCloudAccountInput`](crate::operation::create_gov_cloud_account::CreateGovCloudAccountInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_gov_cloud_account::CreateGovCloudAccountInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_gov_cloud_account::CreateGovCloudAccountInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_gov_cloud_account::CreateGovCloudAccountInput {
             email: self.email,

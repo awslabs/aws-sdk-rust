@@ -53,10 +53,10 @@ impl SsekmsBuilder {
     /// Consumes the builder and constructs a [`Ssekms`](crate::types::Ssekms).
     /// This method will fail if any of the following fields are not set:
     /// - [`key_id`](crate::types::builders::SsekmsBuilder::key_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::Ssekms, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Ssekms, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Ssekms {
             key_id: self.key_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "key_id",
                     "key_id was not specified but it is required when building Ssekms",
                 )

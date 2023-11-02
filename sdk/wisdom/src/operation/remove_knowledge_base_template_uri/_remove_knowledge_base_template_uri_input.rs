@@ -46,7 +46,7 @@ impl RemoveKnowledgeBaseTemplateUriInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_knowledge_base_template_uri::RemoveKnowledgeBaseTemplateUriInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::remove_knowledge_base_template_uri::RemoveKnowledgeBaseTemplateUriInput {

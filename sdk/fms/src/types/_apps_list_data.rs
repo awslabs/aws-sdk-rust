@@ -193,11 +193,11 @@ impl AppsListDataBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`list_name`](crate::types::builders::AppsListDataBuilder::list_name)
     /// - [`apps_list`](crate::types::builders::AppsListDataBuilder::apps_list)
-    pub fn build(self) -> ::std::result::Result<crate::types::AppsListData, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AppsListData, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AppsListData {
             list_id: self.list_id,
             list_name: self.list_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "list_name",
                     "list_name was not specified but it is required when building AppsListData",
                 )
@@ -206,7 +206,7 @@ impl AppsListDataBuilder {
             create_time: self.create_time,
             last_update_time: self.last_update_time,
             apps_list: self.apps_list.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "apps_list",
                     "apps_list was not specified but it is required when building AppsListData",
                 )

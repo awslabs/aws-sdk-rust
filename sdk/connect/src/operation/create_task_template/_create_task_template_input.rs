@@ -221,7 +221,8 @@ impl CreateTaskTemplateInputBuilder {
     /// Consumes the builder and constructs a [`CreateTaskTemplateInput`](crate::operation::create_task_template::CreateTaskTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_task_template::CreateTaskTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_task_template::CreateTaskTemplateInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_task_template::CreateTaskTemplateInput {
             instance_id: self.instance_id,
             name: self.name,

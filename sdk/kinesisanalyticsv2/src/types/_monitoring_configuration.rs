@@ -87,10 +87,10 @@ impl MonitoringConfigurationBuilder {
     /// Consumes the builder and constructs a [`MonitoringConfiguration`](crate::types::MonitoringConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`configuration_type`](crate::types::builders::MonitoringConfigurationBuilder::configuration_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::MonitoringConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::MonitoringConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MonitoringConfiguration {
             configuration_type: self.configuration_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "configuration_type",
                     "configuration_type was not specified but it is required when building MonitoringConfiguration",
                 )

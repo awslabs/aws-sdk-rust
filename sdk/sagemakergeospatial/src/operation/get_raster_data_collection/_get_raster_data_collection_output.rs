@@ -245,47 +245,47 @@ impl GetRasterDataCollectionOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_raster_data_collection::GetRasterDataCollectionOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_raster_data_collection::GetRasterDataCollectionOutput {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building GetRasterDataCollectionOutput",
                 )
             })?,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building GetRasterDataCollectionOutput",
                 )
             })?,
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building GetRasterDataCollectionOutput",
                 )
             })?,
             description: self.description.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "description",
                     "description was not specified but it is required when building GetRasterDataCollectionOutput",
                 )
             })?,
             description_page_url: self.description_page_url.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "description_page_url",
                     "description_page_url was not specified but it is required when building GetRasterDataCollectionOutput",
                 )
             })?,
             supported_filters: self.supported_filters.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "supported_filters",
                     "supported_filters was not specified but it is required when building GetRasterDataCollectionOutput",
                 )
             })?,
             image_source_bands: self.image_source_bands.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "image_source_bands",
                     "image_source_bands was not specified but it is required when building GetRasterDataCollectionOutput",
                 )

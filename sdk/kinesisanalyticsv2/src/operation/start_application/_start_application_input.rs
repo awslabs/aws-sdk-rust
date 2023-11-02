@@ -65,7 +65,7 @@ impl StartApplicationInputBuilder {
     /// Consumes the builder and constructs a [`StartApplicationInput`](crate::operation::start_application::StartApplicationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_application::StartApplicationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_application::StartApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_application::StartApplicationInput {
             application_name: self.application_name,
             run_configuration: self.run_configuration,

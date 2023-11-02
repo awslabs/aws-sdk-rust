@@ -92,11 +92,11 @@ impl ListDeadLetterSourceQueuesOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_dead_letter_source_queues::ListDeadLetterSourceQueuesOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_dead_letter_source_queues::ListDeadLetterSourceQueuesOutput {
             queue_urls: self.queue_urls.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "queue_urls",
                     "queue_urls was not specified but it is required when building ListDeadLetterSourceQueuesOutput",
                 )

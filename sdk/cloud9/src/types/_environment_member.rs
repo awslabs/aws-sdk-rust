@@ -163,28 +163,28 @@ impl EnvironmentMemberBuilder {
     /// - [`user_id`](crate::types::builders::EnvironmentMemberBuilder::user_id)
     /// - [`user_arn`](crate::types::builders::EnvironmentMemberBuilder::user_arn)
     /// - [`environment_id`](crate::types::builders::EnvironmentMemberBuilder::environment_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::EnvironmentMember, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::EnvironmentMember, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EnvironmentMember {
             permissions: self.permissions.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "permissions",
                     "permissions was not specified but it is required when building EnvironmentMember",
                 )
             })?,
             user_id: self.user_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "user_id",
                     "user_id was not specified but it is required when building EnvironmentMember",
                 )
             })?,
             user_arn: self.user_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "user_arn",
                     "user_arn was not specified but it is required when building EnvironmentMember",
                 )
             })?,
             environment_id: self.environment_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "environment_id",
                     "environment_id was not specified but it is required when building EnvironmentMember",
                 )

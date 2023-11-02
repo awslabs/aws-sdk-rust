@@ -47,7 +47,7 @@ impl DescribeChapCredentialsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_chap_credentials::DescribeChapCredentialsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_chap_credentials::DescribeChapCredentialsInput { target_arn: self.target_arn })
     }

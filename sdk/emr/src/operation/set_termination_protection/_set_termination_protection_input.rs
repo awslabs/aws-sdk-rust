@@ -76,7 +76,7 @@ impl SetTerminationProtectionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_termination_protection::SetTerminationProtectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::set_termination_protection::SetTerminationProtectionInput {
             job_flow_ids: self.job_flow_ids,

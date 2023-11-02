@@ -92,22 +92,22 @@ impl StateBuilder {
     /// - [`status`](crate::types::builders::StateBuilder::status)
     /// - [`error_code`](crate::types::builders::StateBuilder::error_code)
     /// - [`error_message`](crate::types::builders::StateBuilder::error_message)
-    pub fn build(self) -> ::std::result::Result<crate::types::State, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::State, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::State {
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building State",
                 )
             })?,
             error_code: self.error_code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "error_code",
                     "error_code was not specified but it is required when building State",
                 )
             })?,
             error_message: self.error_message.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "error_message",
                     "error_message was not specified but it is required when building State",
                 )

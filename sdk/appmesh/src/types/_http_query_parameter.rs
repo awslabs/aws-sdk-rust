@@ -67,10 +67,10 @@ impl HttpQueryParameterBuilder {
     /// Consumes the builder and constructs a [`HttpQueryParameter`](crate::types::HttpQueryParameter).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::HttpQueryParameterBuilder::name)
-    pub fn build(self) -> ::std::result::Result<crate::types::HttpQueryParameter, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::HttpQueryParameter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::HttpQueryParameter {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building HttpQueryParameter",
                 )

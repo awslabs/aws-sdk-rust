@@ -66,7 +66,7 @@ impl GetSiteAddressInputBuilder {
     /// Consumes the builder and constructs a [`GetSiteAddressInput`](crate::operation::get_site_address::GetSiteAddressInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_site_address::GetSiteAddressInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_site_address::GetSiteAddressInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_site_address::GetSiteAddressInput {
             site_id: self.site_id,
             address_type: self.address_type,

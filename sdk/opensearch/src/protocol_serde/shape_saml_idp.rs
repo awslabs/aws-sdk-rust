@@ -2,7 +2,7 @@
 pub fn ser_saml_idp(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SamlIdp,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("MetadataContent").string(input.metadata_content.as_str());
     }

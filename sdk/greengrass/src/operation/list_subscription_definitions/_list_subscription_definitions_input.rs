@@ -66,7 +66,7 @@ impl ListSubscriptionDefinitionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_subscription_definitions::ListSubscriptionDefinitionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_subscription_definitions::ListSubscriptionDefinitionsInput {
             max_results: self.max_results,

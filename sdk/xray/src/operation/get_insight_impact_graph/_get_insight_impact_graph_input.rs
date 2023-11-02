@@ -109,7 +109,7 @@ impl GetInsightImpactGraphInputBuilder {
     /// Consumes the builder and constructs a [`GetInsightImpactGraphInput`](crate::operation::get_insight_impact_graph::GetInsightImpactGraphInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_insight_impact_graph::GetInsightImpactGraphInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_insight_impact_graph::GetInsightImpactGraphInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_insight_impact_graph::GetInsightImpactGraphInput {
             insight_id: self.insight_id,

@@ -157,7 +157,7 @@ impl UpdateStorageSystemInputBuilder {
     /// Consumes the builder and constructs a [`UpdateStorageSystemInput`](crate::operation::update_storage_system::UpdateStorageSystemInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_storage_system::UpdateStorageSystemInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_storage_system::UpdateStorageSystemInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_storage_system::UpdateStorageSystemInput {
             storage_system_arn: self.storage_system_arn,

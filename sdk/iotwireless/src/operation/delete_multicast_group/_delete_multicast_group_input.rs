@@ -44,7 +44,7 @@ impl DeleteMulticastGroupInputBuilder {
     /// Consumes the builder and constructs a [`DeleteMulticastGroupInput`](crate::operation::delete_multicast_group::DeleteMulticastGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_multicast_group::DeleteMulticastGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_multicast_group::DeleteMulticastGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_multicast_group::DeleteMulticastGroupInput { id: self.id })
     }

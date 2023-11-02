@@ -2,7 +2,7 @@
 pub fn ser_disk_map(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DiskMap,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.original_disk_path {
         object.key("originalDiskPath").string(var_1.as_str());
     }

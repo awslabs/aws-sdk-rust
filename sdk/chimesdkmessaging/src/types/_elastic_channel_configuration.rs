@@ -91,22 +91,22 @@ impl ElasticChannelConfigurationBuilder {
     /// - [`maximum_sub_channels`](crate::types::builders::ElasticChannelConfigurationBuilder::maximum_sub_channels)
     /// - [`target_memberships_per_sub_channel`](crate::types::builders::ElasticChannelConfigurationBuilder::target_memberships_per_sub_channel)
     /// - [`minimum_membership_percentage`](crate::types::builders::ElasticChannelConfigurationBuilder::minimum_membership_percentage)
-    pub fn build(self) -> ::std::result::Result<crate::types::ElasticChannelConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ElasticChannelConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ElasticChannelConfiguration {
             maximum_sub_channels: self.maximum_sub_channels.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "maximum_sub_channels",
                     "maximum_sub_channels was not specified but it is required when building ElasticChannelConfiguration",
                 )
             })?,
             target_memberships_per_sub_channel: self.target_memberships_per_sub_channel.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "target_memberships_per_sub_channel",
                     "target_memberships_per_sub_channel was not specified but it is required when building ElasticChannelConfiguration",
                 )
             })?,
             minimum_membership_percentage: self.minimum_membership_percentage.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "minimum_membership_percentage",
                     "minimum_membership_percentage was not specified but it is required when building ElasticChannelConfiguration",
                 )

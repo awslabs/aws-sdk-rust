@@ -148,10 +148,10 @@ impl RefreshFrequencyBuilder {
     /// Consumes the builder and constructs a [`RefreshFrequency`](crate::types::RefreshFrequency).
     /// This method will fail if any of the following fields are not set:
     /// - [`interval`](crate::types::builders::RefreshFrequencyBuilder::interval)
-    pub fn build(self) -> ::std::result::Result<crate::types::RefreshFrequency, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RefreshFrequency, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RefreshFrequency {
             interval: self.interval.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "interval",
                     "interval was not specified but it is required when building RefreshFrequency",
                 )

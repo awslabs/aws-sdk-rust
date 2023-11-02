@@ -45,7 +45,7 @@ impl ListVolumeInitiatorsInputBuilder {
     /// Consumes the builder and constructs a [`ListVolumeInitiatorsInput`](crate::operation::list_volume_initiators::ListVolumeInitiatorsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_volume_initiators::ListVolumeInitiatorsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_volume_initiators::ListVolumeInitiatorsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_volume_initiators::ListVolumeInitiatorsInput { volume_arn: self.volume_arn })
     }

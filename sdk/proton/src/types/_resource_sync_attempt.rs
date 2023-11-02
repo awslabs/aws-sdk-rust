@@ -165,30 +165,30 @@ impl ResourceSyncAttemptBuilder {
     /// - [`started_at`](crate::types::builders::ResourceSyncAttemptBuilder::started_at)
     /// - [`status`](crate::types::builders::ResourceSyncAttemptBuilder::status)
     /// - [`events`](crate::types::builders::ResourceSyncAttemptBuilder::events)
-    pub fn build(self) -> ::std::result::Result<crate::types::ResourceSyncAttempt, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ResourceSyncAttempt, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ResourceSyncAttempt {
             initial_revision: self.initial_revision,
             target_revision: self.target_revision,
             target: self.target.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "target",
                     "target was not specified but it is required when building ResourceSyncAttempt",
                 )
             })?,
             started_at: self.started_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "started_at",
                     "started_at was not specified but it is required when building ResourceSyncAttempt",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building ResourceSyncAttempt",
                 )
             })?,
             events: self.events.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "events",
                     "events was not specified but it is required when building ResourceSyncAttempt",
                 )

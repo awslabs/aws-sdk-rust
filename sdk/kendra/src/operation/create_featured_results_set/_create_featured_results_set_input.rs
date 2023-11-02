@@ -218,7 +218,7 @@ impl CreateFeaturedResultsSetInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_featured_results_set::CreateFeaturedResultsSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_featured_results_set::CreateFeaturedResultsSetInput {
             index_id: self.index_id,

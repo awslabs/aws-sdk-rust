@@ -2,7 +2,7 @@
 pub fn ser_describe_budget_actions_for_budget_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_budget_actions_for_budget::DescribeBudgetActionsForBudgetInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.account_id {
         object.key("AccountId").string(var_1.as_str());
     }

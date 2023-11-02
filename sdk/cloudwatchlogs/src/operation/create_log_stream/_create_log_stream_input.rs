@@ -66,7 +66,7 @@ impl CreateLogStreamInputBuilder {
     /// Consumes the builder and constructs a [`CreateLogStreamInput`](crate::operation::create_log_stream::CreateLogStreamInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_log_stream::CreateLogStreamInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_log_stream::CreateLogStreamInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_log_stream::CreateLogStreamInput {
             log_group_name: self.log_group_name,
             log_stream_name: self.log_stream_name,

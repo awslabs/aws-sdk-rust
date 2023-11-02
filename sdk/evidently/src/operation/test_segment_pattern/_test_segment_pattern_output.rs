@@ -62,11 +62,11 @@ impl TestSegmentPatternOutputBuilder {
     /// - [`r#match`](crate::operation::test_segment_pattern::builders::TestSegmentPatternOutputBuilder::r#match)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::test_segment_pattern::TestSegmentPatternOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::test_segment_pattern::TestSegmentPatternOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::test_segment_pattern::TestSegmentPatternOutput {
             r#match: self.r#match.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#match",
                     "r#match was not specified but it is required when building TestSegmentPatternOutput",
                 )

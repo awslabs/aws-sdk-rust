@@ -65,7 +65,9 @@ impl GetChangesetInputBuilder {
         &self.changeset_id
     }
     /// Consumes the builder and constructs a [`GetChangesetInput`](crate::operation::get_changeset::GetChangesetInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_changeset::GetChangesetInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_changeset::GetChangesetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_changeset::GetChangesetInput {
             dataset_id: self.dataset_id,
             changeset_id: self.changeset_id,

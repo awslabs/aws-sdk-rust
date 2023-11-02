@@ -285,7 +285,7 @@ impl SynthesizeSpeechInputBuilder {
     /// Consumes the builder and constructs a [`SynthesizeSpeechInput`](crate::operation::synthesize_speech::SynthesizeSpeechInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::synthesize_speech::SynthesizeSpeechInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::synthesize_speech::SynthesizeSpeechInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::synthesize_speech::SynthesizeSpeechInput {
             engine: self.engine,
             language_code: self.language_code,

@@ -46,10 +46,10 @@ impl LambdaDataSourceConfigBuilder {
     /// Consumes the builder and constructs a [`LambdaDataSourceConfig`](crate::types::LambdaDataSourceConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`lambda_function_arn`](crate::types::builders::LambdaDataSourceConfigBuilder::lambda_function_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::LambdaDataSourceConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::LambdaDataSourceConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::LambdaDataSourceConfig {
             lambda_function_arn: self.lambda_function_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "lambda_function_arn",
                     "lambda_function_arn was not specified but it is required when building LambdaDataSourceConfig",
                 )

@@ -132,7 +132,7 @@ impl CreateTransitGatewayPrefixListReferenceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_transit_gateway_prefix_list_reference::CreateTransitGatewayPrefixListReferenceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::create_transit_gateway_prefix_list_reference::CreateTransitGatewayPrefixListReferenceInput {

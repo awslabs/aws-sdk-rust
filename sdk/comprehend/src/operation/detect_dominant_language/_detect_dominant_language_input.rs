@@ -51,8 +51,10 @@ impl DetectDominantLanguageInputBuilder {
     /// Consumes the builder and constructs a [`DetectDominantLanguageInput`](crate::operation::detect_dominant_language::DetectDominantLanguageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::detect_dominant_language::DetectDominantLanguageInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::detect_dominant_language::DetectDominantLanguageInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::detect_dominant_language::DetectDominantLanguageInput { text: self.text })
     }
 }

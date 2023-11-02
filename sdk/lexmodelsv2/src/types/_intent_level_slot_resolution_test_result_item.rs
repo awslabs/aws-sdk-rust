@@ -99,17 +99,17 @@ impl IntentLevelSlotResolutionTestResultItemBuilder {
     /// - [`slot_resolution_results`](crate::types::builders::IntentLevelSlotResolutionTestResultItemBuilder::slot_resolution_results)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::IntentLevelSlotResolutionTestResultItem, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::IntentLevelSlotResolutionTestResultItem, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::IntentLevelSlotResolutionTestResultItem {
             intent_name: self.intent_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "intent_name",
                     "intent_name was not specified but it is required when building IntentLevelSlotResolutionTestResultItem",
                 )
             })?,
             multi_turn_conversation: self.multi_turn_conversation.unwrap_or_default(),
             slot_resolution_results: self.slot_resolution_results.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "slot_resolution_results",
                     "slot_resolution_results was not specified but it is required when building IntentLevelSlotResolutionTestResultItem",
                 )

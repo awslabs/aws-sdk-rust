@@ -44,7 +44,7 @@ impl GetSolFunctionPackageInputBuilder {
     /// Consumes the builder and constructs a [`GetSolFunctionPackageInput`](crate::operation::get_sol_function_package::GetSolFunctionPackageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_sol_function_package::GetSolFunctionPackageInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_sol_function_package::GetSolFunctionPackageInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_sol_function_package::GetSolFunctionPackageInput { vnf_pkg_id: self.vnf_pkg_id })
     }

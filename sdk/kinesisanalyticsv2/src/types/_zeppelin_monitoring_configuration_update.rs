@@ -47,10 +47,10 @@ impl ZeppelinMonitoringConfigurationUpdateBuilder {
     /// - [`log_level_update`](crate::types::builders::ZeppelinMonitoringConfigurationUpdateBuilder::log_level_update)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::ZeppelinMonitoringConfigurationUpdate, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::ZeppelinMonitoringConfigurationUpdate, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ZeppelinMonitoringConfigurationUpdate {
             log_level_update: self.log_level_update.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "log_level_update",
                     "log_level_update was not specified but it is required when building ZeppelinMonitoringConfigurationUpdate",
                 )

@@ -66,7 +66,7 @@ impl AssociateLicenseInputBuilder {
     /// Consumes the builder and constructs a [`AssociateLicenseInput`](crate::operation::associate_license::AssociateLicenseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::associate_license::AssociateLicenseInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::associate_license::AssociateLicenseInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::associate_license::AssociateLicenseInput {
             workspace_id: self.workspace_id,
             license_type: self.license_type,

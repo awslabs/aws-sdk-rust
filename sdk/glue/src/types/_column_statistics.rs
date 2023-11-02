@@ -115,22 +115,22 @@ impl ColumnStatisticsBuilder {
     /// - [`column_name`](crate::types::builders::ColumnStatisticsBuilder::column_name)
     /// - [`column_type`](crate::types::builders::ColumnStatisticsBuilder::column_type)
     /// - [`analyzed_time`](crate::types::builders::ColumnStatisticsBuilder::analyzed_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::ColumnStatistics, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ColumnStatistics, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ColumnStatistics {
             column_name: self.column_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "column_name",
                     "column_name was not specified but it is required when building ColumnStatistics",
                 )
             })?,
             column_type: self.column_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "column_type",
                     "column_type was not specified but it is required when building ColumnStatistics",
                 )
             })?,
             analyzed_time: self.analyzed_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "analyzed_time",
                     "analyzed_time was not specified but it is required when building ColumnStatistics",
                 )

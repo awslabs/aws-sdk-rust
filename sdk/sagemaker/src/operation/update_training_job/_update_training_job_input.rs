@@ -118,7 +118,7 @@ impl UpdateTrainingJobInputBuilder {
     /// Consumes the builder and constructs a [`UpdateTrainingJobInput`](crate::operation::update_training_job::UpdateTrainingJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_training_job::UpdateTrainingJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_training_job::UpdateTrainingJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_training_job::UpdateTrainingJobInput {
             training_job_name: self.training_job_name,
             profiler_config: self.profiler_config,

@@ -179,15 +179,15 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for StartAssetBu
             fn uri_base(
                 _input: &crate::operation::start_asset_bundle_import_job::StartAssetBundleImportJobInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 use ::std::fmt::Write as _;
                 let input_1 = &_input.aws_account_id;
                 let input_1 = input_1
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("aws_account_id", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("aws_account_id", "cannot be empty or unset"))?;
                 let aws_account_id = ::aws_smithy_http::label::fmt_string(input_1, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if aws_account_id.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "aws_account_id",
                         "cannot be empty or unset",
                     ));
@@ -204,7 +204,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for StartAssetBu
             fn update_http_builder(
                 input: &crate::operation::start_asset_bundle_import_job::StartAssetBundleImportJobInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 ::std::result::Result::Ok(builder.method("POST").uri(uri))
@@ -213,7 +213,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for StartAssetBu
             builder = _header_serialization_settings.set_default_header(builder, ::http::header::CONTENT_TYPE, "application/json");
             builder
         };
-        let body = ::aws_smithy_http::body::SdkBody::from(
+        let body = ::aws_smithy_types::body::SdkBody::from(
             crate::protocol_serde::shape_start_asset_bundle_import_job::ser_start_asset_bundle_import_job_input(&input)?,
         );
         if let Some(content_length) = body.content_length() {

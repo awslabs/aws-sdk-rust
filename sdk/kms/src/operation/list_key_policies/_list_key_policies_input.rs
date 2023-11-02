@@ -131,7 +131,7 @@ impl ListKeyPoliciesInputBuilder {
     /// Consumes the builder and constructs a [`ListKeyPoliciesInput`](crate::operation::list_key_policies::ListKeyPoliciesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_key_policies::ListKeyPoliciesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_key_policies::ListKeyPoliciesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_key_policies::ListKeyPoliciesInput {
             key_id: self.key_id,
             limit: self.limit,

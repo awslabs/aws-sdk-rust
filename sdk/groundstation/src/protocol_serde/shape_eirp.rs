@@ -2,7 +2,7 @@
 pub fn ser_eirp(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Eirp,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("value").number(
             #[allow(clippy::useless_conversion)]

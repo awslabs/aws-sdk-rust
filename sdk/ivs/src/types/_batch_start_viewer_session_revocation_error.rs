@@ -114,16 +114,16 @@ impl BatchStartViewerSessionRevocationErrorBuilder {
     /// - [`viewer_id`](crate::types::builders::BatchStartViewerSessionRevocationErrorBuilder::viewer_id)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::BatchStartViewerSessionRevocationError, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::BatchStartViewerSessionRevocationError, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::BatchStartViewerSessionRevocationError {
             channel_arn: self.channel_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "channel_arn",
                     "channel_arn was not specified but it is required when building BatchStartViewerSessionRevocationError",
                 )
             })?,
             viewer_id: self.viewer_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "viewer_id",
                     "viewer_id was not specified but it is required when building BatchStartViewerSessionRevocationError",
                 )

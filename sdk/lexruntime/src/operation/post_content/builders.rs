@@ -354,19 +354,19 @@ impl PostContentFluentBuilder {
     }
     /// <p> User input in PCM or Opus audio format or text format as described in the <code>Content-Type</code> HTTP header. </p>
     /// <p>You can stream audio data to Amazon Lex or you can create a local buffer that captures all of the audio data before sending. In general, you get better performance if you stream audio data rather than buffering the data locally.</p>
-    pub fn input_stream(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
+    pub fn input_stream(mut self, input: ::aws_smithy_types::byte_stream::ByteStream) -> Self {
         self.inner = self.inner.input_stream(input);
         self
     }
     /// <p> User input in PCM or Opus audio format or text format as described in the <code>Content-Type</code> HTTP header. </p>
     /// <p>You can stream audio data to Amazon Lex or you can create a local buffer that captures all of the audio data before sending. In general, you get better performance if you stream audio data rather than buffering the data locally.</p>
-    pub fn set_input_stream(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
+    pub fn set_input_stream(mut self, input: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>) -> Self {
         self.inner = self.inner.set_input_stream(input);
         self
     }
     /// <p> User input in PCM or Opus audio format or text format as described in the <code>Content-Type</code> HTTP header. </p>
     /// <p>You can stream audio data to Amazon Lex or you can create a local buffer that captures all of the audio data before sending. In general, you get better performance if you stream audio data rather than buffering the data locally.</p>
-    pub fn get_input_stream(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+    pub fn get_input_stream(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
         self.inner.get_input_stream()
     }
     /// <p>A list of contexts active for the request. A context can be activated when a previous intent is fulfilled, or by including the context in the request,</p>

@@ -88,7 +88,7 @@ impl AssociateChannelFlowInputBuilder {
     /// Consumes the builder and constructs a [`AssociateChannelFlowInput`](crate::operation::associate_channel_flow::AssociateChannelFlowInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::associate_channel_flow::AssociateChannelFlowInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::associate_channel_flow::AssociateChannelFlowInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::associate_channel_flow::AssociateChannelFlowInput {
             channel_arn: self.channel_arn,

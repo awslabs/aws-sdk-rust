@@ -144,7 +144,7 @@ impl UpgradeLensReviewInputBuilder {
     /// Consumes the builder and constructs a [`UpgradeLensReviewInput`](crate::operation::upgrade_lens_review::UpgradeLensReviewInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::upgrade_lens_review::UpgradeLensReviewInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::upgrade_lens_review::UpgradeLensReviewInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::upgrade_lens_review::UpgradeLensReviewInput {
             workload_id: self.workload_id,
             lens_alias: self.lens_alias,

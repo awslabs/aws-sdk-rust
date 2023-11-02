@@ -45,10 +45,10 @@ impl AnswerMachineDetectionConfigBuilder {
     /// Consumes the builder and constructs a [`AnswerMachineDetectionConfig`](crate::types::AnswerMachineDetectionConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`enable_answer_machine_detection`](crate::types::builders::AnswerMachineDetectionConfigBuilder::enable_answer_machine_detection)
-    pub fn build(self) -> ::std::result::Result<crate::types::AnswerMachineDetectionConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AnswerMachineDetectionConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AnswerMachineDetectionConfig {
             enable_answer_machine_detection: self.enable_answer_machine_detection.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "enable_answer_machine_detection",
                     "enable_answer_machine_detection was not specified but it is required when building AnswerMachineDetectionConfig",
                 )

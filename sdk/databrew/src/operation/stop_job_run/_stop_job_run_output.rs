@@ -61,10 +61,10 @@ impl StopJobRunOutputBuilder {
     /// Consumes the builder and constructs a [`StopJobRunOutput`](crate::operation::stop_job_run::StopJobRunOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`run_id`](crate::operation::stop_job_run::builders::StopJobRunOutputBuilder::run_id)
-    pub fn build(self) -> ::std::result::Result<crate::operation::stop_job_run::StopJobRunOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_job_run::StopJobRunOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_job_run::StopJobRunOutput {
             run_id: self.run_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "run_id",
                     "run_id was not specified but it is required when building StopJobRunOutput",
                 )

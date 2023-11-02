@@ -44,7 +44,7 @@ impl DescribeTrialInputBuilder {
     /// Consumes the builder and constructs a [`DescribeTrialInput`](crate::operation::describe_trial::DescribeTrialInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_trial::DescribeTrialInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_trial::DescribeTrialInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_trial::DescribeTrialInput { trial_name: self.trial_name })
     }
 }

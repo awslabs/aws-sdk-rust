@@ -113,7 +113,7 @@ impl UpdateHubInputBuilder {
         &self.hub_search_keywords
     }
     /// Consumes the builder and constructs a [`UpdateHubInput`](crate::operation::update_hub::UpdateHubInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_hub::UpdateHubInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_hub::UpdateHubInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_hub::UpdateHubInput {
             hub_name: self.hub_name,
             hub_description: self.hub_description,

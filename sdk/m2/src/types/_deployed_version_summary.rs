@@ -89,16 +89,16 @@ impl DeployedVersionSummaryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`application_version`](crate::types::builders::DeployedVersionSummaryBuilder::application_version)
     /// - [`status`](crate::types::builders::DeployedVersionSummaryBuilder::status)
-    pub fn build(self) -> ::std::result::Result<crate::types::DeployedVersionSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DeployedVersionSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DeployedVersionSummary {
             application_version: self.application_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "application_version",
                     "application_version was not specified but it is required when building DeployedVersionSummary",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building DeployedVersionSummary",
                 )

@@ -87,16 +87,16 @@ impl CreateRelatedItemOutputBuilder {
     /// - [`related_item_arn`](crate::operation::create_related_item::builders::CreateRelatedItemOutputBuilder::related_item_arn)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_related_item::CreateRelatedItemOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_related_item::CreateRelatedItemOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_related_item::CreateRelatedItemOutput {
             related_item_id: self.related_item_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "related_item_id",
                     "related_item_id was not specified but it is required when building CreateRelatedItemOutput",
                 )
             })?,
             related_item_arn: self.related_item_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "related_item_arn",
                     "related_item_arn was not specified but it is required when building CreateRelatedItemOutput",
                 )

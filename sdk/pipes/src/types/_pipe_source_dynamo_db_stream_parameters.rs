@@ -192,7 +192,7 @@ impl PipeSourceDynamoDbStreamParametersBuilder {
     /// Consumes the builder and constructs a [`PipeSourceDynamoDbStreamParameters`](crate::types::PipeSourceDynamoDbStreamParameters).
     /// This method will fail if any of the following fields are not set:
     /// - [`starting_position`](crate::types::builders::PipeSourceDynamoDbStreamParametersBuilder::starting_position)
-    pub fn build(self) -> ::std::result::Result<crate::types::PipeSourceDynamoDbStreamParameters, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PipeSourceDynamoDbStreamParameters, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PipeSourceDynamoDbStreamParameters {
             batch_size: self.batch_size,
             dead_letter_config: self.dead_letter_config,
@@ -202,7 +202,7 @@ impl PipeSourceDynamoDbStreamParametersBuilder {
             maximum_retry_attempts: self.maximum_retry_attempts,
             parallelization_factor: self.parallelization_factor,
             starting_position: self.starting_position.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "starting_position",
                     "starting_position was not specified but it is required when building PipeSourceDynamoDbStreamParameters",
                 )

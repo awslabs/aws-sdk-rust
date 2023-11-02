@@ -163,7 +163,7 @@ impl TranslateTextInputBuilder {
     /// Consumes the builder and constructs a [`TranslateTextInput`](crate::operation::translate_text::TranslateTextInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::translate_text::TranslateTextInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::translate_text::TranslateTextInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::translate_text::TranslateTextInput {
             text: self.text,
             terminology_names: self.terminology_names,

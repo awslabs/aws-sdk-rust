@@ -240,29 +240,29 @@ impl ListIntegrationItemBuilder {
     /// - [`uri`](crate::types::builders::ListIntegrationItemBuilder::uri)
     /// - [`created_at`](crate::types::builders::ListIntegrationItemBuilder::created_at)
     /// - [`last_updated_at`](crate::types::builders::ListIntegrationItemBuilder::last_updated_at)
-    pub fn build(self) -> ::std::result::Result<crate::types::ListIntegrationItem, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ListIntegrationItem, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ListIntegrationItem {
             domain_name: self.domain_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "domain_name",
                     "domain_name was not specified but it is required when building ListIntegrationItem",
                 )
             })?,
             uri: self.uri.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "uri",
                     "uri was not specified but it is required when building ListIntegrationItem",
                 )
             })?,
             object_type_name: self.object_type_name,
             created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
                     "created_at was not specified but it is required when building ListIntegrationItem",
                 )
             })?,
             last_updated_at: self.last_updated_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_updated_at",
                     "last_updated_at was not specified but it is required when building ListIntegrationItem",
                 )

@@ -44,8 +44,10 @@ impl DeleteVirtualInterfaceInputBuilder {
     /// Consumes the builder and constructs a [`DeleteVirtualInterfaceInput`](crate::operation::delete_virtual_interface::DeleteVirtualInterfaceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_virtual_interface::DeleteVirtualInterfaceInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::delete_virtual_interface::DeleteVirtualInterfaceInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::delete_virtual_interface::DeleteVirtualInterfaceInput {
             virtual_interface_id: self.virtual_interface_id,
         })

@@ -2,7 +2,7 @@
 pub fn ser_describe_images_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DescribeImagesFilter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.tag_status {
         object.key("tagStatus").string(var_1.as_str());
     }

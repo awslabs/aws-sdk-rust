@@ -51,7 +51,7 @@ impl BatchDisableAlarmInputBuilder {
     /// Consumes the builder and constructs a [`BatchDisableAlarmInput`](crate::operation::batch_disable_alarm::BatchDisableAlarmInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_disable_alarm::BatchDisableAlarmInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::batch_disable_alarm::BatchDisableAlarmInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::batch_disable_alarm::BatchDisableAlarmInput {
             disable_action_requests: self.disable_action_requests,
         })

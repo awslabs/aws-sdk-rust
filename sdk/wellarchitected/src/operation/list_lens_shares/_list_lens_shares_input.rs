@@ -143,7 +143,7 @@ impl ListLensSharesInputBuilder {
     /// Consumes the builder and constructs a [`ListLensSharesInput`](crate::operation::list_lens_shares::ListLensSharesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_lens_shares::ListLensSharesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_lens_shares::ListLensSharesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_lens_shares::ListLensSharesInput {
             lens_alias: self.lens_alias,
             shared_with_prefix: self.shared_with_prefix,

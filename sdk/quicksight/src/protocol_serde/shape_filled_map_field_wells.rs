@@ -2,7 +2,7 @@
 pub fn ser_filled_map_field_wells(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FilledMapFieldWells,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.filled_map_aggregated_field_wells {
         #[allow(unused_mut)]
         let mut object_2 = object.key("FilledMapAggregatedFieldWells").start_object();

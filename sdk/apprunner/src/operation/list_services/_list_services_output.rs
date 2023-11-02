@@ -89,10 +89,10 @@ impl ListServicesOutputBuilder {
     /// - [`service_summary_list`](crate::operation::list_services::builders::ListServicesOutputBuilder::service_summary_list)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_services::ListServicesOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_services::ListServicesOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_services::ListServicesOutput {
             service_summary_list: self.service_summary_list.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "service_summary_list",
                     "service_summary_list was not specified but it is required when building ListServicesOutput",
                 )

@@ -101,11 +101,11 @@ impl IdentityDkimAttributesBuilder {
     /// Consumes the builder and constructs a [`IdentityDkimAttributes`](crate::types::IdentityDkimAttributes).
     /// This method will fail if any of the following fields are not set:
     /// - [`dkim_verification_status`](crate::types::builders::IdentityDkimAttributesBuilder::dkim_verification_status)
-    pub fn build(self) -> ::std::result::Result<crate::types::IdentityDkimAttributes, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::IdentityDkimAttributes, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::IdentityDkimAttributes {
             dkim_enabled: self.dkim_enabled.unwrap_or_default(),
             dkim_verification_status: self.dkim_verification_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "dkim_verification_status",
                     "dkim_verification_status was not specified but it is required when building IdentityDkimAttributes",
                 )

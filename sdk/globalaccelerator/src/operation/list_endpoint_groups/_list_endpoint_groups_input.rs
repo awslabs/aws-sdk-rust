@@ -86,7 +86,8 @@ impl ListEndpointGroupsInputBuilder {
     /// Consumes the builder and constructs a [`ListEndpointGroupsInput`](crate::operation::list_endpoint_groups::ListEndpointGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_endpoint_groups::ListEndpointGroupsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_endpoint_groups::ListEndpointGroupsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::list_endpoint_groups::ListEndpointGroupsInput {
             listener_arn: self.listener_arn,
             max_results: self.max_results,

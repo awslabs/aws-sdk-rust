@@ -71,7 +71,9 @@ impl AddEndpointsInputBuilder {
         &self.endpoint_group_arn
     }
     /// Consumes the builder and constructs a [`AddEndpointsInput`](crate::operation::add_endpoints::AddEndpointsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::add_endpoints::AddEndpointsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::add_endpoints::AddEndpointsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::add_endpoints::AddEndpointsInput {
             endpoint_configurations: self.endpoint_configurations,
             endpoint_group_arn: self.endpoint_group_arn,

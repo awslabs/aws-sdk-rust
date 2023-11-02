@@ -120,7 +120,7 @@ impl AdminListGroupsForUserInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::admin_list_groups_for_user::AdminListGroupsForUserInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::admin_list_groups_for_user::AdminListGroupsForUserInput {
             username: self.username,

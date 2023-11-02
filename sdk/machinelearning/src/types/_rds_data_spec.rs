@@ -368,18 +368,18 @@ impl RdsDataSpecBuilder {
     /// - [`service_role`](crate::types::builders::RdsDataSpecBuilder::service_role)
     /// - [`subnet_id`](crate::types::builders::RdsDataSpecBuilder::subnet_id)
     /// - [`security_group_ids`](crate::types::builders::RdsDataSpecBuilder::security_group_ids)
-    pub fn build(self) -> ::std::result::Result<crate::types::RdsDataSpec, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RdsDataSpec, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RdsDataSpec {
             database_information: self.database_information,
             select_sql_query: self.select_sql_query.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "select_sql_query",
                     "select_sql_query was not specified but it is required when building RdsDataSpec",
                 )
             })?,
             database_credentials: self.database_credentials,
             s3_staging_location: self.s3_staging_location.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "s3_staging_location",
                     "s3_staging_location was not specified but it is required when building RdsDataSpec",
                 )
@@ -388,25 +388,25 @@ impl RdsDataSpecBuilder {
             data_schema: self.data_schema,
             data_schema_uri: self.data_schema_uri,
             resource_role: self.resource_role.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_role",
                     "resource_role was not specified but it is required when building RdsDataSpec",
                 )
             })?,
             service_role: self.service_role.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "service_role",
                     "service_role was not specified but it is required when building RdsDataSpec",
                 )
             })?,
             subnet_id: self.subnet_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "subnet_id",
                     "subnet_id was not specified but it is required when building RdsDataSpec",
                 )
             })?,
             security_group_ids: self.security_group_ids.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "security_group_ids",
                     "security_group_ids was not specified but it is required when building RdsDataSpec",
                 )

@@ -165,29 +165,29 @@ impl CloudFrontOriginAccessIdentityListBuilder {
     /// - [`max_items`](crate::types::builders::CloudFrontOriginAccessIdentityListBuilder::max_items)
     /// - [`is_truncated`](crate::types::builders::CloudFrontOriginAccessIdentityListBuilder::is_truncated)
     /// - [`quantity`](crate::types::builders::CloudFrontOriginAccessIdentityListBuilder::quantity)
-    pub fn build(self) -> ::std::result::Result<crate::types::CloudFrontOriginAccessIdentityList, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CloudFrontOriginAccessIdentityList, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CloudFrontOriginAccessIdentityList {
             marker: self.marker.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "marker",
                     "marker was not specified but it is required when building CloudFrontOriginAccessIdentityList",
                 )
             })?,
             next_marker: self.next_marker,
             max_items: self.max_items.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "max_items",
                     "max_items was not specified but it is required when building CloudFrontOriginAccessIdentityList",
                 )
             })?,
             is_truncated: self.is_truncated.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "is_truncated",
                     "is_truncated was not specified but it is required when building CloudFrontOriginAccessIdentityList",
                 )
             })?,
             quantity: self.quantity.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "quantity",
                     "quantity was not specified but it is required when building CloudFrontOriginAccessIdentityList",
                 )

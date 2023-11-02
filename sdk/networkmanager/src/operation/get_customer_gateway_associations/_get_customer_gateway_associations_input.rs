@@ -117,7 +117,7 @@ impl GetCustomerGatewayAssociationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_customer_gateway_associations::GetCustomerGatewayAssociationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_customer_gateway_associations::GetCustomerGatewayAssociationsInput {
             global_network_id: self.global_network_id,

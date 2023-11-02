@@ -88,7 +88,7 @@ impl RetryWorkflowStepInputBuilder {
     /// Consumes the builder and constructs a [`RetryWorkflowStepInput`](crate::operation::retry_workflow_step::RetryWorkflowStepInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::retry_workflow_step::RetryWorkflowStepInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::retry_workflow_step::RetryWorkflowStepInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::retry_workflow_step::RetryWorkflowStepInput {
             workflow_id: self.workflow_id,
             step_group_id: self.step_group_id,

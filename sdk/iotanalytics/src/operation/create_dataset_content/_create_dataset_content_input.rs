@@ -65,7 +65,7 @@ impl CreateDatasetContentInputBuilder {
     /// Consumes the builder and constructs a [`CreateDatasetContentInput`](crate::operation::create_dataset_content::CreateDatasetContentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_dataset_content::CreateDatasetContentInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_dataset_content::CreateDatasetContentInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_dataset_content::CreateDatasetContentInput {
             dataset_name: self.dataset_name,

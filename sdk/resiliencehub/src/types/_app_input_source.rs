@@ -150,11 +150,11 @@ impl AppInputSourceBuilder {
     /// Consumes the builder and constructs a [`AppInputSource`](crate::types::AppInputSource).
     /// This method will fail if any of the following fields are not set:
     /// - [`import_type`](crate::types::builders::AppInputSourceBuilder::import_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::AppInputSource, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AppInputSource, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AppInputSource {
             source_name: self.source_name,
             import_type: self.import_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "import_type",
                     "import_type was not specified but it is required when building AppInputSource",
                 )

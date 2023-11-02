@@ -116,7 +116,7 @@ impl MergeProfilesInputBuilder {
     /// Consumes the builder and constructs a [`MergeProfilesInput`](crate::operation::merge_profiles::MergeProfilesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::merge_profiles::MergeProfilesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::merge_profiles::MergeProfilesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::merge_profiles::MergeProfilesInput {
             domain_name: self.domain_name,
             main_profile_id: self.main_profile_id,

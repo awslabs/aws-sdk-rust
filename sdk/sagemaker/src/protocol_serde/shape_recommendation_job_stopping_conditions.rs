@@ -2,7 +2,7 @@
 pub fn ser_recommendation_job_stopping_conditions(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RecommendationJobStoppingConditions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.max_invocations {
         object.key("MaxInvocations").number(
             #[allow(clippy::useless_conversion)]

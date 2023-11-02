@@ -2,7 +2,7 @@
 pub fn ser_analysis_rule_custom(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AnalysisRuleCustom,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("allowedAnalyses").start_array();
         for item_2 in &input.allowed_analyses {

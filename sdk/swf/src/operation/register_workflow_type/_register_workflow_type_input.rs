@@ -310,7 +310,7 @@ impl RegisterWorkflowTypeInputBuilder {
     /// Consumes the builder and constructs a [`RegisterWorkflowTypeInput`](crate::operation::register_workflow_type::RegisterWorkflowTypeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::register_workflow_type::RegisterWorkflowTypeInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::register_workflow_type::RegisterWorkflowTypeInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::register_workflow_type::RegisterWorkflowTypeInput {
             domain: self.domain,

@@ -2,7 +2,7 @@
 pub fn ser_create_svm_active_directory_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CreateSvmActiveDirectoryConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.net_bios_name {
         object.key("NetBiosName").string(var_1.as_str());
     }

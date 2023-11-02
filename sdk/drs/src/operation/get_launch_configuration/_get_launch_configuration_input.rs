@@ -44,8 +44,10 @@ impl GetLaunchConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`GetLaunchConfigurationInput`](crate::operation::get_launch_configuration::GetLaunchConfigurationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_launch_configuration::GetLaunchConfigurationInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::get_launch_configuration::GetLaunchConfigurationInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::get_launch_configuration::GetLaunchConfigurationInput {
             source_server_id: self.source_server_id,
         })

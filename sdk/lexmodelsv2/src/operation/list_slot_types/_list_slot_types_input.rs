@@ -180,7 +180,7 @@ impl ListSlotTypesInputBuilder {
     /// Consumes the builder and constructs a [`ListSlotTypesInput`](crate::operation::list_slot_types::ListSlotTypesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_slot_types::ListSlotTypesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_slot_types::ListSlotTypesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_slot_types::ListSlotTypesInput {
             bot_id: self.bot_id,
             bot_version: self.bot_version,

@@ -2,7 +2,7 @@
 pub fn ser_algorithm_specification(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AlgorithmSpecification,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.script_mode_config {
         #[allow(unused_mut)]
         let mut object_2 = object.key("scriptModeConfig").start_object();

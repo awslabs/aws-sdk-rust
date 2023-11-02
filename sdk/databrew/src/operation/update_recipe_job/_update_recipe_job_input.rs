@@ -299,7 +299,7 @@ impl UpdateRecipeJobInputBuilder {
     /// Consumes the builder and constructs a [`UpdateRecipeJobInput`](crate::operation::update_recipe_job::UpdateRecipeJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_recipe_job::UpdateRecipeJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_recipe_job::UpdateRecipeJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_recipe_job::UpdateRecipeJobInput {
             encryption_key_arn: self.encryption_key_arn,
             encryption_mode: self.encryption_mode,

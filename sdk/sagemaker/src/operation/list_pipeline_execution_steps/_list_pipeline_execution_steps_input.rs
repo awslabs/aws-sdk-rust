@@ -108,7 +108,7 @@ impl ListPipelineExecutionStepsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_pipeline_execution_steps::ListPipelineExecutionStepsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_pipeline_execution_steps::ListPipelineExecutionStepsInput {
             pipeline_execution_arn: self.pipeline_execution_arn,

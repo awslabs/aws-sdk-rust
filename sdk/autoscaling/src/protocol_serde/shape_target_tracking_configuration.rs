@@ -3,7 +3,7 @@
 pub fn ser_target_tracking_configuration(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::TargetTrackingConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("PredefinedMetricSpecification");
     if let Some(var_2) = &input.predefined_metric_specification {

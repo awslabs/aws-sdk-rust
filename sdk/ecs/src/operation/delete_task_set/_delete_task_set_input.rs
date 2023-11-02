@@ -109,7 +109,7 @@ impl DeleteTaskSetInputBuilder {
     /// Consumes the builder and constructs a [`DeleteTaskSetInput`](crate::operation::delete_task_set::DeleteTaskSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_task_set::DeleteTaskSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_task_set::DeleteTaskSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_task_set::DeleteTaskSetInput {
             cluster: self.cluster,
             service: self.service,

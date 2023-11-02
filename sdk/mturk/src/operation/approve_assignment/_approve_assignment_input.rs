@@ -86,7 +86,7 @@ impl ApproveAssignmentInputBuilder {
     /// Consumes the builder and constructs a [`ApproveAssignmentInput`](crate::operation::approve_assignment::ApproveAssignmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::approve_assignment::ApproveAssignmentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::approve_assignment::ApproveAssignmentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::approve_assignment::ApproveAssignmentInput {
             assignment_id: self.assignment_id,
             requester_feedback: self.requester_feedback,

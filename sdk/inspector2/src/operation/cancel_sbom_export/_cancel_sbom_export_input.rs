@@ -44,7 +44,7 @@ impl CancelSbomExportInputBuilder {
     /// Consumes the builder and constructs a [`CancelSbomExportInput`](crate::operation::cancel_sbom_export::CancelSbomExportInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::cancel_sbom_export::CancelSbomExportInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::cancel_sbom_export::CancelSbomExportInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::cancel_sbom_export::CancelSbomExportInput { report_id: self.report_id })
     }
 }

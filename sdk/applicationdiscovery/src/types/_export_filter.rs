@@ -99,22 +99,22 @@ impl ExportFilterBuilder {
     /// - [`name`](crate::types::builders::ExportFilterBuilder::name)
     /// - [`values`](crate::types::builders::ExportFilterBuilder::values)
     /// - [`condition`](crate::types::builders::ExportFilterBuilder::condition)
-    pub fn build(self) -> ::std::result::Result<crate::types::ExportFilter, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ExportFilter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ExportFilter {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building ExportFilter",
                 )
             })?,
             values: self.values.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "values",
                     "values was not specified but it is required when building ExportFilter",
                 )
             })?,
             condition: self.condition.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "condition",
                     "condition was not specified but it is required when building ExportFilter",
                 )

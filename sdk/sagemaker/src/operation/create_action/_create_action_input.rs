@@ -205,7 +205,9 @@ impl CreateActionInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateActionInput`](crate::operation::create_action::CreateActionInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_action::CreateActionInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_action::CreateActionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_action::CreateActionInput {
             action_name: self.action_name,
             source: self.source,

@@ -44,7 +44,8 @@ impl GetDecoderManifestInputBuilder {
     /// Consumes the builder and constructs a [`GetDecoderManifestInput`](crate::operation::get_decoder_manifest::GetDecoderManifestInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_decoder_manifest::GetDecoderManifestInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_decoder_manifest::GetDecoderManifestInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::get_decoder_manifest::GetDecoderManifestInput { name: self.name })
     }
 }

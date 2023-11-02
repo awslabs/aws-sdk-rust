@@ -70,16 +70,16 @@ impl PoDetailAttributesBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`format`](crate::types::builders::PoDetailAttributesBuilder::format)
     /// - [`encoding`](crate::types::builders::PoDetailAttributesBuilder::encoding)
-    pub fn build(self) -> ::std::result::Result<crate::types::PoDetailAttributes, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PoDetailAttributes, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PoDetailAttributes {
             format: self.format.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "format",
                     "format was not specified but it is required when building PoDetailAttributes",
                 )
             })?,
             encoding: self.encoding.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "encoding",
                     "encoding was not specified but it is required when building PoDetailAttributes",
                 )

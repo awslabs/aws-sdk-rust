@@ -66,7 +66,7 @@ impl RestoreAnalysisInputBuilder {
     /// Consumes the builder and constructs a [`RestoreAnalysisInput`](crate::operation::restore_analysis::RestoreAnalysisInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::restore_analysis::RestoreAnalysisInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::restore_analysis::RestoreAnalysisInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::restore_analysis::RestoreAnalysisInput {
             aws_account_id: self.aws_account_id,
             analysis_id: self.analysis_id,

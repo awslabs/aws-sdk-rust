@@ -93,7 +93,7 @@ impl StartBatchJobInputBuilder {
     /// Consumes the builder and constructs a [`StartBatchJobInput`](crate::operation::start_batch_job::StartBatchJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_batch_job::StartBatchJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_batch_job::StartBatchJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_batch_job::StartBatchJobInput {
             application_id: self.application_id,
             batch_job_identifier: self.batch_job_identifier,

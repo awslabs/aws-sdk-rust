@@ -128,28 +128,28 @@ impl MergeBuilder {
     /// - [`inputs`](crate::types::builders::MergeBuilder::inputs)
     /// - [`source`](crate::types::builders::MergeBuilder::source)
     /// - [`primary_keys`](crate::types::builders::MergeBuilder::primary_keys)
-    pub fn build(self) -> ::std::result::Result<crate::types::Merge, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Merge, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Merge {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building Merge",
                 )
             })?,
             inputs: self.inputs.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "inputs",
                     "inputs was not specified but it is required when building Merge",
                 )
             })?,
             source: self.source.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source",
                     "source was not specified but it is required when building Merge",
                 )
             })?,
             primary_keys: self.primary_keys.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "primary_keys",
                     "primary_keys was not specified but it is required when building Merge",
                 )

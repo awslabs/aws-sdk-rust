@@ -89,7 +89,7 @@ impl UpdateMembershipInputBuilder {
     /// Consumes the builder and constructs a [`UpdateMembershipInput`](crate::operation::update_membership::UpdateMembershipInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_membership::UpdateMembershipInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_membership::UpdateMembershipInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_membership::UpdateMembershipInput {
             membership_identifier: self.membership_identifier,
             query_log_status: self.query_log_status,

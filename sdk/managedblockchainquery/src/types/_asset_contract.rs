@@ -91,17 +91,17 @@ impl AssetContractBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`token_standard`](crate::types::builders::AssetContractBuilder::token_standard)
     /// - [`deployer_address`](crate::types::builders::AssetContractBuilder::deployer_address)
-    pub fn build(self) -> ::std::result::Result<crate::types::AssetContract, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AssetContract, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AssetContract {
             contract_identifier: self.contract_identifier,
             token_standard: self.token_standard.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "token_standard",
                     "token_standard was not specified but it is required when building AssetContract",
                 )
             })?,
             deployer_address: self.deployer_address.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "deployer_address",
                     "deployer_address was not specified but it is required when building AssetContract",
                 )

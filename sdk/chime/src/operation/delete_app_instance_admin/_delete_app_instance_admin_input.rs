@@ -68,7 +68,7 @@ impl DeleteAppInstanceAdminInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_app_instance_admin::DeleteAppInstanceAdminInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_app_instance_admin::DeleteAppInstanceAdminInput {
             app_instance_admin_arn: self.app_instance_admin_arn,

@@ -2,7 +2,7 @@
 pub fn ser_update_backend_auth_o_auth_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UpdateBackendAuthOAuthConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.domain_prefix {
         object.key("domainPrefix").string(var_1.as_str());
     }

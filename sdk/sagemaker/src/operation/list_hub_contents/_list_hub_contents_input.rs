@@ -234,7 +234,7 @@ impl ListHubContentsInputBuilder {
     /// Consumes the builder and constructs a [`ListHubContentsInput`](crate::operation::list_hub_contents::ListHubContentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_hub_contents::ListHubContentsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_hub_contents::ListHubContentsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_hub_contents::ListHubContentsInput {
             hub_name: self.hub_name,
             hub_content_type: self.hub_content_type,

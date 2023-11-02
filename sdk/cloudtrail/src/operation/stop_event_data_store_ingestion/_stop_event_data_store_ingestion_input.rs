@@ -46,7 +46,7 @@ impl StopEventDataStoreIngestionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_event_data_store_ingestion::StopEventDataStoreIngestionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::stop_event_data_store_ingestion::StopEventDataStoreIngestionInput {
             event_data_store: self.event_data_store,

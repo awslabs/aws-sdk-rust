@@ -114,23 +114,23 @@ impl TopicBuilder {
     /// - [`topic_name`](crate::types::builders::TopicBuilder::topic_name)
     /// - [`display_name`](crate::types::builders::TopicBuilder::display_name)
     /// - [`default_subscription_status`](crate::types::builders::TopicBuilder::default_subscription_status)
-    pub fn build(self) -> ::std::result::Result<crate::types::Topic, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Topic, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Topic {
             topic_name: self.topic_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "topic_name",
                     "topic_name was not specified but it is required when building Topic",
                 )
             })?,
             display_name: self.display_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "display_name",
                     "display_name was not specified but it is required when building Topic",
                 )
             })?,
             description: self.description,
             default_subscription_status: self.default_subscription_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "default_subscription_status",
                     "default_subscription_status was not specified but it is required when building Topic",
                 )

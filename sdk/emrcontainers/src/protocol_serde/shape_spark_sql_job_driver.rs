@@ -2,7 +2,7 @@
 pub fn ser_spark_sql_job_driver(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SparkSqlJobDriver,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.entry_point {
         object.key("entryPoint").string(var_1.as_str());
     }

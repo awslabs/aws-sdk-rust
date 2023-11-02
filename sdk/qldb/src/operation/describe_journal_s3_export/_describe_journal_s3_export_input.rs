@@ -68,7 +68,7 @@ impl DescribeJournalS3ExportInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_journal_s3_export::DescribeJournalS3ExportInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_journal_s3_export::DescribeJournalS3ExportInput {
             name: self.name,

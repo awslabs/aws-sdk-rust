@@ -8,7 +8,7 @@
 
 use crate::http::HttpChecksum;
 
-use aws_smithy_http::body::SdkBody;
+use aws_smithy_types::body::SdkBody;
 
 use bytes::Bytes;
 use http::{HeaderMap, HeaderValue};
@@ -48,7 +48,7 @@ impl ChecksumBody<SdkBody> {
     fn poll_inner(
         self: Pin<&mut Self>,
         cx: &mut Context<'_>,
-    ) -> Poll<Option<Result<Bytes, aws_smithy_http::body::Error>>> {
+    ) -> Poll<Option<Result<Bytes, aws_smithy_types::body::Error>>> {
         use http_body::Body;
 
         let this = self.project();
@@ -126,7 +126,7 @@ impl std::error::Error for Error {}
 
 impl http_body::Body for ChecksumBody<SdkBody> {
     type Data = Bytes;
-    type Error = aws_smithy_http::body::Error;
+    type Error = aws_smithy_types::body::Error;
 
     fn poll_data(
         self: Pin<&mut Self>,
@@ -155,7 +155,7 @@ impl http_body::Body for ChecksumBody<SdkBody> {
 mod tests {
     use crate::body::validate::{ChecksumBody, Error};
     use crate::ChecksumAlgorithm;
-    use aws_smithy_http::body::SdkBody;
+    use aws_smithy_types::body::SdkBody;
     use bytes::{Buf, Bytes};
     use bytes_utils::SegmentedBuf;
     use http_body::Body;

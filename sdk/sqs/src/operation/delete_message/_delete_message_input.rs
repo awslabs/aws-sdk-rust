@@ -72,7 +72,7 @@ impl DeleteMessageInputBuilder {
     /// Consumes the builder and constructs a [`DeleteMessageInput`](crate::operation::delete_message::DeleteMessageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_message::DeleteMessageInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_message::DeleteMessageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_message::DeleteMessageInput {
             queue_url: self.queue_url,
             receipt_handle: self.receipt_handle,

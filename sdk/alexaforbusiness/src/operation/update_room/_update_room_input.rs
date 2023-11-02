@@ -125,7 +125,7 @@ impl UpdateRoomInputBuilder {
         &self.profile_arn
     }
     /// Consumes the builder and constructs a [`UpdateRoomInput`](crate::operation::update_room::UpdateRoomInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_room::UpdateRoomInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_room::UpdateRoomInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_room::UpdateRoomInput {
             room_arn: self.room_arn,
             room_name: self.room_name,

@@ -214,28 +214,28 @@ impl ServiceTemplateSummaryBuilder {
     /// - [`arn`](crate::types::builders::ServiceTemplateSummaryBuilder::arn)
     /// - [`created_at`](crate::types::builders::ServiceTemplateSummaryBuilder::created_at)
     /// - [`last_modified_at`](crate::types::builders::ServiceTemplateSummaryBuilder::last_modified_at)
-    pub fn build(self) -> ::std::result::Result<crate::types::ServiceTemplateSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ServiceTemplateSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ServiceTemplateSummary {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building ServiceTemplateSummary",
                 )
             })?,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building ServiceTemplateSummary",
                 )
             })?,
             created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
                     "created_at was not specified but it is required when building ServiceTemplateSummary",
                 )
             })?,
             last_modified_at: self.last_modified_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_modified_at",
                     "last_modified_at was not specified but it is required when building ServiceTemplateSummary",
                 )

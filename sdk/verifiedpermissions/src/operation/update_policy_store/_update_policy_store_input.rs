@@ -66,7 +66,7 @@ impl UpdatePolicyStoreInputBuilder {
     /// Consumes the builder and constructs a [`UpdatePolicyStoreInput`](crate::operation::update_policy_store::UpdatePolicyStoreInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_policy_store::UpdatePolicyStoreInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_policy_store::UpdatePolicyStoreInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_policy_store::UpdatePolicyStoreInput {
             policy_store_id: self.policy_store_id,
             validation_settings: self.validation_settings,

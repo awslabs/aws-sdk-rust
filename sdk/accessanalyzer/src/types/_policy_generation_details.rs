@@ -46,10 +46,10 @@ impl PolicyGenerationDetailsBuilder {
     /// Consumes the builder and constructs a [`PolicyGenerationDetails`](crate::types::PolicyGenerationDetails).
     /// This method will fail if any of the following fields are not set:
     /// - [`principal_arn`](crate::types::builders::PolicyGenerationDetailsBuilder::principal_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::PolicyGenerationDetails, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PolicyGenerationDetails, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PolicyGenerationDetails {
             principal_arn: self.principal_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "principal_arn",
                     "principal_arn was not specified but it is required when building PolicyGenerationDetails",
                 )

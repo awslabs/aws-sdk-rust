@@ -2,7 +2,7 @@
 pub fn ser_list_received_licenses_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_received_licenses::ListReceivedLicensesInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.license_arns {
         let mut array_2 = object.key("LicenseArns").start_array();
         for item_3 in var_1 {

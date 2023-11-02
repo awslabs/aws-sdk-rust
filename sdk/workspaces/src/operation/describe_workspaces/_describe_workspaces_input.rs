@@ -161,7 +161,7 @@ impl DescribeWorkspacesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeWorkspacesInput`](crate::operation::describe_workspaces::DescribeWorkspacesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_workspaces::DescribeWorkspacesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_workspaces::DescribeWorkspacesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_workspaces::DescribeWorkspacesInput {
             workspace_ids: self.workspace_ids,
             directory_id: self.directory_id,

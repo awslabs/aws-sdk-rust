@@ -45,10 +45,10 @@ impl UpdateFreeTierConfigBuilder {
     /// Consumes the builder and constructs a [`UpdateFreeTierConfig`](crate::types::UpdateFreeTierConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`activated`](crate::types::builders::UpdateFreeTierConfigBuilder::activated)
-    pub fn build(self) -> ::std::result::Result<crate::types::UpdateFreeTierConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::UpdateFreeTierConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::UpdateFreeTierConfig {
             activated: self.activated.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "activated",
                     "activated was not specified but it is required when building UpdateFreeTierConfig",
                 )

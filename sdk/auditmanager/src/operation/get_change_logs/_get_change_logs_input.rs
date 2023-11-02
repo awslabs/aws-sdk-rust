@@ -128,7 +128,7 @@ impl GetChangeLogsInputBuilder {
     /// Consumes the builder and constructs a [`GetChangeLogsInput`](crate::operation::get_change_logs::GetChangeLogsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_change_logs::GetChangeLogsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_change_logs::GetChangeLogsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_change_logs::GetChangeLogsInput {
             assessment_id: self.assessment_id,
             control_set_id: self.control_set_id,

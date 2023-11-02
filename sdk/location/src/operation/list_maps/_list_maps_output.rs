@@ -87,10 +87,10 @@ impl ListMapsOutputBuilder {
     /// Consumes the builder and constructs a [`ListMapsOutput`](crate::operation::list_maps::ListMapsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`entries`](crate::operation::list_maps::builders::ListMapsOutputBuilder::entries)
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_maps::ListMapsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_maps::ListMapsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_maps::ListMapsOutput {
             entries: self.entries.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "entries",
                     "entries was not specified but it is required when building ListMapsOutput",
                 )

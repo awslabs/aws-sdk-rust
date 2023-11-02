@@ -51,7 +51,7 @@ impl CreateAwsLogSourceInputBuilder {
     /// Consumes the builder and constructs a [`CreateAwsLogSourceInput`](crate::operation::create_aws_log_source::CreateAwsLogSourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_aws_log_source::CreateAwsLogSourceInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_aws_log_source::CreateAwsLogSourceInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_aws_log_source::CreateAwsLogSourceInput { sources: self.sources })
     }

@@ -107,7 +107,7 @@ impl UpdateAdapterInputBuilder {
     /// Consumes the builder and constructs a [`UpdateAdapterInput`](crate::operation::update_adapter::UpdateAdapterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_adapter::UpdateAdapterInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_adapter::UpdateAdapterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_adapter::UpdateAdapterInput {
             adapter_id: self.adapter_id,
             description: self.description,

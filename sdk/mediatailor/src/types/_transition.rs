@@ -157,11 +157,11 @@ impl TransitionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`relative_position`](crate::types::builders::TransitionBuilder::relative_position)
     /// - [`r#type`](crate::types::builders::TransitionBuilder::r#type)
-    pub fn build(self) -> ::std::result::Result<crate::types::Transition, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Transition, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Transition {
             duration_millis: self.duration_millis.unwrap_or_default(),
             relative_position: self.relative_position.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "relative_position",
                     "relative_position was not specified but it is required when building Transition",
                 )
@@ -169,7 +169,7 @@ impl TransitionBuilder {
             relative_program: self.relative_program,
             scheduled_start_time_millis: self.scheduled_start_time_millis.unwrap_or_default(),
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building Transition",
                 )

@@ -80,7 +80,7 @@ impl GetRegionOptStatusInputBuilder {
     /// Consumes the builder and constructs a [`GetRegionOptStatusInput`](crate::operation::get_region_opt_status::GetRegionOptStatusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_region_opt_status::GetRegionOptStatusInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_region_opt_status::GetRegionOptStatusInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_region_opt_status::GetRegionOptStatusInput {
             account_id: self.account_id,

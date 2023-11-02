@@ -106,10 +106,10 @@ impl HistoricalOptionsBuilder {
     /// Consumes the builder and constructs a [`HistoricalOptions`](crate::types::HistoricalOptions).
     /// This method will fail if any of the following fields are not set:
     /// - [`budget_adjustment_period`](crate::types::builders::HistoricalOptionsBuilder::budget_adjustment_period)
-    pub fn build(self) -> ::std::result::Result<crate::types::HistoricalOptions, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::HistoricalOptions, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::HistoricalOptions {
             budget_adjustment_period: self.budget_adjustment_period.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "budget_adjustment_period",
                     "budget_adjustment_period was not specified but it is required when building HistoricalOptions",
                 )

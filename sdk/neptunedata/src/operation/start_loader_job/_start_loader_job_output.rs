@@ -91,16 +91,16 @@ impl StartLoaderJobOutputBuilder {
     /// - [`payload`](crate::operation::start_loader_job::builders::StartLoaderJobOutputBuilder::payload)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_loader_job::StartLoaderJobOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_loader_job::StartLoaderJobOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_loader_job::StartLoaderJobOutput {
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building StartLoaderJobOutput",
                 )
             })?,
             payload: self.payload.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "payload",
                     "payload was not specified but it is required when building StartLoaderJobOutput",
                 )

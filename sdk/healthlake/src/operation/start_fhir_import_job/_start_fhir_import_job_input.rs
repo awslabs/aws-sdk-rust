@@ -153,7 +153,7 @@ impl StartFhirImportJobInputBuilder {
     /// Consumes the builder and constructs a [`StartFhirImportJobInput`](crate::operation::start_fhir_import_job::StartFhirImportJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_fhir_import_job::StartFhirImportJobInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::start_fhir_import_job::StartFhirImportJobInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_fhir_import_job::StartFhirImportJobInput {
             job_name: self.job_name,

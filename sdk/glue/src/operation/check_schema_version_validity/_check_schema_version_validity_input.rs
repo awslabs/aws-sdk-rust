@@ -68,7 +68,7 @@ impl CheckSchemaVersionValidityInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::check_schema_version_validity::CheckSchemaVersionValidityInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::check_schema_version_validity::CheckSchemaVersionValidityInput {
             data_format: self.data_format,

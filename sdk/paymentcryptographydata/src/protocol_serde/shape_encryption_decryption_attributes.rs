@@ -2,7 +2,7 @@
 pub fn ser_encryption_decryption_attributes(
     object_3: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EncryptionDecryptionAttributes,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::EncryptionDecryptionAttributes::Symmetric(inner) => {
             #[allow(unused_mut)]
@@ -23,7 +23,7 @@ pub fn ser_encryption_decryption_attributes(
             object_3.finish();
         }
         crate::types::EncryptionDecryptionAttributes::Unknown => {
-            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+            return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "EncryptionDecryptionAttributes",
             ))
         }

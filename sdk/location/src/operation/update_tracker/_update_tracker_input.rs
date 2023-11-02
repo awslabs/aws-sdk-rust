@@ -225,7 +225,7 @@ impl UpdateTrackerInputBuilder {
     /// Consumes the builder and constructs a [`UpdateTrackerInput`](crate::operation::update_tracker::UpdateTrackerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_tracker::UpdateTrackerInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_tracker::UpdateTrackerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_tracker::UpdateTrackerInput {
             tracker_name: self.tracker_name,
             pricing_plan: self.pricing_plan,

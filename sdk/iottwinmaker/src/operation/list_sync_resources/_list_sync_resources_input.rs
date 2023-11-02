@@ -182,7 +182,7 @@ impl ListSyncResourcesInputBuilder {
     /// Consumes the builder and constructs a [`ListSyncResourcesInput`](crate::operation::list_sync_resources::ListSyncResourcesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_sync_resources::ListSyncResourcesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_sync_resources::ListSyncResourcesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_sync_resources::ListSyncResourcesInput {
             workspace_id: self.workspace_id,
             sync_source: self.sync_source,

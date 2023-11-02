@@ -94,7 +94,7 @@ impl CreateJobForDevicesInputBuilder {
     /// Consumes the builder and constructs a [`CreateJobForDevicesInput`](crate::operation::create_job_for_devices::CreateJobForDevicesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_job_for_devices::CreateJobForDevicesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_job_for_devices::CreateJobForDevicesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_job_for_devices::CreateJobForDevicesInput {
             device_ids: self.device_ids,

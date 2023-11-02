@@ -112,10 +112,10 @@ impl SlotValueSelectionSettingBuilder {
     /// Consumes the builder and constructs a [`SlotValueSelectionSetting`](crate::types::SlotValueSelectionSetting).
     /// This method will fail if any of the following fields are not set:
     /// - [`resolution_strategy`](crate::types::builders::SlotValueSelectionSettingBuilder::resolution_strategy)
-    pub fn build(self) -> ::std::result::Result<crate::types::SlotValueSelectionSetting, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SlotValueSelectionSetting, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SlotValueSelectionSetting {
             resolution_strategy: self.resolution_strategy.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resolution_strategy",
                     "resolution_strategy was not specified but it is required when building SlotValueSelectionSetting",
                 )

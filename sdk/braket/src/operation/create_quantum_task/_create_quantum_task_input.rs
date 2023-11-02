@@ -223,7 +223,7 @@ impl CreateQuantumTaskInputBuilder {
     /// Consumes the builder and constructs a [`CreateQuantumTaskInput`](crate::operation::create_quantum_task::CreateQuantumTaskInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_quantum_task::CreateQuantumTaskInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_quantum_task::CreateQuantumTaskInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_quantum_task::CreateQuantumTaskInput {
             client_token: self.client_token,
             device_arn: self.device_arn,

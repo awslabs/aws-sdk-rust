@@ -117,28 +117,28 @@ impl MappingRuleBuilder {
     /// - [`match_type`](crate::types::builders::MappingRuleBuilder::match_type)
     /// - [`value`](crate::types::builders::MappingRuleBuilder::value)
     /// - [`role_arn`](crate::types::builders::MappingRuleBuilder::role_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::MappingRule, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::MappingRule, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MappingRule {
             claim: self.claim.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "claim",
                     "claim was not specified but it is required when building MappingRule",
                 )
             })?,
             match_type: self.match_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "match_type",
                     "match_type was not specified but it is required when building MappingRule",
                 )
             })?,
             value: self.value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "value",
                     "value was not specified but it is required when building MappingRule",
                 )
             })?,
             role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role_arn",
                     "role_arn was not specified but it is required when building MappingRule",
                 )

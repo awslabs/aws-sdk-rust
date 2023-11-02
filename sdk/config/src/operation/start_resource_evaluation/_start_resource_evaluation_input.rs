@@ -141,7 +141,7 @@ impl StartResourceEvaluationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_resource_evaluation::StartResourceEvaluationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_resource_evaluation::StartResourceEvaluationInput {
             resource_details: self.resource_details,

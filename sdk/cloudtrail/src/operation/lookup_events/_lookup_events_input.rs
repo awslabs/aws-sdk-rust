@@ -155,7 +155,9 @@ impl LookupEventsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`LookupEventsInput`](crate::operation::lookup_events::LookupEventsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::lookup_events::LookupEventsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::lookup_events::LookupEventsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::lookup_events::LookupEventsInput {
             lookup_attributes: self.lookup_attributes,
             start_time: self.start_time,

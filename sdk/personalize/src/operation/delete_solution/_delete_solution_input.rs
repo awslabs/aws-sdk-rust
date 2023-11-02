@@ -44,7 +44,7 @@ impl DeleteSolutionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSolutionInput`](crate::operation::delete_solution::DeleteSolutionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_solution::DeleteSolutionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_solution::DeleteSolutionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_solution::DeleteSolutionInput {
             solution_arn: self.solution_arn,
         })

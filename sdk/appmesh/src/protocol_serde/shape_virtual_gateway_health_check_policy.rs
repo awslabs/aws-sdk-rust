@@ -2,7 +2,7 @@
 pub fn ser_virtual_gateway_health_check_policy(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VirtualGatewayHealthCheckPolicy,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("timeoutMillis").number(
             #[allow(clippy::useless_conversion)]

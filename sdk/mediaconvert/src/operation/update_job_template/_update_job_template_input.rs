@@ -220,7 +220,7 @@ impl UpdateJobTemplateInputBuilder {
     /// Consumes the builder and constructs a [`UpdateJobTemplateInput`](crate::operation::update_job_template::UpdateJobTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_job_template::UpdateJobTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_job_template::UpdateJobTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_job_template::UpdateJobTemplateInput {
             acceleration_settings: self.acceleration_settings,
             category: self.category,

@@ -396,23 +396,23 @@ impl ComponentBuilder {
     /// - [`created_at`](crate::types::builders::ComponentBuilder::created_at)
     /// - [`last_modified_at`](crate::types::builders::ComponentBuilder::last_modified_at)
     /// - [`deployment_status`](crate::types::builders::ComponentBuilder::deployment_status)
-    pub fn build(self) -> ::std::result::Result<crate::types::Component, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Component, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Component {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building Component",
                 )
             })?,
             description: self.description,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building Component",
                 )
             })?,
             environment_name: self.environment_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "environment_name",
                     "environment_name was not specified but it is required when building Component",
                 )
@@ -420,13 +420,13 @@ impl ComponentBuilder {
             service_name: self.service_name,
             service_instance_name: self.service_instance_name,
             created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
                     "created_at was not specified but it is required when building Component",
                 )
             })?,
             last_modified_at: self.last_modified_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_modified_at",
                     "last_modified_at was not specified but it is required when building Component",
                 )
@@ -434,7 +434,7 @@ impl ComponentBuilder {
             last_deployment_attempted_at: self.last_deployment_attempted_at,
             last_deployment_succeeded_at: self.last_deployment_succeeded_at,
             deployment_status: self.deployment_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "deployment_status",
                     "deployment_status was not specified but it is required when building Component",
                 )

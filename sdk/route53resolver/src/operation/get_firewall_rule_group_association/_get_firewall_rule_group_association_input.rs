@@ -46,7 +46,7 @@ impl GetFirewallRuleGroupAssociationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_firewall_rule_group_association::GetFirewallRuleGroupAssociationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_firewall_rule_group_association::GetFirewallRuleGroupAssociationInput {

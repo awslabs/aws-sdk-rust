@@ -101,7 +101,7 @@ impl EnablePolicyTypeInputBuilder {
     /// Consumes the builder and constructs a [`EnablePolicyTypeInput`](crate::operation::enable_policy_type::EnablePolicyTypeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::enable_policy_type::EnablePolicyTypeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::enable_policy_type::EnablePolicyTypeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::enable_policy_type::EnablePolicyTypeInput {
             root_id: self.root_id,
             policy_type: self.policy_type,

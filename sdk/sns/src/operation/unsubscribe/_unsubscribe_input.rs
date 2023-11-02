@@ -43,7 +43,7 @@ impl UnsubscribeInputBuilder {
         &self.subscription_arn
     }
     /// Consumes the builder and constructs a [`UnsubscribeInput`](crate::operation::unsubscribe::UnsubscribeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::unsubscribe::UnsubscribeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::unsubscribe::UnsubscribeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::unsubscribe::UnsubscribeInput {
             subscription_arn: self.subscription_arn,
         })

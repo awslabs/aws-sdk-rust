@@ -67,10 +67,10 @@ impl OrderByElementBuilder {
     /// Consumes the builder and constructs a [`OrderByElement`](crate::types::OrderByElement).
     /// This method will fail if any of the following fields are not set:
     /// - [`field_name`](crate::types::builders::OrderByElementBuilder::field_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::OrderByElement, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::OrderByElement, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::OrderByElement {
             field_name: self.field_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "field_name",
                     "field_name was not specified but it is required when building OrderByElement",
                 )

@@ -66,7 +66,8 @@ impl CreatePushTemplateInputBuilder {
     /// Consumes the builder and constructs a [`CreatePushTemplateInput`](crate::operation::create_push_template::CreatePushTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_push_template::CreatePushTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_push_template::CreatePushTemplateInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_push_template::CreatePushTemplateInput {
             push_notification_template_request: self.push_notification_template_request,
             template_name: self.template_name,

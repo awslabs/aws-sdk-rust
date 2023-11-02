@@ -173,7 +173,7 @@ impl ModifyGlobalReplicationGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_global_replication_group::ModifyGlobalReplicationGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::modify_global_replication_group::ModifyGlobalReplicationGroupInput {
             global_replication_group_id: self.global_replication_group_id,

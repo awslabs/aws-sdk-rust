@@ -43,7 +43,7 @@ impl DeletePlatformVersionInputBuilder {
     /// Consumes the builder and constructs a [`DeletePlatformVersionInput`](crate::operation::delete_platform_version::DeletePlatformVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_platform_version::DeletePlatformVersionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_platform_version::DeletePlatformVersionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_platform_version::DeletePlatformVersionInput {
             platform_arn: self.platform_arn,

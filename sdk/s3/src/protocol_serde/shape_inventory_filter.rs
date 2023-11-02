@@ -31,7 +31,7 @@ pub fn de_inventory_filter(
 pub fn ser_inventory_filter(
     input: &crate::types::InventoryFilter,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     {

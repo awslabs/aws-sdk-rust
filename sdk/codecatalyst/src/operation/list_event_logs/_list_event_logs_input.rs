@@ -151,7 +151,7 @@ impl ListEventLogsInputBuilder {
     /// Consumes the builder and constructs a [`ListEventLogsInput`](crate::operation::list_event_logs::ListEventLogsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_event_logs::ListEventLogsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_event_logs::ListEventLogsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_event_logs::ListEventLogsInput {
             space_name: self.space_name,
             start_time: self.start_time,

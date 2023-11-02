@@ -115,7 +115,8 @@ impl ListAccessPoliciesInputBuilder {
     /// Consumes the builder and constructs a [`ListAccessPoliciesInput`](crate::operation::list_access_policies::ListAccessPoliciesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_access_policies::ListAccessPoliciesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_access_policies::ListAccessPoliciesInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::list_access_policies::ListAccessPoliciesInput {
             r#type: self.r#type,
             resource: self.resource,

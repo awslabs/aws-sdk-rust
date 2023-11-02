@@ -68,7 +68,7 @@ impl CloseInstancePublicPortsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::close_instance_public_ports::CloseInstancePublicPortsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::close_instance_public_ports::CloseInstancePublicPortsInput {
             port_info: self.port_info,

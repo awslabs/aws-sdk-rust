@@ -2,7 +2,7 @@
 pub fn ser_embedded_destination_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EmbeddedDestinationSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.destination608_channel_number {
         object.key("destination608ChannelNumber").number(
             #[allow(clippy::useless_conversion)]

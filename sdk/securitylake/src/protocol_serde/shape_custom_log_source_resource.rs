@@ -58,7 +58,7 @@ where
 pub fn ser_custom_log_source_resource(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CustomLogSourceResource,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.source_name {
         object.key("sourceName").string(var_1.as_str());
     }

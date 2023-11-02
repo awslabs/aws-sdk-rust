@@ -46,7 +46,7 @@ impl GetBulkDeploymentStatusInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_bulk_deployment_status::GetBulkDeploymentStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_bulk_deployment_status::GetBulkDeploymentStatusInput {
             bulk_deployment_id: self.bulk_deployment_id,

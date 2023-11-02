@@ -163,10 +163,10 @@ impl TargetTrackingScalingPolicyConfigurationBuilder {
     /// - [`target_value`](crate::types::builders::TargetTrackingScalingPolicyConfigurationBuilder::target_value)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::TargetTrackingScalingPolicyConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::TargetTrackingScalingPolicyConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TargetTrackingScalingPolicyConfiguration {
             target_value: self.target_value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "target_value",
                     "target_value was not specified but it is required when building TargetTrackingScalingPolicyConfiguration",
                 )

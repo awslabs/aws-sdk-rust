@@ -130,7 +130,7 @@ impl ListParticipantEventsInputBuilder {
     /// Consumes the builder and constructs a [`ListParticipantEventsInput`](crate::operation::list_participant_events::ListParticipantEventsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_participant_events::ListParticipantEventsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_participant_events::ListParticipantEventsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_participant_events::ListParticipantEventsInput {
             stage_arn: self.stage_arn,

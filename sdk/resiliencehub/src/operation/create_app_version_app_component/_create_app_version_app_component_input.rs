@@ -166,7 +166,7 @@ impl CreateAppVersionAppComponentInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_app_version_app_component::CreateAppVersionAppComponentInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_app_version_app_component::CreateAppVersionAppComponentInput {
             app_arn: self.app_arn,

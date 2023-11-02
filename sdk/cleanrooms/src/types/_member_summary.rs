@@ -210,40 +210,40 @@ impl MemberSummaryBuilder {
     /// - [`abilities`](crate::types::builders::MemberSummaryBuilder::abilities)
     /// - [`create_time`](crate::types::builders::MemberSummaryBuilder::create_time)
     /// - [`update_time`](crate::types::builders::MemberSummaryBuilder::update_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::MemberSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::MemberSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MemberSummary {
             account_id: self.account_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "account_id",
                     "account_id was not specified but it is required when building MemberSummary",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building MemberSummary",
                 )
             })?,
             display_name: self.display_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "display_name",
                     "display_name was not specified but it is required when building MemberSummary",
                 )
             })?,
             abilities: self.abilities.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "abilities",
                     "abilities was not specified but it is required when building MemberSummary",
                 )
             })?,
             create_time: self.create_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "create_time",
                     "create_time was not specified but it is required when building MemberSummary",
                 )
             })?,
             update_time: self.update_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "update_time",
                     "update_time was not specified but it is required when building MemberSummary",
                 )

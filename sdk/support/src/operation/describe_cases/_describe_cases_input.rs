@@ -219,7 +219,7 @@ impl DescribeCasesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeCasesInput`](crate::operation::describe_cases::DescribeCasesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_cases::DescribeCasesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_cases::DescribeCasesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_cases::DescribeCasesInput {
             case_id_list: self.case_id_list,
             display_id: self.display_id,

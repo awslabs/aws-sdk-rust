@@ -89,7 +89,7 @@ impl EnableStageTransitionInputBuilder {
     /// Consumes the builder and constructs a [`EnableStageTransitionInput`](crate::operation::enable_stage_transition::EnableStageTransitionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::enable_stage_transition::EnableStageTransitionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::enable_stage_transition::EnableStageTransitionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::enable_stage_transition::EnableStageTransitionInput {
             pipeline_name: self.pipeline_name,

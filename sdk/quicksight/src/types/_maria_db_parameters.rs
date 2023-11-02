@@ -93,22 +93,22 @@ impl MariaDbParametersBuilder {
     /// - [`host`](crate::types::builders::MariaDbParametersBuilder::host)
     /// - [`port`](crate::types::builders::MariaDbParametersBuilder::port)
     /// - [`database`](crate::types::builders::MariaDbParametersBuilder::database)
-    pub fn build(self) -> ::std::result::Result<crate::types::MariaDbParameters, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::MariaDbParameters, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MariaDbParameters {
             host: self.host.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "host",
                     "host was not specified but it is required when building MariaDbParameters",
                 )
             })?,
             port: self.port.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "port",
                     "port was not specified but it is required when building MariaDbParameters",
                 )
             })?,
             database: self.database.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "database",
                     "database was not specified but it is required when building MariaDbParameters",
                 )

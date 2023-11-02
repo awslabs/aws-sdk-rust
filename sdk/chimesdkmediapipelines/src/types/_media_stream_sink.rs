@@ -125,28 +125,28 @@ impl MediaStreamSinkBuilder {
     /// - [`sink_type`](crate::types::builders::MediaStreamSinkBuilder::sink_type)
     /// - [`reserved_stream_capacity`](crate::types::builders::MediaStreamSinkBuilder::reserved_stream_capacity)
     /// - [`media_stream_type`](crate::types::builders::MediaStreamSinkBuilder::media_stream_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::MediaStreamSink, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::MediaStreamSink, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MediaStreamSink {
             sink_arn: self.sink_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "sink_arn",
                     "sink_arn was not specified but it is required when building MediaStreamSink",
                 )
             })?,
             sink_type: self.sink_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "sink_type",
                     "sink_type was not specified but it is required when building MediaStreamSink",
                 )
             })?,
             reserved_stream_capacity: self.reserved_stream_capacity.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "reserved_stream_capacity",
                     "reserved_stream_capacity was not specified but it is required when building MediaStreamSink",
                 )
             })?,
             media_stream_type: self.media_stream_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "media_stream_type",
                     "media_stream_type was not specified but it is required when building MediaStreamSink",
                 )

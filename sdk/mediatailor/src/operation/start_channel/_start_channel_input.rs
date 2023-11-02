@@ -42,7 +42,9 @@ impl StartChannelInputBuilder {
         &self.channel_name
     }
     /// Consumes the builder and constructs a [`StartChannelInput`](crate::operation::start_channel::StartChannelInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::start_channel::StartChannelInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::start_channel::StartChannelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_channel::StartChannelInput {
             channel_name: self.channel_name,
         })

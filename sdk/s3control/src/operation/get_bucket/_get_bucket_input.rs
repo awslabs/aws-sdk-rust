@@ -124,7 +124,7 @@ impl GetBucketInputBuilder {
         &self.bucket
     }
     /// Consumes the builder and constructs a [`GetBucketInput`](crate::operation::get_bucket::GetBucketInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_bucket::GetBucketInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_bucket::GetBucketInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_bucket::GetBucketInput {
             account_id: self.account_id,
             bucket: self.bucket,

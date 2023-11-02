@@ -2,7 +2,7 @@
 pub fn ser_sub_slot_value_elicitation_setting(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SubSlotValueElicitationSetting,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.default_value_specification {
         #[allow(unused_mut)]
         let mut object_2 = object.key("defaultValueSpecification").start_object();

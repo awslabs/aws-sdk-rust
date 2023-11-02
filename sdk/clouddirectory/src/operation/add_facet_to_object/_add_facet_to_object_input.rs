@@ -117,7 +117,7 @@ impl AddFacetToObjectInputBuilder {
     /// Consumes the builder and constructs a [`AddFacetToObjectInput`](crate::operation::add_facet_to_object::AddFacetToObjectInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::add_facet_to_object::AddFacetToObjectInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::add_facet_to_object::AddFacetToObjectInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::add_facet_to_object::AddFacetToObjectInput {
             directory_arn: self.directory_arn,
             schema_facet: self.schema_facet,

@@ -65,12 +65,12 @@ impl CompleteMultipartReadSetUploadOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUploadOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUploadOutput {
                 read_set_id: self.read_set_id.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
                         "read_set_id",
                         "read_set_id was not specified but it is required when building CompleteMultipartReadSetUploadOutput",
                     )

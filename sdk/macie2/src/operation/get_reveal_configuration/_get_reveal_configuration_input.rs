@@ -18,8 +18,10 @@ impl GetRevealConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`GetRevealConfigurationInput`](crate::operation::get_reveal_configuration::GetRevealConfigurationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_reveal_configuration::GetRevealConfigurationInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::get_reveal_configuration::GetRevealConfigurationInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::get_reveal_configuration::GetRevealConfigurationInput {})
     }
 }

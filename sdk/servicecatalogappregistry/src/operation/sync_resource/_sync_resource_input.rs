@@ -64,7 +64,9 @@ impl SyncResourceInputBuilder {
         &self.resource
     }
     /// Consumes the builder and constructs a [`SyncResourceInput`](crate::operation::sync_resource::SyncResourceInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::sync_resource::SyncResourceInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::sync_resource::SyncResourceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::sync_resource::SyncResourceInput {
             resource_type: self.resource_type,
             resource: self.resource,

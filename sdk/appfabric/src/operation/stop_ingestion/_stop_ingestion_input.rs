@@ -66,7 +66,7 @@ impl StopIngestionInputBuilder {
     /// Consumes the builder and constructs a [`StopIngestionInput`](crate::operation::stop_ingestion::StopIngestionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_ingestion::StopIngestionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::stop_ingestion::StopIngestionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_ingestion::StopIngestionInput {
             ingestion_identifier: self.ingestion_identifier,
             app_bundle_identifier: self.app_bundle_identifier,

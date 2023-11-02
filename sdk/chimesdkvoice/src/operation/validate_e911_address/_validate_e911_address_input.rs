@@ -189,7 +189,7 @@ impl ValidateE911AddressInputBuilder {
     /// Consumes the builder and constructs a [`ValidateE911AddressInput`](crate::operation::validate_e911_address::ValidateE911AddressInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::validate_e911_address::ValidateE911AddressInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::validate_e911_address::ValidateE911AddressInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::validate_e911_address::ValidateE911AddressInput {
             aws_account_id: self.aws_account_id,

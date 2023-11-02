@@ -137,7 +137,8 @@ impl UpdateTableObjectsInputBuilder {
     /// Consumes the builder and constructs a [`UpdateTableObjectsInput`](crate::operation::update_table_objects::UpdateTableObjectsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_table_objects::UpdateTableObjectsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_table_objects::UpdateTableObjectsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::update_table_objects::UpdateTableObjectsInput {
             catalog_id: self.catalog_id,
             database_name: self.database_name,

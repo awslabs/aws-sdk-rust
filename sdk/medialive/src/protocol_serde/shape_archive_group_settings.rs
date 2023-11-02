@@ -2,7 +2,7 @@
 pub fn ser_archive_group_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ArchiveGroupSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.archive_cdn_settings {
         #[allow(unused_mut)]
         let mut object_2 = object.key("archiveCdnSettings").start_object();

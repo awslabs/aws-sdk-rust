@@ -89,16 +89,16 @@ impl DedicatedIpPoolBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`pool_name`](crate::types::builders::DedicatedIpPoolBuilder::pool_name)
     /// - [`scaling_mode`](crate::types::builders::DedicatedIpPoolBuilder::scaling_mode)
-    pub fn build(self) -> ::std::result::Result<crate::types::DedicatedIpPool, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DedicatedIpPool, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DedicatedIpPool {
             pool_name: self.pool_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "pool_name",
                     "pool_name was not specified but it is required when building DedicatedIpPool",
                 )
             })?,
             scaling_mode: self.scaling_mode.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "scaling_mode",
                     "scaling_mode was not specified but it is required when building DedicatedIpPool",
                 )

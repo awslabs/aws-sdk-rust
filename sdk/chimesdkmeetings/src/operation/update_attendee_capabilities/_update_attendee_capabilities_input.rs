@@ -90,7 +90,7 @@ impl UpdateAttendeeCapabilitiesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_attendee_capabilities::UpdateAttendeeCapabilitiesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_attendee_capabilities::UpdateAttendeeCapabilitiesInput {
             meeting_id: self.meeting_id,

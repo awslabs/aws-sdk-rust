@@ -117,28 +117,28 @@ impl TemplateSummaryBuilder {
     /// - [`template_arn`](crate::types::builders::TemplateSummaryBuilder::template_arn)
     /// - [`name`](crate::types::builders::TemplateSummaryBuilder::name)
     /// - [`status`](crate::types::builders::TemplateSummaryBuilder::status)
-    pub fn build(self) -> ::std::result::Result<crate::types::TemplateSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TemplateSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TemplateSummary {
             template_id: self.template_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "template_id",
                     "template_id was not specified but it is required when building TemplateSummary",
                 )
             })?,
             template_arn: self.template_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "template_arn",
                     "template_arn was not specified but it is required when building TemplateSummary",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building TemplateSummary",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building TemplateSummary",
                 )

@@ -259,11 +259,11 @@ impl EventBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`event_type`](crate::types::builders::EventBuilder::event_type)
     /// - [`sent_at`](crate::types::builders::EventBuilder::sent_at)
-    pub fn build(self) -> ::std::result::Result<crate::types::Event, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Event, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Event {
             event_id: self.event_id,
             event_type: self.event_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "event_type",
                     "event_type was not specified but it is required when building Event",
                 )
@@ -272,7 +272,7 @@ impl EventBuilder {
             item_id: self.item_id,
             properties: self.properties,
             sent_at: self.sent_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "sent_at",
                     "sent_at was not specified but it is required when building Event",
                 )

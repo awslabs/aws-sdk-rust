@@ -283,7 +283,7 @@ impl DescribeNetworkAclsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeNetworkAclsInput`](crate::operation::describe_network_acls::DescribeNetworkAclsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_network_acls::DescribeNetworkAclsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_network_acls::DescribeNetworkAclsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_network_acls::DescribeNetworkAclsInput {
             filters: self.filters,

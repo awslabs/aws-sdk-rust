@@ -44,7 +44,7 @@ where
 pub fn ser_fixed_response_action(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FixedResponseAction,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("statusCode").number(
             #[allow(clippy::useless_conversion)]

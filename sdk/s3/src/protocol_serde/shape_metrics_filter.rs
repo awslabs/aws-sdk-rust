@@ -52,7 +52,7 @@ pub fn de_metrics_filter(
 pub fn ser_metrics_filter(
     input: &crate::types::MetricsFilter,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     let mut scope_writer = writer.finish();
     match input {
         crate::types::MetricsFilter::Prefix(inner) => {
@@ -72,7 +72,7 @@ pub fn ser_metrics_filter(
             crate::protocol_serde::shape_metrics_and_operator::ser_metrics_and_operator(inner, inner_writer)?
         }
         crate::types::MetricsFilter::Unknown => {
-            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant("MetricsFilter"))
+            return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("MetricsFilter"))
         }
     }
     Ok(())

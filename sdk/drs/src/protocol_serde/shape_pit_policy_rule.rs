@@ -2,7 +2,7 @@
 pub fn ser_pit_policy_rule(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PitPolicyRule,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.rule_id != 0 {
         object.key("ruleID").number(
             #[allow(clippy::useless_conversion)]

@@ -91,11 +91,11 @@ impl ListAssessmentRunAgentsOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_assessment_run_agents::ListAssessmentRunAgentsOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_assessment_run_agents::ListAssessmentRunAgentsOutput {
             assessment_run_agents: self.assessment_run_agents.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "assessment_run_agents",
                     "assessment_run_agents was not specified but it is required when building ListAssessmentRunAgentsOutput",
                 )

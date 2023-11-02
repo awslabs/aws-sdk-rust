@@ -64,7 +64,7 @@ impl DescribeProtectionInputBuilder {
     /// Consumes the builder and constructs a [`DescribeProtectionInput`](crate::operation::describe_protection::DescribeProtectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_protection::DescribeProtectionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_protection::DescribeProtectionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_protection::DescribeProtectionInput {
             protection_id: self.protection_id,
             resource_arn: self.resource_arn,

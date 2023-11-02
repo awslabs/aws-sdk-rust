@@ -66,8 +66,10 @@ impl DescribeFargateProfileInputBuilder {
     /// Consumes the builder and constructs a [`DescribeFargateProfileInput`](crate::operation::describe_fargate_profile::DescribeFargateProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_fargate_profile::DescribeFargateProfileInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::describe_fargate_profile::DescribeFargateProfileInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::describe_fargate_profile::DescribeFargateProfileInput {
             cluster_name: self.cluster_name,
             fargate_profile_name: self.fargate_profile_name,

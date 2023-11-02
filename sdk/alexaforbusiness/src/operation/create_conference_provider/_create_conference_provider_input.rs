@@ -182,7 +182,7 @@ impl CreateConferenceProviderInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_conference_provider::CreateConferenceProviderInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_conference_provider::CreateConferenceProviderInput {
             conference_provider_name: self.conference_provider_name,

@@ -44,7 +44,7 @@ impl DescribeCopyJobInputBuilder {
     /// Consumes the builder and constructs a [`DescribeCopyJobInput`](crate::operation::describe_copy_job::DescribeCopyJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_copy_job::DescribeCopyJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_copy_job::DescribeCopyJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_copy_job::DescribeCopyJobInput {
             copy_job_id: self.copy_job_id,
         })

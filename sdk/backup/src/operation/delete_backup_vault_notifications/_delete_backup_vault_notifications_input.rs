@@ -46,7 +46,7 @@ impl DeleteBackupVaultNotificationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_backup_vault_notifications::DeleteBackupVaultNotificationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_backup_vault_notifications::DeleteBackupVaultNotificationsInput {
             backup_vault_name: self.backup_vault_name,

@@ -127,7 +127,7 @@ impl ListFragmentsInputBuilder {
     /// Consumes the builder and constructs a [`ListFragmentsInput`](crate::operation::list_fragments::ListFragmentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_fragments::ListFragmentsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_fragments::ListFragmentsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_fragments::ListFragmentsInput {
             stream_name: self.stream_name,
             stream_arn: self.stream_arn,

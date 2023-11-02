@@ -2,7 +2,7 @@
 pub fn ser_associate_website_certificate_authority_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::associate_website_certificate_authority::AssociateWebsiteCertificateAuthorityInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.certificate {
         object.key("Certificate").string(var_1.as_str());
     }

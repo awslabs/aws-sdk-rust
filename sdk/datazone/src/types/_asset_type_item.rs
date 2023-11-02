@@ -314,35 +314,35 @@ impl AssetTypeItemBuilder {
     /// - [`revision`](crate::types::builders::AssetTypeItemBuilder::revision)
     /// - [`forms_output`](crate::types::builders::AssetTypeItemBuilder::forms_output)
     /// - [`owning_project_id`](crate::types::builders::AssetTypeItemBuilder::owning_project_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::AssetTypeItem, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AssetTypeItem, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AssetTypeItem {
             domain_id: self.domain_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "domain_id",
                     "domain_id was not specified but it is required when building AssetTypeItem",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building AssetTypeItem",
                 )
             })?,
             revision: self.revision.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "revision",
                     "revision was not specified but it is required when building AssetTypeItem",
                 )
             })?,
             description: self.description,
             forms_output: self.forms_output.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "forms_output",
                     "forms_output was not specified but it is required when building AssetTypeItem",
                 )
             })?,
             owning_project_id: self.owning_project_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "owning_project_id",
                     "owning_project_id was not specified but it is required when building AssetTypeItem",
                 )

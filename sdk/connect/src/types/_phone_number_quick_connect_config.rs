@@ -46,10 +46,10 @@ impl PhoneNumberQuickConnectConfigBuilder {
     /// Consumes the builder and constructs a [`PhoneNumberQuickConnectConfig`](crate::types::PhoneNumberQuickConnectConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`phone_number`](crate::types::builders::PhoneNumberQuickConnectConfigBuilder::phone_number)
-    pub fn build(self) -> ::std::result::Result<crate::types::PhoneNumberQuickConnectConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PhoneNumberQuickConnectConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PhoneNumberQuickConnectConfig {
             phone_number: self.phone_number.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "phone_number",
                     "phone_number was not specified but it is required when building PhoneNumberQuickConnectConfig",
                 )

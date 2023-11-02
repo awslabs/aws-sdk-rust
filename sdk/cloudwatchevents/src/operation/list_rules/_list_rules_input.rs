@@ -104,7 +104,7 @@ impl ListRulesInputBuilder {
         &self.limit
     }
     /// Consumes the builder and constructs a [`ListRulesInput`](crate::operation::list_rules::ListRulesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_rules::ListRulesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_rules::ListRulesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_rules::ListRulesInput {
             name_prefix: self.name_prefix,
             event_bus_name: self.event_bus_name,

@@ -104,7 +104,7 @@ impl ModifyReservedInstancesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_reserved_instances::ModifyReservedInstancesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::modify_reserved_instances::ModifyReservedInstancesInput {
             reserved_instances_ids: self.reserved_instances_ids,

@@ -89,11 +89,11 @@ impl ListReadSetsOutputBuilder {
     /// - [`read_sets`](crate::operation::list_read_sets::builders::ListReadSetsOutputBuilder::read_sets)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_read_sets::ListReadSetsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_read_sets::ListReadSetsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_read_sets::ListReadSetsOutput {
             next_token: self.next_token,
             read_sets: self.read_sets.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "read_sets",
                     "read_sets was not specified but it is required when building ListReadSetsOutput",
                 )

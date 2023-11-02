@@ -192,7 +192,7 @@ impl DescribeScheduledInstancesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_scheduled_instances::DescribeScheduledInstancesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_scheduled_instances::DescribeScheduledInstancesInput {
             dry_run: self.dry_run,

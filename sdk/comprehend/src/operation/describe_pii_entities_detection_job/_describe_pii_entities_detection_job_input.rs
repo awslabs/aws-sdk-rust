@@ -46,7 +46,7 @@ impl DescribePiiEntitiesDetectionJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_pii_entities_detection_job::DescribePiiEntitiesDetectionJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_pii_entities_detection_job::DescribePiiEntitiesDetectionJobInput { job_id: self.job_id })
     }

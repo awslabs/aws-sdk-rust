@@ -45,7 +45,7 @@ impl EnableEbsEncryptionByDefaultInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::enable_ebs_encryption_by_default::EnableEbsEncryptionByDefaultInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::enable_ebs_encryption_by_default::EnableEbsEncryptionByDefaultInput { dry_run: self.dry_run })
     }

@@ -42,7 +42,7 @@ impl GetProfileInputBuilder {
         &self.profile_id
     }
     /// Consumes the builder and constructs a [`GetProfileInput`](crate::operation::get_profile::GetProfileInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_profile::GetProfileInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_profile::GetProfileInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_profile::GetProfileInput { profile_id: self.profile_id })
     }
 }

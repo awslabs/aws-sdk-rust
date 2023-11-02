@@ -2,7 +2,7 @@
 pub fn ser_raster_data_collection_query_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RasterDataCollectionQueryInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("RasterDataCollectionArn").string(input.raster_data_collection_arn.as_str());
     }

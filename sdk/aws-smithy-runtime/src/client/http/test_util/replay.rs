@@ -116,8 +116,8 @@ impl ValidateRequest {
 /// # Example
 ///
 /// ```no_run
-/// use aws_smithy_http::body::SdkBody;
 /// use aws_smithy_runtime::client::http::test_util::{ReplayEvent, StaticReplayClient};
+/// use aws_smithy_types::body::SdkBody;
 ///
 /// let http_client = StaticReplayClient::new(vec![
 ///     // Event that covers the first request/response

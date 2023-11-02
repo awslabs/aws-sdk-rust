@@ -66,7 +66,7 @@ impl DeleteTypedLinkFacetInputBuilder {
     /// Consumes the builder and constructs a [`DeleteTypedLinkFacetInput`](crate::operation::delete_typed_link_facet::DeleteTypedLinkFacetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_typed_link_facet::DeleteTypedLinkFacetInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_typed_link_facet::DeleteTypedLinkFacetInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_typed_link_facet::DeleteTypedLinkFacetInput {
             schema_arn: self.schema_arn,

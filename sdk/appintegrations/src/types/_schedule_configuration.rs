@@ -88,12 +88,12 @@ impl ScheduleConfigurationBuilder {
     /// Consumes the builder and constructs a [`ScheduleConfiguration`](crate::types::ScheduleConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`schedule_expression`](crate::types::builders::ScheduleConfigurationBuilder::schedule_expression)
-    pub fn build(self) -> ::std::result::Result<crate::types::ScheduleConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ScheduleConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ScheduleConfiguration {
             first_execution_from: self.first_execution_from,
             object: self.object,
             schedule_expression: self.schedule_expression.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "schedule_expression",
                     "schedule_expression was not specified but it is required when building ScheduleConfiguration",
                 )

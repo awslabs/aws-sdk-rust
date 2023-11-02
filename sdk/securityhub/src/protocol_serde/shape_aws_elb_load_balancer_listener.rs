@@ -2,7 +2,7 @@
 pub fn ser_aws_elb_load_balancer_listener(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsElbLoadBalancerListener,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.instance_port {
         object.key("InstancePort").number(
             #[allow(clippy::useless_conversion)]

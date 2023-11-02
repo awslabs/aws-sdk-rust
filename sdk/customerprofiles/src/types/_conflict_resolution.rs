@@ -86,10 +86,10 @@ impl ConflictResolutionBuilder {
     /// Consumes the builder and constructs a [`ConflictResolution`](crate::types::ConflictResolution).
     /// This method will fail if any of the following fields are not set:
     /// - [`conflict_resolving_model`](crate::types::builders::ConflictResolutionBuilder::conflict_resolving_model)
-    pub fn build(self) -> ::std::result::Result<crate::types::ConflictResolution, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ConflictResolution, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ConflictResolution {
             conflict_resolving_model: self.conflict_resolving_model.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "conflict_resolving_model",
                     "conflict_resolving_model was not specified but it is required when building ConflictResolution",
                 )

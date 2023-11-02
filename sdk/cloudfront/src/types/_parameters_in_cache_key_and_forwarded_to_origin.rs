@@ -225,10 +225,10 @@ impl ParametersInCacheKeyAndForwardedToOriginBuilder {
     /// - [`enable_accept_encoding_gzip`](crate::types::builders::ParametersInCacheKeyAndForwardedToOriginBuilder::enable_accept_encoding_gzip)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::ParametersInCacheKeyAndForwardedToOrigin, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::ParametersInCacheKeyAndForwardedToOrigin, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ParametersInCacheKeyAndForwardedToOrigin {
             enable_accept_encoding_gzip: self.enable_accept_encoding_gzip.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "enable_accept_encoding_gzip",
                     "enable_accept_encoding_gzip was not specified but it is required when building ParametersInCacheKeyAndForwardedToOrigin",
                 )

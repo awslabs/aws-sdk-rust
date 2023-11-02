@@ -126,7 +126,7 @@ pub fn de_cors_rule(
 pub fn ser_cors_rule(
     input: &crate::types::CorsRule,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_11) = &input.id {

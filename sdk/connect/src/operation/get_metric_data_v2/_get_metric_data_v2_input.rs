@@ -2073,7 +2073,7 @@ impl GetMetricDataV2InputBuilder {
     /// Consumes the builder and constructs a [`GetMetricDataV2Input`](crate::operation::get_metric_data_v2::GetMetricDataV2Input).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_metric_data_v2::GetMetricDataV2Input, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_metric_data_v2::GetMetricDataV2Input, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_metric_data_v2::GetMetricDataV2Input {
             resource_arn: self.resource_arn,
             start_time: self.start_time,

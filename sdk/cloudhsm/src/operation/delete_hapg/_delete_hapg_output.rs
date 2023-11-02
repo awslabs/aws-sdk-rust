@@ -62,10 +62,10 @@ impl DeleteHapgOutputBuilder {
     /// Consumes the builder and constructs a [`DeleteHapgOutput`](crate::operation::delete_hapg::DeleteHapgOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`status`](crate::operation::delete_hapg::builders::DeleteHapgOutputBuilder::status)
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_hapg::DeleteHapgOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_hapg::DeleteHapgOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_hapg::DeleteHapgOutput {
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building DeleteHapgOutput",
                 )

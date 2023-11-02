@@ -44,7 +44,8 @@ impl DeleteVoiceProfileInputBuilder {
     /// Consumes the builder and constructs a [`DeleteVoiceProfileInput`](crate::operation::delete_voice_profile::DeleteVoiceProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_voice_profile::DeleteVoiceProfileInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_voice_profile::DeleteVoiceProfileInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::delete_voice_profile::DeleteVoiceProfileInput {
             voice_profile_id: self.voice_profile_id,
         })

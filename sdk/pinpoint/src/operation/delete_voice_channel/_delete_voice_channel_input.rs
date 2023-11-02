@@ -44,7 +44,8 @@ impl DeleteVoiceChannelInputBuilder {
     /// Consumes the builder and constructs a [`DeleteVoiceChannelInput`](crate::operation::delete_voice_channel::DeleteVoiceChannelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_voice_channel::DeleteVoiceChannelInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_voice_channel::DeleteVoiceChannelInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::delete_voice_channel::DeleteVoiceChannelInput {
             application_id: self.application_id,
         })

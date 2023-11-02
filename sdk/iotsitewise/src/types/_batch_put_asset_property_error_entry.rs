@@ -75,16 +75,16 @@ impl BatchPutAssetPropertyErrorEntryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`entry_id`](crate::types::builders::BatchPutAssetPropertyErrorEntryBuilder::entry_id)
     /// - [`errors`](crate::types::builders::BatchPutAssetPropertyErrorEntryBuilder::errors)
-    pub fn build(self) -> ::std::result::Result<crate::types::BatchPutAssetPropertyErrorEntry, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::BatchPutAssetPropertyErrorEntry, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::BatchPutAssetPropertyErrorEntry {
             entry_id: self.entry_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "entry_id",
                     "entry_id was not specified but it is required when building BatchPutAssetPropertyErrorEntry",
                 )
             })?,
             errors: self.errors.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "errors",
                     "errors was not specified but it is required when building BatchPutAssetPropertyErrorEntry",
                 )

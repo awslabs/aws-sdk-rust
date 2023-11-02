@@ -78,7 +78,7 @@ impl DescribeEventTopicsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeEventTopicsInput`](crate::operation::describe_event_topics::DescribeEventTopicsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_event_topics::DescribeEventTopicsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_event_topics::DescribeEventTopicsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_event_topics::DescribeEventTopicsInput {
             directory_id: self.directory_id,

@@ -2,7 +2,7 @@
 pub fn ser_media_stream_sink(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MediaStreamSink,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("SinkArn").string(input.sink_arn.as_str());
     }

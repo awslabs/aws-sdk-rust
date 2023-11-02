@@ -73,7 +73,7 @@ impl DetachLoadBalancersInputBuilder {
     /// Consumes the builder and constructs a [`DetachLoadBalancersInput`](crate::operation::detach_load_balancers::DetachLoadBalancersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::detach_load_balancers::DetachLoadBalancersInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::detach_load_balancers::DetachLoadBalancersInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::detach_load_balancers::DetachLoadBalancersInput {
             auto_scaling_group_name: self.auto_scaling_group_name,

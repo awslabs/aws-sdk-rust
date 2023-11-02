@@ -2,7 +2,7 @@
 pub fn ser_attribute_dimension(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AttributeDimension,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.attribute_type {
         object.key("AttributeType").string(var_1.as_str());
     }

@@ -69,16 +69,16 @@ impl LocationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`latitude`](crate::types::builders::LocationBuilder::latitude)
     /// - [`longitude`](crate::types::builders::LocationBuilder::longitude)
-    pub fn build(self) -> ::std::result::Result<crate::types::Location, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Location, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Location {
             latitude: self.latitude.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "latitude",
                     "latitude was not specified but it is required when building Location",
                 )
             })?,
             longitude: self.longitude.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "longitude",
                     "longitude was not specified but it is required when building Location",
                 )

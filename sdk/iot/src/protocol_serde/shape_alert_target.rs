@@ -2,7 +2,7 @@
 pub fn ser_alert_target(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AlertTarget,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("alertTargetArn").string(input.alert_target_arn.as_str());
     }

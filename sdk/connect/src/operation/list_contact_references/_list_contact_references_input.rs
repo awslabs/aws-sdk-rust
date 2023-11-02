@@ -126,7 +126,7 @@ impl ListContactReferencesInputBuilder {
     /// Consumes the builder and constructs a [`ListContactReferencesInput`](crate::operation::list_contact_references::ListContactReferencesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_contact_references::ListContactReferencesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_contact_references::ListContactReferencesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_contact_references::ListContactReferencesInput {
             instance_id: self.instance_id,

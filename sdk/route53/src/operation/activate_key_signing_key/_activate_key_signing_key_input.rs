@@ -66,7 +66,7 @@ impl ActivateKeySigningKeyInputBuilder {
     /// Consumes the builder and constructs a [`ActivateKeySigningKeyInput`](crate::operation::activate_key_signing_key::ActivateKeySigningKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::activate_key_signing_key::ActivateKeySigningKeyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::activate_key_signing_key::ActivateKeySigningKeyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::activate_key_signing_key::ActivateKeySigningKeyInput {
             hosted_zone_id: self.hosted_zone_id,

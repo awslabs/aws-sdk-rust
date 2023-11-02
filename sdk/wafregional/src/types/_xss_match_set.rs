@@ -105,17 +105,17 @@ impl XssMatchSetBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`xss_match_set_id`](crate::types::builders::XssMatchSetBuilder::xss_match_set_id)
     /// - [`xss_match_tuples`](crate::types::builders::XssMatchSetBuilder::xss_match_tuples)
-    pub fn build(self) -> ::std::result::Result<crate::types::XssMatchSet, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::XssMatchSet, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::XssMatchSet {
             xss_match_set_id: self.xss_match_set_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "xss_match_set_id",
                     "xss_match_set_id was not specified but it is required when building XssMatchSet",
                 )
             })?,
             name: self.name,
             xss_match_tuples: self.xss_match_tuples.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "xss_match_tuples",
                     "xss_match_tuples was not specified but it is required when building XssMatchSet",
                 )

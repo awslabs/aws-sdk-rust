@@ -63,7 +63,8 @@ impl GetWorkingLocationInputBuilder {
     /// Consumes the builder and constructs a [`GetWorkingLocationInput`](crate::operation::get_working_location::GetWorkingLocationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_working_location::GetWorkingLocationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_working_location::GetWorkingLocationInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::get_working_location::GetWorkingLocationInput {
             location_type: self.location_type,
         })

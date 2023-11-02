@@ -89,10 +89,10 @@ impl PreviewAgentsOutputBuilder {
     /// - [`agent_previews`](crate::operation::preview_agents::builders::PreviewAgentsOutputBuilder::agent_previews)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::preview_agents::PreviewAgentsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::preview_agents::PreviewAgentsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::preview_agents::PreviewAgentsOutput {
             agent_previews: self.agent_previews.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "agent_previews",
                     "agent_previews was not specified but it is required when building PreviewAgentsOutput",
                 )

@@ -2,7 +2,7 @@
 pub fn ser_update_channel_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_channel::UpdateChannelInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.cdi_input_specification {
         #[allow(unused_mut)]
         let mut object_2 = object.key("cdiInputSpecification").start_object();

@@ -65,7 +65,7 @@ impl GetActivityTaskInputBuilder {
     /// Consumes the builder and constructs a [`GetActivityTaskInput`](crate::operation::get_activity_task::GetActivityTaskInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_activity_task::GetActivityTaskInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_activity_task::GetActivityTaskInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_activity_task::GetActivityTaskInput {
             activity_arn: self.activity_arn,
             worker_name: self.worker_name,

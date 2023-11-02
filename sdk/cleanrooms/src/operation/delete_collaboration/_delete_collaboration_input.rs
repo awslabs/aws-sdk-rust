@@ -44,7 +44,7 @@ impl DeleteCollaborationInputBuilder {
     /// Consumes the builder and constructs a [`DeleteCollaborationInput`](crate::operation::delete_collaboration::DeleteCollaborationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_collaboration::DeleteCollaborationInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_collaboration::DeleteCollaborationInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_collaboration::DeleteCollaborationInput {
             collaboration_identifier: self.collaboration_identifier,

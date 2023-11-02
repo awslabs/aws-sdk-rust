@@ -46,7 +46,7 @@ impl StopEntitiesDetectionV2JobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_entities_detection_v2_job::StopEntitiesDetectionV2JobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::stop_entities_detection_v2_job::StopEntitiesDetectionV2JobInput { job_id: self.job_id })
     }

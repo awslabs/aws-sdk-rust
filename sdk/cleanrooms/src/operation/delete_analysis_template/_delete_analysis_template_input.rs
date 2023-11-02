@@ -66,8 +66,10 @@ impl DeleteAnalysisTemplateInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAnalysisTemplateInput`](crate::operation::delete_analysis_template::DeleteAnalysisTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_analysis_template::DeleteAnalysisTemplateInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::delete_analysis_template::DeleteAnalysisTemplateInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::delete_analysis_template::DeleteAnalysisTemplateInput {
             membership_identifier: self.membership_identifier,
             analysis_template_identifier: self.analysis_template_identifier,

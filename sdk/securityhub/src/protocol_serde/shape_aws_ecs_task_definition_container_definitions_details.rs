@@ -2,7 +2,7 @@
 pub fn ser_aws_ecs_task_definition_container_definitions_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEcsTaskDefinitionContainerDefinitionsDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.command {
         let mut array_2 = object.key("Command").start_array();
         for item_3 in var_1 {

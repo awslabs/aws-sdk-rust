@@ -110,7 +110,7 @@ impl RevokeSigningProfileInputBuilder {
     /// Consumes the builder and constructs a [`RevokeSigningProfileInput`](crate::operation::revoke_signing_profile::RevokeSigningProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::revoke_signing_profile::RevokeSigningProfileInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::revoke_signing_profile::RevokeSigningProfileInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::revoke_signing_profile::RevokeSigningProfileInput {
             profile_name: self.profile_name,

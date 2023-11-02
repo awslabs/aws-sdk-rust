@@ -66,7 +66,7 @@ impl DeleteSlotTypeVersionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSlotTypeVersionInput`](crate::operation::delete_slot_type_version::DeleteSlotTypeVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_slot_type_version::DeleteSlotTypeVersionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_slot_type_version::DeleteSlotTypeVersionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_slot_type_version::DeleteSlotTypeVersionInput {
             name: self.name,

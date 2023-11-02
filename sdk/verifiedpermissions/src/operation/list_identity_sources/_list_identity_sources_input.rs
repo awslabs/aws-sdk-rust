@@ -120,7 +120,7 @@ impl ListIdentitySourcesInputBuilder {
     /// Consumes the builder and constructs a [`ListIdentitySourcesInput`](crate::operation::list_identity_sources::ListIdentitySourcesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_identity_sources::ListIdentitySourcesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_identity_sources::ListIdentitySourcesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_identity_sources::ListIdentitySourcesInput {
             policy_store_id: self.policy_store_id,

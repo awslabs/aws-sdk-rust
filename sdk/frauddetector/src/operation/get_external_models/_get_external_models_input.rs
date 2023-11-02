@@ -85,7 +85,7 @@ impl GetExternalModelsInputBuilder {
     /// Consumes the builder and constructs a [`GetExternalModelsInput`](crate::operation::get_external_models::GetExternalModelsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_external_models::GetExternalModelsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_external_models::GetExternalModelsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_external_models::GetExternalModelsInput {
             model_endpoint: self.model_endpoint,
             next_token: self.next_token,

@@ -44,7 +44,7 @@ impl EnableDirectoryInputBuilder {
     /// Consumes the builder and constructs a [`EnableDirectoryInput`](crate::operation::enable_directory::EnableDirectoryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::enable_directory::EnableDirectoryInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::enable_directory::EnableDirectoryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::enable_directory::EnableDirectoryInput {
             directory_arn: self.directory_arn,
         })

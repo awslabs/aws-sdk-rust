@@ -46,7 +46,7 @@ impl DescribeUserHierarchyStructureInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_user_hierarchy_structure::DescribeUserHierarchyStructureInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_user_hierarchy_structure::DescribeUserHierarchyStructureInput {
             instance_id: self.instance_id,

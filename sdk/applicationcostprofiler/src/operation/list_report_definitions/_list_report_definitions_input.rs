@@ -64,7 +64,7 @@ impl ListReportDefinitionsInputBuilder {
     /// Consumes the builder and constructs a [`ListReportDefinitionsInput`](crate::operation::list_report_definitions::ListReportDefinitionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_report_definitions::ListReportDefinitionsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_report_definitions::ListReportDefinitionsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_report_definitions::ListReportDefinitionsInput {
             next_token: self.next_token,

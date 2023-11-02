@@ -144,34 +144,34 @@ impl ElasticsearchActionBuilder {
     /// - [`index`](crate::types::builders::ElasticsearchActionBuilder::index)
     /// - [`r#type`](crate::types::builders::ElasticsearchActionBuilder::r#type)
     /// - [`id`](crate::types::builders::ElasticsearchActionBuilder::id)
-    pub fn build(self) -> ::std::result::Result<crate::types::ElasticsearchAction, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ElasticsearchAction, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ElasticsearchAction {
             role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role_arn",
                     "role_arn was not specified but it is required when building ElasticsearchAction",
                 )
             })?,
             endpoint: self.endpoint.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "endpoint",
                     "endpoint was not specified but it is required when building ElasticsearchAction",
                 )
             })?,
             index: self.index.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "index",
                     "index was not specified but it is required when building ElasticsearchAction",
                 )
             })?,
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building ElasticsearchAction",
                 )
             })?,
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building ElasticsearchAction",
                 )

@@ -387,7 +387,7 @@ impl ModifyClientVpnEndpointInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_client_vpn_endpoint::ModifyClientVpnEndpointInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::modify_client_vpn_endpoint::ModifyClientVpnEndpointInput {
             client_vpn_endpoint_id: self.client_vpn_endpoint_id,

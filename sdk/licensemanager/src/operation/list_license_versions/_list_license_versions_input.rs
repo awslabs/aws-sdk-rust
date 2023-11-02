@@ -86,7 +86,7 @@ impl ListLicenseVersionsInputBuilder {
     /// Consumes the builder and constructs a [`ListLicenseVersionsInput`](crate::operation::list_license_versions::ListLicenseVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_license_versions::ListLicenseVersionsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_license_versions::ListLicenseVersionsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_license_versions::ListLicenseVersionsInput {
             license_arn: self.license_arn,

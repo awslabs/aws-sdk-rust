@@ -2,7 +2,7 @@
 pub fn ser_distribution(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Distribution,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("region").string(input.region.as_str());
     }

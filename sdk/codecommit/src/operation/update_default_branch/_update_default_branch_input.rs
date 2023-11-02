@@ -67,7 +67,7 @@ impl UpdateDefaultBranchInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDefaultBranchInput`](crate::operation::update_default_branch::UpdateDefaultBranchInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_default_branch::UpdateDefaultBranchInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_default_branch::UpdateDefaultBranchInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_default_branch::UpdateDefaultBranchInput {
             repository_name: self.repository_name,

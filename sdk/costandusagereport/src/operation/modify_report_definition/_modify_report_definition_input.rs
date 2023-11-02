@@ -66,8 +66,10 @@ impl ModifyReportDefinitionInputBuilder {
     /// Consumes the builder and constructs a [`ModifyReportDefinitionInput`](crate::operation::modify_report_definition::ModifyReportDefinitionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::modify_report_definition::ModifyReportDefinitionInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::modify_report_definition::ModifyReportDefinitionInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::modify_report_definition::ModifyReportDefinitionInput {
             report_name: self.report_name,
             report_definition: self.report_definition,

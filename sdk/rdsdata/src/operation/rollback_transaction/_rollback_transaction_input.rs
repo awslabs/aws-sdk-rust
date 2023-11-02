@@ -89,7 +89,7 @@ impl RollbackTransactionInputBuilder {
     /// Consumes the builder and constructs a [`RollbackTransactionInput`](crate::operation::rollback_transaction::RollbackTransactionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::rollback_transaction::RollbackTransactionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::rollback_transaction::RollbackTransactionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::rollback_transaction::RollbackTransactionInput {
             resource_arn: self.resource_arn,

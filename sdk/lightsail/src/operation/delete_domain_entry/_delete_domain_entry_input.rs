@@ -66,7 +66,7 @@ impl DeleteDomainEntryInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDomainEntryInput`](crate::operation::delete_domain_entry::DeleteDomainEntryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_domain_entry::DeleteDomainEntryInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_domain_entry::DeleteDomainEntryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_domain_entry::DeleteDomainEntryInput {
             domain_name: self.domain_name,
             domain_entry: self.domain_entry,

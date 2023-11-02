@@ -73,7 +73,7 @@ impl AuthorizeIpRulesInputBuilder {
     /// Consumes the builder and constructs a [`AuthorizeIpRulesInput`](crate::operation::authorize_ip_rules::AuthorizeIpRulesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::authorize_ip_rules::AuthorizeIpRulesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::authorize_ip_rules::AuthorizeIpRulesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::authorize_ip_rules::AuthorizeIpRulesInput {
             group_id: self.group_id,
             user_rules: self.user_rules,

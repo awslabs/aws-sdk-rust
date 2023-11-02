@@ -66,7 +66,8 @@ impl ResetEncryptionKeyInputBuilder {
     /// Consumes the builder and constructs a [`ResetEncryptionKeyInput`](crate::operation::reset_encryption_key::ResetEncryptionKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::reset_encryption_key::ResetEncryptionKeyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::reset_encryption_key::ResetEncryptionKeyInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::reset_encryption_key::ResetEncryptionKeyInput {
             scan_type: self.scan_type,
             resource_type: self.resource_type,

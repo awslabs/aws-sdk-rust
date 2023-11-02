@@ -149,7 +149,7 @@ impl ExportApiInputBuilder {
         &self.stage_name
     }
     /// Consumes the builder and constructs a [`ExportApiInput`](crate::operation::export_api::ExportApiInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::export_api::ExportApiInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::export_api::ExportApiInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::export_api::ExportApiInput {
             api_id: self.api_id,
             export_version: self.export_version,

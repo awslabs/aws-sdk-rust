@@ -108,7 +108,7 @@ impl GetLensReviewInputBuilder {
     /// Consumes the builder and constructs a [`GetLensReviewInput`](crate::operation::get_lens_review::GetLensReviewInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_lens_review::GetLensReviewInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_lens_review::GetLensReviewInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_lens_review::GetLensReviewInput {
             workload_id: self.workload_id,
             lens_alias: self.lens_alias,

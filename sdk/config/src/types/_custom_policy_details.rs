@@ -91,16 +91,16 @@ impl CustomPolicyDetailsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`policy_runtime`](crate::types::builders::CustomPolicyDetailsBuilder::policy_runtime)
     /// - [`policy_text`](crate::types::builders::CustomPolicyDetailsBuilder::policy_text)
-    pub fn build(self) -> ::std::result::Result<crate::types::CustomPolicyDetails, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CustomPolicyDetails, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CustomPolicyDetails {
             policy_runtime: self.policy_runtime.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "policy_runtime",
                     "policy_runtime was not specified but it is required when building CustomPolicyDetails",
                 )
             })?,
             policy_text: self.policy_text.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "policy_text",
                     "policy_text was not specified but it is required when building CustomPolicyDetails",
                 )

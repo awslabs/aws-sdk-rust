@@ -119,11 +119,11 @@ impl ListProfilingGroupsOutputBuilder {
     /// - [`profiling_group_names`](crate::operation::list_profiling_groups::builders::ListProfilingGroupsOutputBuilder::profiling_group_names)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_profiling_groups::ListProfilingGroupsOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_profiling_groups::ListProfilingGroupsOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_profiling_groups::ListProfilingGroupsOutput {
             profiling_group_names: self.profiling_group_names.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "profiling_group_names",
                     "profiling_group_names was not specified but it is required when building ListProfilingGroupsOutput",
                 )

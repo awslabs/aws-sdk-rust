@@ -51,10 +51,10 @@ impl CorsConfigurationBuilder {
     /// Consumes the builder and constructs a [`CorsConfiguration`](crate::types::CorsConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`cors_rules`](crate::types::builders::CorsConfigurationBuilder::cors_rules)
-    pub fn build(self) -> ::std::result::Result<crate::types::CorsConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CorsConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CorsConfiguration {
             cors_rules: self.cors_rules.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "cors_rules",
                     "cors_rules was not specified but it is required when building CorsConfiguration",
                 )

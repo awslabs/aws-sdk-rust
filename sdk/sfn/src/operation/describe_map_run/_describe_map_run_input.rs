@@ -44,7 +44,7 @@ impl DescribeMapRunInputBuilder {
     /// Consumes the builder and constructs a [`DescribeMapRunInput`](crate::operation::describe_map_run::DescribeMapRunInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_map_run::DescribeMapRunInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_map_run::DescribeMapRunInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_map_run::DescribeMapRunInput {
             map_run_arn: self.map_run_arn,
         })

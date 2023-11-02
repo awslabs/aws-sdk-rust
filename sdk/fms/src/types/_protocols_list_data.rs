@@ -194,11 +194,11 @@ impl ProtocolsListDataBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`list_name`](crate::types::builders::ProtocolsListDataBuilder::list_name)
     /// - [`protocols_list`](crate::types::builders::ProtocolsListDataBuilder::protocols_list)
-    pub fn build(self) -> ::std::result::Result<crate::types::ProtocolsListData, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ProtocolsListData, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ProtocolsListData {
             list_id: self.list_id,
             list_name: self.list_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "list_name",
                     "list_name was not specified but it is required when building ProtocolsListData",
                 )
@@ -207,7 +207,7 @@ impl ProtocolsListDataBuilder {
             create_time: self.create_time,
             last_update_time: self.last_update_time,
             protocols_list: self.protocols_list.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "protocols_list",
                     "protocols_list was not specified but it is required when building ProtocolsListData",
                 )

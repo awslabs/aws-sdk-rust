@@ -2,7 +2,7 @@
 pub fn ser_data_source_s3_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DataSourceS3Configuration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("BucketName").string(input.bucket_name.as_str());
     }

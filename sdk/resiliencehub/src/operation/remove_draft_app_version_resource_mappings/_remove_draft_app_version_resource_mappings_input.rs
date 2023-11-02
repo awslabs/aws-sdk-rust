@@ -230,7 +230,7 @@ impl RemoveDraftAppVersionResourceMappingsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_draft_app_version_resource_mappings::RemoveDraftAppVersionResourceMappingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::remove_draft_app_version_resource_mappings::RemoveDraftAppVersionResourceMappingsInput {

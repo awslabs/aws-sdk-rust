@@ -90,10 +90,10 @@ impl ListActionTypesOutputBuilder {
     /// - [`action_types`](crate::operation::list_action_types::builders::ListActionTypesOutputBuilder::action_types)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_action_types::ListActionTypesOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_action_types::ListActionTypesOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_action_types::ListActionTypesOutput {
             action_types: self.action_types.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "action_types",
                     "action_types was not specified but it is required when building ListActionTypesOutput",
                 )

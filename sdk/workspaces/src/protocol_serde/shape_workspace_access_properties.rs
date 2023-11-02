@@ -2,7 +2,7 @@
 pub fn ser_workspace_access_properties(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::WorkspaceAccessProperties,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.device_type_windows {
         object.key("DeviceTypeWindows").string(var_1.as_str());
     }

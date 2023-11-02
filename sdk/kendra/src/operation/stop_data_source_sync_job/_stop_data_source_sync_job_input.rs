@@ -66,8 +66,10 @@ impl StopDataSourceSyncJobInputBuilder {
     /// Consumes the builder and constructs a [`StopDataSourceSyncJobInput`](crate::operation::stop_data_source_sync_job::StopDataSourceSyncJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_data_source_sync_job::StopDataSourceSyncJobInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::stop_data_source_sync_job::StopDataSourceSyncJobInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::stop_data_source_sync_job::StopDataSourceSyncJobInput {
             id: self.id,
             index_id: self.index_id,

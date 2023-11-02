@@ -66,7 +66,7 @@ impl ListIdMappingWorkflowsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_id_mapping_workflows::ListIdMappingWorkflowsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_id_mapping_workflows::ListIdMappingWorkflowsInput {
             next_token: self.next_token,

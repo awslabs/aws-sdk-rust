@@ -80,16 +80,16 @@ impl ExplainabilityConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`time_series_granularity`](crate::types::builders::ExplainabilityConfigBuilder::time_series_granularity)
     /// - [`time_point_granularity`](crate::types::builders::ExplainabilityConfigBuilder::time_point_granularity)
-    pub fn build(self) -> ::std::result::Result<crate::types::ExplainabilityConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ExplainabilityConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ExplainabilityConfig {
             time_series_granularity: self.time_series_granularity.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "time_series_granularity",
                     "time_series_granularity was not specified but it is required when building ExplainabilityConfig",
                 )
             })?,
             time_point_granularity: self.time_point_granularity.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "time_point_granularity",
                     "time_point_granularity was not specified but it is required when building ExplainabilityConfig",
                 )

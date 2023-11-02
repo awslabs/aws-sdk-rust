@@ -99,10 +99,10 @@ impl AddOnRequestBuilder {
     /// Consumes the builder and constructs a [`AddOnRequest`](crate::types::AddOnRequest).
     /// This method will fail if any of the following fields are not set:
     /// - [`add_on_type`](crate::types::builders::AddOnRequestBuilder::add_on_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::AddOnRequest, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AddOnRequest, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AddOnRequest {
             add_on_type: self.add_on_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "add_on_type",
                     "add_on_type was not specified but it is required when building AddOnRequest",
                 )

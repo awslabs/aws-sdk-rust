@@ -88,7 +88,7 @@ impl UpdateJourneyInputBuilder {
     /// Consumes the builder and constructs a [`UpdateJourneyInput`](crate::operation::update_journey::UpdateJourneyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_journey::UpdateJourneyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_journey::UpdateJourneyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_journey::UpdateJourneyInput {
             application_id: self.application_id,
             journey_id: self.journey_id,

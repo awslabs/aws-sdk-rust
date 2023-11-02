@@ -2,7 +2,7 @@
 pub fn ser_spark_submit_job_driver(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SparkSubmitJobDriver,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("entryPoint").string(input.entry_point.as_str());
     }

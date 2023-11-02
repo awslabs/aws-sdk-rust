@@ -2,7 +2,7 @@
 pub fn ser_update_open_zfs_volume_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UpdateOpenZfsVolumeConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.storage_capacity_reservation_gib {
         object.key("StorageCapacityReservationGiB").number(
             #[allow(clippy::useless_conversion)]

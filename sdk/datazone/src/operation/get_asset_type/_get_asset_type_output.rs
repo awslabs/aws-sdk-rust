@@ -332,35 +332,35 @@ impl GetAssetTypeOutputBuilder {
     /// - [`owning_project_id`](crate::operation::get_asset_type::builders::GetAssetTypeOutputBuilder::owning_project_id)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_asset_type::GetAssetTypeOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_asset_type::GetAssetTypeOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_asset_type::GetAssetTypeOutput {
             domain_id: self.domain_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "domain_id",
                     "domain_id was not specified but it is required when building GetAssetTypeOutput",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building GetAssetTypeOutput",
                 )
             })?,
             revision: self.revision.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "revision",
                     "revision was not specified but it is required when building GetAssetTypeOutput",
                 )
             })?,
             description: self.description,
             forms_output: self.forms_output.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "forms_output",
                     "forms_output was not specified but it is required when building GetAssetTypeOutput",
                 )
             })?,
             owning_project_id: self.owning_project_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "owning_project_id",
                     "owning_project_id was not specified but it is required when building GetAssetTypeOutput",
                 )

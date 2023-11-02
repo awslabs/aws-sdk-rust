@@ -109,22 +109,22 @@ impl DiscoveryDataBuilder {
     /// - [`public_ip_addresses`](crate::types::builders::DiscoveryDataBuilder::public_ip_addresses)
     /// - [`private_ip_addresses`](crate::types::builders::DiscoveryDataBuilder::private_ip_addresses)
     /// - [`capability_arns`](crate::types::builders::DiscoveryDataBuilder::capability_arns)
-    pub fn build(self) -> ::std::result::Result<crate::types::DiscoveryData, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DiscoveryData, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DiscoveryData {
             public_ip_addresses: self.public_ip_addresses.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "public_ip_addresses",
                     "public_ip_addresses was not specified but it is required when building DiscoveryData",
                 )
             })?,
             private_ip_addresses: self.private_ip_addresses.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "private_ip_addresses",
                     "private_ip_addresses was not specified but it is required when building DiscoveryData",
                 )
             })?,
             capability_arns: self.capability_arns.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "capability_arns",
                     "capability_arns was not specified but it is required when building DiscoveryData",
                 )

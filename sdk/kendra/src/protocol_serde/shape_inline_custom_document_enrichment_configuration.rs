@@ -2,7 +2,7 @@
 pub fn ser_inline_custom_document_enrichment_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::InlineCustomDocumentEnrichmentConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.condition {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Condition").start_object();

@@ -66,7 +66,7 @@ impl GetGroupVersionInputBuilder {
     /// Consumes the builder and constructs a [`GetGroupVersionInput`](crate::operation::get_group_version::GetGroupVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_group_version::GetGroupVersionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_group_version::GetGroupVersionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_group_version::GetGroupVersionInput {
             group_id: self.group_id,
             group_version_id: self.group_version_id,

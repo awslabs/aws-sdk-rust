@@ -108,7 +108,7 @@ impl DeleteAnalysisInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAnalysisInput`](crate::operation::delete_analysis::DeleteAnalysisInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_analysis::DeleteAnalysisInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_analysis::DeleteAnalysisInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_analysis::DeleteAnalysisInput {
             aws_account_id: self.aws_account_id,
             analysis_id: self.analysis_id,

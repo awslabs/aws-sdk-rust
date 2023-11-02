@@ -42,7 +42,7 @@ impl GetCrlInputBuilder {
         &self.crl_id
     }
     /// Consumes the builder and constructs a [`GetCrlInput`](crate::operation::get_crl::GetCrlInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_crl::GetCrlInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_crl::GetCrlInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_crl::GetCrlInput { crl_id: self.crl_id })
     }
 }

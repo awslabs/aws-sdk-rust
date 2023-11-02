@@ -156,30 +156,30 @@ impl PricingPlanBuilder {
     /// - [`pricing_mode`](crate::types::builders::PricingPlanBuilder::pricing_mode)
     /// - [`update_date_time`](crate::types::builders::PricingPlanBuilder::update_date_time)
     /// - [`update_reason`](crate::types::builders::PricingPlanBuilder::update_reason)
-    pub fn build(self) -> ::std::result::Result<crate::types::PricingPlan, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PricingPlan, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PricingPlan {
             billable_entity_count: self.billable_entity_count,
             bundle_information: self.bundle_information,
             effective_date_time: self.effective_date_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "effective_date_time",
                     "effective_date_time was not specified but it is required when building PricingPlan",
                 )
             })?,
             pricing_mode: self.pricing_mode.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "pricing_mode",
                     "pricing_mode was not specified but it is required when building PricingPlan",
                 )
             })?,
             update_date_time: self.update_date_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "update_date_time",
                     "update_date_time was not specified but it is required when building PricingPlan",
                 )
             })?,
             update_reason: self.update_reason.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "update_reason",
                     "update_reason was not specified but it is required when building PricingPlan",
                 )

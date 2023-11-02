@@ -103,16 +103,16 @@ impl AccountLimitBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::AccountLimitBuilder::r#type)
     /// - [`value`](crate::types::builders::AccountLimitBuilder::value)
-    pub fn build(self) -> ::std::result::Result<crate::types::AccountLimit, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AccountLimit, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AccountLimit {
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building AccountLimit",
                 )
             })?,
             value: self.value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "value",
                     "value was not specified but it is required when building AccountLimit",
                 )

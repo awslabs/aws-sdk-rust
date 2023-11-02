@@ -163,7 +163,7 @@ impl CreateDeviceFleetInputBuilder {
     /// Consumes the builder and constructs a [`CreateDeviceFleetInput`](crate::operation::create_device_fleet::CreateDeviceFleetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_device_fleet::CreateDeviceFleetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_device_fleet::CreateDeviceFleetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_device_fleet::CreateDeviceFleetInput {
             device_fleet_name: self.device_fleet_name,
             role_arn: self.role_arn,

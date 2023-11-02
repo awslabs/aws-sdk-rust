@@ -107,7 +107,7 @@ impl DescribeImageTagsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeImageTagsInput`](crate::operation::describe_image_tags::DescribeImageTagsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_image_tags::DescribeImageTagsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_image_tags::DescribeImageTagsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_image_tags::DescribeImageTagsInput {
             registry_id: self.registry_id,
             repository_name: self.repository_name,

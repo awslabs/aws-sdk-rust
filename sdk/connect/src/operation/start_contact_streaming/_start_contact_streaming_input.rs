@@ -110,7 +110,7 @@ impl StartContactStreamingInputBuilder {
     /// Consumes the builder and constructs a [`StartContactStreamingInput`](crate::operation::start_contact_streaming::StartContactStreamingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_contact_streaming::StartContactStreamingInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::start_contact_streaming::StartContactStreamingInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_contact_streaming::StartContactStreamingInput {
             instance_id: self.instance_id,

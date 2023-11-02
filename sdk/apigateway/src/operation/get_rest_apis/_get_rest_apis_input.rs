@@ -63,7 +63,7 @@ impl GetRestApisInputBuilder {
         &self.limit
     }
     /// Consumes the builder and constructs a [`GetRestApisInput`](crate::operation::get_rest_apis::GetRestApisInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_rest_apis::GetRestApisInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_rest_apis::GetRestApisInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_rest_apis::GetRestApisInput {
             position: self.position,
             limit: self.limit,

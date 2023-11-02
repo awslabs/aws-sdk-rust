@@ -65,7 +65,7 @@ impl UpdateDeviceMetadataInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDeviceMetadataInput`](crate::operation::update_device_metadata::UpdateDeviceMetadataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_device_metadata::UpdateDeviceMetadataInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_device_metadata::UpdateDeviceMetadataInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_device_metadata::UpdateDeviceMetadataInput {
             device_id: self.device_id,

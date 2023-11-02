@@ -118,7 +118,7 @@ impl DescribeCustomKeyStoresInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_custom_key_stores::DescribeCustomKeyStoresInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_custom_key_stores::DescribeCustomKeyStoresInput {
             custom_key_store_id: self.custom_key_store_id,

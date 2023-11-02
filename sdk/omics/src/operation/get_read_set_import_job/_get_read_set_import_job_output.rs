@@ -228,43 +228,43 @@ impl GetReadSetImportJobOutputBuilder {
     /// - [`sources`](crate::operation::get_read_set_import_job::builders::GetReadSetImportJobOutputBuilder::sources)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_read_set_import_job::GetReadSetImportJobOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_read_set_import_job::GetReadSetImportJobOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_read_set_import_job::GetReadSetImportJobOutput {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building GetReadSetImportJobOutput",
                 )
             })?,
             sequence_store_id: self.sequence_store_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "sequence_store_id",
                     "sequence_store_id was not specified but it is required when building GetReadSetImportJobOutput",
                 )
             })?,
             role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role_arn",
                     "role_arn was not specified but it is required when building GetReadSetImportJobOutput",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building GetReadSetImportJobOutput",
                 )
             })?,
             status_message: self.status_message,
             creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_time",
                     "creation_time was not specified but it is required when building GetReadSetImportJobOutput",
                 )
             })?,
             completion_time: self.completion_time,
             sources: self.sources.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "sources",
                     "sources was not specified but it is required when building GetReadSetImportJobOutput",
                 )

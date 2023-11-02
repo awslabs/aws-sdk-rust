@@ -2,7 +2,7 @@
 pub fn ser_event_bridge_data_source_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EventBridgeDataSourceConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("eventBusArn").string(input.event_bus_arn.as_str());
     }

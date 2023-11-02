@@ -114,22 +114,22 @@ impl ManagedAgentStateChangeBuilder {
     /// - [`container_name`](crate::types::builders::ManagedAgentStateChangeBuilder::container_name)
     /// - [`managed_agent_name`](crate::types::builders::ManagedAgentStateChangeBuilder::managed_agent_name)
     /// - [`status`](crate::types::builders::ManagedAgentStateChangeBuilder::status)
-    pub fn build(self) -> ::std::result::Result<crate::types::ManagedAgentStateChange, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ManagedAgentStateChange, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ManagedAgentStateChange {
             container_name: self.container_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "container_name",
                     "container_name was not specified but it is required when building ManagedAgentStateChange",
                 )
             })?,
             managed_agent_name: self.managed_agent_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "managed_agent_name",
                     "managed_agent_name was not specified but it is required when building ManagedAgentStateChange",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building ManagedAgentStateChange",
                 )

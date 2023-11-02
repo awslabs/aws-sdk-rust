@@ -84,8 +84,8 @@ pub fn de_describe_registry_http_response(
 
 pub fn ser_describe_registry_input(
     _input: &crate::operation::describe_registry::DescribeRegistryInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
-    Ok(::aws_smithy_http::body::SdkBody::from("{}"))
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+    Ok(::aws_smithy_types::body::SdkBody::from("{}"))
 }
 
 pub(crate) fn de_describe_registry(

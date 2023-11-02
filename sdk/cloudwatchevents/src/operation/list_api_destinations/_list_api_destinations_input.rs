@@ -106,7 +106,7 @@ impl ListApiDestinationsInputBuilder {
     /// Consumes the builder and constructs a [`ListApiDestinationsInput`](crate::operation::list_api_destinations::ListApiDestinationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_api_destinations::ListApiDestinationsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_api_destinations::ListApiDestinationsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_api_destinations::ListApiDestinationsInput {
             name_prefix: self.name_prefix,

@@ -85,16 +85,16 @@ impl TagColumnOperationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`column_name`](crate::types::builders::TagColumnOperationBuilder::column_name)
     /// - [`tags`](crate::types::builders::TagColumnOperationBuilder::tags)
-    pub fn build(self) -> ::std::result::Result<crate::types::TagColumnOperation, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TagColumnOperation, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TagColumnOperation {
             column_name: self.column_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "column_name",
                     "column_name was not specified but it is required when building TagColumnOperation",
                 )
             })?,
             tags: self.tags.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "tags",
                     "tags was not specified but it is required when building TagColumnOperation",
                 )

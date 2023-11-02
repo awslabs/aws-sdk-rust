@@ -76,10 +76,10 @@ impl S3OriginConfigBuilder {
     /// Consumes the builder and constructs a [`S3OriginConfig`](crate::types::S3OriginConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`origin_access_identity`](crate::types::builders::S3OriginConfigBuilder::origin_access_identity)
-    pub fn build(self) -> ::std::result::Result<crate::types::S3OriginConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::S3OriginConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::S3OriginConfig {
             origin_access_identity: self.origin_access_identity.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "origin_access_identity",
                     "origin_access_identity was not specified but it is required when building S3OriginConfig",
                 )

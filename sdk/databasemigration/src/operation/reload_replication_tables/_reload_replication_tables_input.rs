@@ -97,7 +97,7 @@ impl ReloadReplicationTablesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reload_replication_tables::ReloadReplicationTablesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::reload_replication_tables::ReloadReplicationTablesInput {
             replication_config_arn: self.replication_config_arn,

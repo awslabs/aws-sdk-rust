@@ -92,16 +92,16 @@ impl ArtifactStoreBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::ArtifactStoreBuilder::r#type)
     /// - [`location`](crate::types::builders::ArtifactStoreBuilder::location)
-    pub fn build(self) -> ::std::result::Result<crate::types::ArtifactStore, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ArtifactStore, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ArtifactStore {
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building ArtifactStore",
                 )
             })?,
             location: self.location.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "location",
                     "location was not specified but it is required when building ArtifactStore",
                 )

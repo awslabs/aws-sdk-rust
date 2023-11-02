@@ -92,16 +92,16 @@ impl TagCostEstimationResourceCollectionFilterBuilder {
     /// - [`tag_values`](crate::types::builders::TagCostEstimationResourceCollectionFilterBuilder::tag_values)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::TagCostEstimationResourceCollectionFilter, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::TagCostEstimationResourceCollectionFilter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TagCostEstimationResourceCollectionFilter {
             app_boundary_key: self.app_boundary_key.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "app_boundary_key",
                     "app_boundary_key was not specified but it is required when building TagCostEstimationResourceCollectionFilter",
                 )
             })?,
             tag_values: self.tag_values.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "tag_values",
                     "tag_values was not specified but it is required when building TagCostEstimationResourceCollectionFilter",
                 )

@@ -54,7 +54,7 @@ where
 pub fn ser_temporal_statistics_config_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TemporalStatisticsConfigInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.group_by {
         object.key("GroupBy").string(var_1.as_str());
     }

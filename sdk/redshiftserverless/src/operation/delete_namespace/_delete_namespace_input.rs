@@ -86,7 +86,7 @@ impl DeleteNamespaceInputBuilder {
     /// Consumes the builder and constructs a [`DeleteNamespaceInput`](crate::operation::delete_namespace::DeleteNamespaceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_namespace::DeleteNamespaceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_namespace::DeleteNamespaceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_namespace::DeleteNamespaceInput {
             namespace_name: self.namespace_name,
             final_snapshot_name: self.final_snapshot_name,

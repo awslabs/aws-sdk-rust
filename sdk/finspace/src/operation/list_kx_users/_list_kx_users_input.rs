@@ -84,7 +84,7 @@ impl ListKxUsersInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListKxUsersInput`](crate::operation::list_kx_users::ListKxUsersInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_kx_users::ListKxUsersInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_kx_users::ListKxUsersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_kx_users::ListKxUsersInput {
             environment_id: self.environment_id,
             next_token: self.next_token,

@@ -368,16 +368,16 @@ impl DnsRecordBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::DnsRecordBuilder::r#type)
     /// - [`ttl`](crate::types::builders::DnsRecordBuilder::ttl)
-    pub fn build(self) -> ::std::result::Result<crate::types::DnsRecord, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DnsRecord, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DnsRecord {
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building DnsRecord",
                 )
             })?,
             ttl: self.ttl.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "ttl",
                     "ttl was not specified but it is required when building DnsRecord",
                 )

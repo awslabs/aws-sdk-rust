@@ -108,7 +108,7 @@ impl SearchSchemasInputBuilder {
     /// Consumes the builder and constructs a [`SearchSchemasInput`](crate::operation::search_schemas::SearchSchemasInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::search_schemas::SearchSchemasInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::search_schemas::SearchSchemasInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_schemas::SearchSchemasInput {
             keywords: self.keywords,
             limit: self.limit,

@@ -108,7 +108,7 @@ impl ListThemeVersionsInputBuilder {
     /// Consumes the builder and constructs a [`ListThemeVersionsInput`](crate::operation::list_theme_versions::ListThemeVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_theme_versions::ListThemeVersionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_theme_versions::ListThemeVersionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_theme_versions::ListThemeVersionsInput {
             aws_account_id: self.aws_account_id,
             theme_id: self.theme_id,

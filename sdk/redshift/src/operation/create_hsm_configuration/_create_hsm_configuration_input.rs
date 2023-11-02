@@ -184,8 +184,10 @@ impl CreateHsmConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`CreateHsmConfigurationInput`](crate::operation::create_hsm_configuration::CreateHsmConfigurationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_hsm_configuration::CreateHsmConfigurationInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::create_hsm_configuration::CreateHsmConfigurationInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::create_hsm_configuration::CreateHsmConfigurationInput {
             hsm_configuration_identifier: self.hsm_configuration_identifier,
             description: self.description,

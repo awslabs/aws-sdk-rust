@@ -2,7 +2,7 @@
 pub fn ser_release_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ReleaseConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.duration_since_last_access {
         #[allow(unused_mut)]
         let mut object_2 = object.key("DurationSinceLastAccess").start_object();

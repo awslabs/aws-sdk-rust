@@ -2,7 +2,7 @@
 pub fn ser_execute_command_log_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ExecuteCommandLogConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.cloud_watch_log_group_name {
         object.key("cloudWatchLogGroupName").string(var_1.as_str());
     }

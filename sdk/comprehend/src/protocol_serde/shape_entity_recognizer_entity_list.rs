@@ -2,7 +2,7 @@
 pub fn ser_entity_recognizer_entity_list(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EntityRecognizerEntityList,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("S3Uri").string(input.s3_uri.as_str());
     }

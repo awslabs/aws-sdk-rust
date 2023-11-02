@@ -75,10 +75,10 @@ impl PolicyInformationBuilder {
     /// Consumes the builder and constructs a [`PolicyInformation`](crate::types::PolicyInformation).
     /// This method will fail if any of the following fields are not set:
     /// - [`cert_policy_id`](crate::types::builders::PolicyInformationBuilder::cert_policy_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::PolicyInformation, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PolicyInformation, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PolicyInformation {
             cert_policy_id: self.cert_policy_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "cert_policy_id",
                     "cert_policy_id was not specified but it is required when building PolicyInformation",
                 )

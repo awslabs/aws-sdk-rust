@@ -2,7 +2,7 @@
 pub fn ser_parameter_date_time_picker_control(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ParameterDateTimePickerControl,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("ParameterControlId").string(input.parameter_control_id.as_str());
     }

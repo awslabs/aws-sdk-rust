@@ -349,29 +349,29 @@ impl GetCustomModelOutputBuilder {
     /// - [`creation_time`](crate::operation::get_custom_model::builders::GetCustomModelOutputBuilder::creation_time)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_custom_model::GetCustomModelOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_custom_model::GetCustomModelOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_custom_model::GetCustomModelOutput {
             model_arn: self.model_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "model_arn",
                     "model_arn was not specified but it is required when building GetCustomModelOutput",
                 )
             })?,
             model_name: self.model_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "model_name",
                     "model_name was not specified but it is required when building GetCustomModelOutput",
                 )
             })?,
             job_name: self.job_name,
             job_arn: self.job_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "job_arn",
                     "job_arn was not specified but it is required when building GetCustomModelOutput",
                 )
             })?,
             base_model_arn: self.base_model_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "base_model_arn",
                     "base_model_arn was not specified but it is required when building GetCustomModelOutput",
                 )
@@ -384,7 +384,7 @@ impl GetCustomModelOutputBuilder {
             training_metrics: self.training_metrics,
             validation_metrics: self.validation_metrics,
             creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_time",
                     "creation_time was not specified but it is required when building GetCustomModelOutput",
                 )

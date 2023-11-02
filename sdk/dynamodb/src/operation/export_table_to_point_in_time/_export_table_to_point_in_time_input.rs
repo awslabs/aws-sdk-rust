@@ -287,7 +287,7 @@ impl ExportTableToPointInTimeInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::export_table_to_point_in_time::ExportTableToPointInTimeInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::export_table_to_point_in_time::ExportTableToPointInTimeInput {
             table_arn: self.table_arn,

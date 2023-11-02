@@ -85,7 +85,7 @@ impl BatchDisassociateApprovalRuleTemplateFromRepositoriesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_disassociate_approval_rule_template_from_repositories::BatchDisassociateApprovalRuleTemplateFromRepositoriesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::batch_disassociate_approval_rule_template_from_repositories::BatchDisassociateApprovalRuleTemplateFromRepositoriesInput {

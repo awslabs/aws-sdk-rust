@@ -88,7 +88,8 @@ impl DeleteModelVersionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteModelVersionInput`](crate::operation::delete_model_version::DeleteModelVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_model_version::DeleteModelVersionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_model_version::DeleteModelVersionInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::delete_model_version::DeleteModelVersionInput {
             model_id: self.model_id,
             model_type: self.model_type,

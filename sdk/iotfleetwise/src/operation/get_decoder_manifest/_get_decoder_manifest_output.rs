@@ -196,17 +196,17 @@ impl GetDecoderManifestOutputBuilder {
     /// - [`last_modification_time`](crate::operation::get_decoder_manifest::builders::GetDecoderManifestOutputBuilder::last_modification_time)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_decoder_manifest::GetDecoderManifestOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_decoder_manifest::GetDecoderManifestOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_decoder_manifest::GetDecoderManifestOutput {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building GetDecoderManifestOutput",
                 )
             })?,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building GetDecoderManifestOutput",
                 )
@@ -215,13 +215,13 @@ impl GetDecoderManifestOutputBuilder {
             model_manifest_arn: self.model_manifest_arn,
             status: self.status,
             creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_time",
                     "creation_time was not specified but it is required when building GetDecoderManifestOutput",
                 )
             })?,
             last_modification_time: self.last_modification_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_modification_time",
                     "last_modification_time was not specified but it is required when building GetDecoderManifestOutput",
                 )

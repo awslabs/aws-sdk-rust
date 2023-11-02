@@ -147,28 +147,28 @@ impl AutomaticTapeCreationRuleBuilder {
     /// - [`pool_id`](crate::types::builders::AutomaticTapeCreationRuleBuilder::pool_id)
     /// - [`tape_size_in_bytes`](crate::types::builders::AutomaticTapeCreationRuleBuilder::tape_size_in_bytes)
     /// - [`minimum_num_tapes`](crate::types::builders::AutomaticTapeCreationRuleBuilder::minimum_num_tapes)
-    pub fn build(self) -> ::std::result::Result<crate::types::AutomaticTapeCreationRule, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AutomaticTapeCreationRule, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AutomaticTapeCreationRule {
             tape_barcode_prefix: self.tape_barcode_prefix.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "tape_barcode_prefix",
                     "tape_barcode_prefix was not specified but it is required when building AutomaticTapeCreationRule",
                 )
             })?,
             pool_id: self.pool_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "pool_id",
                     "pool_id was not specified but it is required when building AutomaticTapeCreationRule",
                 )
             })?,
             tape_size_in_bytes: self.tape_size_in_bytes.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "tape_size_in_bytes",
                     "tape_size_in_bytes was not specified but it is required when building AutomaticTapeCreationRule",
                 )
             })?,
             minimum_num_tapes: self.minimum_num_tapes.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "minimum_num_tapes",
                     "minimum_num_tapes was not specified but it is required when building AutomaticTapeCreationRule",
                 )

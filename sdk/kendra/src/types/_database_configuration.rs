@@ -152,10 +152,10 @@ impl DatabaseConfigurationBuilder {
     /// Consumes the builder and constructs a [`DatabaseConfiguration`](crate::types::DatabaseConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`database_engine_type`](crate::types::builders::DatabaseConfigurationBuilder::database_engine_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::DatabaseConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DatabaseConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DatabaseConfiguration {
             database_engine_type: self.database_engine_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "database_engine_type",
                     "database_engine_type was not specified but it is required when building DatabaseConfiguration",
                 )

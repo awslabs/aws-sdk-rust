@@ -46,10 +46,10 @@ impl SingularSourcePropertiesBuilder {
     /// Consumes the builder and constructs a [`SingularSourceProperties`](crate::types::SingularSourceProperties).
     /// This method will fail if any of the following fields are not set:
     /// - [`object`](crate::types::builders::SingularSourcePropertiesBuilder::object)
-    pub fn build(self) -> ::std::result::Result<crate::types::SingularSourceProperties, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SingularSourceProperties, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SingularSourceProperties {
             object: self.object.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "object",
                     "object was not specified but it is required when building SingularSourceProperties",
                 )

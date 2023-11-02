@@ -2,7 +2,7 @@
 pub fn ser_source_api_association_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SourceApiAssociationConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.merge_type {
         object.key("mergeType").string(var_1.as_str());
     }

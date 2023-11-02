@@ -2,7 +2,7 @@
 pub fn ser_list_workflow_executions_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_workflow_executions::ListWorkflowExecutionsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.image_build_version_arn {
         object.key("imageBuildVersionArn").string(var_1.as_str());
     }

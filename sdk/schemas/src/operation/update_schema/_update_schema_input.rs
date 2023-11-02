@@ -148,7 +148,9 @@ impl UpdateSchemaInputBuilder {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`UpdateSchemaInput`](crate::operation::update_schema::UpdateSchemaInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_schema::UpdateSchemaInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_schema::UpdateSchemaInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_schema::UpdateSchemaInput {
             client_token_id: self.client_token_id,
             content: self.content,

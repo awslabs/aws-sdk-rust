@@ -47,10 +47,10 @@ impl S3ConfigBuilder {
     /// Consumes the builder and constructs a [`S3Config`](crate::types::S3Config).
     /// This method will fail if any of the following fields are not set:
     /// - [`bucket_access_role_arn`](crate::types::builders::S3ConfigBuilder::bucket_access_role_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::S3Config, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::S3Config, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::S3Config {
             bucket_access_role_arn: self.bucket_access_role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "bucket_access_role_arn",
                     "bucket_access_role_arn was not specified but it is required when building S3Config",
                 )

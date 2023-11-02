@@ -44,7 +44,7 @@ impl InitiateDeviceClaimInputBuilder {
     /// Consumes the builder and constructs a [`InitiateDeviceClaimInput`](crate::operation::initiate_device_claim::InitiateDeviceClaimInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::initiate_device_claim::InitiateDeviceClaimInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::initiate_device_claim::InitiateDeviceClaimInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::initiate_device_claim::InitiateDeviceClaimInput { device_id: self.device_id })
     }

@@ -72,7 +72,7 @@ impl DescribeLayersInputBuilder {
     /// Consumes the builder and constructs a [`DescribeLayersInput`](crate::operation::describe_layers::DescribeLayersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_layers::DescribeLayersInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_layers::DescribeLayersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_layers::DescribeLayersInput {
             stack_id: self.stack_id,
             layer_ids: self.layer_ids,

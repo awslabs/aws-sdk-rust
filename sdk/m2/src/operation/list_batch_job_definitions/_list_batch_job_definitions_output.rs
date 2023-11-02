@@ -91,11 +91,11 @@ impl ListBatchJobDefinitionsOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_batch_job_definitions::ListBatchJobDefinitionsOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_batch_job_definitions::ListBatchJobDefinitionsOutput {
             batch_job_definitions: self.batch_job_definitions.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "batch_job_definitions",
                     "batch_job_definitions was not specified but it is required when building ListBatchJobDefinitionsOutput",
                 )

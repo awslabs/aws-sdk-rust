@@ -138,8 +138,10 @@ impl ListMailboxPermissionsInputBuilder {
     /// Consumes the builder and constructs a [`ListMailboxPermissionsInput`](crate::operation::list_mailbox_permissions::ListMailboxPermissionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_mailbox_permissions::ListMailboxPermissionsInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::list_mailbox_permissions::ListMailboxPermissionsInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::list_mailbox_permissions::ListMailboxPermissionsInput {
             organization_id: self.organization_id,
             entity_id: self.entity_id,

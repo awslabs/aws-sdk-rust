@@ -140,34 +140,34 @@ impl DeviceSummaryBuilder {
     /// - [`provider_name`](crate::types::builders::DeviceSummaryBuilder::provider_name)
     /// - [`device_type`](crate::types::builders::DeviceSummaryBuilder::device_type)
     /// - [`device_status`](crate::types::builders::DeviceSummaryBuilder::device_status)
-    pub fn build(self) -> ::std::result::Result<crate::types::DeviceSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DeviceSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DeviceSummary {
             device_arn: self.device_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "device_arn",
                     "device_arn was not specified but it is required when building DeviceSummary",
                 )
             })?,
             device_name: self.device_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "device_name",
                     "device_name was not specified but it is required when building DeviceSummary",
                 )
             })?,
             provider_name: self.provider_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "provider_name",
                     "provider_name was not specified but it is required when building DeviceSummary",
                 )
             })?,
             device_type: self.device_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "device_type",
                     "device_type was not specified but it is required when building DeviceSummary",
                 )
             })?,
             device_status: self.device_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "device_status",
                     "device_status was not specified but it is required when building DeviceSummary",
                 )

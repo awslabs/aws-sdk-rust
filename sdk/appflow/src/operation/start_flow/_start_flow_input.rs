@@ -78,7 +78,7 @@ impl StartFlowInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`StartFlowInput`](crate::operation::start_flow::StartFlowInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::start_flow::StartFlowInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_flow::StartFlowInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_flow::StartFlowInput {
             flow_name: self.flow_name,
             client_token: self.client_token,

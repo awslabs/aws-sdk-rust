@@ -44,7 +44,7 @@ impl DeleteTargetGroupInputBuilder {
     /// Consumes the builder and constructs a [`DeleteTargetGroupInput`](crate::operation::delete_target_group::DeleteTargetGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_target_group::DeleteTargetGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_target_group::DeleteTargetGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_target_group::DeleteTargetGroupInput {
             target_group_identifier: self.target_group_identifier,
         })

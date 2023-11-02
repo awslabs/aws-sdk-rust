@@ -51,7 +51,7 @@ impl SetSecurityTokenServicePreferencesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_security_token_service_preferences::SetSecurityTokenServicePreferencesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::set_security_token_service_preferences::SetSecurityTokenServicePreferencesInput {

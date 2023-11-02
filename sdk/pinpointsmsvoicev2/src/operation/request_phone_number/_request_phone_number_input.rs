@@ -251,7 +251,8 @@ impl RequestPhoneNumberInputBuilder {
     /// Consumes the builder and constructs a [`RequestPhoneNumberInput`](crate::operation::request_phone_number::RequestPhoneNumberInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::request_phone_number::RequestPhoneNumberInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::request_phone_number::RequestPhoneNumberInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::request_phone_number::RequestPhoneNumberInput {
             iso_country_code: self.iso_country_code,
             message_type: self.message_type,

@@ -2,7 +2,7 @@
 pub fn ser_model_quality_job_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ModelQualityJobInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.endpoint_input {
         #[allow(unused_mut)]
         let mut object_2 = object.key("EndpointInput").start_object();

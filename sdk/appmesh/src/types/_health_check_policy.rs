@@ -177,22 +177,22 @@ impl HealthCheckPolicyBuilder {
     /// - [`timeout_millis`](crate::types::builders::HealthCheckPolicyBuilder::timeout_millis)
     /// - [`interval_millis`](crate::types::builders::HealthCheckPolicyBuilder::interval_millis)
     /// - [`protocol`](crate::types::builders::HealthCheckPolicyBuilder::protocol)
-    pub fn build(self) -> ::std::result::Result<crate::types::HealthCheckPolicy, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::HealthCheckPolicy, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::HealthCheckPolicy {
             timeout_millis: self.timeout_millis.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "timeout_millis",
                     "timeout_millis was not specified but it is required when building HealthCheckPolicy",
                 )
             })?,
             interval_millis: self.interval_millis.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "interval_millis",
                     "interval_millis was not specified but it is required when building HealthCheckPolicy",
                 )
             })?,
             protocol: self.protocol.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "protocol",
                     "protocol was not specified but it is required when building HealthCheckPolicy",
                 )

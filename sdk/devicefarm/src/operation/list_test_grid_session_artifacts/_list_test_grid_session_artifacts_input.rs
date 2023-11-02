@@ -109,7 +109,7 @@ impl ListTestGridSessionArtifactsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_test_grid_session_artifacts::ListTestGridSessionArtifactsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_test_grid_session_artifacts::ListTestGridSessionArtifactsInput {
             session_arn: self.session_arn,

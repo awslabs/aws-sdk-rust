@@ -86,7 +86,7 @@ impl DeleteFormInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`DeleteFormInput`](crate::operation::delete_form::DeleteFormInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_form::DeleteFormInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_form::DeleteFormInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_form::DeleteFormInput {
             app_id: self.app_id,
             environment_name: self.environment_name,

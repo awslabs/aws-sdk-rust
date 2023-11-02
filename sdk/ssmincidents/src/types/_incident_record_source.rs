@@ -112,10 +112,10 @@ impl IncidentRecordSourceBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`created_by`](crate::types::builders::IncidentRecordSourceBuilder::created_by)
     /// - [`source`](crate::types::builders::IncidentRecordSourceBuilder::source)
-    pub fn build(self) -> ::std::result::Result<crate::types::IncidentRecordSource, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::IncidentRecordSource, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::IncidentRecordSource {
             created_by: self.created_by.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_by",
                     "created_by was not specified but it is required when building IncidentRecordSource",
                 )
@@ -123,7 +123,7 @@ impl IncidentRecordSourceBuilder {
             invoked_by: self.invoked_by,
             resource_arn: self.resource_arn,
             source: self.source.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source",
                     "source was not specified but it is required when building IncidentRecordSource",
                 )

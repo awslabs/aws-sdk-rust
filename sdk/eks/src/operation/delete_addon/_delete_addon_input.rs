@@ -85,7 +85,7 @@ impl DeleteAddonInputBuilder {
         &self.preserve
     }
     /// Consumes the builder and constructs a [`DeleteAddonInput`](crate::operation::delete_addon::DeleteAddonInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_addon::DeleteAddonInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_addon::DeleteAddonInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_addon::DeleteAddonInput {
             cluster_name: self.cluster_name,
             addon_name: self.addon_name,

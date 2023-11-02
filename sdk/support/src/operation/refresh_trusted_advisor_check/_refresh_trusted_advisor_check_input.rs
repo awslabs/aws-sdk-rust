@@ -57,7 +57,7 @@ impl RefreshTrustedAdvisorCheckInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::refresh_trusted_advisor_check::RefreshTrustedAdvisorCheckInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::refresh_trusted_advisor_check::RefreshTrustedAdvisorCheckInput { check_id: self.check_id })
     }

@@ -96,7 +96,7 @@ impl CreateLoggerDefinitionVersionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_logger_definition_version::CreateLoggerDefinitionVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_logger_definition_version::CreateLoggerDefinitionVersionInput {
             amzn_client_token: self.amzn_client_token,

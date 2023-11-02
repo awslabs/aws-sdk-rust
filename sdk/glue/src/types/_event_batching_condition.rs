@@ -66,10 +66,10 @@ impl EventBatchingConditionBuilder {
     /// Consumes the builder and constructs a [`EventBatchingCondition`](crate::types::EventBatchingCondition).
     /// This method will fail if any of the following fields are not set:
     /// - [`batch_size`](crate::types::builders::EventBatchingConditionBuilder::batch_size)
-    pub fn build(self) -> ::std::result::Result<crate::types::EventBatchingCondition, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::EventBatchingCondition, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EventBatchingCondition {
             batch_size: self.batch_size.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "batch_size",
                     "batch_size was not specified but it is required when building EventBatchingCondition",
                 )

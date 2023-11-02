@@ -2,7 +2,7 @@
 pub fn ser_greengrass_v2(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GreengrassV2,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("coreDeviceThingName").string(input.core_device_thing_name.as_str());
     }

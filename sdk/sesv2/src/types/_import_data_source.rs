@@ -74,16 +74,16 @@ impl ImportDataSourceBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`s3_url`](crate::types::builders::ImportDataSourceBuilder::s3_url)
     /// - [`data_format`](crate::types::builders::ImportDataSourceBuilder::data_format)
-    pub fn build(self) -> ::std::result::Result<crate::types::ImportDataSource, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ImportDataSource, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ImportDataSource {
             s3_url: self.s3_url.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "s3_url",
                     "s3_url was not specified but it is required when building ImportDataSource",
                 )
             })?,
             data_format: self.data_format.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_format",
                     "data_format was not specified but it is required when building ImportDataSource",
                 )

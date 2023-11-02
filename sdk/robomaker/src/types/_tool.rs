@@ -133,14 +133,17 @@ impl ToolBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::ToolBuilder::name)
     /// - [`command`](crate::types::builders::ToolBuilder::command)
-    pub fn build(self) -> ::std::result::Result<crate::types::Tool, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Tool, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Tool {
             stream_ui: self.stream_ui,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field("name", "name was not specified but it is required when building Tool")
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building Tool",
+                )
             })?,
             command: self.command.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "command",
                     "command was not specified but it is required when building Tool",
                 )

@@ -89,7 +89,7 @@ impl GetFunctionDefinitionVersionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_function_definition_version::GetFunctionDefinitionVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_function_definition_version::GetFunctionDefinitionVersionInput {
             function_definition_id: self.function_definition_id,

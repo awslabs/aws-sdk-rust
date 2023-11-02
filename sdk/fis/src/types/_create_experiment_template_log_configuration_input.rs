@@ -92,12 +92,12 @@ impl CreateExperimentTemplateLogConfigurationInputBuilder {
     /// - [`log_schema_version`](crate::types::builders::CreateExperimentTemplateLogConfigurationInputBuilder::log_schema_version)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::CreateExperimentTemplateLogConfigurationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::CreateExperimentTemplateLogConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CreateExperimentTemplateLogConfigurationInput {
             cloud_watch_logs_configuration: self.cloud_watch_logs_configuration,
             s3_configuration: self.s3_configuration,
             log_schema_version: self.log_schema_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "log_schema_version",
                     "log_schema_version was not specified but it is required when building CreateExperimentTemplateLogConfigurationInput",
                 )

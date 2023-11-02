@@ -2,7 +2,7 @@
 pub fn ser_s3_data_spec(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::S3DataSpec,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("DataLocationS3").string(input.data_location_s3.as_str());
     }

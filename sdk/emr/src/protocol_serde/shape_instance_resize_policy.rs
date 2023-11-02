@@ -2,7 +2,7 @@
 pub fn ser_instance_resize_policy(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::InstanceResizePolicy,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.instances_to_terminate {
         let mut array_2 = object.key("InstancesToTerminate").start_array();
         for item_3 in var_1 {

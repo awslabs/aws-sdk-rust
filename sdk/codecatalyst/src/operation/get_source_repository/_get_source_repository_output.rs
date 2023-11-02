@@ -178,36 +178,36 @@ impl GetSourceRepositoryOutputBuilder {
     /// - [`created_time`](crate::operation::get_source_repository::builders::GetSourceRepositoryOutputBuilder::created_time)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_source_repository::GetSourceRepositoryOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_source_repository::GetSourceRepositoryOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_source_repository::GetSourceRepositoryOutput {
             space_name: self.space_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "space_name",
                     "space_name was not specified but it is required when building GetSourceRepositoryOutput",
                 )
             })?,
             project_name: self.project_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "project_name",
                     "project_name was not specified but it is required when building GetSourceRepositoryOutput",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building GetSourceRepositoryOutput",
                 )
             })?,
             description: self.description,
             last_updated_time: self.last_updated_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_updated_time",
                     "last_updated_time was not specified but it is required when building GetSourceRepositoryOutput",
                 )
             })?,
             created_time: self.created_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_time",
                     "created_time was not specified but it is required when building GetSourceRepositoryOutput",
                 )

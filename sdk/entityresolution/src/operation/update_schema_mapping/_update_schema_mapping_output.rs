@@ -137,24 +137,24 @@ impl UpdateSchemaMappingOutputBuilder {
     /// - [`mapped_input_fields`](crate::operation::update_schema_mapping::builders::UpdateSchemaMappingOutputBuilder::mapped_input_fields)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_schema_mapping::UpdateSchemaMappingOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_schema_mapping::UpdateSchemaMappingOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_schema_mapping::UpdateSchemaMappingOutput {
             schema_name: self.schema_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "schema_name",
                     "schema_name was not specified but it is required when building UpdateSchemaMappingOutput",
                 )
             })?,
             schema_arn: self.schema_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "schema_arn",
                     "schema_arn was not specified but it is required when building UpdateSchemaMappingOutput",
                 )
             })?,
             description: self.description,
             mapped_input_fields: self.mapped_input_fields.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "mapped_input_fields",
                     "mapped_input_fields was not specified but it is required when building UpdateSchemaMappingOutput",
                 )

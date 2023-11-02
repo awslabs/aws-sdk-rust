@@ -65,11 +65,11 @@ impl StartAnnotationImportJobOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_annotation_import_job::StartAnnotationImportJobOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_annotation_import_job::StartAnnotationImportJobOutput {
             job_id: self.job_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "job_id",
                     "job_id was not specified but it is required when building StartAnnotationImportJobOutput",
                 )

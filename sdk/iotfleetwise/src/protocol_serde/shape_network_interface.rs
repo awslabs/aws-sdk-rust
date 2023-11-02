@@ -2,7 +2,7 @@
 pub fn ser_network_interface(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::NetworkInterface,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("interfaceId").string(input.interface_id.as_str());
     }

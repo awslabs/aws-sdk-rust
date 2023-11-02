@@ -66,7 +66,8 @@ impl TestSegmentPatternInputBuilder {
     /// Consumes the builder and constructs a [`TestSegmentPatternInput`](crate::operation::test_segment_pattern::TestSegmentPatternInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::test_segment_pattern::TestSegmentPatternInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::test_segment_pattern::TestSegmentPatternInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::test_segment_pattern::TestSegmentPatternInput {
             pattern: self.pattern,
             payload: self.payload,

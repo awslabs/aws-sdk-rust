@@ -106,7 +106,7 @@ impl DescribeSourceServersInputBuilder {
     /// Consumes the builder and constructs a [`DescribeSourceServersInput`](crate::operation::describe_source_servers::DescribeSourceServersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_source_servers::DescribeSourceServersInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_source_servers::DescribeSourceServersInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_source_servers::DescribeSourceServersInput {
             filters: self.filters,

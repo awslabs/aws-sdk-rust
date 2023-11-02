@@ -2,7 +2,7 @@
 pub fn ser_code_configuration_values(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CodeConfigurationValues,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Runtime").string(input.runtime.as_str());
     }

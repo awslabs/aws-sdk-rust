@@ -2,7 +2,7 @@
 pub fn ser_get_ops_metadata_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_ops_metadata::GetOpsMetadataInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.ops_metadata_arn {
         object.key("OpsMetadataArn").string(var_1.as_str());
     }

@@ -249,47 +249,47 @@ impl JournalS3ExportDescriptionBuilder {
     /// - [`inclusive_start_time`](crate::types::builders::JournalS3ExportDescriptionBuilder::inclusive_start_time)
     /// - [`exclusive_end_time`](crate::types::builders::JournalS3ExportDescriptionBuilder::exclusive_end_time)
     /// - [`role_arn`](crate::types::builders::JournalS3ExportDescriptionBuilder::role_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::JournalS3ExportDescription, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::JournalS3ExportDescription, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::JournalS3ExportDescription {
             ledger_name: self.ledger_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "ledger_name",
                     "ledger_name was not specified but it is required when building JournalS3ExportDescription",
                 )
             })?,
             export_id: self.export_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "export_id",
                     "export_id was not specified but it is required when building JournalS3ExportDescription",
                 )
             })?,
             export_creation_time: self.export_creation_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "export_creation_time",
                     "export_creation_time was not specified but it is required when building JournalS3ExportDescription",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building JournalS3ExportDescription",
                 )
             })?,
             inclusive_start_time: self.inclusive_start_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "inclusive_start_time",
                     "inclusive_start_time was not specified but it is required when building JournalS3ExportDescription",
                 )
             })?,
             exclusive_end_time: self.exclusive_end_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "exclusive_end_time",
                     "exclusive_end_time was not specified but it is required when building JournalS3ExportDescription",
                 )
             })?,
             s3_export_configuration: self.s3_export_configuration,
             role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role_arn",
                     "role_arn was not specified but it is required when building JournalS3ExportDescription",
                 )

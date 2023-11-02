@@ -70,16 +70,16 @@ impl AttachmentStateChangeBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`attachment_arn`](crate::types::builders::AttachmentStateChangeBuilder::attachment_arn)
     /// - [`status`](crate::types::builders::AttachmentStateChangeBuilder::status)
-    pub fn build(self) -> ::std::result::Result<crate::types::AttachmentStateChange, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AttachmentStateChange, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AttachmentStateChange {
             attachment_arn: self.attachment_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "attachment_arn",
                     "attachment_arn was not specified but it is required when building AttachmentStateChange",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building AttachmentStateChange",
                 )

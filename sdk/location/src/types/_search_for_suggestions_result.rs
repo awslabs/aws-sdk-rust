@@ -145,10 +145,10 @@ impl SearchForSuggestionsResultBuilder {
     /// Consumes the builder and constructs a [`SearchForSuggestionsResult`](crate::types::SearchForSuggestionsResult).
     /// This method will fail if any of the following fields are not set:
     /// - [`text`](crate::types::builders::SearchForSuggestionsResultBuilder::text)
-    pub fn build(self) -> ::std::result::Result<crate::types::SearchForSuggestionsResult, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SearchForSuggestionsResult, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SearchForSuggestionsResult {
             text: self.text.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "text",
                     "text was not specified but it is required when building SearchForSuggestionsResult",
                 )

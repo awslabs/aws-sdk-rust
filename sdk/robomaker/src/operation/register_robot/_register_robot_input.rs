@@ -69,7 +69,7 @@ impl RegisterRobotInputBuilder {
     /// Consumes the builder and constructs a [`RegisterRobotInput`](crate::operation::register_robot::RegisterRobotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::register_robot::RegisterRobotInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::register_robot::RegisterRobotInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::register_robot::RegisterRobotInput {
             fleet: self.fleet,
             robot: self.robot,

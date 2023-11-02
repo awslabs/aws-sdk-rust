@@ -47,7 +47,7 @@ impl CreateGraphInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateGraphInput`](crate::operation::create_graph::CreateGraphInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_graph::CreateGraphInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_graph::CreateGraphInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_graph::CreateGraphInput { tags: self.tags })
     }
 }

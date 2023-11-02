@@ -66,7 +66,7 @@ impl RejectAssignmentInputBuilder {
     /// Consumes the builder and constructs a [`RejectAssignmentInput`](crate::operation::reject_assignment::RejectAssignmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::reject_assignment::RejectAssignmentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::reject_assignment::RejectAssignmentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::reject_assignment::RejectAssignmentInput {
             assignment_id: self.assignment_id,
             requester_feedback: self.requester_feedback,

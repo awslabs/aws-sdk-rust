@@ -51,10 +51,10 @@ impl ConversationLevelTestResultsBuilder {
     /// Consumes the builder and constructs a [`ConversationLevelTestResults`](crate::types::ConversationLevelTestResults).
     /// This method will fail if any of the following fields are not set:
     /// - [`items`](crate::types::builders::ConversationLevelTestResultsBuilder::items)
-    pub fn build(self) -> ::std::result::Result<crate::types::ConversationLevelTestResults, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ConversationLevelTestResults, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ConversationLevelTestResults {
             items: self.items.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "items",
                     "items was not specified but it is required when building ConversationLevelTestResults",
                 )

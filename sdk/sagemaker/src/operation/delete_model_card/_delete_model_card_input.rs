@@ -44,7 +44,7 @@ impl DeleteModelCardInputBuilder {
     /// Consumes the builder and constructs a [`DeleteModelCardInput`](crate::operation::delete_model_card::DeleteModelCardInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_model_card::DeleteModelCardInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_model_card::DeleteModelCardInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_model_card::DeleteModelCardInput {
             model_card_name: self.model_card_name,
         })

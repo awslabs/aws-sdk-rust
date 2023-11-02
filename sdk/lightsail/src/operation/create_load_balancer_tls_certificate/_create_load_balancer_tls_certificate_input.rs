@@ -158,7 +158,7 @@ impl CreateLoadBalancerTlsCertificateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificateInput {

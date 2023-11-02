@@ -145,7 +145,7 @@ impl DescribeImportSnapshotTasksInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_import_snapshot_tasks::DescribeImportSnapshotTasksInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_import_snapshot_tasks::DescribeImportSnapshotTasksInput {
             dry_run: self.dry_run,

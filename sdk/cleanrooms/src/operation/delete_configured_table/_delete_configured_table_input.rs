@@ -44,7 +44,7 @@ impl DeleteConfiguredTableInputBuilder {
     /// Consumes the builder and constructs a [`DeleteConfiguredTableInput`](crate::operation::delete_configured_table::DeleteConfiguredTableInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_configured_table::DeleteConfiguredTableInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_configured_table::DeleteConfiguredTableInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_configured_table::DeleteConfiguredTableInput {
             configured_table_identifier: self.configured_table_identifier,

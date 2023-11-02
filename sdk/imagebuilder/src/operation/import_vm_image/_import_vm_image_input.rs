@@ -276,7 +276,7 @@ impl ImportVmImageInputBuilder {
     /// Consumes the builder and constructs a [`ImportVmImageInput`](crate::operation::import_vm_image::ImportVmImageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::import_vm_image::ImportVmImageInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::import_vm_image::ImportVmImageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::import_vm_image::ImportVmImageInput {
             name: self.name,
             semantic_version: self.semantic_version,

@@ -216,28 +216,28 @@ impl PiiDetectionBuilder {
     /// - [`inputs`](crate::types::builders::PiiDetectionBuilder::inputs)
     /// - [`pii_type`](crate::types::builders::PiiDetectionBuilder::pii_type)
     /// - [`entity_types_to_detect`](crate::types::builders::PiiDetectionBuilder::entity_types_to_detect)
-    pub fn build(self) -> ::std::result::Result<crate::types::PiiDetection, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PiiDetection, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PiiDetection {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building PiiDetection",
                 )
             })?,
             inputs: self.inputs.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "inputs",
                     "inputs was not specified but it is required when building PiiDetection",
                 )
             })?,
             pii_type: self.pii_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "pii_type",
                     "pii_type was not specified but it is required when building PiiDetection",
                 )
             })?,
             entity_types_to_detect: self.entity_types_to_detect.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "entity_types_to_detect",
                     "entity_types_to_detect was not specified but it is required when building PiiDetection",
                 )

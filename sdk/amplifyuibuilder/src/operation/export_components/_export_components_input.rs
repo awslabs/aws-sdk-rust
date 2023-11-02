@@ -87,7 +87,7 @@ impl ExportComponentsInputBuilder {
     /// Consumes the builder and constructs a [`ExportComponentsInput`](crate::operation::export_components::ExportComponentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::export_components::ExportComponentsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::export_components::ExportComponentsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::export_components::ExportComponentsInput {
             app_id: self.app_id,
             environment_name: self.environment_name,

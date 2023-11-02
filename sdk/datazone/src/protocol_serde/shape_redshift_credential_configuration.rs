@@ -2,7 +2,7 @@
 pub fn ser_redshift_credential_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RedshiftCredentialConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("secretManagerArn").string(input.secret_manager_arn.as_str());
     }

@@ -102,7 +102,7 @@ impl ModifyUserGroupInputBuilder {
     /// Consumes the builder and constructs a [`ModifyUserGroupInput`](crate::operation::modify_user_group::ModifyUserGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::modify_user_group::ModifyUserGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::modify_user_group::ModifyUserGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::modify_user_group::ModifyUserGroupInput {
             user_group_id: self.user_group_id,
             user_ids_to_add: self.user_ids_to_add,

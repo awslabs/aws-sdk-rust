@@ -2,7 +2,7 @@
 pub fn ser_initiate_document_version_upload_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.content_created_timestamp {
         object
             .key("ContentCreatedTimestamp")

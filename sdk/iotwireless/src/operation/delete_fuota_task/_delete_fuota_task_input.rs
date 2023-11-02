@@ -44,7 +44,7 @@ impl DeleteFuotaTaskInputBuilder {
     /// Consumes the builder and constructs a [`DeleteFuotaTaskInput`](crate::operation::delete_fuota_task::DeleteFuotaTaskInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_fuota_task::DeleteFuotaTaskInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_fuota_task::DeleteFuotaTaskInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_fuota_task::DeleteFuotaTaskInput { id: self.id })
     }
 }

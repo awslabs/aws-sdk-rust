@@ -76,7 +76,7 @@ impl TagUserInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`TagUserInput`](crate::operation::tag_user::TagUserInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::tag_user::TagUserInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::tag_user::TagUserInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::tag_user::TagUserInput {
             user_name: self.user_name,
             tags: self.tags,

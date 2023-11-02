@@ -2,7 +2,7 @@
 pub fn ser_custom_plugin(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CustomPlugin,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("customPluginArn").string(input.custom_plugin_arn.as_str());
     }

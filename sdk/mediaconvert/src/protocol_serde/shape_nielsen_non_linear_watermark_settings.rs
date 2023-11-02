@@ -2,7 +2,7 @@
 pub fn ser_nielsen_non_linear_watermark_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::NielsenNonLinearWatermarkSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.active_watermark_process {
         object.key("activeWatermarkProcess").string(var_1.as_str());
     }

@@ -114,7 +114,7 @@ impl GetCaseInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`GetCaseInput`](crate::operation::get_case::GetCaseInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_case::GetCaseInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_case::GetCaseInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_case::GetCaseInput {
             case_id: self.case_id,
             domain_id: self.domain_id,

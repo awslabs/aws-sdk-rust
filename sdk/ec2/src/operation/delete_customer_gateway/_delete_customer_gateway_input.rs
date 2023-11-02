@@ -66,7 +66,7 @@ impl DeleteCustomerGatewayInputBuilder {
     /// Consumes the builder and constructs a [`DeleteCustomerGatewayInput`](crate::operation::delete_customer_gateway::DeleteCustomerGatewayInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_customer_gateway::DeleteCustomerGatewayInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_customer_gateway::DeleteCustomerGatewayInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_customer_gateway::DeleteCustomerGatewayInput {
             customer_gateway_id: self.customer_gateway_id,

@@ -264,10 +264,10 @@ impl BackupBuilder {
     /// Consumes the builder and constructs a [`Backup`](crate::types::Backup).
     /// This method will fail if any of the following fields are not set:
     /// - [`backup_id`](crate::types::builders::BackupBuilder::backup_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::Backup, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Backup, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Backup {
             backup_id: self.backup_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "backup_id",
                     "backup_id was not specified but it is required when building Backup",
                 )

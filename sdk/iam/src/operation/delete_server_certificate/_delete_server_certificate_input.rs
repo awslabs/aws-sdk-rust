@@ -51,7 +51,7 @@ impl DeleteServerCertificateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_server_certificate::DeleteServerCertificateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_server_certificate::DeleteServerCertificateInput {
             server_certificate_name: self.server_certificate_name,

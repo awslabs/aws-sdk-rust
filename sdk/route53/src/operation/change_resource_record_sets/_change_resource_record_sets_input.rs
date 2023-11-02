@@ -69,7 +69,7 @@ impl ChangeResourceRecordSetsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::change_resource_record_sets::ChangeResourceRecordSetsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::change_resource_record_sets::ChangeResourceRecordSetsInput {
             hosted_zone_id: self.hosted_zone_id,

@@ -28,7 +28,7 @@ pub struct RecognizeUtteranceOutput {
     /// <p>The <code>inputTranscript</code> field is compressed with gzip and then base64 encoded. Before you can use the contents of the field, you must decode and decompress the contents. See the example for a simple function to decode and decompress the contents.</p>
     pub input_transcript: ::std::option::Option<::std::string::String>,
     /// <p>The prompt or statement to send to the user. This is based on the bot configuration and context. For example, if Amazon Lex V2 did not understand the user intent, it sends the <code>clarificationPrompt</code> configured for the bot. If the intent requires confirmation before taking the fulfillment action, it sends the <code>confirmationPrompt</code>. Another example: Suppose that the Lambda function successfully fulfilled the intent, and sent a message to convey to the user. Then Amazon Lex V2 sends that message in the response.</p>
-    pub audio_stream: ::aws_smithy_http::byte_stream::ByteStream,
+    pub audio_stream: ::aws_smithy_types::byte_stream::ByteStream,
     /// <p>The bot member that recognized the utterance.</p>
     pub recognized_bot_member: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -75,7 +75,7 @@ impl RecognizeUtteranceOutput {
         self.input_transcript.as_deref()
     }
     /// <p>The prompt or statement to send to the user. This is based on the bot configuration and context. For example, if Amazon Lex V2 did not understand the user intent, it sends the <code>clarificationPrompt</code> configured for the bot. If the intent requires confirmation before taking the fulfillment action, it sends the <code>confirmationPrompt</code>. Another example: Suppose that the Lambda function successfully fulfilled the intent, and sent a message to convey to the user. Then Amazon Lex V2 sends that message in the response.</p>
-    pub fn audio_stream(&self) -> &::aws_smithy_http::byte_stream::ByteStream {
+    pub fn audio_stream(&self) -> &::aws_smithy_types::byte_stream::ByteStream {
         &self.audio_stream
     }
     /// <p>The bot member that recognized the utterance.</p>
@@ -107,7 +107,7 @@ pub struct RecognizeUtteranceOutputBuilder {
     pub(crate) request_attributes: ::std::option::Option<::std::string::String>,
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
     pub(crate) input_transcript: ::std::option::Option<::std::string::String>,
-    pub(crate) audio_stream: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
+    pub(crate) audio_stream: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>,
     pub(crate) recognized_bot_member: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -249,17 +249,17 @@ impl RecognizeUtteranceOutputBuilder {
         &self.input_transcript
     }
     /// <p>The prompt or statement to send to the user. This is based on the bot configuration and context. For example, if Amazon Lex V2 did not understand the user intent, it sends the <code>clarificationPrompt</code> configured for the bot. If the intent requires confirmation before taking the fulfillment action, it sends the <code>confirmationPrompt</code>. Another example: Suppose that the Lambda function successfully fulfilled the intent, and sent a message to convey to the user. Then Amazon Lex V2 sends that message in the response.</p>
-    pub fn audio_stream(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
+    pub fn audio_stream(mut self, input: ::aws_smithy_types::byte_stream::ByteStream) -> Self {
         self.audio_stream = ::std::option::Option::Some(input);
         self
     }
     /// <p>The prompt or statement to send to the user. This is based on the bot configuration and context. For example, if Amazon Lex V2 did not understand the user intent, it sends the <code>clarificationPrompt</code> configured for the bot. If the intent requires confirmation before taking the fulfillment action, it sends the <code>confirmationPrompt</code>. Another example: Suppose that the Lambda function successfully fulfilled the intent, and sent a message to convey to the user. Then Amazon Lex V2 sends that message in the response.</p>
-    pub fn set_audio_stream(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
+    pub fn set_audio_stream(mut self, input: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>) -> Self {
         self.audio_stream = input;
         self
     }
     /// <p>The prompt or statement to send to the user. This is based on the bot configuration and context. For example, if Amazon Lex V2 did not understand the user intent, it sends the <code>clarificationPrompt</code> configured for the bot. If the intent requires confirmation before taking the fulfillment action, it sends the <code>confirmationPrompt</code>. Another example: Suppose that the Lambda function successfully fulfilled the intent, and sent a message to convey to the user. Then Amazon Lex V2 sends that message in the response.</p>
-    pub fn get_audio_stream(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+    pub fn get_audio_stream(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
         &self.audio_stream
     }
     /// <p>The bot member that recognized the utterance.</p>

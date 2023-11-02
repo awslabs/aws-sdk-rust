@@ -2,7 +2,7 @@
 pub fn ser_describe_event_details_for_organization_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_event_details_for_organization::DescribeEventDetailsForOrganizationInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.organization_event_detail_filters {
         let mut array_2 = object.key("organizationEventDetailFilters").start_array();
         for item_3 in var_1 {

@@ -46,10 +46,10 @@ impl GeneratedPolicyBuilder {
     /// Consumes the builder and constructs a [`GeneratedPolicy`](crate::types::GeneratedPolicy).
     /// This method will fail if any of the following fields are not set:
     /// - [`policy`](crate::types::builders::GeneratedPolicyBuilder::policy)
-    pub fn build(self) -> ::std::result::Result<crate::types::GeneratedPolicy, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::GeneratedPolicy, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::GeneratedPolicy {
             policy: self.policy.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "policy",
                     "policy was not specified but it is required when building GeneratedPolicy",
                 )

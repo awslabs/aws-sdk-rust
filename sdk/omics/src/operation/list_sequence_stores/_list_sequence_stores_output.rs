@@ -89,12 +89,12 @@ impl ListSequenceStoresOutputBuilder {
     /// - [`sequence_stores`](crate::operation::list_sequence_stores::builders::ListSequenceStoresOutputBuilder::sequence_stores)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_sequence_stores::ListSequenceStoresOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_sequence_stores::ListSequenceStoresOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_sequence_stores::ListSequenceStoresOutput {
             next_token: self.next_token,
             sequence_stores: self.sequence_stores.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "sequence_stores",
                     "sequence_stores was not specified but it is required when building ListSequenceStoresOutput",
                 )

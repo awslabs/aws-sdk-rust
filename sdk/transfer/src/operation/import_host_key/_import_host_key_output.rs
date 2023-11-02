@@ -87,16 +87,16 @@ impl ImportHostKeyOutputBuilder {
     /// - [`host_key_id`](crate::operation::import_host_key::builders::ImportHostKeyOutputBuilder::host_key_id)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::import_host_key::ImportHostKeyOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::import_host_key::ImportHostKeyOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::import_host_key::ImportHostKeyOutput {
             server_id: self.server_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "server_id",
                     "server_id was not specified but it is required when building ImportHostKeyOutput",
                 )
             })?,
             host_key_id: self.host_key_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "host_key_id",
                     "host_key_id was not specified but it is required when building ImportHostKeyOutput",
                 )

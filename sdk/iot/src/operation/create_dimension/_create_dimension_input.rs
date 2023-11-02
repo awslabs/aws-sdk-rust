@@ -146,7 +146,7 @@ impl CreateDimensionInputBuilder {
     /// Consumes the builder and constructs a [`CreateDimensionInput`](crate::operation::create_dimension::CreateDimensionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_dimension::CreateDimensionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_dimension::CreateDimensionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_dimension::CreateDimensionInput {
             name: self.name,
             r#type: self.r#type,

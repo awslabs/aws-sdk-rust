@@ -192,7 +192,7 @@ impl StartJobInputBuilder {
         &self.commit_time
     }
     /// Consumes the builder and constructs a [`StartJobInput`](crate::operation::start_job::StartJobInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::start_job::StartJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_job::StartJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_job::StartJobInput {
             app_id: self.app_id,
             branch_name: self.branch_name,

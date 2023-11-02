@@ -83,7 +83,7 @@ impl ListKeysInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListKeysInput`](crate::operation::list_keys::ListKeysInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_keys::ListKeysInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_keys::ListKeysInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_keys::ListKeysInput {
             key_state: self.key_state,
             next_token: self.next_token,

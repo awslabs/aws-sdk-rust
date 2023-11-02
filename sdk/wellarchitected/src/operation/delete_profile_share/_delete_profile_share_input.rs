@@ -103,7 +103,8 @@ impl DeleteProfileShareInputBuilder {
     /// Consumes the builder and constructs a [`DeleteProfileShareInput`](crate::operation::delete_profile_share::DeleteProfileShareInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_profile_share::DeleteProfileShareInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_profile_share::DeleteProfileShareInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::delete_profile_share::DeleteProfileShareInput {
             share_id: self.share_id,
             profile_arn: self.profile_arn,

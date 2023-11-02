@@ -67,7 +67,7 @@ impl ListSupportedInstanceTypesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_supported_instance_types::ListSupportedInstanceTypesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_supported_instance_types::ListSupportedInstanceTypesInput {
             release_label: self.release_label,

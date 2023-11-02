@@ -108,16 +108,16 @@ impl ChangeMessageVisibilityBatchRequestEntryBuilder {
     /// - [`receipt_handle`](crate::types::builders::ChangeMessageVisibilityBatchRequestEntryBuilder::receipt_handle)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::ChangeMessageVisibilityBatchRequestEntry, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::ChangeMessageVisibilityBatchRequestEntry, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ChangeMessageVisibilityBatchRequestEntry {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building ChangeMessageVisibilityBatchRequestEntry",
                 )
             })?,
             receipt_handle: self.receipt_handle.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "receipt_handle",
                     "receipt_handle was not specified but it is required when building ChangeMessageVisibilityBatchRequestEntry",
                 )

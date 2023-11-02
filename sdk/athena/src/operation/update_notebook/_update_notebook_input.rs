@@ -140,7 +140,7 @@ impl UpdateNotebookInputBuilder {
     /// Consumes the builder and constructs a [`UpdateNotebookInput`](crate::operation::update_notebook::UpdateNotebookInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_notebook::UpdateNotebookInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_notebook::UpdateNotebookInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_notebook::UpdateNotebookInput {
             notebook_id: self.notebook_id,
             payload: self.payload,

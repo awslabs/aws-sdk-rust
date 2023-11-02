@@ -46,10 +46,10 @@ impl VeevaConnectorProfilePropertiesBuilder {
     /// Consumes the builder and constructs a [`VeevaConnectorProfileProperties`](crate::types::VeevaConnectorProfileProperties).
     /// This method will fail if any of the following fields are not set:
     /// - [`instance_url`](crate::types::builders::VeevaConnectorProfilePropertiesBuilder::instance_url)
-    pub fn build(self) -> ::std::result::Result<crate::types::VeevaConnectorProfileProperties, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::VeevaConnectorProfileProperties, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::VeevaConnectorProfileProperties {
             instance_url: self.instance_url.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "instance_url",
                     "instance_url was not specified but it is required when building VeevaConnectorProfileProperties",
                 )

@@ -249,7 +249,7 @@ impl AllocateIpamPoolCidrInputBuilder {
     /// Consumes the builder and constructs a [`AllocateIpamPoolCidrInput`](crate::operation::allocate_ipam_pool_cidr::AllocateIpamPoolCidrInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::allocate_ipam_pool_cidr::AllocateIpamPoolCidrInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::allocate_ipam_pool_cidr::AllocateIpamPoolCidrInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::allocate_ipam_pool_cidr::AllocateIpamPoolCidrInput {
             dry_run: self.dry_run,

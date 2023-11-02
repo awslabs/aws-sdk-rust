@@ -88,10 +88,10 @@ impl SlackWorkspaceConfigurationBuilder {
     /// Consumes the builder and constructs a [`SlackWorkspaceConfiguration`](crate::types::SlackWorkspaceConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`team_id`](crate::types::builders::SlackWorkspaceConfigurationBuilder::team_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::SlackWorkspaceConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SlackWorkspaceConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SlackWorkspaceConfiguration {
             team_id: self.team_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "team_id",
                     "team_id was not specified but it is required when building SlackWorkspaceConfiguration",
                 )

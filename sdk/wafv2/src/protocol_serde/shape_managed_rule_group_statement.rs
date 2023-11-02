@@ -2,7 +2,7 @@
 pub fn ser_managed_rule_group_statement(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ManagedRuleGroupStatement,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("VendorName").string(input.vendor_name.as_str());
     }

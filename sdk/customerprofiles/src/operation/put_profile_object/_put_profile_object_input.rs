@@ -97,7 +97,7 @@ impl PutProfileObjectInputBuilder {
     /// Consumes the builder and constructs a [`PutProfileObjectInput`](crate::operation::put_profile_object::PutProfileObjectInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_profile_object::PutProfileObjectInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_profile_object::PutProfileObjectInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_profile_object::PutProfileObjectInput {
             object_type_name: self.object_type_name,
             object: self.object,

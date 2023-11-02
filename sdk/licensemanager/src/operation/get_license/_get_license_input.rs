@@ -63,7 +63,7 @@ impl GetLicenseInputBuilder {
         &self.version
     }
     /// Consumes the builder and constructs a [`GetLicenseInput`](crate::operation::get_license::GetLicenseInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_license::GetLicenseInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_license::GetLicenseInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_license::GetLicenseInput {
             license_arn: self.license_arn,
             version: self.version,

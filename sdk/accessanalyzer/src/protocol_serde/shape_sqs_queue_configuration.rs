@@ -2,7 +2,7 @@
 pub fn ser_sqs_queue_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SqsQueueConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.queue_policy {
         object.key("queuePolicy").string(var_1.as_str());
     }

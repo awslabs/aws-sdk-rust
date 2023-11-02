@@ -46,7 +46,7 @@ impl GetFaceLivenessSessionResultsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsInput {
             session_id: self.session_id,

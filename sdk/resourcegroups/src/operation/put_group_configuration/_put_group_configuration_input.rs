@@ -87,7 +87,7 @@ impl PutGroupConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`PutGroupConfigurationInput`](crate::operation::put_group_configuration::PutGroupConfigurationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_group_configuration::PutGroupConfigurationInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::put_group_configuration::PutGroupConfigurationInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::put_group_configuration::PutGroupConfigurationInput {
             group: self.group,

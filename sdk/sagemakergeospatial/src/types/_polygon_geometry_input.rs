@@ -51,10 +51,10 @@ impl PolygonGeometryInputBuilder {
     /// Consumes the builder and constructs a [`PolygonGeometryInput`](crate::types::PolygonGeometryInput).
     /// This method will fail if any of the following fields are not set:
     /// - [`coordinates`](crate::types::builders::PolygonGeometryInputBuilder::coordinates)
-    pub fn build(self) -> ::std::result::Result<crate::types::PolygonGeometryInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PolygonGeometryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PolygonGeometryInput {
             coordinates: self.coordinates.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "coordinates",
                     "coordinates was not specified but it is required when building PolygonGeometryInput",
                 )

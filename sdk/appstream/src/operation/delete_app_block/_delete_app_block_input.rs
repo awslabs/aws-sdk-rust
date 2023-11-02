@@ -44,7 +44,7 @@ impl DeleteAppBlockInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAppBlockInput`](crate::operation::delete_app_block::DeleteAppBlockInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_app_block::DeleteAppBlockInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_app_block::DeleteAppBlockInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_app_block::DeleteAppBlockInput { name: self.name })
     }
 }

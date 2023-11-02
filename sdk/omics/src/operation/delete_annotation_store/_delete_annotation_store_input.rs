@@ -65,7 +65,7 @@ impl DeleteAnnotationStoreInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAnnotationStoreInput`](crate::operation::delete_annotation_store::DeleteAnnotationStoreInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_annotation_store::DeleteAnnotationStoreInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_annotation_store::DeleteAnnotationStoreInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_annotation_store::DeleteAnnotationStoreInput {
             name: self.name,

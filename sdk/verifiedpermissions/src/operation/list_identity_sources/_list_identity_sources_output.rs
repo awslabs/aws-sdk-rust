@@ -89,12 +89,12 @@ impl ListIdentitySourcesOutputBuilder {
     /// - [`identity_sources`](crate::operation::list_identity_sources::builders::ListIdentitySourcesOutputBuilder::identity_sources)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_identity_sources::ListIdentitySourcesOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_identity_sources::ListIdentitySourcesOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_identity_sources::ListIdentitySourcesOutput {
             next_token: self.next_token,
             identity_sources: self.identity_sources.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "identity_sources",
                     "identity_sources was not specified but it is required when building ListIdentitySourcesOutput",
                 )

@@ -2,7 +2,7 @@
 pub fn ser_update_theme_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_theme::UpdateThemeInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.base_theme_id {
         object.key("BaseThemeId").string(var_1.as_str());
     }

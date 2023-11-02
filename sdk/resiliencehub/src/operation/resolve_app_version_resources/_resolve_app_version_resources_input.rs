@@ -68,7 +68,7 @@ impl ResolveAppVersionResourcesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::resolve_app_version_resources::ResolveAppVersionResourcesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::resolve_app_version_resources::ResolveAppVersionResourcesInput {
             app_arn: self.app_arn,

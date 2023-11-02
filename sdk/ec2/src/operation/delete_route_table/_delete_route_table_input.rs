@@ -65,7 +65,7 @@ impl DeleteRouteTableInputBuilder {
     /// Consumes the builder and constructs a [`DeleteRouteTableInput`](crate::operation::delete_route_table::DeleteRouteTableInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_route_table::DeleteRouteTableInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_route_table::DeleteRouteTableInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_route_table::DeleteRouteTableInput {
             dry_run: self.dry_run,
             route_table_id: self.route_table_id,

@@ -63,7 +63,7 @@ where
 pub fn ser_static_ip_connection_info(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::StaticIpConnectionInfo,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("IpAddress").string(input.ip_address.as_str());
     }

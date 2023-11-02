@@ -253,29 +253,29 @@ impl AlarmRecommendationBuilder {
     /// - [`reference_id`](crate::types::builders::AlarmRecommendationBuilder::reference_id)
     /// - [`name`](crate::types::builders::AlarmRecommendationBuilder::name)
     /// - [`r#type`](crate::types::builders::AlarmRecommendationBuilder::r#type)
-    pub fn build(self) -> ::std::result::Result<crate::types::AlarmRecommendation, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AlarmRecommendation, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AlarmRecommendation {
             recommendation_id: self.recommendation_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "recommendation_id",
                     "recommendation_id was not specified but it is required when building AlarmRecommendation",
                 )
             })?,
             reference_id: self.reference_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "reference_id",
                     "reference_id was not specified but it is required when building AlarmRecommendation",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building AlarmRecommendation",
                 )
             })?,
             description: self.description,
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building AlarmRecommendation",
                 )

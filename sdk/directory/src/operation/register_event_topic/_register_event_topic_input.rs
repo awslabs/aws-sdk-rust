@@ -67,7 +67,8 @@ impl RegisterEventTopicInputBuilder {
     /// Consumes the builder and constructs a [`RegisterEventTopicInput`](crate::operation::register_event_topic::RegisterEventTopicInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::register_event_topic::RegisterEventTopicInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::register_event_topic::RegisterEventTopicInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::register_event_topic::RegisterEventTopicInput {
             directory_id: self.directory_id,
             topic_name: self.topic_name,

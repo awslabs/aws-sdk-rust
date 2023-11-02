@@ -121,7 +121,7 @@ impl UpdateViewInputBuilder {
         &self.filters
     }
     /// Consumes the builder and constructs a [`UpdateViewInput`](crate::operation::update_view::UpdateViewInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_view::UpdateViewInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_view::UpdateViewInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_view::UpdateViewInput {
             view_arn: self.view_arn,
             included_properties: self.included_properties,

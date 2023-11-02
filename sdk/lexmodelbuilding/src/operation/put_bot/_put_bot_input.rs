@@ -600,7 +600,7 @@ impl PutBotInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`PutBotInput`](crate::operation::put_bot::PutBotInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_bot::PutBotInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_bot::PutBotInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_bot::PutBotInput {
             name: self.name,
             description: self.description,

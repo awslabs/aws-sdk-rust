@@ -73,7 +73,7 @@ impl GetDiscoveredSchemaInputBuilder {
     /// Consumes the builder and constructs a [`GetDiscoveredSchemaInput`](crate::operation::get_discovered_schema::GetDiscoveredSchemaInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_discovered_schema::GetDiscoveredSchemaInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_discovered_schema::GetDiscoveredSchemaInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_discovered_schema::GetDiscoveredSchemaInput {
             events: self.events,

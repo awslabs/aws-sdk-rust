@@ -120,17 +120,17 @@ impl StandbyWorkspaceBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`primary_workspace_id`](crate::types::builders::StandbyWorkspaceBuilder::primary_workspace_id)
     /// - [`directory_id`](crate::types::builders::StandbyWorkspaceBuilder::directory_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::StandbyWorkspace, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::StandbyWorkspace, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::StandbyWorkspace {
             primary_workspace_id: self.primary_workspace_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "primary_workspace_id",
                     "primary_workspace_id was not specified but it is required when building StandbyWorkspace",
                 )
             })?,
             volume_encryption_key: self.volume_encryption_key,
             directory_id: self.directory_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "directory_id",
                     "directory_id was not specified but it is required when building StandbyWorkspace",
                 )

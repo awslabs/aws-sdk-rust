@@ -72,11 +72,11 @@ impl AlarmConfigurationBuilder {
     /// Consumes the builder and constructs a [`AlarmConfiguration`](crate::types::AlarmConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`alarms`](crate::types::builders::AlarmConfigurationBuilder::alarms)
-    pub fn build(self) -> ::std::result::Result<crate::types::AlarmConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AlarmConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AlarmConfiguration {
             ignore_poll_alarm_failure: self.ignore_poll_alarm_failure.unwrap_or_default(),
             alarms: self.alarms.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "alarms",
                     "alarms was not specified but it is required when building AlarmConfiguration",
                 )

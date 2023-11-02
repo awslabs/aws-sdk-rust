@@ -224,35 +224,35 @@ impl ModelCustomizationJobSummaryBuilder {
     /// - [`job_name`](crate::types::builders::ModelCustomizationJobSummaryBuilder::job_name)
     /// - [`status`](crate::types::builders::ModelCustomizationJobSummaryBuilder::status)
     /// - [`creation_time`](crate::types::builders::ModelCustomizationJobSummaryBuilder::creation_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::ModelCustomizationJobSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ModelCustomizationJobSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ModelCustomizationJobSummary {
             job_arn: self.job_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "job_arn",
                     "job_arn was not specified but it is required when building ModelCustomizationJobSummary",
                 )
             })?,
             base_model_arn: self.base_model_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "base_model_arn",
                     "base_model_arn was not specified but it is required when building ModelCustomizationJobSummary",
                 )
             })?,
             job_name: self.job_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "job_name",
                     "job_name was not specified but it is required when building ModelCustomizationJobSummary",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building ModelCustomizationJobSummary",
                 )
             })?,
             last_modified_time: self.last_modified_time,
             creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_time",
                     "creation_time was not specified but it is required when building ModelCustomizationJobSummary",
                 )

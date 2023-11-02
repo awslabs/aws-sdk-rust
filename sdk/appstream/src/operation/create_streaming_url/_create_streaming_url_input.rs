@@ -151,7 +151,8 @@ impl CreateStreamingUrlInputBuilder {
     /// Consumes the builder and constructs a [`CreateStreamingUrlInput`](crate::operation::create_streaming_url::CreateStreamingUrlInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_streaming_url::CreateStreamingUrlInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_streaming_url::CreateStreamingUrlInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_streaming_url::CreateStreamingUrlInput {
             stack_name: self.stack_name,
             fleet_name: self.fleet_name,

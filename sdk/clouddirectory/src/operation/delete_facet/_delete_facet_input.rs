@@ -64,7 +64,7 @@ impl DeleteFacetInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`DeleteFacetInput`](crate::operation::delete_facet::DeleteFacetInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_facet::DeleteFacetInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_facet::DeleteFacetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_facet::DeleteFacetInput {
             schema_arn: self.schema_arn,
             name: self.name,

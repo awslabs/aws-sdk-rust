@@ -46,7 +46,7 @@ impl DescribeGatewayInstanceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_gateway_instance::DescribeGatewayInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_gateway_instance::DescribeGatewayInstanceInput {
             gateway_instance_arn: self.gateway_instance_arn,

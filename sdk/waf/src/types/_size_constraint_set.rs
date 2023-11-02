@@ -105,17 +105,17 @@ impl SizeConstraintSetBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`size_constraint_set_id`](crate::types::builders::SizeConstraintSetBuilder::size_constraint_set_id)
     /// - [`size_constraints`](crate::types::builders::SizeConstraintSetBuilder::size_constraints)
-    pub fn build(self) -> ::std::result::Result<crate::types::SizeConstraintSet, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SizeConstraintSet, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SizeConstraintSet {
             size_constraint_set_id: self.size_constraint_set_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "size_constraint_set_id",
                     "size_constraint_set_id was not specified but it is required when building SizeConstraintSet",
                 )
             })?,
             name: self.name,
             size_constraints: self.size_constraints.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "size_constraints",
                     "size_constraints was not specified but it is required when building SizeConstraintSet",
                 )

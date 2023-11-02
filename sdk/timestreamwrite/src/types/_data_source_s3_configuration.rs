@@ -67,10 +67,10 @@ impl DataSourceS3ConfigurationBuilder {
     /// Consumes the builder and constructs a [`DataSourceS3Configuration`](crate::types::DataSourceS3Configuration).
     /// This method will fail if any of the following fields are not set:
     /// - [`bucket_name`](crate::types::builders::DataSourceS3ConfigurationBuilder::bucket_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::DataSourceS3Configuration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DataSourceS3Configuration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DataSourceS3Configuration {
             bucket_name: self.bucket_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "bucket_name",
                     "bucket_name was not specified but it is required when building DataSourceS3Configuration",
                 )

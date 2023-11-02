@@ -44,7 +44,7 @@ impl GetRelationalDatabaseInputBuilder {
     /// Consumes the builder and constructs a [`GetRelationalDatabaseInput`](crate::operation::get_relational_database::GetRelationalDatabaseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_relational_database::GetRelationalDatabaseInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_relational_database::GetRelationalDatabaseInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_relational_database::GetRelationalDatabaseInput {
             relational_database_name: self.relational_database_name,

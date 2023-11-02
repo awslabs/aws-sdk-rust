@@ -100,7 +100,7 @@ impl DeleteFunctionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteFunctionInput`](crate::operation::delete_function::DeleteFunctionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_function::DeleteFunctionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_function::DeleteFunctionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_function::DeleteFunctionInput {
             function_name: self.function_name,
             qualifier: self.qualifier,

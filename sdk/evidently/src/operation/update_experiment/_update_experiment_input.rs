@@ -255,7 +255,7 @@ impl UpdateExperimentInputBuilder {
     /// Consumes the builder and constructs a [`UpdateExperimentInput`](crate::operation::update_experiment::UpdateExperimentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_experiment::UpdateExperimentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_experiment::UpdateExperimentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_experiment::UpdateExperimentInput {
             project: self.project,
             experiment: self.experiment,

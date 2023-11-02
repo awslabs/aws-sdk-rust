@@ -89,10 +89,10 @@ impl ListActivitiesOutputBuilder {
     /// - [`activities`](crate::operation::list_activities::builders::ListActivitiesOutputBuilder::activities)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_activities::ListActivitiesOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_activities::ListActivitiesOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_activities::ListActivitiesOutput {
             activities: self.activities.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "activities",
                     "activities was not specified but it is required when building ListActivitiesOutput",
                 )

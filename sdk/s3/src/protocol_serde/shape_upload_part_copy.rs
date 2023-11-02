@@ -84,13 +84,13 @@ pub fn de_upload_part_copy_http_response(
 pub fn ser_upload_part_copy_headers(
     input: &crate::operation::upload_part_copy::UploadPartCopyInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.copy_source {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
             let header_value = formatted_2;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "copy_source",
                     format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
@@ -103,7 +103,7 @@ pub fn ser_upload_part_copy_headers(
         if !formatted_4.is_empty() {
             let header_value = formatted_4;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "copy_source_if_match",
                     format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
@@ -116,7 +116,7 @@ pub fn ser_upload_part_copy_headers(
         if !formatted_6.is_empty() {
             let header_value = formatted_6;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "copy_source_if_modified_since",
                     format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
@@ -129,7 +129,7 @@ pub fn ser_upload_part_copy_headers(
         if !formatted_8.is_empty() {
             let header_value = formatted_8;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "copy_source_if_none_match",
                     format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
@@ -142,7 +142,7 @@ pub fn ser_upload_part_copy_headers(
         if !formatted_10.is_empty() {
             let header_value = formatted_10;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "copy_source_if_unmodified_since",
                     format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
@@ -155,7 +155,7 @@ pub fn ser_upload_part_copy_headers(
         if !formatted_12.is_empty() {
             let header_value = formatted_12;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "copy_source_range",
                     format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
@@ -168,7 +168,7 @@ pub fn ser_upload_part_copy_headers(
         if !formatted_14.is_empty() {
             let header_value = formatted_14;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "sse_customer_algorithm",
                     format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
@@ -181,7 +181,7 @@ pub fn ser_upload_part_copy_headers(
         if !formatted_16.is_empty() {
             let header_value = formatted_16;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "sse_customer_key",
                     format!("`{}` cannot be used as a header value: {}", &"*** Sensitive Data Redacted ***", err),
                 )
@@ -194,7 +194,7 @@ pub fn ser_upload_part_copy_headers(
         if !formatted_18.is_empty() {
             let header_value = formatted_18;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "sse_customer_key_md5",
                     format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
@@ -207,7 +207,7 @@ pub fn ser_upload_part_copy_headers(
         if !formatted_20.is_empty() {
             let header_value = formatted_20;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "copy_source_sse_customer_algorithm",
                     format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
@@ -220,7 +220,7 @@ pub fn ser_upload_part_copy_headers(
         if !formatted_22.is_empty() {
             let header_value = formatted_22;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "copy_source_sse_customer_key",
                     format!("`{}` cannot be used as a header value: {}", &"*** Sensitive Data Redacted ***", err),
                 )
@@ -233,7 +233,7 @@ pub fn ser_upload_part_copy_headers(
         if !formatted_24.is_empty() {
             let header_value = formatted_24;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "copy_source_sse_customer_key_md5",
                     format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
@@ -246,7 +246,7 @@ pub fn ser_upload_part_copy_headers(
         if !formatted_26.is_empty() {
             let header_value = formatted_26;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "request_payer",
                     format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
@@ -259,7 +259,7 @@ pub fn ser_upload_part_copy_headers(
         if !formatted_28.is_empty() {
             let header_value = formatted_28;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "expected_bucket_owner",
                     format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
@@ -272,7 +272,7 @@ pub fn ser_upload_part_copy_headers(
         if !formatted_30.is_empty() {
             let header_value = formatted_30;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "expected_source_bucket_owner",
                     format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )

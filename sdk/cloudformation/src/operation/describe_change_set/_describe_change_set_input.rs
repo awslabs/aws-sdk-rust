@@ -87,7 +87,7 @@ impl DescribeChangeSetInputBuilder {
     /// Consumes the builder and constructs a [`DescribeChangeSetInput`](crate::operation::describe_change_set::DescribeChangeSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_change_set::DescribeChangeSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_change_set::DescribeChangeSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_change_set::DescribeChangeSetInput {
             change_set_name: self.change_set_name,
             stack_name: self.stack_name,

@@ -46,7 +46,7 @@ impl GetVoiceConnectorTerminationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_voice_connector_termination::GetVoiceConnectorTerminationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_voice_connector_termination::GetVoiceConnectorTerminationInput {
             voice_connector_id: self.voice_connector_id,

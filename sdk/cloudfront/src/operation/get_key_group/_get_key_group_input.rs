@@ -42,7 +42,7 @@ impl GetKeyGroupInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`GetKeyGroupInput`](crate::operation::get_key_group::GetKeyGroupInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_key_group::GetKeyGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_key_group::GetKeyGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_key_group::GetKeyGroupInput { id: self.id })
     }
 }

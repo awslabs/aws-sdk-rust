@@ -2,7 +2,7 @@
 pub fn ser_salesforce_standard_knowledge_article_type_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SalesforceStandardKnowledgeArticleTypeConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("DocumentDataFieldName").string(input.document_data_field_name.as_str());
     }

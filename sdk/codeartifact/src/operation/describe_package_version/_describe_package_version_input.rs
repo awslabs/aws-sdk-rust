@@ -204,8 +204,10 @@ impl DescribePackageVersionInputBuilder {
     /// Consumes the builder and constructs a [`DescribePackageVersionInput`](crate::operation::describe_package_version::DescribePackageVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_package_version::DescribePackageVersionInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::describe_package_version::DescribePackageVersionInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::describe_package_version::DescribePackageVersionInput {
             domain: self.domain,
             domain_owner: self.domain_owner,

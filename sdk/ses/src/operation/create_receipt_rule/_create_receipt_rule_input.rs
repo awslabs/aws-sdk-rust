@@ -88,7 +88,7 @@ impl CreateReceiptRuleInputBuilder {
     /// Consumes the builder and constructs a [`CreateReceiptRuleInput`](crate::operation::create_receipt_rule::CreateReceiptRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_receipt_rule::CreateReceiptRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_receipt_rule::CreateReceiptRuleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_receipt_rule::CreateReceiptRuleInput {
             rule_set_name: self.rule_set_name,
             after: self.after,

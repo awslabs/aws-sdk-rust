@@ -123,28 +123,28 @@ impl PostgreSqlCatalogTargetBuilder {
     /// - [`inputs`](crate::types::builders::PostgreSqlCatalogTargetBuilder::inputs)
     /// - [`database`](crate::types::builders::PostgreSqlCatalogTargetBuilder::database)
     /// - [`table`](crate::types::builders::PostgreSqlCatalogTargetBuilder::table)
-    pub fn build(self) -> ::std::result::Result<crate::types::PostgreSqlCatalogTarget, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PostgreSqlCatalogTarget, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PostgreSqlCatalogTarget {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building PostgreSqlCatalogTarget",
                 )
             })?,
             inputs: self.inputs.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "inputs",
                     "inputs was not specified but it is required when building PostgreSqlCatalogTarget",
                 )
             })?,
             database: self.database.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "database",
                     "database was not specified but it is required when building PostgreSqlCatalogTarget",
                 )
             })?,
             table: self.table.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "table",
                     "table was not specified but it is required when building PostgreSqlCatalogTarget",
                 )

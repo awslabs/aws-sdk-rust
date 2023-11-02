@@ -46,10 +46,10 @@ impl OwnerIdentifierBuilder {
     /// Consumes the builder and constructs a [`OwnerIdentifier`](crate::types::OwnerIdentifier).
     /// This method will fail if any of the following fields are not set:
     /// - [`address`](crate::types::builders::OwnerIdentifierBuilder::address)
-    pub fn build(self) -> ::std::result::Result<crate::types::OwnerIdentifier, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::OwnerIdentifier, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::OwnerIdentifier {
             address: self.address.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "address",
                     "address was not specified but it is required when building OwnerIdentifier",
                 )

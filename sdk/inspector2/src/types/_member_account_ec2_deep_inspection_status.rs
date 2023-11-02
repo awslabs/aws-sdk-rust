@@ -69,16 +69,18 @@ impl MemberAccountEc2DeepInspectionStatusBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`account_id`](crate::types::builders::MemberAccountEc2DeepInspectionStatusBuilder::account_id)
     /// - [`activate_deep_inspection`](crate::types::builders::MemberAccountEc2DeepInspectionStatusBuilder::activate_deep_inspection)
-    pub fn build(self) -> ::std::result::Result<crate::types::MemberAccountEc2DeepInspectionStatus, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::MemberAccountEc2DeepInspectionStatus, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MemberAccountEc2DeepInspectionStatus {
             account_id: self.account_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "account_id",
                     "account_id was not specified but it is required when building MemberAccountEc2DeepInspectionStatus",
                 )
             })?,
             activate_deep_inspection: self.activate_deep_inspection.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "activate_deep_inspection",
                     "activate_deep_inspection was not specified but it is required when building MemberAccountEc2DeepInspectionStatus",
                 )

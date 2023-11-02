@@ -116,7 +116,9 @@ impl UpdateMethodInputBuilder {
         &self.patch_operations
     }
     /// Consumes the builder and constructs a [`UpdateMethodInput`](crate::operation::update_method::UpdateMethodInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_method::UpdateMethodInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_method::UpdateMethodInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_method::UpdateMethodInput {
             rest_api_id: self.rest_api_id,
             resource_id: self.resource_id,

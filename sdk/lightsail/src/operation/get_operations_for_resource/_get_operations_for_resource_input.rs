@@ -72,7 +72,7 @@ impl GetOperationsForResourceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_operations_for_resource::GetOperationsForResourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_operations_for_resource::GetOperationsForResourceInput {
             resource_name: self.resource_name,

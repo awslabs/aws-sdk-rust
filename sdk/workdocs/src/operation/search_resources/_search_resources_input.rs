@@ -253,7 +253,7 @@ impl SearchResourcesInputBuilder {
     /// Consumes the builder and constructs a [`SearchResourcesInput`](crate::operation::search_resources::SearchResourcesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::search_resources::SearchResourcesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::search_resources::SearchResourcesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_resources::SearchResourcesInput {
             authentication_token: self.authentication_token,
             query_text: self.query_text,

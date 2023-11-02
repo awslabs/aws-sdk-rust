@@ -117,8 +117,10 @@ impl DetachNetworkInterfaceInputBuilder {
     /// Consumes the builder and constructs a [`DetachNetworkInterfaceInput`](crate::operation::detach_network_interface::DetachNetworkInterfaceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::detach_network_interface::DetachNetworkInterfaceInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::detach_network_interface::DetachNetworkInterfaceInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::detach_network_interface::DetachNetworkInterfaceInput {
             attachment_id: self.attachment_id,
             dry_run: self.dry_run,

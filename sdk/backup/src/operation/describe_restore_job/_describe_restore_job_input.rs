@@ -44,7 +44,8 @@ impl DescribeRestoreJobInputBuilder {
     /// Consumes the builder and constructs a [`DescribeRestoreJobInput`](crate::operation::describe_restore_job::DescribeRestoreJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_restore_job::DescribeRestoreJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_restore_job::DescribeRestoreJobInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::describe_restore_job::DescribeRestoreJobInput {
             restore_job_id: self.restore_job_id,
         })

@@ -2,7 +2,7 @@
 pub fn ser_delete_compute_environment_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_compute_environment::DeleteComputeEnvironmentInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.compute_environment {
         object.key("computeEnvironment").string(var_1.as_str());
     }

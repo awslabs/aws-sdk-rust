@@ -131,7 +131,7 @@ impl DescribeImageScanFindingsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_image_scan_findings::DescribeImageScanFindingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_image_scan_findings::DescribeImageScanFindingsInput {
             registry_id: self.registry_id,

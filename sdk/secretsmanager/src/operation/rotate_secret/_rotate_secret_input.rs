@@ -166,7 +166,9 @@ impl RotateSecretInputBuilder {
         &self.rotate_immediately
     }
     /// Consumes the builder and constructs a [`RotateSecretInput`](crate::operation::rotate_secret::RotateSecretInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::rotate_secret::RotateSecretInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::rotate_secret::RotateSecretInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::rotate_secret::RotateSecretInput {
             secret_id: self.secret_id,
             client_request_token: self.client_request_token,

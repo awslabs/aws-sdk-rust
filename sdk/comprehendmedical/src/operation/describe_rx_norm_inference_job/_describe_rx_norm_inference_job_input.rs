@@ -46,7 +46,7 @@ impl DescribeRxNormInferenceJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_rx_norm_inference_job::DescribeRxNormInferenceJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_rx_norm_inference_job::DescribeRxNormInferenceJobInput { job_id: self.job_id })
     }

@@ -66,7 +66,7 @@ impl DeleteEntitlementInputBuilder {
     /// Consumes the builder and constructs a [`DeleteEntitlementInput`](crate::operation::delete_entitlement::DeleteEntitlementInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_entitlement::DeleteEntitlementInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_entitlement::DeleteEntitlementInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_entitlement::DeleteEntitlementInput {
             name: self.name,
             stack_name: self.stack_name,

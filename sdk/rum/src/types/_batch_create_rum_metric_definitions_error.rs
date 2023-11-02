@@ -92,17 +92,19 @@ impl BatchCreateRumMetricDefinitionsErrorBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`error_code`](crate::types::builders::BatchCreateRumMetricDefinitionsErrorBuilder::error_code)
     /// - [`error_message`](crate::types::builders::BatchCreateRumMetricDefinitionsErrorBuilder::error_message)
-    pub fn build(self) -> ::std::result::Result<crate::types::BatchCreateRumMetricDefinitionsError, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::BatchCreateRumMetricDefinitionsError, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::BatchCreateRumMetricDefinitionsError {
             metric_definition: self.metric_definition,
             error_code: self.error_code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "error_code",
                     "error_code was not specified but it is required when building BatchCreateRumMetricDefinitionsError",
                 )
             })?,
             error_message: self.error_message.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "error_message",
                     "error_message was not specified but it is required when building BatchCreateRumMetricDefinitionsError",
                 )

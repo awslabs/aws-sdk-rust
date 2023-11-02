@@ -2,7 +2,7 @@
 pub fn ser_systems_manager_agent(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SystemsManagerAgent,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.uninstall_after_build {
         object.key("uninstallAfterBuild").boolean(*var_1);
     }

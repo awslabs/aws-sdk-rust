@@ -2,7 +2,7 @@
 pub fn ser_custom_request_handling(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CustomRequestHandling,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("InsertHeaders").start_array();
         for item_2 in &input.insert_headers {

@@ -114,7 +114,7 @@ impl GetRecordInputBuilder {
         &self.expiration_time_response
     }
     /// Consumes the builder and constructs a [`GetRecordInput`](crate::operation::get_record::GetRecordInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_record::GetRecordInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_record::GetRecordInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_record::GetRecordInput {
             feature_group_name: self.feature_group_name,
             record_identifier_value_as_string: self.record_identifier_value_as_string,

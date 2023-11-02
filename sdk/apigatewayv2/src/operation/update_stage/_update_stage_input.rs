@@ -255,7 +255,7 @@ impl UpdateStageInputBuilder {
         &self.stage_variables
     }
     /// Consumes the builder and constructs a [`UpdateStageInput`](crate::operation::update_stage::UpdateStageInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_stage::UpdateStageInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_stage::UpdateStageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_stage::UpdateStageInput {
             access_log_settings: self.access_log_settings,
             api_id: self.api_id,

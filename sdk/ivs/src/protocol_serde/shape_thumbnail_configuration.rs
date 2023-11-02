@@ -2,7 +2,7 @@
 pub fn ser_thumbnail_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ThumbnailConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.recording_mode {
         object.key("recordingMode").string(var_1.as_str());
     }

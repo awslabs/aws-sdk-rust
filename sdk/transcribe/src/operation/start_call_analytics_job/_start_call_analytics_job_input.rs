@@ -309,7 +309,7 @@ impl StartCallAnalyticsJobInputBuilder {
     /// Consumes the builder and constructs a [`StartCallAnalyticsJobInput`](crate::operation::start_call_analytics_job::StartCallAnalyticsJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_call_analytics_job::StartCallAnalyticsJobInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::start_call_analytics_job::StartCallAnalyticsJobInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_call_analytics_job::StartCallAnalyticsJobInput {
             call_analytics_job_name: self.call_analytics_job_name,

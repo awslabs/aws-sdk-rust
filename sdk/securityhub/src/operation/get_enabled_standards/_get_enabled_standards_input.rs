@@ -98,7 +98,7 @@ impl GetEnabledStandardsInputBuilder {
     /// Consumes the builder and constructs a [`GetEnabledStandardsInput`](crate::operation::get_enabled_standards::GetEnabledStandardsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_enabled_standards::GetEnabledStandardsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_enabled_standards::GetEnabledStandardsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_enabled_standards::GetEnabledStandardsInput {
             standards_subscription_arns: self.standards_subscription_arns,

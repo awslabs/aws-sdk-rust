@@ -375,7 +375,7 @@ impl DescribeLaunchTemplateVersionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_launch_template_versions::DescribeLaunchTemplateVersionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_launch_template_versions::DescribeLaunchTemplateVersionsInput {
             dry_run: self.dry_run,

@@ -2,7 +2,7 @@
 pub fn ser_list_component_types_filter(
     object_4: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ListComponentTypesFilter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::ListComponentTypesFilter::ExtendsFrom(inner) => {
             object_4.key("extendsFrom").string(inner.as_str());
@@ -14,7 +14,7 @@ pub fn ser_list_component_types_filter(
             object_4.key("isAbstract").boolean(*inner);
         }
         crate::types::ListComponentTypesFilter::Unknown => {
-            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+            return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "ListComponentTypesFilter",
             ))
         }

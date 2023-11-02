@@ -75,11 +75,11 @@ impl DeletePullRequestApprovalRuleOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_pull_request_approval_rule::DeletePullRequestApprovalRuleOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_pull_request_approval_rule::DeletePullRequestApprovalRuleOutput {
             approval_rule_id: self.approval_rule_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "approval_rule_id",
                     "approval_rule_id was not specified but it is required when building DeletePullRequestApprovalRuleOutput",
                 )

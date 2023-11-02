@@ -87,11 +87,11 @@ impl SearchCasesOutputBuilder {
     /// Consumes the builder and constructs a [`SearchCasesOutput`](crate::operation::search_cases::SearchCasesOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`cases`](crate::operation::search_cases::builders::SearchCasesOutputBuilder::cases)
-    pub fn build(self) -> ::std::result::Result<crate::operation::search_cases::SearchCasesOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::search_cases::SearchCasesOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_cases::SearchCasesOutput {
             next_token: self.next_token,
             cases: self.cases.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "cases",
                     "cases was not specified but it is required when building SearchCasesOutput",
                 )

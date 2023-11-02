@@ -128,7 +128,7 @@ impl DescribeMountTargetsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeMountTargetsInput`](crate::operation::describe_mount_targets::DescribeMountTargetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_mount_targets::DescribeMountTargetsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_mount_targets::DescribeMountTargetsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_mount_targets::DescribeMountTargetsInput {
             max_items: self.max_items,

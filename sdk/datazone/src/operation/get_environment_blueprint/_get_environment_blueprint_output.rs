@@ -294,24 +294,24 @@ impl GetEnvironmentBlueprintOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_environment_blueprint::GetEnvironmentBlueprintOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_environment_blueprint::GetEnvironmentBlueprintOutput {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building GetEnvironmentBlueprintOutput",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building GetEnvironmentBlueprintOutput",
                 )
             })?,
             description: self.description,
             provider: self.provider.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "provider",
                     "provider was not specified but it is required when building GetEnvironmentBlueprintOutput",
                 )

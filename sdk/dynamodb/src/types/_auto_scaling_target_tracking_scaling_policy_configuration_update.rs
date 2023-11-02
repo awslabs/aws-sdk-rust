@@ -110,14 +110,16 @@ impl AutoScalingTargetTrackingScalingPolicyConfigurationUpdateBuilder {
     /// - [`target_value`](crate::types::builders::AutoScalingTargetTrackingScalingPolicyConfigurationUpdateBuilder::target_value)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::AutoScalingTargetTrackingScalingPolicyConfigurationUpdate, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::types::AutoScalingTargetTrackingScalingPolicyConfigurationUpdate,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::types::AutoScalingTargetTrackingScalingPolicyConfigurationUpdate {
             disable_scale_in: self.disable_scale_in,
             scale_in_cooldown: self.scale_in_cooldown,
             scale_out_cooldown: self.scale_out_cooldown,
             target_value: self.target_value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "target_value",
                     "target_value was not specified but it is required when building AutoScalingTargetTrackingScalingPolicyConfigurationUpdate",
                 )

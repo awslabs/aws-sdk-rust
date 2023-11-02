@@ -97,7 +97,9 @@ impl CreateBudgetInputBuilder {
         &self.notifications_with_subscribers
     }
     /// Consumes the builder and constructs a [`CreateBudgetInput`](crate::operation::create_budget::CreateBudgetInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_budget::CreateBudgetInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_budget::CreateBudgetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_budget::CreateBudgetInput {
             account_id: self.account_id,
             budget: self.budget,

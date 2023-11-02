@@ -63,7 +63,7 @@ impl EnableImageInputBuilder {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`EnableImageInput`](crate::operation::enable_image::EnableImageInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::enable_image::EnableImageInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::enable_image::EnableImageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::enable_image::EnableImageInput {
             image_id: self.image_id,
             dry_run: self.dry_run,

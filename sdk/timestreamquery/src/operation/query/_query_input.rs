@@ -220,7 +220,7 @@ impl QueryInputBuilder {
         &self.max_rows
     }
     /// Consumes the builder and constructs a [`QueryInput`](crate::operation::query::QueryInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::query::QueryInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::query::QueryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::query::QueryInput {
             query_string: self.query_string,
             client_token: self.client_token,

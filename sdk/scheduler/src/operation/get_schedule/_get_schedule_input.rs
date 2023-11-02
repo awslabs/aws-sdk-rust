@@ -63,7 +63,7 @@ impl GetScheduleInputBuilder {
         &self.group_name
     }
     /// Consumes the builder and constructs a [`GetScheduleInput`](crate::operation::get_schedule::GetScheduleInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_schedule::GetScheduleInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_schedule::GetScheduleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_schedule::GetScheduleInput {
             name: self.name,
             group_name: self.group_name,

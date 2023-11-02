@@ -98,7 +98,7 @@ impl ModifyInstanceCreditSpecificationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_instance_credit_specification::ModifyInstanceCreditSpecificationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::modify_instance_credit_specification::ModifyInstanceCreditSpecificationInput {

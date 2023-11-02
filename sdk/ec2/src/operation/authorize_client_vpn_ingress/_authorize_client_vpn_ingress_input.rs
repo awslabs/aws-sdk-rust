@@ -173,7 +173,7 @@ impl AuthorizeClientVpnIngressInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::authorize_client_vpn_ingress::AuthorizeClientVpnIngressInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::authorize_client_vpn_ingress::AuthorizeClientVpnIngressInput {
             client_vpn_endpoint_id: self.client_vpn_endpoint_id,

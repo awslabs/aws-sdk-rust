@@ -85,7 +85,7 @@ impl GetAssetPropertyValueInputBuilder {
     /// Consumes the builder and constructs a [`GetAssetPropertyValueInput`](crate::operation::get_asset_property_value::GetAssetPropertyValueInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_asset_property_value::GetAssetPropertyValueInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_asset_property_value::GetAssetPropertyValueInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_asset_property_value::GetAssetPropertyValueInput {
             asset_id: self.asset_id,

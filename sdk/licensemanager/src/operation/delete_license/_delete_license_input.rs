@@ -66,7 +66,7 @@ impl DeleteLicenseInputBuilder {
     /// Consumes the builder and constructs a [`DeleteLicenseInput`](crate::operation::delete_license::DeleteLicenseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_license::DeleteLicenseInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_license::DeleteLicenseInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_license::DeleteLicenseInput {
             license_arn: self.license_arn,
             source_version: self.source_version,

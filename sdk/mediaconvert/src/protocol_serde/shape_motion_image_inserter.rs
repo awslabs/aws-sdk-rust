@@ -2,7 +2,7 @@
 pub fn ser_motion_image_inserter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MotionImageInserter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.framerate {
         #[allow(unused_mut)]
         let mut object_2 = object.key("framerate").start_object();

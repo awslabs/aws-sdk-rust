@@ -49,7 +49,7 @@ where
 pub fn ser_cdn_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CdnConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.ad_segment_url_prefix {
         object.key("AdSegmentUrlPrefix").string(var_1.as_str());
     }

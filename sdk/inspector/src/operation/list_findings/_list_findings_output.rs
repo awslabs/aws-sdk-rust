@@ -89,10 +89,10 @@ impl ListFindingsOutputBuilder {
     /// - [`finding_arns`](crate::operation::list_findings::builders::ListFindingsOutputBuilder::finding_arns)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_findings::ListFindingsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_findings::ListFindingsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_findings::ListFindingsOutput {
             finding_arns: self.finding_arns.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "finding_arns",
                     "finding_arns was not specified but it is required when building ListFindingsOutput",
                 )

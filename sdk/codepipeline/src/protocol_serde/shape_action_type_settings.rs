@@ -2,7 +2,7 @@
 pub fn ser_action_type_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ActionTypeSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.third_party_configuration_url {
         object.key("thirdPartyConfigurationUrl").string(var_1.as_str());
     }

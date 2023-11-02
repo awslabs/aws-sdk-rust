@@ -45,7 +45,7 @@ impl GetXssMatchSetInputBuilder {
     /// Consumes the builder and constructs a [`GetXssMatchSetInput`](crate::operation::get_xss_match_set::GetXssMatchSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_xss_match_set::GetXssMatchSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_xss_match_set::GetXssMatchSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_xss_match_set::GetXssMatchSetInput {
             xss_match_set_id: self.xss_match_set_id,
         })

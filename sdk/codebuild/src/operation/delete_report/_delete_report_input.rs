@@ -42,7 +42,9 @@ impl DeleteReportInputBuilder {
         &self.arn
     }
     /// Consumes the builder and constructs a [`DeleteReportInput`](crate::operation::delete_report::DeleteReportInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_report::DeleteReportInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_report::DeleteReportInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_report::DeleteReportInput { arn: self.arn })
     }
 }

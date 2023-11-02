@@ -109,7 +109,7 @@ impl DescribeEndpointTypesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeEndpointTypesInput`](crate::operation::describe_endpoint_types::DescribeEndpointTypesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_endpoint_types::DescribeEndpointTypesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_endpoint_types::DescribeEndpointTypesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_endpoint_types::DescribeEndpointTypesInput {
             filters: self.filters,

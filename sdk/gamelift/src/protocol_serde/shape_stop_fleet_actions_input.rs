@@ -2,7 +2,7 @@
 pub fn ser_stop_fleet_actions_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::stop_fleet_actions::StopFleetActionsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.fleet_id {
         object.key("FleetId").string(var_1.as_str());
     }

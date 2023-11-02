@@ -157,7 +157,7 @@ impl GetQuerySuggestionsInputBuilder {
     /// Consumes the builder and constructs a [`GetQuerySuggestionsInput`](crate::operation::get_query_suggestions::GetQuerySuggestionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_query_suggestions::GetQuerySuggestionsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_query_suggestions::GetQuerySuggestionsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_query_suggestions::GetQuerySuggestionsInput {
             index_id: self.index_id,

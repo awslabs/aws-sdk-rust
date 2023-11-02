@@ -75,7 +75,7 @@ impl AdminDeleteUserInputBuilder {
     /// Consumes the builder and constructs a [`AdminDeleteUserInput`](crate::operation::admin_delete_user::AdminDeleteUserInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::admin_delete_user::AdminDeleteUserInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::admin_delete_user::AdminDeleteUserInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::admin_delete_user::AdminDeleteUserInput {
             user_pool_id: self.user_pool_id,
             username: self.username,

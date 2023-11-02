@@ -112,16 +112,16 @@ impl DisableAlarmActionRequestBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`request_id`](crate::types::builders::DisableAlarmActionRequestBuilder::request_id)
     /// - [`alarm_model_name`](crate::types::builders::DisableAlarmActionRequestBuilder::alarm_model_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::DisableAlarmActionRequest, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DisableAlarmActionRequest, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DisableAlarmActionRequest {
             request_id: self.request_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "request_id",
                     "request_id was not specified but it is required when building DisableAlarmActionRequest",
                 )
             })?,
             alarm_model_name: self.alarm_model_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "alarm_model_name",
                     "alarm_model_name was not specified but it is required when building DisableAlarmActionRequest",
                 )

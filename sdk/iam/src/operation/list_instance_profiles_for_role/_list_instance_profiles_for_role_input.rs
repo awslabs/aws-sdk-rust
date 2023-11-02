@@ -98,7 +98,7 @@ impl ListInstanceProfilesForRoleInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_instance_profiles_for_role::ListInstanceProfilesForRoleInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_instance_profiles_for_role::ListInstanceProfilesForRoleInput {
             role_name: self.role_name,

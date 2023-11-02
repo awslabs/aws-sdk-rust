@@ -77,10 +77,10 @@ impl EndpointIdentifierBuilder {
     /// Consumes the builder and constructs a [`EndpointIdentifier`](crate::types::EndpointIdentifier).
     /// This method will fail if any of the following fields are not set:
     /// - [`endpoint_id`](crate::types::builders::EndpointIdentifierBuilder::endpoint_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::EndpointIdentifier, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::EndpointIdentifier, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EndpointIdentifier {
             endpoint_id: self.endpoint_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "endpoint_id",
                     "endpoint_id was not specified but it is required when building EndpointIdentifier",
                 )

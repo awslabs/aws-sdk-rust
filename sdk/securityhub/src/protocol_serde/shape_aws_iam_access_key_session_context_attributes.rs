@@ -2,7 +2,7 @@
 pub fn ser_aws_iam_access_key_session_context_attributes(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsIamAccessKeySessionContextAttributes,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.mfa_authenticated {
         object.key("MfaAuthenticated").boolean(*var_1);
     }

@@ -97,7 +97,7 @@ impl DisassociatePersonasFromEntitiesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_personas_from_entities::DisassociatePersonasFromEntitiesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::disassociate_personas_from_entities::DisassociatePersonasFromEntitiesInput {

@@ -198,7 +198,7 @@ impl DescribeAlarmHistoryInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAlarmHistoryInput`](crate::operation::describe_alarm_history::DescribeAlarmHistoryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_alarm_history::DescribeAlarmHistoryInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_alarm_history::DescribeAlarmHistoryInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_alarm_history::DescribeAlarmHistoryInput {
             alarm_name: self.alarm_name,

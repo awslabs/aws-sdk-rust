@@ -111,7 +111,7 @@ impl TestEventPatternInputBuilder {
     /// Consumes the builder and constructs a [`TestEventPatternInput`](crate::operation::test_event_pattern::TestEventPatternInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::test_event_pattern::TestEventPatternInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::test_event_pattern::TestEventPatternInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::test_event_pattern::TestEventPatternInput {
             event_pattern: self.event_pattern,
             event: self.event,

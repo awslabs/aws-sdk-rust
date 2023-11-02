@@ -95,7 +95,7 @@ impl DeleteLaunchTemplateInputBuilder {
     /// Consumes the builder and constructs a [`DeleteLaunchTemplateInput`](crate::operation::delete_launch_template::DeleteLaunchTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_launch_template::DeleteLaunchTemplateInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_launch_template::DeleteLaunchTemplateInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_launch_template::DeleteLaunchTemplateInput {
             dry_run: self.dry_run,

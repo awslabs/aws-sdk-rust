@@ -176,8 +176,10 @@ impl UpdateNodegroupVersionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateNodegroupVersionInput`](crate::operation::update_nodegroup_version::UpdateNodegroupVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_nodegroup_version::UpdateNodegroupVersionInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::update_nodegroup_version::UpdateNodegroupVersionInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::update_nodegroup_version::UpdateNodegroupVersionInput {
             cluster_name: self.cluster_name,
             nodegroup_name: self.nodegroup_name,

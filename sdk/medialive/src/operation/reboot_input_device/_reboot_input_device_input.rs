@@ -66,7 +66,7 @@ impl RebootInputDeviceInputBuilder {
     /// Consumes the builder and constructs a [`RebootInputDeviceInput`](crate::operation::reboot_input_device::RebootInputDeviceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::reboot_input_device::RebootInputDeviceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::reboot_input_device::RebootInputDeviceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::reboot_input_device::RebootInputDeviceInput {
             force: self.force,
             input_device_id: self.input_device_id,

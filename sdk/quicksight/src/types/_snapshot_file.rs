@@ -74,16 +74,16 @@ impl SnapshotFileBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`sheet_selections`](crate::types::builders::SnapshotFileBuilder::sheet_selections)
     /// - [`format_type`](crate::types::builders::SnapshotFileBuilder::format_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::SnapshotFile, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SnapshotFile, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SnapshotFile {
             sheet_selections: self.sheet_selections.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "sheet_selections",
                     "sheet_selections was not specified but it is required when building SnapshotFile",
                 )
             })?,
             format_type: self.format_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "format_type",
                     "format_type was not specified but it is required when building SnapshotFile",
                 )

@@ -2,7 +2,7 @@
 pub fn ser_terraform_source(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TerraformSource,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("s3StateFileUrl").string(input.s3_state_file_url.as_str());
     }

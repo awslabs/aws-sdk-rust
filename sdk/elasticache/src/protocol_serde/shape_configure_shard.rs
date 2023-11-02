@@ -3,7 +3,7 @@
 pub fn ser_configure_shard(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::ConfigureShard,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("NodeGroupId");
     if let Some(var_2) = &input.node_group_id {

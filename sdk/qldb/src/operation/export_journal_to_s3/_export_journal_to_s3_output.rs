@@ -68,10 +68,11 @@ impl ExportJournalToS3OutputBuilder {
     /// - [`export_id`](crate::operation::export_journal_to_s3::builders::ExportJournalToS3OutputBuilder::export_id)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::export_journal_to_s3::ExportJournalToS3Output, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::export_journal_to_s3::ExportJournalToS3Output, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::export_journal_to_s3::ExportJournalToS3Output {
             export_id: self.export_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "export_id",
                     "export_id was not specified but it is required when building ExportJournalToS3Output",
                 )

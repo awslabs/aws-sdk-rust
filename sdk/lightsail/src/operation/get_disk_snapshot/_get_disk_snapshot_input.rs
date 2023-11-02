@@ -44,7 +44,7 @@ impl GetDiskSnapshotInputBuilder {
     /// Consumes the builder and constructs a [`GetDiskSnapshotInput`](crate::operation::get_disk_snapshot::GetDiskSnapshotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_disk_snapshot::GetDiskSnapshotInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_disk_snapshot::GetDiskSnapshotInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_disk_snapshot::GetDiskSnapshotInput {
             disk_snapshot_name: self.disk_snapshot_name,
         })

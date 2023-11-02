@@ -2,7 +2,7 @@
 pub fn ser_put_asset_property_value_entry(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PutAssetPropertyValueEntry,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("entryId").string(input.entry_id.as_str());
     }

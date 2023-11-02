@@ -141,10 +141,10 @@ impl SourceBuilder {
     /// Consumes the builder and constructs a [`Source`](crate::types::Source).
     /// This method will fail if any of the following fields are not set:
     /// - [`owner`](crate::types::builders::SourceBuilder::owner)
-    pub fn build(self) -> ::std::result::Result<crate::types::Source, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Source, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Source {
             owner: self.owner.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "owner",
                     "owner was not specified but it is required when building Source",
                 )

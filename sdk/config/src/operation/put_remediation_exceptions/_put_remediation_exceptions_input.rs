@@ -117,7 +117,7 @@ impl PutRemediationExceptionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_remediation_exceptions::PutRemediationExceptionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_remediation_exceptions::PutRemediationExceptionsInput {
             config_rule_name: self.config_rule_name,

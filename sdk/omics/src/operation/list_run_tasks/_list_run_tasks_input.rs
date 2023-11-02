@@ -107,7 +107,7 @@ impl ListRunTasksInputBuilder {
     /// Consumes the builder and constructs a [`ListRunTasksInput`](crate::operation::list_run_tasks::ListRunTasksInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_run_tasks::ListRunTasksInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_run_tasks::ListRunTasksInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_run_tasks::ListRunTasksInput {
             id: self.id,
             status: self.status,

@@ -42,7 +42,7 @@ impl GetSiteInputBuilder {
         &self.site_id
     }
     /// Consumes the builder and constructs a [`GetSiteInput`](crate::operation::get_site::GetSiteInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_site::GetSiteInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_site::GetSiteInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_site::GetSiteInput { site_id: self.site_id })
     }
 }

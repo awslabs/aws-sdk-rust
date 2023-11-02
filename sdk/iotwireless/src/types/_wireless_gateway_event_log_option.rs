@@ -69,16 +69,16 @@ impl WirelessGatewayEventLogOptionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`event`](crate::types::builders::WirelessGatewayEventLogOptionBuilder::event)
     /// - [`log_level`](crate::types::builders::WirelessGatewayEventLogOptionBuilder::log_level)
-    pub fn build(self) -> ::std::result::Result<crate::types::WirelessGatewayEventLogOption, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::WirelessGatewayEventLogOption, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::WirelessGatewayEventLogOption {
             event: self.event.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "event",
                     "event was not specified but it is required when building WirelessGatewayEventLogOption",
                 )
             })?,
             log_level: self.log_level.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "log_level",
                     "log_level was not specified but it is required when building WirelessGatewayEventLogOption",
                 )

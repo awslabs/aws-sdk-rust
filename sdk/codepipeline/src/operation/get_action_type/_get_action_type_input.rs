@@ -150,7 +150,7 @@ impl GetActionTypeInputBuilder {
     /// Consumes the builder and constructs a [`GetActionTypeInput`](crate::operation::get_action_type::GetActionTypeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_action_type::GetActionTypeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_action_type::GetActionTypeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_action_type::GetActionTypeInput {
             category: self.category,
             owner: self.owner,

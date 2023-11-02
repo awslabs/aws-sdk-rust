@@ -86,7 +86,7 @@ impl DeleteSchemaVersionsInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSchemaVersionsInput`](crate::operation::delete_schema_versions::DeleteSchemaVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_schema_versions::DeleteSchemaVersionsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_schema_versions::DeleteSchemaVersionsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_schema_versions::DeleteSchemaVersionsInput {
             schema_id: self.schema_id,

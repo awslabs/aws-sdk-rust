@@ -106,8 +106,10 @@ impl ListClassificationJobsInputBuilder {
     /// Consumes the builder and constructs a [`ListClassificationJobsInput`](crate::operation::list_classification_jobs::ListClassificationJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_classification_jobs::ListClassificationJobsInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::list_classification_jobs::ListClassificationJobsInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::list_classification_jobs::ListClassificationJobsInput {
             filter_criteria: self.filter_criteria,
             max_results: self.max_results,

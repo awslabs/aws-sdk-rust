@@ -123,7 +123,7 @@ impl BatchCreateRumMetricDefinitionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_create_rum_metric_definitions::BatchCreateRumMetricDefinitionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::batch_create_rum_metric_definitions::BatchCreateRumMetricDefinitionsInput {

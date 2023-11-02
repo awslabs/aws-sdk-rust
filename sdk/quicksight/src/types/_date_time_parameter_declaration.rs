@@ -138,10 +138,10 @@ impl DateTimeParameterDeclarationBuilder {
     /// Consumes the builder and constructs a [`DateTimeParameterDeclaration`](crate::types::DateTimeParameterDeclaration).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::DateTimeParameterDeclarationBuilder::name)
-    pub fn build(self) -> ::std::result::Result<crate::types::DateTimeParameterDeclaration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DateTimeParameterDeclaration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DateTimeParameterDeclaration {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building DateTimeParameterDeclaration",
                 )

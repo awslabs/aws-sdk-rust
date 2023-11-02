@@ -131,7 +131,7 @@ impl ImportHostKeyInputBuilder {
     /// Consumes the builder and constructs a [`ImportHostKeyInput`](crate::operation::import_host_key::ImportHostKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::import_host_key::ImportHostKeyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::import_host_key::ImportHostKeyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::import_host_key::ImportHostKeyInput {
             server_id: self.server_id,
             host_key_body: self.host_key_body,

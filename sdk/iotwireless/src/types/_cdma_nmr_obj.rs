@@ -110,16 +110,16 @@ impl CdmaNmrObjBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`pn_offset`](crate::types::builders::CdmaNmrObjBuilder::pn_offset)
     /// - [`cdma_channel`](crate::types::builders::CdmaNmrObjBuilder::cdma_channel)
-    pub fn build(self) -> ::std::result::Result<crate::types::CdmaNmrObj, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CdmaNmrObj, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CdmaNmrObj {
             pn_offset: self.pn_offset.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "pn_offset",
                     "pn_offset was not specified but it is required when building CdmaNmrObj",
                 )
             })?,
             cdma_channel: self.cdma_channel.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "cdma_channel",
                     "cdma_channel was not specified but it is required when building CdmaNmrObj",
                 )

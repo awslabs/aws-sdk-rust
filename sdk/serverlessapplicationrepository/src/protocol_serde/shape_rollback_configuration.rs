@@ -2,7 +2,7 @@
 pub fn ser_rollback_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RollbackConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.monitoring_time_in_minutes {
         object.key("monitoringTimeInMinutes").number(
             #[allow(clippy::useless_conversion)]

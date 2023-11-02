@@ -85,7 +85,7 @@ impl GetBatchImportJobsInputBuilder {
     /// Consumes the builder and constructs a [`GetBatchImportJobsInput`](crate::operation::get_batch_import_jobs::GetBatchImportJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_batch_import_jobs::GetBatchImportJobsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_batch_import_jobs::GetBatchImportJobsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_batch_import_jobs::GetBatchImportJobsInput {
             job_id: self.job_id,

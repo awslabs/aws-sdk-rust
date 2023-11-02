@@ -93,22 +93,22 @@ impl MySqlParametersBuilder {
     /// - [`host`](crate::types::builders::MySqlParametersBuilder::host)
     /// - [`port`](crate::types::builders::MySqlParametersBuilder::port)
     /// - [`database`](crate::types::builders::MySqlParametersBuilder::database)
-    pub fn build(self) -> ::std::result::Result<crate::types::MySqlParameters, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::MySqlParameters, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MySqlParameters {
             host: self.host.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "host",
                     "host was not specified but it is required when building MySqlParameters",
                 )
             })?,
             port: self.port.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "port",
                     "port was not specified but it is required when building MySqlParameters",
                 )
             })?,
             database: self.database.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "database",
                     "database was not specified but it is required when building MySqlParameters",
                 )

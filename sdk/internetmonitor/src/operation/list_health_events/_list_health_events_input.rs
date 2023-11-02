@@ -149,7 +149,7 @@ impl ListHealthEventsInputBuilder {
     /// Consumes the builder and constructs a [`ListHealthEventsInput`](crate::operation::list_health_events::ListHealthEventsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_health_events::ListHealthEventsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_health_events::ListHealthEventsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_health_events::ListHealthEventsInput {
             monitor_name: self.monitor_name,
             start_time: self.start_time,

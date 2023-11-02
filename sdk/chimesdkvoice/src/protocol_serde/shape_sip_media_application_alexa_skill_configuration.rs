@@ -49,7 +49,7 @@ where
 pub fn ser_sip_media_application_alexa_skill_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SipMediaApplicationAlexaSkillConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("AlexaSkillStatus").string(input.alexa_skill_status.as_str());
     }

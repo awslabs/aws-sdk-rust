@@ -50,7 +50,7 @@ impl GetCloudFormationStackRecordsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_cloud_formation_stack_records::GetCloudFormationStackRecordsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_cloud_formation_stack_records::GetCloudFormationStackRecordsInput {
             page_token: self.page_token,

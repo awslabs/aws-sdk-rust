@@ -90,7 +90,7 @@ impl AssociateInstanceStorageConfigInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_instance_storage_config::AssociateInstanceStorageConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::associate_instance_storage_config::AssociateInstanceStorageConfigInput {
             instance_id: self.instance_id,

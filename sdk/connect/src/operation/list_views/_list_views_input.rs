@@ -105,7 +105,7 @@ impl ListViewsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListViewsInput`](crate::operation::list_views::ListViewsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_views::ListViewsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_views::ListViewsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_views::ListViewsInput {
             instance_id: self.instance_id,
             r#type: self.r#type,

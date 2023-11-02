@@ -388,7 +388,8 @@ impl CreateTransformJobInputBuilder {
     /// Consumes the builder and constructs a [`CreateTransformJobInput`](crate::operation::create_transform_job::CreateTransformJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_transform_job::CreateTransformJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_transform_job::CreateTransformJobInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_transform_job::CreateTransformJobInput {
             transform_job_name: self.transform_job_name,
             model_name: self.model_name,

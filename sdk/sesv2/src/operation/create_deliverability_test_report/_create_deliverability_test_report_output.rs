@@ -89,18 +89,18 @@ impl CreateDeliverabilityTestReportOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_deliverability_test_report::CreateDeliverabilityTestReportOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::create_deliverability_test_report::CreateDeliverabilityTestReportOutput {
                 report_id: self.report_id.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
                         "report_id",
                         "report_id was not specified but it is required when building CreateDeliverabilityTestReportOutput",
                     )
                 })?,
                 deliverability_test_status: self.deliverability_test_status.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
                         "deliverability_test_status",
                         "deliverability_test_status was not specified but it is required when building CreateDeliverabilityTestReportOutput",
                     )

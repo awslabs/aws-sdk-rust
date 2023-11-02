@@ -102,7 +102,7 @@ impl StartImportTaskInputBuilder {
     /// Consumes the builder and constructs a [`StartImportTaskInput`](crate::operation::start_import_task::StartImportTaskInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_import_task::StartImportTaskInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_import_task::StartImportTaskInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_import_task::StartImportTaskInput {
             client_request_token: self.client_request_token,
             name: self.name,

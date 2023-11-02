@@ -87,16 +87,16 @@ impl MediaSourceConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`media_uri_secret_arn`](crate::types::builders::MediaSourceConfigBuilder::media_uri_secret_arn)
     /// - [`media_uri_type`](crate::types::builders::MediaSourceConfigBuilder::media_uri_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::MediaSourceConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::MediaSourceConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MediaSourceConfig {
             media_uri_secret_arn: self.media_uri_secret_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "media_uri_secret_arn",
                     "media_uri_secret_arn was not specified but it is required when building MediaSourceConfig",
                 )
             })?,
             media_uri_type: self.media_uri_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "media_uri_type",
                     "media_uri_type was not specified but it is required when building MediaSourceConfig",
                 )

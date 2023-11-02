@@ -70,10 +70,10 @@ impl MatchingRuleBuilder {
     /// Consumes the builder and constructs a [`MatchingRule`](crate::types::MatchingRule).
     /// This method will fail if any of the following fields are not set:
     /// - [`rule`](crate::types::builders::MatchingRuleBuilder::rule)
-    pub fn build(self) -> ::std::result::Result<crate::types::MatchingRule, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::MatchingRule, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MatchingRule {
             rule: self.rule.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "rule",
                     "rule was not specified but it is required when building MatchingRule",
                 )

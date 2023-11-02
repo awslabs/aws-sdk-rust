@@ -198,35 +198,35 @@ impl CreateSolNetworkPackageOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_sol_network_package::CreateSolNetworkPackageOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_sol_network_package::CreateSolNetworkPackageOutput {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building CreateSolNetworkPackageOutput",
                 )
             })?,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building CreateSolNetworkPackageOutput",
                 )
             })?,
             nsd_onboarding_state: self.nsd_onboarding_state.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "nsd_onboarding_state",
                     "nsd_onboarding_state was not specified but it is required when building CreateSolNetworkPackageOutput",
                 )
             })?,
             nsd_operational_state: self.nsd_operational_state.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "nsd_operational_state",
                     "nsd_operational_state was not specified but it is required when building CreateSolNetworkPackageOutput",
                 )
             })?,
             nsd_usage_state: self.nsd_usage_state.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "nsd_usage_state",
                     "nsd_usage_state was not specified but it is required when building CreateSolNetworkPackageOutput",
                 )

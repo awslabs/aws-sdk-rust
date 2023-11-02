@@ -174,7 +174,7 @@ impl CreateMeetingInputBuilder {
     /// Consumes the builder and constructs a [`CreateMeetingInput`](crate::operation::create_meeting::CreateMeetingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_meeting::CreateMeetingInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_meeting::CreateMeetingInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_meeting::CreateMeetingInput {
             client_request_token: self.client_request_token,
             external_meeting_id: self.external_meeting_id,

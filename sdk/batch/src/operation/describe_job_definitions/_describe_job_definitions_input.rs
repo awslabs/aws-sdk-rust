@@ -146,8 +146,10 @@ impl DescribeJobDefinitionsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeJobDefinitionsInput`](crate::operation::describe_job_definitions::DescribeJobDefinitionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_job_definitions::DescribeJobDefinitionsInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::describe_job_definitions::DescribeJobDefinitionsInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::describe_job_definitions::DescribeJobDefinitionsInput {
             job_definitions: self.job_definitions,
             max_results: self.max_results,

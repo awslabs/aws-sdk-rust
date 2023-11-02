@@ -284,9 +284,9 @@ impl Sign for DigestAuthSigner {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use aws_smithy_http::body::SdkBody;
     use aws_smithy_runtime_api::client::identity::http::Login;
     use aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder;
+    use aws_smithy_types::body::SdkBody;
 
     #[test]
     fn test_api_key_signing_headers() {

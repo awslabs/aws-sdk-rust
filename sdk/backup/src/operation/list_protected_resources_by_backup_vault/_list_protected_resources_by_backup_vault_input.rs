@@ -109,7 +109,7 @@ impl ListProtectedResourcesByBackupVaultInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_protected_resources_by_backup_vault::ListProtectedResourcesByBackupVaultInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_protected_resources_by_backup_vault::ListProtectedResourcesByBackupVaultInput {

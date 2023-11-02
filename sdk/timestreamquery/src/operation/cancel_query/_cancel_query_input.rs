@@ -42,7 +42,7 @@ impl CancelQueryInputBuilder {
         &self.query_id
     }
     /// Consumes the builder and constructs a [`CancelQueryInput`](crate::operation::cancel_query::CancelQueryInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_query::CancelQueryInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_query::CancelQueryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::cancel_query::CancelQueryInput { query_id: self.query_id })
     }
 }

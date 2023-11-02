@@ -2,7 +2,7 @@
 pub fn ser_ops_result_attribute(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::OpsResultAttribute,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("TypeName").string(input.type_name.as_str());
     }

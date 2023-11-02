@@ -2,7 +2,7 @@
 pub fn ser_empty_visual(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EmptyVisual,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("VisualId").string(input.visual_id.as_str());
     }

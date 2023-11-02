@@ -67,7 +67,7 @@ impl RejectQualificationRequestInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reject_qualification_request::RejectQualificationRequestInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::reject_qualification_request::RejectQualificationRequestInput {
             qualification_request_id: self.qualification_request_id,

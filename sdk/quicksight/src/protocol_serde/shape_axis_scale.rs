@@ -2,7 +2,7 @@
 pub fn ser_axis_scale(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AxisScale,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.linear {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Linear").start_object();

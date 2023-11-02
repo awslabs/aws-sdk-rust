@@ -266,34 +266,34 @@ impl DataSourceRunActivityBuilder {
     /// - [`project_id`](crate::types::builders::DataSourceRunActivityBuilder::project_id)
     /// - [`created_at`](crate::types::builders::DataSourceRunActivityBuilder::created_at)
     /// - [`updated_at`](crate::types::builders::DataSourceRunActivityBuilder::updated_at)
-    pub fn build(self) -> ::std::result::Result<crate::types::DataSourceRunActivity, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DataSourceRunActivity, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DataSourceRunActivity {
             database: self.database.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "database",
                     "database was not specified but it is required when building DataSourceRunActivity",
                 )
             })?,
             data_source_run_id: self.data_source_run_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_source_run_id",
                     "data_source_run_id was not specified but it is required when building DataSourceRunActivity",
                 )
             })?,
             technical_name: self.technical_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "technical_name",
                     "technical_name was not specified but it is required when building DataSourceRunActivity",
                 )
             })?,
             data_asset_status: self.data_asset_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_asset_status",
                     "data_asset_status was not specified but it is required when building DataSourceRunActivity",
                 )
             })?,
             project_id: self.project_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "project_id",
                     "project_id was not specified but it is required when building DataSourceRunActivity",
                 )
@@ -302,13 +302,13 @@ impl DataSourceRunActivityBuilder {
             technical_description: self.technical_description,
             error_message: self.error_message,
             created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
                     "created_at was not specified but it is required when building DataSourceRunActivity",
                 )
             })?,
             updated_at: self.updated_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "updated_at",
                     "updated_at was not specified but it is required when building DataSourceRunActivity",
                 )

@@ -155,23 +155,23 @@ impl RecordBuilder {
     /// - [`sequence_number`](crate::types::builders::RecordBuilder::sequence_number)
     /// - [`data`](crate::types::builders::RecordBuilder::data)
     /// - [`partition_key`](crate::types::builders::RecordBuilder::partition_key)
-    pub fn build(self) -> ::std::result::Result<crate::types::Record, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Record, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Record {
             sequence_number: self.sequence_number.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "sequence_number",
                     "sequence_number was not specified but it is required when building Record",
                 )
             })?,
             approximate_arrival_timestamp: self.approximate_arrival_timestamp,
             data: self.data.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data",
                     "data was not specified but it is required when building Record",
                 )
             })?,
             partition_key: self.partition_key.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "partition_key",
                     "partition_key was not specified but it is required when building Record",
                 )

@@ -89,10 +89,10 @@ impl DecisionTaskTimedOutEventAttributesBuilder {
     /// Consumes the builder and constructs a [`DecisionTaskTimedOutEventAttributes`](crate::types::DecisionTaskTimedOutEventAttributes).
     /// This method will fail if any of the following fields are not set:
     /// - [`timeout_type`](crate::types::builders::DecisionTaskTimedOutEventAttributesBuilder::timeout_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::DecisionTaskTimedOutEventAttributes, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DecisionTaskTimedOutEventAttributes, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DecisionTaskTimedOutEventAttributes {
             timeout_type: self.timeout_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "timeout_type",
                     "timeout_type was not specified but it is required when building DecisionTaskTimedOutEventAttributes",
                 )

@@ -196,7 +196,7 @@ impl CreateMediaCapturePipelineInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_media_capture_pipeline::CreateMediaCapturePipelineInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_media_capture_pipeline::CreateMediaCapturePipelineInput {
             source_type: self.source_type,

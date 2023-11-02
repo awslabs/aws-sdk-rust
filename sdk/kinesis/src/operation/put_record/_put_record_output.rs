@@ -127,16 +127,16 @@ impl PutRecordOutputBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`shard_id`](crate::operation::put_record::builders::PutRecordOutputBuilder::shard_id)
     /// - [`sequence_number`](crate::operation::put_record::builders::PutRecordOutputBuilder::sequence_number)
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_record::PutRecordOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_record::PutRecordOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_record::PutRecordOutput {
             shard_id: self.shard_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "shard_id",
                     "shard_id was not specified but it is required when building PutRecordOutput",
                 )
             })?,
             sequence_number: self.sequence_number.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "sequence_number",
                     "sequence_number was not specified but it is required when building PutRecordOutput",
                 )

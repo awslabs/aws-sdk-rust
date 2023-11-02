@@ -89,10 +89,10 @@ impl ListIngestionsOutputBuilder {
     /// - [`ingestions`](crate::operation::list_ingestions::builders::ListIngestionsOutputBuilder::ingestions)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_ingestions::ListIngestionsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_ingestions::ListIngestionsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_ingestions::ListIngestionsOutput {
             ingestions: self.ingestions.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "ingestions",
                     "ingestions was not specified but it is required when building ListIngestionsOutput",
                 )

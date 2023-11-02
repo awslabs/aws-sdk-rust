@@ -179,7 +179,7 @@ impl CreateModelCardInputBuilder {
     /// Consumes the builder and constructs a [`CreateModelCardInput`](crate::operation::create_model_card::CreateModelCardInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_model_card::CreateModelCardInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_model_card::CreateModelCardInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_model_card::CreateModelCardInput {
             model_card_name: self.model_card_name,
             security_config: self.security_config,

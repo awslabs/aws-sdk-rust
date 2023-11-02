@@ -87,7 +87,7 @@ impl ListMetricAttributionMetricsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_metric_attribution_metrics::ListMetricAttributionMetricsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_metric_attribution_metrics::ListMetricAttributionMetricsInput {
             metric_attribution_arn: self.metric_attribution_arn,

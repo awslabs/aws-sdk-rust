@@ -114,7 +114,7 @@ impl CreateSpaceInputBuilder {
         &self.space_settings
     }
     /// Consumes the builder and constructs a [`CreateSpaceInput`](crate::operation::create_space::CreateSpaceInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_space::CreateSpaceInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_space::CreateSpaceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_space::CreateSpaceInput {
             domain_id: self.domain_id,
             space_name: self.space_name,

@@ -20,7 +20,7 @@ impl GetComplianceSummaryByConfigRuleInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_compliance_summary_by_config_rule::GetComplianceSummaryByConfigRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_compliance_summary_by_config_rule::GetComplianceSummaryByConfigRuleInput {})
     }

@@ -54,7 +54,7 @@ impl DeleteSystemTemplateInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSystemTemplateInput`](crate::operation::delete_system_template::DeleteSystemTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_system_template::DeleteSystemTemplateInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_system_template::DeleteSystemTemplateInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_system_template::DeleteSystemTemplateInput { id: self.id })
     }

@@ -2,7 +2,7 @@
 pub fn ser_list_outgoing_typed_links_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_outgoing_typed_links::ListOutgoingTypedLinksInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.consistency_level {
         object.key("ConsistencyLevel").string(var_1.as_str());
     }

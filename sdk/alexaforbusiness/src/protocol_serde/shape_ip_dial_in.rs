@@ -2,7 +2,7 @@
 pub fn ser_ip_dial_in(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IpDialIn,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Endpoint").string(input.endpoint.as_str());
     }

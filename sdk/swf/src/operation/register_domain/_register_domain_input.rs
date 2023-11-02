@@ -136,7 +136,7 @@ impl RegisterDomainInputBuilder {
     /// Consumes the builder and constructs a [`RegisterDomainInput`](crate::operation::register_domain::RegisterDomainInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::register_domain::RegisterDomainInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::register_domain::RegisterDomainInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::register_domain::RegisterDomainInput {
             name: self.name,
             description: self.description,

@@ -95,7 +95,7 @@ impl ListChannelFlowsInputBuilder {
     /// Consumes the builder and constructs a [`ListChannelFlowsInput`](crate::operation::list_channel_flows::ListChannelFlowsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_channel_flows::ListChannelFlowsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_channel_flows::ListChannelFlowsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_channel_flows::ListChannelFlowsInput {
             app_instance_arn: self.app_instance_arn,
             max_results: self.max_results,

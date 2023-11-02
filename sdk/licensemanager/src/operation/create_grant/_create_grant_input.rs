@@ -211,7 +211,7 @@ impl CreateGrantInputBuilder {
         &self.allowed_operations
     }
     /// Consumes the builder and constructs a [`CreateGrantInput`](crate::operation::create_grant::CreateGrantInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_grant::CreateGrantInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_grant::CreateGrantInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_grant::CreateGrantInput {
             client_token: self.client_token,
             grant_name: self.grant_name,

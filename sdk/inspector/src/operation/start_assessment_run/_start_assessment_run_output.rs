@@ -63,11 +63,11 @@ impl StartAssessmentRunOutputBuilder {
     /// - [`assessment_run_arn`](crate::operation::start_assessment_run::builders::StartAssessmentRunOutputBuilder::assessment_run_arn)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_assessment_run::StartAssessmentRunOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::start_assessment_run::StartAssessmentRunOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_assessment_run::StartAssessmentRunOutput {
             assessment_run_arn: self.assessment_run_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "assessment_run_arn",
                     "assessment_run_arn was not specified but it is required when building StartAssessmentRunOutput",
                 )

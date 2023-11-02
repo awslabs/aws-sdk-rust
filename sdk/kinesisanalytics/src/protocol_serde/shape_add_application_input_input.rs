@@ -2,7 +2,7 @@
 pub fn ser_add_application_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::add_application_input::AddApplicationInputInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.application_name {
         object.key("ApplicationName").string(var_1.as_str());
     }

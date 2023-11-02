@@ -193,35 +193,35 @@ impl GetFieldResponseBuilder {
     /// - [`field_arn`](crate::types::builders::GetFieldResponseBuilder::field_arn)
     /// - [`r#type`](crate::types::builders::GetFieldResponseBuilder::r#type)
     /// - [`namespace`](crate::types::builders::GetFieldResponseBuilder::namespace)
-    pub fn build(self) -> ::std::result::Result<crate::types::GetFieldResponse, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::GetFieldResponse, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::GetFieldResponse {
             field_id: self.field_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "field_id",
                     "field_id was not specified but it is required when building GetFieldResponse",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building GetFieldResponse",
                 )
             })?,
             field_arn: self.field_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "field_arn",
                     "field_arn was not specified but it is required when building GetFieldResponse",
                 )
             })?,
             description: self.description,
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building GetFieldResponse",
                 )
             })?,
             namespace: self.namespace.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "namespace",
                     "namespace was not specified but it is required when building GetFieldResponse",
                 )

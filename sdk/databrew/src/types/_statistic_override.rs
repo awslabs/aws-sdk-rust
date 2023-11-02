@@ -74,16 +74,16 @@ impl StatisticOverrideBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`statistic`](crate::types::builders::StatisticOverrideBuilder::statistic)
     /// - [`parameters`](crate::types::builders::StatisticOverrideBuilder::parameters)
-    pub fn build(self) -> ::std::result::Result<crate::types::StatisticOverride, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::StatisticOverride, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::StatisticOverride {
             statistic: self.statistic.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "statistic",
                     "statistic was not specified but it is required when building StatisticOverride",
                 )
             })?,
             parameters: self.parameters.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "parameters",
                     "parameters was not specified but it is required when building StatisticOverride",
                 )

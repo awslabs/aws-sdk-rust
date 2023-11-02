@@ -117,7 +117,7 @@ impl GetPredictiveScalingForecastInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_predictive_scaling_forecast::GetPredictiveScalingForecastInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_predictive_scaling_forecast::GetPredictiveScalingForecastInput {
             auto_scaling_group_name: self.auto_scaling_group_name,

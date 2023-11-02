@@ -66,7 +66,7 @@ impl GetFileUploadUrlInputBuilder {
     /// Consumes the builder and constructs a [`GetFileUploadUrlInput`](crate::operation::get_file_upload_url::GetFileUploadUrlInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_file_upload_url::GetFileUploadUrlInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_file_upload_url::GetFileUploadUrlInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_file_upload_url::GetFileUploadUrlInput {
             assignment_id: self.assignment_id,
             question_identifier: self.question_identifier,

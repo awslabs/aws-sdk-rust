@@ -163,28 +163,28 @@ impl StepBuilder {
     /// - [`end_position`](crate::types::builders::StepBuilder::end_position)
     /// - [`distance`](crate::types::builders::StepBuilder::distance)
     /// - [`duration_seconds`](crate::types::builders::StepBuilder::duration_seconds)
-    pub fn build(self) -> ::std::result::Result<crate::types::Step, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Step, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Step {
             start_position: self.start_position.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "start_position",
                     "start_position was not specified but it is required when building Step",
                 )
             })?,
             end_position: self.end_position.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "end_position",
                     "end_position was not specified but it is required when building Step",
                 )
             })?,
             distance: self.distance.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "distance",
                     "distance was not specified but it is required when building Step",
                 )
             })?,
             duration_seconds: self.duration_seconds.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "duration_seconds",
                     "duration_seconds was not specified but it is required when building Step",
                 )

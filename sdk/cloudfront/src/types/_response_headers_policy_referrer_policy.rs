@@ -124,16 +124,16 @@ impl ResponseHeadersPolicyReferrerPolicyBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`r#override`](crate::types::builders::ResponseHeadersPolicyReferrerPolicyBuilder::r#override)
     /// - [`referrer_policy`](crate::types::builders::ResponseHeadersPolicyReferrerPolicyBuilder::referrer_policy)
-    pub fn build(self) -> ::std::result::Result<crate::types::ResponseHeadersPolicyReferrerPolicy, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ResponseHeadersPolicyReferrerPolicy, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ResponseHeadersPolicyReferrerPolicy {
             r#override: self.r#override.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#override",
                     "r#override was not specified but it is required when building ResponseHeadersPolicyReferrerPolicy",
                 )
             })?,
             referrer_policy: self.referrer_policy.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "referrer_policy",
                     "referrer_policy was not specified but it is required when building ResponseHeadersPolicyReferrerPolicy",
                 )

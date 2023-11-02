@@ -843,7 +843,7 @@ impl ModifyEndpointInputBuilder {
     /// Consumes the builder and constructs a [`ModifyEndpointInput`](crate::operation::modify_endpoint::ModifyEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::modify_endpoint::ModifyEndpointInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::modify_endpoint::ModifyEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::modify_endpoint::ModifyEndpointInput {
             endpoint_arn: self.endpoint_arn,
             endpoint_identifier: self.endpoint_identifier,

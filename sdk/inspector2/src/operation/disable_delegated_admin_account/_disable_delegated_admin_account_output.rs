@@ -65,11 +65,11 @@ impl DisableDelegatedAdminAccountOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disable_delegated_admin_account::DisableDelegatedAdminAccountOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disable_delegated_admin_account::DisableDelegatedAdminAccountOutput {
             delegated_admin_account_id: self.delegated_admin_account_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "delegated_admin_account_id",
                     "delegated_admin_account_id was not specified but it is required when building DisableDelegatedAdminAccountOutput",
                 )

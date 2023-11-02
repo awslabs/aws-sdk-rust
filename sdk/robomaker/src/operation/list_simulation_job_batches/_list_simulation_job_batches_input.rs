@@ -95,7 +95,7 @@ impl ListSimulationJobBatchesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_simulation_job_batches::ListSimulationJobBatchesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_simulation_job_batches::ListSimulationJobBatchesInput {
             next_token: self.next_token,

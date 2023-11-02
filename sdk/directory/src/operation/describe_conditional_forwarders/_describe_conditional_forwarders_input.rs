@@ -76,7 +76,7 @@ impl DescribeConditionalForwardersInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_conditional_forwarders::DescribeConditionalForwardersInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_conditional_forwarders::DescribeConditionalForwardersInput {
             directory_id: self.directory_id,

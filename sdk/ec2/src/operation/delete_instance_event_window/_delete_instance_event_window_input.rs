@@ -88,7 +88,7 @@ impl DeleteInstanceEventWindowInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_instance_event_window::DeleteInstanceEventWindowInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_instance_event_window::DeleteInstanceEventWindowInput {
             dry_run: self.dry_run,

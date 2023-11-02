@@ -98,22 +98,22 @@ impl BatchPutAssetPropertyErrorBuilder {
     /// - [`error_code`](crate::types::builders::BatchPutAssetPropertyErrorBuilder::error_code)
     /// - [`error_message`](crate::types::builders::BatchPutAssetPropertyErrorBuilder::error_message)
     /// - [`timestamps`](crate::types::builders::BatchPutAssetPropertyErrorBuilder::timestamps)
-    pub fn build(self) -> ::std::result::Result<crate::types::BatchPutAssetPropertyError, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::BatchPutAssetPropertyError, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::BatchPutAssetPropertyError {
             error_code: self.error_code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "error_code",
                     "error_code was not specified but it is required when building BatchPutAssetPropertyError",
                 )
             })?,
             error_message: self.error_message.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "error_message",
                     "error_message was not specified but it is required when building BatchPutAssetPropertyError",
                 )
             })?,
             timestamps: self.timestamps.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "timestamps",
                     "timestamps was not specified but it is required when building BatchPutAssetPropertyError",
                 )

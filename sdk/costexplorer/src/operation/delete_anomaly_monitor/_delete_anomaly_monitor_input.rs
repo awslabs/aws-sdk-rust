@@ -44,7 +44,7 @@ impl DeleteAnomalyMonitorInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAnomalyMonitorInput`](crate::operation::delete_anomaly_monitor::DeleteAnomalyMonitorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_anomaly_monitor::DeleteAnomalyMonitorInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_anomaly_monitor::DeleteAnomalyMonitorInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_anomaly_monitor::DeleteAnomalyMonitorInput {
             monitor_arn: self.monitor_arn,

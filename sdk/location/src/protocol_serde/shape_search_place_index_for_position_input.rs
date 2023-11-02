@@ -2,7 +2,7 @@
 pub fn ser_search_place_index_for_position_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::search_place_index_for_position::SearchPlaceIndexForPositionInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.language {
         object.key("Language").string(var_1.as_str());
     }

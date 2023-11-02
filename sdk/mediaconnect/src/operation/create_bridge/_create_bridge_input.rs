@@ -186,7 +186,9 @@ impl CreateBridgeInputBuilder {
         &self.sources
     }
     /// Consumes the builder and constructs a [`CreateBridgeInput`](crate::operation::create_bridge::CreateBridgeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_bridge::CreateBridgeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_bridge::CreateBridgeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_bridge::CreateBridgeInput {
             egress_gateway_bridge: self.egress_gateway_bridge,
             ingress_gateway_bridge: self.ingress_gateway_bridge,

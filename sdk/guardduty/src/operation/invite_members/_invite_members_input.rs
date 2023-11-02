@@ -115,7 +115,7 @@ impl InviteMembersInputBuilder {
     /// Consumes the builder and constructs a [`InviteMembersInput`](crate::operation::invite_members::InviteMembersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::invite_members::InviteMembersInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::invite_members::InviteMembersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::invite_members::InviteMembersInput {
             detector_id: self.detector_id,
             account_ids: self.account_ids,

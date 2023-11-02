@@ -2,7 +2,7 @@
 pub fn ser_update_subscriptions_to_event_bridge_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_subscriptions_to_event_bridge::UpdateSubscriptionsToEventBridgeInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.force_move {
         object.key("ForceMove").boolean(*var_1);
     }

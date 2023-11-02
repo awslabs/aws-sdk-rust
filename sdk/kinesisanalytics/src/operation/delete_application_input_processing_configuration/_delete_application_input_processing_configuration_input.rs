@@ -92,7 +92,7 @@ impl DeleteApplicationInputProcessingConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_application_input_processing_configuration::DeleteApplicationInputProcessingConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_application_input_processing_configuration::DeleteApplicationInputProcessingConfigurationInput {

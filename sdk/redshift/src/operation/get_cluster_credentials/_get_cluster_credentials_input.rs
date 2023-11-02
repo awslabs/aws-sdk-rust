@@ -314,7 +314,7 @@ impl GetClusterCredentialsInputBuilder {
     /// Consumes the builder and constructs a [`GetClusterCredentialsInput`](crate::operation::get_cluster_credentials::GetClusterCredentialsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_cluster_credentials::GetClusterCredentialsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_cluster_credentials::GetClusterCredentialsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_cluster_credentials::GetClusterCredentialsInput {
             db_user: self.db_user,

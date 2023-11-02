@@ -2,7 +2,7 @@
 pub fn ser_allowed_input_types(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AllowedInputTypes,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("allowAudioInput").boolean(input.allow_audio_input);
     }

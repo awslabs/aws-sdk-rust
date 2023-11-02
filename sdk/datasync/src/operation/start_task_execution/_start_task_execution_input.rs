@@ -184,7 +184,8 @@ impl StartTaskExecutionInputBuilder {
     /// Consumes the builder and constructs a [`StartTaskExecutionInput`](crate::operation::start_task_execution::StartTaskExecutionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_task_execution::StartTaskExecutionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_task_execution::StartTaskExecutionInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::start_task_execution::StartTaskExecutionInput {
             task_arn: self.task_arn,
             override_options: self.override_options,

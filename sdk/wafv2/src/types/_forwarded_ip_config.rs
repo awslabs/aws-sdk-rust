@@ -118,16 +118,16 @@ impl ForwardedIpConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`header_name`](crate::types::builders::ForwardedIpConfigBuilder::header_name)
     /// - [`fallback_behavior`](crate::types::builders::ForwardedIpConfigBuilder::fallback_behavior)
-    pub fn build(self) -> ::std::result::Result<crate::types::ForwardedIpConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ForwardedIpConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ForwardedIpConfig {
             header_name: self.header_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "header_name",
                     "header_name was not specified but it is required when building ForwardedIpConfig",
                 )
             })?,
             fallback_behavior: self.fallback_behavior.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "fallback_behavior",
                     "fallback_behavior was not specified but it is required when building ForwardedIpConfig",
                 )

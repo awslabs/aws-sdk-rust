@@ -177,24 +177,24 @@ impl EvaluationFormQuestionBuilder {
     /// - [`title`](crate::types::builders::EvaluationFormQuestionBuilder::title)
     /// - [`ref_id`](crate::types::builders::EvaluationFormQuestionBuilder::ref_id)
     /// - [`question_type`](crate::types::builders::EvaluationFormQuestionBuilder::question_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::EvaluationFormQuestion, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::EvaluationFormQuestion, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EvaluationFormQuestion {
             title: self.title.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "title",
                     "title was not specified but it is required when building EvaluationFormQuestion",
                 )
             })?,
             instructions: self.instructions,
             ref_id: self.ref_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "ref_id",
                     "ref_id was not specified but it is required when building EvaluationFormQuestion",
                 )
             })?,
             not_applicable_enabled: self.not_applicable_enabled.unwrap_or_default(),
             question_type: self.question_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "question_type",
                     "question_type was not specified but it is required when building EvaluationFormQuestion",
                 )

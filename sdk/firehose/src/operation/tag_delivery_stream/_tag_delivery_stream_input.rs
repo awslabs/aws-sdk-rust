@@ -73,7 +73,7 @@ impl TagDeliveryStreamInputBuilder {
     /// Consumes the builder and constructs a [`TagDeliveryStreamInput`](crate::operation::tag_delivery_stream::TagDeliveryStreamInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::tag_delivery_stream::TagDeliveryStreamInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::tag_delivery_stream::TagDeliveryStreamInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::tag_delivery_stream::TagDeliveryStreamInput {
             delivery_stream_name: self.delivery_stream_name,
             tags: self.tags,

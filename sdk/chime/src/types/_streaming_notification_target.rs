@@ -45,10 +45,10 @@ impl StreamingNotificationTargetBuilder {
     /// Consumes the builder and constructs a [`StreamingNotificationTarget`](crate::types::StreamingNotificationTarget).
     /// This method will fail if any of the following fields are not set:
     /// - [`notification_target`](crate::types::builders::StreamingNotificationTargetBuilder::notification_target)
-    pub fn build(self) -> ::std::result::Result<crate::types::StreamingNotificationTarget, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::StreamingNotificationTarget, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::StreamingNotificationTarget {
             notification_target: self.notification_target.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "notification_target",
                     "notification_target was not specified but it is required when building StreamingNotificationTarget",
                 )

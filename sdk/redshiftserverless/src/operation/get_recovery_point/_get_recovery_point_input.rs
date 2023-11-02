@@ -44,7 +44,7 @@ impl GetRecoveryPointInputBuilder {
     /// Consumes the builder and constructs a [`GetRecoveryPointInput`](crate::operation::get_recovery_point::GetRecoveryPointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_recovery_point::GetRecoveryPointInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_recovery_point::GetRecoveryPointInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_recovery_point::GetRecoveryPointInput {
             recovery_point_id: self.recovery_point_id,
         })

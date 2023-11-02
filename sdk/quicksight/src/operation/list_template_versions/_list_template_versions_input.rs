@@ -108,7 +108,7 @@ impl ListTemplateVersionsInputBuilder {
     /// Consumes the builder and constructs a [`ListTemplateVersionsInput`](crate::operation::list_template_versions::ListTemplateVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_template_versions::ListTemplateVersionsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_template_versions::ListTemplateVersionsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_template_versions::ListTemplateVersionsInput {
             aws_account_id: self.aws_account_id,

@@ -87,8 +87,10 @@ impl DescribeEvaluationFormInputBuilder {
     /// Consumes the builder and constructs a [`DescribeEvaluationFormInput`](crate::operation::describe_evaluation_form::DescribeEvaluationFormInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_evaluation_form::DescribeEvaluationFormInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::describe_evaluation_form::DescribeEvaluationFormInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::describe_evaluation_form::DescribeEvaluationFormInput {
             instance_id: self.instance_id,
             evaluation_form_id: self.evaluation_form_id,

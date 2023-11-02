@@ -103,7 +103,7 @@ impl CreateAppBundleInputBuilder {
     /// Consumes the builder and constructs a [`CreateAppBundleInput`](crate::operation::create_app_bundle::CreateAppBundleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_app_bundle::CreateAppBundleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_app_bundle::CreateAppBundleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_app_bundle::CreateAppBundleInput {
             client_token: self.client_token,
             customer_managed_key_identifier: self.customer_managed_key_identifier,

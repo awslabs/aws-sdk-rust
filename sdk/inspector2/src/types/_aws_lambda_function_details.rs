@@ -262,34 +262,34 @@ impl AwsLambdaFunctionDetailsBuilder {
     /// - [`code_sha256`](crate::types::builders::AwsLambdaFunctionDetailsBuilder::code_sha256)
     /// - [`version`](crate::types::builders::AwsLambdaFunctionDetailsBuilder::version)
     /// - [`execution_role_arn`](crate::types::builders::AwsLambdaFunctionDetailsBuilder::execution_role_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::AwsLambdaFunctionDetails, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AwsLambdaFunctionDetails, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AwsLambdaFunctionDetails {
             function_name: self.function_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "function_name",
                     "function_name was not specified but it is required when building AwsLambdaFunctionDetails",
                 )
             })?,
             runtime: self.runtime.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "runtime",
                     "runtime was not specified but it is required when building AwsLambdaFunctionDetails",
                 )
             })?,
             code_sha256: self.code_sha256.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "code_sha256",
                     "code_sha256 was not specified but it is required when building AwsLambdaFunctionDetails",
                 )
             })?,
             version: self.version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "version",
                     "version was not specified but it is required when building AwsLambdaFunctionDetails",
                 )
             })?,
             execution_role_arn: self.execution_role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "execution_role_arn",
                     "execution_role_arn was not specified but it is required when building AwsLambdaFunctionDetails",
                 )

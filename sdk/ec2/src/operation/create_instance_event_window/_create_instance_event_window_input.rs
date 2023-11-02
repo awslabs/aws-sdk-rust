@@ -195,7 +195,7 @@ impl CreateInstanceEventWindowInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_instance_event_window::CreateInstanceEventWindowInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_instance_event_window::CreateInstanceEventWindowInput {
             dry_run: self.dry_run,

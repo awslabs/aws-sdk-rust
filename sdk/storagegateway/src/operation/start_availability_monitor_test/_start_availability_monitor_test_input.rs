@@ -46,7 +46,7 @@ impl StartAvailabilityMonitorTestInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_availability_monitor_test::StartAvailabilityMonitorTestInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_availability_monitor_test::StartAvailabilityMonitorTestInput {
             gateway_arn: self.gateway_arn,

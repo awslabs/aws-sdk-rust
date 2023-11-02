@@ -71,7 +71,7 @@ impl GetRunInputBuilder {
         &self.export
     }
     /// Consumes the builder and constructs a [`GetRunInput`](crate::operation::get_run::GetRunInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_run::GetRunInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_run::GetRunInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_run::GetRunInput {
             id: self.id,
             export: self.export,

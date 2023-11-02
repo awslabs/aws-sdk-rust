@@ -68,16 +68,16 @@ impl EventTimeRangeBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`from_time`](crate::types::builders::EventTimeRangeBuilder::from_time)
     /// - [`to_time`](crate::types::builders::EventTimeRangeBuilder::to_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::EventTimeRange, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::EventTimeRange, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EventTimeRange {
             from_time: self.from_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "from_time",
                     "from_time was not specified but it is required when building EventTimeRange",
                 )
             })?,
             to_time: self.to_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "to_time",
                     "to_time was not specified but it is required when building EventTimeRange",
                 )

@@ -2,7 +2,7 @@
 pub fn ser_kafka_cluster_client_authentication(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::KafkaClusterClientAuthentication,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("authenticationType").string(input.authentication_type.as_str());
     }

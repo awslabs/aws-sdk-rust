@@ -68,7 +68,7 @@ impl DeleteMobileDeviceAccessRuleInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_mobile_device_access_rule::DeleteMobileDeviceAccessRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_mobile_device_access_rule::DeleteMobileDeviceAccessRuleInput {
             organization_id: self.organization_id,

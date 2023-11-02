@@ -146,7 +146,7 @@ impl CreateIpamInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateIpamInput`](crate::operation::create_ipam::CreateIpamInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_ipam::CreateIpamInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_ipam::CreateIpamInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_ipam::CreateIpamInput {
             dry_run: self.dry_run,
             description: self.description,

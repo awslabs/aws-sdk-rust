@@ -2,7 +2,7 @@
 pub fn ser_associate_phone_number_contact_flow_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::associate_phone_number_contact_flow::AssociatePhoneNumberContactFlowInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.contact_flow_id {
         object.key("ContactFlowId").string(var_1.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_api_key_credential(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ApiKeyCredential,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("apiKey").string(input.api_key.as_str());
     }

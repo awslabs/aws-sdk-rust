@@ -101,11 +101,11 @@ impl RowLevelPermissionTagConfigurationBuilder {
     /// Consumes the builder and constructs a [`RowLevelPermissionTagConfiguration`](crate::types::RowLevelPermissionTagConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`tag_rules`](crate::types::builders::RowLevelPermissionTagConfigurationBuilder::tag_rules)
-    pub fn build(self) -> ::std::result::Result<crate::types::RowLevelPermissionTagConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RowLevelPermissionTagConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RowLevelPermissionTagConfiguration {
             status: self.status,
             tag_rules: self.tag_rules.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "tag_rules",
                     "tag_rules was not specified but it is required when building RowLevelPermissionTagConfiguration",
                 )

@@ -86,10 +86,10 @@ impl CachePolicyHeadersConfigBuilder {
     /// Consumes the builder and constructs a [`CachePolicyHeadersConfig`](crate::types::CachePolicyHeadersConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`header_behavior`](crate::types::builders::CachePolicyHeadersConfigBuilder::header_behavior)
-    pub fn build(self) -> ::std::result::Result<crate::types::CachePolicyHeadersConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CachePolicyHeadersConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CachePolicyHeadersConfig {
             header_behavior: self.header_behavior.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "header_behavior",
                     "header_behavior was not specified but it is required when building CachePolicyHeadersConfig",
                 )

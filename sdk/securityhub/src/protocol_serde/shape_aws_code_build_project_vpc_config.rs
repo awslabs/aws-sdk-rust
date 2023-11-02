@@ -2,7 +2,7 @@
 pub fn ser_aws_code_build_project_vpc_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsCodeBuildProjectVpcConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.vpc_id {
         object.key("VpcId").string(var_1.as_str());
     }

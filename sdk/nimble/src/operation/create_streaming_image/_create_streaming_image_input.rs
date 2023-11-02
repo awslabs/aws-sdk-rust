@@ -169,7 +169,7 @@ impl CreateStreamingImageInputBuilder {
     /// Consumes the builder and constructs a [`CreateStreamingImageInput`](crate::operation::create_streaming_image::CreateStreamingImageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_streaming_image::CreateStreamingImageInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_streaming_image::CreateStreamingImageInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_streaming_image::CreateStreamingImageInput {
             client_token: self.client_token,

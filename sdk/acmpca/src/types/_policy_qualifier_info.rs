@@ -67,10 +67,10 @@ impl PolicyQualifierInfoBuilder {
     /// Consumes the builder and constructs a [`PolicyQualifierInfo`](crate::types::PolicyQualifierInfo).
     /// This method will fail if any of the following fields are not set:
     /// - [`policy_qualifier_id`](crate::types::builders::PolicyQualifierInfoBuilder::policy_qualifier_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::PolicyQualifierInfo, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PolicyQualifierInfo, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PolicyQualifierInfo {
             policy_qualifier_id: self.policy_qualifier_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "policy_qualifier_id",
                     "policy_qualifier_id was not specified but it is required when building PolicyQualifierInfo",
                 )

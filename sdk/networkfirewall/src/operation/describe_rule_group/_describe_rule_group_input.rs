@@ -105,7 +105,7 @@ impl DescribeRuleGroupInputBuilder {
     /// Consumes the builder and constructs a [`DescribeRuleGroupInput`](crate::operation::describe_rule_group::DescribeRuleGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_rule_group::DescribeRuleGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_rule_group::DescribeRuleGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_rule_group::DescribeRuleGroupInput {
             rule_group_name: self.rule_group_name,
             rule_group_arn: self.rule_group_arn,

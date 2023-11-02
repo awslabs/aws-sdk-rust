@@ -3,7 +3,7 @@
 pub fn ser_create_transit_gateway_multicast_domain_request_options(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::CreateTransitGatewayMulticastDomainRequestOptions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Igmpv2Support");
     if let Some(var_2) = &input.igmpv2_support {

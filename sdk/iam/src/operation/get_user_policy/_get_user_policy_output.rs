@@ -117,22 +117,22 @@ impl GetUserPolicyOutputBuilder {
     /// - [`policy_document`](crate::operation::get_user_policy::builders::GetUserPolicyOutputBuilder::policy_document)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_user_policy::GetUserPolicyOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_user_policy::GetUserPolicyOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_user_policy::GetUserPolicyOutput {
             user_name: self.user_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "user_name",
                     "user_name was not specified but it is required when building GetUserPolicyOutput",
                 )
             })?,
             policy_name: self.policy_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "policy_name",
                     "policy_name was not specified but it is required when building GetUserPolicyOutput",
                 )
             })?,
             policy_document: self.policy_document.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "policy_document",
                     "policy_document was not specified but it is required when building GetUserPolicyOutput",
                 )

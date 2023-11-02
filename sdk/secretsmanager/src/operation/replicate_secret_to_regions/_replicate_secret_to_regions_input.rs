@@ -96,7 +96,7 @@ impl ReplicateSecretToRegionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::replicate_secret_to_regions::ReplicateSecretToRegionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::replicate_secret_to_regions::ReplicateSecretToRegionsInput {
             secret_id: self.secret_id,

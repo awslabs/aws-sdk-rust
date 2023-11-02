@@ -65,7 +65,7 @@ impl GetPasswordDataInputBuilder {
     /// Consumes the builder and constructs a [`GetPasswordDataInput`](crate::operation::get_password_data::GetPasswordDataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_password_data::GetPasswordDataInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_password_data::GetPasswordDataInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_password_data::GetPasswordDataInput {
             instance_id: self.instance_id,
             dry_run: self.dry_run,

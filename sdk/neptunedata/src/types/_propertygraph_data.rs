@@ -189,28 +189,28 @@ impl PropertygraphDataBuilder {
     /// - [`r#type`](crate::types::builders::PropertygraphDataBuilder::r#type)
     /// - [`key`](crate::types::builders::PropertygraphDataBuilder::key)
     /// - [`value`](crate::types::builders::PropertygraphDataBuilder::value)
-    pub fn build(self) -> ::std::result::Result<crate::types::PropertygraphData, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PropertygraphData, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PropertygraphData {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building PropertygraphData",
                 )
             })?,
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building PropertygraphData",
                 )
             })?,
             key: self.key.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "key",
                     "key was not specified but it is required when building PropertygraphData",
                 )
             })?,
             value: self.value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "value",
                     "value was not specified but it is required when building PropertygraphData",
                 )

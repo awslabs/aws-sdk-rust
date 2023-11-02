@@ -159,7 +159,7 @@ impl ImportTableInputBuilder {
         &self.table_creation_parameters
     }
     /// Consumes the builder and constructs a [`ImportTableInput`](crate::operation::import_table::ImportTableInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::import_table::ImportTableInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::import_table::ImportTableInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::import_table::ImportTableInput {
             client_token: self.client_token,
             s3_bucket_source: self.s3_bucket_source,

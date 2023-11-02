@@ -68,7 +68,7 @@ impl AuthorizeVpcEndpointAccessInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::authorize_vpc_endpoint_access::AuthorizeVpcEndpointAccessInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::authorize_vpc_endpoint_access::AuthorizeVpcEndpointAccessInput {
             domain_name: self.domain_name,

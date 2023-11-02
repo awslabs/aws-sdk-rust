@@ -781,8 +781,10 @@ impl RegisterTaskDefinitionInputBuilder {
     /// Consumes the builder and constructs a [`RegisterTaskDefinitionInput`](crate::operation::register_task_definition::RegisterTaskDefinitionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::register_task_definition::RegisterTaskDefinitionInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::register_task_definition::RegisterTaskDefinitionInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::register_task_definition::RegisterTaskDefinitionInput {
             family: self.family,
             task_role_arn: self.task_role_arn,

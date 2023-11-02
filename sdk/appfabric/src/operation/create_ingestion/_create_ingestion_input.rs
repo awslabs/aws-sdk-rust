@@ -245,7 +245,7 @@ impl CreateIngestionInputBuilder {
     /// Consumes the builder and constructs a [`CreateIngestionInput`](crate::operation::create_ingestion::CreateIngestionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_ingestion::CreateIngestionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_ingestion::CreateIngestionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_ingestion::CreateIngestionInput {
             app_bundle_identifier: self.app_bundle_identifier,
             app: self.app,

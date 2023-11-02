@@ -156,7 +156,9 @@ impl CreateVolumeInputBuilder {
         &self.open_zfs_configuration
     }
     /// Consumes the builder and constructs a [`CreateVolumeInput`](crate::operation::create_volume::CreateVolumeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_volume::CreateVolumeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_volume::CreateVolumeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_volume::CreateVolumeInput {
             client_request_token: self.client_request_token,
             volume_type: self.volume_type,

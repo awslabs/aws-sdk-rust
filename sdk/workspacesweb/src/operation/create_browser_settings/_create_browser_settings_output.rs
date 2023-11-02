@@ -63,11 +63,11 @@ impl CreateBrowserSettingsOutputBuilder {
     /// - [`browser_settings_arn`](crate::operation::create_browser_settings::builders::CreateBrowserSettingsOutputBuilder::browser_settings_arn)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_browser_settings::CreateBrowserSettingsOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_browser_settings::CreateBrowserSettingsOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_browser_settings::CreateBrowserSettingsOutput {
             browser_settings_arn: self.browser_settings_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "browser_settings_arn",
                     "browser_settings_arn was not specified but it is required when building CreateBrowserSettingsOutput",
                 )

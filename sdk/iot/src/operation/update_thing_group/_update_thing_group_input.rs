@@ -87,7 +87,7 @@ impl UpdateThingGroupInputBuilder {
     /// Consumes the builder and constructs a [`UpdateThingGroupInput`](crate::operation::update_thing_group::UpdateThingGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_thing_group::UpdateThingGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_thing_group::UpdateThingGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_thing_group::UpdateThingGroupInput {
             thing_group_name: self.thing_group_name,
             thing_group_properties: self.thing_group_properties,

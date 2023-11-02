@@ -2,7 +2,7 @@
 pub fn ser_user_phone_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UserPhoneConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("PhoneType").string(input.phone_type.as_str());
     }

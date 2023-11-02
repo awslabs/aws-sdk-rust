@@ -47,7 +47,7 @@ impl DeleteComputeEnvironmentInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_compute_environment::DeleteComputeEnvironmentInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_compute_environment::DeleteComputeEnvironmentInput {
             compute_environment: self.compute_environment,

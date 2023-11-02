@@ -93,7 +93,7 @@ impl ListEnvironmentsInputBuilder {
     /// Consumes the builder and constructs a [`ListEnvironmentsInput`](crate::operation::list_environments::ListEnvironmentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_environments::ListEnvironmentsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_environments::ListEnvironmentsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_environments::ListEnvironmentsInput {
             next_token: self.next_token,
             max_results: self.max_results,

@@ -123,23 +123,23 @@ impl TransitionEventBuilder {
     /// - [`event_name`](crate::types::builders::TransitionEventBuilder::event_name)
     /// - [`condition`](crate::types::builders::TransitionEventBuilder::condition)
     /// - [`next_state`](crate::types::builders::TransitionEventBuilder::next_state)
-    pub fn build(self) -> ::std::result::Result<crate::types::TransitionEvent, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TransitionEvent, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TransitionEvent {
             event_name: self.event_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "event_name",
                     "event_name was not specified but it is required when building TransitionEvent",
                 )
             })?,
             condition: self.condition.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "condition",
                     "condition was not specified but it is required when building TransitionEvent",
                 )
             })?,
             actions: self.actions,
             next_state: self.next_state.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "next_state",
                     "next_state was not specified but it is required when building TransitionEvent",
                 )

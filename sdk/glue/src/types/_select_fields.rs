@@ -104,22 +104,22 @@ impl SelectFieldsBuilder {
     /// - [`name`](crate::types::builders::SelectFieldsBuilder::name)
     /// - [`inputs`](crate::types::builders::SelectFieldsBuilder::inputs)
     /// - [`paths`](crate::types::builders::SelectFieldsBuilder::paths)
-    pub fn build(self) -> ::std::result::Result<crate::types::SelectFields, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SelectFields, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SelectFields {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building SelectFields",
                 )
             })?,
             inputs: self.inputs.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "inputs",
                     "inputs was not specified but it is required when building SelectFields",
                 )
             })?,
             paths: self.paths.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "paths",
                     "paths was not specified but it is required when building SelectFields",
                 )

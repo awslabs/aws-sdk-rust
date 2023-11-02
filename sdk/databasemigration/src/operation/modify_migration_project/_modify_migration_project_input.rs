@@ -213,8 +213,10 @@ impl ModifyMigrationProjectInputBuilder {
     /// Consumes the builder and constructs a [`ModifyMigrationProjectInput`](crate::operation::modify_migration_project::ModifyMigrationProjectInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::modify_migration_project::ModifyMigrationProjectInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::modify_migration_project::ModifyMigrationProjectInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::modify_migration_project::ModifyMigrationProjectInput {
             migration_project_identifier: self.migration_project_identifier,
             migration_project_name: self.migration_project_name,

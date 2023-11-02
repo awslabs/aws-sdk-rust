@@ -93,17 +93,17 @@ impl ConditionExpressionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`condition`](crate::types::builders::ConditionExpressionBuilder::condition)
     /// - [`target_column`](crate::types::builders::ConditionExpressionBuilder::target_column)
-    pub fn build(self) -> ::std::result::Result<crate::types::ConditionExpression, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ConditionExpression, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ConditionExpression {
             condition: self.condition.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "condition",
                     "condition was not specified but it is required when building ConditionExpression",
                 )
             })?,
             value: self.value,
             target_column: self.target_column.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "target_column",
                     "target_column was not specified but it is required when building ConditionExpression",
                 )

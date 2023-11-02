@@ -2,7 +2,7 @@
 pub fn ser_axis_linear_scale(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AxisLinearScale,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.step_count {
         object.key("StepCount").number(
             #[allow(clippy::useless_conversion)]

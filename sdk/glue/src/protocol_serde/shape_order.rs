@@ -2,7 +2,7 @@
 pub fn ser_order(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Order,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Column").string(input.column.as_str());
     }

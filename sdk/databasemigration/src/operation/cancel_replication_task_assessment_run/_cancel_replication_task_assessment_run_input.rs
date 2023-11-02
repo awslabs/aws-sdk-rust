@@ -47,7 +47,7 @@ impl CancelReplicationTaskAssessmentRunInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_replication_task_assessment_run::CancelReplicationTaskAssessmentRunInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::cancel_replication_task_assessment_run::CancelReplicationTaskAssessmentRunInput {

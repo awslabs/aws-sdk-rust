@@ -5,7 +5,7 @@
 #[derive(::std::fmt::Debug)]
 pub struct DescribeInputDeviceThumbnailOutput {
     /// The binary data for the thumbnail that the Link device has most recently sent to MediaLive.
-    pub body: ::aws_smithy_http::byte_stream::ByteStream,
+    pub body: ::aws_smithy_types::byte_stream::ByteStream,
     /// Specifies the media type of the thumbnail.
     pub content_type: ::std::option::Option<crate::types::ContentType>,
     /// The length of the content.
@@ -18,7 +18,7 @@ pub struct DescribeInputDeviceThumbnailOutput {
 }
 impl DescribeInputDeviceThumbnailOutput {
     /// The binary data for the thumbnail that the Link device has most recently sent to MediaLive.
-    pub fn body(&self) -> &::aws_smithy_http::byte_stream::ByteStream {
+    pub fn body(&self) -> &::aws_smithy_types::byte_stream::ByteStream {
         &self.body
     }
     /// Specifies the media type of the thumbnail.
@@ -54,7 +54,7 @@ impl DescribeInputDeviceThumbnailOutput {
 #[non_exhaustive]
 #[derive(::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeInputDeviceThumbnailOutputBuilder {
-    pub(crate) body: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
+    pub(crate) body: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>,
     pub(crate) content_type: ::std::option::Option<crate::types::ContentType>,
     pub(crate) content_length: ::std::option::Option<i64>,
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,
@@ -63,17 +63,17 @@ pub struct DescribeInputDeviceThumbnailOutputBuilder {
 }
 impl DescribeInputDeviceThumbnailOutputBuilder {
     /// The binary data for the thumbnail that the Link device has most recently sent to MediaLive.
-    pub fn body(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
+    pub fn body(mut self, input: ::aws_smithy_types::byte_stream::ByteStream) -> Self {
         self.body = ::std::option::Option::Some(input);
         self
     }
     /// The binary data for the thumbnail that the Link device has most recently sent to MediaLive.
-    pub fn set_body(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
+    pub fn set_body(mut self, input: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>) -> Self {
         self.body = input;
         self
     }
     /// The binary data for the thumbnail that the Link device has most recently sent to MediaLive.
-    pub fn get_body(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+    pub fn get_body(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
         &self.body
     }
     /// Specifies the media type of the thumbnail.

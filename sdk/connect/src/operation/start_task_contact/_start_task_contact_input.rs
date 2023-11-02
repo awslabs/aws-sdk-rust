@@ -301,7 +301,7 @@ impl StartTaskContactInputBuilder {
     /// Consumes the builder and constructs a [`StartTaskContactInput`](crate::operation::start_task_contact::StartTaskContactInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_task_contact::StartTaskContactInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_task_contact::StartTaskContactInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_task_contact::StartTaskContactInput {
             instance_id: self.instance_id,
             previous_contact_id: self.previous_contact_id,

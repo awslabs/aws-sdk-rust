@@ -228,35 +228,35 @@ impl BatchGetMetricDataQueryBuilder {
     /// - [`metric`](crate::types::builders::BatchGetMetricDataQueryBuilder::metric)
     /// - [`start_date`](crate::types::builders::BatchGetMetricDataQueryBuilder::start_date)
     /// - [`end_date`](crate::types::builders::BatchGetMetricDataQueryBuilder::end_date)
-    pub fn build(self) -> ::std::result::Result<crate::types::BatchGetMetricDataQuery, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::BatchGetMetricDataQuery, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::BatchGetMetricDataQuery {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building BatchGetMetricDataQuery",
                 )
             })?,
             namespace: self.namespace.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "namespace",
                     "namespace was not specified but it is required when building BatchGetMetricDataQuery",
                 )
             })?,
             metric: self.metric.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "metric",
                     "metric was not specified but it is required when building BatchGetMetricDataQuery",
                 )
             })?,
             dimensions: self.dimensions,
             start_date: self.start_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "start_date",
                     "start_date was not specified but it is required when building BatchGetMetricDataQuery",
                 )
             })?,
             end_date: self.end_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "end_date",
                     "end_date was not specified but it is required when building BatchGetMetricDataQuery",
                 )

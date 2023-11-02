@@ -89,7 +89,7 @@ impl DescribeThumbnailsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeThumbnailsInput`](crate::operation::describe_thumbnails::DescribeThumbnailsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_thumbnails::DescribeThumbnailsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_thumbnails::DescribeThumbnailsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_thumbnails::DescribeThumbnailsInput {
             channel_id: self.channel_id,
             pipeline_id: self.pipeline_id,

@@ -2,7 +2,7 @@
 pub fn ser_create_app_authorization_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_app_authorization::CreateAppAuthorizationInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.app {
         object.key("app").string(var_1.as_str());
     }

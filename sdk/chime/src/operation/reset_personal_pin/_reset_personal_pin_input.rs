@@ -66,7 +66,7 @@ impl ResetPersonalPinInputBuilder {
     /// Consumes the builder and constructs a [`ResetPersonalPinInput`](crate::operation::reset_personal_pin::ResetPersonalPinInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::reset_personal_pin::ResetPersonalPinInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::reset_personal_pin::ResetPersonalPinInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::reset_personal_pin::ResetPersonalPinInput {
             account_id: self.account_id,
             user_id: self.user_id,

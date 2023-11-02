@@ -265,19 +265,19 @@ impl WorkflowExecutionInfoBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`start_timestamp`](crate::types::builders::WorkflowExecutionInfoBuilder::start_timestamp)
     /// - [`execution_status`](crate::types::builders::WorkflowExecutionInfoBuilder::execution_status)
-    pub fn build(self) -> ::std::result::Result<crate::types::WorkflowExecutionInfo, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::WorkflowExecutionInfo, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::WorkflowExecutionInfo {
             execution: self.execution,
             workflow_type: self.workflow_type,
             start_timestamp: self.start_timestamp.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "start_timestamp",
                     "start_timestamp was not specified but it is required when building WorkflowExecutionInfo",
                 )
             })?,
             close_timestamp: self.close_timestamp,
             execution_status: self.execution_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "execution_status",
                     "execution_status was not specified but it is required when building WorkflowExecutionInfo",
                 )

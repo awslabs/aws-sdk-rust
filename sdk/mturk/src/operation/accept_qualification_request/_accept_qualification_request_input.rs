@@ -67,7 +67,7 @@ impl AcceptQualificationRequestInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::accept_qualification_request::AcceptQualificationRequestInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::accept_qualification_request::AcceptQualificationRequestInput {
             qualification_request_id: self.qualification_request_id,

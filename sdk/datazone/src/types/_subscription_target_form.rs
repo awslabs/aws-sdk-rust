@@ -70,16 +70,16 @@ impl SubscriptionTargetFormBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`form_name`](crate::types::builders::SubscriptionTargetFormBuilder::form_name)
     /// - [`content`](crate::types::builders::SubscriptionTargetFormBuilder::content)
-    pub fn build(self) -> ::std::result::Result<crate::types::SubscriptionTargetForm, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SubscriptionTargetForm, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SubscriptionTargetForm {
             form_name: self.form_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "form_name",
                     "form_name was not specified but it is required when building SubscriptionTargetForm",
                 )
             })?,
             content: self.content.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "content",
                     "content was not specified but it is required when building SubscriptionTargetForm",
                 )

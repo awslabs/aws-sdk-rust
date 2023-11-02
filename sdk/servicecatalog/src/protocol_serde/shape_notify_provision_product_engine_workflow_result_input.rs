@@ -2,7 +2,7 @@
 pub fn ser_notify_provision_product_engine_workflow_result_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::notify_provision_product_engine_workflow_result::NotifyProvisionProductEngineWorkflowResultInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.workflow_token {
         object.key("WorkflowToken").string(var_1.as_str());
     }

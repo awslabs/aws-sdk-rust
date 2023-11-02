@@ -135,7 +135,7 @@ impl DeleteRegexPatternSetInputBuilder {
     /// Consumes the builder and constructs a [`DeleteRegexPatternSetInput`](crate::operation::delete_regex_pattern_set::DeleteRegexPatternSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_regex_pattern_set::DeleteRegexPatternSetInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_regex_pattern_set::DeleteRegexPatternSetInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_regex_pattern_set::DeleteRegexPatternSetInput {
             name: self.name,

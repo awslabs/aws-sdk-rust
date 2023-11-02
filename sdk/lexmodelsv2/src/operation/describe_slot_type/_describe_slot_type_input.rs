@@ -110,7 +110,7 @@ impl DescribeSlotTypeInputBuilder {
     /// Consumes the builder and constructs a [`DescribeSlotTypeInput`](crate::operation::describe_slot_type::DescribeSlotTypeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_slot_type::DescribeSlotTypeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_slot_type::DescribeSlotTypeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_slot_type::DescribeSlotTypeInput {
             slot_type_id: self.slot_type_id,
             bot_id: self.bot_id,

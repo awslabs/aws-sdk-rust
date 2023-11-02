@@ -104,7 +104,7 @@ impl BatchApplyUpdateActionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_apply_update_action::BatchApplyUpdateActionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::batch_apply_update_action::BatchApplyUpdateActionInput {
             replication_group_ids: self.replication_group_ids,

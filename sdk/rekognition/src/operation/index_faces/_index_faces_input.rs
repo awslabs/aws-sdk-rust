@@ -186,7 +186,7 @@ impl IndexFacesInputBuilder {
         &self.quality_filter
     }
     /// Consumes the builder and constructs a [`IndexFacesInput`](crate::operation::index_faces::IndexFacesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::index_faces::IndexFacesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::index_faces::IndexFacesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::index_faces::IndexFacesInput {
             collection_id: self.collection_id,
             image: self.image,

@@ -2,7 +2,7 @@
 pub fn ser_delete_vpc_ingress_connection_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_vpc_ingress_connection::DeleteVpcIngressConnectionInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.vpc_ingress_connection_arn {
         object.key("VpcIngressConnectionArn").string(var_1.as_str());
     }

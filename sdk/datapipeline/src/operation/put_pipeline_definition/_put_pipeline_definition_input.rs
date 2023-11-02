@@ -132,7 +132,7 @@ impl PutPipelineDefinitionInputBuilder {
     /// Consumes the builder and constructs a [`PutPipelineDefinitionInput`](crate::operation::put_pipeline_definition::PutPipelineDefinitionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_pipeline_definition::PutPipelineDefinitionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::put_pipeline_definition::PutPipelineDefinitionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::put_pipeline_definition::PutPipelineDefinitionInput {
             pipeline_id: self.pipeline_id,

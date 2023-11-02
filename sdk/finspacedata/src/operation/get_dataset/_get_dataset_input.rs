@@ -43,7 +43,7 @@ impl GetDatasetInputBuilder {
         &self.dataset_id
     }
     /// Consumes the builder and constructs a [`GetDatasetInput`](crate::operation::get_dataset::GetDatasetInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_dataset::GetDatasetInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_dataset::GetDatasetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_dataset::GetDatasetInput { dataset_id: self.dataset_id })
     }
 }

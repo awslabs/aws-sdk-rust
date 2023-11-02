@@ -2,7 +2,7 @@
 pub fn ser_cdma_obj(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CdmaObj,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("SystemId").number(
             #[allow(clippy::useless_conversion)]

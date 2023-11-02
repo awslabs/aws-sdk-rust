@@ -147,7 +147,7 @@ impl CreateWorkflowStepGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_workflow_step_group::CreateWorkflowStepGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_workflow_step_group::CreateWorkflowStepGroupInput {
             workflow_id: self.workflow_id,

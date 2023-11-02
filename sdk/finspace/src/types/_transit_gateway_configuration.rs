@@ -99,16 +99,16 @@ impl TransitGatewayConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`transit_gateway_id`](crate::types::builders::TransitGatewayConfigurationBuilder::transit_gateway_id)
     /// - [`routable_cidr_space`](crate::types::builders::TransitGatewayConfigurationBuilder::routable_cidr_space)
-    pub fn build(self) -> ::std::result::Result<crate::types::TransitGatewayConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TransitGatewayConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TransitGatewayConfiguration {
             transit_gateway_id: self.transit_gateway_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "transit_gateway_id",
                     "transit_gateway_id was not specified but it is required when building TransitGatewayConfiguration",
                 )
             })?,
             routable_cidr_space: self.routable_cidr_space.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "routable_cidr_space",
                     "routable_cidr_space was not specified but it is required when building TransitGatewayConfiguration",
                 )

@@ -69,10 +69,10 @@ impl ApplicationLayerAutomaticResponseConfigurationBuilder {
     /// - [`status`](crate::types::builders::ApplicationLayerAutomaticResponseConfigurationBuilder::status)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::ApplicationLayerAutomaticResponseConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::ApplicationLayerAutomaticResponseConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ApplicationLayerAutomaticResponseConfiguration {
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building ApplicationLayerAutomaticResponseConfiguration",
                 )

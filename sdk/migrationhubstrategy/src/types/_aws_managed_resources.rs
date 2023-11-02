@@ -51,10 +51,10 @@ impl AwsManagedResourcesBuilder {
     /// Consumes the builder and constructs a [`AwsManagedResources`](crate::types::AwsManagedResources).
     /// This method will fail if any of the following fields are not set:
     /// - [`target_destination`](crate::types::builders::AwsManagedResourcesBuilder::target_destination)
-    pub fn build(self) -> ::std::result::Result<crate::types::AwsManagedResources, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AwsManagedResources, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AwsManagedResources {
             target_destination: self.target_destination.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "target_destination",
                     "target_destination was not specified but it is required when building AwsManagedResources",
                 )

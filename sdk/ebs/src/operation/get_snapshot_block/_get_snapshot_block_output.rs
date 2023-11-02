@@ -5,7 +5,7 @@ pub struct GetSnapshotBlockOutput {
     /// <p>The size of the data in the block.</p>
     pub data_length: ::std::option::Option<i32>,
     /// <p>The data content of the block.</p>
-    pub block_data: ::aws_smithy_http::byte_stream::ByteStream,
+    pub block_data: ::aws_smithy_types::byte_stream::ByteStream,
     /// <p>The checksum generated for the block, which is Base64 encoded.</p>
     pub checksum: ::std::option::Option<::std::string::String>,
     /// <p>The algorithm used to generate the checksum for the block, such as SHA256.</p>
@@ -18,7 +18,7 @@ impl GetSnapshotBlockOutput {
         self.data_length
     }
     /// <p>The data content of the block.</p>
-    pub fn block_data(&self) -> &::aws_smithy_http::byte_stream::ByteStream {
+    pub fn block_data(&self) -> &::aws_smithy_types::byte_stream::ByteStream {
         &self.block_data
     }
     /// <p>The checksum generated for the block, which is Base64 encoded.</p>
@@ -58,7 +58,7 @@ impl GetSnapshotBlockOutput {
 #[derive(::std::default::Default)]
 pub struct GetSnapshotBlockOutputBuilder {
     pub(crate) data_length: ::std::option::Option<i32>,
-    pub(crate) block_data: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
+    pub(crate) block_data: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>,
     pub(crate) checksum: ::std::option::Option<::std::string::String>,
     pub(crate) checksum_algorithm: ::std::option::Option<crate::types::ChecksumAlgorithm>,
     _request_id: Option<String>,
@@ -79,17 +79,17 @@ impl GetSnapshotBlockOutputBuilder {
         &self.data_length
     }
     /// <p>The data content of the block.</p>
-    pub fn block_data(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
+    pub fn block_data(mut self, input: ::aws_smithy_types::byte_stream::ByteStream) -> Self {
         self.block_data = ::std::option::Option::Some(input);
         self
     }
     /// <p>The data content of the block.</p>
-    pub fn set_block_data(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
+    pub fn set_block_data(mut self, input: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>) -> Self {
         self.block_data = input;
         self
     }
     /// <p>The data content of the block.</p>
-    pub fn get_block_data(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+    pub fn get_block_data(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
         &self.block_data
     }
     /// <p>The checksum generated for the block, which is Base64 encoded.</p>

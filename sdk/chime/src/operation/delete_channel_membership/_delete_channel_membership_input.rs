@@ -89,7 +89,7 @@ impl DeleteChannelMembershipInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_channel_membership::DeleteChannelMembershipInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_channel_membership::DeleteChannelMembershipInput {
             channel_arn: self.channel_arn,

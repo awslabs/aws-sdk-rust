@@ -92,7 +92,7 @@ impl GetServiceQuotaIncreaseRequestFromTemplateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_service_quota_increase_request_from_template::GetServiceQuotaIncreaseRequestFromTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_service_quota_increase_request_from_template::GetServiceQuotaIncreaseRequestFromTemplateInput {

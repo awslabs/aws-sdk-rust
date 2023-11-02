@@ -183,7 +183,7 @@ impl SearchLocalGatewayRoutesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::search_local_gateway_routes::SearchLocalGatewayRoutesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::search_local_gateway_routes::SearchLocalGatewayRoutesInput {
             local_gateway_route_table_id: self.local_gateway_route_table_id,

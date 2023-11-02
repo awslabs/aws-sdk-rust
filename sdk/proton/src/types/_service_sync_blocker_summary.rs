@@ -102,10 +102,10 @@ impl ServiceSyncBlockerSummaryBuilder {
     /// Consumes the builder and constructs a [`ServiceSyncBlockerSummary`](crate::types::ServiceSyncBlockerSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`service_name`](crate::types::builders::ServiceSyncBlockerSummaryBuilder::service_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::ServiceSyncBlockerSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ServiceSyncBlockerSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ServiceSyncBlockerSummary {
             service_name: self.service_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "service_name",
                     "service_name was not specified but it is required when building ServiceSyncBlockerSummary",
                 )

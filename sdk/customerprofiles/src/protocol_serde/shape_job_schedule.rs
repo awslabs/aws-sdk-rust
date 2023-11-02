@@ -2,7 +2,7 @@
 pub fn ser_job_schedule(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::JobSchedule,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("DayOfTheWeek").string(input.day_of_the_week.as_str());
     }

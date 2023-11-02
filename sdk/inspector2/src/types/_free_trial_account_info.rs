@@ -75,16 +75,16 @@ impl FreeTrialAccountInfoBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`account_id`](crate::types::builders::FreeTrialAccountInfoBuilder::account_id)
     /// - [`free_trial_info`](crate::types::builders::FreeTrialAccountInfoBuilder::free_trial_info)
-    pub fn build(self) -> ::std::result::Result<crate::types::FreeTrialAccountInfo, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::FreeTrialAccountInfo, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FreeTrialAccountInfo {
             account_id: self.account_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "account_id",
                     "account_id was not specified but it is required when building FreeTrialAccountInfo",
                 )
             })?,
             free_trial_info: self.free_trial_info.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "free_trial_info",
                     "free_trial_info was not specified but it is required when building FreeTrialAccountInfo",
                 )

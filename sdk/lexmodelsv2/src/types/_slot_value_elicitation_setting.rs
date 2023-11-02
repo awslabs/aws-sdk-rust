@@ -158,11 +158,11 @@ impl SlotValueElicitationSettingBuilder {
     /// Consumes the builder and constructs a [`SlotValueElicitationSetting`](crate::types::SlotValueElicitationSetting).
     /// This method will fail if any of the following fields are not set:
     /// - [`slot_constraint`](crate::types::builders::SlotValueElicitationSettingBuilder::slot_constraint)
-    pub fn build(self) -> ::std::result::Result<crate::types::SlotValueElicitationSetting, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SlotValueElicitationSetting, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SlotValueElicitationSetting {
             default_value_specification: self.default_value_specification,
             slot_constraint: self.slot_constraint.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "slot_constraint",
                     "slot_constraint was not specified but it is required when building SlotValueElicitationSetting",
                 )

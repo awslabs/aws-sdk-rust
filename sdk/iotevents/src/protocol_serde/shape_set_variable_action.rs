@@ -2,7 +2,7 @@
 pub fn ser_set_variable_action(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SetVariableAction,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("variableName").string(input.variable_name.as_str());
     }

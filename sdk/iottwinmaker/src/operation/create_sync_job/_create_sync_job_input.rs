@@ -125,7 +125,7 @@ impl CreateSyncJobInputBuilder {
     /// Consumes the builder and constructs a [`CreateSyncJobInput`](crate::operation::create_sync_job::CreateSyncJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_sync_job::CreateSyncJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_sync_job::CreateSyncJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_sync_job::CreateSyncJobInput {
             workspace_id: self.workspace_id,
             sync_source: self.sync_source,

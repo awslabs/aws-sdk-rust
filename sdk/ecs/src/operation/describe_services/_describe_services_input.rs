@@ -101,7 +101,7 @@ impl DescribeServicesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeServicesInput`](crate::operation::describe_services::DescribeServicesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_services::DescribeServicesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_services::DescribeServicesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_services::DescribeServicesInput {
             cluster: self.cluster,
             services: self.services,

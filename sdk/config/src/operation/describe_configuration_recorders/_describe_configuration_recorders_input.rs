@@ -54,7 +54,7 @@ impl DescribeConfigurationRecordersInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_configuration_recorders::DescribeConfigurationRecordersInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_configuration_recorders::DescribeConfigurationRecordersInput {
             configuration_recorder_names: self.configuration_recorder_names,

@@ -2,7 +2,7 @@
 pub fn ser_dimension_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DimensionFilter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.dimension_name {
         object.key("DimensionName").string(var_1.as_str());
     }

@@ -69,16 +69,16 @@ impl CodeLineBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`content`](crate::types::builders::CodeLineBuilder::content)
     /// - [`line_number`](crate::types::builders::CodeLineBuilder::line_number)
-    pub fn build(self) -> ::std::result::Result<crate::types::CodeLine, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CodeLine, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CodeLine {
             content: self.content.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "content",
                     "content was not specified but it is required when building CodeLine",
                 )
             })?,
             line_number: self.line_number.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "line_number",
                     "line_number was not specified but it is required when building CodeLine",
                 )

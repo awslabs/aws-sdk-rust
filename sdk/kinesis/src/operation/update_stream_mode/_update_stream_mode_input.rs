@@ -66,7 +66,7 @@ impl UpdateStreamModeInputBuilder {
     /// Consumes the builder and constructs a [`UpdateStreamModeInput`](crate::operation::update_stream_mode::UpdateStreamModeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_stream_mode::UpdateStreamModeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_stream_mode::UpdateStreamModeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_stream_mode::UpdateStreamModeInput {
             stream_arn: self.stream_arn,
             stream_mode_details: self.stream_mode_details,

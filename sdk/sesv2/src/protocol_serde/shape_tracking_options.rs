@@ -2,7 +2,7 @@
 pub fn ser_tracking_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TrackingOptions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("CustomRedirectDomain").string(input.custom_redirect_domain.as_str());
     }

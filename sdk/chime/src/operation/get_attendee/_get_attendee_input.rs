@@ -64,7 +64,7 @@ impl GetAttendeeInputBuilder {
         &self.attendee_id
     }
     /// Consumes the builder and constructs a [`GetAttendeeInput`](crate::operation::get_attendee::GetAttendeeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_attendee::GetAttendeeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_attendee::GetAttendeeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_attendee::GetAttendeeInput {
             meeting_id: self.meeting_id,
             attendee_id: self.attendee_id,

@@ -132,8 +132,10 @@ impl UpdateReportDefinitionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateReportDefinitionInput`](crate::operation::update_report_definition::UpdateReportDefinitionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_report_definition::UpdateReportDefinitionInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::update_report_definition::UpdateReportDefinitionInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::update_report_definition::UpdateReportDefinitionInput {
             report_id: self.report_id,
             report_description: self.report_description,

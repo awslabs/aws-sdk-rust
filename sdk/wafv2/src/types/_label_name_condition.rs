@@ -46,10 +46,10 @@ impl LabelNameConditionBuilder {
     /// Consumes the builder and constructs a [`LabelNameCondition`](crate::types::LabelNameCondition).
     /// This method will fail if any of the following fields are not set:
     /// - [`label_name`](crate::types::builders::LabelNameConditionBuilder::label_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::LabelNameCondition, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::LabelNameCondition, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::LabelNameCondition {
             label_name: self.label_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "label_name",
                     "label_name was not specified but it is required when building LabelNameCondition",
                 )

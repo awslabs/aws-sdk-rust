@@ -459,7 +459,7 @@ impl CreateReplicationInstanceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_replication_instance::CreateReplicationInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_replication_instance::CreateReplicationInstanceInput {
             replication_instance_identifier: self.replication_instance_identifier,

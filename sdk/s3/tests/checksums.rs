@@ -11,10 +11,10 @@ use aws_sdk_s3::config::{Credentials, Region};
 use aws_sdk_s3::types::ChecksumMode;
 use aws_sdk_s3::{operation::get_object::GetObjectOutput, types::ChecksumAlgorithm};
 use aws_sdk_s3::{Client, Config};
-use aws_smithy_http::body::SdkBody;
 use aws_smithy_runtime::client::http::test_util::{
     capture_request, ReplayEvent, StaticReplayClient,
 };
+use aws_smithy_types::body::SdkBody;
 use http::header::AUTHORIZATION;
 use http::{HeaderValue, Uri};
 use std::time::{Duration, UNIX_EPOCH};
@@ -315,7 +315,7 @@ async fn test_sha256_checksum_on_streaming_request() {
     .await
 }
 
-async fn collect_body_into_string(mut body: aws_smithy_http::body::SdkBody) -> String {
+async fn collect_body_into_string(mut body: aws_smithy_types::body::SdkBody) -> String {
     use bytes::Buf;
     use bytes_utils::SegmentedBuf;
     use http_body::Body;

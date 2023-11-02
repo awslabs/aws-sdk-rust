@@ -117,7 +117,7 @@ impl UnassignPrivateNatGatewayAddressInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddressInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddressInput {

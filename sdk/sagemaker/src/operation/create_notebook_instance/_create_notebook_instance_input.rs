@@ -421,8 +421,10 @@ impl CreateNotebookInstanceInputBuilder {
     /// Consumes the builder and constructs a [`CreateNotebookInstanceInput`](crate::operation::create_notebook_instance::CreateNotebookInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_notebook_instance::CreateNotebookInstanceInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::create_notebook_instance::CreateNotebookInstanceInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::create_notebook_instance::CreateNotebookInstanceInput {
             notebook_instance_name: self.notebook_instance_name,
             instance_type: self.instance_type,

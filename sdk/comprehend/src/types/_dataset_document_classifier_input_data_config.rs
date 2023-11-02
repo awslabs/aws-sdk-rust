@@ -80,10 +80,10 @@ impl DatasetDocumentClassifierInputDataConfigBuilder {
     /// - [`s3_uri`](crate::types::builders::DatasetDocumentClassifierInputDataConfigBuilder::s3_uri)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::DatasetDocumentClassifierInputDataConfig, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::DatasetDocumentClassifierInputDataConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DatasetDocumentClassifierInputDataConfig {
             s3_uri: self.s3_uri.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "s3_uri",
                     "s3_uri was not specified but it is required when building DatasetDocumentClassifierInputDataConfig",
                 )

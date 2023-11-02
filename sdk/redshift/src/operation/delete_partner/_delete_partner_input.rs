@@ -110,7 +110,7 @@ impl DeletePartnerInputBuilder {
     /// Consumes the builder and constructs a [`DeletePartnerInput`](crate::operation::delete_partner::DeletePartnerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_partner::DeletePartnerInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_partner::DeletePartnerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_partner::DeletePartnerInput {
             account_id: self.account_id,
             cluster_identifier: self.cluster_identifier,

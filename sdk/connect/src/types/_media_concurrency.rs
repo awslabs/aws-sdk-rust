@@ -104,16 +104,16 @@ impl MediaConcurrencyBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`channel`](crate::types::builders::MediaConcurrencyBuilder::channel)
     /// - [`concurrency`](crate::types::builders::MediaConcurrencyBuilder::concurrency)
-    pub fn build(self) -> ::std::result::Result<crate::types::MediaConcurrency, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::MediaConcurrency, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MediaConcurrency {
             channel: self.channel.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "channel",
                     "channel was not specified but it is required when building MediaConcurrency",
                 )
             })?,
             concurrency: self.concurrency.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "concurrency",
                     "concurrency was not specified but it is required when building MediaConcurrency",
                 )

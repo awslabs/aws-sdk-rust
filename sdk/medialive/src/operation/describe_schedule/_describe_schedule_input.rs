@@ -87,7 +87,7 @@ impl DescribeScheduleInputBuilder {
     /// Consumes the builder and constructs a [`DescribeScheduleInput`](crate::operation::describe_schedule::DescribeScheduleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_schedule::DescribeScheduleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_schedule::DescribeScheduleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_schedule::DescribeScheduleInput {
             channel_id: self.channel_id,
             max_results: self.max_results,

@@ -117,7 +117,7 @@ impl DescribeDomainControllersInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_domain_controllers::DescribeDomainControllersInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_domain_controllers::DescribeDomainControllersInput {
             directory_id: self.directory_id,

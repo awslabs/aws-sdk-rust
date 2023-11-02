@@ -44,7 +44,8 @@ impl DescribeReportPlanInputBuilder {
     /// Consumes the builder and constructs a [`DescribeReportPlanInput`](crate::operation::describe_report_plan::DescribeReportPlanInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_report_plan::DescribeReportPlanInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_report_plan::DescribeReportPlanInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::describe_report_plan::DescribeReportPlanInput {
             report_plan_name: self.report_plan_name,
         })

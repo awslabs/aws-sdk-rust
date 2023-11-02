@@ -46,7 +46,7 @@ impl StopRetrainingSchedulerInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_retraining_scheduler::StopRetrainingSchedulerInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::stop_retraining_scheduler::StopRetrainingSchedulerInput { model_name: self.model_name })
     }

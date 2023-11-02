@@ -108,10 +108,10 @@ impl ResponseResourceMetricKeyBuilder {
     /// Consumes the builder and constructs a [`ResponseResourceMetricKey`](crate::types::ResponseResourceMetricKey).
     /// This method will fail if any of the following fields are not set:
     /// - [`metric`](crate::types::builders::ResponseResourceMetricKeyBuilder::metric)
-    pub fn build(self) -> ::std::result::Result<crate::types::ResponseResourceMetricKey, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ResponseResourceMetricKey, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ResponseResourceMetricKey {
             metric: self.metric.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "metric",
                     "metric was not specified but it is required when building ResponseResourceMetricKey",
                 )

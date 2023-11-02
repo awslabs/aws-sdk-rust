@@ -65,7 +65,9 @@ impl UpdateRadiusInputBuilder {
         &self.radius_settings
     }
     /// Consumes the builder and constructs a [`UpdateRadiusInput`](crate::operation::update_radius::UpdateRadiusInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_radius::UpdateRadiusInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_radius::UpdateRadiusInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_radius::UpdateRadiusInput {
             directory_id: self.directory_id,
             radius_settings: self.radius_settings,

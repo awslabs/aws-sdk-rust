@@ -46,7 +46,7 @@ impl DescribeAppInstanceUserInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_app_instance_user::DescribeAppInstanceUserInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_app_instance_user::DescribeAppInstanceUserInput {
             app_instance_user_arn: self.app_instance_user_arn,

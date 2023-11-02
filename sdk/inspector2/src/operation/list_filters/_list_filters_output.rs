@@ -87,10 +87,10 @@ impl ListFiltersOutputBuilder {
     /// Consumes the builder and constructs a [`ListFiltersOutput`](crate::operation::list_filters::ListFiltersOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`filters`](crate::operation::list_filters::builders::ListFiltersOutputBuilder::filters)
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_filters::ListFiltersOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_filters::ListFiltersOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_filters::ListFiltersOutput {
             filters: self.filters.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "filters",
                     "filters was not specified but it is required when building ListFiltersOutput",
                 )

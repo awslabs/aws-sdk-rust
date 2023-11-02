@@ -68,7 +68,7 @@ impl GetSolFunctionPackageContentInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_sol_function_package_content::GetSolFunctionPackageContentInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_sol_function_package_content::GetSolFunctionPackageContentInput {
             vnf_pkg_id: self.vnf_pkg_id,

@@ -65,7 +65,7 @@ impl CreateAccessTokenInputBuilder {
     /// Consumes the builder and constructs a [`CreateAccessTokenInput`](crate::operation::create_access_token::CreateAccessTokenInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_access_token::CreateAccessTokenInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_access_token::CreateAccessTokenInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_access_token::CreateAccessTokenInput {
             name: self.name,
             expires_time: self.expires_time,

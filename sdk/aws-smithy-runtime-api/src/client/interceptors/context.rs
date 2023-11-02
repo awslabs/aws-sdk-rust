@@ -428,7 +428,7 @@ impl fmt::Display for RewindResult {
 #[cfg(all(test, feature = "test-util"))]
 mod tests {
     use super::*;
-    use aws_smithy_http::body::SdkBody;
+    use aws_smithy_types::body::SdkBody;
     use http::header::{AUTHORIZATION, CONTENT_LENGTH};
     use http::{HeaderValue, Uri};
 

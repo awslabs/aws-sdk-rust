@@ -2,7 +2,7 @@
 pub fn ser_dkim_signing_attributes(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DkimSigningAttributes,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.domain_signing_selector {
         object.key("DomainSigningSelector").string(var_1.as_str());
     }

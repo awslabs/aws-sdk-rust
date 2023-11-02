@@ -142,8 +142,10 @@ impl CreateParticipantTokenInputBuilder {
     /// Consumes the builder and constructs a [`CreateParticipantTokenInput`](crate::operation::create_participant_token::CreateParticipantTokenInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_participant_token::CreateParticipantTokenInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::create_participant_token::CreateParticipantTokenInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::create_participant_token::CreateParticipantTokenInput {
             stage_arn: self.stage_arn,
             duration: self.duration,

@@ -119,11 +119,11 @@ impl ServerCertificateBuilder {
     /// Consumes the builder and constructs a [`ServerCertificate`](crate::types::ServerCertificate).
     /// This method will fail if any of the following fields are not set:
     /// - [`certificate_body`](crate::types::builders::ServerCertificateBuilder::certificate_body)
-    pub fn build(self) -> ::std::result::Result<crate::types::ServerCertificate, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ServerCertificate, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ServerCertificate {
             server_certificate_metadata: self.server_certificate_metadata,
             certificate_body: self.certificate_body.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "certificate_body",
                     "certificate_body was not specified but it is required when building ServerCertificate",
                 )

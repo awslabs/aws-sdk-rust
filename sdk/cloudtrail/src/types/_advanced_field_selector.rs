@@ -1990,10 +1990,10 @@ impl AdvancedFieldSelectorBuilder {
     /// Consumes the builder and constructs a [`AdvancedFieldSelector`](crate::types::AdvancedFieldSelector).
     /// This method will fail if any of the following fields are not set:
     /// - [`field`](crate::types::builders::AdvancedFieldSelectorBuilder::field)
-    pub fn build(self) -> ::std::result::Result<crate::types::AdvancedFieldSelector, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AdvancedFieldSelector, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AdvancedFieldSelector {
             field: self.field.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "field",
                     "field was not specified but it is required when building AdvancedFieldSelector",
                 )

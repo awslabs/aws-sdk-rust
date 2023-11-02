@@ -45,7 +45,7 @@ impl ResolveCustomerInputBuilder {
     /// Consumes the builder and constructs a [`ResolveCustomerInput`](crate::operation::resolve_customer::ResolveCustomerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::resolve_customer::ResolveCustomerInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::resolve_customer::ResolveCustomerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::resolve_customer::ResolveCustomerInput {
             registration_token: self.registration_token,
         })

@@ -127,7 +127,7 @@ impl ListSigningPlatformsInputBuilder {
     /// Consumes the builder and constructs a [`ListSigningPlatformsInput`](crate::operation::list_signing_platforms::ListSigningPlatformsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_signing_platforms::ListSigningPlatformsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_signing_platforms::ListSigningPlatformsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_signing_platforms::ListSigningPlatformsInput {
             category: self.category,

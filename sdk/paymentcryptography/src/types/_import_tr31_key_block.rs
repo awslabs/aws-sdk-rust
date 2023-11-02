@@ -70,16 +70,16 @@ impl ImportTr31KeyBlockBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`wrapping_key_identifier`](crate::types::builders::ImportTr31KeyBlockBuilder::wrapping_key_identifier)
     /// - [`wrapped_key_block`](crate::types::builders::ImportTr31KeyBlockBuilder::wrapped_key_block)
-    pub fn build(self) -> ::std::result::Result<crate::types::ImportTr31KeyBlock, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ImportTr31KeyBlock, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ImportTr31KeyBlock {
             wrapping_key_identifier: self.wrapping_key_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "wrapping_key_identifier",
                     "wrapping_key_identifier was not specified but it is required when building ImportTr31KeyBlock",
                 )
             })?,
             wrapped_key_block: self.wrapped_key_block.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "wrapped_key_block",
                     "wrapped_key_block was not specified but it is required when building ImportTr31KeyBlock",
                 )

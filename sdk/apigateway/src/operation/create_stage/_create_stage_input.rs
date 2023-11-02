@@ -267,7 +267,7 @@ impl CreateStageInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateStageInput`](crate::operation::create_stage::CreateStageInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_stage::CreateStageInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_stage::CreateStageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_stage::CreateStageInput {
             rest_api_id: self.rest_api_id,
             stage_name: self.stage_name,

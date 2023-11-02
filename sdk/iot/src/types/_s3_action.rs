@@ -115,22 +115,22 @@ impl S3ActionBuilder {
     /// - [`role_arn`](crate::types::builders::S3ActionBuilder::role_arn)
     /// - [`bucket_name`](crate::types::builders::S3ActionBuilder::bucket_name)
     /// - [`key`](crate::types::builders::S3ActionBuilder::key)
-    pub fn build(self) -> ::std::result::Result<crate::types::S3Action, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::S3Action, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::S3Action {
             role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role_arn",
                     "role_arn was not specified but it is required when building S3Action",
                 )
             })?,
             bucket_name: self.bucket_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "bucket_name",
                     "bucket_name was not specified but it is required when building S3Action",
                 )
             })?,
             key: self.key.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "key",
                     "key was not specified but it is required when building S3Action",
                 )

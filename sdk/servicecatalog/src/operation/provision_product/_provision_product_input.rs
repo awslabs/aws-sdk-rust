@@ -341,7 +341,7 @@ impl ProvisionProductInputBuilder {
     /// Consumes the builder and constructs a [`ProvisionProductInput`](crate::operation::provision_product::ProvisionProductInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::provision_product::ProvisionProductInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::provision_product::ProvisionProductInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::provision_product::ProvisionProductInput {
             accept_language: self.accept_language,
             product_id: self.product_id,

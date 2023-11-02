@@ -159,7 +159,7 @@ impl ListReviewPolicyResultsForHitInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_review_policy_results_for_hit::ListReviewPolicyResultsForHitInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_review_policy_results_for_hit::ListReviewPolicyResultsForHitInput {
             hit_id: self.hit_id,

@@ -370,7 +370,8 @@ impl CreateFeatureGroupInputBuilder {
     /// Consumes the builder and constructs a [`CreateFeatureGroupInput`](crate::operation::create_feature_group::CreateFeatureGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_feature_group::CreateFeatureGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_feature_group::CreateFeatureGroupInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_feature_group::CreateFeatureGroupInput {
             feature_group_name: self.feature_group_name,
             record_identifier_feature_name: self.record_identifier_feature_name,

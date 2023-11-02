@@ -103,22 +103,22 @@ impl NetworkImpairmentBuilder {
     /// - [`networks`](crate::types::builders::NetworkImpairmentBuilder::networks)
     /// - [`as_path`](crate::types::builders::NetworkImpairmentBuilder::as_path)
     /// - [`network_event_type`](crate::types::builders::NetworkImpairmentBuilder::network_event_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::NetworkImpairment, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::NetworkImpairment, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::NetworkImpairment {
             networks: self.networks.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "networks",
                     "networks was not specified but it is required when building NetworkImpairment",
                 )
             })?,
             as_path: self.as_path.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "as_path",
                     "as_path was not specified but it is required when building NetworkImpairment",
                 )
             })?,
             network_event_type: self.network_event_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "network_event_type",
                     "network_event_type was not specified but it is required when building NetworkImpairment",
                 )

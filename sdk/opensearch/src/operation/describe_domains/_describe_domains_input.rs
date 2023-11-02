@@ -52,7 +52,7 @@ impl DescribeDomainsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDomainsInput`](crate::operation::describe_domains::DescribeDomainsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_domains::DescribeDomainsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_domains::DescribeDomainsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_domains::DescribeDomainsInput {
             domain_names: self.domain_names,
         })

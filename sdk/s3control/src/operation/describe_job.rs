@@ -172,15 +172,15 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DescribeJobR
             fn uri_base(
                 _input: &crate::operation::describe_job::DescribeJobInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 use ::std::fmt::Write as _;
                 let input_1 = &_input.job_id;
                 let input_1 = input_1
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("job_id", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("job_id", "cannot be empty or unset"))?;
                 let job_id = ::aws_smithy_http::label::fmt_string(input_1, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if job_id.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "job_id",
                         "cannot be empty or unset",
                     ));
@@ -192,7 +192,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DescribeJobR
             fn update_http_builder(
                 input: &crate::operation::describe_job::DescribeJobInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::protocol_serde::shape_describe_job::ser_describe_job_headers(input, builder)?;
@@ -201,7 +201,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DescribeJobR
             let mut builder = update_http_builder(&input, ::http::request::Builder::new())?;
             builder
         };
-        let body = ::aws_smithy_http::body::SdkBody::from("");
+        let body = ::aws_smithy_types::body::SdkBody::from("");
 
         ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
@@ -241,7 +241,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribeJobEn
                     .account_id
                     .clone()
                     .filter(|f| !AsRef::<str>::as_ref(f).trim().is_empty())
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("account_id", "A required field was not set"))?,
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("account_id", "A required field was not set"))?,
             ))
             .build()
             .map_err(|err| {

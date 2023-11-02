@@ -714,7 +714,7 @@ impl ScanInputBuilder {
         &self.consistent_read
     }
     /// Consumes the builder and constructs a [`ScanInput`](crate::operation::scan::ScanInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::scan::ScanInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::scan::ScanInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::scan::ScanInput {
             table_name: self.table_name,
             index_name: self.index_name,

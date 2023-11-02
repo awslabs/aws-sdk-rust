@@ -119,7 +119,7 @@ impl ChangeCidrCollectionInputBuilder {
     /// Consumes the builder and constructs a [`ChangeCidrCollectionInput`](crate::operation::change_cidr_collection::ChangeCidrCollectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::change_cidr_collection::ChangeCidrCollectionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::change_cidr_collection::ChangeCidrCollectionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::change_cidr_collection::ChangeCidrCollectionInput {
             id: self.id,

@@ -322,7 +322,7 @@ impl StartRunInputBuilder {
         &self.retention_mode
     }
     /// Consumes the builder and constructs a [`StartRunInput`](crate::operation::start_run::StartRunInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::start_run::StartRunInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_run::StartRunInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_run::StartRunInput {
             workflow_id: self.workflow_id,
             workflow_type: self.workflow_type,

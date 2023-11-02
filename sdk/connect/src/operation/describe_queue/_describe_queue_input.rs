@@ -66,7 +66,7 @@ impl DescribeQueueInputBuilder {
     /// Consumes the builder and constructs a [`DescribeQueueInput`](crate::operation::describe_queue::DescribeQueueInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_queue::DescribeQueueInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_queue::DescribeQueueInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_queue::DescribeQueueInput {
             instance_id: self.instance_id,
             queue_id: self.queue_id,

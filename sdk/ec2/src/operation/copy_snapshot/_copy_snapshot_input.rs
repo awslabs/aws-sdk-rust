@@ -311,7 +311,9 @@ impl CopySnapshotInputBuilder {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`CopySnapshotInput`](crate::operation::copy_snapshot::CopySnapshotInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::copy_snapshot::CopySnapshotInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::copy_snapshot::CopySnapshotInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::copy_snapshot::CopySnapshotInput {
             description: self.description,
             destination_outpost_arn: self.destination_outpost_arn,

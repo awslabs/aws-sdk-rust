@@ -42,7 +42,7 @@ impl GetLinkInputBuilder {
         &self.identifier
     }
     /// Consumes the builder and constructs a [`GetLinkInput`](crate::operation::get_link::GetLinkInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_link::GetLinkInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_link::GetLinkInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_link::GetLinkInput { identifier: self.identifier })
     }
 }

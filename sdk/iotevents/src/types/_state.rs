@@ -109,10 +109,10 @@ impl StateBuilder {
     /// Consumes the builder and constructs a [`State`](crate::types::State).
     /// This method will fail if any of the following fields are not set:
     /// - [`state_name`](crate::types::builders::StateBuilder::state_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::State, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::State, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::State {
             state_name: self.state_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "state_name",
                     "state_name was not specified but it is required when building State",
                 )

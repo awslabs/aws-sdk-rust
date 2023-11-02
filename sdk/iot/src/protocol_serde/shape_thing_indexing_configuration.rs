@@ -76,7 +76,7 @@ where
 pub fn ser_thing_indexing_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ThingIndexingConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("thingIndexingMode").string(input.thing_indexing_mode.as_str());
     }

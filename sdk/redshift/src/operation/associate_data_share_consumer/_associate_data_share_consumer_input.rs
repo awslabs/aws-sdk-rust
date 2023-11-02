@@ -109,7 +109,7 @@ impl AssociateDataShareConsumerInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_data_share_consumer::AssociateDataShareConsumerInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::associate_data_share_consumer::AssociateDataShareConsumerInput {
             data_share_arn: self.data_share_arn,

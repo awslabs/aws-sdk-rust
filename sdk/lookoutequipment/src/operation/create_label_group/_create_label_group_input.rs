@@ -139,7 +139,7 @@ impl CreateLabelGroupInputBuilder {
     /// Consumes the builder and constructs a [`CreateLabelGroupInput`](crate::operation::create_label_group::CreateLabelGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_label_group::CreateLabelGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_label_group::CreateLabelGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_label_group::CreateLabelGroupInput {
             label_group_name: self.label_group_name,
             fault_codes: self.fault_codes,

@@ -222,7 +222,7 @@ impl CreateFlywheelInputBuilder {
     /// Consumes the builder and constructs a [`CreateFlywheelInput`](crate::operation::create_flywheel::CreateFlywheelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_flywheel::CreateFlywheelInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_flywheel::CreateFlywheelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_flywheel::CreateFlywheelInput {
             flywheel_name: self.flywheel_name,
             active_model_arn: self.active_model_arn,

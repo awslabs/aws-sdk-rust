@@ -127,7 +127,7 @@ impl StartDiscoveryJobInputBuilder {
     /// Consumes the builder and constructs a [`StartDiscoveryJobInput`](crate::operation::start_discovery_job::StartDiscoveryJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_discovery_job::StartDiscoveryJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_discovery_job::StartDiscoveryJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_discovery_job::StartDiscoveryJobInput {
             storage_system_arn: self.storage_system_arn,
             collection_duration_minutes: self.collection_duration_minutes,

@@ -61,7 +61,7 @@ where
 pub fn ser_firehose_action(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FirehoseAction,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("roleArn").string(input.role_arn.as_str());
     }

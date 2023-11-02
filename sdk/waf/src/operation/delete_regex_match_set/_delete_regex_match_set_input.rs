@@ -66,7 +66,7 @@ impl DeleteRegexMatchSetInputBuilder {
     /// Consumes the builder and constructs a [`DeleteRegexMatchSetInput`](crate::operation::delete_regex_match_set::DeleteRegexMatchSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_regex_match_set::DeleteRegexMatchSetInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_regex_match_set::DeleteRegexMatchSetInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_regex_match_set::DeleteRegexMatchSetInput {
             regex_match_set_id: self.regex_match_set_id,

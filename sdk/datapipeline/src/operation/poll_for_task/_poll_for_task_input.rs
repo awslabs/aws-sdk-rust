@@ -85,7 +85,7 @@ impl PollForTaskInputBuilder {
         &self.instance_identity
     }
     /// Consumes the builder and constructs a [`PollForTaskInput`](crate::operation::poll_for_task::PollForTaskInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::poll_for_task::PollForTaskInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::poll_for_task::PollForTaskInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::poll_for_task::PollForTaskInput {
             worker_group: self.worker_group,
             hostname: self.hostname,

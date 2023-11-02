@@ -2,7 +2,7 @@
 pub fn ser_advanced_input_filter_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AdvancedInputFilterSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.add_texture {
         object.key("addTexture").string(var_1.as_str());
     }

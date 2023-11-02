@@ -201,46 +201,46 @@ impl ServiceSpecificCredentialBuilder {
     /// - [`service_specific_credential_id`](crate::types::builders::ServiceSpecificCredentialBuilder::service_specific_credential_id)
     /// - [`user_name`](crate::types::builders::ServiceSpecificCredentialBuilder::user_name)
     /// - [`status`](crate::types::builders::ServiceSpecificCredentialBuilder::status)
-    pub fn build(self) -> ::std::result::Result<crate::types::ServiceSpecificCredential, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ServiceSpecificCredential, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ServiceSpecificCredential {
             create_date: self.create_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "create_date",
                     "create_date was not specified but it is required when building ServiceSpecificCredential",
                 )
             })?,
             service_name: self.service_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "service_name",
                     "service_name was not specified but it is required when building ServiceSpecificCredential",
                 )
             })?,
             service_user_name: self.service_user_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "service_user_name",
                     "service_user_name was not specified but it is required when building ServiceSpecificCredential",
                 )
             })?,
             service_password: self.service_password.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "service_password",
                     "service_password was not specified but it is required when building ServiceSpecificCredential",
                 )
             })?,
             service_specific_credential_id: self.service_specific_credential_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "service_specific_credential_id",
                     "service_specific_credential_id was not specified but it is required when building ServiceSpecificCredential",
                 )
             })?,
             user_name: self.user_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "user_name",
                     "user_name was not specified but it is required when building ServiceSpecificCredential",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building ServiceSpecificCredential",
                 )

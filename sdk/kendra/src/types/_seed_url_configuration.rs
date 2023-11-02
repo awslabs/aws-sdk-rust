@@ -108,10 +108,10 @@ impl SeedUrlConfigurationBuilder {
     /// Consumes the builder and constructs a [`SeedUrlConfiguration`](crate::types::SeedUrlConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`seed_urls`](crate::types::builders::SeedUrlConfigurationBuilder::seed_urls)
-    pub fn build(self) -> ::std::result::Result<crate::types::SeedUrlConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SeedUrlConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SeedUrlConfiguration {
             seed_urls: self.seed_urls.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "seed_urls",
                     "seed_urls was not specified but it is required when building SeedUrlConfiguration",
                 )

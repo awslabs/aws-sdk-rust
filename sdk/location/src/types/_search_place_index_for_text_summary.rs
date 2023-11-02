@@ -322,10 +322,10 @@ impl SearchPlaceIndexForTextSummaryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`text`](crate::types::builders::SearchPlaceIndexForTextSummaryBuilder::text)
     /// - [`data_source`](crate::types::builders::SearchPlaceIndexForTextSummaryBuilder::data_source)
-    pub fn build(self) -> ::std::result::Result<crate::types::SearchPlaceIndexForTextSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SearchPlaceIndexForTextSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SearchPlaceIndexForTextSummary {
             text: self.text.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "text",
                     "text was not specified but it is required when building SearchPlaceIndexForTextSummary",
                 )
@@ -336,7 +336,7 @@ impl SearchPlaceIndexForTextSummaryBuilder {
             max_results: self.max_results.unwrap_or_default(),
             result_b_box: self.result_b_box,
             data_source: self.data_source.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_source",
                     "data_source was not specified but it is required when building SearchPlaceIndexForTextSummary",
                 )

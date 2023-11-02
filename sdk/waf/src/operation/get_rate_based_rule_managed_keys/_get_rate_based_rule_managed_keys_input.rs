@@ -67,7 +67,7 @@ impl GetRateBasedRuleManagedKeysInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_rate_based_rule_managed_keys::GetRateBasedRuleManagedKeysInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_rate_based_rule_managed_keys::GetRateBasedRuleManagedKeysInput {
             rule_id: self.rule_id,

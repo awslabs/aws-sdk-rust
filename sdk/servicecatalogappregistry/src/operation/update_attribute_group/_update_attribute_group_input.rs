@@ -112,7 +112,7 @@ impl UpdateAttributeGroupInputBuilder {
     /// Consumes the builder and constructs a [`UpdateAttributeGroupInput`](crate::operation::update_attribute_group::UpdateAttributeGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_attribute_group::UpdateAttributeGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_attribute_group::UpdateAttributeGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_attribute_group::UpdateAttributeGroupInput {
             attribute_group: self.attribute_group,

@@ -221,7 +221,7 @@ impl StartSupportDataExportInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_support_data_export::StartSupportDataExportInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_support_data_export::StartSupportDataExportInput {
             data_set_type: self.data_set_type,

@@ -134,23 +134,23 @@ impl CreateSourceRepositoryOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_source_repository::CreateSourceRepositoryOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_source_repository::CreateSourceRepositoryOutput {
             space_name: self.space_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "space_name",
                     "space_name was not specified but it is required when building CreateSourceRepositoryOutput",
                 )
             })?,
             project_name: self.project_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "project_name",
                     "project_name was not specified but it is required when building CreateSourceRepositoryOutput",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building CreateSourceRepositoryOutput",
                 )

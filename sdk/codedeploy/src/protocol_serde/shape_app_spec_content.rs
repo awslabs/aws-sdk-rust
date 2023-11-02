@@ -2,7 +2,7 @@
 pub fn ser_app_spec_content(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AppSpecContent,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.content {
         object.key("content").string(var_1.as_str());
     }

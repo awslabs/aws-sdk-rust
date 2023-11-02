@@ -66,7 +66,7 @@ where
 pub fn ser_s3_bucket_transcript_source(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::S3BucketTranscriptSource,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("s3BucketName").string(input.s3_bucket_name.as_str());
     }

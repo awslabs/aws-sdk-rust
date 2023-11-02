@@ -109,10 +109,10 @@ impl BranchBuilder {
     /// Consumes the builder and constructs a [`Branch`](crate::types::Branch).
     /// This method will fail if any of the following fields are not set:
     /// - [`fully_qualified_name`](crate::types::builders::BranchBuilder::fully_qualified_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::Branch, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Branch, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Branch {
             fully_qualified_name: self.fully_qualified_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "fully_qualified_name",
                     "fully_qualified_name was not specified but it is required when building Branch",
                 )

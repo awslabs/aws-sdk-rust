@@ -67,10 +67,10 @@ impl ExportS3DataInputBuilder {
     /// Consumes the builder and constructs a [`ExportS3DataInput`](crate::types::ExportS3DataInput).
     /// This method will fail if any of the following fields are not set:
     /// - [`s3_uri`](crate::types::builders::ExportS3DataInputBuilder::s3_uri)
-    pub fn build(self) -> ::std::result::Result<crate::types::ExportS3DataInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ExportS3DataInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ExportS3DataInput {
             s3_uri: self.s3_uri.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "s3_uri",
                     "s3_uri was not specified but it is required when building ExportS3DataInput",
                 )

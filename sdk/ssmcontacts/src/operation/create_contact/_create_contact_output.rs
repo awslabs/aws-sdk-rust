@@ -63,10 +63,10 @@ impl CreateContactOutputBuilder {
     /// - [`contact_arn`](crate::operation::create_contact::builders::CreateContactOutputBuilder::contact_arn)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_contact::CreateContactOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_contact::CreateContactOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_contact::CreateContactOutput {
             contact_arn: self.contact_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "contact_arn",
                     "contact_arn was not specified but it is required when building CreateContactOutput",
                 )

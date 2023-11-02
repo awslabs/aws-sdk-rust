@@ -126,7 +126,9 @@ impl ListCoverageInputBuilder {
         &self.sort_criteria
     }
     /// Consumes the builder and constructs a [`ListCoverageInput`](crate::operation::list_coverage::ListCoverageInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_coverage::ListCoverageInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_coverage::ListCoverageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_coverage::ListCoverageInput {
             detector_id: self.detector_id,
             next_token: self.next_token,

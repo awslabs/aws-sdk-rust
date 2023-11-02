@@ -112,7 +112,7 @@ impl UpdateIngestionDestinationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_ingestion_destination::UpdateIngestionDestinationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_ingestion_destination::UpdateIngestionDestinationInput {
             app_bundle_identifier: self.app_bundle_identifier,

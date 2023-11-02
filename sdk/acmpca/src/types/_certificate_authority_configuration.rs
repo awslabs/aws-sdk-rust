@@ -116,16 +116,16 @@ impl CertificateAuthorityConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`key_algorithm`](crate::types::builders::CertificateAuthorityConfigurationBuilder::key_algorithm)
     /// - [`signing_algorithm`](crate::types::builders::CertificateAuthorityConfigurationBuilder::signing_algorithm)
-    pub fn build(self) -> ::std::result::Result<crate::types::CertificateAuthorityConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CertificateAuthorityConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CertificateAuthorityConfiguration {
             key_algorithm: self.key_algorithm.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "key_algorithm",
                     "key_algorithm was not specified but it is required when building CertificateAuthorityConfiguration",
                 )
             })?,
             signing_algorithm: self.signing_algorithm.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "signing_algorithm",
                     "signing_algorithm was not specified but it is required when building CertificateAuthorityConfiguration",
                 )

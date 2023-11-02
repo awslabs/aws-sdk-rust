@@ -166,7 +166,7 @@ impl UpdatePullRequestApprovalRuleContentInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentInput {

@@ -2,7 +2,7 @@
 pub fn ser_conditional_formatting_color(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ConditionalFormattingColor,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.solid {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Solid").start_object();

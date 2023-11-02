@@ -150,8 +150,10 @@ impl ListProjectMembershipsInputBuilder {
     /// Consumes the builder and constructs a [`ListProjectMembershipsInput`](crate::operation::list_project_memberships::ListProjectMembershipsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_project_memberships::ListProjectMembershipsInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::list_project_memberships::ListProjectMembershipsInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::list_project_memberships::ListProjectMembershipsInput {
             domain_identifier: self.domain_identifier,
             project_identifier: self.project_identifier,

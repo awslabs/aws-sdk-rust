@@ -53,7 +53,7 @@ impl StartOnDemandAuditTaskInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_on_demand_audit_task::StartOnDemandAuditTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_on_demand_audit_task::StartOnDemandAuditTaskInput {
             target_check_names: self.target_check_names,

@@ -44,7 +44,7 @@ impl DeleteVehicleInputBuilder {
     /// Consumes the builder and constructs a [`DeleteVehicleInput`](crate::operation::delete_vehicle::DeleteVehicleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_vehicle::DeleteVehicleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_vehicle::DeleteVehicleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_vehicle::DeleteVehicleInput {
             vehicle_name: self.vehicle_name,
         })

@@ -70,16 +70,16 @@ impl ImageLocationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::ImageLocationBuilder::id)
     /// - [`url`](crate::types::builders::ImageLocationBuilder::url)
-    pub fn build(self) -> ::std::result::Result<crate::types::ImageLocation, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ImageLocation, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ImageLocation {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building ImageLocation",
                 )
             })?,
             url: self.url.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "url",
                     "url was not specified but it is required when building ImageLocation",
                 )

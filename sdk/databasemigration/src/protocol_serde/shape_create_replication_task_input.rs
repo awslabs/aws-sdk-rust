@@ -2,7 +2,7 @@
 pub fn ser_create_replication_task_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_replication_task::CreateReplicationTaskInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.replication_task_identifier {
         object.key("ReplicationTaskIdentifier").string(var_1.as_str());
     }

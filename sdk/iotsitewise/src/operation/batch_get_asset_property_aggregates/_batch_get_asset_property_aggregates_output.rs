@@ -158,24 +158,24 @@ impl BatchGetAssetPropertyAggregatesOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_asset_property_aggregates::BatchGetAssetPropertyAggregatesOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::batch_get_asset_property_aggregates::BatchGetAssetPropertyAggregatesOutput {
                 error_entries: self.error_entries.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
                         "error_entries",
                         "error_entries was not specified but it is required when building BatchGetAssetPropertyAggregatesOutput",
                     )
                 })?,
                 success_entries: self.success_entries.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
                         "success_entries",
                         "success_entries was not specified but it is required when building BatchGetAssetPropertyAggregatesOutput",
                     )
                 })?,
                 skipped_entries: self.skipped_entries.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
                         "skipped_entries",
                         "skipped_entries was not specified but it is required when building BatchGetAssetPropertyAggregatesOutput",
                     )

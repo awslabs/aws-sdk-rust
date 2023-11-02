@@ -2,7 +2,7 @@
 pub fn ser_deployment_circuit_breaker(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DeploymentCircuitBreaker,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("enable").boolean(input.enable);
     }

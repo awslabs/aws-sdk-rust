@@ -150,7 +150,7 @@ impl UpdateExperienceInputBuilder {
     /// Consumes the builder and constructs a [`UpdateExperienceInput`](crate::operation::update_experience::UpdateExperienceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_experience::UpdateExperienceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_experience::UpdateExperienceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_experience::UpdateExperienceInput {
             id: self.id,
             name: self.name,

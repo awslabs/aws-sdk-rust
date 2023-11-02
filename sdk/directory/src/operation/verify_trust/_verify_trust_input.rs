@@ -43,7 +43,7 @@ impl VerifyTrustInputBuilder {
         &self.trust_id
     }
     /// Consumes the builder and constructs a [`VerifyTrustInput`](crate::operation::verify_trust::VerifyTrustInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::verify_trust::VerifyTrustInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::verify_trust::VerifyTrustInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::verify_trust::VerifyTrustInput { trust_id: self.trust_id })
     }
 }

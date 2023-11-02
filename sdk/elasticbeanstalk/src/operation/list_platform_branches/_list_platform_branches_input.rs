@@ -213,7 +213,7 @@ impl ListPlatformBranchesInputBuilder {
     /// Consumes the builder and constructs a [`ListPlatformBranchesInput`](crate::operation::list_platform_branches::ListPlatformBranchesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_platform_branches::ListPlatformBranchesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_platform_branches::ListPlatformBranchesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_platform_branches::ListPlatformBranchesInput {
             filters: self.filters,

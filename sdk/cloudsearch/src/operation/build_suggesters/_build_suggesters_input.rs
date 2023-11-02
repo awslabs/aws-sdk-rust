@@ -45,7 +45,7 @@ impl BuildSuggestersInputBuilder {
     /// Consumes the builder and constructs a [`BuildSuggestersInput`](crate::operation::build_suggesters::BuildSuggestersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::build_suggesters::BuildSuggestersInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::build_suggesters::BuildSuggestersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::build_suggesters::BuildSuggestersInput {
             domain_name: self.domain_name,
         })

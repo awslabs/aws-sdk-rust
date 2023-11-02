@@ -2,7 +2,7 @@
 pub fn ser_package_import_job_input_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PackageImportJobInputConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.package_version_input_config {
         #[allow(unused_mut)]
         let mut object_2 = object.key("PackageVersionInputConfig").start_object();

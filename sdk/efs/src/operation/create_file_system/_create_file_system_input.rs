@@ -310,7 +310,7 @@ impl CreateFileSystemInputBuilder {
     /// Consumes the builder and constructs a [`CreateFileSystemInput`](crate::operation::create_file_system::CreateFileSystemInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_file_system::CreateFileSystemInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_file_system::CreateFileSystemInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_file_system::CreateFileSystemInput {
             creation_token: self.creation_token,
             performance_mode: self.performance_mode,

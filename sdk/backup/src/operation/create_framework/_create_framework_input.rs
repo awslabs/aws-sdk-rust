@@ -149,7 +149,7 @@ impl CreateFrameworkInputBuilder {
     /// Consumes the builder and constructs a [`CreateFrameworkInput`](crate::operation::create_framework::CreateFrameworkInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_framework::CreateFrameworkInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_framework::CreateFrameworkInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_framework::CreateFrameworkInput {
             framework_name: self.framework_name,
             framework_description: self.framework_description,

@@ -101,7 +101,7 @@ impl DescribeTasksInputBuilder {
     /// Consumes the builder and constructs a [`DescribeTasksInput`](crate::operation::describe_tasks::DescribeTasksInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_tasks::DescribeTasksInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_tasks::DescribeTasksInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_tasks::DescribeTasksInput {
             cluster: self.cluster,
             tasks: self.tasks,

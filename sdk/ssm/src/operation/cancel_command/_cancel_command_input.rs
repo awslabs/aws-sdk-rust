@@ -74,7 +74,7 @@ impl CancelCommandInputBuilder {
     /// Consumes the builder and constructs a [`CancelCommandInput`](crate::operation::cancel_command::CancelCommandInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::cancel_command::CancelCommandInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::cancel_command::CancelCommandInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::cancel_command::CancelCommandInput {
             command_id: self.command_id,
             instance_ids: self.instance_ids,

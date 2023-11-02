@@ -91,17 +91,17 @@ impl DestinationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`bucket_name`](crate::types::builders::DestinationBuilder::bucket_name)
     /// - [`kms_key_arn`](crate::types::builders::DestinationBuilder::kms_key_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::Destination, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Destination, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Destination {
             bucket_name: self.bucket_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "bucket_name",
                     "bucket_name was not specified but it is required when building Destination",
                 )
             })?,
             key_prefix: self.key_prefix,
             kms_key_arn: self.kms_key_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "kms_key_arn",
                     "kms_key_arn was not specified but it is required when building Destination",
                 )

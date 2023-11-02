@@ -125,7 +125,7 @@ impl CreateCacheParameterGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_cache_parameter_group::CreateCacheParameterGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_cache_parameter_group::CreateCacheParameterGroupInput {
             cache_parameter_group_name: self.cache_parameter_group_name,

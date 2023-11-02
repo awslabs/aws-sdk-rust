@@ -285,7 +285,7 @@ impl GetTileInputBuilder {
         &self.execution_role_arn
     }
     /// Consumes the builder and constructs a [`GetTileInput`](crate::operation::get_tile::GetTileInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_tile::GetTileInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_tile::GetTileInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_tile::GetTileInput {
             x: self.x,
             y: self.y,

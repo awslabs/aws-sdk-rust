@@ -68,16 +68,16 @@ impl AuditLogProcessingConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`schema`](crate::types::builders::AuditLogProcessingConfigurationBuilder::schema)
     /// - [`format`](crate::types::builders::AuditLogProcessingConfigurationBuilder::format)
-    pub fn build(self) -> ::std::result::Result<crate::types::AuditLogProcessingConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AuditLogProcessingConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AuditLogProcessingConfiguration {
             schema: self.schema.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "schema",
                     "schema was not specified but it is required when building AuditLogProcessingConfiguration",
                 )
             })?,
             format: self.format.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "format",
                     "format was not specified but it is required when building AuditLogProcessingConfiguration",
                 )

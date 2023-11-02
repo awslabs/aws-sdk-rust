@@ -107,10 +107,10 @@ impl CopyImageSetOutputBuilder {
     /// - [`datastore_id`](crate::operation::copy_image_set::builders::CopyImageSetOutputBuilder::datastore_id)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::copy_image_set::CopyImageSetOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::copy_image_set::CopyImageSetOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::copy_image_set::CopyImageSetOutput {
             datastore_id: self.datastore_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "datastore_id",
                     "datastore_id was not specified but it is required when building CopyImageSetOutput",
                 )

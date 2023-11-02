@@ -2,7 +2,7 @@
 pub fn ser_create_location_object_storage_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_location_object_storage::CreateLocationObjectStorageInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.server_hostname {
         object.key("ServerHostname").string(var_1.as_str());
     }

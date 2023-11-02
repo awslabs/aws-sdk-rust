@@ -146,7 +146,7 @@ impl CreateWhatIfAnalysisInputBuilder {
     /// Consumes the builder and constructs a [`CreateWhatIfAnalysisInput`](crate::operation::create_what_if_analysis::CreateWhatIfAnalysisInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_what_if_analysis::CreateWhatIfAnalysisInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_what_if_analysis::CreateWhatIfAnalysisInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_what_if_analysis::CreateWhatIfAnalysisInput {
             what_if_analysis_name: self.what_if_analysis_name,

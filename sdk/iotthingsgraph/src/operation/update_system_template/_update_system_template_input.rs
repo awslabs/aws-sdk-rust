@@ -102,7 +102,7 @@ impl UpdateSystemTemplateInputBuilder {
     /// Consumes the builder and constructs a [`UpdateSystemTemplateInput`](crate::operation::update_system_template::UpdateSystemTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_system_template::UpdateSystemTemplateInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_system_template::UpdateSystemTemplateInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_system_template::UpdateSystemTemplateInput {
             id: self.id,

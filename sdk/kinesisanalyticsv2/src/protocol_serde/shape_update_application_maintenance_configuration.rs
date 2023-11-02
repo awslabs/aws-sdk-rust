@@ -134,7 +134,7 @@ pub fn de_update_application_maintenance_configuration_http_response(
 
 pub fn ser_update_application_maintenance_configuration_input(
     input: &crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfigurationInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_update_application_maintenance_configuration_input::ser_update_application_maintenance_configuration_input(
@@ -142,7 +142,7 @@ pub fn ser_update_application_maintenance_configuration_input(
         input,
     )?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_update_application_maintenance_configuration(

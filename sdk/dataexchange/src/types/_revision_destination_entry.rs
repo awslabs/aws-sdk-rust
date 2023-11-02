@@ -91,17 +91,17 @@ impl RevisionDestinationEntryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`bucket`](crate::types::builders::RevisionDestinationEntryBuilder::bucket)
     /// - [`revision_id`](crate::types::builders::RevisionDestinationEntryBuilder::revision_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::RevisionDestinationEntry, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RevisionDestinationEntry, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RevisionDestinationEntry {
             bucket: self.bucket.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "bucket",
                     "bucket was not specified but it is required when building RevisionDestinationEntry",
                 )
             })?,
             key_pattern: self.key_pattern,
             revision_id: self.revision_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "revision_id",
                     "revision_id was not specified but it is required when building RevisionDestinationEntry",
                 )

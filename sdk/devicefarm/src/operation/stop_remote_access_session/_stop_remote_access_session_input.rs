@@ -47,7 +47,7 @@ impl StopRemoteAccessSessionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_remote_access_session::StopRemoteAccessSessionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::stop_remote_access_session::StopRemoteAccessSessionInput { arn: self.arn })
     }

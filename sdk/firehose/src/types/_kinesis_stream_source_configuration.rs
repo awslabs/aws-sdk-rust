@@ -70,16 +70,16 @@ impl KinesisStreamSourceConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`kinesis_stream_arn`](crate::types::builders::KinesisStreamSourceConfigurationBuilder::kinesis_stream_arn)
     /// - [`role_arn`](crate::types::builders::KinesisStreamSourceConfigurationBuilder::role_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::KinesisStreamSourceConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::KinesisStreamSourceConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::KinesisStreamSourceConfiguration {
             kinesis_stream_arn: self.kinesis_stream_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "kinesis_stream_arn",
                     "kinesis_stream_arn was not specified but it is required when building KinesisStreamSourceConfiguration",
                 )
             })?,
             role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role_arn",
                     "role_arn was not specified but it is required when building KinesisStreamSourceConfiguration",
                 )

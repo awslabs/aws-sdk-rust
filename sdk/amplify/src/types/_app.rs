@@ -635,76 +635,76 @@ impl AppBuilder {
     /// - [`default_domain`](crate::types::builders::AppBuilder::default_domain)
     /// - [`enable_branch_auto_build`](crate::types::builders::AppBuilder::enable_branch_auto_build)
     /// - [`enable_basic_auth`](crate::types::builders::AppBuilder::enable_basic_auth)
-    pub fn build(self) -> ::std::result::Result<crate::types::App, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::App, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::App {
             app_id: self.app_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "app_id",
                     "app_id was not specified but it is required when building App",
                 )
             })?,
             app_arn: self.app_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "app_arn",
                     "app_arn was not specified but it is required when building App",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field("name", "name was not specified but it is required when building App")
+                ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building App")
             })?,
             tags: self.tags,
             description: self.description.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "description",
                     "description was not specified but it is required when building App",
                 )
             })?,
             repository: self.repository.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "repository",
                     "repository was not specified but it is required when building App",
                 )
             })?,
             platform: self.platform.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "platform",
                     "platform was not specified but it is required when building App",
                 )
             })?,
             create_time: self.create_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "create_time",
                     "create_time was not specified but it is required when building App",
                 )
             })?,
             update_time: self.update_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "update_time",
                     "update_time was not specified but it is required when building App",
                 )
             })?,
             iam_service_role_arn: self.iam_service_role_arn,
             environment_variables: self.environment_variables.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "environment_variables",
                     "environment_variables was not specified but it is required when building App",
                 )
             })?,
             default_domain: self.default_domain.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "default_domain",
                     "default_domain was not specified but it is required when building App",
                 )
             })?,
             enable_branch_auto_build: self.enable_branch_auto_build.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "enable_branch_auto_build",
                     "enable_branch_auto_build was not specified but it is required when building App",
                 )
             })?,
             enable_branch_auto_deletion: self.enable_branch_auto_deletion,
             enable_basic_auth: self.enable_basic_auth.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "enable_basic_auth",
                     "enable_basic_auth was not specified but it is required when building App",
                 )

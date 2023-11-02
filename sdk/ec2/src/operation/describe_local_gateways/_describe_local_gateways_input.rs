@@ -173,7 +173,7 @@ impl DescribeLocalGatewaysInputBuilder {
     /// Consumes the builder and constructs a [`DescribeLocalGatewaysInput`](crate::operation::describe_local_gateways::DescribeLocalGatewaysInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_local_gateways::DescribeLocalGatewaysInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_local_gateways::DescribeLocalGatewaysInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_local_gateways::DescribeLocalGatewaysInput {
             local_gateway_ids: self.local_gateway_ids,

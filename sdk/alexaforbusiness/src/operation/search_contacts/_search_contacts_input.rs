@@ -122,7 +122,7 @@ impl SearchContactsInputBuilder {
     /// Consumes the builder and constructs a [`SearchContactsInput`](crate::operation::search_contacts::SearchContactsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::search_contacts::SearchContactsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::search_contacts::SearchContactsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_contacts::SearchContactsInput {
             filters: self.filters,
             sort_criteria: self.sort_criteria,

@@ -228,7 +228,7 @@ impl DescribeFlowLogsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeFlowLogsInput`](crate::operation::describe_flow_logs::DescribeFlowLogsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_flow_logs::DescribeFlowLogsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_flow_logs::DescribeFlowLogsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_flow_logs::DescribeFlowLogsInput {
             dry_run: self.dry_run,
             filter: self.filter,

@@ -66,7 +66,7 @@ impl DeprecateWorkflowTypeInputBuilder {
     /// Consumes the builder and constructs a [`DeprecateWorkflowTypeInput`](crate::operation::deprecate_workflow_type::DeprecateWorkflowTypeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::deprecate_workflow_type::DeprecateWorkflowTypeInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::deprecate_workflow_type::DeprecateWorkflowTypeInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::deprecate_workflow_type::DeprecateWorkflowTypeInput {
             domain: self.domain,

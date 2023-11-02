@@ -45,7 +45,7 @@ impl RetryDataReplicationInputBuilder {
     /// Consumes the builder and constructs a [`RetryDataReplicationInput`](crate::operation::retry_data_replication::RetryDataReplicationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::retry_data_replication::RetryDataReplicationInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::retry_data_replication::RetryDataReplicationInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::retry_data_replication::RetryDataReplicationInput {
             source_server_id: self.source_server_id,

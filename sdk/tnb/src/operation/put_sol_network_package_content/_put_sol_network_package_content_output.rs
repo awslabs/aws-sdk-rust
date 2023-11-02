@@ -212,41 +212,41 @@ impl PutSolNetworkPackageContentOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_sol_network_package_content::PutSolNetworkPackageContentOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_sol_network_package_content::PutSolNetworkPackageContentOutput {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building PutSolNetworkPackageContentOutput",
                 )
             })?,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building PutSolNetworkPackageContentOutput",
                 )
             })?,
             nsd_id: self.nsd_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "nsd_id",
                     "nsd_id was not specified but it is required when building PutSolNetworkPackageContentOutput",
                 )
             })?,
             nsd_name: self.nsd_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "nsd_name",
                     "nsd_name was not specified but it is required when building PutSolNetworkPackageContentOutput",
                 )
             })?,
             nsd_version: self.nsd_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "nsd_version",
                     "nsd_version was not specified but it is required when building PutSolNetworkPackageContentOutput",
                 )
             })?,
             vnf_pkg_ids: self.vnf_pkg_ids.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "vnf_pkg_ids",
                     "vnf_pkg_ids was not specified but it is required when building PutSolNetworkPackageContentOutput",
                 )

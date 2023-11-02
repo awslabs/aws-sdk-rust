@@ -63,7 +63,9 @@ impl DeletePolicyInputBuilder {
         &self.policy_name
     }
     /// Consumes the builder and constructs a [`DeletePolicyInput`](crate::operation::delete_policy::DeletePolicyInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_policy::DeletePolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_policy::DeletePolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_policy::DeletePolicyInput {
             auto_scaling_group_name: self.auto_scaling_group_name,
             policy_name: self.policy_name,

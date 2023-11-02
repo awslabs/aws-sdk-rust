@@ -433,7 +433,7 @@ impl GetCostCategoriesInputBuilder {
     /// Consumes the builder and constructs a [`GetCostCategoriesInput`](crate::operation::get_cost_categories::GetCostCategoriesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_cost_categories::GetCostCategoriesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_cost_categories::GetCostCategoriesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_cost_categories::GetCostCategoriesInput {
             search_string: self.search_string,
             time_period: self.time_period,

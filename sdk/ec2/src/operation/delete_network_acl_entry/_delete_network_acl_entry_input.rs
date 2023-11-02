@@ -109,7 +109,7 @@ impl DeleteNetworkAclEntryInputBuilder {
     /// Consumes the builder and constructs a [`DeleteNetworkAclEntryInput`](crate::operation::delete_network_acl_entry::DeleteNetworkAclEntryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_network_acl_entry::DeleteNetworkAclEntryInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_network_acl_entry::DeleteNetworkAclEntryInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_network_acl_entry::DeleteNetworkAclEntryInput {
             dry_run: self.dry_run,

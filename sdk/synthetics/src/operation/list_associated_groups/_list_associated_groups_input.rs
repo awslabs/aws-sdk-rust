@@ -86,7 +86,7 @@ impl ListAssociatedGroupsInputBuilder {
     /// Consumes the builder and constructs a [`ListAssociatedGroupsInput`](crate::operation::list_associated_groups::ListAssociatedGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_associated_groups::ListAssociatedGroupsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_associated_groups::ListAssociatedGroupsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_associated_groups::ListAssociatedGroupsInput {
             next_token: self.next_token,

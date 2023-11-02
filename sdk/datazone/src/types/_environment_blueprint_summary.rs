@@ -192,23 +192,23 @@ impl EnvironmentBlueprintSummaryBuilder {
     /// - [`id`](crate::types::builders::EnvironmentBlueprintSummaryBuilder::id)
     /// - [`name`](crate::types::builders::EnvironmentBlueprintSummaryBuilder::name)
     /// - [`provider`](crate::types::builders::EnvironmentBlueprintSummaryBuilder::provider)
-    pub fn build(self) -> ::std::result::Result<crate::types::EnvironmentBlueprintSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::EnvironmentBlueprintSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EnvironmentBlueprintSummary {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building EnvironmentBlueprintSummary",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building EnvironmentBlueprintSummary",
                 )
             })?,
             description: self.description,
             provider: self.provider.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "provider",
                     "provider was not specified but it is required when building EnvironmentBlueprintSummary",
                 )

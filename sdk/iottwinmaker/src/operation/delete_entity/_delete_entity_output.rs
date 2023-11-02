@@ -62,10 +62,10 @@ impl DeleteEntityOutputBuilder {
     /// - [`state`](crate::operation::delete_entity::builders::DeleteEntityOutputBuilder::state)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_entity::DeleteEntityOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_entity::DeleteEntityOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_entity::DeleteEntityOutput {
             state: self.state.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "state",
                     "state was not specified but it is required when building DeleteEntityOutput",
                 )

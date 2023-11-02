@@ -87,7 +87,7 @@ impl AddRoleToDbClusterInputBuilder {
     /// Consumes the builder and constructs a [`AddRoleToDbClusterInput`](crate::operation::add_role_to_db_cluster::AddRoleToDbClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::add_role_to_db_cluster::AddRoleToDbClusterInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::add_role_to_db_cluster::AddRoleToDbClusterInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::add_role_to_db_cluster::AddRoleToDbClusterInput {
             db_cluster_identifier: self.db_cluster_identifier,

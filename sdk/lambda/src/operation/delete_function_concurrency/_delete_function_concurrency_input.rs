@@ -81,7 +81,7 @@ impl DeleteFunctionConcurrencyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_function_concurrency::DeleteFunctionConcurrencyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_function_concurrency::DeleteFunctionConcurrencyInput {
             function_name: self.function_name,

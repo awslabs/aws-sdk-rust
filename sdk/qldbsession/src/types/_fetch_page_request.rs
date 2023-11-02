@@ -70,16 +70,16 @@ impl FetchPageRequestBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`transaction_id`](crate::types::builders::FetchPageRequestBuilder::transaction_id)
     /// - [`next_page_token`](crate::types::builders::FetchPageRequestBuilder::next_page_token)
-    pub fn build(self) -> ::std::result::Result<crate::types::FetchPageRequest, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::FetchPageRequest, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FetchPageRequest {
             transaction_id: self.transaction_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "transaction_id",
                     "transaction_id was not specified but it is required when building FetchPageRequest",
                 )
             })?,
             next_page_token: self.next_page_token.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "next_page_token",
                     "next_page_token was not specified but it is required when building FetchPageRequest",
                 )

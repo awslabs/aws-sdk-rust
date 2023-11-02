@@ -109,10 +109,10 @@ impl PutFileEntryBuilder {
     /// Consumes the builder and constructs a [`PutFileEntry`](crate::types::PutFileEntry).
     /// This method will fail if any of the following fields are not set:
     /// - [`file_path`](crate::types::builders::PutFileEntryBuilder::file_path)
-    pub fn build(self) -> ::std::result::Result<crate::types::PutFileEntry, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PutFileEntry, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PutFileEntry {
             file_path: self.file_path.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "file_path",
                     "file_path was not specified but it is required when building PutFileEntry",
                 )

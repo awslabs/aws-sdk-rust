@@ -2,7 +2,7 @@
 pub fn ser_rolling_date_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RollingDateConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.data_set_identifier {
         object.key("DataSetIdentifier").string(var_1.as_str());
     }

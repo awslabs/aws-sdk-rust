@@ -180,7 +180,7 @@ impl UpdateFindingsFilterInputBuilder {
     /// Consumes the builder and constructs a [`UpdateFindingsFilterInput`](crate::operation::update_findings_filter::UpdateFindingsFilterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_findings_filter::UpdateFindingsFilterInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_findings_filter::UpdateFindingsFilterInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_findings_filter::UpdateFindingsFilterInput {
             action: self.action,

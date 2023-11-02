@@ -93,22 +93,22 @@ impl ClusterInListBuilder {
     /// - [`cluster_name`](crate::types::builders::ClusterInListBuilder::cluster_name)
     /// - [`cluster_arn`](crate::types::builders::ClusterInListBuilder::cluster_arn)
     /// - [`status`](crate::types::builders::ClusterInListBuilder::status)
-    pub fn build(self) -> ::std::result::Result<crate::types::ClusterInList, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ClusterInList, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ClusterInList {
             cluster_name: self.cluster_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "cluster_name",
                     "cluster_name was not specified but it is required when building ClusterInList",
                 )
             })?,
             cluster_arn: self.cluster_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "cluster_arn",
                     "cluster_arn was not specified but it is required when building ClusterInList",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building ClusterInList",
                 )

@@ -45,7 +45,7 @@ impl PutReportDefinitionInputBuilder {
     /// Consumes the builder and constructs a [`PutReportDefinitionInput`](crate::operation::put_report_definition::PutReportDefinitionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_report_definition::PutReportDefinitionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::put_report_definition::PutReportDefinitionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::put_report_definition::PutReportDefinitionInput {
             report_definition: self.report_definition,

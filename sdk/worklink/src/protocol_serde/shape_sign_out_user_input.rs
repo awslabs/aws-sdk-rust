@@ -2,7 +2,7 @@
 pub fn ser_sign_out_user_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::sign_out_user::SignOutUserInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.fleet_arn {
         object.key("FleetArn").string(var_1.as_str());
     }

@@ -206,40 +206,40 @@ impl InstanceProfileBuilder {
     /// - [`arn`](crate::types::builders::InstanceProfileBuilder::arn)
     /// - [`create_date`](crate::types::builders::InstanceProfileBuilder::create_date)
     /// - [`roles`](crate::types::builders::InstanceProfileBuilder::roles)
-    pub fn build(self) -> ::std::result::Result<crate::types::InstanceProfile, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::InstanceProfile, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::InstanceProfile {
             path: self.path.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "path",
                     "path was not specified but it is required when building InstanceProfile",
                 )
             })?,
             instance_profile_name: self.instance_profile_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "instance_profile_name",
                     "instance_profile_name was not specified but it is required when building InstanceProfile",
                 )
             })?,
             instance_profile_id: self.instance_profile_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "instance_profile_id",
                     "instance_profile_id was not specified but it is required when building InstanceProfile",
                 )
             })?,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building InstanceProfile",
                 )
             })?,
             create_date: self.create_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "create_date",
                     "create_date was not specified but it is required when building InstanceProfile",
                 )
             })?,
             roles: self.roles.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "roles",
                     "roles was not specified but it is required when building InstanceProfile",
                 )

@@ -42,7 +42,7 @@ where
 pub fn ser_positional_accuracy(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PositionalAccuracy,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Horizontal").number(
             #[allow(clippy::useless_conversion)]

@@ -46,10 +46,10 @@ impl GreengrassBuilder {
     /// Consumes the builder and constructs a [`Greengrass`](crate::types::Greengrass).
     /// This method will fail if any of the following fields are not set:
     /// - [`group_arn`](crate::types::builders::GreengrassBuilder::group_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::Greengrass, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Greengrass, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Greengrass {
             group_arn: self.group_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "group_arn",
                     "group_arn was not specified but it is required when building Greengrass",
                 )

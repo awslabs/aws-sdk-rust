@@ -2,7 +2,7 @@
 pub fn ser_aws_elb_lb_cookie_stickiness_policy(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsElbLbCookieStickinessPolicy,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.cookie_expiration_period {
         object.key("CookieExpirationPeriod").number(
             #[allow(clippy::useless_conversion)]

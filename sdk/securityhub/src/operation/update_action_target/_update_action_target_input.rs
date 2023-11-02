@@ -86,7 +86,8 @@ impl UpdateActionTargetInputBuilder {
     /// Consumes the builder and constructs a [`UpdateActionTargetInput`](crate::operation::update_action_target::UpdateActionTargetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_action_target::UpdateActionTargetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_action_target::UpdateActionTargetInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::update_action_target::UpdateActionTargetInput {
             action_target_arn: self.action_target_arn,
             name: self.name,

@@ -213,7 +213,7 @@ impl CreateEphemerisInputBuilder {
     /// Consumes the builder and constructs a [`CreateEphemerisInput`](crate::operation::create_ephemeris::CreateEphemerisInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_ephemeris::CreateEphemerisInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_ephemeris::CreateEphemerisInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_ephemeris::CreateEphemerisInput {
             satellite_id: self.satellite_id,
             enabled: self.enabled,

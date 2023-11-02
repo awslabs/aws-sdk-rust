@@ -83,7 +83,7 @@ impl GetBotsInputBuilder {
         &self.name_contains
     }
     /// Consumes the builder and constructs a [`GetBotsInput`](crate::operation::get_bots::GetBotsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_bots::GetBotsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_bots::GetBotsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_bots::GetBotsInput {
             next_token: self.next_token,
             max_results: self.max_results,

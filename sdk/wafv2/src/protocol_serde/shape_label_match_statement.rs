@@ -2,7 +2,7 @@
 pub fn ser_label_match_statement(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LabelMatchStatement,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Scope").string(input.scope.as_str());
     }

@@ -97,22 +97,22 @@ impl ComponentPropertyGroupResponseBuilder {
     /// - [`group_type`](crate::types::builders::ComponentPropertyGroupResponseBuilder::group_type)
     /// - [`property_names`](crate::types::builders::ComponentPropertyGroupResponseBuilder::property_names)
     /// - [`is_inherited`](crate::types::builders::ComponentPropertyGroupResponseBuilder::is_inherited)
-    pub fn build(self) -> ::std::result::Result<crate::types::ComponentPropertyGroupResponse, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ComponentPropertyGroupResponse, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ComponentPropertyGroupResponse {
             group_type: self.group_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "group_type",
                     "group_type was not specified but it is required when building ComponentPropertyGroupResponse",
                 )
             })?,
             property_names: self.property_names.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "property_names",
                     "property_names was not specified but it is required when building ComponentPropertyGroupResponse",
                 )
             })?,
             is_inherited: self.is_inherited.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "is_inherited",
                     "is_inherited was not specified but it is required when building ComponentPropertyGroupResponse",
                 )

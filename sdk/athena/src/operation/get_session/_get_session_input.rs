@@ -42,7 +42,7 @@ impl GetSessionInputBuilder {
         &self.session_id
     }
     /// Consumes the builder and constructs a [`GetSessionInput`](crate::operation::get_session::GetSessionInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_session::GetSessionInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_session::GetSessionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_session::GetSessionInput { session_id: self.session_id })
     }
 }

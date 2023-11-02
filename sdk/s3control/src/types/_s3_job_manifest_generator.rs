@@ -131,11 +131,11 @@ impl S3JobManifestGeneratorBuilder {
     /// Consumes the builder and constructs a [`S3JobManifestGenerator`](crate::types::S3JobManifestGenerator).
     /// This method will fail if any of the following fields are not set:
     /// - [`source_bucket`](crate::types::builders::S3JobManifestGeneratorBuilder::source_bucket)
-    pub fn build(self) -> ::std::result::Result<crate::types::S3JobManifestGenerator, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::S3JobManifestGenerator, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::S3JobManifestGenerator {
             expected_bucket_owner: self.expected_bucket_owner,
             source_bucket: self.source_bucket.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source_bucket",
                     "source_bucket was not specified but it is required when building S3JobManifestGenerator",
                 )

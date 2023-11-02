@@ -89,7 +89,7 @@ impl PutRepositoryCatalogDataInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_repository_catalog_data::PutRepositoryCatalogDataInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_repository_catalog_data::PutRepositoryCatalogDataInput {
             registry_id: self.registry_id,

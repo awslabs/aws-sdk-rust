@@ -115,22 +115,22 @@ impl PublicKeyConfigBuilder {
     /// - [`caller_reference`](crate::types::builders::PublicKeyConfigBuilder::caller_reference)
     /// - [`name`](crate::types::builders::PublicKeyConfigBuilder::name)
     /// - [`encoded_key`](crate::types::builders::PublicKeyConfigBuilder::encoded_key)
-    pub fn build(self) -> ::std::result::Result<crate::types::PublicKeyConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PublicKeyConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PublicKeyConfig {
             caller_reference: self.caller_reference.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "caller_reference",
                     "caller_reference was not specified but it is required when building PublicKeyConfig",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building PublicKeyConfig",
                 )
             })?,
             encoded_key: self.encoded_key.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "encoded_key",
                     "encoded_key was not specified but it is required when building PublicKeyConfig",
                 )

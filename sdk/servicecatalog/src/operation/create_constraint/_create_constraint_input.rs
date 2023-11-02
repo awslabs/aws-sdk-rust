@@ -469,7 +469,7 @@ impl CreateConstraintInputBuilder {
     /// Consumes the builder and constructs a [`CreateConstraintInput`](crate::operation::create_constraint::CreateConstraintInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_constraint::CreateConstraintInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_constraint::CreateConstraintInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_constraint::CreateConstraintInput {
             accept_language: self.accept_language,
             portfolio_id: self.portfolio_id,

@@ -167,22 +167,22 @@ impl TrustedAdvisorCheckResultBuilder {
     /// - [`timestamp`](crate::types::builders::TrustedAdvisorCheckResultBuilder::timestamp)
     /// - [`status`](crate::types::builders::TrustedAdvisorCheckResultBuilder::status)
     /// - [`flagged_resources`](crate::types::builders::TrustedAdvisorCheckResultBuilder::flagged_resources)
-    pub fn build(self) -> ::std::result::Result<crate::types::TrustedAdvisorCheckResult, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TrustedAdvisorCheckResult, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TrustedAdvisorCheckResult {
             check_id: self.check_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "check_id",
                     "check_id was not specified but it is required when building TrustedAdvisorCheckResult",
                 )
             })?,
             timestamp: self.timestamp.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "timestamp",
                     "timestamp was not specified but it is required when building TrustedAdvisorCheckResult",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building TrustedAdvisorCheckResult",
                 )
@@ -190,7 +190,7 @@ impl TrustedAdvisorCheckResultBuilder {
             resources_summary: self.resources_summary,
             category_specific_summary: self.category_specific_summary,
             flagged_resources: self.flagged_resources.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "flagged_resources",
                     "flagged_resources was not specified but it is required when building TrustedAdvisorCheckResult",
                 )

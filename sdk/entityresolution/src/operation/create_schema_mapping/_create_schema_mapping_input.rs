@@ -121,7 +121,7 @@ impl CreateSchemaMappingInputBuilder {
     /// Consumes the builder and constructs a [`CreateSchemaMappingInput`](crate::operation::create_schema_mapping::CreateSchemaMappingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_schema_mapping::CreateSchemaMappingInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_schema_mapping::CreateSchemaMappingInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_schema_mapping::CreateSchemaMappingInput {
             schema_name: self.schema_name,

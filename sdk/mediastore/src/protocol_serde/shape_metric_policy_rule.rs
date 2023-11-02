@@ -2,7 +2,7 @@
 pub fn ser_metric_policy_rule(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MetricPolicyRule,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("ObjectGroup").string(input.object_group.as_str());
     }

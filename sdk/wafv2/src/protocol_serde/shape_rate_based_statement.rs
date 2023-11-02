@@ -2,7 +2,7 @@
 pub fn ser_rate_based_statement(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RateBasedStatement,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Limit").number(
             #[allow(clippy::useless_conversion)]

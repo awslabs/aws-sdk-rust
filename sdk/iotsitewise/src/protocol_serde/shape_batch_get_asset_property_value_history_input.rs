@@ -2,7 +2,7 @@
 pub fn ser_batch_get_asset_property_value_history_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.entries {
         let mut array_2 = object.key("entries").start_array();
         for item_3 in var_1 {

@@ -110,7 +110,7 @@ impl UpdateThemeAliasInputBuilder {
     /// Consumes the builder and constructs a [`UpdateThemeAliasInput`](crate::operation::update_theme_alias::UpdateThemeAliasInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_theme_alias::UpdateThemeAliasInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_theme_alias::UpdateThemeAliasInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_theme_alias::UpdateThemeAliasInput {
             aws_account_id: self.aws_account_id,
             theme_id: self.theme_id,

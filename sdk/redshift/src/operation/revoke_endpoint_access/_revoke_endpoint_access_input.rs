@@ -114,7 +114,7 @@ impl RevokeEndpointAccessInputBuilder {
     /// Consumes the builder and constructs a [`RevokeEndpointAccessInput`](crate::operation::revoke_endpoint_access::RevokeEndpointAccessInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::revoke_endpoint_access::RevokeEndpointAccessInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::revoke_endpoint_access::RevokeEndpointAccessInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::revoke_endpoint_access::RevokeEndpointAccessInput {
             cluster_identifier: self.cluster_identifier,

@@ -94,7 +94,7 @@ impl UpdateSubnetGroupInputBuilder {
     /// Consumes the builder and constructs a [`UpdateSubnetGroupInput`](crate::operation::update_subnet_group::UpdateSubnetGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_subnet_group::UpdateSubnetGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_subnet_group::UpdateSubnetGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_subnet_group::UpdateSubnetGroupInput {
             subnet_group_name: self.subnet_group_name,
             description: self.description,

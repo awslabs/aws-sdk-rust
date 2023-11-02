@@ -122,7 +122,7 @@ impl VerifyCardValidationDataInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::verify_card_validation_data::VerifyCardValidationDataInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::verify_card_validation_data::VerifyCardValidationDataInput {
             key_identifier: self.key_identifier,

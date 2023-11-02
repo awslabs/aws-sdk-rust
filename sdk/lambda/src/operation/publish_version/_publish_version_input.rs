@@ -142,7 +142,7 @@ impl PublishVersionInputBuilder {
     /// Consumes the builder and constructs a [`PublishVersionInput`](crate::operation::publish_version::PublishVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::publish_version::PublishVersionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::publish_version::PublishVersionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::publish_version::PublishVersionInput {
             function_name: self.function_name,
             code_sha256: self.code_sha256,

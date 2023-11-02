@@ -66,7 +66,8 @@ impl RegisterEcsClusterInputBuilder {
     /// Consumes the builder and constructs a [`RegisterEcsClusterInput`](crate::operation::register_ecs_cluster::RegisterEcsClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::register_ecs_cluster::RegisterEcsClusterInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::register_ecs_cluster::RegisterEcsClusterInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::register_ecs_cluster::RegisterEcsClusterInput {
             ecs_cluster_arn: self.ecs_cluster_arn,
             stack_id: self.stack_id,

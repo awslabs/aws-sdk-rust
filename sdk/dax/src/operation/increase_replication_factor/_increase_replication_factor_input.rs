@@ -97,7 +97,7 @@ impl IncreaseReplicationFactorInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::increase_replication_factor::IncreaseReplicationFactorInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::increase_replication_factor::IncreaseReplicationFactorInput {
             cluster_name: self.cluster_name,

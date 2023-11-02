@@ -2,7 +2,7 @@
 pub fn ser_datastore_iot_site_wise_multi_layer_storage(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DatastoreIotSiteWiseMultiLayerStorage,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.customer_managed_s3_storage {
         #[allow(unused_mut)]
         let mut object_2 = object.key("customerManagedS3Storage").start_object();

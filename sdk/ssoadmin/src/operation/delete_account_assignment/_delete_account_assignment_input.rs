@@ -156,7 +156,7 @@ impl DeleteAccountAssignmentInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_account_assignment::DeleteAccountAssignmentInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_account_assignment::DeleteAccountAssignmentInput {
             instance_arn: self.instance_arn,

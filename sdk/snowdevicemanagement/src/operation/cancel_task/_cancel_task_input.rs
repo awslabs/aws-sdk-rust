@@ -42,7 +42,7 @@ impl CancelTaskInputBuilder {
         &self.task_id
     }
     /// Consumes the builder and constructs a [`CancelTaskInput`](crate::operation::cancel_task::CancelTaskInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_task::CancelTaskInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_task::CancelTaskInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::cancel_task::CancelTaskInput { task_id: self.task_id })
     }
 }

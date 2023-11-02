@@ -2,7 +2,7 @@
 pub fn ser_sms_configuration_type(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SmsConfigurationType,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("SnsCallerArn").string(input.sns_caller_arn.as_str());
     }

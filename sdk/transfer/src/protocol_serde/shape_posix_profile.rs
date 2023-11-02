@@ -2,7 +2,7 @@
 pub fn ser_posix_profile(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PosixProfile,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Uid").number(
             #[allow(clippy::useless_conversion)]

@@ -175,16 +175,16 @@ impl CopySourceImageSetPropertiesBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`image_set_id`](crate::types::builders::CopySourceImageSetPropertiesBuilder::image_set_id)
     /// - [`latest_version_id`](crate::types::builders::CopySourceImageSetPropertiesBuilder::latest_version_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::CopySourceImageSetProperties, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CopySourceImageSetProperties, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CopySourceImageSetProperties {
             image_set_id: self.image_set_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "image_set_id",
                     "image_set_id was not specified but it is required when building CopySourceImageSetProperties",
                 )
             })?,
             latest_version_id: self.latest_version_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "latest_version_id",
                     "latest_version_id was not specified but it is required when building CopySourceImageSetProperties",
                 )

@@ -2,7 +2,7 @@
 pub fn ser_can_signal(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CanSignal,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("messageId").number(
             #[allow(clippy::useless_conversion)]

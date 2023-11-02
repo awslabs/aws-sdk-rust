@@ -119,7 +119,7 @@ impl ReplicateInstanceInputBuilder {
     /// Consumes the builder and constructs a [`ReplicateInstanceInput`](crate::operation::replicate_instance::ReplicateInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::replicate_instance::ReplicateInstanceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::replicate_instance::ReplicateInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::replicate_instance::ReplicateInstanceInput {
             instance_id: self.instance_id,
             replica_region: self.replica_region,

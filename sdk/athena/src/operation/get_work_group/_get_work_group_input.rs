@@ -44,7 +44,7 @@ impl GetWorkGroupInputBuilder {
     /// Consumes the builder and constructs a [`GetWorkGroupInput`](crate::operation::get_work_group::GetWorkGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_work_group::GetWorkGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_work_group::GetWorkGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_work_group::GetWorkGroupInput { work_group: self.work_group })
     }
 }

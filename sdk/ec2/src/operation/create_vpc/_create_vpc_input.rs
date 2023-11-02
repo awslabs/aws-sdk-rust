@@ -300,7 +300,7 @@ impl CreateVpcInputBuilder {
         &self.tag_specifications
     }
     /// Consumes the builder and constructs a [`CreateVpcInput`](crate::operation::create_vpc::CreateVpcInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_vpc::CreateVpcInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_vpc::CreateVpcInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_vpc::CreateVpcInput {
             cidr_block: self.cidr_block,
             amazon_provided_ipv6_cidr_block: self.amazon_provided_ipv6_cidr_block,

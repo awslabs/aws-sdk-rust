@@ -2,7 +2,7 @@
 pub fn ser_captcha_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CaptchaConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.immunity_time_property {
         #[allow(unused_mut)]
         let mut object_2 = object.key("ImmunityTimeProperty").start_object();

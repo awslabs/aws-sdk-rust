@@ -72,7 +72,7 @@ impl TransactGetItemsInputBuilder {
     /// Consumes the builder and constructs a [`TransactGetItemsInput`](crate::operation::transact_get_items::TransactGetItemsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::transact_get_items::TransactGetItemsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::transact_get_items::TransactGetItemsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::transact_get_items::TransactGetItemsInput {
             transact_items: self.transact_items,
             return_consumed_capacity: self.return_consumed_capacity,

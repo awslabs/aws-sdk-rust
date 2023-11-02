@@ -47,7 +47,7 @@ impl DescribeIdentityPoolUsageInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_identity_pool_usage::DescribeIdentityPoolUsageInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_identity_pool_usage::DescribeIdentityPoolUsageInput {
             identity_pool_id: self.identity_pool_id,

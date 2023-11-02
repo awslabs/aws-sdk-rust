@@ -7,8 +7,8 @@ use aws_sdk_s3::config::interceptors::InterceptorContext;
 use aws_sdk_s3::config::retry::{ClassifyRetry, RetryAction, RetryConfig};
 use aws_sdk_s3::config::SharedAsyncSleep;
 use aws_smithy_async::rt::sleep::TokioSleep;
-use aws_smithy_http::body::SdkBody;
 use aws_smithy_runtime::client::http::test_util::{ReplayEvent, StaticReplayClient};
+use aws_smithy_types::body::SdkBody;
 use std::sync::{Arc, Mutex};
 
 #[derive(Debug, Clone)]

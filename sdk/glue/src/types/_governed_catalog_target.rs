@@ -173,29 +173,29 @@ impl GovernedCatalogTargetBuilder {
     /// - [`inputs`](crate::types::builders::GovernedCatalogTargetBuilder::inputs)
     /// - [`table`](crate::types::builders::GovernedCatalogTargetBuilder::table)
     /// - [`database`](crate::types::builders::GovernedCatalogTargetBuilder::database)
-    pub fn build(self) -> ::std::result::Result<crate::types::GovernedCatalogTarget, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::GovernedCatalogTarget, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::GovernedCatalogTarget {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building GovernedCatalogTarget",
                 )
             })?,
             inputs: self.inputs.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "inputs",
                     "inputs was not specified but it is required when building GovernedCatalogTarget",
                 )
             })?,
             partition_keys: self.partition_keys,
             table: self.table.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "table",
                     "table was not specified but it is required when building GovernedCatalogTarget",
                 )
             })?,
             database: self.database.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "database",
                     "database was not specified but it is required when building GovernedCatalogTarget",
                 )

@@ -79,7 +79,7 @@ impl BatchStopInputBuilder {
         &self.multiplex_ids
     }
     /// Consumes the builder and constructs a [`BatchStopInput`](crate::operation::batch_stop::BatchStopInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::batch_stop::BatchStopInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_stop::BatchStopInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::batch_stop::BatchStopInput {
             channel_ids: self.channel_ids,
             multiplex_ids: self.multiplex_ids,

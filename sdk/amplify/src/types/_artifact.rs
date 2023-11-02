@@ -70,16 +70,16 @@ impl ArtifactBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`artifact_file_name`](crate::types::builders::ArtifactBuilder::artifact_file_name)
     /// - [`artifact_id`](crate::types::builders::ArtifactBuilder::artifact_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::Artifact, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Artifact, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Artifact {
             artifact_file_name: self.artifact_file_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "artifact_file_name",
                     "artifact_file_name was not specified but it is required when building Artifact",
                 )
             })?,
             artifact_id: self.artifact_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "artifact_id",
                     "artifact_id was not specified but it is required when building Artifact",
                 )

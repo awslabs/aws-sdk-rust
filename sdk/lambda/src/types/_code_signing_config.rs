@@ -159,16 +159,16 @@ impl CodeSigningConfigBuilder {
     /// - [`code_signing_config_id`](crate::types::builders::CodeSigningConfigBuilder::code_signing_config_id)
     /// - [`code_signing_config_arn`](crate::types::builders::CodeSigningConfigBuilder::code_signing_config_arn)
     /// - [`last_modified`](crate::types::builders::CodeSigningConfigBuilder::last_modified)
-    pub fn build(self) -> ::std::result::Result<crate::types::CodeSigningConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CodeSigningConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CodeSigningConfig {
             code_signing_config_id: self.code_signing_config_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "code_signing_config_id",
                     "code_signing_config_id was not specified but it is required when building CodeSigningConfig",
                 )
             })?,
             code_signing_config_arn: self.code_signing_config_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "code_signing_config_arn",
                     "code_signing_config_arn was not specified but it is required when building CodeSigningConfig",
                 )
@@ -177,7 +177,7 @@ impl CodeSigningConfigBuilder {
             allowed_publishers: self.allowed_publishers,
             code_signing_policies: self.code_signing_policies,
             last_modified: self.last_modified.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_modified",
                     "last_modified was not specified but it is required when building CodeSigningConfig",
                 )

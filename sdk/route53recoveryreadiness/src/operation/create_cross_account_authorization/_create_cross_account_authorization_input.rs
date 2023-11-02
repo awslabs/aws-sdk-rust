@@ -46,7 +46,7 @@ impl CreateCrossAccountAuthorizationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_cross_account_authorization::CreateCrossAccountAuthorizationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::create_cross_account_authorization::CreateCrossAccountAuthorizationInput {

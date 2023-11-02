@@ -65,7 +65,7 @@ impl DescribeFunctionInputBuilder {
     /// Consumes the builder and constructs a [`DescribeFunctionInput`](crate::operation::describe_function::DescribeFunctionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_function::DescribeFunctionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_function::DescribeFunctionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_function::DescribeFunctionInput {
             name: self.name,
             stage: self.stage,

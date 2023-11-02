@@ -82,10 +82,10 @@ impl PutRecordOutputBuilder {
     /// Consumes the builder and constructs a [`PutRecordOutput`](crate::operation::put_record::PutRecordOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`record_id`](crate::operation::put_record::builders::PutRecordOutputBuilder::record_id)
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_record::PutRecordOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_record::PutRecordOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_record::PutRecordOutput {
             record_id: self.record_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "record_id",
                     "record_id was not specified but it is required when building PutRecordOutput",
                 )

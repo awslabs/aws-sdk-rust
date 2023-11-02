@@ -81,7 +81,7 @@ impl DeleteReviewTemplateInputBuilder {
     /// Consumes the builder and constructs a [`DeleteReviewTemplateInput`](crate::operation::delete_review_template::DeleteReviewTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_review_template::DeleteReviewTemplateInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_review_template::DeleteReviewTemplateInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_review_template::DeleteReviewTemplateInput {
             template_arn: self.template_arn,

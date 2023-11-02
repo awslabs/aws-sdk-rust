@@ -266,7 +266,7 @@ impl CreateWorkgroupInputBuilder {
     /// Consumes the builder and constructs a [`CreateWorkgroupInput`](crate::operation::create_workgroup::CreateWorkgroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_workgroup::CreateWorkgroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_workgroup::CreateWorkgroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_workgroup::CreateWorkgroupInput {
             workgroup_name: self.workgroup_name,
             namespace_name: self.namespace_name,

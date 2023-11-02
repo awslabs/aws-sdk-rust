@@ -120,22 +120,22 @@ impl CodeGenNodeBuilder {
     /// - [`id`](crate::types::builders::CodeGenNodeBuilder::id)
     /// - [`node_type`](crate::types::builders::CodeGenNodeBuilder::node_type)
     /// - [`args`](crate::types::builders::CodeGenNodeBuilder::args)
-    pub fn build(self) -> ::std::result::Result<crate::types::CodeGenNode, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CodeGenNode, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CodeGenNode {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building CodeGenNode",
                 )
             })?,
             node_type: self.node_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "node_type",
                     "node_type was not specified but it is required when building CodeGenNode",
                 )
             })?,
             args: self.args.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "args",
                     "args was not specified but it is required when building CodeGenNode",
                 )

@@ -160,7 +160,7 @@ impl GetIpamDiscoveredResourceCidrsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_ipam_discovered_resource_cidrs::GetIpamDiscoveredResourceCidrsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_ipam_discovered_resource_cidrs::GetIpamDiscoveredResourceCidrsInput {

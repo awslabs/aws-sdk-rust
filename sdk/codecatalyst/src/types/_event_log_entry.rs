@@ -357,46 +357,46 @@ impl EventLogEntryBuilder {
     /// - [`event_source`](crate::types::builders::EventLogEntryBuilder::event_source)
     /// - [`event_time`](crate::types::builders::EventLogEntryBuilder::event_time)
     /// - [`operation_type`](crate::types::builders::EventLogEntryBuilder::operation_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::EventLogEntry, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::EventLogEntry, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EventLogEntry {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building EventLogEntry",
                 )
             })?,
             event_name: self.event_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "event_name",
                     "event_name was not specified but it is required when building EventLogEntry",
                 )
             })?,
             event_type: self.event_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "event_type",
                     "event_type was not specified but it is required when building EventLogEntry",
                 )
             })?,
             event_category: self.event_category.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "event_category",
                     "event_category was not specified but it is required when building EventLogEntry",
                 )
             })?,
             event_source: self.event_source.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "event_source",
                     "event_source was not specified but it is required when building EventLogEntry",
                 )
             })?,
             event_time: self.event_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "event_time",
                     "event_time was not specified but it is required when building EventLogEntry",
                 )
             })?,
             operation_type: self.operation_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "operation_type",
                     "operation_type was not specified but it is required when building EventLogEntry",
                 )

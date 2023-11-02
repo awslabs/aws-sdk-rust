@@ -274,7 +274,7 @@ impl ImportHubContentInputBuilder {
     /// Consumes the builder and constructs a [`ImportHubContentInput`](crate::operation::import_hub_content::ImportHubContentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::import_hub_content::ImportHubContentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::import_hub_content::ImportHubContentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::import_hub_content::ImportHubContentInput {
             hub_content_name: self.hub_content_name,
             hub_content_version: self.hub_content_version,

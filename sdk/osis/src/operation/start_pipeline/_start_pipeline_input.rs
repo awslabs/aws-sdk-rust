@@ -44,7 +44,7 @@ impl StartPipelineInputBuilder {
     /// Consumes the builder and constructs a [`StartPipelineInput`](crate::operation::start_pipeline::StartPipelineInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_pipeline::StartPipelineInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_pipeline::StartPipelineInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_pipeline::StartPipelineInput {
             pipeline_name: self.pipeline_name,
         })

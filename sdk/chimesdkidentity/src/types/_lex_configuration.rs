@@ -148,18 +148,18 @@ impl LexConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`lex_bot_alias_arn`](crate::types::builders::LexConfigurationBuilder::lex_bot_alias_arn)
     /// - [`locale_id`](crate::types::builders::LexConfigurationBuilder::locale_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::LexConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::LexConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::LexConfiguration {
             responds_to: self.responds_to,
             invoked_by: self.invoked_by,
             lex_bot_alias_arn: self.lex_bot_alias_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "lex_bot_alias_arn",
                     "lex_bot_alias_arn was not specified but it is required when building LexConfiguration",
                 )
             })?,
             locale_id: self.locale_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "locale_id",
                     "locale_id was not specified but it is required when building LexConfiguration",
                 )

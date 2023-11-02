@@ -128,28 +128,28 @@ impl SessionKeyMastercardBuilder {
     /// - [`pan_sequence_number`](crate::types::builders::SessionKeyMastercardBuilder::pan_sequence_number)
     /// - [`application_transaction_counter`](crate::types::builders::SessionKeyMastercardBuilder::application_transaction_counter)
     /// - [`unpredictable_number`](crate::types::builders::SessionKeyMastercardBuilder::unpredictable_number)
-    pub fn build(self) -> ::std::result::Result<crate::types::SessionKeyMastercard, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SessionKeyMastercard, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SessionKeyMastercard {
             primary_account_number: self.primary_account_number.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "primary_account_number",
                     "primary_account_number was not specified but it is required when building SessionKeyMastercard",
                 )
             })?,
             pan_sequence_number: self.pan_sequence_number.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "pan_sequence_number",
                     "pan_sequence_number was not specified but it is required when building SessionKeyMastercard",
                 )
             })?,
             application_transaction_counter: self.application_transaction_counter.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "application_transaction_counter",
                     "application_transaction_counter was not specified but it is required when building SessionKeyMastercard",
                 )
             })?,
             unpredictable_number: self.unpredictable_number.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "unpredictable_number",
                     "unpredictable_number was not specified but it is required when building SessionKeyMastercard",
                 )

@@ -100,7 +100,7 @@ impl UpdateAclInputBuilder {
         &self.user_names_to_remove
     }
     /// Consumes the builder and constructs a [`UpdateAclInput`](crate::operation::update_acl::UpdateAclInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_acl::UpdateAclInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_acl::UpdateAclInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_acl::UpdateAclInput {
             acl_name: self.acl_name,
             user_names_to_add: self.user_names_to_add,

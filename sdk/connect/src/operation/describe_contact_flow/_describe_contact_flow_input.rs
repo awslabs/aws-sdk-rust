@@ -66,7 +66,7 @@ impl DescribeContactFlowInputBuilder {
     /// Consumes the builder and constructs a [`DescribeContactFlowInput`](crate::operation::describe_contact_flow::DescribeContactFlowInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_contact_flow::DescribeContactFlowInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_contact_flow::DescribeContactFlowInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_contact_flow::DescribeContactFlowInput {
             instance_id: self.instance_id,

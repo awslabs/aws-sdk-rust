@@ -46,7 +46,7 @@ impl StopSourceNetworkReplicationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_source_network_replication::StopSourceNetworkReplicationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::stop_source_network_replication::StopSourceNetworkReplicationInput {
             source_network_id: self.source_network_id,

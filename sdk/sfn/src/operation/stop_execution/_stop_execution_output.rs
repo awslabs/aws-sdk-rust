@@ -62,10 +62,10 @@ impl StopExecutionOutputBuilder {
     /// - [`stop_date`](crate::operation::stop_execution::builders::StopExecutionOutputBuilder::stop_date)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_execution::StopExecutionOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::stop_execution::StopExecutionOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_execution::StopExecutionOutput {
             stop_date: self.stop_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "stop_date",
                     "stop_date was not specified but it is required when building StopExecutionOutput",
                 )

@@ -15,7 +15,7 @@ pub struct UploadMultipartPartInput {
     /// <p>Identifies the range of bytes in the assembled archive that will be uploaded in this part. Amazon S3 Glacier uses this information to assemble the archive in the proper sequence. The format of this header follows RFC 2616. An example header is Content-Range:bytes 0-4194303/*.</p>
     pub range: ::std::option::Option<::std::string::String>,
     /// <p>The data to upload.</p>
-    pub body: ::aws_smithy_http::byte_stream::ByteStream,
+    pub body: ::aws_smithy_types::byte_stream::ByteStream,
 }
 impl UploadMultipartPartInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
@@ -39,7 +39,7 @@ impl UploadMultipartPartInput {
         self.range.as_deref()
     }
     /// <p>The data to upload.</p>
-    pub fn body(&self) -> &::aws_smithy_http::byte_stream::ByteStream {
+    pub fn body(&self) -> &::aws_smithy_types::byte_stream::ByteStream {
         &self.body
     }
 }
@@ -64,7 +64,7 @@ pub struct UploadMultipartPartInputBuilder {
     pub(crate) upload_id: ::std::option::Option<::std::string::String>,
     pub(crate) checksum: ::std::option::Option<::std::string::String>,
     pub(crate) range: ::std::option::Option<::std::string::String>,
-    pub(crate) body: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
+    pub(crate) body: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>,
 }
 impl UploadMultipartPartInputBuilder {
     /// <p>The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </p>
@@ -141,23 +141,23 @@ impl UploadMultipartPartInputBuilder {
         &self.range
     }
     /// <p>The data to upload.</p>
-    pub fn body(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
+    pub fn body(mut self, input: ::aws_smithy_types::byte_stream::ByteStream) -> Self {
         self.body = ::std::option::Option::Some(input);
         self
     }
     /// <p>The data to upload.</p>
-    pub fn set_body(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
+    pub fn set_body(mut self, input: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>) -> Self {
         self.body = input;
         self
     }
     /// <p>The data to upload.</p>
-    pub fn get_body(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+    pub fn get_body(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
         &self.body
     }
     /// Consumes the builder and constructs a [`UploadMultipartPartInput`](crate::operation::upload_multipart_part::UploadMultipartPartInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::upload_multipart_part::UploadMultipartPartInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::upload_multipart_part::UploadMultipartPartInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::upload_multipart_part::UploadMultipartPartInput {
             account_id: self.account_id,

@@ -84,16 +84,16 @@ impl CancelJobOutputBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`job_arn`](crate::operation::cancel_job::builders::CancelJobOutputBuilder::job_arn)
     /// - [`cancellation_status`](crate::operation::cancel_job::builders::CancelJobOutputBuilder::cancellation_status)
-    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_job::CancelJobOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_job::CancelJobOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::cancel_job::CancelJobOutput {
             job_arn: self.job_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "job_arn",
                     "job_arn was not specified but it is required when building CancelJobOutput",
                 )
             })?,
             cancellation_status: self.cancellation_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "cancellation_status",
                     "cancellation_status was not specified but it is required when building CancelJobOutput",
                 )

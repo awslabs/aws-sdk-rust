@@ -100,22 +100,22 @@ impl DashboardVisualIdBuilder {
     /// - [`dashboard_id`](crate::types::builders::DashboardVisualIdBuilder::dashboard_id)
     /// - [`sheet_id`](crate::types::builders::DashboardVisualIdBuilder::sheet_id)
     /// - [`visual_id`](crate::types::builders::DashboardVisualIdBuilder::visual_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::DashboardVisualId, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DashboardVisualId, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DashboardVisualId {
             dashboard_id: self.dashboard_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "dashboard_id",
                     "dashboard_id was not specified but it is required when building DashboardVisualId",
                 )
             })?,
             sheet_id: self.sheet_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "sheet_id",
                     "sheet_id was not specified but it is required when building DashboardVisualId",
                 )
             })?,
             visual_id: self.visual_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "visual_id",
                     "visual_id was not specified but it is required when building DashboardVisualId",
                 )

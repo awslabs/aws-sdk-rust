@@ -194,22 +194,22 @@ impl CustomOriginConfigBuilder {
     /// - [`http_port`](crate::types::builders::CustomOriginConfigBuilder::http_port)
     /// - [`https_port`](crate::types::builders::CustomOriginConfigBuilder::https_port)
     /// - [`origin_protocol_policy`](crate::types::builders::CustomOriginConfigBuilder::origin_protocol_policy)
-    pub fn build(self) -> ::std::result::Result<crate::types::CustomOriginConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CustomOriginConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CustomOriginConfig {
             http_port: self.http_port.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "http_port",
                     "http_port was not specified but it is required when building CustomOriginConfig",
                 )
             })?,
             https_port: self.https_port.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "https_port",
                     "https_port was not specified but it is required when building CustomOriginConfig",
                 )
             })?,
             origin_protocol_policy: self.origin_protocol_policy.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "origin_protocol_policy",
                     "origin_protocol_policy was not specified but it is required when building CustomOriginConfig",
                 )

@@ -89,10 +89,10 @@ impl ListFieldOptionsOutputBuilder {
     /// - [`options`](crate::operation::list_field_options::builders::ListFieldOptionsOutputBuilder::options)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_field_options::ListFieldOptionsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_field_options::ListFieldOptionsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_field_options::ListFieldOptionsOutput {
             options: self.options.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "options",
                     "options was not specified but it is required when building ListFieldOptionsOutput",
                 )

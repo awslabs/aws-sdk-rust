@@ -43,7 +43,7 @@ impl SendInvitationInputBuilder {
     /// Consumes the builder and constructs a [`SendInvitationInput`](crate::operation::send_invitation::SendInvitationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::send_invitation::SendInvitationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::send_invitation::SendInvitationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::send_invitation::SendInvitationInput { user_arn: self.user_arn })
     }
 }

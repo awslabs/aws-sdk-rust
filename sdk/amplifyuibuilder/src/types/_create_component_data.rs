@@ -376,42 +376,42 @@ impl CreateComponentDataBuilder {
     /// - [`variants`](crate::types::builders::CreateComponentDataBuilder::variants)
     /// - [`overrides`](crate::types::builders::CreateComponentDataBuilder::overrides)
     /// - [`binding_properties`](crate::types::builders::CreateComponentDataBuilder::binding_properties)
-    pub fn build(self) -> ::std::result::Result<crate::types::CreateComponentData, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CreateComponentData, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CreateComponentData {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building CreateComponentData",
                 )
             })?,
             source_id: self.source_id,
             component_type: self.component_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "component_type",
                     "component_type was not specified but it is required when building CreateComponentData",
                 )
             })?,
             properties: self.properties.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "properties",
                     "properties was not specified but it is required when building CreateComponentData",
                 )
             })?,
             children: self.children,
             variants: self.variants.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "variants",
                     "variants was not specified but it is required when building CreateComponentData",
                 )
             })?,
             overrides: self.overrides.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "overrides",
                     "overrides was not specified but it is required when building CreateComponentData",
                 )
             })?,
             binding_properties: self.binding_properties.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "binding_properties",
                     "binding_properties was not specified but it is required when building CreateComponentData",
                 )

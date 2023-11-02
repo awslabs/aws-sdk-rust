@@ -127,12 +127,12 @@ pub fn de_get_delete_events_by_event_type_status_http_response(
 
 pub fn ser_get_delete_events_by_event_type_status_input(
     input: &crate::operation::get_delete_events_by_event_type_status::GetDeleteEventsByEventTypeStatusInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_get_delete_events_by_event_type_status_input::ser_get_delete_events_by_event_type_status_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_get_delete_events_by_event_type_status(

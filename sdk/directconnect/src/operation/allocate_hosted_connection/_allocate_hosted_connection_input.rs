@@ -163,7 +163,7 @@ impl AllocateHostedConnectionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::allocate_hosted_connection::AllocateHostedConnectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::allocate_hosted_connection::AllocateHostedConnectionInput {
             connection_id: self.connection_id,

@@ -44,7 +44,7 @@ impl DeleteRecommenderInputBuilder {
     /// Consumes the builder and constructs a [`DeleteRecommenderInput`](crate::operation::delete_recommender::DeleteRecommenderInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_recommender::DeleteRecommenderInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_recommender::DeleteRecommenderInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_recommender::DeleteRecommenderInput {
             recommender_arn: self.recommender_arn,
         })

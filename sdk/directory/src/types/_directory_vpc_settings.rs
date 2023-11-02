@@ -75,16 +75,16 @@ impl DirectoryVpcSettingsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`vpc_id`](crate::types::builders::DirectoryVpcSettingsBuilder::vpc_id)
     /// - [`subnet_ids`](crate::types::builders::DirectoryVpcSettingsBuilder::subnet_ids)
-    pub fn build(self) -> ::std::result::Result<crate::types::DirectoryVpcSettings, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DirectoryVpcSettings, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DirectoryVpcSettings {
             vpc_id: self.vpc_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "vpc_id",
                     "vpc_id was not specified but it is required when building DirectoryVpcSettings",
                 )
             })?,
             subnet_ids: self.subnet_ids.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "subnet_ids",
                     "subnet_ids was not specified but it is required when building DirectoryVpcSettings",
                 )

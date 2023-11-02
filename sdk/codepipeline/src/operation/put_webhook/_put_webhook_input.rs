@@ -71,7 +71,7 @@ impl PutWebhookInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`PutWebhookInput`](crate::operation::put_webhook::PutWebhookInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_webhook::PutWebhookInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_webhook::PutWebhookInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_webhook::PutWebhookInput {
             webhook: self.webhook,
             tags: self.tags,

@@ -97,22 +97,22 @@ impl FilterBuilder {
     /// - [`behavior`](crate::types::builders::FilterBuilder::behavior)
     /// - [`requirement`](crate::types::builders::FilterBuilder::requirement)
     /// - [`conditions`](crate::types::builders::FilterBuilder::conditions)
-    pub fn build(self) -> ::std::result::Result<crate::types::Filter, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Filter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Filter {
             behavior: self.behavior.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "behavior",
                     "behavior was not specified but it is required when building Filter",
                 )
             })?,
             requirement: self.requirement.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "requirement",
                     "requirement was not specified but it is required when building Filter",
                 )
             })?,
             conditions: self.conditions.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "conditions",
                     "conditions was not specified but it is required when building Filter",
                 )

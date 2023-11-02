@@ -305,7 +305,7 @@ impl CreateTrialComponentInputBuilder {
     /// Consumes the builder and constructs a [`CreateTrialComponentInput`](crate::operation::create_trial_component::CreateTrialComponentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_trial_component::CreateTrialComponentInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_trial_component::CreateTrialComponentInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_trial_component::CreateTrialComponentInput {
             trial_component_name: self.trial_component_name,

@@ -108,7 +108,9 @@ impl AttachObjectInputBuilder {
         &self.link_name
     }
     /// Consumes the builder and constructs a [`AttachObjectInput`](crate::operation::attach_object::AttachObjectInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::attach_object::AttachObjectInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::attach_object::AttachObjectInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::attach_object::AttachObjectInput {
             directory_arn: self.directory_arn,
             parent_reference: self.parent_reference,

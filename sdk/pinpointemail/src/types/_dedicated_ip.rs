@@ -134,22 +134,22 @@ impl DedicatedIpBuilder {
     /// - [`ip`](crate::types::builders::DedicatedIpBuilder::ip)
     /// - [`warmup_status`](crate::types::builders::DedicatedIpBuilder::warmup_status)
     /// - [`warmup_percentage`](crate::types::builders::DedicatedIpBuilder::warmup_percentage)
-    pub fn build(self) -> ::std::result::Result<crate::types::DedicatedIp, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DedicatedIp, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DedicatedIp {
             ip: self.ip.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "ip",
                     "ip was not specified but it is required when building DedicatedIp",
                 )
             })?,
             warmup_status: self.warmup_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "warmup_status",
                     "warmup_status was not specified but it is required when building DedicatedIp",
                 )
             })?,
             warmup_percentage: self.warmup_percentage.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "warmup_percentage",
                     "warmup_percentage was not specified but it is required when building DedicatedIp",
                 )

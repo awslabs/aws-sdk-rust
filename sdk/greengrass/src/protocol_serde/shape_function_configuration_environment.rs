@@ -2,7 +2,7 @@
 pub fn ser_function_configuration_environment(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FunctionConfigurationEnvironment,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.access_sysfs {
         object.key("AccessSysfs").boolean(*var_1);
     }

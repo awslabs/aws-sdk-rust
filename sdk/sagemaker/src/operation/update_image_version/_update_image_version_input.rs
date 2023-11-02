@@ -366,7 +366,8 @@ impl UpdateImageVersionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateImageVersionInput`](crate::operation::update_image_version::UpdateImageVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_image_version::UpdateImageVersionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_image_version::UpdateImageVersionInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::update_image_version::UpdateImageVersionInput {
             image_name: self.image_name,
             alias: self.alias,

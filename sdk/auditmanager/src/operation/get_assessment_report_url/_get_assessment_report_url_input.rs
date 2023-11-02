@@ -68,7 +68,7 @@ impl GetAssessmentReportUrlInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_assessment_report_url::GetAssessmentReportUrlInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_assessment_report_url::GetAssessmentReportUrlInput {
             assessment_report_id: self.assessment_report_id,

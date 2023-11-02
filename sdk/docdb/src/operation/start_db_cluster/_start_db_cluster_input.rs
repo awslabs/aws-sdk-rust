@@ -44,7 +44,7 @@ impl StartDbClusterInputBuilder {
     /// Consumes the builder and constructs a [`StartDbClusterInput`](crate::operation::start_db_cluster::StartDbClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_db_cluster::StartDbClusterInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_db_cluster::StartDbClusterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_db_cluster::StartDbClusterInput {
             db_cluster_identifier: self.db_cluster_identifier,
         })

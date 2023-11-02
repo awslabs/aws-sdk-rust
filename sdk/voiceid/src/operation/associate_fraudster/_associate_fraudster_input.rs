@@ -97,7 +97,7 @@ impl AssociateFraudsterInputBuilder {
     /// Consumes the builder and constructs a [`AssociateFraudsterInput`](crate::operation::associate_fraudster::AssociateFraudsterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::associate_fraudster::AssociateFraudsterInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::associate_fraudster::AssociateFraudsterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::associate_fraudster::AssociateFraudsterInput {
             domain_id: self.domain_id,
             watchlist_id: self.watchlist_id,

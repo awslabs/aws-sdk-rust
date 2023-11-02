@@ -66,7 +66,7 @@ impl ModifyClusterInputBuilder {
     /// Consumes the builder and constructs a [`ModifyClusterInput`](crate::operation::modify_cluster::ModifyClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::modify_cluster::ModifyClusterInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::modify_cluster::ModifyClusterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::modify_cluster::ModifyClusterInput {
             backup_retention_policy: self.backup_retention_policy,
             cluster_id: self.cluster_id,

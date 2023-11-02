@@ -159,17 +159,17 @@ impl TranslateDocumentOutputBuilder {
     /// - [`target_language_code`](crate::operation::translate_document::builders::TranslateDocumentOutputBuilder::target_language_code)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::translate_document::TranslateDocumentOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::translate_document::TranslateDocumentOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::translate_document::TranslateDocumentOutput {
             translated_document: self.translated_document,
             source_language_code: self.source_language_code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source_language_code",
                     "source_language_code was not specified but it is required when building TranslateDocumentOutput",
                 )
             })?,
             target_language_code: self.target_language_code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "target_language_code",
                     "target_language_code was not specified but it is required when building TranslateDocumentOutput",
                 )

@@ -98,7 +98,7 @@ impl CreateWorkerConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_worker_configuration::CreateWorkerConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_worker_configuration::CreateWorkerConfigurationInput {
             description: self.description,

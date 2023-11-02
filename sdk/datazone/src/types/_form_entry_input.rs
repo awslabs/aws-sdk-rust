@@ -91,16 +91,16 @@ impl FormEntryInputBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`type_identifier`](crate::types::builders::FormEntryInputBuilder::type_identifier)
     /// - [`type_revision`](crate::types::builders::FormEntryInputBuilder::type_revision)
-    pub fn build(self) -> ::std::result::Result<crate::types::FormEntryInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::FormEntryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FormEntryInput {
             type_identifier: self.type_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "type_identifier",
                     "type_identifier was not specified but it is required when building FormEntryInput",
                 )
             })?,
             type_revision: self.type_revision.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "type_revision",
                     "type_revision was not specified but it is required when building FormEntryInput",
                 )

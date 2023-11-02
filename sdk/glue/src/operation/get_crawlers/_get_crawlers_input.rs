@@ -62,7 +62,7 @@ impl GetCrawlersInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`GetCrawlersInput`](crate::operation::get_crawlers::GetCrawlersInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_crawlers::GetCrawlersInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_crawlers::GetCrawlersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_crawlers::GetCrawlersInput {
             max_results: self.max_results,
             next_token: self.next_token,

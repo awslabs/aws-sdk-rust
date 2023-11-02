@@ -217,7 +217,7 @@ impl CreateImageInputBuilder {
         &self.image_scanning_configuration
     }
     /// Consumes the builder and constructs a [`CreateImageInput`](crate::operation::create_image::CreateImageInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_image::CreateImageInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_image::CreateImageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_image::CreateImageInput {
             image_recipe_arn: self.image_recipe_arn,
             container_recipe_arn: self.container_recipe_arn,

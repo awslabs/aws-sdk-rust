@@ -2,7 +2,7 @@
 pub fn ser_set_data_retrieval_policy_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::set_data_retrieval_policy::SetDataRetrievalPolicyInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.policy {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Policy").start_object();

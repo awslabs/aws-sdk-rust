@@ -190,40 +190,40 @@ impl ListEarthObservationJobOutputConfigBuilder {
     /// - [`duration_in_seconds`](crate::types::builders::ListEarthObservationJobOutputConfigBuilder::duration_in_seconds)
     /// - [`status`](crate::types::builders::ListEarthObservationJobOutputConfigBuilder::status)
     /// - [`operation_type`](crate::types::builders::ListEarthObservationJobOutputConfigBuilder::operation_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::ListEarthObservationJobOutputConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ListEarthObservationJobOutputConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ListEarthObservationJobOutputConfig {
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building ListEarthObservationJobOutputConfig",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building ListEarthObservationJobOutputConfig",
                 )
             })?,
             creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_time",
                     "creation_time was not specified but it is required when building ListEarthObservationJobOutputConfig",
                 )
             })?,
             duration_in_seconds: self.duration_in_seconds.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "duration_in_seconds",
                     "duration_in_seconds was not specified but it is required when building ListEarthObservationJobOutputConfig",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building ListEarthObservationJobOutputConfig",
                 )
             })?,
             operation_type: self.operation_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "operation_type",
                     "operation_type was not specified but it is required when building ListEarthObservationJobOutputConfig",
                 )

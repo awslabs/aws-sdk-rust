@@ -89,18 +89,18 @@ impl AssociateUserAccessLoggingSettingsOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_user_access_logging_settings::AssociateUserAccessLoggingSettingsOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::associate_user_access_logging_settings::AssociateUserAccessLoggingSettingsOutput {
                 portal_arn: self.portal_arn
                     .ok_or_else(||
-                        ::aws_smithy_http::operation::error::BuildError::missing_field("portal_arn", "portal_arn was not specified but it is required when building AssociateUserAccessLoggingSettingsOutput")
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("portal_arn", "portal_arn was not specified but it is required when building AssociateUserAccessLoggingSettingsOutput")
                     )?
                 ,
                 user_access_logging_settings_arn: self.user_access_logging_settings_arn
                     .ok_or_else(||
-                        ::aws_smithy_http::operation::error::BuildError::missing_field("user_access_logging_settings_arn", "user_access_logging_settings_arn was not specified but it is required when building AssociateUserAccessLoggingSettingsOutput")
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("user_access_logging_settings_arn", "user_access_logging_settings_arn was not specified but it is required when building AssociateUserAccessLoggingSettingsOutput")
                     )?
                 ,
                 _request_id: self._request_id,

@@ -97,10 +97,11 @@ impl GetRecommendationsOutputBuilder {
     /// - [`recommendations`](crate::operation::get_recommendations::builders::GetRecommendationsOutputBuilder::recommendations)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_recommendations::GetRecommendationsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_recommendations::GetRecommendationsOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::get_recommendations::GetRecommendationsOutput {
             recommendations: self.recommendations.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "recommendations",
                     "recommendations was not specified but it is required when building GetRecommendationsOutput",
                 )

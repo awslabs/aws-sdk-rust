@@ -271,7 +271,7 @@ impl UpdateDestinationInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDestinationInput`](crate::operation::update_destination::UpdateDestinationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_destination::UpdateDestinationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_destination::UpdateDestinationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_destination::UpdateDestinationInput {
             delivery_stream_name: self.delivery_stream_name,
             current_delivery_stream_version_id: self.current_delivery_stream_version_id,

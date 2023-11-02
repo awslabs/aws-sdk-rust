@@ -555,71 +555,71 @@ impl GetEnvironmentOutputBuilder {
     /// - [`creation_time`](crate::operation::get_environment::builders::GetEnvironmentOutputBuilder::creation_time)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_environment::GetEnvironmentOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_environment::GetEnvironmentOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_environment::GetEnvironmentOutput {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building GetEnvironmentOutput",
                 )
             })?,
             description: self.description,
             environment_arn: self.environment_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "environment_arn",
                     "environment_arn was not specified but it is required when building GetEnvironmentOutput",
                 )
             })?,
             environment_id: self.environment_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "environment_id",
                     "environment_id was not specified but it is required when building GetEnvironmentOutput",
                 )
             })?,
             instance_type: self.instance_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "instance_type",
                     "instance_type was not specified but it is required when building GetEnvironmentOutput",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building GetEnvironmentOutput",
                 )
             })?,
             engine_type: self.engine_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "engine_type",
                     "engine_type was not specified but it is required when building GetEnvironmentOutput",
                 )
             })?,
             engine_version: self.engine_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "engine_version",
                     "engine_version was not specified but it is required when building GetEnvironmentOutput",
                 )
             })?,
             vpc_id: self.vpc_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "vpc_id",
                     "vpc_id was not specified but it is required when building GetEnvironmentOutput",
                 )
             })?,
             subnet_ids: self.subnet_ids.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "subnet_ids",
                     "subnet_ids was not specified but it is required when building GetEnvironmentOutput",
                 )
             })?,
             security_group_ids: self.security_group_ids.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "security_group_ids",
                     "security_group_ids was not specified but it is required when building GetEnvironmentOutput",
                 )
             })?,
             creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_time",
                     "creation_time was not specified but it is required when building GetEnvironmentOutput",
                 )

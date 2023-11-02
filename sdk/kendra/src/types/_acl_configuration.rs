@@ -46,10 +46,10 @@ impl AclConfigurationBuilder {
     /// Consumes the builder and constructs a [`AclConfiguration`](crate::types::AclConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`allowed_groups_column_name`](crate::types::builders::AclConfigurationBuilder::allowed_groups_column_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::AclConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AclConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AclConfiguration {
             allowed_groups_column_name: self.allowed_groups_column_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "allowed_groups_column_name",
                     "allowed_groups_column_name was not specified but it is required when building AclConfiguration",
                 )

@@ -133,10 +133,10 @@ impl IdentityProviderConfigurationBuilder {
     /// Consumes the builder and constructs a [`IdentityProviderConfiguration`](crate::types::IdentityProviderConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`authorization_strategy`](crate::types::builders::IdentityProviderConfigurationBuilder::authorization_strategy)
-    pub fn build(self) -> ::std::result::Result<crate::types::IdentityProviderConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::IdentityProviderConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::IdentityProviderConfiguration {
             authorization_strategy: self.authorization_strategy.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "authorization_strategy",
                     "authorization_strategy was not specified but it is required when building IdentityProviderConfiguration",
                 )

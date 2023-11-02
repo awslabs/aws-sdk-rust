@@ -66,7 +66,8 @@ impl UpdateRuleMetadataInputBuilder {
     /// Consumes the builder and constructs a [`UpdateRuleMetadataInput`](crate::operation::update_rule_metadata::UpdateRuleMetadataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_rule_metadata::UpdateRuleMetadataInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_rule_metadata::UpdateRuleMetadataInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::update_rule_metadata::UpdateRuleMetadataInput {
             rule: self.rule,
             description: self.description,

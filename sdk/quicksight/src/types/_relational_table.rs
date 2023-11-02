@@ -141,10 +141,10 @@ impl RelationalTableBuilder {
     /// - [`data_source_arn`](crate::types::builders::RelationalTableBuilder::data_source_arn)
     /// - [`name`](crate::types::builders::RelationalTableBuilder::name)
     /// - [`input_columns`](crate::types::builders::RelationalTableBuilder::input_columns)
-    pub fn build(self) -> ::std::result::Result<crate::types::RelationalTable, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RelationalTable, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RelationalTable {
             data_source_arn: self.data_source_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_source_arn",
                     "data_source_arn was not specified but it is required when building RelationalTable",
                 )
@@ -152,13 +152,13 @@ impl RelationalTableBuilder {
             catalog: self.catalog,
             schema: self.schema,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building RelationalTable",
                 )
             })?,
             input_columns: self.input_columns.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "input_columns",
                     "input_columns was not specified but it is required when building RelationalTable",
                 )

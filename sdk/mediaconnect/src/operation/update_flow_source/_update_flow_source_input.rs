@@ -458,7 +458,7 @@ impl UpdateFlowSourceInputBuilder {
     /// Consumes the builder and constructs a [`UpdateFlowSourceInput`](crate::operation::update_flow_source::UpdateFlowSourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_flow_source::UpdateFlowSourceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_flow_source::UpdateFlowSourceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_flow_source::UpdateFlowSourceInput {
             decryption: self.decryption,
             description: self.description,

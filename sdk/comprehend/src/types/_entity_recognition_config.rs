@@ -51,10 +51,10 @@ impl EntityRecognitionConfigBuilder {
     /// Consumes the builder and constructs a [`EntityRecognitionConfig`](crate::types::EntityRecognitionConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`entity_types`](crate::types::builders::EntityRecognitionConfigBuilder::entity_types)
-    pub fn build(self) -> ::std::result::Result<crate::types::EntityRecognitionConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::EntityRecognitionConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EntityRecognitionConfig {
             entity_types: self.entity_types.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "entity_types",
                     "entity_types was not specified but it is required when building EntityRecognitionConfig",
                 )

@@ -176,7 +176,7 @@ impl SetSubnetsInputBuilder {
         &self.ip_address_type
     }
     /// Consumes the builder and constructs a [`SetSubnetsInput`](crate::operation::set_subnets::SetSubnetsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::set_subnets::SetSubnetsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::set_subnets::SetSubnetsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::set_subnets::SetSubnetsInput {
             load_balancer_arn: self.load_balancer_arn,
             subnets: self.subnets,

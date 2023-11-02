@@ -138,28 +138,28 @@ impl PublicKeySummaryBuilder {
     /// - [`name`](crate::types::builders::PublicKeySummaryBuilder::name)
     /// - [`created_time`](crate::types::builders::PublicKeySummaryBuilder::created_time)
     /// - [`encoded_key`](crate::types::builders::PublicKeySummaryBuilder::encoded_key)
-    pub fn build(self) -> ::std::result::Result<crate::types::PublicKeySummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PublicKeySummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PublicKeySummary {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building PublicKeySummary",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building PublicKeySummary",
                 )
             })?,
             created_time: self.created_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_time",
                     "created_time was not specified but it is required when building PublicKeySummary",
                 )
             })?,
             encoded_key: self.encoded_key.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "encoded_key",
                     "encoded_key was not specified but it is required when building PublicKeySummary",
                 )

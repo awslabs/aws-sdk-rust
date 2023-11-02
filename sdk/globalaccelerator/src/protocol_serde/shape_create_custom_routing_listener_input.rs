@@ -2,7 +2,7 @@
 pub fn ser_create_custom_routing_listener_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_custom_routing_listener::CreateCustomRoutingListenerInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.accelerator_arn {
         object.key("AcceleratorArn").string(var_1.as_str());
     }

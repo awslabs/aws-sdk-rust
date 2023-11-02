@@ -107,7 +107,7 @@ impl ListDetectorsInputBuilder {
     /// Consumes the builder and constructs a [`ListDetectorsInput`](crate::operation::list_detectors::ListDetectorsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_detectors::ListDetectorsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_detectors::ListDetectorsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_detectors::ListDetectorsInput {
             detector_model_name: self.detector_model_name,
             state_name: self.state_name,

@@ -2,7 +2,7 @@
 pub fn ser_batch_add_facet_to_object(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BatchAddFacetToObject,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.schema_facet {
         #[allow(unused_mut)]
         let mut object_2 = object.key("SchemaFacet").start_object();

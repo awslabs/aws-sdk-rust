@@ -85,7 +85,7 @@ impl ListSolutionVersionsInputBuilder {
     /// Consumes the builder and constructs a [`ListSolutionVersionsInput`](crate::operation::list_solution_versions::ListSolutionVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_solution_versions::ListSolutionVersionsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_solution_versions::ListSolutionVersionsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_solution_versions::ListSolutionVersionsInput {
             solution_arn: self.solution_arn,

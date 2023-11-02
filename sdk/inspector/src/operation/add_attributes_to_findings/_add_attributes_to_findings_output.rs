@@ -72,11 +72,11 @@ impl AddAttributesToFindingsOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_attributes_to_findings::AddAttributesToFindingsOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::add_attributes_to_findings::AddAttributesToFindingsOutput {
             failed_items: self.failed_items.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "failed_items",
                     "failed_items was not specified but it is required when building AddAttributesToFindingsOutput",
                 )

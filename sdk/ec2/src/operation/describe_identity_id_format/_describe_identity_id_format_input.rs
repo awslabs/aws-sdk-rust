@@ -67,7 +67,7 @@ impl DescribeIdentityIdFormatInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_identity_id_format::DescribeIdentityIdFormatInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_identity_id_format::DescribeIdentityIdFormatInput {
             principal_arn: self.principal_arn,

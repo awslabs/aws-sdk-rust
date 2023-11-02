@@ -105,16 +105,16 @@ impl ProxyConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`host`](crate::types::builders::ProxyConfigurationBuilder::host)
     /// - [`port`](crate::types::builders::ProxyConfigurationBuilder::port)
-    pub fn build(self) -> ::std::result::Result<crate::types::ProxyConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ProxyConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ProxyConfiguration {
             host: self.host.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "host",
                     "host was not specified but it is required when building ProxyConfiguration",
                 )
             })?,
             port: self.port.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "port",
                     "port was not specified but it is required when building ProxyConfiguration",
                 )

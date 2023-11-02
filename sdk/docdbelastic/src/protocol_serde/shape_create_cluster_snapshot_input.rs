@@ -2,7 +2,7 @@
 pub fn ser_create_cluster_snapshot_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_cluster_snapshot::CreateClusterSnapshotInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.cluster_arn {
         object.key("clusterArn").string(var_1.as_str());
     }

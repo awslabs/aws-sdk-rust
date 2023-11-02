@@ -177,22 +177,22 @@ impl SubscribedAssetBuilder {
     /// - [`asset_id`](crate::types::builders::SubscribedAssetBuilder::asset_id)
     /// - [`asset_revision`](crate::types::builders::SubscribedAssetBuilder::asset_revision)
     /// - [`status`](crate::types::builders::SubscribedAssetBuilder::status)
-    pub fn build(self) -> ::std::result::Result<crate::types::SubscribedAsset, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SubscribedAsset, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SubscribedAsset {
             asset_id: self.asset_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "asset_id",
                     "asset_id was not specified but it is required when building SubscribedAsset",
                 )
             })?,
             asset_revision: self.asset_revision.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "asset_revision",
                     "asset_revision was not specified but it is required when building SubscribedAsset",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building SubscribedAsset",
                 )

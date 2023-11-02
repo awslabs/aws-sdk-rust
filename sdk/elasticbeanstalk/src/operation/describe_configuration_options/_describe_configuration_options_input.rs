@@ -159,7 +159,7 @@ impl DescribeConfigurationOptionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_configuration_options::DescribeConfigurationOptionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_configuration_options::DescribeConfigurationOptionsInput {
             application_name: self.application_name,

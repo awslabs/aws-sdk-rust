@@ -87,7 +87,8 @@ impl RegisterMailDomainInputBuilder {
     /// Consumes the builder and constructs a [`RegisterMailDomainInput`](crate::operation::register_mail_domain::RegisterMailDomainInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::register_mail_domain::RegisterMailDomainInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::register_mail_domain::RegisterMailDomainInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::register_mail_domain::RegisterMailDomainInput {
             client_token: self.client_token,
             organization_id: self.organization_id,

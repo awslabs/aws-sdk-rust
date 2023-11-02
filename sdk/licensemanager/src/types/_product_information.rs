@@ -163,16 +163,16 @@ impl ProductInformationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`resource_type`](crate::types::builders::ProductInformationBuilder::resource_type)
     /// - [`product_information_filter_list`](crate::types::builders::ProductInformationBuilder::product_information_filter_list)
-    pub fn build(self) -> ::std::result::Result<crate::types::ProductInformation, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ProductInformation, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ProductInformation {
             resource_type: self.resource_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_type",
                     "resource_type was not specified but it is required when building ProductInformation",
                 )
             })?,
             product_information_filter_list: self.product_information_filter_list.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "product_information_filter_list",
                     "product_information_filter_list was not specified but it is required when building ProductInformation",
                 )

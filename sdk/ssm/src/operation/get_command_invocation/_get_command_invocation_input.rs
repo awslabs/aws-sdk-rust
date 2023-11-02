@@ -92,7 +92,7 @@ impl GetCommandInvocationInputBuilder {
     /// Consumes the builder and constructs a [`GetCommandInvocationInput`](crate::operation::get_command_invocation::GetCommandInvocationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_command_invocation::GetCommandInvocationInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_command_invocation::GetCommandInvocationInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_command_invocation::GetCommandInvocationInput {
             command_id: self.command_id,

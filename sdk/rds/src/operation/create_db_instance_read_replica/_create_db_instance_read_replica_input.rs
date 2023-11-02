@@ -1719,7 +1719,7 @@ impl CreateDbInstanceReadReplicaInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_db_instance_read_replica::CreateDbInstanceReadReplicaInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_db_instance_read_replica::CreateDbInstanceReadReplicaInput {
             db_instance_identifier: self.db_instance_identifier,

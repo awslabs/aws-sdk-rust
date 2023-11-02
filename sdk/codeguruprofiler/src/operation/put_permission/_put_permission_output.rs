@@ -88,16 +88,16 @@ impl PutPermissionOutputBuilder {
     /// - [`revision_id`](crate::operation::put_permission::builders::PutPermissionOutputBuilder::revision_id)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_permission::PutPermissionOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_permission::PutPermissionOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_permission::PutPermissionOutput {
             policy: self.policy.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "policy",
                     "policy was not specified but it is required when building PutPermissionOutput",
                 )
             })?,
             revision_id: self.revision_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "revision_id",
                     "revision_id was not specified but it is required when building PutPermissionOutput",
                 )

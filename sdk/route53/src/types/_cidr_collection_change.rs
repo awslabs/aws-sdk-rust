@@ -98,22 +98,22 @@ impl CidrCollectionChangeBuilder {
     /// - [`location_name`](crate::types::builders::CidrCollectionChangeBuilder::location_name)
     /// - [`action`](crate::types::builders::CidrCollectionChangeBuilder::action)
     /// - [`cidr_list`](crate::types::builders::CidrCollectionChangeBuilder::cidr_list)
-    pub fn build(self) -> ::std::result::Result<crate::types::CidrCollectionChange, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CidrCollectionChange, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CidrCollectionChange {
             location_name: self.location_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "location_name",
                     "location_name was not specified but it is required when building CidrCollectionChange",
                 )
             })?,
             action: self.action.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "action",
                     "action was not specified but it is required when building CidrCollectionChange",
                 )
             })?,
             cidr_list: self.cidr_list.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "cidr_list",
                     "cidr_list was not specified but it is required when building CidrCollectionChange",
                 )

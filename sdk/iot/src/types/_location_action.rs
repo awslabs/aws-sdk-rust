@@ -163,35 +163,35 @@ impl LocationActionBuilder {
     /// - [`device_id`](crate::types::builders::LocationActionBuilder::device_id)
     /// - [`latitude`](crate::types::builders::LocationActionBuilder::latitude)
     /// - [`longitude`](crate::types::builders::LocationActionBuilder::longitude)
-    pub fn build(self) -> ::std::result::Result<crate::types::LocationAction, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::LocationAction, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::LocationAction {
             role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role_arn",
                     "role_arn was not specified but it is required when building LocationAction",
                 )
             })?,
             tracker_name: self.tracker_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "tracker_name",
                     "tracker_name was not specified but it is required when building LocationAction",
                 )
             })?,
             device_id: self.device_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "device_id",
                     "device_id was not specified but it is required when building LocationAction",
                 )
             })?,
             timestamp: self.timestamp,
             latitude: self.latitude.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "latitude",
                     "latitude was not specified but it is required when building LocationAction",
                 )
             })?,
             longitude: self.longitude.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "longitude",
                     "longitude was not specified but it is required when building LocationAction",
                 )

@@ -109,10 +109,10 @@ impl AmiAggregationResponseBuilder {
     /// Consumes the builder and constructs a [`AmiAggregationResponse`](crate::types::AmiAggregationResponse).
     /// This method will fail if any of the following fields are not set:
     /// - [`ami`](crate::types::builders::AmiAggregationResponseBuilder::ami)
-    pub fn build(self) -> ::std::result::Result<crate::types::AmiAggregationResponse, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AmiAggregationResponse, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AmiAggregationResponse {
             ami: self.ami.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "ami",
                     "ami was not specified but it is required when building AmiAggregationResponse",
                 )

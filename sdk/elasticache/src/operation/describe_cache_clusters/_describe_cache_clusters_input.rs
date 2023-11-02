@@ -138,7 +138,7 @@ impl DescribeCacheClustersInputBuilder {
     /// Consumes the builder and constructs a [`DescribeCacheClustersInput`](crate::operation::describe_cache_clusters::DescribeCacheClustersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_cache_clusters::DescribeCacheClustersInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_cache_clusters::DescribeCacheClustersInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_cache_clusters::DescribeCacheClustersInput {
             cache_cluster_id: self.cache_cluster_id,

@@ -91,16 +91,16 @@ impl GrammarSlotTypeSourceBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`s3_bucket_name`](crate::types::builders::GrammarSlotTypeSourceBuilder::s3_bucket_name)
     /// - [`s3_object_key`](crate::types::builders::GrammarSlotTypeSourceBuilder::s3_object_key)
-    pub fn build(self) -> ::std::result::Result<crate::types::GrammarSlotTypeSource, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::GrammarSlotTypeSource, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::GrammarSlotTypeSource {
             s3_bucket_name: self.s3_bucket_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "s3_bucket_name",
                     "s3_bucket_name was not specified but it is required when building GrammarSlotTypeSource",
                 )
             })?,
             s3_object_key: self.s3_object_key.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "s3_object_key",
                     "s3_object_key was not specified but it is required when building GrammarSlotTypeSource",
                 )

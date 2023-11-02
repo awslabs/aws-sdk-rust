@@ -97,16 +97,16 @@ impl FulfillmentStartResponseSpecificationBuilder {
     /// - [`message_groups`](crate::types::builders::FulfillmentStartResponseSpecificationBuilder::message_groups)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::FulfillmentStartResponseSpecification, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::FulfillmentStartResponseSpecification, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FulfillmentStartResponseSpecification {
             delay_in_seconds: self.delay_in_seconds.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "delay_in_seconds",
                     "delay_in_seconds was not specified but it is required when building FulfillmentStartResponseSpecification",
                 )
             })?,
             message_groups: self.message_groups.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "message_groups",
                     "message_groups was not specified but it is required when building FulfillmentStartResponseSpecification",
                 )

@@ -44,7 +44,7 @@ impl DeleteOutpostInputBuilder {
     /// Consumes the builder and constructs a [`DeleteOutpostInput`](crate::operation::delete_outpost::DeleteOutpostInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_outpost::DeleteOutpostInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_outpost::DeleteOutpostInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_outpost::DeleteOutpostInput { outpost_id: self.outpost_id })
     }
 }

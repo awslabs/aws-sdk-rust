@@ -68,7 +68,7 @@ impl StartMlLabelingSetGenerationTaskRunInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_ml_labeling_set_generation_task_run::StartMlLabelingSetGenerationTaskRunInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::start_ml_labeling_set_generation_task_run::StartMlLabelingSetGenerationTaskRunInput {

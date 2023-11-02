@@ -69,16 +69,16 @@ impl RepositoryFilterBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`filter`](crate::types::builders::RepositoryFilterBuilder::filter)
     /// - [`filter_type`](crate::types::builders::RepositoryFilterBuilder::filter_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::RepositoryFilter, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RepositoryFilter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RepositoryFilter {
             filter: self.filter.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "filter",
                     "filter was not specified but it is required when building RepositoryFilter",
                 )
             })?,
             filter_type: self.filter_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "filter_type",
                     "filter_type was not specified but it is required when building RepositoryFilter",
                 )

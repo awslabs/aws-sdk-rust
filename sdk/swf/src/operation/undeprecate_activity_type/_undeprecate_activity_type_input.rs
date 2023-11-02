@@ -68,7 +68,7 @@ impl UndeprecateActivityTypeInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::undeprecate_activity_type::UndeprecateActivityTypeInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::undeprecate_activity_type::UndeprecateActivityTypeInput {
             domain: self.domain,

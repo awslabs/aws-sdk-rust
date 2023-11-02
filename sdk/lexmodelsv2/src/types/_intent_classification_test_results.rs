@@ -51,10 +51,10 @@ impl IntentClassificationTestResultsBuilder {
     /// Consumes the builder and constructs a [`IntentClassificationTestResults`](crate::types::IntentClassificationTestResults).
     /// This method will fail if any of the following fields are not set:
     /// - [`items`](crate::types::builders::IntentClassificationTestResultsBuilder::items)
-    pub fn build(self) -> ::std::result::Result<crate::types::IntentClassificationTestResults, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::IntentClassificationTestResults, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::IntentClassificationTestResults {
             items: self.items.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "items",
                     "items was not specified but it is required when building IntentClassificationTestResults",
                 )

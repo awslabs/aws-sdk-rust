@@ -83,7 +83,7 @@ impl UpdateClusterSettingsInputBuilder {
     /// Consumes the builder and constructs a [`UpdateClusterSettingsInput`](crate::operation::update_cluster_settings::UpdateClusterSettingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_cluster_settings::UpdateClusterSettingsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_cluster_settings::UpdateClusterSettingsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_cluster_settings::UpdateClusterSettingsInput {
             cluster: self.cluster,

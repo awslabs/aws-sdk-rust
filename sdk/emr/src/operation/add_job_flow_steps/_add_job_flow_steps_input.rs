@@ -100,7 +100,7 @@ impl AddJobFlowStepsInputBuilder {
     /// Consumes the builder and constructs a [`AddJobFlowStepsInput`](crate::operation::add_job_flow_steps::AddJobFlowStepsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::add_job_flow_steps::AddJobFlowStepsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::add_job_flow_steps::AddJobFlowStepsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::add_job_flow_steps::AddJobFlowStepsInput {
             job_flow_id: self.job_flow_id,
             steps: self.steps,

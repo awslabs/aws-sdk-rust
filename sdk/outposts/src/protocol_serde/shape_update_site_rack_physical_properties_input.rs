@@ -2,7 +2,7 @@
 pub fn ser_update_site_rack_physical_properties_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_site_rack_physical_properties::UpdateSiteRackPhysicalPropertiesInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.fiber_optic_cable_type {
         object.key("FiberOpticCableType").string(var_1.as_str());
     }

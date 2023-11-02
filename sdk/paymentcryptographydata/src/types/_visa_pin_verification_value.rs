@@ -69,16 +69,16 @@ impl VisaPinVerificationValueBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`encrypted_pin_block`](crate::types::builders::VisaPinVerificationValueBuilder::encrypted_pin_block)
     /// - [`pin_verification_key_index`](crate::types::builders::VisaPinVerificationValueBuilder::pin_verification_key_index)
-    pub fn build(self) -> ::std::result::Result<crate::types::VisaPinVerificationValue, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::VisaPinVerificationValue, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::VisaPinVerificationValue {
             encrypted_pin_block: self.encrypted_pin_block.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "encrypted_pin_block",
                     "encrypted_pin_block was not specified but it is required when building VisaPinVerificationValue",
                 )
             })?,
             pin_verification_key_index: self.pin_verification_key_index.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "pin_verification_key_index",
                     "pin_verification_key_index was not specified but it is required when building VisaPinVerificationValue",
                 )

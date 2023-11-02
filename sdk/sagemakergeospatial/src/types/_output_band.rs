@@ -69,16 +69,16 @@ impl OutputBandBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`band_name`](crate::types::builders::OutputBandBuilder::band_name)
     /// - [`output_data_type`](crate::types::builders::OutputBandBuilder::output_data_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::OutputBand, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::OutputBand, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::OutputBand {
             band_name: self.band_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "band_name",
                     "band_name was not specified but it is required when building OutputBand",
                 )
             })?,
             output_data_type: self.output_data_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "output_data_type",
                     "output_data_type was not specified but it is required when building OutputBand",
                 )

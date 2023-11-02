@@ -2,7 +2,7 @@
 pub fn ser_datatype(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Datatype,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Id").string(input.id.as_str());
     }

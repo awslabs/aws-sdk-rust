@@ -2,7 +2,7 @@
 pub fn ser_subject_alternative_names(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SubjectAlternativeNames,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.r#match {
         #[allow(unused_mut)]
         let mut object_2 = object.key("match").start_object();

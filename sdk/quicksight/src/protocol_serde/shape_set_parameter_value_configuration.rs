@@ -2,7 +2,7 @@
 pub fn ser_set_parameter_value_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SetParameterValueConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("DestinationParameterName").string(input.destination_parameter_name.as_str());
     }

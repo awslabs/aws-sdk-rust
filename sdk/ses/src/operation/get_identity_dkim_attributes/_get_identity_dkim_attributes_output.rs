@@ -75,11 +75,11 @@ impl GetIdentityDkimAttributesOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_identity_dkim_attributes::GetIdentityDkimAttributesOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_identity_dkim_attributes::GetIdentityDkimAttributesOutput {
             dkim_attributes: self.dkim_attributes.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "dkim_attributes",
                     "dkim_attributes was not specified but it is required when building GetIdentityDkimAttributesOutput",
                 )

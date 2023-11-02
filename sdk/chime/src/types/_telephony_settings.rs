@@ -91,22 +91,22 @@ impl TelephonySettingsBuilder {
     /// - [`inbound_calling`](crate::types::builders::TelephonySettingsBuilder::inbound_calling)
     /// - [`outbound_calling`](crate::types::builders::TelephonySettingsBuilder::outbound_calling)
     /// - [`sms`](crate::types::builders::TelephonySettingsBuilder::sms)
-    pub fn build(self) -> ::std::result::Result<crate::types::TelephonySettings, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TelephonySettings, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TelephonySettings {
             inbound_calling: self.inbound_calling.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "inbound_calling",
                     "inbound_calling was not specified but it is required when building TelephonySettings",
                 )
             })?,
             outbound_calling: self.outbound_calling.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "outbound_calling",
                     "outbound_calling was not specified but it is required when building TelephonySettings",
                 )
             })?,
             sms: self.sms.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "sms",
                     "sms was not specified but it is required when building TelephonySettings",
                 )

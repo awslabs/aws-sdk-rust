@@ -71,7 +71,7 @@ impl CreateCollectionInputBuilder {
     /// Consumes the builder and constructs a [`CreateCollectionInput`](crate::operation::create_collection::CreateCollectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_collection::CreateCollectionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_collection::CreateCollectionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_collection::CreateCollectionInput {
             collection_id: self.collection_id,
             tags: self.tags,

@@ -97,22 +97,22 @@ impl LineItemFilterBuilder {
     /// - [`attribute`](crate::types::builders::LineItemFilterBuilder::attribute)
     /// - [`match_option`](crate::types::builders::LineItemFilterBuilder::match_option)
     /// - [`values`](crate::types::builders::LineItemFilterBuilder::values)
-    pub fn build(self) -> ::std::result::Result<crate::types::LineItemFilter, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::LineItemFilter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::LineItemFilter {
             attribute: self.attribute.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "attribute",
                     "attribute was not specified but it is required when building LineItemFilter",
                 )
             })?,
             match_option: self.match_option.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "match_option",
                     "match_option was not specified but it is required when building LineItemFilter",
                 )
             })?,
             values: self.values.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "values",
                     "values was not specified but it is required when building LineItemFilter",
                 )

@@ -105,12 +105,12 @@ impl SignUpOutputBuilder {
     /// Consumes the builder and constructs a [`SignUpOutput`](crate::operation::sign_up::SignUpOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`user_sub`](crate::operation::sign_up::builders::SignUpOutputBuilder::user_sub)
-    pub fn build(self) -> ::std::result::Result<crate::operation::sign_up::SignUpOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::sign_up::SignUpOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::sign_up::SignUpOutput {
             user_confirmed: self.user_confirmed.unwrap_or_default(),
             code_delivery_details: self.code_delivery_details,
             user_sub: self.user_sub.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "user_sub",
                     "user_sub was not specified but it is required when building SignUpOutput",
                 )

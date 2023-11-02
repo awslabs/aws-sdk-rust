@@ -51,7 +51,7 @@ impl UpdateDataLakeInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDataLakeInput`](crate::operation::update_data_lake::UpdateDataLakeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_data_lake::UpdateDataLakeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_data_lake::UpdateDataLakeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_data_lake::UpdateDataLakeInput {
             configurations: self.configurations,
         })

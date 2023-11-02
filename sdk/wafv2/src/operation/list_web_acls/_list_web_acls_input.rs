@@ -109,7 +109,7 @@ impl ListWebAcLsInputBuilder {
         &self.limit
     }
     /// Consumes the builder and constructs a [`ListWebAcLsInput`](crate::operation::list_web_acls::ListWebAcLsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_web_acls::ListWebAcLsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_web_acls::ListWebAcLsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_web_acls::ListWebAcLsInput {
             scope: self.scope,
             next_marker: self.next_marker,

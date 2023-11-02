@@ -91,14 +91,14 @@ pub fn de_get_object_attributes_http_response(
 pub fn ser_get_object_attributes_headers(
     input: &crate::operation::get_object_attributes::GetObjectAttributesInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.max_parts {
         let mut encoder = ::aws_smithy_types::primitive::Encoder::from(*inner_1);
         let formatted_2 = encoder.encode();
         if !formatted_2.is_empty() {
             let header_value = formatted_2;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "max_parts",
                     format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
@@ -111,7 +111,7 @@ pub fn ser_get_object_attributes_headers(
         if !formatted_4.is_empty() {
             let header_value = formatted_4;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "part_number_marker",
                     format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
@@ -124,7 +124,7 @@ pub fn ser_get_object_attributes_headers(
         if !formatted_6.is_empty() {
             let header_value = formatted_6;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "sse_customer_algorithm",
                     format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
@@ -137,7 +137,7 @@ pub fn ser_get_object_attributes_headers(
         if !formatted_8.is_empty() {
             let header_value = formatted_8;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "sse_customer_key",
                     format!("`{}` cannot be used as a header value: {}", &"*** Sensitive Data Redacted ***", err),
                 )
@@ -150,7 +150,7 @@ pub fn ser_get_object_attributes_headers(
         if !formatted_10.is_empty() {
             let header_value = formatted_10;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "sse_customer_key_md5",
                     format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
@@ -163,7 +163,7 @@ pub fn ser_get_object_attributes_headers(
         if !formatted_12.is_empty() {
             let header_value = formatted_12;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "request_payer",
                     format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
@@ -176,7 +176,7 @@ pub fn ser_get_object_attributes_headers(
         if !formatted_14.is_empty() {
             let header_value = formatted_14;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "expected_bucket_owner",
                     format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
@@ -190,7 +190,7 @@ pub fn ser_get_object_attributes_headers(
             if !formatted_17.is_empty() {
                 let header_value = formatted_17;
                 let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                    ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                    ::aws_smithy_types::error::operation::BuildError::invalid_field(
                         "object_attributes",
                         format!("`{}` cannot be used as a header value: {}", &header_value, err),
                     )

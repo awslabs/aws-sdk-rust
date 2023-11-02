@@ -106,7 +106,7 @@ impl StartTestInputBuilder {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`StartTestInput`](crate::operation::start_test::StartTestInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::start_test::StartTestInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_test::StartTestInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_test::StartTestInput {
             source_server_ids: self.source_server_ids,
             tags: self.tags,

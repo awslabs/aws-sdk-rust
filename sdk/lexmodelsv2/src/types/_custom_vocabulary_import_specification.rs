@@ -94,22 +94,22 @@ impl CustomVocabularyImportSpecificationBuilder {
     /// - [`bot_id`](crate::types::builders::CustomVocabularyImportSpecificationBuilder::bot_id)
     /// - [`bot_version`](crate::types::builders::CustomVocabularyImportSpecificationBuilder::bot_version)
     /// - [`locale_id`](crate::types::builders::CustomVocabularyImportSpecificationBuilder::locale_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::CustomVocabularyImportSpecification, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CustomVocabularyImportSpecification, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CustomVocabularyImportSpecification {
             bot_id: self.bot_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "bot_id",
                     "bot_id was not specified but it is required when building CustomVocabularyImportSpecification",
                 )
             })?,
             bot_version: self.bot_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "bot_version",
                     "bot_version was not specified but it is required when building CustomVocabularyImportSpecification",
                 )
             })?,
             locale_id: self.locale_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "locale_id",
                     "locale_id was not specified but it is required when building CustomVocabularyImportSpecification",
                 )

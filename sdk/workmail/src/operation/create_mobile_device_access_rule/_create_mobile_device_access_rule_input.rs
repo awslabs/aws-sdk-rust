@@ -364,7 +364,7 @@ impl CreateMobileDeviceAccessRuleInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_mobile_device_access_rule::CreateMobileDeviceAccessRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_mobile_device_access_rule::CreateMobileDeviceAccessRuleInput {
             organization_id: self.organization_id,

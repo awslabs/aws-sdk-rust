@@ -45,10 +45,10 @@ impl ActionSummaryBuilder {
     /// Consumes the builder and constructs a [`ActionSummary`](crate::types::ActionSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`action_type`](crate::types::builders::ActionSummaryBuilder::action_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::ActionSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ActionSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ActionSummary {
             action_type: self.action_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "action_type",
                     "action_type was not specified but it is required when building ActionSummary",
                 )

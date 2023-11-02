@@ -320,29 +320,29 @@ impl GetEntityOutputBuilder {
     /// - [`has_child_entities`](crate::operation::get_entity::builders::GetEntityOutputBuilder::has_child_entities)
     /// - [`creation_date_time`](crate::operation::get_entity::builders::GetEntityOutputBuilder::creation_date_time)
     /// - [`update_date_time`](crate::operation::get_entity::builders::GetEntityOutputBuilder::update_date_time)
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_entity::GetEntityOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_entity::GetEntityOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_entity::GetEntityOutput {
             entity_id: self.entity_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "entity_id",
                     "entity_id was not specified but it is required when building GetEntityOutput",
                 )
             })?,
             entity_name: self.entity_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "entity_name",
                     "entity_name was not specified but it is required when building GetEntityOutput",
                 )
             })?,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building GetEntityOutput",
                 )
             })?,
             status: self.status,
             workspace_id: self.workspace_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "workspace_id",
                     "workspace_id was not specified but it is required when building GetEntityOutput",
                 )
@@ -350,25 +350,25 @@ impl GetEntityOutputBuilder {
             description: self.description,
             components: self.components,
             parent_entity_id: self.parent_entity_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "parent_entity_id",
                     "parent_entity_id was not specified but it is required when building GetEntityOutput",
                 )
             })?,
             has_child_entities: self.has_child_entities.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "has_child_entities",
                     "has_child_entities was not specified but it is required when building GetEntityOutput",
                 )
             })?,
             creation_date_time: self.creation_date_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_date_time",
                     "creation_date_time was not specified but it is required when building GetEntityOutput",
                 )
             })?,
             update_date_time: self.update_date_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "update_date_time",
                     "update_date_time was not specified but it is required when building GetEntityOutput",
                 )

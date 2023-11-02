@@ -2,7 +2,7 @@
 pub fn ser_tag_cost_estimation_resource_collection_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TagCostEstimationResourceCollectionFilter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("AppBoundaryKey").string(input.app_boundary_key.as_str());
     }

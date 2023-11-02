@@ -93,7 +93,9 @@ impl EnterStandbyInputBuilder {
         &self.should_decrement_desired_capacity
     }
     /// Consumes the builder and constructs a [`EnterStandbyInput`](crate::operation::enter_standby::EnterStandbyInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::enter_standby::EnterStandbyInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::enter_standby::EnterStandbyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::enter_standby::EnterStandbyInput {
             instance_ids: self.instance_ids,
             auto_scaling_group_name: self.auto_scaling_group_name,

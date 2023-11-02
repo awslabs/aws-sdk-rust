@@ -65,7 +65,7 @@ impl DeleteAssetModelInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAssetModelInput`](crate::operation::delete_asset_model::DeleteAssetModelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_asset_model::DeleteAssetModelInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_asset_model::DeleteAssetModelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_asset_model::DeleteAssetModelInput {
             asset_model_id: self.asset_model_id,
             client_token: self.client_token,

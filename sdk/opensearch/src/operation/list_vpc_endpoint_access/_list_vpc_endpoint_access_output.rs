@@ -92,17 +92,19 @@ impl ListVpcEndpointAccessOutputBuilder {
     /// - [`next_token`](crate::operation::list_vpc_endpoint_access::builders::ListVpcEndpointAccessOutputBuilder::next_token)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_vpc_endpoint_access::ListVpcEndpointAccessOutput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::list_vpc_endpoint_access::ListVpcEndpointAccessOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::list_vpc_endpoint_access::ListVpcEndpointAccessOutput {
             authorized_principal_list: self.authorized_principal_list.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "authorized_principal_list",
                     "authorized_principal_list was not specified but it is required when building ListVpcEndpointAccessOutput",
                 )
             })?,
             next_token: self.next_token.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "next_token",
                     "next_token was not specified but it is required when building ListVpcEndpointAccessOutput",
                 )

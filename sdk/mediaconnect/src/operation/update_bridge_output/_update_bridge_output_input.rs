@@ -88,7 +88,8 @@ impl UpdateBridgeOutputInputBuilder {
     /// Consumes the builder and constructs a [`UpdateBridgeOutputInput`](crate::operation::update_bridge_output::UpdateBridgeOutputInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_bridge_output::UpdateBridgeOutputInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_bridge_output::UpdateBridgeOutputInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::update_bridge_output::UpdateBridgeOutputInput {
             bridge_arn: self.bridge_arn,
             network_output: self.network_output,

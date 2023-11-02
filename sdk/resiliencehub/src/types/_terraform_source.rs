@@ -46,10 +46,10 @@ impl TerraformSourceBuilder {
     /// Consumes the builder and constructs a [`TerraformSource`](crate::types::TerraformSource).
     /// This method will fail if any of the following fields are not set:
     /// - [`s3_state_file_url`](crate::types::builders::TerraformSourceBuilder::s3_state_file_url)
-    pub fn build(self) -> ::std::result::Result<crate::types::TerraformSource, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TerraformSource, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TerraformSource {
             s3_state_file_url: self.s3_state_file_url.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "s3_state_file_url",
                     "s3_state_file_url was not specified but it is required when building TerraformSource",
                 )

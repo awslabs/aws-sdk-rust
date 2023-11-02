@@ -158,7 +158,9 @@ impl StartSessionInputBuilder {
         &self.client_request_token
     }
     /// Consumes the builder and constructs a [`StartSessionInput`](crate::operation::start_session::StartSessionInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::start_session::StartSessionInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::start_session::StartSessionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_session::StartSessionInput {
             description: self.description,
             work_group: self.work_group,

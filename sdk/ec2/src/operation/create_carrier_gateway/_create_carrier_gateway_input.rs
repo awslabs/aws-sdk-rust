@@ -115,7 +115,7 @@ impl CreateCarrierGatewayInputBuilder {
     /// Consumes the builder and constructs a [`CreateCarrierGatewayInput`](crate::operation::create_carrier_gateway::CreateCarrierGatewayInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_carrier_gateway::CreateCarrierGatewayInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_carrier_gateway::CreateCarrierGatewayInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_carrier_gateway::CreateCarrierGatewayInput {
             vpc_id: self.vpc_id,

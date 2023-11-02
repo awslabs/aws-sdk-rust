@@ -2,7 +2,7 @@
 pub fn ser_batch_get_record_identifier(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BatchGetRecordIdentifier,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.feature_group_name {
         object.key("FeatureGroupName").string(var_1.as_str());
     }

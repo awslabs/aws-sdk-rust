@@ -88,7 +88,7 @@ impl UpdateHostKeyInputBuilder {
     /// Consumes the builder and constructs a [`UpdateHostKeyInput`](crate::operation::update_host_key::UpdateHostKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_host_key::UpdateHostKeyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_host_key::UpdateHostKeyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_host_key::UpdateHostKeyInput {
             server_id: self.server_id,
             host_key_id: self.host_key_id,

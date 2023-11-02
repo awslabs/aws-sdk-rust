@@ -67,10 +67,10 @@ impl IpAddressTypeStatusBuilder {
     /// Consumes the builder and constructs a [`IpAddressTypeStatus`](crate::types::IpAddressTypeStatus).
     /// This method will fail if any of the following fields are not set:
     /// - [`options`](crate::types::builders::IpAddressTypeStatusBuilder::options)
-    pub fn build(self) -> ::std::result::Result<crate::types::IpAddressTypeStatus, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::IpAddressTypeStatus, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::IpAddressTypeStatus {
             options: self.options.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "options",
                     "options was not specified but it is required when building IpAddressTypeStatus",
                 )

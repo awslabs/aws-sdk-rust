@@ -109,7 +109,7 @@ impl CreatePartitionInputBuilder {
     /// Consumes the builder and constructs a [`CreatePartitionInput`](crate::operation::create_partition::CreatePartitionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_partition::CreatePartitionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_partition::CreatePartitionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_partition::CreatePartitionInput {
             catalog_id: self.catalog_id,
             database_name: self.database_name,

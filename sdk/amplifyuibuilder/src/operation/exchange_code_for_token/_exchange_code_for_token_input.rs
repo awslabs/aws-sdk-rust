@@ -66,7 +66,7 @@ impl ExchangeCodeForTokenInputBuilder {
     /// Consumes the builder and constructs a [`ExchangeCodeForTokenInput`](crate::operation::exchange_code_for_token::ExchangeCodeForTokenInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::exchange_code_for_token::ExchangeCodeForTokenInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::exchange_code_for_token::ExchangeCodeForTokenInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::exchange_code_for_token::ExchangeCodeForTokenInput {
             provider: self.provider,

@@ -2,7 +2,7 @@
 pub fn ser_nfs_mount_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::NfsMountOptions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.version {
         object.key("Version").string(var_1.as_str());
     }

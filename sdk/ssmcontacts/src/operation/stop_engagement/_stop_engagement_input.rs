@@ -65,7 +65,7 @@ impl StopEngagementInputBuilder {
     /// Consumes the builder and constructs a [`StopEngagementInput`](crate::operation::stop_engagement::StopEngagementInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_engagement::StopEngagementInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::stop_engagement::StopEngagementInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_engagement::StopEngagementInput {
             engagement_id: self.engagement_id,
             reason: self.reason,

@@ -87,7 +87,7 @@ impl RedactChannelMessageInputBuilder {
     /// Consumes the builder and constructs a [`RedactChannelMessageInput`](crate::operation::redact_channel_message::RedactChannelMessageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::redact_channel_message::RedactChannelMessageInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::redact_channel_message::RedactChannelMessageInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::redact_channel_message::RedactChannelMessageInput {
             channel_arn: self.channel_arn,

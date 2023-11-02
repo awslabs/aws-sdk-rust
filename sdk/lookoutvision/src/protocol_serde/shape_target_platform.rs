@@ -2,7 +2,7 @@
 pub fn ser_target_platform(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TargetPlatform,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.os {
         object.key("Os").string(var_1.as_str());
     }

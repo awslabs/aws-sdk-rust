@@ -2,7 +2,7 @@
 pub fn ser_describe_agreement_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_agreement::DescribeAgreementInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.agreement_id {
         object.key("AgreementId").string(var_1.as_str());
     }

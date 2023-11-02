@@ -200,29 +200,29 @@ impl ExportInfoBuilder {
     /// - [`export_status`](crate::types::builders::ExportInfoBuilder::export_status)
     /// - [`status_message`](crate::types::builders::ExportInfoBuilder::status_message)
     /// - [`export_request_time`](crate::types::builders::ExportInfoBuilder::export_request_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::ExportInfo, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ExportInfo, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ExportInfo {
             export_id: self.export_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "export_id",
                     "export_id was not specified but it is required when building ExportInfo",
                 )
             })?,
             export_status: self.export_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "export_status",
                     "export_status was not specified but it is required when building ExportInfo",
                 )
             })?,
             status_message: self.status_message.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status_message",
                     "status_message was not specified but it is required when building ExportInfo",
                 )
             })?,
             configurations_download_url: self.configurations_download_url,
             export_request_time: self.export_request_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "export_request_time",
                     "export_request_time was not specified but it is required when building ExportInfo",
                 )

@@ -194,7 +194,7 @@ impl StartEngagementInputBuilder {
     /// Consumes the builder and constructs a [`StartEngagementInput`](crate::operation::start_engagement::StartEngagementInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_engagement::StartEngagementInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_engagement::StartEngagementInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_engagement::StartEngagementInput {
             contact_id: self.contact_id,
             sender: self.sender,

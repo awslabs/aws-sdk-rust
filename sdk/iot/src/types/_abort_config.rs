@@ -51,10 +51,10 @@ impl AbortConfigBuilder {
     /// Consumes the builder and constructs a [`AbortConfig`](crate::types::AbortConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`criteria_list`](crate::types::builders::AbortConfigBuilder::criteria_list)
-    pub fn build(self) -> ::std::result::Result<crate::types::AbortConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AbortConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AbortConfig {
             criteria_list: self.criteria_list.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "criteria_list",
                     "criteria_list was not specified but it is required when building AbortConfig",
                 )

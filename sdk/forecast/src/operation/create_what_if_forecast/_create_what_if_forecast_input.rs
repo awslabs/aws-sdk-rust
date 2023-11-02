@@ -160,7 +160,7 @@ impl CreateWhatIfForecastInputBuilder {
     /// Consumes the builder and constructs a [`CreateWhatIfForecastInput`](crate::operation::create_what_if_forecast::CreateWhatIfForecastInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_what_if_forecast::CreateWhatIfForecastInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_what_if_forecast::CreateWhatIfForecastInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_what_if_forecast::CreateWhatIfForecastInput {
             what_if_forecast_name: self.what_if_forecast_name,

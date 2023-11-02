@@ -139,7 +139,7 @@ impl GetObjectTaggingInputBuilder {
     /// Consumes the builder and constructs a [`GetObjectTaggingInput`](crate::operation::get_object_tagging::GetObjectTaggingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_object_tagging::GetObjectTaggingInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_object_tagging::GetObjectTaggingInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_object_tagging::GetObjectTaggingInput {
             bucket: self.bucket,
             key: self.key,

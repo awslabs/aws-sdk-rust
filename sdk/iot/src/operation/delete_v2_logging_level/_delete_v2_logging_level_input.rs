@@ -66,7 +66,7 @@ impl DeleteV2LoggingLevelInputBuilder {
     /// Consumes the builder and constructs a [`DeleteV2LoggingLevelInput`](crate::operation::delete_v2_logging_level::DeleteV2LoggingLevelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_v2_logging_level::DeleteV2LoggingLevelInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_v2_logging_level::DeleteV2LoggingLevelInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_v2_logging_level::DeleteV2LoggingLevelInput {
             target_type: self.target_type,

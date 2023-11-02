@@ -104,7 +104,7 @@ impl GetEndpointInputBuilder {
         &self.authentication_method
     }
     /// Consumes the builder and constructs a [`GetEndpointInput`](crate::operation::get_endpoint::GetEndpointInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_endpoint::GetEndpointInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_endpoint::GetEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_endpoint::GetEndpointInput {
             thing_arn: self.thing_arn,
             certificate_arn: self.certificate_arn,

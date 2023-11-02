@@ -66,7 +66,7 @@ impl AssociateLexBotInputBuilder {
     /// Consumes the builder and constructs a [`AssociateLexBotInput`](crate::operation::associate_lex_bot::AssociateLexBotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::associate_lex_bot::AssociateLexBotInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::associate_lex_bot::AssociateLexBotInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::associate_lex_bot::AssociateLexBotInput {
             instance_id: self.instance_id,
             lex_bot: self.lex_bot,

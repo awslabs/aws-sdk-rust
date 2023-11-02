@@ -2,7 +2,7 @@
 pub fn ser_create_resource_share_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_resource_share::CreateResourceShareInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.allow_external_principals {
         object.key("allowExternalPrincipals").boolean(*var_1);
     }

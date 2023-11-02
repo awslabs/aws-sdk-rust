@@ -54,7 +54,7 @@ impl StartConfigRulesEvaluationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_config_rules_evaluation::StartConfigRulesEvaluationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_config_rules_evaluation::StartConfigRulesEvaluationInput {
             config_rule_names: self.config_rule_names,

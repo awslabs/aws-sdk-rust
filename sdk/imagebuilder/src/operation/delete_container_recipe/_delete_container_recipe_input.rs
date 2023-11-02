@@ -44,7 +44,7 @@ impl DeleteContainerRecipeInputBuilder {
     /// Consumes the builder and constructs a [`DeleteContainerRecipeInput`](crate::operation::delete_container_recipe::DeleteContainerRecipeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_container_recipe::DeleteContainerRecipeInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_container_recipe::DeleteContainerRecipeInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_container_recipe::DeleteContainerRecipeInput {
             container_recipe_arn: self.container_recipe_arn,

@@ -88,10 +88,10 @@ impl FirehoseActionBuilder {
     /// Consumes the builder and constructs a [`FirehoseAction`](crate::types::FirehoseAction).
     /// This method will fail if any of the following fields are not set:
     /// - [`delivery_stream_name`](crate::types::builders::FirehoseActionBuilder::delivery_stream_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::FirehoseAction, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::FirehoseAction, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FirehoseAction {
             delivery_stream_name: self.delivery_stream_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "delivery_stream_name",
                     "delivery_stream_name was not specified but it is required when building FirehoseAction",
                 )

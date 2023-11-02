@@ -40,7 +40,7 @@ where
 pub fn ser_sip_media_application_logging_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SipMediaApplicationLoggingConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.enable_sip_media_application_message_logs {
         object.key("EnableSipMediaApplicationMessageLogs").boolean(*var_1);
     }

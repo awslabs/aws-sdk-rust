@@ -154,18 +154,18 @@ impl RedshiftDataParametersBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`database`](crate::types::builders::RedshiftDataParametersBuilder::database)
     /// - [`sql`](crate::types::builders::RedshiftDataParametersBuilder::sql)
-    pub fn build(self) -> ::std::result::Result<crate::types::RedshiftDataParameters, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RedshiftDataParameters, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RedshiftDataParameters {
             secret_manager_arn: self.secret_manager_arn,
             database: self.database.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "database",
                     "database was not specified but it is required when building RedshiftDataParameters",
                 )
             })?,
             db_user: self.db_user,
             sql: self.sql.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "sql",
                     "sql was not specified but it is required when building RedshiftDataParameters",
                 )

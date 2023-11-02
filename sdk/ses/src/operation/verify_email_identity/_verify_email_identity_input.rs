@@ -45,7 +45,7 @@ impl VerifyEmailIdentityInputBuilder {
     /// Consumes the builder and constructs a [`VerifyEmailIdentityInput`](crate::operation::verify_email_identity::VerifyEmailIdentityInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::verify_email_identity::VerifyEmailIdentityInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::verify_email_identity::VerifyEmailIdentityInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::verify_email_identity::VerifyEmailIdentityInput {
             email_address: self.email_address,

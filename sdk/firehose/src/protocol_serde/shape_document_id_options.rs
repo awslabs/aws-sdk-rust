@@ -2,7 +2,7 @@
 pub fn ser_document_id_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DocumentIdOptions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("DefaultDocumentIdFormat").string(input.default_document_id_format.as_str());
     }

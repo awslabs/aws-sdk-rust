@@ -70,16 +70,16 @@ impl IdMappingWorkflowInputSourceBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`input_source_arn`](crate::types::builders::IdMappingWorkflowInputSourceBuilder::input_source_arn)
     /// - [`schema_name`](crate::types::builders::IdMappingWorkflowInputSourceBuilder::schema_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::IdMappingWorkflowInputSource, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::IdMappingWorkflowInputSource, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::IdMappingWorkflowInputSource {
             input_source_arn: self.input_source_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "input_source_arn",
                     "input_source_arn was not specified but it is required when building IdMappingWorkflowInputSource",
                 )
             })?,
             schema_name: self.schema_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "schema_name",
                     "schema_name was not specified but it is required when building IdMappingWorkflowInputSource",
                 )

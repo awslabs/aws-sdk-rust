@@ -46,10 +46,10 @@ impl ExportReadSetBuilder {
     /// Consumes the builder and constructs a [`ExportReadSet`](crate::types::ExportReadSet).
     /// This method will fail if any of the following fields are not set:
     /// - [`read_set_id`](crate::types::builders::ExportReadSetBuilder::read_set_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::ExportReadSet, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ExportReadSet, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ExportReadSet {
             read_set_id: self.read_set_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "read_set_id",
                     "read_set_id was not specified but it is required when building ExportReadSet",
                 )

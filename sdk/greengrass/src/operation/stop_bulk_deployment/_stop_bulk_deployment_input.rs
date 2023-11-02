@@ -44,7 +44,8 @@ impl StopBulkDeploymentInputBuilder {
     /// Consumes the builder and constructs a [`StopBulkDeploymentInput`](crate::operation::stop_bulk_deployment::StopBulkDeploymentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_bulk_deployment::StopBulkDeploymentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::stop_bulk_deployment::StopBulkDeploymentInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::stop_bulk_deployment::StopBulkDeploymentInput {
             bulk_deployment_id: self.bulk_deployment_id,
         })

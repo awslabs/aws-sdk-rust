@@ -101,16 +101,16 @@ impl StartTimerFailedEventAttributesBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`timer_id`](crate::types::builders::StartTimerFailedEventAttributesBuilder::timer_id)
     /// - [`cause`](crate::types::builders::StartTimerFailedEventAttributesBuilder::cause)
-    pub fn build(self) -> ::std::result::Result<crate::types::StartTimerFailedEventAttributes, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::StartTimerFailedEventAttributes, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::StartTimerFailedEventAttributes {
             timer_id: self.timer_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "timer_id",
                     "timer_id was not specified but it is required when building StartTimerFailedEventAttributes",
                 )
             })?,
             cause: self.cause.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "cause",
                     "cause was not specified but it is required when building StartTimerFailedEventAttributes",
                 )

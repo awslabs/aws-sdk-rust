@@ -65,7 +65,9 @@ impl TerminateJobInputBuilder {
         &self.reason
     }
     /// Consumes the builder and constructs a [`TerminateJobInput`](crate::operation::terminate_job::TerminateJobInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::terminate_job::TerminateJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::terminate_job::TerminateJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::terminate_job::TerminateJobInput {
             job_id: self.job_id,
             reason: self.reason,

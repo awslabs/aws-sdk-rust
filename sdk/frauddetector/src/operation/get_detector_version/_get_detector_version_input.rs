@@ -66,7 +66,8 @@ impl GetDetectorVersionInputBuilder {
     /// Consumes the builder and constructs a [`GetDetectorVersionInput`](crate::operation::get_detector_version::GetDetectorVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_detector_version::GetDetectorVersionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_detector_version::GetDetectorVersionInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::get_detector_version::GetDetectorVersionInput {
             detector_id: self.detector_id,
             detector_version_id: self.detector_version_id,

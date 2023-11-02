@@ -68,16 +68,16 @@ impl IntegerRangeBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`minimum`](crate::types::builders::IntegerRangeBuilder::minimum)
     /// - [`maximum`](crate::types::builders::IntegerRangeBuilder::maximum)
-    pub fn build(self) -> ::std::result::Result<crate::types::IntegerRange, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::IntegerRange, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::IntegerRange {
             minimum: self.minimum.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "minimum",
                     "minimum was not specified but it is required when building IntegerRange",
                 )
             })?,
             maximum: self.maximum.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "maximum",
                     "maximum was not specified but it is required when building IntegerRange",
                 )

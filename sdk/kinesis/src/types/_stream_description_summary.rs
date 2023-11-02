@@ -360,41 +360,41 @@ impl StreamDescriptionSummaryBuilder {
     /// - [`stream_creation_timestamp`](crate::types::builders::StreamDescriptionSummaryBuilder::stream_creation_timestamp)
     /// - [`enhanced_monitoring`](crate::types::builders::StreamDescriptionSummaryBuilder::enhanced_monitoring)
     /// - [`open_shard_count`](crate::types::builders::StreamDescriptionSummaryBuilder::open_shard_count)
-    pub fn build(self) -> ::std::result::Result<crate::types::StreamDescriptionSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::StreamDescriptionSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::StreamDescriptionSummary {
             stream_name: self.stream_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "stream_name",
                     "stream_name was not specified but it is required when building StreamDescriptionSummary",
                 )
             })?,
             stream_arn: self.stream_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "stream_arn",
                     "stream_arn was not specified but it is required when building StreamDescriptionSummary",
                 )
             })?,
             stream_status: self.stream_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "stream_status",
                     "stream_status was not specified but it is required when building StreamDescriptionSummary",
                 )
             })?,
             stream_mode_details: self.stream_mode_details,
             retention_period_hours: self.retention_period_hours.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "retention_period_hours",
                     "retention_period_hours was not specified but it is required when building StreamDescriptionSummary",
                 )
             })?,
             stream_creation_timestamp: self.stream_creation_timestamp.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "stream_creation_timestamp",
                     "stream_creation_timestamp was not specified but it is required when building StreamDescriptionSummary",
                 )
             })?,
             enhanced_monitoring: self.enhanced_monitoring.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "enhanced_monitoring",
                     "enhanced_monitoring was not specified but it is required when building StreamDescriptionSummary",
                 )
@@ -402,7 +402,7 @@ impl StreamDescriptionSummaryBuilder {
             encryption_type: self.encryption_type,
             key_id: self.key_id,
             open_shard_count: self.open_shard_count.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "open_shard_count",
                     "open_shard_count was not specified but it is required when building StreamDescriptionSummary",
                 )

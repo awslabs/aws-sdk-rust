@@ -47,7 +47,7 @@ where
 pub fn ser_throttle_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ThrottleSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.burst_limit != 0 {
         object.key("burstLimit").number(
             #[allow(clippy::useless_conversion)]

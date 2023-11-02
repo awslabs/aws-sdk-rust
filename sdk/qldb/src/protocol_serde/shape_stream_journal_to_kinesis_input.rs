@@ -2,7 +2,7 @@
 pub fn ser_stream_journal_to_kinesis_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::stream_journal_to_kinesis::StreamJournalToKinesisInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.exclusive_end_time {
         object
             .key("ExclusiveEndTime")

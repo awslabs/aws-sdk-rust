@@ -89,10 +89,10 @@ impl ListEnvironmentsOutputBuilder {
     /// - [`items`](crate::operation::list_environments::builders::ListEnvironmentsOutputBuilder::items)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_environments::ListEnvironmentsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_environments::ListEnvironmentsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_environments::ListEnvironmentsOutput {
             items: self.items.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "items",
                     "items was not specified but it is required when building ListEnvironmentsOutput",
                 )

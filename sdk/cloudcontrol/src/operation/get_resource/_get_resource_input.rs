@@ -131,7 +131,7 @@ impl GetResourceInputBuilder {
         &self.identifier
     }
     /// Consumes the builder and constructs a [`GetResourceInput`](crate::operation::get_resource::GetResourceInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_resource::GetResourceInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_resource::GetResourceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_resource::GetResourceInput {
             type_name: self.type_name,
             type_version_id: self.type_version_id,

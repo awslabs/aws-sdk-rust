@@ -86,7 +86,7 @@ impl GetExportJobsInputBuilder {
     /// Consumes the builder and constructs a [`GetExportJobsInput`](crate::operation::get_export_jobs::GetExportJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_export_jobs::GetExportJobsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_export_jobs::GetExportJobsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_export_jobs::GetExportJobsInput {
             application_id: self.application_id,
             page_size: self.page_size,

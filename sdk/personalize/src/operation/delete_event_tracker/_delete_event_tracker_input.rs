@@ -44,7 +44,8 @@ impl DeleteEventTrackerInputBuilder {
     /// Consumes the builder and constructs a [`DeleteEventTrackerInput`](crate::operation::delete_event_tracker::DeleteEventTrackerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_event_tracker::DeleteEventTrackerInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_event_tracker::DeleteEventTrackerInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::delete_event_tracker::DeleteEventTrackerInput {
             event_tracker_arn: self.event_tracker_arn,
         })

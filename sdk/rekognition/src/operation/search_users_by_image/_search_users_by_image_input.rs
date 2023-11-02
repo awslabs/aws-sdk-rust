@@ -159,7 +159,7 @@ impl SearchUsersByImageInputBuilder {
     /// Consumes the builder and constructs a [`SearchUsersByImageInput`](crate::operation::search_users_by_image::SearchUsersByImageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::search_users_by_image::SearchUsersByImageInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::search_users_by_image::SearchUsersByImageInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::search_users_by_image::SearchUsersByImageInput {
             collection_id: self.collection_id,

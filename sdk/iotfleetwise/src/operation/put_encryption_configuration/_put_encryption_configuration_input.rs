@@ -67,7 +67,7 @@ impl PutEncryptionConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_encryption_configuration::PutEncryptionConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_encryption_configuration::PutEncryptionConfigurationInput {
             kms_key_id: self.kms_key_id,

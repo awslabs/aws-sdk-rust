@@ -42,7 +42,9 @@ impl DeletePresetInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`DeletePresetInput`](crate::operation::delete_preset::DeletePresetInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_preset::DeletePresetInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_preset::DeletePresetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_preset::DeletePresetInput { name: self.name })
     }
 }

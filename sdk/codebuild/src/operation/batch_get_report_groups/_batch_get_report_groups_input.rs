@@ -51,7 +51,7 @@ impl BatchGetReportGroupsInputBuilder {
     /// Consumes the builder and constructs a [`BatchGetReportGroupsInput`](crate::operation::batch_get_report_groups::BatchGetReportGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_get_report_groups::BatchGetReportGroupsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::batch_get_report_groups::BatchGetReportGroupsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::batch_get_report_groups::BatchGetReportGroupsInput {
             report_group_arns: self.report_group_arns,

@@ -110,22 +110,22 @@ impl CreateDomainOutputBuilder {
     /// - [`domain_status`](crate::operation::create_domain::builders::CreateDomainOutputBuilder::domain_status)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_domain::CreateDomainOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_domain::CreateDomainOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_domain::CreateDomainOutput {
             domain_id: self.domain_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "domain_id",
                     "domain_id was not specified but it is required when building CreateDomainOutput",
                 )
             })?,
             domain_arn: self.domain_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "domain_arn",
                     "domain_arn was not specified but it is required when building CreateDomainOutput",
                 )
             })?,
             domain_status: self.domain_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "domain_status",
                     "domain_status was not specified but it is required when building CreateDomainOutput",
                 )

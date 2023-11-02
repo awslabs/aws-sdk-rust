@@ -91,16 +91,16 @@ impl TeamMemberBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`user_arn`](crate::types::builders::TeamMemberBuilder::user_arn)
     /// - [`project_role`](crate::types::builders::TeamMemberBuilder::project_role)
-    pub fn build(self) -> ::std::result::Result<crate::types::TeamMember, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TeamMember, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TeamMember {
             user_arn: self.user_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "user_arn",
                     "user_arn was not specified but it is required when building TeamMember",
                 )
             })?,
             project_role: self.project_role.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "project_role",
                     "project_role was not specified but it is required when building TeamMember",
                 )

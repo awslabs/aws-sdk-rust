@@ -299,7 +299,7 @@ impl CreateLicenseVersionInputBuilder {
     /// Consumes the builder and constructs a [`CreateLicenseVersionInput`](crate::operation::create_license_version::CreateLicenseVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_license_version::CreateLicenseVersionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_license_version::CreateLicenseVersionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_license_version::CreateLicenseVersionInput {
             license_arn: self.license_arn,

@@ -62,7 +62,7 @@ impl GetSchemaInputBuilder {
         &self.schema_id
     }
     /// Consumes the builder and constructs a [`GetSchemaInput`](crate::operation::get_schema::GetSchemaInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_schema::GetSchemaInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_schema::GetSchemaInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_schema::GetSchemaInput { schema_id: self.schema_id })
     }
 }

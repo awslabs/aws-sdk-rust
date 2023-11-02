@@ -96,7 +96,7 @@ impl AuthorizeEndpointAccessInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::authorize_endpoint_access::AuthorizeEndpointAccessInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::authorize_endpoint_access::AuthorizeEndpointAccessInput {
             cluster_identifier: self.cluster_identifier,

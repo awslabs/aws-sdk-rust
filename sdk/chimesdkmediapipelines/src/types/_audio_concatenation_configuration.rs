@@ -45,10 +45,10 @@ impl AudioConcatenationConfigurationBuilder {
     /// Consumes the builder and constructs a [`AudioConcatenationConfiguration`](crate::types::AudioConcatenationConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`state`](crate::types::builders::AudioConcatenationConfigurationBuilder::state)
-    pub fn build(self) -> ::std::result::Result<crate::types::AudioConcatenationConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AudioConcatenationConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AudioConcatenationConfiguration {
             state: self.state.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "state",
                     "state was not specified but it is required when building AudioConcatenationConfiguration",
                 )

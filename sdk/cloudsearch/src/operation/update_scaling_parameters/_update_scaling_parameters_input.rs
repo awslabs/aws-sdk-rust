@@ -69,7 +69,7 @@ impl UpdateScalingParametersInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_scaling_parameters::UpdateScalingParametersInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_scaling_parameters::UpdateScalingParametersInput {
             domain_name: self.domain_name,

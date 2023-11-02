@@ -131,7 +131,7 @@ impl DeleteSlotTypeInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSlotTypeInput`](crate::operation::delete_slot_type::DeleteSlotTypeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_slot_type::DeleteSlotTypeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_slot_type::DeleteSlotTypeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_slot_type::DeleteSlotTypeInput {
             slot_type_id: self.slot_type_id,
             bot_id: self.bot_id,

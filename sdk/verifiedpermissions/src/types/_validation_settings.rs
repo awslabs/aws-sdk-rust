@@ -81,10 +81,10 @@ impl ValidationSettingsBuilder {
     /// Consumes the builder and constructs a [`ValidationSettings`](crate::types::ValidationSettings).
     /// This method will fail if any of the following fields are not set:
     /// - [`mode`](crate::types::builders::ValidationSettingsBuilder::mode)
-    pub fn build(self) -> ::std::result::Result<crate::types::ValidationSettings, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ValidationSettings, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ValidationSettings {
             mode: self.mode.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "mode",
                     "mode was not specified but it is required when building ValidationSettings",
                 )

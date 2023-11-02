@@ -46,7 +46,7 @@ impl DeleteConferenceProviderInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_conference_provider::DeleteConferenceProviderInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_conference_provider::DeleteConferenceProviderInput {
             conference_provider_arn: self.conference_provider_arn,

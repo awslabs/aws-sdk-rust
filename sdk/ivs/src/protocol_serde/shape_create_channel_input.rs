@@ -2,7 +2,7 @@
 pub fn ser_create_channel_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_channel::CreateChannelInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.authorized {
         object.key("authorized").boolean(*var_1);
     }

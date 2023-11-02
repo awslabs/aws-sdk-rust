@@ -51,10 +51,10 @@ impl OverallTestResultsBuilder {
     /// Consumes the builder and constructs a [`OverallTestResults`](crate::types::OverallTestResults).
     /// This method will fail if any of the following fields are not set:
     /// - [`items`](crate::types::builders::OverallTestResultsBuilder::items)
-    pub fn build(self) -> ::std::result::Result<crate::types::OverallTestResults, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::OverallTestResults, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::OverallTestResults {
             items: self.items.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "items",
                     "items was not specified but it is required when building OverallTestResults",
                 )

@@ -76,7 +76,7 @@ impl BatchAssociateClientDeviceWithCoreDeviceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_associate_client_device_with_core_device::BatchAssociateClientDeviceWithCoreDeviceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::batch_associate_client_device_with_core_device::BatchAssociateClientDeviceWithCoreDeviceInput {

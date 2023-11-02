@@ -73,8 +73,10 @@ impl ModifySnapshotScheduleInputBuilder {
     /// Consumes the builder and constructs a [`ModifySnapshotScheduleInput`](crate::operation::modify_snapshot_schedule::ModifySnapshotScheduleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::modify_snapshot_schedule::ModifySnapshotScheduleInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::modify_snapshot_schedule::ModifySnapshotScheduleInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::modify_snapshot_schedule::ModifySnapshotScheduleInput {
             schedule_identifier: self.schedule_identifier,
             schedule_definitions: self.schedule_definitions,

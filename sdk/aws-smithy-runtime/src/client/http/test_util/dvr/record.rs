@@ -7,13 +7,13 @@ use super::{
     Action, BodyData, ConnectionId, Direction, Error, Event, NetworkTraffic, Request, Response,
     Version,
 };
-use aws_smithy_http::body::SdkBody;
 use aws_smithy_runtime_api::client::http::{
     HttpClient, HttpConnector, HttpConnectorFuture, HttpConnectorSettings, SharedHttpConnector,
 };
 use aws_smithy_runtime_api::client::orchestrator::HttpRequest;
 use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
 use aws_smithy_runtime_api::shared::IntoShared;
+use aws_smithy_types::body::SdkBody;
 use http_body::Body;
 use std::path::Path;
 use std::sync::atomic::{AtomicUsize, Ordering};

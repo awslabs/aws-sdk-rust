@@ -146,25 +146,25 @@ impl GenerateEmbedUrlForAnonymousUserOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::generate_embed_url_for_anonymous_user::GenerateEmbedUrlForAnonymousUserOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::generate_embed_url_for_anonymous_user::GenerateEmbedUrlForAnonymousUserOutput {
                 embed_url: self.embed_url.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
                         "embed_url",
                         "embed_url was not specified but it is required when building GenerateEmbedUrlForAnonymousUserOutput",
                     )
                 })?,
                 status: self.status.unwrap_or_default(),
                 request_id: self.request_id.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
                         "request_id",
                         "request_id was not specified but it is required when building GenerateEmbedUrlForAnonymousUserOutput",
                     )
                 })?,
                 anonymous_user_arn: self.anonymous_user_arn.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
                         "anonymous_user_arn",
                         "anonymous_user_arn was not specified but it is required when building GenerateEmbedUrlForAnonymousUserOutput",
                     )

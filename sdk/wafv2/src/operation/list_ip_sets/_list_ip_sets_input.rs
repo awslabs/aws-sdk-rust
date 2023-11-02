@@ -109,7 +109,7 @@ impl ListIpSetsInputBuilder {
         &self.limit
     }
     /// Consumes the builder and constructs a [`ListIpSetsInput`](crate::operation::list_ip_sets::ListIpSetsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_ip_sets::ListIpSetsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_ip_sets::ListIpSetsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_ip_sets::ListIpSetsInput {
             scope: self.scope,
             next_marker: self.next_marker,

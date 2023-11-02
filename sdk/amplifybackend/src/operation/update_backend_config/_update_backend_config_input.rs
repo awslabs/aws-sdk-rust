@@ -66,7 +66,7 @@ impl UpdateBackendConfigInputBuilder {
     /// Consumes the builder and constructs a [`UpdateBackendConfigInput`](crate::operation::update_backend_config::UpdateBackendConfigInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_backend_config::UpdateBackendConfigInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_backend_config::UpdateBackendConfigInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_backend_config::UpdateBackendConfigInput {
             app_id: self.app_id,

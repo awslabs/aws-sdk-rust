@@ -123,7 +123,7 @@ impl CreateIpGroupInputBuilder {
     /// Consumes the builder and constructs a [`CreateIpGroupInput`](crate::operation::create_ip_group::CreateIpGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_ip_group::CreateIpGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_ip_group::CreateIpGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_ip_group::CreateIpGroupInput {
             group_name: self.group_name,
             group_desc: self.group_desc,

@@ -198,7 +198,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for StartCallAna
             fn uri_base(
                 _input: &crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 use ::std::fmt::Write as _;
                 ::std::write!(output, "/call-analytics-stream-transcription").expect("formatting should succeed");
                 ::std::result::Result::Ok(())
@@ -207,7 +207,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for StartCallAna
             fn update_http_builder(
                 input: &crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 let builder =
@@ -220,14 +220,14 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for StartCallAna
             builder = _header_serialization_settings.set_default_header(builder, ::http::header::CONTENT_TYPE, "application/vnd.amazon.eventstream");
             builder
         };
-        let body = ::aws_smithy_http::body::SdkBody::from({
+        let body = ::aws_smithy_types::body::SdkBody::from({
             let error_marshaller = crate::event_stream_serde::AudioStreamErrorMarshaller::new();
             let marshaller = crate::event_stream_serde::AudioStreamMarshaller::new();
             let (signer, signer_sender) = ::aws_smithy_eventstream::frame::DeferredSigner::new();
             _cfg.interceptor_state().store_put(signer_sender);
             let adapter: ::aws_smithy_http::event_stream::MessageStreamAdapter<_, _> =
                 input.audio_stream.into_body_stream(marshaller, error_marshaller, signer);
-            let body: ::aws_smithy_http::body::SdkBody = ::hyper::Body::wrap_stream(adapter).into();
+            let body: ::aws_smithy_types::body::SdkBody = ::hyper::Body::wrap_stream(adapter).into();
             body
         });
         if let Some(content_length) = body.content_length() {

@@ -45,10 +45,10 @@ impl VoiceSpoofingRiskBuilder {
     /// Consumes the builder and constructs a [`VoiceSpoofingRisk`](crate::types::VoiceSpoofingRisk).
     /// This method will fail if any of the following fields are not set:
     /// - [`risk_score`](crate::types::builders::VoiceSpoofingRiskBuilder::risk_score)
-    pub fn build(self) -> ::std::result::Result<crate::types::VoiceSpoofingRisk, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::VoiceSpoofingRisk, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::VoiceSpoofingRisk {
             risk_score: self.risk_score.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "risk_score",
                     "risk_score was not specified but it is required when building VoiceSpoofingRisk",
                 )

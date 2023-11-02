@@ -123,12 +123,12 @@ pub fn de_list_customer_managed_policy_references_in_permission_set_http_respons
 
 pub fn ser_list_customer_managed_policy_references_in_permission_set_input(
     input: &crate::operation::list_customer_managed_policy_references_in_permission_set::ListCustomerManagedPolicyReferencesInPermissionSetInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_list_customer_managed_policy_references_in_permission_set_input::ser_list_customer_managed_policy_references_in_permission_set_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_list_customer_managed_policy_references_in_permission_set(value: &[u8], mut builder: crate::operation::list_customer_managed_policy_references_in_permission_set::builders::ListCustomerManagedPolicyReferencesInPermissionSetOutputBuilder) -> Result<crate::operation::list_customer_managed_policy_references_in_permission_set::builders::ListCustomerManagedPolicyReferencesInPermissionSetOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>{

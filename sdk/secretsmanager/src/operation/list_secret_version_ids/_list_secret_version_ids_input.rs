@@ -117,7 +117,7 @@ impl ListSecretVersionIdsInputBuilder {
     /// Consumes the builder and constructs a [`ListSecretVersionIdsInput`](crate::operation::list_secret_version_ids::ListSecretVersionIdsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_secret_version_ids::ListSecretVersionIdsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_secret_version_ids::ListSecretVersionIdsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_secret_version_ids::ListSecretVersionIdsInput {
             secret_id: self.secret_id,

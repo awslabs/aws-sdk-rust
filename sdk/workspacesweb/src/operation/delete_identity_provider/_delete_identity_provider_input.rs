@@ -44,8 +44,10 @@ impl DeleteIdentityProviderInputBuilder {
     /// Consumes the builder and constructs a [`DeleteIdentityProviderInput`](crate::operation::delete_identity_provider::DeleteIdentityProviderInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_identity_provider::DeleteIdentityProviderInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::delete_identity_provider::DeleteIdentityProviderInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::delete_identity_provider::DeleteIdentityProviderInput {
             identity_provider_arn: self.identity_provider_arn,
         })

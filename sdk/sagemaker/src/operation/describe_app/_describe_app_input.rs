@@ -128,7 +128,7 @@ impl DescribeAppInputBuilder {
         &self.space_name
     }
     /// Consumes the builder and constructs a [`DescribeAppInput`](crate::operation::describe_app::DescribeAppInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_app::DescribeAppInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_app::DescribeAppInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_app::DescribeAppInput {
             domain_id: self.domain_id,
             user_profile_name: self.user_profile_name,

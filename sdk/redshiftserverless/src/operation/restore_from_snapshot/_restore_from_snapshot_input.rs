@@ -176,7 +176,7 @@ impl RestoreFromSnapshotInputBuilder {
     /// Consumes the builder and constructs a [`RestoreFromSnapshotInput`](crate::operation::restore_from_snapshot::RestoreFromSnapshotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::restore_from_snapshot::RestoreFromSnapshotInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::restore_from_snapshot::RestoreFromSnapshotInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::restore_from_snapshot::RestoreFromSnapshotInput {
             namespace_name: self.namespace_name,

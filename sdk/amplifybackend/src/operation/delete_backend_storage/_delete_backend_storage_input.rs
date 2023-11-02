@@ -111,7 +111,7 @@ impl DeleteBackendStorageInputBuilder {
     /// Consumes the builder and constructs a [`DeleteBackendStorageInput`](crate::operation::delete_backend_storage::DeleteBackendStorageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_backend_storage::DeleteBackendStorageInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_backend_storage::DeleteBackendStorageInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_backend_storage::DeleteBackendStorageInput {
             app_id: self.app_id,

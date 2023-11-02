@@ -87,7 +87,7 @@ impl DeleteVirtualRouterInputBuilder {
     /// Consumes the builder and constructs a [`DeleteVirtualRouterInput`](crate::operation::delete_virtual_router::DeleteVirtualRouterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_virtual_router::DeleteVirtualRouterInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_virtual_router::DeleteVirtualRouterInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_virtual_router::DeleteVirtualRouterInput {
             virtual_router_name: self.virtual_router_name,

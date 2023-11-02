@@ -44,7 +44,7 @@ impl PutConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`PutConfigurationInput`](crate::operation::put_configuration::PutConfigurationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_configuration::PutConfigurationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_configuration::PutConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_configuration::PutConfigurationInput {
             configuration: self.configuration,
         })

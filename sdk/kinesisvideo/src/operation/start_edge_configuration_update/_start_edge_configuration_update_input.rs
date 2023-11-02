@@ -88,7 +88,7 @@ impl StartEdgeConfigurationUpdateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_edge_configuration_update::StartEdgeConfigurationUpdateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_edge_configuration_update::StartEdgeConfigurationUpdateInput {
             stream_name: self.stream_name,

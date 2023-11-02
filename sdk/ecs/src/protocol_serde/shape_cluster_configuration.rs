@@ -2,7 +2,7 @@
 pub fn ser_cluster_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ClusterConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.execute_command_configuration {
         #[allow(unused_mut)]
         let mut object_2 = object.key("executeCommandConfiguration").start_object();

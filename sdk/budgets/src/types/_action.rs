@@ -259,28 +259,28 @@ impl ActionBuilder {
     /// - [`approval_model`](crate::types::builders::ActionBuilder::approval_model)
     /// - [`status`](crate::types::builders::ActionBuilder::status)
     /// - [`subscribers`](crate::types::builders::ActionBuilder::subscribers)
-    pub fn build(self) -> ::std::result::Result<crate::types::Action, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Action, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Action {
             action_id: self.action_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "action_id",
                     "action_id was not specified but it is required when building Action",
                 )
             })?,
             budget_name: self.budget_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "budget_name",
                     "budget_name was not specified but it is required when building Action",
                 )
             })?,
             notification_type: self.notification_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "notification_type",
                     "notification_type was not specified but it is required when building Action",
                 )
             })?,
             action_type: self.action_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "action_type",
                     "action_type was not specified but it is required when building Action",
                 )
@@ -288,25 +288,25 @@ impl ActionBuilder {
             action_threshold: self.action_threshold,
             definition: self.definition,
             execution_role_arn: self.execution_role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "execution_role_arn",
                     "execution_role_arn was not specified but it is required when building Action",
                 )
             })?,
             approval_model: self.approval_model.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "approval_model",
                     "approval_model was not specified but it is required when building Action",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building Action",
                 )
             })?,
             subscribers: self.subscribers.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "subscribers",
                     "subscribers was not specified but it is required when building Action",
                 )

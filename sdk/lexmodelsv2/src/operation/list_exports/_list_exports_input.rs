@@ -180,7 +180,7 @@ impl ListExportsInputBuilder {
         &self.locale_id
     }
     /// Consumes the builder and constructs a [`ListExportsInput`](crate::operation::list_exports::ListExportsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_exports::ListExportsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_exports::ListExportsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_exports::ListExportsInput {
             bot_id: self.bot_id,
             bot_version: self.bot_version,

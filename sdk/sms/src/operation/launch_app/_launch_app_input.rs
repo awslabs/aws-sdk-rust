@@ -41,7 +41,7 @@ impl LaunchAppInputBuilder {
         &self.app_id
     }
     /// Consumes the builder and constructs a [`LaunchAppInput`](crate::operation::launch_app::LaunchAppInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::launch_app::LaunchAppInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::launch_app::LaunchAppInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::launch_app::LaunchAppInput { app_id: self.app_id })
     }
 }

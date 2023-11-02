@@ -20,7 +20,7 @@ impl EnableSagemakerServicecatalogPortfolioInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::enable_sagemaker_servicecatalog_portfolio::EnableSagemakerServicecatalogPortfolioInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::enable_sagemaker_servicecatalog_portfolio::EnableSagemakerServicecatalogPortfolioInput {})
     }

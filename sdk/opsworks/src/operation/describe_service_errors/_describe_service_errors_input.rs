@@ -93,7 +93,7 @@ impl DescribeServiceErrorsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeServiceErrorsInput`](crate::operation::describe_service_errors::DescribeServiceErrorsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_service_errors::DescribeServiceErrorsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_service_errors::DescribeServiceErrorsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_service_errors::DescribeServiceErrorsInput {
             stack_id: self.stack_id,

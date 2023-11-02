@@ -73,7 +73,7 @@ impl DeleteDocumentInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDocumentInput`](crate::operation::delete_document::DeleteDocumentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_document::DeleteDocumentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_document::DeleteDocumentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_document::DeleteDocumentInput {
             authentication_token: self.authentication_token,
             document_id: self.document_id,

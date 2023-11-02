@@ -67,7 +67,7 @@ impl DetectProtectiveEquipmentInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::detect_protective_equipment::DetectProtectiveEquipmentInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::detect_protective_equipment::DetectProtectiveEquipmentInput {
             image: self.image,

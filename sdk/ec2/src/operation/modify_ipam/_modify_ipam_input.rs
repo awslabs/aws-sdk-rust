@@ -147,7 +147,7 @@ impl ModifyIpamInputBuilder {
         &self.remove_operating_regions
     }
     /// Consumes the builder and constructs a [`ModifyIpamInput`](crate::operation::modify_ipam::ModifyIpamInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::modify_ipam::ModifyIpamInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_ipam::ModifyIpamInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::modify_ipam::ModifyIpamInput {
             dry_run: self.dry_run,
             ipam_id: self.ipam_id,

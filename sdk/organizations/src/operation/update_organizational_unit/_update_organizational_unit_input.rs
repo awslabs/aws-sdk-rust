@@ -77,7 +77,7 @@ impl UpdateOrganizationalUnitInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_organizational_unit::UpdateOrganizationalUnitInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_organizational_unit::UpdateOrganizationalUnitInput {
             organizational_unit_id: self.organizational_unit_id,

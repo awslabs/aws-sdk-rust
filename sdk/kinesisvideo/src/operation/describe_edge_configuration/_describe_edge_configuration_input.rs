@@ -66,7 +66,7 @@ impl DescribeEdgeConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_edge_configuration::DescribeEdgeConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_edge_configuration::DescribeEdgeConfigurationInput {
             stream_name: self.stream_name,

@@ -110,7 +110,7 @@ impl ListPricingPlansAssociatedWithPricingRuleInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_pricing_plans_associated_with_pricing_rule::ListPricingPlansAssociatedWithPricingRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_pricing_plans_associated_with_pricing_rule::ListPricingPlansAssociatedWithPricingRuleInput {

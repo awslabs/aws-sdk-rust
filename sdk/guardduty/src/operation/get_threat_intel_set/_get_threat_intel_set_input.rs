@@ -66,7 +66,7 @@ impl GetThreatIntelSetInputBuilder {
     /// Consumes the builder and constructs a [`GetThreatIntelSetInput`](crate::operation::get_threat_intel_set::GetThreatIntelSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_threat_intel_set::GetThreatIntelSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_threat_intel_set::GetThreatIntelSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_threat_intel_set::GetThreatIntelSetInput {
             detector_id: self.detector_id,
             threat_intel_set_id: self.threat_intel_set_id,

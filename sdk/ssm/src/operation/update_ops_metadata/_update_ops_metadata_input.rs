@@ -103,7 +103,7 @@ impl UpdateOpsMetadataInputBuilder {
     /// Consumes the builder and constructs a [`UpdateOpsMetadataInput`](crate::operation::update_ops_metadata::UpdateOpsMetadataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_ops_metadata::UpdateOpsMetadataInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_ops_metadata::UpdateOpsMetadataInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_ops_metadata::UpdateOpsMetadataInput {
             ops_metadata_arn: self.ops_metadata_arn,
             metadata_to_update: self.metadata_to_update,

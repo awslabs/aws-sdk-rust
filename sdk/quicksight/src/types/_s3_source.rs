@@ -106,17 +106,17 @@ impl S3SourceBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`data_source_arn`](crate::types::builders::S3SourceBuilder::data_source_arn)
     /// - [`input_columns`](crate::types::builders::S3SourceBuilder::input_columns)
-    pub fn build(self) -> ::std::result::Result<crate::types::S3Source, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::S3Source, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::S3Source {
             data_source_arn: self.data_source_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_source_arn",
                     "data_source_arn was not specified but it is required when building S3Source",
                 )
             })?,
             upload_settings: self.upload_settings,
             input_columns: self.input_columns.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "input_columns",
                     "input_columns was not specified but it is required when building S3Source",
                 )

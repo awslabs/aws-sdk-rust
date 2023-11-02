@@ -66,7 +66,7 @@ impl PutAuthPolicyInputBuilder {
     /// Consumes the builder and constructs a [`PutAuthPolicyInput`](crate::operation::put_auth_policy::PutAuthPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_auth_policy::PutAuthPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_auth_policy::PutAuthPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_auth_policy::PutAuthPolicyInput {
             resource_identifier: self.resource_identifier,
             policy: self.policy,

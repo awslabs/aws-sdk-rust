@@ -46,7 +46,7 @@ impl GetDataQualityRulesetEvaluationRunInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_data_quality_ruleset_evaluation_run::GetDataQualityRulesetEvaluationRunInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_data_quality_ruleset_evaluation_run::GetDataQualityRulesetEvaluationRunInput { run_id: self.run_id },

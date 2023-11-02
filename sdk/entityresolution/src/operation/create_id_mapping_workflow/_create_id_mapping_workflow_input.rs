@@ -196,7 +196,7 @@ impl CreateIdMappingWorkflowInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_id_mapping_workflow::CreateIdMappingWorkflowInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_id_mapping_workflow::CreateIdMappingWorkflowInput {
             workflow_name: self.workflow_name,

@@ -44,7 +44,8 @@ impl DeleteStateMachineInputBuilder {
     /// Consumes the builder and constructs a [`DeleteStateMachineInput`](crate::operation::delete_state_machine::DeleteStateMachineInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_state_machine::DeleteStateMachineInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_state_machine::DeleteStateMachineInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::delete_state_machine::DeleteStateMachineInput {
             state_machine_arn: self.state_machine_arn,
         })

@@ -83,7 +83,9 @@ impl DescribeAcLsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeAcLsInput`](crate::operation::describe_acls::DescribeAcLsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_acls::DescribeAcLsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::describe_acls::DescribeAcLsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_acls::DescribeAcLsInput {
             acl_name: self.acl_name,
             max_results: self.max_results,

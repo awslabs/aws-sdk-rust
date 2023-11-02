@@ -2,7 +2,7 @@
 pub fn ser_hyper_parameter_training_job_definition(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::HyperParameterTrainingJobDefinition,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.definition_name {
         object.key("DefinitionName").string(var_1.as_str());
     }

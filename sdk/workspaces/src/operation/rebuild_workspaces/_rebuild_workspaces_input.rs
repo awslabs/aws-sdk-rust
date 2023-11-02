@@ -51,7 +51,7 @@ impl RebuildWorkspacesInputBuilder {
     /// Consumes the builder and constructs a [`RebuildWorkspacesInput`](crate::operation::rebuild_workspaces::RebuildWorkspacesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::rebuild_workspaces::RebuildWorkspacesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::rebuild_workspaces::RebuildWorkspacesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::rebuild_workspaces::RebuildWorkspacesInput {
             rebuild_workspace_requests: self.rebuild_workspace_requests,
         })

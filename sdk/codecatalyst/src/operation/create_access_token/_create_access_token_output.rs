@@ -145,28 +145,28 @@ impl CreateAccessTokenOutputBuilder {
     /// - [`access_token_id`](crate::operation::create_access_token::builders::CreateAccessTokenOutputBuilder::access_token_id)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_access_token::CreateAccessTokenOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_access_token::CreateAccessTokenOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_access_token::CreateAccessTokenOutput {
             secret: self.secret.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "secret",
                     "secret was not specified but it is required when building CreateAccessTokenOutput",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building CreateAccessTokenOutput",
                 )
             })?,
             expires_time: self.expires_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "expires_time",
                     "expires_time was not specified but it is required when building CreateAccessTokenOutput",
                 )
             })?,
             access_token_id: self.access_token_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "access_token_id",
                     "access_token_id was not specified but it is required when building CreateAccessTokenOutput",
                 )

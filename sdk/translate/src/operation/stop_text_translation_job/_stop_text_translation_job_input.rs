@@ -46,7 +46,7 @@ impl StopTextTranslationJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_text_translation_job::StopTextTranslationJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::stop_text_translation_job::StopTextTranslationJobInput { job_id: self.job_id })
     }

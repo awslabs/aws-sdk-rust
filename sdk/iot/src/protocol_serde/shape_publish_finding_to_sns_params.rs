@@ -2,7 +2,7 @@
 pub fn ser_publish_finding_to_sns_params(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PublishFindingToSnsParams,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("topicArn").string(input.topic_arn.as_str());
     }

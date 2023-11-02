@@ -44,8 +44,10 @@ impl DeleteTranscriptionJobInputBuilder {
     /// Consumes the builder and constructs a [`DeleteTranscriptionJobInput`](crate::operation::delete_transcription_job::DeleteTranscriptionJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_transcription_job::DeleteTranscriptionJobInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::delete_transcription_job::DeleteTranscriptionJobInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::delete_transcription_job::DeleteTranscriptionJobInput {
             transcription_job_name: self.transcription_job_name,
         })

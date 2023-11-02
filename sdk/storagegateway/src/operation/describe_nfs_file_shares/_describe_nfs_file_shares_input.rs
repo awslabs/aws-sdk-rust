@@ -52,7 +52,7 @@ impl DescribeNfsFileSharesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeNfsFileSharesInput`](crate::operation::describe_nfs_file_shares::DescribeNfsFileSharesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_nfs_file_shares::DescribeNfsFileSharesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_nfs_file_shares::DescribeNfsFileSharesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_nfs_file_shares::DescribeNfsFileSharesInput {
             file_share_arn_list: self.file_share_arn_list,

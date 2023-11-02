@@ -140,29 +140,29 @@ impl CreateSchemaMappingOutputBuilder {
     /// - [`mapped_input_fields`](crate::operation::create_schema_mapping::builders::CreateSchemaMappingOutputBuilder::mapped_input_fields)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_schema_mapping::CreateSchemaMappingOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_schema_mapping::CreateSchemaMappingOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_schema_mapping::CreateSchemaMappingOutput {
             schema_name: self.schema_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "schema_name",
                     "schema_name was not specified but it is required when building CreateSchemaMappingOutput",
                 )
             })?,
             schema_arn: self.schema_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "schema_arn",
                     "schema_arn was not specified but it is required when building CreateSchemaMappingOutput",
                 )
             })?,
             description: self.description.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "description",
                     "description was not specified but it is required when building CreateSchemaMappingOutput",
                 )
             })?,
             mapped_input_fields: self.mapped_input_fields.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "mapped_input_fields",
                     "mapped_input_fields was not specified but it is required when building CreateSchemaMappingOutput",
                 )

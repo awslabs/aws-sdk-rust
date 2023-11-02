@@ -181,11 +181,11 @@ impl ListWebhookItemBuilder {
     /// Consumes the builder and constructs a [`ListWebhookItem`](crate::types::ListWebhookItem).
     /// This method will fail if any of the following fields are not set:
     /// - [`url`](crate::types::builders::ListWebhookItemBuilder::url)
-    pub fn build(self) -> ::std::result::Result<crate::types::ListWebhookItem, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ListWebhookItem, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ListWebhookItem {
             definition: self.definition,
             url: self.url.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "url",
                     "url was not specified but it is required when building ListWebhookItem",
                 )

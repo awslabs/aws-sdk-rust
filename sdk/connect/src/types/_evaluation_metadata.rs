@@ -112,16 +112,16 @@ impl EvaluationMetadataBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`contact_id`](crate::types::builders::EvaluationMetadataBuilder::contact_id)
     /// - [`evaluator_arn`](crate::types::builders::EvaluationMetadataBuilder::evaluator_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::EvaluationMetadata, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::EvaluationMetadata, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EvaluationMetadata {
             contact_id: self.contact_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "contact_id",
                     "contact_id was not specified but it is required when building EvaluationMetadata",
                 )
             })?,
             evaluator_arn: self.evaluator_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "evaluator_arn",
                     "evaluator_arn was not specified but it is required when building EvaluationMetadata",
                 )

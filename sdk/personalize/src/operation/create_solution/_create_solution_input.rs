@@ -240,7 +240,7 @@ impl CreateSolutionInputBuilder {
     /// Consumes the builder and constructs a [`CreateSolutionInput`](crate::operation::create_solution::CreateSolutionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_solution::CreateSolutionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_solution::CreateSolutionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_solution::CreateSolutionInput {
             name: self.name,
             perform_hpo: self.perform_hpo,

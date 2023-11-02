@@ -78,7 +78,7 @@ impl GetRelationalDatabaseMasterUserPasswordInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordInput {

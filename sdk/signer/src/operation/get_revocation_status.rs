@@ -172,7 +172,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetRevocatio
             fn uri_base(
                 _input: &crate::operation::get_revocation_status::GetRevocationStatusInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 use ::std::fmt::Write as _;
                 ::std::write!(output, "/revocations").expect("formatting should succeed");
                 ::std::result::Result::Ok(())
@@ -180,11 +180,11 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetRevocatio
             fn uri_query(
                 _input: &crate::operation::get_revocation_status::GetRevocationStatusInput,
                 mut output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 let inner_1 = &_input.signature_timestamp;
                 let inner_1 = inner_1.as_ref().ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field("signature_timestamp", "cannot be empty or unset")
+                    ::aws_smithy_types::error::operation::BuildError::missing_field("signature_timestamp", "cannot be empty or unset")
                 })?;
                 query.push_kv(
                     "signatureTimestamp",
@@ -193,9 +193,9 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetRevocatio
                 let inner_2 = &_input.platform_id;
                 let inner_2 = inner_2
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("platform_id", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("platform_id", "cannot be empty or unset"))?;
                 if inner_2.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "platform_id",
                         "cannot be empty or unset",
                     ));
@@ -203,10 +203,10 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetRevocatio
                 query.push_kv("platformId", &::aws_smithy_http::query::fmt_string(&inner_2));
                 let inner_3 = &_input.profile_version_arn;
                 let inner_3 = inner_3.as_ref().ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field("profile_version_arn", "cannot be empty or unset")
+                    ::aws_smithy_types::error::operation::BuildError::missing_field("profile_version_arn", "cannot be empty or unset")
                 })?;
                 if inner_3.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "profile_version_arn",
                         "cannot be empty or unset",
                     ));
@@ -215,9 +215,9 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetRevocatio
                 let inner_4 = &_input.job_arn;
                 let inner_4 = inner_4
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("job_arn", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("job_arn", "cannot be empty or unset"))?;
                 if inner_4.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "job_arn",
                         "cannot be empty or unset",
                     ));
@@ -225,7 +225,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetRevocatio
                 query.push_kv("jobArn", &::aws_smithy_http::query::fmt_string(&inner_4));
                 let inner_5 = &_input.certificate_hashes;
                 let inner_5 = inner_5.as_ref().ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field("certificate_hashes", "cannot be empty or unset")
+                    ::aws_smithy_types::error::operation::BuildError::missing_field("certificate_hashes", "cannot be empty or unset")
                 })?;
                 for inner_6 in inner_5 {
                     query.push_kv("certificateHashes", &::aws_smithy_http::query::fmt_string(&inner_6));
@@ -236,7 +236,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetRevocatio
             fn update_http_builder(
                 input: &crate::operation::get_revocation_status::GetRevocationStatusInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -245,7 +245,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetRevocatio
             let mut builder = update_http_builder(&input, ::http::request::Builder::new())?;
             builder
         };
-        let body = ::aws_smithy_http::body::SdkBody::from("");
+        let body = ::aws_smithy_types::body::SdkBody::from("");
 
         ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }

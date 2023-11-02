@@ -71,7 +71,7 @@ impl AddCacheInputBuilder {
         &self.disk_ids
     }
     /// Consumes the builder and constructs a [`AddCacheInput`](crate::operation::add_cache::AddCacheInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::add_cache::AddCacheInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::add_cache::AddCacheInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::add_cache::AddCacheInput {
             gateway_arn: self.gateway_arn,
             disk_ids: self.disk_ids,

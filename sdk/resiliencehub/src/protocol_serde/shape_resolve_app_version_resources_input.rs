@@ -2,7 +2,7 @@
 pub fn ser_resolve_app_version_resources_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::resolve_app_version_resources::ResolveAppVersionResourcesInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.app_arn {
         object.key("appArn").string(var_1.as_str());
     }

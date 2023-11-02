@@ -211,41 +211,41 @@ impl GetSyncJobOutputBuilder {
     /// - [`sync_role`](crate::operation::get_sync_job::builders::GetSyncJobOutputBuilder::sync_role)
     /// - [`creation_date_time`](crate::operation::get_sync_job::builders::GetSyncJobOutputBuilder::creation_date_time)
     /// - [`update_date_time`](crate::operation::get_sync_job::builders::GetSyncJobOutputBuilder::update_date_time)
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_sync_job::GetSyncJobOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_sync_job::GetSyncJobOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_sync_job::GetSyncJobOutput {
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building GetSyncJobOutput",
                 )
             })?,
             workspace_id: self.workspace_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "workspace_id",
                     "workspace_id was not specified but it is required when building GetSyncJobOutput",
                 )
             })?,
             sync_source: self.sync_source.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "sync_source",
                     "sync_source was not specified but it is required when building GetSyncJobOutput",
                 )
             })?,
             sync_role: self.sync_role.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "sync_role",
                     "sync_role was not specified but it is required when building GetSyncJobOutput",
                 )
             })?,
             status: self.status,
             creation_date_time: self.creation_date_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_date_time",
                     "creation_date_time was not specified but it is required when building GetSyncJobOutput",
                 )
             })?,
             update_date_time: self.update_date_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "update_date_time",
                     "update_date_time was not specified but it is required when building GetSyncJobOutput",
                 )

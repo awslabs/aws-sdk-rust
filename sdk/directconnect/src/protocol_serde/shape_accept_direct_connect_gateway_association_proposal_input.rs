@@ -2,7 +2,7 @@
 pub fn ser_accept_direct_connect_gateway_association_proposal_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::accept_direct_connect_gateway_association_proposal::AcceptDirectConnectGatewayAssociationProposalInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.direct_connect_gateway_id {
         object.key("directConnectGatewayId").string(var_1.as_str());
     }

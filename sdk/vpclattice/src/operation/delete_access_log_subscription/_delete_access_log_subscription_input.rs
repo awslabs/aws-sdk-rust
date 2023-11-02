@@ -46,7 +46,7 @@ impl DeleteAccessLogSubscriptionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_access_log_subscription::DeleteAccessLogSubscriptionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_access_log_subscription::DeleteAccessLogSubscriptionInput {
             access_log_subscription_identifier: self.access_log_subscription_identifier,

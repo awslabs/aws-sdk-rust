@@ -65,8 +65,10 @@ impl CreateAssessmentTargetInputBuilder {
     /// Consumes the builder and constructs a [`CreateAssessmentTargetInput`](crate::operation::create_assessment_target::CreateAssessmentTargetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_assessment_target::CreateAssessmentTargetInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::create_assessment_target::CreateAssessmentTargetInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::create_assessment_target::CreateAssessmentTargetInput {
             assessment_target_name: self.assessment_target_name,
             resource_group_arn: self.resource_group_arn,

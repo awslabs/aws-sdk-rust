@@ -89,12 +89,12 @@ impl ListRecipeVersionsOutputBuilder {
     /// - [`recipes`](crate::operation::list_recipe_versions::builders::ListRecipeVersionsOutputBuilder::recipes)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_recipe_versions::ListRecipeVersionsOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_recipe_versions::ListRecipeVersionsOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_recipe_versions::ListRecipeVersionsOutput {
             next_token: self.next_token,
             recipes: self.recipes.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "recipes",
                     "recipes was not specified but it is required when building ListRecipeVersionsOutput",
                 )

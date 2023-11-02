@@ -284,7 +284,7 @@ impl UpdateMlTransformInputBuilder {
     /// Consumes the builder and constructs a [`UpdateMlTransformInput`](crate::operation::update_ml_transform::UpdateMlTransformInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_ml_transform::UpdateMlTransformInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_ml_transform::UpdateMlTransformInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_ml_transform::UpdateMlTransformInput {
             transform_id: self.transform_id,
             name: self.name,

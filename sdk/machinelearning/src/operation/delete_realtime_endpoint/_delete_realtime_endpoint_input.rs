@@ -44,8 +44,10 @@ impl DeleteRealtimeEndpointInputBuilder {
     /// Consumes the builder and constructs a [`DeleteRealtimeEndpointInput`](crate::operation::delete_realtime_endpoint::DeleteRealtimeEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_realtime_endpoint::DeleteRealtimeEndpointInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::delete_realtime_endpoint::DeleteRealtimeEndpointInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::delete_realtime_endpoint::DeleteRealtimeEndpointInput {
             ml_model_id: self.ml_model_id,
         })

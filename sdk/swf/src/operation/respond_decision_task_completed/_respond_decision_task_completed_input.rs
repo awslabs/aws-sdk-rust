@@ -154,7 +154,7 @@ impl RespondDecisionTaskCompletedInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::respond_decision_task_completed::RespondDecisionTaskCompletedInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::respond_decision_task_completed::RespondDecisionTaskCompletedInput {
             task_token: self.task_token,

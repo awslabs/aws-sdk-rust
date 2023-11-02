@@ -102,7 +102,7 @@ impl GetFunctionEventInvokeConfigInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_function_event_invoke_config::GetFunctionEventInvokeConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_function_event_invoke_config::GetFunctionEventInvokeConfigInput {
             function_name: self.function_name,

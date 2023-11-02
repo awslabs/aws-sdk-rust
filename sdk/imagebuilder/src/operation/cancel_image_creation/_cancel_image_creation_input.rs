@@ -66,7 +66,7 @@ impl CancelImageCreationInputBuilder {
     /// Consumes the builder and constructs a [`CancelImageCreationInput`](crate::operation::cancel_image_creation::CancelImageCreationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::cancel_image_creation::CancelImageCreationInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::cancel_image_creation::CancelImageCreationInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::cancel_image_creation::CancelImageCreationInput {
             image_build_version_arn: self.image_build_version_arn,

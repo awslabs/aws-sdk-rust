@@ -91,16 +91,16 @@ impl PublicKeyBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::PublicKeyBuilder::id)
     /// - [`created_time`](crate::types::builders::PublicKeyBuilder::created_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::PublicKey, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PublicKey, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PublicKey {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building PublicKey",
                 )
             })?,
             created_time: self.created_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_time",
                     "created_time was not specified but it is required when building PublicKey",
                 )

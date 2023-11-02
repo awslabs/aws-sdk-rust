@@ -48,10 +48,10 @@ impl CloudWatchLogsDestinationConfigurationBuilder {
     /// - [`log_group_name`](crate::types::builders::CloudWatchLogsDestinationConfigurationBuilder::log_group_name)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::CloudWatchLogsDestinationConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::CloudWatchLogsDestinationConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CloudWatchLogsDestinationConfiguration {
             log_group_name: self.log_group_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "log_group_name",
                     "log_group_name was not specified but it is required when building CloudWatchLogsDestinationConfiguration",
                 )

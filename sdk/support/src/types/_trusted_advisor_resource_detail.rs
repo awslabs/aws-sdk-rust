@@ -141,24 +141,24 @@ impl TrustedAdvisorResourceDetailBuilder {
     /// - [`status`](crate::types::builders::TrustedAdvisorResourceDetailBuilder::status)
     /// - [`resource_id`](crate::types::builders::TrustedAdvisorResourceDetailBuilder::resource_id)
     /// - [`metadata`](crate::types::builders::TrustedAdvisorResourceDetailBuilder::metadata)
-    pub fn build(self) -> ::std::result::Result<crate::types::TrustedAdvisorResourceDetail, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TrustedAdvisorResourceDetail, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TrustedAdvisorResourceDetail {
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building TrustedAdvisorResourceDetail",
                 )
             })?,
             region: self.region,
             resource_id: self.resource_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_id",
                     "resource_id was not specified but it is required when building TrustedAdvisorResourceDetail",
                 )
             })?,
             is_suppressed: self.is_suppressed.unwrap_or_default(),
             metadata: self.metadata.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "metadata",
                     "metadata was not specified but it is required when building TrustedAdvisorResourceDetail",
                 )

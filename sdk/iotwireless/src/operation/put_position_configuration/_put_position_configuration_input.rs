@@ -111,7 +111,7 @@ impl PutPositionConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_position_configuration::PutPositionConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_position_configuration::PutPositionConfigurationInput {
             resource_identifier: self.resource_identifier,

@@ -442,7 +442,7 @@ impl CreateMlTransformInputBuilder {
     /// Consumes the builder and constructs a [`CreateMlTransformInput`](crate::operation::create_ml_transform::CreateMlTransformInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_ml_transform::CreateMlTransformInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_ml_transform::CreateMlTransformInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_ml_transform::CreateMlTransformInput {
             name: self.name,
             description: self.description,

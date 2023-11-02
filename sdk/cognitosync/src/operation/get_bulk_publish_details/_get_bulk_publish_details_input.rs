@@ -45,7 +45,7 @@ impl GetBulkPublishDetailsInputBuilder {
     /// Consumes the builder and constructs a [`GetBulkPublishDetailsInput`](crate::operation::get_bulk_publish_details::GetBulkPublishDetailsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_bulk_publish_details::GetBulkPublishDetailsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_bulk_publish_details::GetBulkPublishDetailsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_bulk_publish_details::GetBulkPublishDetailsInput {
             identity_pool_id: self.identity_pool_id,

@@ -111,10 +111,10 @@ impl ListPipelinesOutputBuilder {
     /// - [`pipeline_id_list`](crate::operation::list_pipelines::builders::ListPipelinesOutputBuilder::pipeline_id_list)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_pipelines::ListPipelinesOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_pipelines::ListPipelinesOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_pipelines::ListPipelinesOutput {
             pipeline_id_list: self.pipeline_id_list.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "pipeline_id_list",
                     "pipeline_id_list was not specified but it is required when building ListPipelinesOutput",
                 )

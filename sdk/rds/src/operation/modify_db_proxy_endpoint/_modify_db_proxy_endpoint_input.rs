@@ -94,7 +94,7 @@ impl ModifyDbProxyEndpointInputBuilder {
     /// Consumes the builder and constructs a [`ModifyDbProxyEndpointInput`](crate::operation::modify_db_proxy_endpoint::ModifyDbProxyEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::modify_db_proxy_endpoint::ModifyDbProxyEndpointInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::modify_db_proxy_endpoint::ModifyDbProxyEndpointInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::modify_db_proxy_endpoint::ModifyDbProxyEndpointInput {
             db_proxy_endpoint_name: self.db_proxy_endpoint_name,

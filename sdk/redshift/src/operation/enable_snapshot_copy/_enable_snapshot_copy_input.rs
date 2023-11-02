@@ -155,7 +155,8 @@ impl EnableSnapshotCopyInputBuilder {
     /// Consumes the builder and constructs a [`EnableSnapshotCopyInput`](crate::operation::enable_snapshot_copy::EnableSnapshotCopyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::enable_snapshot_copy::EnableSnapshotCopyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::enable_snapshot_copy::EnableSnapshotCopyInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::enable_snapshot_copy::EnableSnapshotCopyInput {
             cluster_identifier: self.cluster_identifier,
             destination_region: self.destination_region,

@@ -73,7 +73,7 @@ impl ModifyClusterDbRevisionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_cluster_db_revision::ModifyClusterDbRevisionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::modify_cluster_db_revision::ModifyClusterDbRevisionInput {
             cluster_identifier: self.cluster_identifier,

@@ -69,10 +69,10 @@ impl MagneticStoreWritePropertiesBuilder {
     /// Consumes the builder and constructs a [`MagneticStoreWriteProperties`](crate::types::MagneticStoreWriteProperties).
     /// This method will fail if any of the following fields are not set:
     /// - [`enable_magnetic_store_writes`](crate::types::builders::MagneticStoreWritePropertiesBuilder::enable_magnetic_store_writes)
-    pub fn build(self) -> ::std::result::Result<crate::types::MagneticStoreWriteProperties, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::MagneticStoreWriteProperties, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MagneticStoreWriteProperties {
             enable_magnetic_store_writes: self.enable_magnetic_store_writes.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "enable_magnetic_store_writes",
                     "enable_magnetic_store_writes was not specified but it is required when building MagneticStoreWriteProperties",
                 )

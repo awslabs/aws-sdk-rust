@@ -132,18 +132,18 @@ impl OverallTestResultItemBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`total_result_count`](crate::types::builders::OverallTestResultItemBuilder::total_result_count)
     /// - [`end_to_end_result_counts`](crate::types::builders::OverallTestResultItemBuilder::end_to_end_result_counts)
-    pub fn build(self) -> ::std::result::Result<crate::types::OverallTestResultItem, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::OverallTestResultItem, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::OverallTestResultItem {
             multi_turn_conversation: self.multi_turn_conversation.unwrap_or_default(),
             total_result_count: self.total_result_count.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "total_result_count",
                     "total_result_count was not specified but it is required when building OverallTestResultItem",
                 )
             })?,
             speech_transcription_result_counts: self.speech_transcription_result_counts,
             end_to_end_result_counts: self.end_to_end_result_counts.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "end_to_end_result_counts",
                     "end_to_end_result_counts was not specified but it is required when building OverallTestResultItem",
                 )

@@ -69,16 +69,16 @@ impl DefinitionDocumentBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`language`](crate::types::builders::DefinitionDocumentBuilder::language)
     /// - [`text`](crate::types::builders::DefinitionDocumentBuilder::text)
-    pub fn build(self) -> ::std::result::Result<crate::types::DefinitionDocument, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DefinitionDocument, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DefinitionDocument {
             language: self.language.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "language",
                     "language was not specified but it is required when building DefinitionDocument",
                 )
             })?,
             text: self.text.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "text",
                     "text was not specified but it is required when building DefinitionDocument",
                 )

@@ -2,7 +2,7 @@
 pub fn ser_failover_condition_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FailoverConditionSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.audio_silence_settings {
         #[allow(unused_mut)]
         let mut object_2 = object.key("audioSilenceSettings").start_object();

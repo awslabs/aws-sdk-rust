@@ -44,7 +44,8 @@ impl GetSoftwareUpdatesInputBuilder {
     /// Consumes the builder and constructs a [`GetSoftwareUpdatesInput`](crate::operation::get_software_updates::GetSoftwareUpdatesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_software_updates::GetSoftwareUpdatesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_software_updates::GetSoftwareUpdatesInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::get_software_updates::GetSoftwareUpdatesInput { job_id: self.job_id })
     }
 }

@@ -74,16 +74,16 @@ impl AggregateColumnBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`column_names`](crate::types::builders::AggregateColumnBuilder::column_names)
     /// - [`function`](crate::types::builders::AggregateColumnBuilder::function)
-    pub fn build(self) -> ::std::result::Result<crate::types::AggregateColumn, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AggregateColumn, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AggregateColumn {
             column_names: self.column_names.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "column_names",
                     "column_names was not specified but it is required when building AggregateColumn",
                 )
             })?,
             function: self.function.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "function",
                     "function was not specified but it is required when building AggregateColumn",
                 )

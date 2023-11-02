@@ -87,7 +87,7 @@ impl UpdateCachePolicyInputBuilder {
     /// Consumes the builder and constructs a [`UpdateCachePolicyInput`](crate::operation::update_cache_policy::UpdateCachePolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_cache_policy::UpdateCachePolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_cache_policy::UpdateCachePolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_cache_policy::UpdateCachePolicyInput {
             cache_policy_config: self.cache_policy_config,
             id: self.id,

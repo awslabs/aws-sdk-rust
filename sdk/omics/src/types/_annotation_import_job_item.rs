@@ -263,46 +263,46 @@ impl AnnotationImportJobItemBuilder {
     /// - [`status`](crate::types::builders::AnnotationImportJobItemBuilder::status)
     /// - [`creation_time`](crate::types::builders::AnnotationImportJobItemBuilder::creation_time)
     /// - [`update_time`](crate::types::builders::AnnotationImportJobItemBuilder::update_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::AnnotationImportJobItem, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AnnotationImportJobItem, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AnnotationImportJobItem {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building AnnotationImportJobItem",
                 )
             })?,
             destination_name: self.destination_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "destination_name",
                     "destination_name was not specified but it is required when building AnnotationImportJobItem",
                 )
             })?,
             version_name: self.version_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "version_name",
                     "version_name was not specified but it is required when building AnnotationImportJobItem",
                 )
             })?,
             role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role_arn",
                     "role_arn was not specified but it is required when building AnnotationImportJobItem",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building AnnotationImportJobItem",
                 )
             })?,
             creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_time",
                     "creation_time was not specified but it is required when building AnnotationImportJobItem",
                 )
             })?,
             update_time: self.update_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "update_time",
                     "update_time was not specified but it is required when building AnnotationImportJobItem",
                 )

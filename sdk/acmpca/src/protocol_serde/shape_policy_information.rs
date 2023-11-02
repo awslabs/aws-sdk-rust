@@ -2,7 +2,7 @@
 pub fn ser_policy_information(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PolicyInformation,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("CertPolicyId").string(input.cert_policy_id.as_str());
     }

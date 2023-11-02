@@ -69,7 +69,7 @@ impl GetWebAclForResourceInputBuilder {
     /// Consumes the builder and constructs a [`GetWebAclForResourceInput`](crate::operation::get_web_acl_for_resource::GetWebAclForResourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_web_acl_for_resource::GetWebAclForResourceInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_web_acl_for_resource::GetWebAclForResourceInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_web_acl_for_resource::GetWebAclForResourceInput {
             resource_arn: self.resource_arn,

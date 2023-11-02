@@ -2,7 +2,7 @@
 pub fn ser_meeting_setting(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MeetingSetting,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("RequirePin").string(input.require_pin.as_str());
     }

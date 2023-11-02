@@ -282,10 +282,10 @@ impl ThingIndexingConfigurationBuilder {
     /// Consumes the builder and constructs a [`ThingIndexingConfiguration`](crate::types::ThingIndexingConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`thing_indexing_mode`](crate::types::builders::ThingIndexingConfigurationBuilder::thing_indexing_mode)
-    pub fn build(self) -> ::std::result::Result<crate::types::ThingIndexingConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ThingIndexingConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ThingIndexingConfiguration {
             thing_indexing_mode: self.thing_indexing_mode.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "thing_indexing_mode",
                     "thing_indexing_mode was not specified but it is required when building ThingIndexingConfiguration",
                 )

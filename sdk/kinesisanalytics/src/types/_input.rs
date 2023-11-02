@@ -177,10 +177,10 @@ impl InputBuilder {
     /// Consumes the builder and constructs a [`Input`](crate::types::Input).
     /// This method will fail if any of the following fields are not set:
     /// - [`name_prefix`](crate::types::builders::InputBuilder::name_prefix)
-    pub fn build(self) -> ::std::result::Result<crate::types::Input, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Input, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Input {
             name_prefix: self.name_prefix.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name_prefix",
                     "name_prefix was not specified but it is required when building Input",
                 )

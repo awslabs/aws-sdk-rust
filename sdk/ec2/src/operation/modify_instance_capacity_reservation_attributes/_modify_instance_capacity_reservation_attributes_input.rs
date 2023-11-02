@@ -91,7 +91,7 @@ impl ModifyInstanceCapacityReservationAttributesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_instance_capacity_reservation_attributes::ModifyInstanceCapacityReservationAttributesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::modify_instance_capacity_reservation_attributes::ModifyInstanceCapacityReservationAttributesInput {

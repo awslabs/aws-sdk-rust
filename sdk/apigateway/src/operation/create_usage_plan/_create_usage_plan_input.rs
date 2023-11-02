@@ -164,7 +164,7 @@ impl CreateUsagePlanInputBuilder {
     /// Consumes the builder and constructs a [`CreateUsagePlanInput`](crate::operation::create_usage_plan::CreateUsagePlanInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_usage_plan::CreateUsagePlanInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_usage_plan::CreateUsagePlanInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_usage_plan::CreateUsagePlanInput {
             name: self.name,
             description: self.description,

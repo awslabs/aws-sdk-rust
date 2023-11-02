@@ -126,7 +126,7 @@ impl ListCoreDevicesInputBuilder {
     /// Consumes the builder and constructs a [`ListCoreDevicesInput`](crate::operation::list_core_devices::ListCoreDevicesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_core_devices::ListCoreDevicesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_core_devices::ListCoreDevicesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_core_devices::ListCoreDevicesInput {
             thing_group_arn: self.thing_group_arn,
             status: self.status,

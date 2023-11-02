@@ -69,7 +69,7 @@ impl ModifyCertificatesInputBuilder {
     /// Consumes the builder and constructs a [`ModifyCertificatesInput`](crate::operation::modify_certificates::ModifyCertificatesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::modify_certificates::ModifyCertificatesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::modify_certificates::ModifyCertificatesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::modify_certificates::ModifyCertificatesInput {
             certificate_identifier: self.certificate_identifier,
             remove_customer_override: self.remove_customer_override,

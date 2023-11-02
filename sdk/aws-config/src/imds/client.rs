@@ -13,7 +13,6 @@ use crate::provider_config::ProviderConfig;
 use crate::PKG_VERSION;
 use aws_http::user_agent::{ApiMetadata, AwsUserAgent};
 use aws_runtime::user_agent::UserAgentInterceptor;
-use aws_smithy_http::body::SdkBody;
 use aws_smithy_http::result::ConnectorError;
 use aws_smithy_http::result::SdkError;
 use aws_smithy_runtime::client::orchestrator::operation::Operation;
@@ -31,6 +30,7 @@ use aws_smithy_runtime_api::client::retries::classifiers::{
 };
 use aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder;
 use aws_smithy_runtime_api::client::runtime_plugin::{RuntimePlugin, SharedRuntimePlugin};
+use aws_smithy_types::body::SdkBody;
 use aws_smithy_types::config_bag::{FrozenLayer, Layer};
 use aws_smithy_types::endpoint::Endpoint;
 use aws_smithy_types::retry::RetryConfig;
@@ -583,7 +583,6 @@ pub(crate) mod test {
     use crate::provider_config::ProviderConfig;
     use aws_smithy_async::rt::sleep::TokioSleep;
     use aws_smithy_async::test_util::{instant_time_and_sleep, InstantSleep};
-    use aws_smithy_http::body::SdkBody;
     use aws_smithy_http::result::ConnectorError;
     use aws_smithy_runtime::client::http::test_util::{
         capture_request, ReplayEvent, StaticReplayClient,
@@ -596,6 +595,7 @@ pub(crate) mod test {
         HttpRequest, HttpResponse, OrchestratorError,
     };
     use aws_smithy_runtime_api::client::retries::classifiers::{ClassifyRetry, RetryAction};
+    use aws_smithy_types::body::SdkBody;
     use aws_smithy_types::error::display::DisplayErrorContext;
     use aws_types::os_shim_internal::{Env, Fs};
     use http::header::USER_AGENT;

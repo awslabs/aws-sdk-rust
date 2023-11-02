@@ -91,7 +91,7 @@ impl GetConsoleOutputInputBuilder {
     /// Consumes the builder and constructs a [`GetConsoleOutputInput`](crate::operation::get_console_output::GetConsoleOutputInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_console_output::GetConsoleOutputInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_console_output::GetConsoleOutputInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_console_output::GetConsoleOutputInput {
             instance_id: self.instance_id,
             dry_run: self.dry_run,

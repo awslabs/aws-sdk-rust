@@ -130,7 +130,8 @@ impl RegisterGameServerInputBuilder {
     /// Consumes the builder and constructs a [`RegisterGameServerInput`](crate::operation::register_game_server::RegisterGameServerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::register_game_server::RegisterGameServerInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::register_game_server::RegisterGameServerInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::register_game_server::RegisterGameServerInput {
             game_server_group_name: self.game_server_group_name,
             game_server_id: self.game_server_id,

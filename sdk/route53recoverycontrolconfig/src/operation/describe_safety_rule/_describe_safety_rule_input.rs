@@ -44,7 +44,8 @@ impl DescribeSafetyRuleInputBuilder {
     /// Consumes the builder and constructs a [`DescribeSafetyRuleInput`](crate::operation::describe_safety_rule::DescribeSafetyRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_safety_rule::DescribeSafetyRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_safety_rule::DescribeSafetyRuleInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::describe_safety_rule::DescribeSafetyRuleInput {
             safety_rule_arn: self.safety_rule_arn,
         })

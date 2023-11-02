@@ -42,7 +42,7 @@ impl GetHitInputBuilder {
         &self.hit_id
     }
     /// Consumes the builder and constructs a [`GetHitInput`](crate::operation::get_hit::GetHitInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_hit::GetHitInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_hit::GetHitInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_hit::GetHitInput { hit_id: self.hit_id })
     }
 }

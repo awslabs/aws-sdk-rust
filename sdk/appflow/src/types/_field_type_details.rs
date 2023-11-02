@@ -188,16 +188,16 @@ impl FieldTypeDetailsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`field_type`](crate::types::builders::FieldTypeDetailsBuilder::field_type)
     /// - [`filter_operators`](crate::types::builders::FieldTypeDetailsBuilder::filter_operators)
-    pub fn build(self) -> ::std::result::Result<crate::types::FieldTypeDetails, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::FieldTypeDetails, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FieldTypeDetails {
             field_type: self.field_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "field_type",
                     "field_type was not specified but it is required when building FieldTypeDetails",
                 )
             })?,
             filter_operators: self.filter_operators.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "filter_operators",
                     "filter_operators was not specified but it is required when building FieldTypeDetails",
                 )

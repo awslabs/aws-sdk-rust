@@ -69,10 +69,10 @@ impl SendBulkEmailOutputBuilder {
     /// - [`bulk_email_entry_results`](crate::operation::send_bulk_email::builders::SendBulkEmailOutputBuilder::bulk_email_entry_results)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::send_bulk_email::SendBulkEmailOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::send_bulk_email::SendBulkEmailOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::send_bulk_email::SendBulkEmailOutput {
             bulk_email_entry_results: self.bulk_email_entry_results.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "bulk_email_entry_results",
                     "bulk_email_entry_results was not specified but it is required when building SendBulkEmailOutput",
                 )

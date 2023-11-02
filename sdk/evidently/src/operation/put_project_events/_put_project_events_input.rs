@@ -73,7 +73,7 @@ impl PutProjectEventsInputBuilder {
     /// Consumes the builder and constructs a [`PutProjectEventsInput`](crate::operation::put_project_events::PutProjectEventsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_project_events::PutProjectEventsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_project_events::PutProjectEventsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_project_events::PutProjectEventsInput {
             project: self.project,
             events: self.events,

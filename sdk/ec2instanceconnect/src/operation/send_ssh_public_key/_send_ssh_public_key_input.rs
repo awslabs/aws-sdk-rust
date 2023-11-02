@@ -109,7 +109,7 @@ impl SendSshPublicKeyInputBuilder {
     /// Consumes the builder and constructs a [`SendSshPublicKeyInput`](crate::operation::send_ssh_public_key::SendSshPublicKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::send_ssh_public_key::SendSshPublicKeyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::send_ssh_public_key::SendSshPublicKeyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::send_ssh_public_key::SendSshPublicKeyInput {
             instance_id: self.instance_id,
             instance_os_user: self.instance_os_user,

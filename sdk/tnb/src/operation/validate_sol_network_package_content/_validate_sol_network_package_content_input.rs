@@ -89,7 +89,7 @@ impl ValidateSolNetworkPackageContentInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentInput {

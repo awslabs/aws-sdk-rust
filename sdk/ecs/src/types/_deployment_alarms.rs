@@ -98,10 +98,10 @@ impl DeploymentAlarmsBuilder {
     /// Consumes the builder and constructs a [`DeploymentAlarms`](crate::types::DeploymentAlarms).
     /// This method will fail if any of the following fields are not set:
     /// - [`alarm_names`](crate::types::builders::DeploymentAlarmsBuilder::alarm_names)
-    pub fn build(self) -> ::std::result::Result<crate::types::DeploymentAlarms, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DeploymentAlarms, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DeploymentAlarms {
             alarm_names: self.alarm_names.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "alarm_names",
                     "alarm_names was not specified but it is required when building DeploymentAlarms",
                 )

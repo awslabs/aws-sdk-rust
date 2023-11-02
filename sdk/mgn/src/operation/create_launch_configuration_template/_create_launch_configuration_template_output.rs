@@ -434,12 +434,12 @@ impl CreateLaunchConfigurationTemplateOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_launch_configuration_template::CreateLaunchConfigurationTemplateOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::create_launch_configuration_template::CreateLaunchConfigurationTemplateOutput {
                 launch_configuration_template_id: self.launch_configuration_template_id.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
                         "launch_configuration_template_id",
                         "launch_configuration_template_id was not specified but it is required when building CreateLaunchConfigurationTemplateOutput",
                     )

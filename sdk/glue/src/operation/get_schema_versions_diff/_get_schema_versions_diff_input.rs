@@ -130,7 +130,7 @@ impl GetSchemaVersionsDiffInputBuilder {
     /// Consumes the builder and constructs a [`GetSchemaVersionsDiffInput`](crate::operation::get_schema_versions_diff::GetSchemaVersionsDiffInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_schema_versions_diff::GetSchemaVersionsDiffInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_schema_versions_diff::GetSchemaVersionsDiffInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_schema_versions_diff::GetSchemaVersionsDiffInput {
             schema_id: self.schema_id,

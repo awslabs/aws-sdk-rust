@@ -343,7 +343,7 @@ impl UpdateStudioComponentInputBuilder {
     /// Consumes the builder and constructs a [`UpdateStudioComponentInput`](crate::operation::update_studio_component::UpdateStudioComponentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_studio_component::UpdateStudioComponentInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_studio_component::UpdateStudioComponentInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_studio_component::UpdateStudioComponentInput {
             client_token: self.client_token,

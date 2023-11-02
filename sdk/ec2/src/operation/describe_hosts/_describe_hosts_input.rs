@@ -172,7 +172,7 @@ impl DescribeHostsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeHostsInput`](crate::operation::describe_hosts::DescribeHostsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_hosts::DescribeHostsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_hosts::DescribeHostsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_hosts::DescribeHostsInput {
             filter: self.filter,
             host_ids: self.host_ids,

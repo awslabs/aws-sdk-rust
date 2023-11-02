@@ -92,22 +92,22 @@ impl SharePrincipalBuilder {
     /// - [`id`](crate::types::builders::SharePrincipalBuilder::id)
     /// - [`r#type`](crate::types::builders::SharePrincipalBuilder::r#type)
     /// - [`role`](crate::types::builders::SharePrincipalBuilder::role)
-    pub fn build(self) -> ::std::result::Result<crate::types::SharePrincipal, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SharePrincipal, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SharePrincipal {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building SharePrincipal",
                 )
             })?,
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building SharePrincipal",
                 )
             })?,
             role: self.role.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role",
                     "role was not specified but it is required when building SharePrincipal",
                 )

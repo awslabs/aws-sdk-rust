@@ -149,10 +149,10 @@ impl MetricQueryBuilder {
     /// Consumes the builder and constructs a [`MetricQuery`](crate::types::MetricQuery).
     /// This method will fail if any of the following fields are not set:
     /// - [`metric`](crate::types::builders::MetricQueryBuilder::metric)
-    pub fn build(self) -> ::std::result::Result<crate::types::MetricQuery, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::MetricQuery, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MetricQuery {
             metric: self.metric.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "metric",
                     "metric was not specified but it is required when building MetricQuery",
                 )

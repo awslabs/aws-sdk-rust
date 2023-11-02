@@ -166,7 +166,7 @@ impl CreateScheduledAuditInputBuilder {
     /// Consumes the builder and constructs a [`CreateScheduledAuditInput`](crate::operation::create_scheduled_audit::CreateScheduledAuditInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_scheduled_audit::CreateScheduledAuditInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_scheduled_audit::CreateScheduledAuditInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_scheduled_audit::CreateScheduledAuditInput {
             frequency: self.frequency,

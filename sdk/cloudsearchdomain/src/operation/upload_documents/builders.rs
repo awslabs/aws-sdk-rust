@@ -108,17 +108,17 @@ impl UploadDocumentsFluentBuilder {
         self
     }
     /// <p>A batch of documents formatted in JSON or HTML.</p>
-    pub fn documents(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
+    pub fn documents(mut self, input: ::aws_smithy_types::byte_stream::ByteStream) -> Self {
         self.inner = self.inner.documents(input);
         self
     }
     /// <p>A batch of documents formatted in JSON or HTML.</p>
-    pub fn set_documents(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
+    pub fn set_documents(mut self, input: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>) -> Self {
         self.inner = self.inner.set_documents(input);
         self
     }
     /// <p>A batch of documents formatted in JSON or HTML.</p>
-    pub fn get_documents(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+    pub fn get_documents(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
         self.inner.get_documents()
     }
     /// <p>The format of the batch you are uploading. Amazon CloudSearch supports two document batch formats:</p>

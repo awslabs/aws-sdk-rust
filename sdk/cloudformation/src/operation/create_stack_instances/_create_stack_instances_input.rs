@@ -310,7 +310,7 @@ impl CreateStackInstancesInputBuilder {
     /// Consumes the builder and constructs a [`CreateStackInstancesInput`](crate::operation::create_stack_instances::CreateStackInstancesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_stack_instances::CreateStackInstancesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_stack_instances::CreateStackInstancesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_stack_instances::CreateStackInstancesInput {
             stack_set_name: self.stack_set_name,

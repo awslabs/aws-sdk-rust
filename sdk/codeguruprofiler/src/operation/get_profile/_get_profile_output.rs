@@ -106,16 +106,16 @@ impl GetProfileOutputBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`profile`](crate::operation::get_profile::builders::GetProfileOutputBuilder::profile)
     /// - [`content_type`](crate::operation::get_profile::builders::GetProfileOutputBuilder::content_type)
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_profile::GetProfileOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_profile::GetProfileOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_profile::GetProfileOutput {
             profile: self.profile.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "profile",
                     "profile was not specified but it is required when building GetProfileOutput",
                 )
             })?,
             content_type: self.content_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "content_type",
                     "content_type was not specified but it is required when building GetProfileOutput",
                 )

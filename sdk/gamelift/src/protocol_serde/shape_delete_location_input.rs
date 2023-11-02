@@ -2,7 +2,7 @@
 pub fn ser_delete_location_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_location::DeleteLocationInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.location_name {
         object.key("LocationName").string(var_1.as_str());
     }

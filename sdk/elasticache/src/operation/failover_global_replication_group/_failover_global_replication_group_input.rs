@@ -90,7 +90,7 @@ impl FailoverGlobalReplicationGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::failover_global_replication_group::FailoverGlobalReplicationGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::failover_global_replication_group::FailoverGlobalReplicationGroupInput {
             global_replication_group_id: self.global_replication_group_id,

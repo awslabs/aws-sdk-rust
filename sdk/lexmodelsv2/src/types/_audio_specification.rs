@@ -68,16 +68,16 @@ impl AudioSpecificationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`max_length_ms`](crate::types::builders::AudioSpecificationBuilder::max_length_ms)
     /// - [`end_timeout_ms`](crate::types::builders::AudioSpecificationBuilder::end_timeout_ms)
-    pub fn build(self) -> ::std::result::Result<crate::types::AudioSpecification, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AudioSpecification, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AudioSpecification {
             max_length_ms: self.max_length_ms.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "max_length_ms",
                     "max_length_ms was not specified but it is required when building AudioSpecification",
                 )
             })?,
             end_timeout_ms: self.end_timeout_ms.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "end_timeout_ms",
                     "end_timeout_ms was not specified but it is required when building AudioSpecification",
                 )

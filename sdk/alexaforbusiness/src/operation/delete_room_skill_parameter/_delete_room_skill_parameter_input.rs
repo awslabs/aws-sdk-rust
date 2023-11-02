@@ -89,7 +89,7 @@ impl DeleteRoomSkillParameterInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_room_skill_parameter::DeleteRoomSkillParameterInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_room_skill_parameter::DeleteRoomSkillParameterInput {
             room_arn: self.room_arn,

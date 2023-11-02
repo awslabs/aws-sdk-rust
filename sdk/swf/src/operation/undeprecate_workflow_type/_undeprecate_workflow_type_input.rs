@@ -68,7 +68,7 @@ impl UndeprecateWorkflowTypeInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::undeprecate_workflow_type::UndeprecateWorkflowTypeInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::undeprecate_workflow_type::UndeprecateWorkflowTypeInput {
             domain: self.domain,

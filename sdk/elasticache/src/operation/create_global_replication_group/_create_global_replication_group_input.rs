@@ -94,7 +94,7 @@ impl CreateGlobalReplicationGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_global_replication_group::CreateGlobalReplicationGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_global_replication_group::CreateGlobalReplicationGroupInput {
             global_replication_group_id_suffix: self.global_replication_group_id_suffix,

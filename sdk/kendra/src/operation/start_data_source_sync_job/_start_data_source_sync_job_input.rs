@@ -68,7 +68,7 @@ impl StartDataSourceSyncJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_data_source_sync_job::StartDataSourceSyncJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_data_source_sync_job::StartDataSourceSyncJobInput {
             id: self.id,

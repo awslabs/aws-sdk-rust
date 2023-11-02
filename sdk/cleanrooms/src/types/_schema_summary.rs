@@ -237,52 +237,52 @@ impl SchemaSummaryBuilder {
     /// - [`collaboration_id`](crate::types::builders::SchemaSummaryBuilder::collaboration_id)
     /// - [`collaboration_arn`](crate::types::builders::SchemaSummaryBuilder::collaboration_arn)
     /// - [`analysis_rule_types`](crate::types::builders::SchemaSummaryBuilder::analysis_rule_types)
-    pub fn build(self) -> ::std::result::Result<crate::types::SchemaSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SchemaSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SchemaSummary {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building SchemaSummary",
                 )
             })?,
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building SchemaSummary",
                 )
             })?,
             creator_account_id: self.creator_account_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creator_account_id",
                     "creator_account_id was not specified but it is required when building SchemaSummary",
                 )
             })?,
             create_time: self.create_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "create_time",
                     "create_time was not specified but it is required when building SchemaSummary",
                 )
             })?,
             update_time: self.update_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "update_time",
                     "update_time was not specified but it is required when building SchemaSummary",
                 )
             })?,
             collaboration_id: self.collaboration_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "collaboration_id",
                     "collaboration_id was not specified but it is required when building SchemaSummary",
                 )
             })?,
             collaboration_arn: self.collaboration_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "collaboration_arn",
                     "collaboration_arn was not specified but it is required when building SchemaSummary",
                 )
             })?,
             analysis_rule_types: self.analysis_rule_types.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "analysis_rule_types",
                     "analysis_rule_types was not specified but it is required when building SchemaSummary",
                 )

@@ -46,10 +46,10 @@ impl KmsEncryptionConfigBuilder {
     /// Consumes the builder and constructs a [`KmsEncryptionConfig`](crate::types::KmsEncryptionConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`awskms_key_arn`](crate::types::builders::KmsEncryptionConfigBuilder::awskms_key_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::KmsEncryptionConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::KmsEncryptionConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::KmsEncryptionConfig {
             awskms_key_arn: self.awskms_key_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "awskms_key_arn",
                     "awskms_key_arn was not specified but it is required when building KmsEncryptionConfig",
                 )

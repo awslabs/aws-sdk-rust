@@ -44,7 +44,7 @@ impl RestoreWorkspaceInputBuilder {
     /// Consumes the builder and constructs a [`RestoreWorkspaceInput`](crate::operation::restore_workspace::RestoreWorkspaceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::restore_workspace::RestoreWorkspaceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::restore_workspace::RestoreWorkspaceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::restore_workspace::RestoreWorkspaceInput {
             workspace_id: self.workspace_id,
         })

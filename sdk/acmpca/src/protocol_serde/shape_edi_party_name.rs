@@ -2,7 +2,7 @@
 pub fn ser_edi_party_name(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EdiPartyName,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("PartyName").string(input.party_name.as_str());
     }

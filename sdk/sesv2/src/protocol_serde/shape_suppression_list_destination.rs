@@ -2,7 +2,7 @@
 pub fn ser_suppression_list_destination(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SuppressionListDestination,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object
             .key("SuppressionListImportAction")

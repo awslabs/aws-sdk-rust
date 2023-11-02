@@ -77,7 +77,7 @@ impl DeleteFlowLogsInputBuilder {
     /// Consumes the builder and constructs a [`DeleteFlowLogsInput`](crate::operation::delete_flow_logs::DeleteFlowLogsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_flow_logs::DeleteFlowLogsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_flow_logs::DeleteFlowLogsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_flow_logs::DeleteFlowLogsInput {
             dry_run: self.dry_run,
             flow_log_ids: self.flow_log_ids,

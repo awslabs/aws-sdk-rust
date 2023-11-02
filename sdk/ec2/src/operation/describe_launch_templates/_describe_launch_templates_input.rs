@@ -234,7 +234,7 @@ impl DescribeLaunchTemplatesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_launch_templates::DescribeLaunchTemplatesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_launch_templates::DescribeLaunchTemplatesInput {
             dry_run: self.dry_run,

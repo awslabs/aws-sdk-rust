@@ -86,10 +86,10 @@ impl ExportDestinationBuilder {
     /// Consumes the builder and constructs a [`ExportDestination`](crate::types::ExportDestination).
     /// This method will fail if any of the following fields are not set:
     /// - [`data_format`](crate::types::builders::ExportDestinationBuilder::data_format)
-    pub fn build(self) -> ::std::result::Result<crate::types::ExportDestination, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ExportDestination, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ExportDestination {
             data_format: self.data_format.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_format",
                     "data_format was not specified but it is required when building ExportDestination",
                 )

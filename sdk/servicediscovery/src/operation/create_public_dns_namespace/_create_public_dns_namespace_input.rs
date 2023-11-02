@@ -148,7 +148,7 @@ impl CreatePublicDnsNamespaceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_public_dns_namespace::CreatePublicDnsNamespaceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_public_dns_namespace::CreatePublicDnsNamespaceInput {
             name: self.name,

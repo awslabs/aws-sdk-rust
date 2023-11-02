@@ -73,7 +73,7 @@ impl DeregisterDelegatedAdministratorInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_delegated_administrator::DeregisterDelegatedAdministratorInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::deregister_delegated_administrator::DeregisterDelegatedAdministratorInput {

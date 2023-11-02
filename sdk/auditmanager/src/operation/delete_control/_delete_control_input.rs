@@ -44,7 +44,7 @@ impl DeleteControlInputBuilder {
     /// Consumes the builder and constructs a [`DeleteControlInput`](crate::operation::delete_control::DeleteControlInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_control::DeleteControlInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_control::DeleteControlInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_control::DeleteControlInput { control_id: self.control_id })
     }
 }

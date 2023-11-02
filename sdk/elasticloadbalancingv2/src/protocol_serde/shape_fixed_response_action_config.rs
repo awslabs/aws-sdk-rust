@@ -3,7 +3,7 @@
 pub fn ser_fixed_response_action_config(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::FixedResponseActionConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("MessageBody");
     if let Some(var_2) = &input.message_body {

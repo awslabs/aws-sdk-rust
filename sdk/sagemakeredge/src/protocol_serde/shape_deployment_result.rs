@@ -2,7 +2,7 @@
 pub fn ser_deployment_result(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DeploymentResult,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.deployment_name {
         object.key("DeploymentName").string(var_1.as_str());
     }

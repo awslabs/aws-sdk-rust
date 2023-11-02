@@ -142,17 +142,17 @@ impl PutObjectFluentBuilder {
         self.inner.get_metadata_string()
     }
     /// Inline chunk data to be uploaded.
-    pub fn inline_chunk(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
+    pub fn inline_chunk(mut self, input: ::aws_smithy_types::byte_stream::ByteStream) -> Self {
         self.inner = self.inner.inline_chunk(input);
         self
     }
     /// Inline chunk data to be uploaded.
-    pub fn set_inline_chunk(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
+    pub fn set_inline_chunk(mut self, input: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>) -> Self {
         self.inner = self.inner.set_inline_chunk(input);
         self
     }
     /// Inline chunk data to be uploaded.
-    pub fn get_inline_chunk(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+    pub fn get_inline_chunk(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
         self.inner.get_inline_chunk()
     }
     /// Length of the inline chunk data.

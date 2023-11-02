@@ -202,10 +202,10 @@ impl RecordingConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::RecordingConfigurationBuilder::arn)
     /// - [`state`](crate::types::builders::RecordingConfigurationBuilder::state)
-    pub fn build(self) -> ::std::result::Result<crate::types::RecordingConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RecordingConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RecordingConfiguration {
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building RecordingConfiguration",
                 )
@@ -213,7 +213,7 @@ impl RecordingConfigurationBuilder {
             name: self.name,
             destination_configuration: self.destination_configuration,
             state: self.state.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "state",
                     "state was not specified but it is required when building RecordingConfiguration",
                 )

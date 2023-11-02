@@ -43,7 +43,7 @@ impl DescribeInterconnectsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeInterconnectsInput`](crate::operation::describe_interconnects::DescribeInterconnectsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_interconnects::DescribeInterconnectsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_interconnects::DescribeInterconnectsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_interconnects::DescribeInterconnectsInput {
             interconnect_id: self.interconnect_id,

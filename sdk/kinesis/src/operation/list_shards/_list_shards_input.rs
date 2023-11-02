@@ -227,7 +227,7 @@ impl ListShardsInputBuilder {
         &self.stream_arn
     }
     /// Consumes the builder and constructs a [`ListShardsInput`](crate::operation::list_shards::ListShardsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_shards::ListShardsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_shards::ListShardsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_shards::ListShardsInput {
             stream_name: self.stream_name,
             next_token: self.next_token,

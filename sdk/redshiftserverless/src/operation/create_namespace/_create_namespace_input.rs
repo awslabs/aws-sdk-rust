@@ -300,7 +300,7 @@ impl CreateNamespaceInputBuilder {
     /// Consumes the builder and constructs a [`CreateNamespaceInput`](crate::operation::create_namespace::CreateNamespaceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_namespace::CreateNamespaceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_namespace::CreateNamespaceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_namespace::CreateNamespaceInput {
             namespace_name: self.namespace_name,
             admin_username: self.admin_username,

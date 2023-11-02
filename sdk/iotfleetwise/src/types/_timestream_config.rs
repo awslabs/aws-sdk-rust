@@ -70,16 +70,16 @@ impl TimestreamConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`timestream_table_arn`](crate::types::builders::TimestreamConfigBuilder::timestream_table_arn)
     /// - [`execution_role_arn`](crate::types::builders::TimestreamConfigBuilder::execution_role_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::TimestreamConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TimestreamConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TimestreamConfig {
             timestream_table_arn: self.timestream_table_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "timestream_table_arn",
                     "timestream_table_arn was not specified but it is required when building TimestreamConfig",
                 )
             })?,
             execution_role_arn: self.execution_role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "execution_role_arn",
                     "execution_role_arn was not specified but it is required when building TimestreamConfig",
                 )

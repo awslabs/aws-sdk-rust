@@ -178,7 +178,7 @@ impl CopyDbParameterGroupInputBuilder {
     /// Consumes the builder and constructs a [`CopyDbParameterGroupInput`](crate::operation::copy_db_parameter_group::CopyDbParameterGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::copy_db_parameter_group::CopyDbParameterGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::copy_db_parameter_group::CopyDbParameterGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::copy_db_parameter_group::CopyDbParameterGroupInput {
             source_db_parameter_group_identifier: self.source_db_parameter_group_identifier,

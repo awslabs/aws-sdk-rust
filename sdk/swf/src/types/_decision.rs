@@ -444,10 +444,10 @@ impl DecisionBuilder {
     /// Consumes the builder and constructs a [`Decision`](crate::types::Decision).
     /// This method will fail if any of the following fields are not set:
     /// - [`decision_type`](crate::types::builders::DecisionBuilder::decision_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::Decision, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Decision, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Decision {
             decision_type: self.decision_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "decision_type",
                     "decision_type was not specified but it is required when building Decision",
                 )

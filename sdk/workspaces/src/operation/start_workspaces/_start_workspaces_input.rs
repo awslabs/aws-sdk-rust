@@ -51,7 +51,7 @@ impl StartWorkspacesInputBuilder {
     /// Consumes the builder and constructs a [`StartWorkspacesInput`](crate::operation::start_workspaces::StartWorkspacesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_workspaces::StartWorkspacesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_workspaces::StartWorkspacesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_workspaces::StartWorkspacesInput {
             start_workspace_requests: self.start_workspace_requests,
         })

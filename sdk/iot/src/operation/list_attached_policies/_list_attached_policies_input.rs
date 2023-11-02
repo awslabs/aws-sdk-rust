@@ -107,7 +107,7 @@ impl ListAttachedPoliciesInputBuilder {
     /// Consumes the builder and constructs a [`ListAttachedPoliciesInput`](crate::operation::list_attached_policies::ListAttachedPoliciesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_attached_policies::ListAttachedPoliciesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_attached_policies::ListAttachedPoliciesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_attached_policies::ListAttachedPoliciesInput {
             target: self.target,

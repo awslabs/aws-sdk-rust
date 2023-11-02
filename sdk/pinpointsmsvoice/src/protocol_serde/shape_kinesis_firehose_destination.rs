@@ -2,7 +2,7 @@
 pub fn ser_kinesis_firehose_destination(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::KinesisFirehoseDestination,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.delivery_stream_arn {
         object.key("DeliveryStreamArn").string(var_1.as_str());
     }

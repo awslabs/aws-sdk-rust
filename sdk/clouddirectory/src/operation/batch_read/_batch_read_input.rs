@@ -92,7 +92,7 @@ impl BatchReadInputBuilder {
         &self.consistency_level
     }
     /// Consumes the builder and constructs a [`BatchReadInput`](crate::operation::batch_read::BatchReadInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::batch_read::BatchReadInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_read::BatchReadInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::batch_read::BatchReadInput {
             directory_arn: self.directory_arn,
             operations: self.operations,

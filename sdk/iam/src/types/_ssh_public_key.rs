@@ -163,34 +163,34 @@ impl SshPublicKeyBuilder {
     /// - [`fingerprint`](crate::types::builders::SshPublicKeyBuilder::fingerprint)
     /// - [`ssh_public_key_body`](crate::types::builders::SshPublicKeyBuilder::ssh_public_key_body)
     /// - [`status`](crate::types::builders::SshPublicKeyBuilder::status)
-    pub fn build(self) -> ::std::result::Result<crate::types::SshPublicKey, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SshPublicKey, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SshPublicKey {
             user_name: self.user_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "user_name",
                     "user_name was not specified but it is required when building SshPublicKey",
                 )
             })?,
             ssh_public_key_id: self.ssh_public_key_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "ssh_public_key_id",
                     "ssh_public_key_id was not specified but it is required when building SshPublicKey",
                 )
             })?,
             fingerprint: self.fingerprint.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "fingerprint",
                     "fingerprint was not specified but it is required when building SshPublicKey",
                 )
             })?,
             ssh_public_key_body: self.ssh_public_key_body.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "ssh_public_key_body",
                     "ssh_public_key_body was not specified but it is required when building SshPublicKey",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building SshPublicKey",
                 )

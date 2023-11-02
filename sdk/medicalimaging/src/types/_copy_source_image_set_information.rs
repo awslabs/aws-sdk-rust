@@ -46,10 +46,10 @@ impl CopySourceImageSetInformationBuilder {
     /// Consumes the builder and constructs a [`CopySourceImageSetInformation`](crate::types::CopySourceImageSetInformation).
     /// This method will fail if any of the following fields are not set:
     /// - [`latest_version_id`](crate::types::builders::CopySourceImageSetInformationBuilder::latest_version_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::CopySourceImageSetInformation, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CopySourceImageSetInformation, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CopySourceImageSetInformation {
             latest_version_id: self.latest_version_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "latest_version_id",
                     "latest_version_id was not specified but it is required when building CopySourceImageSetInformation",
                 )

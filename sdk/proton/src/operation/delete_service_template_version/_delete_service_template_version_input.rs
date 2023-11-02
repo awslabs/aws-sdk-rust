@@ -90,7 +90,7 @@ impl DeleteServiceTemplateVersionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_service_template_version::DeleteServiceTemplateVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_service_template_version::DeleteServiceTemplateVersionInput {
             template_name: self.template_name,

@@ -44,7 +44,7 @@ impl GetAdmChannelInputBuilder {
     /// Consumes the builder and constructs a [`GetAdmChannelInput`](crate::operation::get_adm_channel::GetAdmChannelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_adm_channel::GetAdmChannelInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_adm_channel::GetAdmChannelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_adm_channel::GetAdmChannelInput {
             application_id: self.application_id,
         })

@@ -67,7 +67,7 @@ impl DeleteLocalGatewayRouteTableInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_local_gateway_route_table::DeleteLocalGatewayRouteTableInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_local_gateway_route_table::DeleteLocalGatewayRouteTableInput {
             local_gateway_route_table_id: self.local_gateway_route_table_id,

@@ -251,7 +251,7 @@ impl RestoreTableToPointInTimeInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::restore_table_to_point_in_time::RestoreTableToPointInTimeInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::restore_table_to_point_in_time::RestoreTableToPointInTimeInput {
             source_table_arn: self.source_table_arn,

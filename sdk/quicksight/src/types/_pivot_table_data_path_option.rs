@@ -72,10 +72,10 @@ impl PivotTableDataPathOptionBuilder {
     /// Consumes the builder and constructs a [`PivotTableDataPathOption`](crate::types::PivotTableDataPathOption).
     /// This method will fail if any of the following fields are not set:
     /// - [`data_path_list`](crate::types::builders::PivotTableDataPathOptionBuilder::data_path_list)
-    pub fn build(self) -> ::std::result::Result<crate::types::PivotTableDataPathOption, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PivotTableDataPathOption, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PivotTableDataPathOption {
             data_path_list: self.data_path_list.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_path_list",
                     "data_path_list was not specified but it is required when building PivotTableDataPathOption",
                 )

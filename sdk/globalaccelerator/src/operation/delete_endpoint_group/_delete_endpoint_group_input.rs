@@ -44,7 +44,7 @@ impl DeleteEndpointGroupInputBuilder {
     /// Consumes the builder and constructs a [`DeleteEndpointGroupInput`](crate::operation::delete_endpoint_group::DeleteEndpointGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_endpoint_group::DeleteEndpointGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_endpoint_group::DeleteEndpointGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_endpoint_group::DeleteEndpointGroupInput {
             endpoint_group_arn: self.endpoint_group_arn,

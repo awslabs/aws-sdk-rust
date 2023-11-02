@@ -137,7 +137,7 @@ impl ImportDatasetInputBuilder {
     /// Consumes the builder and constructs a [`ImportDatasetInput`](crate::operation::import_dataset::ImportDatasetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::import_dataset::ImportDatasetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::import_dataset::ImportDatasetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::import_dataset::ImportDatasetInput {
             source_dataset_arn: self.source_dataset_arn,
             dataset_name: self.dataset_name,

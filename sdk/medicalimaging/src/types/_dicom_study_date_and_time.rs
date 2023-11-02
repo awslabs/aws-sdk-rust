@@ -75,10 +75,10 @@ impl DicomStudyDateAndTimeBuilder {
     /// Consumes the builder and constructs a [`DicomStudyDateAndTime`](crate::types::DicomStudyDateAndTime).
     /// This method will fail if any of the following fields are not set:
     /// - [`dicom_study_date`](crate::types::builders::DicomStudyDateAndTimeBuilder::dicom_study_date)
-    pub fn build(self) -> ::std::result::Result<crate::types::DicomStudyDateAndTime, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DicomStudyDateAndTime, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DicomStudyDateAndTime {
             dicom_study_date: self.dicom_study_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "dicom_study_date",
                     "dicom_study_date was not specified but it is required when building DicomStudyDateAndTime",
                 )

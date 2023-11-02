@@ -2,7 +2,7 @@
 pub fn ser_custom_code_signing(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CustomCodeSigning,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.signature {
         #[allow(unused_mut)]
         let mut object_2 = object.key("signature").start_object();

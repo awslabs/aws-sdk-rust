@@ -46,7 +46,7 @@ impl StopSolutionVersionCreationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_solution_version_creation::StopSolutionVersionCreationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::stop_solution_version_creation::StopSolutionVersionCreationInput {
             solution_version_arn: self.solution_version_arn,

@@ -89,7 +89,7 @@ impl DeleteBucketInventoryConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_bucket_inventory_configuration::DeleteBucketInventoryConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_bucket_inventory_configuration::DeleteBucketInventoryConfigurationInput {

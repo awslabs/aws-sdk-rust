@@ -2,7 +2,7 @@
 pub fn ser_channel_message_callback(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ChannelMessageCallback,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("MessageId").string(input.message_id.as_str());
     }

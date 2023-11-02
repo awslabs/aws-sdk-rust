@@ -78,7 +78,7 @@ impl UpdateManagedInstanceRoleInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_managed_instance_role::UpdateManagedInstanceRoleInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_managed_instance_role::UpdateManagedInstanceRoleInput {
             instance_id: self.instance_id,

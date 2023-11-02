@@ -2,7 +2,7 @@
 pub fn ser_debug_rule_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DebugRuleConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.rule_configuration_name {
         object.key("RuleConfigurationName").string(var_1.as_str());
     }

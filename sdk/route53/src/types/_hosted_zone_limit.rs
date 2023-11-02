@@ -88,16 +88,16 @@ impl HostedZoneLimitBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::HostedZoneLimitBuilder::r#type)
     /// - [`value`](crate::types::builders::HostedZoneLimitBuilder::value)
-    pub fn build(self) -> ::std::result::Result<crate::types::HostedZoneLimit, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::HostedZoneLimit, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::HostedZoneLimit {
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building HostedZoneLimit",
                 )
             })?,
             value: self.value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "value",
                     "value was not specified but it is required when building HostedZoneLimit",
                 )

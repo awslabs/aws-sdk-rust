@@ -2,7 +2,7 @@
 pub fn ser_update_configuration_set_event_destination_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_configuration_set_event_destination::UpdateConfigurationSetEventDestinationInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.event_destination {
         #[allow(unused_mut)]
         let mut object_2 = object.key("EventDestination").start_object();

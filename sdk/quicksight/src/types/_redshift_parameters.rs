@@ -130,12 +130,12 @@ impl RedshiftParametersBuilder {
     /// Consumes the builder and constructs a [`RedshiftParameters`](crate::types::RedshiftParameters).
     /// This method will fail if any of the following fields are not set:
     /// - [`database`](crate::types::builders::RedshiftParametersBuilder::database)
-    pub fn build(self) -> ::std::result::Result<crate::types::RedshiftParameters, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RedshiftParameters, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RedshiftParameters {
             host: self.host,
             port: self.port.unwrap_or_default(),
             database: self.database.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "database",
                     "database was not specified but it is required when building RedshiftParameters",
                 )

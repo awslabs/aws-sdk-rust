@@ -139,28 +139,28 @@ impl LambdaLayerAggregationResponseBuilder {
     /// - [`resource_id`](crate::types::builders::LambdaLayerAggregationResponseBuilder::resource_id)
     /// - [`layer_arn`](crate::types::builders::LambdaLayerAggregationResponseBuilder::layer_arn)
     /// - [`account_id`](crate::types::builders::LambdaLayerAggregationResponseBuilder::account_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::LambdaLayerAggregationResponse, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::LambdaLayerAggregationResponse, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::LambdaLayerAggregationResponse {
             function_name: self.function_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "function_name",
                     "function_name was not specified but it is required when building LambdaLayerAggregationResponse",
                 )
             })?,
             resource_id: self.resource_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_id",
                     "resource_id was not specified but it is required when building LambdaLayerAggregationResponse",
                 )
             })?,
             layer_arn: self.layer_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "layer_arn",
                     "layer_arn was not specified but it is required when building LambdaLayerAggregationResponse",
                 )
             })?,
             account_id: self.account_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "account_id",
                     "account_id was not specified but it is required when building LambdaLayerAggregationResponse",
                 )

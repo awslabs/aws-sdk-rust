@@ -83,7 +83,7 @@ impl DisassociateTrackerConsumerInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_tracker_consumer::DisassociateTrackerConsumerInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disassociate_tracker_consumer::DisassociateTrackerConsumerInput {
             tracker_name: self.tracker_name,

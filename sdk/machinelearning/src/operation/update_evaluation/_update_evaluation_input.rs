@@ -66,7 +66,7 @@ impl UpdateEvaluationInputBuilder {
     /// Consumes the builder and constructs a [`UpdateEvaluationInput`](crate::operation::update_evaluation::UpdateEvaluationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_evaluation::UpdateEvaluationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_evaluation::UpdateEvaluationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_evaluation::UpdateEvaluationInput {
             evaluation_id: self.evaluation_id,
             evaluation_name: self.evaluation_name,

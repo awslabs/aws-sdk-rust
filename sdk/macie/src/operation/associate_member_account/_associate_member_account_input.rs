@@ -44,8 +44,10 @@ impl AssociateMemberAccountInputBuilder {
     /// Consumes the builder and constructs a [`AssociateMemberAccountInput`](crate::operation::associate_member_account::AssociateMemberAccountInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::associate_member_account::AssociateMemberAccountInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::associate_member_account::AssociateMemberAccountInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::associate_member_account::AssociateMemberAccountInput {
             member_account_id: self.member_account_id,
         })

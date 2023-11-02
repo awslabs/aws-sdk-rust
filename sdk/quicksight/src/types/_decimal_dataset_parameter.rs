@@ -114,22 +114,22 @@ impl DecimalDatasetParameterBuilder {
     /// - [`id`](crate::types::builders::DecimalDatasetParameterBuilder::id)
     /// - [`name`](crate::types::builders::DecimalDatasetParameterBuilder::name)
     /// - [`value_type`](crate::types::builders::DecimalDatasetParameterBuilder::value_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::DecimalDatasetParameter, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DecimalDatasetParameter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DecimalDatasetParameter {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building DecimalDatasetParameter",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building DecimalDatasetParameter",
                 )
             })?,
             value_type: self.value_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "value_type",
                     "value_type was not specified but it is required when building DecimalDatasetParameter",
                 )

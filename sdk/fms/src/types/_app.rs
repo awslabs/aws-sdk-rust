@@ -93,22 +93,22 @@ impl AppBuilder {
     /// - [`app_name`](crate::types::builders::AppBuilder::app_name)
     /// - [`protocol`](crate::types::builders::AppBuilder::protocol)
     /// - [`port`](crate::types::builders::AppBuilder::port)
-    pub fn build(self) -> ::std::result::Result<crate::types::App, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::App, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::App {
             app_name: self.app_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "app_name",
                     "app_name was not specified but it is required when building App",
                 )
             })?,
             protocol: self.protocol.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "protocol",
                     "protocol was not specified but it is required when building App",
                 )
             })?,
             port: self.port.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field("port", "port was not specified but it is required when building App")
+                ::aws_smithy_types::error::operation::BuildError::missing_field("port", "port was not specified but it is required when building App")
             })?,
         })
     }

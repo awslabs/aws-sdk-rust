@@ -2,7 +2,7 @@
 pub fn ser_describe_affected_entities_for_organization_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_affected_entities_for_organization::DescribeAffectedEntitiesForOrganizationInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.organization_entity_filters {
         let mut array_2 = object.key("organizationEntityFilters").start_array();
         for item_3 in var_1 {

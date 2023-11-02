@@ -69,16 +69,16 @@ impl ContainerLogRotationConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`rotation_size`](crate::types::builders::ContainerLogRotationConfigurationBuilder::rotation_size)
     /// - [`max_files_to_keep`](crate::types::builders::ContainerLogRotationConfigurationBuilder::max_files_to_keep)
-    pub fn build(self) -> ::std::result::Result<crate::types::ContainerLogRotationConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ContainerLogRotationConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ContainerLogRotationConfiguration {
             rotation_size: self.rotation_size.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "rotation_size",
                     "rotation_size was not specified but it is required when building ContainerLogRotationConfiguration",
                 )
             })?,
             max_files_to_keep: self.max_files_to_keep.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "max_files_to_keep",
                     "max_files_to_keep was not specified but it is required when building ContainerLogRotationConfiguration",
                 )

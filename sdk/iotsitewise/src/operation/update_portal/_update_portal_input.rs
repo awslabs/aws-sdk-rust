@@ -233,7 +233,9 @@ impl UpdatePortalInputBuilder {
         &self.alarms
     }
     /// Consumes the builder and constructs a [`UpdatePortalInput`](crate::operation::update_portal::UpdatePortalInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_portal::UpdatePortalInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_portal::UpdatePortalInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_portal::UpdatePortalInput {
             portal_id: self.portal_id,
             portal_name: self.portal_name,

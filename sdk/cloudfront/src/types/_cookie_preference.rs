@@ -114,10 +114,10 @@ impl CookiePreferenceBuilder {
     /// Consumes the builder and constructs a [`CookiePreference`](crate::types::CookiePreference).
     /// This method will fail if any of the following fields are not set:
     /// - [`forward`](crate::types::builders::CookiePreferenceBuilder::forward)
-    pub fn build(self) -> ::std::result::Result<crate::types::CookiePreference, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CookiePreference, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CookiePreference {
             forward: self.forward.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "forward",
                     "forward was not specified but it is required when building CookiePreference",
                 )

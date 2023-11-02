@@ -138,22 +138,22 @@ impl PatchSourceBuilder {
     /// - [`name`](crate::types::builders::PatchSourceBuilder::name)
     /// - [`products`](crate::types::builders::PatchSourceBuilder::products)
     /// - [`configuration`](crate::types::builders::PatchSourceBuilder::configuration)
-    pub fn build(self) -> ::std::result::Result<crate::types::PatchSource, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PatchSource, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PatchSource {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building PatchSource",
                 )
             })?,
             products: self.products.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "products",
                     "products was not specified but it is required when building PatchSource",
                 )
             })?,
             configuration: self.configuration.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "configuration",
                     "configuration was not specified but it is required when building PatchSource",
                 )

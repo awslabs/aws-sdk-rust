@@ -2,7 +2,7 @@
 pub fn ser_aws_open_search_service_domain_log_publishing_options_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsOpenSearchServiceDomainLogPublishingOptionsDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.index_slow_logs {
         #[allow(unused_mut)]
         let mut object_2 = object.key("IndexSlowLogs").start_object();

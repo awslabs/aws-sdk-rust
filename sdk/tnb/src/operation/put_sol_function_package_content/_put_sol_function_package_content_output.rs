@@ -183,35 +183,35 @@ impl PutSolFunctionPackageContentOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_sol_function_package_content::PutSolFunctionPackageContentOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_sol_function_package_content::PutSolFunctionPackageContentOutput {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building PutSolFunctionPackageContentOutput",
                 )
             })?,
             vnfd_id: self.vnfd_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "vnfd_id",
                     "vnfd_id was not specified but it is required when building PutSolFunctionPackageContentOutput",
                 )
             })?,
             vnf_product_name: self.vnf_product_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "vnf_product_name",
                     "vnf_product_name was not specified but it is required when building PutSolFunctionPackageContentOutput",
                 )
             })?,
             vnf_provider: self.vnf_provider.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "vnf_provider",
                     "vnf_provider was not specified but it is required when building PutSolFunctionPackageContentOutput",
                 )
             })?,
             vnfd_version: self.vnfd_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "vnfd_version",
                     "vnfd_version was not specified but it is required when building PutSolFunctionPackageContentOutput",
                 )

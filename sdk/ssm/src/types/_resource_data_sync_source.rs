@@ -138,17 +138,17 @@ impl ResourceDataSyncSourceBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`source_type`](crate::types::builders::ResourceDataSyncSourceBuilder::source_type)
     /// - [`source_regions`](crate::types::builders::ResourceDataSyncSourceBuilder::source_regions)
-    pub fn build(self) -> ::std::result::Result<crate::types::ResourceDataSyncSource, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ResourceDataSyncSource, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ResourceDataSyncSource {
             source_type: self.source_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source_type",
                     "source_type was not specified but it is required when building ResourceDataSyncSource",
                 )
             })?,
             aws_organizations_source: self.aws_organizations_source,
             source_regions: self.source_regions.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source_regions",
                     "source_regions was not specified but it is required when building ResourceDataSyncSource",
                 )

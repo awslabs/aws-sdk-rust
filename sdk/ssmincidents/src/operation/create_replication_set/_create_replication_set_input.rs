@@ -100,7 +100,7 @@ impl CreateReplicationSetInputBuilder {
     /// Consumes the builder and constructs a [`CreateReplicationSetInput`](crate::operation::create_replication_set::CreateReplicationSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_replication_set::CreateReplicationSetInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_replication_set::CreateReplicationSetInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_replication_set::CreateReplicationSetInput {
             regions: self.regions,

@@ -44,7 +44,7 @@ impl GetHypervisorInputBuilder {
     /// Consumes the builder and constructs a [`GetHypervisorInput`](crate::operation::get_hypervisor::GetHypervisorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_hypervisor::GetHypervisorInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_hypervisor::GetHypervisorInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_hypervisor::GetHypervisorInput {
             hypervisor_arn: self.hypervisor_arn,
         })

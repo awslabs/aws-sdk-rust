@@ -112,7 +112,7 @@ impl StartThingRegistrationTaskInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_thing_registration_task::StartThingRegistrationTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_thing_registration_task::StartThingRegistrationTaskInput {
             template_body: self.template_body,

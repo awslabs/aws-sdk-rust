@@ -63,10 +63,10 @@ impl UpdateTrustStoreOutputBuilder {
     /// - [`trust_store_arn`](crate::operation::update_trust_store::builders::UpdateTrustStoreOutputBuilder::trust_store_arn)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_trust_store::UpdateTrustStoreOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_trust_store::UpdateTrustStoreOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_trust_store::UpdateTrustStoreOutput {
             trust_store_arn: self.trust_store_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "trust_store_arn",
                     "trust_store_arn was not specified but it is required when building UpdateTrustStoreOutput",
                 )

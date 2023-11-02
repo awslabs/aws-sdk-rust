@@ -108,7 +108,7 @@ impl GetJourneyRunsInputBuilder {
     /// Consumes the builder and constructs a [`GetJourneyRunsInput`](crate::operation::get_journey_runs::GetJourneyRunsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_journey_runs::GetJourneyRunsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_journey_runs::GetJourneyRunsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_journey_runs::GetJourneyRunsInput {
             application_id: self.application_id,
             journey_id: self.journey_id,

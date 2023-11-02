@@ -150,7 +150,7 @@ impl GrantPermissionsInputBuilder {
     /// Consumes the builder and constructs a [`GrantPermissionsInput`](crate::operation::grant_permissions::GrantPermissionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::grant_permissions::GrantPermissionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::grant_permissions::GrantPermissionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::grant_permissions::GrantPermissionsInput {
             catalog_id: self.catalog_id,
             principal: self.principal,

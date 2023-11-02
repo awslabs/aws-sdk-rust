@@ -2,7 +2,7 @@
 pub fn ser_cross_channel_behavior(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CrossChannelBehavior,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("BehaviorType").string(input.behavior_type.as_str());
     }

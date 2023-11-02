@@ -125,23 +125,23 @@ impl ServicePipelineStateBuilder {
     /// - [`template_name`](crate::types::builders::ServicePipelineStateBuilder::template_name)
     /// - [`template_major_version`](crate::types::builders::ServicePipelineStateBuilder::template_major_version)
     /// - [`template_minor_version`](crate::types::builders::ServicePipelineStateBuilder::template_minor_version)
-    pub fn build(self) -> ::std::result::Result<crate::types::ServicePipelineState, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ServicePipelineState, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ServicePipelineState {
             spec: self.spec,
             template_name: self.template_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "template_name",
                     "template_name was not specified but it is required when building ServicePipelineState",
                 )
             })?,
             template_major_version: self.template_major_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "template_major_version",
                     "template_major_version was not specified but it is required when building ServicePipelineState",
                 )
             })?,
             template_minor_version: self.template_minor_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "template_minor_version",
                     "template_minor_version was not specified but it is required when building ServicePipelineState",
                 )

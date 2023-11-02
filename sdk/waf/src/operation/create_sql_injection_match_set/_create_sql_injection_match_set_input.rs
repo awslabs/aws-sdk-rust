@@ -69,7 +69,7 @@ impl CreateSqlInjectionMatchSetInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_sql_injection_match_set::CreateSqlInjectionMatchSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_sql_injection_match_set::CreateSqlInjectionMatchSetInput {
             name: self.name,

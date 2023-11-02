@@ -146,7 +146,7 @@ impl DescribeOptedOutNumbersInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_opted_out_numbers::DescribeOptedOutNumbersInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_opted_out_numbers::DescribeOptedOutNumbersInput {
             opt_out_list_name: self.opt_out_list_name,

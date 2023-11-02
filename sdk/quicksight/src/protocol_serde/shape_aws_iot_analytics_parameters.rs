@@ -2,7 +2,7 @@
 pub fn ser_aws_iot_analytics_parameters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsIotAnalyticsParameters,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("DataSetName").string(input.data_set_name.as_str());
     }

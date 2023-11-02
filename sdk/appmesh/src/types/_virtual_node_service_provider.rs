@@ -46,10 +46,10 @@ impl VirtualNodeServiceProviderBuilder {
     /// Consumes the builder and constructs a [`VirtualNodeServiceProvider`](crate::types::VirtualNodeServiceProvider).
     /// This method will fail if any of the following fields are not set:
     /// - [`virtual_node_name`](crate::types::builders::VirtualNodeServiceProviderBuilder::virtual_node_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::VirtualNodeServiceProvider, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::VirtualNodeServiceProvider, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::VirtualNodeServiceProvider {
             virtual_node_name: self.virtual_node_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "virtual_node_name",
                     "virtual_node_name was not specified but it is required when building VirtualNodeServiceProvider",
                 )

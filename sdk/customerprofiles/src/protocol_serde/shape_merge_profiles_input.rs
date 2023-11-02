@@ -2,7 +2,7 @@
 pub fn ser_merge_profiles_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::merge_profiles::MergeProfilesInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.field_source_profile_ids {
         #[allow(unused_mut)]
         let mut object_2 = object.key("FieldSourceProfileIds").start_object();

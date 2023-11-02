@@ -86,7 +86,7 @@ impl ListVoiceProfilesInputBuilder {
     /// Consumes the builder and constructs a [`ListVoiceProfilesInput`](crate::operation::list_voice_profiles::ListVoiceProfilesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_voice_profiles::ListVoiceProfilesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_voice_profiles::ListVoiceProfilesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_voice_profiles::ListVoiceProfilesInput {
             voice_profile_domain_id: self.voice_profile_domain_id,
             next_token: self.next_token,

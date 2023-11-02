@@ -113,7 +113,7 @@ impl CreateMeshInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateMeshInput`](crate::operation::create_mesh::CreateMeshInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_mesh::CreateMeshInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_mesh::CreateMeshInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_mesh::CreateMeshInput {
             mesh_name: self.mesh_name,
             spec: self.spec,

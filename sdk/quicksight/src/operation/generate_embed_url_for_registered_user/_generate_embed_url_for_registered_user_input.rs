@@ -148,7 +148,7 @@ impl GenerateEmbedUrlForRegisteredUserInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::generate_embed_url_for_registered_user::GenerateEmbedUrlForRegisteredUserInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::generate_embed_url_for_registered_user::GenerateEmbedUrlForRegisteredUserInput {

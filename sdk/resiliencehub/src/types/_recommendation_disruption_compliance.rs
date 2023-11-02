@@ -129,10 +129,10 @@ impl RecommendationDisruptionComplianceBuilder {
     /// Consumes the builder and constructs a [`RecommendationDisruptionCompliance`](crate::types::RecommendationDisruptionCompliance).
     /// This method will fail if any of the following fields are not set:
     /// - [`expected_compliance_status`](crate::types::builders::RecommendationDisruptionComplianceBuilder::expected_compliance_status)
-    pub fn build(self) -> ::std::result::Result<crate::types::RecommendationDisruptionCompliance, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RecommendationDisruptionCompliance, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RecommendationDisruptionCompliance {
             expected_compliance_status: self.expected_compliance_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "expected_compliance_status",
                     "expected_compliance_status was not specified but it is required when building RecommendationDisruptionCompliance",
                 )

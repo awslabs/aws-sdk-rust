@@ -86,10 +86,10 @@ impl AddressBuilder {
     /// Consumes the builder and constructs a [`Address`](crate::types::Address).
     /// This method will fail if any of the following fields are not set:
     /// - [`address_definition`](crate::types::builders::AddressBuilder::address_definition)
-    pub fn build(self) -> ::std::result::Result<crate::types::Address, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Address, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Address {
             address_definition: self.address_definition.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "address_definition",
                     "address_definition was not specified but it is required when building Address",
                 )

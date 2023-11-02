@@ -110,7 +110,7 @@ impl TerminateTargetInstancesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::terminate_target_instances::TerminateTargetInstancesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::terminate_target_instances::TerminateTargetInstancesInput {
             source_server_ids: self.source_server_ids,

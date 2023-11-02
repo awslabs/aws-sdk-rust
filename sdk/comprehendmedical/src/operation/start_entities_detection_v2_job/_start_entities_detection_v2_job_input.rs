@@ -175,7 +175,7 @@ impl StartEntitiesDetectionV2JobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_entities_detection_v2_job::StartEntitiesDetectionV2JobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_entities_detection_v2_job::StartEntitiesDetectionV2JobInput {
             input_data_config: self.input_data_config,

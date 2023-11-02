@@ -220,7 +220,7 @@ impl DescribeVpcEndpointServicesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_vpc_endpoint_services::DescribeVpcEndpointServicesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_vpc_endpoint_services::DescribeVpcEndpointServicesInput {
             dry_run: self.dry_run,

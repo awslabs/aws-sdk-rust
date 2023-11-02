@@ -75,10 +75,10 @@ impl ComponentConfigurationBuilder {
     /// Consumes the builder and constructs a [`ComponentConfiguration`](crate::types::ComponentConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`component_arn`](crate::types::builders::ComponentConfigurationBuilder::component_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::ComponentConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ComponentConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ComponentConfiguration {
             component_arn: self.component_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "component_arn",
                     "component_arn was not specified but it is required when building ComponentConfiguration",
                 )

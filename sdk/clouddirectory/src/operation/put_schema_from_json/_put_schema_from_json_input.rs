@@ -66,7 +66,7 @@ impl PutSchemaFromJsonInputBuilder {
     /// Consumes the builder and constructs a [`PutSchemaFromJsonInput`](crate::operation::put_schema_from_json::PutSchemaFromJsonInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_schema_from_json::PutSchemaFromJsonInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_schema_from_json::PutSchemaFromJsonInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_schema_from_json::PutSchemaFromJsonInput {
             schema_arn: self.schema_arn,
             document: self.document,

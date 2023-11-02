@@ -108,7 +108,7 @@ impl ReplaceVpnTunnelInputBuilder {
     /// Consumes the builder and constructs a [`ReplaceVpnTunnelInput`](crate::operation::replace_vpn_tunnel::ReplaceVpnTunnelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::replace_vpn_tunnel::ReplaceVpnTunnelInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::replace_vpn_tunnel::ReplaceVpnTunnelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::replace_vpn_tunnel::ReplaceVpnTunnelInput {
             vpn_connection_id: self.vpn_connection_id,
             vpn_tunnel_outside_ip_address: self.vpn_tunnel_outside_ip_address,

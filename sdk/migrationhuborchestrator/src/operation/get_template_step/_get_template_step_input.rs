@@ -88,7 +88,7 @@ impl GetTemplateStepInputBuilder {
     /// Consumes the builder and constructs a [`GetTemplateStepInput`](crate::operation::get_template_step::GetTemplateStepInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_template_step::GetTemplateStepInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_template_step::GetTemplateStepInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_template_step::GetTemplateStepInput {
             id: self.id,
             template_id: self.template_id,

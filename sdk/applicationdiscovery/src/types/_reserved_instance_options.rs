@@ -91,22 +91,22 @@ impl ReservedInstanceOptionsBuilder {
     /// - [`purchasing_option`](crate::types::builders::ReservedInstanceOptionsBuilder::purchasing_option)
     /// - [`offering_class`](crate::types::builders::ReservedInstanceOptionsBuilder::offering_class)
     /// - [`term_length`](crate::types::builders::ReservedInstanceOptionsBuilder::term_length)
-    pub fn build(self) -> ::std::result::Result<crate::types::ReservedInstanceOptions, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ReservedInstanceOptions, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ReservedInstanceOptions {
             purchasing_option: self.purchasing_option.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "purchasing_option",
                     "purchasing_option was not specified but it is required when building ReservedInstanceOptions",
                 )
             })?,
             offering_class: self.offering_class.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "offering_class",
                     "offering_class was not specified but it is required when building ReservedInstanceOptions",
                 )
             })?,
             term_length: self.term_length.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "term_length",
                     "term_length was not specified but it is required when building ReservedInstanceOptions",
                 )

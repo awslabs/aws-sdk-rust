@@ -87,10 +87,10 @@ impl ListFormsOutputBuilder {
     /// Consumes the builder and constructs a [`ListFormsOutput`](crate::operation::list_forms::ListFormsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`entities`](crate::operation::list_forms::builders::ListFormsOutputBuilder::entities)
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_forms::ListFormsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_forms::ListFormsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_forms::ListFormsOutput {
             entities: self.entities.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "entities",
                     "entities was not specified but it is required when building ListFormsOutput",
                 )

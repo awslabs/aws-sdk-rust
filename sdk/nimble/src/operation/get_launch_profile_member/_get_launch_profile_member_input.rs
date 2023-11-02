@@ -90,7 +90,7 @@ impl GetLaunchProfileMemberInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_launch_profile_member::GetLaunchProfileMemberInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_launch_profile_member::GetLaunchProfileMemberInput {
             launch_profile_id: self.launch_profile_id,

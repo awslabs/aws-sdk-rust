@@ -144,34 +144,34 @@ impl RotationOverrideBuilder {
     /// - [`start_time`](crate::types::builders::RotationOverrideBuilder::start_time)
     /// - [`end_time`](crate::types::builders::RotationOverrideBuilder::end_time)
     /// - [`create_time`](crate::types::builders::RotationOverrideBuilder::create_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::RotationOverride, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RotationOverride, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RotationOverride {
             rotation_override_id: self.rotation_override_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "rotation_override_id",
                     "rotation_override_id was not specified but it is required when building RotationOverride",
                 )
             })?,
             new_contact_ids: self.new_contact_ids.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "new_contact_ids",
                     "new_contact_ids was not specified but it is required when building RotationOverride",
                 )
             })?,
             start_time: self.start_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "start_time",
                     "start_time was not specified but it is required when building RotationOverride",
                 )
             })?,
             end_time: self.end_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "end_time",
                     "end_time was not specified but it is required when building RotationOverride",
                 )
             })?,
             create_time: self.create_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "create_time",
                     "create_time was not specified but it is required when building RotationOverride",
                 )

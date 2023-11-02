@@ -2,7 +2,7 @@
 pub fn ser_block_device_mapping(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BlockDeviceMapping,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.device_name {
         object.key("DeviceName").string(var_1.as_str());
     }

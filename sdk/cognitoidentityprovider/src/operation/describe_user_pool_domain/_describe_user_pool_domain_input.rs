@@ -46,7 +46,7 @@ impl DescribeUserPoolDomainInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_user_pool_domain::DescribeUserPoolDomainInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_user_pool_domain::DescribeUserPoolDomainInput { domain: self.domain })
     }

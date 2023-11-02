@@ -137,22 +137,22 @@ impl GetKeyspaceOutputBuilder {
     /// - [`keyspace_name`](crate::operation::get_keyspace::builders::GetKeyspaceOutputBuilder::keyspace_name)
     /// - [`resource_arn`](crate::operation::get_keyspace::builders::GetKeyspaceOutputBuilder::resource_arn)
     /// - [`replication_strategy`](crate::operation::get_keyspace::builders::GetKeyspaceOutputBuilder::replication_strategy)
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_keyspace::GetKeyspaceOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_keyspace::GetKeyspaceOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_keyspace::GetKeyspaceOutput {
             keyspace_name: self.keyspace_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "keyspace_name",
                     "keyspace_name was not specified but it is required when building GetKeyspaceOutput",
                 )
             })?,
             resource_arn: self.resource_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_arn",
                     "resource_arn was not specified but it is required when building GetKeyspaceOutput",
                 )
             })?,
             replication_strategy: self.replication_strategy.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "replication_strategy",
                     "replication_strategy was not specified but it is required when building GetKeyspaceOutput",
                 )

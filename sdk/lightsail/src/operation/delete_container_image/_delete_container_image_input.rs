@@ -81,7 +81,7 @@ impl DeleteContainerImageInputBuilder {
     /// Consumes the builder and constructs a [`DeleteContainerImageInput`](crate::operation::delete_container_image::DeleteContainerImageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_container_image::DeleteContainerImageInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_container_image::DeleteContainerImageInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_container_image::DeleteContainerImageInput {
             service_name: self.service_name,

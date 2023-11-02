@@ -50,7 +50,7 @@ impl DisableLoggingInputBuilder {
     /// Consumes the builder and constructs a [`DisableLoggingInput`](crate::operation::disable_logging::DisableLoggingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::disable_logging::DisableLoggingInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::disable_logging::DisableLoggingInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::disable_logging::DisableLoggingInput {
             cluster_identifier: self.cluster_identifier,
         })

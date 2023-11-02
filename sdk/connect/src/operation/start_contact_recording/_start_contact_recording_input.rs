@@ -110,7 +110,7 @@ impl StartContactRecordingInputBuilder {
     /// Consumes the builder and constructs a [`StartContactRecordingInput`](crate::operation::start_contact_recording::StartContactRecordingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_contact_recording::StartContactRecordingInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::start_contact_recording::StartContactRecordingInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_contact_recording::StartContactRecordingInput {
             instance_id: self.instance_id,

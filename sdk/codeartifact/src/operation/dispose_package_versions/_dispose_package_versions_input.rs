@@ -266,8 +266,10 @@ impl DisposePackageVersionsInputBuilder {
     /// Consumes the builder and constructs a [`DisposePackageVersionsInput`](crate::operation::dispose_package_versions::DisposePackageVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::dispose_package_versions::DisposePackageVersionsInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::dispose_package_versions::DisposePackageVersionsInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::dispose_package_versions::DisposePackageVersionsInput {
             domain: self.domain,
             domain_owner: self.domain_owner,

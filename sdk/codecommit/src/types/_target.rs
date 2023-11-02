@@ -91,16 +91,16 @@ impl TargetBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`repository_name`](crate::types::builders::TargetBuilder::repository_name)
     /// - [`source_reference`](crate::types::builders::TargetBuilder::source_reference)
-    pub fn build(self) -> ::std::result::Result<crate::types::Target, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Target, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Target {
             repository_name: self.repository_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "repository_name",
                     "repository_name was not specified but it is required when building Target",
                 )
             })?,
             source_reference: self.source_reference.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source_reference",
                     "source_reference was not specified but it is required when building Target",
                 )

@@ -305,7 +305,7 @@ impl PutMetricStreamInputBuilder {
     /// Consumes the builder and constructs a [`PutMetricStreamInput`](crate::operation::put_metric_stream::PutMetricStreamInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_metric_stream::PutMetricStreamInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_metric_stream::PutMetricStreamInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_metric_stream::PutMetricStreamInput {
             name: self.name,
             include_filters: self.include_filters,

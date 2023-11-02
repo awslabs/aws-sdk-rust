@@ -145,7 +145,7 @@ impl CreateIpamResourceDiscoveryInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_ipam_resource_discovery::CreateIpamResourceDiscoveryInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_ipam_resource_discovery::CreateIpamResourceDiscoveryInput {
             dry_run: self.dry_run,

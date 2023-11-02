@@ -169,7 +169,7 @@ impl UpdateSceneInputBuilder {
         &self.scene_metadata
     }
     /// Consumes the builder and constructs a [`UpdateSceneInput`](crate::operation::update_scene::UpdateSceneInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_scene::UpdateSceneInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_scene::UpdateSceneInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_scene::UpdateSceneInput {
             workspace_id: self.workspace_id,
             scene_id: self.scene_id,

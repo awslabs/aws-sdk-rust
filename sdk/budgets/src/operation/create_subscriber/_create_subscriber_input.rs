@@ -111,7 +111,7 @@ impl CreateSubscriberInputBuilder {
     /// Consumes the builder and constructs a [`CreateSubscriberInput`](crate::operation::create_subscriber::CreateSubscriberInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_subscriber::CreateSubscriberInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_subscriber::CreateSubscriberInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_subscriber::CreateSubscriberInput {
             account_id: self.account_id,
             budget_name: self.budget_name,

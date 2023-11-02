@@ -47,7 +47,7 @@ impl DisableApplicationLayerAutomaticResponseInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disable_application_layer_automatic_response::DisableApplicationLayerAutomaticResponseInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::disable_application_layer_automatic_response::DisableApplicationLayerAutomaticResponseInput {

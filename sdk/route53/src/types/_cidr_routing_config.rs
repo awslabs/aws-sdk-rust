@@ -71,16 +71,16 @@ impl CidrRoutingConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`collection_id`](crate::types::builders::CidrRoutingConfigBuilder::collection_id)
     /// - [`location_name`](crate::types::builders::CidrRoutingConfigBuilder::location_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::CidrRoutingConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CidrRoutingConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CidrRoutingConfig {
             collection_id: self.collection_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "collection_id",
                     "collection_id was not specified but it is required when building CidrRoutingConfig",
                 )
             })?,
             location_name: self.location_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "location_name",
                     "location_name was not specified but it is required when building CidrRoutingConfig",
                 )

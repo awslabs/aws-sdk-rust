@@ -75,7 +75,7 @@ impl DeleteResourceShareInputBuilder {
     /// Consumes the builder and constructs a [`DeleteResourceShareInput`](crate::operation::delete_resource_share::DeleteResourceShareInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_resource_share::DeleteResourceShareInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_resource_share::DeleteResourceShareInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_resource_share::DeleteResourceShareInput {
             resource_share_arn: self.resource_share_arn,

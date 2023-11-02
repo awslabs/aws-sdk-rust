@@ -179,15 +179,15 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteAppIns
             fn uri_base(
                 _input: &crate::operation::delete_app_instance_user::DeleteAppInstanceUserInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 use ::std::fmt::Write as _;
                 let input_1 = &_input.app_instance_user_arn;
                 let input_1 = input_1.as_ref().ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field("app_instance_user_arn", "cannot be empty or unset")
+                    ::aws_smithy_types::error::operation::BuildError::missing_field("app_instance_user_arn", "cannot be empty or unset")
                 })?;
                 let app_instance_user_arn = ::aws_smithy_http::label::fmt_string(input_1, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if app_instance_user_arn.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "app_instance_user_arn",
                         "cannot be empty or unset",
                     ));
@@ -204,7 +204,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteAppIns
             fn update_http_builder(
                 input: &crate::operation::delete_app_instance_user::DeleteAppInstanceUserInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 ::std::result::Result::Ok(builder.method("DELETE").uri(uri))
@@ -212,7 +212,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteAppIns
             let mut builder = update_http_builder(&input, ::http::request::Builder::new())?;
             builder
         };
-        let body = ::aws_smithy_http::body::SdkBody::from("");
+        let body = ::aws_smithy_types::body::SdkBody::from("");
 
         ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }

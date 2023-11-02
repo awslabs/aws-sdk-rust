@@ -117,28 +117,28 @@ impl CvssScoreBuilder {
     /// - [`scoring_vector`](crate::types::builders::CvssScoreBuilder::scoring_vector)
     /// - [`version`](crate::types::builders::CvssScoreBuilder::version)
     /// - [`source`](crate::types::builders::CvssScoreBuilder::source)
-    pub fn build(self) -> ::std::result::Result<crate::types::CvssScore, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CvssScore, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CvssScore {
             base_score: self.base_score.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "base_score",
                     "base_score was not specified but it is required when building CvssScore",
                 )
             })?,
             scoring_vector: self.scoring_vector.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "scoring_vector",
                     "scoring_vector was not specified but it is required when building CvssScore",
                 )
             })?,
             version: self.version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "version",
                     "version was not specified but it is required when building CvssScore",
                 )
             })?,
             source: self.source.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source",
                     "source was not specified but it is required when building CvssScore",
                 )

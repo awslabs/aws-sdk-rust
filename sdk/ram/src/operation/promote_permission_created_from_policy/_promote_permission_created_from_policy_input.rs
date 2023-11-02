@@ -99,7 +99,7 @@ impl PromotePermissionCreatedFromPolicyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::promote_permission_created_from_policy::PromotePermissionCreatedFromPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::promote_permission_created_from_policy::PromotePermissionCreatedFromPolicyInput {

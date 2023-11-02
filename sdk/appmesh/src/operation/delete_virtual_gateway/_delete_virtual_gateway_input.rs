@@ -87,7 +87,7 @@ impl DeleteVirtualGatewayInputBuilder {
     /// Consumes the builder and constructs a [`DeleteVirtualGatewayInput`](crate::operation::delete_virtual_gateway::DeleteVirtualGatewayInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_virtual_gateway::DeleteVirtualGatewayInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_virtual_gateway::DeleteVirtualGatewayInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_virtual_gateway::DeleteVirtualGatewayInput {
             virtual_gateway_name: self.virtual_gateway_name,

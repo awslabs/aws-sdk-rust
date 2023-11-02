@@ -92,17 +92,17 @@ impl CreateAccessPolicyOutputBuilder {
     /// - [`access_policy_arn`](crate::operation::create_access_policy::builders::CreateAccessPolicyOutputBuilder::access_policy_arn)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_access_policy::CreateAccessPolicyOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_access_policy::CreateAccessPolicyOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_access_policy::CreateAccessPolicyOutput {
             access_policy_id: self.access_policy_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "access_policy_id",
                     "access_policy_id was not specified but it is required when building CreateAccessPolicyOutput",
                 )
             })?,
             access_policy_arn: self.access_policy_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "access_policy_arn",
                     "access_policy_arn was not specified but it is required when building CreateAccessPolicyOutput",
                 )

@@ -94,7 +94,7 @@ impl PollForJobsInputBuilder {
         &self.query_param
     }
     /// Consumes the builder and constructs a [`PollForJobsInput`](crate::operation::poll_for_jobs::PollForJobsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::poll_for_jobs::PollForJobsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::poll_for_jobs::PollForJobsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::poll_for_jobs::PollForJobsInput {
             action_type_id: self.action_type_id,
             max_batch_size: self.max_batch_size,

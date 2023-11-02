@@ -65,7 +65,7 @@ impl GetLaunchTemplateDataInputBuilder {
     /// Consumes the builder and constructs a [`GetLaunchTemplateDataInput`](crate::operation::get_launch_template_data::GetLaunchTemplateDataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_launch_template_data::GetLaunchTemplateDataInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_launch_template_data::GetLaunchTemplateDataInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_launch_template_data::GetLaunchTemplateDataInput {
             dry_run: self.dry_run,

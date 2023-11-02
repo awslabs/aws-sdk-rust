@@ -44,7 +44,7 @@ impl StopBgpFailoverTestInputBuilder {
     /// Consumes the builder and constructs a [`StopBgpFailoverTestInput`](crate::operation::stop_bgp_failover_test::StopBgpFailoverTestInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_bgp_failover_test::StopBgpFailoverTestInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::stop_bgp_failover_test::StopBgpFailoverTestInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::stop_bgp_failover_test::StopBgpFailoverTestInput {
             virtual_interface_id: self.virtual_interface_id,

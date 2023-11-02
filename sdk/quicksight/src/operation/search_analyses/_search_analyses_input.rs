@@ -115,7 +115,7 @@ impl SearchAnalysesInputBuilder {
     /// Consumes the builder and constructs a [`SearchAnalysesInput`](crate::operation::search_analyses::SearchAnalysesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::search_analyses::SearchAnalysesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::search_analyses::SearchAnalysesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_analyses::SearchAnalysesInput {
             aws_account_id: self.aws_account_id,
             filters: self.filters,

@@ -41,7 +41,7 @@ where
 pub fn ser_term_relations(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TermRelations,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.is_a {
         let mut array_2 = object.key("isA").start_array();
         for item_3 in var_1 {

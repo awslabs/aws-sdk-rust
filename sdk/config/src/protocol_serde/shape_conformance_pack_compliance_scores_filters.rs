@@ -2,7 +2,7 @@
 pub fn ser_conformance_pack_compliance_scores_filters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ConformancePackComplianceScoresFilters,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("ConformancePackNames").start_array();
         for item_2 in &input.conformance_pack_names {

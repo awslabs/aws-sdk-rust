@@ -49,7 +49,8 @@ impl GetManagedResourceInputBuilder {
     /// Consumes the builder and constructs a [`GetManagedResourceInput`](crate::operation::get_managed_resource::GetManagedResourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_managed_resource::GetManagedResourceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_managed_resource::GetManagedResourceInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::get_managed_resource::GetManagedResourceInput {
             resource_identifier: self.resource_identifier,
         })

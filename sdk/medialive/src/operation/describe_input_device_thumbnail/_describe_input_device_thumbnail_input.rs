@@ -69,7 +69,7 @@ impl DescribeInputDeviceThumbnailInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_input_device_thumbnail::DescribeInputDeviceThumbnailInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_input_device_thumbnail::DescribeInputDeviceThumbnailInput {
             input_device_id: self.input_device_id,

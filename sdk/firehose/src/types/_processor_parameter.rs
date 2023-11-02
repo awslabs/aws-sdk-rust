@@ -69,16 +69,16 @@ impl ProcessorParameterBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`parameter_name`](crate::types::builders::ProcessorParameterBuilder::parameter_name)
     /// - [`parameter_value`](crate::types::builders::ProcessorParameterBuilder::parameter_value)
-    pub fn build(self) -> ::std::result::Result<crate::types::ProcessorParameter, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ProcessorParameter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ProcessorParameter {
             parameter_name: self.parameter_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "parameter_name",
                     "parameter_name was not specified but it is required when building ProcessorParameter",
                 )
             })?,
             parameter_value: self.parameter_value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "parameter_value",
                     "parameter_value was not specified but it is required when building ProcessorParameter",
                 )

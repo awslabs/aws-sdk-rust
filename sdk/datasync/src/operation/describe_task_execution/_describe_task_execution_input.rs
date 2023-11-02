@@ -45,7 +45,7 @@ impl DescribeTaskExecutionInputBuilder {
     /// Consumes the builder and constructs a [`DescribeTaskExecutionInput`](crate::operation::describe_task_execution::DescribeTaskExecutionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_task_execution::DescribeTaskExecutionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_task_execution::DescribeTaskExecutionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_task_execution::DescribeTaskExecutionInput {
             task_execution_arn: self.task_execution_arn,

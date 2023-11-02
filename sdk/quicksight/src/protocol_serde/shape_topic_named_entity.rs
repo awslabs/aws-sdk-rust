@@ -2,7 +2,7 @@
 pub fn ser_topic_named_entity(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TopicNamedEntity,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("EntityName").string(input.entity_name.as_str());
     }

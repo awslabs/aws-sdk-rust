@@ -2,7 +2,7 @@
 pub fn ser_dynamic_card_verification_value(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DynamicCardVerificationValue,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("PanSequenceNumber").string(input.pan_sequence_number.as_str());
     }

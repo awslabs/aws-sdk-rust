@@ -184,7 +184,7 @@ impl NotifyProvisionProductEngineWorkflowResultInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::notify_provision_product_engine_workflow_result::NotifyProvisionProductEngineWorkflowResultInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::notify_provision_product_engine_workflow_result::NotifyProvisionProductEngineWorkflowResultInput {

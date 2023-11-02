@@ -70,7 +70,7 @@ impl CreateVaultInputBuilder {
         &self.vault_name
     }
     /// Consumes the builder and constructs a [`CreateVaultInput`](crate::operation::create_vault::CreateVaultInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_vault::CreateVaultInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_vault::CreateVaultInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_vault::CreateVaultInput {
             account_id: self.account_id,
             vault_name: self.vault_name,

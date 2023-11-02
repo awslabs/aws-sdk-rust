@@ -408,7 +408,9 @@ impl CreateIntentInputBuilder {
         &self.initial_response_setting
     }
     /// Consumes the builder and constructs a [`CreateIntentInput`](crate::operation::create_intent::CreateIntentInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_intent::CreateIntentInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_intent::CreateIntentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_intent::CreateIntentInput {
             intent_name: self.intent_name,
             description: self.description,

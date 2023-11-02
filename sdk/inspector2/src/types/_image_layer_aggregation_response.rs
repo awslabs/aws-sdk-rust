@@ -139,28 +139,28 @@ impl ImageLayerAggregationResponseBuilder {
     /// - [`resource_id`](crate::types::builders::ImageLayerAggregationResponseBuilder::resource_id)
     /// - [`layer_hash`](crate::types::builders::ImageLayerAggregationResponseBuilder::layer_hash)
     /// - [`account_id`](crate::types::builders::ImageLayerAggregationResponseBuilder::account_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::ImageLayerAggregationResponse, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ImageLayerAggregationResponse, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ImageLayerAggregationResponse {
             repository: self.repository.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "repository",
                     "repository was not specified but it is required when building ImageLayerAggregationResponse",
                 )
             })?,
             resource_id: self.resource_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_id",
                     "resource_id was not specified but it is required when building ImageLayerAggregationResponse",
                 )
             })?,
             layer_hash: self.layer_hash.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "layer_hash",
                     "layer_hash was not specified but it is required when building ImageLayerAggregationResponse",
                 )
             })?,
             account_id: self.account_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "account_id",
                     "account_id was not specified but it is required when building ImageLayerAggregationResponse",
                 )

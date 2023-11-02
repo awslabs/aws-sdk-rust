@@ -121,7 +121,7 @@ impl ListAssessmentTemplatesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_assessment_templates::ListAssessmentTemplatesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_assessment_templates::ListAssessmentTemplatesInput {
             assessment_target_arns: self.assessment_target_arns,

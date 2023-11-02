@@ -90,7 +90,7 @@ impl GetStreamingSessionStreamInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_streaming_session_stream::GetStreamingSessionStreamInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_streaming_session_stream::GetStreamingSessionStreamInput {
             session_id: self.session_id,

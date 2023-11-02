@@ -135,7 +135,7 @@ impl CreateSessionInputBuilder {
     /// Consumes the builder and constructs a [`CreateSessionInput`](crate::operation::create_session::CreateSessionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_session::CreateSessionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_session::CreateSessionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_session::CreateSessionInput {
             client_token: self.client_token,
             assistant_id: self.assistant_id,

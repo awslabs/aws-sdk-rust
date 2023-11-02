@@ -2,7 +2,7 @@
 pub fn ser_emergency_contact(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EmergencyContact,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("EmailAddress").string(input.email_address.as_str());
     }

@@ -46,10 +46,10 @@ impl KmsKeyToGrantBuilder {
     /// Consumes the builder and constructs a [`KmsKeyToGrant`](crate::types::KmsKeyToGrant).
     /// This method will fail if any of the following fields are not set:
     /// - [`kms_key_arn`](crate::types::builders::KmsKeyToGrantBuilder::kms_key_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::KmsKeyToGrant, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::KmsKeyToGrant, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::KmsKeyToGrant {
             kms_key_arn: self.kms_key_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "kms_key_arn",
                     "kms_key_arn was not specified but it is required when building KmsKeyToGrant",
                 )

@@ -70,16 +70,16 @@ impl TestSetIntentDiscrepancyItemBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`intent_name`](crate::types::builders::TestSetIntentDiscrepancyItemBuilder::intent_name)
     /// - [`error_message`](crate::types::builders::TestSetIntentDiscrepancyItemBuilder::error_message)
-    pub fn build(self) -> ::std::result::Result<crate::types::TestSetIntentDiscrepancyItem, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TestSetIntentDiscrepancyItem, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TestSetIntentDiscrepancyItem {
             intent_name: self.intent_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "intent_name",
                     "intent_name was not specified but it is required when building TestSetIntentDiscrepancyItem",
                 )
             })?,
             error_message: self.error_message.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "error_message",
                     "error_message was not specified but it is required when building TestSetIntentDiscrepancyItem",
                 )

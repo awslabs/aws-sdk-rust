@@ -74,16 +74,16 @@ impl ResourceFilterBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::ResourceFilterBuilder::name)
     /// - [`values`](crate::types::builders::ResourceFilterBuilder::values)
-    pub fn build(self) -> ::std::result::Result<crate::types::ResourceFilter, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ResourceFilter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ResourceFilter {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building ResourceFilter",
                 )
             })?,
             values: self.values.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "values",
                     "values was not specified but it is required when building ResourceFilter",
                 )

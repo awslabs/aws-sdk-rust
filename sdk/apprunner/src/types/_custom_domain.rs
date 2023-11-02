@@ -124,23 +124,23 @@ impl CustomDomainBuilder {
     /// - [`domain_name`](crate::types::builders::CustomDomainBuilder::domain_name)
     /// - [`enable_www_subdomain`](crate::types::builders::CustomDomainBuilder::enable_www_subdomain)
     /// - [`status`](crate::types::builders::CustomDomainBuilder::status)
-    pub fn build(self) -> ::std::result::Result<crate::types::CustomDomain, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CustomDomain, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CustomDomain {
             domain_name: self.domain_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "domain_name",
                     "domain_name was not specified but it is required when building CustomDomain",
                 )
             })?,
             enable_www_subdomain: self.enable_www_subdomain.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "enable_www_subdomain",
                     "enable_www_subdomain was not specified but it is required when building CustomDomain",
                 )
             })?,
             certificate_validation_records: self.certificate_validation_records,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building CustomDomain",
                 )

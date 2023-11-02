@@ -111,22 +111,22 @@ impl RejectPredictionsOutputBuilder {
     /// - [`asset_revision`](crate::operation::reject_predictions::builders::RejectPredictionsOutputBuilder::asset_revision)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::reject_predictions::RejectPredictionsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::reject_predictions::RejectPredictionsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::reject_predictions::RejectPredictionsOutput {
             domain_id: self.domain_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "domain_id",
                     "domain_id was not specified but it is required when building RejectPredictionsOutput",
                 )
             })?,
             asset_id: self.asset_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "asset_id",
                     "asset_id was not specified but it is required when building RejectPredictionsOutput",
                 )
             })?,
             asset_revision: self.asset_revision.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "asset_revision",
                     "asset_revision was not specified but it is required when building RejectPredictionsOutput",
                 )

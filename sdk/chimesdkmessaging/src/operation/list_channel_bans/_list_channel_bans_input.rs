@@ -118,7 +118,7 @@ impl ListChannelBansInputBuilder {
     /// Consumes the builder and constructs a [`ListChannelBansInput`](crate::operation::list_channel_bans::ListChannelBansInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_channel_bans::ListChannelBansInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_channel_bans::ListChannelBansInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_channel_bans::ListChannelBansInput {
             channel_arn: self.channel_arn,
             max_results: self.max_results,

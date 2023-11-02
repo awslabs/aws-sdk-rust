@@ -104,16 +104,16 @@ impl BackupPlanBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`backup_plan_name`](crate::types::builders::BackupPlanBuilder::backup_plan_name)
     /// - [`rules`](crate::types::builders::BackupPlanBuilder::rules)
-    pub fn build(self) -> ::std::result::Result<crate::types::BackupPlan, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::BackupPlan, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::BackupPlan {
             backup_plan_name: self.backup_plan_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "backup_plan_name",
                     "backup_plan_name was not specified but it is required when building BackupPlan",
                 )
             })?,
             rules: self.rules.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "rules",
                     "rules was not specified but it is required when building BackupPlan",
                 )

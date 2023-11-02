@@ -2,7 +2,7 @@
 pub fn ser_decision(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Decision,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("decisionType").string(input.decision_type.as_str());
     }

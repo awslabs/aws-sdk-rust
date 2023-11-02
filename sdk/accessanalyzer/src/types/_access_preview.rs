@@ -198,34 +198,34 @@ impl AccessPreviewBuilder {
     /// - [`configurations`](crate::types::builders::AccessPreviewBuilder::configurations)
     /// - [`created_at`](crate::types::builders::AccessPreviewBuilder::created_at)
     /// - [`status`](crate::types::builders::AccessPreviewBuilder::status)
-    pub fn build(self) -> ::std::result::Result<crate::types::AccessPreview, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AccessPreview, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AccessPreview {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building AccessPreview",
                 )
             })?,
             analyzer_arn: self.analyzer_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "analyzer_arn",
                     "analyzer_arn was not specified but it is required when building AccessPreview",
                 )
             })?,
             configurations: self.configurations.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "configurations",
                     "configurations was not specified but it is required when building AccessPreview",
                 )
             })?,
             created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
                     "created_at was not specified but it is required when building AccessPreview",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building AccessPreview",
                 )

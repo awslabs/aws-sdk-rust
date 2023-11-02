@@ -96,10 +96,10 @@ impl KxDatabaseConfigurationBuilder {
     /// Consumes the builder and constructs a [`KxDatabaseConfiguration`](crate::types::KxDatabaseConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`database_name`](crate::types::builders::KxDatabaseConfigurationBuilder::database_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::KxDatabaseConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::KxDatabaseConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::KxDatabaseConfiguration {
             database_name: self.database_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "database_name",
                     "database_name was not specified but it is required when building KxDatabaseConfiguration",
                 )

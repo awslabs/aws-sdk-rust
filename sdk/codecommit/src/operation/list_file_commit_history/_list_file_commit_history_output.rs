@@ -89,11 +89,13 @@ impl ListFileCommitHistoryOutputBuilder {
     /// - [`revision_dag`](crate::operation::list_file_commit_history::builders::ListFileCommitHistoryOutputBuilder::revision_dag)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_file_commit_history::ListFileCommitHistoryOutput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::list_file_commit_history::ListFileCommitHistoryOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::list_file_commit_history::ListFileCommitHistoryOutput {
             revision_dag: self.revision_dag.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "revision_dag",
                     "revision_dag was not specified but it is required when building ListFileCommitHistoryOutput",
                 )

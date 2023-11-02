@@ -198,35 +198,35 @@ impl CreateSolFunctionPackageOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_sol_function_package::CreateSolFunctionPackageOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_sol_function_package::CreateSolFunctionPackageOutput {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building CreateSolFunctionPackageOutput",
                 )
             })?,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building CreateSolFunctionPackageOutput",
                 )
             })?,
             onboarding_state: self.onboarding_state.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "onboarding_state",
                     "onboarding_state was not specified but it is required when building CreateSolFunctionPackageOutput",
                 )
             })?,
             operational_state: self.operational_state.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "operational_state",
                     "operational_state was not specified but it is required when building CreateSolFunctionPackageOutput",
                 )
             })?,
             usage_state: self.usage_state.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "usage_state",
                     "usage_state was not specified but it is required when building CreateSolFunctionPackageOutput",
                 )

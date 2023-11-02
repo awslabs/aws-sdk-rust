@@ -130,7 +130,7 @@ impl UpdateVirtualRouterInputBuilder {
     /// Consumes the builder and constructs a [`UpdateVirtualRouterInput`](crate::operation::update_virtual_router::UpdateVirtualRouterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_virtual_router::UpdateVirtualRouterInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_virtual_router::UpdateVirtualRouterInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_virtual_router::UpdateVirtualRouterInput {
             virtual_router_name: self.virtual_router_name,

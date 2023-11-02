@@ -2,7 +2,7 @@
 pub fn ser_mount_point(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MountPoint,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.container_path {
         object.key("containerPath").string(var_1.as_str());
     }

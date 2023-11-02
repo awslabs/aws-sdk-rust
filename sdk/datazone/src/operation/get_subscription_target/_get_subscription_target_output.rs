@@ -429,85 +429,85 @@ impl GetSubscriptionTargetOutputBuilder {
     /// - [`provider`](crate::operation::get_subscription_target::builders::GetSubscriptionTargetOutputBuilder::provider)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_subscription_target::GetSubscriptionTargetOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_subscription_target::GetSubscriptionTargetOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_subscription_target::GetSubscriptionTargetOutput {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building GetSubscriptionTargetOutput",
                 )
             })?,
             authorized_principals: self.authorized_principals.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "authorized_principals",
                     "authorized_principals was not specified but it is required when building GetSubscriptionTargetOutput",
                 )
             })?,
             domain_id: self.domain_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "domain_id",
                     "domain_id was not specified but it is required when building GetSubscriptionTargetOutput",
                 )
             })?,
             project_id: self.project_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "project_id",
                     "project_id was not specified but it is required when building GetSubscriptionTargetOutput",
                 )
             })?,
             environment_id: self.environment_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "environment_id",
                     "environment_id was not specified but it is required when building GetSubscriptionTargetOutput",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building GetSubscriptionTargetOutput",
                 )
             })?,
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building GetSubscriptionTargetOutput",
                 )
             })?,
             created_by: self.created_by.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_by",
                     "created_by was not specified but it is required when building GetSubscriptionTargetOutput",
                 )
             })?,
             updated_by: self.updated_by,
             created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
                     "created_at was not specified but it is required when building GetSubscriptionTargetOutput",
                 )
             })?,
             updated_at: self.updated_at,
             manage_access_role: self.manage_access_role.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "manage_access_role",
                     "manage_access_role was not specified but it is required when building GetSubscriptionTargetOutput",
                 )
             })?,
             applicable_asset_types: self.applicable_asset_types.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "applicable_asset_types",
                     "applicable_asset_types was not specified but it is required when building GetSubscriptionTargetOutput",
                 )
             })?,
             subscription_target_config: self.subscription_target_config.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "subscription_target_config",
                     "subscription_target_config was not specified but it is required when building GetSubscriptionTargetOutput",
                 )
             })?,
             provider: self.provider.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "provider",
                     "provider was not specified but it is required when building GetSubscriptionTargetOutput",
                 )

@@ -94,7 +94,8 @@ impl CreateBillingGroupInputBuilder {
     /// Consumes the builder and constructs a [`CreateBillingGroupInput`](crate::operation::create_billing_group::CreateBillingGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_billing_group::CreateBillingGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_billing_group::CreateBillingGroupInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_billing_group::CreateBillingGroupInput {
             billing_group_name: self.billing_group_name,
             billing_group_properties: self.billing_group_properties,

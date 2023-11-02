@@ -156,7 +156,7 @@ impl DisableEnhancedMonitoringInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disable_enhanced_monitoring::DisableEnhancedMonitoringInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disable_enhanced_monitoring::DisableEnhancedMonitoringInput {
             stream_name: self.stream_name,

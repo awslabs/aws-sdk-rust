@@ -79,16 +79,16 @@ impl CachedMethodsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`quantity`](crate::types::builders::CachedMethodsBuilder::quantity)
     /// - [`items`](crate::types::builders::CachedMethodsBuilder::items)
-    pub fn build(self) -> ::std::result::Result<crate::types::CachedMethods, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CachedMethods, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CachedMethods {
             quantity: self.quantity.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "quantity",
                     "quantity was not specified but it is required when building CachedMethods",
                 )
             })?,
             items: self.items.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "items",
                     "items was not specified but it is required when building CachedMethods",
                 )

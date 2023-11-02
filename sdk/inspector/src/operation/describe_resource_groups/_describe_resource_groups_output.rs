@@ -101,17 +101,17 @@ impl DescribeResourceGroupsOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_resource_groups::DescribeResourceGroupsOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_resource_groups::DescribeResourceGroupsOutput {
             resource_groups: self.resource_groups.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_groups",
                     "resource_groups was not specified but it is required when building DescribeResourceGroupsOutput",
                 )
             })?,
             failed_items: self.failed_items.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "failed_items",
                     "failed_items was not specified but it is required when building DescribeResourceGroupsOutput",
                 )

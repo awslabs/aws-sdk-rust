@@ -72,7 +72,7 @@ impl MonitorInstancesInputBuilder {
     /// Consumes the builder and constructs a [`MonitorInstancesInput`](crate::operation::monitor_instances::MonitorInstancesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::monitor_instances::MonitorInstancesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::monitor_instances::MonitorInstancesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::monitor_instances::MonitorInstancesInput {
             instance_ids: self.instance_ids,
             dry_run: self.dry_run,

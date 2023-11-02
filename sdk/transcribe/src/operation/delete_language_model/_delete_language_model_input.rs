@@ -44,7 +44,7 @@ impl DeleteLanguageModelInputBuilder {
     /// Consumes the builder and constructs a [`DeleteLanguageModelInput`](crate::operation::delete_language_model::DeleteLanguageModelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_language_model::DeleteLanguageModelInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_language_model::DeleteLanguageModelInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_language_model::DeleteLanguageModelInput { model_name: self.model_name })
     }

@@ -173,7 +173,7 @@ impl ListChangedBlocksInputBuilder {
     /// Consumes the builder and constructs a [`ListChangedBlocksInput`](crate::operation::list_changed_blocks::ListChangedBlocksInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_changed_blocks::ListChangedBlocksInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_changed_blocks::ListChangedBlocksInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_changed_blocks::ListChangedBlocksInput {
             first_snapshot_id: self.first_snapshot_id,
             second_snapshot_id: self.second_snapshot_id,

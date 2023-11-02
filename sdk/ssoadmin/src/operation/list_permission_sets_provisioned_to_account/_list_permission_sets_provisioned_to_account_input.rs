@@ -131,7 +131,7 @@ impl ListPermissionSetsProvisionedToAccountInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_permission_sets_provisioned_to_account::ListPermissionSetsProvisionedToAccountInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_permission_sets_provisioned_to_account::ListPermissionSetsProvisionedToAccountInput {

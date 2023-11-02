@@ -90,7 +90,7 @@ impl DeleteSubscriptionTargetInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_subscription_target::DeleteSubscriptionTargetInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_subscription_target::DeleteSubscriptionTargetInput {
             domain_identifier: self.domain_identifier,

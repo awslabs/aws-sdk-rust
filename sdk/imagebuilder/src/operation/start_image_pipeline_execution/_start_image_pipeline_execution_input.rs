@@ -68,7 +68,7 @@ impl StartImagePipelineExecutionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_image_pipeline_execution::StartImagePipelineExecutionInput {
             image_pipeline_arn: self.image_pipeline_arn,

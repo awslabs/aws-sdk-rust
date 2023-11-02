@@ -46,7 +46,7 @@ impl StopInferenceRecommendationsJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_inference_recommendations_job::StopInferenceRecommendationsJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::stop_inference_recommendations_job::StopInferenceRecommendationsJobInput { job_name: self.job_name },

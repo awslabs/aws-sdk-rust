@@ -80,7 +80,7 @@ impl PutEventsInputBuilder {
         &self.endpoint_id
     }
     /// Consumes the builder and constructs a [`PutEventsInput`](crate::operation::put_events::PutEventsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_events::PutEventsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_events::PutEventsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_events::PutEventsInput {
             entries: self.entries,
             endpoint_id: self.endpoint_id,

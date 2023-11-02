@@ -66,7 +66,7 @@ impl DeleteJourneyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteJourneyInput`](crate::operation::delete_journey::DeleteJourneyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_journey::DeleteJourneyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_journey::DeleteJourneyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_journey::DeleteJourneyInput {
             application_id: self.application_id,
             journey_id: self.journey_id,

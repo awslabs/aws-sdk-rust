@@ -558,23 +558,23 @@ impl CreateEnvironmentOutputBuilder {
     /// - [`provider`](crate::operation::create_environment::builders::CreateEnvironmentOutputBuilder::provider)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_environment::CreateEnvironmentOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_environment::CreateEnvironmentOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_environment::CreateEnvironmentOutput {
             project_id: self.project_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "project_id",
                     "project_id was not specified but it is required when building CreateEnvironmentOutput",
                 )
             })?,
             id: self.id,
             domain_id: self.domain_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "domain_id",
                     "domain_id was not specified but it is required when building CreateEnvironmentOutput",
                 )
             })?,
             created_by: self.created_by.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_by",
                     "created_by was not specified but it is required when building CreateEnvironmentOutput",
                 )
@@ -582,14 +582,14 @@ impl CreateEnvironmentOutputBuilder {
             created_at: self.created_at,
             updated_at: self.updated_at,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building CreateEnvironmentOutput",
                 )
             })?,
             description: self.description,
             environment_profile_id: self.environment_profile_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "environment_profile_id",
                     "environment_profile_id was not specified but it is required when building CreateEnvironmentOutput",
                 )
@@ -597,7 +597,7 @@ impl CreateEnvironmentOutputBuilder {
             aws_account_id: self.aws_account_id,
             aws_account_region: self.aws_account_region,
             provider: self.provider.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "provider",
                     "provider was not specified but it is required when building CreateEnvironmentOutput",
                 )

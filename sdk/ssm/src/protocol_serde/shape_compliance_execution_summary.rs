@@ -2,7 +2,7 @@
 pub fn ser_compliance_execution_summary(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ComplianceExecutionSummary,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object
             .key("ExecutionTime")

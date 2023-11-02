@@ -66,7 +66,7 @@ impl GetRotationOverrideInputBuilder {
     /// Consumes the builder and constructs a [`GetRotationOverrideInput`](crate::operation::get_rotation_override::GetRotationOverrideInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_rotation_override::GetRotationOverrideInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_rotation_override::GetRotationOverrideInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_rotation_override::GetRotationOverrideInput {
             rotation_id: self.rotation_id,

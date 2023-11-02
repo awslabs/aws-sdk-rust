@@ -2,7 +2,7 @@
 pub fn ser_detected_properties(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DetectedProperties,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.width {
         object.key("Width").number(
             #[allow(clippy::useless_conversion)]

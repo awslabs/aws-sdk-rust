@@ -236,7 +236,7 @@ impl CreateAddonInputBuilder {
         &self.configuration_values
     }
     /// Consumes the builder and constructs a [`CreateAddonInput`](crate::operation::create_addon::CreateAddonInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_addon::CreateAddonInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_addon::CreateAddonInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_addon::CreateAddonInput {
             cluster_name: self.cluster_name,
             addon_name: self.addon_name,

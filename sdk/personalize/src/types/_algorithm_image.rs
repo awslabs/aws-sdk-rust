@@ -67,11 +67,11 @@ impl AlgorithmImageBuilder {
     /// Consumes the builder and constructs a [`AlgorithmImage`](crate::types::AlgorithmImage).
     /// This method will fail if any of the following fields are not set:
     /// - [`docker_uri`](crate::types::builders::AlgorithmImageBuilder::docker_uri)
-    pub fn build(self) -> ::std::result::Result<crate::types::AlgorithmImage, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AlgorithmImage, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AlgorithmImage {
             name: self.name,
             docker_uri: self.docker_uri.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "docker_uri",
                     "docker_uri was not specified but it is required when building AlgorithmImage",
                 )

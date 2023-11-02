@@ -122,7 +122,7 @@ impl GetEntitlementsInputBuilder {
     /// Consumes the builder and constructs a [`GetEntitlementsInput`](crate::operation::get_entitlements::GetEntitlementsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_entitlements::GetEntitlementsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_entitlements::GetEntitlementsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_entitlements::GetEntitlementsInput {
             product_code: self.product_code,
             filter: self.filter,

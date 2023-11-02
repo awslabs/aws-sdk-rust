@@ -227,11 +227,11 @@ impl JsonBodyBuilder {
     /// Consumes the builder and constructs a [`JsonBody`](crate::types::JsonBody).
     /// This method will fail if any of the following fields are not set:
     /// - [`match_scope`](crate::types::builders::JsonBodyBuilder::match_scope)
-    pub fn build(self) -> ::std::result::Result<crate::types::JsonBody, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::JsonBody, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::JsonBody {
             match_pattern: self.match_pattern,
             match_scope: self.match_scope.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "match_scope",
                     "match_scope was not specified but it is required when building JsonBody",
                 )

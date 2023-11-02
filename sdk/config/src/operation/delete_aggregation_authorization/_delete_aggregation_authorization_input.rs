@@ -68,7 +68,7 @@ impl DeleteAggregationAuthorizationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_aggregation_authorization::DeleteAggregationAuthorizationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_aggregation_authorization::DeleteAggregationAuthorizationInput {
             authorized_account_id: self.authorized_account_id,

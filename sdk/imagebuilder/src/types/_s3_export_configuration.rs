@@ -139,22 +139,22 @@ impl S3ExportConfigurationBuilder {
     /// - [`role_name`](crate::types::builders::S3ExportConfigurationBuilder::role_name)
     /// - [`disk_image_format`](crate::types::builders::S3ExportConfigurationBuilder::disk_image_format)
     /// - [`s3_bucket`](crate::types::builders::S3ExportConfigurationBuilder::s3_bucket)
-    pub fn build(self) -> ::std::result::Result<crate::types::S3ExportConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::S3ExportConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::S3ExportConfiguration {
             role_name: self.role_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role_name",
                     "role_name was not specified but it is required when building S3ExportConfiguration",
                 )
             })?,
             disk_image_format: self.disk_image_format.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "disk_image_format",
                     "disk_image_format was not specified but it is required when building S3ExportConfiguration",
                 )
             })?,
             s3_bucket: self.s3_bucket.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "s3_bucket",
                     "s3_bucket was not specified but it is required when building S3ExportConfiguration",
                 )

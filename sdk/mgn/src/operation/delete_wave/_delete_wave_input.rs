@@ -63,7 +63,7 @@ impl DeleteWaveInputBuilder {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`DeleteWaveInput`](crate::operation::delete_wave::DeleteWaveInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_wave::DeleteWaveInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_wave::DeleteWaveInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_wave::DeleteWaveInput {
             wave_id: self.wave_id,
             account_id: self.account_id,

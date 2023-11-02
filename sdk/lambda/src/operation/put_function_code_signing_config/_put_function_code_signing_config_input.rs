@@ -103,7 +103,7 @@ impl PutFunctionCodeSigningConfigInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_function_code_signing_config::PutFunctionCodeSigningConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_function_code_signing_config::PutFunctionCodeSigningConfigInput {
             code_signing_config_arn: self.code_signing_config_arn,

@@ -159,7 +159,7 @@ impl ExecuteChangeSetInputBuilder {
     /// Consumes the builder and constructs a [`ExecuteChangeSetInput`](crate::operation::execute_change_set::ExecuteChangeSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::execute_change_set::ExecuteChangeSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::execute_change_set::ExecuteChangeSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::execute_change_set::ExecuteChangeSetInput {
             change_set_name: self.change_set_name,
             stack_name: self.stack_name,

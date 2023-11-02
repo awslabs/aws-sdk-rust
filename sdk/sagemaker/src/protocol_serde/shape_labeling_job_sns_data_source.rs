@@ -2,7 +2,7 @@
 pub fn ser_labeling_job_sns_data_source(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LabelingJobSnsDataSource,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.sns_topic_arn {
         object.key("SnsTopicArn").string(var_1.as_str());
     }

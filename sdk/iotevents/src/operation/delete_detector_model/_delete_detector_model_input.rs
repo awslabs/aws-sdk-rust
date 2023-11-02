@@ -44,7 +44,7 @@ impl DeleteDetectorModelInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDetectorModelInput`](crate::operation::delete_detector_model::DeleteDetectorModelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_detector_model::DeleteDetectorModelInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_detector_model::DeleteDetectorModelInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_detector_model::DeleteDetectorModelInput {
             detector_model_name: self.detector_model_name,

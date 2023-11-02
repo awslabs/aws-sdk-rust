@@ -403,7 +403,7 @@ impl DescribeInstanceTypesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeInstanceTypesInput`](crate::operation::describe_instance_types::DescribeInstanceTypesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_instance_types::DescribeInstanceTypesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_instance_types::DescribeInstanceTypesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_instance_types::DescribeInstanceTypesInput {
             dry_run: self.dry_run,

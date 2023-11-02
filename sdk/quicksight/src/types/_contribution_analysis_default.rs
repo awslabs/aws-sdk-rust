@@ -75,16 +75,16 @@ impl ContributionAnalysisDefaultBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`measure_field_id`](crate::types::builders::ContributionAnalysisDefaultBuilder::measure_field_id)
     /// - [`contributor_dimensions`](crate::types::builders::ContributionAnalysisDefaultBuilder::contributor_dimensions)
-    pub fn build(self) -> ::std::result::Result<crate::types::ContributionAnalysisDefault, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ContributionAnalysisDefault, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ContributionAnalysisDefault {
             measure_field_id: self.measure_field_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "measure_field_id",
                     "measure_field_id was not specified but it is required when building ContributionAnalysisDefault",
                 )
             })?,
             contributor_dimensions: self.contributor_dimensions.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "contributor_dimensions",
                     "contributor_dimensions was not specified but it is required when building ContributionAnalysisDefault",
                 )

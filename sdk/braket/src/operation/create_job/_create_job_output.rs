@@ -61,10 +61,10 @@ impl CreateJobOutputBuilder {
     /// Consumes the builder and constructs a [`CreateJobOutput`](crate::operation::create_job::CreateJobOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`job_arn`](crate::operation::create_job::builders::CreateJobOutputBuilder::job_arn)
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_job::CreateJobOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_job::CreateJobOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_job::CreateJobOutput {
             job_arn: self.job_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "job_arn",
                     "job_arn was not specified but it is required when building CreateJobOutput",
                 )

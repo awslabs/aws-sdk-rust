@@ -275,7 +275,7 @@ impl CreateEndpointConfigInputBuilder {
     /// Consumes the builder and constructs a [`CreateEndpointConfigInput`](crate::operation::create_endpoint_config::CreateEndpointConfigInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_endpoint_config::CreateEndpointConfigInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_endpoint_config::CreateEndpointConfigInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_endpoint_config::CreateEndpointConfigInput {
             endpoint_config_name: self.endpoint_config_name,

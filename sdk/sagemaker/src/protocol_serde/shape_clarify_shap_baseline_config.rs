@@ -2,7 +2,7 @@
 pub fn ser_clarify_shap_baseline_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ClarifyShapBaselineConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.mime_type {
         object.key("MimeType").string(var_1.as_str());
     }

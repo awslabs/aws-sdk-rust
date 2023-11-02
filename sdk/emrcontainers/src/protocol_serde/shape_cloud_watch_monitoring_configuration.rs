@@ -2,7 +2,7 @@
 pub fn ser_cloud_watch_monitoring_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CloudWatchMonitoringConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("logGroupName").string(input.log_group_name.as_str());
     }

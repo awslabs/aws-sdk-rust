@@ -167,34 +167,34 @@ impl AlertBuilder {
     /// - [`last_modified_time`](crate::types::builders::AlertBuilder::last_modified_time)
     /// - [`related_resource_arns`](crate::types::builders::AlertBuilder::related_resource_arns)
     /// - [`resource_arn`](crate::types::builders::AlertBuilder::resource_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::Alert, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Alert, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Alert {
             alert_code: self.alert_code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "alert_code",
                     "alert_code was not specified but it is required when building Alert",
                 )
             })?,
             alert_message: self.alert_message.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "alert_message",
                     "alert_message was not specified but it is required when building Alert",
                 )
             })?,
             last_modified_time: self.last_modified_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_modified_time",
                     "last_modified_time was not specified but it is required when building Alert",
                 )
             })?,
             related_resource_arns: self.related_resource_arns.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "related_resource_arns",
                     "related_resource_arns was not specified but it is required when building Alert",
                 )
             })?,
             resource_arn: self.resource_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_arn",
                     "resource_arn was not specified but it is required when building Alert",
                 )

@@ -51,10 +51,10 @@ impl ConsolidationBuilder {
     /// Consumes the builder and constructs a [`Consolidation`](crate::types::Consolidation).
     /// This method will fail if any of the following fields are not set:
     /// - [`matching_attributes_list`](crate::types::builders::ConsolidationBuilder::matching_attributes_list)
-    pub fn build(self) -> ::std::result::Result<crate::types::Consolidation, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Consolidation, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Consolidation {
             matching_attributes_list: self.matching_attributes_list.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "matching_attributes_list",
                     "matching_attributes_list was not specified but it is required when building Consolidation",
                 )

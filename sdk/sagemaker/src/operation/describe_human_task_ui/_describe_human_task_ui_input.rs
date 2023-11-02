@@ -44,7 +44,7 @@ impl DescribeHumanTaskUiInputBuilder {
     /// Consumes the builder and constructs a [`DescribeHumanTaskUiInput`](crate::operation::describe_human_task_ui::DescribeHumanTaskUiInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_human_task_ui::DescribeHumanTaskUiInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_human_task_ui::DescribeHumanTaskUiInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_human_task_ui::DescribeHumanTaskUiInput {
             human_task_ui_name: self.human_task_ui_name,

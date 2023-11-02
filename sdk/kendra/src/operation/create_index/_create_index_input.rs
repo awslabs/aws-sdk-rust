@@ -328,7 +328,7 @@ impl CreateIndexInputBuilder {
         &self.user_group_resolution_configuration
     }
     /// Consumes the builder and constructs a [`CreateIndexInput`](crate::operation::create_index::CreateIndexInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_index::CreateIndexInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_index::CreateIndexInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_index::CreateIndexInput {
             name: self.name,
             edition: self.edition,

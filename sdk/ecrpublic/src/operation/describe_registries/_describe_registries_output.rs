@@ -89,10 +89,11 @@ impl DescribeRegistriesOutputBuilder {
     /// - [`registries`](crate::operation::describe_registries::builders::DescribeRegistriesOutputBuilder::registries)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_registries::DescribeRegistriesOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_registries::DescribeRegistriesOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::describe_registries::DescribeRegistriesOutput {
             registries: self.registries.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "registries",
                     "registries was not specified but it is required when building DescribeRegistriesOutput",
                 )

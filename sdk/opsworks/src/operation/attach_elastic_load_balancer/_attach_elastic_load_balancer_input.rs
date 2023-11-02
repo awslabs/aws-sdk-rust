@@ -68,7 +68,7 @@ impl AttachElasticLoadBalancerInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::attach_elastic_load_balancer::AttachElasticLoadBalancerInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::attach_elastic_load_balancer::AttachElasticLoadBalancerInput {
             elastic_load_balancer_name: self.elastic_load_balancer_name,

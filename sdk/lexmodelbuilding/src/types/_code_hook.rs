@@ -70,16 +70,16 @@ impl CodeHookBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`uri`](crate::types::builders::CodeHookBuilder::uri)
     /// - [`message_version`](crate::types::builders::CodeHookBuilder::message_version)
-    pub fn build(self) -> ::std::result::Result<crate::types::CodeHook, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CodeHook, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CodeHook {
             uri: self.uri.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "uri",
                     "uri was not specified but it is required when building CodeHook",
                 )
             })?,
             message_version: self.message_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "message_version",
                     "message_version was not specified but it is required when building CodeHook",
                 )

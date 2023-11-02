@@ -115,22 +115,22 @@ impl MathActivityBuilder {
     /// - [`name`](crate::types::builders::MathActivityBuilder::name)
     /// - [`attribute`](crate::types::builders::MathActivityBuilder::attribute)
     /// - [`math`](crate::types::builders::MathActivityBuilder::math)
-    pub fn build(self) -> ::std::result::Result<crate::types::MathActivity, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::MathActivity, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MathActivity {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building MathActivity",
                 )
             })?,
             attribute: self.attribute.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "attribute",
                     "attribute was not specified but it is required when building MathActivity",
                 )
             })?,
             math: self.math.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "math",
                     "math was not specified but it is required when building MathActivity",
                 )

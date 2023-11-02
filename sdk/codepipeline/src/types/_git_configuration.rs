@@ -97,10 +97,10 @@ impl GitConfigurationBuilder {
     /// Consumes the builder and constructs a [`GitConfiguration`](crate::types::GitConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`source_action_name`](crate::types::builders::GitConfigurationBuilder::source_action_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::GitConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::GitConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::GitConfiguration {
             source_action_name: self.source_action_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source_action_name",
                     "source_action_name was not specified but it is required when building GitConfiguration",
                 )

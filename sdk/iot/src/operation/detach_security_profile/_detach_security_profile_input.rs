@@ -66,7 +66,7 @@ impl DetachSecurityProfileInputBuilder {
     /// Consumes the builder and constructs a [`DetachSecurityProfileInput`](crate::operation::detach_security_profile::DetachSecurityProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::detach_security_profile::DetachSecurityProfileInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::detach_security_profile::DetachSecurityProfileInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::detach_security_profile::DetachSecurityProfileInput {
             security_profile_name: self.security_profile_name,

@@ -194,7 +194,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for CreateCustom
             fn uri_base(
                 _input: &crate::operation::create_custom_routing_endpoint_group::CreateCustomRoutingEndpointGroupInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 use ::std::fmt::Write as _;
                 ::std::write!(output, "/").expect("formatting should succeed");
                 ::std::result::Result::Ok(())
@@ -203,7 +203,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for CreateCustom
             fn update_http_builder(
                 input: &crate::operation::create_custom_routing_endpoint_group::CreateCustomRoutingEndpointGroupInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 ::std::result::Result::Ok(builder.method("POST").uri(uri))
@@ -217,7 +217,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for CreateCustom
             );
             builder
         };
-        let body = ::aws_smithy_http::body::SdkBody::from(
+        let body = ::aws_smithy_types::body::SdkBody::from(
             crate::protocol_serde::shape_create_custom_routing_endpoint_group::ser_create_custom_routing_endpoint_group_input(&input)?,
         );
         if let Some(content_length) = body.content_length() {

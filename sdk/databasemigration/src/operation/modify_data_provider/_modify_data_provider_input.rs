@@ -169,7 +169,8 @@ impl ModifyDataProviderInputBuilder {
     /// Consumes the builder and constructs a [`ModifyDataProviderInput`](crate::operation::modify_data_provider::ModifyDataProviderInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::modify_data_provider::ModifyDataProviderInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::modify_data_provider::ModifyDataProviderInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::modify_data_provider::ModifyDataProviderInput {
             data_provider_identifier: self.data_provider_identifier,
             data_provider_name: self.data_provider_name,

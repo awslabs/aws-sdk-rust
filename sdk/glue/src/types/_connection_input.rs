@@ -333,24 +333,24 @@ impl ConnectionInputBuilder {
     /// - [`name`](crate::types::builders::ConnectionInputBuilder::name)
     /// - [`connection_type`](crate::types::builders::ConnectionInputBuilder::connection_type)
     /// - [`connection_properties`](crate::types::builders::ConnectionInputBuilder::connection_properties)
-    pub fn build(self) -> ::std::result::Result<crate::types::ConnectionInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ConnectionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ConnectionInput {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building ConnectionInput",
                 )
             })?,
             description: self.description,
             connection_type: self.connection_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "connection_type",
                     "connection_type was not specified but it is required when building ConnectionInput",
                 )
             })?,
             match_criteria: self.match_criteria,
             connection_properties: self.connection_properties.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "connection_properties",
                     "connection_properties was not specified but it is required when building ConnectionInput",
                 )

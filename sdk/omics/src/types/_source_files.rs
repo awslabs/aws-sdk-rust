@@ -67,10 +67,10 @@ impl SourceFilesBuilder {
     /// Consumes the builder and constructs a [`SourceFiles`](crate::types::SourceFiles).
     /// This method will fail if any of the following fields are not set:
     /// - [`source1`](crate::types::builders::SourceFilesBuilder::source1)
-    pub fn build(self) -> ::std::result::Result<crate::types::SourceFiles, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SourceFiles, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SourceFiles {
             source1: self.source1.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source1",
                     "source1 was not specified but it is required when building SourceFiles",
                 )

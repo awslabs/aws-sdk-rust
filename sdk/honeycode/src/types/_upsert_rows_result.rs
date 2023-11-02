@@ -74,16 +74,16 @@ impl UpsertRowsResultBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`row_ids`](crate::types::builders::UpsertRowsResultBuilder::row_ids)
     /// - [`upsert_action`](crate::types::builders::UpsertRowsResultBuilder::upsert_action)
-    pub fn build(self) -> ::std::result::Result<crate::types::UpsertRowsResult, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::UpsertRowsResult, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::UpsertRowsResult {
             row_ids: self.row_ids.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "row_ids",
                     "row_ids was not specified but it is required when building UpsertRowsResult",
                 )
             })?,
             upsert_action: self.upsert_action.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "upsert_action",
                     "upsert_action was not specified but it is required when building UpsertRowsResult",
                 )

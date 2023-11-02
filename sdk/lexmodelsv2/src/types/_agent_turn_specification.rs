@@ -46,10 +46,10 @@ impl AgentTurnSpecificationBuilder {
     /// Consumes the builder and constructs a [`AgentTurnSpecification`](crate::types::AgentTurnSpecification).
     /// This method will fail if any of the following fields are not set:
     /// - [`agent_prompt`](crate::types::builders::AgentTurnSpecificationBuilder::agent_prompt)
-    pub fn build(self) -> ::std::result::Result<crate::types::AgentTurnSpecification, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AgentTurnSpecification, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AgentTurnSpecification {
             agent_prompt: self.agent_prompt.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "agent_prompt",
                     "agent_prompt was not specified but it is required when building AgentTurnSpecification",
                 )

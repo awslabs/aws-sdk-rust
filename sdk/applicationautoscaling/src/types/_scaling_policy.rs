@@ -486,40 +486,40 @@ impl ScalingPolicyBuilder {
     /// - [`scalable_dimension`](crate::types::builders::ScalingPolicyBuilder::scalable_dimension)
     /// - [`policy_type`](crate::types::builders::ScalingPolicyBuilder::policy_type)
     /// - [`creation_time`](crate::types::builders::ScalingPolicyBuilder::creation_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::ScalingPolicy, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ScalingPolicy, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ScalingPolicy {
             policy_arn: self.policy_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "policy_arn",
                     "policy_arn was not specified but it is required when building ScalingPolicy",
                 )
             })?,
             policy_name: self.policy_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "policy_name",
                     "policy_name was not specified but it is required when building ScalingPolicy",
                 )
             })?,
             service_namespace: self.service_namespace.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "service_namespace",
                     "service_namespace was not specified but it is required when building ScalingPolicy",
                 )
             })?,
             resource_id: self.resource_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_id",
                     "resource_id was not specified but it is required when building ScalingPolicy",
                 )
             })?,
             scalable_dimension: self.scalable_dimension.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "scalable_dimension",
                     "scalable_dimension was not specified but it is required when building ScalingPolicy",
                 )
             })?,
             policy_type: self.policy_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "policy_type",
                     "policy_type was not specified but it is required when building ScalingPolicy",
                 )
@@ -528,7 +528,7 @@ impl ScalingPolicyBuilder {
             target_tracking_scaling_policy_configuration: self.target_tracking_scaling_policy_configuration,
             alarms: self.alarms,
             creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_time",
                     "creation_time was not specified but it is required when building ScalingPolicy",
                 )

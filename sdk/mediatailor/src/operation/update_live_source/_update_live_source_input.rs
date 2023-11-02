@@ -95,7 +95,7 @@ impl UpdateLiveSourceInputBuilder {
     /// Consumes the builder and constructs a [`UpdateLiveSourceInput`](crate::operation::update_live_source::UpdateLiveSourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_live_source::UpdateLiveSourceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_live_source::UpdateLiveSourceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_live_source::UpdateLiveSourceInput {
             http_package_configurations: self.http_package_configurations,
             live_source_name: self.live_source_name,

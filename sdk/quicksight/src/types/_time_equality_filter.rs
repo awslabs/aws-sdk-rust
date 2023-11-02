@@ -167,10 +167,10 @@ impl TimeEqualityFilterBuilder {
     /// Consumes the builder and constructs a [`TimeEqualityFilter`](crate::types::TimeEqualityFilter).
     /// This method will fail if any of the following fields are not set:
     /// - [`filter_id`](crate::types::builders::TimeEqualityFilterBuilder::filter_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::TimeEqualityFilter, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TimeEqualityFilter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TimeEqualityFilter {
             filter_id: self.filter_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "filter_id",
                     "filter_id was not specified but it is required when building TimeEqualityFilter",
                 )

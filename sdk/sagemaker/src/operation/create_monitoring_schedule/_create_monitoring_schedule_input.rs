@@ -97,7 +97,7 @@ impl CreateMonitoringScheduleInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_monitoring_schedule::CreateMonitoringScheduleInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_monitoring_schedule::CreateMonitoringScheduleInput {
             monitoring_schedule_name: self.monitoring_schedule_name,

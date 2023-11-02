@@ -166,7 +166,7 @@ impl ModifyFleetInputBuilder {
         &self.context
     }
     /// Consumes the builder and constructs a [`ModifyFleetInput`](crate::operation::modify_fleet::ModifyFleetInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::modify_fleet::ModifyFleetInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_fleet::ModifyFleetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::modify_fleet::ModifyFleetInput {
             dry_run: self.dry_run,
             excess_capacity_termination_policy: self.excess_capacity_termination_policy,

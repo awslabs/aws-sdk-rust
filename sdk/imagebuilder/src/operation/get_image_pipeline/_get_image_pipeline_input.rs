@@ -44,7 +44,7 @@ impl GetImagePipelineInputBuilder {
     /// Consumes the builder and constructs a [`GetImagePipelineInput`](crate::operation::get_image_pipeline::GetImagePipelineInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_image_pipeline::GetImagePipelineInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_image_pipeline::GetImagePipelineInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_image_pipeline::GetImagePipelineInput {
             image_pipeline_arn: self.image_pipeline_arn,
         })

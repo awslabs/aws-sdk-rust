@@ -66,7 +66,7 @@ impl PostToConnectionInputBuilder {
     /// Consumes the builder and constructs a [`PostToConnectionInput`](crate::operation::post_to_connection::PostToConnectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::post_to_connection::PostToConnectionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::post_to_connection::PostToConnectionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::post_to_connection::PostToConnectionInput {
             data: self.data,
             connection_id: self.connection_id,

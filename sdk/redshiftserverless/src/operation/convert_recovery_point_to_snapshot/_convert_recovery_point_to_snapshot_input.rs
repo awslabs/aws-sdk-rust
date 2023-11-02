@@ -118,7 +118,7 @@ impl ConvertRecoveryPointToSnapshotInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::convert_recovery_point_to_snapshot::ConvertRecoveryPointToSnapshotInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::convert_recovery_point_to_snapshot::ConvertRecoveryPointToSnapshotInput {

@@ -131,17 +131,17 @@ impl DescribeAppVersionOutputBuilder {
     /// - [`app_version`](crate::operation::describe_app_version::builders::DescribeAppVersionOutputBuilder::app_version)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_app_version::DescribeAppVersionOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_app_version::DescribeAppVersionOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_app_version::DescribeAppVersionOutput {
             app_arn: self.app_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "app_arn",
                     "app_arn was not specified but it is required when building DescribeAppVersionOutput",
                 )
             })?,
             app_version: self.app_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "app_version",
                     "app_version was not specified but it is required when building DescribeAppVersionOutput",
                 )

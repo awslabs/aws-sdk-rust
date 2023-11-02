@@ -89,10 +89,10 @@ impl ListVirtualNodesOutputBuilder {
     /// - [`virtual_nodes`](crate::operation::list_virtual_nodes::builders::ListVirtualNodesOutputBuilder::virtual_nodes)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_virtual_nodes::ListVirtualNodesOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_virtual_nodes::ListVirtualNodesOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_virtual_nodes::ListVirtualNodesOutput {
             virtual_nodes: self.virtual_nodes.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "virtual_nodes",
                     "virtual_nodes was not specified but it is required when building ListVirtualNodesOutput",
                 )

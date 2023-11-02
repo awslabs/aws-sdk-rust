@@ -160,29 +160,29 @@ impl FleetSummaryBuilder {
     /// - [`arn`](crate::types::builders::FleetSummaryBuilder::arn)
     /// - [`signal_catalog_arn`](crate::types::builders::FleetSummaryBuilder::signal_catalog_arn)
     /// - [`creation_time`](crate::types::builders::FleetSummaryBuilder::creation_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::FleetSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::FleetSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FleetSummary {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building FleetSummary",
                 )
             })?,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building FleetSummary",
                 )
             })?,
             description: self.description,
             signal_catalog_arn: self.signal_catalog_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "signal_catalog_arn",
                     "signal_catalog_arn was not specified but it is required when building FleetSummary",
                 )
             })?,
             creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_time",
                     "creation_time was not specified but it is required when building FleetSummary",
                 )

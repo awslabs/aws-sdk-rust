@@ -109,10 +109,10 @@ impl RepositoryAggregationResponseBuilder {
     /// Consumes the builder and constructs a [`RepositoryAggregationResponse`](crate::types::RepositoryAggregationResponse).
     /// This method will fail if any of the following fields are not set:
     /// - [`repository`](crate::types::builders::RepositoryAggregationResponseBuilder::repository)
-    pub fn build(self) -> ::std::result::Result<crate::types::RepositoryAggregationResponse, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RepositoryAggregationResponse, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RepositoryAggregationResponse {
             repository: self.repository.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "repository",
                     "repository was not specified but it is required when building RepositoryAggregationResponse",
                 )

@@ -147,7 +147,7 @@ impl UpdateStreamProcessorInputBuilder {
     /// Consumes the builder and constructs a [`UpdateStreamProcessorInput`](crate::operation::update_stream_processor::UpdateStreamProcessorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_stream_processor::UpdateStreamProcessorInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_stream_processor::UpdateStreamProcessorInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_stream_processor::UpdateStreamProcessorInput {
             name: self.name,

@@ -42,7 +42,9 @@ impl DeleteExportInputBuilder {
         &self.export_id
     }
     /// Consumes the builder and constructs a [`DeleteExportInput`](crate::operation::delete_export::DeleteExportInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_export::DeleteExportInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_export::DeleteExportInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_export::DeleteExportInput { export_id: self.export_id })
     }
 }

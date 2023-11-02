@@ -65,7 +65,8 @@ impl UpdateChannelGroupInputBuilder {
     /// Consumes the builder and constructs a [`UpdateChannelGroupInput`](crate::operation::update_channel_group::UpdateChannelGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_channel_group::UpdateChannelGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_channel_group::UpdateChannelGroupInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::update_channel_group::UpdateChannelGroupInput {
             channel_group_name: self.channel_group_name,
             description: self.description,

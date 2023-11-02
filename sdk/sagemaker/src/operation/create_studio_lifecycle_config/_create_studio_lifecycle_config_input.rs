@@ -119,7 +119,7 @@ impl CreateStudioLifecycleConfigInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_studio_lifecycle_config::CreateStudioLifecycleConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_studio_lifecycle_config::CreateStudioLifecycleConfigInput {
             studio_lifecycle_config_name: self.studio_lifecycle_config_name,

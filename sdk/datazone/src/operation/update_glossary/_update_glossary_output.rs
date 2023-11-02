@@ -190,28 +190,28 @@ impl UpdateGlossaryOutputBuilder {
     /// - [`owning_project_id`](crate::operation::update_glossary::builders::UpdateGlossaryOutputBuilder::owning_project_id)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_glossary::UpdateGlossaryOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_glossary::UpdateGlossaryOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_glossary::UpdateGlossaryOutput {
             domain_id: self.domain_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "domain_id",
                     "domain_id was not specified but it is required when building UpdateGlossaryOutput",
                 )
             })?,
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building UpdateGlossaryOutput",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building UpdateGlossaryOutput",
                 )
             })?,
             owning_project_id: self.owning_project_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "owning_project_id",
                     "owning_project_id was not specified but it is required when building UpdateGlossaryOutput",
                 )

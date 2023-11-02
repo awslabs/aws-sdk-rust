@@ -44,7 +44,7 @@ impl DeleteScheduledQueryInputBuilder {
     /// Consumes the builder and constructs a [`DeleteScheduledQueryInput`](crate::operation::delete_scheduled_query::DeleteScheduledQueryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_scheduled_query::DeleteScheduledQueryInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_scheduled_query::DeleteScheduledQueryInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_scheduled_query::DeleteScheduledQueryInput {
             scheduled_query_arn: self.scheduled_query_arn,

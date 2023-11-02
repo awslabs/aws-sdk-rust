@@ -89,11 +89,11 @@ impl GetAnomalyMonitorsOutputBuilder {
     /// - [`anomaly_monitors`](crate::operation::get_anomaly_monitors::builders::GetAnomalyMonitorsOutputBuilder::anomaly_monitors)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_anomaly_monitors::GetAnomalyMonitorsOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_anomaly_monitors::GetAnomalyMonitorsOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_anomaly_monitors::GetAnomalyMonitorsOutput {
             anomaly_monitors: self.anomaly_monitors.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "anomaly_monitors",
                     "anomaly_monitors was not specified but it is required when building GetAnomalyMonitorsOutput",
                 )

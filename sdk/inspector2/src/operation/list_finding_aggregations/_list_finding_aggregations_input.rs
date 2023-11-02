@@ -138,7 +138,7 @@ impl ListFindingAggregationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_finding_aggregations::ListFindingAggregationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_finding_aggregations::ListFindingAggregationsInput {
             aggregation_type: self.aggregation_type,

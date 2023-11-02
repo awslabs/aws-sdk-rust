@@ -50,10 +50,10 @@ impl DatasetChangesBuilder {
     /// Consumes the builder and constructs a [`DatasetChanges`](crate::types::DatasetChanges).
     /// This method will fail if any of the following fields are not set:
     /// - [`ground_truth`](crate::types::builders::DatasetChangesBuilder::ground_truth)
-    pub fn build(self) -> ::std::result::Result<crate::types::DatasetChanges, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DatasetChanges, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DatasetChanges {
             ground_truth: self.ground_truth.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "ground_truth",
                     "ground_truth was not specified but it is required when building DatasetChanges",
                 )

@@ -90,8 +90,8 @@ pub fn de_list_available_zones_http_response(
 
 pub fn ser_list_available_zones_input(
     _input: &crate::operation::list_available_zones::ListAvailableZonesInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
-    Ok(::aws_smithy_http::body::SdkBody::from("{}"))
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+    Ok(::aws_smithy_types::body::SdkBody::from("{}"))
 }
 
 pub(crate) fn de_list_available_zones(

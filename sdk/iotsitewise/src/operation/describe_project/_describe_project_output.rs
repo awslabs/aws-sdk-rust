@@ -207,41 +207,41 @@ impl DescribeProjectOutputBuilder {
     /// - [`project_last_update_date`](crate::operation::describe_project::builders::DescribeProjectOutputBuilder::project_last_update_date)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_project::DescribeProjectOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_project::DescribeProjectOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_project::DescribeProjectOutput {
             project_id: self.project_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "project_id",
                     "project_id was not specified but it is required when building DescribeProjectOutput",
                 )
             })?,
             project_arn: self.project_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "project_arn",
                     "project_arn was not specified but it is required when building DescribeProjectOutput",
                 )
             })?,
             project_name: self.project_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "project_name",
                     "project_name was not specified but it is required when building DescribeProjectOutput",
                 )
             })?,
             portal_id: self.portal_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "portal_id",
                     "portal_id was not specified but it is required when building DescribeProjectOutput",
                 )
             })?,
             project_description: self.project_description,
             project_creation_date: self.project_creation_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "project_creation_date",
                     "project_creation_date was not specified but it is required when building DescribeProjectOutput",
                 )
             })?,
             project_last_update_date: self.project_last_update_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "project_last_update_date",
                     "project_last_update_date was not specified but it is required when building DescribeProjectOutput",
                 )

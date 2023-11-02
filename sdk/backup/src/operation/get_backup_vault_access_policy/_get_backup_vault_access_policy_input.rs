@@ -46,7 +46,7 @@ impl GetBackupVaultAccessPolicyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_backup_vault_access_policy::GetBackupVaultAccessPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_backup_vault_access_policy::GetBackupVaultAccessPolicyInput {
             backup_vault_name: self.backup_vault_name,

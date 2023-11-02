@@ -2,7 +2,7 @@
 pub fn ser_splice_insert_message(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SpliceInsertMessage,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.avail_num != 0 {
         object.key("AvailNum").number(
             #[allow(clippy::useless_conversion)]

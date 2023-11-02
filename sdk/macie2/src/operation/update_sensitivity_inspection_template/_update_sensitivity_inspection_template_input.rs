@@ -114,7 +114,7 @@ impl UpdateSensitivityInspectionTemplateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_sensitivity_inspection_template::UpdateSensitivityInspectionTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::update_sensitivity_inspection_template::UpdateSensitivityInspectionTemplateInput {

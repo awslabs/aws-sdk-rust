@@ -2,7 +2,7 @@
 pub fn ser_data_lake_lifecycle_expiration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DataLakeLifecycleExpiration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.days {
         object.key("days").number(
             #[allow(clippy::useless_conversion)]

@@ -192,35 +192,35 @@ impl GetIdentitySourceOutputBuilder {
     /// - [`principal_entity_type`](crate::operation::get_identity_source::builders::GetIdentitySourceOutputBuilder::principal_entity_type)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_identity_source::GetIdentitySourceOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_identity_source::GetIdentitySourceOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_identity_source::GetIdentitySourceOutput {
             created_date: self.created_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_date",
                     "created_date was not specified but it is required when building GetIdentitySourceOutput",
                 )
             })?,
             details: self.details,
             identity_source_id: self.identity_source_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "identity_source_id",
                     "identity_source_id was not specified but it is required when building GetIdentitySourceOutput",
                 )
             })?,
             last_updated_date: self.last_updated_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_updated_date",
                     "last_updated_date was not specified but it is required when building GetIdentitySourceOutput",
                 )
             })?,
             policy_store_id: self.policy_store_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "policy_store_id",
                     "policy_store_id was not specified but it is required when building GetIdentitySourceOutput",
                 )
             })?,
             principal_entity_type: self.principal_entity_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "principal_entity_type",
                     "principal_entity_type was not specified but it is required when building GetIdentitySourceOutput",
                 )

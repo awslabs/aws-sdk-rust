@@ -194,28 +194,28 @@ impl TaskScheduledEventDetailsBuilder {
     /// - [`resource`](crate::types::builders::TaskScheduledEventDetailsBuilder::resource)
     /// - [`region`](crate::types::builders::TaskScheduledEventDetailsBuilder::region)
     /// - [`parameters`](crate::types::builders::TaskScheduledEventDetailsBuilder::parameters)
-    pub fn build(self) -> ::std::result::Result<crate::types::TaskScheduledEventDetails, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TaskScheduledEventDetails, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TaskScheduledEventDetails {
             resource_type: self.resource_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_type",
                     "resource_type was not specified but it is required when building TaskScheduledEventDetails",
                 )
             })?,
             resource: self.resource.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource",
                     "resource was not specified but it is required when building TaskScheduledEventDetails",
                 )
             })?,
             region: self.region.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "region",
                     "region was not specified but it is required when building TaskScheduledEventDetails",
                 )
             })?,
             parameters: self.parameters.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "parameters",
                     "parameters was not specified but it is required when building TaskScheduledEventDetails",
                 )

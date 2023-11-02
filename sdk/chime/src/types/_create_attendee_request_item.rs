@@ -83,10 +83,10 @@ impl CreateAttendeeRequestItemBuilder {
     /// Consumes the builder and constructs a [`CreateAttendeeRequestItem`](crate::types::CreateAttendeeRequestItem).
     /// This method will fail if any of the following fields are not set:
     /// - [`external_user_id`](crate::types::builders::CreateAttendeeRequestItemBuilder::external_user_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::CreateAttendeeRequestItem, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CreateAttendeeRequestItem, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CreateAttendeeRequestItem {
             external_user_id: self.external_user_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "external_user_id",
                     "external_user_id was not specified but it is required when building CreateAttendeeRequestItem",
                 )

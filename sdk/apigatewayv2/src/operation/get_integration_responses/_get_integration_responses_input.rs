@@ -110,7 +110,7 @@ impl GetIntegrationResponsesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_integration_responses::GetIntegrationResponsesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_integration_responses::GetIntegrationResponsesInput {
             api_id: self.api_id,

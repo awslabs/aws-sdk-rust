@@ -108,7 +108,7 @@ impl RemoveThingFromBillingGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_thing_from_billing_group::RemoveThingFromBillingGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::remove_thing_from_billing_group::RemoveThingFromBillingGroupInput {
             billing_group_name: self.billing_group_name,

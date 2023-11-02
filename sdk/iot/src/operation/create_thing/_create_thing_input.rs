@@ -116,7 +116,7 @@ impl CreateThingInputBuilder {
         &self.billing_group_name
     }
     /// Consumes the builder and constructs a [`CreateThingInput`](crate::operation::create_thing::CreateThingInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_thing::CreateThingInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_thing::CreateThingInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_thing::CreateThingInput {
             thing_name: self.thing_name,
             thing_type_name: self.thing_type_name,

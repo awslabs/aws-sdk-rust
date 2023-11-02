@@ -50,10 +50,10 @@ impl CapacityUnitsConfigurationBuilder {
     /// Consumes the builder and constructs a [`CapacityUnitsConfiguration`](crate::types::CapacityUnitsConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`rescore_capacity_units`](crate::types::builders::CapacityUnitsConfigurationBuilder::rescore_capacity_units)
-    pub fn build(self) -> ::std::result::Result<crate::types::CapacityUnitsConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CapacityUnitsConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CapacityUnitsConfiguration {
             rescore_capacity_units: self.rescore_capacity_units.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "rescore_capacity_units",
                     "rescore_capacity_units was not specified but it is required when building CapacityUnitsConfiguration",
                 )

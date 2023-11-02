@@ -192,7 +192,7 @@ impl CreateInstanceConnectEndpointInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_instance_connect_endpoint::CreateInstanceConnectEndpointInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_instance_connect_endpoint::CreateInstanceConnectEndpointInput {
             dry_run: self.dry_run,

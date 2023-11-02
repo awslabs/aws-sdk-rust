@@ -2,7 +2,7 @@
 pub fn ser_tls_validation_context_file_trust(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TlsValidationContextFileTrust,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("certificateChain").string(input.certificate_chain.as_str());
     }

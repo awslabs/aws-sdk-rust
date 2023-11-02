@@ -66,7 +66,7 @@ impl GetPartnerAccountInputBuilder {
     /// Consumes the builder and constructs a [`GetPartnerAccountInput`](crate::operation::get_partner_account::GetPartnerAccountInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_partner_account::GetPartnerAccountInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_partner_account::GetPartnerAccountInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_partner_account::GetPartnerAccountInput {
             partner_account_id: self.partner_account_id,
             partner_type: self.partner_type,

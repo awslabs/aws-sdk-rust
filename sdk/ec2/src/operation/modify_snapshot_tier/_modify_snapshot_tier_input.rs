@@ -86,7 +86,8 @@ impl ModifySnapshotTierInputBuilder {
     /// Consumes the builder and constructs a [`ModifySnapshotTierInput`](crate::operation::modify_snapshot_tier::ModifySnapshotTierInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::modify_snapshot_tier::ModifySnapshotTierInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::modify_snapshot_tier::ModifySnapshotTierInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::modify_snapshot_tier::ModifySnapshotTierInput {
             snapshot_id: self.snapshot_id,
             storage_tier: self.storage_tier,

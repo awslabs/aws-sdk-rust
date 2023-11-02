@@ -235,7 +235,7 @@ impl GetScalingPlanResourceForecastDataInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_scaling_plan_resource_forecast_data::GetScalingPlanResourceForecastDataInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_scaling_plan_resource_forecast_data::GetScalingPlanResourceForecastDataInput {

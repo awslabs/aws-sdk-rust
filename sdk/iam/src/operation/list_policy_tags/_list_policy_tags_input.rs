@@ -96,7 +96,7 @@ impl ListPolicyTagsInputBuilder {
     /// Consumes the builder and constructs a [`ListPolicyTagsInput`](crate::operation::list_policy_tags::ListPolicyTagsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_policy_tags::ListPolicyTagsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_policy_tags::ListPolicyTagsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_policy_tags::ListPolicyTagsInput {
             policy_arn: self.policy_arn,
             marker: self.marker,

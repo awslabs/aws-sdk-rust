@@ -96,7 +96,7 @@ impl DisassociateApplicationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_applications::DisassociateApplicationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disassociate_applications::DisassociateApplicationsInput {
             wave_id: self.wave_id,

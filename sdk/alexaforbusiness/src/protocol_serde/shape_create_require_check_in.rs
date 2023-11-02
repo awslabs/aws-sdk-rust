@@ -2,7 +2,7 @@
 pub fn ser_create_require_check_in(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CreateRequireCheckIn,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("ReleaseAfterMinutes").number(
             #[allow(clippy::useless_conversion)]

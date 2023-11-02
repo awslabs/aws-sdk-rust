@@ -119,7 +119,7 @@ impl DeleteCommentInputBuilder {
     /// Consumes the builder and constructs a [`DeleteCommentInput`](crate::operation::delete_comment::DeleteCommentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_comment::DeleteCommentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_comment::DeleteCommentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_comment::DeleteCommentInput {
             authentication_token: self.authentication_token,
             document_id: self.document_id,

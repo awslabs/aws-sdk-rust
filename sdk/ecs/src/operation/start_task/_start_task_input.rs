@@ -354,7 +354,7 @@ impl StartTaskInputBuilder {
         &self.task_definition
     }
     /// Consumes the builder and constructs a [`StartTaskInput`](crate::operation::start_task::StartTaskInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::start_task::StartTaskInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_task::StartTaskInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_task::StartTaskInput {
             cluster: self.cluster,
             container_instances: self.container_instances,

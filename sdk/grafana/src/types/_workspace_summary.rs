@@ -300,35 +300,35 @@ impl WorkspaceSummaryBuilder {
     /// - [`id`](crate::types::builders::WorkspaceSummaryBuilder::id)
     /// - [`modified`](crate::types::builders::WorkspaceSummaryBuilder::modified)
     /// - [`status`](crate::types::builders::WorkspaceSummaryBuilder::status)
-    pub fn build(self) -> ::std::result::Result<crate::types::WorkspaceSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::WorkspaceSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::WorkspaceSummary {
             created: self.created.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created",
                     "created was not specified but it is required when building WorkspaceSummary",
                 )
             })?,
             description: self.description,
             endpoint: self.endpoint.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "endpoint",
                     "endpoint was not specified but it is required when building WorkspaceSummary",
                 )
             })?,
             grafana_version: self.grafana_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "grafana_version",
                     "grafana_version was not specified but it is required when building WorkspaceSummary",
                 )
             })?,
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building WorkspaceSummary",
                 )
             })?,
             modified: self.modified.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "modified",
                     "modified was not specified but it is required when building WorkspaceSummary",
                 )
@@ -336,7 +336,7 @@ impl WorkspaceSummaryBuilder {
             name: self.name,
             notification_destinations: self.notification_destinations,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building WorkspaceSummary",
                 )

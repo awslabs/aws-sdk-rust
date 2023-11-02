@@ -49,7 +49,8 @@ impl DetectDocumentTextInputBuilder {
     /// Consumes the builder and constructs a [`DetectDocumentTextInput`](crate::operation::detect_document_text::DetectDocumentTextInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::detect_document_text::DetectDocumentTextInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::detect_document_text::DetectDocumentTextInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::detect_document_text::DetectDocumentTextInput { document: self.document })
     }
 }

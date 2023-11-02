@@ -44,7 +44,7 @@ impl GetGremlinQueryStatusInputBuilder {
     /// Consumes the builder and constructs a [`GetGremlinQueryStatusInput`](crate::operation::get_gremlin_query_status::GetGremlinQueryStatusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_gremlin_query_status::GetGremlinQueryStatusInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_gremlin_query_status::GetGremlinQueryStatusInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_gremlin_query_status::GetGremlinQueryStatusInput { query_id: self.query_id })
     }

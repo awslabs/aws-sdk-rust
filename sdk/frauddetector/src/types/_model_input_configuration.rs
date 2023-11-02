@@ -129,12 +129,12 @@ impl ModelInputConfigurationBuilder {
     /// Consumes the builder and constructs a [`ModelInputConfiguration`](crate::types::ModelInputConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`use_event_variables`](crate::types::builders::ModelInputConfigurationBuilder::use_event_variables)
-    pub fn build(self) -> ::std::result::Result<crate::types::ModelInputConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ModelInputConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ModelInputConfiguration {
             event_type_name: self.event_type_name,
             format: self.format,
             use_event_variables: self.use_event_variables.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "use_event_variables",
                     "use_event_variables was not specified but it is required when building ModelInputConfiguration",
                 )

@@ -71,10 +71,10 @@ impl CodeArtifactsBuilder {
     /// Consumes the builder and constructs a [`CodeArtifacts`](crate::types::CodeArtifacts).
     /// This method will fail if any of the following fields are not set:
     /// - [`source_code_artifacts_object_key`](crate::types::builders::CodeArtifactsBuilder::source_code_artifacts_object_key)
-    pub fn build(self) -> ::std::result::Result<crate::types::CodeArtifacts, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CodeArtifacts, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CodeArtifacts {
             source_code_artifacts_object_key: self.source_code_artifacts_object_key.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source_code_artifacts_object_key",
                     "source_code_artifacts_object_key was not specified but it is required when building CodeArtifacts",
                 )

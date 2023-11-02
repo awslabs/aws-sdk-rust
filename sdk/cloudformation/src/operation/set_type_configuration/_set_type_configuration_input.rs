@@ -158,7 +158,7 @@ impl SetTypeConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`SetTypeConfigurationInput`](crate::operation::set_type_configuration::SetTypeConfigurationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::set_type_configuration::SetTypeConfigurationInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::set_type_configuration::SetTypeConfigurationInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::set_type_configuration::SetTypeConfigurationInput {
             type_arn: self.type_arn,

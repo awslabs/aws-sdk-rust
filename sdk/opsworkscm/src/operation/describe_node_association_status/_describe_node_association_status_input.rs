@@ -68,7 +68,7 @@ impl DescribeNodeAssociationStatusInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_node_association_status::DescribeNodeAssociationStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_node_association_status::DescribeNodeAssociationStatusInput {
             node_association_status_token: self.node_association_status_token,

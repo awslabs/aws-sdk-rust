@@ -120,18 +120,18 @@ impl SizeConstraintStatementBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`comparison_operator`](crate::types::builders::SizeConstraintStatementBuilder::comparison_operator)
     /// - [`text_transformations`](crate::types::builders::SizeConstraintStatementBuilder::text_transformations)
-    pub fn build(self) -> ::std::result::Result<crate::types::SizeConstraintStatement, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SizeConstraintStatement, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SizeConstraintStatement {
             field_to_match: self.field_to_match,
             comparison_operator: self.comparison_operator.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "comparison_operator",
                     "comparison_operator was not specified but it is required when building SizeConstraintStatement",
                 )
             })?,
             size: self.size.unwrap_or_default(),
             text_transformations: self.text_transformations.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "text_transformations",
                     "text_transformations was not specified but it is required when building SizeConstraintStatement",
                 )

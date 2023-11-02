@@ -69,16 +69,16 @@ impl MaintenanceWindowBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`start_time`](crate::types::builders::MaintenanceWindowBuilder::start_time)
     /// - [`duration_in_minutes`](crate::types::builders::MaintenanceWindowBuilder::duration_in_minutes)
-    pub fn build(self) -> ::std::result::Result<crate::types::MaintenanceWindow, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::MaintenanceWindow, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MaintenanceWindow {
             start_time: self.start_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "start_time",
                     "start_time was not specified but it is required when building MaintenanceWindow",
                 )
             })?,
             duration_in_minutes: self.duration_in_minutes.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "duration_in_minutes",
                     "duration_in_minutes was not specified but it is required when building MaintenanceWindow",
                 )

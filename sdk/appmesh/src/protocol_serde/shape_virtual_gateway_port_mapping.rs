@@ -2,7 +2,7 @@
 pub fn ser_virtual_gateway_port_mapping(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VirtualGatewayPortMapping,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("port").number(
             #[allow(clippy::useless_conversion)]

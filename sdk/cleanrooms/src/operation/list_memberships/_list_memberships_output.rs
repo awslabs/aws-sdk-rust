@@ -89,11 +89,11 @@ impl ListMembershipsOutputBuilder {
     /// - [`membership_summaries`](crate::operation::list_memberships::builders::ListMembershipsOutputBuilder::membership_summaries)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_memberships::ListMembershipsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_memberships::ListMembershipsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_memberships::ListMembershipsOutput {
             next_token: self.next_token,
             membership_summaries: self.membership_summaries.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "membership_summaries",
                     "membership_summaries was not specified but it is required when building ListMembershipsOutput",
                 )

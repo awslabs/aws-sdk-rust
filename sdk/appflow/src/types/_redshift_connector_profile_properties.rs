@@ -217,18 +217,18 @@ impl RedshiftConnectorProfilePropertiesBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`bucket_name`](crate::types::builders::RedshiftConnectorProfilePropertiesBuilder::bucket_name)
     /// - [`role_arn`](crate::types::builders::RedshiftConnectorProfilePropertiesBuilder::role_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::RedshiftConnectorProfileProperties, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RedshiftConnectorProfileProperties, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RedshiftConnectorProfileProperties {
             database_url: self.database_url,
             bucket_name: self.bucket_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "bucket_name",
                     "bucket_name was not specified but it is required when building RedshiftConnectorProfileProperties",
                 )
             })?,
             bucket_prefix: self.bucket_prefix,
             role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role_arn",
                     "role_arn was not specified but it is required when building RedshiftConnectorProfileProperties",
                 )

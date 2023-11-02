@@ -79,7 +79,7 @@ impl GetIdentityPoliciesInputBuilder {
     /// Consumes the builder and constructs a [`GetIdentityPoliciesInput`](crate::operation::get_identity_policies::GetIdentityPoliciesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_identity_policies::GetIdentityPoliciesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_identity_policies::GetIdentityPoliciesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_identity_policies::GetIdentityPoliciesInput {
             identity: self.identity,

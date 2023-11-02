@@ -62,7 +62,7 @@ impl BatchGetRepositoriesInputBuilder {
     /// Consumes the builder and constructs a [`BatchGetRepositoriesInput`](crate::operation::batch_get_repositories::BatchGetRepositoriesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_get_repositories::BatchGetRepositoriesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::batch_get_repositories::BatchGetRepositoriesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::batch_get_repositories::BatchGetRepositoriesInput {
             repository_names: self.repository_names,

@@ -138,7 +138,7 @@ impl ListResourceInventoryInputBuilder {
     /// Consumes the builder and constructs a [`ListResourceInventoryInput`](crate::operation::list_resource_inventory::ListResourceInventoryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_resource_inventory::ListResourceInventoryInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_resource_inventory::ListResourceInventoryInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_resource_inventory::ListResourceInventoryInput {
             max_results: self.max_results,

@@ -52,7 +52,7 @@ impl TerminateJobFlowsInputBuilder {
     /// Consumes the builder and constructs a [`TerminateJobFlowsInput`](crate::operation::terminate_job_flows::TerminateJobFlowsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::terminate_job_flows::TerminateJobFlowsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::terminate_job_flows::TerminateJobFlowsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::terminate_job_flows::TerminateJobFlowsInput {
             job_flow_ids: self.job_flow_ids,
         })

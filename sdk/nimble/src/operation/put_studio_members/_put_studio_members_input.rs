@@ -116,7 +116,7 @@ impl PutStudioMembersInputBuilder {
     /// Consumes the builder and constructs a [`PutStudioMembersInput`](crate::operation::put_studio_members::PutStudioMembersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_studio_members::PutStudioMembersInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_studio_members::PutStudioMembersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_studio_members::PutStudioMembersInput {
             client_token: self.client_token,
             identity_store_id: self.identity_store_id,

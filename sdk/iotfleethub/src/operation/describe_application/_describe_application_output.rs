@@ -316,36 +316,36 @@ impl DescribeApplicationOutputBuilder {
     /// - [`role_arn`](crate::operation::describe_application::builders::DescribeApplicationOutputBuilder::role_arn)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_application::DescribeApplicationOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_application::DescribeApplicationOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_application::DescribeApplicationOutput {
             application_id: self.application_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "application_id",
                     "application_id was not specified but it is required when building DescribeApplicationOutput",
                 )
             })?,
             application_arn: self.application_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "application_arn",
                     "application_arn was not specified but it is required when building DescribeApplicationOutput",
                 )
             })?,
             application_name: self.application_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "application_name",
                     "application_name was not specified but it is required when building DescribeApplicationOutput",
                 )
             })?,
             application_description: self.application_description,
             application_url: self.application_url.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "application_url",
                     "application_url was not specified but it is required when building DescribeApplicationOutput",
                 )
             })?,
             application_state: self.application_state.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "application_state",
                     "application_state was not specified but it is required when building DescribeApplicationOutput",
                 )
@@ -353,7 +353,7 @@ impl DescribeApplicationOutputBuilder {
             application_creation_date: self.application_creation_date.unwrap_or_default(),
             application_last_update_date: self.application_last_update_date.unwrap_or_default(),
             role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role_arn",
                     "role_arn was not specified but it is required when building DescribeApplicationOutput",
                 )

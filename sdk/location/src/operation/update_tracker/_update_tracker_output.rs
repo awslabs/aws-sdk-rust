@@ -125,22 +125,22 @@ impl UpdateTrackerOutputBuilder {
     /// - [`update_time`](crate::operation::update_tracker::builders::UpdateTrackerOutputBuilder::update_time)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_tracker::UpdateTrackerOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_tracker::UpdateTrackerOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_tracker::UpdateTrackerOutput {
             tracker_name: self.tracker_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "tracker_name",
                     "tracker_name was not specified but it is required when building UpdateTrackerOutput",
                 )
             })?,
             tracker_arn: self.tracker_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "tracker_arn",
                     "tracker_arn was not specified but it is required when building UpdateTrackerOutput",
                 )
             })?,
             update_time: self.update_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "update_time",
                     "update_time was not specified but it is required when building UpdateTrackerOutput",
                 )

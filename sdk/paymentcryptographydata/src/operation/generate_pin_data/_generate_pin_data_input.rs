@@ -175,7 +175,7 @@ impl GeneratePinDataInputBuilder {
     /// Consumes the builder and constructs a [`GeneratePinDataInput`](crate::operation::generate_pin_data::GeneratePinDataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::generate_pin_data::GeneratePinDataInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::generate_pin_data::GeneratePinDataInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::generate_pin_data::GeneratePinDataInput {
             generation_key_identifier: self.generation_key_identifier,
             encryption_key_identifier: self.encryption_key_identifier,

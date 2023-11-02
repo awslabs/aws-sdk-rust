@@ -91,7 +91,7 @@ impl CancelUpdateStackInputBuilder {
     /// Consumes the builder and constructs a [`CancelUpdateStackInput`](crate::operation::cancel_update_stack::CancelUpdateStackInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::cancel_update_stack::CancelUpdateStackInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::cancel_update_stack::CancelUpdateStackInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::cancel_update_stack::CancelUpdateStackInput {
             stack_name: self.stack_name,
             client_request_token: self.client_request_token,

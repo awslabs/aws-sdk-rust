@@ -46,7 +46,7 @@ impl StopPiiEntitiesDetectionJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_pii_entities_detection_job::StopPiiEntitiesDetectionJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::stop_pii_entities_detection_job::StopPiiEntitiesDetectionJobInput { job_id: self.job_id })
     }

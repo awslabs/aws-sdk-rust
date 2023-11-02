@@ -84,7 +84,7 @@ impl ListNodesInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListNodesInput`](crate::operation::list_nodes::ListNodesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_nodes::ListNodesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_nodes::ListNodesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_nodes::ListNodesInput {
             cluster_arn: self.cluster_arn,
             max_results: self.max_results,

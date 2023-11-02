@@ -222,7 +222,7 @@ impl UpdateAgreementInputBuilder {
     /// Consumes the builder and constructs a [`UpdateAgreementInput`](crate::operation::update_agreement::UpdateAgreementInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_agreement::UpdateAgreementInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_agreement::UpdateAgreementInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_agreement::UpdateAgreementInput {
             agreement_id: self.agreement_id,
             server_id: self.server_id,

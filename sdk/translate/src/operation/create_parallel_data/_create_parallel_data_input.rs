@@ -159,7 +159,8 @@ impl CreateParallelDataInputBuilder {
     /// Consumes the builder and constructs a [`CreateParallelDataInput`](crate::operation::create_parallel_data::CreateParallelDataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_parallel_data::CreateParallelDataInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_parallel_data::CreateParallelDataInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_parallel_data::CreateParallelDataInput {
             name: self.name,
             description: self.description,

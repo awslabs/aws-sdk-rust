@@ -2,7 +2,7 @@
 pub fn ser_template_location(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TemplateLocation,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("s3Bucket").string(input.s3_bucket.as_str());
     }

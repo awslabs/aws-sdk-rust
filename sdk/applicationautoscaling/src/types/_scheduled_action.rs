@@ -529,35 +529,35 @@ impl ScheduledActionBuilder {
     /// - [`schedule`](crate::types::builders::ScheduledActionBuilder::schedule)
     /// - [`resource_id`](crate::types::builders::ScheduledActionBuilder::resource_id)
     /// - [`creation_time`](crate::types::builders::ScheduledActionBuilder::creation_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::ScheduledAction, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ScheduledAction, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ScheduledAction {
             scheduled_action_name: self.scheduled_action_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "scheduled_action_name",
                     "scheduled_action_name was not specified but it is required when building ScheduledAction",
                 )
             })?,
             scheduled_action_arn: self.scheduled_action_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "scheduled_action_arn",
                     "scheduled_action_arn was not specified but it is required when building ScheduledAction",
                 )
             })?,
             service_namespace: self.service_namespace.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "service_namespace",
                     "service_namespace was not specified but it is required when building ScheduledAction",
                 )
             })?,
             schedule: self.schedule.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "schedule",
                     "schedule was not specified but it is required when building ScheduledAction",
                 )
             })?,
             timezone: self.timezone,
             resource_id: self.resource_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_id",
                     "resource_id was not specified but it is required when building ScheduledAction",
                 )
@@ -567,7 +567,7 @@ impl ScheduledActionBuilder {
             end_time: self.end_time,
             scalable_target_action: self.scalable_target_action,
             creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_time",
                     "creation_time was not specified but it is required when building ScheduledAction",
                 )

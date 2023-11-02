@@ -66,10 +66,10 @@ impl ExecutionTimeFilterBuilder {
     /// Consumes the builder and constructs a [`ExecutionTimeFilter`](crate::types::ExecutionTimeFilter).
     /// This method will fail if any of the following fields are not set:
     /// - [`oldest_date`](crate::types::builders::ExecutionTimeFilterBuilder::oldest_date)
-    pub fn build(self) -> ::std::result::Result<crate::types::ExecutionTimeFilter, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ExecutionTimeFilter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ExecutionTimeFilter {
             oldest_date: self.oldest_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "oldest_date",
                     "oldest_date was not specified but it is required when building ExecutionTimeFilter",
                 )

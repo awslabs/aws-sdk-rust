@@ -148,7 +148,7 @@ impl GetMigrationsInputBuilder {
     /// Consumes the builder and constructs a [`GetMigrationsInput`](crate::operation::get_migrations::GetMigrationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_migrations::GetMigrationsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_migrations::GetMigrationsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_migrations::GetMigrationsInput {
             sort_by_attribute: self.sort_by_attribute,
             sort_by_order: self.sort_by_order,

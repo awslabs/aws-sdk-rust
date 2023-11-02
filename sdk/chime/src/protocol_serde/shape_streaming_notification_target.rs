@@ -2,7 +2,7 @@
 pub fn ser_streaming_notification_target(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::StreamingNotificationTarget,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("NotificationTarget").string(input.notification_target.as_str());
     }

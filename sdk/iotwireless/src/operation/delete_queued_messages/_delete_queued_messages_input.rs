@@ -87,7 +87,7 @@ impl DeleteQueuedMessagesInputBuilder {
     /// Consumes the builder and constructs a [`DeleteQueuedMessagesInput`](crate::operation::delete_queued_messages::DeleteQueuedMessagesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_queued_messages::DeleteQueuedMessagesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_queued_messages::DeleteQueuedMessagesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_queued_messages::DeleteQueuedMessagesInput {
             id: self.id,

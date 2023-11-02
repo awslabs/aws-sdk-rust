@@ -95,16 +95,16 @@ impl RefreshTokenOutputBuilder {
     /// - [`expires_in`](crate::operation::refresh_token::builders::RefreshTokenOutputBuilder::expires_in)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::refresh_token::RefreshTokenOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::refresh_token::RefreshTokenOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::refresh_token::RefreshTokenOutput {
             access_token: self.access_token.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "access_token",
                     "access_token was not specified but it is required when building RefreshTokenOutput",
                 )
             })?,
             expires_in: self.expires_in.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "expires_in",
                     "expires_in was not specified but it is required when building RefreshTokenOutput",
                 )

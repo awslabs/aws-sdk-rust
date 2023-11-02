@@ -107,16 +107,16 @@ impl ContentRedactionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`redaction_type`](crate::types::builders::ContentRedactionBuilder::redaction_type)
     /// - [`redaction_output`](crate::types::builders::ContentRedactionBuilder::redaction_output)
-    pub fn build(self) -> ::std::result::Result<crate::types::ContentRedaction, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ContentRedaction, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ContentRedaction {
             redaction_type: self.redaction_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "redaction_type",
                     "redaction_type was not specified but it is required when building ContentRedaction",
                 )
             })?,
             redaction_output: self.redaction_output.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "redaction_output",
                     "redaction_output was not specified but it is required when building ContentRedaction",
                 )

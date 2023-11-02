@@ -2,7 +2,7 @@
 pub fn ser_get_scaling_configuration_recommendation_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_scaling_configuration_recommendation::GetScalingConfigurationRecommendationInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.inference_recommendations_job_name {
         object.key("InferenceRecommendationsJobName").string(var_1.as_str());
     }

@@ -98,7 +98,7 @@ impl RejectSubscriptionRequestInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reject_subscription_request::RejectSubscriptionRequestInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::reject_subscription_request::RejectSubscriptionRequestInput {
             domain_identifier: self.domain_identifier,

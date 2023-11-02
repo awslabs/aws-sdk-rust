@@ -353,7 +353,7 @@ impl PutSourceServerActionInputBuilder {
     /// Consumes the builder and constructs a [`PutSourceServerActionInput`](crate::operation::put_source_server_action::PutSourceServerActionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_source_server_action::PutSourceServerActionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::put_source_server_action::PutSourceServerActionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::put_source_server_action::PutSourceServerActionInput {
             source_server_id: self.source_server_id,

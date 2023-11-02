@@ -157,7 +157,7 @@ impl SendBounceInputBuilder {
         &self.bounce_sender_arn
     }
     /// Consumes the builder and constructs a [`SendBounceInput`](crate::operation::send_bounce::SendBounceInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::send_bounce::SendBounceInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::send_bounce::SendBounceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::send_bounce::SendBounceInput {
             original_message_id: self.original_message_id,
             bounce_sender: self.bounce_sender,

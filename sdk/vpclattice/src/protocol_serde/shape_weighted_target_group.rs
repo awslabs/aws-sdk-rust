@@ -2,7 +2,7 @@
 pub fn ser_weighted_target_group(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::WeightedTargetGroup,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("targetGroupIdentifier").string(input.target_group_identifier.as_str());
     }

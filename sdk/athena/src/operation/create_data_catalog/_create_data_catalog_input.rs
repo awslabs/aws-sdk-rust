@@ -213,7 +213,7 @@ impl CreateDataCatalogInputBuilder {
     /// Consumes the builder and constructs a [`CreateDataCatalogInput`](crate::operation::create_data_catalog::CreateDataCatalogInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_data_catalog::CreateDataCatalogInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_data_catalog::CreateDataCatalogInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_data_catalog::CreateDataCatalogInput {
             name: self.name,
             r#type: self.r#type,

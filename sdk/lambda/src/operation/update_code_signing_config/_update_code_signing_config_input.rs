@@ -109,7 +109,7 @@ impl UpdateCodeSigningConfigInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_code_signing_config::UpdateCodeSigningConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_code_signing_config::UpdateCodeSigningConfigInput {
             code_signing_config_arn: self.code_signing_config_arn,

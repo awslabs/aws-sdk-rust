@@ -69,16 +69,16 @@ impl UnshareTargetBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::UnshareTargetBuilder::id)
     /// - [`r#type`](crate::types::builders::UnshareTargetBuilder::r#type)
-    pub fn build(self) -> ::std::result::Result<crate::types::UnshareTarget, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::UnshareTarget, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::UnshareTarget {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building UnshareTarget",
                 )
             })?,
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building UnshareTarget",
                 )

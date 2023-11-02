@@ -66,10 +66,10 @@ impl PredictionTimeRangeBuilder {
     /// Consumes the builder and constructs a [`PredictionTimeRange`](crate::types::PredictionTimeRange).
     /// This method will fail if any of the following fields are not set:
     /// - [`start_time`](crate::types::builders::PredictionTimeRangeBuilder::start_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::PredictionTimeRange, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PredictionTimeRange, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PredictionTimeRange {
             start_time: self.start_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "start_time",
                     "start_time was not specified but it is required when building PredictionTimeRange",
                 )

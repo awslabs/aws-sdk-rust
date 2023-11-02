@@ -44,7 +44,7 @@ impl DeleteBuildBatchInputBuilder {
     /// Consumes the builder and constructs a [`DeleteBuildBatchInput`](crate::operation::delete_build_batch::DeleteBuildBatchInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_build_batch::DeleteBuildBatchInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_build_batch::DeleteBuildBatchInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_build_batch::DeleteBuildBatchInput { id: self.id })
     }
 }

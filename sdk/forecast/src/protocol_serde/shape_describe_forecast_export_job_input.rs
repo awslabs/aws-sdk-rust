@@ -2,7 +2,7 @@
 pub fn ser_describe_forecast_export_job_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_forecast_export_job::DescribeForecastExportJobInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.forecast_export_job_arn {
         object.key("ForecastExportJobArn").string(var_1.as_str());
     }

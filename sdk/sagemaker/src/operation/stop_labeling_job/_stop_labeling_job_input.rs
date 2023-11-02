@@ -44,7 +44,7 @@ impl StopLabelingJobInputBuilder {
     /// Consumes the builder and constructs a [`StopLabelingJobInput`](crate::operation::stop_labeling_job::StopLabelingJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_labeling_job::StopLabelingJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::stop_labeling_job::StopLabelingJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_labeling_job::StopLabelingJobInput {
             labeling_job_name: self.labeling_job_name,
         })

@@ -88,10 +88,10 @@ impl CustomModelTrainingParametersBuilder {
     /// Consumes the builder and constructs a [`CustomModelTrainingParameters`](crate::types::CustomModelTrainingParameters).
     /// This method will fail if any of the following fields are not set:
     /// - [`source_s3_directory_path`](crate::types::builders::CustomModelTrainingParametersBuilder::source_s3_directory_path)
-    pub fn build(self) -> ::std::result::Result<crate::types::CustomModelTrainingParameters, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CustomModelTrainingParameters, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CustomModelTrainingParameters {
             source_s3_directory_path: self.source_s3_directory_path.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source_s3_directory_path",
                     "source_s3_directory_path was not specified but it is required when building CustomModelTrainingParameters",
                 )

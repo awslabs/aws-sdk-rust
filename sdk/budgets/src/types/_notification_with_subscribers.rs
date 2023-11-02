@@ -73,11 +73,11 @@ impl NotificationWithSubscribersBuilder {
     /// Consumes the builder and constructs a [`NotificationWithSubscribers`](crate::types::NotificationWithSubscribers).
     /// This method will fail if any of the following fields are not set:
     /// - [`subscribers`](crate::types::builders::NotificationWithSubscribersBuilder::subscribers)
-    pub fn build(self) -> ::std::result::Result<crate::types::NotificationWithSubscribers, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::NotificationWithSubscribers, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::NotificationWithSubscribers {
             notification: self.notification,
             subscribers: self.subscribers.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "subscribers",
                     "subscribers was not specified but it is required when building NotificationWithSubscribers",
                 )

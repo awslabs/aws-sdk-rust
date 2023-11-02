@@ -73,11 +73,11 @@ impl JobBuilder {
     /// Consumes the builder and constructs a [`Job`](crate::types::Job).
     /// This method will fail if any of the following fields are not set:
     /// - [`steps`](crate::types::builders::JobBuilder::steps)
-    pub fn build(self) -> ::std::result::Result<crate::types::Job, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Job, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Job {
             summary: self.summary,
             steps: self.steps.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "steps",
                     "steps was not specified but it is required when building Job",
                 )

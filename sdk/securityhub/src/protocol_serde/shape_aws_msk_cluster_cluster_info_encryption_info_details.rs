@@ -2,7 +2,7 @@
 pub fn ser_aws_msk_cluster_cluster_info_encryption_info_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsMskClusterClusterInfoEncryptionInfoDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.encryption_in_transit {
         #[allow(unused_mut)]
         let mut object_2 = object.key("EncryptionInTransit").start_object();

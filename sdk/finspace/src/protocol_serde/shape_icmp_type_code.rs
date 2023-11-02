@@ -2,7 +2,7 @@
 pub fn ser_icmp_type_code(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IcmpTypeCode,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("type").number(
             #[allow(clippy::useless_conversion)]

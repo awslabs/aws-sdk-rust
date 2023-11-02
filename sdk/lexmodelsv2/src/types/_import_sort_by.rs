@@ -68,16 +68,16 @@ impl ImportSortByBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`attribute`](crate::types::builders::ImportSortByBuilder::attribute)
     /// - [`order`](crate::types::builders::ImportSortByBuilder::order)
-    pub fn build(self) -> ::std::result::Result<crate::types::ImportSortBy, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ImportSortBy, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ImportSortBy {
             attribute: self.attribute.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "attribute",
                     "attribute was not specified but it is required when building ImportSortBy",
                 )
             })?,
             order: self.order.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "order",
                     "order was not specified but it is required when building ImportSortBy",
                 )

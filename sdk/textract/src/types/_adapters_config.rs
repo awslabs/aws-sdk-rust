@@ -51,10 +51,10 @@ impl AdaptersConfigBuilder {
     /// Consumes the builder and constructs a [`AdaptersConfig`](crate::types::AdaptersConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`adapters`](crate::types::builders::AdaptersConfigBuilder::adapters)
-    pub fn build(self) -> ::std::result::Result<crate::types::AdaptersConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AdaptersConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AdaptersConfig {
             adapters: self.adapters.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "adapters",
                     "adapters was not specified but it is required when building AdaptersConfig",
                 )

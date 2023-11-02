@@ -181,7 +181,7 @@ impl DescribeAlarmsForMetricInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetricInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetricInput {
             metric_name: self.metric_name,

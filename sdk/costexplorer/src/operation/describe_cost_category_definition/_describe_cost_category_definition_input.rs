@@ -67,7 +67,7 @@ impl DescribeCostCategoryDefinitionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinitionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinitionInput {
             cost_category_arn: self.cost_category_arn,

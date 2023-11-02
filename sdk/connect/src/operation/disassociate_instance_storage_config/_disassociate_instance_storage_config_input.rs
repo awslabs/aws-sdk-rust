@@ -90,7 +90,7 @@ impl DisassociateInstanceStorageConfigInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_instance_storage_config::DisassociateInstanceStorageConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::disassociate_instance_storage_config::DisassociateInstanceStorageConfigInput {

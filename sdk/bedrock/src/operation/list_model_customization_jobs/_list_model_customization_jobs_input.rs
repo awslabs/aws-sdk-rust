@@ -192,7 +192,7 @@ impl ListModelCustomizationJobsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_model_customization_jobs::ListModelCustomizationJobsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_model_customization_jobs::ListModelCustomizationJobsInput {
             creation_time_after: self.creation_time_after,

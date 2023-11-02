@@ -93,22 +93,22 @@ impl CodeSnippetErrorBuilder {
     /// - [`finding_arn`](crate::types::builders::CodeSnippetErrorBuilder::finding_arn)
     /// - [`error_code`](crate::types::builders::CodeSnippetErrorBuilder::error_code)
     /// - [`error_message`](crate::types::builders::CodeSnippetErrorBuilder::error_message)
-    pub fn build(self) -> ::std::result::Result<crate::types::CodeSnippetError, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CodeSnippetError, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CodeSnippetError {
             finding_arn: self.finding_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "finding_arn",
                     "finding_arn was not specified but it is required when building CodeSnippetError",
                 )
             })?,
             error_code: self.error_code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "error_code",
                     "error_code was not specified but it is required when building CodeSnippetError",
                 )
             })?,
             error_message: self.error_message.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "error_message",
                     "error_message was not specified but it is required when building CodeSnippetError",
                 )

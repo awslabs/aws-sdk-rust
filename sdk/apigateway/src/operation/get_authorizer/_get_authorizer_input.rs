@@ -67,7 +67,7 @@ impl GetAuthorizerInputBuilder {
     /// Consumes the builder and constructs a [`GetAuthorizerInput`](crate::operation::get_authorizer::GetAuthorizerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_authorizer::GetAuthorizerInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_authorizer::GetAuthorizerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_authorizer::GetAuthorizerInput {
             rest_api_id: self.rest_api_id,
             authorizer_id: self.authorizer_id,

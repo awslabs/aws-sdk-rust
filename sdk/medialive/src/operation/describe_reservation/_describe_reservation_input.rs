@@ -45,7 +45,7 @@ impl DescribeReservationInputBuilder {
     /// Consumes the builder and constructs a [`DescribeReservationInput`](crate::operation::describe_reservation::DescribeReservationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_reservation::DescribeReservationInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_reservation::DescribeReservationInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_reservation::DescribeReservationInput {
             reservation_id: self.reservation_id,

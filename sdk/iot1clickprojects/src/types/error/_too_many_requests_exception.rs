@@ -105,16 +105,16 @@ impl TooManyRequestsExceptionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`code`](crate::types::error::builders::TooManyRequestsExceptionBuilder::code)
     /// - [`message`](crate::types::error::builders::TooManyRequestsExceptionBuilder::message)
-    pub fn build(self) -> ::std::result::Result<crate::types::error::TooManyRequestsException, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::error::TooManyRequestsException, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::error::TooManyRequestsException {
             code: self.code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "code",
                     "code was not specified but it is required when building TooManyRequestsException",
                 )
             })?,
             message: self.message.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "message",
                     "message was not specified but it is required when building TooManyRequestsException",
                 )

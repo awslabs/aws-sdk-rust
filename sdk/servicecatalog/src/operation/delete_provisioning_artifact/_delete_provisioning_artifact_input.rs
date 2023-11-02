@@ -109,7 +109,7 @@ impl DeleteProvisioningArtifactInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_provisioning_artifact::DeleteProvisioningArtifactInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_provisioning_artifact::DeleteProvisioningArtifactInput {
             accept_language: self.accept_language,

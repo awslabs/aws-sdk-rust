@@ -69,16 +69,16 @@ impl CoverageStringFilterBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`comparison`](crate::types::builders::CoverageStringFilterBuilder::comparison)
     /// - [`value`](crate::types::builders::CoverageStringFilterBuilder::value)
-    pub fn build(self) -> ::std::result::Result<crate::types::CoverageStringFilter, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CoverageStringFilter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CoverageStringFilter {
             comparison: self.comparison.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "comparison",
                     "comparison was not specified but it is required when building CoverageStringFilter",
                 )
             })?,
             value: self.value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "value",
                     "value was not specified but it is required when building CoverageStringFilter",
                 )

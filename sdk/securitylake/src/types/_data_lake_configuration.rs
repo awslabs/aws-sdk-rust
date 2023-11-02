@@ -109,10 +109,10 @@ impl DataLakeConfigurationBuilder {
     /// Consumes the builder and constructs a [`DataLakeConfiguration`](crate::types::DataLakeConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`region`](crate::types::builders::DataLakeConfigurationBuilder::region)
-    pub fn build(self) -> ::std::result::Result<crate::types::DataLakeConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DataLakeConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DataLakeConfiguration {
             region: self.region.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "region",
                     "region was not specified but it is required when building DataLakeConfiguration",
                 )

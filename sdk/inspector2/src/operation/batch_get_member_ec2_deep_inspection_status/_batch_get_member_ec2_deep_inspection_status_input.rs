@@ -53,7 +53,7 @@ impl BatchGetMemberEc2DeepInspectionStatusInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_member_ec2_deep_inspection_status::BatchGetMemberEc2DeepInspectionStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::batch_get_member_ec2_deep_inspection_status::BatchGetMemberEc2DeepInspectionStatusInput {

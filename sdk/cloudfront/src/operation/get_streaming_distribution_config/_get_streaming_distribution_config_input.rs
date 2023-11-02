@@ -47,7 +47,7 @@ impl GetStreamingDistributionConfigInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_streaming_distribution_config::GetStreamingDistributionConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_streaming_distribution_config::GetStreamingDistributionConfigInput { id: self.id })
     }

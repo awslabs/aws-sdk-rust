@@ -122,13 +122,13 @@ impl EntityPropertyReferenceBuilder {
     /// Consumes the builder and constructs a [`EntityPropertyReference`](crate::types::EntityPropertyReference).
     /// This method will fail if any of the following fields are not set:
     /// - [`property_name`](crate::types::builders::EntityPropertyReferenceBuilder::property_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::EntityPropertyReference, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::EntityPropertyReference, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EntityPropertyReference {
             component_name: self.component_name,
             external_id_property: self.external_id_property,
             entity_id: self.entity_id,
             property_name: self.property_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "property_name",
                     "property_name was not specified but it is required when building EntityPropertyReference",
                 )

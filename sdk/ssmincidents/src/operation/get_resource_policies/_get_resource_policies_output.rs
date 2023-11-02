@@ -89,11 +89,11 @@ impl GetResourcePoliciesOutputBuilder {
     /// - [`resource_policies`](crate::operation::get_resource_policies::builders::GetResourcePoliciesOutputBuilder::resource_policies)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_resource_policies::GetResourcePoliciesOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_resource_policies::GetResourcePoliciesOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_resource_policies::GetResourcePoliciesOutput {
             resource_policies: self.resource_policies.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_policies",
                     "resource_policies was not specified but it is required when building GetResourcePoliciesOutput",
                 )

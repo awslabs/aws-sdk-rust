@@ -91,11 +91,11 @@ impl ListSmsSandboxPhoneNumbersOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_sms_sandbox_phone_numbers::ListSmsSandboxPhoneNumbersOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_sms_sandbox_phone_numbers::ListSmsSandboxPhoneNumbersOutput {
             phone_numbers: self.phone_numbers.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "phone_numbers",
                     "phone_numbers was not specified but it is required when building ListSmsSandboxPhoneNumbersOutput",
                 )

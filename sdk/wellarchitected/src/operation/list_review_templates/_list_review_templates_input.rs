@@ -64,7 +64,7 @@ impl ListReviewTemplatesInputBuilder {
     /// Consumes the builder and constructs a [`ListReviewTemplatesInput`](crate::operation::list_review_templates::ListReviewTemplatesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_review_templates::ListReviewTemplatesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_review_templates::ListReviewTemplatesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_review_templates::ListReviewTemplatesInput {
             next_token: self.next_token,

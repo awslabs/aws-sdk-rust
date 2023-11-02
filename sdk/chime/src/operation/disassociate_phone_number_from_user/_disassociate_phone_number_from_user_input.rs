@@ -68,7 +68,7 @@ impl DisassociatePhoneNumberFromUserInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_phone_number_from_user::DisassociatePhoneNumberFromUserInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::disassociate_phone_number_from_user::DisassociatePhoneNumberFromUserInput {

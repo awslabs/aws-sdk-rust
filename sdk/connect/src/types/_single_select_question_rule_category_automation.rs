@@ -95,22 +95,22 @@ impl SingleSelectQuestionRuleCategoryAutomationBuilder {
     /// - [`option_ref_id`](crate::types::builders::SingleSelectQuestionRuleCategoryAutomationBuilder::option_ref_id)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::SingleSelectQuestionRuleCategoryAutomation, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::SingleSelectQuestionRuleCategoryAutomation, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SingleSelectQuestionRuleCategoryAutomation {
             category: self.category.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "category",
                     "category was not specified but it is required when building SingleSelectQuestionRuleCategoryAutomation",
                 )
             })?,
             condition: self.condition.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "condition",
                     "condition was not specified but it is required when building SingleSelectQuestionRuleCategoryAutomation",
                 )
             })?,
             option_ref_id: self.option_ref_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "option_ref_id",
                     "option_ref_id was not specified but it is required when building SingleSelectQuestionRuleCategoryAutomation",
                 )

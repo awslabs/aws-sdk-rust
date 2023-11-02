@@ -97,16 +97,16 @@ impl FulfillmentUpdateResponseSpecificationBuilder {
     /// - [`message_groups`](crate::types::builders::FulfillmentUpdateResponseSpecificationBuilder::message_groups)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::FulfillmentUpdateResponseSpecification, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::FulfillmentUpdateResponseSpecification, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FulfillmentUpdateResponseSpecification {
             frequency_in_seconds: self.frequency_in_seconds.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "frequency_in_seconds",
                     "frequency_in_seconds was not specified but it is required when building FulfillmentUpdateResponseSpecification",
                 )
             })?,
             message_groups: self.message_groups.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "message_groups",
                     "message_groups was not specified but it is required when building FulfillmentUpdateResponseSpecification",
                 )

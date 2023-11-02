@@ -66,7 +66,8 @@ impl RevokeDomainAccessInputBuilder {
     /// Consumes the builder and constructs a [`RevokeDomainAccessInput`](crate::operation::revoke_domain_access::RevokeDomainAccessInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::revoke_domain_access::RevokeDomainAccessInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::revoke_domain_access::RevokeDomainAccessInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::revoke_domain_access::RevokeDomainAccessInput {
             fleet_arn: self.fleet_arn,
             domain_name: self.domain_name,

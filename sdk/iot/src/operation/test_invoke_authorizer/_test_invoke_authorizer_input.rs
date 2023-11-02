@@ -149,7 +149,7 @@ impl TestInvokeAuthorizerInputBuilder {
     /// Consumes the builder and constructs a [`TestInvokeAuthorizerInput`](crate::operation::test_invoke_authorizer::TestInvokeAuthorizerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::test_invoke_authorizer::TestInvokeAuthorizerInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::test_invoke_authorizer::TestInvokeAuthorizerInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::test_invoke_authorizer::TestInvokeAuthorizerInput {
             authorizer_name: self.authorizer_name,

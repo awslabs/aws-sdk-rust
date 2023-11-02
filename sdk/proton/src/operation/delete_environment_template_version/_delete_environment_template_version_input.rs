@@ -90,7 +90,7 @@ impl DeleteEnvironmentTemplateVersionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_environment_template_version::DeleteEnvironmentTemplateVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_environment_template_version::DeleteEnvironmentTemplateVersionInput {

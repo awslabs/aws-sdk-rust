@@ -144,16 +144,16 @@ impl InventoryResultItemBuilder {
     /// - [`type_name`](crate::types::builders::InventoryResultItemBuilder::type_name)
     /// - [`schema_version`](crate::types::builders::InventoryResultItemBuilder::schema_version)
     /// - [`content`](crate::types::builders::InventoryResultItemBuilder::content)
-    pub fn build(self) -> ::std::result::Result<crate::types::InventoryResultItem, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::InventoryResultItem, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::InventoryResultItem {
             type_name: self.type_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "type_name",
                     "type_name was not specified but it is required when building InventoryResultItem",
                 )
             })?,
             schema_version: self.schema_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "schema_version",
                     "schema_version was not specified but it is required when building InventoryResultItem",
                 )
@@ -161,7 +161,7 @@ impl InventoryResultItemBuilder {
             capture_time: self.capture_time,
             content_hash: self.content_hash,
             content: self.content.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "content",
                     "content was not specified but it is required when building InventoryResultItem",
                 )

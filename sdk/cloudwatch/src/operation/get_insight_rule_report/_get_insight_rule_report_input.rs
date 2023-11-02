@@ -226,7 +226,7 @@ impl GetInsightRuleReportInputBuilder {
     /// Consumes the builder and constructs a [`GetInsightRuleReportInput`](crate::operation::get_insight_rule_report::GetInsightRuleReportInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_insight_rule_report::GetInsightRuleReportInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_insight_rule_report::GetInsightRuleReportInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_insight_rule_report::GetInsightRuleReportInput {
             rule_name: self.rule_name,

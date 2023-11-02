@@ -239,7 +239,7 @@ impl ModifyListenerInputBuilder {
     /// Consumes the builder and constructs a [`ModifyListenerInput`](crate::operation::modify_listener::ModifyListenerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::modify_listener::ModifyListenerInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::modify_listener::ModifyListenerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::modify_listener::ModifyListenerInput {
             listener_arn: self.listener_arn,
             port: self.port,

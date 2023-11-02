@@ -88,16 +88,16 @@ impl GetArtifactUrlOutputBuilder {
     /// - [`artifact_url`](crate::operation::get_artifact_url::builders::GetArtifactUrlOutputBuilder::artifact_url)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_artifact_url::GetArtifactUrlOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_artifact_url::GetArtifactUrlOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_artifact_url::GetArtifactUrlOutput {
             artifact_id: self.artifact_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "artifact_id",
                     "artifact_id was not specified but it is required when building GetArtifactUrlOutput",
                 )
             })?,
             artifact_url: self.artifact_url.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "artifact_url",
                     "artifact_url was not specified but it is required when building GetArtifactUrlOutput",
                 )

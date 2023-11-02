@@ -91,11 +91,11 @@ impl ListApplicationVersionsOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_application_versions::ListApplicationVersionsOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_application_versions::ListApplicationVersionsOutput {
             application_versions: self.application_versions.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "application_versions",
                     "application_versions was not specified but it is required when building ListApplicationVersionsOutput",
                 )

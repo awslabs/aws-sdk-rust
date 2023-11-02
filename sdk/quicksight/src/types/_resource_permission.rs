@@ -100,16 +100,16 @@ impl ResourcePermissionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`principal`](crate::types::builders::ResourcePermissionBuilder::principal)
     /// - [`actions`](crate::types::builders::ResourcePermissionBuilder::actions)
-    pub fn build(self) -> ::std::result::Result<crate::types::ResourcePermission, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ResourcePermission, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ResourcePermission {
             principal: self.principal.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "principal",
                     "principal was not specified but it is required when building ResourcePermission",
                 )
             })?,
             actions: self.actions.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "actions",
                     "actions was not specified but it is required when building ResourcePermission",
                 )

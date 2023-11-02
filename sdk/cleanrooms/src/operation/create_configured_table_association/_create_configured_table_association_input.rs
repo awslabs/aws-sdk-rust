@@ -160,7 +160,7 @@ impl CreateConfiguredTableAssociationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_configured_table_association::CreateConfiguredTableAssociationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::create_configured_table_association::CreateConfiguredTableAssociationInput {

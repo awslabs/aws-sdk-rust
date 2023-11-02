@@ -87,10 +87,10 @@ impl ListStreamsOutputBuilder {
     /// Consumes the builder and constructs a [`ListStreamsOutput`](crate::operation::list_streams::ListStreamsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`streams`](crate::operation::list_streams::builders::ListStreamsOutputBuilder::streams)
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_streams::ListStreamsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_streams::ListStreamsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_streams::ListStreamsOutput {
             streams: self.streams.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "streams",
                     "streams was not specified but it is required when building ListStreamsOutput",
                 )

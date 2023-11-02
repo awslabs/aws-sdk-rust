@@ -85,10 +85,10 @@ impl UpdateJobPriorityOutputBuilder {
     /// - [`job_id`](crate::operation::update_job_priority::builders::UpdateJobPriorityOutputBuilder::job_id)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_job_priority::UpdateJobPriorityOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_job_priority::UpdateJobPriorityOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_job_priority::UpdateJobPriorityOutput {
             job_id: self.job_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "job_id",
                     "job_id was not specified but it is required when building UpdateJobPriorityOutput",
                 )

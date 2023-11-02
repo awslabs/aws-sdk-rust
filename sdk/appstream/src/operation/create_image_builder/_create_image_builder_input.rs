@@ -511,7 +511,8 @@ impl CreateImageBuilderInputBuilder {
     /// Consumes the builder and constructs a [`CreateImageBuilderInput`](crate::operation::create_image_builder::CreateImageBuilderInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_image_builder::CreateImageBuilderInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_image_builder::CreateImageBuilderInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_image_builder::CreateImageBuilderInput {
             name: self.name,
             image_name: self.image_name,

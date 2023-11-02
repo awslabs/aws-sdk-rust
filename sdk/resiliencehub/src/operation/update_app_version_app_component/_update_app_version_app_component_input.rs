@@ -144,7 +144,7 @@ impl UpdateAppVersionAppComponentInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_app_version_app_component::UpdateAppVersionAppComponentInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_app_version_app_component::UpdateAppVersionAppComponentInput {
             app_arn: self.app_arn,

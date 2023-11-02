@@ -289,56 +289,59 @@ impl RuleBuilder {
     /// - [`created_time`](crate::types::builders::RuleBuilder::created_time)
     /// - [`last_updated_time`](crate::types::builders::RuleBuilder::last_updated_time)
     /// - [`last_updated_by`](crate::types::builders::RuleBuilder::last_updated_by)
-    pub fn build(self) -> ::std::result::Result<crate::types::Rule, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Rule, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Rule {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field("name", "name was not specified but it is required when building Rule")
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building Rule",
+                )
             })?,
             rule_id: self.rule_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "rule_id",
                     "rule_id was not specified but it is required when building Rule",
                 )
             })?,
             rule_arn: self.rule_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "rule_arn",
                     "rule_arn was not specified but it is required when building Rule",
                 )
             })?,
             trigger_event_source: self.trigger_event_source,
             function: self.function.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "function",
                     "function was not specified but it is required when building Rule",
                 )
             })?,
             actions: self.actions.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "actions",
                     "actions was not specified but it is required when building Rule",
                 )
             })?,
             publish_status: self.publish_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "publish_status",
                     "publish_status was not specified but it is required when building Rule",
                 )
             })?,
             created_time: self.created_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_time",
                     "created_time was not specified but it is required when building Rule",
                 )
             })?,
             last_updated_time: self.last_updated_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_updated_time",
                     "last_updated_time was not specified but it is required when building Rule",
                 )
             })?,
             last_updated_by: self.last_updated_by.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_updated_by",
                     "last_updated_by was not specified but it is required when building Rule",
                 )

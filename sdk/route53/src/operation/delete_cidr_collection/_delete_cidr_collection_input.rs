@@ -44,7 +44,7 @@ impl DeleteCidrCollectionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteCidrCollectionInput`](crate::operation::delete_cidr_collection::DeleteCidrCollectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_cidr_collection::DeleteCidrCollectionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_cidr_collection::DeleteCidrCollectionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_cidr_collection::DeleteCidrCollectionInput { id: self.id })
     }

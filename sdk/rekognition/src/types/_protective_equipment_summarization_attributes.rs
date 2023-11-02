@@ -86,16 +86,16 @@ impl ProtectiveEquipmentSummarizationAttributesBuilder {
     /// - [`required_equipment_types`](crate::types::builders::ProtectiveEquipmentSummarizationAttributesBuilder::required_equipment_types)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::ProtectiveEquipmentSummarizationAttributes, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::ProtectiveEquipmentSummarizationAttributes, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ProtectiveEquipmentSummarizationAttributes {
             min_confidence: self.min_confidence.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "min_confidence",
                     "min_confidence was not specified but it is required when building ProtectiveEquipmentSummarizationAttributes",
                 )
             })?,
             required_equipment_types: self.required_equipment_types.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "required_equipment_types",
                     "required_equipment_types was not specified but it is required when building ProtectiveEquipmentSummarizationAttributes",
                 )

@@ -110,7 +110,7 @@ impl UpdateEventLabelInputBuilder {
     /// Consumes the builder and constructs a [`UpdateEventLabelInput`](crate::operation::update_event_label::UpdateEventLabelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_event_label::UpdateEventLabelInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_event_label::UpdateEventLabelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_event_label::UpdateEventLabelInput {
             event_id: self.event_id,
             event_type_name: self.event_type_name,

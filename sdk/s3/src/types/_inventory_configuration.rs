@@ -185,19 +185,19 @@ impl InventoryConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::InventoryConfigurationBuilder::id)
     /// - [`included_object_versions`](crate::types::builders::InventoryConfigurationBuilder::included_object_versions)
-    pub fn build(self) -> ::std::result::Result<crate::types::InventoryConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::InventoryConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::InventoryConfiguration {
             destination: self.destination,
             is_enabled: self.is_enabled.unwrap_or_default(),
             filter: self.filter,
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building InventoryConfiguration",
                 )
             })?,
             included_object_versions: self.included_object_versions.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "included_object_versions",
                     "included_object_versions was not specified but it is required when building InventoryConfiguration",
                 )

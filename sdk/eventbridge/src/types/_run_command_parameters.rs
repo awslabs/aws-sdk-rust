@@ -51,10 +51,10 @@ impl RunCommandParametersBuilder {
     /// Consumes the builder and constructs a [`RunCommandParameters`](crate::types::RunCommandParameters).
     /// This method will fail if any of the following fields are not set:
     /// - [`run_command_targets`](crate::types::builders::RunCommandParametersBuilder::run_command_targets)
-    pub fn build(self) -> ::std::result::Result<crate::types::RunCommandParameters, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RunCommandParameters, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RunCommandParameters {
             run_command_targets: self.run_command_targets.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "run_command_targets",
                     "run_command_targets was not specified but it is required when building RunCommandParameters",
                 )

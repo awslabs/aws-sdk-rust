@@ -88,12 +88,12 @@ impl CreateVpcAssociationAuthorizationOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_vpc_association_authorization::CreateVpcAssociationAuthorizationOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::create_vpc_association_authorization::CreateVpcAssociationAuthorizationOutput {
                 hosted_zone_id: self.hosted_zone_id.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
                         "hosted_zone_id",
                         "hosted_zone_id was not specified but it is required when building CreateVpcAssociationAuthorizationOutput",
                     )

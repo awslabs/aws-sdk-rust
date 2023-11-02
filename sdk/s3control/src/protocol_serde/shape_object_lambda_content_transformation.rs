@@ -2,7 +2,7 @@
 pub fn ser_object_lambda_content_transformation(
     input: &crate::types::ObjectLambdaContentTransformation,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     let mut scope_writer = writer.finish();
     match input {
         crate::types::ObjectLambdaContentTransformation::AwsLambda(inner) => {
@@ -10,7 +10,7 @@ pub fn ser_object_lambda_content_transformation(
             crate::protocol_serde::shape_aws_lambda_transformation::ser_aws_lambda_transformation(inner, inner_writer)?
         }
         crate::types::ObjectLambdaContentTransformation::Unknown => {
-            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+            return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "ObjectLambdaContentTransformation",
             ))
         }

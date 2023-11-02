@@ -66,8 +66,10 @@ impl DescribeRoutingProfileInputBuilder {
     /// Consumes the builder and constructs a [`DescribeRoutingProfileInput`](crate::operation::describe_routing_profile::DescribeRoutingProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_routing_profile::DescribeRoutingProfileInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::describe_routing_profile::DescribeRoutingProfileInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::describe_routing_profile::DescribeRoutingProfileInput {
             instance_id: self.instance_id,
             routing_profile_id: self.routing_profile_id,

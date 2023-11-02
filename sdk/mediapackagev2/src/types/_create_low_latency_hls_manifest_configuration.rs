@@ -158,10 +158,10 @@ impl CreateLowLatencyHlsManifestConfigurationBuilder {
     /// - [`manifest_name`](crate::types::builders::CreateLowLatencyHlsManifestConfigurationBuilder::manifest_name)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::CreateLowLatencyHlsManifestConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::CreateLowLatencyHlsManifestConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CreateLowLatencyHlsManifestConfiguration {
             manifest_name: self.manifest_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "manifest_name",
                     "manifest_name was not specified but it is required when building CreateLowLatencyHlsManifestConfiguration",
                 )

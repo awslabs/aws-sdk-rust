@@ -193,7 +193,7 @@ impl DescribeIpv6PoolsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeIpv6PoolsInput`](crate::operation::describe_ipv6_pools::DescribeIpv6PoolsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_ipv6_pools::DescribeIpv6PoolsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_ipv6_pools::DescribeIpv6PoolsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_ipv6_pools::DescribeIpv6PoolsInput {
             pool_ids: self.pool_ids,
             next_token: self.next_token,

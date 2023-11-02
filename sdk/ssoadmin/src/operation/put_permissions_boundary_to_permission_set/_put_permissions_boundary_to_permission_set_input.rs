@@ -90,7 +90,7 @@ impl PutPermissionsBoundaryToPermissionSetInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_permissions_boundary_to_permission_set::PutPermissionsBoundaryToPermissionSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::put_permissions_boundary_to_permission_set::PutPermissionsBoundaryToPermissionSetInput {

@@ -126,7 +126,7 @@ impl CreateAppInstanceInputBuilder {
     /// Consumes the builder and constructs a [`CreateAppInstanceInput`](crate::operation::create_app_instance::CreateAppInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_app_instance::CreateAppInstanceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_app_instance::CreateAppInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_app_instance::CreateAppInstanceInput {
             name: self.name,
             metadata: self.metadata,

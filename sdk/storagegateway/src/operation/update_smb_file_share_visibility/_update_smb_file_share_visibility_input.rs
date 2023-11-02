@@ -68,7 +68,7 @@ impl UpdateSmbFileShareVisibilityInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_smb_file_share_visibility::UpdateSmbFileShareVisibilityInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_smb_file_share_visibility::UpdateSmbFileShareVisibilityInput {
             gateway_arn: self.gateway_arn,

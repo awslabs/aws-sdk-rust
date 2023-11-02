@@ -153,7 +153,7 @@ impl BatchPutDocumentInputBuilder {
     /// Consumes the builder and constructs a [`BatchPutDocumentInput`](crate::operation::batch_put_document::BatchPutDocumentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_put_document::BatchPutDocumentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::batch_put_document::BatchPutDocumentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::batch_put_document::BatchPutDocumentInput {
             index_id: self.index_id,
             role_arn: self.role_arn,

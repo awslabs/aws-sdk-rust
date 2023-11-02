@@ -70,16 +70,16 @@ impl SalesforceActionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`token`](crate::types::builders::SalesforceActionBuilder::token)
     /// - [`url`](crate::types::builders::SalesforceActionBuilder::url)
-    pub fn build(self) -> ::std::result::Result<crate::types::SalesforceAction, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SalesforceAction, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SalesforceAction {
             token: self.token.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "token",
                     "token was not specified but it is required when building SalesforceAction",
                 )
             })?,
             url: self.url.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "url",
                     "url was not specified but it is required when building SalesforceAction",
                 )

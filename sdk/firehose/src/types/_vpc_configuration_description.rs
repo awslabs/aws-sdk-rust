@@ -188,28 +188,28 @@ impl VpcConfigurationDescriptionBuilder {
     /// - [`role_arn`](crate::types::builders::VpcConfigurationDescriptionBuilder::role_arn)
     /// - [`security_group_ids`](crate::types::builders::VpcConfigurationDescriptionBuilder::security_group_ids)
     /// - [`vpc_id`](crate::types::builders::VpcConfigurationDescriptionBuilder::vpc_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::VpcConfigurationDescription, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::VpcConfigurationDescription, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::VpcConfigurationDescription {
             subnet_ids: self.subnet_ids.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "subnet_ids",
                     "subnet_ids was not specified but it is required when building VpcConfigurationDescription",
                 )
             })?,
             role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role_arn",
                     "role_arn was not specified but it is required when building VpcConfigurationDescription",
                 )
             })?,
             security_group_ids: self.security_group_ids.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "security_group_ids",
                     "security_group_ids was not specified but it is required when building VpcConfigurationDescription",
                 )
             })?,
             vpc_id: self.vpc_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "vpc_id",
                     "vpc_id was not specified but it is required when building VpcConfigurationDescription",
                 )

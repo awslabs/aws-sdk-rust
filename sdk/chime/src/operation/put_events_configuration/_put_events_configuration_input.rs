@@ -118,8 +118,10 @@ impl PutEventsConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`PutEventsConfigurationInput`](crate::operation::put_events_configuration::PutEventsConfigurationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_events_configuration::PutEventsConfigurationInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::put_events_configuration::PutEventsConfigurationInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::put_events_configuration::PutEventsConfigurationInput {
             account_id: self.account_id,
             bot_id: self.bot_id,

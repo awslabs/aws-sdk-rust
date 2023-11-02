@@ -2,7 +2,7 @@
 pub fn ser_invoke_device_method_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::invoke_device_method::InvokeDeviceMethodInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.device_method {
         #[allow(unused_mut)]
         let mut object_2 = object.key("deviceMethod").start_object();

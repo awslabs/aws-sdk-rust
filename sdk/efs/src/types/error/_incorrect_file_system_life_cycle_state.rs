@@ -107,10 +107,10 @@ impl IncorrectFileSystemLifeCycleStateBuilder {
     /// - [`error_code`](crate::types::error::builders::IncorrectFileSystemLifeCycleStateBuilder::error_code)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::error::IncorrectFileSystemLifeCycleState, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::error::IncorrectFileSystemLifeCycleState, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::error::IncorrectFileSystemLifeCycleState {
             error_code: self.error_code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "error_code",
                     "error_code was not specified but it is required when building IncorrectFileSystemLifeCycleState",
                 )

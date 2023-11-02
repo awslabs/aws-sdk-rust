@@ -71,16 +71,16 @@ impl CidrAuthorizationContextBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`message`](crate::types::builders::CidrAuthorizationContextBuilder::message)
     /// - [`signature`](crate::types::builders::CidrAuthorizationContextBuilder::signature)
-    pub fn build(self) -> ::std::result::Result<crate::types::CidrAuthorizationContext, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CidrAuthorizationContext, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CidrAuthorizationContext {
             message: self.message.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "message",
                     "message was not specified but it is required when building CidrAuthorizationContext",
                 )
             })?,
             signature: self.signature.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "signature",
                     "signature was not specified but it is required when building CidrAuthorizationContext",
                 )

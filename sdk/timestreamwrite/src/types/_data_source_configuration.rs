@@ -88,12 +88,12 @@ impl DataSourceConfigurationBuilder {
     /// Consumes the builder and constructs a [`DataSourceConfiguration`](crate::types::DataSourceConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`data_format`](crate::types::builders::DataSourceConfigurationBuilder::data_format)
-    pub fn build(self) -> ::std::result::Result<crate::types::DataSourceConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DataSourceConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DataSourceConfiguration {
             data_source_s3_configuration: self.data_source_s3_configuration,
             csv_configuration: self.csv_configuration,
             data_format: self.data_format.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_format",
                     "data_format was not specified but it is required when building DataSourceConfiguration",
                 )

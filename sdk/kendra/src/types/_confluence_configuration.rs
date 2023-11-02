@@ -318,22 +318,22 @@ impl ConfluenceConfigurationBuilder {
     /// - [`server_url`](crate::types::builders::ConfluenceConfigurationBuilder::server_url)
     /// - [`secret_arn`](crate::types::builders::ConfluenceConfigurationBuilder::secret_arn)
     /// - [`version`](crate::types::builders::ConfluenceConfigurationBuilder::version)
-    pub fn build(self) -> ::std::result::Result<crate::types::ConfluenceConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ConfluenceConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ConfluenceConfiguration {
             server_url: self.server_url.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "server_url",
                     "server_url was not specified but it is required when building ConfluenceConfiguration",
                 )
             })?,
             secret_arn: self.secret_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "secret_arn",
                     "secret_arn was not specified but it is required when building ConfluenceConfiguration",
                 )
             })?,
             version: self.version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "version",
                     "version was not specified but it is required when building ConfluenceConfiguration",
                 )

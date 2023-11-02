@@ -2,7 +2,7 @@
 pub fn ser_file_cache_lustre_metadata_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FileCacheLustreMetadataConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.storage_capacity {
         object.key("StorageCapacity").number(
             #[allow(clippy::useless_conversion)]

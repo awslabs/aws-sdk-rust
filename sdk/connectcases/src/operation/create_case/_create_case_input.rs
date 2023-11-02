@@ -114,7 +114,7 @@ impl CreateCaseInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateCaseInput`](crate::operation::create_case::CreateCaseInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_case::CreateCaseInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_case::CreateCaseInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_case::CreateCaseInput {
             domain_id: self.domain_id,
             template_id: self.template_id,

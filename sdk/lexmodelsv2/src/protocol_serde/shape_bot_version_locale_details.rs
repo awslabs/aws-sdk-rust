@@ -2,7 +2,7 @@
 pub fn ser_bot_version_locale_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BotVersionLocaleDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("sourceBotVersion").string(input.source_bot_version.as_str());
     }

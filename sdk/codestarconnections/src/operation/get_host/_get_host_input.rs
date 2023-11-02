@@ -42,7 +42,7 @@ impl GetHostInputBuilder {
         &self.host_arn
     }
     /// Consumes the builder and constructs a [`GetHostInput`](crate::operation::get_host::GetHostInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_host::GetHostInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_host::GetHostInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_host::GetHostInput { host_arn: self.host_arn })
     }
 }

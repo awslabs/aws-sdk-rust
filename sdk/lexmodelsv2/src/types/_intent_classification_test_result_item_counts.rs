@@ -112,17 +112,17 @@ impl IntentClassificationTestResultItemCountsBuilder {
     /// - [`intent_match_result_counts`](crate::types::builders::IntentClassificationTestResultItemCountsBuilder::intent_match_result_counts)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::IntentClassificationTestResultItemCounts, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::IntentClassificationTestResultItemCounts, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::IntentClassificationTestResultItemCounts {
             total_result_count: self.total_result_count.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "total_result_count",
                     "total_result_count was not specified but it is required when building IntentClassificationTestResultItemCounts",
                 )
             })?,
             speech_transcription_result_counts: self.speech_transcription_result_counts,
             intent_match_result_counts: self.intent_match_result_counts.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "intent_match_result_counts",
                     "intent_match_result_counts was not specified but it is required when building IntentClassificationTestResultItemCounts",
                 )

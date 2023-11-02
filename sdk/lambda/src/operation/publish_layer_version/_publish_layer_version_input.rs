@@ -196,7 +196,7 @@ impl PublishLayerVersionInputBuilder {
     /// Consumes the builder and constructs a [`PublishLayerVersionInput`](crate::operation::publish_layer_version::PublishLayerVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::publish_layer_version::PublishLayerVersionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::publish_layer_version::PublishLayerVersionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::publish_layer_version::PublishLayerVersionInput {
             layer_name: self.layer_name,

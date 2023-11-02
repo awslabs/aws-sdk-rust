@@ -2,7 +2,7 @@
 pub fn ser_dq_results_publishing_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DqResultsPublishingOptions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.evaluation_context {
         object.key("EvaluationContext").string(var_1.as_str());
     }

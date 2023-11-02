@@ -87,17 +87,17 @@ impl CreateEvaluationFormOutputBuilder {
     /// - [`evaluation_form_arn`](crate::operation::create_evaluation_form::builders::CreateEvaluationFormOutputBuilder::evaluation_form_arn)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_evaluation_form::CreateEvaluationFormOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_evaluation_form::CreateEvaluationFormOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_evaluation_form::CreateEvaluationFormOutput {
             evaluation_form_id: self.evaluation_form_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "evaluation_form_id",
                     "evaluation_form_id was not specified but it is required when building CreateEvaluationFormOutput",
                 )
             })?,
             evaluation_form_arn: self.evaluation_form_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "evaluation_form_arn",
                     "evaluation_form_arn was not specified but it is required when building CreateEvaluationFormOutput",
                 )

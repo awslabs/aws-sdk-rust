@@ -88,7 +88,7 @@ impl UpdateSegmentInputBuilder {
     /// Consumes the builder and constructs a [`UpdateSegmentInput`](crate::operation::update_segment::UpdateSegmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_segment::UpdateSegmentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_segment::UpdateSegmentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_segment::UpdateSegmentInput {
             application_id: self.application_id,
             segment_id: self.segment_id,

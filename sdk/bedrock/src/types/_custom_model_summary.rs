@@ -141,34 +141,34 @@ impl CustomModelSummaryBuilder {
     /// - [`creation_time`](crate::types::builders::CustomModelSummaryBuilder::creation_time)
     /// - [`base_model_arn`](crate::types::builders::CustomModelSummaryBuilder::base_model_arn)
     /// - [`base_model_name`](crate::types::builders::CustomModelSummaryBuilder::base_model_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::CustomModelSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CustomModelSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CustomModelSummary {
             model_arn: self.model_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "model_arn",
                     "model_arn was not specified but it is required when building CustomModelSummary",
                 )
             })?,
             model_name: self.model_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "model_name",
                     "model_name was not specified but it is required when building CustomModelSummary",
                 )
             })?,
             creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_time",
                     "creation_time was not specified but it is required when building CustomModelSummary",
                 )
             })?,
             base_model_arn: self.base_model_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "base_model_arn",
                     "base_model_arn was not specified but it is required when building CustomModelSummary",
                 )
             })?,
             base_model_name: self.base_model_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "base_model_name",
                     "base_model_name was not specified but it is required when building CustomModelSummary",
                 )

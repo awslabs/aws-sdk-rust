@@ -73,7 +73,8 @@ impl BatchUnsuspendUserInputBuilder {
     /// Consumes the builder and constructs a [`BatchUnsuspendUserInput`](crate::operation::batch_unsuspend_user::BatchUnsuspendUserInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_unsuspend_user::BatchUnsuspendUserInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::batch_unsuspend_user::BatchUnsuspendUserInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::batch_unsuspend_user::BatchUnsuspendUserInput {
             account_id: self.account_id,
             user_id_list: self.user_id_list,

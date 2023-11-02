@@ -46,7 +46,7 @@ impl DeleteRescoreExecutionPlanInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_rescore_execution_plan::DeleteRescoreExecutionPlanInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_rescore_execution_plan::DeleteRescoreExecutionPlanInput { id: self.id })
     }

@@ -305,7 +305,7 @@ impl UpdateProfileJobInputBuilder {
     /// Consumes the builder and constructs a [`UpdateProfileJobInput`](crate::operation::update_profile_job::UpdateProfileJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_profile_job::UpdateProfileJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_profile_job::UpdateProfileJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_profile_job::UpdateProfileJobInput {
             configuration: self.configuration,
             encryption_key_arn: self.encryption_key_arn,

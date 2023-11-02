@@ -68,16 +68,16 @@ impl TemplateRevisionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`major_revision`](crate::types::builders::TemplateRevisionBuilder::major_revision)
     /// - [`minor_revision`](crate::types::builders::TemplateRevisionBuilder::minor_revision)
-    pub fn build(self) -> ::std::result::Result<crate::types::TemplateRevision, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TemplateRevision, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TemplateRevision {
             major_revision: self.major_revision.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "major_revision",
                     "major_revision was not specified but it is required when building TemplateRevision",
                 )
             })?,
             minor_revision: self.minor_revision.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "minor_revision",
                     "minor_revision was not specified but it is required when building TemplateRevision",
                 )

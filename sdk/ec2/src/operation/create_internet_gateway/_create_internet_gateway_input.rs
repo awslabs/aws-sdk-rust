@@ -72,7 +72,7 @@ impl CreateInternetGatewayInputBuilder {
     /// Consumes the builder and constructs a [`CreateInternetGatewayInput`](crate::operation::create_internet_gateway::CreateInternetGatewayInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_internet_gateway::CreateInternetGatewayInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_internet_gateway::CreateInternetGatewayInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_internet_gateway::CreateInternetGatewayInput {
             tag_specifications: self.tag_specifications,

@@ -2,7 +2,7 @@
 pub fn ser_property_name_query(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PropertyNameQuery,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.property_name_hint {
         object.key("PropertyNameHint").string(var_1.as_str());
     }

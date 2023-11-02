@@ -67,10 +67,10 @@ impl KinesisVideoStreamConfigurationBuilder {
     /// Consumes the builder and constructs a [`KinesisVideoStreamConfiguration`](crate::types::KinesisVideoStreamConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`region`](crate::types::builders::KinesisVideoStreamConfigurationBuilder::region)
-    pub fn build(self) -> ::std::result::Result<crate::types::KinesisVideoStreamConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::KinesisVideoStreamConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::KinesisVideoStreamConfiguration {
             region: self.region.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "region",
                     "region was not specified but it is required when building KinesisVideoStreamConfiguration",
                 )

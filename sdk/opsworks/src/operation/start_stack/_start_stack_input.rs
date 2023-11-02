@@ -42,7 +42,7 @@ impl StartStackInputBuilder {
         &self.stack_id
     }
     /// Consumes the builder and constructs a [`StartStackInput`](crate::operation::start_stack::StartStackInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::start_stack::StartStackInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_stack::StartStackInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_stack::StartStackInput { stack_id: self.stack_id })
     }
 }

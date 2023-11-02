@@ -2,7 +2,7 @@
 pub fn ser_jira_parameters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::JiraParameters,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("SiteBaseUrl").string(input.site_base_url.as_str());
     }

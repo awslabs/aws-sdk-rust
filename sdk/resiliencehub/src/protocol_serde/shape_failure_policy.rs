@@ -2,7 +2,7 @@
 pub fn ser_failure_policy(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FailurePolicy,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("rtoInSecs").number(
             #[allow(clippy::useless_conversion)]

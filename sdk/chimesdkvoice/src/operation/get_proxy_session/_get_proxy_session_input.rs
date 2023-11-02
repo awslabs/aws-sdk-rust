@@ -66,7 +66,7 @@ impl GetProxySessionInputBuilder {
     /// Consumes the builder and constructs a [`GetProxySessionInput`](crate::operation::get_proxy_session::GetProxySessionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_proxy_session::GetProxySessionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_proxy_session::GetProxySessionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_proxy_session::GetProxySessionInput {
             voice_connector_id: self.voice_connector_id,
             proxy_session_id: self.proxy_session_id,

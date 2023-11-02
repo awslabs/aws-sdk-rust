@@ -51,7 +51,7 @@ where
 pub fn ser_media_source_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MediaSourceConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("MediaUriSecretArn").string(input.media_uri_secret_arn.as_str());
     }

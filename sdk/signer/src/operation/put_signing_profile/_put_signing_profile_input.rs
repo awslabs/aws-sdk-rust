@@ -190,7 +190,7 @@ impl PutSigningProfileInputBuilder {
     /// Consumes the builder and constructs a [`PutSigningProfileInput`](crate::operation::put_signing_profile::PutSigningProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_signing_profile::PutSigningProfileInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_signing_profile::PutSigningProfileInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_signing_profile::PutSigningProfileInput {
             profile_name: self.profile_name,
             signing_material: self.signing_material,

@@ -102,7 +102,7 @@ impl CreateHealthCheckInputBuilder {
     /// Consumes the builder and constructs a [`CreateHealthCheckInput`](crate::operation::create_health_check::CreateHealthCheckInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_health_check::CreateHealthCheckInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_health_check::CreateHealthCheckInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_health_check::CreateHealthCheckInput {
             caller_reference: self.caller_reference,
             health_check_config: self.health_check_config,

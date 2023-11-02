@@ -143,7 +143,7 @@ impl CreateWorldGenerationJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_world_generation_job::CreateWorldGenerationJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_world_generation_job::CreateWorldGenerationJobInput {
             client_request_token: self.client_request_token,

@@ -75,7 +75,7 @@ impl BatchDeleteScheduledActionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_delete_scheduled_action::BatchDeleteScheduledActionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::batch_delete_scheduled_action::BatchDeleteScheduledActionInput {
             auto_scaling_group_name: self.auto_scaling_group_name,

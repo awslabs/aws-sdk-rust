@@ -2,7 +2,7 @@
 pub fn ser_voting_policy(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VotingPolicy,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.approval_threshold_policy {
         #[allow(unused_mut)]
         let mut object_2 = object.key("ApprovalThresholdPolicy").start_object();

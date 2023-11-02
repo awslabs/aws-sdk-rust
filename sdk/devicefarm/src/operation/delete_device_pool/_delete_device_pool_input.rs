@@ -45,7 +45,7 @@ impl DeleteDevicePoolInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDevicePoolInput`](crate::operation::delete_device_pool::DeleteDevicePoolInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_device_pool::DeleteDevicePoolInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_device_pool::DeleteDevicePoolInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_device_pool::DeleteDevicePoolInput { arn: self.arn })
     }
 }

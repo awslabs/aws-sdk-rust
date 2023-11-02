@@ -44,7 +44,7 @@ impl GetTrustAnchorInputBuilder {
     /// Consumes the builder and constructs a [`GetTrustAnchorInput`](crate::operation::get_trust_anchor::GetTrustAnchorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_trust_anchor::GetTrustAnchorInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_trust_anchor::GetTrustAnchorInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_trust_anchor::GetTrustAnchorInput {
             trust_anchor_id: self.trust_anchor_id,
         })

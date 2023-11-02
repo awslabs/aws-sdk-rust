@@ -66,7 +66,7 @@ impl DisassociateDomainInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateDomainInput`](crate::operation::disassociate_domain::DisassociateDomainInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::disassociate_domain::DisassociateDomainInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::disassociate_domain::DisassociateDomainInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::disassociate_domain::DisassociateDomainInput {
             fleet_arn: self.fleet_arn,
             domain_name: self.domain_name,

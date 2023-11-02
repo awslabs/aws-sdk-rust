@@ -67,10 +67,10 @@ impl RegionBuilder {
     /// Consumes the builder and constructs a [`Region`](crate::types::Region).
     /// This method will fail if any of the following fields are not set:
     /// - [`bucket`](crate::types::builders::RegionBuilder::bucket)
-    pub fn build(self) -> ::std::result::Result<crate::types::Region, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Region, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Region {
             bucket: self.bucket.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "bucket",
                     "bucket was not specified but it is required when building Region",
                 )

@@ -112,23 +112,23 @@ impl ImportSshPublicKeyOutputBuilder {
     /// - [`user_name`](crate::operation::import_ssh_public_key::builders::ImportSshPublicKeyOutputBuilder::user_name)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::import_ssh_public_key::ImportSshPublicKeyOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::import_ssh_public_key::ImportSshPublicKeyOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::import_ssh_public_key::ImportSshPublicKeyOutput {
             server_id: self.server_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "server_id",
                     "server_id was not specified but it is required when building ImportSshPublicKeyOutput",
                 )
             })?,
             ssh_public_key_id: self.ssh_public_key_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "ssh_public_key_id",
                     "ssh_public_key_id was not specified but it is required when building ImportSshPublicKeyOutput",
                 )
             })?,
             user_name: self.user_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "user_name",
                     "user_name was not specified but it is required when building ImportSshPublicKeyOutput",
                 )

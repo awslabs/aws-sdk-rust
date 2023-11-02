@@ -68,16 +68,16 @@ impl GlobalIdentityBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`lac`](crate::types::builders::GlobalIdentityBuilder::lac)
     /// - [`geran_cid`](crate::types::builders::GlobalIdentityBuilder::geran_cid)
-    pub fn build(self) -> ::std::result::Result<crate::types::GlobalIdentity, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::GlobalIdentity, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::GlobalIdentity {
             lac: self.lac.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "lac",
                     "lac was not specified but it is required when building GlobalIdentity",
                 )
             })?,
             geran_cid: self.geran_cid.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "geran_cid",
                     "geran_cid was not specified but it is required when building GlobalIdentity",
                 )

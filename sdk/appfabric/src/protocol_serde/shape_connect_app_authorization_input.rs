@@ -2,7 +2,7 @@
 pub fn ser_connect_app_authorization_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::connect_app_authorization::ConnectAppAuthorizationInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.auth_request {
         #[allow(unused_mut)]
         let mut object_2 = object.key("authRequest").start_object();

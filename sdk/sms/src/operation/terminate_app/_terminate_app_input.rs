@@ -41,7 +41,9 @@ impl TerminateAppInputBuilder {
         &self.app_id
     }
     /// Consumes the builder and constructs a [`TerminateAppInput`](crate::operation::terminate_app::TerminateAppInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::terminate_app::TerminateAppInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::terminate_app::TerminateAppInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::terminate_app::TerminateAppInput { app_id: self.app_id })
     }
 }

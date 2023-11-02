@@ -66,7 +66,7 @@ impl DescribeNamespaceInputBuilder {
     /// Consumes the builder and constructs a [`DescribeNamespaceInput`](crate::operation::describe_namespace::DescribeNamespaceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_namespace::DescribeNamespaceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_namespace::DescribeNamespaceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_namespace::DescribeNamespaceInput {
             aws_account_id: self.aws_account_id,
             namespace: self.namespace,

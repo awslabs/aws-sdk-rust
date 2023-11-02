@@ -42,7 +42,7 @@ impl AcceptShareInputBuilder {
         &self.share_id
     }
     /// Consumes the builder and constructs a [`AcceptShareInput`](crate::operation::accept_share::AcceptShareInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::accept_share::AcceptShareInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::accept_share::AcceptShareInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::accept_share::AcceptShareInput { share_id: self.share_id })
     }
 }

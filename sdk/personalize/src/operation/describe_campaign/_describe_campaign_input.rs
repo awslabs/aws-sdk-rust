@@ -44,7 +44,7 @@ impl DescribeCampaignInputBuilder {
     /// Consumes the builder and constructs a [`DescribeCampaignInput`](crate::operation::describe_campaign::DescribeCampaignInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_campaign::DescribeCampaignInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_campaign::DescribeCampaignInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_campaign::DescribeCampaignInput {
             campaign_arn: self.campaign_arn,
         })

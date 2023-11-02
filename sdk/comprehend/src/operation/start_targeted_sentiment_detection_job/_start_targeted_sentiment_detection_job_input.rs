@@ -245,7 +245,7 @@ impl StartTargetedSentimentDetectionJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_targeted_sentiment_detection_job::StartTargetedSentimentDetectionJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::start_targeted_sentiment_detection_job::StartTargetedSentimentDetectionJobInput {

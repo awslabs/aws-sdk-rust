@@ -69,16 +69,16 @@ impl RoutingProfileQueueReferenceBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`queue_id`](crate::types::builders::RoutingProfileQueueReferenceBuilder::queue_id)
     /// - [`channel`](crate::types::builders::RoutingProfileQueueReferenceBuilder::channel)
-    pub fn build(self) -> ::std::result::Result<crate::types::RoutingProfileQueueReference, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RoutingProfileQueueReference, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RoutingProfileQueueReference {
             queue_id: self.queue_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "queue_id",
                     "queue_id was not specified but it is required when building RoutingProfileQueueReference",
                 )
             })?,
             channel: self.channel.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "channel",
                     "channel was not specified but it is required when building RoutingProfileQueueReference",
                 )

@@ -4,7 +4,7 @@
 #[derive(::std::fmt::Debug)]
 pub struct GetPackageVersionAssetOutput {
     /// <p> The binary file, or asset, that is downloaded.</p>
-    pub asset: ::aws_smithy_http::byte_stream::ByteStream,
+    pub asset: ::aws_smithy_types::byte_stream::ByteStream,
     /// <p> The name of the asset that is downloaded. </p>
     pub asset_name: ::std::option::Option<::std::string::String>,
     /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
@@ -15,7 +15,7 @@ pub struct GetPackageVersionAssetOutput {
 }
 impl GetPackageVersionAssetOutput {
     /// <p> The binary file, or asset, that is downloaded.</p>
-    pub fn asset(&self) -> &::aws_smithy_http::byte_stream::ByteStream {
+    pub fn asset(&self) -> &::aws_smithy_types::byte_stream::ByteStream {
         &self.asset
     }
     /// <p> The name of the asset that is downloaded. </p>
@@ -47,7 +47,7 @@ impl GetPackageVersionAssetOutput {
 #[non_exhaustive]
 #[derive(::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPackageVersionAssetOutputBuilder {
-    pub(crate) asset: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
+    pub(crate) asset: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>,
     pub(crate) asset_name: ::std::option::Option<::std::string::String>,
     pub(crate) package_version: ::std::option::Option<::std::string::String>,
     pub(crate) package_version_revision: ::std::option::Option<::std::string::String>,
@@ -55,17 +55,17 @@ pub struct GetPackageVersionAssetOutputBuilder {
 }
 impl GetPackageVersionAssetOutputBuilder {
     /// <p> The binary file, or asset, that is downloaded.</p>
-    pub fn asset(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
+    pub fn asset(mut self, input: ::aws_smithy_types::byte_stream::ByteStream) -> Self {
         self.asset = ::std::option::Option::Some(input);
         self
     }
     /// <p> The binary file, or asset, that is downloaded.</p>
-    pub fn set_asset(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
+    pub fn set_asset(mut self, input: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>) -> Self {
         self.asset = input;
         self
     }
     /// <p> The binary file, or asset, that is downloaded.</p>
-    pub fn get_asset(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+    pub fn get_asset(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
         &self.asset
     }
     /// <p> The name of the asset that is downloaded. </p>

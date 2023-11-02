@@ -109,10 +109,10 @@ impl DelimitedTextImportOptionsBuilder {
     /// Consumes the builder and constructs a [`DelimitedTextImportOptions`](crate::types::DelimitedTextImportOptions).
     /// This method will fail if any of the following fields are not set:
     /// - [`delimiter`](crate::types::builders::DelimitedTextImportOptionsBuilder::delimiter)
-    pub fn build(self) -> ::std::result::Result<crate::types::DelimitedTextImportOptions, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DelimitedTextImportOptions, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DelimitedTextImportOptions {
             delimiter: self.delimiter.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "delimiter",
                     "delimiter was not specified but it is required when building DelimitedTextImportOptions",
                 )

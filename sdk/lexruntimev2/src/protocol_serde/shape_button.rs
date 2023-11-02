@@ -2,7 +2,7 @@
 pub fn ser_button(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Button,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("text").string(input.text.as_str());
     }

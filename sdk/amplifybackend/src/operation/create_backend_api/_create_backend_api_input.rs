@@ -111,7 +111,7 @@ impl CreateBackendApiInputBuilder {
     /// Consumes the builder and constructs a [`CreateBackendApiInput`](crate::operation::create_backend_api::CreateBackendApiInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_backend_api::CreateBackendApiInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_backend_api::CreateBackendApiInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_backend_api::CreateBackendApiInput {
             app_id: self.app_id,
             backend_environment_name: self.backend_environment_name,

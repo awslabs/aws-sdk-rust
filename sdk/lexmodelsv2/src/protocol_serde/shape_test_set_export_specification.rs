@@ -46,7 +46,7 @@ where
 pub fn ser_test_set_export_specification(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TestSetExportSpecification,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("testSetId").string(input.test_set_id.as_str());
     }

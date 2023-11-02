@@ -68,7 +68,7 @@ impl DeleteProfileObjectTypeInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_profile_object_type::DeleteProfileObjectTypeInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_profile_object_type::DeleteProfileObjectTypeInput {
             domain_name: self.domain_name,

@@ -89,16 +89,16 @@ impl FolderConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::FolderConfigurationBuilder::name)
     /// - [`action`](crate::types::builders::FolderConfigurationBuilder::action)
-    pub fn build(self) -> ::std::result::Result<crate::types::FolderConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::FolderConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FolderConfiguration {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building FolderConfiguration",
                 )
             })?,
             action: self.action.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "action",
                     "action was not specified but it is required when building FolderConfiguration",
                 )

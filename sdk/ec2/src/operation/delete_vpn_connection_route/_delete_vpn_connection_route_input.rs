@@ -69,7 +69,7 @@ impl DeleteVpnConnectionRouteInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_vpn_connection_route::DeleteVpnConnectionRouteInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_vpn_connection_route::DeleteVpnConnectionRouteInput {
             destination_cidr_block: self.destination_cidr_block,

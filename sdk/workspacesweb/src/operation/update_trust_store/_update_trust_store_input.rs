@@ -128,7 +128,7 @@ impl UpdateTrustStoreInputBuilder {
     /// Consumes the builder and constructs a [`UpdateTrustStoreInput`](crate::operation::update_trust_store::UpdateTrustStoreInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_trust_store::UpdateTrustStoreInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_trust_store::UpdateTrustStoreInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_trust_store::UpdateTrustStoreInput {
             trust_store_arn: self.trust_store_arn,
             certificates_to_add: self.certificates_to_add,

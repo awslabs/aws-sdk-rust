@@ -83,7 +83,7 @@ impl ListOrdersInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListOrdersInput`](crate::operation::list_orders::ListOrdersInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_orders::ListOrdersInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_orders::ListOrdersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_orders::ListOrdersInput {
             outpost_identifier_filter: self.outpost_identifier_filter,
             next_token: self.next_token,

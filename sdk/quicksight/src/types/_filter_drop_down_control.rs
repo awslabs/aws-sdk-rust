@@ -198,22 +198,22 @@ impl FilterDropDownControlBuilder {
     /// - [`filter_control_id`](crate::types::builders::FilterDropDownControlBuilder::filter_control_id)
     /// - [`title`](crate::types::builders::FilterDropDownControlBuilder::title)
     /// - [`source_filter_id`](crate::types::builders::FilterDropDownControlBuilder::source_filter_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::FilterDropDownControl, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::FilterDropDownControl, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FilterDropDownControl {
             filter_control_id: self.filter_control_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "filter_control_id",
                     "filter_control_id was not specified but it is required when building FilterDropDownControl",
                 )
             })?,
             title: self.title.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "title",
                     "title was not specified but it is required when building FilterDropDownControl",
                 )
             })?,
             source_filter_id: self.source_filter_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source_filter_id",
                     "source_filter_id was not specified but it is required when building FilterDropDownControl",
                 )

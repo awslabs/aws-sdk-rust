@@ -108,7 +108,7 @@ impl RestoreServerInputBuilder {
     /// Consumes the builder and constructs a [`RestoreServerInput`](crate::operation::restore_server::RestoreServerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::restore_server::RestoreServerInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::restore_server::RestoreServerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::restore_server::RestoreServerInput {
             backup_id: self.backup_id,
             server_name: self.server_name,

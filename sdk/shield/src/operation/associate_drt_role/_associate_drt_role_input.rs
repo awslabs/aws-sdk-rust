@@ -49,7 +49,7 @@ impl AssociateDrtRoleInputBuilder {
     /// Consumes the builder and constructs a [`AssociateDrtRoleInput`](crate::operation::associate_drt_role::AssociateDrtRoleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::associate_drt_role::AssociateDrtRoleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::associate_drt_role::AssociateDrtRoleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::associate_drt_role::AssociateDrtRoleInput { role_arn: self.role_arn })
     }
 }

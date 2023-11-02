@@ -133,7 +133,7 @@ impl PutGroupPolicyInputBuilder {
     /// Consumes the builder and constructs a [`PutGroupPolicyInput`](crate::operation::put_group_policy::PutGroupPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_group_policy::PutGroupPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_group_policy::PutGroupPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_group_policy::PutGroupPolicyInput {
             group_name: self.group_name,
             policy_name: self.policy_name,

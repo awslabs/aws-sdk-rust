@@ -45,7 +45,7 @@ impl CheckDnsAvailabilityInputBuilder {
     /// Consumes the builder and constructs a [`CheckDnsAvailabilityInput`](crate::operation::check_dns_availability::CheckDnsAvailabilityInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::check_dns_availability::CheckDnsAvailabilityInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::check_dns_availability::CheckDnsAvailabilityInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::check_dns_availability::CheckDnsAvailabilityInput {
             cname_prefix: self.cname_prefix,

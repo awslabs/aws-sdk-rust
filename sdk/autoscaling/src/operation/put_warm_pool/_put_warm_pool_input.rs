@@ -146,7 +146,7 @@ impl PutWarmPoolInputBuilder {
         &self.instance_reuse_policy
     }
     /// Consumes the builder and constructs a [`PutWarmPoolInput`](crate::operation::put_warm_pool::PutWarmPoolInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_warm_pool::PutWarmPoolInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_warm_pool::PutWarmPoolInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_warm_pool::PutWarmPoolInput {
             auto_scaling_group_name: self.auto_scaling_group_name,
             max_group_prepared_capacity: self.max_group_prepared_capacity,

@@ -224,29 +224,29 @@ impl ListGeofenceResponseEntryBuilder {
     /// - [`status`](crate::types::builders::ListGeofenceResponseEntryBuilder::status)
     /// - [`create_time`](crate::types::builders::ListGeofenceResponseEntryBuilder::create_time)
     /// - [`update_time`](crate::types::builders::ListGeofenceResponseEntryBuilder::update_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::ListGeofenceResponseEntry, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ListGeofenceResponseEntry, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ListGeofenceResponseEntry {
             geofence_id: self.geofence_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "geofence_id",
                     "geofence_id was not specified but it is required when building ListGeofenceResponseEntry",
                 )
             })?,
             geometry: self.geometry,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building ListGeofenceResponseEntry",
                 )
             })?,
             create_time: self.create_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "create_time",
                     "create_time was not specified but it is required when building ListGeofenceResponseEntry",
                 )
             })?,
             update_time: self.update_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "update_time",
                     "update_time was not specified but it is required when building ListGeofenceResponseEntry",
                 )

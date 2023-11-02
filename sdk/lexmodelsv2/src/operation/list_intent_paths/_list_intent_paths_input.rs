@@ -164,7 +164,7 @@ impl ListIntentPathsInputBuilder {
     /// Consumes the builder and constructs a [`ListIntentPathsInput`](crate::operation::list_intent_paths::ListIntentPathsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_intent_paths::ListIntentPathsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_intent_paths::ListIntentPathsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_intent_paths::ListIntentPathsInput {
             bot_id: self.bot_id,
             start_date_time: self.start_date_time,

@@ -125,17 +125,17 @@ impl ScheduleActivityTaskFailedEventAttributesBuilder {
     /// - [`cause`](crate::types::builders::ScheduleActivityTaskFailedEventAttributesBuilder::cause)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::ScheduleActivityTaskFailedEventAttributes, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::ScheduleActivityTaskFailedEventAttributes, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ScheduleActivityTaskFailedEventAttributes {
             activity_type: self.activity_type,
             activity_id: self.activity_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "activity_id",
                     "activity_id was not specified but it is required when building ScheduleActivityTaskFailedEventAttributes",
                 )
             })?,
             cause: self.cause.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "cause",
                     "cause was not specified but it is required when building ScheduleActivityTaskFailedEventAttributes",
                 )

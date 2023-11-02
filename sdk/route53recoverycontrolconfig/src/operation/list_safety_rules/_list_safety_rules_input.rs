@@ -86,7 +86,7 @@ impl ListSafetyRulesInputBuilder {
     /// Consumes the builder and constructs a [`ListSafetyRulesInput`](crate::operation::list_safety_rules::ListSafetyRulesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_safety_rules::ListSafetyRulesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_safety_rules::ListSafetyRulesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_safety_rules::ListSafetyRulesInput {
             control_panel_arn: self.control_panel_arn,
             max_results: self.max_results,

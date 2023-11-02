@@ -173,7 +173,7 @@ impl FailoverGlobalClusterInputBuilder {
     /// Consumes the builder and constructs a [`FailoverGlobalClusterInput`](crate::operation::failover_global_cluster::FailoverGlobalClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::failover_global_cluster::FailoverGlobalClusterInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::failover_global_cluster::FailoverGlobalClusterInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::failover_global_cluster::FailoverGlobalClusterInput {
             global_cluster_identifier: self.global_cluster_identifier,

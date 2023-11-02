@@ -2,7 +2,7 @@
 pub fn ser_lake_formation_tag_policy_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LakeFormationTagPolicyDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.database {
         object.key("Database").string(var_1.as_str());
     }

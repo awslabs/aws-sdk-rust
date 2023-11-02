@@ -46,7 +46,7 @@ impl DescribeAppImageConfigInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_app_image_config::DescribeAppImageConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_app_image_config::DescribeAppImageConfigInput {
             app_image_config_name: self.app_image_config_name,

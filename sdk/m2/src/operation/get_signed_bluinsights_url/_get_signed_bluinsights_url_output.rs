@@ -65,11 +65,11 @@ impl GetSignedBluinsightsUrlOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_signed_bluinsights_url::GetSignedBluinsightsUrlOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_signed_bluinsights_url::GetSignedBluinsightsUrlOutput {
             signed_bi_url: self.signed_bi_url.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "signed_bi_url",
                     "signed_bi_url was not specified but it is required when building GetSignedBluinsightsUrlOutput",
                 )

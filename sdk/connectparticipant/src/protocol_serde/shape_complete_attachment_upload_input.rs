@@ -2,7 +2,7 @@
 pub fn ser_complete_attachment_upload_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::complete_attachment_upload::CompleteAttachmentUploadInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.attachment_ids {
         let mut array_2 = object.key("AttachmentIds").start_array();
         for item_3 in var_1 {

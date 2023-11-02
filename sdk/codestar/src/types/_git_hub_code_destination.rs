@@ -196,23 +196,23 @@ impl GitHubCodeDestinationBuilder {
     /// - [`r#type`](crate::types::builders::GitHubCodeDestinationBuilder::r#type)
     /// - [`owner`](crate::types::builders::GitHubCodeDestinationBuilder::owner)
     /// - [`token`](crate::types::builders::GitHubCodeDestinationBuilder::token)
-    pub fn build(self) -> ::std::result::Result<crate::types::GitHubCodeDestination, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::GitHubCodeDestination, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::GitHubCodeDestination {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building GitHubCodeDestination",
                 )
             })?,
             description: self.description,
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building GitHubCodeDestination",
                 )
             })?,
             owner: self.owner.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "owner",
                     "owner was not specified but it is required when building GitHubCodeDestination",
                 )
@@ -220,7 +220,7 @@ impl GitHubCodeDestinationBuilder {
             private_repository: self.private_repository.unwrap_or_default(),
             issues_enabled: self.issues_enabled.unwrap_or_default(),
             token: self.token.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "token",
                     "token was not specified but it is required when building GitHubCodeDestination",
                 )

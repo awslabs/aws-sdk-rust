@@ -317,7 +317,7 @@ impl UpdateTrialComponentInputBuilder {
     /// Consumes the builder and constructs a [`UpdateTrialComponentInput`](crate::operation::update_trial_component::UpdateTrialComponentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_trial_component::UpdateTrialComponentInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_trial_component::UpdateTrialComponentInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_trial_component::UpdateTrialComponentInput {
             trial_component_name: self.trial_component_name,

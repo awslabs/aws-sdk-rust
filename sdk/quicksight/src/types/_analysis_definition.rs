@@ -235,10 +235,10 @@ impl AnalysisDefinitionBuilder {
     /// Consumes the builder and constructs a [`AnalysisDefinition`](crate::types::AnalysisDefinition).
     /// This method will fail if any of the following fields are not set:
     /// - [`data_set_identifier_declarations`](crate::types::builders::AnalysisDefinitionBuilder::data_set_identifier_declarations)
-    pub fn build(self) -> ::std::result::Result<crate::types::AnalysisDefinition, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AnalysisDefinition, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AnalysisDefinition {
             data_set_identifier_declarations: self.data_set_identifier_declarations.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_set_identifier_declarations",
                     "data_set_identifier_declarations was not specified but it is required when building AnalysisDefinition",
                 )

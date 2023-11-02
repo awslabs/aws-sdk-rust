@@ -91,16 +91,16 @@ impl CloudwatchLogsActionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`role_arn`](crate::types::builders::CloudwatchLogsActionBuilder::role_arn)
     /// - [`log_group_name`](crate::types::builders::CloudwatchLogsActionBuilder::log_group_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::CloudwatchLogsAction, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CloudwatchLogsAction, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CloudwatchLogsAction {
             role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role_arn",
                     "role_arn was not specified but it is required when building CloudwatchLogsAction",
                 )
             })?,
             log_group_name: self.log_group_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "log_group_name",
                     "log_group_name was not specified but it is required when building CloudwatchLogsAction",
                 )

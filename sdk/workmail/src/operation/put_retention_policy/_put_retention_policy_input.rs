@@ -148,7 +148,8 @@ impl PutRetentionPolicyInputBuilder {
     /// Consumes the builder and constructs a [`PutRetentionPolicyInput`](crate::operation::put_retention_policy::PutRetentionPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_retention_policy::PutRetentionPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_retention_policy::PutRetentionPolicyInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::put_retention_policy::PutRetentionPolicyInput {
             organization_id: self.organization_id,
             id: self.id,

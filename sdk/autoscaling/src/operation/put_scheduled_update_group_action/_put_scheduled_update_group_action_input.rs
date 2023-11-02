@@ -266,7 +266,7 @@ impl PutScheduledUpdateGroupActionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_scheduled_update_group_action::PutScheduledUpdateGroupActionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_scheduled_update_group_action::PutScheduledUpdateGroupActionInput {
             auto_scaling_group_name: self.auto_scaling_group_name,

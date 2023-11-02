@@ -69,7 +69,7 @@ impl TransferDomainToAnotherAwsAccountInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::transfer_domain_to_another_aws_account::TransferDomainToAnotherAwsAccountInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::transfer_domain_to_another_aws_account::TransferDomainToAnotherAwsAccountInput {

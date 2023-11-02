@@ -66,7 +66,7 @@ impl DeleteRateBasedRuleInputBuilder {
     /// Consumes the builder and constructs a [`DeleteRateBasedRuleInput`](crate::operation::delete_rate_based_rule::DeleteRateBasedRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_rate_based_rule::DeleteRateBasedRuleInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_rate_based_rule::DeleteRateBasedRuleInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_rate_based_rule::DeleteRateBasedRuleInput {
             rule_id: self.rule_id,

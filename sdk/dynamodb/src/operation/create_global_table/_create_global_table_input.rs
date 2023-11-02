@@ -73,7 +73,7 @@ impl CreateGlobalTableInputBuilder {
     /// Consumes the builder and constructs a [`CreateGlobalTableInput`](crate::operation::create_global_table::CreateGlobalTableInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_global_table::CreateGlobalTableInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_global_table::CreateGlobalTableInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_global_table::CreateGlobalTableInput {
             global_table_name: self.global_table_name,
             replication_group: self.replication_group,

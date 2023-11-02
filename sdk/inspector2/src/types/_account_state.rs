@@ -90,10 +90,10 @@ impl AccountStateBuilder {
     /// Consumes the builder and constructs a [`AccountState`](crate::types::AccountState).
     /// This method will fail if any of the following fields are not set:
     /// - [`account_id`](crate::types::builders::AccountStateBuilder::account_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::AccountState, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AccountState, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AccountState {
             account_id: self.account_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "account_id",
                     "account_id was not specified but it is required when building AccountState",
                 )

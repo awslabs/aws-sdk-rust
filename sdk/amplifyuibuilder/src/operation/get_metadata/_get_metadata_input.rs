@@ -64,7 +64,7 @@ impl GetMetadataInputBuilder {
         &self.environment_name
     }
     /// Consumes the builder and constructs a [`GetMetadataInput`](crate::operation::get_metadata::GetMetadataInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_metadata::GetMetadataInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_metadata::GetMetadataInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_metadata::GetMetadataInput {
             app_id: self.app_id,
             environment_name: self.environment_name,

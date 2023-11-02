@@ -126,7 +126,7 @@ impl SearchUsersInputBuilder {
         &self.max_users
     }
     /// Consumes the builder and constructs a [`SearchUsersInput`](crate::operation::search_users::SearchUsersInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::search_users::SearchUsersInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::search_users::SearchUsersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_users::SearchUsersInput {
             collection_id: self.collection_id,
             user_id: self.user_id,

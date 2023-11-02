@@ -2,7 +2,7 @@
 pub fn ser_put_sink_policy_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_sink_policy::PutSinkPolicyInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.policy {
         object.key("Policy").string(var_1.as_str());
     }

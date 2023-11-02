@@ -2,7 +2,7 @@
 pub fn ser_automation_rules_finding_fields_update(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AutomationRulesFindingFieldsUpdate,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.note {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Note").start_object();

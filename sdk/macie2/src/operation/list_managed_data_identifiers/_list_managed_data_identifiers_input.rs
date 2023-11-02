@@ -45,7 +45,7 @@ impl ListManagedDataIdentifiersInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_managed_data_identifiers::ListManagedDataIdentifiersInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_managed_data_identifiers::ListManagedDataIdentifiersInput { next_token: self.next_token })
     }

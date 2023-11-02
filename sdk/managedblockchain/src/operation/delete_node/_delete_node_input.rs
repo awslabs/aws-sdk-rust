@@ -115,7 +115,7 @@ impl DeleteNodeInputBuilder {
         &self.node_id
     }
     /// Consumes the builder and constructs a [`DeleteNodeInput`](crate::operation::delete_node::DeleteNodeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_node::DeleteNodeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_node::DeleteNodeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_node::DeleteNodeInput {
             network_id: self.network_id,
             member_id: self.member_id,

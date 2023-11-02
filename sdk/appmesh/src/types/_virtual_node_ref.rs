@@ -211,52 +211,52 @@ impl VirtualNodeRefBuilder {
     /// - [`version`](crate::types::builders::VirtualNodeRefBuilder::version)
     /// - [`created_at`](crate::types::builders::VirtualNodeRefBuilder::created_at)
     /// - [`last_updated_at`](crate::types::builders::VirtualNodeRefBuilder::last_updated_at)
-    pub fn build(self) -> ::std::result::Result<crate::types::VirtualNodeRef, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::VirtualNodeRef, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::VirtualNodeRef {
             mesh_name: self.mesh_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "mesh_name",
                     "mesh_name was not specified but it is required when building VirtualNodeRef",
                 )
             })?,
             virtual_node_name: self.virtual_node_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "virtual_node_name",
                     "virtual_node_name was not specified but it is required when building VirtualNodeRef",
                 )
             })?,
             mesh_owner: self.mesh_owner.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "mesh_owner",
                     "mesh_owner was not specified but it is required when building VirtualNodeRef",
                 )
             })?,
             resource_owner: self.resource_owner.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_owner",
                     "resource_owner was not specified but it is required when building VirtualNodeRef",
                 )
             })?,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building VirtualNodeRef",
                 )
             })?,
             version: self.version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "version",
                     "version was not specified but it is required when building VirtualNodeRef",
                 )
             })?,
             created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
                     "created_at was not specified but it is required when building VirtualNodeRef",
                 )
             })?,
             last_updated_at: self.last_updated_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_updated_at",
                     "last_updated_at was not specified but it is required when building VirtualNodeRef",
                 )

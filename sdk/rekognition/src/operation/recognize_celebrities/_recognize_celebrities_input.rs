@@ -49,7 +49,7 @@ impl RecognizeCelebritiesInputBuilder {
     /// Consumes the builder and constructs a [`RecognizeCelebritiesInput`](crate::operation::recognize_celebrities::RecognizeCelebritiesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::recognize_celebrities::RecognizeCelebritiesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::recognize_celebrities::RecognizeCelebritiesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::recognize_celebrities::RecognizeCelebritiesInput { image: self.image })
     }

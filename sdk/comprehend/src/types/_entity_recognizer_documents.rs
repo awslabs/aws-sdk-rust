@@ -88,10 +88,10 @@ impl EntityRecognizerDocumentsBuilder {
     /// Consumes the builder and constructs a [`EntityRecognizerDocuments`](crate::types::EntityRecognizerDocuments).
     /// This method will fail if any of the following fields are not set:
     /// - [`s3_uri`](crate::types::builders::EntityRecognizerDocumentsBuilder::s3_uri)
-    pub fn build(self) -> ::std::result::Result<crate::types::EntityRecognizerDocuments, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::EntityRecognizerDocuments, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EntityRecognizerDocuments {
             s3_uri: self.s3_uri.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "s3_uri",
                     "s3_uri was not specified but it is required when building EntityRecognizerDocuments",
                 )

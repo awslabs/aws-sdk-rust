@@ -43,7 +43,9 @@ impl PauseClusterInputBuilder {
         &self.cluster_identifier
     }
     /// Consumes the builder and constructs a [`PauseClusterInput`](crate::operation::pause_cluster::PauseClusterInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::pause_cluster::PauseClusterInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::pause_cluster::PauseClusterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::pause_cluster::PauseClusterInput {
             cluster_identifier: self.cluster_identifier,
         })

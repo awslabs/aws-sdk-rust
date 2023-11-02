@@ -67,10 +67,10 @@ impl ResourceTagBuilder {
     /// Consumes the builder and constructs a [`ResourceTag`](crate::types::ResourceTag).
     /// This method will fail if any of the following fields are not set:
     /// - [`resource_tag_key`](crate::types::builders::ResourceTagBuilder::resource_tag_key)
-    pub fn build(self) -> ::std::result::Result<crate::types::ResourceTag, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ResourceTag, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ResourceTag {
             resource_tag_key: self.resource_tag_key.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_tag_key",
                     "resource_tag_key was not specified but it is required when building ResourceTag",
                 )

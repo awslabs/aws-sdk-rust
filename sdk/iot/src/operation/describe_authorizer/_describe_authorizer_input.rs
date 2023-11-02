@@ -44,7 +44,7 @@ impl DescribeAuthorizerInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAuthorizerInput`](crate::operation::describe_authorizer::DescribeAuthorizerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_authorizer::DescribeAuthorizerInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_authorizer::DescribeAuthorizerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_authorizer::DescribeAuthorizerInput {
             authorizer_name: self.authorizer_name,
         })

@@ -69,7 +69,7 @@ impl DescribeRuleGroupsNamespaceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_rule_groups_namespace::DescribeRuleGroupsNamespaceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_rule_groups_namespace::DescribeRuleGroupsNamespaceInput {
             workspace_id: self.workspace_id,

@@ -89,11 +89,11 @@ impl ListReplicationSetsOutputBuilder {
     /// - [`replication_set_arns`](crate::operation::list_replication_sets::builders::ListReplicationSetsOutputBuilder::replication_set_arns)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_replication_sets::ListReplicationSetsOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_replication_sets::ListReplicationSetsOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_replication_sets::ListReplicationSetsOutput {
             replication_set_arns: self.replication_set_arns.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "replication_set_arns",
                     "replication_set_arns was not specified but it is required when building ListReplicationSetsOutput",
                 )

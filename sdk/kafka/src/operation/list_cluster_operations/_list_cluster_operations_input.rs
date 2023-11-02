@@ -86,7 +86,7 @@ impl ListClusterOperationsInputBuilder {
     /// Consumes the builder and constructs a [`ListClusterOperationsInput`](crate::operation::list_cluster_operations::ListClusterOperationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_cluster_operations::ListClusterOperationsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_cluster_operations::ListClusterOperationsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_cluster_operations::ListClusterOperationsInput {
             cluster_arn: self.cluster_arn,

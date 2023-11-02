@@ -2,7 +2,7 @@
 pub fn ser_endpoint_event_bus(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EndpointEventBus,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("EventBusArn").string(input.event_bus_arn.as_str());
     }

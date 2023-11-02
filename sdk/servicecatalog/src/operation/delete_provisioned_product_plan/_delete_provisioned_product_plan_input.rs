@@ -108,7 +108,7 @@ impl DeleteProvisionedProductPlanInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_provisioned_product_plan::DeleteProvisionedProductPlanInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_provisioned_product_plan::DeleteProvisionedProductPlanInput {
             accept_language: self.accept_language,

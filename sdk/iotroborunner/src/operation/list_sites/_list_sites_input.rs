@@ -62,7 +62,7 @@ impl ListSitesInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListSitesInput`](crate::operation::list_sites::ListSitesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_sites::ListSitesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_sites::ListSitesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_sites::ListSitesInput {
             max_results: self.max_results,
             next_token: self.next_token,

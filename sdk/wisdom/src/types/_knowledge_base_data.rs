@@ -282,34 +282,34 @@ impl KnowledgeBaseDataBuilder {
     /// - [`name`](crate::types::builders::KnowledgeBaseDataBuilder::name)
     /// - [`knowledge_base_type`](crate::types::builders::KnowledgeBaseDataBuilder::knowledge_base_type)
     /// - [`status`](crate::types::builders::KnowledgeBaseDataBuilder::status)
-    pub fn build(self) -> ::std::result::Result<crate::types::KnowledgeBaseData, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::KnowledgeBaseData, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::KnowledgeBaseData {
             knowledge_base_id: self.knowledge_base_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "knowledge_base_id",
                     "knowledge_base_id was not specified but it is required when building KnowledgeBaseData",
                 )
             })?,
             knowledge_base_arn: self.knowledge_base_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "knowledge_base_arn",
                     "knowledge_base_arn was not specified but it is required when building KnowledgeBaseData",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building KnowledgeBaseData",
                 )
             })?,
             knowledge_base_type: self.knowledge_base_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "knowledge_base_type",
                     "knowledge_base_type was not specified but it is required when building KnowledgeBaseData",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building KnowledgeBaseData",
                 )

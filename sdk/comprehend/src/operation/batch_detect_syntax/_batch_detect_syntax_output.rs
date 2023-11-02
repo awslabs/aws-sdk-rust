@@ -106,16 +106,16 @@ impl BatchDetectSyntaxOutputBuilder {
     /// - [`error_list`](crate::operation::batch_detect_syntax::builders::BatchDetectSyntaxOutputBuilder::error_list)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_detect_syntax::BatchDetectSyntaxOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::batch_detect_syntax::BatchDetectSyntaxOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::batch_detect_syntax::BatchDetectSyntaxOutput {
             result_list: self.result_list.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "result_list",
                     "result_list was not specified but it is required when building BatchDetectSyntaxOutput",
                 )
             })?,
             error_list: self.error_list.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "error_list",
                     "error_list was not specified but it is required when building BatchDetectSyntaxOutput",
                 )

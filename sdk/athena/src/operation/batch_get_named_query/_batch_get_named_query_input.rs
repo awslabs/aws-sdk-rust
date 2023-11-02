@@ -52,7 +52,7 @@ impl BatchGetNamedQueryInputBuilder {
     /// Consumes the builder and constructs a [`BatchGetNamedQueryInput`](crate::operation::batch_get_named_query::BatchGetNamedQueryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_get_named_query::BatchGetNamedQueryInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::batch_get_named_query::BatchGetNamedQueryInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::batch_get_named_query::BatchGetNamedQueryInput {
             named_query_ids: self.named_query_ids,

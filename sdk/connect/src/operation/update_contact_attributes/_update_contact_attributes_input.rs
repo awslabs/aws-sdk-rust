@@ -100,7 +100,7 @@ impl UpdateContactAttributesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_contact_attributes::UpdateContactAttributesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_contact_attributes::UpdateContactAttributesInput {
             initial_contact_id: self.initial_contact_id,

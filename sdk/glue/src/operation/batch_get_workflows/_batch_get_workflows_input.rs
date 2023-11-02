@@ -72,7 +72,7 @@ impl BatchGetWorkflowsInputBuilder {
     /// Consumes the builder and constructs a [`BatchGetWorkflowsInput`](crate::operation::batch_get_workflows::BatchGetWorkflowsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_get_workflows::BatchGetWorkflowsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::batch_get_workflows::BatchGetWorkflowsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::batch_get_workflows::BatchGetWorkflowsInput {
             names: self.names,
             include_graph: self.include_graph,

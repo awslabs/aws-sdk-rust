@@ -129,10 +129,10 @@ impl AwsManagedRulesAtpRuleSetBuilder {
     /// Consumes the builder and constructs a [`AwsManagedRulesAtpRuleSet`](crate::types::AwsManagedRulesAtpRuleSet).
     /// This method will fail if any of the following fields are not set:
     /// - [`login_path`](crate::types::builders::AwsManagedRulesAtpRuleSetBuilder::login_path)
-    pub fn build(self) -> ::std::result::Result<crate::types::AwsManagedRulesAtpRuleSet, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AwsManagedRulesAtpRuleSet, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AwsManagedRulesAtpRuleSet {
             login_path: self.login_path.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "login_path",
                     "login_path was not specified but it is required when building AwsManagedRulesAtpRuleSet",
                 )

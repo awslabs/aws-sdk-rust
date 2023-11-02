@@ -96,17 +96,17 @@ impl KendraConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`kendra_index`](crate::types::builders::KendraConfigurationBuilder::kendra_index)
     /// - [`role`](crate::types::builders::KendraConfigurationBuilder::role)
-    pub fn build(self) -> ::std::result::Result<crate::types::KendraConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::KendraConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::KendraConfiguration {
             kendra_index: self.kendra_index.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "kendra_index",
                     "kendra_index was not specified but it is required when building KendraConfiguration",
                 )
             })?,
             query_filter_string: self.query_filter_string,
             role: self.role.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role",
                     "role was not specified but it is required when building KendraConfiguration",
                 )

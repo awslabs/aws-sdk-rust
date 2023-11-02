@@ -46,10 +46,10 @@ impl PagerDutyIncidentConfigurationBuilder {
     /// Consumes the builder and constructs a [`PagerDutyIncidentConfiguration`](crate::types::PagerDutyIncidentConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`service_id`](crate::types::builders::PagerDutyIncidentConfigurationBuilder::service_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::PagerDutyIncidentConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PagerDutyIncidentConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PagerDutyIncidentConfiguration {
             service_id: self.service_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "service_id",
                     "service_id was not specified but it is required when building PagerDutyIncidentConfiguration",
                 )

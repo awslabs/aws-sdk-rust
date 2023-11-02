@@ -239,16 +239,16 @@ impl BackupSelectionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`selection_name`](crate::types::builders::BackupSelectionBuilder::selection_name)
     /// - [`iam_role_arn`](crate::types::builders::BackupSelectionBuilder::iam_role_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::BackupSelection, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::BackupSelection, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::BackupSelection {
             selection_name: self.selection_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "selection_name",
                     "selection_name was not specified but it is required when building BackupSelection",
                 )
             })?,
             iam_role_arn: self.iam_role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "iam_role_arn",
                     "iam_role_arn was not specified but it is required when building BackupSelection",
                 )

@@ -109,7 +109,7 @@ impl ListSpeakerEnrollmentJobsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_speaker_enrollment_jobs::ListSpeakerEnrollmentJobsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_speaker_enrollment_jobs::ListSpeakerEnrollmentJobsInput {
             domain_id: self.domain_id,

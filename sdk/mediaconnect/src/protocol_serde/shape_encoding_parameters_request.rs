@@ -2,7 +2,7 @@
 pub fn ser_encoding_parameters_request(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EncodingParametersRequest,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.compression_factor {
         object.key("compressionFactor").number(
             #[allow(clippy::useless_conversion)]

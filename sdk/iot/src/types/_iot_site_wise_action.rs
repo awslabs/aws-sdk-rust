@@ -78,16 +78,16 @@ impl IotSiteWiseActionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`put_asset_property_value_entries`](crate::types::builders::IotSiteWiseActionBuilder::put_asset_property_value_entries)
     /// - [`role_arn`](crate::types::builders::IotSiteWiseActionBuilder::role_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::IotSiteWiseAction, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::IotSiteWiseAction, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::IotSiteWiseAction {
             put_asset_property_value_entries: self.put_asset_property_value_entries.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "put_asset_property_value_entries",
                     "put_asset_property_value_entries was not specified but it is required when building IotSiteWiseAction",
                 )
             })?,
             role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role_arn",
                     "role_arn was not specified but it is required when building IotSiteWiseAction",
                 )

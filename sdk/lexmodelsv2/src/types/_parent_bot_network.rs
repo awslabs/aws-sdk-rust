@@ -70,16 +70,16 @@ impl ParentBotNetworkBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`bot_id`](crate::types::builders::ParentBotNetworkBuilder::bot_id)
     /// - [`bot_version`](crate::types::builders::ParentBotNetworkBuilder::bot_version)
-    pub fn build(self) -> ::std::result::Result<crate::types::ParentBotNetwork, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ParentBotNetwork, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ParentBotNetwork {
             bot_id: self.bot_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "bot_id",
                     "bot_id was not specified but it is required when building ParentBotNetwork",
                 )
             })?,
             bot_version: self.bot_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "bot_version",
                     "bot_version was not specified but it is required when building ParentBotNetwork",
                 )

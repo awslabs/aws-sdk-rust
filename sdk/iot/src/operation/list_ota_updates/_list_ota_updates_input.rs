@@ -85,7 +85,7 @@ impl ListOtaUpdatesInputBuilder {
     /// Consumes the builder and constructs a [`ListOtaUpdatesInput`](crate::operation::list_ota_updates::ListOtaUpdatesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_ota_updates::ListOtaUpdatesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_ota_updates::ListOtaUpdatesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_ota_updates::ListOtaUpdatesInput {
             max_results: self.max_results,
             next_token: self.next_token,

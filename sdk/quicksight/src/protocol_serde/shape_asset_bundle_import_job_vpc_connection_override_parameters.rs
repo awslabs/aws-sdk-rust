@@ -2,7 +2,7 @@
 pub fn ser_asset_bundle_import_job_vpc_connection_override_parameters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AssetBundleImportJobVpcConnectionOverrideParameters,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("VPCConnectionId").string(input.vpc_connection_id.as_str());
     }

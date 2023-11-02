@@ -153,7 +153,7 @@ impl UpdateReplicationInfoInputBuilder {
     /// Consumes the builder and constructs a [`UpdateReplicationInfoInput`](crate::operation::update_replication_info::UpdateReplicationInfoInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_replication_info::UpdateReplicationInfoInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_replication_info::UpdateReplicationInfoInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_replication_info::UpdateReplicationInfoInput {
             consumer_group_replication: self.consumer_group_replication,

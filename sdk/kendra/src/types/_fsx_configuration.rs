@@ -224,16 +224,16 @@ impl FsxConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`file_system_id`](crate::types::builders::FsxConfigurationBuilder::file_system_id)
     /// - [`file_system_type`](crate::types::builders::FsxConfigurationBuilder::file_system_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::FsxConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::FsxConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FsxConfiguration {
             file_system_id: self.file_system_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "file_system_id",
                     "file_system_id was not specified but it is required when building FsxConfiguration",
                 )
             })?,
             file_system_type: self.file_system_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "file_system_type",
                     "file_system_type was not specified but it is required when building FsxConfiguration",
                 )

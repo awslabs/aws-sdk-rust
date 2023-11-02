@@ -238,7 +238,7 @@ impl CreateExperimentTemplateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_experiment_template::CreateExperimentTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_experiment_template::CreateExperimentTemplateInput {
             client_token: self.client_token,

@@ -271,7 +271,7 @@ impl RevokeSecurityGroupIngressInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::revoke_security_group_ingress::RevokeSecurityGroupIngressInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::revoke_security_group_ingress::RevokeSecurityGroupIngressInput {
             cidr_ip: self.cidr_ip,

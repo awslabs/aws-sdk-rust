@@ -141,7 +141,7 @@ impl ImportNotebookInputBuilder {
     /// Consumes the builder and constructs a [`ImportNotebookInput`](crate::operation::import_notebook::ImportNotebookInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::import_notebook::ImportNotebookInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::import_notebook::ImportNotebookInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::import_notebook::ImportNotebookInput {
             work_group: self.work_group,
             name: self.name,

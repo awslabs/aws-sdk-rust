@@ -91,17 +91,17 @@ impl S3BucketLogDestinationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`s3_bucket_arn`](crate::types::builders::S3BucketLogDestinationBuilder::s3_bucket_arn)
     /// - [`log_prefix`](crate::types::builders::S3BucketLogDestinationBuilder::log_prefix)
-    pub fn build(self) -> ::std::result::Result<crate::types::S3BucketLogDestination, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::S3BucketLogDestination, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::S3BucketLogDestination {
             kms_key_arn: self.kms_key_arn,
             s3_bucket_arn: self.s3_bucket_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "s3_bucket_arn",
                     "s3_bucket_arn was not specified but it is required when building S3BucketLogDestination",
                 )
             })?,
             log_prefix: self.log_prefix.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "log_prefix",
                     "log_prefix was not specified but it is required when building S3BucketLogDestination",
                 )

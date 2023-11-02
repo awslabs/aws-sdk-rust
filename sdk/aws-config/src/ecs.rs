@@ -442,11 +442,11 @@ mod test {
     use aws_credential_types::Credentials;
     use aws_smithy_async::future::never::Never;
     use aws_smithy_async::rt::sleep::TokioSleep;
-    use aws_smithy_http::body::SdkBody;
     use aws_smithy_runtime::client::http::test_util::{ReplayEvent, StaticReplayClient};
     use aws_smithy_runtime_api::client::dns::DnsFuture;
     use aws_smithy_runtime_api::client::http::HttpClient;
     use aws_smithy_runtime_api::shared::IntoShared;
+    use aws_smithy_types::body::SdkBody;
     use aws_types::os_shim_internal::Env;
     use futures_util::FutureExt;
     use http::header::AUTHORIZATION;

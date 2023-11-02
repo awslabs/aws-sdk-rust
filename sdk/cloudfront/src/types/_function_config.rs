@@ -69,16 +69,16 @@ impl FunctionConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`comment`](crate::types::builders::FunctionConfigBuilder::comment)
     /// - [`runtime`](crate::types::builders::FunctionConfigBuilder::runtime)
-    pub fn build(self) -> ::std::result::Result<crate::types::FunctionConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::FunctionConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FunctionConfig {
             comment: self.comment.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "comment",
                     "comment was not specified but it is required when building FunctionConfig",
                 )
             })?,
             runtime: self.runtime.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "runtime",
                     "runtime was not specified but it is required when building FunctionConfig",
                 )

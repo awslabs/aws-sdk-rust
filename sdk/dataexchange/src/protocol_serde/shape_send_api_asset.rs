@@ -114,13 +114,13 @@ pub fn de_send_api_asset_http_response(
 pub fn ser_send_api_asset_headers(
     input: &crate::operation::send_api_asset::SendApiAssetInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.asset_id {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
             let header_value = formatted_2;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "asset_id",
                     format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
@@ -133,7 +133,7 @@ pub fn ser_send_api_asset_headers(
         if !formatted_4.is_empty() {
             let header_value = formatted_4;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "data_set_id",
                     format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
@@ -146,7 +146,7 @@ pub fn ser_send_api_asset_headers(
         if !formatted_6.is_empty() {
             let header_value = formatted_6;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "method",
                     format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
@@ -159,7 +159,7 @@ pub fn ser_send_api_asset_headers(
         if !formatted_8.is_empty() {
             let header_value = formatted_8;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "path",
                     format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
@@ -172,7 +172,7 @@ pub fn ser_send_api_asset_headers(
         if !formatted_10.is_empty() {
             let header_value = formatted_10;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "revision_id",
                     format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
@@ -185,14 +185,14 @@ pub fn ser_send_api_asset_headers(
             for (k, v) in inner_11 {
                 use std::str::FromStr;
                 let header_name = http::header::HeaderName::from_str(&format!("{}{}", "x-amzn-dataexchange-header-", &k)).map_err(|err| {
-                    ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                    ::aws_smithy_types::error::operation::BuildError::invalid_field(
                         "request_headers",
                         format!("`{k}` cannot be used as a header name: {err}"),
                     )
                 })?;
                 let header_value = v.as_str();
                 let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                    ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                    ::aws_smithy_types::error::operation::BuildError::invalid_field(
                         "request_headers",
                         format!("`{}` cannot be used as a header value: {}", v, err),
                     )

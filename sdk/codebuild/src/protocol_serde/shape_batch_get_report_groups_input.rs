@@ -2,7 +2,7 @@
 pub fn ser_batch_get_report_groups_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::batch_get_report_groups::BatchGetReportGroupsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.report_group_arns {
         let mut array_2 = object.key("reportGroupArns").start_array();
         for item_3 in var_1 {

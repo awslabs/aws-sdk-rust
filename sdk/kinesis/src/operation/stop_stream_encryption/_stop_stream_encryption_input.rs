@@ -143,7 +143,7 @@ impl StopStreamEncryptionInputBuilder {
     /// Consumes the builder and constructs a [`StopStreamEncryptionInput`](crate::operation::stop_stream_encryption::StopStreamEncryptionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_stream_encryption::StopStreamEncryptionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::stop_stream_encryption::StopStreamEncryptionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::stop_stream_encryption::StopStreamEncryptionInput {
             stream_name: self.stream_name,

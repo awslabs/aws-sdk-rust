@@ -2,7 +2,7 @@
 pub fn ser_deregister_volume_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::deregister_volume::DeregisterVolumeInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.volume_id {
         object.key("VolumeId").string(var_1.as_str());
     }

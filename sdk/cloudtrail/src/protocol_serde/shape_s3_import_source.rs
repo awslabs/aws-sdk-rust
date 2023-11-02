@@ -58,7 +58,7 @@ where
 pub fn ser_s3_import_source(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::S3ImportSource,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("S3LocationUri").string(input.s3_location_uri.as_str());
     }

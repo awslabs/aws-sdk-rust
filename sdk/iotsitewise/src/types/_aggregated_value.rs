@@ -88,10 +88,10 @@ impl AggregatedValueBuilder {
     /// Consumes the builder and constructs a [`AggregatedValue`](crate::types::AggregatedValue).
     /// This method will fail if any of the following fields are not set:
     /// - [`timestamp`](crate::types::builders::AggregatedValueBuilder::timestamp)
-    pub fn build(self) -> ::std::result::Result<crate::types::AggregatedValue, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AggregatedValue, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AggregatedValue {
             timestamp: self.timestamp.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "timestamp",
                     "timestamp was not specified but it is required when building AggregatedValue",
                 )

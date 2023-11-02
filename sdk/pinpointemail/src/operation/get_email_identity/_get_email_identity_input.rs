@@ -45,7 +45,7 @@ impl GetEmailIdentityInputBuilder {
     /// Consumes the builder and constructs a [`GetEmailIdentityInput`](crate::operation::get_email_identity::GetEmailIdentityInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_email_identity::GetEmailIdentityInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_email_identity::GetEmailIdentityInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_email_identity::GetEmailIdentityInput {
             email_identity: self.email_identity,
         })

@@ -68,7 +68,7 @@ impl DescribeAccessControlConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_access_control_configuration::DescribeAccessControlConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_access_control_configuration::DescribeAccessControlConfigurationInput {

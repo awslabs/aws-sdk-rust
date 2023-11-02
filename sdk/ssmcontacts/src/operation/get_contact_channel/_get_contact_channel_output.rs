@@ -177,28 +177,28 @@ impl GetContactChannelOutputBuilder {
     /// - [`r#type`](crate::operation::get_contact_channel::builders::GetContactChannelOutputBuilder::r#type)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_contact_channel::GetContactChannelOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_contact_channel::GetContactChannelOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_contact_channel::GetContactChannelOutput {
             contact_arn: self.contact_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "contact_arn",
                     "contact_arn was not specified but it is required when building GetContactChannelOutput",
                 )
             })?,
             contact_channel_arn: self.contact_channel_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "contact_channel_arn",
                     "contact_channel_arn was not specified but it is required when building GetContactChannelOutput",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building GetContactChannelOutput",
                 )
             })?,
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building GetContactChannelOutput",
                 )

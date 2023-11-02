@@ -92,7 +92,7 @@ impl CreateRegistryInputBuilder {
     /// Consumes the builder and constructs a [`CreateRegistryInput`](crate::operation::create_registry::CreateRegistryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_registry::CreateRegistryInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_registry::CreateRegistryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_registry::CreateRegistryInput {
             registry_name: self.registry_name,
             description: self.description,

@@ -152,7 +152,7 @@ impl GetApplicationDateRangeKpiInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_application_date_range_kpi::GetApplicationDateRangeKpiInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_application_date_range_kpi::GetApplicationDateRangeKpiInput {
             application_id: self.application_id,

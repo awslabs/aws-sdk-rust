@@ -79,7 +79,9 @@ impl DeleteAccessInputBuilder {
         &self.external_id
     }
     /// Consumes the builder and constructs a [`DeleteAccessInput`](crate::operation::delete_access::DeleteAccessInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_access::DeleteAccessInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_access::DeleteAccessInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_access::DeleteAccessInput {
             server_id: self.server_id,
             external_id: self.external_id,

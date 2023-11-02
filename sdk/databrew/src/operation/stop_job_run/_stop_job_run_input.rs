@@ -64,7 +64,7 @@ impl StopJobRunInputBuilder {
         &self.run_id
     }
     /// Consumes the builder and constructs a [`StopJobRunInput`](crate::operation::stop_job_run::StopJobRunInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::stop_job_run::StopJobRunInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_job_run::StopJobRunInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_job_run::StopJobRunInput {
             name: self.name,
             run_id: self.run_id,

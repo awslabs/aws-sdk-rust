@@ -164,7 +164,7 @@ impl DescribeClustersInputBuilder {
     /// Consumes the builder and constructs a [`DescribeClustersInput`](crate::operation::describe_clusters::DescribeClustersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_clusters::DescribeClustersInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_clusters::DescribeClustersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_clusters::DescribeClustersInput {
             cluster_identifier: self.cluster_identifier,
             max_records: self.max_records,

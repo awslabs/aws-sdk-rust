@@ -68,7 +68,7 @@ impl GetStreamingSessionBackupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_streaming_session_backup::GetStreamingSessionBackupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_streaming_session_backup::GetStreamingSessionBackupInput {
             backup_id: self.backup_id,

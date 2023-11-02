@@ -44,7 +44,7 @@ impl DeletePhoneNumberInputBuilder {
     /// Consumes the builder and constructs a [`DeletePhoneNumberInput`](crate::operation::delete_phone_number::DeletePhoneNumberInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_phone_number::DeletePhoneNumberInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_phone_number::DeletePhoneNumberInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_phone_number::DeletePhoneNumberInput {
             phone_number_id: self.phone_number_id,
         })

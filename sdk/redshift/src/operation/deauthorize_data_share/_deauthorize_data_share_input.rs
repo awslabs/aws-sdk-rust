@@ -66,7 +66,7 @@ impl DeauthorizeDataShareInputBuilder {
     /// Consumes the builder and constructs a [`DeauthorizeDataShareInput`](crate::operation::deauthorize_data_share::DeauthorizeDataShareInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::deauthorize_data_share::DeauthorizeDataShareInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::deauthorize_data_share::DeauthorizeDataShareInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::deauthorize_data_share::DeauthorizeDataShareInput {
             data_share_arn: self.data_share_arn,

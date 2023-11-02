@@ -88,7 +88,7 @@ impl ListDetectorModelVersionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_detector_model_versions::ListDetectorModelVersionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_detector_model_versions::ListDetectorModelVersionsInput {
             detector_model_name: self.detector_model_name,

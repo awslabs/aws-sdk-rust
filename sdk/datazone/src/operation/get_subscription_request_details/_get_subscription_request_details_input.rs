@@ -68,7 +68,7 @@ impl GetSubscriptionRequestDetailsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_subscription_request_details::GetSubscriptionRequestDetailsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_subscription_request_details::GetSubscriptionRequestDetailsInput {
             domain_identifier: self.domain_identifier,

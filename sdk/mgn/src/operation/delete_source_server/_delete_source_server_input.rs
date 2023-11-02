@@ -65,7 +65,8 @@ impl DeleteSourceServerInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSourceServerInput`](crate::operation::delete_source_server::DeleteSourceServerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_source_server::DeleteSourceServerInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_source_server::DeleteSourceServerInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::delete_source_server::DeleteSourceServerInput {
             source_server_id: self.source_server_id,
             account_id: self.account_id,

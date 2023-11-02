@@ -2,7 +2,7 @@
 pub fn ser_parameter_slider_control(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ParameterSliderControl,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("ParameterControlId").string(input.parameter_control_id.as_str());
     }

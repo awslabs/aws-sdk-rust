@@ -132,16 +132,16 @@ impl S3ExportConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`bucket`](crate::types::builders::S3ExportConfigurationBuilder::bucket)
     /// - [`prefix`](crate::types::builders::S3ExportConfigurationBuilder::prefix)
-    pub fn build(self) -> ::std::result::Result<crate::types::S3ExportConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::S3ExportConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::S3ExportConfiguration {
             bucket: self.bucket.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "bucket",
                     "bucket was not specified but it is required when building S3ExportConfiguration",
                 )
             })?,
             prefix: self.prefix.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "prefix",
                     "prefix was not specified but it is required when building S3ExportConfiguration",
                 )

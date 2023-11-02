@@ -260,7 +260,7 @@ impl CreateLocationSmbInputBuilder {
     /// Consumes the builder and constructs a [`CreateLocationSmbInput`](crate::operation::create_location_smb::CreateLocationSmbInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_location_smb::CreateLocationSmbInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_location_smb::CreateLocationSmbInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_location_smb::CreateLocationSmbInput {
             subdirectory: self.subdirectory,
             server_hostname: self.server_hostname,

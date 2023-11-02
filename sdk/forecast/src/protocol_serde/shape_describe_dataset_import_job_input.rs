@@ -2,7 +2,7 @@
 pub fn ser_describe_dataset_import_job_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_dataset_import_job::DescribeDatasetImportJobInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.dataset_import_job_arn {
         object.key("DatasetImportJobArn").string(var_1.as_str());
     }

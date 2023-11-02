@@ -163,7 +163,7 @@ impl UpdateLinkInputBuilder {
         &self.provider
     }
     /// Consumes the builder and constructs a [`UpdateLinkInput`](crate::operation::update_link::UpdateLinkInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_link::UpdateLinkInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_link::UpdateLinkInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_link::UpdateLinkInput {
             global_network_id: self.global_network_id,
             link_id: self.link_id,

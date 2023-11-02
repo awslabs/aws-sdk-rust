@@ -114,28 +114,28 @@ impl GeospatialCoordinateBoundsBuilder {
     /// - [`south`](crate::types::builders::GeospatialCoordinateBoundsBuilder::south)
     /// - [`west`](crate::types::builders::GeospatialCoordinateBoundsBuilder::west)
     /// - [`east`](crate::types::builders::GeospatialCoordinateBoundsBuilder::east)
-    pub fn build(self) -> ::std::result::Result<crate::types::GeospatialCoordinateBounds, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::GeospatialCoordinateBounds, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::GeospatialCoordinateBounds {
             north: self.north.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "north",
                     "north was not specified but it is required when building GeospatialCoordinateBounds",
                 )
             })?,
             south: self.south.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "south",
                     "south was not specified but it is required when building GeospatialCoordinateBounds",
                 )
             })?,
             west: self.west.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "west",
                     "west was not specified but it is required when building GeospatialCoordinateBounds",
                 )
             })?,
             east: self.east.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "east",
                     "east was not specified but it is required when building GeospatialCoordinateBounds",
                 )

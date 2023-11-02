@@ -65,8 +65,10 @@ impl GetMlModelTrainingJobInputBuilder {
     /// Consumes the builder and constructs a [`GetMlModelTrainingJobInput`](crate::operation::get_ml_model_training_job::GetMlModelTrainingJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_ml_model_training_job::GetMlModelTrainingJobInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::get_ml_model_training_job::GetMlModelTrainingJobInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::get_ml_model_training_job::GetMlModelTrainingJobInput {
             id: self.id,
             neptune_iam_role_arn: self.neptune_iam_role_arn,

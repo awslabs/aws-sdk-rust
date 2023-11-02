@@ -44,7 +44,7 @@ impl EnableProfileInputBuilder {
     /// Consumes the builder and constructs a [`EnableProfileInput`](crate::operation::enable_profile::EnableProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::enable_profile::EnableProfileInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::enable_profile::EnableProfileInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::enable_profile::EnableProfileInput { profile_id: self.profile_id })
     }
 }

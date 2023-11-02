@@ -123,8 +123,10 @@ impl DescribePatchBaselinesInputBuilder {
     /// Consumes the builder and constructs a [`DescribePatchBaselinesInput`](crate::operation::describe_patch_baselines::DescribePatchBaselinesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_patch_baselines::DescribePatchBaselinesInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::describe_patch_baselines::DescribePatchBaselinesInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::describe_patch_baselines::DescribePatchBaselinesInput {
             filters: self.filters,
             max_results: self.max_results,

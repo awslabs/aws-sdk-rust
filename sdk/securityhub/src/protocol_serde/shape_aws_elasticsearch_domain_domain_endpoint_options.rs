@@ -2,7 +2,7 @@
 pub fn ser_aws_elasticsearch_domain_domain_endpoint_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsElasticsearchDomainDomainEndpointOptions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.enforce_https {
         object.key("EnforceHTTPS").boolean(*var_1);
     }

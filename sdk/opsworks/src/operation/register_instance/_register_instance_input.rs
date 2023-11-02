@@ -170,7 +170,7 @@ impl RegisterInstanceInputBuilder {
     /// Consumes the builder and constructs a [`RegisterInstanceInput`](crate::operation::register_instance::RegisterInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::register_instance::RegisterInstanceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::register_instance::RegisterInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::register_instance::RegisterInstanceInput {
             stack_id: self.stack_id,
             hostname: self.hostname,

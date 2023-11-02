@@ -119,7 +119,7 @@ impl RegisterTransitGatewayMulticastGroupSourcesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_transit_gateway_multicast_group_sources::RegisterTransitGatewayMulticastGroupSourcesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::register_transit_gateway_multicast_group_sources::RegisterTransitGatewayMulticastGroupSourcesInput {

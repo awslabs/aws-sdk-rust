@@ -2,7 +2,7 @@
 pub fn ser_action_local_port_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ActionLocalPortDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.port {
         object.key("Port").number(
             #[allow(clippy::useless_conversion)]

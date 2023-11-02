@@ -66,8 +66,10 @@ impl DeletePrefetchScheduleInputBuilder {
     /// Consumes the builder and constructs a [`DeletePrefetchScheduleInput`](crate::operation::delete_prefetch_schedule::DeletePrefetchScheduleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_prefetch_schedule::DeletePrefetchScheduleInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::delete_prefetch_schedule::DeletePrefetchScheduleInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::delete_prefetch_schedule::DeletePrefetchScheduleInput {
             name: self.name,
             playback_configuration_name: self.playback_configuration_name,

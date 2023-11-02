@@ -2,7 +2,7 @@
 pub fn ser_aggregate_column(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AggregateColumn,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("columnNames").start_array();
         for item_2 in &input.column_names {

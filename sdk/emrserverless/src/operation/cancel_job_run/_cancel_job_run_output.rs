@@ -87,16 +87,16 @@ impl CancelJobRunOutputBuilder {
     /// - [`job_run_id`](crate::operation::cancel_job_run::builders::CancelJobRunOutputBuilder::job_run_id)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::cancel_job_run::CancelJobRunOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::cancel_job_run::CancelJobRunOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::cancel_job_run::CancelJobRunOutput {
             application_id: self.application_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "application_id",
                     "application_id was not specified but it is required when building CancelJobRunOutput",
                 )
             })?,
             job_run_id: self.job_run_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "job_run_id",
                     "job_run_id was not specified but it is required when building CancelJobRunOutput",
                 )

@@ -115,28 +115,28 @@ impl ReportedRuntimeContextStateBuilder {
     /// - [`runtime_context_name`](crate::types::builders::ReportedRuntimeContextStateBuilder::runtime_context_name)
     /// - [`device_reported_status`](crate::types::builders::ReportedRuntimeContextStateBuilder::device_reported_status)
     /// - [`device_reported_time`](crate::types::builders::ReportedRuntimeContextStateBuilder::device_reported_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::ReportedRuntimeContextState, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ReportedRuntimeContextState, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ReportedRuntimeContextState {
             desired_state: self.desired_state.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "desired_state",
                     "desired_state was not specified but it is required when building ReportedRuntimeContextState",
                 )
             })?,
             runtime_context_name: self.runtime_context_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "runtime_context_name",
                     "runtime_context_name was not specified but it is required when building ReportedRuntimeContextState",
                 )
             })?,
             device_reported_status: self.device_reported_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "device_reported_status",
                     "device_reported_status was not specified but it is required when building ReportedRuntimeContextState",
                 )
             })?,
             device_reported_time: self.device_reported_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "device_reported_time",
                     "device_reported_time was not specified but it is required when building ReportedRuntimeContextState",
                 )

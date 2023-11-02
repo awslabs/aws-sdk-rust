@@ -53,7 +53,7 @@ where
 pub fn ser_file_batch_job_identifier(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FileBatchJobIdentifier,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("fileName").string(input.file_name.as_str());
     }

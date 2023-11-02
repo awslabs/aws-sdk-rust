@@ -45,7 +45,7 @@ impl GetIdentityPoolRolesInputBuilder {
     /// Consumes the builder and constructs a [`GetIdentityPoolRolesInput`](crate::operation::get_identity_pool_roles::GetIdentityPoolRolesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_identity_pool_roles::GetIdentityPoolRolesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_identity_pool_roles::GetIdentityPoolRolesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_identity_pool_roles::GetIdentityPoolRolesInput {
             identity_pool_id: self.identity_pool_id,

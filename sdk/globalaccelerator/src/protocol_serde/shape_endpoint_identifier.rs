@@ -2,7 +2,7 @@
 pub fn ser_endpoint_identifier(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EndpointIdentifier,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("EndpointId").string(input.endpoint_id.as_str());
     }

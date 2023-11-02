@@ -116,22 +116,22 @@ impl ConversationLogsDataSourceBuilder {
     /// - [`bot_id`](crate::types::builders::ConversationLogsDataSourceBuilder::bot_id)
     /// - [`bot_alias_id`](crate::types::builders::ConversationLogsDataSourceBuilder::bot_alias_id)
     /// - [`locale_id`](crate::types::builders::ConversationLogsDataSourceBuilder::locale_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::ConversationLogsDataSource, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ConversationLogsDataSource, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ConversationLogsDataSource {
             bot_id: self.bot_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "bot_id",
                     "bot_id was not specified but it is required when building ConversationLogsDataSource",
                 )
             })?,
             bot_alias_id: self.bot_alias_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "bot_alias_id",
                     "bot_alias_id was not specified but it is required when building ConversationLogsDataSource",
                 )
             })?,
             locale_id: self.locale_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "locale_id",
                     "locale_id was not specified but it is required when building ConversationLogsDataSource",
                 )

@@ -88,7 +88,7 @@ impl DeleteUseCaseInputBuilder {
     /// Consumes the builder and constructs a [`DeleteUseCaseInput`](crate::operation::delete_use_case::DeleteUseCaseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_use_case::DeleteUseCaseInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_use_case::DeleteUseCaseInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_use_case::DeleteUseCaseInput {
             instance_id: self.instance_id,
             integration_association_id: self.integration_association_id,

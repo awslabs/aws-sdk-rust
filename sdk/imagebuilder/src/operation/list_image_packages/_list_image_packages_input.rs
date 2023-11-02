@@ -86,7 +86,7 @@ impl ListImagePackagesInputBuilder {
     /// Consumes the builder and constructs a [`ListImagePackagesInput`](crate::operation::list_image_packages::ListImagePackagesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_image_packages::ListImagePackagesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_image_packages::ListImagePackagesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_image_packages::ListImagePackagesInput {
             image_build_version_arn: self.image_build_version_arn,
             max_results: self.max_results,

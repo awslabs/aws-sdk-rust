@@ -121,22 +121,22 @@ impl ResponseInspectionJsonBuilder {
     /// - [`identifier`](crate::types::builders::ResponseInspectionJsonBuilder::identifier)
     /// - [`success_values`](crate::types::builders::ResponseInspectionJsonBuilder::success_values)
     /// - [`failure_values`](crate::types::builders::ResponseInspectionJsonBuilder::failure_values)
-    pub fn build(self) -> ::std::result::Result<crate::types::ResponseInspectionJson, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ResponseInspectionJson, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ResponseInspectionJson {
             identifier: self.identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "identifier",
                     "identifier was not specified but it is required when building ResponseInspectionJson",
                 )
             })?,
             success_values: self.success_values.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "success_values",
                     "success_values was not specified but it is required when building ResponseInspectionJson",
                 )
             })?,
             failure_values: self.failure_values.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "failure_values",
                     "failure_values was not specified but it is required when building ResponseInspectionJson",
                 )

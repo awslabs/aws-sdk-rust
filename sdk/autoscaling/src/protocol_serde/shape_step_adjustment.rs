@@ -3,7 +3,7 @@
 pub fn ser_step_adjustment(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::StepAdjustment,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("MetricIntervalLowerBound");
     if let Some(var_2) = &input.metric_interval_lower_bound {

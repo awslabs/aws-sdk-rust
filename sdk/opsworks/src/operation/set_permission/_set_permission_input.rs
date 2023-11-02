@@ -169,7 +169,7 @@ impl SetPermissionInputBuilder {
     /// Consumes the builder and constructs a [`SetPermissionInput`](crate::operation::set_permission::SetPermissionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::set_permission::SetPermissionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::set_permission::SetPermissionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::set_permission::SetPermissionInput {
             stack_id: self.stack_id,
             iam_user_arn: self.iam_user_arn,

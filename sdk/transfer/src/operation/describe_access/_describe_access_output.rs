@@ -85,10 +85,10 @@ impl DescribeAccessOutputBuilder {
     /// - [`server_id`](crate::operation::describe_access::builders::DescribeAccessOutputBuilder::server_id)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_access::DescribeAccessOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_access::DescribeAccessOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_access::DescribeAccessOutput {
             server_id: self.server_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "server_id",
                     "server_id was not specified but it is required when building DescribeAccessOutput",
                 )

@@ -94,7 +94,7 @@ impl PutEntityTypeInputBuilder {
     /// Consumes the builder and constructs a [`PutEntityTypeInput`](crate::operation::put_entity_type::PutEntityTypeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_entity_type::PutEntityTypeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_entity_type::PutEntityTypeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_entity_type::PutEntityTypeInput {
             name: self.name,
             description: self.description,

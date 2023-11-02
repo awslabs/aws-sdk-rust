@@ -177,16 +177,16 @@ impl SequenceStoreDetailBuilder {
     /// - [`arn`](crate::types::builders::SequenceStoreDetailBuilder::arn)
     /// - [`id`](crate::types::builders::SequenceStoreDetailBuilder::id)
     /// - [`creation_time`](crate::types::builders::SequenceStoreDetailBuilder::creation_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::SequenceStoreDetail, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SequenceStoreDetail, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SequenceStoreDetail {
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building SequenceStoreDetail",
                 )
             })?,
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building SequenceStoreDetail",
                 )
@@ -195,7 +195,7 @@ impl SequenceStoreDetailBuilder {
             description: self.description,
             sse_config: self.sse_config,
             creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_time",
                     "creation_time was not specified but it is required when building SequenceStoreDetail",
                 )

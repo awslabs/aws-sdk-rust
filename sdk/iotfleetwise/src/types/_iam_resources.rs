@@ -47,10 +47,10 @@ impl IamResourcesBuilder {
     /// Consumes the builder and constructs a [`IamResources`](crate::types::IamResources).
     /// This method will fail if any of the following fields are not set:
     /// - [`role_arn`](crate::types::builders::IamResourcesBuilder::role_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::IamResources, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::IamResources, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::IamResources {
             role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role_arn",
                     "role_arn was not specified but it is required when building IamResources",
                 )

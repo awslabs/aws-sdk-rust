@@ -2,7 +2,7 @@
 pub fn ser_quick_connect_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::QuickConnectConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("QuickConnectType").string(input.quick_connect_type.as_str());
     }

@@ -44,7 +44,7 @@ impl DeleteCustomKeyStoreInputBuilder {
     /// Consumes the builder and constructs a [`DeleteCustomKeyStoreInput`](crate::operation::delete_custom_key_store::DeleteCustomKeyStoreInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_custom_key_store::DeleteCustomKeyStoreInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_custom_key_store::DeleteCustomKeyStoreInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_custom_key_store::DeleteCustomKeyStoreInput {
             custom_key_store_id: self.custom_key_store_id,

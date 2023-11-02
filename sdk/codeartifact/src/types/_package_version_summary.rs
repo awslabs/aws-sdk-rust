@@ -111,17 +111,17 @@ impl PackageVersionSummaryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`version`](crate::types::builders::PackageVersionSummaryBuilder::version)
     /// - [`status`](crate::types::builders::PackageVersionSummaryBuilder::status)
-    pub fn build(self) -> ::std::result::Result<crate::types::PackageVersionSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PackageVersionSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PackageVersionSummary {
             version: self.version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "version",
                     "version was not specified but it is required when building PackageVersionSummary",
                 )
             })?,
             revision: self.revision,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building PackageVersionSummary",
                 )

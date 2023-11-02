@@ -57,10 +57,10 @@ impl CustomRequestHandlingBuilder {
     /// Consumes the builder and constructs a [`CustomRequestHandling`](crate::types::CustomRequestHandling).
     /// This method will fail if any of the following fields are not set:
     /// - [`insert_headers`](crate::types::builders::CustomRequestHandlingBuilder::insert_headers)
-    pub fn build(self) -> ::std::result::Result<crate::types::CustomRequestHandling, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CustomRequestHandling, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CustomRequestHandling {
             insert_headers: self.insert_headers.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "insert_headers",
                     "insert_headers was not specified but it is required when building CustomRequestHandling",
                 )

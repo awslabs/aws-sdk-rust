@@ -2,7 +2,7 @@
 pub fn ser_form_button(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FormButton,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.excluded {
         object.key("excluded").boolean(*var_1);
     }

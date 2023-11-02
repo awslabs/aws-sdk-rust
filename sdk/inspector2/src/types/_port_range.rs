@@ -68,16 +68,16 @@ impl PortRangeBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`begin`](crate::types::builders::PortRangeBuilder::begin)
     /// - [`end`](crate::types::builders::PortRangeBuilder::end)
-    pub fn build(self) -> ::std::result::Result<crate::types::PortRange, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PortRange, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PortRange {
             begin: self.begin.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "begin",
                     "begin was not specified but it is required when building PortRange",
                 )
             })?,
             end: self.end.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "end",
                     "end was not specified but it is required when building PortRange",
                 )

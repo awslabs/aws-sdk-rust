@@ -109,7 +109,7 @@ impl RemoveSchemaVersionMetadataInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_schema_version_metadata::RemoveSchemaVersionMetadataInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::remove_schema_version_metadata::RemoveSchemaVersionMetadataInput {
             schema_id: self.schema_id,

@@ -143,16 +143,16 @@ impl BatchCreateObjectBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`schema_facet`](crate::types::builders::BatchCreateObjectBuilder::schema_facet)
     /// - [`object_attribute_list`](crate::types::builders::BatchCreateObjectBuilder::object_attribute_list)
-    pub fn build(self) -> ::std::result::Result<crate::types::BatchCreateObject, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::BatchCreateObject, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::BatchCreateObject {
             schema_facet: self.schema_facet.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "schema_facet",
                     "schema_facet was not specified but it is required when building BatchCreateObject",
                 )
             })?,
             object_attribute_list: self.object_attribute_list.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "object_attribute_list",
                     "object_attribute_list was not specified but it is required when building BatchCreateObject",
                 )

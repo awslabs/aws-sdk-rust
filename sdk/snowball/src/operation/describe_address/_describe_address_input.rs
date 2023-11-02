@@ -44,7 +44,7 @@ impl DescribeAddressInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAddressInput`](crate::operation::describe_address::DescribeAddressInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_address::DescribeAddressInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_address::DescribeAddressInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_address::DescribeAddressInput { address_id: self.address_id })
     }
 }

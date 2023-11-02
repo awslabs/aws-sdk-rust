@@ -96,7 +96,7 @@ impl RemoveLfTagsFromResourceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_lf_tags_from_resource::RemoveLfTagsFromResourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::remove_lf_tags_from_resource::RemoveLfTagsFromResourceInput {
             catalog_id: self.catalog_id,

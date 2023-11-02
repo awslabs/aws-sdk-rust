@@ -108,12 +108,12 @@ impl MultiRegionAccessPointRouteBuilder {
     /// Consumes the builder and constructs a [`MultiRegionAccessPointRoute`](crate::types::MultiRegionAccessPointRoute).
     /// This method will fail if any of the following fields are not set:
     /// - [`traffic_dial_percentage`](crate::types::builders::MultiRegionAccessPointRouteBuilder::traffic_dial_percentage)
-    pub fn build(self) -> ::std::result::Result<crate::types::MultiRegionAccessPointRoute, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::MultiRegionAccessPointRoute, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MultiRegionAccessPointRoute {
             bucket: self.bucket,
             region: self.region,
             traffic_dial_percentage: self.traffic_dial_percentage.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "traffic_dial_percentage",
                     "traffic_dial_percentage was not specified but it is required when building MultiRegionAccessPointRoute",
                 )

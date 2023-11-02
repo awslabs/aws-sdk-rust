@@ -2,7 +2,7 @@
 pub fn ser_list_cost_category_definitions_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_cost_category_definitions::ListCostCategoryDefinitionsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.effective_on {
         object.key("EffectiveOn").string(var_1.as_str());
     }

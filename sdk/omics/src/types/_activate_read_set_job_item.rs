@@ -137,28 +137,28 @@ impl ActivateReadSetJobItemBuilder {
     /// - [`sequence_store_id`](crate::types::builders::ActivateReadSetJobItemBuilder::sequence_store_id)
     /// - [`status`](crate::types::builders::ActivateReadSetJobItemBuilder::status)
     /// - [`creation_time`](crate::types::builders::ActivateReadSetJobItemBuilder::creation_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::ActivateReadSetJobItem, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ActivateReadSetJobItem, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ActivateReadSetJobItem {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building ActivateReadSetJobItem",
                 )
             })?,
             sequence_store_id: self.sequence_store_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "sequence_store_id",
                     "sequence_store_id was not specified but it is required when building ActivateReadSetJobItem",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building ActivateReadSetJobItem",
                 )
             })?,
             creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_time",
                     "creation_time was not specified but it is required when building ActivateReadSetJobItem",
                 )

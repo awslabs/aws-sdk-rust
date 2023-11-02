@@ -114,7 +114,7 @@ impl CreatePackagingGroupInputBuilder {
     /// Consumes the builder and constructs a [`CreatePackagingGroupInput`](crate::operation::create_packaging_group::CreatePackagingGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_packaging_group::CreatePackagingGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_packaging_group::CreatePackagingGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_packaging_group::CreatePackagingGroupInput {
             authorization: self.authorization,

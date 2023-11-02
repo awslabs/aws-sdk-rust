@@ -90,10 +90,10 @@ impl TimerCanceledEventAttributesBuilder {
     /// Consumes the builder and constructs a [`TimerCanceledEventAttributes`](crate::types::TimerCanceledEventAttributes).
     /// This method will fail if any of the following fields are not set:
     /// - [`timer_id`](crate::types::builders::TimerCanceledEventAttributesBuilder::timer_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::TimerCanceledEventAttributes, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TimerCanceledEventAttributes, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TimerCanceledEventAttributes {
             timer_id: self.timer_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "timer_id",
                     "timer_id was not specified but it is required when building TimerCanceledEventAttributes",
                 )

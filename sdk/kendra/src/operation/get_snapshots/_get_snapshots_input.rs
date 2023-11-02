@@ -173,7 +173,9 @@ impl GetSnapshotsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`GetSnapshotsInput`](crate::operation::get_snapshots::GetSnapshotsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_snapshots::GetSnapshotsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_snapshots::GetSnapshotsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_snapshots::GetSnapshotsInput {
             index_id: self.index_id,
             interval: self.interval,

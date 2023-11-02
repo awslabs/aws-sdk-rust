@@ -85,11 +85,11 @@ impl PutResourceSetOutputBuilder {
     /// - [`resource_set_arn`](crate::operation::put_resource_set::builders::PutResourceSetOutputBuilder::resource_set_arn)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_resource_set::PutResourceSetOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_resource_set::PutResourceSetOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_resource_set::PutResourceSetOutput {
             resource_set: self.resource_set,
             resource_set_arn: self.resource_set_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_set_arn",
                     "resource_set_arn was not specified but it is required when building PutResourceSetOutput",
                 )

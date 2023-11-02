@@ -46,7 +46,7 @@ impl AcceptEnvironmentAccountConnectionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::accept_environment_account_connection::AcceptEnvironmentAccountConnectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::accept_environment_account_connection::AcceptEnvironmentAccountConnectionInput { id: self.id })
     }

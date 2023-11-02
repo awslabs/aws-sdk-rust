@@ -228,16 +228,16 @@ impl IngestionDestinationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::IngestionDestinationBuilder::arn)
     /// - [`ingestion_arn`](crate::types::builders::IngestionDestinationBuilder::ingestion_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::IngestionDestination, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::IngestionDestination, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::IngestionDestination {
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building IngestionDestination",
                 )
             })?,
             ingestion_arn: self.ingestion_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "ingestion_arn",
                     "ingestion_arn was not specified but it is required when building IngestionDestination",
                 )

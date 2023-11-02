@@ -67,10 +67,10 @@ impl Ec2AmiResourceBuilder {
     /// Consumes the builder and constructs a [`Ec2AmiResource`](crate::types::Ec2AmiResource).
     /// This method will fail if any of the following fields are not set:
     /// - [`ami_id`](crate::types::builders::Ec2AmiResourceBuilder::ami_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::Ec2AmiResource, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Ec2AmiResource, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Ec2AmiResource {
             ami_id: self.ami_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "ami_id",
                     "ami_id was not specified but it is required when building Ec2AmiResource",
                 )

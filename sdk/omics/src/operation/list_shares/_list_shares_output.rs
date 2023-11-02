@@ -87,10 +87,10 @@ impl ListSharesOutputBuilder {
     /// Consumes the builder and constructs a [`ListSharesOutput`](crate::operation::list_shares::ListSharesOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`shares`](crate::operation::list_shares::builders::ListSharesOutputBuilder::shares)
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_shares::ListSharesOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_shares::ListSharesOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_shares::ListSharesOutput {
             shares: self.shares.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "shares",
                     "shares was not specified but it is required when building ListSharesOutput",
                 )

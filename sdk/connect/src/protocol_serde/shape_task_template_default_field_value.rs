@@ -2,7 +2,7 @@
 pub fn ser_task_template_default_field_value(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TaskTemplateDefaultFieldValue,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.id {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Id").start_object();

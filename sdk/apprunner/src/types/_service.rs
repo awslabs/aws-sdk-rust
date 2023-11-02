@@ -377,42 +377,42 @@ impl ServiceBuilder {
     /// - [`created_at`](crate::types::builders::ServiceBuilder::created_at)
     /// - [`updated_at`](crate::types::builders::ServiceBuilder::updated_at)
     /// - [`status`](crate::types::builders::ServiceBuilder::status)
-    pub fn build(self) -> ::std::result::Result<crate::types::Service, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Service, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Service {
             service_name: self.service_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "service_name",
                     "service_name was not specified but it is required when building Service",
                 )
             })?,
             service_id: self.service_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "service_id",
                     "service_id was not specified but it is required when building Service",
                 )
             })?,
             service_arn: self.service_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "service_arn",
                     "service_arn was not specified but it is required when building Service",
                 )
             })?,
             service_url: self.service_url,
             created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
                     "created_at was not specified but it is required when building Service",
                 )
             })?,
             updated_at: self.updated_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "updated_at",
                     "updated_at was not specified but it is required when building Service",
                 )
             })?,
             deleted_at: self.deleted_at,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building Service",
                 )

@@ -65,7 +65,7 @@ impl DescribeBackupVaultInputBuilder {
     /// Consumes the builder and constructs a [`DescribeBackupVaultInput`](crate::operation::describe_backup_vault::DescribeBackupVaultInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_backup_vault::DescribeBackupVaultInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_backup_vault::DescribeBackupVaultInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_backup_vault::DescribeBackupVaultInput {
             backup_vault_name: self.backup_vault_name,

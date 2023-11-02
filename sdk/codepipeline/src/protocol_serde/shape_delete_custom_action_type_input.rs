@@ -2,7 +2,7 @@
 pub fn ser_delete_custom_action_type_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_custom_action_type::DeleteCustomActionTypeInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.category {
         object.key("category").string(var_1.as_str());
     }

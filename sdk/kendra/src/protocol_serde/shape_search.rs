@@ -2,7 +2,7 @@
 pub fn ser_search(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Search,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.facetable {
         object.key("Facetable").boolean(input.facetable);
     }

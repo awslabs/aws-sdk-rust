@@ -189,25 +189,28 @@ impl CampaignBuilder {
     /// - [`arn`](crate::types::builders::CampaignBuilder::arn)
     /// - [`name`](crate::types::builders::CampaignBuilder::name)
     /// - [`connect_instance_id`](crate::types::builders::CampaignBuilder::connect_instance_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::Campaign, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Campaign, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Campaign {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field("id", "id was not specified but it is required when building Campaign")
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building Campaign",
+                )
             })?,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building Campaign",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building Campaign",
                 )
             })?,
             connect_instance_id: self.connect_instance_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "connect_instance_id",
                     "connect_instance_id was not specified but it is required when building Campaign",
                 )

@@ -98,7 +98,7 @@ impl DescribeActionTargetsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeActionTargetsInput`](crate::operation::describe_action_targets::DescribeActionTargetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_action_targets::DescribeActionTargetsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_action_targets::DescribeActionTargetsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_action_targets::DescribeActionTargetsInput {
             action_target_arns: self.action_target_arns,

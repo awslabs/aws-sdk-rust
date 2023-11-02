@@ -66,7 +66,8 @@ impl DeleteFirewallRuleInputBuilder {
     /// Consumes the builder and constructs a [`DeleteFirewallRuleInput`](crate::operation::delete_firewall_rule::DeleteFirewallRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_firewall_rule::DeleteFirewallRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_firewall_rule::DeleteFirewallRuleInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::delete_firewall_rule::DeleteFirewallRuleInput {
             firewall_rule_group_id: self.firewall_rule_group_id,
             firewall_domain_list_id: self.firewall_domain_list_id,

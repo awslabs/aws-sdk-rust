@@ -286,7 +286,8 @@ impl UpdateIdentityPoolInputBuilder {
     /// Consumes the builder and constructs a [`UpdateIdentityPoolInput`](crate::operation::update_identity_pool::UpdateIdentityPoolInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_identity_pool::UpdateIdentityPoolInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_identity_pool::UpdateIdentityPoolInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::update_identity_pool::UpdateIdentityPoolInput {
             identity_pool_id: self.identity_pool_id,
             identity_pool_name: self.identity_pool_name,

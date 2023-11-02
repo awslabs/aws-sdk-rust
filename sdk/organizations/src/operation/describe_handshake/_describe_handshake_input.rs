@@ -49,7 +49,7 @@ impl DescribeHandshakeInputBuilder {
     /// Consumes the builder and constructs a [`DescribeHandshakeInput`](crate::operation::describe_handshake::DescribeHandshakeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_handshake::DescribeHandshakeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_handshake::DescribeHandshakeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_handshake::DescribeHandshakeInput {
             handshake_id: self.handshake_id,
         })

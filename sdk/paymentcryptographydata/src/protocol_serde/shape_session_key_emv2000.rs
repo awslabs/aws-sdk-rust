@@ -2,7 +2,7 @@
 pub fn ser_session_key_emv2000(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SessionKeyEmv2000,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("PrimaryAccountNumber").string(input.primary_account_number.as_str());
     }

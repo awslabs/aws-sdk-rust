@@ -2,7 +2,7 @@
 pub fn ser_topic_replication(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TopicReplication,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.copy_access_control_lists_for_topics {
         object.key("copyAccessControlListsForTopics").boolean(*var_1);
     }

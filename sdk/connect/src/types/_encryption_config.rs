@@ -84,16 +84,16 @@ impl EncryptionConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`encryption_type`](crate::types::builders::EncryptionConfigBuilder::encryption_type)
     /// - [`key_id`](crate::types::builders::EncryptionConfigBuilder::key_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::EncryptionConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::EncryptionConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EncryptionConfig {
             encryption_type: self.encryption_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "encryption_type",
                     "encryption_type was not specified but it is required when building EncryptionConfig",
                 )
             })?,
             key_id: self.key_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "key_id",
                     "key_id was not specified but it is required when building EncryptionConfig",
                 )

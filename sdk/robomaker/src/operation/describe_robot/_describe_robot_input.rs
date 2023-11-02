@@ -47,7 +47,7 @@ impl DescribeRobotInputBuilder {
     /// Consumes the builder and constructs a [`DescribeRobotInput`](crate::operation::describe_robot::DescribeRobotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_robot::DescribeRobotInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_robot::DescribeRobotInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_robot::DescribeRobotInput { robot: self.robot })
     }
 }

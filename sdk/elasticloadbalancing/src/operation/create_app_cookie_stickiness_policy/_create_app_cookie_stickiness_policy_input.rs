@@ -91,7 +91,7 @@ impl CreateAppCookieStickinessPolicyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_app_cookie_stickiness_policy::CreateAppCookieStickinessPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::create_app_cookie_stickiness_policy::CreateAppCookieStickinessPolicyInput {

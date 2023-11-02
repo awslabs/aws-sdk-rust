@@ -2,7 +2,7 @@
 pub fn ser_create_integration_workflow_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_integration_workflow::CreateIntegrationWorkflowInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.integration_config {
         #[allow(unused_mut)]
         let mut object_2 = object.key("IntegrationConfig").start_object();

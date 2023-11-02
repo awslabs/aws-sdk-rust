@@ -44,7 +44,7 @@ impl DeleteDeviceFleetInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDeviceFleetInput`](crate::operation::delete_device_fleet::DeleteDeviceFleetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_device_fleet::DeleteDeviceFleetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_device_fleet::DeleteDeviceFleetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_device_fleet::DeleteDeviceFleetInput {
             device_fleet_name: self.device_fleet_name,
         })

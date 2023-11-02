@@ -66,7 +66,7 @@ impl DeleteThesaurusInputBuilder {
     /// Consumes the builder and constructs a [`DeleteThesaurusInput`](crate::operation::delete_thesaurus::DeleteThesaurusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_thesaurus::DeleteThesaurusInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_thesaurus::DeleteThesaurusInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_thesaurus::DeleteThesaurusInput {
             id: self.id,
             index_id: self.index_id,

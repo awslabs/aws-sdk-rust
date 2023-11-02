@@ -66,7 +66,8 @@ impl DescribeAppVersionInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAppVersionInput`](crate::operation::describe_app_version::DescribeAppVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_app_version::DescribeAppVersionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_app_version::DescribeAppVersionInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::describe_app_version::DescribeAppVersionInput {
             app_arn: self.app_arn,
             app_version: self.app_version,

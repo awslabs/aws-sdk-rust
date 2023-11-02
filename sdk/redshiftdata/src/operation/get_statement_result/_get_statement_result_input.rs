@@ -65,7 +65,8 @@ impl GetStatementResultInputBuilder {
     /// Consumes the builder and constructs a [`GetStatementResultInput`](crate::operation::get_statement_result::GetStatementResultInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_statement_result::GetStatementResultInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_statement_result::GetStatementResultInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::get_statement_result::GetStatementResultInput {
             id: self.id,
             next_token: self.next_token,

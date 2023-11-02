@@ -45,10 +45,10 @@ impl DecimalPlacesConfigurationBuilder {
     /// Consumes the builder and constructs a [`DecimalPlacesConfiguration`](crate::types::DecimalPlacesConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`decimal_places`](crate::types::builders::DecimalPlacesConfigurationBuilder::decimal_places)
-    pub fn build(self) -> ::std::result::Result<crate::types::DecimalPlacesConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DecimalPlacesConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DecimalPlacesConfiguration {
             decimal_places: self.decimal_places.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "decimal_places",
                     "decimal_places was not specified but it is required when building DecimalPlacesConfiguration",
                 )

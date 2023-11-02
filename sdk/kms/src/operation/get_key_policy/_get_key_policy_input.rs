@@ -101,7 +101,7 @@ impl GetKeyPolicyInputBuilder {
     /// Consumes the builder and constructs a [`GetKeyPolicyInput`](crate::operation::get_key_policy::GetKeyPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_key_policy::GetKeyPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_key_policy::GetKeyPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_key_policy::GetKeyPolicyInput {
             key_id: self.key_id,
             policy_name: self.policy_name,

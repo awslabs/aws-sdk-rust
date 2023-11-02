@@ -141,17 +141,17 @@ impl ListServiceVersionsOutputBuilder {
     /// - [`service_name`](crate::operation::list_service_versions::builders::ListServiceVersionsOutputBuilder::service_name)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_service_versions::ListServiceVersionsOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_service_versions::ListServiceVersionsOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_service_versions::ListServiceVersionsOutput {
             service_versions: self.service_versions.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "service_versions",
                     "service_versions was not specified but it is required when building ListServiceVersionsOutput",
                 )
             })?,
             service_name: self.service_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "service_name",
                     "service_name was not specified but it is required when building ListServiceVersionsOutput",
                 )

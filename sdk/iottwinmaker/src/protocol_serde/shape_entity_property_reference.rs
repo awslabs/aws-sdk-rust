@@ -2,7 +2,7 @@
 pub fn ser_entity_property_reference(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EntityPropertyReference,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.component_name {
         object.key("componentName").string(var_1.as_str());
     }

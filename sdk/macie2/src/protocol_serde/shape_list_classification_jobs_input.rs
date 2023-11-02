@@ -2,7 +2,7 @@
 pub fn ser_list_classification_jobs_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_classification_jobs::ListClassificationJobsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.filter_criteria {
         #[allow(unused_mut)]
         let mut object_2 = object.key("filterCriteria").start_object();

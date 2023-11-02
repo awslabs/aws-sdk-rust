@@ -68,10 +68,10 @@ impl DomainBuilder {
     /// Consumes the builder and constructs a [`Domain`](crate::types::Domain).
     /// This method will fail if any of the following fields are not set:
     /// - [`domain_name`](crate::types::builders::DomainBuilder::domain_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::Domain, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Domain, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Domain {
             domain_name: self.domain_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "domain_name",
                     "domain_name was not specified but it is required when building Domain",
                 )

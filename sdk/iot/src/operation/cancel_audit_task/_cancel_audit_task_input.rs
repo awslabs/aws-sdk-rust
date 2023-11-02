@@ -44,7 +44,7 @@ impl CancelAuditTaskInputBuilder {
     /// Consumes the builder and constructs a [`CancelAuditTaskInput`](crate::operation::cancel_audit_task::CancelAuditTaskInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::cancel_audit_task::CancelAuditTaskInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::cancel_audit_task::CancelAuditTaskInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::cancel_audit_task::CancelAuditTaskInput { task_id: self.task_id })
     }
 }

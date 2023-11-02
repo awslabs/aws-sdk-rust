@@ -77,7 +77,7 @@ impl DisassociateSigninDelegateGroupsFromAccountInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_signin_delegate_groups_from_account::DisassociateSigninDelegateGroupsFromAccountInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::disassociate_signin_delegate_groups_from_account::DisassociateSigninDelegateGroupsFromAccountInput {

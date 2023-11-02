@@ -65,11 +65,11 @@ impl CreateRotationOverrideOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_rotation_override::CreateRotationOverrideOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_rotation_override::CreateRotationOverrideOutput {
             rotation_override_id: self.rotation_override_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "rotation_override_id",
                     "rotation_override_id was not specified but it is required when building CreateRotationOverrideOutput",
                 )

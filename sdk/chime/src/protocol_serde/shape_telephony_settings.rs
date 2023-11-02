@@ -46,7 +46,7 @@ where
 pub fn ser_telephony_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TelephonySettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("InboundCalling").boolean(input.inbound_calling);
     }

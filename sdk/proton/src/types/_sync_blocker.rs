@@ -210,34 +210,34 @@ impl SyncBlockerBuilder {
     /// - [`status`](crate::types::builders::SyncBlockerBuilder::status)
     /// - [`created_reason`](crate::types::builders::SyncBlockerBuilder::created_reason)
     /// - [`created_at`](crate::types::builders::SyncBlockerBuilder::created_at)
-    pub fn build(self) -> ::std::result::Result<crate::types::SyncBlocker, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SyncBlocker, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SyncBlocker {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building SyncBlocker",
                 )
             })?,
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building SyncBlocker",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building SyncBlocker",
                 )
             })?,
             created_reason: self.created_reason.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_reason",
                     "created_reason was not specified but it is required when building SyncBlocker",
                 )
             })?,
             created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
                     "created_at was not specified but it is required when building SyncBlocker",
                 )

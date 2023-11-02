@@ -2,7 +2,7 @@
 pub fn ser_tmpfs(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Tmpfs,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("containerPath").string(input.container_path.as_str());
     }

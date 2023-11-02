@@ -64,7 +64,7 @@ impl DeleteIpSetInputBuilder {
         &self.change_token
     }
     /// Consumes the builder and constructs a [`DeleteIpSetInput`](crate::operation::delete_ip_set::DeleteIpSetInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_ip_set::DeleteIpSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_ip_set::DeleteIpSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_ip_set::DeleteIpSetInput {
             ip_set_id: self.ip_set_id,
             change_token: self.change_token,

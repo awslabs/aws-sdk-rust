@@ -123,7 +123,7 @@ impl ListTransactionEventsInputBuilder {
     /// Consumes the builder and constructs a [`ListTransactionEventsInput`](crate::operation::list_transaction_events::ListTransactionEventsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_transaction_events::ListTransactionEventsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_transaction_events::ListTransactionEventsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_transaction_events::ListTransactionEventsInput {
             transaction_hash: self.transaction_hash,

@@ -117,7 +117,7 @@ impl PutMetricFilterInputBuilder {
     /// Consumes the builder and constructs a [`PutMetricFilterInput`](crate::operation::put_metric_filter::PutMetricFilterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_metric_filter::PutMetricFilterInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_metric_filter::PutMetricFilterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_metric_filter::PutMetricFilterInput {
             log_group_name: self.log_group_name,
             filter_name: self.filter_name,

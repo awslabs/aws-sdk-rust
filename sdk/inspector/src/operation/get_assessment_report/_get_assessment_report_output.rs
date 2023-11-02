@@ -83,11 +83,11 @@ impl GetAssessmentReportOutputBuilder {
     /// - [`status`](crate::operation::get_assessment_report::builders::GetAssessmentReportOutputBuilder::status)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_assessment_report::GetAssessmentReportOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_assessment_report::GetAssessmentReportOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_assessment_report::GetAssessmentReportOutput {
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building GetAssessmentReportOutput",
                 )

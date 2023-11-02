@@ -2,7 +2,7 @@
 pub fn ser_update_participant_role_config_channel_info(
     object_2: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UpdateParticipantRoleConfigChannelInfo,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::UpdateParticipantRoleConfigChannelInfo::Chat(inner) => {
             #[allow(unused_mut)]
@@ -11,7 +11,7 @@ pub fn ser_update_participant_role_config_channel_info(
             object_1.finish();
         }
         crate::types::UpdateParticipantRoleConfigChannelInfo::Unknown => {
-            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+            return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "UpdateParticipantRoleConfigChannelInfo",
             ))
         }

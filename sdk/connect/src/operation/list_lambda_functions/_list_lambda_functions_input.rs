@@ -86,7 +86,7 @@ impl ListLambdaFunctionsInputBuilder {
     /// Consumes the builder and constructs a [`ListLambdaFunctionsInput`](crate::operation::list_lambda_functions::ListLambdaFunctionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_lambda_functions::ListLambdaFunctionsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_lambda_functions::ListLambdaFunctionsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_lambda_functions::ListLambdaFunctionsInput {
             instance_id: self.instance_id,

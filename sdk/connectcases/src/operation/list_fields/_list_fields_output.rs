@@ -87,10 +87,10 @@ impl ListFieldsOutputBuilder {
     /// Consumes the builder and constructs a [`ListFieldsOutput`](crate::operation::list_fields::ListFieldsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`fields`](crate::operation::list_fields::builders::ListFieldsOutputBuilder::fields)
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_fields::ListFieldsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_fields::ListFieldsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_fields::ListFieldsOutput {
             fields: self.fields.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "fields",
                     "fields was not specified but it is required when building ListFieldsOutput",
                 )

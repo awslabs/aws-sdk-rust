@@ -45,10 +45,10 @@ impl MachineLearningDetectionConfigBuilder {
     /// Consumes the builder and constructs a [`MachineLearningDetectionConfig`](crate::types::MachineLearningDetectionConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`confidence_level`](crate::types::builders::MachineLearningDetectionConfigBuilder::confidence_level)
-    pub fn build(self) -> ::std::result::Result<crate::types::MachineLearningDetectionConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::MachineLearningDetectionConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MachineLearningDetectionConfig {
             confidence_level: self.confidence_level.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "confidence_level",
                     "confidence_level was not specified but it is required when building MachineLearningDetectionConfig",
                 )

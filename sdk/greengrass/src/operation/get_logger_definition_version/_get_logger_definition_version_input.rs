@@ -89,7 +89,7 @@ impl GetLoggerDefinitionVersionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_logger_definition_version::GetLoggerDefinitionVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_logger_definition_version::GetLoggerDefinitionVersionInput {
             logger_definition_id: self.logger_definition_id,

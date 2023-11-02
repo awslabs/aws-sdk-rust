@@ -91,17 +91,17 @@ impl ListDeliveryStreamsOutputBuilder {
     /// - [`has_more_delivery_streams`](crate::operation::list_delivery_streams::builders::ListDeliveryStreamsOutputBuilder::has_more_delivery_streams)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_delivery_streams::ListDeliveryStreamsOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_delivery_streams::ListDeliveryStreamsOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_delivery_streams::ListDeliveryStreamsOutput {
             delivery_stream_names: self.delivery_stream_names.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "delivery_stream_names",
                     "delivery_stream_names was not specified but it is required when building ListDeliveryStreamsOutput",
                 )
             })?,
             has_more_delivery_streams: self.has_more_delivery_streams.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "has_more_delivery_streams",
                     "has_more_delivery_streams was not specified but it is required when building ListDeliveryStreamsOutput",
                 )

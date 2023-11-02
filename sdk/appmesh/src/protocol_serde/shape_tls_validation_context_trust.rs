@@ -2,7 +2,7 @@
 pub fn ser_tls_validation_context_trust(
     object_2: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TlsValidationContextTrust,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::TlsValidationContextTrust::Acm(inner) => {
             #[allow(unused_mut)]
@@ -23,7 +23,7 @@ pub fn ser_tls_validation_context_trust(
             object_3.finish();
         }
         crate::types::TlsValidationContextTrust::Unknown => {
-            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+            return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "TlsValidationContextTrust",
             ))
         }
@@ -44,12 +44,17 @@ where
             match tokens.next().transpose()? {
                 Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                 Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                    let key = key.to_unescaped()?;
+                    if key == "__type" {
+                        ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                        continue;
+                    }
                     if variant.is_some() {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
                             "encountered mixed variants in union",
                         ));
                     }
-                    variant = match key.to_unescaped()?.as_ref() {
+                    variant = match key.as_ref() {
                         "acm" => Some(crate::types::TlsValidationContextTrust::Acm(
                             crate::protocol_serde::shape_tls_validation_context_acm_trust::de_tls_validation_context_acm_trust(tokens)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'acm' cannot be null"))?,

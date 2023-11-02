@@ -67,10 +67,10 @@ impl AnomalyGroupTimeSeriesBuilder {
     /// Consumes the builder and constructs a [`AnomalyGroupTimeSeries`](crate::types::AnomalyGroupTimeSeries).
     /// This method will fail if any of the following fields are not set:
     /// - [`anomaly_group_id`](crate::types::builders::AnomalyGroupTimeSeriesBuilder::anomaly_group_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::AnomalyGroupTimeSeries, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AnomalyGroupTimeSeries, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AnomalyGroupTimeSeries {
             anomaly_group_id: self.anomaly_group_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "anomaly_group_id",
                     "anomaly_group_id was not specified but it is required when building AnomalyGroupTimeSeries",
                 )

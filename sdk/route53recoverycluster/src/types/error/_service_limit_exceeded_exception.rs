@@ -171,10 +171,12 @@ impl ServiceLimitExceededExceptionBuilder {
     /// - [`message`](crate::types::error::builders::ServiceLimitExceededExceptionBuilder::message)
     /// - [`limit_code`](crate::types::error::builders::ServiceLimitExceededExceptionBuilder::limit_code)
     /// - [`service_code`](crate::types::error::builders::ServiceLimitExceededExceptionBuilder::service_code)
-    pub fn build(self) -> ::std::result::Result<crate::types::error::ServiceLimitExceededException, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::error::ServiceLimitExceededException, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::error::ServiceLimitExceededException {
             message: self.message.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "message",
                     "message was not specified but it is required when building ServiceLimitExceededException",
                 )
@@ -182,13 +184,13 @@ impl ServiceLimitExceededExceptionBuilder {
             resource_id: self.resource_id,
             resource_type: self.resource_type,
             limit_code: self.limit_code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "limit_code",
                     "limit_code was not specified but it is required when building ServiceLimitExceededException",
                 )
             })?,
             service_code: self.service_code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "service_code",
                     "service_code was not specified but it is required when building ServiceLimitExceededException",
                 )

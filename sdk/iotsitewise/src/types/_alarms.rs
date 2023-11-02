@@ -67,10 +67,10 @@ impl AlarmsBuilder {
     /// Consumes the builder and constructs a [`Alarms`](crate::types::Alarms).
     /// This method will fail if any of the following fields are not set:
     /// - [`alarm_role_arn`](crate::types::builders::AlarmsBuilder::alarm_role_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::Alarms, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Alarms, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Alarms {
             alarm_role_arn: self.alarm_role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "alarm_role_arn",
                     "alarm_role_arn was not specified but it is required when building Alarms",
                 )

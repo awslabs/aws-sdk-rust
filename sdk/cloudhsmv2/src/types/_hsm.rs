@@ -193,7 +193,7 @@ impl HsmBuilder {
     /// Consumes the builder and constructs a [`Hsm`](crate::types::Hsm).
     /// This method will fail if any of the following fields are not set:
     /// - [`hsm_id`](crate::types::builders::HsmBuilder::hsm_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::Hsm, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Hsm, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Hsm {
             availability_zone: self.availability_zone,
             cluster_id: self.cluster_id,
@@ -201,7 +201,7 @@ impl HsmBuilder {
             eni_id: self.eni_id,
             eni_ip: self.eni_ip,
             hsm_id: self.hsm_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "hsm_id",
                     "hsm_id was not specified but it is required when building Hsm",
                 )

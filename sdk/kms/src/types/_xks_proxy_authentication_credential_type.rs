@@ -79,16 +79,18 @@ impl XksProxyAuthenticationCredentialTypeBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`access_key_id`](crate::types::builders::XksProxyAuthenticationCredentialTypeBuilder::access_key_id)
     /// - [`raw_secret_access_key`](crate::types::builders::XksProxyAuthenticationCredentialTypeBuilder::raw_secret_access_key)
-    pub fn build(self) -> ::std::result::Result<crate::types::XksProxyAuthenticationCredentialType, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::XksProxyAuthenticationCredentialType, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::XksProxyAuthenticationCredentialType {
             access_key_id: self.access_key_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "access_key_id",
                     "access_key_id was not specified but it is required when building XksProxyAuthenticationCredentialType",
                 )
             })?,
             raw_secret_access_key: self.raw_secret_access_key.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "raw_secret_access_key",
                     "raw_secret_access_key was not specified but it is required when building XksProxyAuthenticationCredentialType",
                 )

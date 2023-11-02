@@ -127,7 +127,7 @@ impl CreateResourceSetInputBuilder {
     /// Consumes the builder and constructs a [`CreateResourceSetInput`](crate::operation::create_resource_set::CreateResourceSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_resource_set::CreateResourceSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_resource_set::CreateResourceSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_resource_set::CreateResourceSetInput {
             resource_set_name: self.resource_set_name,
             resource_set_type: self.resource_set_type,

@@ -63,11 +63,11 @@ impl SendTemplatedEmailOutputBuilder {
     /// - [`message_id`](crate::operation::send_templated_email::builders::SendTemplatedEmailOutputBuilder::message_id)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::send_templated_email::SendTemplatedEmailOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::send_templated_email::SendTemplatedEmailOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::send_templated_email::SendTemplatedEmailOutput {
             message_id: self.message_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "message_id",
                     "message_id was not specified but it is required when building SendTemplatedEmailOutput",
                 )

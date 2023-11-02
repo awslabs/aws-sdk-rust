@@ -112,16 +112,16 @@ impl DocumentAttributeConditionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`condition_document_attribute_key`](crate::types::builders::DocumentAttributeConditionBuilder::condition_document_attribute_key)
     /// - [`operator`](crate::types::builders::DocumentAttributeConditionBuilder::operator)
-    pub fn build(self) -> ::std::result::Result<crate::types::DocumentAttributeCondition, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DocumentAttributeCondition, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DocumentAttributeCondition {
             condition_document_attribute_key: self.condition_document_attribute_key.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "condition_document_attribute_key",
                     "condition_document_attribute_key was not specified but it is required when building DocumentAttributeCondition",
                 )
             })?,
             operator: self.operator.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "operator",
                     "operator was not specified but it is required when building DocumentAttributeCondition",
                 )

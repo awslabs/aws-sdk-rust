@@ -130,7 +130,7 @@ impl StartDbInstanceAutomatedBackupsReplicationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_db_instance_automated_backups_replication::StartDbInstanceAutomatedBackupsReplicationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::start_db_instance_automated_backups_replication::StartDbInstanceAutomatedBackupsReplicationInput {

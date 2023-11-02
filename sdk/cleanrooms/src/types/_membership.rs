@@ -335,76 +335,76 @@ impl MembershipBuilder {
     /// - [`status`](crate::types::builders::MembershipBuilder::status)
     /// - [`member_abilities`](crate::types::builders::MembershipBuilder::member_abilities)
     /// - [`query_log_status`](crate::types::builders::MembershipBuilder::query_log_status)
-    pub fn build(self) -> ::std::result::Result<crate::types::Membership, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Membership, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Membership {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building Membership",
                 )
             })?,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building Membership",
                 )
             })?,
             collaboration_arn: self.collaboration_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "collaboration_arn",
                     "collaboration_arn was not specified but it is required when building Membership",
                 )
             })?,
             collaboration_id: self.collaboration_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "collaboration_id",
                     "collaboration_id was not specified but it is required when building Membership",
                 )
             })?,
             collaboration_creator_account_id: self.collaboration_creator_account_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "collaboration_creator_account_id",
                     "collaboration_creator_account_id was not specified but it is required when building Membership",
                 )
             })?,
             collaboration_creator_display_name: self.collaboration_creator_display_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "collaboration_creator_display_name",
                     "collaboration_creator_display_name was not specified but it is required when building Membership",
                 )
             })?,
             collaboration_name: self.collaboration_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "collaboration_name",
                     "collaboration_name was not specified but it is required when building Membership",
                 )
             })?,
             create_time: self.create_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "create_time",
                     "create_time was not specified but it is required when building Membership",
                 )
             })?,
             update_time: self.update_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "update_time",
                     "update_time was not specified but it is required when building Membership",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building Membership",
                 )
             })?,
             member_abilities: self.member_abilities.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "member_abilities",
                     "member_abilities was not specified but it is required when building Membership",
                 )
             })?,
             query_log_status: self.query_log_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "query_log_status",
                     "query_log_status was not specified but it is required when building Membership",
                 )

@@ -89,16 +89,16 @@ impl OrderedResourceDefinitionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::OrderedResourceDefinitionBuilder::r#type)
     /// - [`count`](crate::types::builders::OrderedResourceDefinitionBuilder::count)
-    pub fn build(self) -> ::std::result::Result<crate::types::OrderedResourceDefinition, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::OrderedResourceDefinition, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::OrderedResourceDefinition {
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building OrderedResourceDefinition",
                 )
             })?,
             count: self.count.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "count",
                     "count was not specified but it is required when building OrderedResourceDefinition",
                 )

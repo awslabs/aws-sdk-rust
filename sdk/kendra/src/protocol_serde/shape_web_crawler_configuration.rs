@@ -2,7 +2,7 @@
 pub fn ser_web_crawler_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::WebCrawlerConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.urls {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Urls").start_object();

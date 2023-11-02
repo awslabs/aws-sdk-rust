@@ -142,34 +142,34 @@ impl StorageLocationBuilder {
     /// - [`generated_prefix_location`](crate::types::builders::StorageLocationBuilder::generated_prefix_location)
     /// - [`binary_prefix_location`](crate::types::builders::StorageLocationBuilder::binary_prefix_location)
     /// - [`manifest_prefix_location`](crate::types::builders::StorageLocationBuilder::manifest_prefix_location)
-    pub fn build(self) -> ::std::result::Result<crate::types::StorageLocation, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::StorageLocation, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::StorageLocation {
             bucket: self.bucket.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "bucket",
                     "bucket was not specified but it is required when building StorageLocation",
                 )
             })?,
             repo_prefix_location: self.repo_prefix_location.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "repo_prefix_location",
                     "repo_prefix_location was not specified but it is required when building StorageLocation",
                 )
             })?,
             generated_prefix_location: self.generated_prefix_location.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "generated_prefix_location",
                     "generated_prefix_location was not specified but it is required when building StorageLocation",
                 )
             })?,
             binary_prefix_location: self.binary_prefix_location.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "binary_prefix_location",
                     "binary_prefix_location was not specified but it is required when building StorageLocation",
                 )
             })?,
             manifest_prefix_location: self.manifest_prefix_location.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "manifest_prefix_location",
                     "manifest_prefix_location was not specified but it is required when building StorageLocation",
                 )

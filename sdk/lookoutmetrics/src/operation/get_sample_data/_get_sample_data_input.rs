@@ -43,7 +43,7 @@ impl GetSampleDataInputBuilder {
     /// Consumes the builder and constructs a [`GetSampleDataInput`](crate::operation::get_sample_data::GetSampleDataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_sample_data::GetSampleDataInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_sample_data::GetSampleDataInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_sample_data::GetSampleDataInput {
             s3_source_config: self.s3_source_config,
         })

@@ -45,10 +45,10 @@ impl RetryPolicyExecutionBuilder {
     /// Consumes the builder and constructs a [`RetryPolicyExecution`](crate::types::RetryPolicyExecution).
     /// This method will fail if any of the following fields are not set:
     /// - [`current_attempt_count`](crate::types::builders::RetryPolicyExecutionBuilder::current_attempt_count)
-    pub fn build(self) -> ::std::result::Result<crate::types::RetryPolicyExecution, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RetryPolicyExecution, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RetryPolicyExecution {
             current_attempt_count: self.current_attempt_count.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "current_attempt_count",
                     "current_attempt_count was not specified but it is required when building RetryPolicyExecution",
                 )

@@ -44,7 +44,7 @@ impl DescribeAutoMlJobV2InputBuilder {
     /// Consumes the builder and constructs a [`DescribeAutoMlJobV2Input`](crate::operation::describe_auto_ml_job_v2::DescribeAutoMlJobV2Input).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_auto_ml_job_v2::DescribeAutoMlJobV2Input, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_auto_ml_job_v2::DescribeAutoMlJobV2Input, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_auto_ml_job_v2::DescribeAutoMlJobV2Input {
             auto_ml_job_name: self.auto_ml_job_name,

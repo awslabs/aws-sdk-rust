@@ -88,7 +88,7 @@ impl UpdateRefreshScheduleInputBuilder {
     /// Consumes the builder and constructs a [`UpdateRefreshScheduleInput`](crate::operation::update_refresh_schedule::UpdateRefreshScheduleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_refresh_schedule::UpdateRefreshScheduleInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_refresh_schedule::UpdateRefreshScheduleInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_refresh_schedule::UpdateRefreshScheduleInput {
             data_set_id: self.data_set_id,

@@ -8,8 +8,8 @@
 use aws_credential_types::provider::SharedCredentialsProvider;
 use aws_sdk_s3::Config;
 use aws_sdk_s3::{config::Credentials, config::Region, types::ObjectAttributes, Client};
-use aws_smithy_http::body::SdkBody;
 use aws_smithy_runtime::client::http::test_util::{ReplayEvent, StaticReplayClient};
+use aws_smithy_types::body::SdkBody;
 use http::header::AUTHORIZATION;
 
 const RESPONSE_BODY_XML: &[u8] = b"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<GetObjectAttributesResponse xmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\"><Checksum><ChecksumSHA1>e1AsOh9IyGCa4hLN+2Od7jlnP14=</ChecksumSHA1></Checksum></GetObjectAttributesResponse>";

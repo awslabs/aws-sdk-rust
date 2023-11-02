@@ -108,7 +108,7 @@ impl GetRouteResponsesInputBuilder {
     /// Consumes the builder and constructs a [`GetRouteResponsesInput`](crate::operation::get_route_responses::GetRouteResponsesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_route_responses::GetRouteResponsesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_route_responses::GetRouteResponsesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_route_responses::GetRouteResponsesInput {
             api_id: self.api_id,
             max_results: self.max_results,

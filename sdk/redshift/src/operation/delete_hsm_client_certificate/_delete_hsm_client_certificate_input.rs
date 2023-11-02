@@ -47,7 +47,7 @@ impl DeleteHsmClientCertificateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_hsm_client_certificate::DeleteHsmClientCertificateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_hsm_client_certificate::DeleteHsmClientCertificateInput {
             hsm_client_certificate_identifier: self.hsm_client_certificate_identifier,

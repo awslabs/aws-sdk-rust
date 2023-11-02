@@ -157,7 +157,7 @@ impl CreateOrganizationInputBuilder {
     /// Consumes the builder and constructs a [`CreateOrganizationInput`](crate::operation::create_organization::CreateOrganizationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_organization::CreateOrganizationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_organization::CreateOrganizationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_organization::CreateOrganizationInput {
             directory_id: self.directory_id,
             alias: self.alias,

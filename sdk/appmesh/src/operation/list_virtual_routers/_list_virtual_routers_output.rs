@@ -89,11 +89,11 @@ impl ListVirtualRoutersOutputBuilder {
     /// - [`virtual_routers`](crate::operation::list_virtual_routers::builders::ListVirtualRoutersOutputBuilder::virtual_routers)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_virtual_routers::ListVirtualRoutersOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_virtual_routers::ListVirtualRoutersOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_virtual_routers::ListVirtualRoutersOutput {
             virtual_routers: self.virtual_routers.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "virtual_routers",
                     "virtual_routers was not specified but it is required when building ListVirtualRoutersOutput",
                 )

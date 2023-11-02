@@ -89,17 +89,17 @@ impl VerifyCardValidationDataOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::verify_card_validation_data::VerifyCardValidationDataOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::verify_card_validation_data::VerifyCardValidationDataOutput {
             key_arn: self.key_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "key_arn",
                     "key_arn was not specified but it is required when building VerifyCardValidationDataOutput",
                 )
             })?,
             key_check_value: self.key_check_value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "key_check_value",
                     "key_check_value was not specified but it is required when building VerifyCardValidationDataOutput",
                 )

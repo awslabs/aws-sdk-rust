@@ -2,7 +2,7 @@
 pub fn ser_workflow_detail(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::WorkflowDetail,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("WorkflowId").string(input.workflow_id.as_str());
     }

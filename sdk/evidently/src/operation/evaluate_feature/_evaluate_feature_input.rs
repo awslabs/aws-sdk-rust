@@ -114,7 +114,7 @@ impl EvaluateFeatureInputBuilder {
     /// Consumes the builder and constructs a [`EvaluateFeatureInput`](crate::operation::evaluate_feature::EvaluateFeatureInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::evaluate_feature::EvaluateFeatureInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::evaluate_feature::EvaluateFeatureInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::evaluate_feature::EvaluateFeatureInput {
             project: self.project,
             feature: self.feature,

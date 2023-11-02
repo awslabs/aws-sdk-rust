@@ -2,7 +2,7 @@
 pub fn ser_import_destination(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ImportDestination,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.suppression_list_destination {
         #[allow(unused_mut)]
         let mut object_2 = object.key("SuppressionListDestination").start_object();

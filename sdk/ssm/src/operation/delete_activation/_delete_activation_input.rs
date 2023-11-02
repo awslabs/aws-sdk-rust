@@ -44,7 +44,7 @@ impl DeleteActivationInputBuilder {
     /// Consumes the builder and constructs a [`DeleteActivationInput`](crate::operation::delete_activation::DeleteActivationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_activation::DeleteActivationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_activation::DeleteActivationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_activation::DeleteActivationInput {
             activation_id: self.activation_id,
         })

@@ -113,10 +113,10 @@ impl BucketAccessLogConfigBuilder {
     /// Consumes the builder and constructs a [`BucketAccessLogConfig`](crate::types::BucketAccessLogConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`enabled`](crate::types::builders::BucketAccessLogConfigBuilder::enabled)
-    pub fn build(self) -> ::std::result::Result<crate::types::BucketAccessLogConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::BucketAccessLogConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::BucketAccessLogConfig {
             enabled: self.enabled.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "enabled",
                     "enabled was not specified but it is required when building BucketAccessLogConfig",
                 )

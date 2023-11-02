@@ -97,7 +97,7 @@ impl UnlabelParameterVersionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::unlabel_parameter_version::UnlabelParameterVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::unlabel_parameter_version::UnlabelParameterVersionInput {
             name: self.name,

@@ -44,7 +44,7 @@ impl RemoveStorageSystemInputBuilder {
     /// Consumes the builder and constructs a [`RemoveStorageSystemInput`](crate::operation::remove_storage_system::RemoveStorageSystemInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::remove_storage_system::RemoveStorageSystemInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::remove_storage_system::RemoveStorageSystemInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::remove_storage_system::RemoveStorageSystemInput {
             storage_system_arn: self.storage_system_arn,

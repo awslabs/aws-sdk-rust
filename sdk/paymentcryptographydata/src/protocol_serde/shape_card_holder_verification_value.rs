@@ -2,7 +2,7 @@
 pub fn ser_card_holder_verification_value(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CardHolderVerificationValue,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("UnpredictableNumber").string(input.unpredictable_number.as_str());
     }

@@ -44,7 +44,7 @@ impl GetResolverRuleInputBuilder {
     /// Consumes the builder and constructs a [`GetResolverRuleInput`](crate::operation::get_resolver_rule::GetResolverRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_resolver_rule::GetResolverRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_resolver_rule::GetResolverRuleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_resolver_rule::GetResolverRuleInput {
             resolver_rule_id: self.resolver_rule_id,
         })

@@ -3,7 +3,7 @@
 #[non_exhaustive]
 pub struct GetObjectOutput {
     /// <p>Object data.</p>
-    pub body: ::aws_smithy_http::byte_stream::ByteStream,
+    pub body: ::aws_smithy_types::byte_stream::ByteStream,
     /// <p>Specifies whether the object retrieved was (true) or was not (false) a Delete Marker. If false, this response header does not appear in the response.</p>
     pub delete_marker: bool,
     /// <p>Indicates that a range of bytes was specified.</p>
@@ -79,7 +79,7 @@ pub struct GetObjectOutput {
 }
 impl GetObjectOutput {
     /// <p>Object data.</p>
-    pub fn body(&self) -> &::aws_smithy_http::byte_stream::ByteStream {
+    pub fn body(&self) -> &::aws_smithy_types::byte_stream::ByteStream {
         &self.body
     }
     /// <p>Specifies whether the object retrieved was (true) or was not (false) a Delete Marker. If false, this response header does not appear in the response.</p>
@@ -288,7 +288,7 @@ impl GetObjectOutput {
 #[non_exhaustive]
 #[derive(::std::default::Default)]
 pub struct GetObjectOutputBuilder {
-    pub(crate) body: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
+    pub(crate) body: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>,
     pub(crate) delete_marker: ::std::option::Option<bool>,
     pub(crate) accept_ranges: ::std::option::Option<::std::string::String>,
     pub(crate) expiration: ::std::option::Option<::std::string::String>,
@@ -329,17 +329,17 @@ pub struct GetObjectOutputBuilder {
 }
 impl GetObjectOutputBuilder {
     /// <p>Object data.</p>
-    pub fn body(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
+    pub fn body(mut self, input: ::aws_smithy_types::byte_stream::ByteStream) -> Self {
         self.body = ::std::option::Option::Some(input);
         self
     }
     /// <p>Object data.</p>
-    pub fn set_body(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
+    pub fn set_body(mut self, input: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>) -> Self {
         self.body = input;
         self
     }
     /// <p>Object data.</p>
-    pub fn get_body(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+    pub fn get_body(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
         &self.body
     }
     /// <p>Specifies whether the object retrieved was (true) or was not (false) a Delete Marker. If false, this response header does not appear in the response.</p>

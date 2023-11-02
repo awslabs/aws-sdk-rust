@@ -68,7 +68,7 @@ impl CreatePublicVirtualInterfaceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_public_virtual_interface::CreatePublicVirtualInterfaceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_public_virtual_interface::CreatePublicVirtualInterfaceInput {
             connection_id: self.connection_id,

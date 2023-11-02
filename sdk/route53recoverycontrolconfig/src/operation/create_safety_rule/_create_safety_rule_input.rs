@@ -113,7 +113,7 @@ impl CreateSafetyRuleInputBuilder {
     /// Consumes the builder and constructs a [`CreateSafetyRuleInput`](crate::operation::create_safety_rule::CreateSafetyRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_safety_rule::CreateSafetyRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_safety_rule::CreateSafetyRuleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_safety_rule::CreateSafetyRuleInput {
             assertion_rule: self.assertion_rule,
             client_token: self.client_token,

@@ -307,52 +307,52 @@ impl ReportDefinitionBuilder {
     /// - [`s3_bucket`](crate::types::builders::ReportDefinitionBuilder::s3_bucket)
     /// - [`s3_prefix`](crate::types::builders::ReportDefinitionBuilder::s3_prefix)
     /// - [`s3_region`](crate::types::builders::ReportDefinitionBuilder::s3_region)
-    pub fn build(self) -> ::std::result::Result<crate::types::ReportDefinition, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ReportDefinition, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ReportDefinition {
             report_name: self.report_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "report_name",
                     "report_name was not specified but it is required when building ReportDefinition",
                 )
             })?,
             time_unit: self.time_unit.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "time_unit",
                     "time_unit was not specified but it is required when building ReportDefinition",
                 )
             })?,
             format: self.format.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "format",
                     "format was not specified but it is required when building ReportDefinition",
                 )
             })?,
             compression: self.compression.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "compression",
                     "compression was not specified but it is required when building ReportDefinition",
                 )
             })?,
             additional_schema_elements: self.additional_schema_elements.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "additional_schema_elements",
                     "additional_schema_elements was not specified but it is required when building ReportDefinition",
                 )
             })?,
             s3_bucket: self.s3_bucket.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "s3_bucket",
                     "s3_bucket was not specified but it is required when building ReportDefinition",
                 )
             })?,
             s3_prefix: self.s3_prefix.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "s3_prefix",
                     "s3_prefix was not specified but it is required when building ReportDefinition",
                 )
             })?,
             s3_region: self.s3_region.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "s3_region",
                     "s3_region was not specified but it is required when building ReportDefinition",
                 )

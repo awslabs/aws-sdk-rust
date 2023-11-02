@@ -267,7 +267,7 @@ impl ConfirmForgotPasswordInputBuilder {
     /// Consumes the builder and constructs a [`ConfirmForgotPasswordInput`](crate::operation::confirm_forgot_password::ConfirmForgotPasswordInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::confirm_forgot_password::ConfirmForgotPasswordInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::confirm_forgot_password::ConfirmForgotPasswordInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::confirm_forgot_password::ConfirmForgotPasswordInput {
             client_id: self.client_id,

@@ -128,7 +128,7 @@ impl ResendValidationEmailInputBuilder {
     /// Consumes the builder and constructs a [`ResendValidationEmailInput`](crate::operation::resend_validation_email::ResendValidationEmailInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::resend_validation_email::ResendValidationEmailInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::resend_validation_email::ResendValidationEmailInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::resend_validation_email::ResendValidationEmailInput {
             certificate_arn: self.certificate_arn,

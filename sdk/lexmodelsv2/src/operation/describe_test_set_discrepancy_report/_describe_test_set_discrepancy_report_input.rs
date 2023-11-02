@@ -46,7 +46,7 @@ impl DescribeTestSetDiscrepancyReportInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_test_set_discrepancy_report::DescribeTestSetDiscrepancyReportInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_test_set_discrepancy_report::DescribeTestSetDiscrepancyReportInput {

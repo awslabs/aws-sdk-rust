@@ -68,7 +68,7 @@ impl GetAggregateResourceConfigInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_aggregate_resource_config::GetAggregateResourceConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_aggregate_resource_config::GetAggregateResourceConfigInput {
             configuration_aggregator_name: self.configuration_aggregator_name,

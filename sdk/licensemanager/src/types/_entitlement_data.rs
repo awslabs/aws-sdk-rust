@@ -90,17 +90,17 @@ impl EntitlementDataBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::EntitlementDataBuilder::name)
     /// - [`unit`](crate::types::builders::EntitlementDataBuilder::unit)
-    pub fn build(self) -> ::std::result::Result<crate::types::EntitlementData, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::EntitlementData, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EntitlementData {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building EntitlementData",
                 )
             })?,
             value: self.value,
             unit: self.unit.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "unit",
                     "unit was not specified but it is required when building EntitlementData",
                 )

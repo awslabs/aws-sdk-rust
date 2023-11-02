@@ -71,7 +71,7 @@ impl ListStacksInputBuilder {
         &self.stack_status_filter
     }
     /// Consumes the builder and constructs a [`ListStacksInput`](crate::operation::list_stacks::ListStacksInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_stacks::ListStacksInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_stacks::ListStacksInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_stacks::ListStacksInput {
             next_token: self.next_token,
             stack_status_filter: self.stack_status_filter,

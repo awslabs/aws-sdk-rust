@@ -97,7 +97,7 @@ impl CompleteMultipartReadSetUploadInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUploadInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUploadInput {

@@ -74,8 +74,10 @@ impl DescribeInstanceHealthInputBuilder {
     /// Consumes the builder and constructs a [`DescribeInstanceHealthInput`](crate::operation::describe_instance_health::DescribeInstanceHealthInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_instance_health::DescribeInstanceHealthInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::describe_instance_health::DescribeInstanceHealthInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::describe_instance_health::DescribeInstanceHealthInput {
             load_balancer_name: self.load_balancer_name,
             instances: self.instances,

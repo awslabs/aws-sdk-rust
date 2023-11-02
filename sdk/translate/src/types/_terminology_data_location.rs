@@ -90,16 +90,16 @@ impl TerminologyDataLocationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`repository_type`](crate::types::builders::TerminologyDataLocationBuilder::repository_type)
     /// - [`location`](crate::types::builders::TerminologyDataLocationBuilder::location)
-    pub fn build(self) -> ::std::result::Result<crate::types::TerminologyDataLocation, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TerminologyDataLocation, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TerminologyDataLocation {
             repository_type: self.repository_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "repository_type",
                     "repository_type was not specified but it is required when building TerminologyDataLocation",
                 )
             })?,
             location: self.location.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "location",
                     "location was not specified but it is required when building TerminologyDataLocation",
                 )

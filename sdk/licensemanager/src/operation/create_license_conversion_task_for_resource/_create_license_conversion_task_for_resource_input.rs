@@ -90,7 +90,7 @@ impl CreateLicenseConversionTaskForResourceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_license_conversion_task_for_resource::CreateLicenseConversionTaskForResourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::create_license_conversion_task_for_resource::CreateLicenseConversionTaskForResourceInput {

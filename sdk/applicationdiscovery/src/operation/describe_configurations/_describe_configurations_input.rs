@@ -51,7 +51,7 @@ impl DescribeConfigurationsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeConfigurationsInput`](crate::operation::describe_configurations::DescribeConfigurationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_configurations::DescribeConfigurationsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_configurations::DescribeConfigurationsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_configurations::DescribeConfigurationsInput {
             configuration_ids: self.configuration_ids,

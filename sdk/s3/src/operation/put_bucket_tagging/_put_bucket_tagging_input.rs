@@ -139,7 +139,7 @@ impl PutBucketTaggingInputBuilder {
     /// Consumes the builder and constructs a [`PutBucketTaggingInput`](crate::operation::put_bucket_tagging::PutBucketTaggingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_bucket_tagging::PutBucketTaggingInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_bucket_tagging::PutBucketTaggingInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_bucket_tagging::PutBucketTaggingInput {
             bucket: self.bucket,
             content_md5: self.content_md5,

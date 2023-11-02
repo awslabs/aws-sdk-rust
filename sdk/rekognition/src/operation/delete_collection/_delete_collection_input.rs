@@ -44,7 +44,7 @@ impl DeleteCollectionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteCollectionInput`](crate::operation::delete_collection::DeleteCollectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_collection::DeleteCollectionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_collection::DeleteCollectionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_collection::DeleteCollectionInput {
             collection_id: self.collection_id,
         })

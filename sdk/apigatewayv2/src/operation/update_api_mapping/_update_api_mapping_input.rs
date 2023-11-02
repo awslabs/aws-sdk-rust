@@ -131,7 +131,7 @@ impl UpdateApiMappingInputBuilder {
     /// Consumes the builder and constructs a [`UpdateApiMappingInput`](crate::operation::update_api_mapping::UpdateApiMappingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_api_mapping::UpdateApiMappingInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_api_mapping::UpdateApiMappingInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_api_mapping::UpdateApiMappingInput {
             api_id: self.api_id,
             api_mapping_id: self.api_mapping_id,

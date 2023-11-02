@@ -220,7 +220,7 @@ impl ExportLicenseRecommendationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::export_license_recommendations::ExportLicenseRecommendationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::export_license_recommendations::ExportLicenseRecommendationsInput {
             account_ids: self.account_ids,

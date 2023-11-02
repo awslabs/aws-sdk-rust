@@ -65,7 +65,8 @@ impl DescribeAlarmModelInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAlarmModelInput`](crate::operation::describe_alarm_model::DescribeAlarmModelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_alarm_model::DescribeAlarmModelInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_alarm_model::DescribeAlarmModelInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::describe_alarm_model::DescribeAlarmModelInput {
             alarm_model_name: self.alarm_model_name,
             alarm_model_version: self.alarm_model_version,

@@ -42,7 +42,7 @@ impl DeleteBuildInputBuilder {
         &self.build_id
     }
     /// Consumes the builder and constructs a [`DeleteBuildInput`](crate::operation::delete_build::DeleteBuildInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_build::DeleteBuildInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_build::DeleteBuildInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_build::DeleteBuildInput { build_id: self.build_id })
     }
 }

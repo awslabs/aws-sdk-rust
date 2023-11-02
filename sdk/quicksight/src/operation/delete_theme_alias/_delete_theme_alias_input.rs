@@ -88,7 +88,7 @@ impl DeleteThemeAliasInputBuilder {
     /// Consumes the builder and constructs a [`DeleteThemeAliasInput`](crate::operation::delete_theme_alias::DeleteThemeAliasInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_theme_alias::DeleteThemeAliasInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_theme_alias::DeleteThemeAliasInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_theme_alias::DeleteThemeAliasInput {
             aws_account_id: self.aws_account_id,
             theme_id: self.theme_id,

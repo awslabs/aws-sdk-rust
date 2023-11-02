@@ -136,10 +136,10 @@ impl BatchCreateIndexBuilder {
     /// Consumes the builder and constructs a [`BatchCreateIndex`](crate::types::BatchCreateIndex).
     /// This method will fail if any of the following fields are not set:
     /// - [`ordered_indexed_attribute_list`](crate::types::builders::BatchCreateIndexBuilder::ordered_indexed_attribute_list)
-    pub fn build(self) -> ::std::result::Result<crate::types::BatchCreateIndex, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::BatchCreateIndex, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::BatchCreateIndex {
             ordered_indexed_attribute_list: self.ordered_indexed_attribute_list.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "ordered_indexed_attribute_list",
                     "ordered_indexed_attribute_list was not specified but it is required when building BatchCreateIndex",
                 )

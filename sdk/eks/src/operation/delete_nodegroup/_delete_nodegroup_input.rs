@@ -66,7 +66,7 @@ impl DeleteNodegroupInputBuilder {
     /// Consumes the builder and constructs a [`DeleteNodegroupInput`](crate::operation::delete_nodegroup::DeleteNodegroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_nodegroup::DeleteNodegroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_nodegroup::DeleteNodegroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_nodegroup::DeleteNodegroupInput {
             cluster_name: self.cluster_name,
             nodegroup_name: self.nodegroup_name,

@@ -2,7 +2,7 @@
 pub fn ser_usage_record(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UsageRecord,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object
             .key("Timestamp")

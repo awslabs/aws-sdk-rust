@@ -59,12 +59,12 @@ pub fn de_batch_associate_service_action_with_provisioning_artifact_http_respons
 
 pub fn ser_batch_associate_service_action_with_provisioning_artifact_input(
     input: &crate::operation::batch_associate_service_action_with_provisioning_artifact::BatchAssociateServiceActionWithProvisioningArtifactInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_batch_associate_service_action_with_provisioning_artifact_input::ser_batch_associate_service_action_with_provisioning_artifact_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_batch_associate_service_action_with_provisioning_artifact(value: &[u8], mut builder: crate::operation::batch_associate_service_action_with_provisioning_artifact::builders::BatchAssociateServiceActionWithProvisioningArtifactOutputBuilder) -> Result<crate::operation::batch_associate_service_action_with_provisioning_artifact::builders::BatchAssociateServiceActionWithProvisioningArtifactOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>{

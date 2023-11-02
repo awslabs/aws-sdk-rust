@@ -90,16 +90,16 @@ impl MapFilterBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`comparison`](crate::types::builders::MapFilterBuilder::comparison)
     /// - [`key`](crate::types::builders::MapFilterBuilder::key)
-    pub fn build(self) -> ::std::result::Result<crate::types::MapFilter, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::MapFilter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MapFilter {
             comparison: self.comparison.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "comparison",
                     "comparison was not specified but it is required when building MapFilter",
                 )
             })?,
             key: self.key.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "key",
                     "key was not specified but it is required when building MapFilter",
                 )

@@ -64,7 +64,7 @@ impl ListContactListsInputBuilder {
     /// Consumes the builder and constructs a [`ListContactListsInput`](crate::operation::list_contact_lists::ListContactListsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_contact_lists::ListContactListsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_contact_lists::ListContactListsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_contact_lists::ListContactListsInput {
             page_size: self.page_size,
             next_token: self.next_token,

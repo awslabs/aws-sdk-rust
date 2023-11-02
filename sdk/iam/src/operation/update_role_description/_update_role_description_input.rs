@@ -66,7 +66,7 @@ impl UpdateRoleDescriptionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateRoleDescriptionInput`](crate::operation::update_role_description::UpdateRoleDescriptionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_role_description::UpdateRoleDescriptionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_role_description::UpdateRoleDescriptionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_role_description::UpdateRoleDescriptionInput {
             role_name: self.role_name,

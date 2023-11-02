@@ -73,11 +73,11 @@ impl CategoryDrillDownFilterBuilder {
     /// Consumes the builder and constructs a [`CategoryDrillDownFilter`](crate::types::CategoryDrillDownFilter).
     /// This method will fail if any of the following fields are not set:
     /// - [`category_values`](crate::types::builders::CategoryDrillDownFilterBuilder::category_values)
-    pub fn build(self) -> ::std::result::Result<crate::types::CategoryDrillDownFilter, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CategoryDrillDownFilter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CategoryDrillDownFilter {
             column: self.column,
             category_values: self.category_values.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "category_values",
                     "category_values was not specified but it is required when building CategoryDrillDownFilter",
                 )

@@ -44,7 +44,7 @@ where
 pub fn ser_obfuscation_setting(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ObfuscationSetting,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("obfuscationSettingType").string(input.obfuscation_setting_type.as_str());
     }

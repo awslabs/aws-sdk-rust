@@ -77,16 +77,16 @@ impl AudioBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`locale`](crate::types::builders::AudioBuilder::locale)
     /// - [`location`](crate::types::builders::AudioBuilder::location)
-    pub fn build(self) -> ::std::result::Result<crate::types::Audio, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Audio, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Audio {
             locale: self.locale.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "locale",
                     "locale was not specified but it is required when building Audio",
                 )
             })?,
             location: self.location.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "location",
                     "location was not specified but it is required when building Audio",
                 )

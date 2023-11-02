@@ -255,7 +255,7 @@ impl ListUsersInputBuilder {
         &self.filter
     }
     /// Consumes the builder and constructs a [`ListUsersInput`](crate::operation::list_users::ListUsersInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_users::ListUsersInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_users::ListUsersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_users::ListUsersInput {
             user_pool_id: self.user_pool_id,
             attributes_to_get: self.attributes_to_get,

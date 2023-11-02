@@ -193,7 +193,7 @@ impl JoinDomainInputBuilder {
         &self.password
     }
     /// Consumes the builder and constructs a [`JoinDomainInput`](crate::operation::join_domain::JoinDomainInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::join_domain::JoinDomainInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::join_domain::JoinDomainInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::join_domain::JoinDomainInput {
             gateway_arn: self.gateway_arn,
             domain_name: self.domain_name,

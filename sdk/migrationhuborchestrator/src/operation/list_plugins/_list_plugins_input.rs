@@ -62,7 +62,7 @@ impl ListPluginsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListPluginsInput`](crate::operation::list_plugins::ListPluginsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_plugins::ListPluginsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_plugins::ListPluginsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_plugins::ListPluginsInput {
             max_results: self.max_results,
             next_token: self.next_token,

@@ -86,7 +86,7 @@ impl ListPagesByContactInputBuilder {
     /// Consumes the builder and constructs a [`ListPagesByContactInput`](crate::operation::list_pages_by_contact::ListPagesByContactInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_pages_by_contact::ListPagesByContactInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_pages_by_contact::ListPagesByContactInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_pages_by_contact::ListPagesByContactInput {
             contact_id: self.contact_id,

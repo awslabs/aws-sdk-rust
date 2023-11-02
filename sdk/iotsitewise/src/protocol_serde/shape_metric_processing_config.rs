@@ -2,7 +2,7 @@
 pub fn ser_metric_processing_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MetricProcessingConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("computeLocation").string(input.compute_location.as_str());
     }

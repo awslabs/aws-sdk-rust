@@ -51,10 +51,10 @@ impl PublishMetricActionBuilder {
     /// Consumes the builder and constructs a [`PublishMetricAction`](crate::types::PublishMetricAction).
     /// This method will fail if any of the following fields are not set:
     /// - [`dimensions`](crate::types::builders::PublishMetricActionBuilder::dimensions)
-    pub fn build(self) -> ::std::result::Result<crate::types::PublishMetricAction, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PublishMetricAction, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PublishMetricAction {
             dimensions: self.dimensions.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "dimensions",
                     "dimensions was not specified but it is required when building PublishMetricAction",
                 )

@@ -2,7 +2,7 @@
 pub fn ser_sapo_data_pagination_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SapoDataPaginationConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("maxPageSize").number(
             #[allow(clippy::useless_conversion)]

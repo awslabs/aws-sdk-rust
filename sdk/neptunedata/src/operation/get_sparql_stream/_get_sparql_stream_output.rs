@@ -174,34 +174,34 @@ impl GetSparqlStreamOutputBuilder {
     /// - [`total_records`](crate::operation::get_sparql_stream::builders::GetSparqlStreamOutputBuilder::total_records)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_sparql_stream::GetSparqlStreamOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_sparql_stream::GetSparqlStreamOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_sparql_stream::GetSparqlStreamOutput {
             last_event_id: self.last_event_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_event_id",
                     "last_event_id was not specified but it is required when building GetSparqlStreamOutput",
                 )
             })?,
             last_trx_timestamp_in_millis: self.last_trx_timestamp_in_millis.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_trx_timestamp_in_millis",
                     "last_trx_timestamp_in_millis was not specified but it is required when building GetSparqlStreamOutput",
                 )
             })?,
             format: self.format.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "format",
                     "format was not specified but it is required when building GetSparqlStreamOutput",
                 )
             })?,
             records: self.records.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "records",
                     "records was not specified but it is required when building GetSparqlStreamOutput",
                 )
             })?,
             total_records: self.total_records.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "total_records",
                     "total_records was not specified but it is required when building GetSparqlStreamOutput",
                 )

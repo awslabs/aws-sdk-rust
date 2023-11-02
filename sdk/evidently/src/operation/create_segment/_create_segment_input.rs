@@ -134,7 +134,7 @@ impl CreateSegmentInputBuilder {
     /// Consumes the builder and constructs a [`CreateSegmentInput`](crate::operation::create_segment::CreateSegmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_segment::CreateSegmentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_segment::CreateSegmentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_segment::CreateSegmentInput {
             name: self.name,
             pattern: self.pattern,

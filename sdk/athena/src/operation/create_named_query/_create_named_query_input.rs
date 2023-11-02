@@ -161,7 +161,7 @@ impl CreateNamedQueryInputBuilder {
     /// Consumes the builder and constructs a [`CreateNamedQueryInput`](crate::operation::create_named_query::CreateNamedQueryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_named_query::CreateNamedQueryInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_named_query::CreateNamedQueryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_named_query::CreateNamedQueryInput {
             name: self.name,
             description: self.description,

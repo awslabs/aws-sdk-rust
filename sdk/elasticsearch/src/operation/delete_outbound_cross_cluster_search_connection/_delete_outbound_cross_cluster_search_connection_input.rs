@@ -48,7 +48,7 @@ impl DeleteOutboundCrossClusterSearchConnectionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_outbound_cross_cluster_search_connection::DeleteOutboundCrossClusterSearchConnectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_outbound_cross_cluster_search_connection::DeleteOutboundCrossClusterSearchConnectionInput {

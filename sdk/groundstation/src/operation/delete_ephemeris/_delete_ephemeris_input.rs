@@ -44,7 +44,7 @@ impl DeleteEphemerisInputBuilder {
     /// Consumes the builder and constructs a [`DeleteEphemerisInput`](crate::operation::delete_ephemeris::DeleteEphemerisInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_ephemeris::DeleteEphemerisInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_ephemeris::DeleteEphemerisInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_ephemeris::DeleteEphemerisInput {
             ephemeris_id: self.ephemeris_id,
         })

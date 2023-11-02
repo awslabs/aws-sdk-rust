@@ -78,7 +78,7 @@ impl UntagSamlProviderInputBuilder {
     /// Consumes the builder and constructs a [`UntagSamlProviderInput`](crate::operation::untag_saml_provider::UntagSamlProviderInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::untag_saml_provider::UntagSamlProviderInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::untag_saml_provider::UntagSamlProviderInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::untag_saml_provider::UntagSamlProviderInput {
             saml_provider_arn: self.saml_provider_arn,
             tag_keys: self.tag_keys,

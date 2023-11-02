@@ -44,7 +44,7 @@ impl DescribeStatementInputBuilder {
     /// Consumes the builder and constructs a [`DescribeStatementInput`](crate::operation::describe_statement::DescribeStatementInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_statement::DescribeStatementInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_statement::DescribeStatementInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_statement::DescribeStatementInput { id: self.id })
     }
 }

@@ -48,7 +48,7 @@ impl DescribePublisherInputBuilder {
     /// Consumes the builder and constructs a [`DescribePublisherInput`](crate::operation::describe_publisher::DescribePublisherInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_publisher::DescribePublisherInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_publisher::DescribePublisherInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_publisher::DescribePublisherInput {
             publisher_id: self.publisher_id,
         })

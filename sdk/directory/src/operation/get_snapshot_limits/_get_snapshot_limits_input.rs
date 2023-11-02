@@ -45,7 +45,7 @@ impl GetSnapshotLimitsInputBuilder {
     /// Consumes the builder and constructs a [`GetSnapshotLimitsInput`](crate::operation::get_snapshot_limits::GetSnapshotLimitsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_snapshot_limits::GetSnapshotLimitsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_snapshot_limits::GetSnapshotLimitsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_snapshot_limits::GetSnapshotLimitsInput {
             directory_id: self.directory_id,
         })

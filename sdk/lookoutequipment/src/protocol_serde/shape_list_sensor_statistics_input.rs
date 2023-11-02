@@ -2,7 +2,7 @@
 pub fn ser_list_sensor_statistics_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_sensor_statistics::ListSensorStatisticsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.dataset_name {
         object.key("DatasetName").string(var_1.as_str());
     }

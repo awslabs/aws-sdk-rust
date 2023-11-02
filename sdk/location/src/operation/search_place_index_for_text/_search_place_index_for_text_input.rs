@@ -347,7 +347,7 @@ impl SearchPlaceIndexForTextInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::search_place_index_for_text::SearchPlaceIndexForTextInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::search_place_index_for_text::SearchPlaceIndexForTextInput {
             index_name: self.index_name,

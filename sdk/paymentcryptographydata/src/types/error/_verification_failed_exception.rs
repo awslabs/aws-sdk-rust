@@ -104,16 +104,16 @@ impl VerificationFailedExceptionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`reason`](crate::types::error::builders::VerificationFailedExceptionBuilder::reason)
     /// - [`message`](crate::types::error::builders::VerificationFailedExceptionBuilder::message)
-    pub fn build(self) -> ::std::result::Result<crate::types::error::VerificationFailedException, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::error::VerificationFailedException, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::error::VerificationFailedException {
             reason: self.reason.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "reason",
                     "reason was not specified but it is required when building VerificationFailedException",
                 )
             })?,
             message: self.message.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "message",
                     "message was not specified but it is required when building VerificationFailedException",
                 )

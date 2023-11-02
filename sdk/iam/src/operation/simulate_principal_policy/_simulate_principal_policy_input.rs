@@ -512,7 +512,7 @@ impl SimulatePrincipalPolicyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::simulate_principal_policy::SimulatePrincipalPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::simulate_principal_policy::SimulatePrincipalPolicyInput {
             policy_source_arn: self.policy_source_arn,

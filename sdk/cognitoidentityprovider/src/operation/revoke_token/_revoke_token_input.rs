@@ -94,7 +94,7 @@ impl RevokeTokenInputBuilder {
         &self.client_secret
     }
     /// Consumes the builder and constructs a [`RevokeTokenInput`](crate::operation::revoke_token::RevokeTokenInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::revoke_token::RevokeTokenInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::revoke_token::RevokeTokenInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::revoke_token::RevokeTokenInput {
             token: self.token,
             client_id: self.client_id,

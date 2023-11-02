@@ -217,7 +217,7 @@ impl CreateDataSourceFromRdsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_data_source_from_rds::CreateDataSourceFromRdsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_data_source_from_rds::CreateDataSourceFromRdsInput {
             data_source_id: self.data_source_id,

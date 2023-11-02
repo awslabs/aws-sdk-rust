@@ -107,7 +107,8 @@ impl ListVirtualRoutersInputBuilder {
     /// Consumes the builder and constructs a [`ListVirtualRoutersInput`](crate::operation::list_virtual_routers::ListVirtualRoutersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_virtual_routers::ListVirtualRoutersInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_virtual_routers::ListVirtualRoutersInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::list_virtual_routers::ListVirtualRoutersInput {
             mesh_name: self.mesh_name,
             next_token: self.next_token,

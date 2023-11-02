@@ -2,7 +2,7 @@
 pub fn ser_list_candidates_for_auto_ml_job_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_candidates_for_auto_ml_job::ListCandidatesForAutoMlJobInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.auto_ml_job_name {
         object.key("AutoMLJobName").string(var_1.as_str());
     }

@@ -157,7 +157,7 @@ impl CreateDashboardInputBuilder {
     /// Consumes the builder and constructs a [`CreateDashboardInput`](crate::operation::create_dashboard::CreateDashboardInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_dashboard::CreateDashboardInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_dashboard::CreateDashboardInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_dashboard::CreateDashboardInput {
             project_id: self.project_id,
             dashboard_name: self.dashboard_name,

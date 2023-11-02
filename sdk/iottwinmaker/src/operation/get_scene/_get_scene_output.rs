@@ -318,40 +318,40 @@ impl GetSceneOutputBuilder {
     /// - [`arn`](crate::operation::get_scene::builders::GetSceneOutputBuilder::arn)
     /// - [`creation_date_time`](crate::operation::get_scene::builders::GetSceneOutputBuilder::creation_date_time)
     /// - [`update_date_time`](crate::operation::get_scene::builders::GetSceneOutputBuilder::update_date_time)
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_scene::GetSceneOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_scene::GetSceneOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_scene::GetSceneOutput {
             workspace_id: self.workspace_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "workspace_id",
                     "workspace_id was not specified but it is required when building GetSceneOutput",
                 )
             })?,
             scene_id: self.scene_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "scene_id",
                     "scene_id was not specified but it is required when building GetSceneOutput",
                 )
             })?,
             content_location: self.content_location.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "content_location",
                     "content_location was not specified but it is required when building GetSceneOutput",
                 )
             })?,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building GetSceneOutput",
                 )
             })?,
             creation_date_time: self.creation_date_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_date_time",
                     "creation_date_time was not specified but it is required when building GetSceneOutput",
                 )
             })?,
             update_date_time: self.update_date_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "update_date_time",
                     "update_date_time was not specified but it is required when building GetSceneOutput",
                 )

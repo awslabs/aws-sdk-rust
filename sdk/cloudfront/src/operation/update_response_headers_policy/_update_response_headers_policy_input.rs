@@ -94,7 +94,7 @@ impl UpdateResponseHeadersPolicyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_response_headers_policy::UpdateResponseHeadersPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_response_headers_policy::UpdateResponseHeadersPolicyInput {
             response_headers_policy_config: self.response_headers_policy_config,

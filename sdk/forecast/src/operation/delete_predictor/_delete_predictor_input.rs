@@ -44,7 +44,7 @@ impl DeletePredictorInputBuilder {
     /// Consumes the builder and constructs a [`DeletePredictorInput`](crate::operation::delete_predictor::DeletePredictorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_predictor::DeletePredictorInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_predictor::DeletePredictorInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_predictor::DeletePredictorInput {
             predictor_arn: self.predictor_arn,
         })

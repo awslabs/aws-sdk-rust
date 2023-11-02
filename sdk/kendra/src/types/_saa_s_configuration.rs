@@ -70,16 +70,16 @@ impl SaaSConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`organization_name`](crate::types::builders::SaaSConfigurationBuilder::organization_name)
     /// - [`host_url`](crate::types::builders::SaaSConfigurationBuilder::host_url)
-    pub fn build(self) -> ::std::result::Result<crate::types::SaaSConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SaaSConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SaaSConfiguration {
             organization_name: self.organization_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "organization_name",
                     "organization_name was not specified but it is required when building SaaSConfiguration",
                 )
             })?,
             host_url: self.host_url.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "host_url",
                     "host_url was not specified but it is required when building SaaSConfiguration",
                 )

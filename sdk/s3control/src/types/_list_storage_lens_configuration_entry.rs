@@ -115,22 +115,22 @@ impl ListStorageLensConfigurationEntryBuilder {
     /// - [`id`](crate::types::builders::ListStorageLensConfigurationEntryBuilder::id)
     /// - [`storage_lens_arn`](crate::types::builders::ListStorageLensConfigurationEntryBuilder::storage_lens_arn)
     /// - [`home_region`](crate::types::builders::ListStorageLensConfigurationEntryBuilder::home_region)
-    pub fn build(self) -> ::std::result::Result<crate::types::ListStorageLensConfigurationEntry, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ListStorageLensConfigurationEntry, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ListStorageLensConfigurationEntry {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building ListStorageLensConfigurationEntry",
                 )
             })?,
             storage_lens_arn: self.storage_lens_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "storage_lens_arn",
                     "storage_lens_arn was not specified but it is required when building ListStorageLensConfigurationEntry",
                 )
             })?,
             home_region: self.home_region.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "home_region",
                     "home_region was not specified but it is required when building ListStorageLensConfigurationEntry",
                 )

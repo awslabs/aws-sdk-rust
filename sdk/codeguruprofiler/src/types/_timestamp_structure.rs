@@ -45,10 +45,10 @@ impl TimestampStructureBuilder {
     /// Consumes the builder and constructs a [`TimestampStructure`](crate::types::TimestampStructure).
     /// This method will fail if any of the following fields are not set:
     /// - [`value`](crate::types::builders::TimestampStructureBuilder::value)
-    pub fn build(self) -> ::std::result::Result<crate::types::TimestampStructure, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TimestampStructure, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TimestampStructure {
             value: self.value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "value",
                     "value was not specified but it is required when building TimestampStructure",
                 )

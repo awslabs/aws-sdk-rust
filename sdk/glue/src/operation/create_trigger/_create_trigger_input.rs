@@ -258,7 +258,7 @@ impl CreateTriggerInputBuilder {
     /// Consumes the builder and constructs a [`CreateTriggerInput`](crate::operation::create_trigger::CreateTriggerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_trigger::CreateTriggerInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_trigger::CreateTriggerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_trigger::CreateTriggerInput {
             name: self.name,
             workflow_name: self.workflow_name,

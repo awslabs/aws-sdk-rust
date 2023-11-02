@@ -243,7 +243,9 @@ impl CopySnapshotInputBuilder {
         &self.source_region
     }
     /// Consumes the builder and constructs a [`CopySnapshotInput`](crate::operation::copy_snapshot::CopySnapshotInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::copy_snapshot::CopySnapshotInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::copy_snapshot::CopySnapshotInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::copy_snapshot::CopySnapshotInput {
             source_snapshot_name: self.source_snapshot_name,
             source_resource_name: self.source_resource_name,

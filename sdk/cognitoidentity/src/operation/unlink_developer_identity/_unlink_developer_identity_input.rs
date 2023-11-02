@@ -113,7 +113,7 @@ impl UnlinkDeveloperIdentityInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::unlink_developer_identity::UnlinkDeveloperIdentityInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::unlink_developer_identity::UnlinkDeveloperIdentityInput {
             identity_id: self.identity_id,

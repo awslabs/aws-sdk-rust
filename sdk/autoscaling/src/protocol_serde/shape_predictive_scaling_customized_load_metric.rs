@@ -3,7 +3,7 @@
 pub fn ser_predictive_scaling_customized_load_metric(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::PredictiveScalingCustomizedLoadMetric,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("MetricDataQueries");
     if let Some(var_2) = &input.metric_data_queries {

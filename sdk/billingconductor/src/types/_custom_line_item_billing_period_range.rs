@@ -67,10 +67,10 @@ impl CustomLineItemBillingPeriodRangeBuilder {
     /// Consumes the builder and constructs a [`CustomLineItemBillingPeriodRange`](crate::types::CustomLineItemBillingPeriodRange).
     /// This method will fail if any of the following fields are not set:
     /// - [`inclusive_start_billing_period`](crate::types::builders::CustomLineItemBillingPeriodRangeBuilder::inclusive_start_billing_period)
-    pub fn build(self) -> ::std::result::Result<crate::types::CustomLineItemBillingPeriodRange, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CustomLineItemBillingPeriodRange, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CustomLineItemBillingPeriodRange {
             inclusive_start_billing_period: self.inclusive_start_billing_period.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "inclusive_start_billing_period",
                     "inclusive_start_billing_period was not specified but it is required when building CustomLineItemBillingPeriodRange",
                 )

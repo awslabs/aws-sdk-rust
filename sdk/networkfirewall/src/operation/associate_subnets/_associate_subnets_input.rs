@@ -134,7 +134,7 @@ impl AssociateSubnetsInputBuilder {
     /// Consumes the builder and constructs a [`AssociateSubnetsInput`](crate::operation::associate_subnets::AssociateSubnetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::associate_subnets::AssociateSubnetsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::associate_subnets::AssociateSubnetsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::associate_subnets::AssociateSubnetsInput {
             update_token: self.update_token,
             firewall_arn: self.firewall_arn,

@@ -75,7 +75,7 @@ impl BatchDisassociateResourceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_disassociate_resource::BatchDisassociateResourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::batch_disassociate_resource::BatchDisassociateResourceInput {
             resource_set_identifier: self.resource_set_identifier,

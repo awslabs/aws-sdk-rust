@@ -45,10 +45,10 @@ impl ListCustomLineItemFlatChargeDetailsBuilder {
     /// Consumes the builder and constructs a [`ListCustomLineItemFlatChargeDetails`](crate::types::ListCustomLineItemFlatChargeDetails).
     /// This method will fail if any of the following fields are not set:
     /// - [`charge_value`](crate::types::builders::ListCustomLineItemFlatChargeDetailsBuilder::charge_value)
-    pub fn build(self) -> ::std::result::Result<crate::types::ListCustomLineItemFlatChargeDetails, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ListCustomLineItemFlatChargeDetails, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ListCustomLineItemFlatChargeDetails {
             charge_value: self.charge_value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "charge_value",
                     "charge_value was not specified but it is required when building ListCustomLineItemFlatChargeDetails",
                 )

@@ -71,16 +71,16 @@ impl WorkflowDetailBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`workflow_id`](crate::types::builders::WorkflowDetailBuilder::workflow_id)
     /// - [`execution_role`](crate::types::builders::WorkflowDetailBuilder::execution_role)
-    pub fn build(self) -> ::std::result::Result<crate::types::WorkflowDetail, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::WorkflowDetail, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::WorkflowDetail {
             workflow_id: self.workflow_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "workflow_id",
                     "workflow_id was not specified but it is required when building WorkflowDetail",
                 )
             })?,
             execution_role: self.execution_role.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "execution_role",
                     "execution_role was not specified but it is required when building WorkflowDetail",
                 )

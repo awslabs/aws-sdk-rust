@@ -45,7 +45,8 @@ impl ListPolicyVersionsInputBuilder {
     /// Consumes the builder and constructs a [`ListPolicyVersionsInput`](crate::operation::list_policy_versions::ListPolicyVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_policy_versions::ListPolicyVersionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_policy_versions::ListPolicyVersionsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::list_policy_versions::ListPolicyVersionsInput {
             policy_name: self.policy_name,
         })

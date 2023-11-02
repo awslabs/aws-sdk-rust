@@ -97,10 +97,10 @@ impl HiveBuilder {
     /// Consumes the builder and constructs a [`Hive`](crate::types::Hive).
     /// This method will fail if any of the following fields are not set:
     /// - [`query`](crate::types::builders::HiveBuilder::query)
-    pub fn build(self) -> ::std::result::Result<crate::types::Hive, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Hive, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Hive {
             query: self.query.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "query",
                     "query was not specified but it is required when building Hive",
                 )

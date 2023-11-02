@@ -2,7 +2,7 @@
 pub fn ser_logging_options_payload(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LoggingOptionsPayload,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("roleArn").string(input.role_arn.as_str());
     }

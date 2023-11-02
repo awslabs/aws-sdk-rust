@@ -98,7 +98,7 @@ impl SetLoadBalancerPoliciesOfListenerInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_load_balancer_policies_of_listener::SetLoadBalancerPoliciesOfListenerInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::set_load_balancer_policies_of_listener::SetLoadBalancerPoliciesOfListenerInput {

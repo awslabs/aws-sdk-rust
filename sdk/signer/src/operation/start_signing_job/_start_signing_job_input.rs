@@ -131,7 +131,7 @@ impl StartSigningJobInputBuilder {
     /// Consumes the builder and constructs a [`StartSigningJobInput`](crate::operation::start_signing_job::StartSigningJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_signing_job::StartSigningJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_signing_job::StartSigningJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_signing_job::StartSigningJobInput {
             source: self.source,
             destination: self.destination,

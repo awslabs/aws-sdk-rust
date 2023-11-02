@@ -75,7 +75,7 @@ impl ModifyTargetGroupAttributesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_target_group_attributes::ModifyTargetGroupAttributesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::modify_target_group_attributes::ModifyTargetGroupAttributesInput {
             target_group_arn: self.target_group_arn,

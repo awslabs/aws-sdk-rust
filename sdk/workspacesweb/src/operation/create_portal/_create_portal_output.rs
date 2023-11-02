@@ -87,16 +87,16 @@ impl CreatePortalOutputBuilder {
     /// - [`portal_endpoint`](crate::operation::create_portal::builders::CreatePortalOutputBuilder::portal_endpoint)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_portal::CreatePortalOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_portal::CreatePortalOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_portal::CreatePortalOutput {
             portal_arn: self.portal_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "portal_arn",
                     "portal_arn was not specified but it is required when building CreatePortalOutput",
                 )
             })?,
             portal_endpoint: self.portal_endpoint.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "portal_endpoint",
                     "portal_endpoint was not specified but it is required when building CreatePortalOutput",
                 )

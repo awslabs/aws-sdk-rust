@@ -77,10 +77,10 @@ impl StartSourceNetworkRecoveryRequestNetworkEntryBuilder {
     /// - [`source_network_id`](crate::types::builders::StartSourceNetworkRecoveryRequestNetworkEntryBuilder::source_network_id)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::StartSourceNetworkRecoveryRequestNetworkEntry, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::StartSourceNetworkRecoveryRequestNetworkEntry, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::StartSourceNetworkRecoveryRequestNetworkEntry {
             source_network_id: self.source_network_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source_network_id",
                     "source_network_id was not specified but it is required when building StartSourceNetworkRecoveryRequestNetworkEntry",
                 )

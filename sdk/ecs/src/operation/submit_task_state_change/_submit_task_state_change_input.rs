@@ -256,7 +256,7 @@ impl SubmitTaskStateChangeInputBuilder {
     /// Consumes the builder and constructs a [`SubmitTaskStateChangeInput`](crate::operation::submit_task_state_change::SubmitTaskStateChangeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::submit_task_state_change::SubmitTaskStateChangeInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::submit_task_state_change::SubmitTaskStateChangeInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::submit_task_state_change::SubmitTaskStateChangeInput {
             cluster: self.cluster,

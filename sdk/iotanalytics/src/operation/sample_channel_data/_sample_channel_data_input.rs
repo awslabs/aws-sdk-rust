@@ -107,7 +107,7 @@ impl SampleChannelDataInputBuilder {
     /// Consumes the builder and constructs a [`SampleChannelDataInput`](crate::operation::sample_channel_data::SampleChannelDataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::sample_channel_data::SampleChannelDataInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::sample_channel_data::SampleChannelDataInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::sample_channel_data::SampleChannelDataInput {
             channel_name: self.channel_name,
             max_messages: self.max_messages,

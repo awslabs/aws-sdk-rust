@@ -248,7 +248,7 @@ impl DescribeActivitiesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeActivitiesInput`](crate::operation::describe_activities::DescribeActivitiesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_activities::DescribeActivitiesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_activities::DescribeActivitiesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_activities::DescribeActivitiesInput {
             authentication_token: self.authentication_token,
             start_time: self.start_time,

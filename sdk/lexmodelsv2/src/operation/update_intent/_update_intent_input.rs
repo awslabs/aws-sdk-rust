@@ -414,7 +414,9 @@ impl UpdateIntentInputBuilder {
         &self.initial_response_setting
     }
     /// Consumes the builder and constructs a [`UpdateIntentInput`](crate::operation::update_intent::UpdateIntentInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_intent::UpdateIntentInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_intent::UpdateIntentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_intent::UpdateIntentInput {
             intent_id: self.intent_id,
             intent_name: self.intent_name,

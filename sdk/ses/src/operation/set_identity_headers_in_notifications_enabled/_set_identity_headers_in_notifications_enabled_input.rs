@@ -97,7 +97,7 @@ impl SetIdentityHeadersInNotificationsEnabledInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_identity_headers_in_notifications_enabled::SetIdentityHeadersInNotificationsEnabledInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::set_identity_headers_in_notifications_enabled::SetIdentityHeadersInNotificationsEnabledInput {

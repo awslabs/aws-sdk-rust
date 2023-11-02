@@ -176,16 +176,16 @@ impl KafkaActionBuilder {
     /// - [`destination_arn`](crate::types::builders::KafkaActionBuilder::destination_arn)
     /// - [`topic`](crate::types::builders::KafkaActionBuilder::topic)
     /// - [`client_properties`](crate::types::builders::KafkaActionBuilder::client_properties)
-    pub fn build(self) -> ::std::result::Result<crate::types::KafkaAction, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::KafkaAction, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::KafkaAction {
             destination_arn: self.destination_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "destination_arn",
                     "destination_arn was not specified but it is required when building KafkaAction",
                 )
             })?,
             topic: self.topic.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "topic",
                     "topic was not specified but it is required when building KafkaAction",
                 )
@@ -193,7 +193,7 @@ impl KafkaActionBuilder {
             key: self.key,
             partition: self.partition,
             client_properties: self.client_properties.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "client_properties",
                     "client_properties was not specified but it is required when building KafkaAction",
                 )

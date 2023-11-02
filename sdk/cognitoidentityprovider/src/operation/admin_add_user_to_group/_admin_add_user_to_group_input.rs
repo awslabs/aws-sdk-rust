@@ -97,7 +97,7 @@ impl AdminAddUserToGroupInputBuilder {
     /// Consumes the builder and constructs a [`AdminAddUserToGroupInput`](crate::operation::admin_add_user_to_group::AdminAddUserToGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::admin_add_user_to_group::AdminAddUserToGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::admin_add_user_to_group::AdminAddUserToGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::admin_add_user_to_group::AdminAddUserToGroupInput {
             user_pool_id: self.user_pool_id,

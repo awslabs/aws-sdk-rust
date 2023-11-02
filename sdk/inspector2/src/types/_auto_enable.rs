@@ -110,16 +110,16 @@ impl AutoEnableBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`ec2`](crate::types::builders::AutoEnableBuilder::ec2)
     /// - [`ecr`](crate::types::builders::AutoEnableBuilder::ecr)
-    pub fn build(self) -> ::std::result::Result<crate::types::AutoEnable, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AutoEnable, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AutoEnable {
             ec2: self.ec2.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "ec2",
                     "ec2 was not specified but it is required when building AutoEnable",
                 )
             })?,
             ecr: self.ecr.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "ecr",
                     "ecr was not specified but it is required when building AutoEnable",
                 )

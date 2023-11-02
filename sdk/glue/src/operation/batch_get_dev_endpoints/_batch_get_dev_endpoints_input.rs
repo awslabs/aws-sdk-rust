@@ -51,7 +51,7 @@ impl BatchGetDevEndpointsInputBuilder {
     /// Consumes the builder and constructs a [`BatchGetDevEndpointsInput`](crate::operation::batch_get_dev_endpoints::BatchGetDevEndpointsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_get_dev_endpoints::BatchGetDevEndpointsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::batch_get_dev_endpoints::BatchGetDevEndpointsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::batch_get_dev_endpoints::BatchGetDevEndpointsInput {
             dev_endpoint_names: self.dev_endpoint_names,

@@ -307,7 +307,7 @@ impl CreateProcessingJobInputBuilder {
     /// Consumes the builder and constructs a [`CreateProcessingJobInput`](crate::operation::create_processing_job::CreateProcessingJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_processing_job::CreateProcessingJobInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_processing_job::CreateProcessingJobInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_processing_job::CreateProcessingJobInput {
             processing_inputs: self.processing_inputs,

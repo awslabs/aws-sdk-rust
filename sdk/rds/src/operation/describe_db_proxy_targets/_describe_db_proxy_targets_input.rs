@@ -148,7 +148,7 @@ impl DescribeDbProxyTargetsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_db_proxy_targets::DescribeDbProxyTargetsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_db_proxy_targets::DescribeDbProxyTargetsInput {
             db_proxy_name: self.db_proxy_name,

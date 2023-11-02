@@ -2,7 +2,7 @@
 pub fn ser_confluence_page_to_index_field_mapping(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ConfluencePageToIndexFieldMapping,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.data_source_field_name {
         object.key("DataSourceFieldName").string(var_1.as_str());
     }

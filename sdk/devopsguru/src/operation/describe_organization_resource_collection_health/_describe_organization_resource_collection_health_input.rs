@@ -150,7 +150,7 @@ impl DescribeOrganizationResourceCollectionHealthInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_organization_resource_collection_health::DescribeOrganizationResourceCollectionHealthInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_organization_resource_collection_health::DescribeOrganizationResourceCollectionHealthInput {

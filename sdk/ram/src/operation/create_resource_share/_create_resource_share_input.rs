@@ -291,7 +291,7 @@ impl CreateResourceShareInputBuilder {
     /// Consumes the builder and constructs a [`CreateResourceShareInput`](crate::operation::create_resource_share::CreateResourceShareInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_resource_share::CreateResourceShareInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_resource_share::CreateResourceShareInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_resource_share::CreateResourceShareInput {
             name: self.name,

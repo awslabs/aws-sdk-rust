@@ -103,7 +103,7 @@ impl RevokeCertificateInputBuilder {
     /// Consumes the builder and constructs a [`RevokeCertificateInput`](crate::operation::revoke_certificate::RevokeCertificateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::revoke_certificate::RevokeCertificateInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::revoke_certificate::RevokeCertificateInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::revoke_certificate::RevokeCertificateInput {
             certificate_authority_arn: self.certificate_authority_arn,
             certificate_serial: self.certificate_serial,

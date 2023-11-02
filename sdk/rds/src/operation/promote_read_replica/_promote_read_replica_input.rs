@@ -182,7 +182,8 @@ impl PromoteReadReplicaInputBuilder {
     /// Consumes the builder and constructs a [`PromoteReadReplicaInput`](crate::operation::promote_read_replica::PromoteReadReplicaInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::promote_read_replica::PromoteReadReplicaInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::promote_read_replica::PromoteReadReplicaInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::promote_read_replica::PromoteReadReplicaInput {
             db_instance_identifier: self.db_instance_identifier,
             backup_retention_period: self.backup_retention_period,

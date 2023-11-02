@@ -87,7 +87,7 @@ impl BatchUpdateScheduleInputBuilder {
     /// Consumes the builder and constructs a [`BatchUpdateScheduleInput`](crate::operation::batch_update_schedule::BatchUpdateScheduleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_update_schedule::BatchUpdateScheduleInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::batch_update_schedule::BatchUpdateScheduleInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::batch_update_schedule::BatchUpdateScheduleInput {
             channel_id: self.channel_id,

@@ -170,10 +170,10 @@ impl DescribeGroupOutputBuilder {
     /// - [`identity_store_id`](crate::operation::describe_group::builders::DescribeGroupOutputBuilder::identity_store_id)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_group::DescribeGroupOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_group::DescribeGroupOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_group::DescribeGroupOutput {
             group_id: self.group_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "group_id",
                     "group_id was not specified but it is required when building DescribeGroupOutput",
                 )
@@ -182,7 +182,7 @@ impl DescribeGroupOutputBuilder {
             external_ids: self.external_ids,
             description: self.description,
             identity_store_id: self.identity_store_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "identity_store_id",
                     "identity_store_id was not specified but it is required when building DescribeGroupOutput",
                 )

@@ -90,7 +90,7 @@ impl GetHostedConfigurationVersionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_hosted_configuration_version::GetHostedConfigurationVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_hosted_configuration_version::GetHostedConfigurationVersionInput {
             application_id: self.application_id,

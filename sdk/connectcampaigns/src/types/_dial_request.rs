@@ -131,28 +131,28 @@ impl DialRequestBuilder {
     /// - [`phone_number`](crate::types::builders::DialRequestBuilder::phone_number)
     /// - [`expiration_time`](crate::types::builders::DialRequestBuilder::expiration_time)
     /// - [`attributes`](crate::types::builders::DialRequestBuilder::attributes)
-    pub fn build(self) -> ::std::result::Result<crate::types::DialRequest, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DialRequest, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DialRequest {
             client_token: self.client_token.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "client_token",
                     "client_token was not specified but it is required when building DialRequest",
                 )
             })?,
             phone_number: self.phone_number.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "phone_number",
                     "phone_number was not specified but it is required when building DialRequest",
                 )
             })?,
             expiration_time: self.expiration_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "expiration_time",
                     "expiration_time was not specified but it is required when building DialRequest",
                 )
             })?,
             attributes: self.attributes.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "attributes",
                     "attributes was not specified but it is required when building DialRequest",
                 )

@@ -44,7 +44,7 @@ impl DeleteServiceProfileInputBuilder {
     /// Consumes the builder and constructs a [`DeleteServiceProfileInput`](crate::operation::delete_service_profile::DeleteServiceProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_service_profile::DeleteServiceProfileInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_service_profile::DeleteServiceProfileInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_service_profile::DeleteServiceProfileInput { id: self.id })
     }

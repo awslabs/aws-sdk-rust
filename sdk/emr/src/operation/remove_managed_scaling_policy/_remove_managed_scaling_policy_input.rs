@@ -46,7 +46,7 @@ impl RemoveManagedScalingPolicyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_managed_scaling_policy::RemoveManagedScalingPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::remove_managed_scaling_policy::RemoveManagedScalingPolicyInput { cluster_id: self.cluster_id })
     }

@@ -84,7 +84,7 @@ impl ListBotsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListBotsInput`](crate::operation::list_bots::ListBotsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_bots::ListBotsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_bots::ListBotsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_bots::ListBotsInput {
             account_id: self.account_id,
             max_results: self.max_results,

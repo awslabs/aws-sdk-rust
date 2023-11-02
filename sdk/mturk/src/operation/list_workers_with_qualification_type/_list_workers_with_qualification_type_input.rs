@@ -109,7 +109,7 @@ impl ListWorkersWithQualificationTypeInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_workers_with_qualification_type::ListWorkersWithQualificationTypeInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_workers_with_qualification_type::ListWorkersWithQualificationTypeInput {

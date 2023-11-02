@@ -46,10 +46,10 @@ impl IssueDetectionConfigurationBuilder {
     /// Consumes the builder and constructs a [`IssueDetectionConfiguration`](crate::types::IssueDetectionConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`rule_name`](crate::types::builders::IssueDetectionConfigurationBuilder::rule_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::IssueDetectionConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::IssueDetectionConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::IssueDetectionConfiguration {
             rule_name: self.rule_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "rule_name",
                     "rule_name was not specified but it is required when building IssueDetectionConfiguration",
                 )

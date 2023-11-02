@@ -101,12 +101,12 @@ impl ListResourcesInProtectionGroupOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_resources_in_protection_group::ListResourcesInProtectionGroupOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_resources_in_protection_group::ListResourcesInProtectionGroupOutput {
                 resource_arns: self.resource_arns.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
                         "resource_arns",
                         "resource_arns was not specified but it is required when building ListResourcesInProtectionGroupOutput",
                     )

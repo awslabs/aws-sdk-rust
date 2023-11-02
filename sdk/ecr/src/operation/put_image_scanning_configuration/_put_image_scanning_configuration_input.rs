@@ -89,7 +89,7 @@ impl PutImageScanningConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_image_scanning_configuration::PutImageScanningConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_image_scanning_configuration::PutImageScanningConfigurationInput {
             registry_id: self.registry_id,

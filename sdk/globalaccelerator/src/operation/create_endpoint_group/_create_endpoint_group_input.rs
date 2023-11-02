@@ -287,7 +287,7 @@ impl CreateEndpointGroupInputBuilder {
     /// Consumes the builder and constructs a [`CreateEndpointGroupInput`](crate::operation::create_endpoint_group::CreateEndpointGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_endpoint_group::CreateEndpointGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_endpoint_group::CreateEndpointGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_endpoint_group::CreateEndpointGroupInput {
             listener_arn: self.listener_arn,

@@ -94,22 +94,22 @@ impl S3ReferenceDataSourceDescriptionBuilder {
     /// - [`bucket_arn`](crate::types::builders::S3ReferenceDataSourceDescriptionBuilder::bucket_arn)
     /// - [`file_key`](crate::types::builders::S3ReferenceDataSourceDescriptionBuilder::file_key)
     /// - [`reference_role_arn`](crate::types::builders::S3ReferenceDataSourceDescriptionBuilder::reference_role_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::S3ReferenceDataSourceDescription, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::S3ReferenceDataSourceDescription, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::S3ReferenceDataSourceDescription {
             bucket_arn: self.bucket_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "bucket_arn",
                     "bucket_arn was not specified but it is required when building S3ReferenceDataSourceDescription",
                 )
             })?,
             file_key: self.file_key.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "file_key",
                     "file_key was not specified but it is required when building S3ReferenceDataSourceDescription",
                 )
             })?,
             reference_role_arn: self.reference_role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "reference_role_arn",
                     "reference_role_arn was not specified but it is required when building S3ReferenceDataSourceDescription",
                 )

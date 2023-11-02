@@ -69,16 +69,16 @@ impl UniqueAttributeBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`attribute_path`](crate::types::builders::UniqueAttributeBuilder::attribute_path)
     /// - [`attribute_value`](crate::types::builders::UniqueAttributeBuilder::attribute_value)
-    pub fn build(self) -> ::std::result::Result<crate::types::UniqueAttribute, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::UniqueAttribute, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::UniqueAttribute {
             attribute_path: self.attribute_path.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "attribute_path",
                     "attribute_path was not specified but it is required when building UniqueAttribute",
                 )
             })?,
             attribute_value: self.attribute_value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "attribute_value",
                     "attribute_value was not specified but it is required when building UniqueAttribute",
                 )

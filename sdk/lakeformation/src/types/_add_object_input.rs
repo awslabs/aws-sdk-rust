@@ -126,16 +126,16 @@ impl AddObjectInputBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`uri`](crate::types::builders::AddObjectInputBuilder::uri)
     /// - [`e_tag`](crate::types::builders::AddObjectInputBuilder::e_tag)
-    pub fn build(self) -> ::std::result::Result<crate::types::AddObjectInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AddObjectInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AddObjectInput {
             uri: self.uri.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "uri",
                     "uri was not specified but it is required when building AddObjectInput",
                 )
             })?,
             e_tag: self.e_tag.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "e_tag",
                     "e_tag was not specified but it is required when building AddObjectInput",
                 )

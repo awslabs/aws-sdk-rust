@@ -2,7 +2,7 @@
 pub fn ser_sapo_data_connector_profile_properties(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SapoDataConnectorProfileProperties,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("applicationHostUrl").string(input.application_host_url.as_str());
     }

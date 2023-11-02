@@ -94,7 +94,7 @@ impl GetFindingsStatisticsInputBuilder {
     /// Consumes the builder and constructs a [`GetFindingsStatisticsInput`](crate::operation::get_findings_statistics::GetFindingsStatisticsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_findings_statistics::GetFindingsStatisticsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_findings_statistics::GetFindingsStatisticsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_findings_statistics::GetFindingsStatisticsInput {
             detector_id: self.detector_id,

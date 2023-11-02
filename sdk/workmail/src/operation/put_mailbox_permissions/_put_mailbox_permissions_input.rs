@@ -177,7 +177,7 @@ impl PutMailboxPermissionsInputBuilder {
     /// Consumes the builder and constructs a [`PutMailboxPermissionsInput`](crate::operation::put_mailbox_permissions::PutMailboxPermissionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_mailbox_permissions::PutMailboxPermissionsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::put_mailbox_permissions::PutMailboxPermissionsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::put_mailbox_permissions::PutMailboxPermissionsInput {
             organization_id: self.organization_id,

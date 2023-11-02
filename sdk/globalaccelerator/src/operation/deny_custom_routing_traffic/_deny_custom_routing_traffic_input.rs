@@ -162,7 +162,7 @@ impl DenyCustomRoutingTrafficInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deny_custom_routing_traffic::DenyCustomRoutingTrafficInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::deny_custom_routing_traffic::DenyCustomRoutingTrafficInput {
             endpoint_group_arn: self.endpoint_group_arn,

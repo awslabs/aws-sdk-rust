@@ -44,7 +44,7 @@ impl GetVirtualMachineInputBuilder {
     /// Consumes the builder and constructs a [`GetVirtualMachineInput`](crate::operation::get_virtual_machine::GetVirtualMachineInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_virtual_machine::GetVirtualMachineInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_virtual_machine::GetVirtualMachineInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_virtual_machine::GetVirtualMachineInput {
             resource_arn: self.resource_arn,
         })

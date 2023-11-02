@@ -46,7 +46,7 @@ impl DeleteMedicalTranscriptionJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_medical_transcription_job::DeleteMedicalTranscriptionJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_medical_transcription_job::DeleteMedicalTranscriptionJobInput {
             medical_transcription_job_name: self.medical_transcription_job_name,

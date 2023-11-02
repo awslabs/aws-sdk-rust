@@ -90,10 +90,10 @@ impl CreateEventStreamOutputBuilder {
     /// - [`event_stream_arn`](crate::operation::create_event_stream::builders::CreateEventStreamOutputBuilder::event_stream_arn)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_event_stream::CreateEventStreamOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_event_stream::CreateEventStreamOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_event_stream::CreateEventStreamOutput {
             event_stream_arn: self.event_stream_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "event_stream_arn",
                     "event_stream_arn was not specified but it is required when building CreateEventStreamOutput",
                 )

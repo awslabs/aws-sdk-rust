@@ -185,7 +185,7 @@ impl ListMetricsInputBuilder {
         &self.owning_account
     }
     /// Consumes the builder and constructs a [`ListMetricsInput`](crate::operation::list_metrics::ListMetricsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_metrics::ListMetricsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_metrics::ListMetricsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_metrics::ListMetricsInput {
             namespace: self.namespace,
             metric_name: self.metric_name,

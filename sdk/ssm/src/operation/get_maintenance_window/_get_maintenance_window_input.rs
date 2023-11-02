@@ -44,7 +44,7 @@ impl GetMaintenanceWindowInputBuilder {
     /// Consumes the builder and constructs a [`GetMaintenanceWindowInput`](crate::operation::get_maintenance_window::GetMaintenanceWindowInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_maintenance_window::GetMaintenanceWindowInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_maintenance_window::GetMaintenanceWindowInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_maintenance_window::GetMaintenanceWindowInput { window_id: self.window_id })
     }

@@ -204,42 +204,42 @@ impl CreateAnnotationStoreVersionOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_annotation_store_version::CreateAnnotationStoreVersionOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_annotation_store_version::CreateAnnotationStoreVersionOutput {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building CreateAnnotationStoreVersionOutput",
                 )
             })?,
             version_name: self.version_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "version_name",
                     "version_name was not specified but it is required when building CreateAnnotationStoreVersionOutput",
                 )
             })?,
             store_id: self.store_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "store_id",
                     "store_id was not specified but it is required when building CreateAnnotationStoreVersionOutput",
                 )
             })?,
             version_options: self.version_options,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building CreateAnnotationStoreVersionOutput",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building CreateAnnotationStoreVersionOutput",
                 )
             })?,
             creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_time",
                     "creation_time was not specified but it is required when building CreateAnnotationStoreVersionOutput",
                 )

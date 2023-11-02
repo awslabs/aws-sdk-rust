@@ -66,7 +66,7 @@ impl SendUsersMessagesInputBuilder {
     /// Consumes the builder and constructs a [`SendUsersMessagesInput`](crate::operation::send_users_messages::SendUsersMessagesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::send_users_messages::SendUsersMessagesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::send_users_messages::SendUsersMessagesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::send_users_messages::SendUsersMessagesInput {
             application_id: self.application_id,
             send_users_message_request: self.send_users_message_request,

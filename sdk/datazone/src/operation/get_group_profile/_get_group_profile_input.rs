@@ -66,7 +66,7 @@ impl GetGroupProfileInputBuilder {
     /// Consumes the builder and constructs a [`GetGroupProfileInput`](crate::operation::get_group_profile::GetGroupProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_group_profile::GetGroupProfileInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_group_profile::GetGroupProfileInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_group_profile::GetGroupProfileInput {
             domain_identifier: self.domain_identifier,
             group_identifier: self.group_identifier,

@@ -138,7 +138,8 @@ impl DetectCustomLabelsInputBuilder {
     /// Consumes the builder and constructs a [`DetectCustomLabelsInput`](crate::operation::detect_custom_labels::DetectCustomLabelsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::detect_custom_labels::DetectCustomLabelsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::detect_custom_labels::DetectCustomLabelsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::detect_custom_labels::DetectCustomLabelsInput {
             project_version_arn: self.project_version_arn,
             image: self.image,

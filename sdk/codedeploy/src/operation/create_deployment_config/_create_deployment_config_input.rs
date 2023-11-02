@@ -143,8 +143,10 @@ impl CreateDeploymentConfigInputBuilder {
     /// Consumes the builder and constructs a [`CreateDeploymentConfigInput`](crate::operation::create_deployment_config::CreateDeploymentConfigInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_deployment_config::CreateDeploymentConfigInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::create_deployment_config::CreateDeploymentConfigInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::create_deployment_config::CreateDeploymentConfigInput {
             deployment_config_name: self.deployment_config_name,
             minimum_healthy_hosts: self.minimum_healthy_hosts,

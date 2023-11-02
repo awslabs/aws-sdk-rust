@@ -88,7 +88,8 @@ impl UpdateGroupProfileInputBuilder {
     /// Consumes the builder and constructs a [`UpdateGroupProfileInput`](crate::operation::update_group_profile::UpdateGroupProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_group_profile::UpdateGroupProfileInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_group_profile::UpdateGroupProfileInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::update_group_profile::UpdateGroupProfileInput {
             domain_identifier: self.domain_identifier,
             group_identifier: self.group_identifier,

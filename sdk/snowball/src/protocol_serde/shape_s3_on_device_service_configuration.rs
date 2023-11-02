@@ -2,7 +2,7 @@
 pub fn ser_s3_on_device_service_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::S3OnDeviceServiceConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.storage_limit {
         object.key("StorageLimit").number(
             #[allow(clippy::useless_conversion)]

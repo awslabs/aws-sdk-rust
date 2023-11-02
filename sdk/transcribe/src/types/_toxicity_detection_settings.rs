@@ -51,10 +51,10 @@ impl ToxicityDetectionSettingsBuilder {
     /// Consumes the builder and constructs a [`ToxicityDetectionSettings`](crate::types::ToxicityDetectionSettings).
     /// This method will fail if any of the following fields are not set:
     /// - [`toxicity_categories`](crate::types::builders::ToxicityDetectionSettingsBuilder::toxicity_categories)
-    pub fn build(self) -> ::std::result::Result<crate::types::ToxicityDetectionSettings, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ToxicityDetectionSettings, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ToxicityDetectionSettings {
             toxicity_categories: self.toxicity_categories.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "toxicity_categories",
                     "toxicity_categories was not specified but it is required when building ToxicityDetectionSettings",
                 )

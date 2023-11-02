@@ -109,7 +109,7 @@ impl DescribeRouteInputBuilder {
     /// Consumes the builder and constructs a [`DescribeRouteInput`](crate::operation::describe_route::DescribeRouteInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_route::DescribeRouteInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_route::DescribeRouteInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_route::DescribeRouteInput {
             route_name: self.route_name,
             mesh_name: self.mesh_name,

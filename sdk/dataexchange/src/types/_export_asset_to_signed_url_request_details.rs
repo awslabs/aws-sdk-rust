@@ -94,22 +94,24 @@ impl ExportAssetToSignedUrlRequestDetailsBuilder {
     /// - [`asset_id`](crate::types::builders::ExportAssetToSignedUrlRequestDetailsBuilder::asset_id)
     /// - [`data_set_id`](crate::types::builders::ExportAssetToSignedUrlRequestDetailsBuilder::data_set_id)
     /// - [`revision_id`](crate::types::builders::ExportAssetToSignedUrlRequestDetailsBuilder::revision_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::ExportAssetToSignedUrlRequestDetails, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::ExportAssetToSignedUrlRequestDetails, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ExportAssetToSignedUrlRequestDetails {
             asset_id: self.asset_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "asset_id",
                     "asset_id was not specified but it is required when building ExportAssetToSignedUrlRequestDetails",
                 )
             })?,
             data_set_id: self.data_set_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_set_id",
                     "data_set_id was not specified but it is required when building ExportAssetToSignedUrlRequestDetails",
                 )
             })?,
             revision_id: self.revision_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "revision_id",
                     "revision_id was not specified but it is required when building ExportAssetToSignedUrlRequestDetails",
                 )

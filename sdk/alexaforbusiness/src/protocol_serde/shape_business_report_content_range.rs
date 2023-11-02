@@ -2,7 +2,7 @@
 pub fn ser_business_report_content_range(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BusinessReportContentRange,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Interval").string(input.interval.as_str());
     }

@@ -75,16 +75,16 @@ impl ConversationLogsRequestBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`log_settings`](crate::types::builders::ConversationLogsRequestBuilder::log_settings)
     /// - [`iam_role_arn`](crate::types::builders::ConversationLogsRequestBuilder::iam_role_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::ConversationLogsRequest, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ConversationLogsRequest, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ConversationLogsRequest {
             log_settings: self.log_settings.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "log_settings",
                     "log_settings was not specified but it is required when building ConversationLogsRequest",
                 )
             })?,
             iam_role_arn: self.iam_role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "iam_role_arn",
                     "iam_role_arn was not specified but it is required when building ConversationLogsRequest",
                 )

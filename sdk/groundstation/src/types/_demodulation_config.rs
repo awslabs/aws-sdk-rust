@@ -46,10 +46,10 @@ impl DemodulationConfigBuilder {
     /// Consumes the builder and constructs a [`DemodulationConfig`](crate::types::DemodulationConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`unvalidated_json`](crate::types::builders::DemodulationConfigBuilder::unvalidated_json)
-    pub fn build(self) -> ::std::result::Result<crate::types::DemodulationConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DemodulationConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DemodulationConfig {
             unvalidated_json: self.unvalidated_json.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "unvalidated_json",
                     "unvalidated_json was not specified but it is required when building DemodulationConfig",
                 )

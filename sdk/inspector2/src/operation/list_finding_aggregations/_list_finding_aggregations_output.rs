@@ -114,11 +114,11 @@ impl ListFindingAggregationsOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_finding_aggregations::ListFindingAggregationsOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_finding_aggregations::ListFindingAggregationsOutput {
             aggregation_type: self.aggregation_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "aggregation_type",
                     "aggregation_type was not specified but it is required when building ListFindingAggregationsOutput",
                 )

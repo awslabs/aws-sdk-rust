@@ -66,7 +66,7 @@ impl DisassociateFleetInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateFleetInput`](crate::operation::disassociate_fleet::DisassociateFleetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::disassociate_fleet::DisassociateFleetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::disassociate_fleet::DisassociateFleetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::disassociate_fleet::DisassociateFleetInput {
             fleet_name: self.fleet_name,
             stack_name: self.stack_name,

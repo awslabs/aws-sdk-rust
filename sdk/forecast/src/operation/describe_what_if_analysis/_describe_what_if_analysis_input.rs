@@ -46,7 +46,7 @@ impl DescribeWhatIfAnalysisInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_what_if_analysis::DescribeWhatIfAnalysisInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_what_if_analysis::DescribeWhatIfAnalysisInput {
             what_if_analysis_arn: self.what_if_analysis_arn,

@@ -44,7 +44,7 @@ impl GetInsightResultsInputBuilder {
     /// Consumes the builder and constructs a [`GetInsightResultsInput`](crate::operation::get_insight_results::GetInsightResultsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_insight_results::GetInsightResultsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_insight_results::GetInsightResultsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_insight_results::GetInsightResultsInput {
             insight_arn: self.insight_arn,
         })

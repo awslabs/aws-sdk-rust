@@ -195,7 +195,7 @@ impl ConnectDirectoryInputBuilder {
     /// Consumes the builder and constructs a [`ConnectDirectoryInput`](crate::operation::connect_directory::ConnectDirectoryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::connect_directory::ConnectDirectoryInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::connect_directory::ConnectDirectoryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::connect_directory::ConnectDirectoryInput {
             name: self.name,
             short_name: self.short_name,

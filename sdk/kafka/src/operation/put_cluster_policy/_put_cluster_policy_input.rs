@@ -87,7 +87,7 @@ impl PutClusterPolicyInputBuilder {
     /// Consumes the builder and constructs a [`PutClusterPolicyInput`](crate::operation::put_cluster_policy::PutClusterPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_cluster_policy::PutClusterPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_cluster_policy::PutClusterPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_cluster_policy::PutClusterPolicyInput {
             cluster_arn: self.cluster_arn,
             current_version: self.current_version,

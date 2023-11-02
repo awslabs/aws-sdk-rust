@@ -108,11 +108,11 @@ impl SearchForPositionResultBuilder {
     /// Consumes the builder and constructs a [`SearchForPositionResult`](crate::types::SearchForPositionResult).
     /// This method will fail if any of the following fields are not set:
     /// - [`distance`](crate::types::builders::SearchForPositionResultBuilder::distance)
-    pub fn build(self) -> ::std::result::Result<crate::types::SearchForPositionResult, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SearchForPositionResult, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SearchForPositionResult {
             place: self.place,
             distance: self.distance.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "distance",
                     "distance was not specified but it is required when building SearchForPositionResult",
                 )

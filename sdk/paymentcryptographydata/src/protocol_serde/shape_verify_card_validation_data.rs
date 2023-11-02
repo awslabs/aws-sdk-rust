@@ -140,12 +140,12 @@ pub fn de_verify_card_validation_data_http_response(
 
 pub fn ser_verify_card_validation_data_input(
     input: &crate::operation::verify_card_validation_data::VerifyCardValidationDataInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_verify_card_validation_data_input::ser_verify_card_validation_data_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_verify_card_validation_data(

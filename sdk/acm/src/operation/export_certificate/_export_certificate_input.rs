@@ -99,7 +99,7 @@ impl ExportCertificateInputBuilder {
     /// Consumes the builder and constructs a [`ExportCertificateInput`](crate::operation::export_certificate::ExportCertificateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::export_certificate::ExportCertificateInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::export_certificate::ExportCertificateInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::export_certificate::ExportCertificateInput {
             certificate_arn: self.certificate_arn,
             passphrase: self.passphrase,

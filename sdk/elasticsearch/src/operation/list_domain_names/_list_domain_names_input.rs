@@ -44,7 +44,7 @@ impl ListDomainNamesInputBuilder {
     /// Consumes the builder and constructs a [`ListDomainNamesInput`](crate::operation::list_domain_names::ListDomainNamesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_domain_names::ListDomainNamesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_domain_names::ListDomainNamesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_domain_names::ListDomainNamesInput {
             engine_type: self.engine_type,
         })

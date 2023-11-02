@@ -68,16 +68,16 @@ impl ActiveContextTimeToLiveBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`time_to_live_in_seconds`](crate::types::builders::ActiveContextTimeToLiveBuilder::time_to_live_in_seconds)
     /// - [`turns_to_live`](crate::types::builders::ActiveContextTimeToLiveBuilder::turns_to_live)
-    pub fn build(self) -> ::std::result::Result<crate::types::ActiveContextTimeToLive, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ActiveContextTimeToLive, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ActiveContextTimeToLive {
             time_to_live_in_seconds: self.time_to_live_in_seconds.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "time_to_live_in_seconds",
                     "time_to_live_in_seconds was not specified but it is required when building ActiveContextTimeToLive",
                 )
             })?,
             turns_to_live: self.turns_to_live.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "turns_to_live",
                     "turns_to_live was not specified but it is required when building ActiveContextTimeToLive",
                 )

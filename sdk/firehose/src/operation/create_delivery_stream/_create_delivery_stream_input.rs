@@ -389,7 +389,7 @@ impl CreateDeliveryStreamInputBuilder {
     /// Consumes the builder and constructs a [`CreateDeliveryStreamInput`](crate::operation::create_delivery_stream::CreateDeliveryStreamInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_delivery_stream::CreateDeliveryStreamInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_delivery_stream::CreateDeliveryStreamInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_delivery_stream::CreateDeliveryStreamInput {
             delivery_stream_name: self.delivery_stream_name,

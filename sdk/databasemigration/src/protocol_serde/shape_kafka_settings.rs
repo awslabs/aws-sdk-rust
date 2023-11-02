@@ -2,7 +2,7 @@
 pub fn ser_kafka_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::KafkaSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.broker {
         object.key("Broker").string(var_1.as_str());
     }

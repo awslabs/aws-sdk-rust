@@ -70,16 +70,16 @@ impl QueueQuickConnectConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`queue_id`](crate::types::builders::QueueQuickConnectConfigBuilder::queue_id)
     /// - [`contact_flow_id`](crate::types::builders::QueueQuickConnectConfigBuilder::contact_flow_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::QueueQuickConnectConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::QueueQuickConnectConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::QueueQuickConnectConfig {
             queue_id: self.queue_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "queue_id",
                     "queue_id was not specified but it is required when building QueueQuickConnectConfig",
                 )
             })?,
             contact_flow_id: self.contact_flow_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "contact_flow_id",
                     "contact_flow_id was not specified but it is required when building QueueQuickConnectConfig",
                 )

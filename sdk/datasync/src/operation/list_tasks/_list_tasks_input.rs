@@ -92,7 +92,7 @@ impl ListTasksInputBuilder {
         &self.filters
     }
     /// Consumes the builder and constructs a [`ListTasksInput`](crate::operation::list_tasks::ListTasksInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_tasks::ListTasksInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_tasks::ListTasksInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_tasks::ListTasksInput {
             max_results: self.max_results,
             next_token: self.next_token,

@@ -2,7 +2,7 @@
 pub fn ser_cluster_service_connect_defaults_request(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ClusterServiceConnectDefaultsRequest,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("namespace").string(input.namespace.as_str());
     }

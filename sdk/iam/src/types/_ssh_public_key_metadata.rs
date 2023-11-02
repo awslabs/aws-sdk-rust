@@ -117,28 +117,28 @@ impl SshPublicKeyMetadataBuilder {
     /// - [`ssh_public_key_id`](crate::types::builders::SshPublicKeyMetadataBuilder::ssh_public_key_id)
     /// - [`status`](crate::types::builders::SshPublicKeyMetadataBuilder::status)
     /// - [`upload_date`](crate::types::builders::SshPublicKeyMetadataBuilder::upload_date)
-    pub fn build(self) -> ::std::result::Result<crate::types::SshPublicKeyMetadata, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SshPublicKeyMetadata, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SshPublicKeyMetadata {
             user_name: self.user_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "user_name",
                     "user_name was not specified but it is required when building SshPublicKeyMetadata",
                 )
             })?,
             ssh_public_key_id: self.ssh_public_key_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "ssh_public_key_id",
                     "ssh_public_key_id was not specified but it is required when building SshPublicKeyMetadata",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building SshPublicKeyMetadata",
                 )
             })?,
             upload_date: self.upload_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "upload_date",
                     "upload_date was not specified but it is required when building SshPublicKeyMetadata",
                 )

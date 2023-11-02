@@ -622,7 +622,7 @@ impl DescribeJobOutputBuilder {
     /// Consumes the builder and constructs a [`DescribeJobOutput`](crate::operation::describe_job::DescribeJobOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::operation::describe_job::builders::DescribeJobOutputBuilder::name)
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_job::DescribeJobOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_job::DescribeJobOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_job::DescribeJobOutput {
             create_date: self.create_date,
             created_by: self.created_by,
@@ -630,7 +630,7 @@ impl DescribeJobOutputBuilder {
             encryption_key_arn: self.encryption_key_arn,
             encryption_mode: self.encryption_mode,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building DescribeJobOutput",
                 )

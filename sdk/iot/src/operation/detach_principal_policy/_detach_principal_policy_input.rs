@@ -72,7 +72,7 @@ impl DetachPrincipalPolicyInputBuilder {
     /// Consumes the builder and constructs a [`DetachPrincipalPolicyInput`](crate::operation::detach_principal_policy::DetachPrincipalPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::detach_principal_policy::DetachPrincipalPolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::detach_principal_policy::DetachPrincipalPolicyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::detach_principal_policy::DetachPrincipalPolicyInput {
             policy_name: self.policy_name,

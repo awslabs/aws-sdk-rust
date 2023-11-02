@@ -2,7 +2,7 @@
 pub fn ser_stop_source_network_replication_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::stop_source_network_replication::StopSourceNetworkReplicationInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.source_network_id {
         object.key("sourceNetworkID").string(var_1.as_str());
     }

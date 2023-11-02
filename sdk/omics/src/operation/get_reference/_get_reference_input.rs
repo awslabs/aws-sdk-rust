@@ -128,7 +128,9 @@ impl GetReferenceInputBuilder {
         &self.file
     }
     /// Consumes the builder and constructs a [`GetReferenceInput`](crate::operation::get_reference::GetReferenceInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_reference::GetReferenceInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_reference::GetReferenceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_reference::GetReferenceInput {
             id: self.id,
             reference_store_id: self.reference_store_id,

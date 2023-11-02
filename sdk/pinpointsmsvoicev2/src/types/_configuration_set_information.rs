@@ -164,22 +164,22 @@ impl ConfigurationSetInformationBuilder {
     /// - [`configuration_set_name`](crate::types::builders::ConfigurationSetInformationBuilder::configuration_set_name)
     /// - [`event_destinations`](crate::types::builders::ConfigurationSetInformationBuilder::event_destinations)
     /// - [`created_timestamp`](crate::types::builders::ConfigurationSetInformationBuilder::created_timestamp)
-    pub fn build(self) -> ::std::result::Result<crate::types::ConfigurationSetInformation, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ConfigurationSetInformation, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ConfigurationSetInformation {
             configuration_set_arn: self.configuration_set_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "configuration_set_arn",
                     "configuration_set_arn was not specified but it is required when building ConfigurationSetInformation",
                 )
             })?,
             configuration_set_name: self.configuration_set_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "configuration_set_name",
                     "configuration_set_name was not specified but it is required when building ConfigurationSetInformation",
                 )
             })?,
             event_destinations: self.event_destinations.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "event_destinations",
                     "event_destinations was not specified but it is required when building ConfigurationSetInformation",
                 )
@@ -187,7 +187,7 @@ impl ConfigurationSetInformationBuilder {
             default_message_type: self.default_message_type,
             default_sender_id: self.default_sender_id,
             created_timestamp: self.created_timestamp.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_timestamp",
                     "created_timestamp was not specified but it is required when building ConfigurationSetInformation",
                 )

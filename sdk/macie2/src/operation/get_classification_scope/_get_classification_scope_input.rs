@@ -44,8 +44,10 @@ impl GetClassificationScopeInputBuilder {
     /// Consumes the builder and constructs a [`GetClassificationScopeInput`](crate::operation::get_classification_scope::GetClassificationScopeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_classification_scope::GetClassificationScopeInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::get_classification_scope::GetClassificationScopeInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::get_classification_scope::GetClassificationScopeInput { id: self.id })
     }
 }

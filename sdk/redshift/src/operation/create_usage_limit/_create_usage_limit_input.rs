@@ -181,7 +181,7 @@ impl CreateUsageLimitInputBuilder {
     /// Consumes the builder and constructs a [`CreateUsageLimitInput`](crate::operation::create_usage_limit::CreateUsageLimitInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_usage_limit::CreateUsageLimitInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_usage_limit::CreateUsageLimitInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_usage_limit::CreateUsageLimitInput {
             cluster_identifier: self.cluster_identifier,
             feature_type: self.feature_type,

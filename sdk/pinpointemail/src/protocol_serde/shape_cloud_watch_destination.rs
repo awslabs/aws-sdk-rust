@@ -2,7 +2,7 @@
 pub fn ser_cloud_watch_destination(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CloudWatchDestination,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("DimensionConfigurations").start_array();
         for item_2 in &input.dimension_configurations {

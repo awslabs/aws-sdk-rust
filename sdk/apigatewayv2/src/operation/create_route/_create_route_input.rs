@@ -309,7 +309,7 @@ impl CreateRouteInputBuilder {
         &self.target
     }
     /// Consumes the builder and constructs a [`CreateRouteInput`](crate::operation::create_route::CreateRouteInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_route::CreateRouteInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_route::CreateRouteInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_route::CreateRouteInput {
             api_id: self.api_id,
             api_key_required: self.api_key_required,

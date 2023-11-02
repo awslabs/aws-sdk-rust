@@ -284,16 +284,16 @@ impl ApiKeyRestrictionsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`allow_actions`](crate::types::builders::ApiKeyRestrictionsBuilder::allow_actions)
     /// - [`allow_resources`](crate::types::builders::ApiKeyRestrictionsBuilder::allow_resources)
-    pub fn build(self) -> ::std::result::Result<crate::types::ApiKeyRestrictions, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ApiKeyRestrictions, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ApiKeyRestrictions {
             allow_actions: self.allow_actions.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "allow_actions",
                     "allow_actions was not specified but it is required when building ApiKeyRestrictions",
                 )
             })?,
             allow_resources: self.allow_resources.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "allow_resources",
                     "allow_resources was not specified but it is required when building ApiKeyRestrictions",
                 )

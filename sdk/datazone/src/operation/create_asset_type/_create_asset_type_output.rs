@@ -329,29 +329,29 @@ impl CreateAssetTypeOutputBuilder {
     /// - [`forms_output`](crate::operation::create_asset_type::builders::CreateAssetTypeOutputBuilder::forms_output)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_asset_type::CreateAssetTypeOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_asset_type::CreateAssetTypeOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_asset_type::CreateAssetTypeOutput {
             domain_id: self.domain_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "domain_id",
                     "domain_id was not specified but it is required when building CreateAssetTypeOutput",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building CreateAssetTypeOutput",
                 )
             })?,
             revision: self.revision.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "revision",
                     "revision was not specified but it is required when building CreateAssetTypeOutput",
                 )
             })?,
             description: self.description,
             forms_output: self.forms_output.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "forms_output",
                     "forms_output was not specified but it is required when building CreateAssetTypeOutput",
                 )

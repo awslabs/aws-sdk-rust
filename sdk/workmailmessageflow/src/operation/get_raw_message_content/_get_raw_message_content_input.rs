@@ -44,7 +44,7 @@ impl GetRawMessageContentInputBuilder {
     /// Consumes the builder and constructs a [`GetRawMessageContentInput`](crate::operation::get_raw_message_content::GetRawMessageContentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_raw_message_content::GetRawMessageContentInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_raw_message_content::GetRawMessageContentInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_raw_message_content::GetRawMessageContentInput { message_id: self.message_id })
     }

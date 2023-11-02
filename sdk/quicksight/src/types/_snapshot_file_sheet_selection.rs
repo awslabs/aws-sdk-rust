@@ -118,16 +118,16 @@ impl SnapshotFileSheetSelectionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`sheet_id`](crate::types::builders::SnapshotFileSheetSelectionBuilder::sheet_id)
     /// - [`selection_scope`](crate::types::builders::SnapshotFileSheetSelectionBuilder::selection_scope)
-    pub fn build(self) -> ::std::result::Result<crate::types::SnapshotFileSheetSelection, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SnapshotFileSheetSelection, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SnapshotFileSheetSelection {
             sheet_id: self.sheet_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "sheet_id",
                     "sheet_id was not specified but it is required when building SnapshotFileSheetSelection",
                 )
             })?,
             selection_scope: self.selection_scope.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "selection_scope",
                     "selection_scope was not specified but it is required when building SnapshotFileSheetSelection",
                 )

@@ -47,7 +47,7 @@ where
 pub fn ser_fulfillment_activity(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FulfillmentActivity,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("type").string(input.r#type.as_str());
     }

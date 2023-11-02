@@ -66,7 +66,7 @@ impl DeleteProgramInputBuilder {
     /// Consumes the builder and constructs a [`DeleteProgramInput`](crate::operation::delete_program::DeleteProgramInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_program::DeleteProgramInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_program::DeleteProgramInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_program::DeleteProgramInput {
             channel_name: self.channel_name,
             program_name: self.program_name,

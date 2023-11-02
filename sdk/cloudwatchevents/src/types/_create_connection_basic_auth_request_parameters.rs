@@ -80,16 +80,16 @@ impl CreateConnectionBasicAuthRequestParametersBuilder {
     /// - [`password`](crate::types::builders::CreateConnectionBasicAuthRequestParametersBuilder::password)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::CreateConnectionBasicAuthRequestParameters, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::CreateConnectionBasicAuthRequestParameters, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CreateConnectionBasicAuthRequestParameters {
             username: self.username.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "username",
                     "username was not specified but it is required when building CreateConnectionBasicAuthRequestParameters",
                 )
             })?,
             password: self.password.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "password",
                     "password was not specified but it is required when building CreateConnectionBasicAuthRequestParameters",
                 )

@@ -2,7 +2,7 @@
 pub fn ser_modify_migration_project_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::modify_migration_project::ModifyMigrationProjectInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.migration_project_identifier {
         object.key("MigrationProjectIdentifier").string(var_1.as_str());
     }

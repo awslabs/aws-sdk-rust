@@ -84,7 +84,7 @@ impl ListIpSetsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListIpSetsInput`](crate::operation::list_ip_sets::ListIpSetsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_ip_sets::ListIpSetsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_ip_sets::ListIpSetsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_ip_sets::ListIpSetsInput {
             detector_id: self.detector_id,
             max_results: self.max_results,

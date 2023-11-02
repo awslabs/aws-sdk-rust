@@ -87,7 +87,7 @@ impl GetUpgradeHistoryInputBuilder {
     /// Consumes the builder and constructs a [`GetUpgradeHistoryInput`](crate::operation::get_upgrade_history::GetUpgradeHistoryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_upgrade_history::GetUpgradeHistoryInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_upgrade_history::GetUpgradeHistoryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_upgrade_history::GetUpgradeHistoryInput {
             domain_name: self.domain_name,
             max_results: self.max_results,

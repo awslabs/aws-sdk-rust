@@ -66,7 +66,7 @@ impl DescribeAddonInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAddonInput`](crate::operation::describe_addon::DescribeAddonInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_addon::DescribeAddonInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_addon::DescribeAddonInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_addon::DescribeAddonInput {
             cluster_name: self.cluster_name,
             addon_name: self.addon_name,

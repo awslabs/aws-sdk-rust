@@ -150,7 +150,7 @@ impl StartZonalShiftInputBuilder {
     /// Consumes the builder and constructs a [`StartZonalShiftInput`](crate::operation::start_zonal_shift::StartZonalShiftInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_zonal_shift::StartZonalShiftInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_zonal_shift::StartZonalShiftInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_zonal_shift::StartZonalShiftInput {
             resource_identifier: self.resource_identifier,
             away_from: self.away_from,

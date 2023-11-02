@@ -17,7 +17,7 @@ pub struct GetMediaForFragmentListOutput {
     /// <li> <p>AWS_KINESISVIDEO_EXCEPTION_ERROR_CODE - The integer code of the </p> </li>
     /// <li> <p>AWS_KINESISVIDEO_EXCEPTION_MESSAGE - A text description of the exception </p> </li>
     /// </ul>
-    pub payload: ::aws_smithy_http::byte_stream::ByteStream,
+    pub payload: ::aws_smithy_types::byte_stream::ByteStream,
     _request_id: Option<String>,
 }
 impl GetMediaForFragmentListOutput {
@@ -37,7 +37,7 @@ impl GetMediaForFragmentListOutput {
     /// <li> <p>AWS_KINESISVIDEO_EXCEPTION_ERROR_CODE - The integer code of the </p> </li>
     /// <li> <p>AWS_KINESISVIDEO_EXCEPTION_MESSAGE - A text description of the exception </p> </li>
     /// </ul>
-    pub fn payload(&self) -> &::aws_smithy_http::byte_stream::ByteStream {
+    pub fn payload(&self) -> &::aws_smithy_types::byte_stream::ByteStream {
         &self.payload
     }
 }
@@ -58,7 +58,7 @@ impl GetMediaForFragmentListOutput {
 #[derive(::std::default::Default, ::std::fmt::Debug)]
 pub struct GetMediaForFragmentListOutputBuilder {
     pub(crate) content_type: ::std::option::Option<::std::string::String>,
-    pub(crate) payload: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
+    pub(crate) payload: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>,
     _request_id: Option<String>,
 }
 impl GetMediaForFragmentListOutputBuilder {
@@ -88,7 +88,7 @@ impl GetMediaForFragmentListOutputBuilder {
     /// <li> <p>AWS_KINESISVIDEO_EXCEPTION_ERROR_CODE - The integer code of the </p> </li>
     /// <li> <p>AWS_KINESISVIDEO_EXCEPTION_MESSAGE - A text description of the exception </p> </li>
     /// </ul>
-    pub fn payload(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
+    pub fn payload(mut self, input: ::aws_smithy_types::byte_stream::ByteStream) -> Self {
         self.payload = ::std::option::Option::Some(input);
         self
     }
@@ -104,7 +104,7 @@ impl GetMediaForFragmentListOutputBuilder {
     /// <li> <p>AWS_KINESISVIDEO_EXCEPTION_ERROR_CODE - The integer code of the </p> </li>
     /// <li> <p>AWS_KINESISVIDEO_EXCEPTION_MESSAGE - A text description of the exception </p> </li>
     /// </ul>
-    pub fn set_payload(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
+    pub fn set_payload(mut self, input: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>) -> Self {
         self.payload = input;
         self
     }
@@ -120,7 +120,7 @@ impl GetMediaForFragmentListOutputBuilder {
     /// <li> <p>AWS_KINESISVIDEO_EXCEPTION_ERROR_CODE - The integer code of the </p> </li>
     /// <li> <p>AWS_KINESISVIDEO_EXCEPTION_MESSAGE - A text description of the exception </p> </li>
     /// </ul>
-    pub fn get_payload(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+    pub fn get_payload(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
         &self.payload
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

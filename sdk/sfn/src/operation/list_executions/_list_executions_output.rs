@@ -89,10 +89,10 @@ impl ListExecutionsOutputBuilder {
     /// - [`executions`](crate::operation::list_executions::builders::ListExecutionsOutputBuilder::executions)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_executions::ListExecutionsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_executions::ListExecutionsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_executions::ListExecutionsOutput {
             executions: self.executions.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "executions",
                     "executions was not specified but it is required when building ListExecutionsOutput",
                 )

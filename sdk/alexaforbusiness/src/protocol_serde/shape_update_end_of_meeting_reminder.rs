@@ -2,7 +2,7 @@
 pub fn ser_update_end_of_meeting_reminder(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UpdateEndOfMeetingReminder,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.reminder_at_minutes {
         let mut array_2 = object.key("ReminderAtMinutes").start_array();
         for item_3 in var_1 {

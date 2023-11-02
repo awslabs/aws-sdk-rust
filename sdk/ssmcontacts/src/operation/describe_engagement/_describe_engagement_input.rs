@@ -44,7 +44,7 @@ impl DescribeEngagementInputBuilder {
     /// Consumes the builder and constructs a [`DescribeEngagementInput`](crate::operation::describe_engagement::DescribeEngagementInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_engagement::DescribeEngagementInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_engagement::DescribeEngagementInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_engagement::DescribeEngagementInput {
             engagement_id: self.engagement_id,
         })

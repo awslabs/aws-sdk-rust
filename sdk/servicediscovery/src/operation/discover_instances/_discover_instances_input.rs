@@ -306,7 +306,7 @@ impl DiscoverInstancesInputBuilder {
     /// Consumes the builder and constructs a [`DiscoverInstancesInput`](crate::operation::discover_instances::DiscoverInstancesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::discover_instances::DiscoverInstancesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::discover_instances::DiscoverInstancesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::discover_instances::DiscoverInstancesInput {
             namespace_name: self.namespace_name,
             service_name: self.service_name,

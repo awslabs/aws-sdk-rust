@@ -91,16 +91,16 @@ impl WorkerResourceConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`cpu`](crate::types::builders::WorkerResourceConfigBuilder::cpu)
     /// - [`memory`](crate::types::builders::WorkerResourceConfigBuilder::memory)
-    pub fn build(self) -> ::std::result::Result<crate::types::WorkerResourceConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::WorkerResourceConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::WorkerResourceConfig {
             cpu: self.cpu.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "cpu",
                     "cpu was not specified but it is required when building WorkerResourceConfig",
                 )
             })?,
             memory: self.memory.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "memory",
                     "memory was not specified but it is required when building WorkerResourceConfig",
                 )

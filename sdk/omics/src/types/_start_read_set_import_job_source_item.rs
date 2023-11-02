@@ -229,30 +229,30 @@ impl StartReadSetImportJobSourceItemBuilder {
     /// - [`subject_id`](crate::types::builders::StartReadSetImportJobSourceItemBuilder::subject_id)
     /// - [`sample_id`](crate::types::builders::StartReadSetImportJobSourceItemBuilder::sample_id)
     /// - [`reference_arn`](crate::types::builders::StartReadSetImportJobSourceItemBuilder::reference_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::StartReadSetImportJobSourceItem, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::StartReadSetImportJobSourceItem, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::StartReadSetImportJobSourceItem {
             source_files: self.source_files,
             source_file_type: self.source_file_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source_file_type",
                     "source_file_type was not specified but it is required when building StartReadSetImportJobSourceItem",
                 )
             })?,
             subject_id: self.subject_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "subject_id",
                     "subject_id was not specified but it is required when building StartReadSetImportJobSourceItem",
                 )
             })?,
             sample_id: self.sample_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "sample_id",
                     "sample_id was not specified but it is required when building StartReadSetImportJobSourceItem",
                 )
             })?,
             generated_from: self.generated_from,
             reference_arn: self.reference_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "reference_arn",
                     "reference_arn was not specified but it is required when building StartReadSetImportJobSourceItem",
                 )

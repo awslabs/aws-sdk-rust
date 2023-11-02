@@ -111,7 +111,7 @@ impl DeleteMethodResponseInputBuilder {
     /// Consumes the builder and constructs a [`DeleteMethodResponseInput`](crate::operation::delete_method_response::DeleteMethodResponseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_method_response::DeleteMethodResponseInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_method_response::DeleteMethodResponseInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_method_response::DeleteMethodResponseInput {
             rest_api_id: self.rest_api_id,

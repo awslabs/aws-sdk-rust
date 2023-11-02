@@ -134,7 +134,7 @@ impl ListFacesInputBuilder {
         &self.face_ids
     }
     /// Consumes the builder and constructs a [`ListFacesInput`](crate::operation::list_faces::ListFacesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_faces::ListFacesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_faces::ListFacesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_faces::ListFacesInput {
             collection_id: self.collection_id,
             next_token: self.next_token,

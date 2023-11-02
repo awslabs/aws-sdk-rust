@@ -247,7 +247,7 @@ impl CreateGeofenceCollectionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_geofence_collection::CreateGeofenceCollectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_geofence_collection::CreateGeofenceCollectionInput {
             collection_name: self.collection_name,

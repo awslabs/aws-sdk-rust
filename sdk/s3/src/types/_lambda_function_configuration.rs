@@ -117,17 +117,17 @@ impl LambdaFunctionConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`lambda_function_arn`](crate::types::builders::LambdaFunctionConfigurationBuilder::lambda_function_arn)
     /// - [`events`](crate::types::builders::LambdaFunctionConfigurationBuilder::events)
-    pub fn build(self) -> ::std::result::Result<crate::types::LambdaFunctionConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::LambdaFunctionConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::LambdaFunctionConfiguration {
             id: self.id,
             lambda_function_arn: self.lambda_function_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "lambda_function_arn",
                     "lambda_function_arn was not specified but it is required when building LambdaFunctionConfiguration",
                 )
             })?,
             events: self.events.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "events",
                     "events was not specified but it is required when building LambdaFunctionConfiguration",
                 )

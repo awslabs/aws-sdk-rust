@@ -2,7 +2,7 @@
 pub fn ser_upload_entity_definitions_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::upload_entity_definitions::UploadEntityDefinitionsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.document {
         #[allow(unused_mut)]
         let mut object_2 = object.key("document").start_object();

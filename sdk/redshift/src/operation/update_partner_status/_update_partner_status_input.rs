@@ -153,7 +153,7 @@ impl UpdatePartnerStatusInputBuilder {
     /// Consumes the builder and constructs a [`UpdatePartnerStatusInput`](crate::operation::update_partner_status::UpdatePartnerStatusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_partner_status::UpdatePartnerStatusInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_partner_status::UpdatePartnerStatusInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_partner_status::UpdatePartnerStatusInput {
             account_id: self.account_id,

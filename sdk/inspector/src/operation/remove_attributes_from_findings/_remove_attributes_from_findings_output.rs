@@ -72,11 +72,11 @@ impl RemoveAttributesFromFindingsOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_attributes_from_findings::RemoveAttributesFromFindingsOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::remove_attributes_from_findings::RemoveAttributesFromFindingsOutput {
             failed_items: self.failed_items.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "failed_items",
                     "failed_items was not specified but it is required when building RemoveAttributesFromFindingsOutput",
                 )

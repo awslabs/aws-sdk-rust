@@ -92,7 +92,7 @@ impl AssignTapePoolInputBuilder {
     /// Consumes the builder and constructs a [`AssignTapePoolInput`](crate::operation::assign_tape_pool::AssignTapePoolInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::assign_tape_pool::AssignTapePoolInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::assign_tape_pool::AssignTapePoolInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::assign_tape_pool::AssignTapePoolInput {
             tape_arn: self.tape_arn,
             pool_id: self.pool_id,

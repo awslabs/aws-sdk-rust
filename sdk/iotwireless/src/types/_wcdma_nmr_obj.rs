@@ -133,22 +133,22 @@ impl WcdmaNmrObjBuilder {
     /// - [`uarfcndl`](crate::types::builders::WcdmaNmrObjBuilder::uarfcndl)
     /// - [`psc`](crate::types::builders::WcdmaNmrObjBuilder::psc)
     /// - [`utran_cid`](crate::types::builders::WcdmaNmrObjBuilder::utran_cid)
-    pub fn build(self) -> ::std::result::Result<crate::types::WcdmaNmrObj, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::WcdmaNmrObj, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::WcdmaNmrObj {
             uarfcndl: self.uarfcndl.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "uarfcndl",
                     "uarfcndl was not specified but it is required when building WcdmaNmrObj",
                 )
             })?,
             psc: self.psc.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "psc",
                     "psc was not specified but it is required when building WcdmaNmrObj",
                 )
             })?,
             utran_cid: self.utran_cid.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "utran_cid",
                     "utran_cid was not specified but it is required when building WcdmaNmrObj",
                 )

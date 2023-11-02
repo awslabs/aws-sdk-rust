@@ -172,15 +172,15 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for TagAttendeeR
             fn uri_base(
                 _input: &crate::operation::tag_attendee::TagAttendeeInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 use ::std::fmt::Write as _;
                 let input_1 = &_input.meeting_id;
                 let input_1 = input_1
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("meeting_id", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("meeting_id", "cannot be empty or unset"))?;
                 let meeting_id = ::aws_smithy_http::label::fmt_string(input_1, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if meeting_id.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "meeting_id",
                         "cannot be empty or unset",
                     ));
@@ -188,10 +188,10 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for TagAttendeeR
                 let input_2 = &_input.attendee_id;
                 let input_2 = input_2
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("attendee_id", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("attendee_id", "cannot be empty or unset"))?;
                 let attendee_id = ::aws_smithy_http::label::fmt_string(input_2, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if attendee_id.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "attendee_id",
                         "cannot be empty or unset",
                     ));
@@ -208,7 +208,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for TagAttendeeR
             fn uri_query(
                 _input: &crate::operation::tag_attendee::TagAttendeeInput,
                 mut output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 query.push_kv("operation", "add");
                 ::std::result::Result::Ok(())
@@ -217,7 +217,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for TagAttendeeR
             fn update_http_builder(
                 input: &crate::operation::tag_attendee::TagAttendeeInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -227,7 +227,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for TagAttendeeR
             builder = _header_serialization_settings.set_default_header(builder, ::http::header::CONTENT_TYPE, "application/json");
             builder
         };
-        let body = ::aws_smithy_http::body::SdkBody::from(crate::protocol_serde::shape_tag_attendee::ser_tag_attendee_input(&input)?);
+        let body = ::aws_smithy_types::body::SdkBody::from(crate::protocol_serde::shape_tag_attendee::ser_tag_attendee_input(&input)?);
         if let Some(content_length) = body.content_length() {
             let content_length = content_length.to_string();
             request_builder = _header_serialization_settings.set_default_header(request_builder, ::http::header::CONTENT_LENGTH, &content_length);

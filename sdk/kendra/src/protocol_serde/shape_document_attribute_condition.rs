@@ -2,7 +2,7 @@
 pub fn ser_document_attribute_condition(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DocumentAttributeCondition,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object
             .key("ConditionDocumentAttributeKey")

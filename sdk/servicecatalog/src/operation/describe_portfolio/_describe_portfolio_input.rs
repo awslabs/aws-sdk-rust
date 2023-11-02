@@ -85,7 +85,7 @@ impl DescribePortfolioInputBuilder {
     /// Consumes the builder and constructs a [`DescribePortfolioInput`](crate::operation::describe_portfolio::DescribePortfolioInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_portfolio::DescribePortfolioInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_portfolio::DescribePortfolioInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_portfolio::DescribePortfolioInput {
             accept_language: self.accept_language,
             id: self.id,

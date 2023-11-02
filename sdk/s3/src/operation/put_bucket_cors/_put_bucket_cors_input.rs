@@ -139,7 +139,7 @@ impl PutBucketCorsInputBuilder {
     /// Consumes the builder and constructs a [`PutBucketCorsInput`](crate::operation::put_bucket_cors::PutBucketCorsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_bucket_cors::PutBucketCorsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_bucket_cors::PutBucketCorsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_bucket_cors::PutBucketCorsInput {
             bucket: self.bucket,
             cors_configuration: self.cors_configuration,

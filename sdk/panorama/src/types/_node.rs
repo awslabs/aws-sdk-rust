@@ -275,52 +275,55 @@ impl NodeBuilder {
     /// - [`package_version`](crate::types::builders::NodeBuilder::package_version)
     /// - [`patch_version`](crate::types::builders::NodeBuilder::patch_version)
     /// - [`created_time`](crate::types::builders::NodeBuilder::created_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::Node, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Node, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Node {
             node_id: self.node_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "node_id",
                     "node_id was not specified but it is required when building Node",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field("name", "name was not specified but it is required when building Node")
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building Node",
+                )
             })?,
             category: self.category.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "category",
                     "category was not specified but it is required when building Node",
                 )
             })?,
             owner_account: self.owner_account,
             package_name: self.package_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "package_name",
                     "package_name was not specified but it is required when building Node",
                 )
             })?,
             package_id: self.package_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "package_id",
                     "package_id was not specified but it is required when building Node",
                 )
             })?,
             package_arn: self.package_arn,
             package_version: self.package_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "package_version",
                     "package_version was not specified but it is required when building Node",
                 )
             })?,
             patch_version: self.patch_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "patch_version",
                     "patch_version was not specified but it is required when building Node",
                 )
             })?,
             description: self.description,
             created_time: self.created_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_time",
                     "created_time was not specified but it is required when building Node",
                 )

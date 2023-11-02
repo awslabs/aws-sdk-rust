@@ -113,7 +113,7 @@ impl DescribeComponentConfigurationRecommendationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_component_configuration_recommendation::DescribeComponentConfigurationRecommendationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_component_configuration_recommendation::DescribeComponentConfigurationRecommendationInput {

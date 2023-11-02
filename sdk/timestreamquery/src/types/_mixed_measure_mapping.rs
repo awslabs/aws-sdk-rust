@@ -140,13 +140,13 @@ impl MixedMeasureMappingBuilder {
     /// Consumes the builder and constructs a [`MixedMeasureMapping`](crate::types::MixedMeasureMapping).
     /// This method will fail if any of the following fields are not set:
     /// - [`measure_value_type`](crate::types::builders::MixedMeasureMappingBuilder::measure_value_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::MixedMeasureMapping, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::MixedMeasureMapping, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MixedMeasureMapping {
             measure_name: self.measure_name,
             source_column: self.source_column,
             target_measure_name: self.target_measure_name,
             measure_value_type: self.measure_value_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "measure_value_type",
                     "measure_value_type was not specified but it is required when building MixedMeasureMapping",
                 )

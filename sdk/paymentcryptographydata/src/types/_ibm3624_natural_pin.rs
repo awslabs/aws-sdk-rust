@@ -94,22 +94,22 @@ impl Ibm3624NaturalPinBuilder {
     /// - [`decimalization_table`](crate::types::builders::Ibm3624NaturalPinBuilder::decimalization_table)
     /// - [`pin_validation_data_pad_character`](crate::types::builders::Ibm3624NaturalPinBuilder::pin_validation_data_pad_character)
     /// - [`pin_validation_data`](crate::types::builders::Ibm3624NaturalPinBuilder::pin_validation_data)
-    pub fn build(self) -> ::std::result::Result<crate::types::Ibm3624NaturalPin, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Ibm3624NaturalPin, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Ibm3624NaturalPin {
             decimalization_table: self.decimalization_table.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "decimalization_table",
                     "decimalization_table was not specified but it is required when building Ibm3624NaturalPin",
                 )
             })?,
             pin_validation_data_pad_character: self.pin_validation_data_pad_character.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "pin_validation_data_pad_character",
                     "pin_validation_data_pad_character was not specified but it is required when building Ibm3624NaturalPin",
                 )
             })?,
             pin_validation_data: self.pin_validation_data.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "pin_validation_data",
                     "pin_validation_data was not specified but it is required when building Ibm3624NaturalPin",
                 )

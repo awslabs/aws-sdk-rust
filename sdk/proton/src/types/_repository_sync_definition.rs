@@ -118,28 +118,28 @@ impl RepositorySyncDefinitionBuilder {
     /// - [`parent`](crate::types::builders::RepositorySyncDefinitionBuilder::parent)
     /// - [`branch`](crate::types::builders::RepositorySyncDefinitionBuilder::branch)
     /// - [`directory`](crate::types::builders::RepositorySyncDefinitionBuilder::directory)
-    pub fn build(self) -> ::std::result::Result<crate::types::RepositorySyncDefinition, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RepositorySyncDefinition, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RepositorySyncDefinition {
             target: self.target.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "target",
                     "target was not specified but it is required when building RepositorySyncDefinition",
                 )
             })?,
             parent: self.parent.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "parent",
                     "parent was not specified but it is required when building RepositorySyncDefinition",
                 )
             })?,
             branch: self.branch.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "branch",
                     "branch was not specified but it is required when building RepositorySyncDefinition",
                 )
             })?,
             directory: self.directory.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "directory",
                     "directory was not specified but it is required when building RepositorySyncDefinition",
                 )

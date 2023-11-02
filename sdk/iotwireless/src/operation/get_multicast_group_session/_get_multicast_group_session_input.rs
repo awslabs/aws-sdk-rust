@@ -46,7 +46,7 @@ impl GetMulticastGroupSessionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_multicast_group_session::GetMulticastGroupSessionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_multicast_group_session::GetMulticastGroupSessionInput { id: self.id })
     }

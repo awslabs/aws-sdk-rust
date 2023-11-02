@@ -88,7 +88,8 @@ impl DeleteWorkflowStepInputBuilder {
     /// Consumes the builder and constructs a [`DeleteWorkflowStepInput`](crate::operation::delete_workflow_step::DeleteWorkflowStepInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_workflow_step::DeleteWorkflowStepInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_workflow_step::DeleteWorkflowStepInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::delete_workflow_step::DeleteWorkflowStepInput {
             id: self.id,
             step_group_id: self.step_group_id,

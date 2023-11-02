@@ -397,7 +397,7 @@ impl ReceiveMessageInputBuilder {
     /// Consumes the builder and constructs a [`ReceiveMessageInput`](crate::operation::receive_message::ReceiveMessageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::receive_message::ReceiveMessageInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::receive_message::ReceiveMessageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::receive_message::ReceiveMessageInput {
             queue_url: self.queue_url,
             attribute_names: self.attribute_names,

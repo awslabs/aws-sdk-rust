@@ -118,7 +118,7 @@ impl DeregisterTransitGatewayMulticastGroupSourcesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_transit_gateway_multicast_group_sources::DeregisterTransitGatewayMulticastGroupSourcesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::deregister_transit_gateway_multicast_group_sources::DeregisterTransitGatewayMulticastGroupSourcesInput {

@@ -114,7 +114,7 @@ impl ListVariantImportJobsInputBuilder {
     /// Consumes the builder and constructs a [`ListVariantImportJobsInput`](crate::operation::list_variant_import_jobs::ListVariantImportJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_variant_import_jobs::ListVariantImportJobsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_variant_import_jobs::ListVariantImportJobsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_variant_import_jobs::ListVariantImportJobsInput {
             max_results: self.max_results,

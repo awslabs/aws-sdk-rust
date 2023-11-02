@@ -115,7 +115,7 @@ impl AuthorizeSnapshotAccessInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::authorize_snapshot_access::AuthorizeSnapshotAccessInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::authorize_snapshot_access::AuthorizeSnapshotAccessInput {
             snapshot_identifier: self.snapshot_identifier,

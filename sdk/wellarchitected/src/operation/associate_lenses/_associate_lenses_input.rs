@@ -79,7 +79,7 @@ impl AssociateLensesInputBuilder {
     /// Consumes the builder and constructs a [`AssociateLensesInput`](crate::operation::associate_lenses::AssociateLensesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::associate_lenses::AssociateLensesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::associate_lenses::AssociateLensesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::associate_lenses::AssociateLensesInput {
             workload_id: self.workload_id,
             lens_aliases: self.lens_aliases,

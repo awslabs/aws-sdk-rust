@@ -51,8 +51,10 @@ impl DescribeAssessmentRunsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAssessmentRunsInput`](crate::operation::describe_assessment_runs::DescribeAssessmentRunsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_assessment_runs::DescribeAssessmentRunsInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::describe_assessment_runs::DescribeAssessmentRunsInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::describe_assessment_runs::DescribeAssessmentRunsInput {
             assessment_run_arns: self.assessment_run_arns,
         })

@@ -44,7 +44,7 @@ impl DeleteSchemaMappingInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSchemaMappingInput`](crate::operation::delete_schema_mapping::DeleteSchemaMappingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_schema_mapping::DeleteSchemaMappingInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_schema_mapping::DeleteSchemaMappingInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_schema_mapping::DeleteSchemaMappingInput {
             schema_name: self.schema_name,

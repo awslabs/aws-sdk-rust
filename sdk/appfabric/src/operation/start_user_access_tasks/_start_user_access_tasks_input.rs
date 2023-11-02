@@ -74,7 +74,7 @@ impl StartUserAccessTasksInputBuilder {
     /// Consumes the builder and constructs a [`StartUserAccessTasksInput`](crate::operation::start_user_access_tasks::StartUserAccessTasksInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_user_access_tasks::StartUserAccessTasksInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::start_user_access_tasks::StartUserAccessTasksInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_user_access_tasks::StartUserAccessTasksInput {
             app_bundle_identifier: self.app_bundle_identifier,

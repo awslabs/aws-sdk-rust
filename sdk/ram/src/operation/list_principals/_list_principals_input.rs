@@ -261,7 +261,7 @@ impl ListPrincipalsInputBuilder {
     /// Consumes the builder and constructs a [`ListPrincipalsInput`](crate::operation::list_principals::ListPrincipalsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_principals::ListPrincipalsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_principals::ListPrincipalsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_principals::ListPrincipalsInput {
             resource_owner: self.resource_owner,
             resource_arn: self.resource_arn,

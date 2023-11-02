@@ -44,7 +44,7 @@ impl GetFindingAggregatorInputBuilder {
     /// Consumes the builder and constructs a [`GetFindingAggregatorInput`](crate::operation::get_finding_aggregator::GetFindingAggregatorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_finding_aggregator::GetFindingAggregatorInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_finding_aggregator::GetFindingAggregatorInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_finding_aggregator::GetFindingAggregatorInput {
             finding_aggregator_arn: self.finding_aggregator_arn,

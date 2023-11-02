@@ -66,7 +66,7 @@ impl UpdateDomainEntryInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDomainEntryInput`](crate::operation::update_domain_entry::UpdateDomainEntryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_domain_entry::UpdateDomainEntryInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_domain_entry::UpdateDomainEntryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_domain_entry::UpdateDomainEntryInput {
             domain_name: self.domain_name,
             domain_entry: self.domain_entry,

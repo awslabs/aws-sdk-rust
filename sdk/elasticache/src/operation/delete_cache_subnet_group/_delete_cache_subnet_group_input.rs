@@ -52,7 +52,7 @@ impl DeleteCacheSubnetGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_cache_subnet_group::DeleteCacheSubnetGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_cache_subnet_group::DeleteCacheSubnetGroupInput {
             cache_subnet_group_name: self.cache_subnet_group_name,

@@ -2,7 +2,7 @@
 pub fn ser_deregister_application_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::deregister_application::DeregisterApplicationInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.application_id {
         object.key("ApplicationId").string(var_1.as_str());
     }

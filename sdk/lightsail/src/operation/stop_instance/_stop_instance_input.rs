@@ -73,7 +73,9 @@ impl StopInstanceInputBuilder {
         &self.force
     }
     /// Consumes the builder and constructs a [`StopInstanceInput`](crate::operation::stop_instance::StopInstanceInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::stop_instance::StopInstanceInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::stop_instance::StopInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_instance::StopInstanceInput {
             instance_name: self.instance_name,
             force: self.force,

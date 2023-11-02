@@ -80,7 +80,7 @@ impl UntagOpenIdConnectProviderInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::untag_open_id_connect_provider::UntagOpenIdConnectProviderInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::untag_open_id_connect_provider::UntagOpenIdConnectProviderInput {
             open_id_connect_provider_arn: self.open_id_connect_provider_arn,

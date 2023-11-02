@@ -89,11 +89,11 @@ impl ListImageSetVersionsOutputBuilder {
     /// - [`image_set_properties_list`](crate::operation::list_image_set_versions::builders::ListImageSetVersionsOutputBuilder::image_set_properties_list)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_image_set_versions::ListImageSetVersionsOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_image_set_versions::ListImageSetVersionsOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_image_set_versions::ListImageSetVersionsOutput {
             image_set_properties_list: self.image_set_properties_list.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "image_set_properties_list",
                     "image_set_properties_list was not specified but it is required when building ListImageSetVersionsOutput",
                 )

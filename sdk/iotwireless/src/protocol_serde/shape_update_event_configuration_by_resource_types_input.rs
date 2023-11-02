@@ -2,7 +2,7 @@
 pub fn ser_update_event_configuration_by_resource_types_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_event_configuration_by_resource_types::UpdateEventConfigurationByResourceTypesInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.connection_status {
         #[allow(unused_mut)]
         let mut object_2 = object.key("ConnectionStatus").start_object();

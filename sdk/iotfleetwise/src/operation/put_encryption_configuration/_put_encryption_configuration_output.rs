@@ -108,18 +108,18 @@ impl PutEncryptionConfigurationOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_encryption_configuration::PutEncryptionConfigurationOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_encryption_configuration::PutEncryptionConfigurationOutput {
             kms_key_id: self.kms_key_id,
             encryption_status: self.encryption_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "encryption_status",
                     "encryption_status was not specified but it is required when building PutEncryptionConfigurationOutput",
                 )
             })?,
             encryption_type: self.encryption_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "encryption_type",
                     "encryption_type was not specified but it is required when building PutEncryptionConfigurationOutput",
                 )

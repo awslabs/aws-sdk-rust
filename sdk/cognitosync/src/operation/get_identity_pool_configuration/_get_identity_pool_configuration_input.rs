@@ -47,7 +47,7 @@ impl GetIdentityPoolConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_identity_pool_configuration::GetIdentityPoolConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_identity_pool_configuration::GetIdentityPoolConfigurationInput {
             identity_pool_id: self.identity_pool_id,

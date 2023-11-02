@@ -257,7 +257,7 @@ impl SendBulkEmailInputBuilder {
     /// Consumes the builder and constructs a [`SendBulkEmailInput`](crate::operation::send_bulk_email::SendBulkEmailInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::send_bulk_email::SendBulkEmailInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::send_bulk_email::SendBulkEmailInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::send_bulk_email::SendBulkEmailInput {
             from_email_address: self.from_email_address,
             from_email_address_identity_arn: self.from_email_address_identity_arn,

@@ -68,7 +68,7 @@ impl DisassociatePhoneNumberContactFlowInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_phone_number_contact_flow::DisassociatePhoneNumberContactFlowInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::disassociate_phone_number_contact_flow::DisassociatePhoneNumberContactFlowInput {

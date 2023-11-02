@@ -10,7 +10,7 @@ pub struct PutObjectInput {
     /// Store user defined metadata like backup checksum, disk ids, restore metadata etc.
     pub metadata_string: ::std::option::Option<::std::string::String>,
     /// Inline chunk data to be uploaded.
-    pub inline_chunk: ::aws_smithy_http::byte_stream::ByteStream,
+    pub inline_chunk: ::aws_smithy_types::byte_stream::ByteStream,
     /// Length of the inline chunk data.
     pub inline_chunk_length: ::std::option::Option<i64>,
     /// Inline chunk checksum
@@ -38,7 +38,7 @@ impl PutObjectInput {
         self.metadata_string.as_deref()
     }
     /// Inline chunk data to be uploaded.
-    pub fn inline_chunk(&self) -> &::aws_smithy_http::byte_stream::ByteStream {
+    pub fn inline_chunk(&self) -> &::aws_smithy_types::byte_stream::ByteStream {
         &self.inline_chunk
     }
     /// Length of the inline chunk data.
@@ -80,7 +80,7 @@ pub struct PutObjectInputBuilder {
     pub(crate) backup_job_id: ::std::option::Option<::std::string::String>,
     pub(crate) object_name: ::std::option::Option<::std::string::String>,
     pub(crate) metadata_string: ::std::option::Option<::std::string::String>,
-    pub(crate) inline_chunk: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
+    pub(crate) inline_chunk: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>,
     pub(crate) inline_chunk_length: ::std::option::Option<i64>,
     pub(crate) inline_chunk_checksum: ::std::option::Option<::std::string::String>,
     pub(crate) inline_chunk_checksum_algorithm: ::std::option::Option<::std::string::String>,
@@ -134,17 +134,17 @@ impl PutObjectInputBuilder {
         &self.metadata_string
     }
     /// Inline chunk data to be uploaded.
-    pub fn inline_chunk(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
+    pub fn inline_chunk(mut self, input: ::aws_smithy_types::byte_stream::ByteStream) -> Self {
         self.inline_chunk = ::std::option::Option::Some(input);
         self
     }
     /// Inline chunk data to be uploaded.
-    pub fn set_inline_chunk(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
+    pub fn set_inline_chunk(mut self, input: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>) -> Self {
         self.inline_chunk = input;
         self
     }
     /// Inline chunk data to be uploaded.
-    pub fn get_inline_chunk(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+    pub fn get_inline_chunk(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
         &self.inline_chunk
     }
     /// Length of the inline chunk data.
@@ -232,7 +232,7 @@ impl PutObjectInputBuilder {
         &self.throw_on_duplicate
     }
     /// Consumes the builder and constructs a [`PutObjectInput`](crate::operation::put_object::PutObjectInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_object::PutObjectInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_object::PutObjectInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_object::PutObjectInput {
             backup_job_id: self.backup_job_id,
             object_name: self.object_name,

@@ -86,7 +86,8 @@ impl ListStreamSessionsInputBuilder {
     /// Consumes the builder and constructs a [`ListStreamSessionsInput`](crate::operation::list_stream_sessions::ListStreamSessionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_stream_sessions::ListStreamSessionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_stream_sessions::ListStreamSessionsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::list_stream_sessions::ListStreamSessionsInput {
             channel_arn: self.channel_arn,
             next_token: self.next_token,

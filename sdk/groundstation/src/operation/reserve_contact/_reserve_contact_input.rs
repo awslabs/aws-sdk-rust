@@ -160,7 +160,7 @@ impl ReserveContactInputBuilder {
     /// Consumes the builder and constructs a [`ReserveContactInput`](crate::operation::reserve_contact::ReserveContactInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::reserve_contact::ReserveContactInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::reserve_contact::ReserveContactInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::reserve_contact::ReserveContactInput {
             mission_profile_arn: self.mission_profile_arn,
             satellite_arn: self.satellite_arn,

@@ -103,7 +103,7 @@ impl GetLensVersionDifferenceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_lens_version_difference::GetLensVersionDifferenceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_lens_version_difference::GetLensVersionDifferenceInput {
             lens_alias: self.lens_alias,

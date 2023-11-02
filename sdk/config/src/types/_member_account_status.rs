@@ -216,22 +216,22 @@ impl MemberAccountStatusBuilder {
     /// - [`account_id`](crate::types::builders::MemberAccountStatusBuilder::account_id)
     /// - [`config_rule_name`](crate::types::builders::MemberAccountStatusBuilder::config_rule_name)
     /// - [`member_account_rule_status`](crate::types::builders::MemberAccountStatusBuilder::member_account_rule_status)
-    pub fn build(self) -> ::std::result::Result<crate::types::MemberAccountStatus, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::MemberAccountStatus, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MemberAccountStatus {
             account_id: self.account_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "account_id",
                     "account_id was not specified but it is required when building MemberAccountStatus",
                 )
             })?,
             config_rule_name: self.config_rule_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "config_rule_name",
                     "config_rule_name was not specified but it is required when building MemberAccountStatus",
                 )
             })?,
             member_account_rule_status: self.member_account_rule_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "member_account_rule_status",
                     "member_account_rule_status was not specified but it is required when building MemberAccountStatus",
                 )

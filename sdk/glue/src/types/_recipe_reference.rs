@@ -70,16 +70,16 @@ impl RecipeReferenceBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`recipe_arn`](crate::types::builders::RecipeReferenceBuilder::recipe_arn)
     /// - [`recipe_version`](crate::types::builders::RecipeReferenceBuilder::recipe_version)
-    pub fn build(self) -> ::std::result::Result<crate::types::RecipeReference, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RecipeReference, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RecipeReference {
             recipe_arn: self.recipe_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "recipe_arn",
                     "recipe_arn was not specified but it is required when building RecipeReference",
                 )
             })?,
             recipe_version: self.recipe_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "recipe_version",
                     "recipe_version was not specified but it is required when building RecipeReference",
                 )

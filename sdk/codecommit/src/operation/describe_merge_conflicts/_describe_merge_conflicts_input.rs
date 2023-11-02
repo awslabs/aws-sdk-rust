@@ -216,8 +216,10 @@ impl DescribeMergeConflictsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeMergeConflictsInput`](crate::operation::describe_merge_conflicts::DescribeMergeConflictsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_merge_conflicts::DescribeMergeConflictsInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::describe_merge_conflicts::DescribeMergeConflictsInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::describe_merge_conflicts::DescribeMergeConflictsInput {
             repository_name: self.repository_name,
             destination_commit_specifier: self.destination_commit_specifier,

@@ -71,7 +71,7 @@ impl StartMonitoringMemberInputBuilder {
     /// Consumes the builder and constructs a [`StartMonitoringMemberInput`](crate::operation::start_monitoring_member::StartMonitoringMemberInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_monitoring_member::StartMonitoringMemberInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::start_monitoring_member::StartMonitoringMemberInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_monitoring_member::StartMonitoringMemberInput {
             graph_arn: self.graph_arn,

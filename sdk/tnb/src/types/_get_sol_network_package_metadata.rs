@@ -90,17 +90,17 @@ impl GetSolNetworkPackageMetadataBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`created_at`](crate::types::builders::GetSolNetworkPackageMetadataBuilder::created_at)
     /// - [`last_modified`](crate::types::builders::GetSolNetworkPackageMetadataBuilder::last_modified)
-    pub fn build(self) -> ::std::result::Result<crate::types::GetSolNetworkPackageMetadata, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::GetSolNetworkPackageMetadata, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::GetSolNetworkPackageMetadata {
             nsd: self.nsd,
             created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
                     "created_at was not specified but it is required when building GetSolNetworkPackageMetadata",
                 )
             })?,
             last_modified: self.last_modified.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_modified",
                     "last_modified was not specified but it is required when building GetSolNetworkPackageMetadata",
                 )

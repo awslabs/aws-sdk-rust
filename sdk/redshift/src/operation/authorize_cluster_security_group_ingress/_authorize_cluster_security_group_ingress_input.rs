@@ -115,7 +115,7 @@ impl AuthorizeClusterSecurityGroupIngressInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::authorize_cluster_security_group_ingress::AuthorizeClusterSecurityGroupIngressInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::authorize_cluster_security_group_ingress::AuthorizeClusterSecurityGroupIngressInput {

@@ -91,17 +91,17 @@ impl StepFunctionsActionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`state_machine_name`](crate::types::builders::StepFunctionsActionBuilder::state_machine_name)
     /// - [`role_arn`](crate::types::builders::StepFunctionsActionBuilder::role_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::StepFunctionsAction, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::StepFunctionsAction, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::StepFunctionsAction {
             execution_name_prefix: self.execution_name_prefix,
             state_machine_name: self.state_machine_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "state_machine_name",
                     "state_machine_name was not specified but it is required when building StepFunctionsAction",
                 )
             })?,
             role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role_arn",
                     "role_arn was not specified but it is required when building StepFunctionsAction",
                 )

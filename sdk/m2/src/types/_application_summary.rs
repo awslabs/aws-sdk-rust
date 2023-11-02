@@ -312,47 +312,47 @@ impl ApplicationSummaryBuilder {
     /// - [`status`](crate::types::builders::ApplicationSummaryBuilder::status)
     /// - [`engine_type`](crate::types::builders::ApplicationSummaryBuilder::engine_type)
     /// - [`creation_time`](crate::types::builders::ApplicationSummaryBuilder::creation_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::ApplicationSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ApplicationSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ApplicationSummary {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building ApplicationSummary",
                 )
             })?,
             description: self.description,
             application_id: self.application_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "application_id",
                     "application_id was not specified but it is required when building ApplicationSummary",
                 )
             })?,
             application_arn: self.application_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "application_arn",
                     "application_arn was not specified but it is required when building ApplicationSummary",
                 )
             })?,
             application_version: self.application_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "application_version",
                     "application_version was not specified but it is required when building ApplicationSummary",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building ApplicationSummary",
                 )
             })?,
             engine_type: self.engine_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "engine_type",
                     "engine_type was not specified but it is required when building ApplicationSummary",
                 )
             })?,
             creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_time",
                     "creation_time was not specified but it is required when building ApplicationSummary",
                 )

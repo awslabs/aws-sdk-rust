@@ -114,17 +114,17 @@ impl GetWorkUnitsOutputBuilder {
     /// - [`work_unit_ranges`](crate::operation::get_work_units::builders::GetWorkUnitsOutputBuilder::work_unit_ranges)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_work_units::GetWorkUnitsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_work_units::GetWorkUnitsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_work_units::GetWorkUnitsOutput {
             next_token: self.next_token,
             query_id: self.query_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "query_id",
                     "query_id was not specified but it is required when building GetWorkUnitsOutput",
                 )
             })?,
             work_unit_ranges: self.work_unit_ranges.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "work_unit_ranges",
                     "work_unit_ranges was not specified but it is required when building GetWorkUnitsOutput",
                 )

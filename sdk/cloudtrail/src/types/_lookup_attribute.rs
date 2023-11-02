@@ -69,16 +69,16 @@ impl LookupAttributeBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`attribute_key`](crate::types::builders::LookupAttributeBuilder::attribute_key)
     /// - [`attribute_value`](crate::types::builders::LookupAttributeBuilder::attribute_value)
-    pub fn build(self) -> ::std::result::Result<crate::types::LookupAttribute, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::LookupAttribute, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::LookupAttribute {
             attribute_key: self.attribute_key.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "attribute_key",
                     "attribute_key was not specified but it is required when building LookupAttribute",
                 )
             })?,
             attribute_value: self.attribute_value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "attribute_value",
                     "attribute_value was not specified but it is required when building LookupAttribute",
                 )

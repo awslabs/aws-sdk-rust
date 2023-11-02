@@ -44,7 +44,7 @@ impl DeleteJobTemplateInputBuilder {
     /// Consumes the builder and constructs a [`DeleteJobTemplateInput`](crate::operation::delete_job_template::DeleteJobTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_job_template::DeleteJobTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_job_template::DeleteJobTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_job_template::DeleteJobTemplateInput { id: self.id })
     }
 }

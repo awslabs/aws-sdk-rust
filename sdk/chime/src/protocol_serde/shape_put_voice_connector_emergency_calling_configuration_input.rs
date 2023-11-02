@@ -2,7 +2,7 @@
 pub fn ser_put_voice_connector_emergency_calling_configuration_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_voice_connector_emergency_calling_configuration::PutVoiceConnectorEmergencyCallingConfigurationInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.emergency_calling_configuration {
         #[allow(unused_mut)]
         let mut object_2 = object.key("EmergencyCallingConfiguration").start_object();

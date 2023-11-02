@@ -13,15 +13,14 @@ use aws_runtime::auth::SigV4OperationSigningConfig;
 use aws_sigv4::http_request::SignableBody;
 use aws_smithy_checksums::ChecksumAlgorithm;
 use aws_smithy_checksums::{body::calculate, http::HttpChecksum};
-use aws_smithy_http::body::{BoxBody, SdkBody};
-use aws_smithy_http::operation::error::BuildError;
 use aws_smithy_runtime_api::box_error::BoxError;
 use aws_smithy_runtime_api::client::interceptors::context::{BeforeSerializationInterceptorContextRef, BeforeTransmitInterceptorContextMut, Input};
 use aws_smithy_runtime_api::client::interceptors::Intercept;
-
 use aws_smithy_runtime_api::client::orchestrator::HttpRequest;
 use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
+use aws_smithy_types::body::{BoxBody, SdkBody};
 use aws_smithy_types::config_bag::{ConfigBag, Layer, Storable, StoreReplace};
+use aws_smithy_types::error::operation::BuildError;
 use http::HeaderValue;
 use http_body::Body;
 use std::{fmt, mem};
@@ -194,10 +193,10 @@ fn wrap_streaming_request_body_in_checksum_calculating_body(
 mod tests {
     use crate::http_request_checksum::wrap_streaming_request_body_in_checksum_calculating_body;
     use aws_smithy_checksums::ChecksumAlgorithm;
-    use aws_smithy_http::body::SdkBody;
-    use aws_smithy_http::byte_stream::ByteStream;
     use aws_smithy_runtime_api::client::orchestrator::HttpRequest;
     use aws_smithy_types::base64;
+    use aws_smithy_types::body::SdkBody;
+    use aws_smithy_types::byte_stream::ByteStream;
     use bytes::BytesMut;
     use http_body::Body;
     use tempfile::NamedTempFile;

@@ -543,7 +543,7 @@ impl CreateLaunchConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_launch_configuration::CreateLaunchConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_launch_configuration::CreateLaunchConfigurationInput {
             launch_configuration_name: self.launch_configuration_name,

@@ -140,16 +140,16 @@ impl NotificationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`notification_type`](crate::types::builders::NotificationBuilder::notification_type)
     /// - [`comparison_operator`](crate::types::builders::NotificationBuilder::comparison_operator)
-    pub fn build(self) -> ::std::result::Result<crate::types::Notification, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Notification, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Notification {
             notification_type: self.notification_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "notification_type",
                     "notification_type was not specified but it is required when building Notification",
                 )
             })?,
             comparison_operator: self.comparison_operator.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "comparison_operator",
                     "comparison_operator was not specified but it is required when building Notification",
                 )

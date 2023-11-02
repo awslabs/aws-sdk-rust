@@ -67,10 +67,10 @@ impl CountPercentBuilder {
     /// Consumes the builder and constructs a [`CountPercent`](crate::types::CountPercent).
     /// This method will fail if any of the following fields are not set:
     /// - [`count`](crate::types::builders::CountPercentBuilder::count)
-    pub fn build(self) -> ::std::result::Result<crate::types::CountPercent, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CountPercent, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CountPercent {
             count: self.count.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "count",
                     "count was not specified but it is required when building CountPercent",
                 )

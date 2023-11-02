@@ -2,7 +2,7 @@
 pub fn ser_tle_data(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TleData,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("tleLine1").string(input.tle_line1.as_str());
     }

@@ -74,7 +74,7 @@ impl UntagLogGroupInputBuilder {
     /// Consumes the builder and constructs a [`UntagLogGroupInput`](crate::operation::untag_log_group::UntagLogGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::untag_log_group::UntagLogGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::untag_log_group::UntagLogGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::untag_log_group::UntagLogGroupInput {
             log_group_name: self.log_group_name,
             tags: self.tags,

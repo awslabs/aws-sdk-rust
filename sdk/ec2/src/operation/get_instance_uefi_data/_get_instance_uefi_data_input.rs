@@ -65,7 +65,7 @@ impl GetInstanceUefiDataInputBuilder {
     /// Consumes the builder and constructs a [`GetInstanceUefiDataInput`](crate::operation::get_instance_uefi_data::GetInstanceUefiDataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_instance_uefi_data::GetInstanceUefiDataInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_instance_uefi_data::GetInstanceUefiDataInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_instance_uefi_data::GetInstanceUefiDataInput {
             instance_id: self.instance_id,

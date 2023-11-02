@@ -46,7 +46,7 @@ impl GetOriginRequestPolicyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_origin_request_policy::GetOriginRequestPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_origin_request_policy::GetOriginRequestPolicyInput { id: self.id })
     }

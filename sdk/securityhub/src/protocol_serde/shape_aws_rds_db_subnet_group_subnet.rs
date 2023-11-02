@@ -2,7 +2,7 @@
 pub fn ser_aws_rds_db_subnet_group_subnet(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsRdsDbSubnetGroupSubnet,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.subnet_identifier {
         object.key("SubnetIdentifier").string(var_1.as_str());
     }

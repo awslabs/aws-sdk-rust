@@ -91,16 +91,16 @@ impl LfTagPolicyDetailsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`catalog_id`](crate::types::builders::LfTagPolicyDetailsBuilder::catalog_id)
     /// - [`resource_type`](crate::types::builders::LfTagPolicyDetailsBuilder::resource_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::LfTagPolicyDetails, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::LfTagPolicyDetails, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::LfTagPolicyDetails {
             catalog_id: self.catalog_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "catalog_id",
                     "catalog_id was not specified but it is required when building LfTagPolicyDetails",
                 )
             })?,
             resource_type: self.resource_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_type",
                     "resource_type was not specified but it is required when building LfTagPolicyDetails",
                 )

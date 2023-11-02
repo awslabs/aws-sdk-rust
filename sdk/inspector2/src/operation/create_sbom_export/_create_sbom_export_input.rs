@@ -87,7 +87,7 @@ impl CreateSbomExportInputBuilder {
     /// Consumes the builder and constructs a [`CreateSbomExportInput`](crate::operation::create_sbom_export::CreateSbomExportInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_sbom_export::CreateSbomExportInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_sbom_export::CreateSbomExportInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_sbom_export::CreateSbomExportInput {
             resource_filter_criteria: self.resource_filter_criteria,
             report_format: self.report_format,

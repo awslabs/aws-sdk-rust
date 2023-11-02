@@ -44,8 +44,10 @@ impl DeleteEventIntegrationInputBuilder {
     /// Consumes the builder and constructs a [`DeleteEventIntegrationInput`](crate::operation::delete_event_integration::DeleteEventIntegrationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_event_integration::DeleteEventIntegrationInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::delete_event_integration::DeleteEventIntegrationInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::delete_event_integration::DeleteEventIntegrationInput { name: self.name })
     }
 }

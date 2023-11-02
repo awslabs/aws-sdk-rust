@@ -46,10 +46,10 @@ impl S3MonitoringConfigurationBuilder {
     /// Consumes the builder and constructs a [`S3MonitoringConfiguration`](crate::types::S3MonitoringConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`log_uri`](crate::types::builders::S3MonitoringConfigurationBuilder::log_uri)
-    pub fn build(self) -> ::std::result::Result<crate::types::S3MonitoringConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::S3MonitoringConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::S3MonitoringConfiguration {
             log_uri: self.log_uri.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "log_uri",
                     "log_uri was not specified but it is required when building S3MonitoringConfiguration",
                 )

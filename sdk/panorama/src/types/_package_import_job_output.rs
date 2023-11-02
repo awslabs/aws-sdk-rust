@@ -116,22 +116,22 @@ impl PackageImportJobOutputBuilder {
     /// - [`package_id`](crate::types::builders::PackageImportJobOutputBuilder::package_id)
     /// - [`package_version`](crate::types::builders::PackageImportJobOutputBuilder::package_version)
     /// - [`patch_version`](crate::types::builders::PackageImportJobOutputBuilder::patch_version)
-    pub fn build(self) -> ::std::result::Result<crate::types::PackageImportJobOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PackageImportJobOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PackageImportJobOutput {
             package_id: self.package_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "package_id",
                     "package_id was not specified but it is required when building PackageImportJobOutput",
                 )
             })?,
             package_version: self.package_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "package_version",
                     "package_version was not specified but it is required when building PackageImportJobOutput",
                 )
             })?,
             patch_version: self.patch_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "patch_version",
                     "patch_version was not specified but it is required when building PackageImportJobOutput",
                 )

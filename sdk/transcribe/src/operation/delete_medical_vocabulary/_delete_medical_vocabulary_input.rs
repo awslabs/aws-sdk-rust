@@ -46,7 +46,7 @@ impl DeleteMedicalVocabularyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_medical_vocabulary::DeleteMedicalVocabularyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_medical_vocabulary::DeleteMedicalVocabularyInput {
             vocabulary_name: self.vocabulary_name,

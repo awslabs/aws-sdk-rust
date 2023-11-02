@@ -179,7 +179,7 @@ impl CreateSystemInstanceInputBuilder {
     /// Consumes the builder and constructs a [`CreateSystemInstanceInput`](crate::operation::create_system_instance::CreateSystemInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_system_instance::CreateSystemInstanceInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_system_instance::CreateSystemInstanceInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_system_instance::CreateSystemInstanceInput {
             tags: self.tags,

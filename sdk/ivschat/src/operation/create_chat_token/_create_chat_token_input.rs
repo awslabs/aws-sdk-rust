@@ -143,7 +143,7 @@ impl CreateChatTokenInputBuilder {
     /// Consumes the builder and constructs a [`CreateChatTokenInput`](crate::operation::create_chat_token::CreateChatTokenInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_chat_token::CreateChatTokenInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_chat_token::CreateChatTokenInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_chat_token::CreateChatTokenInput {
             room_identifier: self.room_identifier,
             user_id: self.user_id,

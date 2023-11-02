@@ -44,7 +44,7 @@ impl DeleteDefaultSenderIdInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDefaultSenderIdInput`](crate::operation::delete_default_sender_id::DeleteDefaultSenderIdInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_default_sender_id::DeleteDefaultSenderIdInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_default_sender_id::DeleteDefaultSenderIdInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_default_sender_id::DeleteDefaultSenderIdInput {
             configuration_set_name: self.configuration_set_name,

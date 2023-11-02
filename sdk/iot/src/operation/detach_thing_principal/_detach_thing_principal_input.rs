@@ -67,7 +67,7 @@ impl DetachThingPrincipalInputBuilder {
     /// Consumes the builder and constructs a [`DetachThingPrincipalInput`](crate::operation::detach_thing_principal::DetachThingPrincipalInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::detach_thing_principal::DetachThingPrincipalInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::detach_thing_principal::DetachThingPrincipalInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::detach_thing_principal::DetachThingPrincipalInput {
             thing_name: self.thing_name,

@@ -146,22 +146,22 @@ impl SearchRelatedItemsResponseItemBuilder {
     /// - [`related_item_id`](crate::types::builders::SearchRelatedItemsResponseItemBuilder::related_item_id)
     /// - [`r#type`](crate::types::builders::SearchRelatedItemsResponseItemBuilder::r#type)
     /// - [`association_time`](crate::types::builders::SearchRelatedItemsResponseItemBuilder::association_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::SearchRelatedItemsResponseItem, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SearchRelatedItemsResponseItem, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SearchRelatedItemsResponseItem {
             related_item_id: self.related_item_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "related_item_id",
                     "related_item_id was not specified but it is required when building SearchRelatedItemsResponseItem",
                 )
             })?,
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building SearchRelatedItemsResponseItem",
                 )
             })?,
             association_time: self.association_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "association_time",
                     "association_time was not specified but it is required when building SearchRelatedItemsResponseItem",
                 )

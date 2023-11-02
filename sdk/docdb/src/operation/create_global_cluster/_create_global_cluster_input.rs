@@ -171,7 +171,7 @@ impl CreateGlobalClusterInputBuilder {
     /// Consumes the builder and constructs a [`CreateGlobalClusterInput`](crate::operation::create_global_cluster::CreateGlobalClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_global_cluster::CreateGlobalClusterInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_global_cluster::CreateGlobalClusterInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_global_cluster::CreateGlobalClusterInput {
             global_cluster_identifier: self.global_cluster_identifier,

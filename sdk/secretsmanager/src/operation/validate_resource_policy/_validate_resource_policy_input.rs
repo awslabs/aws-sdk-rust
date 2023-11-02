@@ -65,8 +65,10 @@ impl ValidateResourcePolicyInputBuilder {
     /// Consumes the builder and constructs a [`ValidateResourcePolicyInput`](crate::operation::validate_resource_policy::ValidateResourcePolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::validate_resource_policy::ValidateResourcePolicyInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::validate_resource_policy::ValidateResourcePolicyInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::validate_resource_policy::ValidateResourcePolicyInput {
             secret_id: self.secret_id,
             resource_policy: self.resource_policy,

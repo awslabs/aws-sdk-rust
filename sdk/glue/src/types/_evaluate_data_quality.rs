@@ -162,22 +162,22 @@ impl EvaluateDataQualityBuilder {
     /// - [`name`](crate::types::builders::EvaluateDataQualityBuilder::name)
     /// - [`inputs`](crate::types::builders::EvaluateDataQualityBuilder::inputs)
     /// - [`ruleset`](crate::types::builders::EvaluateDataQualityBuilder::ruleset)
-    pub fn build(self) -> ::std::result::Result<crate::types::EvaluateDataQuality, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::EvaluateDataQuality, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EvaluateDataQuality {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building EvaluateDataQuality",
                 )
             })?,
             inputs: self.inputs.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "inputs",
                     "inputs was not specified but it is required when building EvaluateDataQuality",
                 )
             })?,
             ruleset: self.ruleset.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "ruleset",
                     "ruleset was not specified but it is required when building EvaluateDataQuality",
                 )

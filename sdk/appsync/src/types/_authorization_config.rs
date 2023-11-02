@@ -81,10 +81,10 @@ impl AuthorizationConfigBuilder {
     /// Consumes the builder and constructs a [`AuthorizationConfig`](crate::types::AuthorizationConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`authorization_type`](crate::types::builders::AuthorizationConfigBuilder::authorization_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::AuthorizationConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AuthorizationConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AuthorizationConfig {
             authorization_type: self.authorization_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "authorization_type",
                     "authorization_type was not specified but it is required when building AuthorizationConfig",
                 )

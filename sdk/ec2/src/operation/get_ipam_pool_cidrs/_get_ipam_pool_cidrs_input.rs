@@ -136,7 +136,7 @@ impl GetIpamPoolCidrsInputBuilder {
     /// Consumes the builder and constructs a [`GetIpamPoolCidrsInput`](crate::operation::get_ipam_pool_cidrs::GetIpamPoolCidrsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_ipam_pool_cidrs::GetIpamPoolCidrsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_ipam_pool_cidrs::GetIpamPoolCidrsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_ipam_pool_cidrs::GetIpamPoolCidrsInput {
             dry_run: self.dry_run,
             ipam_pool_id: self.ipam_pool_id,

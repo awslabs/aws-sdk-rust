@@ -102,7 +102,7 @@ impl ListTableColumnsInputBuilder {
     /// Consumes the builder and constructs a [`ListTableColumnsInput`](crate::operation::list_table_columns::ListTableColumnsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_table_columns::ListTableColumnsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_table_columns::ListTableColumnsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_table_columns::ListTableColumnsInput {
             workbook_id: self.workbook_id,
             table_id: self.table_id,

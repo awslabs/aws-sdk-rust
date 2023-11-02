@@ -148,7 +148,7 @@ impl PutAccessPointPolicyInputBuilder {
     /// Consumes the builder and constructs a [`PutAccessPointPolicyInput`](crate::operation::put_access_point_policy::PutAccessPointPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_access_point_policy::PutAccessPointPolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::put_access_point_policy::PutAccessPointPolicyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::put_access_point_policy::PutAccessPointPolicyInput {
             account_id: self.account_id,

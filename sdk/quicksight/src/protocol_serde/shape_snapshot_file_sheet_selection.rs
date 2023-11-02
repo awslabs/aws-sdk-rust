@@ -2,7 +2,7 @@
 pub fn ser_snapshot_file_sheet_selection(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SnapshotFileSheetSelection,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("SheetId").string(input.sheet_id.as_str());
     }

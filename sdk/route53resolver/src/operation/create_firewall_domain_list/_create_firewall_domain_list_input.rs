@@ -97,7 +97,7 @@ impl CreateFirewallDomainListInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_firewall_domain_list::CreateFirewallDomainListInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_firewall_domain_list::CreateFirewallDomainListInput {
             creator_request_id: self.creator_request_id,

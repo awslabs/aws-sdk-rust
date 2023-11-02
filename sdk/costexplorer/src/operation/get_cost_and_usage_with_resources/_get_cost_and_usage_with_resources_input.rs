@@ -204,7 +204,7 @@ impl GetCostAndUsageWithResourcesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_cost_and_usage_with_resources::GetCostAndUsageWithResourcesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_cost_and_usage_with_resources::GetCostAndUsageWithResourcesInput {
             time_period: self.time_period,

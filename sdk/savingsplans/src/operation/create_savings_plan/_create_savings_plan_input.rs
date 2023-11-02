@@ -156,7 +156,7 @@ impl CreateSavingsPlanInputBuilder {
     /// Consumes the builder and constructs a [`CreateSavingsPlanInput`](crate::operation::create_savings_plan::CreateSavingsPlanInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_savings_plan::CreateSavingsPlanInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_savings_plan::CreateSavingsPlanInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_savings_plan::CreateSavingsPlanInput {
             savings_plan_offering_id: self.savings_plan_offering_id,
             commitment: self.commitment,

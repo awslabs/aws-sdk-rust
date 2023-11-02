@@ -76,7 +76,7 @@ impl AddNotificationChannelsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_notification_channels::AddNotificationChannelsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::add_notification_channels::AddNotificationChannelsInput {
             profiling_group_name: self.profiling_group_name,

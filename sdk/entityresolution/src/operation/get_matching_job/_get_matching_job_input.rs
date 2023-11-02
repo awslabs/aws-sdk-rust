@@ -66,7 +66,7 @@ impl GetMatchingJobInputBuilder {
     /// Consumes the builder and constructs a [`GetMatchingJobInput`](crate::operation::get_matching_job::GetMatchingJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_matching_job::GetMatchingJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_matching_job::GetMatchingJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_matching_job::GetMatchingJobInput {
             workflow_name: self.workflow_name,
             job_id: self.job_id,

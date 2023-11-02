@@ -45,7 +45,8 @@ impl DescribeLocationS3InputBuilder {
     /// Consumes the builder and constructs a [`DescribeLocationS3Input`](crate::operation::describe_location_s3::DescribeLocationS3Input).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_location_s3::DescribeLocationS3Input, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_location_s3::DescribeLocationS3Input, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::describe_location_s3::DescribeLocationS3Input {
             location_arn: self.location_arn,
         })

@@ -44,7 +44,7 @@ impl GetBucketAccessKeysInputBuilder {
     /// Consumes the builder and constructs a [`GetBucketAccessKeysInput`](crate::operation::get_bucket_access_keys::GetBucketAccessKeysInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_bucket_access_keys::GetBucketAccessKeysInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_bucket_access_keys::GetBucketAccessKeysInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_bucket_access_keys::GetBucketAccessKeysInput {
             bucket_name: self.bucket_name,

@@ -66,7 +66,8 @@ impl DeleteLayerVersionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteLayerVersionInput`](crate::operation::delete_layer_version::DeleteLayerVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_layer_version::DeleteLayerVersionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_layer_version::DeleteLayerVersionInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::delete_layer_version::DeleteLayerVersionInput {
             layer_name: self.layer_name,
             version_number: self.version_number,

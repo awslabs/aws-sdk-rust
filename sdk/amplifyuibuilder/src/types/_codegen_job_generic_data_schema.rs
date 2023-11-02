@@ -140,28 +140,28 @@ impl CodegenJobGenericDataSchemaBuilder {
     /// - [`models`](crate::types::builders::CodegenJobGenericDataSchemaBuilder::models)
     /// - [`enums`](crate::types::builders::CodegenJobGenericDataSchemaBuilder::enums)
     /// - [`non_models`](crate::types::builders::CodegenJobGenericDataSchemaBuilder::non_models)
-    pub fn build(self) -> ::std::result::Result<crate::types::CodegenJobGenericDataSchema, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CodegenJobGenericDataSchema, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CodegenJobGenericDataSchema {
             data_source_type: self.data_source_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_source_type",
                     "data_source_type was not specified but it is required when building CodegenJobGenericDataSchema",
                 )
             })?,
             models: self.models.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "models",
                     "models was not specified but it is required when building CodegenJobGenericDataSchema",
                 )
             })?,
             enums: self.enums.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "enums",
                     "enums was not specified but it is required when building CodegenJobGenericDataSchema",
                 )
             })?,
             non_models: self.non_models.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "non_models",
                     "non_models was not specified but it is required when building CodegenJobGenericDataSchema",
                 )

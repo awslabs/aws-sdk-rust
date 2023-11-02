@@ -392,53 +392,53 @@ impl PhoneNumberInformationBuilder {
     /// - [`monthly_leasing_price`](crate::types::builders::PhoneNumberInformationBuilder::monthly_leasing_price)
     /// - [`opt_out_list_name`](crate::types::builders::PhoneNumberInformationBuilder::opt_out_list_name)
     /// - [`created_timestamp`](crate::types::builders::PhoneNumberInformationBuilder::created_timestamp)
-    pub fn build(self) -> ::std::result::Result<crate::types::PhoneNumberInformation, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PhoneNumberInformation, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PhoneNumberInformation {
             phone_number_arn: self.phone_number_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "phone_number_arn",
                     "phone_number_arn was not specified but it is required when building PhoneNumberInformation",
                 )
             })?,
             phone_number_id: self.phone_number_id,
             phone_number: self.phone_number.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "phone_number",
                     "phone_number was not specified but it is required when building PhoneNumberInformation",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building PhoneNumberInformation",
                 )
             })?,
             iso_country_code: self.iso_country_code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "iso_country_code",
                     "iso_country_code was not specified but it is required when building PhoneNumberInformation",
                 )
             })?,
             message_type: self.message_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "message_type",
                     "message_type was not specified but it is required when building PhoneNumberInformation",
                 )
             })?,
             number_capabilities: self.number_capabilities.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "number_capabilities",
                     "number_capabilities was not specified but it is required when building PhoneNumberInformation",
                 )
             })?,
             number_type: self.number_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "number_type",
                     "number_type was not specified but it is required when building PhoneNumberInformation",
                 )
             })?,
             monthly_leasing_price: self.monthly_leasing_price.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "monthly_leasing_price",
                     "monthly_leasing_price was not specified but it is required when building PhoneNumberInformation",
                 )
@@ -447,7 +447,7 @@ impl PhoneNumberInformationBuilder {
             two_way_channel_arn: self.two_way_channel_arn,
             self_managed_opt_outs_enabled: self.self_managed_opt_outs_enabled.unwrap_or_default(),
             opt_out_list_name: self.opt_out_list_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "opt_out_list_name",
                     "opt_out_list_name was not specified but it is required when building PhoneNumberInformation",
                 )
@@ -455,7 +455,7 @@ impl PhoneNumberInformationBuilder {
             deletion_protection_enabled: self.deletion_protection_enabled.unwrap_or_default(),
             pool_id: self.pool_id,
             created_timestamp: self.created_timestamp.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_timestamp",
                     "created_timestamp was not specified but it is required when building PhoneNumberInformation",
                 )

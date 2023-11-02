@@ -73,7 +73,7 @@ impl StartMigrationInputBuilder {
     /// Consumes the builder and constructs a [`StartMigrationInput`](crate::operation::start_migration::StartMigrationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_migration::StartMigrationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_migration::StartMigrationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_migration::StartMigrationInput {
             replication_group_id: self.replication_group_id,
             customer_node_endpoint_list: self.customer_node_endpoint_list,

@@ -134,7 +134,7 @@ impl DeleteStackInputBuilder {
         &self.client_request_token
     }
     /// Consumes the builder and constructs a [`DeleteStackInput`](crate::operation::delete_stack::DeleteStackInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_stack::DeleteStackInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_stack::DeleteStackInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_stack::DeleteStackInput {
             stack_name: self.stack_name,
             retain_resources: self.retain_resources,

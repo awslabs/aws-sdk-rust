@@ -63,10 +63,11 @@ impl UploadReadSetPartOutputBuilder {
     /// - [`checksum`](crate::operation::upload_read_set_part::builders::UploadReadSetPartOutputBuilder::checksum)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::upload_read_set_part::UploadReadSetPartOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::upload_read_set_part::UploadReadSetPartOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::upload_read_set_part::UploadReadSetPartOutput {
             checksum: self.checksum.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "checksum",
                     "checksum was not specified but it is required when building UploadReadSetPartOutput",
                 )

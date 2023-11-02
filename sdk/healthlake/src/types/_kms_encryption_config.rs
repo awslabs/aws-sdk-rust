@@ -66,10 +66,10 @@ impl KmsEncryptionConfigBuilder {
     /// Consumes the builder and constructs a [`KmsEncryptionConfig`](crate::types::KmsEncryptionConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`cmk_type`](crate::types::builders::KmsEncryptionConfigBuilder::cmk_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::KmsEncryptionConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::KmsEncryptionConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::KmsEncryptionConfig {
             cmk_type: self.cmk_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "cmk_type",
                     "cmk_type was not specified but it is required when building KmsEncryptionConfig",
                 )

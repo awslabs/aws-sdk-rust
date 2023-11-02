@@ -88,10 +88,10 @@ impl EmergencyContactBuilder {
     /// Consumes the builder and constructs a [`EmergencyContact`](crate::types::EmergencyContact).
     /// This method will fail if any of the following fields are not set:
     /// - [`email_address`](crate::types::builders::EmergencyContactBuilder::email_address)
-    pub fn build(self) -> ::std::result::Result<crate::types::EmergencyContact, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::EmergencyContact, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EmergencyContact {
             email_address: self.email_address.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "email_address",
                     "email_address was not specified but it is required when building EmergencyContact",
                 )

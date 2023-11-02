@@ -44,7 +44,7 @@ impl GetFunctionDefinitionInputBuilder {
     /// Consumes the builder and constructs a [`GetFunctionDefinitionInput`](crate::operation::get_function_definition::GetFunctionDefinitionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_function_definition::GetFunctionDefinitionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_function_definition::GetFunctionDefinitionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_function_definition::GetFunctionDefinitionInput {
             function_definition_id: self.function_definition_id,

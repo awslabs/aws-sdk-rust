@@ -89,7 +89,7 @@ impl DeleteNotificationInputBuilder {
     /// Consumes the builder and constructs a [`DeleteNotificationInput`](crate::operation::delete_notification::DeleteNotificationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_notification::DeleteNotificationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_notification::DeleteNotificationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_notification::DeleteNotificationInput {
             account_id: self.account_id,
             budget_name: self.budget_name,

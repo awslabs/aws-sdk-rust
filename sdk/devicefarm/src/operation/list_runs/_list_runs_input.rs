@@ -64,7 +64,7 @@ impl ListRunsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListRunsInput`](crate::operation::list_runs::ListRunsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_runs::ListRunsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_runs::ListRunsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_runs::ListRunsInput {
             arn: self.arn,
             next_token: self.next_token,

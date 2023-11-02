@@ -271,28 +271,28 @@ impl StepBuilder {
     /// - [`start_time`](crate::types::builders::StepBuilder::start_time)
     /// - [`status`](crate::types::builders::StepBuilder::status)
     /// - [`end_time`](crate::types::builders::StepBuilder::end_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::Step, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Step, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Step {
             step_name: self.step_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "step_name",
                     "step_name was not specified but it is required when building Step",
                 )
             })?,
             start_time: self.start_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "start_time",
                     "start_time was not specified but it is required when building Step",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building Step",
                 )
             })?,
             end_time: self.end_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "end_time",
                     "end_time was not specified but it is required when building Step",
                 )

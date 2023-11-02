@@ -156,8 +156,10 @@ impl ListCommandInvocationsInputBuilder {
     /// Consumes the builder and constructs a [`ListCommandInvocationsInput`](crate::operation::list_command_invocations::ListCommandInvocationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_command_invocations::ListCommandInvocationsInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::list_command_invocations::ListCommandInvocationsInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::list_command_invocations::ListCommandInvocationsInput {
             command_id: self.command_id,
             instance_id: self.instance_id,

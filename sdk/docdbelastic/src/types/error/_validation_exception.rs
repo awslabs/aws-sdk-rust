@@ -133,16 +133,16 @@ impl ValidationExceptionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`message`](crate::types::error::builders::ValidationExceptionBuilder::message)
     /// - [`reason`](crate::types::error::builders::ValidationExceptionBuilder::reason)
-    pub fn build(self) -> ::std::result::Result<crate::types::error::ValidationException, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::error::ValidationException, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::error::ValidationException {
             message: self.message.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "message",
                     "message was not specified but it is required when building ValidationException",
                 )
             })?,
             reason: self.reason.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "reason",
                     "reason was not specified but it is required when building ValidationException",
                 )

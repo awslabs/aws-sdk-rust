@@ -53,10 +53,10 @@ impl ApiKeyCredentialBuilder {
     /// Consumes the builder and constructs a [`ApiKeyCredential`](crate::types::ApiKeyCredential).
     /// This method will fail if any of the following fields are not set:
     /// - [`api_key`](crate::types::builders::ApiKeyCredentialBuilder::api_key)
-    pub fn build(self) -> ::std::result::Result<crate::types::ApiKeyCredential, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ApiKeyCredential, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ApiKeyCredential {
             api_key: self.api_key.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "api_key",
                     "api_key was not specified but it is required when building ApiKeyCredential",
                 )

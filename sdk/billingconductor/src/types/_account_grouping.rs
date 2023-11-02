@@ -72,10 +72,10 @@ impl AccountGroupingBuilder {
     /// Consumes the builder and constructs a [`AccountGrouping`](crate::types::AccountGrouping).
     /// This method will fail if any of the following fields are not set:
     /// - [`linked_account_ids`](crate::types::builders::AccountGroupingBuilder::linked_account_ids)
-    pub fn build(self) -> ::std::result::Result<crate::types::AccountGrouping, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AccountGrouping, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AccountGrouping {
             linked_account_ids: self.linked_account_ids.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "linked_account_ids",
                     "linked_account_ids was not specified but it is required when building AccountGrouping",
                 )

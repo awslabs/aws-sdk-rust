@@ -201,28 +201,28 @@ impl DicomImportJobSummaryBuilder {
     /// - [`job_name`](crate::types::builders::DicomImportJobSummaryBuilder::job_name)
     /// - [`job_status`](crate::types::builders::DicomImportJobSummaryBuilder::job_status)
     /// - [`datastore_id`](crate::types::builders::DicomImportJobSummaryBuilder::datastore_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::DicomImportJobSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DicomImportJobSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DicomImportJobSummary {
             job_id: self.job_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "job_id",
                     "job_id was not specified but it is required when building DicomImportJobSummary",
                 )
             })?,
             job_name: self.job_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "job_name",
                     "job_name was not specified but it is required when building DicomImportJobSummary",
                 )
             })?,
             job_status: self.job_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "job_status",
                     "job_status was not specified but it is required when building DicomImportJobSummary",
                 )
             })?,
             datastore_id: self.datastore_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "datastore_id",
                     "datastore_id was not specified but it is required when building DicomImportJobSummary",
                 )

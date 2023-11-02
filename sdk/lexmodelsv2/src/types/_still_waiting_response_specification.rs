@@ -118,22 +118,22 @@ impl StillWaitingResponseSpecificationBuilder {
     /// - [`message_groups`](crate::types::builders::StillWaitingResponseSpecificationBuilder::message_groups)
     /// - [`frequency_in_seconds`](crate::types::builders::StillWaitingResponseSpecificationBuilder::frequency_in_seconds)
     /// - [`timeout_in_seconds`](crate::types::builders::StillWaitingResponseSpecificationBuilder::timeout_in_seconds)
-    pub fn build(self) -> ::std::result::Result<crate::types::StillWaitingResponseSpecification, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::StillWaitingResponseSpecification, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::StillWaitingResponseSpecification {
             message_groups: self.message_groups.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "message_groups",
                     "message_groups was not specified but it is required when building StillWaitingResponseSpecification",
                 )
             })?,
             frequency_in_seconds: self.frequency_in_seconds.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "frequency_in_seconds",
                     "frequency_in_seconds was not specified but it is required when building StillWaitingResponseSpecification",
                 )
             })?,
             timeout_in_seconds: self.timeout_in_seconds.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "timeout_in_seconds",
                     "timeout_in_seconds was not specified but it is required when building StillWaitingResponseSpecification",
                 )

@@ -106,7 +106,7 @@ impl CreateTrustStoreInputBuilder {
     /// Consumes the builder and constructs a [`CreateTrustStoreInput`](crate::operation::create_trust_store::CreateTrustStoreInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_trust_store::CreateTrustStoreInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_trust_store::CreateTrustStoreInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_trust_store::CreateTrustStoreInput {
             certificate_list: self.certificate_list,
             tags: self.tags,

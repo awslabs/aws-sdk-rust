@@ -77,16 +77,16 @@ impl MediaStreamSourceBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`source_type`](crate::types::builders::MediaStreamSourceBuilder::source_type)
     /// - [`source_arn`](crate::types::builders::MediaStreamSourceBuilder::source_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::MediaStreamSource, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::MediaStreamSource, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MediaStreamSource {
             source_type: self.source_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source_type",
                     "source_type was not specified but it is required when building MediaStreamSource",
                 )
             })?,
             source_arn: self.source_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source_arn",
                     "source_arn was not specified but it is required when building MediaStreamSource",
                 )

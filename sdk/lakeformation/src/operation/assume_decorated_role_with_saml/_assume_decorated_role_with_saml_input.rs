@@ -111,7 +111,7 @@ impl AssumeDecoratedRoleWithSamlInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::assume_decorated_role_with_saml::AssumeDecoratedRoleWithSamlInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::assume_decorated_role_with_saml::AssumeDecoratedRoleWithSamlInput {
             saml_assertion: self.saml_assertion,

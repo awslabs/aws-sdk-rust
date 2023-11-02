@@ -227,7 +227,7 @@ impl EnableLoggingInputBuilder {
     /// Consumes the builder and constructs a [`EnableLoggingInput`](crate::operation::enable_logging::EnableLoggingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::enable_logging::EnableLoggingInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::enable_logging::EnableLoggingInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::enable_logging::EnableLoggingInput {
             cluster_identifier: self.cluster_identifier,
             bucket_name: self.bucket_name,

@@ -46,7 +46,7 @@ impl DeleteWirelessGatewayTaskDefinitionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_wireless_gateway_task_definition::DeleteWirelessGatewayTaskDefinitionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_wireless_gateway_task_definition::DeleteWirelessGatewayTaskDefinitionInput { id: self.id })
     }

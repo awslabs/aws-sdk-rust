@@ -66,8 +66,10 @@ impl UpdateSchedulingPolicyInputBuilder {
     /// Consumes the builder and constructs a [`UpdateSchedulingPolicyInput`](crate::operation::update_scheduling_policy::UpdateSchedulingPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_scheduling_policy::UpdateSchedulingPolicyInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::update_scheduling_policy::UpdateSchedulingPolicyInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::update_scheduling_policy::UpdateSchedulingPolicyInput {
             arn: self.arn,
             fairshare_policy: self.fairshare_policy,

@@ -44,7 +44,7 @@ impl DescribeCacheInputBuilder {
     /// Consumes the builder and constructs a [`DescribeCacheInput`](crate::operation::describe_cache::DescribeCacheInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_cache::DescribeCacheInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_cache::DescribeCacheInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_cache::DescribeCacheInput {
             gateway_arn: self.gateway_arn,
         })

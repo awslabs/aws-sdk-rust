@@ -71,16 +71,16 @@ impl ConversationLevelIntentClassificationResultItemBuilder {
     /// - [`match_result`](crate::types::builders::ConversationLevelIntentClassificationResultItemBuilder::match_result)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::ConversationLevelIntentClassificationResultItem, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::ConversationLevelIntentClassificationResultItem, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ConversationLevelIntentClassificationResultItem {
             intent_name: self.intent_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "intent_name",
                     "intent_name was not specified but it is required when building ConversationLevelIntentClassificationResultItem",
                 )
             })?,
             match_result: self.match_result.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "match_result",
                     "match_result was not specified but it is required when building ConversationLevelIntentClassificationResultItem",
                 )

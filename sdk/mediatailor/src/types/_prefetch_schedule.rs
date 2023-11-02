@@ -159,23 +159,23 @@ impl PrefetchScheduleBuilder {
     /// - [`arn`](crate::types::builders::PrefetchScheduleBuilder::arn)
     /// - [`name`](crate::types::builders::PrefetchScheduleBuilder::name)
     /// - [`playback_configuration_name`](crate::types::builders::PrefetchScheduleBuilder::playback_configuration_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::PrefetchSchedule, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PrefetchSchedule, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PrefetchSchedule {
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building PrefetchSchedule",
                 )
             })?,
             consumption: self.consumption,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building PrefetchSchedule",
                 )
             })?,
             playback_configuration_name: self.playback_configuration_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "playback_configuration_name",
                     "playback_configuration_name was not specified but it is required when building PrefetchSchedule",
                 )

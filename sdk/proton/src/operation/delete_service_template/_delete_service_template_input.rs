@@ -44,7 +44,7 @@ impl DeleteServiceTemplateInputBuilder {
     /// Consumes the builder and constructs a [`DeleteServiceTemplateInput`](crate::operation::delete_service_template::DeleteServiceTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_service_template::DeleteServiceTemplateInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_service_template::DeleteServiceTemplateInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_service_template::DeleteServiceTemplateInput { name: self.name })
     }

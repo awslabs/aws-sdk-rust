@@ -187,23 +187,23 @@ impl AccessPointBuilder {
     /// - [`name`](crate::types::builders::AccessPointBuilder::name)
     /// - [`network_origin`](crate::types::builders::AccessPointBuilder::network_origin)
     /// - [`bucket`](crate::types::builders::AccessPointBuilder::bucket)
-    pub fn build(self) -> ::std::result::Result<crate::types::AccessPoint, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AccessPoint, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AccessPoint {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building AccessPoint",
                 )
             })?,
             network_origin: self.network_origin.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "network_origin",
                     "network_origin was not specified but it is required when building AccessPoint",
                 )
             })?,
             vpc_configuration: self.vpc_configuration,
             bucket: self.bucket.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "bucket",
                     "bucket was not specified but it is required when building AccessPoint",
                 )

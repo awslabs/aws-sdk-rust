@@ -2,7 +2,7 @@
 pub fn ser_associate_source_network_stack_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::associate_source_network_stack::AssociateSourceNetworkStackInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.cfn_stack_name {
         object.key("cfnStackName").string(var_1.as_str());
     }

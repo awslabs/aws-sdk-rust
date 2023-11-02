@@ -2,7 +2,7 @@
 pub fn ser_guardian_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GuardianOptions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.optimized_shared_delivery {
         object.key("OptimizedSharedDelivery").string(var_1.as_str());
     }

@@ -359,8 +359,10 @@ impl CreateIdentityProviderInputBuilder {
     /// Consumes the builder and constructs a [`CreateIdentityProviderInput`](crate::operation::create_identity_provider::CreateIdentityProviderInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_identity_provider::CreateIdentityProviderInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::create_identity_provider::CreateIdentityProviderInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::create_identity_provider::CreateIdentityProviderInput {
             portal_arn: self.portal_arn,
             identity_provider_name: self.identity_provider_name,

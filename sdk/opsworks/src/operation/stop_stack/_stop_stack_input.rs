@@ -42,7 +42,7 @@ impl StopStackInputBuilder {
         &self.stack_id
     }
     /// Consumes the builder and constructs a [`StopStackInput`](crate::operation::stop_stack::StopStackInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::stop_stack::StopStackInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_stack::StopStackInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_stack::StopStackInput { stack_id: self.stack_id })
     }
 }

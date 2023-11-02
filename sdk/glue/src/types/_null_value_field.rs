@@ -68,10 +68,10 @@ impl NullValueFieldBuilder {
     /// Consumes the builder and constructs a [`NullValueField`](crate::types::NullValueField).
     /// This method will fail if any of the following fields are not set:
     /// - [`value`](crate::types::builders::NullValueFieldBuilder::value)
-    pub fn build(self) -> ::std::result::Result<crate::types::NullValueField, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::NullValueField, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::NullValueField {
             value: self.value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "value",
                     "value was not specified but it is required when building NullValueField",
                 )

@@ -2,7 +2,7 @@
 pub fn ser_ind_tax_documents(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IndTaxDocuments,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.gstin {
         object.key("GSTIN").string(var_1.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_scte35_input_schedule_action_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Scte35InputScheduleActionSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.input_attachment_name_reference {
         object.key("inputAttachmentNameReference").string(var_1.as_str());
     }

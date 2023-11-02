@@ -86,7 +86,7 @@ impl GetConnectionInputBuilder {
     /// Consumes the builder and constructs a [`GetConnectionInput`](crate::operation::get_connection::GetConnectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_connection::GetConnectionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_connection::GetConnectionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_connection::GetConnectionInput {
             catalog_id: self.catalog_id,
             name: self.name,

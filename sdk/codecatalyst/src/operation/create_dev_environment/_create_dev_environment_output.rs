@@ -111,23 +111,23 @@ impl CreateDevEnvironmentOutputBuilder {
     /// - [`id`](crate::operation::create_dev_environment::builders::CreateDevEnvironmentOutputBuilder::id)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_dev_environment::CreateDevEnvironmentOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_dev_environment::CreateDevEnvironmentOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_dev_environment::CreateDevEnvironmentOutput {
             space_name: self.space_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "space_name",
                     "space_name was not specified but it is required when building CreateDevEnvironmentOutput",
                 )
             })?,
             project_name: self.project_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "project_name",
                     "project_name was not specified but it is required when building CreateDevEnvironmentOutput",
                 )
             })?,
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building CreateDevEnvironmentOutput",
                 )

@@ -44,7 +44,7 @@ impl DeregisterVolumeInputBuilder {
     /// Consumes the builder and constructs a [`DeregisterVolumeInput`](crate::operation::deregister_volume::DeregisterVolumeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::deregister_volume::DeregisterVolumeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::deregister_volume::DeregisterVolumeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::deregister_volume::DeregisterVolumeInput { volume_id: self.volume_id })
     }
 }

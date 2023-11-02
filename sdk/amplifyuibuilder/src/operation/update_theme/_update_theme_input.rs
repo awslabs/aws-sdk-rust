@@ -129,7 +129,7 @@ impl UpdateThemeInputBuilder {
         &self.updated_theme
     }
     /// Consumes the builder and constructs a [`UpdateThemeInput`](crate::operation::update_theme::UpdateThemeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_theme::UpdateThemeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_theme::UpdateThemeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_theme::UpdateThemeInput {
             app_id: self.app_id,
             environment_name: self.environment_name,

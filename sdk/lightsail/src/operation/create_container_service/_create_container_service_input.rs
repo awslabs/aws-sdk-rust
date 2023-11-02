@@ -338,8 +338,10 @@ impl CreateContainerServiceInputBuilder {
     /// Consumes the builder and constructs a [`CreateContainerServiceInput`](crate::operation::create_container_service::CreateContainerServiceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_container_service::CreateContainerServiceInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::create_container_service::CreateContainerServiceInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::create_container_service::CreateContainerServiceInput {
             service_name: self.service_name,
             power: self.power,

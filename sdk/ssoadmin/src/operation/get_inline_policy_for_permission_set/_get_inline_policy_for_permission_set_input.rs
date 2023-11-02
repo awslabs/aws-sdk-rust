@@ -68,7 +68,7 @@ impl GetInlinePolicyForPermissionSetInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_inline_policy_for_permission_set::GetInlinePolicyForPermissionSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_inline_policy_for_permission_set::GetInlinePolicyForPermissionSetInput {

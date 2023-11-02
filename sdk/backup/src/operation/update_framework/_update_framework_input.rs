@@ -115,7 +115,7 @@ impl UpdateFrameworkInputBuilder {
     /// Consumes the builder and constructs a [`UpdateFrameworkInput`](crate::operation::update_framework::UpdateFrameworkInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_framework::UpdateFrameworkInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_framework::UpdateFrameworkInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_framework::UpdateFrameworkInput {
             framework_name: self.framework_name,
             framework_description: self.framework_description,

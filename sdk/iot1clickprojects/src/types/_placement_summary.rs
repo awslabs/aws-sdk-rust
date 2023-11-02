@@ -116,28 +116,28 @@ impl PlacementSummaryBuilder {
     /// - [`placement_name`](crate::types::builders::PlacementSummaryBuilder::placement_name)
     /// - [`created_date`](crate::types::builders::PlacementSummaryBuilder::created_date)
     /// - [`updated_date`](crate::types::builders::PlacementSummaryBuilder::updated_date)
-    pub fn build(self) -> ::std::result::Result<crate::types::PlacementSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PlacementSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PlacementSummary {
             project_name: self.project_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "project_name",
                     "project_name was not specified but it is required when building PlacementSummary",
                 )
             })?,
             placement_name: self.placement_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "placement_name",
                     "placement_name was not specified but it is required when building PlacementSummary",
                 )
             })?,
             created_date: self.created_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_date",
                     "created_date was not specified but it is required when building PlacementSummary",
                 )
             })?,
             updated_date: self.updated_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "updated_date",
                     "updated_date was not specified but it is required when building PlacementSummary",
                 )

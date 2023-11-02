@@ -151,7 +151,7 @@ impl GetIdInputBuilder {
         &self.logins
     }
     /// Consumes the builder and constructs a [`GetIdInput`](crate::operation::get_id::GetIdInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_id::GetIdInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_id::GetIdInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_id::GetIdInput {
             account_id: self.account_id,
             identity_pool_id: self.identity_pool_id,

@@ -120,7 +120,7 @@ impl InvokeModelWithResponseStreamInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamInput {
             body: self.body,

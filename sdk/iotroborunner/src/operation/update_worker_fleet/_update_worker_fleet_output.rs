@@ -155,28 +155,28 @@ impl UpdateWorkerFleetOutputBuilder {
     /// - [`updated_at`](crate::operation::update_worker_fleet::builders::UpdateWorkerFleetOutputBuilder::updated_at)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_worker_fleet::UpdateWorkerFleetOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_worker_fleet::UpdateWorkerFleetOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_worker_fleet::UpdateWorkerFleetOutput {
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building UpdateWorkerFleetOutput",
                 )
             })?,
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building UpdateWorkerFleetOutput",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building UpdateWorkerFleetOutput",
                 )
             })?,
             updated_at: self.updated_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "updated_at",
                     "updated_at was not specified but it is required when building UpdateWorkerFleetOutput",
                 )

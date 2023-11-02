@@ -118,7 +118,7 @@ impl CreateFunctionDefinitionVersionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_function_definition_version::CreateFunctionDefinitionVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::create_function_definition_version::CreateFunctionDefinitionVersionInput {

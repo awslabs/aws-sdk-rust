@@ -89,10 +89,10 @@ impl ListAssetModelsOutputBuilder {
     /// - [`asset_model_summaries`](crate::operation::list_asset_models::builders::ListAssetModelsOutputBuilder::asset_model_summaries)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_asset_models::ListAssetModelsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_asset_models::ListAssetModelsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_asset_models::ListAssetModelsOutput {
             asset_model_summaries: self.asset_model_summaries.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "asset_model_summaries",
                     "asset_model_summaries was not specified but it is required when building ListAssetModelsOutput",
                 )

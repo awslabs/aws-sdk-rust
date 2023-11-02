@@ -179,7 +179,7 @@ impl CreatePortfolioInputBuilder {
     /// Consumes the builder and constructs a [`CreatePortfolioInput`](crate::operation::create_portfolio::CreatePortfolioInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_portfolio::CreatePortfolioInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_portfolio::CreatePortfolioInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_portfolio::CreatePortfolioInput {
             accept_language: self.accept_language,
             display_name: self.display_name,

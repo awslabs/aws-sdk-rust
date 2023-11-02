@@ -87,7 +87,7 @@ impl UpdateBlueprintInputBuilder {
     /// Consumes the builder and constructs a [`UpdateBlueprintInput`](crate::operation::update_blueprint::UpdateBlueprintInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_blueprint::UpdateBlueprintInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_blueprint::UpdateBlueprintInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_blueprint::UpdateBlueprintInput {
             name: self.name,
             description: self.description,

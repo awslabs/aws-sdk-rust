@@ -45,10 +45,10 @@ impl EventOrchestrationBuilder {
     /// Consumes the builder and constructs a [`EventOrchestration`](crate::types::EventOrchestration).
     /// This method will fail if any of the following fields are not set:
     /// - [`event_bridge_enabled`](crate::types::builders::EventOrchestrationBuilder::event_bridge_enabled)
-    pub fn build(self) -> ::std::result::Result<crate::types::EventOrchestration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::EventOrchestration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EventOrchestration {
             event_bridge_enabled: self.event_bridge_enabled.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "event_bridge_enabled",
                     "event_bridge_enabled was not specified but it is required when building EventOrchestration",
                 )

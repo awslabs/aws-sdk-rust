@@ -65,7 +65,7 @@ impl DescribeProblemInputBuilder {
     /// Consumes the builder and constructs a [`DescribeProblemInput`](crate::operation::describe_problem::DescribeProblemInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_problem::DescribeProblemInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_problem::DescribeProblemInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_problem::DescribeProblemInput {
             problem_id: self.problem_id,
             account_id: self.account_id,

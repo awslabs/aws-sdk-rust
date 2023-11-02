@@ -330,23 +330,23 @@ impl GetDimensionValuesOutputBuilder {
     /// - [`total_size`](crate::operation::get_dimension_values::builders::GetDimensionValuesOutputBuilder::total_size)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_dimension_values::GetDimensionValuesOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_dimension_values::GetDimensionValuesOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_dimension_values::GetDimensionValuesOutput {
             dimension_values: self.dimension_values.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "dimension_values",
                     "dimension_values was not specified but it is required when building GetDimensionValuesOutput",
                 )
             })?,
             return_size: self.return_size.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "return_size",
                     "return_size was not specified but it is required when building GetDimensionValuesOutput",
                 )
             })?,
             total_size: self.total_size.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "total_size",
                     "total_size was not specified but it is required when building GetDimensionValuesOutput",
                 )

@@ -47,10 +47,10 @@ impl LcmOperationInfoBuilder {
     /// Consumes the builder and constructs a [`LcmOperationInfo`](crate::types::LcmOperationInfo).
     /// This method will fail if any of the following fields are not set:
     /// - [`ns_lcm_op_occ_id`](crate::types::builders::LcmOperationInfoBuilder::ns_lcm_op_occ_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::LcmOperationInfo, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::LcmOperationInfo, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::LcmOperationInfo {
             ns_lcm_op_occ_id: self.ns_lcm_op_occ_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "ns_lcm_op_occ_id",
                     "ns_lcm_op_occ_id was not specified but it is required when building LcmOperationInfo",
                 )

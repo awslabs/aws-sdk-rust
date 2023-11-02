@@ -273,10 +273,10 @@ impl SimulationApplicationConfigBuilder {
     /// Consumes the builder and constructs a [`SimulationApplicationConfig`](crate::types::SimulationApplicationConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`application`](crate::types::builders::SimulationApplicationConfigBuilder::application)
-    pub fn build(self) -> ::std::result::Result<crate::types::SimulationApplicationConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SimulationApplicationConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SimulationApplicationConfig {
             application: self.application.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "application",
                     "application was not specified but it is required when building SimulationApplicationConfig",
                 )

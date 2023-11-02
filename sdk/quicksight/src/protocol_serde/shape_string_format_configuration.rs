@@ -2,7 +2,7 @@
 pub fn ser_string_format_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::StringFormatConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.null_value_format_configuration {
         #[allow(unused_mut)]
         let mut object_2 = object.key("NullValueFormatConfiguration").start_object();

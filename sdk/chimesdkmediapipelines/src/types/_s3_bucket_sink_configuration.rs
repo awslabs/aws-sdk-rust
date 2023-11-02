@@ -53,10 +53,10 @@ impl S3BucketSinkConfigurationBuilder {
     /// Consumes the builder and constructs a [`S3BucketSinkConfiguration`](crate::types::S3BucketSinkConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`destination`](crate::types::builders::S3BucketSinkConfigurationBuilder::destination)
-    pub fn build(self) -> ::std::result::Result<crate::types::S3BucketSinkConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::S3BucketSinkConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::S3BucketSinkConfiguration {
             destination: self.destination.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "destination",
                     "destination was not specified but it is required when building S3BucketSinkConfiguration",
                 )

@@ -44,7 +44,7 @@ where
 pub fn ser_json_mapping_parameters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::JsonMappingParameters,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("RecordRowPath").string(input.record_row_path.as_str());
     }

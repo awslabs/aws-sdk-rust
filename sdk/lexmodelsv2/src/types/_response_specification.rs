@@ -72,10 +72,10 @@ impl ResponseSpecificationBuilder {
     /// Consumes the builder and constructs a [`ResponseSpecification`](crate::types::ResponseSpecification).
     /// This method will fail if any of the following fields are not set:
     /// - [`message_groups`](crate::types::builders::ResponseSpecificationBuilder::message_groups)
-    pub fn build(self) -> ::std::result::Result<crate::types::ResponseSpecification, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ResponseSpecification, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ResponseSpecification {
             message_groups: self.message_groups.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "message_groups",
                     "message_groups was not specified but it is required when building ResponseSpecification",
                 )

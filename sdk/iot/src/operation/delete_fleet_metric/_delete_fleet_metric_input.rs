@@ -65,7 +65,7 @@ impl DeleteFleetMetricInputBuilder {
     /// Consumes the builder and constructs a [`DeleteFleetMetricInput`](crate::operation::delete_fleet_metric::DeleteFleetMetricInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_fleet_metric::DeleteFleetMetricInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_fleet_metric::DeleteFleetMetricInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_fleet_metric::DeleteFleetMetricInput {
             metric_name: self.metric_name,
             expected_version: self.expected_version,

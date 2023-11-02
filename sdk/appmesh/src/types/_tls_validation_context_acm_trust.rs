@@ -51,10 +51,10 @@ impl TlsValidationContextAcmTrustBuilder {
     /// Consumes the builder and constructs a [`TlsValidationContextAcmTrust`](crate::types::TlsValidationContextAcmTrust).
     /// This method will fail if any of the following fields are not set:
     /// - [`certificate_authority_arns`](crate::types::builders::TlsValidationContextAcmTrustBuilder::certificate_authority_arns)
-    pub fn build(self) -> ::std::result::Result<crate::types::TlsValidationContextAcmTrust, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TlsValidationContextAcmTrust, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TlsValidationContextAcmTrust {
             certificate_authority_arns: self.certificate_authority_arns.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "certificate_authority_arns",
                     "certificate_authority_arns was not specified but it is required when building TlsValidationContextAcmTrust",
                 )

@@ -42,7 +42,7 @@ impl GetWorkerInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`GetWorkerInput`](crate::operation::get_worker::GetWorkerInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_worker::GetWorkerInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_worker::GetWorkerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_worker::GetWorkerInput { id: self.id })
     }
 }

@@ -72,7 +72,7 @@ impl GenerateOrganizationsAccessReportInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::generate_organizations_access_report::GenerateOrganizationsAccessReportInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::generate_organizations_access_report::GenerateOrganizationsAccessReportInput {

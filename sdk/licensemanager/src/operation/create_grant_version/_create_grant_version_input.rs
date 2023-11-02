@@ -200,7 +200,8 @@ impl CreateGrantVersionInputBuilder {
     /// Consumes the builder and constructs a [`CreateGrantVersionInput`](crate::operation::create_grant_version::CreateGrantVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_grant_version::CreateGrantVersionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_grant_version::CreateGrantVersionInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_grant_version::CreateGrantVersionInput {
             client_token: self.client_token,
             grant_arn: self.grant_arn,

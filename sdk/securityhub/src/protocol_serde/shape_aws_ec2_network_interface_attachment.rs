@@ -2,7 +2,7 @@
 pub fn ser_aws_ec2_network_interface_attachment(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEc2NetworkInterfaceAttachment,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.attach_time {
         object.key("AttachTime").string(var_1.as_str());
     }

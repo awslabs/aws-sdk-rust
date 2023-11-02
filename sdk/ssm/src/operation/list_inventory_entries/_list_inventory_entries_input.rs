@@ -137,7 +137,7 @@ impl ListInventoryEntriesInputBuilder {
     /// Consumes the builder and constructs a [`ListInventoryEntriesInput`](crate::operation::list_inventory_entries::ListInventoryEntriesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_inventory_entries::ListInventoryEntriesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_inventory_entries::ListInventoryEntriesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_inventory_entries::ListInventoryEntriesInput {
             instance_id: self.instance_id,

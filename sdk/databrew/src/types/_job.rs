@@ -607,7 +607,7 @@ impl JobBuilder {
     /// Consumes the builder and constructs a [`Job`](crate::types::Job).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::JobBuilder::name)
-    pub fn build(self) -> ::std::result::Result<crate::types::Job, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Job, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Job {
             account_id: self.account_id,
             created_by: self.created_by,
@@ -616,7 +616,7 @@ impl JobBuilder {
             encryption_key_arn: self.encryption_key_arn,
             encryption_mode: self.encryption_mode,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field("name", "name was not specified but it is required when building Job")
+                ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building Job")
             })?,
             r#type: self.r#type,
             last_modified_by: self.last_modified_by,

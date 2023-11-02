@@ -88,7 +88,7 @@ impl DeleteDevEnvironmentInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDevEnvironmentInput`](crate::operation::delete_dev_environment::DeleteDevEnvironmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_dev_environment::DeleteDevEnvironmentInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_dev_environment::DeleteDevEnvironmentInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_dev_environment::DeleteDevEnvironmentInput {
             space_name: self.space_name,

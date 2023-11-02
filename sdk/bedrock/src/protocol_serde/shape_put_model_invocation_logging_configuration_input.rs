@@ -2,7 +2,7 @@
 pub fn ser_put_model_invocation_logging_configuration_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_model_invocation_logging_configuration::PutModelInvocationLoggingConfigurationInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.logging_config {
         #[allow(unused_mut)]
         let mut object_2 = object.key("loggingConfig").start_object();

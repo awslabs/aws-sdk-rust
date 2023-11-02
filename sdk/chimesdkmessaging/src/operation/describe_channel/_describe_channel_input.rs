@@ -66,7 +66,7 @@ impl DescribeChannelInputBuilder {
     /// Consumes the builder and constructs a [`DescribeChannelInput`](crate::operation::describe_channel::DescribeChannelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_channel::DescribeChannelInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_channel::DescribeChannelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_channel::DescribeChannelInput {
             channel_arn: self.channel_arn,
             chime_bearer: self.chime_bearer,

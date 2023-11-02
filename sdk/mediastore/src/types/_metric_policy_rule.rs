@@ -70,16 +70,16 @@ impl MetricPolicyRuleBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`object_group`](crate::types::builders::MetricPolicyRuleBuilder::object_group)
     /// - [`object_group_name`](crate::types::builders::MetricPolicyRuleBuilder::object_group_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::MetricPolicyRule, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::MetricPolicyRule, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MetricPolicyRule {
             object_group: self.object_group.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "object_group",
                     "object_group was not specified but it is required when building MetricPolicyRule",
                 )
             })?,
             object_group_name: self.object_group_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "object_group_name",
                     "object_group_name was not specified but it is required when building MetricPolicyRule",
                 )

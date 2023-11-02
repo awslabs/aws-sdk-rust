@@ -108,7 +108,7 @@ impl ListTemplateStepsInputBuilder {
     /// Consumes the builder and constructs a [`ListTemplateStepsInput`](crate::operation::list_template_steps::ListTemplateStepsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_template_steps::ListTemplateStepsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_template_steps::ListTemplateStepsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_template_steps::ListTemplateStepsInput {
             max_results: self.max_results,
             next_token: self.next_token,

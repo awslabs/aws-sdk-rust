@@ -301,42 +301,42 @@ impl DescribePlaceIndexOutputBuilder {
     /// - [`data_source`](crate::operation::describe_place_index::builders::DescribePlaceIndexOutputBuilder::data_source)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_place_index::DescribePlaceIndexOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_place_index::DescribePlaceIndexOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_place_index::DescribePlaceIndexOutput {
             index_name: self.index_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "index_name",
                     "index_name was not specified but it is required when building DescribePlaceIndexOutput",
                 )
             })?,
             index_arn: self.index_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "index_arn",
                     "index_arn was not specified but it is required when building DescribePlaceIndexOutput",
                 )
             })?,
             pricing_plan: self.pricing_plan,
             description: self.description.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "description",
                     "description was not specified but it is required when building DescribePlaceIndexOutput",
                 )
             })?,
             create_time: self.create_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "create_time",
                     "create_time was not specified but it is required when building DescribePlaceIndexOutput",
                 )
             })?,
             update_time: self.update_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "update_time",
                     "update_time was not specified but it is required when building DescribePlaceIndexOutput",
                 )
             })?,
             data_source: self.data_source.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_source",
                     "data_source was not specified but it is required when building DescribePlaceIndexOutput",
                 )

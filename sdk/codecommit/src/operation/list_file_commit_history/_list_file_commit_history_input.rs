@@ -129,7 +129,7 @@ impl ListFileCommitHistoryInputBuilder {
     /// Consumes the builder and constructs a [`ListFileCommitHistoryInput`](crate::operation::list_file_commit_history::ListFileCommitHistoryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_file_commit_history::ListFileCommitHistoryInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_file_commit_history::ListFileCommitHistoryInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_file_commit_history::ListFileCommitHistoryInput {
             repository_name: self.repository_name,

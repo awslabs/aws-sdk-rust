@@ -171,7 +171,7 @@ impl GetTraceSummariesInputBuilder {
     /// Consumes the builder and constructs a [`GetTraceSummariesInput`](crate::operation::get_trace_summaries::GetTraceSummariesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_trace_summaries::GetTraceSummariesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_trace_summaries::GetTraceSummariesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_trace_summaries::GetTraceSummariesInput {
             start_time: self.start_time,
             end_time: self.end_time,

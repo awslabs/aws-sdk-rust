@@ -90,16 +90,16 @@ impl EventFeedbackTypeBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`feedback_value`](crate::types::builders::EventFeedbackTypeBuilder::feedback_value)
     /// - [`provider`](crate::types::builders::EventFeedbackTypeBuilder::provider)
-    pub fn build(self) -> ::std::result::Result<crate::types::EventFeedbackType, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::EventFeedbackType, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EventFeedbackType {
             feedback_value: self.feedback_value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "feedback_value",
                     "feedback_value was not specified but it is required when building EventFeedbackType",
                 )
             })?,
             provider: self.provider.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "provider",
                     "provider was not specified but it is required when building EventFeedbackType",
                 )

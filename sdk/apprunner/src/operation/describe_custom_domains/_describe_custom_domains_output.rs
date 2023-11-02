@@ -166,29 +166,29 @@ impl DescribeCustomDomainsOutputBuilder {
     /// - [`vpc_dns_targets`](crate::operation::describe_custom_domains::builders::DescribeCustomDomainsOutputBuilder::vpc_dns_targets)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_custom_domains::DescribeCustomDomainsOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_custom_domains::DescribeCustomDomainsOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_custom_domains::DescribeCustomDomainsOutput {
             dns_target: self.dns_target.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "dns_target",
                     "dns_target was not specified but it is required when building DescribeCustomDomainsOutput",
                 )
             })?,
             service_arn: self.service_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "service_arn",
                     "service_arn was not specified but it is required when building DescribeCustomDomainsOutput",
                 )
             })?,
             custom_domains: self.custom_domains.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "custom_domains",
                     "custom_domains was not specified but it is required when building DescribeCustomDomainsOutput",
                 )
             })?,
             vpc_dns_targets: self.vpc_dns_targets.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "vpc_dns_targets",
                     "vpc_dns_targets was not specified but it is required when building DescribeCustomDomainsOutput",
                 )

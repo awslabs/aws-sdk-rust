@@ -117,17 +117,17 @@ impl TopicConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`topic_arn`](crate::types::builders::TopicConfigurationBuilder::topic_arn)
     /// - [`events`](crate::types::builders::TopicConfigurationBuilder::events)
-    pub fn build(self) -> ::std::result::Result<crate::types::TopicConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TopicConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TopicConfiguration {
             id: self.id,
             topic_arn: self.topic_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "topic_arn",
                     "topic_arn was not specified but it is required when building TopicConfiguration",
                 )
             })?,
             events: self.events.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "events",
                     "events was not specified but it is required when building TopicConfiguration",
                 )

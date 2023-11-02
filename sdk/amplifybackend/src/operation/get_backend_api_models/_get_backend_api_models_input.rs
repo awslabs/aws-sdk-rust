@@ -89,7 +89,7 @@ impl GetBackendApiModelsInputBuilder {
     /// Consumes the builder and constructs a [`GetBackendApiModelsInput`](crate::operation::get_backend_api_models::GetBackendApiModelsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_backend_api_models::GetBackendApiModelsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_backend_api_models::GetBackendApiModelsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_backend_api_models::GetBackendApiModelsInput {
             app_id: self.app_id,

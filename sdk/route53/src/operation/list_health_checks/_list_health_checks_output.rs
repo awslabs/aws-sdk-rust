@@ -159,16 +159,16 @@ impl ListHealthChecksOutputBuilder {
     /// - [`max_items`](crate::operation::list_health_checks::builders::ListHealthChecksOutputBuilder::max_items)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_health_checks::ListHealthChecksOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_health_checks::ListHealthChecksOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_health_checks::ListHealthChecksOutput {
             health_checks: self.health_checks.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "health_checks",
                     "health_checks was not specified but it is required when building ListHealthChecksOutput",
                 )
             })?,
             marker: self.marker.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "marker",
                     "marker was not specified but it is required when building ListHealthChecksOutput",
                 )
@@ -176,7 +176,7 @@ impl ListHealthChecksOutputBuilder {
             is_truncated: self.is_truncated.unwrap_or_default(),
             next_marker: self.next_marker,
             max_items: self.max_items.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "max_items",
                     "max_items was not specified but it is required when building ListHealthChecksOutput",
                 )

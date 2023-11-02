@@ -84,7 +84,9 @@ impl GetBlueprintInputBuilder {
         &self.include_parameter_spec
     }
     /// Consumes the builder and constructs a [`GetBlueprintInput`](crate::operation::get_blueprint::GetBlueprintInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_blueprint::GetBlueprintInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_blueprint::GetBlueprintInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_blueprint::GetBlueprintInput {
             name: self.name,
             include_blueprint: self.include_blueprint,

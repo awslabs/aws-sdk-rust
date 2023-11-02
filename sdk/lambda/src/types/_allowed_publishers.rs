@@ -51,10 +51,10 @@ impl AllowedPublishersBuilder {
     /// Consumes the builder and constructs a [`AllowedPublishers`](crate::types::AllowedPublishers).
     /// This method will fail if any of the following fields are not set:
     /// - [`signing_profile_version_arns`](crate::types::builders::AllowedPublishersBuilder::signing_profile_version_arns)
-    pub fn build(self) -> ::std::result::Result<crate::types::AllowedPublishers, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AllowedPublishers, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AllowedPublishers {
             signing_profile_version_arns: self.signing_profile_version_arns.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "signing_profile_version_arns",
                     "signing_profile_version_arns was not specified but it is required when building AllowedPublishers",
                 )

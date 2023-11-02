@@ -44,7 +44,7 @@ impl DescribeEphemerisInputBuilder {
     /// Consumes the builder and constructs a [`DescribeEphemerisInput`](crate::operation::describe_ephemeris::DescribeEphemerisInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_ephemeris::DescribeEphemerisInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_ephemeris::DescribeEphemerisInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_ephemeris::DescribeEphemerisInput {
             ephemeris_id: self.ephemeris_id,
         })

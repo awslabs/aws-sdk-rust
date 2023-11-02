@@ -2,7 +2,7 @@
 pub fn ser_context_definition(
     object_9: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ContextDefinition,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::ContextDefinition::ContextMap(inner) => {
             #[allow(unused_mut)]
@@ -18,7 +18,7 @@ pub fn ser_context_definition(
             object_1.finish();
         }
         crate::types::ContextDefinition::Unknown => {
-            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+            return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "ContextDefinition",
             ))
         }

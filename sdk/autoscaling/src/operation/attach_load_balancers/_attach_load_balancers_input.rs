@@ -73,7 +73,7 @@ impl AttachLoadBalancersInputBuilder {
     /// Consumes the builder and constructs a [`AttachLoadBalancersInput`](crate::operation::attach_load_balancers::AttachLoadBalancersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::attach_load_balancers::AttachLoadBalancersInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::attach_load_balancers::AttachLoadBalancersInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::attach_load_balancers::AttachLoadBalancersInput {
             auto_scaling_group_name: self.auto_scaling_group_name,

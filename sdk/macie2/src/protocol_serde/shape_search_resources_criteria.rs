@@ -2,7 +2,7 @@
 pub fn ser_search_resources_criteria(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SearchResourcesCriteria,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.simple_criterion {
         #[allow(unused_mut)]
         let mut object_2 = object.key("simpleCriterion").start_object();

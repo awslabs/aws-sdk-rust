@@ -2,7 +2,7 @@
 pub fn ser_sapo_data_connector_profile_credentials(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SapoDataConnectorProfileCredentials,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.basic_auth_credentials {
         #[allow(unused_mut)]
         let mut object_2 = object.key("basicAuthCredentials").start_object();

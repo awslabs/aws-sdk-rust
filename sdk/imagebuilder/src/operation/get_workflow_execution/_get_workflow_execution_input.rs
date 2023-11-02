@@ -44,7 +44,7 @@ impl GetWorkflowExecutionInputBuilder {
     /// Consumes the builder and constructs a [`GetWorkflowExecutionInput`](crate::operation::get_workflow_execution::GetWorkflowExecutionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_workflow_execution::GetWorkflowExecutionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_workflow_execution::GetWorkflowExecutionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_workflow_execution::GetWorkflowExecutionInput {
             workflow_execution_id: self.workflow_execution_id,

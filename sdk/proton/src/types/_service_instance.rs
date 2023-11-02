@@ -409,70 +409,70 @@ impl ServiceInstanceBuilder {
     /// - [`template_major_version`](crate::types::builders::ServiceInstanceBuilder::template_major_version)
     /// - [`template_minor_version`](crate::types::builders::ServiceInstanceBuilder::template_minor_version)
     /// - [`deployment_status`](crate::types::builders::ServiceInstanceBuilder::deployment_status)
-    pub fn build(self) -> ::std::result::Result<crate::types::ServiceInstance, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ServiceInstance, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ServiceInstance {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building ServiceInstance",
                 )
             })?,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building ServiceInstance",
                 )
             })?,
             created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
                     "created_at was not specified but it is required when building ServiceInstance",
                 )
             })?,
             last_deployment_attempted_at: self.last_deployment_attempted_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_deployment_attempted_at",
                     "last_deployment_attempted_at was not specified but it is required when building ServiceInstance",
                 )
             })?,
             last_deployment_succeeded_at: self.last_deployment_succeeded_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_deployment_succeeded_at",
                     "last_deployment_succeeded_at was not specified but it is required when building ServiceInstance",
                 )
             })?,
             service_name: self.service_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "service_name",
                     "service_name was not specified but it is required when building ServiceInstance",
                 )
             })?,
             environment_name: self.environment_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "environment_name",
                     "environment_name was not specified but it is required when building ServiceInstance",
                 )
             })?,
             template_name: self.template_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "template_name",
                     "template_name was not specified but it is required when building ServiceInstance",
                 )
             })?,
             template_major_version: self.template_major_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "template_major_version",
                     "template_major_version was not specified but it is required when building ServiceInstance",
                 )
             })?,
             template_minor_version: self.template_minor_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "template_minor_version",
                     "template_minor_version was not specified but it is required when building ServiceInstance",
                 )
             })?,
             deployment_status: self.deployment_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "deployment_status",
                     "deployment_status was not specified but it is required when building ServiceInstance",
                 )

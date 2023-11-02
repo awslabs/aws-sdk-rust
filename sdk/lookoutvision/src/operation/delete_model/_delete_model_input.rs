@@ -95,7 +95,7 @@ impl DeleteModelInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`DeleteModelInput`](crate::operation::delete_model::DeleteModelInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_model::DeleteModelInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_model::DeleteModelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_model::DeleteModelInput {
             project_name: self.project_name,
             model_version: self.model_version,

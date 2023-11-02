@@ -53,10 +53,10 @@ impl VirtualGatewayTlsValidationContextAcmTrustBuilder {
     /// - [`certificate_authority_arns`](crate::types::builders::VirtualGatewayTlsValidationContextAcmTrustBuilder::certificate_authority_arns)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::VirtualGatewayTlsValidationContextAcmTrust, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::VirtualGatewayTlsValidationContextAcmTrust, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::VirtualGatewayTlsValidationContextAcmTrust {
             certificate_authority_arns: self.certificate_authority_arns.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "certificate_authority_arns",
                     "certificate_authority_arns was not specified but it is required when building VirtualGatewayTlsValidationContextAcmTrust",
                 )

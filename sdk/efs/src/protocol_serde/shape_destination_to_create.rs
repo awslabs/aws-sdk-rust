@@ -2,7 +2,7 @@
 pub fn ser_destination_to_create(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DestinationToCreate,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.region {
         object.key("Region").string(var_1.as_str());
     }

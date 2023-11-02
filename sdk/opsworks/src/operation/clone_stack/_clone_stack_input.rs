@@ -766,7 +766,7 @@ impl CloneStackInputBuilder {
         &self.agent_version
     }
     /// Consumes the builder and constructs a [`CloneStackInput`](crate::operation::clone_stack::CloneStackInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::clone_stack::CloneStackInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::clone_stack::CloneStackInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::clone_stack::CloneStackInput {
             source_stack_id: self.source_stack_id,
             name: self.name,

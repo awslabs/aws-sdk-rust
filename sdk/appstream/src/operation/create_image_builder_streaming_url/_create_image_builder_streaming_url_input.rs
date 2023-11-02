@@ -67,7 +67,7 @@ impl CreateImageBuilderStreamingUrlInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_image_builder_streaming_url::CreateImageBuilderStreamingUrlInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::create_image_builder_streaming_url::CreateImageBuilderStreamingUrlInput {

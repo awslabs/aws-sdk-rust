@@ -118,16 +118,16 @@ impl InvokedByBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`standard_messages`](crate::types::builders::InvokedByBuilder::standard_messages)
     /// - [`targeted_messages`](crate::types::builders::InvokedByBuilder::targeted_messages)
-    pub fn build(self) -> ::std::result::Result<crate::types::InvokedBy, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::InvokedBy, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::InvokedBy {
             standard_messages: self.standard_messages.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "standard_messages",
                     "standard_messages was not specified but it is required when building InvokedBy",
                 )
             })?,
             targeted_messages: self.targeted_messages.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "targeted_messages",
                     "targeted_messages was not specified but it is required when building InvokedBy",
                 )

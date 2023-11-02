@@ -87,7 +87,7 @@ impl GetTaskTemplateInputBuilder {
     /// Consumes the builder and constructs a [`GetTaskTemplateInput`](crate::operation::get_task_template::GetTaskTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_task_template::GetTaskTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_task_template::GetTaskTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_task_template::GetTaskTemplateInput {
             instance_id: self.instance_id,
             task_template_id: self.task_template_id,

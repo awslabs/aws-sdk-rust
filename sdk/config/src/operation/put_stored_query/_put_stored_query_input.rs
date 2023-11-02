@@ -83,7 +83,7 @@ impl PutStoredQueryInputBuilder {
     /// Consumes the builder and constructs a [`PutStoredQueryInput`](crate::operation::put_stored_query::PutStoredQueryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_stored_query::PutStoredQueryInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_stored_query::PutStoredQueryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_stored_query::PutStoredQueryInput {
             stored_query: self.stored_query,
             tags: self.tags,

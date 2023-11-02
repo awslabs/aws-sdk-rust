@@ -162,7 +162,7 @@ impl CreateClusterSubnetGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupInput {
             cluster_subnet_group_name: self.cluster_subnet_group_name,

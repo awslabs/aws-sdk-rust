@@ -44,7 +44,7 @@ impl GetReportDefinitionInputBuilder {
     /// Consumes the builder and constructs a [`GetReportDefinitionInput`](crate::operation::get_report_definition::GetReportDefinitionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_report_definition::GetReportDefinitionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_report_definition::GetReportDefinitionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_report_definition::GetReportDefinitionInput { report_id: self.report_id })
     }

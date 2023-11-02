@@ -78,7 +78,7 @@ impl UpdateLabelGroupInputBuilder {
     /// Consumes the builder and constructs a [`UpdateLabelGroupInput`](crate::operation::update_label_group::UpdateLabelGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_label_group::UpdateLabelGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_label_group::UpdateLabelGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_label_group::UpdateLabelGroupInput {
             label_group_name: self.label_group_name,
             fault_codes: self.fault_codes,

@@ -69,16 +69,16 @@ impl IpDialInBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`endpoint`](crate::types::builders::IpDialInBuilder::endpoint)
     /// - [`comms_protocol`](crate::types::builders::IpDialInBuilder::comms_protocol)
-    pub fn build(self) -> ::std::result::Result<crate::types::IpDialIn, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::IpDialIn, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::IpDialIn {
             endpoint: self.endpoint.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "endpoint",
                     "endpoint was not specified but it is required when building IpDialIn",
                 )
             })?,
             comms_protocol: self.comms_protocol.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "comms_protocol",
                     "comms_protocol was not specified but it is required when building IpDialIn",
                 )

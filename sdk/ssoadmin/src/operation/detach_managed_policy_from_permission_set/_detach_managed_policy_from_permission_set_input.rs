@@ -90,7 +90,7 @@ impl DetachManagedPolicyFromPermissionSetInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::detach_managed_policy_from_permission_set::DetachManagedPolicyFromPermissionSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::detach_managed_policy_from_permission_set::DetachManagedPolicyFromPermissionSetInput {

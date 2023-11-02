@@ -89,11 +89,11 @@ impl ListAssetContractsOutputBuilder {
     /// - [`contracts`](crate::operation::list_asset_contracts::builders::ListAssetContractsOutputBuilder::contracts)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_asset_contracts::ListAssetContractsOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_asset_contracts::ListAssetContractsOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_asset_contracts::ListAssetContractsOutput {
             contracts: self.contracts.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "contracts",
                     "contracts was not specified but it is required when building ListAssetContractsOutput",
                 )

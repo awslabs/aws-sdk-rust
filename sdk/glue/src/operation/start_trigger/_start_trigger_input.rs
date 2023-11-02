@@ -42,7 +42,9 @@ impl StartTriggerInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`StartTriggerInput`](crate::operation::start_trigger::StartTriggerInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::start_trigger::StartTriggerInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::start_trigger::StartTriggerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_trigger::StartTriggerInput { name: self.name })
     }
 }

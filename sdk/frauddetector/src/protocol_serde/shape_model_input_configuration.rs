@@ -2,7 +2,7 @@
 pub fn ser_model_input_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ModelInputConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.event_type_name {
         object.key("eventTypeName").string(var_1.as_str());
     }

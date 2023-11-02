@@ -2,7 +2,7 @@
 pub fn ser_cost_types(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CostTypes,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.include_tax {
         object.key("IncludeTax").boolean(*var_1);
     }

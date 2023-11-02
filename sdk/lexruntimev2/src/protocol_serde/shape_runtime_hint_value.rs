@@ -2,7 +2,7 @@
 pub fn ser_runtime_hint_value(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RuntimeHintValue,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("phrase").string(input.phrase.as_str());
     }

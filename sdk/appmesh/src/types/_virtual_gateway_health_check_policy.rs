@@ -177,22 +177,22 @@ impl VirtualGatewayHealthCheckPolicyBuilder {
     /// - [`timeout_millis`](crate::types::builders::VirtualGatewayHealthCheckPolicyBuilder::timeout_millis)
     /// - [`interval_millis`](crate::types::builders::VirtualGatewayHealthCheckPolicyBuilder::interval_millis)
     /// - [`protocol`](crate::types::builders::VirtualGatewayHealthCheckPolicyBuilder::protocol)
-    pub fn build(self) -> ::std::result::Result<crate::types::VirtualGatewayHealthCheckPolicy, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::VirtualGatewayHealthCheckPolicy, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::VirtualGatewayHealthCheckPolicy {
             timeout_millis: self.timeout_millis.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "timeout_millis",
                     "timeout_millis was not specified but it is required when building VirtualGatewayHealthCheckPolicy",
                 )
             })?,
             interval_millis: self.interval_millis.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "interval_millis",
                     "interval_millis was not specified but it is required when building VirtualGatewayHealthCheckPolicy",
                 )
             })?,
             protocol: self.protocol.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "protocol",
                     "protocol was not specified but it is required when building VirtualGatewayHealthCheckPolicy",
                 )

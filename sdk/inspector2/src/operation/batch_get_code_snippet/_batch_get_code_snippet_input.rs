@@ -51,7 +51,7 @@ impl BatchGetCodeSnippetInputBuilder {
     /// Consumes the builder and constructs a [`BatchGetCodeSnippetInput`](crate::operation::batch_get_code_snippet::BatchGetCodeSnippetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_get_code_snippet::BatchGetCodeSnippetInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::batch_get_code_snippet::BatchGetCodeSnippetInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::batch_get_code_snippet::BatchGetCodeSnippetInput {
             finding_arns: self.finding_arns,

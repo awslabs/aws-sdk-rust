@@ -88,7 +88,7 @@ impl GetDocumentTextDetectionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_document_text_detection::GetDocumentTextDetectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_document_text_detection::GetDocumentTextDetectionInput {
             job_id: self.job_id,

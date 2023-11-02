@@ -68,7 +68,7 @@ impl UpdatePullRequestTitleInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_pull_request_title::UpdatePullRequestTitleInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_pull_request_title::UpdatePullRequestTitleInput {
             pull_request_id: self.pull_request_id,

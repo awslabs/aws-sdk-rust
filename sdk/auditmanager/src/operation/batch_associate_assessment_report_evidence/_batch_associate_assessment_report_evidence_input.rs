@@ -97,7 +97,7 @@ impl BatchAssociateAssessmentReportEvidenceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_associate_assessment_report_evidence::BatchAssociateAssessmentReportEvidenceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::batch_associate_assessment_report_evidence::BatchAssociateAssessmentReportEvidenceInput {

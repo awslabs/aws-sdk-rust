@@ -64,7 +64,7 @@ impl DeleteRuleInputBuilder {
         &self.rule_id
     }
     /// Consumes the builder and constructs a [`DeleteRuleInput`](crate::operation::delete_rule::DeleteRuleInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_rule::DeleteRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_rule::DeleteRuleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_rule::DeleteRuleInput {
             instance_id: self.instance_id,
             rule_id: self.rule_id,

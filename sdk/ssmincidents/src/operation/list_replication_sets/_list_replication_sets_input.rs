@@ -64,7 +64,7 @@ impl ListReplicationSetsInputBuilder {
     /// Consumes the builder and constructs a [`ListReplicationSetsInput`](crate::operation::list_replication_sets::ListReplicationSetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_replication_sets::ListReplicationSetsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_replication_sets::ListReplicationSetsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_replication_sets::ListReplicationSetsInput {
             max_results: self.max_results,

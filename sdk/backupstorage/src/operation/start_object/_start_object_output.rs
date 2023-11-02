@@ -61,10 +61,10 @@ impl StartObjectOutputBuilder {
     /// Consumes the builder and constructs a [`StartObjectOutput`](crate::operation::start_object::StartObjectOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`upload_id`](crate::operation::start_object::builders::StartObjectOutputBuilder::upload_id)
-    pub fn build(self) -> ::std::result::Result<crate::operation::start_object::StartObjectOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_object::StartObjectOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_object::StartObjectOutput {
             upload_id: self.upload_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "upload_id",
                     "upload_id was not specified but it is required when building StartObjectOutput",
                 )

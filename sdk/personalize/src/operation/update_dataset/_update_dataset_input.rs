@@ -66,7 +66,7 @@ impl UpdateDatasetInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDatasetInput`](crate::operation::update_dataset::UpdateDatasetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_dataset::UpdateDatasetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_dataset::UpdateDatasetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_dataset::UpdateDatasetInput {
             dataset_arn: self.dataset_arn,
             schema_arn: self.schema_arn,

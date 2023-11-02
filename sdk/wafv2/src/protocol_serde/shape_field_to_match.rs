@@ -2,7 +2,7 @@
 pub fn ser_field_to_match(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FieldToMatch,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.single_header {
         #[allow(unused_mut)]
         let mut object_2 = object.key("SingleHeader").start_object();

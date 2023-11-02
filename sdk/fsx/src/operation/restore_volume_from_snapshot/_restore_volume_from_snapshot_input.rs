@@ -138,7 +138,7 @@ impl RestoreVolumeFromSnapshotInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshotInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshotInput {
             client_request_token: self.client_request_token,

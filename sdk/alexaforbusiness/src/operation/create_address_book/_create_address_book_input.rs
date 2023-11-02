@@ -115,7 +115,7 @@ impl CreateAddressBookInputBuilder {
     /// Consumes the builder and constructs a [`CreateAddressBookInput`](crate::operation::create_address_book::CreateAddressBookInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_address_book::CreateAddressBookInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_address_book::CreateAddressBookInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_address_book::CreateAddressBookInput {
             name: self.name,
             description: self.description,

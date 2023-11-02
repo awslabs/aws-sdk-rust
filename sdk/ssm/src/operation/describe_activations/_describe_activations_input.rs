@@ -93,7 +93,7 @@ impl DescribeActivationsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeActivationsInput`](crate::operation::describe_activations::DescribeActivationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_activations::DescribeActivationsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_activations::DescribeActivationsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_activations::DescribeActivationsInput {
             filters: self.filters,

@@ -112,16 +112,16 @@ impl SnowflakeDestinationPropertiesBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`object`](crate::types::builders::SnowflakeDestinationPropertiesBuilder::object)
     /// - [`intermediate_bucket_name`](crate::types::builders::SnowflakeDestinationPropertiesBuilder::intermediate_bucket_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::SnowflakeDestinationProperties, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SnowflakeDestinationProperties, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SnowflakeDestinationProperties {
             object: self.object.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "object",
                     "object was not specified but it is required when building SnowflakeDestinationProperties",
                 )
             })?,
             intermediate_bucket_name: self.intermediate_bucket_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "intermediate_bucket_name",
                     "intermediate_bucket_name was not specified but it is required when building SnowflakeDestinationProperties",
                 )

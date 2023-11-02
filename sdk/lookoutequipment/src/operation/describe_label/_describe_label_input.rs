@@ -66,7 +66,7 @@ impl DescribeLabelInputBuilder {
     /// Consumes the builder and constructs a [`DescribeLabelInput`](crate::operation::describe_label::DescribeLabelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_label::DescribeLabelInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_label::DescribeLabelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_label::DescribeLabelInput {
             label_group_name: self.label_group_name,
             label_id: self.label_id,

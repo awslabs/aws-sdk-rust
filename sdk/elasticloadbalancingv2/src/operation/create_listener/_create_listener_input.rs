@@ -268,7 +268,7 @@ impl CreateListenerInputBuilder {
     /// Consumes the builder and constructs a [`CreateListenerInput`](crate::operation::create_listener::CreateListenerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_listener::CreateListenerInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_listener::CreateListenerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_listener::CreateListenerInput {
             load_balancer_arn: self.load_balancer_arn,
             protocol: self.protocol,

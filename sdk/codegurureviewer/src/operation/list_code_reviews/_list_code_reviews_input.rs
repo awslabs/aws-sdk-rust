@@ -208,7 +208,7 @@ impl ListCodeReviewsInputBuilder {
     /// Consumes the builder and constructs a [`ListCodeReviewsInput`](crate::operation::list_code_reviews::ListCodeReviewsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_code_reviews::ListCodeReviewsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_code_reviews::ListCodeReviewsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_code_reviews::ListCodeReviewsInput {
             provider_types: self.provider_types,
             states: self.states,

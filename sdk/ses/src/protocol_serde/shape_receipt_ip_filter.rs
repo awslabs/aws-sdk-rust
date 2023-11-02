@@ -3,7 +3,7 @@
 pub fn ser_receipt_ip_filter(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::ReceiptIpFilter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Policy");
     {

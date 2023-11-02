@@ -192,31 +192,31 @@ impl VodSourceBuilder {
     /// - [`http_package_configurations`](crate::types::builders::VodSourceBuilder::http_package_configurations)
     /// - [`source_location_name`](crate::types::builders::VodSourceBuilder::source_location_name)
     /// - [`vod_source_name`](crate::types::builders::VodSourceBuilder::vod_source_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::VodSource, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::VodSource, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::VodSource {
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building VodSource",
                 )
             })?,
             creation_time: self.creation_time,
             http_package_configurations: self.http_package_configurations.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "http_package_configurations",
                     "http_package_configurations was not specified but it is required when building VodSource",
                 )
             })?,
             last_modified_time: self.last_modified_time,
             source_location_name: self.source_location_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source_location_name",
                     "source_location_name was not specified but it is required when building VodSource",
                 )
             })?,
             tags: self.tags,
             vod_source_name: self.vod_source_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "vod_source_name",
                     "vod_source_name was not specified but it is required when building VodSource",
                 )

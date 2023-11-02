@@ -2,7 +2,7 @@
 pub fn ser_describe_anomaly_detector_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_anomaly_detector::DescribeAnomalyDetectorInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.anomaly_detector_arn {
         object.key("AnomalyDetectorArn").string(var_1.as_str());
     }

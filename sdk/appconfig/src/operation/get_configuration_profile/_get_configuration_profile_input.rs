@@ -68,7 +68,7 @@ impl GetConfigurationProfileInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_configuration_profile::GetConfigurationProfileInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_configuration_profile::GetConfigurationProfileInput {
             application_id: self.application_id,

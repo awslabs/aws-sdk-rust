@@ -60,7 +60,7 @@ where
 pub fn ser_connector_ssm_command_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ConnectorSsmCommandConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("s3OutputEnabled").boolean(input.s3_output_enabled);
     }

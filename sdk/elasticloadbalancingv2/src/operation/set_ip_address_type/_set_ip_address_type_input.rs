@@ -66,7 +66,7 @@ impl SetIpAddressTypeInputBuilder {
     /// Consumes the builder and constructs a [`SetIpAddressTypeInput`](crate::operation::set_ip_address_type::SetIpAddressTypeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::set_ip_address_type::SetIpAddressTypeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::set_ip_address_type::SetIpAddressTypeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::set_ip_address_type::SetIpAddressTypeInput {
             load_balancer_arn: self.load_balancer_arn,
             ip_address_type: self.ip_address_type,

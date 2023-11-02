@@ -21,7 +21,7 @@ impl DisableHealthServiceAccessForOrganizationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disable_health_service_access_for_organization::DisableHealthServiceAccessForOrganizationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disable_health_service_access_for_organization::DisableHealthServiceAccessForOrganizationInput {})
     }

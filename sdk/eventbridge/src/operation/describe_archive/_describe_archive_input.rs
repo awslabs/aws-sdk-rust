@@ -44,7 +44,7 @@ impl DescribeArchiveInputBuilder {
     /// Consumes the builder and constructs a [`DescribeArchiveInput`](crate::operation::describe_archive::DescribeArchiveInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_archive::DescribeArchiveInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_archive::DescribeArchiveInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_archive::DescribeArchiveInput {
             archive_name: self.archive_name,
         })

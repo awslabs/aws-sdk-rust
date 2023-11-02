@@ -65,7 +65,7 @@ impl GetResourceCollectionInputBuilder {
     /// Consumes the builder and constructs a [`GetResourceCollectionInput`](crate::operation::get_resource_collection::GetResourceCollectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_resource_collection::GetResourceCollectionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_resource_collection::GetResourceCollectionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_resource_collection::GetResourceCollectionInput {
             resource_collection_type: self.resource_collection_type,

@@ -109,17 +109,17 @@ impl AnalysisRuleListBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`join_columns`](crate::types::builders::AnalysisRuleListBuilder::join_columns)
     /// - [`list_columns`](crate::types::builders::AnalysisRuleListBuilder::list_columns)
-    pub fn build(self) -> ::std::result::Result<crate::types::AnalysisRuleList, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AnalysisRuleList, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AnalysisRuleList {
             join_columns: self.join_columns.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "join_columns",
                     "join_columns was not specified but it is required when building AnalysisRuleList",
                 )
             })?,
             allowed_join_operators: self.allowed_join_operators,
             list_columns: self.list_columns.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "list_columns",
                     "list_columns was not specified but it is required when building AnalysisRuleList",
                 )

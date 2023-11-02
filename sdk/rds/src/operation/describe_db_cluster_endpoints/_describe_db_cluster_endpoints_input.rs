@@ -147,7 +147,7 @@ impl DescribeDbClusterEndpointsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_db_cluster_endpoints::DescribeDbClusterEndpointsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_db_cluster_endpoints::DescribeDbClusterEndpointsInput {
             db_cluster_identifier: self.db_cluster_identifier,

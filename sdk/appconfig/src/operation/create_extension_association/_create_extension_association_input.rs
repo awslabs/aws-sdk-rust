@@ -143,7 +143,7 @@ impl CreateExtensionAssociationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_extension_association::CreateExtensionAssociationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_extension_association::CreateExtensionAssociationInput {
             extension_identifier: self.extension_identifier,

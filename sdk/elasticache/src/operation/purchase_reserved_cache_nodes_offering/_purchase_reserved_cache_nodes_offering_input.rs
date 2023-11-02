@@ -143,7 +143,7 @@ impl PurchaseReservedCacheNodesOfferingInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::purchase_reserved_cache_nodes_offering::PurchaseReservedCacheNodesOfferingInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::purchase_reserved_cache_nodes_offering::PurchaseReservedCacheNodesOfferingInput {

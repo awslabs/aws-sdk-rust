@@ -75,7 +75,7 @@ impl ModifyLoadBalancerAttributesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesInput {
             load_balancer_arn: self.load_balancer_arn,

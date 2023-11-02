@@ -131,22 +131,22 @@ impl SectionBasedLayoutConfigurationBuilder {
     /// - [`header_sections`](crate::types::builders::SectionBasedLayoutConfigurationBuilder::header_sections)
     /// - [`body_sections`](crate::types::builders::SectionBasedLayoutConfigurationBuilder::body_sections)
     /// - [`footer_sections`](crate::types::builders::SectionBasedLayoutConfigurationBuilder::footer_sections)
-    pub fn build(self) -> ::std::result::Result<crate::types::SectionBasedLayoutConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SectionBasedLayoutConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SectionBasedLayoutConfiguration {
             header_sections: self.header_sections.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "header_sections",
                     "header_sections was not specified but it is required when building SectionBasedLayoutConfiguration",
                 )
             })?,
             body_sections: self.body_sections.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "body_sections",
                     "body_sections was not specified but it is required when building SectionBasedLayoutConfiguration",
                 )
             })?,
             footer_sections: self.footer_sections.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "footer_sections",
                     "footer_sections was not specified but it is required when building SectionBasedLayoutConfiguration",
                 )

@@ -89,11 +89,11 @@ impl ListKnowledgeBasesOutputBuilder {
     /// - [`knowledge_base_summaries`](crate::operation::list_knowledge_bases::builders::ListKnowledgeBasesOutputBuilder::knowledge_base_summaries)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_knowledge_bases::ListKnowledgeBasesOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_knowledge_bases::ListKnowledgeBasesOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_knowledge_bases::ListKnowledgeBasesOutput {
             knowledge_base_summaries: self.knowledge_base_summaries.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "knowledge_base_summaries",
                     "knowledge_base_summaries was not specified but it is required when building ListKnowledgeBasesOutput",
                 )

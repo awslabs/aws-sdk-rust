@@ -2,7 +2,7 @@
 pub fn ser_video_selector_pid(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VideoSelectorPid,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.pid {
         object.key("pid").number(
             #[allow(clippy::useless_conversion)]

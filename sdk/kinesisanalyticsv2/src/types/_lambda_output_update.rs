@@ -56,10 +56,10 @@ impl LambdaOutputUpdateBuilder {
     /// Consumes the builder and constructs a [`LambdaOutputUpdate`](crate::types::LambdaOutputUpdate).
     /// This method will fail if any of the following fields are not set:
     /// - [`resource_arn_update`](crate::types::builders::LambdaOutputUpdateBuilder::resource_arn_update)
-    pub fn build(self) -> ::std::result::Result<crate::types::LambdaOutputUpdate, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::LambdaOutputUpdate, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::LambdaOutputUpdate {
             resource_arn_update: self.resource_arn_update.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_arn_update",
                     "resource_arn_update was not specified but it is required when building LambdaOutputUpdate",
                 )

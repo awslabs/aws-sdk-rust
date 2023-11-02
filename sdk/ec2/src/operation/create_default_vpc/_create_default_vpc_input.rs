@@ -43,7 +43,7 @@ impl CreateDefaultVpcInputBuilder {
     /// Consumes the builder and constructs a [`CreateDefaultVpcInput`](crate::operation::create_default_vpc::CreateDefaultVpcInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_default_vpc::CreateDefaultVpcInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_default_vpc::CreateDefaultVpcInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_default_vpc::CreateDefaultVpcInput { dry_run: self.dry_run })
     }
 }

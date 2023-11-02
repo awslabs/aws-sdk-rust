@@ -2,7 +2,7 @@
 pub fn ser_update_table_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_table::UpdateTableInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.attribute_definitions {
         let mut array_2 = object.key("AttributeDefinitions").start_array();
         for item_3 in var_1 {

@@ -45,10 +45,10 @@ impl RealtimeMetricsSubscriptionConfigBuilder {
     /// Consumes the builder and constructs a [`RealtimeMetricsSubscriptionConfig`](crate::types::RealtimeMetricsSubscriptionConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`realtime_metrics_subscription_status`](crate::types::builders::RealtimeMetricsSubscriptionConfigBuilder::realtime_metrics_subscription_status)
-    pub fn build(self) -> ::std::result::Result<crate::types::RealtimeMetricsSubscriptionConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RealtimeMetricsSubscriptionConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RealtimeMetricsSubscriptionConfig {
             realtime_metrics_subscription_status: self.realtime_metrics_subscription_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "realtime_metrics_subscription_status",
                     "realtime_metrics_subscription_status was not specified but it is required when building RealtimeMetricsSubscriptionConfig",
                 )

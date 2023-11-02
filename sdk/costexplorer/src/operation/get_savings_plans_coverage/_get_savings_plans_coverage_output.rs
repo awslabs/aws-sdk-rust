@@ -91,11 +91,11 @@ impl GetSavingsPlansCoverageOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_savings_plans_coverage::GetSavingsPlansCoverageOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_savings_plans_coverage::GetSavingsPlansCoverageOutput {
             savings_plans_coverages: self.savings_plans_coverages.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "savings_plans_coverages",
                     "savings_plans_coverages was not specified but it is required when building GetSavingsPlansCoverageOutput",
                 )

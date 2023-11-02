@@ -179,7 +179,7 @@ impl CreateScanInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateScanInput`](crate::operation::create_scan::CreateScanInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_scan::CreateScanInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_scan::CreateScanInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_scan::CreateScanInput {
             client_token: self.client_token,
             resource_id: self.resource_id,

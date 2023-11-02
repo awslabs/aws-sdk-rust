@@ -87,7 +87,7 @@ impl ListInvalidationsInputBuilder {
     /// Consumes the builder and constructs a [`ListInvalidationsInput`](crate::operation::list_invalidations::ListInvalidationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_invalidations::ListInvalidationsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_invalidations::ListInvalidationsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_invalidations::ListInvalidationsInput {
             distribution_id: self.distribution_id,
             marker: self.marker,

@@ -130,7 +130,7 @@ impl ListRotationOverridesInputBuilder {
     /// Consumes the builder and constructs a [`ListRotationOverridesInput`](crate::operation::list_rotation_overrides::ListRotationOverridesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_rotation_overrides::ListRotationOverridesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_rotation_overrides::ListRotationOverridesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_rotation_overrides::ListRotationOverridesInput {
             rotation_id: self.rotation_id,

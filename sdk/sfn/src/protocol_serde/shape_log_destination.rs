@@ -2,7 +2,7 @@
 pub fn ser_log_destination(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LogDestination,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.cloud_watch_logs_log_group {
         #[allow(unused_mut)]
         let mut object_2 = object.key("cloudWatchLogsLogGroup").start_object();

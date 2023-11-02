@@ -93,7 +93,7 @@ impl CancelStepsInputBuilder {
         &self.step_cancellation_option
     }
     /// Consumes the builder and constructs a [`CancelStepsInput`](crate::operation::cancel_steps::CancelStepsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_steps::CancelStepsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_steps::CancelStepsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::cancel_steps::CancelStepsInput {
             cluster_id: self.cluster_id,
             step_ids: self.step_ids,

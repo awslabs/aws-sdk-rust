@@ -160,35 +160,35 @@ impl InputConfigurationBuilder {
     /// - [`creation_time`](crate::types::builders::InputConfigurationBuilder::creation_time)
     /// - [`last_update_time`](crate::types::builders::InputConfigurationBuilder::last_update_time)
     /// - [`status`](crate::types::builders::InputConfigurationBuilder::status)
-    pub fn build(self) -> ::std::result::Result<crate::types::InputConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::InputConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::InputConfiguration {
             input_name: self.input_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "input_name",
                     "input_name was not specified but it is required when building InputConfiguration",
                 )
             })?,
             input_description: self.input_description,
             input_arn: self.input_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "input_arn",
                     "input_arn was not specified but it is required when building InputConfiguration",
                 )
             })?,
             creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_time",
                     "creation_time was not specified but it is required when building InputConfiguration",
                 )
             })?,
             last_update_time: self.last_update_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_update_time",
                     "last_update_time was not specified but it is required when building InputConfiguration",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building InputConfiguration",
                 )

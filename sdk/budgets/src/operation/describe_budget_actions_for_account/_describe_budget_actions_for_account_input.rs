@@ -88,7 +88,7 @@ impl DescribeBudgetActionsForAccountInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_budget_actions_for_account::DescribeBudgetActionsForAccountInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_budget_actions_for_account::DescribeBudgetActionsForAccountInput {

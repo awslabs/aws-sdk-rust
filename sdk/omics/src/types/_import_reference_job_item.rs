@@ -161,34 +161,34 @@ impl ImportReferenceJobItemBuilder {
     /// - [`role_arn`](crate::types::builders::ImportReferenceJobItemBuilder::role_arn)
     /// - [`status`](crate::types::builders::ImportReferenceJobItemBuilder::status)
     /// - [`creation_time`](crate::types::builders::ImportReferenceJobItemBuilder::creation_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::ImportReferenceJobItem, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ImportReferenceJobItem, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ImportReferenceJobItem {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building ImportReferenceJobItem",
                 )
             })?,
             reference_store_id: self.reference_store_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "reference_store_id",
                     "reference_store_id was not specified but it is required when building ImportReferenceJobItem",
                 )
             })?,
             role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role_arn",
                     "role_arn was not specified but it is required when building ImportReferenceJobItem",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building ImportReferenceJobItem",
                 )
             })?,
             creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_time",
                     "creation_time was not specified but it is required when building ImportReferenceJobItem",
                 )

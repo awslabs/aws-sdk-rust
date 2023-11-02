@@ -65,7 +65,7 @@ impl CreateIntentVersionInputBuilder {
     /// Consumes the builder and constructs a [`CreateIntentVersionInput`](crate::operation::create_intent_version::CreateIntentVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_intent_version::CreateIntentVersionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_intent_version::CreateIntentVersionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_intent_version::CreateIntentVersionInput {
             name: self.name,

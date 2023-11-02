@@ -44,7 +44,7 @@ impl GetFindingsFilterInputBuilder {
     /// Consumes the builder and constructs a [`GetFindingsFilterInput`](crate::operation::get_findings_filter::GetFindingsFilterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_findings_filter::GetFindingsFilterInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_findings_filter::GetFindingsFilterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_findings_filter::GetFindingsFilterInput { id: self.id })
     }
 }

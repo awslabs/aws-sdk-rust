@@ -765,7 +765,7 @@ impl GetCurrentMetricDataInputBuilder {
     /// Consumes the builder and constructs a [`GetCurrentMetricDataInput`](crate::operation::get_current_metric_data::GetCurrentMetricDataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_current_metric_data::GetCurrentMetricDataInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_current_metric_data::GetCurrentMetricDataInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_current_metric_data::GetCurrentMetricDataInput {
             instance_id: self.instance_id,

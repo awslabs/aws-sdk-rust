@@ -258,7 +258,7 @@ impl UpdateIpSetInputBuilder {
         &self.lock_token
     }
     /// Consumes the builder and constructs a [`UpdateIpSetInput`](crate::operation::update_ip_set::UpdateIpSetInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_ip_set::UpdateIpSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_ip_set::UpdateIpSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_ip_set::UpdateIpSetInput {
             name: self.name,
             scope: self.scope,

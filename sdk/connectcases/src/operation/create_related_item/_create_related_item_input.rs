@@ -110,7 +110,7 @@ impl CreateRelatedItemInputBuilder {
     /// Consumes the builder and constructs a [`CreateRelatedItemInput`](crate::operation::create_related_item::CreateRelatedItemInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_related_item::CreateRelatedItemInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_related_item::CreateRelatedItemInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_related_item::CreateRelatedItemInput {
             domain_id: self.domain_id,
             case_id: self.case_id,

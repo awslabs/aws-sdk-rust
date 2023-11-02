@@ -2,7 +2,7 @@
 pub fn ser_aws_efs_access_point_root_directory_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEfsAccessPointRootDirectoryDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.creation_info {
         #[allow(unused_mut)]
         let mut object_2 = object.key("CreationInfo").start_object();

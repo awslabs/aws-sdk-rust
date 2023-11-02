@@ -68,10 +68,10 @@ impl GetCorsPolicyOutputBuilder {
     /// - [`cors_policy`](crate::operation::get_cors_policy::builders::GetCorsPolicyOutputBuilder::cors_policy)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_cors_policy::GetCorsPolicyOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_cors_policy::GetCorsPolicyOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_cors_policy::GetCorsPolicyOutput {
             cors_policy: self.cors_policy.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "cors_policy",
                     "cors_policy was not specified but it is required when building GetCorsPolicyOutput",
                 )

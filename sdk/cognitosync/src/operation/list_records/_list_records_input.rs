@@ -171,7 +171,7 @@ impl ListRecordsInputBuilder {
         &self.sync_session_token
     }
     /// Consumes the builder and constructs a [`ListRecordsInput`](crate::operation::list_records::ListRecordsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_records::ListRecordsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_records::ListRecordsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_records::ListRecordsInput {
             identity_pool_id: self.identity_pool_id,
             identity_id: self.identity_id,

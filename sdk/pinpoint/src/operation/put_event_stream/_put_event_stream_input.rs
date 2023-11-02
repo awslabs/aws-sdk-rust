@@ -66,7 +66,7 @@ impl PutEventStreamInputBuilder {
     /// Consumes the builder and constructs a [`PutEventStreamInput`](crate::operation::put_event_stream::PutEventStreamInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_event_stream::PutEventStreamInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_event_stream::PutEventStreamInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_event_stream::PutEventStreamInput {
             application_id: self.application_id,
             write_event_stream: self.write_event_stream,

@@ -149,7 +149,7 @@ impl CreateDeploymentJobInputBuilder {
     /// Consumes the builder and constructs a [`CreateDeploymentJobInput`](crate::operation::create_deployment_job::CreateDeploymentJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_deployment_job::CreateDeploymentJobInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_deployment_job::CreateDeploymentJobInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_deployment_job::CreateDeploymentJobInput {
             deployment_config: self.deployment_config,

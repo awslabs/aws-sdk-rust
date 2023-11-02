@@ -77,16 +77,16 @@ impl CreateRowDataBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`batch_item_id`](crate::types::builders::CreateRowDataBuilder::batch_item_id)
     /// - [`cells_to_create`](crate::types::builders::CreateRowDataBuilder::cells_to_create)
-    pub fn build(self) -> ::std::result::Result<crate::types::CreateRowData, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CreateRowData, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CreateRowData {
             batch_item_id: self.batch_item_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "batch_item_id",
                     "batch_item_id was not specified but it is required when building CreateRowData",
                 )
             })?,
             cells_to_create: self.cells_to_create.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "cells_to_create",
                     "cells_to_create was not specified but it is required when building CreateRowData",
                 )

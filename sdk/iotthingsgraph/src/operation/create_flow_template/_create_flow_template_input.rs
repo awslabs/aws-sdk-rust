@@ -70,7 +70,8 @@ impl CreateFlowTemplateInputBuilder {
     /// Consumes the builder and constructs a [`CreateFlowTemplateInput`](crate::operation::create_flow_template::CreateFlowTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_flow_template::CreateFlowTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_flow_template::CreateFlowTemplateInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_flow_template::CreateFlowTemplateInput {
             definition: self.definition,
             compatible_namespace_version: self.compatible_namespace_version,

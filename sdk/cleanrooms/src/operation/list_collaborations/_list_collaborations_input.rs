@@ -85,7 +85,7 @@ impl ListCollaborationsInputBuilder {
     /// Consumes the builder and constructs a [`ListCollaborationsInput`](crate::operation::list_collaborations::ListCollaborationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_collaborations::ListCollaborationsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_collaborations::ListCollaborationsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_collaborations::ListCollaborationsInput {
             next_token: self.next_token,
             max_results: self.max_results,

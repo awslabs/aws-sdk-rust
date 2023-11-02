@@ -391,7 +391,7 @@ impl StartCallAnalyticsStreamTranscriptionOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionOutput {
@@ -409,7 +409,7 @@ impl StartCallAnalyticsStreamTranscriptionOutputBuilder {
                 ,
                 call_analytics_transcript_result_stream: self.call_analytics_transcript_result_stream
                     .ok_or_else(||
-                        ::aws_smithy_http::operation::error::BuildError::missing_field("call_analytics_transcript_result_stream", "call_analytics_transcript_result_stream was not specified but it is required when building StartCallAnalyticsStreamTranscriptionOutput")
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("call_analytics_transcript_result_stream", "call_analytics_transcript_result_stream was not specified but it is required when building StartCallAnalyticsStreamTranscriptionOutput")
                     )?
                 ,
                 vocabulary_filter_name: self.vocabulary_filter_name

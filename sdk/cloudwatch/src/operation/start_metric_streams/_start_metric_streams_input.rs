@@ -56,7 +56,8 @@ impl StartMetricStreamsInputBuilder {
     /// Consumes the builder and constructs a [`StartMetricStreamsInput`](crate::operation::start_metric_streams::StartMetricStreamsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_metric_streams::StartMetricStreamsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_metric_streams::StartMetricStreamsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::start_metric_streams::StartMetricStreamsInput { names: self.names })
     }
 }

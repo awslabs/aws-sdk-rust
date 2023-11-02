@@ -111,7 +111,7 @@ impl PutActionRevisionInputBuilder {
     /// Consumes the builder and constructs a [`PutActionRevisionInput`](crate::operation::put_action_revision::PutActionRevisionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_action_revision::PutActionRevisionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_action_revision::PutActionRevisionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_action_revision::PutActionRevisionInput {
             pipeline_name: self.pipeline_name,
             stage_name: self.stage_name,

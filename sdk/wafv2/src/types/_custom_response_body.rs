@@ -79,16 +79,16 @@ impl CustomResponseBodyBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`content_type`](crate::types::builders::CustomResponseBodyBuilder::content_type)
     /// - [`content`](crate::types::builders::CustomResponseBodyBuilder::content)
-    pub fn build(self) -> ::std::result::Result<crate::types::CustomResponseBody, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CustomResponseBody, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CustomResponseBody {
             content_type: self.content_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "content_type",
                     "content_type was not specified but it is required when building CustomResponseBody",
                 )
             })?,
             content: self.content.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "content",
                     "content was not specified but it is required when building CustomResponseBody",
                 )

@@ -44,7 +44,7 @@ impl DisableProfileInputBuilder {
     /// Consumes the builder and constructs a [`DisableProfileInput`](crate::operation::disable_profile::DisableProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::disable_profile::DisableProfileInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::disable_profile::DisableProfileInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::disable_profile::DisableProfileInput { profile_id: self.profile_id })
     }
 }

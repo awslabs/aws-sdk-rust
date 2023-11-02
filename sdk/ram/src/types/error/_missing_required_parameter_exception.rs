@@ -81,10 +81,10 @@ impl MissingRequiredParameterExceptionBuilder {
     /// - [`message`](crate::types::error::builders::MissingRequiredParameterExceptionBuilder::message)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::error::MissingRequiredParameterException, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::error::MissingRequiredParameterException, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::error::MissingRequiredParameterException {
             message: self.message.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "message",
                     "message was not specified but it is required when building MissingRequiredParameterException",
                 )

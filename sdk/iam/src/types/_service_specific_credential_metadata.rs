@@ -164,40 +164,40 @@ impl ServiceSpecificCredentialMetadataBuilder {
     /// - [`create_date`](crate::types::builders::ServiceSpecificCredentialMetadataBuilder::create_date)
     /// - [`service_specific_credential_id`](crate::types::builders::ServiceSpecificCredentialMetadataBuilder::service_specific_credential_id)
     /// - [`service_name`](crate::types::builders::ServiceSpecificCredentialMetadataBuilder::service_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::ServiceSpecificCredentialMetadata, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ServiceSpecificCredentialMetadata, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ServiceSpecificCredentialMetadata {
             user_name: self.user_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "user_name",
                     "user_name was not specified but it is required when building ServiceSpecificCredentialMetadata",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building ServiceSpecificCredentialMetadata",
                 )
             })?,
             service_user_name: self.service_user_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "service_user_name",
                     "service_user_name was not specified but it is required when building ServiceSpecificCredentialMetadata",
                 )
             })?,
             create_date: self.create_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "create_date",
                     "create_date was not specified but it is required when building ServiceSpecificCredentialMetadata",
                 )
             })?,
             service_specific_credential_id: self.service_specific_credential_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "service_specific_credential_id",
                     "service_specific_credential_id was not specified but it is required when building ServiceSpecificCredentialMetadata",
                 )
             })?,
             service_name: self.service_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "service_name",
                     "service_name was not specified but it is required when building ServiceSpecificCredentialMetadata",
                 )

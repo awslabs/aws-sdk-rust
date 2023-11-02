@@ -104,7 +104,7 @@ impl DescribeJobQueuesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeJobQueuesInput`](crate::operation::describe_job_queues::DescribeJobQueuesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_job_queues::DescribeJobQueuesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_job_queues::DescribeJobQueuesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_job_queues::DescribeJobQueuesInput {
             job_queues: self.job_queues,
             max_results: self.max_results,

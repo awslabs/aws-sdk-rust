@@ -260,7 +260,7 @@ impl ListUploadsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListUploadsInput`](crate::operation::list_uploads::ListUploadsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_uploads::ListUploadsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_uploads::ListUploadsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_uploads::ListUploadsInput {
             arn: self.arn,
             r#type: self.r#type,

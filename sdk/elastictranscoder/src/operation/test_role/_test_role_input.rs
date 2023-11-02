@@ -117,7 +117,7 @@ impl TestRoleInputBuilder {
         &self.topics
     }
     /// Consumes the builder and constructs a [`TestRoleInput`](crate::operation::test_role::TestRoleInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::test_role::TestRoleInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::test_role::TestRoleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::test_role::TestRoleInput {
             role: self.role,
             input_bucket: self.input_bucket,

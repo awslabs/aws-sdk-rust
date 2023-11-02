@@ -202,7 +202,7 @@ impl UpdatePermissionGroupInputBuilder {
     /// Consumes the builder and constructs a [`UpdatePermissionGroupInput`](crate::operation::update_permission_group::UpdatePermissionGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_permission_group::UpdatePermissionGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_permission_group::UpdatePermissionGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_permission_group::UpdatePermissionGroupInput {
             permission_group_id: self.permission_group_id,

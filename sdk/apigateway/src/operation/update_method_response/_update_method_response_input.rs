@@ -140,7 +140,7 @@ impl UpdateMethodResponseInputBuilder {
     /// Consumes the builder and constructs a [`UpdateMethodResponseInput`](crate::operation::update_method_response::UpdateMethodResponseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_method_response::UpdateMethodResponseInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_method_response::UpdateMethodResponseInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_method_response::UpdateMethodResponseInput {
             rest_api_id: self.rest_api_id,

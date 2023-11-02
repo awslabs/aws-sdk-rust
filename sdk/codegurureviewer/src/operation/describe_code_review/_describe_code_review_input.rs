@@ -44,7 +44,8 @@ impl DescribeCodeReviewInputBuilder {
     /// Consumes the builder and constructs a [`DescribeCodeReviewInput`](crate::operation::describe_code_review::DescribeCodeReviewInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_code_review::DescribeCodeReviewInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_code_review::DescribeCodeReviewInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::describe_code_review::DescribeCodeReviewInput {
             code_review_arn: self.code_review_arn,
         })

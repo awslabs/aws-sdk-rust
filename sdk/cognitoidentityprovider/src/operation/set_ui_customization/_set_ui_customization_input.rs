@@ -117,7 +117,8 @@ impl SetUiCustomizationInputBuilder {
     /// Consumes the builder and constructs a [`SetUiCustomizationInput`](crate::operation::set_ui_customization::SetUiCustomizationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::set_ui_customization::SetUiCustomizationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::set_ui_customization::SetUiCustomizationInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::set_ui_customization::SetUiCustomizationInput {
             user_pool_id: self.user_pool_id,
             client_id: self.client_id,

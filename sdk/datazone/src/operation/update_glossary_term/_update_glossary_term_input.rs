@@ -206,7 +206,8 @@ impl UpdateGlossaryTermInputBuilder {
     /// Consumes the builder and constructs a [`UpdateGlossaryTermInput`](crate::operation::update_glossary_term::UpdateGlossaryTermInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_glossary_term::UpdateGlossaryTermInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_glossary_term::UpdateGlossaryTermInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::update_glossary_term::UpdateGlossaryTermInput {
             domain_identifier: self.domain_identifier,
             glossary_identifier: self.glossary_identifier,

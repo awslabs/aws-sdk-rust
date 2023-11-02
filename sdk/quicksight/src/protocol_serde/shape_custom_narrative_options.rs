@@ -2,7 +2,7 @@
 pub fn ser_custom_narrative_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CustomNarrativeOptions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Narrative").string(input.narrative.as_str());
     }

@@ -188,7 +188,7 @@ impl StartSpeakerEnrollmentJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_speaker_enrollment_job::StartSpeakerEnrollmentJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_speaker_enrollment_job::StartSpeakerEnrollmentJobInput {
             client_token: self.client_token,

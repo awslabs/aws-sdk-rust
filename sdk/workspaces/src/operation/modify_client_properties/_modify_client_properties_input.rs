@@ -66,8 +66,10 @@ impl ModifyClientPropertiesInputBuilder {
     /// Consumes the builder and constructs a [`ModifyClientPropertiesInput`](crate::operation::modify_client_properties::ModifyClientPropertiesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::modify_client_properties::ModifyClientPropertiesInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::modify_client_properties::ModifyClientPropertiesInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::modify_client_properties::ModifyClientPropertiesInput {
             resource_id: self.resource_id,
             client_properties: self.client_properties,

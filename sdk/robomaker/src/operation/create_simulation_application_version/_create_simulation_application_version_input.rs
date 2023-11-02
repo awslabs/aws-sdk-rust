@@ -117,7 +117,7 @@ impl CreateSimulationApplicationVersionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_simulation_application_version::CreateSimulationApplicationVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::create_simulation_application_version::CreateSimulationApplicationVersionInput {

@@ -2,7 +2,7 @@
 pub fn ser_aws_auto_scaling_auto_scaling_group_mixed_instances_policy_instances_distribution_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.on_demand_allocation_strategy {
         object.key("OnDemandAllocationStrategy").string(var_1.as_str());
     }

@@ -113,22 +113,22 @@ impl ActionHistoryBuilder {
     /// - [`timestamp`](crate::types::builders::ActionHistoryBuilder::timestamp)
     /// - [`status`](crate::types::builders::ActionHistoryBuilder::status)
     /// - [`event_type`](crate::types::builders::ActionHistoryBuilder::event_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::ActionHistory, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ActionHistory, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ActionHistory {
             timestamp: self.timestamp.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "timestamp",
                     "timestamp was not specified but it is required when building ActionHistory",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building ActionHistory",
                 )
             })?,
             event_type: self.event_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "event_type",
                     "event_type was not specified but it is required when building ActionHistory",
                 )

@@ -88,7 +88,7 @@ impl DeleteLogPatternInputBuilder {
     /// Consumes the builder and constructs a [`DeleteLogPatternInput`](crate::operation::delete_log_pattern::DeleteLogPatternInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_log_pattern::DeleteLogPatternInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_log_pattern::DeleteLogPatternInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_log_pattern::DeleteLogPatternInput {
             resource_group_name: self.resource_group_name,
             pattern_set_name: self.pattern_set_name,

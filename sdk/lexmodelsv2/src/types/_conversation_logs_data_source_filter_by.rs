@@ -91,22 +91,22 @@ impl ConversationLogsDataSourceFilterByBuilder {
     /// - [`start_time`](crate::types::builders::ConversationLogsDataSourceFilterByBuilder::start_time)
     /// - [`end_time`](crate::types::builders::ConversationLogsDataSourceFilterByBuilder::end_time)
     /// - [`input_mode`](crate::types::builders::ConversationLogsDataSourceFilterByBuilder::input_mode)
-    pub fn build(self) -> ::std::result::Result<crate::types::ConversationLogsDataSourceFilterBy, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ConversationLogsDataSourceFilterBy, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ConversationLogsDataSourceFilterBy {
             start_time: self.start_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "start_time",
                     "start_time was not specified but it is required when building ConversationLogsDataSourceFilterBy",
                 )
             })?,
             end_time: self.end_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "end_time",
                     "end_time was not specified but it is required when building ConversationLogsDataSourceFilterBy",
                 )
             })?,
             input_mode: self.input_mode.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "input_mode",
                     "input_mode was not specified but it is required when building ConversationLogsDataSourceFilterBy",
                 )

@@ -64,11 +64,11 @@ impl StartQueryPlanningOutputBuilder {
     /// - [`query_id`](crate::operation::start_query_planning::builders::StartQueryPlanningOutputBuilder::query_id)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_query_planning::StartQueryPlanningOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::start_query_planning::StartQueryPlanningOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_query_planning::StartQueryPlanningOutput {
             query_id: self.query_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "query_id",
                     "query_id was not specified but it is required when building StartQueryPlanningOutput",
                 )

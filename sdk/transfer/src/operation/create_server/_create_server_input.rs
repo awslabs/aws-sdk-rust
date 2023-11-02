@@ -717,7 +717,9 @@ impl CreateServerInputBuilder {
         &self.structured_log_destinations
     }
     /// Consumes the builder and constructs a [`CreateServerInput`](crate::operation::create_server::CreateServerInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_server::CreateServerInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_server::CreateServerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_server::CreateServerInput {
             certificate: self.certificate,
             domain: self.domain,

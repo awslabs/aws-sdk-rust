@@ -2,7 +2,7 @@
 pub fn ser_update_media_pipeline_kinesis_video_stream_pool_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_media_pipeline_kinesis_video_stream_pool::UpdateMediaPipelineKinesisVideoStreamPoolInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.stream_configuration {
         #[allow(unused_mut)]
         let mut object_2 = object.key("StreamConfiguration").start_object();

@@ -81,11 +81,11 @@ impl AdvancedEventSelectorBuilder {
     /// Consumes the builder and constructs a [`AdvancedEventSelector`](crate::types::AdvancedEventSelector).
     /// This method will fail if any of the following fields are not set:
     /// - [`field_selectors`](crate::types::builders::AdvancedEventSelectorBuilder::field_selectors)
-    pub fn build(self) -> ::std::result::Result<crate::types::AdvancedEventSelector, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AdvancedEventSelector, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AdvancedEventSelector {
             name: self.name,
             field_selectors: self.field_selectors.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "field_selectors",
                     "field_selectors was not specified but it is required when building AdvancedEventSelector",
                 )

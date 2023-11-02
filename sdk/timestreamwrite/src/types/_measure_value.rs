@@ -99,22 +99,22 @@ impl MeasureValueBuilder {
     /// - [`name`](crate::types::builders::MeasureValueBuilder::name)
     /// - [`value`](crate::types::builders::MeasureValueBuilder::value)
     /// - [`r#type`](crate::types::builders::MeasureValueBuilder::r#type)
-    pub fn build(self) -> ::std::result::Result<crate::types::MeasureValue, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::MeasureValue, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MeasureValue {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building MeasureValue",
                 )
             })?,
             value: self.value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "value",
                     "value was not specified but it is required when building MeasureValue",
                 )
             })?,
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building MeasureValue",
                 )

@@ -83,7 +83,7 @@ impl GetTriggersInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`GetTriggersInput`](crate::operation::get_triggers::GetTriggersInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_triggers::GetTriggersInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_triggers::GetTriggersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_triggers::GetTriggersInput {
             next_token: self.next_token,
             dependent_job_name: self.dependent_job_name,

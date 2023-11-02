@@ -87,10 +87,10 @@ impl ListDevicesOutputBuilder {
     /// Consumes the builder and constructs a [`ListDevicesOutput`](crate::operation::list_devices::ListDevicesOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`devices`](crate::operation::list_devices::builders::ListDevicesOutputBuilder::devices)
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_devices::ListDevicesOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_devices::ListDevicesOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_devices::ListDevicesOutput {
             devices: self.devices.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "devices",
                     "devices was not specified but it is required when building ListDevicesOutput",
                 )

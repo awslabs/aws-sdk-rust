@@ -101,7 +101,9 @@ impl ListClustersInputBuilder {
         &self.include
     }
     /// Consumes the builder and constructs a [`ListClustersInput`](crate::operation::list_clusters::ListClustersInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_clusters::ListClustersInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_clusters::ListClustersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_clusters::ListClustersInput {
             max_results: self.max_results,
             next_token: self.next_token,

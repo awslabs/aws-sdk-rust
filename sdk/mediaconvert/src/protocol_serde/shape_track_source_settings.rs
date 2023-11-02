@@ -2,7 +2,7 @@
 pub fn ser_track_source_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TrackSourceSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.track_number {
         object.key("trackNumber").number(
             #[allow(clippy::useless_conversion)]

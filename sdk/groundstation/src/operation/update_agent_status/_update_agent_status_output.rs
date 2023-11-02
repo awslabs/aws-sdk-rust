@@ -63,10 +63,10 @@ impl UpdateAgentStatusOutputBuilder {
     /// - [`agent_id`](crate::operation::update_agent_status::builders::UpdateAgentStatusOutputBuilder::agent_id)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_agent_status::UpdateAgentStatusOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_agent_status::UpdateAgentStatusOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_agent_status::UpdateAgentStatusOutput {
             agent_id: self.agent_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "agent_id",
                     "agent_id was not specified but it is required when building UpdateAgentStatusOutput",
                 )

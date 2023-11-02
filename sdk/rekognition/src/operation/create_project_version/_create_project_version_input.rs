@@ -260,7 +260,7 @@ impl CreateProjectVersionInputBuilder {
     /// Consumes the builder and constructs a [`CreateProjectVersionInput`](crate::operation::create_project_version::CreateProjectVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_project_version::CreateProjectVersionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_project_version::CreateProjectVersionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_project_version::CreateProjectVersionInput {
             project_arn: self.project_arn,

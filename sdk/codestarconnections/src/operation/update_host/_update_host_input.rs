@@ -84,7 +84,7 @@ impl UpdateHostInputBuilder {
         &self.vpc_configuration
     }
     /// Consumes the builder and constructs a [`UpdateHostInput`](crate::operation::update_host::UpdateHostInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_host::UpdateHostInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_host::UpdateHostInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_host::UpdateHostInput {
             host_arn: self.host_arn,
             provider_endpoint: self.provider_endpoint,

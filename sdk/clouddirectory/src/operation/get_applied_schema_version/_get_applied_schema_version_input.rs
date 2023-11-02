@@ -46,7 +46,7 @@ impl GetAppliedSchemaVersionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_applied_schema_version::GetAppliedSchemaVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_applied_schema_version::GetAppliedSchemaVersionInput { schema_arn: self.schema_arn })
     }

@@ -85,16 +85,16 @@ impl CreateCaseOutputBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`case_id`](crate::operation::create_case::builders::CreateCaseOutputBuilder::case_id)
     /// - [`case_arn`](crate::operation::create_case::builders::CreateCaseOutputBuilder::case_arn)
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_case::CreateCaseOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_case::CreateCaseOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_case::CreateCaseOutput {
             case_id: self.case_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "case_id",
                     "case_id was not specified but it is required when building CreateCaseOutput",
                 )
             })?,
             case_arn: self.case_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "case_arn",
                     "case_arn was not specified but it is required when building CreateCaseOutput",
                 )

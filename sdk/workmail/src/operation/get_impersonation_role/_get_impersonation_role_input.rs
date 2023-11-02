@@ -66,7 +66,7 @@ impl GetImpersonationRoleInputBuilder {
     /// Consumes the builder and constructs a [`GetImpersonationRoleInput`](crate::operation::get_impersonation_role::GetImpersonationRoleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_impersonation_role::GetImpersonationRoleInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_impersonation_role::GetImpersonationRoleInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_impersonation_role::GetImpersonationRoleInput {
             organization_id: self.organization_id,

@@ -173,15 +173,15 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for PutBucketVer
             fn uri_base(
                 _input: &crate::operation::put_bucket_versioning::PutBucketVersioningInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 use ::std::fmt::Write as _;
                 let input_1 = &_input.bucket;
                 let input_1 = input_1
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("bucket", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("bucket", "cannot be empty or unset"))?;
                 let bucket = ::aws_smithy_http::label::fmt_string(input_1, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if bucket.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "bucket",
                         "cannot be empty or unset",
                     ));
@@ -193,7 +193,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for PutBucketVer
             fn update_http_builder(
                 input: &crate::operation::put_bucket_versioning::PutBucketVersioningInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::protocol_serde::shape_put_bucket_versioning::ser_put_bucket_versioning_headers(input, builder)?;
@@ -203,7 +203,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for PutBucketVer
             builder = _header_serialization_settings.set_default_header(builder, ::http::header::CONTENT_TYPE, "application/xml");
             builder
         };
-        let body = ::aws_smithy_http::body::SdkBody::from(
+        let body = ::aws_smithy_types::body::SdkBody::from(
             crate::protocol_serde::shape_put_bucket_versioning_input::ser_versioning_configuration_http_payload(&input.versioning_configuration)?,
         );
         if let Some(content_length) = body.content_length() {
@@ -248,14 +248,14 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for PutBucketVers
                     .account_id
                     .clone()
                     .filter(|f| !AsRef::<str>::as_ref(f).trim().is_empty())
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("account_id", "A required field was not set"))?,
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("account_id", "A required field was not set"))?,
             ))
             .set_bucket(Some(
                 _input
                     .bucket
                     .clone()
                     .filter(|f| !AsRef::<str>::as_ref(f).trim().is_empty())
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("bucket", "A required field was not set"))?,
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("bucket", "A required field was not set"))?,
             ))
             .build()
             .map_err(|err| {

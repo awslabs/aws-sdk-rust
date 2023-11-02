@@ -46,7 +46,7 @@ impl ListAllowedNodeTypeUpdatesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_allowed_node_type_updates::ListAllowedNodeTypeUpdatesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_allowed_node_type_updates::ListAllowedNodeTypeUpdatesInput {
             cluster_name: self.cluster_name,

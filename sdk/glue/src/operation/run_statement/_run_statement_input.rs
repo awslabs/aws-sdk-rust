@@ -85,7 +85,9 @@ impl RunStatementInputBuilder {
         &self.request_origin
     }
     /// Consumes the builder and constructs a [`RunStatementInput`](crate::operation::run_statement::RunStatementInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::run_statement::RunStatementInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::run_statement::RunStatementInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::run_statement::RunStatementInput {
             session_id: self.session_id,
             code: self.code,

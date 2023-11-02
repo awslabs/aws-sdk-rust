@@ -189,11 +189,11 @@ impl BatchDescribeMergeConflictsOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_describe_merge_conflicts::BatchDescribeMergeConflictsOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::batch_describe_merge_conflicts::BatchDescribeMergeConflictsOutput {
             conflicts: self.conflicts.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "conflicts",
                     "conflicts was not specified but it is required when building BatchDescribeMergeConflictsOutput",
                 )
@@ -201,13 +201,13 @@ impl BatchDescribeMergeConflictsOutputBuilder {
             next_token: self.next_token,
             errors: self.errors,
             destination_commit_id: self.destination_commit_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "destination_commit_id",
                     "destination_commit_id was not specified but it is required when building BatchDescribeMergeConflictsOutput",
                 )
             })?,
             source_commit_id: self.source_commit_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source_commit_id",
                     "source_commit_id was not specified but it is required when building BatchDescribeMergeConflictsOutput",
                 )

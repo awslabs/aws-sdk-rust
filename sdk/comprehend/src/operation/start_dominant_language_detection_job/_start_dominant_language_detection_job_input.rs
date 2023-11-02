@@ -223,7 +223,7 @@ impl StartDominantLanguageDetectionJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_dominant_language_detection_job::StartDominantLanguageDetectionJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::start_dominant_language_detection_job::StartDominantLanguageDetectionJobInput {

@@ -65,7 +65,7 @@ impl DisconnectFromServiceInputBuilder {
     /// Consumes the builder and constructs a [`DisconnectFromServiceInput`](crate::operation::disconnect_from_service::DisconnectFromServiceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::disconnect_from_service::DisconnectFromServiceInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::disconnect_from_service::DisconnectFromServiceInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::disconnect_from_service::DisconnectFromServiceInput {
             source_server_id: self.source_server_id,

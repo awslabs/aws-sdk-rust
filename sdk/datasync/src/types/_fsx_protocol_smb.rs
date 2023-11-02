@@ -172,18 +172,18 @@ impl FsxProtocolSmbBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`password`](crate::types::builders::FsxProtocolSmbBuilder::password)
     /// - [`user`](crate::types::builders::FsxProtocolSmbBuilder::user)
-    pub fn build(self) -> ::std::result::Result<crate::types::FsxProtocolSmb, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::FsxProtocolSmb, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FsxProtocolSmb {
             domain: self.domain,
             mount_options: self.mount_options,
             password: self.password.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "password",
                     "password was not specified but it is required when building FsxProtocolSmb",
                 )
             })?,
             user: self.user.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "user",
                     "user was not specified but it is required when building FsxProtocolSmb",
                 )

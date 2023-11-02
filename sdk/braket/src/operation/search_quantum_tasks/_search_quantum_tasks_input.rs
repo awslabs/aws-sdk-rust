@@ -93,7 +93,8 @@ impl SearchQuantumTasksInputBuilder {
     /// Consumes the builder and constructs a [`SearchQuantumTasksInput`](crate::operation::search_quantum_tasks::SearchQuantumTasksInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::search_quantum_tasks::SearchQuantumTasksInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::search_quantum_tasks::SearchQuantumTasksInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::search_quantum_tasks::SearchQuantumTasksInput {
             next_token: self.next_token,
             max_results: self.max_results,

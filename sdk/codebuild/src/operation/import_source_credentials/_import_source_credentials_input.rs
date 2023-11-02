@@ -143,7 +143,7 @@ impl ImportSourceCredentialsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::import_source_credentials::ImportSourceCredentialsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::import_source_credentials::ImportSourceCredentialsInput {
             username: self.username,

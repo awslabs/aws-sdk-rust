@@ -176,17 +176,17 @@ impl NotifyObjectCompleteFluentBuilder {
         self.inner.get_metadata_string()
     }
     /// Optional metadata associated with an Object. Maximum length is 4MB.
-    pub fn metadata_blob(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
+    pub fn metadata_blob(mut self, input: ::aws_smithy_types::byte_stream::ByteStream) -> Self {
         self.inner = self.inner.metadata_blob(input);
         self
     }
     /// Optional metadata associated with an Object. Maximum length is 4MB.
-    pub fn set_metadata_blob(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
+    pub fn set_metadata_blob(mut self, input: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>) -> Self {
         self.inner = self.inner.set_metadata_blob(input);
         self
     }
     /// Optional metadata associated with an Object. Maximum length is 4MB.
-    pub fn get_metadata_blob(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+    pub fn get_metadata_blob(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
         self.inner.get_metadata_blob()
     }
     /// The size of MetadataBlob.

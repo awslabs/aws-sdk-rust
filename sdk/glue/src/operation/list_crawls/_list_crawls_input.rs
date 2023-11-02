@@ -113,7 +113,7 @@ impl ListCrawlsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListCrawlsInput`](crate::operation::list_crawls::ListCrawlsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_crawls::ListCrawlsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_crawls::ListCrawlsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_crawls::ListCrawlsInput {
             crawler_name: self.crawler_name,
             max_results: self.max_results,

@@ -2,7 +2,7 @@
 pub fn ser_custom_response_body(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CustomResponseBody,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("ContentType").string(input.content_type.as_str());
     }

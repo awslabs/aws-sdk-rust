@@ -78,16 +78,18 @@ impl AmplitudeConnectorProfileCredentialsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`api_key`](crate::types::builders::AmplitudeConnectorProfileCredentialsBuilder::api_key)
     /// - [`secret_key`](crate::types::builders::AmplitudeConnectorProfileCredentialsBuilder::secret_key)
-    pub fn build(self) -> ::std::result::Result<crate::types::AmplitudeConnectorProfileCredentials, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::AmplitudeConnectorProfileCredentials, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AmplitudeConnectorProfileCredentials {
             api_key: self.api_key.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "api_key",
                     "api_key was not specified but it is required when building AmplitudeConnectorProfileCredentials",
                 )
             })?,
             secret_key: self.secret_key.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "secret_key",
                     "secret_key was not specified but it is required when building AmplitudeConnectorProfileCredentials",
                 )

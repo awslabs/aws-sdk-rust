@@ -70,16 +70,19 @@ impl S3PathBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`bucket`](crate::types::builders::S3PathBuilder::bucket)
     /// - [`key`](crate::types::builders::S3PathBuilder::key)
-    pub fn build(self) -> ::std::result::Result<crate::types::S3Path, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::S3Path, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::S3Path {
             bucket: self.bucket.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "bucket",
                     "bucket was not specified but it is required when building S3Path",
                 )
             })?,
             key: self.key.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field("key", "key was not specified but it is required when building S3Path")
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "key",
+                    "key was not specified but it is required when building S3Path",
+                )
             })?,
         })
     }

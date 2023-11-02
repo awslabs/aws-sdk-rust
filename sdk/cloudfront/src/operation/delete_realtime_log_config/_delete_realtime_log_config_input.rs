@@ -66,7 +66,7 @@ impl DeleteRealtimeLogConfigInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_realtime_log_config::DeleteRealtimeLogConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_realtime_log_config::DeleteRealtimeLogConfigInput {
             name: self.name,

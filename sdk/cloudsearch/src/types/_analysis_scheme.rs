@@ -90,16 +90,16 @@ impl AnalysisSchemeBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`analysis_scheme_name`](crate::types::builders::AnalysisSchemeBuilder::analysis_scheme_name)
     /// - [`analysis_scheme_language`](crate::types::builders::AnalysisSchemeBuilder::analysis_scheme_language)
-    pub fn build(self) -> ::std::result::Result<crate::types::AnalysisScheme, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AnalysisScheme, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AnalysisScheme {
             analysis_scheme_name: self.analysis_scheme_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "analysis_scheme_name",
                     "analysis_scheme_name was not specified but it is required when building AnalysisScheme",
                 )
             })?,
             analysis_scheme_language: self.analysis_scheme_language.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "analysis_scheme_language",
                     "analysis_scheme_language was not specified but it is required when building AnalysisScheme",
                 )

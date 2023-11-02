@@ -153,7 +153,7 @@ impl GetCurrentUserDataInputBuilder {
     /// Consumes the builder and constructs a [`GetCurrentUserDataInput`](crate::operation::get_current_user_data::GetCurrentUserDataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_current_user_data::GetCurrentUserDataInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_current_user_data::GetCurrentUserDataInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_current_user_data::GetCurrentUserDataInput {
             instance_id: self.instance_id,

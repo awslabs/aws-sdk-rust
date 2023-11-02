@@ -116,7 +116,7 @@ impl DeletePartitionInputBuilder {
     /// Consumes the builder and constructs a [`DeletePartitionInput`](crate::operation::delete_partition::DeletePartitionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_partition::DeletePartitionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_partition::DeletePartitionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_partition::DeletePartitionInput {
             catalog_id: self.catalog_id,
             database_name: self.database_name,

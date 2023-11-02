@@ -72,7 +72,7 @@ impl DescribeRulesPackagesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeRulesPackagesInput`](crate::operation::describe_rules_packages::DescribeRulesPackagesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_rules_packages::DescribeRulesPackagesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_rules_packages::DescribeRulesPackagesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_rules_packages::DescribeRulesPackagesInput {
             rules_package_arns: self.rules_package_arns,

@@ -99,11 +99,11 @@ impl BatchGetDataQualityResultOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_data_quality_result::BatchGetDataQualityResultOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::batch_get_data_quality_result::BatchGetDataQualityResultOutput {
             results: self.results.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "results",
                     "results was not specified but it is required when building BatchGetDataQualityResultOutput",
                 )

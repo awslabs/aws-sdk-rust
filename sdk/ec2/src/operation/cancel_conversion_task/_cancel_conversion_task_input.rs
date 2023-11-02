@@ -86,7 +86,7 @@ impl CancelConversionTaskInputBuilder {
     /// Consumes the builder and constructs a [`CancelConversionTaskInput`](crate::operation::cancel_conversion_task::CancelConversionTaskInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::cancel_conversion_task::CancelConversionTaskInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::cancel_conversion_task::CancelConversionTaskInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::cancel_conversion_task::CancelConversionTaskInput {
             conversion_task_id: self.conversion_task_id,

@@ -89,10 +89,10 @@ impl ListPullRequestsOutputBuilder {
     /// - [`pull_request_ids`](crate::operation::list_pull_requests::builders::ListPullRequestsOutputBuilder::pull_request_ids)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_pull_requests::ListPullRequestsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_pull_requests::ListPullRequestsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_pull_requests::ListPullRequestsOutput {
             pull_request_ids: self.pull_request_ids.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "pull_request_ids",
                     "pull_request_ids was not specified but it is required when building ListPullRequestsOutput",
                 )

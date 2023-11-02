@@ -85,7 +85,7 @@ impl ListOriginEndpointsInputBuilder {
     /// Consumes the builder and constructs a [`ListOriginEndpointsInput`](crate::operation::list_origin_endpoints::ListOriginEndpointsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_origin_endpoints::ListOriginEndpointsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_origin_endpoints::ListOriginEndpointsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_origin_endpoints::ListOriginEndpointsInput {
             channel_id: self.channel_id,

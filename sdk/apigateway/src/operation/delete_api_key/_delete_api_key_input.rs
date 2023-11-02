@@ -45,7 +45,7 @@ impl DeleteApiKeyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteApiKeyInput`](crate::operation::delete_api_key::DeleteApiKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_api_key::DeleteApiKeyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_api_key::DeleteApiKeyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_api_key::DeleteApiKeyInput { api_key: self.api_key })
     }
 }

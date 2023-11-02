@@ -108,7 +108,7 @@ impl UpdateAssumeRolePolicyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_assume_role_policy::UpdateAssumeRolePolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_assume_role_policy::UpdateAssumeRolePolicyInput {
             role_name: self.role_name,

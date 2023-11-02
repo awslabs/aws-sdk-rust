@@ -91,7 +91,7 @@ impl ListAppAuthorizationsInputBuilder {
     /// Consumes the builder and constructs a [`ListAppAuthorizationsInput`](crate::operation::list_app_authorizations::ListAppAuthorizationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_app_authorizations::ListAppAuthorizationsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_app_authorizations::ListAppAuthorizationsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_app_authorizations::ListAppAuthorizationsInput {
             app_bundle_identifier: self.app_bundle_identifier,

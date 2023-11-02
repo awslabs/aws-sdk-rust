@@ -69,16 +69,16 @@ impl TopicPreferenceBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`topic_name`](crate::types::builders::TopicPreferenceBuilder::topic_name)
     /// - [`subscription_status`](crate::types::builders::TopicPreferenceBuilder::subscription_status)
-    pub fn build(self) -> ::std::result::Result<crate::types::TopicPreference, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TopicPreference, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TopicPreference {
             topic_name: self.topic_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "topic_name",
                     "topic_name was not specified but it is required when building TopicPreference",
                 )
             })?,
             subscription_status: self.subscription_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "subscription_status",
                     "subscription_status was not specified but it is required when building TopicPreference",
                 )

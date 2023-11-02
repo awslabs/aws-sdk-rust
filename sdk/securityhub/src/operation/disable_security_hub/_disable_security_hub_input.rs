@@ -18,7 +18,8 @@ impl DisableSecurityHubInputBuilder {
     /// Consumes the builder and constructs a [`DisableSecurityHubInput`](crate::operation::disable_security_hub::DisableSecurityHubInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::disable_security_hub::DisableSecurityHubInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::disable_security_hub::DisableSecurityHubInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::disable_security_hub::DisableSecurityHubInput {})
     }
 }

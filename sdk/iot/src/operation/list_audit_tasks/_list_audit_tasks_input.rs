@@ -150,7 +150,7 @@ impl ListAuditTasksInputBuilder {
     /// Consumes the builder and constructs a [`ListAuditTasksInput`](crate::operation::list_audit_tasks::ListAuditTasksInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_audit_tasks::ListAuditTasksInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_audit_tasks::ListAuditTasksInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_audit_tasks::ListAuditTasksInput {
             start_time: self.start_time,
             end_time: self.end_time,

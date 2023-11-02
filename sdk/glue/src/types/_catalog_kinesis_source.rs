@@ -178,10 +178,10 @@ impl CatalogKinesisSourceBuilder {
     /// - [`name`](crate::types::builders::CatalogKinesisSourceBuilder::name)
     /// - [`table`](crate::types::builders::CatalogKinesisSourceBuilder::table)
     /// - [`database`](crate::types::builders::CatalogKinesisSourceBuilder::database)
-    pub fn build(self) -> ::std::result::Result<crate::types::CatalogKinesisSource, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CatalogKinesisSource, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CatalogKinesisSource {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building CatalogKinesisSource",
                 )
@@ -189,13 +189,13 @@ impl CatalogKinesisSourceBuilder {
             window_size: self.window_size,
             detect_schema: self.detect_schema,
             table: self.table.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "table",
                     "table was not specified but it is required when building CatalogKinesisSource",
                 )
             })?,
             database: self.database.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "database",
                     "database was not specified but it is required when building CatalogKinesisSource",
                 )

@@ -63,7 +63,7 @@ impl ArchiveWaveInputBuilder {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`ArchiveWaveInput`](crate::operation::archive_wave::ArchiveWaveInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::archive_wave::ArchiveWaveInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::archive_wave::ArchiveWaveInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::archive_wave::ArchiveWaveInput {
             wave_id: self.wave_id,
             account_id: self.account_id,

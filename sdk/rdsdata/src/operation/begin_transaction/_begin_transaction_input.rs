@@ -109,7 +109,7 @@ impl BeginTransactionInputBuilder {
     /// Consumes the builder and constructs a [`BeginTransactionInput`](crate::operation::begin_transaction::BeginTransactionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::begin_transaction::BeginTransactionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::begin_transaction::BeginTransactionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::begin_transaction::BeginTransactionInput {
             resource_arn: self.resource_arn,
             secret_arn: self.secret_arn,

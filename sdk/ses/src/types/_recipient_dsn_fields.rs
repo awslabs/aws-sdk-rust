@@ -193,18 +193,18 @@ impl RecipientDsnFieldsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`action`](crate::types::builders::RecipientDsnFieldsBuilder::action)
     /// - [`status`](crate::types::builders::RecipientDsnFieldsBuilder::status)
-    pub fn build(self) -> ::std::result::Result<crate::types::RecipientDsnFields, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RecipientDsnFields, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RecipientDsnFields {
             final_recipient: self.final_recipient,
             action: self.action.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "action",
                     "action was not specified but it is required when building RecipientDsnFields",
                 )
             })?,
             remote_mta: self.remote_mta,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building RecipientDsnFields",
                 )

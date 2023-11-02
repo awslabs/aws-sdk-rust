@@ -2,7 +2,7 @@
 pub fn ser_create_location_fsx_windows_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_location_fsx_windows::CreateLocationFsxWindowsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.subdirectory {
         object.key("Subdirectory").string(var_1.as_str());
     }

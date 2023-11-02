@@ -322,7 +322,7 @@ impl GetNetworkTelemetryInputBuilder {
     /// Consumes the builder and constructs a [`GetNetworkTelemetryInput`](crate::operation::get_network_telemetry::GetNetworkTelemetryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_network_telemetry::GetNetworkTelemetryInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_network_telemetry::GetNetworkTelemetryInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_network_telemetry::GetNetworkTelemetryInput {
             global_network_id: self.global_network_id,

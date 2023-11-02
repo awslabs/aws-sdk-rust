@@ -77,7 +77,7 @@ impl AddWorkingStorageInputBuilder {
     /// Consumes the builder and constructs a [`AddWorkingStorageInput`](crate::operation::add_working_storage::AddWorkingStorageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::add_working_storage::AddWorkingStorageInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::add_working_storage::AddWorkingStorageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::add_working_storage::AddWorkingStorageInput {
             gateway_arn: self.gateway_arn,
             disk_ids: self.disk_ids,

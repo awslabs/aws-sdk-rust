@@ -93,7 +93,7 @@ impl ListRumMetricsDestinationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_rum_metrics_destinations::ListRumMetricsDestinationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_rum_metrics_destinations::ListRumMetricsDestinationsInput {
             app_monitor_name: self.app_monitor_name,

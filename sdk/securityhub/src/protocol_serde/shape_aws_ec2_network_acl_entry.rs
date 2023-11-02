@@ -2,7 +2,7 @@
 pub fn ser_aws_ec2_network_acl_entry(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEc2NetworkAclEntry,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.cidr_block {
         object.key("CidrBlock").string(var_1.as_str());
     }

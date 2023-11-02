@@ -123,10 +123,10 @@ pub fn de_register_cross_account_access_role_http_response(
 
 pub fn ser_register_cross_account_access_role_input(
     input: &crate::operation::register_cross_account_access_role::RegisterCrossAccountAccessRoleInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_register_cross_account_access_role_input::ser_register_cross_account_access_role_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

@@ -2,7 +2,7 @@
 pub fn ser_system_resource_limits(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SystemResourceLimits,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.memory != 0 {
         object.key("memory").number(
             #[allow(clippy::useless_conversion)]

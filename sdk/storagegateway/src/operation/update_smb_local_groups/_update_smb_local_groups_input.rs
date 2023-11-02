@@ -66,7 +66,7 @@ impl UpdateSmbLocalGroupsInputBuilder {
     /// Consumes the builder and constructs a [`UpdateSmbLocalGroupsInput`](crate::operation::update_smb_local_groups::UpdateSmbLocalGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_smb_local_groups::UpdateSmbLocalGroupsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_smb_local_groups::UpdateSmbLocalGroupsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_smb_local_groups::UpdateSmbLocalGroupsInput {
             gateway_arn: self.gateway_arn,

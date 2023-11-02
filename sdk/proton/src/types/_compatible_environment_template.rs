@@ -70,16 +70,16 @@ impl CompatibleEnvironmentTemplateBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`template_name`](crate::types::builders::CompatibleEnvironmentTemplateBuilder::template_name)
     /// - [`major_version`](crate::types::builders::CompatibleEnvironmentTemplateBuilder::major_version)
-    pub fn build(self) -> ::std::result::Result<crate::types::CompatibleEnvironmentTemplate, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CompatibleEnvironmentTemplate, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CompatibleEnvironmentTemplate {
             template_name: self.template_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "template_name",
                     "template_name was not specified but it is required when building CompatibleEnvironmentTemplate",
                 )
             })?,
             major_version: self.major_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "major_version",
                     "major_version was not specified but it is required when building CompatibleEnvironmentTemplate",
                 )

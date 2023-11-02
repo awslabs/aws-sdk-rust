@@ -2,7 +2,7 @@
 pub fn ser_voice_message_content(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VoiceMessageContent,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.call_instructions_message {
         #[allow(unused_mut)]
         let mut object_2 = object.key("CallInstructionsMessage").start_object();

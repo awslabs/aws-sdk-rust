@@ -88,7 +88,7 @@ impl ListTemplateGroupAccessControlEntriesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_template_group_access_control_entries::ListTemplateGroupAccessControlEntriesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_template_group_access_control_entries::ListTemplateGroupAccessControlEntriesInput {

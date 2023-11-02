@@ -113,7 +113,7 @@ impl RenderUiTemplateInputBuilder {
     /// Consumes the builder and constructs a [`RenderUiTemplateInput`](crate::operation::render_ui_template::RenderUiTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::render_ui_template::RenderUiTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::render_ui_template::RenderUiTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::render_ui_template::RenderUiTemplateInput {
             ui_template: self.ui_template,
             task: self.task,

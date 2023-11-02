@@ -91,17 +91,17 @@ impl ReportDestinationS3Builder {
     /// This method will fail if any of the following fields are not set:
     /// - [`s3_bucket_arn`](crate::types::builders::ReportDestinationS3Builder::s3_bucket_arn)
     /// - [`bucket_access_role_arn`](crate::types::builders::ReportDestinationS3Builder::bucket_access_role_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::ReportDestinationS3, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ReportDestinationS3, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ReportDestinationS3 {
             subdirectory: self.subdirectory,
             s3_bucket_arn: self.s3_bucket_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "s3_bucket_arn",
                     "s3_bucket_arn was not specified but it is required when building ReportDestinationS3",
                 )
             })?,
             bucket_access_role_arn: self.bucket_access_role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "bucket_access_role_arn",
                     "bucket_access_role_arn was not specified but it is required when building ReportDestinationS3",
                 )

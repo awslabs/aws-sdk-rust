@@ -253,7 +253,9 @@ impl RegisterTypeInputBuilder {
         &self.client_request_token
     }
     /// Consumes the builder and constructs a [`RegisterTypeInput`](crate::operation::register_type::RegisterTypeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::register_type::RegisterTypeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::register_type::RegisterTypeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::register_type::RegisterTypeInput {
             r#type: self.r#type,
             type_name: self.type_name,

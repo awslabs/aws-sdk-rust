@@ -142,24 +142,24 @@ impl BounceActionBuilder {
     /// - [`smtp_reply_code`](crate::types::builders::BounceActionBuilder::smtp_reply_code)
     /// - [`message`](crate::types::builders::BounceActionBuilder::message)
     /// - [`sender`](crate::types::builders::BounceActionBuilder::sender)
-    pub fn build(self) -> ::std::result::Result<crate::types::BounceAction, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::BounceAction, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::BounceAction {
             topic_arn: self.topic_arn,
             smtp_reply_code: self.smtp_reply_code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "smtp_reply_code",
                     "smtp_reply_code was not specified but it is required when building BounceAction",
                 )
             })?,
             status_code: self.status_code,
             message: self.message.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "message",
                     "message was not specified but it is required when building BounceAction",
                 )
             })?,
             sender: self.sender.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "sender",
                     "sender was not specified but it is required when building BounceAction",
                 )

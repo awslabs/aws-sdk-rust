@@ -97,16 +97,16 @@ impl PutAuditEventsOutputBuilder {
     /// - [`failed`](crate::operation::put_audit_events::builders::PutAuditEventsOutputBuilder::failed)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_audit_events::PutAuditEventsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_audit_events::PutAuditEventsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_audit_events::PutAuditEventsOutput {
             successful: self.successful.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "successful",
                     "successful was not specified but it is required when building PutAuditEventsOutput",
                 )
             })?,
             failed: self.failed.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "failed",
                     "failed was not specified but it is required when building PutAuditEventsOutput",
                 )

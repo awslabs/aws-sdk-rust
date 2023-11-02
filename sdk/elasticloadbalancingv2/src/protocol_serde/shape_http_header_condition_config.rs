@@ -3,7 +3,7 @@
 pub fn ser_http_header_condition_config(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::HttpHeaderConditionConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("HttpHeaderName");
     if let Some(var_2) = &input.http_header_name {

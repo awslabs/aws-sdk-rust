@@ -2,7 +2,7 @@
 pub fn ser_aws_step_function_state_machine_logging_configuration_destinations_cloud_watch_logs_log_group_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsStepFunctionStateMachineLoggingConfigurationDestinationsCloudWatchLogsLogGroupDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.log_group_arn {
         object.key("LogGroupArn").string(var_1.as_str());
     }

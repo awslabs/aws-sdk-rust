@@ -109,7 +109,8 @@ impl CreateCustomPluginInputBuilder {
     /// Consumes the builder and constructs a [`CreateCustomPluginInput`](crate::operation::create_custom_plugin::CreateCustomPluginInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_custom_plugin::CreateCustomPluginInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_custom_plugin::CreateCustomPluginInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_custom_plugin::CreateCustomPluginInput {
             content_type: self.content_type,
             description: self.description,

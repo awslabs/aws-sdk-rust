@@ -2,7 +2,7 @@
 pub fn ser_image_permissions(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ImagePermissions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.allow_fleet {
         object.key("allowFleet").boolean(*var_1);
     }

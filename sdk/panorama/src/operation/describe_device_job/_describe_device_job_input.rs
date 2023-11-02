@@ -44,7 +44,7 @@ impl DescribeDeviceJobInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDeviceJobInput`](crate::operation::describe_device_job::DescribeDeviceJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_device_job::DescribeDeviceJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_device_job::DescribeDeviceJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_device_job::DescribeDeviceJobInput { job_id: self.job_id })
     }
 }

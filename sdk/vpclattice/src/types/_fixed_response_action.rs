@@ -45,10 +45,10 @@ impl FixedResponseActionBuilder {
     /// Consumes the builder and constructs a [`FixedResponseAction`](crate::types::FixedResponseAction).
     /// This method will fail if any of the following fields are not set:
     /// - [`status_code`](crate::types::builders::FixedResponseActionBuilder::status_code)
-    pub fn build(self) -> ::std::result::Result<crate::types::FixedResponseAction, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::FixedResponseAction, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FixedResponseAction {
             status_code: self.status_code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status_code",
                     "status_code was not specified but it is required when building FixedResponseAction",
                 )

@@ -243,7 +243,8 @@ impl CreateResponsePlanInputBuilder {
     /// Consumes the builder and constructs a [`CreateResponsePlanInput`](crate::operation::create_response_plan::CreateResponsePlanInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_response_plan::CreateResponsePlanInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_response_plan::CreateResponsePlanInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_response_plan::CreateResponsePlanInput {
             client_token: self.client_token,
             name: self.name,

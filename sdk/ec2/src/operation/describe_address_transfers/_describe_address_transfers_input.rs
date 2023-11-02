@@ -116,7 +116,7 @@ impl DescribeAddressTransfersInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_address_transfers::DescribeAddressTransfersInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_address_transfers::DescribeAddressTransfersInput {
             allocation_ids: self.allocation_ids,

@@ -51,7 +51,8 @@ impl BatchCreateVehicleInputBuilder {
     /// Consumes the builder and constructs a [`BatchCreateVehicleInput`](crate::operation::batch_create_vehicle::BatchCreateVehicleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_create_vehicle::BatchCreateVehicleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::batch_create_vehicle::BatchCreateVehicleInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::batch_create_vehicle::BatchCreateVehicleInput { vehicles: self.vehicles })
     }
 }

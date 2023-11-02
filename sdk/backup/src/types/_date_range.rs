@@ -79,16 +79,16 @@ impl DateRangeBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`from_date`](crate::types::builders::DateRangeBuilder::from_date)
     /// - [`to_date`](crate::types::builders::DateRangeBuilder::to_date)
-    pub fn build(self) -> ::std::result::Result<crate::types::DateRange, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DateRange, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DateRange {
             from_date: self.from_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "from_date",
                     "from_date was not specified but it is required when building DateRange",
                 )
             })?,
             to_date: self.to_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "to_date",
                     "to_date was not specified but it is required when building DateRange",
                 )

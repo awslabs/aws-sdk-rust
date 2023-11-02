@@ -46,7 +46,7 @@ impl GetProvisionedModelThroughputInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_provisioned_model_throughput::GetProvisionedModelThroughputInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_provisioned_model_throughput::GetProvisionedModelThroughputInput {
             provisioned_model_id: self.provisioned_model_id,

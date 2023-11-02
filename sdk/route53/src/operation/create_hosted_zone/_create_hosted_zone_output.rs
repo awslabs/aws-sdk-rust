@@ -151,14 +151,14 @@ impl CreateHostedZoneOutputBuilder {
     /// - [`location`](crate::operation::create_hosted_zone::builders::CreateHostedZoneOutputBuilder::location)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_hosted_zone::CreateHostedZoneOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_hosted_zone::CreateHostedZoneOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_hosted_zone::CreateHostedZoneOutput {
             hosted_zone: self.hosted_zone,
             change_info: self.change_info,
             delegation_set: self.delegation_set,
             vpc: self.vpc,
             location: self.location.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "location",
                     "location was not specified but it is required when building CreateHostedZoneOutput",
                 )

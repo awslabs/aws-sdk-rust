@@ -69,7 +69,7 @@ impl DeregisterInstanceEventNotificationAttributesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_instance_event_notification_attributes::DeregisterInstanceEventNotificationAttributesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::deregister_instance_event_notification_attributes::DeregisterInstanceEventNotificationAttributesInput {

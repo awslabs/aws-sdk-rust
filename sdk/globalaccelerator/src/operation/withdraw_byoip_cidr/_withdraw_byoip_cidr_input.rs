@@ -44,7 +44,7 @@ impl WithdrawByoipCidrInputBuilder {
     /// Consumes the builder and constructs a [`WithdrawByoipCidrInput`](crate::operation::withdraw_byoip_cidr::WithdrawByoipCidrInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::withdraw_byoip_cidr::WithdrawByoipCidrInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::withdraw_byoip_cidr::WithdrawByoipCidrInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::withdraw_byoip_cidr::WithdrawByoipCidrInput { cidr: self.cidr })
     }
 }

@@ -117,7 +117,7 @@ impl AddAssociationInputBuilder {
     /// Consumes the builder and constructs a [`AddAssociationInput`](crate::operation::add_association::AddAssociationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::add_association::AddAssociationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::add_association::AddAssociationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::add_association::AddAssociationInput {
             source_arn: self.source_arn,
             destination_arn: self.destination_arn,

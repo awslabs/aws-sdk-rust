@@ -116,28 +116,28 @@ impl DtmfSpecificationBuilder {
     /// - [`end_timeout_ms`](crate::types::builders::DtmfSpecificationBuilder::end_timeout_ms)
     /// - [`deletion_character`](crate::types::builders::DtmfSpecificationBuilder::deletion_character)
     /// - [`end_character`](crate::types::builders::DtmfSpecificationBuilder::end_character)
-    pub fn build(self) -> ::std::result::Result<crate::types::DtmfSpecification, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DtmfSpecification, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DtmfSpecification {
             max_length: self.max_length.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "max_length",
                     "max_length was not specified but it is required when building DtmfSpecification",
                 )
             })?,
             end_timeout_ms: self.end_timeout_ms.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "end_timeout_ms",
                     "end_timeout_ms was not specified but it is required when building DtmfSpecification",
                 )
             })?,
             deletion_character: self.deletion_character.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "deletion_character",
                     "deletion_character was not specified but it is required when building DtmfSpecification",
                 )
             })?,
             end_character: self.end_character.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "end_character",
                     "end_character was not specified but it is required when building DtmfSpecification",
                 )

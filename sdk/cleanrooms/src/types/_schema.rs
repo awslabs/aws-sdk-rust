@@ -319,71 +319,71 @@ impl SchemaBuilder {
     /// - [`create_time`](crate::types::builders::SchemaBuilder::create_time)
     /// - [`update_time`](crate::types::builders::SchemaBuilder::update_time)
     /// - [`r#type`](crate::types::builders::SchemaBuilder::r#type)
-    pub fn build(self) -> ::std::result::Result<crate::types::Schema, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Schema, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Schema {
             columns: self.columns.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "columns",
                     "columns was not specified but it is required when building Schema",
                 )
             })?,
             partition_keys: self.partition_keys.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "partition_keys",
                     "partition_keys was not specified but it is required when building Schema",
                 )
             })?,
             analysis_rule_types: self.analysis_rule_types.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "analysis_rule_types",
                     "analysis_rule_types was not specified but it is required when building Schema",
                 )
             })?,
             analysis_method: self.analysis_method,
             creator_account_id: self.creator_account_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creator_account_id",
                     "creator_account_id was not specified but it is required when building Schema",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building Schema",
                 )
             })?,
             collaboration_id: self.collaboration_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "collaboration_id",
                     "collaboration_id was not specified but it is required when building Schema",
                 )
             })?,
             collaboration_arn: self.collaboration_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "collaboration_arn",
                     "collaboration_arn was not specified but it is required when building Schema",
                 )
             })?,
             description: self.description.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "description",
                     "description was not specified but it is required when building Schema",
                 )
             })?,
             create_time: self.create_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "create_time",
                     "create_time was not specified but it is required when building Schema",
                 )
             })?,
             update_time: self.update_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "update_time",
                     "update_time was not specified but it is required when building Schema",
                 )
             })?,
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building Schema",
                 )

@@ -45,7 +45,7 @@ impl DisableTopicRuleInputBuilder {
     /// Consumes the builder and constructs a [`DisableTopicRuleInput`](crate::operation::disable_topic_rule::DisableTopicRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::disable_topic_rule::DisableTopicRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::disable_topic_rule::DisableTopicRuleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::disable_topic_rule::DisableTopicRuleInput { rule_name: self.rule_name })
     }
 }

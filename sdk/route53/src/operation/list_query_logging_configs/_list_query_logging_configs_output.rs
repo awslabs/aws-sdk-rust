@@ -96,11 +96,11 @@ impl ListQueryLoggingConfigsOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_query_logging_configs::ListQueryLoggingConfigsOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_query_logging_configs::ListQueryLoggingConfigsOutput {
             query_logging_configs: self.query_logging_configs.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "query_logging_configs",
                     "query_logging_configs was not specified but it is required when building ListQueryLoggingConfigsOutput",
                 )

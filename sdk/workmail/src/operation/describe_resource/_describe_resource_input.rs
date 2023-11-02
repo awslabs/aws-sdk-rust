@@ -96,7 +96,7 @@ impl DescribeResourceInputBuilder {
     /// Consumes the builder and constructs a [`DescribeResourceInput`](crate::operation::describe_resource::DescribeResourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_resource::DescribeResourceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_resource::DescribeResourceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_resource::DescribeResourceInput {
             organization_id: self.organization_id,
             resource_id: self.resource_id,

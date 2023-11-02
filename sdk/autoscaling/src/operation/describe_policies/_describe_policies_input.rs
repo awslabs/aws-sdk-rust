@@ -148,7 +148,7 @@ impl DescribePoliciesInputBuilder {
     /// Consumes the builder and constructs a [`DescribePoliciesInput`](crate::operation::describe_policies::DescribePoliciesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_policies::DescribePoliciesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_policies::DescribePoliciesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_policies::DescribePoliciesInput {
             auto_scaling_group_name: self.auto_scaling_group_name,
             policy_names: self.policy_names,

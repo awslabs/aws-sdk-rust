@@ -90,10 +90,10 @@ impl ListIdentitiesOutputBuilder {
     /// - [`identities`](crate::operation::list_identities::builders::ListIdentitiesOutputBuilder::identities)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_identities::ListIdentitiesOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_identities::ListIdentitiesOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_identities::ListIdentitiesOutput {
             identities: self.identities.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "identities",
                     "identities was not specified but it is required when building ListIdentitiesOutput",
                 )

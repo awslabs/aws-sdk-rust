@@ -180,7 +180,7 @@ impl CreatePackagingConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_packaging_configuration::CreatePackagingConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_packaging_configuration::CreatePackagingConfigurationInput {
             cmaf_package: self.cmaf_package,

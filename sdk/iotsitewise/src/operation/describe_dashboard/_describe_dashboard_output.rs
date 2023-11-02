@@ -231,47 +231,47 @@ impl DescribeDashboardOutputBuilder {
     /// - [`dashboard_last_update_date`](crate::operation::describe_dashboard::builders::DescribeDashboardOutputBuilder::dashboard_last_update_date)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_dashboard::DescribeDashboardOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_dashboard::DescribeDashboardOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_dashboard::DescribeDashboardOutput {
             dashboard_id: self.dashboard_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "dashboard_id",
                     "dashboard_id was not specified but it is required when building DescribeDashboardOutput",
                 )
             })?,
             dashboard_arn: self.dashboard_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "dashboard_arn",
                     "dashboard_arn was not specified but it is required when building DescribeDashboardOutput",
                 )
             })?,
             dashboard_name: self.dashboard_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "dashboard_name",
                     "dashboard_name was not specified but it is required when building DescribeDashboardOutput",
                 )
             })?,
             project_id: self.project_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "project_id",
                     "project_id was not specified but it is required when building DescribeDashboardOutput",
                 )
             })?,
             dashboard_description: self.dashboard_description,
             dashboard_definition: self.dashboard_definition.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "dashboard_definition",
                     "dashboard_definition was not specified but it is required when building DescribeDashboardOutput",
                 )
             })?,
             dashboard_creation_date: self.dashboard_creation_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "dashboard_creation_date",
                     "dashboard_creation_date was not specified but it is required when building DescribeDashboardOutput",
                 )
             })?,
             dashboard_last_update_date: self.dashboard_last_update_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "dashboard_last_update_date",
                     "dashboard_last_update_date was not specified but it is required when building DescribeDashboardOutput",
                 )

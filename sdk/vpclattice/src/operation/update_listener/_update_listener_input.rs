@@ -88,7 +88,7 @@ impl UpdateListenerInputBuilder {
     /// Consumes the builder and constructs a [`UpdateListenerInput`](crate::operation::update_listener::UpdateListenerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_listener::UpdateListenerInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_listener::UpdateListenerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_listener::UpdateListenerInput {
             service_identifier: self.service_identifier,
             listener_identifier: self.listener_identifier,

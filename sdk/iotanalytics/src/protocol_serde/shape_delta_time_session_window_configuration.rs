@@ -2,7 +2,7 @@
 pub fn ser_delta_time_session_window_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DeltaTimeSessionWindowConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("timeoutInMinutes").number(
             #[allow(clippy::useless_conversion)]

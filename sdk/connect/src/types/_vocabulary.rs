@@ -232,40 +232,40 @@ impl VocabularyBuilder {
     /// - [`language_code`](crate::types::builders::VocabularyBuilder::language_code)
     /// - [`state`](crate::types::builders::VocabularyBuilder::state)
     /// - [`last_modified_time`](crate::types::builders::VocabularyBuilder::last_modified_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::Vocabulary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Vocabulary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Vocabulary {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building Vocabulary",
                 )
             })?,
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building Vocabulary",
                 )
             })?,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building Vocabulary",
                 )
             })?,
             language_code: self.language_code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "language_code",
                     "language_code was not specified but it is required when building Vocabulary",
                 )
             })?,
             state: self.state.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "state",
                     "state was not specified but it is required when building Vocabulary",
                 )
             })?,
             last_modified_time: self.last_modified_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_modified_time",
                     "last_modified_time was not specified but it is required when building Vocabulary",
                 )

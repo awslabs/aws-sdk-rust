@@ -265,7 +265,7 @@ impl RulesetItemBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::RulesetItemBuilder::name)
     /// - [`target_arn`](crate::types::builders::RulesetItemBuilder::target_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::RulesetItem, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RulesetItem, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RulesetItem {
             account_id: self.account_id,
             created_by: self.created_by,
@@ -274,7 +274,7 @@ impl RulesetItemBuilder {
             last_modified_by: self.last_modified_by,
             last_modified_date: self.last_modified_date,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building RulesetItem",
                 )
@@ -283,7 +283,7 @@ impl RulesetItemBuilder {
             rule_count: self.rule_count.unwrap_or_default(),
             tags: self.tags,
             target_arn: self.target_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "target_arn",
                     "target_arn was not specified but it is required when building RulesetItem",
                 )

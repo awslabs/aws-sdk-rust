@@ -321,53 +321,53 @@ impl DescribeAssetOutputBuilder {
     /// - [`asset_last_update_date`](crate::operation::describe_asset::builders::DescribeAssetOutputBuilder::asset_last_update_date)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_asset::DescribeAssetOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_asset::DescribeAssetOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_asset::DescribeAssetOutput {
             asset_id: self.asset_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "asset_id",
                     "asset_id was not specified but it is required when building DescribeAssetOutput",
                 )
             })?,
             asset_arn: self.asset_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "asset_arn",
                     "asset_arn was not specified but it is required when building DescribeAssetOutput",
                 )
             })?,
             asset_name: self.asset_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "asset_name",
                     "asset_name was not specified but it is required when building DescribeAssetOutput",
                 )
             })?,
             asset_model_id: self.asset_model_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "asset_model_id",
                     "asset_model_id was not specified but it is required when building DescribeAssetOutput",
                 )
             })?,
             asset_properties: self.asset_properties.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "asset_properties",
                     "asset_properties was not specified but it is required when building DescribeAssetOutput",
                 )
             })?,
             asset_hierarchies: self.asset_hierarchies.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "asset_hierarchies",
                     "asset_hierarchies was not specified but it is required when building DescribeAssetOutput",
                 )
             })?,
             asset_composite_models: self.asset_composite_models,
             asset_creation_date: self.asset_creation_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "asset_creation_date",
                     "asset_creation_date was not specified but it is required when building DescribeAssetOutput",
                 )
             })?,
             asset_last_update_date: self.asset_last_update_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "asset_last_update_date",
                     "asset_last_update_date was not specified but it is required when building DescribeAssetOutput",
                 )

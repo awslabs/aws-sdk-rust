@@ -149,7 +149,7 @@ impl SearchFlowExecutionsInputBuilder {
     /// Consumes the builder and constructs a [`SearchFlowExecutionsInput`](crate::operation::search_flow_executions::SearchFlowExecutionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::search_flow_executions::SearchFlowExecutionsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::search_flow_executions::SearchFlowExecutionsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::search_flow_executions::SearchFlowExecutionsInput {
             system_instance_id: self.system_instance_id,

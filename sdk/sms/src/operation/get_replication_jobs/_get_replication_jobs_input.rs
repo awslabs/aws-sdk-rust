@@ -85,7 +85,8 @@ impl GetReplicationJobsInputBuilder {
     /// Consumes the builder and constructs a [`GetReplicationJobsInput`](crate::operation::get_replication_jobs::GetReplicationJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_replication_jobs::GetReplicationJobsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_replication_jobs::GetReplicationJobsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::get_replication_jobs::GetReplicationJobsInput {
             replication_job_id: self.replication_job_id,
             next_token: self.next_token,

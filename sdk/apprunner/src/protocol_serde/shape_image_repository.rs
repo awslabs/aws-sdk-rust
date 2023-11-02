@@ -2,7 +2,7 @@
 pub fn ser_image_repository(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ImageRepository,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("ImageIdentifier").string(input.image_identifier.as_str());
     }

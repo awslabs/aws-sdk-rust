@@ -49,7 +49,7 @@ impl CancelHandshakeInputBuilder {
     /// Consumes the builder and constructs a [`CancelHandshakeInput`](crate::operation::cancel_handshake::CancelHandshakeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::cancel_handshake::CancelHandshakeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::cancel_handshake::CancelHandshakeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::cancel_handshake::CancelHandshakeInput {
             handshake_id: self.handshake_id,
         })

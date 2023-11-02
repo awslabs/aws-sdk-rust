@@ -265,29 +265,29 @@ impl GetReferenceMetadataOutputBuilder {
     /// - [`update_time`](crate::operation::get_reference_metadata::builders::GetReferenceMetadataOutputBuilder::update_time)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_reference_metadata::GetReferenceMetadataOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_reference_metadata::GetReferenceMetadataOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_reference_metadata::GetReferenceMetadataOutput {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building GetReferenceMetadataOutput",
                 )
             })?,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building GetReferenceMetadataOutput",
                 )
             })?,
             reference_store_id: self.reference_store_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "reference_store_id",
                     "reference_store_id was not specified but it is required when building GetReferenceMetadataOutput",
                 )
             })?,
             md5: self.md5.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "md5",
                     "md5 was not specified but it is required when building GetReferenceMetadataOutput",
                 )
@@ -296,13 +296,13 @@ impl GetReferenceMetadataOutputBuilder {
             name: self.name,
             description: self.description,
             creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_time",
                     "creation_time was not specified but it is required when building GetReferenceMetadataOutput",
                 )
             })?,
             update_time: self.update_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "update_time",
                     "update_time was not specified but it is required when building GetReferenceMetadataOutput",
                 )

@@ -46,10 +46,10 @@ impl DeleteMarkerReplicationBuilder {
     /// Consumes the builder and constructs a [`DeleteMarkerReplication`](crate::types::DeleteMarkerReplication).
     /// This method will fail if any of the following fields are not set:
     /// - [`status`](crate::types::builders::DeleteMarkerReplicationBuilder::status)
-    pub fn build(self) -> ::std::result::Result<crate::types::DeleteMarkerReplication, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DeleteMarkerReplication, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DeleteMarkerReplication {
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building DeleteMarkerReplication",
                 )

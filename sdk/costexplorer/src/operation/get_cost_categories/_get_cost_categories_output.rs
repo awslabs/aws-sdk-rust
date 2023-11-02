@@ -169,19 +169,19 @@ impl GetCostCategoriesOutputBuilder {
     /// - [`total_size`](crate::operation::get_cost_categories::builders::GetCostCategoriesOutputBuilder::total_size)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_cost_categories::GetCostCategoriesOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_cost_categories::GetCostCategoriesOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_cost_categories::GetCostCategoriesOutput {
             next_page_token: self.next_page_token,
             cost_category_names: self.cost_category_names,
             cost_category_values: self.cost_category_values,
             return_size: self.return_size.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "return_size",
                     "return_size was not specified but it is required when building GetCostCategoriesOutput",
                 )
             })?,
             total_size: self.total_size.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "total_size",
                     "total_size was not specified but it is required when building GetCostCategoriesOutput",
                 )

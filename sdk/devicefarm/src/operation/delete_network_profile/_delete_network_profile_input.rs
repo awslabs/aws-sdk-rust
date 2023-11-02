@@ -44,7 +44,7 @@ impl DeleteNetworkProfileInputBuilder {
     /// Consumes the builder and constructs a [`DeleteNetworkProfileInput`](crate::operation::delete_network_profile::DeleteNetworkProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_network_profile::DeleteNetworkProfileInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_network_profile::DeleteNetworkProfileInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_network_profile::DeleteNetworkProfileInput { arn: self.arn })
     }

@@ -44,8 +44,10 @@ impl DeleteDeviceDefinitionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDeviceDefinitionInput`](crate::operation::delete_device_definition::DeleteDeviceDefinitionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_device_definition::DeleteDeviceDefinitionInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::delete_device_definition::DeleteDeviceDefinitionInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::delete_device_definition::DeleteDeviceDefinitionInput {
             device_definition_id: self.device_definition_id,
         })

@@ -99,22 +99,22 @@ impl CustomRoutingDestinationConfigurationBuilder {
     /// - [`protocols`](crate::types::builders::CustomRoutingDestinationConfigurationBuilder::protocols)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::CustomRoutingDestinationConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::CustomRoutingDestinationConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CustomRoutingDestinationConfiguration {
             from_port: self.from_port.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "from_port",
                     "from_port was not specified but it is required when building CustomRoutingDestinationConfiguration",
                 )
             })?,
             to_port: self.to_port.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "to_port",
                     "to_port was not specified but it is required when building CustomRoutingDestinationConfiguration",
                 )
             })?,
             protocols: self.protocols.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "protocols",
                     "protocols was not specified but it is required when building CustomRoutingDestinationConfiguration",
                 )

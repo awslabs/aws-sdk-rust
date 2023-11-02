@@ -92,16 +92,16 @@ impl InstanceConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`connect_instance_id`](crate::types::builders::InstanceConfigBuilder::connect_instance_id)
     /// - [`service_linked_role_arn`](crate::types::builders::InstanceConfigBuilder::service_linked_role_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::InstanceConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::InstanceConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::InstanceConfig {
             connect_instance_id: self.connect_instance_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "connect_instance_id",
                     "connect_instance_id was not specified but it is required when building InstanceConfig",
                 )
             })?,
             service_linked_role_arn: self.service_linked_role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "service_linked_role_arn",
                     "service_linked_role_arn was not specified but it is required when building InstanceConfig",
                 )

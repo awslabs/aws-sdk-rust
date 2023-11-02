@@ -66,7 +66,7 @@ impl PutPermissionPolicyInputBuilder {
     /// Consumes the builder and constructs a [`PutPermissionPolicyInput`](crate::operation::put_permission_policy::PutPermissionPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_permission_policy::PutPermissionPolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::put_permission_policy::PutPermissionPolicyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::put_permission_policy::PutPermissionPolicyInput {
             resource_arn: self.resource_arn,

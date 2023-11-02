@@ -122,8 +122,10 @@ impl CreateComponentVersionInputBuilder {
     /// Consumes the builder and constructs a [`CreateComponentVersionInput`](crate::operation::create_component_version::CreateComponentVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_component_version::CreateComponentVersionInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::create_component_version::CreateComponentVersionInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::create_component_version::CreateComponentVersionInput {
             inline_recipe: self.inline_recipe,
             lambda_function: self.lambda_function,

@@ -181,7 +181,7 @@ impl CreateThesaurusInputBuilder {
     /// Consumes the builder and constructs a [`CreateThesaurusInput`](crate::operation::create_thesaurus::CreateThesaurusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_thesaurus::CreateThesaurusInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_thesaurus::CreateThesaurusInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_thesaurus::CreateThesaurusInput {
             index_id: self.index_id,
             name: self.name,

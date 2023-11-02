@@ -87,7 +87,7 @@ impl CreateLongTermPricingInputBuilder {
     /// Consumes the builder and constructs a [`CreateLongTermPricingInput`](crate::operation::create_long_term_pricing::CreateLongTermPricingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_long_term_pricing::CreateLongTermPricingInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_long_term_pricing::CreateLongTermPricingInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_long_term_pricing::CreateLongTermPricingInput {
             long_term_pricing_type: self.long_term_pricing_type,

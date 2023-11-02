@@ -113,7 +113,7 @@ impl RegisterToWorkMailInputBuilder {
     /// Consumes the builder and constructs a [`RegisterToWorkMailInput`](crate::operation::register_to_work_mail::RegisterToWorkMailInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::register_to_work_mail::RegisterToWorkMailInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::register_to_work_mail::RegisterToWorkMailInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::register_to_work_mail::RegisterToWorkMailInput {
             organization_id: self.organization_id,

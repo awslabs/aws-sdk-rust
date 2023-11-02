@@ -2,7 +2,7 @@
 pub fn ser_recording_group(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RecordingGroup,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.all_supported {
         object.key("allSupported").boolean(input.all_supported);
     }

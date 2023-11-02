@@ -91,16 +91,16 @@ impl PackageVersionOutputConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`package_name`](crate::types::builders::PackageVersionOutputConfigBuilder::package_name)
     /// - [`package_version`](crate::types::builders::PackageVersionOutputConfigBuilder::package_version)
-    pub fn build(self) -> ::std::result::Result<crate::types::PackageVersionOutputConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PackageVersionOutputConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PackageVersionOutputConfig {
             package_name: self.package_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "package_name",
                     "package_name was not specified but it is required when building PackageVersionOutputConfig",
                 )
             })?,
             package_version: self.package_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "package_version",
                     "package_version was not specified but it is required when building PackageVersionOutputConfig",
                 )

@@ -162,11 +162,11 @@ impl ImportAssetsFromLakeFormationTagPolicyResponseDetailsBuilder {
     /// - [`revision_id`](crate::types::builders::ImportAssetsFromLakeFormationTagPolicyResponseDetailsBuilder::revision_id)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::ImportAssetsFromLakeFormationTagPolicyResponseDetails, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::types::ImportAssetsFromLakeFormationTagPolicyResponseDetails, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::types::ImportAssetsFromLakeFormationTagPolicyResponseDetails {
             catalog_id: self.catalog_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "catalog_id",
                     "catalog_id was not specified but it is required when building ImportAssetsFromLakeFormationTagPolicyResponseDetails",
                 )
@@ -174,19 +174,19 @@ impl ImportAssetsFromLakeFormationTagPolicyResponseDetailsBuilder {
             database: self.database,
             table: self.table,
             role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role_arn",
                     "role_arn was not specified but it is required when building ImportAssetsFromLakeFormationTagPolicyResponseDetails",
                 )
             })?,
             data_set_id: self.data_set_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_set_id",
                     "data_set_id was not specified but it is required when building ImportAssetsFromLakeFormationTagPolicyResponseDetails",
                 )
             })?,
             revision_id: self.revision_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "revision_id",
                     "revision_id was not specified but it is required when building ImportAssetsFromLakeFormationTagPolicyResponseDetails",
                 )

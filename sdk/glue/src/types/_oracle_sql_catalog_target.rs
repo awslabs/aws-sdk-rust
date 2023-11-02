@@ -123,28 +123,28 @@ impl OracleSqlCatalogTargetBuilder {
     /// - [`inputs`](crate::types::builders::OracleSqlCatalogTargetBuilder::inputs)
     /// - [`database`](crate::types::builders::OracleSqlCatalogTargetBuilder::database)
     /// - [`table`](crate::types::builders::OracleSqlCatalogTargetBuilder::table)
-    pub fn build(self) -> ::std::result::Result<crate::types::OracleSqlCatalogTarget, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::OracleSqlCatalogTarget, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::OracleSqlCatalogTarget {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building OracleSqlCatalogTarget",
                 )
             })?,
             inputs: self.inputs.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "inputs",
                     "inputs was not specified but it is required when building OracleSqlCatalogTarget",
                 )
             })?,
             database: self.database.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "database",
                     "database was not specified but it is required when building OracleSqlCatalogTarget",
                 )
             })?,
             table: self.table.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "table",
                     "table was not specified but it is required when building OracleSqlCatalogTarget",
                 )

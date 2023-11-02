@@ -299,7 +299,7 @@ impl UpdateAppBlockBuilderInputBuilder {
     /// Consumes the builder and constructs a [`UpdateAppBlockBuilderInput`](crate::operation::update_app_block_builder::UpdateAppBlockBuilderInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_app_block_builder::UpdateAppBlockBuilderInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_app_block_builder::UpdateAppBlockBuilderInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_app_block_builder::UpdateAppBlockBuilderInput {
             name: self.name,

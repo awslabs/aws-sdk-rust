@@ -54,7 +54,7 @@ impl BatchGetQueryExecutionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_query_execution::BatchGetQueryExecutionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::batch_get_query_execution::BatchGetQueryExecutionInput {
             query_execution_ids: self.query_execution_ids,

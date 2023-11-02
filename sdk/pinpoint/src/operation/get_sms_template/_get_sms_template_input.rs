@@ -105,7 +105,7 @@ impl GetSmsTemplateInputBuilder {
     /// Consumes the builder and constructs a [`GetSmsTemplateInput`](crate::operation::get_sms_template::GetSmsTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_sms_template::GetSmsTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_sms_template::GetSmsTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_sms_template::GetSmsTemplateInput {
             template_name: self.template_name,
             version: self.version,

@@ -109,7 +109,7 @@ impl DescribeCodeBindingInputBuilder {
     /// Consumes the builder and constructs a [`DescribeCodeBindingInput`](crate::operation::describe_code_binding::DescribeCodeBindingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_code_binding::DescribeCodeBindingInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_code_binding::DescribeCodeBindingInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_code_binding::DescribeCodeBindingInput {
             language: self.language,

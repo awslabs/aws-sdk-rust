@@ -145,28 +145,28 @@ impl CalculateRouteMatrixSummaryBuilder {
     /// - [`route_count`](crate::types::builders::CalculateRouteMatrixSummaryBuilder::route_count)
     /// - [`error_count`](crate::types::builders::CalculateRouteMatrixSummaryBuilder::error_count)
     /// - [`distance_unit`](crate::types::builders::CalculateRouteMatrixSummaryBuilder::distance_unit)
-    pub fn build(self) -> ::std::result::Result<crate::types::CalculateRouteMatrixSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CalculateRouteMatrixSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CalculateRouteMatrixSummary {
             data_source: self.data_source.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_source",
                     "data_source was not specified but it is required when building CalculateRouteMatrixSummary",
                 )
             })?,
             route_count: self.route_count.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "route_count",
                     "route_count was not specified but it is required when building CalculateRouteMatrixSummary",
                 )
             })?,
             error_count: self.error_count.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "error_count",
                     "error_count was not specified but it is required when building CalculateRouteMatrixSummary",
                 )
             })?,
             distance_unit: self.distance_unit.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "distance_unit",
                     "distance_unit was not specified but it is required when building CalculateRouteMatrixSummary",
                 )

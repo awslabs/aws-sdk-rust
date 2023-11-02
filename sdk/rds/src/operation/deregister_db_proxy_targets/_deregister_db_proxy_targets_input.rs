@@ -125,7 +125,7 @@ impl DeregisterDbProxyTargetsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_db_proxy_targets::DeregisterDbProxyTargetsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::deregister_db_proxy_targets::DeregisterDbProxyTargetsInput {
             db_proxy_name: self.db_proxy_name,

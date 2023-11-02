@@ -114,7 +114,7 @@ impl SearchTablesByLfTagsInputBuilder {
     /// Consumes the builder and constructs a [`SearchTablesByLfTagsInput`](crate::operation::search_tables_by_lf_tags::SearchTablesByLfTagsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::search_tables_by_lf_tags::SearchTablesByLfTagsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::search_tables_by_lf_tags::SearchTablesByLfTagsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::search_tables_by_lf_tags::SearchTablesByLfTagsInput {
             next_token: self.next_token,

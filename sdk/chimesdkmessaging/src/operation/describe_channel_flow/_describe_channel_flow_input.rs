@@ -44,7 +44,7 @@ impl DescribeChannelFlowInputBuilder {
     /// Consumes the builder and constructs a [`DescribeChannelFlowInput`](crate::operation::describe_channel_flow::DescribeChannelFlowInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_channel_flow::DescribeChannelFlowInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_channel_flow::DescribeChannelFlowInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_channel_flow::DescribeChannelFlowInput {
             channel_flow_arn: self.channel_flow_arn,

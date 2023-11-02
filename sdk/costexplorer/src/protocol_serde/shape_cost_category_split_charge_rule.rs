@@ -2,7 +2,7 @@
 pub fn ser_cost_category_split_charge_rule(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CostCategorySplitChargeRule,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Source").string(input.source.as_str());
     }

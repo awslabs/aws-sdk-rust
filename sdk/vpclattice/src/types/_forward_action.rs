@@ -56,10 +56,10 @@ impl ForwardActionBuilder {
     /// Consumes the builder and constructs a [`ForwardAction`](crate::types::ForwardAction).
     /// This method will fail if any of the following fields are not set:
     /// - [`target_groups`](crate::types::builders::ForwardActionBuilder::target_groups)
-    pub fn build(self) -> ::std::result::Result<crate::types::ForwardAction, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ForwardAction, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ForwardAction {
             target_groups: self.target_groups.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "target_groups",
                     "target_groups was not specified but it is required when building ForwardAction",
                 )

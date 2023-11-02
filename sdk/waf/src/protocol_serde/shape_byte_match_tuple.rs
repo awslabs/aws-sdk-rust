@@ -2,7 +2,7 @@
 pub fn ser_byte_match_tuple(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ByteMatchTuple,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.field_to_match {
         #[allow(unused_mut)]
         let mut object_2 = object.key("FieldToMatch").start_object();

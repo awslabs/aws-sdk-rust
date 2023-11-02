@@ -320,7 +320,7 @@ impl CreateAppBlockBuilderInputBuilder {
     /// Consumes the builder and constructs a [`CreateAppBlockBuilderInput`](crate::operation::create_app_block_builder::CreateAppBlockBuilderInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_app_block_builder::CreateAppBlockBuilderInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_app_block_builder::CreateAppBlockBuilderInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_app_block_builder::CreateAppBlockBuilderInput {
             name: self.name,

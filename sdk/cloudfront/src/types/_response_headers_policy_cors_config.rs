@@ -219,13 +219,13 @@ impl ResponseHeadersPolicyCorsConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`access_control_allow_credentials`](crate::types::builders::ResponseHeadersPolicyCorsConfigBuilder::access_control_allow_credentials)
     /// - [`origin_override`](crate::types::builders::ResponseHeadersPolicyCorsConfigBuilder::origin_override)
-    pub fn build(self) -> ::std::result::Result<crate::types::ResponseHeadersPolicyCorsConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ResponseHeadersPolicyCorsConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ResponseHeadersPolicyCorsConfig {
             access_control_allow_origins: self.access_control_allow_origins,
             access_control_allow_headers: self.access_control_allow_headers,
             access_control_allow_methods: self.access_control_allow_methods,
             access_control_allow_credentials: self.access_control_allow_credentials.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "access_control_allow_credentials",
                     "access_control_allow_credentials was not specified but it is required when building ResponseHeadersPolicyCorsConfig",
                 )
@@ -233,7 +233,7 @@ impl ResponseHeadersPolicyCorsConfigBuilder {
             access_control_expose_headers: self.access_control_expose_headers,
             access_control_max_age_sec: self.access_control_max_age_sec,
             origin_override: self.origin_override.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "origin_override",
                     "origin_override was not specified but it is required when building ResponseHeadersPolicyCorsConfig",
                 )

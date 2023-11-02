@@ -135,28 +135,28 @@ impl CreateDirectoryOutputBuilder {
     /// - [`applied_schema_arn`](crate::operation::create_directory::builders::CreateDirectoryOutputBuilder::applied_schema_arn)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_directory::CreateDirectoryOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_directory::CreateDirectoryOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_directory::CreateDirectoryOutput {
             directory_arn: self.directory_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "directory_arn",
                     "directory_arn was not specified but it is required when building CreateDirectoryOutput",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building CreateDirectoryOutput",
                 )
             })?,
             object_identifier: self.object_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "object_identifier",
                     "object_identifier was not specified but it is required when building CreateDirectoryOutput",
                 )
             })?,
             applied_schema_arn: self.applied_schema_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "applied_schema_arn",
                     "applied_schema_arn was not specified but it is required when building CreateDirectoryOutput",
                 )

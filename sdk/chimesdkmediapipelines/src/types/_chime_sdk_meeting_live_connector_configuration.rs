@@ -123,16 +123,16 @@ impl ChimeSdkMeetingLiveConnectorConfigurationBuilder {
     /// - [`mux_type`](crate::types::builders::ChimeSdkMeetingLiveConnectorConfigurationBuilder::mux_type)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::ChimeSdkMeetingLiveConnectorConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::ChimeSdkMeetingLiveConnectorConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ChimeSdkMeetingLiveConnectorConfiguration {
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building ChimeSdkMeetingLiveConnectorConfiguration",
                 )
             })?,
             mux_type: self.mux_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "mux_type",
                     "mux_type was not specified but it is required when building ChimeSdkMeetingLiveConnectorConfiguration",
                 )

@@ -38,7 +38,7 @@ where
 pub fn ser_sentiment_analysis_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SentimentAnalysisSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("detectSentiment").boolean(input.detect_sentiment);
     }

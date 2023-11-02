@@ -74,10 +74,10 @@ impl CustomHeadersBuilder {
     /// Consumes the builder and constructs a [`CustomHeaders`](crate::types::CustomHeaders).
     /// This method will fail if any of the following fields are not set:
     /// - [`quantity`](crate::types::builders::CustomHeadersBuilder::quantity)
-    pub fn build(self) -> ::std::result::Result<crate::types::CustomHeaders, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CustomHeaders, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CustomHeaders {
             quantity: self.quantity.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "quantity",
                     "quantity was not specified but it is required when building CustomHeaders",
                 )

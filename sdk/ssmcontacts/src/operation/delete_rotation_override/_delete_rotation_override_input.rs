@@ -66,8 +66,10 @@ impl DeleteRotationOverrideInputBuilder {
     /// Consumes the builder and constructs a [`DeleteRotationOverrideInput`](crate::operation::delete_rotation_override::DeleteRotationOverrideInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_rotation_override::DeleteRotationOverrideInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::delete_rotation_override::DeleteRotationOverrideInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::delete_rotation_override::DeleteRotationOverrideInput {
             rotation_id: self.rotation_id,
             rotation_override_id: self.rotation_override_id,

@@ -441,48 +441,48 @@ impl TransactionBuilder {
     /// - [`number_of_transactions`](crate::types::builders::TransactionBuilder::number_of_transactions)
     /// - [`status`](crate::types::builders::TransactionBuilder::status)
     /// - [`to`](crate::types::builders::TransactionBuilder::to)
-    pub fn build(self) -> ::std::result::Result<crate::types::Transaction, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Transaction, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Transaction {
             network: self.network.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "network",
                     "network was not specified but it is required when building Transaction",
                 )
             })?,
             block_hash: self.block_hash,
             transaction_hash: self.transaction_hash.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "transaction_hash",
                     "transaction_hash was not specified but it is required when building Transaction",
                 )
             })?,
             block_number: self.block_number,
             transaction_timestamp: self.transaction_timestamp.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "transaction_timestamp",
                     "transaction_timestamp was not specified but it is required when building Transaction",
                 )
             })?,
             transaction_index: self.transaction_index.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "transaction_index",
                     "transaction_index was not specified but it is required when building Transaction",
                 )
             })?,
             number_of_transactions: self.number_of_transactions.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "number_of_transactions",
                     "number_of_transactions was not specified but it is required when building Transaction",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building Transaction",
                 )
             })?,
             to: self.to.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "to",
                     "to was not specified but it is required when building Transaction",
                 )

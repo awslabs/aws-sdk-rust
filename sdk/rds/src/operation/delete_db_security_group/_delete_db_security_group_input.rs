@@ -90,7 +90,7 @@ impl DeleteDbSecurityGroupInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDbSecurityGroupInput`](crate::operation::delete_db_security_group::DeleteDbSecurityGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_db_security_group::DeleteDbSecurityGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_db_security_group::DeleteDbSecurityGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_db_security_group::DeleteDbSecurityGroupInput {
             db_security_group_name: self.db_security_group_name,

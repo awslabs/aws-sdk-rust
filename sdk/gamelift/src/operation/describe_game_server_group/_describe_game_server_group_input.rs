@@ -46,7 +46,7 @@ impl DescribeGameServerGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_game_server_group::DescribeGameServerGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_game_server_group::DescribeGameServerGroupInput {
             game_server_group_name: self.game_server_group_name,

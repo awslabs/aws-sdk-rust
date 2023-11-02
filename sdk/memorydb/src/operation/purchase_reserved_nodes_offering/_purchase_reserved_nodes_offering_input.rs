@@ -117,7 +117,7 @@ impl PurchaseReservedNodesOfferingInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::purchase_reserved_nodes_offering::PurchaseReservedNodesOfferingInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::purchase_reserved_nodes_offering::PurchaseReservedNodesOfferingInput {
             reserved_nodes_offering_id: self.reserved_nodes_offering_id,

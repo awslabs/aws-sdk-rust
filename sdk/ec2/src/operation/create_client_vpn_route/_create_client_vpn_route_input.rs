@@ -186,7 +186,7 @@ impl CreateClientVpnRouteInputBuilder {
     /// Consumes the builder and constructs a [`CreateClientVpnRouteInput`](crate::operation::create_client_vpn_route::CreateClientVpnRouteInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_client_vpn_route::CreateClientVpnRouteInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_client_vpn_route::CreateClientVpnRouteInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_client_vpn_route::CreateClientVpnRouteInput {
             client_vpn_endpoint_id: self.client_vpn_endpoint_id,

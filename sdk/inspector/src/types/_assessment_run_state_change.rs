@@ -68,16 +68,16 @@ impl AssessmentRunStateChangeBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`state_changed_at`](crate::types::builders::AssessmentRunStateChangeBuilder::state_changed_at)
     /// - [`state`](crate::types::builders::AssessmentRunStateChangeBuilder::state)
-    pub fn build(self) -> ::std::result::Result<crate::types::AssessmentRunStateChange, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AssessmentRunStateChange, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AssessmentRunStateChange {
             state_changed_at: self.state_changed_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "state_changed_at",
                     "state_changed_at was not specified but it is required when building AssessmentRunStateChange",
                 )
             })?,
             state: self.state.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "state",
                     "state was not specified but it is required when building AssessmentRunStateChange",
                 )

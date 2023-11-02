@@ -86,7 +86,7 @@ impl UpdateFileCacheInputBuilder {
     /// Consumes the builder and constructs a [`UpdateFileCacheInput`](crate::operation::update_file_cache::UpdateFileCacheInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_file_cache::UpdateFileCacheInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_file_cache::UpdateFileCacheInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_file_cache::UpdateFileCacheInput {
             file_cache_id: self.file_cache_id,
             client_request_token: self.client_request_token,

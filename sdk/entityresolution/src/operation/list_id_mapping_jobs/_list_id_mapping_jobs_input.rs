@@ -86,7 +86,7 @@ impl ListIdMappingJobsInputBuilder {
     /// Consumes the builder and constructs a [`ListIdMappingJobsInput`](crate::operation::list_id_mapping_jobs::ListIdMappingJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_id_mapping_jobs::ListIdMappingJobsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_id_mapping_jobs::ListIdMappingJobsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_id_mapping_jobs::ListIdMappingJobsInput {
             workflow_name: self.workflow_name,
             next_token: self.next_token,

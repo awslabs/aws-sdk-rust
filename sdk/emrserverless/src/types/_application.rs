@@ -505,35 +505,35 @@ impl ApplicationBuilder {
     /// - [`state`](crate::types::builders::ApplicationBuilder::state)
     /// - [`created_at`](crate::types::builders::ApplicationBuilder::created_at)
     /// - [`updated_at`](crate::types::builders::ApplicationBuilder::updated_at)
-    pub fn build(self) -> ::std::result::Result<crate::types::Application, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Application, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Application {
             application_id: self.application_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "application_id",
                     "application_id was not specified but it is required when building Application",
                 )
             })?,
             name: self.name,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building Application",
                 )
             })?,
             release_label: self.release_label.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "release_label",
                     "release_label was not specified but it is required when building Application",
                 )
             })?,
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building Application",
                 )
             })?,
             state: self.state.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "state",
                     "state was not specified but it is required when building Application",
                 )
@@ -542,13 +542,13 @@ impl ApplicationBuilder {
             initial_capacity: self.initial_capacity,
             maximum_capacity: self.maximum_capacity,
             created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
                     "created_at was not specified but it is required when building Application",
                 )
             })?,
             updated_at: self.updated_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "updated_at",
                     "updated_at was not specified but it is required when building Application",
                 )

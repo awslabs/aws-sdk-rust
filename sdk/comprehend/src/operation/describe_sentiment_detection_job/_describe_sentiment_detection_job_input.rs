@@ -46,7 +46,7 @@ impl DescribeSentimentDetectionJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_sentiment_detection_job::DescribeSentimentDetectionJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_sentiment_detection_job::DescribeSentimentDetectionJobInput { job_id: self.job_id })
     }

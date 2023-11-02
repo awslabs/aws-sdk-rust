@@ -66,7 +66,8 @@ impl DeleteQuickConnectInputBuilder {
     /// Consumes the builder and constructs a [`DeleteQuickConnectInput`](crate::operation::delete_quick_connect::DeleteQuickConnectInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_quick_connect::DeleteQuickConnectInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_quick_connect::DeleteQuickConnectInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::delete_quick_connect::DeleteQuickConnectInput {
             instance_id: self.instance_id,
             quick_connect_id: self.quick_connect_id,

@@ -159,7 +159,7 @@ impl CreateVirtualRouterInputBuilder {
     /// Consumes the builder and constructs a [`CreateVirtualRouterInput`](crate::operation::create_virtual_router::CreateVirtualRouterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_virtual_router::CreateVirtualRouterInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_virtual_router::CreateVirtualRouterInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_virtual_router::CreateVirtualRouterInput {
             virtual_router_name: self.virtual_router_name,

@@ -134,22 +134,22 @@ impl CloudWatchDimensionConfigurationBuilder {
     /// - [`dimension_name`](crate::types::builders::CloudWatchDimensionConfigurationBuilder::dimension_name)
     /// - [`dimension_value_source`](crate::types::builders::CloudWatchDimensionConfigurationBuilder::dimension_value_source)
     /// - [`default_dimension_value`](crate::types::builders::CloudWatchDimensionConfigurationBuilder::default_dimension_value)
-    pub fn build(self) -> ::std::result::Result<crate::types::CloudWatchDimensionConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CloudWatchDimensionConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CloudWatchDimensionConfiguration {
             dimension_name: self.dimension_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "dimension_name",
                     "dimension_name was not specified but it is required when building CloudWatchDimensionConfiguration",
                 )
             })?,
             dimension_value_source: self.dimension_value_source.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "dimension_value_source",
                     "dimension_value_source was not specified but it is required when building CloudWatchDimensionConfiguration",
                 )
             })?,
             default_dimension_value: self.default_dimension_value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "default_dimension_value",
                     "default_dimension_value was not specified but it is required when building CloudWatchDimensionConfiguration",
                 )

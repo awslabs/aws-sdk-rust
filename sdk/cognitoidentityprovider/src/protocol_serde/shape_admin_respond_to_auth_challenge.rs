@@ -395,12 +395,12 @@ pub fn de_admin_respond_to_auth_challenge_http_response(
 
 pub fn ser_admin_respond_to_auth_challenge_input(
     input: &crate::operation::admin_respond_to_auth_challenge::AdminRespondToAuthChallengeInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_admin_respond_to_auth_challenge_input::ser_admin_respond_to_auth_challenge_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_admin_respond_to_auth_challenge(

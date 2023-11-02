@@ -93,7 +93,7 @@ impl ListLocationsInputBuilder {
     /// Consumes the builder and constructs a [`ListLocationsInput`](crate::operation::list_locations::ListLocationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_locations::ListLocationsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_locations::ListLocationsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_locations::ListLocationsInput {
             filters: self.filters,
             limit: self.limit,

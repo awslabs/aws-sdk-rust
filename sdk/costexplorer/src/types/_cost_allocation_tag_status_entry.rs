@@ -69,16 +69,16 @@ impl CostAllocationTagStatusEntryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`tag_key`](crate::types::builders::CostAllocationTagStatusEntryBuilder::tag_key)
     /// - [`status`](crate::types::builders::CostAllocationTagStatusEntryBuilder::status)
-    pub fn build(self) -> ::std::result::Result<crate::types::CostAllocationTagStatusEntry, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CostAllocationTagStatusEntry, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CostAllocationTagStatusEntry {
             tag_key: self.tag_key.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "tag_key",
                     "tag_key was not specified but it is required when building CostAllocationTagStatusEntry",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building CostAllocationTagStatusEntry",
                 )

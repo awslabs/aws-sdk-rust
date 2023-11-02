@@ -44,7 +44,7 @@ impl StartDeploymentInputBuilder {
     /// Consumes the builder and constructs a [`StartDeploymentInput`](crate::operation::start_deployment::StartDeploymentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_deployment::StartDeploymentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_deployment::StartDeploymentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_deployment::StartDeploymentInput {
             service_arn: self.service_arn,
         })

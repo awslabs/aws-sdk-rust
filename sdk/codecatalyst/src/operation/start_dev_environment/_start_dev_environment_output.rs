@@ -134,29 +134,29 @@ impl StartDevEnvironmentOutputBuilder {
     /// - [`status`](crate::operation::start_dev_environment::builders::StartDevEnvironmentOutputBuilder::status)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_dev_environment::StartDevEnvironmentOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::start_dev_environment::StartDevEnvironmentOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_dev_environment::StartDevEnvironmentOutput {
             space_name: self.space_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "space_name",
                     "space_name was not specified but it is required when building StartDevEnvironmentOutput",
                 )
             })?,
             project_name: self.project_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "project_name",
                     "project_name was not specified but it is required when building StartDevEnvironmentOutput",
                 )
             })?,
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building StartDevEnvironmentOutput",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building StartDevEnvironmentOutput",
                 )

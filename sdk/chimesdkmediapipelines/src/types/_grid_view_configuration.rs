@@ -171,10 +171,10 @@ impl GridViewConfigurationBuilder {
     /// Consumes the builder and constructs a [`GridViewConfiguration`](crate::types::GridViewConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`content_share_layout`](crate::types::builders::GridViewConfigurationBuilder::content_share_layout)
-    pub fn build(self) -> ::std::result::Result<crate::types::GridViewConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::GridViewConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::GridViewConfiguration {
             content_share_layout: self.content_share_layout.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "content_share_layout",
                     "content_share_layout was not specified but it is required when building GridViewConfiguration",
                 )

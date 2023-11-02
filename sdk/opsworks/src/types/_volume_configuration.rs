@@ -211,23 +211,23 @@ impl VolumeConfigurationBuilder {
     /// - [`mount_point`](crate::types::builders::VolumeConfigurationBuilder::mount_point)
     /// - [`number_of_disks`](crate::types::builders::VolumeConfigurationBuilder::number_of_disks)
     /// - [`size`](crate::types::builders::VolumeConfigurationBuilder::size)
-    pub fn build(self) -> ::std::result::Result<crate::types::VolumeConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::VolumeConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::VolumeConfiguration {
             mount_point: self.mount_point.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "mount_point",
                     "mount_point was not specified but it is required when building VolumeConfiguration",
                 )
             })?,
             raid_level: self.raid_level,
             number_of_disks: self.number_of_disks.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "number_of_disks",
                     "number_of_disks was not specified but it is required when building VolumeConfiguration",
                 )
             })?,
             size: self.size.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "size",
                     "size was not specified but it is required when building VolumeConfiguration",
                 )

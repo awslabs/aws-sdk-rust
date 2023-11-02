@@ -375,7 +375,7 @@ impl CreateWebAclInputBuilder {
     /// Consumes the builder and constructs a [`CreateWebAclInput`](crate::operation::create_web_acl::CreateWebAclInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_web_acl::CreateWebAclInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_web_acl::CreateWebAclInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_web_acl::CreateWebAclInput {
             name: self.name,
             scope: self.scope,

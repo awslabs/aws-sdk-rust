@@ -68,7 +68,7 @@ impl CountPendingActivityTasksInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::count_pending_activity_tasks::CountPendingActivityTasksInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::count_pending_activity_tasks::CountPendingActivityTasksInput {
             domain: self.domain,

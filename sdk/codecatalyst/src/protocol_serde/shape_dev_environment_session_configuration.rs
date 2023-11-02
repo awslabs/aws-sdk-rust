@@ -2,7 +2,7 @@
 pub fn ser_dev_environment_session_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DevEnvironmentSessionConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("sessionType").string(input.session_type.as_str());
     }

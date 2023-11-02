@@ -69,7 +69,7 @@ impl UpdateDomainEndpointOptionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_domain_endpoint_options::UpdateDomainEndpointOptionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_domain_endpoint_options::UpdateDomainEndpointOptionsInput {
             domain_name: self.domain_name,

@@ -2,7 +2,7 @@
 pub fn ser_get_connection_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_connection::GetConnectionInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.connection_arn {
         object.key("ConnectionArn").string(var_1.as_str());
     }

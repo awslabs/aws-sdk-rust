@@ -67,7 +67,7 @@ impl GetMinuteUsageInputBuilder {
     /// Consumes the builder and constructs a [`GetMinuteUsageInput`](crate::operation::get_minute_usage::GetMinuteUsageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_minute_usage::GetMinuteUsageInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_minute_usage::GetMinuteUsageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_minute_usage::GetMinuteUsageInput {
             month: self.month,
             year: self.year,

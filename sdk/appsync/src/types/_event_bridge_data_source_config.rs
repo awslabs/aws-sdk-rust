@@ -46,10 +46,10 @@ impl EventBridgeDataSourceConfigBuilder {
     /// Consumes the builder and constructs a [`EventBridgeDataSourceConfig`](crate::types::EventBridgeDataSourceConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`event_bus_arn`](crate::types::builders::EventBridgeDataSourceConfigBuilder::event_bus_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::EventBridgeDataSourceConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::EventBridgeDataSourceConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EventBridgeDataSourceConfig {
             event_bus_arn: self.event_bus_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "event_bus_arn",
                     "event_bus_arn was not specified but it is required when building EventBridgeDataSourceConfig",
                 )

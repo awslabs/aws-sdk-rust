@@ -66,7 +66,7 @@ impl GetPriceListFileUrlInputBuilder {
     /// Consumes the builder and constructs a [`GetPriceListFileUrlInput`](crate::operation::get_price_list_file_url::GetPriceListFileUrlInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_price_list_file_url::GetPriceListFileUrlInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_price_list_file_url::GetPriceListFileUrlInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_price_list_file_url::GetPriceListFileUrlInput {
             price_list_arn: self.price_list_arn,

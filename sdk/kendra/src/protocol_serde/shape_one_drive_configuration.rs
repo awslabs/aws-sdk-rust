@@ -2,7 +2,7 @@
 pub fn ser_one_drive_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::OneDriveConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("TenantDomain").string(input.tenant_domain.as_str());
     }

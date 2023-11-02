@@ -110,7 +110,7 @@ impl CreateTemplateAliasInputBuilder {
     /// Consumes the builder and constructs a [`CreateTemplateAliasInput`](crate::operation::create_template_alias::CreateTemplateAliasInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_template_alias::CreateTemplateAliasInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_template_alias::CreateTemplateAliasInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_template_alias::CreateTemplateAliasInput {
             aws_account_id: self.aws_account_id,

@@ -307,7 +307,7 @@ impl CreateMetricSetInputBuilder {
     /// Consumes the builder and constructs a [`CreateMetricSetInput`](crate::operation::create_metric_set::CreateMetricSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_metric_set::CreateMetricSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_metric_set::CreateMetricSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_metric_set::CreateMetricSetInput {
             anomaly_detector_arn: self.anomaly_detector_arn,
             metric_set_name: self.metric_set_name,

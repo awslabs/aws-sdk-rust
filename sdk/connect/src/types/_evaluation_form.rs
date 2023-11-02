@@ -353,10 +353,10 @@ impl EvaluationFormBuilder {
     /// - [`created_by`](crate::types::builders::EvaluationFormBuilder::created_by)
     /// - [`last_modified_time`](crate::types::builders::EvaluationFormBuilder::last_modified_time)
     /// - [`last_modified_by`](crate::types::builders::EvaluationFormBuilder::last_modified_by)
-    pub fn build(self) -> ::std::result::Result<crate::types::EvaluationForm, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::EvaluationForm, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EvaluationForm {
             evaluation_form_id: self.evaluation_form_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "evaluation_form_id",
                     "evaluation_form_id was not specified but it is required when building EvaluationForm",
                 )
@@ -364,51 +364,51 @@ impl EvaluationFormBuilder {
             evaluation_form_version: self.evaluation_form_version.unwrap_or_default(),
             locked: self.locked.unwrap_or_default(),
             evaluation_form_arn: self.evaluation_form_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "evaluation_form_arn",
                     "evaluation_form_arn was not specified but it is required when building EvaluationForm",
                 )
             })?,
             title: self.title.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "title",
                     "title was not specified but it is required when building EvaluationForm",
                 )
             })?,
             description: self.description,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building EvaluationForm",
                 )
             })?,
             items: self.items.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "items",
                     "items was not specified but it is required when building EvaluationForm",
                 )
             })?,
             scoring_strategy: self.scoring_strategy,
             created_time: self.created_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_time",
                     "created_time was not specified but it is required when building EvaluationForm",
                 )
             })?,
             created_by: self.created_by.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_by",
                     "created_by was not specified but it is required when building EvaluationForm",
                 )
             })?,
             last_modified_time: self.last_modified_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_modified_time",
                     "last_modified_time was not specified but it is required when building EvaluationForm",
                 )
             })?,
             last_modified_by: self.last_modified_by.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_modified_by",
                     "last_modified_by was not specified but it is required when building EvaluationForm",
                 )

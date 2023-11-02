@@ -127,22 +127,22 @@ impl NoSuchEntityExceptionBuilder {
     /// - [`message`](crate::types::error::builders::NoSuchEntityExceptionBuilder::message)
     /// - [`error_code`](crate::types::error::builders::NoSuchEntityExceptionBuilder::error_code)
     /// - [`can_retry`](crate::types::error::builders::NoSuchEntityExceptionBuilder::can_retry)
-    pub fn build(self) -> ::std::result::Result<crate::types::error::NoSuchEntityException, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::error::NoSuchEntityException, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::error::NoSuchEntityException {
             message: self.message.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "message",
                     "message was not specified but it is required when building NoSuchEntityException",
                 )
             })?,
             error_code: self.error_code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "error_code",
                     "error_code was not specified but it is required when building NoSuchEntityException",
                 )
             })?,
             can_retry: self.can_retry.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "can_retry",
                     "can_retry was not specified but it is required when building NoSuchEntityException",
                 )

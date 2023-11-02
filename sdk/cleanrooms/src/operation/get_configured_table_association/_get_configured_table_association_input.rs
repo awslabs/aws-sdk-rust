@@ -68,7 +68,7 @@ impl GetConfiguredTableAssociationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_configured_table_association::GetConfiguredTableAssociationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_configured_table_association::GetConfiguredTableAssociationInput {
             configured_table_association_identifier: self.configured_table_association_identifier,

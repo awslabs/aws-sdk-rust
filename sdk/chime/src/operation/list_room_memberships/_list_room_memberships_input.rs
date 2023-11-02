@@ -108,7 +108,7 @@ impl ListRoomMembershipsInputBuilder {
     /// Consumes the builder and constructs a [`ListRoomMembershipsInput`](crate::operation::list_room_memberships::ListRoomMembershipsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_room_memberships::ListRoomMembershipsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_room_memberships::ListRoomMembershipsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_room_memberships::ListRoomMembershipsInput {
             account_id: self.account_id,

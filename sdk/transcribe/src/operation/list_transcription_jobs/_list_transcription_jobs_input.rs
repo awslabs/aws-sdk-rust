@@ -106,7 +106,7 @@ impl ListTranscriptionJobsInputBuilder {
     /// Consumes the builder and constructs a [`ListTranscriptionJobsInput`](crate::operation::list_transcription_jobs::ListTranscriptionJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_transcription_jobs::ListTranscriptionJobsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_transcription_jobs::ListTranscriptionJobsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_transcription_jobs::ListTranscriptionJobsInput {
             status: self.status,

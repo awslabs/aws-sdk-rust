@@ -81,7 +81,7 @@ impl BatchDetectSyntaxInputBuilder {
     /// Consumes the builder and constructs a [`BatchDetectSyntaxInput`](crate::operation::batch_detect_syntax::BatchDetectSyntaxInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_detect_syntax::BatchDetectSyntaxInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::batch_detect_syntax::BatchDetectSyntaxInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::batch_detect_syntax::BatchDetectSyntaxInput {
             text_list: self.text_list,
             language_code: self.language_code,

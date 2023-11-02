@@ -87,10 +87,10 @@ impl ListThemesOutputBuilder {
     /// Consumes the builder and constructs a [`ListThemesOutput`](crate::operation::list_themes::ListThemesOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`entities`](crate::operation::list_themes::builders::ListThemesOutputBuilder::entities)
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_themes::ListThemesOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_themes::ListThemesOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_themes::ListThemesOutput {
             entities: self.entities.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "entities",
                     "entities was not specified but it is required when building ListThemesOutput",
                 )

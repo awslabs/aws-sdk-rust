@@ -175,7 +175,7 @@ impl TestIdentityProviderInputBuilder {
     /// Consumes the builder and constructs a [`TestIdentityProviderInput`](crate::operation::test_identity_provider::TestIdentityProviderInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::test_identity_provider::TestIdentityProviderInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::test_identity_provider::TestIdentityProviderInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::test_identity_provider::TestIdentityProviderInput {
             server_id: self.server_id,

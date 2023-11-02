@@ -72,7 +72,7 @@ impl GetVaultAccessPolicyInputBuilder {
     /// Consumes the builder and constructs a [`GetVaultAccessPolicyInput`](crate::operation::get_vault_access_policy::GetVaultAccessPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_vault_access_policy::GetVaultAccessPolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_vault_access_policy::GetVaultAccessPolicyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_vault_access_policy::GetVaultAccessPolicyInput {
             account_id: self.account_id,

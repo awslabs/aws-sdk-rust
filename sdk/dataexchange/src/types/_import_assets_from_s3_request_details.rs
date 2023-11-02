@@ -99,22 +99,22 @@ impl ImportAssetsFromS3RequestDetailsBuilder {
     /// - [`asset_sources`](crate::types::builders::ImportAssetsFromS3RequestDetailsBuilder::asset_sources)
     /// - [`data_set_id`](crate::types::builders::ImportAssetsFromS3RequestDetailsBuilder::data_set_id)
     /// - [`revision_id`](crate::types::builders::ImportAssetsFromS3RequestDetailsBuilder::revision_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::ImportAssetsFromS3RequestDetails, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ImportAssetsFromS3RequestDetails, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ImportAssetsFromS3RequestDetails {
             asset_sources: self.asset_sources.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "asset_sources",
                     "asset_sources was not specified but it is required when building ImportAssetsFromS3RequestDetails",
                 )
             })?,
             data_set_id: self.data_set_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_set_id",
                     "data_set_id was not specified but it is required when building ImportAssetsFromS3RequestDetails",
                 )
             })?,
             revision_id: self.revision_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "revision_id",
                     "revision_id was not specified but it is required when building ImportAssetsFromS3RequestDetails",
                 )

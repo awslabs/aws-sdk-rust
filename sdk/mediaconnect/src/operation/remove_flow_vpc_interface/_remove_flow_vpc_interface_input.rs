@@ -68,7 +68,7 @@ impl RemoveFlowVpcInterfaceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_flow_vpc_interface::RemoveFlowVpcInterfaceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::remove_flow_vpc_interface::RemoveFlowVpcInterfaceInput {
             flow_arn: self.flow_arn,

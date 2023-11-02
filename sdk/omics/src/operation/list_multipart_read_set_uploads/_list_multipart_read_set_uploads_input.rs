@@ -88,7 +88,7 @@ impl ListMultipartReadSetUploadsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsInput {
             sequence_store_id: self.sequence_store_id,

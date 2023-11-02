@@ -128,7 +128,7 @@ impl DescribeEngineDefaultClusterParametersInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_engine_default_cluster_parameters::DescribeEngineDefaultClusterParametersInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_engine_default_cluster_parameters::DescribeEngineDefaultClusterParametersInput {

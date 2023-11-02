@@ -93,7 +93,7 @@ impl SetVaultNotificationsInputBuilder {
     /// Consumes the builder and constructs a [`SetVaultNotificationsInput`](crate::operation::set_vault_notifications::SetVaultNotificationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::set_vault_notifications::SetVaultNotificationsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::set_vault_notifications::SetVaultNotificationsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::set_vault_notifications::SetVaultNotificationsInput {
             account_id: self.account_id,

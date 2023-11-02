@@ -148,7 +148,7 @@ impl ListWhatIfForecastsInputBuilder {
     /// Consumes the builder and constructs a [`ListWhatIfForecastsInput`](crate::operation::list_what_if_forecasts::ListWhatIfForecastsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_what_if_forecasts::ListWhatIfForecastsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_what_if_forecasts::ListWhatIfForecastsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_what_if_forecasts::ListWhatIfForecastsInput {
             next_token: self.next_token,

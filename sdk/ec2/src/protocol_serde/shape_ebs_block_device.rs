@@ -3,7 +3,7 @@
 pub fn ser_ebs_block_device(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::EbsBlockDevice,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("DeleteOnTermination");
     if let Some(var_2) = &input.delete_on_termination {

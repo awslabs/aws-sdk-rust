@@ -77,16 +77,16 @@ impl PropertyGroupBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`property_group_id`](crate::types::builders::PropertyGroupBuilder::property_group_id)
     /// - [`property_map`](crate::types::builders::PropertyGroupBuilder::property_map)
-    pub fn build(self) -> ::std::result::Result<crate::types::PropertyGroup, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PropertyGroup, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PropertyGroup {
             property_group_id: self.property_group_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "property_group_id",
                     "property_group_id was not specified but it is required when building PropertyGroup",
                 )
             })?,
             property_map: self.property_map.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "property_map",
                     "property_map was not specified but it is required when building PropertyGroup",
                 )

@@ -186,7 +186,7 @@ impl CreateWorkteamInputBuilder {
     /// Consumes the builder and constructs a [`CreateWorkteamInput`](crate::operation::create_workteam::CreateWorkteamInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_workteam::CreateWorkteamInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_workteam::CreateWorkteamInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_workteam::CreateWorkteamInput {
             workteam_name: self.workteam_name,
             workforce_name: self.workforce_name,

@@ -2,7 +2,7 @@
 pub fn ser_service_connect_client_alias(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ServiceConnectClientAlias,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("port").number(
             #[allow(clippy::useless_conversion)]

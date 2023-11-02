@@ -73,7 +73,7 @@ impl DisassociateIpGroupsInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateIpGroupsInput`](crate::operation::disassociate_ip_groups::DisassociateIpGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::disassociate_ip_groups::DisassociateIpGroupsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::disassociate_ip_groups::DisassociateIpGroupsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::disassociate_ip_groups::DisassociateIpGroupsInput {
             directory_id: self.directory_id,

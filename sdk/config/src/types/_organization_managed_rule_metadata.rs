@@ -211,11 +211,11 @@ impl OrganizationManagedRuleMetadataBuilder {
     /// Consumes the builder and constructs a [`OrganizationManagedRuleMetadata`](crate::types::OrganizationManagedRuleMetadata).
     /// This method will fail if any of the following fields are not set:
     /// - [`rule_identifier`](crate::types::builders::OrganizationManagedRuleMetadataBuilder::rule_identifier)
-    pub fn build(self) -> ::std::result::Result<crate::types::OrganizationManagedRuleMetadata, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::OrganizationManagedRuleMetadata, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::OrganizationManagedRuleMetadata {
             description: self.description,
             rule_identifier: self.rule_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "rule_identifier",
                     "rule_identifier was not specified but it is required when building OrganizationManagedRuleMetadata",
                 )

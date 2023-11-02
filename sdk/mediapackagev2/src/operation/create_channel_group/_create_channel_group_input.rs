@@ -123,7 +123,8 @@ impl CreateChannelGroupInputBuilder {
     /// Consumes the builder and constructs a [`CreateChannelGroupInput`](crate::operation::create_channel_group::CreateChannelGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_channel_group::CreateChannelGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_channel_group::CreateChannelGroupInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_channel_group::CreateChannelGroupInput {
             channel_group_name: self.channel_group_name,
             client_token: self.client_token,

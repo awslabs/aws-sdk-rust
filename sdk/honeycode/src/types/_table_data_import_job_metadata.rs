@@ -111,11 +111,11 @@ impl TableDataImportJobMetadataBuilder {
     /// Consumes the builder and constructs a [`TableDataImportJobMetadata`](crate::types::TableDataImportJobMetadata).
     /// This method will fail if any of the following fields are not set:
     /// - [`submit_time`](crate::types::builders::TableDataImportJobMetadataBuilder::submit_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::TableDataImportJobMetadata, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TableDataImportJobMetadata, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TableDataImportJobMetadata {
             submitter: self.submitter,
             submit_time: self.submit_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "submit_time",
                     "submit_time was not specified but it is required when building TableDataImportJobMetadata",
                 )

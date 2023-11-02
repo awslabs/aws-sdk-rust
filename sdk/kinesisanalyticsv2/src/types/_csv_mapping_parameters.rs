@@ -72,16 +72,16 @@ impl CsvMappingParametersBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`record_row_delimiter`](crate::types::builders::CsvMappingParametersBuilder::record_row_delimiter)
     /// - [`record_column_delimiter`](crate::types::builders::CsvMappingParametersBuilder::record_column_delimiter)
-    pub fn build(self) -> ::std::result::Result<crate::types::CsvMappingParameters, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CsvMappingParameters, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CsvMappingParameters {
             record_row_delimiter: self.record_row_delimiter.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "record_row_delimiter",
                     "record_row_delimiter was not specified but it is required when building CsvMappingParameters",
                 )
             })?,
             record_column_delimiter: self.record_column_delimiter.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "record_column_delimiter",
                     "record_column_delimiter was not specified but it is required when building CsvMappingParameters",
                 )

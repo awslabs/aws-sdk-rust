@@ -43,7 +43,7 @@ impl GetSkillGroupInputBuilder {
     /// Consumes the builder and constructs a [`GetSkillGroupInput`](crate::operation::get_skill_group::GetSkillGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_skill_group::GetSkillGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_skill_group::GetSkillGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_skill_group::GetSkillGroupInput {
             skill_group_arn: self.skill_group_arn,
         })

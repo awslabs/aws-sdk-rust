@@ -90,7 +90,7 @@ impl UpdateAssociationStatusInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_association_status::UpdateAssociationStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_association_status::UpdateAssociationStatusInput {
             name: self.name,

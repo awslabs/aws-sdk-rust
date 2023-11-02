@@ -2,7 +2,7 @@
 pub fn ser_hls_output_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::HlsOutputSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.h265_packaging_type {
         object.key("h265PackagingType").string(var_1.as_str());
     }

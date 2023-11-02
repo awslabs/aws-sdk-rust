@@ -87,7 +87,7 @@ impl ListImportErrorsInputBuilder {
     /// Consumes the builder and constructs a [`ListImportErrorsInput`](crate::operation::list_import_errors::ListImportErrorsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_import_errors::ListImportErrorsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_import_errors::ListImportErrorsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_import_errors::ListImportErrorsInput {
             import_id: self.import_id,
             max_results: self.max_results,

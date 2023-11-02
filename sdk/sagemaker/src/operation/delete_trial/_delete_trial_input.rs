@@ -42,7 +42,7 @@ impl DeleteTrialInputBuilder {
         &self.trial_name
     }
     /// Consumes the builder and constructs a [`DeleteTrialInput`](crate::operation::delete_trial::DeleteTrialInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_trial::DeleteTrialInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_trial::DeleteTrialInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_trial::DeleteTrialInput { trial_name: self.trial_name })
     }
 }

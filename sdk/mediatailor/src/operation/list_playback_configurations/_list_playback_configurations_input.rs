@@ -66,7 +66,7 @@ impl ListPlaybackConfigurationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_playback_configurations::ListPlaybackConfigurationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_playback_configurations::ListPlaybackConfigurationsInput {
             max_results: self.max_results,

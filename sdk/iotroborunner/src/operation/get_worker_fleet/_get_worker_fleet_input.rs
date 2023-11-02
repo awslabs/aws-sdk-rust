@@ -44,7 +44,7 @@ impl GetWorkerFleetInputBuilder {
     /// Consumes the builder and constructs a [`GetWorkerFleetInput`](crate::operation::get_worker_fleet::GetWorkerFleetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_worker_fleet::GetWorkerFleetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_worker_fleet::GetWorkerFleetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_worker_fleet::GetWorkerFleetInput { id: self.id })
     }
 }

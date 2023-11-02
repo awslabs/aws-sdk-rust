@@ -149,10 +149,10 @@ impl ListenerBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`protocol`](crate::types::builders::ListenerBuilder::protocol)
     /// - [`instance_port`](crate::types::builders::ListenerBuilder::instance_port)
-    pub fn build(self) -> ::std::result::Result<crate::types::Listener, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Listener, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Listener {
             protocol: self.protocol.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "protocol",
                     "protocol was not specified but it is required when building Listener",
                 )
@@ -160,7 +160,7 @@ impl ListenerBuilder {
             load_balancer_port: self.load_balancer_port.unwrap_or_default(),
             instance_protocol: self.instance_protocol,
             instance_port: self.instance_port.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "instance_port",
                     "instance_port was not specified but it is required when building Listener",
                 )

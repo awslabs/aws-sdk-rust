@@ -195,7 +195,7 @@ impl CreateForecastExportJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_forecast_export_job::CreateForecastExportJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_forecast_export_job::CreateForecastExportJobInput {
             forecast_export_job_name: self.forecast_export_job_name,

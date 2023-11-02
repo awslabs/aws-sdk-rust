@@ -123,28 +123,28 @@ impl StaticIpConnectionInfoBuilder {
     /// - [`mask`](crate::types::builders::StaticIpConnectionInfoBuilder::mask)
     /// - [`dns`](crate::types::builders::StaticIpConnectionInfoBuilder::dns)
     /// - [`default_gateway`](crate::types::builders::StaticIpConnectionInfoBuilder::default_gateway)
-    pub fn build(self) -> ::std::result::Result<crate::types::StaticIpConnectionInfo, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::StaticIpConnectionInfo, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::StaticIpConnectionInfo {
             ip_address: self.ip_address.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "ip_address",
                     "ip_address was not specified but it is required when building StaticIpConnectionInfo",
                 )
             })?,
             mask: self.mask.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "mask",
                     "mask was not specified but it is required when building StaticIpConnectionInfo",
                 )
             })?,
             dns: self.dns.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "dns",
                     "dns was not specified but it is required when building StaticIpConnectionInfo",
                 )
             })?,
             default_gateway: self.default_gateway.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "default_gateway",
                     "default_gateway was not specified but it is required when building StaticIpConnectionInfo",
                 )

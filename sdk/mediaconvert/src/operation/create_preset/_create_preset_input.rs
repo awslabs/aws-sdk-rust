@@ -133,7 +133,9 @@ impl CreatePresetInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreatePresetInput`](crate::operation::create_preset::CreatePresetInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_preset::CreatePresetInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_preset::CreatePresetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_preset::CreatePresetInput {
             category: self.category,
             description: self.description,

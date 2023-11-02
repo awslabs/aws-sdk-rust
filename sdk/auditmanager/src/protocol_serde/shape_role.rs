@@ -2,7 +2,7 @@
 pub fn ser_role(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Role,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("roleType").string(input.role_type.as_str());
     }

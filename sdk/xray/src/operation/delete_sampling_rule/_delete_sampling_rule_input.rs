@@ -64,7 +64,8 @@ impl DeleteSamplingRuleInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSamplingRuleInput`](crate::operation::delete_sampling_rule::DeleteSamplingRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_sampling_rule::DeleteSamplingRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_sampling_rule::DeleteSamplingRuleInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::delete_sampling_rule::DeleteSamplingRuleInput {
             rule_name: self.rule_name,
             rule_arn: self.rule_arn,

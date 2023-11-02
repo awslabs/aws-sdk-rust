@@ -183,10 +183,10 @@ pub fn de_enable_aws_service_access_http_response(
 
 pub fn ser_enable_aws_service_access_input(
     input: &crate::operation::enable_aws_service_access::EnableAwsServiceAccessInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_enable_aws_service_access_input::ser_enable_aws_service_access_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

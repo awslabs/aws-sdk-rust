@@ -66,7 +66,7 @@ impl GetComputeAccessInputBuilder {
     /// Consumes the builder and constructs a [`GetComputeAccessInput`](crate::operation::get_compute_access::GetComputeAccessInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_compute_access::GetComputeAccessInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_compute_access::GetComputeAccessInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_compute_access::GetComputeAccessInput {
             fleet_id: self.fleet_id,
             compute_name: self.compute_name,

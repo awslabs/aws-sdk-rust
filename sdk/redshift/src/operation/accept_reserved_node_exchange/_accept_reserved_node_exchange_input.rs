@@ -68,7 +68,7 @@ impl AcceptReservedNodeExchangeInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::accept_reserved_node_exchange::AcceptReservedNodeExchangeInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::accept_reserved_node_exchange::AcceptReservedNodeExchangeInput {
             reserved_node_id: self.reserved_node_id,

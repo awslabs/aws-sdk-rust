@@ -85,7 +85,9 @@ impl DeleteEntityInputBuilder {
         &self.is_recursive
     }
     /// Consumes the builder and constructs a [`DeleteEntityInput`](crate::operation::delete_entity::DeleteEntityInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_entity::DeleteEntityInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_entity::DeleteEntityInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_entity::DeleteEntityInput {
             workspace_id: self.workspace_id,
             entity_id: self.entity_id,

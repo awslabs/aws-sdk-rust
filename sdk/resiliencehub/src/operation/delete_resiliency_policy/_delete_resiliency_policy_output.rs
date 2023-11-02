@@ -65,11 +65,11 @@ impl DeleteResiliencyPolicyOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_resiliency_policy::DeleteResiliencyPolicyOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_resiliency_policy::DeleteResiliencyPolicyOutput {
             policy_arn: self.policy_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "policy_arn",
                     "policy_arn was not specified but it is required when building DeleteResiliencyPolicyOutput",
                 )

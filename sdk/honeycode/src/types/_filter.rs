@@ -75,10 +75,10 @@ impl FilterBuilder {
     /// Consumes the builder and constructs a [`Filter`](crate::types::Filter).
     /// This method will fail if any of the following fields are not set:
     /// - [`formula`](crate::types::builders::FilterBuilder::formula)
-    pub fn build(self) -> ::std::result::Result<crate::types::Filter, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Filter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Filter {
             formula: self.formula.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "formula",
                     "formula was not specified but it is required when building Filter",
                 )

@@ -90,7 +90,7 @@ impl ListGlobalTablesInputBuilder {
     /// Consumes the builder and constructs a [`ListGlobalTablesInput`](crate::operation::list_global_tables::ListGlobalTablesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_global_tables::ListGlobalTablesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_global_tables::ListGlobalTablesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_global_tables::ListGlobalTablesInput {
             exclusive_start_global_table_name: self.exclusive_start_global_table_name,
             limit: self.limit,

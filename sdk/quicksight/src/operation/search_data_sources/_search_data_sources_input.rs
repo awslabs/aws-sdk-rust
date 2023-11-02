@@ -115,7 +115,7 @@ impl SearchDataSourcesInputBuilder {
     /// Consumes the builder and constructs a [`SearchDataSourcesInput`](crate::operation::search_data_sources::SearchDataSourcesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::search_data_sources::SearchDataSourcesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::search_data_sources::SearchDataSourcesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_data_sources::SearchDataSourcesInput {
             aws_account_id: self.aws_account_id,
             filters: self.filters,

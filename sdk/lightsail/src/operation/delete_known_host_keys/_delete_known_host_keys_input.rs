@@ -44,7 +44,7 @@ impl DeleteKnownHostKeysInputBuilder {
     /// Consumes the builder and constructs a [`DeleteKnownHostKeysInput`](crate::operation::delete_known_host_keys::DeleteKnownHostKeysInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_known_host_keys::DeleteKnownHostKeysInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_known_host_keys::DeleteKnownHostKeysInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_known_host_keys::DeleteKnownHostKeysInput {
             instance_name: self.instance_name,

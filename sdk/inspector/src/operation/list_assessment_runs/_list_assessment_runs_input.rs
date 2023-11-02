@@ -119,7 +119,8 @@ impl ListAssessmentRunsInputBuilder {
     /// Consumes the builder and constructs a [`ListAssessmentRunsInput`](crate::operation::list_assessment_runs::ListAssessmentRunsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_assessment_runs::ListAssessmentRunsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_assessment_runs::ListAssessmentRunsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::list_assessment_runs::ListAssessmentRunsInput {
             assessment_template_arns: self.assessment_template_arns,
             filter: self.filter,

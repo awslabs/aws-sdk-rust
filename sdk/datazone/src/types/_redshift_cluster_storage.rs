@@ -46,10 +46,10 @@ impl RedshiftClusterStorageBuilder {
     /// Consumes the builder and constructs a [`RedshiftClusterStorage`](crate::types::RedshiftClusterStorage).
     /// This method will fail if any of the following fields are not set:
     /// - [`cluster_name`](crate::types::builders::RedshiftClusterStorageBuilder::cluster_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::RedshiftClusterStorage, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RedshiftClusterStorage, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RedshiftClusterStorage {
             cluster_name: self.cluster_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "cluster_name",
                     "cluster_name was not specified but it is required when building RedshiftClusterStorage",
                 )

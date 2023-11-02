@@ -172,7 +172,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListControls
             fn uri_base(
                 _input: &crate::operation::list_controls::ListControlsInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 use ::std::fmt::Write as _;
                 ::std::write!(output, "/controls").expect("formatting should succeed");
                 ::std::result::Result::Ok(())
@@ -180,12 +180,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListControls
             fn uri_query(
                 _input: &crate::operation::list_controls::ListControlsInput,
                 mut output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 let inner_1 = &_input.control_type;
                 let inner_1 = inner_1
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("control_type", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("control_type", "cannot be empty or unset"))?;
                 query.push_kv("controlType", &::aws_smithy_http::query::fmt_string(&inner_1));
                 if let ::std::option::Option::Some(inner_2) = &_input.next_token {
                     {
@@ -203,7 +203,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListControls
             fn update_http_builder(
                 input: &crate::operation::list_controls::ListControlsInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -212,7 +212,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListControls
             let mut builder = update_http_builder(&input, ::http::request::Builder::new())?;
             builder
         };
-        let body = ::aws_smithy_http::body::SdkBody::from("");
+        let body = ::aws_smithy_types::body::SdkBody::from("");
 
         ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }

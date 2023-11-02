@@ -99,22 +99,22 @@ impl SubscriptionBuilder {
     /// - [`resource_arn`](crate::types::builders::SubscriptionBuilder::resource_arn)
     /// - [`topic_arn`](crate::types::builders::SubscriptionBuilder::topic_arn)
     /// - [`event_subscriptions`](crate::types::builders::SubscriptionBuilder::event_subscriptions)
-    pub fn build(self) -> ::std::result::Result<crate::types::Subscription, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Subscription, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Subscription {
             resource_arn: self.resource_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_arn",
                     "resource_arn was not specified but it is required when building Subscription",
                 )
             })?,
             topic_arn: self.topic_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "topic_arn",
                     "topic_arn was not specified but it is required when building Subscription",
                 )
             })?,
             event_subscriptions: self.event_subscriptions.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "event_subscriptions",
                     "event_subscriptions was not specified but it is required when building Subscription",
                 )

@@ -75,16 +75,16 @@ impl ComponentVersionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`component_type`](crate::types::builders::ComponentVersionBuilder::component_type)
     /// - [`versions`](crate::types::builders::ComponentVersionBuilder::versions)
-    pub fn build(self) -> ::std::result::Result<crate::types::ComponentVersion, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ComponentVersion, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ComponentVersion {
             component_type: self.component_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "component_type",
                     "component_type was not specified but it is required when building ComponentVersion",
                 )
             })?,
             versions: self.versions.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "versions",
                     "versions was not specified but it is required when building ComponentVersion",
                 )

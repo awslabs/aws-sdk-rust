@@ -95,7 +95,7 @@ impl DescribeMatchmakingRuleSetsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_matchmaking_rule_sets::DescribeMatchmakingRuleSetsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_matchmaking_rule_sets::DescribeMatchmakingRuleSetsInput {
             names: self.names,

@@ -46,7 +46,7 @@ impl GetFieldLevelEncryptionProfileInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_field_level_encryption_profile::GetFieldLevelEncryptionProfileInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_field_level_encryption_profile::GetFieldLevelEncryptionProfileInput { id: self.id })
     }

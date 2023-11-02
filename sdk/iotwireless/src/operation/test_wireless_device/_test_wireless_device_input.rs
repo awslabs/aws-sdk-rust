@@ -44,7 +44,8 @@ impl TestWirelessDeviceInputBuilder {
     /// Consumes the builder and constructs a [`TestWirelessDeviceInput`](crate::operation::test_wireless_device::TestWirelessDeviceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::test_wireless_device::TestWirelessDeviceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::test_wireless_device::TestWirelessDeviceInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::test_wireless_device::TestWirelessDeviceInput { id: self.id })
     }
 }

@@ -1244,7 +1244,7 @@ impl RestoreDbClusterFromS3InputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::restore_db_cluster_from_s3::RestoreDbClusterFromS3Input,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::restore_db_cluster_from_s3::RestoreDbClusterFromS3Input {
             availability_zones: self.availability_zones,

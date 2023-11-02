@@ -46,7 +46,7 @@ impl DisassociateBrowserSettingsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_browser_settings::DisassociateBrowserSettingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disassociate_browser_settings::DisassociateBrowserSettingsInput { portal_arn: self.portal_arn })
     }

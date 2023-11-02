@@ -156,7 +156,7 @@ impl ListIndexInputBuilder {
         &self.consistency_level
     }
     /// Consumes the builder and constructs a [`ListIndexInput`](crate::operation::list_index::ListIndexInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_index::ListIndexInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_index::ListIndexInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_index::ListIndexInput {
             directory_arn: self.directory_arn,
             ranges_on_indexed_values: self.ranges_on_indexed_values,

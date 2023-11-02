@@ -44,7 +44,7 @@ impl StopImageBuilderInputBuilder {
     /// Consumes the builder and constructs a [`StopImageBuilderInput`](crate::operation::stop_image_builder::StopImageBuilderInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_image_builder::StopImageBuilderInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::stop_image_builder::StopImageBuilderInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_image_builder::StopImageBuilderInput { name: self.name })
     }
 }

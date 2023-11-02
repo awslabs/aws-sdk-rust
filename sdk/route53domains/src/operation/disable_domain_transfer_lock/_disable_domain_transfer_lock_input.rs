@@ -47,7 +47,7 @@ impl DisableDomainTransferLockInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disable_domain_transfer_lock::DisableDomainTransferLockInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disable_domain_transfer_lock::DisableDomainTransferLockInput {
             domain_name: self.domain_name,

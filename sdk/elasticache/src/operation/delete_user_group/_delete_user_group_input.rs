@@ -44,7 +44,7 @@ impl DeleteUserGroupInputBuilder {
     /// Consumes the builder and constructs a [`DeleteUserGroupInput`](crate::operation::delete_user_group::DeleteUserGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_user_group::DeleteUserGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_user_group::DeleteUserGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_user_group::DeleteUserGroupInput {
             user_group_id: self.user_group_id,
         })

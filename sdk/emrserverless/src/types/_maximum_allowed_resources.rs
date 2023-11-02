@@ -91,16 +91,16 @@ impl MaximumAllowedResourcesBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`cpu`](crate::types::builders::MaximumAllowedResourcesBuilder::cpu)
     /// - [`memory`](crate::types::builders::MaximumAllowedResourcesBuilder::memory)
-    pub fn build(self) -> ::std::result::Result<crate::types::MaximumAllowedResources, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::MaximumAllowedResources, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MaximumAllowedResources {
             cpu: self.cpu.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "cpu",
                     "cpu was not specified but it is required when building MaximumAllowedResources",
                 )
             })?,
             memory: self.memory.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "memory",
                     "memory was not specified but it is required when building MaximumAllowedResources",
                 )

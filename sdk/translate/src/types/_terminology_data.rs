@@ -173,16 +173,16 @@ impl TerminologyDataBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`file`](crate::types::builders::TerminologyDataBuilder::file)
     /// - [`format`](crate::types::builders::TerminologyDataBuilder::format)
-    pub fn build(self) -> ::std::result::Result<crate::types::TerminologyData, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TerminologyData, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TerminologyData {
             file: self.file.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "file",
                     "file was not specified but it is required when building TerminologyData",
                 )
             })?,
             format: self.format.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "format",
                     "format was not specified but it is required when building TerminologyData",
                 )

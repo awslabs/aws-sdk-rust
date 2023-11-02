@@ -2,7 +2,7 @@
 pub fn ser_caption_description(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CaptionDescription,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.accessibility {
         object.key("accessibility").string(var_1.as_str());
     }

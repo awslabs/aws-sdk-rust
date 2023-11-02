@@ -87,10 +87,10 @@ impl TaskConfigBuilder {
     /// Consumes the builder and constructs a [`TaskConfig`](crate::types::TaskConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`language_code`](crate::types::builders::TaskConfigBuilder::language_code)
-    pub fn build(self) -> ::std::result::Result<crate::types::TaskConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TaskConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TaskConfig {
             language_code: self.language_code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "language_code",
                     "language_code was not specified but it is required when building TaskConfig",
                 )

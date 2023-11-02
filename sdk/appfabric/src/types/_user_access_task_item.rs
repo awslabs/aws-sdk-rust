@@ -112,16 +112,16 @@ impl UserAccessTaskItemBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`app`](crate::types::builders::UserAccessTaskItemBuilder::app)
     /// - [`tenant_id`](crate::types::builders::UserAccessTaskItemBuilder::tenant_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::UserAccessTaskItem, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::UserAccessTaskItem, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::UserAccessTaskItem {
             app: self.app.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "app",
                     "app was not specified but it is required when building UserAccessTaskItem",
                 )
             })?,
             tenant_id: self.tenant_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "tenant_id",
                     "tenant_id was not specified but it is required when building UserAccessTaskItem",
                 )

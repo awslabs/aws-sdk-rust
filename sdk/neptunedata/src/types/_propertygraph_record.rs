@@ -140,23 +140,23 @@ impl PropertygraphRecordBuilder {
     /// - [`commit_timestamp_in_millis`](crate::types::builders::PropertygraphRecordBuilder::commit_timestamp_in_millis)
     /// - [`event_id`](crate::types::builders::PropertygraphRecordBuilder::event_id)
     /// - [`op`](crate::types::builders::PropertygraphRecordBuilder::op)
-    pub fn build(self) -> ::std::result::Result<crate::types::PropertygraphRecord, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PropertygraphRecord, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PropertygraphRecord {
             commit_timestamp_in_millis: self.commit_timestamp_in_millis.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "commit_timestamp_in_millis",
                     "commit_timestamp_in_millis was not specified but it is required when building PropertygraphRecord",
                 )
             })?,
             event_id: self.event_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "event_id",
                     "event_id was not specified but it is required when building PropertygraphRecord",
                 )
             })?,
             data: self.data,
             op: self.op.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "op",
                     "op was not specified but it is required when building PropertygraphRecord",
                 )

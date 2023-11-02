@@ -141,16 +141,16 @@ impl KmsGrantConfigurationBuilder {
     /// - [`operations`](crate::types::builders::KmsGrantConfigurationBuilder::operations)
     /// - [`grantee_principal`](crate::types::builders::KmsGrantConfigurationBuilder::grantee_principal)
     /// - [`issuing_account`](crate::types::builders::KmsGrantConfigurationBuilder::issuing_account)
-    pub fn build(self) -> ::std::result::Result<crate::types::KmsGrantConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::KmsGrantConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::KmsGrantConfiguration {
             operations: self.operations.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "operations",
                     "operations was not specified but it is required when building KmsGrantConfiguration",
                 )
             })?,
             grantee_principal: self.grantee_principal.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "grantee_principal",
                     "grantee_principal was not specified but it is required when building KmsGrantConfiguration",
                 )
@@ -158,7 +158,7 @@ impl KmsGrantConfigurationBuilder {
             retiring_principal: self.retiring_principal,
             constraints: self.constraints,
             issuing_account: self.issuing_account.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "issuing_account",
                     "issuing_account was not specified but it is required when building KmsGrantConfiguration",
                 )

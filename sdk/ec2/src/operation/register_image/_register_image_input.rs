@@ -467,7 +467,7 @@ impl RegisterImageInputBuilder {
     /// Consumes the builder and constructs a [`RegisterImageInput`](crate::operation::register_image::RegisterImageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::register_image::RegisterImageInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::register_image::RegisterImageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::register_image::RegisterImageInput {
             image_location: self.image_location,
             architecture: self.architecture,

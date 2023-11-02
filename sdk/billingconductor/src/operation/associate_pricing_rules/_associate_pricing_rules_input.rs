@@ -73,7 +73,7 @@ impl AssociatePricingRulesInputBuilder {
     /// Consumes the builder and constructs a [`AssociatePricingRulesInput`](crate::operation::associate_pricing_rules::AssociatePricingRulesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::associate_pricing_rules::AssociatePricingRulesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::associate_pricing_rules::AssociatePricingRulesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::associate_pricing_rules::AssociatePricingRulesInput {
             arn: self.arn,

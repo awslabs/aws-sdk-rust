@@ -188,7 +188,7 @@ impl ListActionsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListActionsInput`](crate::operation::list_actions::ListActionsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_actions::ListActionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_actions::ListActionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_actions::ListActionsInput {
             source_uri: self.source_uri,
             action_type: self.action_type,

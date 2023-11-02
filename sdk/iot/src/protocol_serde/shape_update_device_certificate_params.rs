@@ -2,7 +2,7 @@
 pub fn ser_update_device_certificate_params(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UpdateDeviceCertificateParams,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("action").string(input.action.as_str());
     }

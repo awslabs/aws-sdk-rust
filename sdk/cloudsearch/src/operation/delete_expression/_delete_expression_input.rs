@@ -67,7 +67,7 @@ impl DeleteExpressionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteExpressionInput`](crate::operation::delete_expression::DeleteExpressionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_expression::DeleteExpressionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_expression::DeleteExpressionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_expression::DeleteExpressionInput {
             domain_name: self.domain_name,
             expression_name: self.expression_name,

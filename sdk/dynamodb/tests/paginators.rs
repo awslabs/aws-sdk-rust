@@ -9,12 +9,12 @@ use std::iter::FromIterator;
 use aws_credential_types::Credentials;
 use aws_sdk_dynamodb::types::AttributeValue;
 use aws_sdk_dynamodb::{Client, Config};
-use aws_smithy_http::body::SdkBody;
 use aws_smithy_protocol_test::{assert_ok, validate_body, MediaType};
 use aws_smithy_runtime::client::http::test_util::{
     capture_request, ReplayEvent, StaticReplayClient,
 };
 use aws_smithy_runtime_api::client::http::HttpClient;
+use aws_smithy_types::body::SdkBody;
 use aws_types::region::Region;
 
 fn stub_config(http_client: impl HttpClient + 'static) -> Config {

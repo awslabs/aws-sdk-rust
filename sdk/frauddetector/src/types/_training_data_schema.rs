@@ -72,10 +72,10 @@ impl TrainingDataSchemaBuilder {
     /// Consumes the builder and constructs a [`TrainingDataSchema`](crate::types::TrainingDataSchema).
     /// This method will fail if any of the following fields are not set:
     /// - [`model_variables`](crate::types::builders::TrainingDataSchemaBuilder::model_variables)
-    pub fn build(self) -> ::std::result::Result<crate::types::TrainingDataSchema, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TrainingDataSchema, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TrainingDataSchema {
             model_variables: self.model_variables.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "model_variables",
                     "model_variables was not specified but it is required when building TrainingDataSchema",
                 )

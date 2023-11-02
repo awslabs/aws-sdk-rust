@@ -87,7 +87,7 @@ impl RegisterUsageInputBuilder {
     /// Consumes the builder and constructs a [`RegisterUsageInput`](crate::operation::register_usage::RegisterUsageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::register_usage::RegisterUsageInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::register_usage::RegisterUsageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::register_usage::RegisterUsageInput {
             product_code: self.product_code,
             public_key_version: self.public_key_version,

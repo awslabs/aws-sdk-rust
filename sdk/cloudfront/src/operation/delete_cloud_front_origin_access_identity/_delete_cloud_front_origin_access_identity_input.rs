@@ -68,7 +68,7 @@ impl DeleteCloudFrontOriginAccessIdentityInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentityInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_cloud_front_origin_access_identity::DeleteCloudFrontOriginAccessIdentityInput {

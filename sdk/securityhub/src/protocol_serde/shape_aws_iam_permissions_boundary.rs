@@ -2,7 +2,7 @@
 pub fn ser_aws_iam_permissions_boundary(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsIamPermissionsBoundary,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.permissions_boundary_arn {
         object.key("PermissionsBoundaryArn").string(var_1.as_str());
     }

@@ -132,7 +132,7 @@ impl ListDocumentsInputBuilder {
     /// Consumes the builder and constructs a [`ListDocumentsInput`](crate::operation::list_documents::ListDocumentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_documents::ListDocumentsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_documents::ListDocumentsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_documents::ListDocumentsInput {
             document_filter_list: self.document_filter_list,
             filters: self.filters,

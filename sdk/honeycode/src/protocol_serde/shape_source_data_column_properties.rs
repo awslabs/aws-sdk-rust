@@ -2,7 +2,7 @@
 pub fn ser_source_data_column_properties(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SourceDataColumnProperties,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.column_index {
         object.key("columnIndex").number(
             #[allow(clippy::useless_conversion)]

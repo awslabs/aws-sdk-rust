@@ -163,15 +163,15 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for PutChunkRequ
             fn uri_base(
                 _input: &crate::operation::put_chunk::PutChunkInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 use ::std::fmt::Write as _;
                 let input_1 = &_input.backup_job_id;
                 let input_1 = input_1
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("backup_job_id", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("backup_job_id", "cannot be empty or unset"))?;
                 let backup_job_id = ::aws_smithy_http::label::fmt_string(input_1, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if backup_job_id.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "backup_job_id",
                         "cannot be empty or unset",
                     ));
@@ -179,10 +179,10 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for PutChunkRequ
                 let input_2 = &_input.upload_id;
                 let input_2 = input_2
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("upload_id", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("upload_id", "cannot be empty or unset"))?;
                 let upload_id = ::aws_smithy_http::label::fmt_string(input_2, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if upload_id.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "upload_id",
                         "cannot be empty or unset",
                     ));
@@ -190,11 +190,11 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for PutChunkRequ
                 let input_3 = &_input.chunk_index;
                 let input_3 = input_3
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("chunk_index", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("chunk_index", "cannot be empty or unset"))?;
                 let mut chunk_index_encoder = ::aws_smithy_types::primitive::Encoder::from(*input_3);
                 let chunk_index = chunk_index_encoder.encode();
                 if chunk_index.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "chunk_index",
                         "cannot be empty or unset",
                     ));
@@ -212,19 +212,19 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for PutChunkRequ
             fn uri_query(
                 _input: &crate::operation::put_chunk::PutChunkInput,
                 mut output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 let inner_4 = &_input.length;
                 let inner_4 = inner_4
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("length", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("length", "cannot be empty or unset"))?;
                 query.push_kv("length", ::aws_smithy_types::primitive::Encoder::from(*inner_4).encode());
                 let inner_5 = &_input.checksum;
                 let inner_5 = inner_5
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("checksum", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("checksum", "cannot be empty or unset"))?;
                 if inner_5.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "checksum",
                         "cannot be empty or unset",
                     ));
@@ -232,7 +232,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for PutChunkRequ
                 query.push_kv("checksum", &::aws_smithy_http::query::fmt_string(&inner_5));
                 let inner_6 = &_input.checksum_algorithm;
                 let inner_6 = inner_6.as_ref().ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field("checksum_algorithm", "cannot be empty or unset")
+                    ::aws_smithy_types::error::operation::BuildError::missing_field("checksum_algorithm", "cannot be empty or unset")
                 })?;
                 query.push_kv("checksum-algorithm", &::aws_smithy_http::query::fmt_string(&inner_6));
                 ::std::result::Result::Ok(())
@@ -241,7 +241,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for PutChunkRequ
             fn update_http_builder(
                 input: &crate::operation::put_chunk::PutChunkInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;

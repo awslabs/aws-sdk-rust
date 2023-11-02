@@ -51,7 +51,7 @@ impl BatchDeleteWorldsInputBuilder {
     /// Consumes the builder and constructs a [`BatchDeleteWorldsInput`](crate::operation::batch_delete_worlds::BatchDeleteWorldsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_delete_worlds::BatchDeleteWorldsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::batch_delete_worlds::BatchDeleteWorldsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::batch_delete_worlds::BatchDeleteWorldsInput { worlds: self.worlds })
     }
 }

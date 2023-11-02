@@ -68,7 +68,7 @@ impl GetCoreDefinitionVersionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_core_definition_version::GetCoreDefinitionVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_core_definition_version::GetCoreDefinitionVersionInput {
             core_definition_id: self.core_definition_id,

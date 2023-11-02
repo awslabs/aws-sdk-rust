@@ -66,7 +66,7 @@ impl UpdatePackageConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_package_configuration::UpdatePackageConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_package_configuration::UpdatePackageConfigurationInput {
             version_update_by_jobs_config: self.version_update_by_jobs_config,

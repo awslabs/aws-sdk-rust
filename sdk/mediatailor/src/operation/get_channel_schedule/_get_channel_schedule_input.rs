@@ -122,7 +122,8 @@ impl GetChannelScheduleInputBuilder {
     /// Consumes the builder and constructs a [`GetChannelScheduleInput`](crate::operation::get_channel_schedule::GetChannelScheduleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_channel_schedule::GetChannelScheduleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_channel_schedule::GetChannelScheduleInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::get_channel_schedule::GetChannelScheduleInput {
             channel_name: self.channel_name,
             duration_minutes: self.duration_minutes,

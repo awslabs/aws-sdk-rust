@@ -87,7 +87,7 @@ impl UpdateTestSetInputBuilder {
     /// Consumes the builder and constructs a [`UpdateTestSetInput`](crate::operation::update_test_set::UpdateTestSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_test_set::UpdateTestSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_test_set::UpdateTestSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_test_set::UpdateTestSetInput {
             test_set_id: self.test_set_id,
             test_set_name: self.test_set_name,

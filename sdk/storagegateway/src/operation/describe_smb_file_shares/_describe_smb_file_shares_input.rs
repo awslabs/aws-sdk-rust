@@ -52,7 +52,7 @@ impl DescribeSmbFileSharesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeSmbFileSharesInput`](crate::operation::describe_smb_file_shares::DescribeSmbFileSharesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_smb_file_shares::DescribeSmbFileSharesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_smb_file_shares::DescribeSmbFileSharesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_smb_file_shares::DescribeSmbFileSharesInput {
             file_share_arn_list: self.file_share_arn_list,

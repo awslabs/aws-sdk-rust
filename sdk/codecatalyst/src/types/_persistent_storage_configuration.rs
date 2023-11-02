@@ -55,10 +55,10 @@ impl PersistentStorageConfigurationBuilder {
     /// Consumes the builder and constructs a [`PersistentStorageConfiguration`](crate::types::PersistentStorageConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`size_in_gib`](crate::types::builders::PersistentStorageConfigurationBuilder::size_in_gib)
-    pub fn build(self) -> ::std::result::Result<crate::types::PersistentStorageConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PersistentStorageConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PersistentStorageConfiguration {
             size_in_gib: self.size_in_gib.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "size_in_gib",
                     "size_in_gib was not specified but it is required when building PersistentStorageConfiguration",
                 )

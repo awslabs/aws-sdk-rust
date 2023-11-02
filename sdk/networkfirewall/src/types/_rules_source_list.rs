@@ -125,22 +125,22 @@ impl RulesSourceListBuilder {
     /// - [`targets`](crate::types::builders::RulesSourceListBuilder::targets)
     /// - [`target_types`](crate::types::builders::RulesSourceListBuilder::target_types)
     /// - [`generated_rules_type`](crate::types::builders::RulesSourceListBuilder::generated_rules_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::RulesSourceList, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RulesSourceList, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RulesSourceList {
             targets: self.targets.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "targets",
                     "targets was not specified but it is required when building RulesSourceList",
                 )
             })?,
             target_types: self.target_types.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "target_types",
                     "target_types was not specified but it is required when building RulesSourceList",
                 )
             })?,
             generated_rules_type: self.generated_rules_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "generated_rules_type",
                     "generated_rules_type was not specified but it is required when building RulesSourceList",
                 )

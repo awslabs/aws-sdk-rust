@@ -89,11 +89,11 @@ impl ListAssessmentTargetsOutputBuilder {
     /// - [`assessment_target_arns`](crate::operation::list_assessment_targets::builders::ListAssessmentTargetsOutputBuilder::assessment_target_arns)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_assessment_targets::ListAssessmentTargetsOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_assessment_targets::ListAssessmentTargetsOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_assessment_targets::ListAssessmentTargetsOutput {
             assessment_target_arns: self.assessment_target_arns.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "assessment_target_arns",
                     "assessment_target_arns was not specified but it is required when building ListAssessmentTargetsOutput",
                 )

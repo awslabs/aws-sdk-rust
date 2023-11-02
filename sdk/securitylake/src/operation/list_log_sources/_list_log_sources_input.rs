@@ -151,7 +151,7 @@ impl ListLogSourcesInputBuilder {
     /// Consumes the builder and constructs a [`ListLogSourcesInput`](crate::operation::list_log_sources::ListLogSourcesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_log_sources::ListLogSourcesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_log_sources::ListLogSourcesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_log_sources::ListLogSourcesInput {
             accounts: self.accounts,
             regions: self.regions,

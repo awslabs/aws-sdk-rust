@@ -73,7 +73,7 @@ impl StopMonitoringMembersInputBuilder {
     /// Consumes the builder and constructs a [`StopMonitoringMembersInput`](crate::operation::stop_monitoring_members::StopMonitoringMembersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_monitoring_members::StopMonitoringMembersInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::stop_monitoring_members::StopMonitoringMembersInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::stop_monitoring_members::StopMonitoringMembersInput {
             detector_id: self.detector_id,

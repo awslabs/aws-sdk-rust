@@ -47,7 +47,7 @@ impl DeleteReplicationConfigInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_replication_config::DeleteReplicationConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_replication_config::DeleteReplicationConfigInput {
             replication_config_arn: self.replication_config_arn,

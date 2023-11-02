@@ -44,7 +44,7 @@ impl GetOfferingStatusInputBuilder {
     /// Consumes the builder and constructs a [`GetOfferingStatusInput`](crate::operation::get_offering_status::GetOfferingStatusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_offering_status::GetOfferingStatusInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_offering_status::GetOfferingStatusInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_offering_status::GetOfferingStatusInput { next_token: self.next_token })
     }
 }

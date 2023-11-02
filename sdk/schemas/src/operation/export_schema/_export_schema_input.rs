@@ -107,7 +107,9 @@ impl ExportSchemaInputBuilder {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`ExportSchemaInput`](crate::operation::export_schema::ExportSchemaInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::export_schema::ExportSchemaInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::export_schema::ExportSchemaInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::export_schema::ExportSchemaInput {
             registry_name: self.registry_name,
             schema_name: self.schema_name,

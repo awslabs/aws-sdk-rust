@@ -72,7 +72,7 @@ impl BatchGetRecordInputBuilder {
     /// Consumes the builder and constructs a [`BatchGetRecordInput`](crate::operation::batch_get_record::BatchGetRecordInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_get_record::BatchGetRecordInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::batch_get_record::BatchGetRecordInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::batch_get_record::BatchGetRecordInput {
             identifiers: self.identifiers,
             expiration_time_response: self.expiration_time_response,

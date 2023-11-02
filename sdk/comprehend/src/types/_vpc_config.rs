@@ -80,16 +80,16 @@ impl VpcConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`security_group_ids`](crate::types::builders::VpcConfigBuilder::security_group_ids)
     /// - [`subnets`](crate::types::builders::VpcConfigBuilder::subnets)
-    pub fn build(self) -> ::std::result::Result<crate::types::VpcConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::VpcConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::VpcConfig {
             security_group_ids: self.security_group_ids.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "security_group_ids",
                     "security_group_ids was not specified but it is required when building VpcConfig",
                 )
             })?,
             subnets: self.subnets.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "subnets",
                     "subnets was not specified but it is required when building VpcConfig",
                 )

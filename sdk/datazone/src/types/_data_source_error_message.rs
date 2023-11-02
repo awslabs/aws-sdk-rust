@@ -66,10 +66,10 @@ impl DataSourceErrorMessageBuilder {
     /// Consumes the builder and constructs a [`DataSourceErrorMessage`](crate::types::DataSourceErrorMessage).
     /// This method will fail if any of the following fields are not set:
     /// - [`error_type`](crate::types::builders::DataSourceErrorMessageBuilder::error_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::DataSourceErrorMessage, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DataSourceErrorMessage, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DataSourceErrorMessage {
             error_type: self.error_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "error_type",
                     "error_type was not specified but it is required when building DataSourceErrorMessage",
                 )

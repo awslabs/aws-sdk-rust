@@ -44,7 +44,7 @@ impl GetTelemetryMetadataInputBuilder {
     /// Consumes the builder and constructs a [`GetTelemetryMetadataInput`](crate::operation::get_telemetry_metadata::GetTelemetryMetadataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_telemetry_metadata::GetTelemetryMetadataInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_telemetry_metadata::GetTelemetryMetadataInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_telemetry_metadata::GetTelemetryMetadataInput {
             assessment_run_arn: self.assessment_run_arn,

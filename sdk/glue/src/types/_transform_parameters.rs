@@ -71,10 +71,10 @@ impl TransformParametersBuilder {
     /// Consumes the builder and constructs a [`TransformParameters`](crate::types::TransformParameters).
     /// This method will fail if any of the following fields are not set:
     /// - [`transform_type`](crate::types::builders::TransformParametersBuilder::transform_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::TransformParameters, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TransformParameters, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TransformParameters {
             transform_type: self.transform_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "transform_type",
                     "transform_type was not specified but it is required when building TransformParameters",
                 )

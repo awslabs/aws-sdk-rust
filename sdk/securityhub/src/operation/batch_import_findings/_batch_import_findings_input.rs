@@ -51,7 +51,7 @@ impl BatchImportFindingsInputBuilder {
     /// Consumes the builder and constructs a [`BatchImportFindingsInput`](crate::operation::batch_import_findings::BatchImportFindingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_import_findings::BatchImportFindingsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::batch_import_findings::BatchImportFindingsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::batch_import_findings::BatchImportFindingsInput { findings: self.findings })
     }

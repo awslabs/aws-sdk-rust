@@ -2,7 +2,7 @@
 pub fn ser_function_definition_version(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FunctionDefinitionVersion,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.default_config {
         #[allow(unused_mut)]
         let mut object_2 = object.key("DefaultConfig").start_object();

@@ -86,7 +86,7 @@ impl AddWorkloadInputBuilder {
         &self.workload_configuration
     }
     /// Consumes the builder and constructs a [`AddWorkloadInput`](crate::operation::add_workload::AddWorkloadInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::add_workload::AddWorkloadInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::add_workload::AddWorkloadInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::add_workload::AddWorkloadInput {
             resource_group_name: self.resource_group_name,
             component_name: self.component_name,

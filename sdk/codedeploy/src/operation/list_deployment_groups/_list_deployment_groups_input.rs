@@ -66,7 +66,7 @@ impl ListDeploymentGroupsInputBuilder {
     /// Consumes the builder and constructs a [`ListDeploymentGroupsInput`](crate::operation::list_deployment_groups::ListDeploymentGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_deployment_groups::ListDeploymentGroupsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_deployment_groups::ListDeploymentGroupsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_deployment_groups::ListDeploymentGroupsInput {
             application_name: self.application_name,

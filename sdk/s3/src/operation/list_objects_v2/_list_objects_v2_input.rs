@@ -272,7 +272,7 @@ impl ListObjectsV2InputBuilder {
     /// Consumes the builder and constructs a [`ListObjectsV2Input`](crate::operation::list_objects_v2::ListObjectsV2Input).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_objects_v2::ListObjectsV2Input, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_objects_v2::ListObjectsV2Input, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_objects_v2::ListObjectsV2Input {
             bucket: self.bucket,
             delimiter: self.delimiter,

@@ -138,7 +138,7 @@ impl DescribeTableStatisticsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_table_statistics::DescribeTableStatisticsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_table_statistics::DescribeTableStatisticsInput {
             replication_task_arn: self.replication_task_arn,

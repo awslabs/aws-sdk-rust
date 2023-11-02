@@ -142,10 +142,10 @@ impl DetectEntitiesOutputBuilder {
     /// - [`model_version`](crate::operation::detect_entities::builders::DetectEntitiesOutputBuilder::model_version)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::detect_entities::DetectEntitiesOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::detect_entities::DetectEntitiesOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::detect_entities::DetectEntitiesOutput {
             entities: self.entities.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "entities",
                     "entities was not specified but it is required when building DetectEntitiesOutput",
                 )
@@ -153,7 +153,7 @@ impl DetectEntitiesOutputBuilder {
             unmapped_attributes: self.unmapped_attributes,
             pagination_token: self.pagination_token,
             model_version: self.model_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "model_version",
                     "model_version was not specified but it is required when building DetectEntitiesOutput",
                 )

@@ -44,7 +44,7 @@ impl StartRecommenderInputBuilder {
     /// Consumes the builder and constructs a [`StartRecommenderInput`](crate::operation::start_recommender::StartRecommenderInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_recommender::StartRecommenderInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_recommender::StartRecommenderInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_recommender::StartRecommenderInput {
             recommender_arn: self.recommender_arn,
         })

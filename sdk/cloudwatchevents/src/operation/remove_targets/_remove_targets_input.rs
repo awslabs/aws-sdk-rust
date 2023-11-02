@@ -115,7 +115,7 @@ impl RemoveTargetsInputBuilder {
     /// Consumes the builder and constructs a [`RemoveTargetsInput`](crate::operation::remove_targets::RemoveTargetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::remove_targets::RemoveTargetsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::remove_targets::RemoveTargetsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::remove_targets::RemoveTargetsInput {
             rule: self.rule,
             event_bus_name: self.event_bus_name,

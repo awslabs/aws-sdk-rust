@@ -78,10 +78,10 @@ impl ReplicationSpecificationBuilder {
     /// Consumes the builder and constructs a [`ReplicationSpecification`](crate::types::ReplicationSpecification).
     /// This method will fail if any of the following fields are not set:
     /// - [`replication_strategy`](crate::types::builders::ReplicationSpecificationBuilder::replication_strategy)
-    pub fn build(self) -> ::std::result::Result<crate::types::ReplicationSpecification, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ReplicationSpecification, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ReplicationSpecification {
             replication_strategy: self.replication_strategy.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "replication_strategy",
                     "replication_strategy was not specified but it is required when building ReplicationSpecification",
                 )

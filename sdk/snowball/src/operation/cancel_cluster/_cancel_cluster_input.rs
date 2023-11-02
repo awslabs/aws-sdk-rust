@@ -44,7 +44,7 @@ impl CancelClusterInputBuilder {
     /// Consumes the builder and constructs a [`CancelClusterInput`](crate::operation::cancel_cluster::CancelClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::cancel_cluster::CancelClusterInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::cancel_cluster::CancelClusterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::cancel_cluster::CancelClusterInput { cluster_id: self.cluster_id })
     }
 }

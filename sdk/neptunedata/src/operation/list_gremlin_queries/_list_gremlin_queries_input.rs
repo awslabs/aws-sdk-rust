@@ -43,7 +43,8 @@ impl ListGremlinQueriesInputBuilder {
     /// Consumes the builder and constructs a [`ListGremlinQueriesInput`](crate::operation::list_gremlin_queries::ListGremlinQueriesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_gremlin_queries::ListGremlinQueriesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_gremlin_queries::ListGremlinQueriesInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::list_gremlin_queries::ListGremlinQueriesInput {
             include_waiting: self.include_waiting,
         })

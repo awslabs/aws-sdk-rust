@@ -2,7 +2,7 @@
 pub fn ser_cast_column_type_operation(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CastColumnTypeOperation,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("ColumnName").string(input.column_name.as_str());
     }

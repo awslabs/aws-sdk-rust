@@ -44,7 +44,7 @@ impl DeleteAppBundleInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAppBundleInput`](crate::operation::delete_app_bundle::DeleteAppBundleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_app_bundle::DeleteAppBundleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_app_bundle::DeleteAppBundleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_app_bundle::DeleteAppBundleInput {
             app_bundle_identifier: self.app_bundle_identifier,
         })

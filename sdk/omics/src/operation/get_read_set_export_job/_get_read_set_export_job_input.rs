@@ -66,7 +66,7 @@ impl GetReadSetExportJobInputBuilder {
     /// Consumes the builder and constructs a [`GetReadSetExportJobInput`](crate::operation::get_read_set_export_job::GetReadSetExportJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_read_set_export_job::GetReadSetExportJobInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_read_set_export_job::GetReadSetExportJobInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_read_set_export_job::GetReadSetExportJobInput {
             sequence_store_id: self.sequence_store_id,

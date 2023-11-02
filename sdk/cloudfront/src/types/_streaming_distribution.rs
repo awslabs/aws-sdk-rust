@@ -193,29 +193,29 @@ impl StreamingDistributionBuilder {
     /// - [`arn`](crate::types::builders::StreamingDistributionBuilder::arn)
     /// - [`status`](crate::types::builders::StreamingDistributionBuilder::status)
     /// - [`domain_name`](crate::types::builders::StreamingDistributionBuilder::domain_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::StreamingDistribution, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::StreamingDistribution, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::StreamingDistribution {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building StreamingDistribution",
                 )
             })?,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building StreamingDistribution",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building StreamingDistribution",
                 )
             })?,
             last_modified_time: self.last_modified_time,
             domain_name: self.domain_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "domain_name",
                     "domain_name was not specified but it is required when building StreamingDistribution",
                 )

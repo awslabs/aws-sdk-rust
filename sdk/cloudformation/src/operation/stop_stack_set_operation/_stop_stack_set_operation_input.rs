@@ -112,7 +112,7 @@ impl StopStackSetOperationInputBuilder {
     /// Consumes the builder and constructs a [`StopStackSetOperationInput`](crate::operation::stop_stack_set_operation::StopStackSetOperationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_stack_set_operation::StopStackSetOperationInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::stop_stack_set_operation::StopStackSetOperationInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::stop_stack_set_operation::StopStackSetOperationInput {
             stack_set_name: self.stack_set_name,

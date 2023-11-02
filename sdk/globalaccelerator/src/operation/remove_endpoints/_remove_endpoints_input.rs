@@ -73,7 +73,7 @@ impl RemoveEndpointsInputBuilder {
     /// Consumes the builder and constructs a [`RemoveEndpointsInput`](crate::operation::remove_endpoints::RemoveEndpointsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::remove_endpoints::RemoveEndpointsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::remove_endpoints::RemoveEndpointsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::remove_endpoints::RemoveEndpointsInput {
             endpoint_identifiers: self.endpoint_identifiers,
             endpoint_group_arn: self.endpoint_group_arn,

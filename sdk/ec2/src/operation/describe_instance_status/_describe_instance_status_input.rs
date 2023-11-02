@@ -259,8 +259,10 @@ impl DescribeInstanceStatusInputBuilder {
     /// Consumes the builder and constructs a [`DescribeInstanceStatusInput`](crate::operation::describe_instance_status::DescribeInstanceStatusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_instance_status::DescribeInstanceStatusInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::describe_instance_status::DescribeInstanceStatusInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::describe_instance_status::DescribeInstanceStatusInput {
             filters: self.filters,
             instance_ids: self.instance_ids,

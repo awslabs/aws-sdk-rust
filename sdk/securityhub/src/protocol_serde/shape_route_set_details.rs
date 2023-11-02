@@ -2,7 +2,7 @@
 pub fn ser_route_set_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RouteSetDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.carrier_gateway_id {
         object.key("CarrierGatewayId").string(var_1.as_str());
     }

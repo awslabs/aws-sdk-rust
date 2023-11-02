@@ -76,7 +76,7 @@ impl DeleteRolePolicyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteRolePolicyInput`](crate::operation::delete_role_policy::DeleteRolePolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_role_policy::DeleteRolePolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_role_policy::DeleteRolePolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_role_policy::DeleteRolePolicyInput {
             role_name: self.role_name,
             policy_name: self.policy_name,

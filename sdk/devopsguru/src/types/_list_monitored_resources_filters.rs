@@ -74,16 +74,16 @@ impl ListMonitoredResourcesFiltersBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`resource_permission`](crate::types::builders::ListMonitoredResourcesFiltersBuilder::resource_permission)
     /// - [`resource_type_filters`](crate::types::builders::ListMonitoredResourcesFiltersBuilder::resource_type_filters)
-    pub fn build(self) -> ::std::result::Result<crate::types::ListMonitoredResourcesFilters, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ListMonitoredResourcesFilters, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ListMonitoredResourcesFilters {
             resource_permission: self.resource_permission.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_permission",
                     "resource_permission was not specified but it is required when building ListMonitoredResourcesFilters",
                 )
             })?,
             resource_type_filters: self.resource_type_filters.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_type_filters",
                     "resource_type_filters was not specified but it is required when building ListMonitoredResourcesFilters",
                 )

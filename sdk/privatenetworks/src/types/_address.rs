@@ -288,42 +288,42 @@ impl AddressBuilder {
     /// - [`postal_code`](crate::types::builders::AddressBuilder::postal_code)
     /// - [`state_or_province`](crate::types::builders::AddressBuilder::state_or_province)
     /// - [`street1`](crate::types::builders::AddressBuilder::street1)
-    pub fn build(self) -> ::std::result::Result<crate::types::Address, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Address, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Address {
             city: self.city.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "city",
                     "city was not specified but it is required when building Address",
                 )
             })?,
             company: self.company,
             country: self.country.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "country",
                     "country was not specified but it is required when building Address",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building Address",
                 )
             })?,
             phone_number: self.phone_number,
             postal_code: self.postal_code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "postal_code",
                     "postal_code was not specified but it is required when building Address",
                 )
             })?,
             state_or_province: self.state_or_province.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "state_or_province",
                     "state_or_province was not specified but it is required when building Address",
                 )
             })?,
             street1: self.street1.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "street1",
                     "street1 was not specified but it is required when building Address",
                 )

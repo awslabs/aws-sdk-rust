@@ -66,7 +66,7 @@ impl ContainsPiiEntitiesInputBuilder {
     /// Consumes the builder and constructs a [`ContainsPiiEntitiesInput`](crate::operation::contains_pii_entities::ContainsPiiEntitiesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::contains_pii_entities::ContainsPiiEntitiesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::contains_pii_entities::ContainsPiiEntitiesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::contains_pii_entities::ContainsPiiEntitiesInput {
             text: self.text,

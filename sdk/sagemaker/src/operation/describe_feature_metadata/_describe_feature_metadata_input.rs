@@ -68,7 +68,7 @@ impl DescribeFeatureMetadataInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_feature_metadata::DescribeFeatureMetadataInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_feature_metadata::DescribeFeatureMetadataInput {
             feature_group_name: self.feature_group_name,

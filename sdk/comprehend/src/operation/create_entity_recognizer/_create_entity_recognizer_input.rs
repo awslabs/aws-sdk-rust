@@ -325,8 +325,10 @@ impl CreateEntityRecognizerInputBuilder {
     /// Consumes the builder and constructs a [`CreateEntityRecognizerInput`](crate::operation::create_entity_recognizer::CreateEntityRecognizerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_entity_recognizer::CreateEntityRecognizerInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::create_entity_recognizer::CreateEntityRecognizerInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::create_entity_recognizer::CreateEntityRecognizerInput {
             recognizer_name: self.recognizer_name,
             version_name: self.version_name,

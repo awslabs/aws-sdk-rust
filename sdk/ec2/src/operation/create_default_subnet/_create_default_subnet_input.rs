@@ -86,7 +86,7 @@ impl CreateDefaultSubnetInputBuilder {
     /// Consumes the builder and constructs a [`CreateDefaultSubnetInput`](crate::operation::create_default_subnet::CreateDefaultSubnetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_default_subnet::CreateDefaultSubnetInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_default_subnet::CreateDefaultSubnetInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_default_subnet::CreateDefaultSubnetInput {
             availability_zone: self.availability_zone,

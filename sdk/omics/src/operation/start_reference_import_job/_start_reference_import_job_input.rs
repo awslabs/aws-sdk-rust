@@ -118,7 +118,7 @@ impl StartReferenceImportJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_reference_import_job::StartReferenceImportJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_reference_import_job::StartReferenceImportJobInput {
             reference_store_id: self.reference_store_id,

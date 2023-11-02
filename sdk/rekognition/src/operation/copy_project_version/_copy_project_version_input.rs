@@ -220,7 +220,8 @@ impl CopyProjectVersionInputBuilder {
     /// Consumes the builder and constructs a [`CopyProjectVersionInput`](crate::operation::copy_project_version::CopyProjectVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::copy_project_version::CopyProjectVersionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::copy_project_version::CopyProjectVersionInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::copy_project_version::CopyProjectVersionInput {
             source_project_arn: self.source_project_arn,
             source_project_version_arn: self.source_project_version_arn,

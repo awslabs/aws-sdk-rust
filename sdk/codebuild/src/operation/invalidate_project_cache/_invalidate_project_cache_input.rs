@@ -44,8 +44,10 @@ impl InvalidateProjectCacheInputBuilder {
     /// Consumes the builder and constructs a [`InvalidateProjectCacheInput`](crate::operation::invalidate_project_cache::InvalidateProjectCacheInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::invalidate_project_cache::InvalidateProjectCacheInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::invalidate_project_cache::InvalidateProjectCacheInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::invalidate_project_cache::InvalidateProjectCacheInput {
             project_name: self.project_name,
         })

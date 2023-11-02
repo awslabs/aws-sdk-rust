@@ -186,7 +186,7 @@ impl DescribeLogGroupsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeLogGroupsInput`](crate::operation::describe_log_groups::DescribeLogGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_log_groups::DescribeLogGroupsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_log_groups::DescribeLogGroupsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_log_groups::DescribeLogGroupsInput {
             account_identifiers: self.account_identifiers,
             log_group_name_prefix: self.log_group_name_prefix,

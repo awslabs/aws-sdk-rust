@@ -129,7 +129,7 @@ impl GetTableVersionsInputBuilder {
     /// Consumes the builder and constructs a [`GetTableVersionsInput`](crate::operation::get_table_versions::GetTableVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_table_versions::GetTableVersionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_table_versions::GetTableVersionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_table_versions::GetTableVersionsInput {
             catalog_id: self.catalog_id,
             database_name: self.database_name,

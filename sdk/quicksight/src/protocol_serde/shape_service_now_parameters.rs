@@ -2,7 +2,7 @@
 pub fn ser_service_now_parameters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ServiceNowParameters,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("SiteBaseUrl").string(input.site_base_url.as_str());
     }

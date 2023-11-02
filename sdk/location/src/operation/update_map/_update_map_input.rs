@@ -110,7 +110,7 @@ impl UpdateMapInputBuilder {
         &self.configuration_update
     }
     /// Consumes the builder and constructs a [`UpdateMapInput`](crate::operation::update_map::UpdateMapInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_map::UpdateMapInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_map::UpdateMapInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_map::UpdateMapInput {
             map_name: self.map_name,
             pricing_plan: self.pricing_plan,

@@ -2,7 +2,7 @@
 pub fn ser_aws_cloud_map_service_discovery(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsCloudMapServiceDiscovery,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("namespaceName").string(input.namespace_name.as_str());
     }

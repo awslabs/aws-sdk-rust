@@ -68,7 +68,7 @@ impl DeleteGlobalReplicationGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_global_replication_group::DeleteGlobalReplicationGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_global_replication_group::DeleteGlobalReplicationGroupInput {
             global_replication_group_id: self.global_replication_group_id,

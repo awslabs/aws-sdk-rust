@@ -68,7 +68,7 @@ impl GetGroupCertificateAuthorityInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_group_certificate_authority::GetGroupCertificateAuthorityInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_group_certificate_authority::GetGroupCertificateAuthorityInput {
             certificate_authority_id: self.certificate_authority_id,

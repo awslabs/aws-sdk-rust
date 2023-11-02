@@ -89,10 +89,10 @@ impl ListHealthEventsOutputBuilder {
     /// - [`health_events`](crate::operation::list_health_events::builders::ListHealthEventsOutputBuilder::health_events)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_health_events::ListHealthEventsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_health_events::ListHealthEventsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_health_events::ListHealthEventsOutput {
             health_events: self.health_events.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "health_events",
                     "health_events was not specified but it is required when building ListHealthEventsOutput",
                 )

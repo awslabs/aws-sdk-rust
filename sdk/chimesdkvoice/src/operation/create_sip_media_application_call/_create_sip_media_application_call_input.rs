@@ -161,7 +161,7 @@ impl CreateSipMediaApplicationCallInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_sip_media_application_call::CreateSipMediaApplicationCallInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_sip_media_application_call::CreateSipMediaApplicationCallInput {
             from_phone_number: self.from_phone_number,

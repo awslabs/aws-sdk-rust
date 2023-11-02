@@ -2,7 +2,7 @@
 pub fn ser_list_association_versions_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_association_versions::ListAssociationVersionsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.association_id {
         object.key("AssociationId").string(var_1.as_str());
     }

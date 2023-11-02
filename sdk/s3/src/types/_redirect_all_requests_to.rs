@@ -67,10 +67,10 @@ impl RedirectAllRequestsToBuilder {
     /// Consumes the builder and constructs a [`RedirectAllRequestsTo`](crate::types::RedirectAllRequestsTo).
     /// This method will fail if any of the following fields are not set:
     /// - [`host_name`](crate::types::builders::RedirectAllRequestsToBuilder::host_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::RedirectAllRequestsTo, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RedirectAllRequestsTo, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RedirectAllRequestsTo {
             host_name: self.host_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "host_name",
                     "host_name was not specified but it is required when building RedirectAllRequestsTo",
                 )

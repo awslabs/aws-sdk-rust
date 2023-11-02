@@ -64,7 +64,7 @@ impl GetTableInputBuilder {
         &self.table_name
     }
     /// Consumes the builder and constructs a [`GetTableInput`](crate::operation::get_table::GetTableInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_table::GetTableInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_table::GetTableInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_table::GetTableInput {
             keyspace_name: self.keyspace_name,
             table_name: self.table_name,

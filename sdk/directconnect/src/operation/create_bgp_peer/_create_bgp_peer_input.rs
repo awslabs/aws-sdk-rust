@@ -64,7 +64,7 @@ impl CreateBgpPeerInputBuilder {
     /// Consumes the builder and constructs a [`CreateBgpPeerInput`](crate::operation::create_bgp_peer::CreateBgpPeerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_bgp_peer::CreateBgpPeerInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_bgp_peer::CreateBgpPeerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_bgp_peer::CreateBgpPeerInput {
             virtual_interface_id: self.virtual_interface_id,
             new_bgp_peer: self.new_bgp_peer,

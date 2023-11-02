@@ -104,22 +104,22 @@ impl DetectorStateDefinitionBuilder {
     /// - [`state_name`](crate::types::builders::DetectorStateDefinitionBuilder::state_name)
     /// - [`variables`](crate::types::builders::DetectorStateDefinitionBuilder::variables)
     /// - [`timers`](crate::types::builders::DetectorStateDefinitionBuilder::timers)
-    pub fn build(self) -> ::std::result::Result<crate::types::DetectorStateDefinition, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DetectorStateDefinition, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DetectorStateDefinition {
             state_name: self.state_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "state_name",
                     "state_name was not specified but it is required when building DetectorStateDefinition",
                 )
             })?,
             variables: self.variables.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "variables",
                     "variables was not specified but it is required when building DetectorStateDefinition",
                 )
             })?,
             timers: self.timers.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "timers",
                     "timers was not specified but it is required when building DetectorStateDefinition",
                 )

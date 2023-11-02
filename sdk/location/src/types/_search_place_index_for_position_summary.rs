@@ -162,17 +162,17 @@ impl SearchPlaceIndexForPositionSummaryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`position`](crate::types::builders::SearchPlaceIndexForPositionSummaryBuilder::position)
     /// - [`data_source`](crate::types::builders::SearchPlaceIndexForPositionSummaryBuilder::data_source)
-    pub fn build(self) -> ::std::result::Result<crate::types::SearchPlaceIndexForPositionSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SearchPlaceIndexForPositionSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SearchPlaceIndexForPositionSummary {
             position: self.position.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "position",
                     "position was not specified but it is required when building SearchPlaceIndexForPositionSummary",
                 )
             })?,
             max_results: self.max_results.unwrap_or_default(),
             data_source: self.data_source.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_source",
                     "data_source was not specified but it is required when building SearchPlaceIndexForPositionSummary",
                 )

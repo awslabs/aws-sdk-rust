@@ -204,7 +204,7 @@ impl SearchAssociatedTranscriptsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::search_associated_transcripts::SearchAssociatedTranscriptsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::search_associated_transcripts::SearchAssociatedTranscriptsInput {
             bot_id: self.bot_id,

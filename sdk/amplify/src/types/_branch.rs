@@ -701,95 +701,95 @@ impl BranchBuilder {
     /// - [`enable_basic_auth`](crate::types::builders::BranchBuilder::enable_basic_auth)
     /// - [`ttl`](crate::types::builders::BranchBuilder::ttl)
     /// - [`enable_pull_request_preview`](crate::types::builders::BranchBuilder::enable_pull_request_preview)
-    pub fn build(self) -> ::std::result::Result<crate::types::Branch, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Branch, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Branch {
             branch_arn: self.branch_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "branch_arn",
                     "branch_arn was not specified but it is required when building Branch",
                 )
             })?,
             branch_name: self.branch_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "branch_name",
                     "branch_name was not specified but it is required when building Branch",
                 )
             })?,
             description: self.description.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "description",
                     "description was not specified but it is required when building Branch",
                 )
             })?,
             tags: self.tags,
             stage: self.stage.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "stage",
                     "stage was not specified but it is required when building Branch",
                 )
             })?,
             display_name: self.display_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "display_name",
                     "display_name was not specified but it is required when building Branch",
                 )
             })?,
             enable_notification: self.enable_notification.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "enable_notification",
                     "enable_notification was not specified but it is required when building Branch",
                 )
             })?,
             create_time: self.create_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "create_time",
                     "create_time was not specified but it is required when building Branch",
                 )
             })?,
             update_time: self.update_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "update_time",
                     "update_time was not specified but it is required when building Branch",
                 )
             })?,
             environment_variables: self.environment_variables.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "environment_variables",
                     "environment_variables was not specified but it is required when building Branch",
                 )
             })?,
             enable_auto_build: self.enable_auto_build.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "enable_auto_build",
                     "enable_auto_build was not specified but it is required when building Branch",
                 )
             })?,
             custom_domains: self.custom_domains.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "custom_domains",
                     "custom_domains was not specified but it is required when building Branch",
                 )
             })?,
             framework: self.framework.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "framework",
                     "framework was not specified but it is required when building Branch",
                 )
             })?,
             active_job_id: self.active_job_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "active_job_id",
                     "active_job_id was not specified but it is required when building Branch",
                 )
             })?,
             total_number_of_jobs: self.total_number_of_jobs.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "total_number_of_jobs",
                     "total_number_of_jobs was not specified but it is required when building Branch",
                 )
             })?,
             enable_basic_auth: self.enable_basic_auth.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "enable_basic_auth",
                     "enable_basic_auth was not specified but it is required when building Branch",
                 )
@@ -799,11 +799,14 @@ impl BranchBuilder {
             basic_auth_credentials: self.basic_auth_credentials,
             build_spec: self.build_spec,
             ttl: self.ttl.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field("ttl", "ttl was not specified but it is required when building Branch")
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "ttl",
+                    "ttl was not specified but it is required when building Branch",
+                )
             })?,
             associated_resources: self.associated_resources,
             enable_pull_request_preview: self.enable_pull_request_preview.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "enable_pull_request_preview",
                     "enable_pull_request_preview was not specified but it is required when building Branch",
                 )

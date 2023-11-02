@@ -192,16 +192,16 @@ impl OrganizationConformancePackStatusBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`organization_conformance_pack_name`](crate::types::builders::OrganizationConformancePackStatusBuilder::organization_conformance_pack_name)
     /// - [`status`](crate::types::builders::OrganizationConformancePackStatusBuilder::status)
-    pub fn build(self) -> ::std::result::Result<crate::types::OrganizationConformancePackStatus, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::OrganizationConformancePackStatus, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::OrganizationConformancePackStatus {
             organization_conformance_pack_name: self.organization_conformance_pack_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "organization_conformance_pack_name",
                     "organization_conformance_pack_name was not specified but it is required when building OrganizationConformancePackStatus",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building OrganizationConformancePackStatus",
                 )

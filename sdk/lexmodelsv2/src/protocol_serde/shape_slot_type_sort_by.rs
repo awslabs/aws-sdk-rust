@@ -2,7 +2,7 @@
 pub fn ser_slot_type_sort_by(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SlotTypeSortBy,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("attribute").string(input.attribute.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_create_gateway_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_gateway::CreateGatewayInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.gateway_name {
         object.key("gatewayName").string(var_1.as_str());
     }

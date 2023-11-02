@@ -75,16 +75,16 @@ impl AggregatedLogOddsMetricBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`variable_names`](crate::types::builders::AggregatedLogOddsMetricBuilder::variable_names)
     /// - [`aggregated_variables_importance`](crate::types::builders::AggregatedLogOddsMetricBuilder::aggregated_variables_importance)
-    pub fn build(self) -> ::std::result::Result<crate::types::AggregatedLogOddsMetric, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AggregatedLogOddsMetric, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AggregatedLogOddsMetric {
             variable_names: self.variable_names.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "variable_names",
                     "variable_names was not specified but it is required when building AggregatedLogOddsMetric",
                 )
             })?,
             aggregated_variables_importance: self.aggregated_variables_importance.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "aggregated_variables_importance",
                     "aggregated_variables_importance was not specified but it is required when building AggregatedLogOddsMetric",
                 )

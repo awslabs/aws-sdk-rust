@@ -94,7 +94,7 @@ impl ModifyDefaultCreditSpecificationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_default_credit_specification::ModifyDefaultCreditSpecificationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::modify_default_credit_specification::ModifyDefaultCreditSpecificationInput {

@@ -2,7 +2,7 @@
 pub fn ser_delta_sync_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DeltaSyncConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.base_table_ttl != 0 {
         object.key("baseTableTTL").number(
             #[allow(clippy::useless_conversion)]

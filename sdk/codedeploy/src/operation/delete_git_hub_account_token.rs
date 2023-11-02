@@ -179,7 +179,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteGitHub
             fn uri_base(
                 _input: &crate::operation::delete_git_hub_account_token::DeleteGitHubAccountTokenInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 use ::std::fmt::Write as _;
                 ::std::write!(output, "/").expect("formatting should succeed");
                 ::std::result::Result::Ok(())
@@ -188,7 +188,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteGitHub
             fn update_http_builder(
                 input: &crate::operation::delete_git_hub_account_token::DeleteGitHubAccountTokenInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 ::std::result::Result::Ok(builder.method("POST").uri(uri))
@@ -202,7 +202,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteGitHub
             );
             builder
         };
-        let body = ::aws_smithy_http::body::SdkBody::from(
+        let body = ::aws_smithy_types::body::SdkBody::from(
             crate::protocol_serde::shape_delete_git_hub_account_token::ser_delete_git_hub_account_token_input(&input)?,
         );
         if let Some(content_length) = body.content_length() {

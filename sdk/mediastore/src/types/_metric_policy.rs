@@ -75,10 +75,10 @@ impl MetricPolicyBuilder {
     /// Consumes the builder and constructs a [`MetricPolicy`](crate::types::MetricPolicy).
     /// This method will fail if any of the following fields are not set:
     /// - [`container_level_metrics`](crate::types::builders::MetricPolicyBuilder::container_level_metrics)
-    pub fn build(self) -> ::std::result::Result<crate::types::MetricPolicy, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::MetricPolicy, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MetricPolicy {
             container_level_metrics: self.container_level_metrics.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "container_level_metrics",
                     "container_level_metrics was not specified but it is required when building MetricPolicy",
                 )

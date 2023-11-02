@@ -261,7 +261,9 @@ impl UpdateBrokerInputBuilder {
         &self.data_replication_mode
     }
     /// Consumes the builder and constructs a [`UpdateBrokerInput`](crate::operation::update_broker::UpdateBrokerInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_broker::UpdateBrokerInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_broker::UpdateBrokerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_broker::UpdateBrokerInput {
             authentication_strategy: self.authentication_strategy,
             auto_minor_version_upgrade: self.auto_minor_version_upgrade,

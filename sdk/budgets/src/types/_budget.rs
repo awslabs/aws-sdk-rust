@@ -382,10 +382,10 @@ impl BudgetBuilder {
     /// - [`budget_name`](crate::types::builders::BudgetBuilder::budget_name)
     /// - [`time_unit`](crate::types::builders::BudgetBuilder::time_unit)
     /// - [`budget_type`](crate::types::builders::BudgetBuilder::budget_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::Budget, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Budget, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Budget {
             budget_name: self.budget_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "budget_name",
                     "budget_name was not specified but it is required when building Budget",
                 )
@@ -395,7 +395,7 @@ impl BudgetBuilder {
             cost_filters: self.cost_filters,
             cost_types: self.cost_types,
             time_unit: self.time_unit.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "time_unit",
                     "time_unit was not specified but it is required when building Budget",
                 )
@@ -403,7 +403,7 @@ impl BudgetBuilder {
             time_period: self.time_period,
             calculated_spend: self.calculated_spend,
             budget_type: self.budget_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "budget_type",
                     "budget_type was not specified but it is required when building Budget",
                 )

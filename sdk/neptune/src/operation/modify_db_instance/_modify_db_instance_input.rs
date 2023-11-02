@@ -1139,7 +1139,7 @@ impl ModifyDbInstanceInputBuilder {
     /// Consumes the builder and constructs a [`ModifyDbInstanceInput`](crate::operation::modify_db_instance::ModifyDbInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::modify_db_instance::ModifyDbInstanceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::modify_db_instance::ModifyDbInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::modify_db_instance::ModifyDbInstanceInput {
             db_instance_identifier: self.db_instance_identifier,
             allocated_storage: self.allocated_storage,

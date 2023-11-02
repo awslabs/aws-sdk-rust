@@ -171,35 +171,35 @@ impl GetParametersForImportOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_parameters_for_import::GetParametersForImportOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_parameters_for_import::GetParametersForImportOutput {
             wrapping_key_certificate: self.wrapping_key_certificate.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "wrapping_key_certificate",
                     "wrapping_key_certificate was not specified but it is required when building GetParametersForImportOutput",
                 )
             })?,
             wrapping_key_certificate_chain: self.wrapping_key_certificate_chain.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "wrapping_key_certificate_chain",
                     "wrapping_key_certificate_chain was not specified but it is required when building GetParametersForImportOutput",
                 )
             })?,
             wrapping_key_algorithm: self.wrapping_key_algorithm.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "wrapping_key_algorithm",
                     "wrapping_key_algorithm was not specified but it is required when building GetParametersForImportOutput",
                 )
             })?,
             import_token: self.import_token.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "import_token",
                     "import_token was not specified but it is required when building GetParametersForImportOutput",
                 )
             })?,
             parameters_valid_until_timestamp: self.parameters_valid_until_timestamp.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "parameters_valid_until_timestamp",
                     "parameters_valid_until_timestamp was not specified but it is required when building GetParametersForImportOutput",
                 )

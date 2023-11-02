@@ -44,7 +44,7 @@ impl DescribeEndpointGroupInputBuilder {
     /// Consumes the builder and constructs a [`DescribeEndpointGroupInput`](crate::operation::describe_endpoint_group::DescribeEndpointGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_endpoint_group::DescribeEndpointGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_endpoint_group::DescribeEndpointGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_endpoint_group::DescribeEndpointGroupInput {
             endpoint_group_arn: self.endpoint_group_arn,

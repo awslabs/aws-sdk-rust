@@ -86,7 +86,7 @@ impl ModifyIpamScopeInputBuilder {
     /// Consumes the builder and constructs a [`ModifyIpamScopeInput`](crate::operation::modify_ipam_scope::ModifyIpamScopeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::modify_ipam_scope::ModifyIpamScopeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::modify_ipam_scope::ModifyIpamScopeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::modify_ipam_scope::ModifyIpamScopeInput {
             dry_run: self.dry_run,
             ipam_scope_id: self.ipam_scope_id,

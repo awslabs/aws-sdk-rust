@@ -90,7 +90,7 @@ impl UpdateClusterConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_cluster_configuration::UpdateClusterConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_cluster_configuration::UpdateClusterConfigurationInput {
             cluster_arn: self.cluster_arn,

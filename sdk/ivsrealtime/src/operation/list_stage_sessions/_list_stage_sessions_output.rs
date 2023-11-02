@@ -89,10 +89,10 @@ impl ListStageSessionsOutputBuilder {
     /// - [`stage_sessions`](crate::operation::list_stage_sessions::builders::ListStageSessionsOutputBuilder::stage_sessions)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_stage_sessions::ListStageSessionsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_stage_sessions::ListStageSessionsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_stage_sessions::ListStageSessionsOutput {
             stage_sessions: self.stage_sessions.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "stage_sessions",
                     "stage_sessions was not specified but it is required when building ListStageSessionsOutput",
                 )

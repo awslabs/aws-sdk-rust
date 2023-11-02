@@ -2,7 +2,7 @@
 pub fn ser_short_format_text(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ShortFormatText,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.plain_text {
         object.key("PlainText").string(var_1.as_str());
     }

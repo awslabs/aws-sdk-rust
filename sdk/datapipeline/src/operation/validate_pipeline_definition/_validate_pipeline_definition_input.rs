@@ -134,7 +134,7 @@ impl ValidatePipelineDefinitionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::validate_pipeline_definition::ValidatePipelineDefinitionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::validate_pipeline_definition::ValidatePipelineDefinitionInput {
             pipeline_id: self.pipeline_id,

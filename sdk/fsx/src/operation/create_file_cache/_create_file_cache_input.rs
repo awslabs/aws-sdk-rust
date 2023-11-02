@@ -326,7 +326,7 @@ impl CreateFileCacheInputBuilder {
     /// Consumes the builder and constructs a [`CreateFileCacheInput`](crate::operation::create_file_cache::CreateFileCacheInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_file_cache::CreateFileCacheInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_file_cache::CreateFileCacheInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_file_cache::CreateFileCacheInput {
             client_request_token: self.client_request_token,
             file_cache_type: self.file_cache_type,

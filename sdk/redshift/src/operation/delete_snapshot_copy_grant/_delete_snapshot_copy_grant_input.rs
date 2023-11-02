@@ -47,7 +47,7 @@ impl DeleteSnapshotCopyGrantInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_snapshot_copy_grant::DeleteSnapshotCopyGrantInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_snapshot_copy_grant::DeleteSnapshotCopyGrantInput {
             snapshot_copy_grant_name: self.snapshot_copy_grant_name,

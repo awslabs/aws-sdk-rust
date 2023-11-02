@@ -169,7 +169,7 @@ impl CreateVpcPeeringConnectionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_vpc_peering_connection::CreateVpcPeeringConnectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_vpc_peering_connection::CreateVpcPeeringConnectionInput {
             dry_run: self.dry_run,

@@ -312,16 +312,16 @@ impl BackupRuleBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`rule_name`](crate::types::builders::BackupRuleBuilder::rule_name)
     /// - [`target_backup_vault_name`](crate::types::builders::BackupRuleBuilder::target_backup_vault_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::BackupRule, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::BackupRule, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::BackupRule {
             rule_name: self.rule_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "rule_name",
                     "rule_name was not specified but it is required when building BackupRule",
                 )
             })?,
             target_backup_vault_name: self.target_backup_vault_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "target_backup_vault_name",
                     "target_backup_vault_name was not specified but it is required when building BackupRule",
                 )

@@ -234,34 +234,34 @@ impl UpdateChannelOutputBuilder {
     /// - [`modified_at`](crate::operation::update_channel::builders::UpdateChannelOutputBuilder::modified_at)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_channel::UpdateChannelOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_channel::UpdateChannelOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_channel::UpdateChannelOutput {
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building UpdateChannelOutput",
                 )
             })?,
             channel_name: self.channel_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "channel_name",
                     "channel_name was not specified but it is required when building UpdateChannelOutput",
                 )
             })?,
             channel_group_name: self.channel_group_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "channel_group_name",
                     "channel_group_name was not specified but it is required when building UpdateChannelOutput",
                 )
             })?,
             created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
                     "created_at was not specified but it is required when building UpdateChannelOutput",
                 )
             })?,
             modified_at: self.modified_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "modified_at",
                     "modified_at was not specified but it is required when building UpdateChannelOutput",
                 )

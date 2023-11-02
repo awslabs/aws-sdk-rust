@@ -93,7 +93,7 @@ impl DescribeDeploymentsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDeploymentsInput`](crate::operation::describe_deployments::DescribeDeploymentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_deployments::DescribeDeploymentsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_deployments::DescribeDeploymentsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_deployments::DescribeDeploymentsInput {
             stack_id: self.stack_id,

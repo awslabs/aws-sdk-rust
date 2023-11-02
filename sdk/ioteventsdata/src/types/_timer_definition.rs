@@ -69,16 +69,16 @@ impl TimerDefinitionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::TimerDefinitionBuilder::name)
     /// - [`seconds`](crate::types::builders::TimerDefinitionBuilder::seconds)
-    pub fn build(self) -> ::std::result::Result<crate::types::TimerDefinition, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TimerDefinition, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TimerDefinition {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building TimerDefinition",
                 )
             })?,
             seconds: self.seconds.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "seconds",
                     "seconds was not specified but it is required when building TimerDefinition",
                 )

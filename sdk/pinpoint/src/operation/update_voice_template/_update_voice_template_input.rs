@@ -153,7 +153,7 @@ impl UpdateVoiceTemplateInputBuilder {
     /// Consumes the builder and constructs a [`UpdateVoiceTemplateInput`](crate::operation::update_voice_template::UpdateVoiceTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_voice_template::UpdateVoiceTemplateInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_voice_template::UpdateVoiceTemplateInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_voice_template::UpdateVoiceTemplateInput {
             create_new_version: self.create_new_version,

@@ -97,17 +97,17 @@ impl BatchGetTokenBalanceOutputBuilder {
     /// - [`errors`](crate::operation::batch_get_token_balance::builders::BatchGetTokenBalanceOutputBuilder::errors)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_get_token_balance::BatchGetTokenBalanceOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::batch_get_token_balance::BatchGetTokenBalanceOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::batch_get_token_balance::BatchGetTokenBalanceOutput {
             token_balances: self.token_balances.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "token_balances",
                     "token_balances was not specified but it is required when building BatchGetTokenBalanceOutput",
                 )
             })?,
             errors: self.errors.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "errors",
                     "errors was not specified but it is required when building BatchGetTokenBalanceOutput",
                 )

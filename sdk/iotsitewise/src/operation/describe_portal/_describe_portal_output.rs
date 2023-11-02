@@ -382,54 +382,54 @@ impl DescribePortalOutputBuilder {
     /// - [`portal_last_update_date`](crate::operation::describe_portal::builders::DescribePortalOutputBuilder::portal_last_update_date)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_portal::DescribePortalOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_portal::DescribePortalOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_portal::DescribePortalOutput {
             portal_id: self.portal_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "portal_id",
                     "portal_id was not specified but it is required when building DescribePortalOutput",
                 )
             })?,
             portal_arn: self.portal_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "portal_arn",
                     "portal_arn was not specified but it is required when building DescribePortalOutput",
                 )
             })?,
             portal_name: self.portal_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "portal_name",
                     "portal_name was not specified but it is required when building DescribePortalOutput",
                 )
             })?,
             portal_description: self.portal_description,
             portal_client_id: self.portal_client_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "portal_client_id",
                     "portal_client_id was not specified but it is required when building DescribePortalOutput",
                 )
             })?,
             portal_start_url: self.portal_start_url.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "portal_start_url",
                     "portal_start_url was not specified but it is required when building DescribePortalOutput",
                 )
             })?,
             portal_contact_email: self.portal_contact_email.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "portal_contact_email",
                     "portal_contact_email was not specified but it is required when building DescribePortalOutput",
                 )
             })?,
             portal_status: self.portal_status,
             portal_creation_date: self.portal_creation_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "portal_creation_date",
                     "portal_creation_date was not specified but it is required when building DescribePortalOutput",
                 )
             })?,
             portal_last_update_date: self.portal_last_update_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "portal_last_update_date",
                     "portal_last_update_date was not specified but it is required when building DescribePortalOutput",
                 )

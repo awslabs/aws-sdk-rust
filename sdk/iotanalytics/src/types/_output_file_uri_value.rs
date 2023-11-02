@@ -46,10 +46,10 @@ impl OutputFileUriValueBuilder {
     /// Consumes the builder and constructs a [`OutputFileUriValue`](crate::types::OutputFileUriValue).
     /// This method will fail if any of the following fields are not set:
     /// - [`file_name`](crate::types::builders::OutputFileUriValueBuilder::file_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::OutputFileUriValue, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::OutputFileUriValue, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::OutputFileUriValue {
             file_name: self.file_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "file_name",
                     "file_name was not specified but it is required when building OutputFileUriValue",
                 )

@@ -267,19 +267,19 @@ impl TopicFilterBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`filter_name`](crate::types::builders::TopicFilterBuilder::filter_name)
     /// - [`operand_field_name`](crate::types::builders::TopicFilterBuilder::operand_field_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::TopicFilter, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TopicFilter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TopicFilter {
             filter_description: self.filter_description,
             filter_class: self.filter_class,
             filter_name: self.filter_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "filter_name",
                     "filter_name was not specified but it is required when building TopicFilter",
                 )
             })?,
             filter_synonyms: self.filter_synonyms,
             operand_field_name: self.operand_field_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "operand_field_name",
                     "operand_field_name was not specified but it is required when building TopicFilter",
                 )

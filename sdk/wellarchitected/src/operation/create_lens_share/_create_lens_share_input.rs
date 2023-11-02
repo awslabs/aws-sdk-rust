@@ -118,7 +118,7 @@ impl CreateLensShareInputBuilder {
     /// Consumes the builder and constructs a [`CreateLensShareInput`](crate::operation::create_lens_share::CreateLensShareInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_lens_share::CreateLensShareInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_lens_share::CreateLensShareInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_lens_share::CreateLensShareInput {
             lens_alias: self.lens_alias,
             shared_with: self.shared_with,

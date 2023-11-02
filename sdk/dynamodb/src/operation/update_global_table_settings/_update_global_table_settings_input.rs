@@ -201,7 +201,7 @@ impl UpdateGlobalTableSettingsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_global_table_settings::UpdateGlobalTableSettingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_global_table_settings::UpdateGlobalTableSettingsInput {
             global_table_name: self.global_table_name,

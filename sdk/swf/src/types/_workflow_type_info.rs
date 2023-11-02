@@ -132,18 +132,18 @@ impl WorkflowTypeInfoBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`status`](crate::types::builders::WorkflowTypeInfoBuilder::status)
     /// - [`creation_date`](crate::types::builders::WorkflowTypeInfoBuilder::creation_date)
-    pub fn build(self) -> ::std::result::Result<crate::types::WorkflowTypeInfo, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::WorkflowTypeInfo, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::WorkflowTypeInfo {
             workflow_type: self.workflow_type,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building WorkflowTypeInfo",
                 )
             })?,
             description: self.description,
             creation_date: self.creation_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_date",
                     "creation_date was not specified but it is required when building WorkflowTypeInfo",
                 )

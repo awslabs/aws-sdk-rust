@@ -163,7 +163,7 @@ impl DescribeScheduledActionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_scheduled_actions::DescribeScheduledActionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_scheduled_actions::DescribeScheduledActionsInput {
             auto_scaling_group_name: self.auto_scaling_group_name,

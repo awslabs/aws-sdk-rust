@@ -2,7 +2,7 @@
 pub fn ser_domain(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Domain,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("DomainName").string(input.domain_name.as_str());
     }

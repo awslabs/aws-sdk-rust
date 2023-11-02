@@ -110,7 +110,7 @@ impl ListServiceInstanceOutputsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_service_instance_outputs::ListServiceInstanceOutputsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_service_instance_outputs::ListServiceInstanceOutputsInput {
             service_instance_name: self.service_instance_name,

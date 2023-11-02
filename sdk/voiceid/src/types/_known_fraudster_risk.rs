@@ -66,10 +66,10 @@ impl KnownFraudsterRiskBuilder {
     /// Consumes the builder and constructs a [`KnownFraudsterRisk`](crate::types::KnownFraudsterRisk).
     /// This method will fail if any of the following fields are not set:
     /// - [`risk_score`](crate::types::builders::KnownFraudsterRiskBuilder::risk_score)
-    pub fn build(self) -> ::std::result::Result<crate::types::KnownFraudsterRisk, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::KnownFraudsterRisk, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::KnownFraudsterRisk {
             risk_score: self.risk_score.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "risk_score",
                     "risk_score was not specified but it is required when building KnownFraudsterRisk",
                 )

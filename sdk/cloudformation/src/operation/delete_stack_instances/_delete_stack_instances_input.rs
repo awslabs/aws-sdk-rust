@@ -263,7 +263,7 @@ impl DeleteStackInstancesInputBuilder {
     /// Consumes the builder and constructs a [`DeleteStackInstancesInput`](crate::operation::delete_stack_instances::DeleteStackInstancesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_stack_instances::DeleteStackInstancesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_stack_instances::DeleteStackInstancesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_stack_instances::DeleteStackInstancesInput {
             stack_set_name: self.stack_set_name,

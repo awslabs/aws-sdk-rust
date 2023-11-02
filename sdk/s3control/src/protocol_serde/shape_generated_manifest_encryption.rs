@@ -2,7 +2,7 @@
 pub fn ser_generated_manifest_encryption(
     input: &crate::types::GeneratedManifestEncryption,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(_var_1) = &input.sses3 {

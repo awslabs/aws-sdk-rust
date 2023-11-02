@@ -66,7 +66,7 @@ impl UpdateHitTypeOfHitInputBuilder {
     /// Consumes the builder and constructs a [`UpdateHitTypeOfHitInput`](crate::operation::update_hit_type_of_hit::UpdateHitTypeOfHitInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_hit_type_of_hit::UpdateHitTypeOfHitInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_hit_type_of_hit::UpdateHitTypeOfHitInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_hit_type_of_hit::UpdateHitTypeOfHitInput {
             hit_id: self.hit_id,

@@ -2,7 +2,7 @@
 pub fn ser_virtual_gateway_file_access_log(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VirtualGatewayFileAccessLog,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("path").string(input.path.as_str());
     }

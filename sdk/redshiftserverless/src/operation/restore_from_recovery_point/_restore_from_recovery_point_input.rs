@@ -90,7 +90,7 @@ impl RestoreFromRecoveryPointInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::restore_from_recovery_point::RestoreFromRecoveryPointInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::restore_from_recovery_point::RestoreFromRecoveryPointInput {
             recovery_point_id: self.recovery_point_id,

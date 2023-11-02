@@ -65,7 +65,7 @@ impl DeleteInstanceInputBuilder {
     /// Consumes the builder and constructs a [`DeleteInstanceInput`](crate::operation::delete_instance::DeleteInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_instance::DeleteInstanceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_instance::DeleteInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_instance::DeleteInstanceInput {
             instance_name: self.instance_name,
             force_delete_add_ons: self.force_delete_add_ons,

@@ -512,53 +512,53 @@ impl ScalingActivityBuilder {
     /// - [`cause`](crate::types::builders::ScalingActivityBuilder::cause)
     /// - [`start_time`](crate::types::builders::ScalingActivityBuilder::start_time)
     /// - [`status_code`](crate::types::builders::ScalingActivityBuilder::status_code)
-    pub fn build(self) -> ::std::result::Result<crate::types::ScalingActivity, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ScalingActivity, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ScalingActivity {
             activity_id: self.activity_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "activity_id",
                     "activity_id was not specified but it is required when building ScalingActivity",
                 )
             })?,
             service_namespace: self.service_namespace.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "service_namespace",
                     "service_namespace was not specified but it is required when building ScalingActivity",
                 )
             })?,
             resource_id: self.resource_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_id",
                     "resource_id was not specified but it is required when building ScalingActivity",
                 )
             })?,
             scalable_dimension: self.scalable_dimension.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "scalable_dimension",
                     "scalable_dimension was not specified but it is required when building ScalingActivity",
                 )
             })?,
             description: self.description.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "description",
                     "description was not specified but it is required when building ScalingActivity",
                 )
             })?,
             cause: self.cause.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "cause",
                     "cause was not specified but it is required when building ScalingActivity",
                 )
             })?,
             start_time: self.start_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "start_time",
                     "start_time was not specified but it is required when building ScalingActivity",
                 )
             })?,
             end_time: self.end_time,
             status_code: self.status_code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status_code",
                     "status_code was not specified but it is required when building ScalingActivity",
                 )

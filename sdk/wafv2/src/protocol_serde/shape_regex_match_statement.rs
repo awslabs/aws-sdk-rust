@@ -2,7 +2,7 @@
 pub fn ser_regex_match_statement(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RegexMatchStatement,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("RegexString").string(input.regex_string.as_str());
     }

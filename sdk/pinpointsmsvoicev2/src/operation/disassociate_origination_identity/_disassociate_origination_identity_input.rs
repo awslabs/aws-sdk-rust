@@ -111,7 +111,7 @@ impl DisassociateOriginationIdentityInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_origination_identity::DisassociateOriginationIdentityInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::disassociate_origination_identity::DisassociateOriginationIdentityInput {

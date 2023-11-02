@@ -64,7 +64,7 @@ impl ListGameServerGroupsInputBuilder {
     /// Consumes the builder and constructs a [`ListGameServerGroupsInput`](crate::operation::list_game_server_groups::ListGameServerGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_game_server_groups::ListGameServerGroupsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_game_server_groups::ListGameServerGroupsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_game_server_groups::ListGameServerGroupsInput {
             limit: self.limit,

@@ -44,7 +44,7 @@ impl DescribeReportJobInputBuilder {
     /// Consumes the builder and constructs a [`DescribeReportJobInput`](crate::operation::describe_report_job::DescribeReportJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_report_job::DescribeReportJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_report_job::DescribeReportJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_report_job::DescribeReportJobInput {
             report_job_id: self.report_job_id,
         })

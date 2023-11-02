@@ -90,10 +90,10 @@ impl RawMessageBuilder {
     /// Consumes the builder and constructs a [`RawMessage`](crate::types::RawMessage).
     /// This method will fail if any of the following fields are not set:
     /// - [`data`](crate::types::builders::RawMessageBuilder::data)
-    pub fn build(self) -> ::std::result::Result<crate::types::RawMessage, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RawMessage, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RawMessage {
             data: self.data.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data",
                     "data was not specified but it is required when building RawMessage",
                 )

@@ -117,7 +117,7 @@ impl DescribeSavingsPlanRatesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_savings_plan_rates::DescribeSavingsPlanRatesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_savings_plan_rates::DescribeSavingsPlanRatesInput {
             savings_plan_id: self.savings_plan_id,

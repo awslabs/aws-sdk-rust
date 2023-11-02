@@ -88,8 +88,10 @@ impl ResumeContactRecordingInputBuilder {
     /// Consumes the builder and constructs a [`ResumeContactRecordingInput`](crate::operation::resume_contact_recording::ResumeContactRecordingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::resume_contact_recording::ResumeContactRecordingInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::resume_contact_recording::ResumeContactRecordingInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::resume_contact_recording::ResumeContactRecordingInput {
             instance_id: self.instance_id,
             contact_id: self.contact_id,

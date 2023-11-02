@@ -47,7 +47,7 @@ impl GetInfrastructureConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_infrastructure_configuration::GetInfrastructureConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_infrastructure_configuration::GetInfrastructureConfigurationInput {
             infrastructure_configuration_arn: self.infrastructure_configuration_arn,

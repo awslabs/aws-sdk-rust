@@ -2,7 +2,7 @@
 pub fn ser_virtual_gateway_connection_pool(
     object_8: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VirtualGatewayConnectionPool,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::VirtualGatewayConnectionPool::Http(inner) => {
             #[allow(unused_mut)]
@@ -23,7 +23,7 @@ pub fn ser_virtual_gateway_connection_pool(
             object_3.finish();
         }
         crate::types::VirtualGatewayConnectionPool::Unknown => {
-            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+            return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "VirtualGatewayConnectionPool",
             ))
         }
@@ -44,12 +44,17 @@ where
             match tokens.next().transpose()? {
                 Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                 Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                    let key = key.to_unescaped()?;
+                    if key == "__type" {
+                        ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                        continue;
+                    }
                     if variant.is_some() {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
                             "encountered mixed variants in union",
                         ));
                     }
-                    variant = match key.to_unescaped()?.as_ref() {
+                    variant = match key.as_ref() {
                         "http" => Some(crate::types::VirtualGatewayConnectionPool::Http(
                             crate::protocol_serde::shape_virtual_gateway_http_connection_pool::de_virtual_gateway_http_connection_pool(tokens)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'http' cannot be null"))?,

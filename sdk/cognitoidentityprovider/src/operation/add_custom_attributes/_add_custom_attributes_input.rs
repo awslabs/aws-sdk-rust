@@ -74,7 +74,7 @@ impl AddCustomAttributesInputBuilder {
     /// Consumes the builder and constructs a [`AddCustomAttributesInput`](crate::operation::add_custom_attributes::AddCustomAttributesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::add_custom_attributes::AddCustomAttributesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::add_custom_attributes::AddCustomAttributesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::add_custom_attributes::AddCustomAttributesInput {
             user_pool_id: self.user_pool_id,

@@ -90,16 +90,16 @@ impl TelemetryMetadataBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`message_type`](crate::types::builders::TelemetryMetadataBuilder::message_type)
     /// - [`count`](crate::types::builders::TelemetryMetadataBuilder::count)
-    pub fn build(self) -> ::std::result::Result<crate::types::TelemetryMetadata, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TelemetryMetadata, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TelemetryMetadata {
             message_type: self.message_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "message_type",
                     "message_type was not specified but it is required when building TelemetryMetadata",
                 )
             })?,
             count: self.count.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "count",
                     "count was not specified but it is required when building TelemetryMetadata",
                 )

@@ -116,7 +116,7 @@ impl DescribeConnectionAliasesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_connection_aliases::DescribeConnectionAliasesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_connection_aliases::DescribeConnectionAliasesInput {
             alias_ids: self.alias_ids,

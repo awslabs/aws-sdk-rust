@@ -326,22 +326,24 @@ impl GetFormTypeOutputBuilder {
     /// - [`domain_id`](crate::operation::get_form_type::builders::GetFormTypeOutputBuilder::domain_id)
     /// - [`name`](crate::operation::get_form_type::builders::GetFormTypeOutputBuilder::name)
     /// - [`revision`](crate::operation::get_form_type::builders::GetFormTypeOutputBuilder::revision)
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_form_type::GetFormTypeOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_form_type::GetFormTypeOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_form_type::GetFormTypeOutput {
             domain_id: self.domain_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "domain_id",
                     "domain_id was not specified but it is required when building GetFormTypeOutput",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building GetFormTypeOutput",
                 )
             })?,
             revision: self.revision.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "revision",
                     "revision was not specified but it is required when building GetFormTypeOutput",
                 )

@@ -129,7 +129,7 @@ impl DeleteIpamInputBuilder {
         &self.cascade
     }
     /// Consumes the builder and constructs a [`DeleteIpamInput`](crate::operation::delete_ipam::DeleteIpamInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_ipam::DeleteIpamInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_ipam::DeleteIpamInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_ipam::DeleteIpamInput {
             dry_run: self.dry_run,
             ipam_id: self.ipam_id,

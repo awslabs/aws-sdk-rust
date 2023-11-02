@@ -49,7 +49,7 @@ impl GetAccessKeyLastUsedInputBuilder {
     /// Consumes the builder and constructs a [`GetAccessKeyLastUsedInput`](crate::operation::get_access_key_last_used::GetAccessKeyLastUsedInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_access_key_last_used::GetAccessKeyLastUsedInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_access_key_last_used::GetAccessKeyLastUsedInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_access_key_last_used::GetAccessKeyLastUsedInput {
             access_key_id: self.access_key_id,

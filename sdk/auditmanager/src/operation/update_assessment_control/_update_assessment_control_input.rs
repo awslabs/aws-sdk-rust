@@ -143,7 +143,7 @@ impl UpdateAssessmentControlInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_assessment_control::UpdateAssessmentControlInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_assessment_control::UpdateAssessmentControlInput {
             assessment_id: self.assessment_id,

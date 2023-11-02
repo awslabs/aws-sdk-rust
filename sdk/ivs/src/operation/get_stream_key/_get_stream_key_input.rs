@@ -44,7 +44,7 @@ impl GetStreamKeyInputBuilder {
     /// Consumes the builder and constructs a [`GetStreamKeyInput`](crate::operation::get_stream_key::GetStreamKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_stream_key::GetStreamKeyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_stream_key::GetStreamKeyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_stream_key::GetStreamKeyInput { arn: self.arn })
     }
 }

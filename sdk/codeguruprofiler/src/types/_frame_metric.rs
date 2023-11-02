@@ -98,22 +98,22 @@ impl FrameMetricBuilder {
     /// - [`frame_name`](crate::types::builders::FrameMetricBuilder::frame_name)
     /// - [`r#type`](crate::types::builders::FrameMetricBuilder::r#type)
     /// - [`thread_states`](crate::types::builders::FrameMetricBuilder::thread_states)
-    pub fn build(self) -> ::std::result::Result<crate::types::FrameMetric, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::FrameMetric, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FrameMetric {
             frame_name: self.frame_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "frame_name",
                     "frame_name was not specified but it is required when building FrameMetric",
                 )
             })?,
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building FrameMetric",
                 )
             })?,
             thread_states: self.thread_states.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "thread_states",
                     "thread_states was not specified but it is required when building FrameMetric",
                 )

@@ -88,10 +88,10 @@ impl IpAddressRequestBuilder {
     /// Consumes the builder and constructs a [`IpAddressRequest`](crate::types::IpAddressRequest).
     /// This method will fail if any of the following fields are not set:
     /// - [`subnet_id`](crate::types::builders::IpAddressRequestBuilder::subnet_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::IpAddressRequest, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::IpAddressRequest, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::IpAddressRequest {
             subnet_id: self.subnet_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "subnet_id",
                     "subnet_id was not specified but it is required when building IpAddressRequest",
                 )

@@ -53,10 +53,10 @@ impl AnonymousUserQSearchBarEmbeddingConfigurationBuilder {
     /// - [`initial_topic_id`](crate::types::builders::AnonymousUserQSearchBarEmbeddingConfigurationBuilder::initial_topic_id)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::AnonymousUserQSearchBarEmbeddingConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::AnonymousUserQSearchBarEmbeddingConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AnonymousUserQSearchBarEmbeddingConfiguration {
             initial_topic_id: self.initial_topic_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "initial_topic_id",
                     "initial_topic_id was not specified but it is required when building AnonymousUserQSearchBarEmbeddingConfiguration",
                 )

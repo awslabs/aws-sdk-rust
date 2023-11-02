@@ -2,7 +2,7 @@
 pub fn ser_monthly_setting(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MonthlySetting,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("DayOfMonth").number(
             #[allow(clippy::useless_conversion)]

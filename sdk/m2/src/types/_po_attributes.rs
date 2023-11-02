@@ -96,17 +96,17 @@ impl PoAttributesBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`format`](crate::types::builders::PoAttributesBuilder::format)
     /// - [`member_file_extensions`](crate::types::builders::PoAttributesBuilder::member_file_extensions)
-    pub fn build(self) -> ::std::result::Result<crate::types::PoAttributes, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PoAttributes, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PoAttributes {
             format: self.format.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "format",
                     "format was not specified but it is required when building PoAttributes",
                 )
             })?,
             encoding: self.encoding,
             member_file_extensions: self.member_file_extensions.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "member_file_extensions",
                     "member_file_extensions was not specified but it is required when building PoAttributes",
                 )

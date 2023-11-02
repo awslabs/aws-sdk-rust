@@ -66,7 +66,8 @@ impl UpdateBaiduChannelInputBuilder {
     /// Consumes the builder and constructs a [`UpdateBaiduChannelInput`](crate::operation::update_baidu_channel::UpdateBaiduChannelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_baidu_channel::UpdateBaiduChannelInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_baidu_channel::UpdateBaiduChannelInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::update_baidu_channel::UpdateBaiduChannelInput {
             application_id: self.application_id,
             baidu_channel_request: self.baidu_channel_request,

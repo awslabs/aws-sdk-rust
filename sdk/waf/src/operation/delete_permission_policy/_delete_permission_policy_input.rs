@@ -49,8 +49,10 @@ impl DeletePermissionPolicyInputBuilder {
     /// Consumes the builder and constructs a [`DeletePermissionPolicyInput`](crate::operation::delete_permission_policy::DeletePermissionPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_permission_policy::DeletePermissionPolicyInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::delete_permission_policy::DeletePermissionPolicyInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::delete_permission_policy::DeletePermissionPolicyInput {
             resource_arn: self.resource_arn,
         })

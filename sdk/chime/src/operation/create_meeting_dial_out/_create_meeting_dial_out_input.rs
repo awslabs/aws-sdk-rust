@@ -120,7 +120,7 @@ impl CreateMeetingDialOutInputBuilder {
     /// Consumes the builder and constructs a [`CreateMeetingDialOutInput`](crate::operation::create_meeting_dial_out::CreateMeetingDialOutInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_meeting_dial_out::CreateMeetingDialOutInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_meeting_dial_out::CreateMeetingDialOutInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_meeting_dial_out::CreateMeetingDialOutInput {
             meeting_id: self.meeting_id,

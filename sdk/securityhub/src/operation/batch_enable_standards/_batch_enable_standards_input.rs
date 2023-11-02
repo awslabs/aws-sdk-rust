@@ -54,7 +54,7 @@ impl BatchEnableStandardsInputBuilder {
     /// Consumes the builder and constructs a [`BatchEnableStandardsInput`](crate::operation::batch_enable_standards::BatchEnableStandardsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_enable_standards::BatchEnableStandardsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::batch_enable_standards::BatchEnableStandardsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::batch_enable_standards::BatchEnableStandardsInput {
             standards_subscription_requests: self.standards_subscription_requests,

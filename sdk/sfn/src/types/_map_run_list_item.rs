@@ -138,28 +138,28 @@ impl MapRunListItemBuilder {
     /// - [`map_run_arn`](crate::types::builders::MapRunListItemBuilder::map_run_arn)
     /// - [`state_machine_arn`](crate::types::builders::MapRunListItemBuilder::state_machine_arn)
     /// - [`start_date`](crate::types::builders::MapRunListItemBuilder::start_date)
-    pub fn build(self) -> ::std::result::Result<crate::types::MapRunListItem, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::MapRunListItem, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MapRunListItem {
             execution_arn: self.execution_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "execution_arn",
                     "execution_arn was not specified but it is required when building MapRunListItem",
                 )
             })?,
             map_run_arn: self.map_run_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "map_run_arn",
                     "map_run_arn was not specified but it is required when building MapRunListItem",
                 )
             })?,
             state_machine_arn: self.state_machine_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "state_machine_arn",
                     "state_machine_arn was not specified but it is required when building MapRunListItem",
                 )
             })?,
             start_date: self.start_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "start_date",
                     "start_date was not specified but it is required when building MapRunListItem",
                 )

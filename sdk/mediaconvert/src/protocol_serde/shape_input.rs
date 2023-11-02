@@ -2,7 +2,7 @@
 pub fn ser_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Input,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.advanced_input_filter {
         object.key("advancedInputFilter").string(var_1.as_str());
     }

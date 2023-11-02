@@ -2,7 +2,7 @@
 pub fn ser_inference_s3_output_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::InferenceS3OutputConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Bucket").string(input.bucket.as_str());
     }

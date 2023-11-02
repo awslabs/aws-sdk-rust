@@ -2,7 +2,7 @@
 pub fn ser_stateless_rules_and_custom_actions(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::StatelessRulesAndCustomActions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("StatelessRules").start_array();
         for item_2 in &input.stateless_rules {

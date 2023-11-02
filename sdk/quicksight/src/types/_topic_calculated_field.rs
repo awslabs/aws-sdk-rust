@@ -440,17 +440,17 @@ impl TopicCalculatedFieldBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`calculated_field_name`](crate::types::builders::TopicCalculatedFieldBuilder::calculated_field_name)
     /// - [`expression`](crate::types::builders::TopicCalculatedFieldBuilder::expression)
-    pub fn build(self) -> ::std::result::Result<crate::types::TopicCalculatedField, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TopicCalculatedField, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TopicCalculatedField {
             calculated_field_name: self.calculated_field_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "calculated_field_name",
                     "calculated_field_name was not specified but it is required when building TopicCalculatedField",
                 )
             })?,
             calculated_field_description: self.calculated_field_description,
             expression: self.expression.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "expression",
                     "expression was not specified but it is required when building TopicCalculatedField",
                 )

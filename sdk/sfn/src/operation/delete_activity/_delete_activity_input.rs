@@ -44,7 +44,7 @@ impl DeleteActivityInputBuilder {
     /// Consumes the builder and constructs a [`DeleteActivityInput`](crate::operation::delete_activity::DeleteActivityInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_activity::DeleteActivityInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_activity::DeleteActivityInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_activity::DeleteActivityInput {
             activity_arn: self.activity_arn,
         })

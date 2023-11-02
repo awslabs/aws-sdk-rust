@@ -173,7 +173,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DescribeComp
             fn uri_base(
                 _input: &crate::operation::describe_compute_environments::DescribeComputeEnvironmentsInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 use ::std::fmt::Write as _;
                 ::std::write!(output, "/v1/describecomputeenvironments").expect("formatting should succeed");
                 ::std::result::Result::Ok(())
@@ -182,7 +182,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DescribeComp
             fn update_http_builder(
                 input: &crate::operation::describe_compute_environments::DescribeComputeEnvironmentsInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 ::std::result::Result::Ok(builder.method("POST").uri(uri))
@@ -191,7 +191,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DescribeComp
             builder = _header_serialization_settings.set_default_header(builder, ::http::header::CONTENT_TYPE, "application/json");
             builder
         };
-        let body = ::aws_smithy_http::body::SdkBody::from(
+        let body = ::aws_smithy_types::body::SdkBody::from(
             crate::protocol_serde::shape_describe_compute_environments::ser_describe_compute_environments_input(&input)?,
         );
         if let Some(content_length) = body.content_length() {
@@ -298,7 +298,7 @@ mod describe_compute_environments_request_test {
             .build();
         let mut http_response = ::http::response::Builder::new()
         .status(200)
-                    .body(::aws_smithy_http::body::SdkBody::from("    {\n        \"computeEnvironments\":[{\n            \"computeEnvironmentName\":\"test-batch-compute\",\n            \"computeEnvironmentArn\":\"arn\",\n            \"ecsClusterArn\":\"clusteran\",\n            \"tags\":{\"foo\": \"bar\"},\n            \"type\":\"MANAGED\",\n            \"state\":\"ENABLED\",\n            \"status\":\"VALID\",\n            \"statusReason\":\"ComputeEnvironment Healthy\",\n            \"computeResources\":{\n                \"type\":\"EC2\",\n                \"minvCpus\":0,\n                \"maxvCpus\":256,\n                \"desiredvCpus\":0,\n                \"instanceTypes\":[\"optimal\"],\n                \"subnets\":[\"subnet-c745b79c\",\"subnet-d4e24fe8\"],\n                \"securityGroupIds\":[\"sg-06a55e7b\"],\n                \"instanceRole\":\"instancerole\",\n                \"tags\":{\"Name\":\"batch-compute\"},\n                \"ec2Configuration\":[{\"imageType\":\"ECS_AL1\"}]\n            },\n            \"serviceRole\":\"arn:aws:iam::432762038596:role/service-role/AWSBatchServiceRole\"\n        }]\n    }\n"))
+                    .body(::aws_smithy_types::body::SdkBody::from("    {\n        \"computeEnvironments\":[{\n            \"computeEnvironmentName\":\"test-batch-compute\",\n            \"computeEnvironmentArn\":\"arn\",\n            \"ecsClusterArn\":\"clusteran\",\n            \"tags\":{\"foo\": \"bar\"},\n            \"type\":\"MANAGED\",\n            \"state\":\"ENABLED\",\n            \"status\":\"VALID\",\n            \"statusReason\":\"ComputeEnvironment Healthy\",\n            \"computeResources\":{\n                \"type\":\"EC2\",\n                \"minvCpus\":0,\n                \"maxvCpus\":256,\n                \"desiredvCpus\":0,\n                \"instanceTypes\":[\"optimal\"],\n                \"subnets\":[\"subnet-c745b79c\",\"subnet-d4e24fe8\"],\n                \"securityGroupIds\":[\"sg-06a55e7b\"],\n                \"instanceRole\":\"instancerole\",\n                \"tags\":{\"Name\":\"batch-compute\"},\n                \"ec2Configuration\":[{\"imageType\":\"ECS_AL1\"}]\n            },\n            \"serviceRole\":\"arn:aws:iam::432762038596:role/service-role/AWSBatchServiceRole\"\n        }]\n    }\n"))
                     .unwrap();
         use ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin;
         use ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse;
@@ -312,7 +312,7 @@ mod describe_compute_environments_request_test {
         let parsed = de.deserialize_streaming(&mut http_response);
         let parsed = parsed.unwrap_or_else(|| {
             let http_response =
-                http_response.map(|body| ::aws_smithy_http::body::SdkBody::from(::bytes::Bytes::copy_from_slice(body.bytes().unwrap())));
+                http_response.map(|body| ::aws_smithy_types::body::SdkBody::from(::bytes::Bytes::copy_from_slice(body.bytes().unwrap())));
             de.deserialize_nonstreaming(&http_response)
         });
         let parsed = parsed

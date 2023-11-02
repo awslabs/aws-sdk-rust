@@ -2,7 +2,7 @@
 pub fn ser_aws_api_gateway_v2_stage_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsApiGatewayV2StageDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.client_certificate_id {
         object.key("ClientCertificateId").string(var_1.as_str());
     }

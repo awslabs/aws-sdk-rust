@@ -2,7 +2,7 @@
 pub fn ser_server_group(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ServerGroup,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.server_group_id {
         object.key("serverGroupId").string(var_1.as_str());
     }

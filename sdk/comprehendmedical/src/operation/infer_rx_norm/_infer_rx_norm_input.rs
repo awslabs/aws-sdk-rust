@@ -42,7 +42,7 @@ impl InferRxNormInputBuilder {
         &self.text
     }
     /// Consumes the builder and constructs a [`InferRxNormInput`](crate::operation::infer_rx_norm::InferRxNormInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::infer_rx_norm::InferRxNormInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::infer_rx_norm::InferRxNormInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::infer_rx_norm::InferRxNormInput { text: self.text })
     }
 }

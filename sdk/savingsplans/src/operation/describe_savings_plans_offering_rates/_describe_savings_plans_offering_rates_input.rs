@@ -298,7 +298,7 @@ impl DescribeSavingsPlansOfferingRatesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_savings_plans_offering_rates::DescribeSavingsPlansOfferingRatesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_savings_plans_offering_rates::DescribeSavingsPlansOfferingRatesInput {

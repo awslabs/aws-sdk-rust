@@ -2,7 +2,7 @@
 pub fn ser_get_shard_iterator_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_shard_iterator::GetShardIteratorInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.stream_arn {
         object.key("StreamArn").string(var_1.as_str());
     }

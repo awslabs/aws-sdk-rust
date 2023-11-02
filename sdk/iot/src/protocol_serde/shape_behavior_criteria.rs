@@ -2,7 +2,7 @@
 pub fn ser_behavior_criteria(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BehaviorCriteria,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.comparison_operator {
         object.key("comparisonOperator").string(var_1.as_str());
     }

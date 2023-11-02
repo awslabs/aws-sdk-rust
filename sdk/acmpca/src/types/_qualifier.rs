@@ -46,10 +46,10 @@ impl QualifierBuilder {
     /// Consumes the builder and constructs a [`Qualifier`](crate::types::Qualifier).
     /// This method will fail if any of the following fields are not set:
     /// - [`cps_uri`](crate::types::builders::QualifierBuilder::cps_uri)
-    pub fn build(self) -> ::std::result::Result<crate::types::Qualifier, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Qualifier, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Qualifier {
             cps_uri: self.cps_uri.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "cps_uri",
                     "cps_uri was not specified but it is required when building Qualifier",
                 )

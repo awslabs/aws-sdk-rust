@@ -116,7 +116,7 @@ impl CreateCallAnalyticsCategoryInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_call_analytics_category::CreateCallAnalyticsCategoryInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_call_analytics_category::CreateCallAnalyticsCategoryInput {
             category_name: self.category_name,

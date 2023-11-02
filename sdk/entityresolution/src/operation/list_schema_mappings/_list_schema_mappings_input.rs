@@ -64,7 +64,8 @@ impl ListSchemaMappingsInputBuilder {
     /// Consumes the builder and constructs a [`ListSchemaMappingsInput`](crate::operation::list_schema_mappings::ListSchemaMappingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_schema_mappings::ListSchemaMappingsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_schema_mappings::ListSchemaMappingsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::list_schema_mappings::ListSchemaMappingsInput {
             next_token: self.next_token,
             max_results: self.max_results,

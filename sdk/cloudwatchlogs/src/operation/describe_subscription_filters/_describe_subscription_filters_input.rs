@@ -109,7 +109,7 @@ impl DescribeSubscriptionFiltersInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_subscription_filters::DescribeSubscriptionFiltersInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_subscription_filters::DescribeSubscriptionFiltersInput {
             log_group_name: self.log_group_name,

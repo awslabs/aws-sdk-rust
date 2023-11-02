@@ -2,7 +2,7 @@
 pub fn ser_sensor(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Sensor,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("fullyQualifiedName").string(input.fully_qualified_name.as_str());
     }

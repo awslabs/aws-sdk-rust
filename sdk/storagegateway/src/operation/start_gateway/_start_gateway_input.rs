@@ -43,7 +43,9 @@ impl StartGatewayInputBuilder {
         &self.gateway_arn
     }
     /// Consumes the builder and constructs a [`StartGatewayInput`](crate::operation::start_gateway::StartGatewayInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::start_gateway::StartGatewayInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::start_gateway::StartGatewayInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_gateway::StartGatewayInput {
             gateway_arn: self.gateway_arn,
         })

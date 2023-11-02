@@ -44,7 +44,7 @@ impl DeleteTrustStoreInputBuilder {
     /// Consumes the builder and constructs a [`DeleteTrustStoreInput`](crate::operation::delete_trust_store::DeleteTrustStoreInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_trust_store::DeleteTrustStoreInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_trust_store::DeleteTrustStoreInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_trust_store::DeleteTrustStoreInput {
             trust_store_arn: self.trust_store_arn,
         })

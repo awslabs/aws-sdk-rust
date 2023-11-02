@@ -86,7 +86,7 @@ impl DescribeImageVersionInputBuilder {
     /// Consumes the builder and constructs a [`DescribeImageVersionInput`](crate::operation::describe_image_version::DescribeImageVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_image_version::DescribeImageVersionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_image_version::DescribeImageVersionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_image_version::DescribeImageVersionInput {
             image_name: self.image_name,

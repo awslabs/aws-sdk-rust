@@ -2,7 +2,7 @@
 pub fn ser_registry_credential(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RegistryCredential,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("credential").string(input.credential.as_str());
     }

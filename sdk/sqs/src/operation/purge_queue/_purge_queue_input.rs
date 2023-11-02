@@ -48,7 +48,7 @@ impl PurgeQueueInputBuilder {
         &self.queue_url
     }
     /// Consumes the builder and constructs a [`PurgeQueueInput`](crate::operation::purge_queue::PurgeQueueInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::purge_queue::PurgeQueueInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::purge_queue::PurgeQueueInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::purge_queue::PurgeQueueInput { queue_url: self.queue_url })
     }
 }

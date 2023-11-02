@@ -104,7 +104,7 @@ impl StartBgpFailoverTestInputBuilder {
     /// Consumes the builder and constructs a [`StartBgpFailoverTestInput`](crate::operation::start_bgp_failover_test::StartBgpFailoverTestInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_bgp_failover_test::StartBgpFailoverTestInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::start_bgp_failover_test::StartBgpFailoverTestInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_bgp_failover_test::StartBgpFailoverTestInput {
             virtual_interface_id: self.virtual_interface_id,

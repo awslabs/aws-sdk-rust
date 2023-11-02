@@ -108,10 +108,10 @@ impl ListTablesOutputBuilder {
     /// Consumes the builder and constructs a [`ListTablesOutput`](crate::operation::list_tables::ListTablesOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`tables`](crate::operation::list_tables::builders::ListTablesOutputBuilder::tables)
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_tables::ListTablesOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_tables::ListTablesOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_tables::ListTablesOutput {
             tables: self.tables.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "tables",
                     "tables was not specified but it is required when building ListTablesOutput",
                 )

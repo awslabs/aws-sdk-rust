@@ -66,7 +66,7 @@ impl ModifyInstanceFleetInputBuilder {
     /// Consumes the builder and constructs a [`ModifyInstanceFleetInput`](crate::operation::modify_instance_fleet::ModifyInstanceFleetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::modify_instance_fleet::ModifyInstanceFleetInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::modify_instance_fleet::ModifyInstanceFleetInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::modify_instance_fleet::ModifyInstanceFleetInput {
             cluster_id: self.cluster_id,

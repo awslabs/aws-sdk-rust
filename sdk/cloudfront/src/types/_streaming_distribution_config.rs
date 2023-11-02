@@ -210,10 +210,10 @@ impl StreamingDistributionConfigBuilder {
     /// - [`caller_reference`](crate::types::builders::StreamingDistributionConfigBuilder::caller_reference)
     /// - [`comment`](crate::types::builders::StreamingDistributionConfigBuilder::comment)
     /// - [`enabled`](crate::types::builders::StreamingDistributionConfigBuilder::enabled)
-    pub fn build(self) -> ::std::result::Result<crate::types::StreamingDistributionConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::StreamingDistributionConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::StreamingDistributionConfig {
             caller_reference: self.caller_reference.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "caller_reference",
                     "caller_reference was not specified but it is required when building StreamingDistributionConfig",
                 )
@@ -221,7 +221,7 @@ impl StreamingDistributionConfigBuilder {
             s3_origin: self.s3_origin,
             aliases: self.aliases,
             comment: self.comment.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "comment",
                     "comment was not specified but it is required when building StreamingDistributionConfig",
                 )
@@ -230,7 +230,7 @@ impl StreamingDistributionConfigBuilder {
             trusted_signers: self.trusted_signers,
             price_class: self.price_class,
             enabled: self.enabled.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "enabled",
                     "enabled was not specified but it is required when building StreamingDistributionConfig",
                 )

@@ -127,7 +127,7 @@ impl UpdateIpSetInputBuilder {
         &self.activate
     }
     /// Consumes the builder and constructs a [`UpdateIpSetInput`](crate::operation::update_ip_set::UpdateIpSetInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_ip_set::UpdateIpSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_ip_set::UpdateIpSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_ip_set::UpdateIpSetInput {
             detector_id: self.detector_id,
             ip_set_id: self.ip_set_id,

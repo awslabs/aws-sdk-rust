@@ -89,11 +89,13 @@ impl ListPackageImportJobsOutputBuilder {
     /// - [`package_import_jobs`](crate::operation::list_package_import_jobs::builders::ListPackageImportJobsOutputBuilder::package_import_jobs)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_package_import_jobs::ListPackageImportJobsOutput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::list_package_import_jobs::ListPackageImportJobsOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::list_package_import_jobs::ListPackageImportJobsOutput {
             package_import_jobs: self.package_import_jobs.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "package_import_jobs",
                     "package_import_jobs was not specified but it is required when building ListPackageImportJobsOutput",
                 )

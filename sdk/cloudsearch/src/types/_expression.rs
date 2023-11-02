@@ -70,16 +70,16 @@ impl ExpressionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`expression_name`](crate::types::builders::ExpressionBuilder::expression_name)
     /// - [`expression_value`](crate::types::builders::ExpressionBuilder::expression_value)
-    pub fn build(self) -> ::std::result::Result<crate::types::Expression, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Expression, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Expression {
             expression_name: self.expression_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "expression_name",
                     "expression_name was not specified but it is required when building Expression",
                 )
             })?,
             expression_value: self.expression_value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "expression_value",
                     "expression_value was not specified but it is required when building Expression",
                 )

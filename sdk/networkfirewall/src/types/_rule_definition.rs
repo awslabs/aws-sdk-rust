@@ -123,11 +123,11 @@ impl RuleDefinitionBuilder {
     /// Consumes the builder and constructs a [`RuleDefinition`](crate::types::RuleDefinition).
     /// This method will fail if any of the following fields are not set:
     /// - [`actions`](crate::types::builders::RuleDefinitionBuilder::actions)
-    pub fn build(self) -> ::std::result::Result<crate::types::RuleDefinition, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RuleDefinition, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RuleDefinition {
             match_attributes: self.match_attributes,
             actions: self.actions.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "actions",
                     "actions was not specified but it is required when building RuleDefinition",
                 )

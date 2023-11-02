@@ -132,7 +132,7 @@ impl CreateLogPatternInputBuilder {
     /// Consumes the builder and constructs a [`CreateLogPatternInput`](crate::operation::create_log_pattern::CreateLogPatternInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_log_pattern::CreateLogPatternInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_log_pattern::CreateLogPatternInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_log_pattern::CreateLogPatternInput {
             resource_group_name: self.resource_group_name,
             pattern_set_name: self.pattern_set_name,

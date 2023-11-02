@@ -145,34 +145,34 @@ impl ConsumerDescriptionBuilder {
     /// - [`consumer_status`](crate::types::builders::ConsumerDescriptionBuilder::consumer_status)
     /// - [`consumer_creation_timestamp`](crate::types::builders::ConsumerDescriptionBuilder::consumer_creation_timestamp)
     /// - [`stream_arn`](crate::types::builders::ConsumerDescriptionBuilder::stream_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::ConsumerDescription, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ConsumerDescription, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ConsumerDescription {
             consumer_name: self.consumer_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "consumer_name",
                     "consumer_name was not specified but it is required when building ConsumerDescription",
                 )
             })?,
             consumer_arn: self.consumer_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "consumer_arn",
                     "consumer_arn was not specified but it is required when building ConsumerDescription",
                 )
             })?,
             consumer_status: self.consumer_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "consumer_status",
                     "consumer_status was not specified but it is required when building ConsumerDescription",
                 )
             })?,
             consumer_creation_timestamp: self.consumer_creation_timestamp.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "consumer_creation_timestamp",
                     "consumer_creation_timestamp was not specified but it is required when building ConsumerDescription",
                 )
             })?,
             stream_arn: self.stream_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "stream_arn",
                     "stream_arn was not specified but it is required when building ConsumerDescription",
                 )

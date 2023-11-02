@@ -65,7 +65,7 @@ where
 pub fn ser_cloudwatch_alarm_action(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CloudwatchAlarmAction,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("roleArn").string(input.role_arn.as_str());
     }

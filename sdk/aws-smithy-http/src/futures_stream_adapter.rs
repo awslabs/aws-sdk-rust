@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use crate::body::SdkBody;
-use crate::byte_stream::error::Error as ByteStreamError;
-use crate::byte_stream::ByteStream;
+use aws_smithy_types::body::SdkBody;
+use aws_smithy_types::byte_stream::error::Error as ByteStreamError;
+use aws_smithy_types::byte_stream::ByteStream;
 use bytes::Bytes;
 use futures_core::stream::Stream;
 use std::pin::Pin;

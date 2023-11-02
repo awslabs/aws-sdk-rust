@@ -101,7 +101,7 @@ impl UnlinkIdentityInputBuilder {
     /// Consumes the builder and constructs a [`UnlinkIdentityInput`](crate::operation::unlink_identity::UnlinkIdentityInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::unlink_identity::UnlinkIdentityInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::unlink_identity::UnlinkIdentityInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::unlink_identity::UnlinkIdentityInput {
             identity_id: self.identity_id,
             logins: self.logins,

@@ -120,17 +120,17 @@ impl LakeFormationDataPermissionAssetBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`lake_formation_data_permission_type`](crate::types::builders::LakeFormationDataPermissionAssetBuilder::lake_formation_data_permission_type)
     /// - [`permissions`](crate::types::builders::LakeFormationDataPermissionAssetBuilder::permissions)
-    pub fn build(self) -> ::std::result::Result<crate::types::LakeFormationDataPermissionAsset, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::LakeFormationDataPermissionAsset, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::LakeFormationDataPermissionAsset {
             lake_formation_data_permission_details: self.lake_formation_data_permission_details,
             lake_formation_data_permission_type: self.lake_formation_data_permission_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "lake_formation_data_permission_type",
                     "lake_formation_data_permission_type was not specified but it is required when building LakeFormationDataPermissionAsset",
                 )
             })?,
             permissions: self.permissions.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "permissions",
                     "permissions was not specified but it is required when building LakeFormationDataPermissionAsset",
                 )

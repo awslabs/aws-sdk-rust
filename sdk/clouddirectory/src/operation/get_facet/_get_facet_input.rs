@@ -64,7 +64,7 @@ impl GetFacetInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`GetFacetInput`](crate::operation::get_facet::GetFacetInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_facet::GetFacetInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_facet::GetFacetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_facet::GetFacetInput {
             schema_arn: self.schema_arn,
             name: self.name,

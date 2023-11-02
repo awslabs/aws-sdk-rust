@@ -68,7 +68,7 @@ impl DescribeAuditSuppressionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_audit_suppression::DescribeAuditSuppressionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_audit_suppression::DescribeAuditSuppressionInput {
             check_name: self.check_name,

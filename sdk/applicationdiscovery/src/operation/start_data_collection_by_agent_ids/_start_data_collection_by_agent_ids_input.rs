@@ -53,7 +53,7 @@ impl StartDataCollectionByAgentIdsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_data_collection_by_agent_ids::StartDataCollectionByAgentIdsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_data_collection_by_agent_ids::StartDataCollectionByAgentIdsInput {
             agent_ids: self.agent_ids,

@@ -145,7 +145,7 @@ impl CreateMultiplexInputBuilder {
     /// Consumes the builder and constructs a [`CreateMultiplexInput`](crate::operation::create_multiplex::CreateMultiplexInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_multiplex::CreateMultiplexInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_multiplex::CreateMultiplexInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_multiplex::CreateMultiplexInput {
             availability_zones: self.availability_zones,
             multiplex_settings: self.multiplex_settings,

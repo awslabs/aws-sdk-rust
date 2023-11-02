@@ -44,7 +44,7 @@ impl StopCrawlerScheduleInputBuilder {
     /// Consumes the builder and constructs a [`StopCrawlerScheduleInput`](crate::operation::stop_crawler_schedule::StopCrawlerScheduleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_crawler_schedule::StopCrawlerScheduleInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::stop_crawler_schedule::StopCrawlerScheduleInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::stop_crawler_schedule::StopCrawlerScheduleInput {
             crawler_name: self.crawler_name,

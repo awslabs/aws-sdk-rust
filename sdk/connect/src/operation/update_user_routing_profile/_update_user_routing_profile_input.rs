@@ -90,7 +90,7 @@ impl UpdateUserRoutingProfileInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_user_routing_profile::UpdateUserRoutingProfileInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_user_routing_profile::UpdateUserRoutingProfileInput {
             routing_profile_id: self.routing_profile_id,

@@ -138,7 +138,7 @@ impl DescribeTrustedAdvisorCheckResultInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_trusted_advisor_check_result::DescribeTrustedAdvisorCheckResultInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_trusted_advisor_check_result::DescribeTrustedAdvisorCheckResultInput {

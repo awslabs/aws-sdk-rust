@@ -143,7 +143,7 @@ impl CreateWorldExportJobInputBuilder {
     /// Consumes the builder and constructs a [`CreateWorldExportJobInput`](crate::operation::create_world_export_job::CreateWorldExportJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_world_export_job::CreateWorldExportJobInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_world_export_job::CreateWorldExportJobInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_world_export_job::CreateWorldExportJobInput {
             client_request_token: self.client_request_token,

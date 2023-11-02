@@ -67,10 +67,10 @@ impl RecognizedBotMemberBuilder {
     /// Consumes the builder and constructs a [`RecognizedBotMember`](crate::types::RecognizedBotMember).
     /// This method will fail if any of the following fields are not set:
     /// - [`bot_id`](crate::types::builders::RecognizedBotMemberBuilder::bot_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::RecognizedBotMember, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RecognizedBotMember, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RecognizedBotMember {
             bot_id: self.bot_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "bot_id",
                     "bot_id was not specified but it is required when building RecognizedBotMember",
                 )

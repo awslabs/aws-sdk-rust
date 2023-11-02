@@ -94,22 +94,22 @@ impl RuleBuilder {
     /// - [`detector_id`](crate::types::builders::RuleBuilder::detector_id)
     /// - [`rule_id`](crate::types::builders::RuleBuilder::rule_id)
     /// - [`rule_version`](crate::types::builders::RuleBuilder::rule_version)
-    pub fn build(self) -> ::std::result::Result<crate::types::Rule, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Rule, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Rule {
             detector_id: self.detector_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "detector_id",
                     "detector_id was not specified but it is required when building Rule",
                 )
             })?,
             rule_id: self.rule_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "rule_id",
                     "rule_id was not specified but it is required when building Rule",
                 )
             })?,
             rule_version: self.rule_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "rule_version",
                     "rule_version was not specified but it is required when building Rule",
                 )

@@ -107,7 +107,7 @@ impl ListExperimentsInputBuilder {
     /// Consumes the builder and constructs a [`ListExperimentsInput`](crate::operation::list_experiments::ListExperimentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_experiments::ListExperimentsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_experiments::ListExperimentsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_experiments::ListExperimentsInput {
             project: self.project,
             max_results: self.max_results,

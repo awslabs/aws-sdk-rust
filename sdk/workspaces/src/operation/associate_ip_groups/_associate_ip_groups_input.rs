@@ -73,7 +73,7 @@ impl AssociateIpGroupsInputBuilder {
     /// Consumes the builder and constructs a [`AssociateIpGroupsInput`](crate::operation::associate_ip_groups::AssociateIpGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::associate_ip_groups::AssociateIpGroupsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::associate_ip_groups::AssociateIpGroupsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::associate_ip_groups::AssociateIpGroupsInput {
             directory_id: self.directory_id,
             group_ids: self.group_ids,

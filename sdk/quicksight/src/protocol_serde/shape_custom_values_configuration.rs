@@ -2,7 +2,7 @@
 pub fn ser_custom_values_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CustomValuesConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.include_null_value {
         object.key("IncludeNullValue").boolean(*var_1);
     }

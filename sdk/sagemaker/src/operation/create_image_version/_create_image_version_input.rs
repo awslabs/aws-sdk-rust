@@ -379,7 +379,8 @@ impl CreateImageVersionInputBuilder {
     /// Consumes the builder and constructs a [`CreateImageVersionInput`](crate::operation::create_image_version::CreateImageVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_image_version::CreateImageVersionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_image_version::CreateImageVersionInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_image_version::CreateImageVersionInput {
             base_image: self.base_image,
             client_token: self.client_token,

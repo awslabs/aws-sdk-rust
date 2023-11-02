@@ -44,7 +44,7 @@ impl DeleteOptOutListInputBuilder {
     /// Consumes the builder and constructs a [`DeleteOptOutListInput`](crate::operation::delete_opt_out_list::DeleteOptOutListInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_opt_out_list::DeleteOptOutListInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_opt_out_list::DeleteOptOutListInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_opt_out_list::DeleteOptOutListInput {
             opt_out_list_name: self.opt_out_list_name,
         })

@@ -135,10 +135,10 @@ impl DocumentInfoBuilder {
     /// Consumes the builder and constructs a [`DocumentInfo`](crate::types::DocumentInfo).
     /// This method will fail if any of the following fields are not set:
     /// - [`document_id`](crate::types::builders::DocumentInfoBuilder::document_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::DocumentInfo, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DocumentInfo, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DocumentInfo {
             document_id: self.document_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "document_id",
                     "document_id was not specified but it is required when building DocumentInfo",
                 )

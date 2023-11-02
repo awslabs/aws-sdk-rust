@@ -512,7 +512,7 @@ impl CreateClientVpnEndpointInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_client_vpn_endpoint::CreateClientVpnEndpointInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_client_vpn_endpoint::CreateClientVpnEndpointInput {
             client_cidr_block: self.client_cidr_block,

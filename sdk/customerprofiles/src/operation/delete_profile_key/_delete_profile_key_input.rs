@@ -117,7 +117,7 @@ impl DeleteProfileKeyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteProfileKeyInput`](crate::operation::delete_profile_key::DeleteProfileKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_profile_key::DeleteProfileKeyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_profile_key::DeleteProfileKeyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_profile_key::DeleteProfileKeyInput {
             profile_id: self.profile_id,
             key_name: self.key_name,

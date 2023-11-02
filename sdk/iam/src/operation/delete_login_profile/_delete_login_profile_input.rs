@@ -49,7 +49,8 @@ impl DeleteLoginProfileInputBuilder {
     /// Consumes the builder and constructs a [`DeleteLoginProfileInput`](crate::operation::delete_login_profile::DeleteLoginProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_login_profile::DeleteLoginProfileInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_login_profile::DeleteLoginProfileInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::delete_login_profile::DeleteLoginProfileInput { user_name: self.user_name })
     }
 }

@@ -74,13 +74,13 @@ pub fn de_create_bucket_http_response(
 pub fn ser_create_bucket_headers(
     input: &crate::operation::create_bucket::CreateBucketInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.acl {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
             let header_value = formatted_2;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "acl",
                     format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
@@ -93,7 +93,7 @@ pub fn ser_create_bucket_headers(
         if !formatted_4.is_empty() {
             let header_value = formatted_4;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "grant_full_control",
                     format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
@@ -106,7 +106,7 @@ pub fn ser_create_bucket_headers(
         if !formatted_6.is_empty() {
             let header_value = formatted_6;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "grant_read",
                     format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
@@ -119,7 +119,7 @@ pub fn ser_create_bucket_headers(
         if !formatted_8.is_empty() {
             let header_value = formatted_8;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "grant_read_acp",
                     format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
@@ -132,7 +132,7 @@ pub fn ser_create_bucket_headers(
         if !formatted_10.is_empty() {
             let header_value = formatted_10;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "grant_write",
                     format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
@@ -145,7 +145,7 @@ pub fn ser_create_bucket_headers(
         if !formatted_12.is_empty() {
             let header_value = formatted_12;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "grant_write_acp",
                     format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
@@ -159,7 +159,7 @@ pub fn ser_create_bucket_headers(
         if !formatted_14.is_empty() {
             let header_value = formatted_14;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "object_lock_enabled_for_bucket",
                     format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
@@ -172,7 +172,7 @@ pub fn ser_create_bucket_headers(
         if !formatted_16.is_empty() {
             let header_value = formatted_16;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "outpost_id",
                     format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )

@@ -114,7 +114,7 @@ impl StartBulkDeploymentInputBuilder {
     /// Consumes the builder and constructs a [`StartBulkDeploymentInput`](crate::operation::start_bulk_deployment::StartBulkDeploymentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_bulk_deployment::StartBulkDeploymentInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::start_bulk_deployment::StartBulkDeploymentInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_bulk_deployment::StartBulkDeploymentInput {
             amzn_client_token: self.amzn_client_token,

@@ -243,7 +243,7 @@ impl UpdateEndpointGroupInputBuilder {
     /// Consumes the builder and constructs a [`UpdateEndpointGroupInput`](crate::operation::update_endpoint_group::UpdateEndpointGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_endpoint_group::UpdateEndpointGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_endpoint_group::UpdateEndpointGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_endpoint_group::UpdateEndpointGroupInput {
             endpoint_group_arn: self.endpoint_group_arn,

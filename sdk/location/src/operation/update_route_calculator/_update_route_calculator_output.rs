@@ -125,23 +125,23 @@ impl UpdateRouteCalculatorOutputBuilder {
     /// - [`update_time`](crate::operation::update_route_calculator::builders::UpdateRouteCalculatorOutputBuilder::update_time)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_route_calculator::UpdateRouteCalculatorOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_route_calculator::UpdateRouteCalculatorOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_route_calculator::UpdateRouteCalculatorOutput {
             calculator_name: self.calculator_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "calculator_name",
                     "calculator_name was not specified but it is required when building UpdateRouteCalculatorOutput",
                 )
             })?,
             calculator_arn: self.calculator_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "calculator_arn",
                     "calculator_arn was not specified but it is required when building UpdateRouteCalculatorOutput",
                 )
             })?,
             update_time: self.update_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "update_time",
                     "update_time was not specified but it is required when building UpdateRouteCalculatorOutput",
                 )

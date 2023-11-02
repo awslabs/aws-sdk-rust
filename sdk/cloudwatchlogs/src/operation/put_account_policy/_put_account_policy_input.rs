@@ -159,7 +159,7 @@ impl PutAccountPolicyInputBuilder {
     /// Consumes the builder and constructs a [`PutAccountPolicyInput`](crate::operation::put_account_policy::PutAccountPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_account_policy::PutAccountPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_account_policy::PutAccountPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_account_policy::PutAccountPolicyInput {
             policy_name: self.policy_name,
             policy_document: self.policy_document,

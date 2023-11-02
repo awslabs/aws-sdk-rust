@@ -46,10 +46,10 @@ impl PardotSourcePropertiesBuilder {
     /// Consumes the builder and constructs a [`PardotSourceProperties`](crate::types::PardotSourceProperties).
     /// This method will fail if any of the following fields are not set:
     /// - [`object`](crate::types::builders::PardotSourcePropertiesBuilder::object)
-    pub fn build(self) -> ::std::result::Result<crate::types::PardotSourceProperties, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PardotSourceProperties, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PardotSourceProperties {
             object: self.object.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "object",
                     "object was not specified but it is required when building PardotSourceProperties",
                 )

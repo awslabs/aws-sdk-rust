@@ -91,16 +91,16 @@ impl OperationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::OperationBuilder::name)
     /// - [`equation`](crate::types::builders::OperationBuilder::equation)
-    pub fn build(self) -> ::std::result::Result<crate::types::Operation, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Operation, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Operation {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building Operation",
                 )
             })?,
             equation: self.equation.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "equation",
                     "equation was not specified but it is required when building Operation",
                 )

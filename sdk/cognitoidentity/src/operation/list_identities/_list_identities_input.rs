@@ -109,7 +109,7 @@ impl ListIdentitiesInputBuilder {
     /// Consumes the builder and constructs a [`ListIdentitiesInput`](crate::operation::list_identities::ListIdentitiesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_identities::ListIdentitiesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_identities::ListIdentitiesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_identities::ListIdentitiesInput {
             identity_pool_id: self.identity_pool_id,
             max_results: self.max_results,

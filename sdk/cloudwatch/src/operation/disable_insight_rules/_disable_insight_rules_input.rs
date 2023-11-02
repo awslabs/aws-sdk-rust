@@ -51,7 +51,7 @@ impl DisableInsightRulesInputBuilder {
     /// Consumes the builder and constructs a [`DisableInsightRulesInput`](crate::operation::disable_insight_rules::DisableInsightRulesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::disable_insight_rules::DisableInsightRulesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::disable_insight_rules::DisableInsightRulesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::disable_insight_rules::DisableInsightRulesInput { rule_names: self.rule_names })
     }

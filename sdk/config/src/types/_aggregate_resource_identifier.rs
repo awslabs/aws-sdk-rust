@@ -138,28 +138,28 @@ impl AggregateResourceIdentifierBuilder {
     /// - [`source_region`](crate::types::builders::AggregateResourceIdentifierBuilder::source_region)
     /// - [`resource_id`](crate::types::builders::AggregateResourceIdentifierBuilder::resource_id)
     /// - [`resource_type`](crate::types::builders::AggregateResourceIdentifierBuilder::resource_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::AggregateResourceIdentifier, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AggregateResourceIdentifier, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AggregateResourceIdentifier {
             source_account_id: self.source_account_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source_account_id",
                     "source_account_id was not specified but it is required when building AggregateResourceIdentifier",
                 )
             })?,
             source_region: self.source_region.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source_region",
                     "source_region was not specified but it is required when building AggregateResourceIdentifier",
                 )
             })?,
             resource_id: self.resource_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_id",
                     "resource_id was not specified but it is required when building AggregateResourceIdentifier",
                 )
             })?,
             resource_type: self.resource_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_type",
                     "resource_type was not specified but it is required when building AggregateResourceIdentifier",
                 )

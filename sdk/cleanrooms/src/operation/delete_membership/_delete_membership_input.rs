@@ -44,7 +44,7 @@ impl DeleteMembershipInputBuilder {
     /// Consumes the builder and constructs a [`DeleteMembershipInput`](crate::operation::delete_membership::DeleteMembershipInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_membership::DeleteMembershipInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_membership::DeleteMembershipInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_membership::DeleteMembershipInput {
             membership_identifier: self.membership_identifier,
         })

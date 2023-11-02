@@ -171,7 +171,7 @@ impl GetDocumentationPartsInputBuilder {
     /// Consumes the builder and constructs a [`GetDocumentationPartsInput`](crate::operation::get_documentation_parts::GetDocumentationPartsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_documentation_parts::GetDocumentationPartsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_documentation_parts::GetDocumentationPartsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_documentation_parts::GetDocumentationPartsInput {
             rest_api_id: self.rest_api_id,

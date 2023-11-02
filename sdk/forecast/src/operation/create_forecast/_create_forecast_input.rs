@@ -230,7 +230,7 @@ impl CreateForecastInputBuilder {
     /// Consumes the builder and constructs a [`CreateForecastInput`](crate::operation::create_forecast::CreateForecastInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_forecast::CreateForecastInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_forecast::CreateForecastInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_forecast::CreateForecastInput {
             forecast_name: self.forecast_name,
             predictor_arn: self.predictor_arn,

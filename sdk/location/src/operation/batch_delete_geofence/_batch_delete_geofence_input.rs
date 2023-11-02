@@ -73,7 +73,7 @@ impl BatchDeleteGeofenceInputBuilder {
     /// Consumes the builder and constructs a [`BatchDeleteGeofenceInput`](crate::operation::batch_delete_geofence::BatchDeleteGeofenceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_delete_geofence::BatchDeleteGeofenceInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::batch_delete_geofence::BatchDeleteGeofenceInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::batch_delete_geofence::BatchDeleteGeofenceInput {
             collection_name: self.collection_name,

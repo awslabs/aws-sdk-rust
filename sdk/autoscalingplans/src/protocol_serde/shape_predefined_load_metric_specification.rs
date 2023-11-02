@@ -2,7 +2,7 @@
 pub fn ser_predefined_load_metric_specification(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PredefinedLoadMetricSpecification,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("PredefinedLoadMetricType").string(input.predefined_load_metric_type.as_str());
     }

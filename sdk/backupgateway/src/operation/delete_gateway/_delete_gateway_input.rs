@@ -44,7 +44,7 @@ impl DeleteGatewayInputBuilder {
     /// Consumes the builder and constructs a [`DeleteGatewayInput`](crate::operation::delete_gateway::DeleteGatewayInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_gateway::DeleteGatewayInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_gateway::DeleteGatewayInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_gateway::DeleteGatewayInput {
             gateway_arn: self.gateway_arn,
         })

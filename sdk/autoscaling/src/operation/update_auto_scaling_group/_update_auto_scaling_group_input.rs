@@ -547,7 +547,7 @@ impl UpdateAutoScalingGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_auto_scaling_group::UpdateAutoScalingGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_auto_scaling_group::UpdateAutoScalingGroupInput {
             auto_scaling_group_name: self.auto_scaling_group_name,

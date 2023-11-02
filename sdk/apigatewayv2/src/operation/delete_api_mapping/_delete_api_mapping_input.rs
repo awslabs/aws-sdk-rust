@@ -66,7 +66,7 @@ impl DeleteApiMappingInputBuilder {
     /// Consumes the builder and constructs a [`DeleteApiMappingInput`](crate::operation::delete_api_mapping::DeleteApiMappingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_api_mapping::DeleteApiMappingInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_api_mapping::DeleteApiMappingInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_api_mapping::DeleteApiMappingInput {
             api_mapping_id: self.api_mapping_id,
             domain_name: self.domain_name,

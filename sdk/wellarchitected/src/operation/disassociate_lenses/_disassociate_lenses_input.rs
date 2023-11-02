@@ -79,7 +79,7 @@ impl DisassociateLensesInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateLensesInput`](crate::operation::disassociate_lenses::DisassociateLensesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::disassociate_lenses::DisassociateLensesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::disassociate_lenses::DisassociateLensesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::disassociate_lenses::DisassociateLensesInput {
             workload_id: self.workload_id,
             lens_aliases: self.lens_aliases,

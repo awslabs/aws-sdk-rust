@@ -87,7 +87,7 @@ impl GetRoomSkillParameterInputBuilder {
     /// Consumes the builder and constructs a [`GetRoomSkillParameterInput`](crate::operation::get_room_skill_parameter::GetRoomSkillParameterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_room_skill_parameter::GetRoomSkillParameterInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_room_skill_parameter::GetRoomSkillParameterInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_room_skill_parameter::GetRoomSkillParameterInput {
             room_arn: self.room_arn,

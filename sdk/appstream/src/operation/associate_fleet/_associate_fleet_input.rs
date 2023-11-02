@@ -66,7 +66,7 @@ impl AssociateFleetInputBuilder {
     /// Consumes the builder and constructs a [`AssociateFleetInput`](crate::operation::associate_fleet::AssociateFleetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::associate_fleet::AssociateFleetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::associate_fleet::AssociateFleetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::associate_fleet::AssociateFleetInput {
             fleet_name: self.fleet_name,
             stack_name: self.stack_name,

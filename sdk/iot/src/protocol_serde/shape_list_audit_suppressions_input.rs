@@ -2,7 +2,7 @@
 pub fn ser_list_audit_suppressions_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_audit_suppressions::ListAuditSuppressionsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.ascending_order {
         object.key("ascendingOrder").boolean(*var_1);
     }

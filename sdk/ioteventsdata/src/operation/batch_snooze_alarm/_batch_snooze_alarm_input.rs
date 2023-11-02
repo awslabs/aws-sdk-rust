@@ -51,7 +51,7 @@ impl BatchSnoozeAlarmInputBuilder {
     /// Consumes the builder and constructs a [`BatchSnoozeAlarmInput`](crate::operation::batch_snooze_alarm::BatchSnoozeAlarmInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_snooze_alarm::BatchSnoozeAlarmInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::batch_snooze_alarm::BatchSnoozeAlarmInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::batch_snooze_alarm::BatchSnoozeAlarmInput {
             snooze_action_requests: self.snooze_action_requests,
         })

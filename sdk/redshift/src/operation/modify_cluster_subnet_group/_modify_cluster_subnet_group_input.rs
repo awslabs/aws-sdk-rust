@@ -97,7 +97,7 @@ impl ModifyClusterSubnetGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_cluster_subnet_group::ModifyClusterSubnetGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::modify_cluster_subnet_group::ModifyClusterSubnetGroupInput {
             cluster_subnet_group_name: self.cluster_subnet_group_name,

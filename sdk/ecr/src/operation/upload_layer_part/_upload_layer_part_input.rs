@@ -153,7 +153,7 @@ impl UploadLayerPartInputBuilder {
     /// Consumes the builder and constructs a [`UploadLayerPartInput`](crate::operation::upload_layer_part::UploadLayerPartInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::upload_layer_part::UploadLayerPartInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::upload_layer_part::UploadLayerPartInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::upload_layer_part::UploadLayerPartInput {
             registry_id: self.registry_id,
             repository_name: self.repository_name,

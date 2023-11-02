@@ -137,24 +137,24 @@ impl ChunkBuilder {
     /// - [`checksum`](crate::types::builders::ChunkBuilder::checksum)
     /// - [`checksum_algorithm`](crate::types::builders::ChunkBuilder::checksum_algorithm)
     /// - [`chunk_token`](crate::types::builders::ChunkBuilder::chunk_token)
-    pub fn build(self) -> ::std::result::Result<crate::types::Chunk, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Chunk, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Chunk {
             index: self.index.unwrap_or_default(),
             length: self.length.unwrap_or_default(),
             checksum: self.checksum.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "checksum",
                     "checksum was not specified but it is required when building Chunk",
                 )
             })?,
             checksum_algorithm: self.checksum_algorithm.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "checksum_algorithm",
                     "checksum_algorithm was not specified but it is required when building Chunk",
                 )
             })?,
             chunk_token: self.chunk_token.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "chunk_token",
                     "chunk_token was not specified but it is required when building Chunk",
                 )

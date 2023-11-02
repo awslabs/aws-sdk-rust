@@ -280,56 +280,56 @@ impl ImportAssetFromApiGatewayApiResponseDetailsBuilder {
     /// - [`stage`](crate::types::builders::ImportAssetFromApiGatewayApiResponseDetailsBuilder::stage)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::ImportAssetFromApiGatewayApiResponseDetails, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::ImportAssetFromApiGatewayApiResponseDetails, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(
             crate::types::ImportAssetFromApiGatewayApiResponseDetails {
                 api_description: self.api_description
                 ,
                 api_id: self.api_id
                     .ok_or_else(||
-                        ::aws_smithy_http::operation::error::BuildError::missing_field("api_id", "api_id was not specified but it is required when building ImportAssetFromApiGatewayApiResponseDetails")
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("api_id", "api_id was not specified but it is required when building ImportAssetFromApiGatewayApiResponseDetails")
                     )?
                 ,
                 api_key: self.api_key
                 ,
                 api_name: self.api_name
                     .ok_or_else(||
-                        ::aws_smithy_http::operation::error::BuildError::missing_field("api_name", "api_name was not specified but it is required when building ImportAssetFromApiGatewayApiResponseDetails")
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("api_name", "api_name was not specified but it is required when building ImportAssetFromApiGatewayApiResponseDetails")
                     )?
                 ,
                 api_specification_md5_hash: self.api_specification_md5_hash
                     .ok_or_else(||
-                        ::aws_smithy_http::operation::error::BuildError::missing_field("api_specification_md5_hash", "api_specification_md5_hash was not specified but it is required when building ImportAssetFromApiGatewayApiResponseDetails")
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("api_specification_md5_hash", "api_specification_md5_hash was not specified but it is required when building ImportAssetFromApiGatewayApiResponseDetails")
                     )?
                 ,
                 api_specification_upload_url: self.api_specification_upload_url
                     .ok_or_else(||
-                        ::aws_smithy_http::operation::error::BuildError::missing_field("api_specification_upload_url", "api_specification_upload_url was not specified but it is required when building ImportAssetFromApiGatewayApiResponseDetails")
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("api_specification_upload_url", "api_specification_upload_url was not specified but it is required when building ImportAssetFromApiGatewayApiResponseDetails")
                     )?
                 ,
                 api_specification_upload_url_expires_at: self.api_specification_upload_url_expires_at
                     .ok_or_else(||
-                        ::aws_smithy_http::operation::error::BuildError::missing_field("api_specification_upload_url_expires_at", "api_specification_upload_url_expires_at was not specified but it is required when building ImportAssetFromApiGatewayApiResponseDetails")
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("api_specification_upload_url_expires_at", "api_specification_upload_url_expires_at was not specified but it is required when building ImportAssetFromApiGatewayApiResponseDetails")
                     )?
                 ,
                 data_set_id: self.data_set_id
                     .ok_or_else(||
-                        ::aws_smithy_http::operation::error::BuildError::missing_field("data_set_id", "data_set_id was not specified but it is required when building ImportAssetFromApiGatewayApiResponseDetails")
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("data_set_id", "data_set_id was not specified but it is required when building ImportAssetFromApiGatewayApiResponseDetails")
                     )?
                 ,
                 protocol_type: self.protocol_type
                     .ok_or_else(||
-                        ::aws_smithy_http::operation::error::BuildError::missing_field("protocol_type", "protocol_type was not specified but it is required when building ImportAssetFromApiGatewayApiResponseDetails")
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("protocol_type", "protocol_type was not specified but it is required when building ImportAssetFromApiGatewayApiResponseDetails")
                     )?
                 ,
                 revision_id: self.revision_id
                     .ok_or_else(||
-                        ::aws_smithy_http::operation::error::BuildError::missing_field("revision_id", "revision_id was not specified but it is required when building ImportAssetFromApiGatewayApiResponseDetails")
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("revision_id", "revision_id was not specified but it is required when building ImportAssetFromApiGatewayApiResponseDetails")
                     )?
                 ,
                 stage: self.stage
                     .ok_or_else(||
-                        ::aws_smithy_http::operation::error::BuildError::missing_field("stage", "stage was not specified but it is required when building ImportAssetFromApiGatewayApiResponseDetails")
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("stage", "stage was not specified but it is required when building ImportAssetFromApiGatewayApiResponseDetails")
                     )?
                 ,
             }

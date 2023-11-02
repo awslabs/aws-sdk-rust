@@ -51,10 +51,10 @@ impl AndStatementBuilder {
     /// Consumes the builder and constructs a [`AndStatement`](crate::types::AndStatement).
     /// This method will fail if any of the following fields are not set:
     /// - [`statements`](crate::types::builders::AndStatementBuilder::statements)
-    pub fn build(self) -> ::std::result::Result<crate::types::AndStatement, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AndStatement, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AndStatement {
             statements: self.statements.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "statements",
                     "statements was not specified but it is required when building AndStatement",
                 )

@@ -44,7 +44,7 @@ impl DeleteOpsItemInputBuilder {
     /// Consumes the builder and constructs a [`DeleteOpsItemInput`](crate::operation::delete_ops_item::DeleteOpsItemInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_ops_item::DeleteOpsItemInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_ops_item::DeleteOpsItemInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_ops_item::DeleteOpsItemInput {
             ops_item_id: self.ops_item_id,
         })

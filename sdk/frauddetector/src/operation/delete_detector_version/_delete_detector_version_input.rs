@@ -66,7 +66,7 @@ impl DeleteDetectorVersionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDetectorVersionInput`](crate::operation::delete_detector_version::DeleteDetectorVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_detector_version::DeleteDetectorVersionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_detector_version::DeleteDetectorVersionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_detector_version::DeleteDetectorVersionInput {
             detector_id: self.detector_id,

@@ -157,7 +157,7 @@ impl ListReceivedLicensesInputBuilder {
     /// Consumes the builder and constructs a [`ListReceivedLicensesInput`](crate::operation::list_received_licenses::ListReceivedLicensesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_received_licenses::ListReceivedLicensesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_received_licenses::ListReceivedLicensesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_received_licenses::ListReceivedLicensesInput {
             license_arns: self.license_arns,

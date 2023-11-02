@@ -123,28 +123,28 @@ impl OriginationIdentityMetadataBuilder {
     /// - [`origination_identity`](crate::types::builders::OriginationIdentityMetadataBuilder::origination_identity)
     /// - [`iso_country_code`](crate::types::builders::OriginationIdentityMetadataBuilder::iso_country_code)
     /// - [`number_capabilities`](crate::types::builders::OriginationIdentityMetadataBuilder::number_capabilities)
-    pub fn build(self) -> ::std::result::Result<crate::types::OriginationIdentityMetadata, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::OriginationIdentityMetadata, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::OriginationIdentityMetadata {
             origination_identity_arn: self.origination_identity_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "origination_identity_arn",
                     "origination_identity_arn was not specified but it is required when building OriginationIdentityMetadata",
                 )
             })?,
             origination_identity: self.origination_identity.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "origination_identity",
                     "origination_identity was not specified but it is required when building OriginationIdentityMetadata",
                 )
             })?,
             iso_country_code: self.iso_country_code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "iso_country_code",
                     "iso_country_code was not specified but it is required when building OriginationIdentityMetadata",
                 )
             })?,
             number_capabilities: self.number_capabilities.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "number_capabilities",
                     "number_capabilities was not specified but it is required when building OriginationIdentityMetadata",
                 )

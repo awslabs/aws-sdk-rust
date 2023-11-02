@@ -90,7 +90,7 @@ impl OverridePullRequestApprovalRulesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::override_pull_request_approval_rules::OverridePullRequestApprovalRulesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::override_pull_request_approval_rules::OverridePullRequestApprovalRulesInput {

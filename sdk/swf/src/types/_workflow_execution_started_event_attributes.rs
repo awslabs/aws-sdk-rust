@@ -328,13 +328,13 @@ impl WorkflowExecutionStartedEventAttributesBuilder {
     /// - [`child_policy`](crate::types::builders::WorkflowExecutionStartedEventAttributesBuilder::child_policy)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::WorkflowExecutionStartedEventAttributes, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::WorkflowExecutionStartedEventAttributes, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::WorkflowExecutionStartedEventAttributes {
             input: self.input,
             execution_start_to_close_timeout: self.execution_start_to_close_timeout,
             task_start_to_close_timeout: self.task_start_to_close_timeout,
             child_policy: self.child_policy.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "child_policy",
                     "child_policy was not specified but it is required when building WorkflowExecutionStartedEventAttributes",
                 )

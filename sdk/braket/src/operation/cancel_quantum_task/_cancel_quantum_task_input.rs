@@ -66,7 +66,7 @@ impl CancelQuantumTaskInputBuilder {
     /// Consumes the builder and constructs a [`CancelQuantumTaskInput`](crate::operation::cancel_quantum_task::CancelQuantumTaskInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::cancel_quantum_task::CancelQuantumTaskInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::cancel_quantum_task::CancelQuantumTaskInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::cancel_quantum_task::CancelQuantumTaskInput {
             quantum_task_arn: self.quantum_task_arn,
             client_token: self.client_token,

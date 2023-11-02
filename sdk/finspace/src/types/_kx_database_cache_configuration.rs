@@ -90,16 +90,16 @@ impl KxDatabaseCacheConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`cache_type`](crate::types::builders::KxDatabaseCacheConfigurationBuilder::cache_type)
     /// - [`db_paths`](crate::types::builders::KxDatabaseCacheConfigurationBuilder::db_paths)
-    pub fn build(self) -> ::std::result::Result<crate::types::KxDatabaseCacheConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::KxDatabaseCacheConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::KxDatabaseCacheConfiguration {
             cache_type: self.cache_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "cache_type",
                     "cache_type was not specified but it is required when building KxDatabaseCacheConfiguration",
                 )
             })?,
             db_paths: self.db_paths.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "db_paths",
                     "db_paths was not specified but it is required when building KxDatabaseCacheConfiguration",
                 )

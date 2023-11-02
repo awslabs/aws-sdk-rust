@@ -229,7 +229,7 @@ impl UpdateQualificationTypeInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_qualification_type::UpdateQualificationTypeInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_qualification_type::UpdateQualificationTypeInput {
             qualification_type_id: self.qualification_type_id,

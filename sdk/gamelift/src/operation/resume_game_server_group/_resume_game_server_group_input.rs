@@ -73,7 +73,7 @@ impl ResumeGameServerGroupInputBuilder {
     /// Consumes the builder and constructs a [`ResumeGameServerGroupInput`](crate::operation::resume_game_server_group::ResumeGameServerGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::resume_game_server_group::ResumeGameServerGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::resume_game_server_group::ResumeGameServerGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::resume_game_server_group::ResumeGameServerGroupInput {
             game_server_group_name: self.game_server_group_name,

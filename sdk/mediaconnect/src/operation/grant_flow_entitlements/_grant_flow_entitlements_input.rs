@@ -74,7 +74,7 @@ impl GrantFlowEntitlementsInputBuilder {
     /// Consumes the builder and constructs a [`GrantFlowEntitlementsInput`](crate::operation::grant_flow_entitlements::GrantFlowEntitlementsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::grant_flow_entitlements::GrantFlowEntitlementsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::grant_flow_entitlements::GrantFlowEntitlementsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::grant_flow_entitlements::GrantFlowEntitlementsInput {
             entitlements: self.entitlements,

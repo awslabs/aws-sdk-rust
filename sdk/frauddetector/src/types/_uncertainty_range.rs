@@ -68,16 +68,16 @@ impl UncertaintyRangeBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`lower_bound_value`](crate::types::builders::UncertaintyRangeBuilder::lower_bound_value)
     /// - [`upper_bound_value`](crate::types::builders::UncertaintyRangeBuilder::upper_bound_value)
-    pub fn build(self) -> ::std::result::Result<crate::types::UncertaintyRange, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::UncertaintyRange, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::UncertaintyRange {
             lower_bound_value: self.lower_bound_value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "lower_bound_value",
                     "lower_bound_value was not specified but it is required when building UncertaintyRange",
                 )
             })?,
             upper_bound_value: self.upper_bound_value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "upper_bound_value",
                     "upper_bound_value was not specified but it is required when building UncertaintyRange",
                 )

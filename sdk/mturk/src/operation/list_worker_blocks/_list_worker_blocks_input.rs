@@ -64,7 +64,7 @@ impl ListWorkerBlocksInputBuilder {
     /// Consumes the builder and constructs a [`ListWorkerBlocksInput`](crate::operation::list_worker_blocks::ListWorkerBlocksInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_worker_blocks::ListWorkerBlocksInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_worker_blocks::ListWorkerBlocksInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_worker_blocks::ListWorkerBlocksInput {
             next_token: self.next_token,
             max_results: self.max_results,

@@ -2,7 +2,7 @@
 pub fn ser_enable_aws_service_access_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::enable_aws_service_access::EnableAwsServiceAccessInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.service_principal {
         object.key("ServicePrincipal").string(var_1.as_str());
     }

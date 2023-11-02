@@ -44,7 +44,7 @@ impl GetRateBasedRuleInputBuilder {
     /// Consumes the builder and constructs a [`GetRateBasedRuleInput`](crate::operation::get_rate_based_rule::GetRateBasedRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_rate_based_rule::GetRateBasedRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_rate_based_rule::GetRateBasedRuleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_rate_based_rule::GetRateBasedRuleInput { rule_id: self.rule_id })
     }
 }

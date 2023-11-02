@@ -86,7 +86,7 @@ impl DeleteAliasInputBuilder {
         &self.alias
     }
     /// Consumes the builder and constructs a [`DeleteAliasInput`](crate::operation::delete_alias::DeleteAliasInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_alias::DeleteAliasInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_alias::DeleteAliasInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_alias::DeleteAliasInput {
             organization_id: self.organization_id,
             entity_id: self.entity_id,

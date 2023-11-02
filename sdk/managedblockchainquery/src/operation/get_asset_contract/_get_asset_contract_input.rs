@@ -44,7 +44,7 @@ impl GetAssetContractInputBuilder {
     /// Consumes the builder and constructs a [`GetAssetContractInput`](crate::operation::get_asset_contract::GetAssetContractInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_asset_contract::GetAssetContractInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_asset_contract::GetAssetContractInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_asset_contract::GetAssetContractInput {
             contract_identifier: self.contract_identifier,
         })

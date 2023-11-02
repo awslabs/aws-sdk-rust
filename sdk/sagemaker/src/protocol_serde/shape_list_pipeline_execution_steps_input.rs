@@ -2,7 +2,7 @@
 pub fn ser_list_pipeline_execution_steps_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_pipeline_execution_steps::ListPipelineExecutionStepsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.pipeline_execution_arn {
         object.key("PipelineExecutionArn").string(var_1.as_str());
     }

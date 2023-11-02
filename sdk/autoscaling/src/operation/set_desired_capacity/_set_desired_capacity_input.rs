@@ -87,7 +87,8 @@ impl SetDesiredCapacityInputBuilder {
     /// Consumes the builder and constructs a [`SetDesiredCapacityInput`](crate::operation::set_desired_capacity::SetDesiredCapacityInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::set_desired_capacity::SetDesiredCapacityInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::set_desired_capacity::SetDesiredCapacityInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::set_desired_capacity::SetDesiredCapacityInput {
             auto_scaling_group_name: self.auto_scaling_group_name,
             desired_capacity: self.desired_capacity,

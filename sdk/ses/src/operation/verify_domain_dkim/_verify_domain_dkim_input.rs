@@ -45,7 +45,7 @@ impl VerifyDomainDkimInputBuilder {
     /// Consumes the builder and constructs a [`VerifyDomainDkimInput`](crate::operation::verify_domain_dkim::VerifyDomainDkimInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::verify_domain_dkim::VerifyDomainDkimInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::verify_domain_dkim::VerifyDomainDkimInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::verify_domain_dkim::VerifyDomainDkimInput { domain: self.domain })
     }
 }

@@ -2,7 +2,7 @@
 pub fn ser_pivot_table_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PivotTableOptions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.metric_placement {
         object.key("MetricPlacement").string(var_1.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_list_anomalous_log_groups_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_anomalous_log_groups::ListAnomalousLogGroupsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.insight_id {
         object.key("InsightId").string(var_1.as_str());
     }

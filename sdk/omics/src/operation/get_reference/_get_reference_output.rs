@@ -4,12 +4,12 @@
 #[derive(::std::fmt::Debug)]
 pub struct GetReferenceOutput {
     /// <p>The reference file payload.</p>
-    pub payload: ::aws_smithy_http::byte_stream::ByteStream,
+    pub payload: ::aws_smithy_types::byte_stream::ByteStream,
     _request_id: Option<String>,
 }
 impl GetReferenceOutput {
     /// <p>The reference file payload.</p>
-    pub fn payload(&self) -> &::aws_smithy_http::byte_stream::ByteStream {
+    pub fn payload(&self) -> &::aws_smithy_types::byte_stream::ByteStream {
         &self.payload
     }
 }
@@ -29,22 +29,22 @@ impl GetReferenceOutput {
 #[non_exhaustive]
 #[derive(::std::default::Default, ::std::fmt::Debug)]
 pub struct GetReferenceOutputBuilder {
-    pub(crate) payload: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
+    pub(crate) payload: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>,
     _request_id: Option<String>,
 }
 impl GetReferenceOutputBuilder {
     /// <p>The reference file payload.</p>
-    pub fn payload(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
+    pub fn payload(mut self, input: ::aws_smithy_types::byte_stream::ByteStream) -> Self {
         self.payload = ::std::option::Option::Some(input);
         self
     }
     /// <p>The reference file payload.</p>
-    pub fn set_payload(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
+    pub fn set_payload(mut self, input: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>) -> Self {
         self.payload = input;
         self
     }
     /// <p>The reference file payload.</p>
-    pub fn get_payload(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+    pub fn get_payload(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
         &self.payload
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

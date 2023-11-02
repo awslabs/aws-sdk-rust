@@ -108,11 +108,11 @@ impl WebsiteAuthorizationProviderSummaryBuilder {
     /// Consumes the builder and constructs a [`WebsiteAuthorizationProviderSummary`](crate::types::WebsiteAuthorizationProviderSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`authorization_provider_type`](crate::types::builders::WebsiteAuthorizationProviderSummaryBuilder::authorization_provider_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::WebsiteAuthorizationProviderSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::WebsiteAuthorizationProviderSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::WebsiteAuthorizationProviderSummary {
             authorization_provider_id: self.authorization_provider_id,
             authorization_provider_type: self.authorization_provider_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "authorization_provider_type",
                     "authorization_provider_type was not specified but it is required when building WebsiteAuthorizationProviderSummary",
                 )

@@ -278,60 +278,60 @@ impl VariantStoreItemBuilder {
     /// - [`update_time`](crate::types::builders::VariantStoreItemBuilder::update_time)
     /// - [`status_message`](crate::types::builders::VariantStoreItemBuilder::status_message)
     /// - [`store_size_bytes`](crate::types::builders::VariantStoreItemBuilder::store_size_bytes)
-    pub fn build(self) -> ::std::result::Result<crate::types::VariantStoreItem, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::VariantStoreItem, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::VariantStoreItem {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building VariantStoreItem",
                 )
             })?,
             reference: self.reference,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building VariantStoreItem",
                 )
             })?,
             store_arn: self.store_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "store_arn",
                     "store_arn was not specified but it is required when building VariantStoreItem",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building VariantStoreItem",
                 )
             })?,
             description: self.description.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "description",
                     "description was not specified but it is required when building VariantStoreItem",
                 )
             })?,
             sse_config: self.sse_config,
             creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_time",
                     "creation_time was not specified but it is required when building VariantStoreItem",
                 )
             })?,
             update_time: self.update_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "update_time",
                     "update_time was not specified but it is required when building VariantStoreItem",
                 )
             })?,
             status_message: self.status_message.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status_message",
                     "status_message was not specified but it is required when building VariantStoreItem",
                 )
             })?,
             store_size_bytes: self.store_size_bytes.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "store_size_bytes",
                     "store_size_bytes was not specified but it is required when building VariantStoreItem",
                 )

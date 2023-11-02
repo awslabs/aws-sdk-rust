@@ -69,10 +69,11 @@ impl DescribeSuggestersOutputBuilder {
     /// - [`suggesters`](crate::operation::describe_suggesters::builders::DescribeSuggestersOutputBuilder::suggesters)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_suggesters::DescribeSuggestersOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_suggesters::DescribeSuggestersOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::describe_suggesters::DescribeSuggestersOutput {
             suggesters: self.suggesters.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "suggesters",
                     "suggesters was not specified but it is required when building DescribeSuggestersOutput",
                 )

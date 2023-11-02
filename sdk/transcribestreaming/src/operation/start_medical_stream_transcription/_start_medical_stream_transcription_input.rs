@@ -378,7 +378,7 @@ impl StartMedicalStreamTranscriptionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionInput {
@@ -391,7 +391,7 @@ impl StartMedicalStreamTranscriptionInputBuilder {
                 show_speaker_label: self.show_speaker_label,
                 session_id: self.session_id,
                 audio_stream: self.audio_stream.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
                         "audio_stream",
                         "audio_stream was not specified but it is required when building StartMedicalStreamTranscriptionInput",
                     )

@@ -47,7 +47,7 @@ impl AcceptInboundConnectionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::accept_inbound_connection::AcceptInboundConnectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::accept_inbound_connection::AcceptInboundConnectionInput {
             connection_id: self.connection_id,

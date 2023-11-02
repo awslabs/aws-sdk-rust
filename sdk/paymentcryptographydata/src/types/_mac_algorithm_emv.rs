@@ -149,28 +149,28 @@ impl MacAlgorithmEmvBuilder {
     /// - [`primary_account_number`](crate::types::builders::MacAlgorithmEmvBuilder::primary_account_number)
     /// - [`pan_sequence_number`](crate::types::builders::MacAlgorithmEmvBuilder::pan_sequence_number)
     /// - [`session_key_derivation_mode`](crate::types::builders::MacAlgorithmEmvBuilder::session_key_derivation_mode)
-    pub fn build(self) -> ::std::result::Result<crate::types::MacAlgorithmEmv, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::MacAlgorithmEmv, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MacAlgorithmEmv {
             major_key_derivation_mode: self.major_key_derivation_mode.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "major_key_derivation_mode",
                     "major_key_derivation_mode was not specified but it is required when building MacAlgorithmEmv",
                 )
             })?,
             primary_account_number: self.primary_account_number.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "primary_account_number",
                     "primary_account_number was not specified but it is required when building MacAlgorithmEmv",
                 )
             })?,
             pan_sequence_number: self.pan_sequence_number.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "pan_sequence_number",
                     "pan_sequence_number was not specified but it is required when building MacAlgorithmEmv",
                 )
             })?,
             session_key_derivation_mode: self.session_key_derivation_mode.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "session_key_derivation_mode",
                     "session_key_derivation_mode was not specified but it is required when building MacAlgorithmEmv",
                 )

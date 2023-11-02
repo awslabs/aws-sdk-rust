@@ -69,7 +69,7 @@ impl ListPolicyStoresInputBuilder {
     /// Consumes the builder and constructs a [`ListPolicyStoresInput`](crate::operation::list_policy_stores::ListPolicyStoresInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_policy_stores::ListPolicyStoresInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_policy_stores::ListPolicyStoresInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_policy_stores::ListPolicyStoresInput {
             next_token: self.next_token,
             max_results: self.max_results,

@@ -2,7 +2,7 @@
 pub fn ser_put_verification_state_on_violation_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_verification_state_on_violation::PutVerificationStateOnViolationInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.verification_state {
         object.key("verificationState").string(var_1.as_str());
     }

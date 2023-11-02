@@ -44,7 +44,7 @@ impl GetQueryResultsInputBuilder {
     /// Consumes the builder and constructs a [`GetQueryResultsInput`](crate::operation::get_query_results::GetQueryResultsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_query_results::GetQueryResultsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_query_results::GetQueryResultsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_query_results::GetQueryResultsInput { query_id: self.query_id })
     }
 }

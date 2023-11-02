@@ -107,7 +107,7 @@ impl ListTopicRulesInputBuilder {
     /// Consumes the builder and constructs a [`ListTopicRulesInput`](crate::operation::list_topic_rules::ListTopicRulesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_topic_rules::ListTopicRulesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_topic_rules::ListTopicRulesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_topic_rules::ListTopicRulesInput {
             topic: self.topic,
             max_results: self.max_results,

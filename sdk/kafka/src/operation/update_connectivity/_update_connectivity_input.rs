@@ -89,7 +89,7 @@ impl UpdateConnectivityInputBuilder {
     /// Consumes the builder and constructs a [`UpdateConnectivityInput`](crate::operation::update_connectivity::UpdateConnectivityInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_connectivity::UpdateConnectivityInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_connectivity::UpdateConnectivityInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_connectivity::UpdateConnectivityInput {
             cluster_arn: self.cluster_arn,
             connectivity_info: self.connectivity_info,

@@ -310,7 +310,7 @@ impl DescribeCapacityReservationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_capacity_reservations::DescribeCapacityReservationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_capacity_reservations::DescribeCapacityReservationsInput {
             capacity_reservation_ids: self.capacity_reservation_ids,

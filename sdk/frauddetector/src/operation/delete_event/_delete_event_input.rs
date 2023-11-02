@@ -85,7 +85,7 @@ impl DeleteEventInputBuilder {
         &self.delete_audit_history
     }
     /// Consumes the builder and constructs a [`DeleteEventInput`](crate::operation::delete_event::DeleteEventInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_event::DeleteEventInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_event::DeleteEventInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_event::DeleteEventInput {
             event_id: self.event_id,
             event_type_name: self.event_type_name,

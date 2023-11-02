@@ -179,10 +179,10 @@ impl FeaturizationConfigBuilder {
     /// Consumes the builder and constructs a [`FeaturizationConfig`](crate::types::FeaturizationConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`forecast_frequency`](crate::types::builders::FeaturizationConfigBuilder::forecast_frequency)
-    pub fn build(self) -> ::std::result::Result<crate::types::FeaturizationConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::FeaturizationConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FeaturizationConfig {
             forecast_frequency: self.forecast_frequency.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "forecast_frequency",
                     "forecast_frequency was not specified but it is required when building FeaturizationConfig",
                 )

@@ -78,7 +78,7 @@ impl UpdateAutomaticTapeCreationPolicyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_automatic_tape_creation_policy::UpdateAutomaticTapeCreationPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::update_automatic_tape_creation_policy::UpdateAutomaticTapeCreationPolicyInput {

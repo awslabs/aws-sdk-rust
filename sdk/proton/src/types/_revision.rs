@@ -141,34 +141,34 @@ impl RevisionBuilder {
     /// - [`sha`](crate::types::builders::RevisionBuilder::sha)
     /// - [`directory`](crate::types::builders::RevisionBuilder::directory)
     /// - [`branch`](crate::types::builders::RevisionBuilder::branch)
-    pub fn build(self) -> ::std::result::Result<crate::types::Revision, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Revision, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Revision {
             repository_name: self.repository_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "repository_name",
                     "repository_name was not specified but it is required when building Revision",
                 )
             })?,
             repository_provider: self.repository_provider.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "repository_provider",
                     "repository_provider was not specified but it is required when building Revision",
                 )
             })?,
             sha: self.sha.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "sha",
                     "sha was not specified but it is required when building Revision",
                 )
             })?,
             directory: self.directory.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "directory",
                     "directory was not specified but it is required when building Revision",
                 )
             })?,
             branch: self.branch.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "branch",
                     "branch was not specified but it is required when building Revision",
                 )

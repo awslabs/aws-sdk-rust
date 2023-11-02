@@ -60,7 +60,7 @@ where
 pub fn ser_grammar_slot_type_source(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GrammarSlotTypeSource,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("s3BucketName").string(input.s3_bucket_name.as_str());
     }

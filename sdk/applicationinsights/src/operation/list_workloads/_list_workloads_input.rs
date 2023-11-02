@@ -129,7 +129,7 @@ impl ListWorkloadsInputBuilder {
     /// Consumes the builder and constructs a [`ListWorkloadsInput`](crate::operation::list_workloads::ListWorkloadsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_workloads::ListWorkloadsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_workloads::ListWorkloadsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_workloads::ListWorkloadsInput {
             resource_group_name: self.resource_group_name,
             component_name: self.component_name,

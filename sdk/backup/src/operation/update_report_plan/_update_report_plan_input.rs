@@ -138,7 +138,7 @@ impl UpdateReportPlanInputBuilder {
     /// Consumes the builder and constructs a [`UpdateReportPlanInput`](crate::operation::update_report_plan::UpdateReportPlanInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_report_plan::UpdateReportPlanInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_report_plan::UpdateReportPlanInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_report_plan::UpdateReportPlanInput {
             report_plan_name: self.report_plan_name,
             report_plan_description: self.report_plan_description,

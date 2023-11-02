@@ -2,7 +2,7 @@
 pub fn ser_tenant(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Tenant,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("tenantIdentifier").string(input.tenant_identifier.as_str());
     }

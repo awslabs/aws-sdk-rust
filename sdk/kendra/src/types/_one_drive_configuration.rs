@@ -210,16 +210,16 @@ impl OneDriveConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`tenant_domain`](crate::types::builders::OneDriveConfigurationBuilder::tenant_domain)
     /// - [`secret_arn`](crate::types::builders::OneDriveConfigurationBuilder::secret_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::OneDriveConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::OneDriveConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::OneDriveConfiguration {
             tenant_domain: self.tenant_domain.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "tenant_domain",
                     "tenant_domain was not specified but it is required when building OneDriveConfiguration",
                 )
             })?,
             secret_arn: self.secret_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "secret_arn",
                     "secret_arn was not specified but it is required when building OneDriveConfiguration",
                 )

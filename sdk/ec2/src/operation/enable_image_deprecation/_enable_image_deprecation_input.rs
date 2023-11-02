@@ -92,8 +92,10 @@ impl EnableImageDeprecationInputBuilder {
     /// Consumes the builder and constructs a [`EnableImageDeprecationInput`](crate::operation::enable_image_deprecation::EnableImageDeprecationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::enable_image_deprecation::EnableImageDeprecationInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::enable_image_deprecation::EnableImageDeprecationInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::enable_image_deprecation::EnableImageDeprecationInput {
             image_id: self.image_id,
             deprecate_at: self.deprecate_at,

@@ -2,7 +2,7 @@
 pub fn ser_firehose_stream(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FirehoseStream,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("streamName").string(input.stream_name.as_str());
     }

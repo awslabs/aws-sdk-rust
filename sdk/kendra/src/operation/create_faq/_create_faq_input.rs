@@ -236,7 +236,7 @@ impl CreateFaqInputBuilder {
         &self.language_code
     }
     /// Consumes the builder and constructs a [`CreateFaqInput`](crate::operation::create_faq::CreateFaqInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_faq::CreateFaqInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_faq::CreateFaqInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_faq::CreateFaqInput {
             index_id: self.index_id,
             name: self.name,

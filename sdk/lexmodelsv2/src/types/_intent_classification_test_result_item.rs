@@ -90,10 +90,10 @@ impl IntentClassificationTestResultItemBuilder {
     /// Consumes the builder and constructs a [`IntentClassificationTestResultItem`](crate::types::IntentClassificationTestResultItem).
     /// This method will fail if any of the following fields are not set:
     /// - [`intent_name`](crate::types::builders::IntentClassificationTestResultItemBuilder::intent_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::IntentClassificationTestResultItem, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::IntentClassificationTestResultItem, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::IntentClassificationTestResultItem {
             intent_name: self.intent_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "intent_name",
                     "intent_name was not specified but it is required when building IntentClassificationTestResultItem",
                 )

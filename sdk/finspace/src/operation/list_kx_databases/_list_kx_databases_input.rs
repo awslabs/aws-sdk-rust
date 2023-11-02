@@ -86,7 +86,7 @@ impl ListKxDatabasesInputBuilder {
     /// Consumes the builder and constructs a [`ListKxDatabasesInput`](crate::operation::list_kx_databases::ListKxDatabasesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_kx_databases::ListKxDatabasesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_kx_databases::ListKxDatabasesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_kx_databases::ListKxDatabasesInput {
             environment_id: self.environment_id,
             next_token: self.next_token,

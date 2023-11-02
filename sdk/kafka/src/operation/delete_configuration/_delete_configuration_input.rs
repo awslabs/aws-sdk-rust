@@ -44,7 +44,7 @@ impl DeleteConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`DeleteConfigurationInput`](crate::operation::delete_configuration::DeleteConfigurationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_configuration::DeleteConfigurationInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_configuration::DeleteConfigurationInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_configuration::DeleteConfigurationInput { arn: self.arn })
     }

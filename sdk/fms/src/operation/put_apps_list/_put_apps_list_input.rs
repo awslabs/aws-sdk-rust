@@ -71,7 +71,7 @@ impl PutAppsListInputBuilder {
         &self.tag_list
     }
     /// Consumes the builder and constructs a [`PutAppsListInput`](crate::operation::put_apps_list::PutAppsListInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_apps_list::PutAppsListInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_apps_list::PutAppsListInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_apps_list::PutAppsListInput {
             apps_list: self.apps_list,
             tag_list: self.tag_list,

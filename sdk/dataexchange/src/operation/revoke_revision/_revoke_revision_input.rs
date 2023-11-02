@@ -88,7 +88,7 @@ impl RevokeRevisionInputBuilder {
     /// Consumes the builder and constructs a [`RevokeRevisionInput`](crate::operation::revoke_revision::RevokeRevisionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::revoke_revision::RevokeRevisionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::revoke_revision::RevokeRevisionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::revoke_revision::RevokeRevisionInput {
             data_set_id: self.data_set_id,
             revision_id: self.revision_id,

@@ -51,10 +51,10 @@ impl HierarchicalPrincipalBuilder {
     /// Consumes the builder and constructs a [`HierarchicalPrincipal`](crate::types::HierarchicalPrincipal).
     /// This method will fail if any of the following fields are not set:
     /// - [`principal_list`](crate::types::builders::HierarchicalPrincipalBuilder::principal_list)
-    pub fn build(self) -> ::std::result::Result<crate::types::HierarchicalPrincipal, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::HierarchicalPrincipal, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::HierarchicalPrincipal {
             principal_list: self.principal_list.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "principal_list",
                     "principal_list was not specified but it is required when building HierarchicalPrincipal",
                 )

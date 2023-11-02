@@ -66,7 +66,7 @@ impl DescribeBotAliasInputBuilder {
     /// Consumes the builder and constructs a [`DescribeBotAliasInput`](crate::operation::describe_bot_alias::DescribeBotAliasInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_bot_alias::DescribeBotAliasInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_bot_alias::DescribeBotAliasInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_bot_alias::DescribeBotAliasInput {
             bot_alias_id: self.bot_alias_id,
             bot_id: self.bot_id,

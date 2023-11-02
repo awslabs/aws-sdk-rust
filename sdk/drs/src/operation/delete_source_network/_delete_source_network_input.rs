@@ -44,7 +44,7 @@ impl DeleteSourceNetworkInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSourceNetworkInput`](crate::operation::delete_source_network::DeleteSourceNetworkInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_source_network::DeleteSourceNetworkInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_source_network::DeleteSourceNetworkInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_source_network::DeleteSourceNetworkInput {
             source_network_id: self.source_network_id,

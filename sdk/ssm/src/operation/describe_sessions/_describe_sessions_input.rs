@@ -115,7 +115,7 @@ impl DescribeSessionsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeSessionsInput`](crate::operation::describe_sessions::DescribeSessionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_sessions::DescribeSessionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_sessions::DescribeSessionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_sessions::DescribeSessionsInput {
             state: self.state,
             max_results: self.max_results,

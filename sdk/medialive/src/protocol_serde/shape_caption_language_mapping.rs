@@ -2,7 +2,7 @@
 pub fn ser_caption_language_mapping(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CaptionLanguageMapping,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.caption_channel {
         object.key("captionChannel").number(
             #[allow(clippy::useless_conversion)]

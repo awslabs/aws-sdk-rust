@@ -105,7 +105,7 @@ impl CreatePhoneNumberOrderInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_phone_number_order::CreatePhoneNumberOrderInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_phone_number_order::CreatePhoneNumberOrderInput {
             product_type: self.product_type,

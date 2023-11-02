@@ -138,7 +138,7 @@ impl ListSecretsInputBuilder {
         &self.sort_order
     }
     /// Consumes the builder and constructs a [`ListSecretsInput`](crate::operation::list_secrets::ListSecretsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_secrets::ListSecretsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_secrets::ListSecretsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_secrets::ListSecretsInput {
             include_planned_deletion: self.include_planned_deletion,
             max_results: self.max_results,

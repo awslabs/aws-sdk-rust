@@ -97,11 +97,11 @@ impl CustomColorBuilder {
     /// Consumes the builder and constructs a [`CustomColor`](crate::types::CustomColor).
     /// This method will fail if any of the following fields are not set:
     /// - [`color`](crate::types::builders::CustomColorBuilder::color)
-    pub fn build(self) -> ::std::result::Result<crate::types::CustomColor, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CustomColor, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CustomColor {
             field_value: self.field_value,
             color: self.color.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "color",
                     "color was not specified but it is required when building CustomColor",
                 )

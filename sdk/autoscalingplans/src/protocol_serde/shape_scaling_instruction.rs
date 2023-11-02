@@ -2,7 +2,7 @@
 pub fn ser_scaling_instruction(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ScalingInstruction,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("ServiceNamespace").string(input.service_namespace.as_str());
     }

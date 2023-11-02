@@ -46,7 +46,7 @@ impl StartSourceNetworkReplicationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_source_network_replication::StartSourceNetworkReplicationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_source_network_replication::StartSourceNetworkReplicationInput {
             source_network_id: self.source_network_id,

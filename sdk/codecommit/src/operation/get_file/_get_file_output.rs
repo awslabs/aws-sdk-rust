@@ -187,35 +187,35 @@ impl GetFileOutputBuilder {
     /// - [`file_path`](crate::operation::get_file::builders::GetFileOutputBuilder::file_path)
     /// - [`file_mode`](crate::operation::get_file::builders::GetFileOutputBuilder::file_mode)
     /// - [`file_content`](crate::operation::get_file::builders::GetFileOutputBuilder::file_content)
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_file::GetFileOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_file::GetFileOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_file::GetFileOutput {
             commit_id: self.commit_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "commit_id",
                     "commit_id was not specified but it is required when building GetFileOutput",
                 )
             })?,
             blob_id: self.blob_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "blob_id",
                     "blob_id was not specified but it is required when building GetFileOutput",
                 )
             })?,
             file_path: self.file_path.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "file_path",
                     "file_path was not specified but it is required when building GetFileOutput",
                 )
             })?,
             file_mode: self.file_mode.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "file_mode",
                     "file_mode was not specified but it is required when building GetFileOutput",
                 )
             })?,
             file_size: self.file_size.unwrap_or_default(),
             file_content: self.file_content.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "file_content",
                     "file_content was not specified but it is required when building GetFileOutput",
                 )

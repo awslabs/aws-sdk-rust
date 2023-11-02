@@ -73,7 +73,7 @@ impl ModifyEndpointAccessInputBuilder {
     /// Consumes the builder and constructs a [`ModifyEndpointAccessInput`](crate::operation::modify_endpoint_access::ModifyEndpointAccessInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::modify_endpoint_access::ModifyEndpointAccessInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::modify_endpoint_access::ModifyEndpointAccessInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::modify_endpoint_access::ModifyEndpointAccessInput {
             endpoint_name: self.endpoint_name,

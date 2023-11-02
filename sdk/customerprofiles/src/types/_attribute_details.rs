@@ -83,16 +83,16 @@ impl AttributeDetailsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`attributes`](crate::types::builders::AttributeDetailsBuilder::attributes)
     /// - [`expression`](crate::types::builders::AttributeDetailsBuilder::expression)
-    pub fn build(self) -> ::std::result::Result<crate::types::AttributeDetails, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AttributeDetails, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AttributeDetails {
             attributes: self.attributes.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "attributes",
                     "attributes was not specified but it is required when building AttributeDetails",
                 )
             })?,
             expression: self.expression.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "expression",
                     "expression was not specified but it is required when building AttributeDetails",
                 )

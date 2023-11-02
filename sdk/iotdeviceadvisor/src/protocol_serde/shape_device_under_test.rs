@@ -2,7 +2,7 @@
 pub fn ser_device_under_test(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DeviceUnderTest,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.thing_arn {
         object.key("thingArn").string(var_1.as_str());
     }

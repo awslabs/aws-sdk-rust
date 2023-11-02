@@ -2,7 +2,7 @@
 pub fn ser_udp_output_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UdpOutputSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.buffer_msec {
         object.key("bufferMsec").number(
             #[allow(clippy::useless_conversion)]

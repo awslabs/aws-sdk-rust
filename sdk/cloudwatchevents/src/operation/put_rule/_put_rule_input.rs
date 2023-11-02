@@ -202,7 +202,7 @@ impl PutRuleInputBuilder {
         &self.event_bus_name
     }
     /// Consumes the builder and constructs a [`PutRuleInput`](crate::operation::put_rule::PutRuleInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_rule::PutRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_rule::PutRuleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_rule::PutRuleInput {
             name: self.name,
             schedule_expression: self.schedule_expression,

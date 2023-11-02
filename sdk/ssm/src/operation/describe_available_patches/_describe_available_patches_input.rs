@@ -245,7 +245,7 @@ impl DescribeAvailablePatchesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_available_patches::DescribeAvailablePatchesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_available_patches::DescribeAvailablePatchesInput {
             filters: self.filters,

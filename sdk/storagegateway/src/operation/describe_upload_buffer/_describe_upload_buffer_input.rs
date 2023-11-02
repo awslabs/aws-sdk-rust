@@ -44,7 +44,7 @@ impl DescribeUploadBufferInputBuilder {
     /// Consumes the builder and constructs a [`DescribeUploadBufferInput`](crate::operation::describe_upload_buffer::DescribeUploadBufferInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_upload_buffer::DescribeUploadBufferInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_upload_buffer::DescribeUploadBufferInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_upload_buffer::DescribeUploadBufferInput {
             gateway_arn: self.gateway_arn,

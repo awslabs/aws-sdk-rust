@@ -66,8 +66,10 @@ impl DeleteAuditSuppressionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAuditSuppressionInput`](crate::operation::delete_audit_suppression::DeleteAuditSuppressionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_audit_suppression::DeleteAuditSuppressionInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::delete_audit_suppression::DeleteAuditSuppressionInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::delete_audit_suppression::DeleteAuditSuppressionInput {
             check_name: self.check_name,
             resource_identifier: self.resource_identifier,

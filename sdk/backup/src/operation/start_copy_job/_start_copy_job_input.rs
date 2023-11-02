@@ -162,7 +162,7 @@ impl StartCopyJobInputBuilder {
     /// Consumes the builder and constructs a [`StartCopyJobInput`](crate::operation::start_copy_job::StartCopyJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_copy_job::StartCopyJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_copy_job::StartCopyJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_copy_job::StartCopyJobInput {
             recovery_point_arn: self.recovery_point_arn,
             source_backup_vault_name: self.source_backup_vault_name,

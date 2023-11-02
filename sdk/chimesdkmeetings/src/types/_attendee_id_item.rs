@@ -46,10 +46,10 @@ impl AttendeeIdItemBuilder {
     /// Consumes the builder and constructs a [`AttendeeIdItem`](crate::types::AttendeeIdItem).
     /// This method will fail if any of the following fields are not set:
     /// - [`attendee_id`](crate::types::builders::AttendeeIdItemBuilder::attendee_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::AttendeeIdItem, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AttendeeIdItem, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AttendeeIdItem {
             attendee_id: self.attendee_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "attendee_id",
                     "attendee_id was not specified but it is required when building AttendeeIdItem",
                 )

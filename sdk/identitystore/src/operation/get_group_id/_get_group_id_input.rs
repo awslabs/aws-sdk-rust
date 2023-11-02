@@ -64,7 +64,7 @@ impl GetGroupIdInputBuilder {
         &self.alternate_identifier
     }
     /// Consumes the builder and constructs a [`GetGroupIdInput`](crate::operation::get_group_id::GetGroupIdInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_group_id::GetGroupIdInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_group_id::GetGroupIdInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_group_id::GetGroupIdInput {
             identity_store_id: self.identity_store_id,
             alternate_identifier: self.alternate_identifier,

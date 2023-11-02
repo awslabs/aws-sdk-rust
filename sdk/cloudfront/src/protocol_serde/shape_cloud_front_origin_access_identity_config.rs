@@ -2,7 +2,7 @@
 pub fn ser_cloud_front_origin_access_identity_config(
     input: &crate::types::CloudFrontOriginAccessIdentityConfig,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     {

@@ -271,7 +271,7 @@ impl ListIntentMetricsInputBuilder {
     /// Consumes the builder and constructs a [`ListIntentMetricsInput`](crate::operation::list_intent_metrics::ListIntentMetricsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_intent_metrics::ListIntentMetricsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_intent_metrics::ListIntentMetricsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_intent_metrics::ListIntentMetricsInput {
             bot_id: self.bot_id,
             start_date_time: self.start_date_time,

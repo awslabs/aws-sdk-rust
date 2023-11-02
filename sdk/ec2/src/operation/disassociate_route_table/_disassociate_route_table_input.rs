@@ -65,8 +65,10 @@ impl DisassociateRouteTableInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateRouteTableInput`](crate::operation::disassociate_route_table::DisassociateRouteTableInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::disassociate_route_table::DisassociateRouteTableInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_route_table::DisassociateRouteTableInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::disassociate_route_table::DisassociateRouteTableInput {
             association_id: self.association_id,
             dry_run: self.dry_run,

@@ -95,7 +95,7 @@ impl StopExecutionInputBuilder {
     /// Consumes the builder and constructs a [`StopExecutionInput`](crate::operation::stop_execution::StopExecutionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_execution::StopExecutionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::stop_execution::StopExecutionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_execution::StopExecutionInput {
             execution_arn: self.execution_arn,
             error: self.error,

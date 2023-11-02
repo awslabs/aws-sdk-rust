@@ -135,22 +135,22 @@ impl StreamSummaryBuilder {
     /// - [`stream_name`](crate::types::builders::StreamSummaryBuilder::stream_name)
     /// - [`stream_arn`](crate::types::builders::StreamSummaryBuilder::stream_arn)
     /// - [`stream_status`](crate::types::builders::StreamSummaryBuilder::stream_status)
-    pub fn build(self) -> ::std::result::Result<crate::types::StreamSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::StreamSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::StreamSummary {
             stream_name: self.stream_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "stream_name",
                     "stream_name was not specified but it is required when building StreamSummary",
                 )
             })?,
             stream_arn: self.stream_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "stream_arn",
                     "stream_arn was not specified but it is required when building StreamSummary",
                 )
             })?,
             stream_status: self.stream_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "stream_status",
                     "stream_status was not specified but it is required when building StreamSummary",
                 )

@@ -247,38 +247,38 @@ impl ThemeBuilder {
     /// - [`name`](crate::types::builders::ThemeBuilder::name)
     /// - [`created_at`](crate::types::builders::ThemeBuilder::created_at)
     /// - [`values`](crate::types::builders::ThemeBuilder::values)
-    pub fn build(self) -> ::std::result::Result<crate::types::Theme, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Theme, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Theme {
             app_id: self.app_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "app_id",
                     "app_id was not specified but it is required when building Theme",
                 )
             })?,
             environment_name: self.environment_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "environment_name",
                     "environment_name was not specified but it is required when building Theme",
                 )
             })?,
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field("id", "id was not specified but it is required when building Theme")
+                ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building Theme")
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building Theme",
                 )
             })?,
             created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
                     "created_at was not specified but it is required when building Theme",
                 )
             })?,
             modified_at: self.modified_at,
             values: self.values.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "values",
                     "values was not specified but it is required when building Theme",
                 )

@@ -84,7 +84,9 @@ impl ListControlsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListControlsInput`](crate::operation::list_controls::ListControlsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_controls::ListControlsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_controls::ListControlsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_controls::ListControlsInput {
             control_type: self.control_type,
             next_token: self.next_token,

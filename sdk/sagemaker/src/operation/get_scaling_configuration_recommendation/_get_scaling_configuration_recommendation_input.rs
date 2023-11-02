@@ -140,7 +140,7 @@ impl GetScalingConfigurationRecommendationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_scaling_configuration_recommendation::GetScalingConfigurationRecommendationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_scaling_configuration_recommendation::GetScalingConfigurationRecommendationInput {

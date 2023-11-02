@@ -97,7 +97,7 @@ impl SubmitMultiRegionAccessPointRoutesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesInput {

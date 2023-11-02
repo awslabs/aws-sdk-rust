@@ -136,22 +136,22 @@ impl RemediationExceptionBuilder {
     /// - [`config_rule_name`](crate::types::builders::RemediationExceptionBuilder::config_rule_name)
     /// - [`resource_type`](crate::types::builders::RemediationExceptionBuilder::resource_type)
     /// - [`resource_id`](crate::types::builders::RemediationExceptionBuilder::resource_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::RemediationException, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RemediationException, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RemediationException {
             config_rule_name: self.config_rule_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "config_rule_name",
                     "config_rule_name was not specified but it is required when building RemediationException",
                 )
             })?,
             resource_type: self.resource_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_type",
                     "resource_type was not specified but it is required when building RemediationException",
                 )
             })?,
             resource_id: self.resource_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_id",
                     "resource_id was not specified but it is required when building RemediationException",
                 )

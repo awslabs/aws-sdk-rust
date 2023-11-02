@@ -44,7 +44,8 @@ impl DescribeThingGroupInputBuilder {
     /// Consumes the builder and constructs a [`DescribeThingGroupInput`](crate::operation::describe_thing_group::DescribeThingGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_thing_group::DescribeThingGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_thing_group::DescribeThingGroupInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::describe_thing_group::DescribeThingGroupInput {
             thing_group_name: self.thing_group_name,
         })

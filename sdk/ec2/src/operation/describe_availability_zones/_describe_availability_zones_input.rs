@@ -218,7 +218,7 @@ impl DescribeAvailabilityZonesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_availability_zones::DescribeAvailabilityZonesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_availability_zones::DescribeAvailabilityZonesInput {
             filters: self.filters,

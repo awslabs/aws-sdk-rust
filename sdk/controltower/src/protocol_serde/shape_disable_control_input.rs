@@ -2,7 +2,7 @@
 pub fn ser_disable_control_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::disable_control::DisableControlInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.control_identifier {
         object.key("controlIdentifier").string(var_1.as_str());
     }

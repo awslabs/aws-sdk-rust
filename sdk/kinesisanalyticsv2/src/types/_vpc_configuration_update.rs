@@ -104,10 +104,10 @@ impl VpcConfigurationUpdateBuilder {
     /// Consumes the builder and constructs a [`VpcConfigurationUpdate`](crate::types::VpcConfigurationUpdate).
     /// This method will fail if any of the following fields are not set:
     /// - [`vpc_configuration_id`](crate::types::builders::VpcConfigurationUpdateBuilder::vpc_configuration_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::VpcConfigurationUpdate, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::VpcConfigurationUpdate, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::VpcConfigurationUpdate {
             vpc_configuration_id: self.vpc_configuration_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "vpc_configuration_id",
                     "vpc_configuration_id was not specified but it is required when building VpcConfigurationUpdate",
                 )

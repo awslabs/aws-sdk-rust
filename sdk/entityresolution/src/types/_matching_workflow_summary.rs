@@ -139,34 +139,34 @@ impl MatchingWorkflowSummaryBuilder {
     /// - [`created_at`](crate::types::builders::MatchingWorkflowSummaryBuilder::created_at)
     /// - [`updated_at`](crate::types::builders::MatchingWorkflowSummaryBuilder::updated_at)
     /// - [`resolution_type`](crate::types::builders::MatchingWorkflowSummaryBuilder::resolution_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::MatchingWorkflowSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::MatchingWorkflowSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MatchingWorkflowSummary {
             workflow_name: self.workflow_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "workflow_name",
                     "workflow_name was not specified but it is required when building MatchingWorkflowSummary",
                 )
             })?,
             workflow_arn: self.workflow_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "workflow_arn",
                     "workflow_arn was not specified but it is required when building MatchingWorkflowSummary",
                 )
             })?,
             created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
                     "created_at was not specified but it is required when building MatchingWorkflowSummary",
                 )
             })?,
             updated_at: self.updated_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "updated_at",
                     "updated_at was not specified but it is required when building MatchingWorkflowSummary",
                 )
             })?,
             resolution_type: self.resolution_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resolution_type",
                     "resolution_type was not specified but it is required when building MatchingWorkflowSummary",
                 )

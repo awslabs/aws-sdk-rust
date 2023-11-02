@@ -46,7 +46,7 @@ impl DeleteMatchmakingRuleSetInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_matchmaking_rule_set::DeleteMatchmakingRuleSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_matchmaking_rule_set::DeleteMatchmakingRuleSetInput { name: self.name })
     }

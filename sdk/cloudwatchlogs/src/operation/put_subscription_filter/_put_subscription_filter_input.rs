@@ -182,7 +182,7 @@ impl PutSubscriptionFilterInputBuilder {
     /// Consumes the builder and constructs a [`PutSubscriptionFilterInput`](crate::operation::put_subscription_filter::PutSubscriptionFilterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_subscription_filter::PutSubscriptionFilterInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::put_subscription_filter::PutSubscriptionFilterInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::put_subscription_filter::PutSubscriptionFilterInput {
             log_group_name: self.log_group_name,

@@ -155,22 +155,22 @@ impl StatisticsNotAvailableExceptionBuilder {
     /// - [`code`](crate::types::error::builders::StatisticsNotAvailableExceptionBuilder::code)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::error::StatisticsNotAvailableException, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::error::StatisticsNotAvailableException, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::error::StatisticsNotAvailableException {
             detailed_message: self.detailed_message.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "detailed_message",
                     "detailed_message was not specified but it is required when building StatisticsNotAvailableException",
                 )
             })?,
             request_id: self.request_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "request_id",
                     "request_id was not specified but it is required when building StatisticsNotAvailableException",
                 )
             })?,
             code: self.code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "code",
                     "code was not specified but it is required when building StatisticsNotAvailableException",
                 )

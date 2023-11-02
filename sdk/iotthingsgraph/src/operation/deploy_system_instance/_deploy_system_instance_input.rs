@@ -53,7 +53,7 @@ impl DeploySystemInstanceInputBuilder {
     /// Consumes the builder and constructs a [`DeploySystemInstanceInput`](crate::operation::deploy_system_instance::DeploySystemInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::deploy_system_instance::DeploySystemInstanceInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::deploy_system_instance::DeploySystemInstanceInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::deploy_system_instance::DeploySystemInstanceInput { id: self.id })
     }

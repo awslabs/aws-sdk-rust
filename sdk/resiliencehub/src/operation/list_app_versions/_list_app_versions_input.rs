@@ -128,7 +128,7 @@ impl ListAppVersionsInputBuilder {
     /// Consumes the builder and constructs a [`ListAppVersionsInput`](crate::operation::list_app_versions::ListAppVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_app_versions::ListAppVersionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_app_versions::ListAppVersionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_app_versions::ListAppVersionsInput {
             app_arn: self.app_arn,
             next_token: self.next_token,

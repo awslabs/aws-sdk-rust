@@ -44,7 +44,7 @@ impl CancelSigningProfileInputBuilder {
     /// Consumes the builder and constructs a [`CancelSigningProfileInput`](crate::operation::cancel_signing_profile::CancelSigningProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::cancel_signing_profile::CancelSigningProfileInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::cancel_signing_profile::CancelSigningProfileInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::cancel_signing_profile::CancelSigningProfileInput {
             profile_name: self.profile_name,

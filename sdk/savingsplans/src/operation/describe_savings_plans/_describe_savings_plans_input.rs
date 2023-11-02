@@ -180,7 +180,7 @@ impl DescribeSavingsPlansInputBuilder {
     /// Consumes the builder and constructs a [`DescribeSavingsPlansInput`](crate::operation::describe_savings_plans::DescribeSavingsPlansInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_savings_plans::DescribeSavingsPlansInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_savings_plans::DescribeSavingsPlansInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_savings_plans::DescribeSavingsPlansInput {
             savings_plan_arns: self.savings_plan_arns,

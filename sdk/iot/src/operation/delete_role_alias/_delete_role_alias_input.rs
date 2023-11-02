@@ -44,7 +44,7 @@ impl DeleteRoleAliasInputBuilder {
     /// Consumes the builder and constructs a [`DeleteRoleAliasInput`](crate::operation::delete_role_alias::DeleteRoleAliasInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_role_alias::DeleteRoleAliasInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_role_alias::DeleteRoleAliasInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_role_alias::DeleteRoleAliasInput { role_alias: self.role_alias })
     }
 }

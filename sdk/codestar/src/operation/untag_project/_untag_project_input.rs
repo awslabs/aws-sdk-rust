@@ -71,7 +71,9 @@ impl UntagProjectInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`UntagProjectInput`](crate::operation::untag_project::UntagProjectInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::untag_project::UntagProjectInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::untag_project::UntagProjectInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::untag_project::UntagProjectInput {
             id: self.id,
             tags: self.tags,

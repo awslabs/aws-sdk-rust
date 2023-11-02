@@ -44,7 +44,7 @@ impl DeleteChannelPolicyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteChannelPolicyInput`](crate::operation::delete_channel_policy::DeleteChannelPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_channel_policy::DeleteChannelPolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_channel_policy::DeleteChannelPolicyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_channel_policy::DeleteChannelPolicyInput {
             channel_name: self.channel_name,

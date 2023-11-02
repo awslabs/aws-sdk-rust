@@ -130,7 +130,9 @@ impl DescribeSlotInputBuilder {
         &self.intent_id
     }
     /// Consumes the builder and constructs a [`DescribeSlotInput`](crate::operation::describe_slot::DescribeSlotInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_slot::DescribeSlotInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::describe_slot::DescribeSlotInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_slot::DescribeSlotInput {
             slot_id: self.slot_id,
             bot_id: self.bot_id,

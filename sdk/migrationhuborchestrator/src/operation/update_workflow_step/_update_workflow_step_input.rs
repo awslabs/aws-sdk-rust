@@ -312,7 +312,8 @@ impl UpdateWorkflowStepInputBuilder {
     /// Consumes the builder and constructs a [`UpdateWorkflowStepInput`](crate::operation::update_workflow_step::UpdateWorkflowStepInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_workflow_step::UpdateWorkflowStepInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_workflow_step::UpdateWorkflowStepInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::update_workflow_step::UpdateWorkflowStepInput {
             id: self.id,
             step_group_id: self.step_group_id,

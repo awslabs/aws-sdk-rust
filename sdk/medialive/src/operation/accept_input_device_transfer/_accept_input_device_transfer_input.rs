@@ -47,7 +47,7 @@ impl AcceptInputDeviceTransferInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::accept_input_device_transfer::AcceptInputDeviceTransferInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::accept_input_device_transfer::AcceptInputDeviceTransferInput {
             input_device_id: self.input_device_id,

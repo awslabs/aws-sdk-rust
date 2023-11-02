@@ -213,16 +213,16 @@ impl PostCallAnalyticsSettingsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`output_location`](crate::types::builders::PostCallAnalyticsSettingsBuilder::output_location)
     /// - [`data_access_role_arn`](crate::types::builders::PostCallAnalyticsSettingsBuilder::data_access_role_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::PostCallAnalyticsSettings, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PostCallAnalyticsSettings, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PostCallAnalyticsSettings {
             output_location: self.output_location.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "output_location",
                     "output_location was not specified but it is required when building PostCallAnalyticsSettings",
                 )
             })?,
             data_access_role_arn: self.data_access_role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_access_role_arn",
                     "data_access_role_arn was not specified but it is required when building PostCallAnalyticsSettings",
                 )

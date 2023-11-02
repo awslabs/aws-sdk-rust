@@ -81,7 +81,7 @@ impl BatchDetectSentimentInputBuilder {
     /// Consumes the builder and constructs a [`BatchDetectSentimentInput`](crate::operation::batch_detect_sentiment::BatchDetectSentimentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_detect_sentiment::BatchDetectSentimentInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::batch_detect_sentiment::BatchDetectSentimentInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::batch_detect_sentiment::BatchDetectSentimentInput {
             text_list: self.text_list,

@@ -46,10 +46,10 @@ impl EndpointEventBusBuilder {
     /// Consumes the builder and constructs a [`EndpointEventBus`](crate::types::EndpointEventBus).
     /// This method will fail if any of the following fields are not set:
     /// - [`event_bus_arn`](crate::types::builders::EndpointEventBusBuilder::event_bus_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::EndpointEventBus, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::EndpointEventBus, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EndpointEventBus {
             event_bus_arn: self.event_bus_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "event_bus_arn",
                     "event_bus_arn was not specified but it is required when building EndpointEventBus",
                 )

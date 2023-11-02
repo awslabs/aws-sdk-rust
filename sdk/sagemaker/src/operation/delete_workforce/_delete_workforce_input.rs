@@ -44,7 +44,7 @@ impl DeleteWorkforceInputBuilder {
     /// Consumes the builder and constructs a [`DeleteWorkforceInput`](crate::operation::delete_workforce::DeleteWorkforceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_workforce::DeleteWorkforceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_workforce::DeleteWorkforceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_workforce::DeleteWorkforceInput {
             workforce_name: self.workforce_name,
         })

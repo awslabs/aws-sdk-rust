@@ -145,8 +145,10 @@ impl UpdateVocabularyFilterInputBuilder {
     /// Consumes the builder and constructs a [`UpdateVocabularyFilterInput`](crate::operation::update_vocabulary_filter::UpdateVocabularyFilterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_vocabulary_filter::UpdateVocabularyFilterInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::update_vocabulary_filter::UpdateVocabularyFilterInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::update_vocabulary_filter::UpdateVocabularyFilterInput {
             vocabulary_filter_name: self.vocabulary_filter_name,
             words: self.words,

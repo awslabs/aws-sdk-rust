@@ -86,7 +86,7 @@ impl ListAccountsForParentInputBuilder {
     /// Consumes the builder and constructs a [`ListAccountsForParentInput`](crate::operation::list_accounts_for_parent::ListAccountsForParentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_accounts_for_parent::ListAccountsForParentInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_accounts_for_parent::ListAccountsForParentInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_accounts_for_parent::ListAccountsForParentInput {
             parent_id: self.parent_id,

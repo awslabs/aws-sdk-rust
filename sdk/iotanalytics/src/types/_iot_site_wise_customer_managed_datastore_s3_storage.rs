@@ -69,10 +69,10 @@ impl IotSiteWiseCustomerManagedDatastoreS3StorageBuilder {
     /// - [`bucket`](crate::types::builders::IotSiteWiseCustomerManagedDatastoreS3StorageBuilder::bucket)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::IotSiteWiseCustomerManagedDatastoreS3Storage, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::IotSiteWiseCustomerManagedDatastoreS3Storage, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::IotSiteWiseCustomerManagedDatastoreS3Storage {
             bucket: self.bucket.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "bucket",
                     "bucket was not specified but it is required when building IotSiteWiseCustomerManagedDatastoreS3Storage",
                 )

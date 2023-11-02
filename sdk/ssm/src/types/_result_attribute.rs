@@ -46,10 +46,10 @@ impl ResultAttributeBuilder {
     /// Consumes the builder and constructs a [`ResultAttribute`](crate::types::ResultAttribute).
     /// This method will fail if any of the following fields are not set:
     /// - [`type_name`](crate::types::builders::ResultAttributeBuilder::type_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::ResultAttribute, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ResultAttribute, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ResultAttribute {
             type_name: self.type_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "type_name",
                     "type_name was not specified but it is required when building ResultAttribute",
                 )

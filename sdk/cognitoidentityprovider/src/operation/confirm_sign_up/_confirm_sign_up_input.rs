@@ -266,7 +266,7 @@ impl ConfirmSignUpInputBuilder {
     /// Consumes the builder and constructs a [`ConfirmSignUpInput`](crate::operation::confirm_sign_up::ConfirmSignUpInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::confirm_sign_up::ConfirmSignUpInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::confirm_sign_up::ConfirmSignUpInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::confirm_sign_up::ConfirmSignUpInput {
             client_id: self.client_id,
             secret_hash: self.secret_hash,

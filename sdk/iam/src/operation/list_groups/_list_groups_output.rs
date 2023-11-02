@@ -109,10 +109,10 @@ impl ListGroupsOutputBuilder {
     /// Consumes the builder and constructs a [`ListGroupsOutput`](crate::operation::list_groups::ListGroupsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`groups`](crate::operation::list_groups::builders::ListGroupsOutputBuilder::groups)
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_groups::ListGroupsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_groups::ListGroupsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_groups::ListGroupsOutput {
             groups: self.groups.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "groups",
                     "groups was not specified but it is required when building ListGroupsOutput",
                 )

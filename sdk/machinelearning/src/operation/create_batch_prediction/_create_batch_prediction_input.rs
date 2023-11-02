@@ -136,7 +136,7 @@ impl CreateBatchPredictionInputBuilder {
     /// Consumes the builder and constructs a [`CreateBatchPredictionInput`](crate::operation::create_batch_prediction::CreateBatchPredictionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_batch_prediction::CreateBatchPredictionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_batch_prediction::CreateBatchPredictionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_batch_prediction::CreateBatchPredictionInput {
             batch_prediction_id: self.batch_prediction_id,

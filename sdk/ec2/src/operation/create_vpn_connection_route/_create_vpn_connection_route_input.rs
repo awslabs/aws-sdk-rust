@@ -69,7 +69,7 @@ impl CreateVpnConnectionRouteInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_vpn_connection_route::CreateVpnConnectionRouteInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_vpn_connection_route::CreateVpnConnectionRouteInput {
             destination_cidr_block: self.destination_cidr_block,

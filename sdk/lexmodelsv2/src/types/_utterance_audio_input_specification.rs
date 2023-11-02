@@ -46,10 +46,10 @@ impl UtteranceAudioInputSpecificationBuilder {
     /// Consumes the builder and constructs a [`UtteranceAudioInputSpecification`](crate::types::UtteranceAudioInputSpecification).
     /// This method will fail if any of the following fields are not set:
     /// - [`audio_file_s3_location`](crate::types::builders::UtteranceAudioInputSpecificationBuilder::audio_file_s3_location)
-    pub fn build(self) -> ::std::result::Result<crate::types::UtteranceAudioInputSpecification, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::UtteranceAudioInputSpecification, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::UtteranceAudioInputSpecification {
             audio_file_s3_location: self.audio_file_s3_location.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "audio_file_s3_location",
                     "audio_file_s3_location was not specified but it is required when building UtteranceAudioInputSpecification",
                 )

@@ -103,17 +103,17 @@ impl CodegenGenericDataModelBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`fields`](crate::types::builders::CodegenGenericDataModelBuilder::fields)
     /// - [`primary_keys`](crate::types::builders::CodegenGenericDataModelBuilder::primary_keys)
-    pub fn build(self) -> ::std::result::Result<crate::types::CodegenGenericDataModel, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CodegenGenericDataModel, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CodegenGenericDataModel {
             fields: self.fields.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "fields",
                     "fields was not specified but it is required when building CodegenGenericDataModel",
                 )
             })?,
             is_join_table: self.is_join_table,
             primary_keys: self.primary_keys.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "primary_keys",
                     "primary_keys was not specified but it is required when building CodegenGenericDataModel",
                 )

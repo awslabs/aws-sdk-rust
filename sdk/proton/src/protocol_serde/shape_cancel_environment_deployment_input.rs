@@ -2,7 +2,7 @@
 pub fn ser_cancel_environment_deployment_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::cancel_environment_deployment::CancelEnvironmentDeploymentInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.environment_name {
         object.key("environmentName").string(var_1.as_str());
     }

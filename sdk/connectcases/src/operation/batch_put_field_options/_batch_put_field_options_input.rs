@@ -95,7 +95,7 @@ impl BatchPutFieldOptionsInputBuilder {
     /// Consumes the builder and constructs a [`BatchPutFieldOptionsInput`](crate::operation::batch_put_field_options::BatchPutFieldOptionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_put_field_options::BatchPutFieldOptionsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::batch_put_field_options::BatchPutFieldOptionsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::batch_put_field_options::BatchPutFieldOptionsInput {
             domain_id: self.domain_id,

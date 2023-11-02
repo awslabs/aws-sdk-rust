@@ -70,16 +70,16 @@ impl OtherNameBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`type_id`](crate::types::builders::OtherNameBuilder::type_id)
     /// - [`value`](crate::types::builders::OtherNameBuilder::value)
-    pub fn build(self) -> ::std::result::Result<crate::types::OtherName, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::OtherName, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::OtherName {
             type_id: self.type_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "type_id",
                     "type_id was not specified but it is required when building OtherName",
                 )
             })?,
             value: self.value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "value",
                     "value was not specified but it is required when building OtherName",
                 )

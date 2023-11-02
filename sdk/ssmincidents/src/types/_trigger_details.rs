@@ -111,17 +111,17 @@ impl TriggerDetailsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`source`](crate::types::builders::TriggerDetailsBuilder::source)
     /// - [`timestamp`](crate::types::builders::TriggerDetailsBuilder::timestamp)
-    pub fn build(self) -> ::std::result::Result<crate::types::TriggerDetails, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TriggerDetails, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TriggerDetails {
             source: self.source.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source",
                     "source was not specified but it is required when building TriggerDetails",
                 )
             })?,
             trigger_arn: self.trigger_arn,
             timestamp: self.timestamp.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "timestamp",
                     "timestamp was not specified but it is required when building TriggerDetails",
                 )

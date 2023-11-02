@@ -88,7 +88,7 @@ impl PutResourcePermissionInputBuilder {
     /// Consumes the builder and constructs a [`PutResourcePermissionInput`](crate::operation::put_resource_permission::PutResourcePermissionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_resource_permission::PutResourcePermissionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::put_resource_permission::PutResourcePermissionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::put_resource_permission::PutResourcePermissionInput {
             action_type: self.action_type,

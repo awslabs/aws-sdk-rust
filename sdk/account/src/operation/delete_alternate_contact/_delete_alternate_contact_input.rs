@@ -90,8 +90,10 @@ impl DeleteAlternateContactInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAlternateContactInput`](crate::operation::delete_alternate_contact::DeleteAlternateContactInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_alternate_contact::DeleteAlternateContactInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::delete_alternate_contact::DeleteAlternateContactInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::delete_alternate_contact::DeleteAlternateContactInput {
             alternate_contact_type: self.alternate_contact_type,
             account_id: self.account_id,

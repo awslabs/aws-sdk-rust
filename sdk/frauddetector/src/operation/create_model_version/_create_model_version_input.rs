@@ -181,7 +181,8 @@ impl CreateModelVersionInputBuilder {
     /// Consumes the builder and constructs a [`CreateModelVersionInput`](crate::operation::create_model_version::CreateModelVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_model_version::CreateModelVersionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_model_version::CreateModelVersionInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_model_version::CreateModelVersionInput {
             model_id: self.model_id,
             model_type: self.model_type,

@@ -2,7 +2,7 @@
 pub fn ser_rds_db_cluster_snapshot_attribute_value(
     object_5: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RdsDbClusterSnapshotAttributeValue,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::RdsDbClusterSnapshotAttributeValue::AccountIds(inner) => {
             let mut array_1 = object_5.key("accountIds").start_array();
@@ -14,7 +14,7 @@ pub fn ser_rds_db_cluster_snapshot_attribute_value(
             array_1.finish();
         }
         crate::types::RdsDbClusterSnapshotAttributeValue::Unknown => {
-            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+            return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "RdsDbClusterSnapshotAttributeValue",
             ))
         }
@@ -35,12 +35,17 @@ where
             match tokens.next().transpose()? {
                 Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                 Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                    let key = key.to_unescaped()?;
+                    if key == "__type" {
+                        ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                        continue;
+                    }
                     if variant.is_some() {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
                             "encountered mixed variants in union",
                         ));
                     }
-                    variant = match key.to_unescaped()?.as_ref() {
+                    variant = match key.as_ref() {
                         "accountIds" => Some(crate::types::RdsDbClusterSnapshotAttributeValue::AccountIds(
                             crate::protocol_serde::shape_rds_db_cluster_snapshot_account_ids_list::de_rds_db_cluster_snapshot_account_ids_list(
                                 tokens,

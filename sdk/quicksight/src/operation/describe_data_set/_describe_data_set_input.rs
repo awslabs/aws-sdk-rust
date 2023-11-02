@@ -66,7 +66,7 @@ impl DescribeDataSetInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDataSetInput`](crate::operation::describe_data_set::DescribeDataSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_data_set::DescribeDataSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_data_set::DescribeDataSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_data_set::DescribeDataSetInput {
             aws_account_id: self.aws_account_id,
             data_set_id: self.data_set_id,

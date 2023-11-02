@@ -2,7 +2,7 @@
 pub fn ser_traffic_pattern(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TrafficPattern,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.traffic_type {
         object.key("TrafficType").string(var_1.as_str());
     }

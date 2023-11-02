@@ -132,7 +132,7 @@ impl ExportEarthObservationJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::export_earth_observation_job::ExportEarthObservationJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::export_earth_observation_job::ExportEarthObservationJobInput {
             arn: self.arn,

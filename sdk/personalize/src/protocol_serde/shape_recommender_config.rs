@@ -2,7 +2,7 @@
 pub fn ser_recommender_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RecommenderConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.item_exploration_config {
         #[allow(unused_mut)]
         let mut object_2 = object.key("itemExplorationConfig").start_object();

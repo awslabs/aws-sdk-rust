@@ -64,7 +64,7 @@ impl EnableAddOnInputBuilder {
         &self.add_on_request
     }
     /// Consumes the builder and constructs a [`EnableAddOnInput`](crate::operation::enable_add_on::EnableAddOnInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::enable_add_on::EnableAddOnInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::enable_add_on::EnableAddOnInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::enable_add_on::EnableAddOnInput {
             resource_name: self.resource_name,
             add_on_request: self.add_on_request,

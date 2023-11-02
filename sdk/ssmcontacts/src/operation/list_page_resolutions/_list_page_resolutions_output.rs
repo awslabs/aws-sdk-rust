@@ -89,12 +89,12 @@ impl ListPageResolutionsOutputBuilder {
     /// - [`page_resolutions`](crate::operation::list_page_resolutions::builders::ListPageResolutionsOutputBuilder::page_resolutions)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_page_resolutions::ListPageResolutionsOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_page_resolutions::ListPageResolutionsOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_page_resolutions::ListPageResolutionsOutput {
             next_token: self.next_token,
             page_resolutions: self.page_resolutions.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "page_resolutions",
                     "page_resolutions was not specified but it is required when building ListPageResolutionsOutput",
                 )

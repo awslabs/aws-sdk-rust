@@ -431,7 +431,9 @@ impl RegisterUserInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`RegisterUserInput`](crate::operation::register_user::RegisterUserInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::register_user::RegisterUserInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::register_user::RegisterUserInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::register_user::RegisterUserInput {
             identity_type: self.identity_type,
             email: self.email,

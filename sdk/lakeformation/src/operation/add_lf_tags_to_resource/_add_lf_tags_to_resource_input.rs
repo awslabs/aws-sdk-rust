@@ -94,7 +94,7 @@ impl AddLfTagsToResourceInputBuilder {
     /// Consumes the builder and constructs a [`AddLfTagsToResourceInput`](crate::operation::add_lf_tags_to_resource::AddLfTagsToResourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::add_lf_tags_to_resource::AddLfTagsToResourceInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::add_lf_tags_to_resource::AddLfTagsToResourceInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::add_lf_tags_to_resource::AddLfTagsToResourceInput {
             catalog_id: self.catalog_id,

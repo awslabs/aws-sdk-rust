@@ -91,7 +91,7 @@ impl CreateTypeInputBuilder {
         &self.format
     }
     /// Consumes the builder and constructs a [`CreateTypeInput`](crate::operation::create_type::CreateTypeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_type::CreateTypeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_type::CreateTypeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_type::CreateTypeInput {
             api_id: self.api_id,
             definition: self.definition,

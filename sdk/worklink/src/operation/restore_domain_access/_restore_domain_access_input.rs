@@ -66,7 +66,7 @@ impl RestoreDomainAccessInputBuilder {
     /// Consumes the builder and constructs a [`RestoreDomainAccessInput`](crate::operation::restore_domain_access::RestoreDomainAccessInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::restore_domain_access::RestoreDomainAccessInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::restore_domain_access::RestoreDomainAccessInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::restore_domain_access::RestoreDomainAccessInput {
             fleet_arn: self.fleet_arn,

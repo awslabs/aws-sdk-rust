@@ -125,7 +125,7 @@ impl CreateSolutionVersionInputBuilder {
     /// Consumes the builder and constructs a [`CreateSolutionVersionInput`](crate::operation::create_solution_version::CreateSolutionVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_solution_version::CreateSolutionVersionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_solution_version::CreateSolutionVersionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_solution_version::CreateSolutionVersionInput {
             name: self.name,

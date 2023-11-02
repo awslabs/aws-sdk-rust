@@ -242,53 +242,53 @@ impl AssessmentTemplateBuilder {
     /// - [`user_attributes_for_findings`](crate::types::builders::AssessmentTemplateBuilder::user_attributes_for_findings)
     /// - [`assessment_run_count`](crate::types::builders::AssessmentTemplateBuilder::assessment_run_count)
     /// - [`created_at`](crate::types::builders::AssessmentTemplateBuilder::created_at)
-    pub fn build(self) -> ::std::result::Result<crate::types::AssessmentTemplate, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AssessmentTemplate, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AssessmentTemplate {
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building AssessmentTemplate",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building AssessmentTemplate",
                 )
             })?,
             assessment_target_arn: self.assessment_target_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "assessment_target_arn",
                     "assessment_target_arn was not specified but it is required when building AssessmentTemplate",
                 )
             })?,
             duration_in_seconds: self.duration_in_seconds.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "duration_in_seconds",
                     "duration_in_seconds was not specified but it is required when building AssessmentTemplate",
                 )
             })?,
             rules_package_arns: self.rules_package_arns.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "rules_package_arns",
                     "rules_package_arns was not specified but it is required when building AssessmentTemplate",
                 )
             })?,
             user_attributes_for_findings: self.user_attributes_for_findings.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "user_attributes_for_findings",
                     "user_attributes_for_findings was not specified but it is required when building AssessmentTemplate",
                 )
             })?,
             last_assessment_run_arn: self.last_assessment_run_arn,
             assessment_run_count: self.assessment_run_count.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "assessment_run_count",
                     "assessment_run_count was not specified but it is required when building AssessmentTemplate",
                 )
             })?,
             created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
                     "created_at was not specified but it is required when building AssessmentTemplate",
                 )

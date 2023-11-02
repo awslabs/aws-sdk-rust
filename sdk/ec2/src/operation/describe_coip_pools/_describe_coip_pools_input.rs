@@ -163,7 +163,7 @@ impl DescribeCoipPoolsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeCoipPoolsInput`](crate::operation::describe_coip_pools::DescribeCoipPoolsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_coip_pools::DescribeCoipPoolsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_coip_pools::DescribeCoipPoolsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_coip_pools::DescribeCoipPoolsInput {
             pool_ids: self.pool_ids,
             filters: self.filters,

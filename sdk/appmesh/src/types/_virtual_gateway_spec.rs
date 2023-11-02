@@ -93,11 +93,11 @@ impl VirtualGatewaySpecBuilder {
     /// Consumes the builder and constructs a [`VirtualGatewaySpec`](crate::types::VirtualGatewaySpec).
     /// This method will fail if any of the following fields are not set:
     /// - [`listeners`](crate::types::builders::VirtualGatewaySpecBuilder::listeners)
-    pub fn build(self) -> ::std::result::Result<crate::types::VirtualGatewaySpec, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::VirtualGatewaySpec, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::VirtualGatewaySpec {
             backend_defaults: self.backend_defaults,
             listeners: self.listeners.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "listeners",
                     "listeners was not specified but it is required when building VirtualGatewaySpec",
                 )

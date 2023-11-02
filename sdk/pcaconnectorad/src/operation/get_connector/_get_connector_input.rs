@@ -42,7 +42,9 @@ impl GetConnectorInputBuilder {
         &self.connector_arn
     }
     /// Consumes the builder and constructs a [`GetConnectorInput`](crate::operation::get_connector::GetConnectorInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_connector::GetConnectorInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_connector::GetConnectorInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_connector::GetConnectorInput {
             connector_arn: self.connector_arn,
         })

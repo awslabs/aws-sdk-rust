@@ -125,16 +125,18 @@ impl InvalidCampaignStateExceptionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`state`](crate::types::error::builders::InvalidCampaignStateExceptionBuilder::state)
     /// - [`message`](crate::types::error::builders::InvalidCampaignStateExceptionBuilder::message)
-    pub fn build(self) -> ::std::result::Result<crate::types::error::InvalidCampaignStateException, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::error::InvalidCampaignStateException, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::error::InvalidCampaignStateException {
             state: self.state.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "state",
                     "state was not specified but it is required when building InvalidCampaignStateException",
                 )
             })?,
             message: self.message.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "message",
                     "message was not specified but it is required when building InvalidCampaignStateException",
                 )

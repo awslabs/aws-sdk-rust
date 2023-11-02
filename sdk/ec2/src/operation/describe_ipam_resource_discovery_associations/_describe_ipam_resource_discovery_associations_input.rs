@@ -146,7 +146,7 @@ impl DescribeIpamResourceDiscoveryAssociationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_ipam_resource_discovery_associations::DescribeIpamResourceDiscoveryAssociationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_ipam_resource_discovery_associations::DescribeIpamResourceDiscoveryAssociationsInput {

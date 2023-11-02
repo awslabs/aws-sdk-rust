@@ -105,17 +105,17 @@ impl SqlInjectionMatchSetBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`sql_injection_match_set_id`](crate::types::builders::SqlInjectionMatchSetBuilder::sql_injection_match_set_id)
     /// - [`sql_injection_match_tuples`](crate::types::builders::SqlInjectionMatchSetBuilder::sql_injection_match_tuples)
-    pub fn build(self) -> ::std::result::Result<crate::types::SqlInjectionMatchSet, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SqlInjectionMatchSet, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SqlInjectionMatchSet {
             sql_injection_match_set_id: self.sql_injection_match_set_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "sql_injection_match_set_id",
                     "sql_injection_match_set_id was not specified but it is required when building SqlInjectionMatchSet",
                 )
             })?,
             name: self.name,
             sql_injection_match_tuples: self.sql_injection_match_tuples.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "sql_injection_match_tuples",
                     "sql_injection_match_tuples was not specified but it is required when building SqlInjectionMatchSet",
                 )

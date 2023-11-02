@@ -191,7 +191,7 @@ impl ListModelCardVersionsInputBuilder {
     /// Consumes the builder and constructs a [`ListModelCardVersionsInput`](crate::operation::list_model_card_versions::ListModelCardVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_model_card_versions::ListModelCardVersionsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_model_card_versions::ListModelCardVersionsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_model_card_versions::ListModelCardVersionsInput {
             creation_time_after: self.creation_time_after,

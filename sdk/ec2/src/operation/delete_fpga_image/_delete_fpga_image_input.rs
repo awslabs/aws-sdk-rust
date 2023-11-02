@@ -65,7 +65,7 @@ impl DeleteFpgaImageInputBuilder {
     /// Consumes the builder and constructs a [`DeleteFpgaImageInput`](crate::operation::delete_fpga_image::DeleteFpgaImageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_fpga_image::DeleteFpgaImageInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_fpga_image::DeleteFpgaImageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_fpga_image::DeleteFpgaImageInput {
             dry_run: self.dry_run,
             fpga_image_id: self.fpga_image_id,

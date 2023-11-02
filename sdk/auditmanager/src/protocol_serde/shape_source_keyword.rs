@@ -2,7 +2,7 @@
 pub fn ser_source_keyword(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SourceKeyword,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.keyword_input_type {
         object.key("keywordInputType").string(var_1.as_str());
     }

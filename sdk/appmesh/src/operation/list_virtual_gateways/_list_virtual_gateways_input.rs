@@ -107,7 +107,7 @@ impl ListVirtualGatewaysInputBuilder {
     /// Consumes the builder and constructs a [`ListVirtualGatewaysInput`](crate::operation::list_virtual_gateways::ListVirtualGatewaysInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_virtual_gateways::ListVirtualGatewaysInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_virtual_gateways::ListVirtualGatewaysInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_virtual_gateways::ListVirtualGatewaysInput {
             mesh_name: self.mesh_name,

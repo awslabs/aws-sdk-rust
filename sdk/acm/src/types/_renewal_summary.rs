@@ -118,23 +118,23 @@ impl RenewalSummaryBuilder {
     /// - [`renewal_status`](crate::types::builders::RenewalSummaryBuilder::renewal_status)
     /// - [`domain_validation_options`](crate::types::builders::RenewalSummaryBuilder::domain_validation_options)
     /// - [`updated_at`](crate::types::builders::RenewalSummaryBuilder::updated_at)
-    pub fn build(self) -> ::std::result::Result<crate::types::RenewalSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RenewalSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RenewalSummary {
             renewal_status: self.renewal_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "renewal_status",
                     "renewal_status was not specified but it is required when building RenewalSummary",
                 )
             })?,
             domain_validation_options: self.domain_validation_options.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "domain_validation_options",
                     "domain_validation_options was not specified but it is required when building RenewalSummary",
                 )
             })?,
             renewal_status_reason: self.renewal_status_reason,
             updated_at: self.updated_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "updated_at",
                     "updated_at was not specified but it is required when building RenewalSummary",
                 )

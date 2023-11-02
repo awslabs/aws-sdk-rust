@@ -145,24 +145,24 @@ impl ListTrafficPolicyVersionsOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_traffic_policy_versions::ListTrafficPolicyVersionsOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_traffic_policy_versions::ListTrafficPolicyVersionsOutput {
             traffic_policies: self.traffic_policies.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "traffic_policies",
                     "traffic_policies was not specified but it is required when building ListTrafficPolicyVersionsOutput",
                 )
             })?,
             is_truncated: self.is_truncated.unwrap_or_default(),
             traffic_policy_version_marker: self.traffic_policy_version_marker.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "traffic_policy_version_marker",
                     "traffic_policy_version_marker was not specified but it is required when building ListTrafficPolicyVersionsOutput",
                 )
             })?,
             max_items: self.max_items.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "max_items",
                     "max_items was not specified but it is required when building ListTrafficPolicyVersionsOutput",
                 )

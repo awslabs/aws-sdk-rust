@@ -88,7 +88,7 @@ impl ListKeywordsForDataSourceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_keywords_for_data_source::ListKeywordsForDataSourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_keywords_for_data_source::ListKeywordsForDataSourceInput {
             source: self.source,

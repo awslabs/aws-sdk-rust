@@ -74,7 +74,7 @@ impl DetectKeyPhrasesInputBuilder {
     /// Consumes the builder and constructs a [`DetectKeyPhrasesInput`](crate::operation::detect_key_phrases::DetectKeyPhrasesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::detect_key_phrases::DetectKeyPhrasesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::detect_key_phrases::DetectKeyPhrasesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::detect_key_phrases::DetectKeyPhrasesInput {
             text: self.text,
             language_code: self.language_code,

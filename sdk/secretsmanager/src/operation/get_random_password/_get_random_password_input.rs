@@ -190,7 +190,7 @@ impl GetRandomPasswordInputBuilder {
     /// Consumes the builder and constructs a [`GetRandomPasswordInput`](crate::operation::get_random_password::GetRandomPasswordInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_random_password::GetRandomPasswordInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_random_password::GetRandomPasswordInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_random_password::GetRandomPasswordInput {
             password_length: self.password_length,
             exclude_characters: self.exclude_characters,

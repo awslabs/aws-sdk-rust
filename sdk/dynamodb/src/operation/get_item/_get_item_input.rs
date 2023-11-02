@@ -338,7 +338,7 @@ impl GetItemInputBuilder {
         &self.expression_attribute_names
     }
     /// Consumes the builder and constructs a [`GetItemInput`](crate::operation::get_item::GetItemInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_item::GetItemInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_item::GetItemInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_item::GetItemInput {
             table_name: self.table_name,
             key: self.key,

@@ -453,7 +453,7 @@ impl CreateContainerRecipeInputBuilder {
     /// Consumes the builder and constructs a [`CreateContainerRecipeInput`](crate::operation::create_container_recipe::CreateContainerRecipeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_container_recipe::CreateContainerRecipeInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_container_recipe::CreateContainerRecipeInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_container_recipe::CreateContainerRecipeInput {
             container_type: self.container_type,

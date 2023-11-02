@@ -67,7 +67,7 @@ impl CreateAppBlockBuilderStreamingUrlInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_app_block_builder_streaming_url::CreateAppBlockBuilderStreamingUrlInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::create_app_block_builder_streaming_url::CreateAppBlockBuilderStreamingUrlInput {

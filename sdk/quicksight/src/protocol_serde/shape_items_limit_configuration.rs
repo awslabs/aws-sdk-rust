@@ -2,7 +2,7 @@
 pub fn ser_items_limit_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ItemsLimitConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.items_limit {
         object.key("ItemsLimit").number(
             #[allow(clippy::useless_conversion)]

@@ -110,7 +110,7 @@ impl ListCustomerManagedPolicyReferencesInPermissionSetInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_customer_managed_policy_references_in_permission_set::ListCustomerManagedPolicyReferencesInPermissionSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_customer_managed_policy_references_in_permission_set::ListCustomerManagedPolicyReferencesInPermissionSetInput {

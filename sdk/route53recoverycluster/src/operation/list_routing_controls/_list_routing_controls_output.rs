@@ -89,11 +89,11 @@ impl ListRoutingControlsOutputBuilder {
     /// - [`routing_controls`](crate::operation::list_routing_controls::builders::ListRoutingControlsOutputBuilder::routing_controls)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_routing_controls::ListRoutingControlsOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_routing_controls::ListRoutingControlsOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_routing_controls::ListRoutingControlsOutput {
             routing_controls: self.routing_controls.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "routing_controls",
                     "routing_controls was not specified but it is required when building ListRoutingControlsOutput",
                 )

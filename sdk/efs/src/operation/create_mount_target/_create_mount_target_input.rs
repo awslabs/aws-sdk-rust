@@ -117,7 +117,7 @@ impl CreateMountTargetInputBuilder {
     /// Consumes the builder and constructs a [`CreateMountTargetInput`](crate::operation::create_mount_target::CreateMountTargetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_mount_target::CreateMountTargetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_mount_target::CreateMountTargetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_mount_target::CreateMountTargetInput {
             file_system_id: self.file_system_id,
             subnet_id: self.subnet_id,

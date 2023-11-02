@@ -122,7 +122,7 @@ impl DescribeMetadataModelImportsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_metadata_model_imports::DescribeMetadataModelImportsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_metadata_model_imports::DescribeMetadataModelImportsInput {
             migration_project_identifier: self.migration_project_identifier,

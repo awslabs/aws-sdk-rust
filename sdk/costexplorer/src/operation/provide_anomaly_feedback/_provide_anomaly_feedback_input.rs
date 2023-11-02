@@ -66,8 +66,10 @@ impl ProvideAnomalyFeedbackInputBuilder {
     /// Consumes the builder and constructs a [`ProvideAnomalyFeedbackInput`](crate::operation::provide_anomaly_feedback::ProvideAnomalyFeedbackInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::provide_anomaly_feedback::ProvideAnomalyFeedbackInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::provide_anomaly_feedback::ProvideAnomalyFeedbackInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::provide_anomaly_feedback::ProvideAnomalyFeedbackInput {
             anomaly_id: self.anomaly_id,
             feedback: self.feedback,

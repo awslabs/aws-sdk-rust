@@ -89,10 +89,10 @@ impl ListCodegenJobsOutputBuilder {
     /// - [`entities`](crate::operation::list_codegen_jobs::builders::ListCodegenJobsOutputBuilder::entities)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_codegen_jobs::ListCodegenJobsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_codegen_jobs::ListCodegenJobsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_codegen_jobs::ListCodegenJobsOutput {
             entities: self.entities.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "entities",
                     "entities was not specified but it is required when building ListCodegenJobsOutput",
                 )

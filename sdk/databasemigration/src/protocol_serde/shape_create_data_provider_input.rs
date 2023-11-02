@@ -2,7 +2,7 @@
 pub fn ser_create_data_provider_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_data_provider::CreateDataProviderInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.data_provider_name {
         object.key("DataProviderName").string(var_1.as_str());
     }

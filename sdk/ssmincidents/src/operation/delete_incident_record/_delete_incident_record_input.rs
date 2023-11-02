@@ -44,7 +44,7 @@ impl DeleteIncidentRecordInputBuilder {
     /// Consumes the builder and constructs a [`DeleteIncidentRecordInput`](crate::operation::delete_incident_record::DeleteIncidentRecordInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_incident_record::DeleteIncidentRecordInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_incident_record::DeleteIncidentRecordInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_incident_record::DeleteIncidentRecordInput { arn: self.arn })
     }

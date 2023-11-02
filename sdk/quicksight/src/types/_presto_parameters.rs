@@ -93,22 +93,22 @@ impl PrestoParametersBuilder {
     /// - [`host`](crate::types::builders::PrestoParametersBuilder::host)
     /// - [`port`](crate::types::builders::PrestoParametersBuilder::port)
     /// - [`catalog`](crate::types::builders::PrestoParametersBuilder::catalog)
-    pub fn build(self) -> ::std::result::Result<crate::types::PrestoParameters, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PrestoParameters, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PrestoParameters {
             host: self.host.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "host",
                     "host was not specified but it is required when building PrestoParameters",
                 )
             })?,
             port: self.port.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "port",
                     "port was not specified but it is required when building PrestoParameters",
                 )
             })?,
             catalog: self.catalog.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "catalog",
                     "catalog was not specified but it is required when building PrestoParameters",
                 )

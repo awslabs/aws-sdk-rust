@@ -72,10 +72,10 @@ impl StatementBuilder {
     /// Consumes the builder and constructs a [`Statement`](crate::types::Statement).
     /// This method will fail if any of the following fields are not set:
     /// - [`messages`](crate::types::builders::StatementBuilder::messages)
-    pub fn build(self) -> ::std::result::Result<crate::types::Statement, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Statement, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Statement {
             messages: self.messages.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "messages",
                     "messages was not specified but it is required when building Statement",
                 )

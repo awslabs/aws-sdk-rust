@@ -44,7 +44,7 @@ impl DeleteAppInstanceInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAppInstanceInput`](crate::operation::delete_app_instance::DeleteAppInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_app_instance::DeleteAppInstanceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_app_instance::DeleteAppInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_app_instance::DeleteAppInstanceInput {
             app_instance_arn: self.app_instance_arn,
         })

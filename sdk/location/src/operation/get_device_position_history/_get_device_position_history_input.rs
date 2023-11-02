@@ -202,7 +202,7 @@ impl GetDevicePositionHistoryInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_device_position_history::GetDevicePositionHistoryInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_device_position_history::GetDevicePositionHistoryInput {
             tracker_name: self.tracker_name,

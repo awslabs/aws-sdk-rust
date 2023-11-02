@@ -47,7 +47,7 @@ impl DeleteEvaluationResultsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_evaluation_results::DeleteEvaluationResultsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_evaluation_results::DeleteEvaluationResultsInput {
             config_rule_name: self.config_rule_name,

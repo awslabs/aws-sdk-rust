@@ -134,7 +134,7 @@ impl ListInstalledComponentsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_installed_components::ListInstalledComponentsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_installed_components::ListInstalledComponentsInput {
             core_device_thing_name: self.core_device_thing_name,

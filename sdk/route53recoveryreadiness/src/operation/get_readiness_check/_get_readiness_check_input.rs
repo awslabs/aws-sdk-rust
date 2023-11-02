@@ -44,7 +44,7 @@ impl GetReadinessCheckInputBuilder {
     /// Consumes the builder and constructs a [`GetReadinessCheckInput`](crate::operation::get_readiness_check::GetReadinessCheckInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_readiness_check::GetReadinessCheckInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_readiness_check::GetReadinessCheckInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_readiness_check::GetReadinessCheckInput {
             readiness_check_name: self.readiness_check_name,
         })

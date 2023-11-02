@@ -97,8 +97,10 @@ impl ResetInstanceAttributeInputBuilder {
     /// Consumes the builder and constructs a [`ResetInstanceAttributeInput`](crate::operation::reset_instance_attribute::ResetInstanceAttributeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::reset_instance_attribute::ResetInstanceAttributeInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::reset_instance_attribute::ResetInstanceAttributeInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::reset_instance_attribute::ResetInstanceAttributeInput {
             attribute: self.attribute,
             dry_run: self.dry_run,

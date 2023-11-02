@@ -2,7 +2,7 @@
 pub fn ser_put_deliverability_dashboard_option_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_deliverability_dashboard_option::PutDeliverabilityDashboardOptionInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.dashboard_enabled {
         object.key("DashboardEnabled").boolean(*var_1);
     }

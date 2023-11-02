@@ -44,7 +44,7 @@ impl DeleteTestGridProjectInputBuilder {
     /// Consumes the builder and constructs a [`DeleteTestGridProjectInput`](crate::operation::delete_test_grid_project::DeleteTestGridProjectInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_test_grid_project::DeleteTestGridProjectInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_test_grid_project::DeleteTestGridProjectInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_test_grid_project::DeleteTestGridProjectInput {
             project_arn: self.project_arn,

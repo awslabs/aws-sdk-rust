@@ -149,7 +149,7 @@ impl UpdateNetworkSettingsInputBuilder {
     /// Consumes the builder and constructs a [`UpdateNetworkSettingsInput`](crate::operation::update_network_settings::UpdateNetworkSettingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_network_settings::UpdateNetworkSettingsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_network_settings::UpdateNetworkSettingsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_network_settings::UpdateNetworkSettingsInput {
             network_settings_arn: self.network_settings_arn,

@@ -2,7 +2,7 @@
 pub fn ser_validate_pipeline_definition_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::validate_pipeline_definition::ValidatePipelineDefinitionInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.pipeline_id {
         object.key("pipelineId").string(var_1.as_str());
     }

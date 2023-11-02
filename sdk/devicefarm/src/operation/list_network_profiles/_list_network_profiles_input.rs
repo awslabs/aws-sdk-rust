@@ -86,7 +86,7 @@ impl ListNetworkProfilesInputBuilder {
     /// Consumes the builder and constructs a [`ListNetworkProfilesInput`](crate::operation::list_network_profiles::ListNetworkProfilesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_network_profiles::ListNetworkProfilesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_network_profiles::ListNetworkProfilesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_network_profiles::ListNetworkProfilesInput {
             arn: self.arn,

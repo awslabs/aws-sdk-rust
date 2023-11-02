@@ -46,7 +46,7 @@ impl DeleteAssessmentTemplateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_assessment_template::DeleteAssessmentTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_assessment_template::DeleteAssessmentTemplateInput {
             assessment_template_arn: self.assessment_template_arn,

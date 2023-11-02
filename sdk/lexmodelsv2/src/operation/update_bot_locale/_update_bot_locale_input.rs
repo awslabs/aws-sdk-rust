@@ -152,7 +152,7 @@ impl UpdateBotLocaleInputBuilder {
     /// Consumes the builder and constructs a [`UpdateBotLocaleInput`](crate::operation::update_bot_locale::UpdateBotLocaleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_bot_locale::UpdateBotLocaleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_bot_locale::UpdateBotLocaleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_bot_locale::UpdateBotLocaleInput {
             bot_id: self.bot_id,
             bot_version: self.bot_version,

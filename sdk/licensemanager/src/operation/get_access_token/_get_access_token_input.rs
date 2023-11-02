@@ -73,7 +73,7 @@ impl GetAccessTokenInputBuilder {
     /// Consumes the builder and constructs a [`GetAccessTokenInput`](crate::operation::get_access_token::GetAccessTokenInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_access_token::GetAccessTokenInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_access_token::GetAccessTokenInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_access_token::GetAccessTokenInput {
             token: self.token,
             token_properties: self.token_properties,

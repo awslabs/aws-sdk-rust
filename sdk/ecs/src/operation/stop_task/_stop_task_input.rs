@@ -84,7 +84,7 @@ impl StopTaskInputBuilder {
         &self.reason
     }
     /// Consumes the builder and constructs a [`StopTaskInput`](crate::operation::stop_task::StopTaskInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::stop_task::StopTaskInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_task::StopTaskInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_task::StopTaskInput {
             cluster: self.cluster,
             task: self.task,

@@ -134,7 +134,7 @@ impl ListStackSetOperationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_stack_set_operations::ListStackSetOperationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_stack_set_operations::ListStackSetOperationsInput {
             stack_set_name: self.stack_set_name,

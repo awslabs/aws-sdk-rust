@@ -87,7 +87,7 @@ impl UploadEntityDefinitionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::upload_entity_definitions::UploadEntityDefinitionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::upload_entity_definitions::UploadEntityDefinitionsInput {
             document: self.document,

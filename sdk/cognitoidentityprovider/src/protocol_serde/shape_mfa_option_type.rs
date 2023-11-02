@@ -2,7 +2,7 @@
 pub fn ser_mfa_option_type(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MfaOptionType,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.delivery_medium {
         object.key("DeliveryMedium").string(var_1.as_str());
     }

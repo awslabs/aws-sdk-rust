@@ -2,7 +2,7 @@
 pub fn ser_join_storage_session_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::join_storage_session::JoinStorageSessionInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.channel_arn {
         object.key("channelArn").string(var_1.as_str());
     }

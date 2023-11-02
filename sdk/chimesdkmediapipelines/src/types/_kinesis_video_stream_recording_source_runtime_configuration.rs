@@ -75,11 +75,11 @@ impl KinesisVideoStreamRecordingSourceRuntimeConfigurationBuilder {
     /// - [`streams`](crate::types::builders::KinesisVideoStreamRecordingSourceRuntimeConfigurationBuilder::streams)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::KinesisVideoStreamRecordingSourceRuntimeConfiguration, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::types::KinesisVideoStreamRecordingSourceRuntimeConfiguration, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::types::KinesisVideoStreamRecordingSourceRuntimeConfiguration {
             streams: self.streams.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "streams",
                     "streams was not specified but it is required when building KinesisVideoStreamRecordingSourceRuntimeConfiguration",
                 )

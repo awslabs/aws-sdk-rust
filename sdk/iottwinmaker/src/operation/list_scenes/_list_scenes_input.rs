@@ -84,7 +84,7 @@ impl ListScenesInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListScenesInput`](crate::operation::list_scenes::ListScenesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_scenes::ListScenesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_scenes::ListScenesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_scenes::ListScenesInput {
             workspace_id: self.workspace_id,
             max_results: self.max_results,

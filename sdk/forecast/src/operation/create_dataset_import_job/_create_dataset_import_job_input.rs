@@ -350,7 +350,7 @@ impl CreateDatasetImportJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_dataset_import_job::CreateDatasetImportJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_dataset_import_job::CreateDatasetImportJobInput {
             dataset_import_job_name: self.dataset_import_job_name,

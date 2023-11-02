@@ -68,7 +68,7 @@ impl DisassociateMergedGraphqlApiInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_merged_graphql_api::DisassociateMergedGraphqlApiInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disassociate_merged_graphql_api::DisassociateMergedGraphqlApiInput {
             source_api_identifier: self.source_api_identifier,

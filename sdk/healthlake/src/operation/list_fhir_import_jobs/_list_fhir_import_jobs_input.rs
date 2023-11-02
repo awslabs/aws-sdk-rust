@@ -170,7 +170,7 @@ impl ListFhirImportJobsInputBuilder {
     /// Consumes the builder and constructs a [`ListFhirImportJobsInput`](crate::operation::list_fhir_import_jobs::ListFhirImportJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_fhir_import_jobs::ListFhirImportJobsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_fhir_import_jobs::ListFhirImportJobsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_fhir_import_jobs::ListFhirImportJobsInput {
             datastore_id: self.datastore_id,

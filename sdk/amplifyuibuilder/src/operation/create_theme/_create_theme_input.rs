@@ -107,7 +107,7 @@ impl CreateThemeInputBuilder {
         &self.theme_to_create
     }
     /// Consumes the builder and constructs a [`CreateThemeInput`](crate::operation::create_theme::CreateThemeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_theme::CreateThemeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_theme::CreateThemeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_theme::CreateThemeInput {
             app_id: self.app_id,
             environment_name: self.environment_name,

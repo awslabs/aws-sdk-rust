@@ -109,7 +109,9 @@ impl DeleteSecretInputBuilder {
         &self.force_delete_without_recovery
     }
     /// Consumes the builder and constructs a [`DeleteSecretInput`](crate::operation::delete_secret::DeleteSecretInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_secret::DeleteSecretInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_secret::DeleteSecretInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_secret::DeleteSecretInput {
             secret_id: self.secret_id,
             recovery_window_in_days: self.recovery_window_in_days,

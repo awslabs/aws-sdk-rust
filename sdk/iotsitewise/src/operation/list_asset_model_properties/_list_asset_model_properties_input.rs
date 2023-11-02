@@ -134,7 +134,7 @@ impl ListAssetModelPropertiesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_asset_model_properties::ListAssetModelPropertiesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_asset_model_properties::ListAssetModelPropertiesInput {
             asset_model_id: self.asset_model_id,

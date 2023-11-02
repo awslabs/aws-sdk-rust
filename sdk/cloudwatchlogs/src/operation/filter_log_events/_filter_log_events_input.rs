@@ -321,7 +321,7 @@ impl FilterLogEventsInputBuilder {
     /// Consumes the builder and constructs a [`FilterLogEventsInput`](crate::operation::filter_log_events::FilterLogEventsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::filter_log_events::FilterLogEventsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::filter_log_events::FilterLogEventsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::filter_log_events::FilterLogEventsInput {
             log_group_name: self.log_group_name,
             log_group_identifier: self.log_group_identifier,

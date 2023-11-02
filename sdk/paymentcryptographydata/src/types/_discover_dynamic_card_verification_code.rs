@@ -94,22 +94,22 @@ impl DiscoverDynamicCardVerificationCodeBuilder {
     /// - [`card_expiry_date`](crate::types::builders::DiscoverDynamicCardVerificationCodeBuilder::card_expiry_date)
     /// - [`unpredictable_number`](crate::types::builders::DiscoverDynamicCardVerificationCodeBuilder::unpredictable_number)
     /// - [`application_transaction_counter`](crate::types::builders::DiscoverDynamicCardVerificationCodeBuilder::application_transaction_counter)
-    pub fn build(self) -> ::std::result::Result<crate::types::DiscoverDynamicCardVerificationCode, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DiscoverDynamicCardVerificationCode, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DiscoverDynamicCardVerificationCode {
             card_expiry_date: self.card_expiry_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "card_expiry_date",
                     "card_expiry_date was not specified but it is required when building DiscoverDynamicCardVerificationCode",
                 )
             })?,
             unpredictable_number: self.unpredictable_number.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "unpredictable_number",
                     "unpredictable_number was not specified but it is required when building DiscoverDynamicCardVerificationCode",
                 )
             })?,
             application_transaction_counter: self.application_transaction_counter.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "application_transaction_counter",
                     "application_transaction_counter was not specified but it is required when building DiscoverDynamicCardVerificationCode",
                 )

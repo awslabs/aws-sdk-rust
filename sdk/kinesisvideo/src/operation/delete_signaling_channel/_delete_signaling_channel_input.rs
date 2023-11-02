@@ -65,8 +65,10 @@ impl DeleteSignalingChannelInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSignalingChannelInput`](crate::operation::delete_signaling_channel::DeleteSignalingChannelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_signaling_channel::DeleteSignalingChannelInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::delete_signaling_channel::DeleteSignalingChannelInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::delete_signaling_channel::DeleteSignalingChannelInput {
             channel_arn: self.channel_arn,
             current_version: self.current_version,

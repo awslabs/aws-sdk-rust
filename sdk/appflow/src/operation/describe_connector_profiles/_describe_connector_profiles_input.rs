@@ -137,7 +137,7 @@ impl DescribeConnectorProfilesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_connector_profiles::DescribeConnectorProfilesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_connector_profiles::DescribeConnectorProfilesInput {
             connector_profile_names: self.connector_profile_names,

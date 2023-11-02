@@ -114,10 +114,10 @@ impl NodeConfigurationBuilder {
     /// Consumes the builder and constructs a [`NodeConfiguration`](crate::types::NodeConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`instance_type`](crate::types::builders::NodeConfigurationBuilder::instance_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::NodeConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::NodeConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::NodeConfiguration {
             instance_type: self.instance_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "instance_type",
                     "instance_type was not specified but it is required when building NodeConfiguration",
                 )

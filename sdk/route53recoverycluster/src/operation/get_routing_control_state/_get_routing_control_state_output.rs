@@ -109,17 +109,17 @@ impl GetRoutingControlStateOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_routing_control_state::GetRoutingControlStateOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_routing_control_state::GetRoutingControlStateOutput {
             routing_control_arn: self.routing_control_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "routing_control_arn",
                     "routing_control_arn was not specified but it is required when building GetRoutingControlStateOutput",
                 )
             })?,
             routing_control_state: self.routing_control_state.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "routing_control_state",
                     "routing_control_state was not specified but it is required when building GetRoutingControlStateOutput",
                 )

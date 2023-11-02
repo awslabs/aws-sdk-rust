@@ -85,7 +85,7 @@ impl ListModelMetadataInputBuilder {
     /// Consumes the builder and constructs a [`ListModelMetadataInput`](crate::operation::list_model_metadata::ListModelMetadataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_model_metadata::ListModelMetadataInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_model_metadata::ListModelMetadataInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_model_metadata::ListModelMetadataInput {
             search_expression: self.search_expression,
             next_token: self.next_token,

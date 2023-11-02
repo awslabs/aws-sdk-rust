@@ -948,7 +948,8 @@ impl ModifyCacheClusterInputBuilder {
     /// Consumes the builder and constructs a [`ModifyCacheClusterInput`](crate::operation::modify_cache_cluster::ModifyCacheClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::modify_cache_cluster::ModifyCacheClusterInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::modify_cache_cluster::ModifyCacheClusterInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::modify_cache_cluster::ModifyCacheClusterInput {
             cache_cluster_id: self.cache_cluster_id,
             num_cache_nodes: self.num_cache_nodes,

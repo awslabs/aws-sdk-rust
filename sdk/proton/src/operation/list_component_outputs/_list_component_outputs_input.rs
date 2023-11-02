@@ -86,7 +86,7 @@ impl ListComponentOutputsInputBuilder {
     /// Consumes the builder and constructs a [`ListComponentOutputsInput`](crate::operation::list_component_outputs::ListComponentOutputsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_component_outputs::ListComponentOutputsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_component_outputs::ListComponentOutputsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_component_outputs::ListComponentOutputsInput {
             component_name: self.component_name,

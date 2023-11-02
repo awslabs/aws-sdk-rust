@@ -78,7 +78,7 @@ impl GetLensInputBuilder {
         &self.lens_version
     }
     /// Consumes the builder and constructs a [`GetLensInput`](crate::operation::get_lens::GetLensInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_lens::GetLensInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_lens::GetLensInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_lens::GetLensInput {
             lens_alias: self.lens_alias,
             lens_version: self.lens_version,

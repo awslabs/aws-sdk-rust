@@ -182,7 +182,7 @@ impl GetParametersByPathInputBuilder {
     /// Consumes the builder and constructs a [`GetParametersByPathInput`](crate::operation::get_parameters_by_path::GetParametersByPathInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_parameters_by_path::GetParametersByPathInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_parameters_by_path::GetParametersByPathInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_parameters_by_path::GetParametersByPathInput {
             path: self.path,

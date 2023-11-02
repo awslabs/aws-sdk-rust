@@ -130,7 +130,7 @@ impl AssociateTeamMemberInputBuilder {
     /// Consumes the builder and constructs a [`AssociateTeamMemberInput`](crate::operation::associate_team_member::AssociateTeamMemberInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::associate_team_member::AssociateTeamMemberInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::associate_team_member::AssociateTeamMemberInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::associate_team_member::AssociateTeamMemberInput {
             project_id: self.project_id,

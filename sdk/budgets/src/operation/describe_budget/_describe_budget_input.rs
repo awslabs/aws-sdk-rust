@@ -67,7 +67,7 @@ impl DescribeBudgetInputBuilder {
     /// Consumes the builder and constructs a [`DescribeBudgetInput`](crate::operation::describe_budget::DescribeBudgetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_budget::DescribeBudgetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_budget::DescribeBudgetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_budget::DescribeBudgetInput {
             account_id: self.account_id,
             budget_name: self.budget_name,

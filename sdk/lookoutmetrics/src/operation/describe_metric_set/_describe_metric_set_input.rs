@@ -44,7 +44,7 @@ impl DescribeMetricSetInputBuilder {
     /// Consumes the builder and constructs a [`DescribeMetricSetInput`](crate::operation::describe_metric_set::DescribeMetricSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_metric_set::DescribeMetricSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_metric_set::DescribeMetricSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_metric_set::DescribeMetricSetInput {
             metric_set_arn: self.metric_set_arn,
         })

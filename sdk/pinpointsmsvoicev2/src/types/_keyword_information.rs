@@ -93,22 +93,22 @@ impl KeywordInformationBuilder {
     /// - [`keyword`](crate::types::builders::KeywordInformationBuilder::keyword)
     /// - [`keyword_message`](crate::types::builders::KeywordInformationBuilder::keyword_message)
     /// - [`keyword_action`](crate::types::builders::KeywordInformationBuilder::keyword_action)
-    pub fn build(self) -> ::std::result::Result<crate::types::KeywordInformation, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::KeywordInformation, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::KeywordInformation {
             keyword: self.keyword.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "keyword",
                     "keyword was not specified but it is required when building KeywordInformation",
                 )
             })?,
             keyword_message: self.keyword_message.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "keyword_message",
                     "keyword_message was not specified but it is required when building KeywordInformation",
                 )
             })?,
             keyword_action: self.keyword_action.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "keyword_action",
                     "keyword_action was not specified but it is required when building KeywordInformation",
                 )

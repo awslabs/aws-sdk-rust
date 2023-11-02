@@ -2,7 +2,7 @@
 pub fn ser_describe_model_version_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_model_version::DescribeModelVersionInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.model_name {
         object.key("ModelName").string(var_1.as_str());
     }

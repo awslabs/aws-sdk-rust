@@ -51,8 +51,10 @@ impl DescribeResourceGroupsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeResourceGroupsInput`](crate::operation::describe_resource_groups::DescribeResourceGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_resource_groups::DescribeResourceGroupsInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::describe_resource_groups::DescribeResourceGroupsInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::describe_resource_groups::DescribeResourceGroupsInput {
             resource_group_arns: self.resource_group_arns,
         })

@@ -205,7 +205,7 @@ impl CreateQueueInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateQueueInput`](crate::operation::create_queue::CreateQueueInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_queue::CreateQueueInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_queue::CreateQueueInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_queue::CreateQueueInput {
             instance_id: self.instance_id,
             name: self.name,

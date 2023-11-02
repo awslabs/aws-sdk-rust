@@ -87,10 +87,10 @@ impl CanaryScheduleInputBuilder {
     /// Consumes the builder and constructs a [`CanaryScheduleInput`](crate::types::CanaryScheduleInput).
     /// This method will fail if any of the following fields are not set:
     /// - [`expression`](crate::types::builders::CanaryScheduleInputBuilder::expression)
-    pub fn build(self) -> ::std::result::Result<crate::types::CanaryScheduleInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CanaryScheduleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CanaryScheduleInput {
             expression: self.expression.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "expression",
                     "expression was not specified but it is required when building CanaryScheduleInput",
                 )

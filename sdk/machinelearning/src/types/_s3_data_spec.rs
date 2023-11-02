@@ -199,10 +199,10 @@ impl S3DataSpecBuilder {
     /// Consumes the builder and constructs a [`S3DataSpec`](crate::types::S3DataSpec).
     /// This method will fail if any of the following fields are not set:
     /// - [`data_location_s3`](crate::types::builders::S3DataSpecBuilder::data_location_s3)
-    pub fn build(self) -> ::std::result::Result<crate::types::S3DataSpec, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::S3DataSpec, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::S3DataSpec {
             data_location_s3: self.data_location_s3.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_location_s3",
                     "data_location_s3 was not specified but it is required when building S3DataSpec",
                 )

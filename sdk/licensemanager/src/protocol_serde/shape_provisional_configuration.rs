@@ -2,7 +2,7 @@
 pub fn ser_provisional_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ProvisionalConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("MaxTimeToLiveInMinutes").number(
             #[allow(clippy::useless_conversion)]

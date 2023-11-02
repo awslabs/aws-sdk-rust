@@ -171,10 +171,10 @@ impl VirtualMfaDeviceBuilder {
     /// Consumes the builder and constructs a [`VirtualMfaDevice`](crate::types::VirtualMfaDevice).
     /// This method will fail if any of the following fields are not set:
     /// - [`serial_number`](crate::types::builders::VirtualMfaDeviceBuilder::serial_number)
-    pub fn build(self) -> ::std::result::Result<crate::types::VirtualMfaDevice, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::VirtualMfaDevice, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::VirtualMfaDevice {
             serial_number: self.serial_number.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "serial_number",
                     "serial_number was not specified but it is required when building VirtualMfaDevice",
                 )

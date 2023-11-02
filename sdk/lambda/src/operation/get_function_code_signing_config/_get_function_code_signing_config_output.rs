@@ -124,17 +124,17 @@ impl GetFunctionCodeSigningConfigOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_function_code_signing_config::GetFunctionCodeSigningConfigOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_function_code_signing_config::GetFunctionCodeSigningConfigOutput {
             code_signing_config_arn: self.code_signing_config_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "code_signing_config_arn",
                     "code_signing_config_arn was not specified but it is required when building GetFunctionCodeSigningConfigOutput",
                 )
             })?,
             function_name: self.function_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "function_name",
                     "function_name was not specified but it is required when building GetFunctionCodeSigningConfigOutput",
                 )

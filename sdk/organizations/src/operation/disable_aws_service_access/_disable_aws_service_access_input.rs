@@ -46,7 +46,7 @@ impl DisableAwsServiceAccessInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disable_aws_service_access::DisableAwsServiceAccessInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disable_aws_service_access::DisableAwsServiceAccessInput {
             service_principal: self.service_principal,

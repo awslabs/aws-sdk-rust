@@ -2,7 +2,7 @@
 pub fn ser_notifications(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Notifications,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.progressing {
         object.key("Progressing").string(var_1.as_str());
     }

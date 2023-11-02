@@ -130,10 +130,10 @@ impl DakCertificateMetadataBuilder {
     /// Consumes the builder and constructs a [`DakCertificateMetadata`](crate::types::DakCertificateMetadata).
     /// This method will fail if any of the following fields are not set:
     /// - [`certificate_id`](crate::types::builders::DakCertificateMetadataBuilder::certificate_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::DakCertificateMetadata, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DakCertificateMetadata, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DakCertificateMetadata {
             certificate_id: self.certificate_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "certificate_id",
                     "certificate_id was not specified but it is required when building DakCertificateMetadata",
                 )

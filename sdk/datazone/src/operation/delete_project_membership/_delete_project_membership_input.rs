@@ -90,7 +90,7 @@ impl DeleteProjectMembershipInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_project_membership::DeleteProjectMembershipInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_project_membership::DeleteProjectMembershipInput {
             domain_identifier: self.domain_identifier,

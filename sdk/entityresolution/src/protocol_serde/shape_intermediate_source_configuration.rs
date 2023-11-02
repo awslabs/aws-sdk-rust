@@ -46,7 +46,7 @@ where
 pub fn ser_intermediate_source_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IntermediateSourceConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("intermediateS3Path").string(input.intermediate_s3_path.as_str());
     }

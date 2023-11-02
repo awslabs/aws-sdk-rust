@@ -82,7 +82,7 @@ impl ListResourcesForWebAclInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_resources_for_web_acl::ListResourcesForWebAclInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_resources_for_web_acl::ListResourcesForWebAclInput {
             web_acl_arn: self.web_acl_arn,

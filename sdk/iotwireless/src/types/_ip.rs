@@ -46,10 +46,10 @@ impl IpBuilder {
     /// Consumes the builder and constructs a [`Ip`](crate::types::Ip).
     /// This method will fail if any of the following fields are not set:
     /// - [`ip_address`](crate::types::builders::IpBuilder::ip_address)
-    pub fn build(self) -> ::std::result::Result<crate::types::Ip, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Ip, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Ip {
             ip_address: self.ip_address.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "ip_address",
                     "ip_address was not specified but it is required when building Ip",
                 )

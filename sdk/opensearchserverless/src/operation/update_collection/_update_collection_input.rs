@@ -86,7 +86,7 @@ impl UpdateCollectionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateCollectionInput`](crate::operation::update_collection::UpdateCollectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_collection::UpdateCollectionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_collection::UpdateCollectionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_collection::UpdateCollectionInput {
             id: self.id,
             description: self.description,

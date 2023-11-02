@@ -2,7 +2,7 @@
 pub fn ser_rules_source_list(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RulesSourceList,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("Targets").start_array();
         for item_2 in &input.targets {

@@ -109,7 +109,7 @@ impl ListThingsInThingGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_things_in_thing_group::ListThingsInThingGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_things_in_thing_group::ListThingsInThingGroupInput {
             thing_group_name: self.thing_group_name,

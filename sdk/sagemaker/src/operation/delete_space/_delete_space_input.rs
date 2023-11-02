@@ -64,7 +64,7 @@ impl DeleteSpaceInputBuilder {
         &self.space_name
     }
     /// Consumes the builder and constructs a [`DeleteSpaceInput`](crate::operation::delete_space::DeleteSpaceInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_space::DeleteSpaceInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_space::DeleteSpaceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_space::DeleteSpaceInput {
             domain_id: self.domain_id,
             space_name: self.space_name,

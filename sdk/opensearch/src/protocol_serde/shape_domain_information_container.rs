@@ -39,7 +39,7 @@ where
 pub fn ser_domain_information_container(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DomainInformationContainer,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.aws_domain_information {
         #[allow(unused_mut)]
         let mut object_2 = object.key("AWSDomainInformation").start_object();

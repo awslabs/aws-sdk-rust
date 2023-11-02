@@ -255,39 +255,39 @@ impl DescribeTimeSeriesOutputBuilder {
     /// - [`time_series_arn`](crate::operation::describe_time_series::builders::DescribeTimeSeriesOutputBuilder::time_series_arn)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_time_series::DescribeTimeSeriesOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_time_series::DescribeTimeSeriesOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_time_series::DescribeTimeSeriesOutput {
             asset_id: self.asset_id,
             property_id: self.property_id,
             alias: self.alias,
             time_series_id: self.time_series_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "time_series_id",
                     "time_series_id was not specified but it is required when building DescribeTimeSeriesOutput",
                 )
             })?,
             data_type: self.data_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_type",
                     "data_type was not specified but it is required when building DescribeTimeSeriesOutput",
                 )
             })?,
             data_type_spec: self.data_type_spec,
             time_series_creation_date: self.time_series_creation_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "time_series_creation_date",
                     "time_series_creation_date was not specified but it is required when building DescribeTimeSeriesOutput",
                 )
             })?,
             time_series_last_update_date: self.time_series_last_update_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "time_series_last_update_date",
                     "time_series_last_update_date was not specified but it is required when building DescribeTimeSeriesOutput",
                 )
             })?,
             time_series_arn: self.time_series_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "time_series_arn",
                     "time_series_arn was not specified but it is required when building DescribeTimeSeriesOutput",
                 )

@@ -166,35 +166,35 @@ impl ListMapsResponseEntryBuilder {
     /// - [`data_source`](crate::types::builders::ListMapsResponseEntryBuilder::data_source)
     /// - [`create_time`](crate::types::builders::ListMapsResponseEntryBuilder::create_time)
     /// - [`update_time`](crate::types::builders::ListMapsResponseEntryBuilder::update_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::ListMapsResponseEntry, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ListMapsResponseEntry, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ListMapsResponseEntry {
             map_name: self.map_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "map_name",
                     "map_name was not specified but it is required when building ListMapsResponseEntry",
                 )
             })?,
             description: self.description.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "description",
                     "description was not specified but it is required when building ListMapsResponseEntry",
                 )
             })?,
             data_source: self.data_source.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_source",
                     "data_source was not specified but it is required when building ListMapsResponseEntry",
                 )
             })?,
             pricing_plan: self.pricing_plan,
             create_time: self.create_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "create_time",
                     "create_time was not specified but it is required when building ListMapsResponseEntry",
                 )
             })?,
             update_time: self.update_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "update_time",
                     "update_time was not specified but it is required when building ListMapsResponseEntry",
                 )

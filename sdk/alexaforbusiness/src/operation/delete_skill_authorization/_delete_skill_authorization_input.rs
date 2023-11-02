@@ -67,7 +67,7 @@ impl DeleteSkillAuthorizationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_skill_authorization::DeleteSkillAuthorizationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_skill_authorization::DeleteSkillAuthorizationInput {
             skill_id: self.skill_id,

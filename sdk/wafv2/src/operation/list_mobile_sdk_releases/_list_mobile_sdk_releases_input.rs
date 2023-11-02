@@ -86,7 +86,7 @@ impl ListMobileSdkReleasesInputBuilder {
     /// Consumes the builder and constructs a [`ListMobileSdkReleasesInput`](crate::operation::list_mobile_sdk_releases::ListMobileSdkReleasesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_mobile_sdk_releases::ListMobileSdkReleasesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_mobile_sdk_releases::ListMobileSdkReleasesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_mobile_sdk_releases::ListMobileSdkReleasesInput {
             platform: self.platform,

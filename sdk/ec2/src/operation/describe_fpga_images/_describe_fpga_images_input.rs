@@ -267,7 +267,8 @@ impl DescribeFpgaImagesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeFpgaImagesInput`](crate::operation::describe_fpga_images::DescribeFpgaImagesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_fpga_images::DescribeFpgaImagesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_fpga_images::DescribeFpgaImagesInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::describe_fpga_images::DescribeFpgaImagesInput {
             dry_run: self.dry_run,
             fpga_image_ids: self.fpga_image_ids,

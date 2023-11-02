@@ -66,7 +66,7 @@ impl DeletePlacementInputBuilder {
     /// Consumes the builder and constructs a [`DeletePlacementInput`](crate::operation::delete_placement::DeletePlacementInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_placement::DeletePlacementInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_placement::DeletePlacementInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_placement::DeletePlacementInput {
             placement_name: self.placement_name,
             project_name: self.project_name,

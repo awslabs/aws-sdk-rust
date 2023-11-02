@@ -115,7 +115,7 @@ impl CreateTopicInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateTopicInput`](crate::operation::create_topic::CreateTopicInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_topic::CreateTopicInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_topic::CreateTopicInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_topic::CreateTopicInput {
             aws_account_id: self.aws_account_id,
             topic_id: self.topic_id,

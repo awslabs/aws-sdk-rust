@@ -44,7 +44,7 @@ impl GetCallAnalyticsJobInputBuilder {
     /// Consumes the builder and constructs a [`GetCallAnalyticsJobInput`](crate::operation::get_call_analytics_job::GetCallAnalyticsJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_call_analytics_job::GetCallAnalyticsJobInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_call_analytics_job::GetCallAnalyticsJobInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_call_analytics_job::GetCallAnalyticsJobInput {
             call_analytics_job_name: self.call_analytics_job_name,

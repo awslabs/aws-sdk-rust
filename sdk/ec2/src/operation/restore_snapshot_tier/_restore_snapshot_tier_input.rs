@@ -112,7 +112,7 @@ impl RestoreSnapshotTierInputBuilder {
     /// Consumes the builder and constructs a [`RestoreSnapshotTierInput`](crate::operation::restore_snapshot_tier::RestoreSnapshotTierInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::restore_snapshot_tier::RestoreSnapshotTierInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::restore_snapshot_tier::RestoreSnapshotTierInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::restore_snapshot_tier::RestoreSnapshotTierInput {
             snapshot_id: self.snapshot_id,

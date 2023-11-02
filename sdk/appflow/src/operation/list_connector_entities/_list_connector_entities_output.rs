@@ -98,11 +98,11 @@ impl ListConnectorEntitiesOutputBuilder {
     /// - [`connector_entity_map`](crate::operation::list_connector_entities::builders::ListConnectorEntitiesOutputBuilder::connector_entity_map)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_connector_entities::ListConnectorEntitiesOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_connector_entities::ListConnectorEntitiesOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_connector_entities::ListConnectorEntitiesOutput {
             connector_entity_map: self.connector_entity_map.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "connector_entity_map",
                     "connector_entity_map was not specified but it is required when building ListConnectorEntitiesOutput",
                 )

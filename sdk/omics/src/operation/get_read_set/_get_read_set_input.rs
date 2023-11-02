@@ -107,7 +107,7 @@ impl GetReadSetInputBuilder {
         &self.part_number
     }
     /// Consumes the builder and constructs a [`GetReadSetInput`](crate::operation::get_read_set::GetReadSetInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_read_set::GetReadSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_read_set::GetReadSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_read_set::GetReadSetInput {
             id: self.id,
             sequence_store_id: self.sequence_store_id,

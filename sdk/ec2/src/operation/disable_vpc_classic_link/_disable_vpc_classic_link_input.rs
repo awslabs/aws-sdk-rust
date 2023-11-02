@@ -65,7 +65,7 @@ impl DisableVpcClassicLinkInputBuilder {
     /// Consumes the builder and constructs a [`DisableVpcClassicLinkInput`](crate::operation::disable_vpc_classic_link::DisableVpcClassicLinkInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::disable_vpc_classic_link::DisableVpcClassicLinkInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::disable_vpc_classic_link::DisableVpcClassicLinkInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::disable_vpc_classic_link::DisableVpcClassicLinkInput {
             dry_run: self.dry_run,

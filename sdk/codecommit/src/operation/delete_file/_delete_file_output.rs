@@ -133,28 +133,28 @@ impl DeleteFileOutputBuilder {
     /// - [`blob_id`](crate::operation::delete_file::builders::DeleteFileOutputBuilder::blob_id)
     /// - [`tree_id`](crate::operation::delete_file::builders::DeleteFileOutputBuilder::tree_id)
     /// - [`file_path`](crate::operation::delete_file::builders::DeleteFileOutputBuilder::file_path)
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_file::DeleteFileOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_file::DeleteFileOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_file::DeleteFileOutput {
             commit_id: self.commit_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "commit_id",
                     "commit_id was not specified but it is required when building DeleteFileOutput",
                 )
             })?,
             blob_id: self.blob_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "blob_id",
                     "blob_id was not specified but it is required when building DeleteFileOutput",
                 )
             })?,
             tree_id: self.tree_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "tree_id",
                     "tree_id was not specified but it is required when building DeleteFileOutput",
                 )
             })?,
             file_path: self.file_path.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "file_path",
                     "file_path was not specified but it is required when building DeleteFileOutput",
                 )

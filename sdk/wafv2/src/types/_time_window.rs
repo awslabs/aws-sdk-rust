@@ -70,16 +70,16 @@ impl TimeWindowBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`start_time`](crate::types::builders::TimeWindowBuilder::start_time)
     /// - [`end_time`](crate::types::builders::TimeWindowBuilder::end_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::TimeWindow, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TimeWindow, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TimeWindow {
             start_time: self.start_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "start_time",
                     "start_time was not specified but it is required when building TimeWindow",
                 )
             })?,
             end_time: self.end_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "end_time",
                     "end_time was not specified but it is required when building TimeWindow",
                 )

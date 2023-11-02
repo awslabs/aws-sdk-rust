@@ -361,53 +361,53 @@ impl FindingBuilder {
     /// - [`updated_at`](crate::types::builders::FindingBuilder::updated_at)
     /// - [`status`](crate::types::builders::FindingBuilder::status)
     /// - [`resource_owner_account`](crate::types::builders::FindingBuilder::resource_owner_account)
-    pub fn build(self) -> ::std::result::Result<crate::types::Finding, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Finding, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Finding {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field("id", "id was not specified but it is required when building Finding")
+                ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building Finding")
             })?,
             principal: self.principal,
             action: self.action,
             resource: self.resource,
             is_public: self.is_public,
             resource_type: self.resource_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_type",
                     "resource_type was not specified but it is required when building Finding",
                 )
             })?,
             condition: self.condition.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "condition",
                     "condition was not specified but it is required when building Finding",
                 )
             })?,
             created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
                     "created_at was not specified but it is required when building Finding",
                 )
             })?,
             analyzed_at: self.analyzed_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "analyzed_at",
                     "analyzed_at was not specified but it is required when building Finding",
                 )
             })?,
             updated_at: self.updated_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "updated_at",
                     "updated_at was not specified but it is required when building Finding",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building Finding",
                 )
             })?,
             resource_owner_account: self.resource_owner_account.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_owner_account",
                     "resource_owner_account was not specified but it is required when building Finding",
                 )

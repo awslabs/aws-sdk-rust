@@ -89,11 +89,11 @@ impl ListWorkflowsOutputBuilder {
     /// - [`workflows`](crate::operation::list_workflows::builders::ListWorkflowsOutputBuilder::workflows)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_workflows::ListWorkflowsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_workflows::ListWorkflowsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_workflows::ListWorkflowsOutput {
             next_token: self.next_token,
             workflows: self.workflows.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "workflows",
                     "workflows was not specified but it is required when building ListWorkflowsOutput",
                 )

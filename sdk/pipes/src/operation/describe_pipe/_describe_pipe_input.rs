@@ -42,7 +42,9 @@ impl DescribePipeInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`DescribePipeInput`](crate::operation::describe_pipe::DescribePipeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_pipe::DescribePipeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::describe_pipe::DescribePipeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_pipe::DescribePipeInput { name: self.name })
     }
 }

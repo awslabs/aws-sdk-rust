@@ -102,10 +102,10 @@ impl CreateConnectionOutputBuilder {
     /// - [`connection_arn`](crate::operation::create_connection::builders::CreateConnectionOutputBuilder::connection_arn)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_connection::CreateConnectionOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_connection::CreateConnectionOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_connection::CreateConnectionOutput {
             connection_arn: self.connection_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "connection_arn",
                     "connection_arn was not specified but it is required when building CreateConnectionOutput",
                 )

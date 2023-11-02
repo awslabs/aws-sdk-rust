@@ -184,40 +184,40 @@ impl DeploymentSummaryBuilder {
     /// - [`application_version`](crate::types::builders::DeploymentSummaryBuilder::application_version)
     /// - [`status`](crate::types::builders::DeploymentSummaryBuilder::status)
     /// - [`creation_time`](crate::types::builders::DeploymentSummaryBuilder::creation_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::DeploymentSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DeploymentSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DeploymentSummary {
             deployment_id: self.deployment_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "deployment_id",
                     "deployment_id was not specified but it is required when building DeploymentSummary",
                 )
             })?,
             application_id: self.application_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "application_id",
                     "application_id was not specified but it is required when building DeploymentSummary",
                 )
             })?,
             environment_id: self.environment_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "environment_id",
                     "environment_id was not specified but it is required when building DeploymentSummary",
                 )
             })?,
             application_version: self.application_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "application_version",
                     "application_version was not specified but it is required when building DeploymentSummary",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building DeploymentSummary",
                 )
             })?,
             creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_time",
                     "creation_time was not specified but it is required when building DeploymentSummary",
                 )

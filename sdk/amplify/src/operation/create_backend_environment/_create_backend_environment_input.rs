@@ -111,7 +111,7 @@ impl CreateBackendEnvironmentInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_backend_environment::CreateBackendEnvironmentInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_backend_environment::CreateBackendEnvironmentInput {
             app_id: self.app_id,

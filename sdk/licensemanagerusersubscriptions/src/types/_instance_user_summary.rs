@@ -200,23 +200,23 @@ impl InstanceUserSummaryBuilder {
     /// - [`username`](crate::types::builders::InstanceUserSummaryBuilder::username)
     /// - [`instance_id`](crate::types::builders::InstanceUserSummaryBuilder::instance_id)
     /// - [`status`](crate::types::builders::InstanceUserSummaryBuilder::status)
-    pub fn build(self) -> ::std::result::Result<crate::types::InstanceUserSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::InstanceUserSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::InstanceUserSummary {
             username: self.username.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "username",
                     "username was not specified but it is required when building InstanceUserSummary",
                 )
             })?,
             instance_id: self.instance_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "instance_id",
                     "instance_id was not specified but it is required when building InstanceUserSummary",
                 )
             })?,
             identity_provider: self.identity_provider,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building InstanceUserSummary",
                 )

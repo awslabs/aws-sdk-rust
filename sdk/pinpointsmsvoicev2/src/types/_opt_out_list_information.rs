@@ -93,22 +93,22 @@ impl OptOutListInformationBuilder {
     /// - [`opt_out_list_arn`](crate::types::builders::OptOutListInformationBuilder::opt_out_list_arn)
     /// - [`opt_out_list_name`](crate::types::builders::OptOutListInformationBuilder::opt_out_list_name)
     /// - [`created_timestamp`](crate::types::builders::OptOutListInformationBuilder::created_timestamp)
-    pub fn build(self) -> ::std::result::Result<crate::types::OptOutListInformation, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::OptOutListInformation, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::OptOutListInformation {
             opt_out_list_arn: self.opt_out_list_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "opt_out_list_arn",
                     "opt_out_list_arn was not specified but it is required when building OptOutListInformation",
                 )
             })?,
             opt_out_list_name: self.opt_out_list_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "opt_out_list_name",
                     "opt_out_list_name was not specified but it is required when building OptOutListInformation",
                 )
             })?,
             created_timestamp: self.created_timestamp.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_timestamp",
                     "created_timestamp was not specified but it is required when building OptOutListInformation",
                 )

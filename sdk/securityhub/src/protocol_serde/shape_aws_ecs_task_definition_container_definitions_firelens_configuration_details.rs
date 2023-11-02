@@ -2,7 +2,7 @@
 pub fn ser_aws_ecs_task_definition_container_definitions_firelens_configuration_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.options {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Options").start_object();

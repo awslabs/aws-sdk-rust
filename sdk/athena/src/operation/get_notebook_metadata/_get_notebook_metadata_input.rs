@@ -44,7 +44,7 @@ impl GetNotebookMetadataInputBuilder {
     /// Consumes the builder and constructs a [`GetNotebookMetadataInput`](crate::operation::get_notebook_metadata::GetNotebookMetadataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_notebook_metadata::GetNotebookMetadataInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_notebook_metadata::GetNotebookMetadataInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_notebook_metadata::GetNotebookMetadataInput {
             notebook_id: self.notebook_id,

@@ -86,7 +86,7 @@ impl RegisterSchemaVersionInputBuilder {
     /// Consumes the builder and constructs a [`RegisterSchemaVersionInput`](crate::operation::register_schema_version::RegisterSchemaVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::register_schema_version::RegisterSchemaVersionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::register_schema_version::RegisterSchemaVersionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::register_schema_version::RegisterSchemaVersionInput {
             schema_id: self.schema_id,

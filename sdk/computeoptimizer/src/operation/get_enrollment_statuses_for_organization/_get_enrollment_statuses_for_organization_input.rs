@@ -100,7 +100,7 @@ impl GetEnrollmentStatusesForOrganizationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_enrollment_statuses_for_organization::GetEnrollmentStatusesForOrganizationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_enrollment_statuses_for_organization::GetEnrollmentStatusesForOrganizationInput {

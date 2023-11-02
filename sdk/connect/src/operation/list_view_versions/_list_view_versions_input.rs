@@ -108,7 +108,7 @@ impl ListViewVersionsInputBuilder {
     /// Consumes the builder and constructs a [`ListViewVersionsInput`](crate::operation::list_view_versions::ListViewVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_view_versions::ListViewVersionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_view_versions::ListViewVersionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_view_versions::ListViewVersionsInput {
             instance_id: self.instance_id,
             view_id: self.view_id,

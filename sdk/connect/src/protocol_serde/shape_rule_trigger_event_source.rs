@@ -2,7 +2,7 @@
 pub fn ser_rule_trigger_event_source(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RuleTriggerEventSource,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("EventSourceName").string(input.event_source_name.as_str());
     }

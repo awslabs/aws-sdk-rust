@@ -90,17 +90,17 @@ impl GetSolFunctionPackageMetadataBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`created_at`](crate::types::builders::GetSolFunctionPackageMetadataBuilder::created_at)
     /// - [`last_modified`](crate::types::builders::GetSolFunctionPackageMetadataBuilder::last_modified)
-    pub fn build(self) -> ::std::result::Result<crate::types::GetSolFunctionPackageMetadata, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::GetSolFunctionPackageMetadata, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::GetSolFunctionPackageMetadata {
             vnfd: self.vnfd,
             created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
                     "created_at was not specified but it is required when building GetSolFunctionPackageMetadata",
                 )
             })?,
             last_modified: self.last_modified.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_modified",
                     "last_modified was not specified but it is required when building GetSolFunctionPackageMetadata",
                 )

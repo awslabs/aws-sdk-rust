@@ -115,7 +115,7 @@ impl UpdateGroupInputBuilder {
         &self.hidden_from_global_address_list
     }
     /// Consumes the builder and constructs a [`UpdateGroupInput`](crate::operation::update_group::UpdateGroupInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_group::UpdateGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_group::UpdateGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_group::UpdateGroupInput {
             organization_id: self.organization_id,
             group_id: self.group_id,

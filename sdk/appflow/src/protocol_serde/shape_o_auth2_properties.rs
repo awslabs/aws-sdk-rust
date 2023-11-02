@@ -2,7 +2,7 @@
 pub fn ser_o_auth2_properties(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::OAuth2Properties,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("tokenUrl").string(input.token_url.as_str());
     }

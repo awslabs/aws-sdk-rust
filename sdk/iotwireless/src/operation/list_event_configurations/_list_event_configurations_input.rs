@@ -88,7 +88,7 @@ impl ListEventConfigurationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_event_configurations::ListEventConfigurationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_event_configurations::ListEventConfigurationsInput {
             resource_type: self.resource_type,

@@ -114,12 +114,12 @@ impl ListCoverageStatisticsOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_coverage_statistics::ListCoverageStatisticsOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_coverage_statistics::ListCoverageStatisticsOutput {
             counts_by_group: self.counts_by_group,
             total_counts: self.total_counts.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "total_counts",
                     "total_counts was not specified but it is required when building ListCoverageStatisticsOutput",
                 )

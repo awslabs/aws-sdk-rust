@@ -316,7 +316,9 @@ impl CreateStudioInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateStudioInput`](crate::operation::create_studio::CreateStudioInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_studio::CreateStudioInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_studio::CreateStudioInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_studio::CreateStudioInput {
             name: self.name,
             description: self.description,

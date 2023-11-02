@@ -97,7 +97,7 @@ impl GenerateRecommendationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::generate_recommendations::GenerateRecommendationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::generate_recommendations::GenerateRecommendationsInput {
             discovery_job_arn: self.discovery_job_arn,

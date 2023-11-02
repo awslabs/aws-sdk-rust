@@ -165,7 +165,7 @@ impl CreateContextInputBuilder {
     /// Consumes the builder and constructs a [`CreateContextInput`](crate::operation::create_context::CreateContextInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_context::CreateContextInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_context::CreateContextInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_context::CreateContextInput {
             context_name: self.context_name,
             source: self.source,

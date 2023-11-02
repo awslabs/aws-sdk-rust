@@ -46,7 +46,7 @@ impl ListOfferingTransactionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_offering_transactions::ListOfferingTransactionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_offering_transactions::ListOfferingTransactionsInput { next_token: self.next_token })
     }

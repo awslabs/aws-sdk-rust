@@ -185,23 +185,23 @@ impl DevicePositionBuilder {
     /// - [`sample_time`](crate::types::builders::DevicePositionBuilder::sample_time)
     /// - [`received_time`](crate::types::builders::DevicePositionBuilder::received_time)
     /// - [`position`](crate::types::builders::DevicePositionBuilder::position)
-    pub fn build(self) -> ::std::result::Result<crate::types::DevicePosition, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DevicePosition, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DevicePosition {
             device_id: self.device_id,
             sample_time: self.sample_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "sample_time",
                     "sample_time was not specified but it is required when building DevicePosition",
                 )
             })?,
             received_time: self.received_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "received_time",
                     "received_time was not specified but it is required when building DevicePosition",
                 )
             })?,
             position: self.position.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "position",
                     "position was not specified but it is required when building DevicePosition",
                 )

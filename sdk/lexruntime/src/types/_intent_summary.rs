@@ -275,14 +275,14 @@ impl IntentSummaryBuilder {
     /// Consumes the builder and constructs a [`IntentSummary`](crate::types::IntentSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`dialog_action_type`](crate::types::builders::IntentSummaryBuilder::dialog_action_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::IntentSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::IntentSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::IntentSummary {
             intent_name: self.intent_name,
             checkpoint_label: self.checkpoint_label,
             slots: self.slots,
             confirmation_status: self.confirmation_status,
             dialog_action_type: self.dialog_action_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "dialog_action_type",
                     "dialog_action_type was not specified but it is required when building IntentSummary",
                 )

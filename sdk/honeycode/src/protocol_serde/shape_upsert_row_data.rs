@@ -2,7 +2,7 @@
 pub fn ser_upsert_row_data(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UpsertRowData,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("batchItemId").string(input.batch_item_id.as_str());
     }

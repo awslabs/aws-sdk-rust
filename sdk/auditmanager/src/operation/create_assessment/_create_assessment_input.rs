@@ -200,7 +200,7 @@ impl CreateAssessmentInputBuilder {
     /// Consumes the builder and constructs a [`CreateAssessmentInput`](crate::operation::create_assessment::CreateAssessmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_assessment::CreateAssessmentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_assessment::CreateAssessmentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_assessment::CreateAssessmentInput {
             name: self.name,
             description: self.description,

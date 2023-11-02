@@ -2,7 +2,7 @@
 pub fn ser_create_streaming_session_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_streaming_session::CreateStreamingSessionInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.ec2_instance_type {
         object.key("ec2InstanceType").string(var_1.as_str());
     }

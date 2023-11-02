@@ -86,7 +86,7 @@ impl GetModelInputBuilder {
         &self.flatten
     }
     /// Consumes the builder and constructs a [`GetModelInput`](crate::operation::get_model::GetModelInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_model::GetModelInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_model::GetModelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_model::GetModelInput {
             rest_api_id: self.rest_api_id,
             model_name: self.model_name,

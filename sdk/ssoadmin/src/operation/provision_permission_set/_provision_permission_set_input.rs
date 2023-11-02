@@ -109,8 +109,10 @@ impl ProvisionPermissionSetInputBuilder {
     /// Consumes the builder and constructs a [`ProvisionPermissionSetInput`](crate::operation::provision_permission_set::ProvisionPermissionSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::provision_permission_set::ProvisionPermissionSetInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::provision_permission_set::ProvisionPermissionSetInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::provision_permission_set::ProvisionPermissionSetInput {
             instance_arn: self.instance_arn,
             permission_set_arn: self.permission_set_arn,

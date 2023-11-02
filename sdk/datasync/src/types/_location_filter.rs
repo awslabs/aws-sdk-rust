@@ -98,22 +98,22 @@ impl LocationFilterBuilder {
     /// - [`name`](crate::types::builders::LocationFilterBuilder::name)
     /// - [`values`](crate::types::builders::LocationFilterBuilder::values)
     /// - [`operator`](crate::types::builders::LocationFilterBuilder::operator)
-    pub fn build(self) -> ::std::result::Result<crate::types::LocationFilter, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::LocationFilter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::LocationFilter {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building LocationFilter",
                 )
             })?,
             values: self.values.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "values",
                     "values was not specified but it is required when building LocationFilter",
                 )
             })?,
             operator: self.operator.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "operator",
                     "operator was not specified but it is required when building LocationFilter",
                 )

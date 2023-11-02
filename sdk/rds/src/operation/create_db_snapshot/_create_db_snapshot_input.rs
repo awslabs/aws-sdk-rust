@@ -156,7 +156,7 @@ impl CreateDbSnapshotInputBuilder {
     /// Consumes the builder and constructs a [`CreateDbSnapshotInput`](crate::operation::create_db_snapshot::CreateDbSnapshotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_db_snapshot::CreateDbSnapshotInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_db_snapshot::CreateDbSnapshotInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_db_snapshot::CreateDbSnapshotInput {
             db_snapshot_identifier: self.db_snapshot_identifier,
             db_instance_identifier: self.db_instance_identifier,

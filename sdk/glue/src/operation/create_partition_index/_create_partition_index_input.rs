@@ -109,7 +109,7 @@ impl CreatePartitionIndexInputBuilder {
     /// Consumes the builder and constructs a [`CreatePartitionIndexInput`](crate::operation::create_partition_index::CreatePartitionIndexInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_partition_index::CreatePartitionIndexInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_partition_index::CreatePartitionIndexInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_partition_index::CreatePartitionIndexInput {
             catalog_id: self.catalog_id,

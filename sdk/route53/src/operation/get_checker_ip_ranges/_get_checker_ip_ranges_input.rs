@@ -19,7 +19,7 @@ impl GetCheckerIpRangesInputBuilder {
     /// Consumes the builder and constructs a [`GetCheckerIpRangesInput`](crate::operation::get_checker_ip_ranges::GetCheckerIpRangesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_checker_ip_ranges::GetCheckerIpRangesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_checker_ip_ranges::GetCheckerIpRangesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_checker_ip_ranges::GetCheckerIpRangesInput {})
     }

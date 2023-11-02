@@ -174,7 +174,7 @@ impl DescribeDbInstancesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDbInstancesInput`](crate::operation::describe_db_instances::DescribeDbInstancesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_db_instances::DescribeDbInstancesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_db_instances::DescribeDbInstancesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_db_instances::DescribeDbInstancesInput {
             db_instance_identifier: self.db_instance_identifier,

@@ -101,7 +101,7 @@ impl SearchRasterDataCollectionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::search_raster_data_collection::SearchRasterDataCollectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::search_raster_data_collection::SearchRasterDataCollectionInput {
             arn: self.arn,

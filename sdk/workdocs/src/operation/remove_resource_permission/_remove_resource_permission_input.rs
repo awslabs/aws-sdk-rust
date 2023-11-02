@@ -120,7 +120,7 @@ impl RemoveResourcePermissionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_resource_permission::RemoveResourcePermissionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::remove_resource_permission::RemoveResourcePermissionInput {
             authentication_token: self.authentication_token,

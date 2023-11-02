@@ -205,7 +205,7 @@ impl CreateManagedPrefixListInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_managed_prefix_list::CreateManagedPrefixListInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_managed_prefix_list::CreateManagedPrefixListInput {
             dry_run: self.dry_run,

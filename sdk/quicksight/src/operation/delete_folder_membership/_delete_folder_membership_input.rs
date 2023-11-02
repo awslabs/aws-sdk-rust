@@ -110,8 +110,10 @@ impl DeleteFolderMembershipInputBuilder {
     /// Consumes the builder and constructs a [`DeleteFolderMembershipInput`](crate::operation::delete_folder_membership::DeleteFolderMembershipInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_folder_membership::DeleteFolderMembershipInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::delete_folder_membership::DeleteFolderMembershipInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::delete_folder_membership::DeleteFolderMembershipInput {
             aws_account_id: self.aws_account_id,
             folder_id: self.folder_id,

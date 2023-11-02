@@ -70,7 +70,7 @@ impl TagLogGroupInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`TagLogGroupInput`](crate::operation::tag_log_group::TagLogGroupInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::tag_log_group::TagLogGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::tag_log_group::TagLogGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::tag_log_group::TagLogGroupInput {
             log_group_name: self.log_group_name,
             tags: self.tags,

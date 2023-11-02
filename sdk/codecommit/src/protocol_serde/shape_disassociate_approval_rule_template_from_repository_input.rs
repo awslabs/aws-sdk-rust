@@ -2,7 +2,7 @@
 pub fn ser_disassociate_approval_rule_template_from_repository_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.approval_rule_template_name {
         object.key("approvalRuleTemplateName").string(var_1.as_str());
     }

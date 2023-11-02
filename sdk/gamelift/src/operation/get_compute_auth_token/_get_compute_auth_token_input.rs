@@ -66,7 +66,7 @@ impl GetComputeAuthTokenInputBuilder {
     /// Consumes the builder and constructs a [`GetComputeAuthTokenInput`](crate::operation::get_compute_auth_token::GetComputeAuthTokenInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_compute_auth_token::GetComputeAuthTokenInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_compute_auth_token::GetComputeAuthTokenInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_compute_auth_token::GetComputeAuthTokenInput {
             fleet_id: self.fleet_id,

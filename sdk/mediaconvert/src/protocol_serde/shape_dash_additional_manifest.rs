@@ -2,7 +2,7 @@
 pub fn ser_dash_additional_manifest(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DashAdditionalManifest,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.manifest_name_modifier {
         object.key("manifestNameModifier").string(var_1.as_str());
     }

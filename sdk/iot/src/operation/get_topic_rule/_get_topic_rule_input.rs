@@ -45,7 +45,7 @@ impl GetTopicRuleInputBuilder {
     /// Consumes the builder and constructs a [`GetTopicRuleInput`](crate::operation::get_topic_rule::GetTopicRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_topic_rule::GetTopicRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_topic_rule::GetTopicRuleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_topic_rule::GetTopicRuleInput { rule_name: self.rule_name })
     }
 }

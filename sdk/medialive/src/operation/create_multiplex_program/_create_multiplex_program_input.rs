@@ -111,8 +111,10 @@ impl CreateMultiplexProgramInputBuilder {
     /// Consumes the builder and constructs a [`CreateMultiplexProgramInput`](crate::operation::create_multiplex_program::CreateMultiplexProgramInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_multiplex_program::CreateMultiplexProgramInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::create_multiplex_program::CreateMultiplexProgramInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::create_multiplex_program::CreateMultiplexProgramInput {
             multiplex_id: self.multiplex_id,
             multiplex_program_settings: self.multiplex_program_settings,

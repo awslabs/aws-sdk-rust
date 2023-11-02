@@ -105,7 +105,7 @@ impl ListEventsInputBuilder {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`ListEventsInput`](crate::operation::list_events::ListEventsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_events::ListEventsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_events::ListEventsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_events::ListEventsInput {
             filters: self.filters,
             max_results: self.max_results,

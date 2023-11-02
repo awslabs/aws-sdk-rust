@@ -147,7 +147,7 @@ impl DeleteCustomMetadataInputBuilder {
     /// Consumes the builder and constructs a [`DeleteCustomMetadataInput`](crate::operation::delete_custom_metadata::DeleteCustomMetadataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_custom_metadata::DeleteCustomMetadataInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_custom_metadata::DeleteCustomMetadataInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_custom_metadata::DeleteCustomMetadataInput {
             authentication_token: self.authentication_token,

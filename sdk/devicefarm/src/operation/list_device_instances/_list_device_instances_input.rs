@@ -64,7 +64,7 @@ impl ListDeviceInstancesInputBuilder {
     /// Consumes the builder and constructs a [`ListDeviceInstancesInput`](crate::operation::list_device_instances::ListDeviceInstancesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_device_instances::ListDeviceInstancesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_device_instances::ListDeviceInstancesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_device_instances::ListDeviceInstancesInput {
             max_results: self.max_results,

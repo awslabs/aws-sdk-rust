@@ -287,36 +287,36 @@ impl DescribeStateMachineForExecutionOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_state_machine_for_execution::DescribeStateMachineForExecutionOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_state_machine_for_execution::DescribeStateMachineForExecutionOutput {
                 state_machine_arn: self.state_machine_arn.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
                         "state_machine_arn",
                         "state_machine_arn was not specified but it is required when building DescribeStateMachineForExecutionOutput",
                     )
                 })?,
                 name: self.name.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
                         "name",
                         "name was not specified but it is required when building DescribeStateMachineForExecutionOutput",
                     )
                 })?,
                 definition: self.definition.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
                         "definition",
                         "definition was not specified but it is required when building DescribeStateMachineForExecutionOutput",
                     )
                 })?,
                 role_arn: self.role_arn.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
                         "role_arn",
                         "role_arn was not specified but it is required when building DescribeStateMachineForExecutionOutput",
                     )
                 })?,
                 update_date: self.update_date.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
                         "update_date",
                         "update_date was not specified but it is required when building DescribeStateMachineForExecutionOutput",
                     )

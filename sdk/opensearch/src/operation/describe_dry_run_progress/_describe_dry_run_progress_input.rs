@@ -88,7 +88,7 @@ impl DescribeDryRunProgressInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_dry_run_progress::DescribeDryRunProgressInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_dry_run_progress::DescribeDryRunProgressInput {
             domain_name: self.domain_name,

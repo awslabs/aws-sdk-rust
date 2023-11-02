@@ -93,7 +93,7 @@ impl DescribeCommandsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeCommandsInput`](crate::operation::describe_commands::DescribeCommandsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_commands::DescribeCommandsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_commands::DescribeCommandsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_commands::DescribeCommandsInput {
             deployment_id: self.deployment_id,
             instance_id: self.instance_id,

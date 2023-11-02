@@ -88,12 +88,12 @@ impl CreateTrafficPolicyInstanceOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_traffic_policy_instance::CreateTrafficPolicyInstanceOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_traffic_policy_instance::CreateTrafficPolicyInstanceOutput {
             traffic_policy_instance: self.traffic_policy_instance,
             location: self.location.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "location",
                     "location was not specified but it is required when building CreateTrafficPolicyInstanceOutput",
                 )

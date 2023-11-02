@@ -252,25 +252,25 @@ impl ScheduleEntryBuilder {
     /// - [`channel_name`](crate::types::builders::ScheduleEntryBuilder::channel_name)
     /// - [`program_name`](crate::types::builders::ScheduleEntryBuilder::program_name)
     /// - [`source_location_name`](crate::types::builders::ScheduleEntryBuilder::source_location_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::ScheduleEntry, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ScheduleEntry, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ScheduleEntry {
             approximate_duration_seconds: self.approximate_duration_seconds.unwrap_or_default(),
             approximate_start_time: self.approximate_start_time,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building ScheduleEntry",
                 )
             })?,
             channel_name: self.channel_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "channel_name",
                     "channel_name was not specified but it is required when building ScheduleEntry",
                 )
             })?,
             live_source_name: self.live_source_name,
             program_name: self.program_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "program_name",
                     "program_name was not specified but it is required when building ScheduleEntry",
                 )
@@ -278,7 +278,7 @@ impl ScheduleEntryBuilder {
             schedule_ad_breaks: self.schedule_ad_breaks,
             schedule_entry_type: self.schedule_entry_type,
             source_location_name: self.source_location_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source_location_name",
                     "source_location_name was not specified but it is required when building ScheduleEntry",
                 )

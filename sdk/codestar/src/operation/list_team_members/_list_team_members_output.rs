@@ -89,10 +89,10 @@ impl ListTeamMembersOutputBuilder {
     /// - [`team_members`](crate::operation::list_team_members::builders::ListTeamMembersOutputBuilder::team_members)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_team_members::ListTeamMembersOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_team_members::ListTeamMembersOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_team_members::ListTeamMembersOutput {
             team_members: self.team_members.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "team_members",
                     "team_members was not specified but it is required when building ListTeamMembersOutput",
                 )

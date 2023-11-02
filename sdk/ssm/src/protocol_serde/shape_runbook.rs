@@ -2,7 +2,7 @@
 pub fn ser_runbook(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Runbook,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("DocumentName").string(input.document_name.as_str());
     }

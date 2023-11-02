@@ -93,7 +93,7 @@ impl ListWorldExportJobsInputBuilder {
     /// Consumes the builder and constructs a [`ListWorldExportJobsInput`](crate::operation::list_world_export_jobs::ListWorldExportJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_world_export_jobs::ListWorldExportJobsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_world_export_jobs::ListWorldExportJobsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_world_export_jobs::ListWorldExportJobsInput {
             next_token: self.next_token,

@@ -154,7 +154,8 @@ impl TransactWriteItemsInputBuilder {
     /// Consumes the builder and constructs a [`TransactWriteItemsInput`](crate::operation::transact_write_items::TransactWriteItemsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::transact_write_items::TransactWriteItemsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::transact_write_items::TransactWriteItemsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::transact_write_items::TransactWriteItemsInput {
             transact_items: self.transact_items,
             return_consumed_capacity: self.return_consumed_capacity,

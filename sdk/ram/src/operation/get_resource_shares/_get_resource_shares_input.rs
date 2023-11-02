@@ -248,7 +248,7 @@ impl GetResourceSharesInputBuilder {
     /// Consumes the builder and constructs a [`GetResourceSharesInput`](crate::operation::get_resource_shares::GetResourceSharesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_resource_shares::GetResourceSharesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_resource_shares::GetResourceSharesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_resource_shares::GetResourceSharesInput {
             resource_share_arns: self.resource_share_arns,
             resource_share_status: self.resource_share_status,

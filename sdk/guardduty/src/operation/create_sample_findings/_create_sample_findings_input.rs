@@ -73,7 +73,7 @@ impl CreateSampleFindingsInputBuilder {
     /// Consumes the builder and constructs a [`CreateSampleFindingsInput`](crate::operation::create_sample_findings::CreateSampleFindingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_sample_findings::CreateSampleFindingsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_sample_findings::CreateSampleFindingsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_sample_findings::CreateSampleFindingsInput {
             detector_id: self.detector_id,

@@ -2,7 +2,7 @@
 pub fn ser_io_t_job_exponential_rollout_rate(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IoTJobExponentialRolloutRate,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("baseRatePerMinute").number(
             #[allow(clippy::useless_conversion)]

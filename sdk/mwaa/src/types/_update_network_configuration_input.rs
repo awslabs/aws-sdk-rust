@@ -51,10 +51,10 @@ impl UpdateNetworkConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`UpdateNetworkConfigurationInput`](crate::types::UpdateNetworkConfigurationInput).
     /// This method will fail if any of the following fields are not set:
     /// - [`security_group_ids`](crate::types::builders::UpdateNetworkConfigurationInputBuilder::security_group_ids)
-    pub fn build(self) -> ::std::result::Result<crate::types::UpdateNetworkConfigurationInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::UpdateNetworkConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::UpdateNetworkConfigurationInput {
             security_group_ids: self.security_group_ids.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "security_group_ids",
                     "security_group_ids was not specified but it is required when building UpdateNetworkConfigurationInput",
                 )

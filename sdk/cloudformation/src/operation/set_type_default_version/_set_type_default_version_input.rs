@@ -121,7 +121,7 @@ impl SetTypeDefaultVersionInputBuilder {
     /// Consumes the builder and constructs a [`SetTypeDefaultVersionInput`](crate::operation::set_type_default_version::SetTypeDefaultVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::set_type_default_version::SetTypeDefaultVersionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::set_type_default_version::SetTypeDefaultVersionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::set_type_default_version::SetTypeDefaultVersionInput {
             arn: self.arn,

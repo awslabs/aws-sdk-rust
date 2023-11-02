@@ -285,40 +285,40 @@ impl AnalyzedResourceBuilder {
     /// - [`updated_at`](crate::types::builders::AnalyzedResourceBuilder::updated_at)
     /// - [`is_public`](crate::types::builders::AnalyzedResourceBuilder::is_public)
     /// - [`resource_owner_account`](crate::types::builders::AnalyzedResourceBuilder::resource_owner_account)
-    pub fn build(self) -> ::std::result::Result<crate::types::AnalyzedResource, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AnalyzedResource, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AnalyzedResource {
             resource_arn: self.resource_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_arn",
                     "resource_arn was not specified but it is required when building AnalyzedResource",
                 )
             })?,
             resource_type: self.resource_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_type",
                     "resource_type was not specified but it is required when building AnalyzedResource",
                 )
             })?,
             created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
                     "created_at was not specified but it is required when building AnalyzedResource",
                 )
             })?,
             analyzed_at: self.analyzed_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "analyzed_at",
                     "analyzed_at was not specified but it is required when building AnalyzedResource",
                 )
             })?,
             updated_at: self.updated_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "updated_at",
                     "updated_at was not specified but it is required when building AnalyzedResource",
                 )
             })?,
             is_public: self.is_public.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "is_public",
                     "is_public was not specified but it is required when building AnalyzedResource",
                 )
@@ -327,7 +327,7 @@ impl AnalyzedResourceBuilder {
             shared_via: self.shared_via,
             status: self.status,
             resource_owner_account: self.resource_owner_account.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_owner_account",
                     "resource_owner_account was not specified but it is required when building AnalyzedResource",
                 )

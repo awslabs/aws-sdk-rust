@@ -66,7 +66,7 @@ impl DescribePromptInputBuilder {
     /// Consumes the builder and constructs a [`DescribePromptInput`](crate::operation::describe_prompt::DescribePromptInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_prompt::DescribePromptInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_prompt::DescribePromptInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_prompt::DescribePromptInput {
             instance_id: self.instance_id,
             prompt_id: self.prompt_id,

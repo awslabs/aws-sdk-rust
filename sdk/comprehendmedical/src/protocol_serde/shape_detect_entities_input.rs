@@ -2,7 +2,7 @@
 pub fn ser_detect_entities_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::detect_entities::DetectEntitiesInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.text {
         object.key("Text").string(var_1.as_str());
     }

@@ -240,29 +240,29 @@ impl GetProjectOutputBuilder {
     /// - [`id`](crate::operation::get_project::builders::GetProjectOutputBuilder::id)
     /// - [`name`](crate::operation::get_project::builders::GetProjectOutputBuilder::name)
     /// - [`created_by`](crate::operation::get_project::builders::GetProjectOutputBuilder::created_by)
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_project::GetProjectOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_project::GetProjectOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_project::GetProjectOutput {
             domain_id: self.domain_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "domain_id",
                     "domain_id was not specified but it is required when building GetProjectOutput",
                 )
             })?,
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building GetProjectOutput",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building GetProjectOutput",
                 )
             })?,
             description: self.description,
             created_by: self.created_by.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_by",
                     "created_by was not specified but it is required when building GetProjectOutput",
                 )

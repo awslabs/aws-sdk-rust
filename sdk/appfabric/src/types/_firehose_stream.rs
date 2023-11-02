@@ -46,10 +46,10 @@ impl FirehoseStreamBuilder {
     /// Consumes the builder and constructs a [`FirehoseStream`](crate::types::FirehoseStream).
     /// This method will fail if any of the following fields are not set:
     /// - [`stream_name`](crate::types::builders::FirehoseStreamBuilder::stream_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::FirehoseStream, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::FirehoseStream, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FirehoseStream {
             stream_name: self.stream_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "stream_name",
                     "stream_name was not specified but it is required when building FirehoseStream",
                 )

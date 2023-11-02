@@ -2,7 +2,7 @@
 pub fn ser_exclude_period_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ExcludePeriodConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Amount").number(
             #[allow(clippy::useless_conversion)]

@@ -142,34 +142,34 @@ impl BotMemberBuilder {
     /// - [`bot_member_alias_id`](crate::types::builders::BotMemberBuilder::bot_member_alias_id)
     /// - [`bot_member_alias_name`](crate::types::builders::BotMemberBuilder::bot_member_alias_name)
     /// - [`bot_member_version`](crate::types::builders::BotMemberBuilder::bot_member_version)
-    pub fn build(self) -> ::std::result::Result<crate::types::BotMember, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::BotMember, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::BotMember {
             bot_member_id: self.bot_member_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "bot_member_id",
                     "bot_member_id was not specified but it is required when building BotMember",
                 )
             })?,
             bot_member_name: self.bot_member_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "bot_member_name",
                     "bot_member_name was not specified but it is required when building BotMember",
                 )
             })?,
             bot_member_alias_id: self.bot_member_alias_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "bot_member_alias_id",
                     "bot_member_alias_id was not specified but it is required when building BotMember",
                 )
             })?,
             bot_member_alias_name: self.bot_member_alias_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "bot_member_alias_name",
                     "bot_member_alias_name was not specified but it is required when building BotMember",
                 )
             })?,
             bot_member_version: self.bot_member_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "bot_member_version",
                     "bot_member_version was not specified but it is required when building BotMember",
                 )

@@ -68,7 +68,7 @@ impl GetAssistantAssociationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_assistant_association::GetAssistantAssociationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_assistant_association::GetAssistantAssociationInput {
             assistant_association_id: self.assistant_association_id,

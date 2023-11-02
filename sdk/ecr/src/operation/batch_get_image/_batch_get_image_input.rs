@@ -128,7 +128,7 @@ impl BatchGetImageInputBuilder {
     /// Consumes the builder and constructs a [`BatchGetImageInput`](crate::operation::batch_get_image::BatchGetImageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_get_image::BatchGetImageInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::batch_get_image::BatchGetImageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::batch_get_image::BatchGetImageInput {
             registry_id: self.registry_id,
             repository_name: self.repository_name,

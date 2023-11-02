@@ -93,8 +93,10 @@ impl DescribeImageAttributeInputBuilder {
     /// Consumes the builder and constructs a [`DescribeImageAttributeInput`](crate::operation::describe_image_attribute::DescribeImageAttributeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_image_attribute::DescribeImageAttributeInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::describe_image_attribute::DescribeImageAttributeInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::describe_image_attribute::DescribeImageAttributeInput {
             attribute: self.attribute,
             image_id: self.image_id,

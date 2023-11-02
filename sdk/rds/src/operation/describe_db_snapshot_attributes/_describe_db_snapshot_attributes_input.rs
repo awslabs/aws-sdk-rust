@@ -47,7 +47,7 @@ impl DescribeDbSnapshotAttributesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_db_snapshot_attributes::DescribeDbSnapshotAttributesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_db_snapshot_attributes::DescribeDbSnapshotAttributesInput {
             db_snapshot_identifier: self.db_snapshot_identifier,

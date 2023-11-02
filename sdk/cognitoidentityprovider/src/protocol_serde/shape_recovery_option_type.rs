@@ -2,7 +2,7 @@
 pub fn ser_recovery_option_type(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RecoveryOptionType,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Priority").number(
             #[allow(clippy::useless_conversion)]

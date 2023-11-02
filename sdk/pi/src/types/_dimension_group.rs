@@ -444,10 +444,10 @@ impl DimensionGroupBuilder {
     /// Consumes the builder and constructs a [`DimensionGroup`](crate::types::DimensionGroup).
     /// This method will fail if any of the following fields are not set:
     /// - [`group`](crate::types::builders::DimensionGroupBuilder::group)
-    pub fn build(self) -> ::std::result::Result<crate::types::DimensionGroup, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DimensionGroup, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DimensionGroup {
             group: self.group.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "group",
                     "group was not specified but it is required when building DimensionGroup",
                 )

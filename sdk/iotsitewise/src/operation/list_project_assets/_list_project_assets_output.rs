@@ -89,10 +89,10 @@ impl ListProjectAssetsOutputBuilder {
     /// - [`asset_ids`](crate::operation::list_project_assets::builders::ListProjectAssetsOutputBuilder::asset_ids)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_project_assets::ListProjectAssetsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_project_assets::ListProjectAssetsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_project_assets::ListProjectAssetsOutput {
             asset_ids: self.asset_ids.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "asset_ids",
                     "asset_ids was not specified but it is required when building ListProjectAssetsOutput",
                 )

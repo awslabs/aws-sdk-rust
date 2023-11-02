@@ -224,22 +224,22 @@ impl PolicyItemBuilder {
     /// - [`policy_type`](crate::types::builders::PolicyItemBuilder::policy_type)
     /// - [`created_date`](crate::types::builders::PolicyItemBuilder::created_date)
     /// - [`last_updated_date`](crate::types::builders::PolicyItemBuilder::last_updated_date)
-    pub fn build(self) -> ::std::result::Result<crate::types::PolicyItem, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PolicyItem, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PolicyItem {
             policy_store_id: self.policy_store_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "policy_store_id",
                     "policy_store_id was not specified but it is required when building PolicyItem",
                 )
             })?,
             policy_id: self.policy_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "policy_id",
                     "policy_id was not specified but it is required when building PolicyItem",
                 )
             })?,
             policy_type: self.policy_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "policy_type",
                     "policy_type was not specified but it is required when building PolicyItem",
                 )
@@ -248,13 +248,13 @@ impl PolicyItemBuilder {
             resource: self.resource,
             definition: self.definition,
             created_date: self.created_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_date",
                     "created_date was not specified but it is required when building PolicyItem",
                 )
             })?,
             last_updated_date: self.last_updated_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_updated_date",
                     "last_updated_date was not specified but it is required when building PolicyItem",
                 )

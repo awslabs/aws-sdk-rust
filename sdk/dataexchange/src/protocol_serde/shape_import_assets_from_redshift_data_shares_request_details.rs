@@ -2,7 +2,7 @@
 pub fn ser_import_assets_from_redshift_data_shares_request_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ImportAssetsFromRedshiftDataSharesRequestDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("AssetSources").start_array();
         for item_2 in &input.asset_sources {

@@ -188,40 +188,40 @@ impl TestDnsAnswerOutputBuilder {
     /// - [`protocol`](crate::operation::test_dns_answer::builders::TestDnsAnswerOutputBuilder::protocol)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::test_dns_answer::TestDnsAnswerOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::test_dns_answer::TestDnsAnswerOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::test_dns_answer::TestDnsAnswerOutput {
             nameserver: self.nameserver.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "nameserver",
                     "nameserver was not specified but it is required when building TestDnsAnswerOutput",
                 )
             })?,
             record_name: self.record_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "record_name",
                     "record_name was not specified but it is required when building TestDnsAnswerOutput",
                 )
             })?,
             record_type: self.record_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "record_type",
                     "record_type was not specified but it is required when building TestDnsAnswerOutput",
                 )
             })?,
             record_data: self.record_data.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "record_data",
                     "record_data was not specified but it is required when building TestDnsAnswerOutput",
                 )
             })?,
             response_code: self.response_code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "response_code",
                     "response_code was not specified but it is required when building TestDnsAnswerOutput",
                 )
             })?,
             protocol: self.protocol.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "protocol",
                     "protocol was not specified but it is required when building TestDnsAnswerOutput",
                 )

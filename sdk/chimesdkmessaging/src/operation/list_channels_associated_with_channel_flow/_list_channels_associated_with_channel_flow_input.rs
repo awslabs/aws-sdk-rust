@@ -97,7 +97,7 @@ impl ListChannelsAssociatedWithChannelFlowInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_channels_associated_with_channel_flow::ListChannelsAssociatedWithChannelFlowInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_channels_associated_with_channel_flow::ListChannelsAssociatedWithChannelFlowInput {

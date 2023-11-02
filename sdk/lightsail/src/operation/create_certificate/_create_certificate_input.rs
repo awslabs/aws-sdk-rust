@@ -139,7 +139,7 @@ impl CreateCertificateInputBuilder {
     /// Consumes the builder and constructs a [`CreateCertificateInput`](crate::operation::create_certificate::CreateCertificateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_certificate::CreateCertificateInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_certificate::CreateCertificateInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_certificate::CreateCertificateInput {
             certificate_name: self.certificate_name,
             domain_name: self.domain_name,

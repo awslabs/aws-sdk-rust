@@ -103,22 +103,22 @@ impl SessionKeyEmv2000Builder {
     /// - [`primary_account_number`](crate::types::builders::SessionKeyEmv2000Builder::primary_account_number)
     /// - [`pan_sequence_number`](crate::types::builders::SessionKeyEmv2000Builder::pan_sequence_number)
     /// - [`application_transaction_counter`](crate::types::builders::SessionKeyEmv2000Builder::application_transaction_counter)
-    pub fn build(self) -> ::std::result::Result<crate::types::SessionKeyEmv2000, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SessionKeyEmv2000, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SessionKeyEmv2000 {
             primary_account_number: self.primary_account_number.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "primary_account_number",
                     "primary_account_number was not specified but it is required when building SessionKeyEmv2000",
                 )
             })?,
             pan_sequence_number: self.pan_sequence_number.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "pan_sequence_number",
                     "pan_sequence_number was not specified but it is required when building SessionKeyEmv2000",
                 )
             })?,
             application_transaction_counter: self.application_transaction_counter.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "application_transaction_counter",
                     "application_transaction_counter was not specified but it is required when building SessionKeyEmv2000",
                 )

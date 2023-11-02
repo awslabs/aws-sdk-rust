@@ -2,7 +2,7 @@
 pub fn ser_custom_message_activity(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CustomMessageActivity,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.delivery_uri {
         object.key("DeliveryUri").string(var_1.as_str());
     }

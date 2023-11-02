@@ -2,7 +2,7 @@
 pub fn ser_hls_additional_manifest(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::HlsAdditionalManifest,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.manifest_name_modifier {
         object.key("manifestNameModifier").string(var_1.as_str());
     }

@@ -389,7 +389,7 @@ impl CreateRecipeJobInputBuilder {
     /// Consumes the builder and constructs a [`CreateRecipeJobInput`](crate::operation::create_recipe_job::CreateRecipeJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_recipe_job::CreateRecipeJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_recipe_job::CreateRecipeJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_recipe_job::CreateRecipeJobInput {
             dataset_name: self.dataset_name,
             encryption_key_arn: self.encryption_key_arn,

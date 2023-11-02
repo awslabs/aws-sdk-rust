@@ -68,7 +68,7 @@ impl DeleteCoreNetworkPolicyVersionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_core_network_policy_version::DeleteCoreNetworkPolicyVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_core_network_policy_version::DeleteCoreNetworkPolicyVersionInput {

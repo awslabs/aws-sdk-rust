@@ -51,7 +51,7 @@ impl BatchDeleteDetectorInputBuilder {
     /// Consumes the builder and constructs a [`BatchDeleteDetectorInput`](crate::operation::batch_delete_detector::BatchDeleteDetectorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_delete_detector::BatchDeleteDetectorInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::batch_delete_detector::BatchDeleteDetectorInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::batch_delete_detector::BatchDeleteDetectorInput { detectors: self.detectors })
     }

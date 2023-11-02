@@ -2,7 +2,7 @@
 pub fn ser_aws_open_search_service_domain_domain_endpoint_options_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsOpenSearchServiceDomainDomainEndpointOptionsDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.custom_endpoint_certificate_arn {
         object.key("CustomEndpointCertificateArn").string(var_1.as_str());
     }

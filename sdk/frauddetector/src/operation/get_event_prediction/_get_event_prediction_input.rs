@@ -283,7 +283,8 @@ impl GetEventPredictionInputBuilder {
     /// Consumes the builder and constructs a [`GetEventPredictionInput`](crate::operation::get_event_prediction::GetEventPredictionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_event_prediction::GetEventPredictionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_event_prediction::GetEventPredictionInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::get_event_prediction::GetEventPredictionInput {
             detector_id: self.detector_id,
             detector_version_id: self.detector_version_id,

@@ -2,7 +2,7 @@
 pub fn ser_aws_backup_recovery_point_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsBackupRecoveryPointDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.backup_size_in_bytes {
         object.key("BackupSizeInBytes").number(
             #[allow(clippy::useless_conversion)]

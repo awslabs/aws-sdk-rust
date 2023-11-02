@@ -95,7 +95,7 @@ impl DescribeExportConfigurationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_export_configurations::DescribeExportConfigurationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_export_configurations::DescribeExportConfigurationsInput {
             export_ids: self.export_ids,

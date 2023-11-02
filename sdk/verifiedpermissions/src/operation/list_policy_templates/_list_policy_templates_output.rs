@@ -89,12 +89,12 @@ impl ListPolicyTemplatesOutputBuilder {
     /// - [`policy_templates`](crate::operation::list_policy_templates::builders::ListPolicyTemplatesOutputBuilder::policy_templates)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_policy_templates::ListPolicyTemplatesOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_policy_templates::ListPolicyTemplatesOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_policy_templates::ListPolicyTemplatesOutput {
             next_token: self.next_token,
             policy_templates: self.policy_templates.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "policy_templates",
                     "policy_templates was not specified but it is required when building ListPolicyTemplatesOutput",
                 )

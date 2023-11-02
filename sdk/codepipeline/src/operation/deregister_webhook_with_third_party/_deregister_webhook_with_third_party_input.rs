@@ -45,7 +45,7 @@ impl DeregisterWebhookWithThirdPartyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_webhook_with_third_party::DeregisterWebhookWithThirdPartyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::deregister_webhook_with_third_party::DeregisterWebhookWithThirdPartyInput {

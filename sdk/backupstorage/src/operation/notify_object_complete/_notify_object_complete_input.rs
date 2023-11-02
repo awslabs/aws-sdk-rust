@@ -14,7 +14,7 @@ pub struct NotifyObjectCompleteInput {
     /// Optional metadata associated with an Object. Maximum string length is 256 bytes.
     pub metadata_string: ::std::option::Option<::std::string::String>,
     /// Optional metadata associated with an Object. Maximum length is 4MB.
-    pub metadata_blob: ::aws_smithy_http::byte_stream::ByteStream,
+    pub metadata_blob: ::aws_smithy_types::byte_stream::ByteStream,
     /// The size of MetadataBlob.
     pub metadata_blob_length: ::std::option::Option<i64>,
     /// Checksum of MetadataBlob.
@@ -44,7 +44,7 @@ impl NotifyObjectCompleteInput {
         self.metadata_string.as_deref()
     }
     /// Optional metadata associated with an Object. Maximum length is 4MB.
-    pub fn metadata_blob(&self) -> &::aws_smithy_http::byte_stream::ByteStream {
+    pub fn metadata_blob(&self) -> &::aws_smithy_types::byte_stream::ByteStream {
         &self.metadata_blob
     }
     /// The size of MetadataBlob.
@@ -76,7 +76,7 @@ pub struct NotifyObjectCompleteInputBuilder {
     pub(crate) object_checksum: ::std::option::Option<::std::string::String>,
     pub(crate) object_checksum_algorithm: ::std::option::Option<crate::types::SummaryChecksumAlgorithm>,
     pub(crate) metadata_string: ::std::option::Option<::std::string::String>,
-    pub(crate) metadata_blob: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
+    pub(crate) metadata_blob: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>,
     pub(crate) metadata_blob_length: ::std::option::Option<i64>,
     pub(crate) metadata_blob_checksum: ::std::option::Option<::std::string::String>,
     pub(crate) metadata_blob_checksum_algorithm: ::std::option::Option<crate::types::DataChecksumAlgorithm>,
@@ -157,17 +157,17 @@ impl NotifyObjectCompleteInputBuilder {
         &self.metadata_string
     }
     /// Optional metadata associated with an Object. Maximum length is 4MB.
-    pub fn metadata_blob(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
+    pub fn metadata_blob(mut self, input: ::aws_smithy_types::byte_stream::ByteStream) -> Self {
         self.metadata_blob = ::std::option::Option::Some(input);
         self
     }
     /// Optional metadata associated with an Object. Maximum length is 4MB.
-    pub fn set_metadata_blob(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
+    pub fn set_metadata_blob(mut self, input: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>) -> Self {
         self.metadata_blob = input;
         self
     }
     /// Optional metadata associated with an Object. Maximum length is 4MB.
-    pub fn get_metadata_blob(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+    pub fn get_metadata_blob(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
         &self.metadata_blob
     }
     /// The size of MetadataBlob.
@@ -215,7 +215,7 @@ impl NotifyObjectCompleteInputBuilder {
     /// Consumes the builder and constructs a [`NotifyObjectCompleteInput`](crate::operation::notify_object_complete::NotifyObjectCompleteInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::notify_object_complete::NotifyObjectCompleteInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::notify_object_complete::NotifyObjectCompleteInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::notify_object_complete::NotifyObjectCompleteInput {
             backup_job_id: self.backup_job_id,

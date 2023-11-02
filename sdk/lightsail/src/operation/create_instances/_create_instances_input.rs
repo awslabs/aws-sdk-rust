@@ -309,7 +309,7 @@ impl CreateInstancesInputBuilder {
     /// Consumes the builder and constructs a [`CreateInstancesInput`](crate::operation::create_instances::CreateInstancesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_instances::CreateInstancesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_instances::CreateInstancesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_instances::CreateInstancesInput {
             instance_names: self.instance_names,
             availability_zone: self.availability_zone,

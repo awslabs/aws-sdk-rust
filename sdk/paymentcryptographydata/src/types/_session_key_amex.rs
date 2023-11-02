@@ -78,16 +78,16 @@ impl SessionKeyAmexBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`primary_account_number`](crate::types::builders::SessionKeyAmexBuilder::primary_account_number)
     /// - [`pan_sequence_number`](crate::types::builders::SessionKeyAmexBuilder::pan_sequence_number)
-    pub fn build(self) -> ::std::result::Result<crate::types::SessionKeyAmex, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SessionKeyAmex, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SessionKeyAmex {
             primary_account_number: self.primary_account_number.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "primary_account_number",
                     "primary_account_number was not specified but it is required when building SessionKeyAmex",
                 )
             })?,
             pan_sequence_number: self.pan_sequence_number.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "pan_sequence_number",
                     "pan_sequence_number was not specified but it is required when building SessionKeyAmex",
                 )

@@ -338,7 +338,9 @@ impl UpdateCanaryInputBuilder {
         &self.artifact_config
     }
     /// Consumes the builder and constructs a [`UpdateCanaryInput`](crate::operation::update_canary::UpdateCanaryInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_canary::UpdateCanaryInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_canary::UpdateCanaryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_canary::UpdateCanaryInput {
             name: self.name,
             code: self.code,

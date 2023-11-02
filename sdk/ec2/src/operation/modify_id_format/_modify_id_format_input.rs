@@ -71,7 +71,7 @@ impl ModifyIdFormatInputBuilder {
     /// Consumes the builder and constructs a [`ModifyIdFormatInput`](crate::operation::modify_id_format::ModifyIdFormatInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::modify_id_format::ModifyIdFormatInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::modify_id_format::ModifyIdFormatInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::modify_id_format::ModifyIdFormatInput {
             resource: self.resource,
             use_long_ids: self.use_long_ids,

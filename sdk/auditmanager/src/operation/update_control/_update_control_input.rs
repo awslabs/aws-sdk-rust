@@ -192,7 +192,7 @@ impl UpdateControlInputBuilder {
     /// Consumes the builder and constructs a [`UpdateControlInput`](crate::operation::update_control::UpdateControlInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_control::UpdateControlInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_control::UpdateControlInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_control::UpdateControlInput {
             control_id: self.control_id,
             name: self.name,

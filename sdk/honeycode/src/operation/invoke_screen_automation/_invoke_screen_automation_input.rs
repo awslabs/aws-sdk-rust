@@ -200,8 +200,10 @@ impl InvokeScreenAutomationInputBuilder {
     /// Consumes the builder and constructs a [`InvokeScreenAutomationInput`](crate::operation::invoke_screen_automation::InvokeScreenAutomationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::invoke_screen_automation::InvokeScreenAutomationInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::invoke_screen_automation::InvokeScreenAutomationInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::invoke_screen_automation::InvokeScreenAutomationInput {
             workbook_id: self.workbook_id,
             app_id: self.app_id,

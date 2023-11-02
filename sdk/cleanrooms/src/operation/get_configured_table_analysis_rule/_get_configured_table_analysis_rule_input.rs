@@ -68,7 +68,7 @@ impl GetConfiguredTableAnalysisRuleInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_configured_table_analysis_rule::GetConfiguredTableAnalysisRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_configured_table_analysis_rule::GetConfiguredTableAnalysisRuleInput {

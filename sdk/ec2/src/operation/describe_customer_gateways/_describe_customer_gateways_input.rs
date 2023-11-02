@@ -184,7 +184,7 @@ impl DescribeCustomerGatewaysInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_customer_gateways::DescribeCustomerGatewaysInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_customer_gateways::DescribeCustomerGatewaysInput {
             customer_gateway_ids: self.customer_gateway_ids,

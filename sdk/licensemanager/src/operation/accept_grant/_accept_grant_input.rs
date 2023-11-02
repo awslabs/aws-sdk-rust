@@ -42,7 +42,7 @@ impl AcceptGrantInputBuilder {
         &self.grant_arn
     }
     /// Consumes the builder and constructs a [`AcceptGrantInput`](crate::operation::accept_grant::AcceptGrantInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::accept_grant::AcceptGrantInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::accept_grant::AcceptGrantInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::accept_grant::AcceptGrantInput { grant_arn: self.grant_arn })
     }
 }

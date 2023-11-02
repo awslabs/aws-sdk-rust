@@ -89,12 +89,12 @@ impl ListComponentOutputsOutputBuilder {
     /// - [`outputs`](crate::operation::list_component_outputs::builders::ListComponentOutputsOutputBuilder::outputs)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_component_outputs::ListComponentOutputsOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_component_outputs::ListComponentOutputsOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_component_outputs::ListComponentOutputsOutput {
             next_token: self.next_token,
             outputs: self.outputs.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "outputs",
                     "outputs was not specified but it is required when building ListComponentOutputsOutput",
                 )

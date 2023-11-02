@@ -68,7 +68,7 @@ impl OpenInstancePublicPortsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::open_instance_public_ports::OpenInstancePublicPortsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::open_instance_public_ports::OpenInstancePublicPortsInput {
             port_info: self.port_info,

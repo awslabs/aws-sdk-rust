@@ -170,7 +170,7 @@ impl CreateRegexPatternSetInputBuilder {
     /// Consumes the builder and constructs a [`CreateRegexPatternSetInput`](crate::operation::create_regex_pattern_set::CreateRegexPatternSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_regex_pattern_set::CreateRegexPatternSetInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_regex_pattern_set::CreateRegexPatternSetInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_regex_pattern_set::CreateRegexPatternSetInput {
             name: self.name,

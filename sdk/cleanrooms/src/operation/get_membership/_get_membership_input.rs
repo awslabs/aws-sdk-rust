@@ -44,7 +44,7 @@ impl GetMembershipInputBuilder {
     /// Consumes the builder and constructs a [`GetMembershipInput`](crate::operation::get_membership::GetMembershipInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_membership::GetMembershipInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_membership::GetMembershipInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_membership::GetMembershipInput {
             membership_identifier: self.membership_identifier,
         })

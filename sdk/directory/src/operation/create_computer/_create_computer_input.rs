@@ -150,7 +150,7 @@ impl CreateComputerInputBuilder {
     /// Consumes the builder and constructs a [`CreateComputerInput`](crate::operation::create_computer::CreateComputerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_computer::CreateComputerInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_computer::CreateComputerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_computer::CreateComputerInput {
             directory_id: self.directory_id,
             computer_name: self.computer_name,

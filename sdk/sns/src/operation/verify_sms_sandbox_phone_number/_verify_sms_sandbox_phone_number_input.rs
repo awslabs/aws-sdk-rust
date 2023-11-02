@@ -68,7 +68,7 @@ impl VerifySmsSandboxPhoneNumberInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::verify_sms_sandbox_phone_number::VerifySmsSandboxPhoneNumberInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::verify_sms_sandbox_phone_number::VerifySmsSandboxPhoneNumberInput {
             phone_number: self.phone_number,

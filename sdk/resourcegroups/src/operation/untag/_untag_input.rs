@@ -71,7 +71,7 @@ impl UntagInputBuilder {
         &self.keys
     }
     /// Consumes the builder and constructs a [`UntagInput`](crate::operation::untag::UntagInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::untag::UntagInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::untag::UntagInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::untag::UntagInput {
             arn: self.arn,
             keys: self.keys,

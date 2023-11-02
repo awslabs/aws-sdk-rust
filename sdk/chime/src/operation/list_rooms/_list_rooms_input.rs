@@ -105,7 +105,7 @@ impl ListRoomsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListRoomsInput`](crate::operation::list_rooms::ListRoomsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_rooms::ListRoomsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_rooms::ListRoomsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_rooms::ListRoomsInput {
             account_id: self.account_id,
             member_id: self.member_id,

@@ -93,7 +93,7 @@ impl GetCrawlerMetricsInputBuilder {
     /// Consumes the builder and constructs a [`GetCrawlerMetricsInput`](crate::operation::get_crawler_metrics::GetCrawlerMetricsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_crawler_metrics::GetCrawlerMetricsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_crawler_metrics::GetCrawlerMetricsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_crawler_metrics::GetCrawlerMetricsInput {
             crawler_name_list: self.crawler_name_list,
             max_results: self.max_results,

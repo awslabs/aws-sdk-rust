@@ -74,7 +74,7 @@ impl AddFlowSourcesInputBuilder {
     /// Consumes the builder and constructs a [`AddFlowSourcesInput`](crate::operation::add_flow_sources::AddFlowSourcesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::add_flow_sources::AddFlowSourcesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::add_flow_sources::AddFlowSourcesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::add_flow_sources::AddFlowSourcesInput {
             flow_arn: self.flow_arn,
             sources: self.sources,

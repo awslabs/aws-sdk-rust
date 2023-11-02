@@ -80,7 +80,7 @@ impl GetEntitiesInputBuilder {
         &self.namespace_version
     }
     /// Consumes the builder and constructs a [`GetEntitiesInput`](crate::operation::get_entities::GetEntitiesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_entities::GetEntitiesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_entities::GetEntitiesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_entities::GetEntitiesInput {
             ids: self.ids,
             namespace_version: self.namespace_version,

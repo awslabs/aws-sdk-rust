@@ -131,22 +131,22 @@ impl ResourceAlreadyExistsExceptionBuilder {
     /// - [`resource_arn`](crate::types::error::builders::ResourceAlreadyExistsExceptionBuilder::resource_arn)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::error::ResourceAlreadyExistsException, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::error::ResourceAlreadyExistsException, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::error::ResourceAlreadyExistsException {
             message: self.message.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "message",
                     "message was not specified but it is required when building ResourceAlreadyExistsException",
                 )
             })?,
             resource_id: self.resource_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_id",
                     "resource_id was not specified but it is required when building ResourceAlreadyExistsException",
                 )
             })?,
             resource_arn: self.resource_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_arn",
                     "resource_arn was not specified but it is required when building ResourceAlreadyExistsException",
                 )

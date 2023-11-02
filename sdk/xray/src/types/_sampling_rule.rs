@@ -325,18 +325,18 @@ impl SamplingRuleBuilder {
     /// - [`http_method`](crate::types::builders::SamplingRuleBuilder::http_method)
     /// - [`url_path`](crate::types::builders::SamplingRuleBuilder::url_path)
     /// - [`version`](crate::types::builders::SamplingRuleBuilder::version)
-    pub fn build(self) -> ::std::result::Result<crate::types::SamplingRule, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SamplingRule, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SamplingRule {
             rule_name: self.rule_name,
             rule_arn: self.rule_arn,
             resource_arn: self.resource_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_arn",
                     "resource_arn was not specified but it is required when building SamplingRule",
                 )
             })?,
             priority: self.priority.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "priority",
                     "priority was not specified but it is required when building SamplingRule",
                 )
@@ -344,37 +344,37 @@ impl SamplingRuleBuilder {
             fixed_rate: self.fixed_rate.unwrap_or_default(),
             reservoir_size: self.reservoir_size.unwrap_or_default(),
             service_name: self.service_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "service_name",
                     "service_name was not specified but it is required when building SamplingRule",
                 )
             })?,
             service_type: self.service_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "service_type",
                     "service_type was not specified but it is required when building SamplingRule",
                 )
             })?,
             host: self.host.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "host",
                     "host was not specified but it is required when building SamplingRule",
                 )
             })?,
             http_method: self.http_method.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "http_method",
                     "http_method was not specified but it is required when building SamplingRule",
                 )
             })?,
             url_path: self.url_path.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "url_path",
                     "url_path was not specified but it is required when building SamplingRule",
                 )
             })?,
             version: self.version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "version",
                     "version was not specified but it is required when building SamplingRule",
                 )

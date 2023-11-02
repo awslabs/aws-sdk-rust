@@ -167,7 +167,7 @@ impl CheckoutBorrowLicenseInputBuilder {
     /// Consumes the builder and constructs a [`CheckoutBorrowLicenseInput`](crate::operation::checkout_borrow_license::CheckoutBorrowLicenseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::checkout_borrow_license::CheckoutBorrowLicenseInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::checkout_borrow_license::CheckoutBorrowLicenseInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::checkout_borrow_license::CheckoutBorrowLicenseInput {
             license_arn: self.license_arn,

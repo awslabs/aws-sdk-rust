@@ -113,10 +113,10 @@ impl FulfillmentUpdatesSpecificationBuilder {
     /// Consumes the builder and constructs a [`FulfillmentUpdatesSpecification`](crate::types::FulfillmentUpdatesSpecification).
     /// This method will fail if any of the following fields are not set:
     /// - [`active`](crate::types::builders::FulfillmentUpdatesSpecificationBuilder::active)
-    pub fn build(self) -> ::std::result::Result<crate::types::FulfillmentUpdatesSpecification, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::FulfillmentUpdatesSpecification, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FulfillmentUpdatesSpecification {
             active: self.active.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "active",
                     "active was not specified but it is required when building FulfillmentUpdatesSpecification",
                 )

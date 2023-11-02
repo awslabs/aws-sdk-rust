@@ -44,7 +44,7 @@ impl DeleteResourceSetInputBuilder {
     /// Consumes the builder and constructs a [`DeleteResourceSetInput`](crate::operation::delete_resource_set::DeleteResourceSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_resource_set::DeleteResourceSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_resource_set::DeleteResourceSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_resource_set::DeleteResourceSetInput {
             resource_set_name: self.resource_set_name,
         })

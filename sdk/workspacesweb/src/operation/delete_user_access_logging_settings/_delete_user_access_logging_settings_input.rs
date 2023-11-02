@@ -46,7 +46,7 @@ impl DeleteUserAccessLoggingSettingsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_user_access_logging_settings::DeleteUserAccessLoggingSettingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_user_access_logging_settings::DeleteUserAccessLoggingSettingsInput {

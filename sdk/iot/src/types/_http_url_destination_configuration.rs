@@ -46,10 +46,10 @@ impl HttpUrlDestinationConfigurationBuilder {
     /// Consumes the builder and constructs a [`HttpUrlDestinationConfiguration`](crate::types::HttpUrlDestinationConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`confirmation_url`](crate::types::builders::HttpUrlDestinationConfigurationBuilder::confirmation_url)
-    pub fn build(self) -> ::std::result::Result<crate::types::HttpUrlDestinationConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::HttpUrlDestinationConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::HttpUrlDestinationConfiguration {
             confirmation_url: self.confirmation_url.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "confirmation_url",
                     "confirmation_url was not specified but it is required when building HttpUrlDestinationConfiguration",
                 )

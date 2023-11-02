@@ -44,7 +44,7 @@ impl GetDeviceFleetReportInputBuilder {
     /// Consumes the builder and constructs a [`GetDeviceFleetReportInput`](crate::operation::get_device_fleet_report::GetDeviceFleetReportInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_device_fleet_report::GetDeviceFleetReportInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_device_fleet_report::GetDeviceFleetReportInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_device_fleet_report::GetDeviceFleetReportInput {
             device_fleet_name: self.device_fleet_name,

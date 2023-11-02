@@ -102,18 +102,18 @@ impl BatchGetCollaborationAnalysisTemplateOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_collaboration_analysis_template::BatchGetCollaborationAnalysisTemplateOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::batch_get_collaboration_analysis_template::BatchGetCollaborationAnalysisTemplateOutput {
                 collaboration_analysis_templates: self.collaboration_analysis_templates
                     .ok_or_else(||
-                        ::aws_smithy_http::operation::error::BuildError::missing_field("collaboration_analysis_templates", "collaboration_analysis_templates was not specified but it is required when building BatchGetCollaborationAnalysisTemplateOutput")
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("collaboration_analysis_templates", "collaboration_analysis_templates was not specified but it is required when building BatchGetCollaborationAnalysisTemplateOutput")
                     )?
                 ,
                 errors: self.errors
                     .ok_or_else(||
-                        ::aws_smithy_http::operation::error::BuildError::missing_field("errors", "errors was not specified but it is required when building BatchGetCollaborationAnalysisTemplateOutput")
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("errors", "errors was not specified but it is required when building BatchGetCollaborationAnalysisTemplateOutput")
                     )?
                 ,
                 _request_id: self._request_id,

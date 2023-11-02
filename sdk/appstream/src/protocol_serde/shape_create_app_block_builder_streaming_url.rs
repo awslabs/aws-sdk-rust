@@ -85,12 +85,12 @@ pub fn de_create_app_block_builder_streaming_url_http_response(
 
 pub fn ser_create_app_block_builder_streaming_url_input(
     input: &crate::operation::create_app_block_builder_streaming_url::CreateAppBlockBuilderStreamingUrlInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_create_app_block_builder_streaming_url_input::ser_create_app_block_builder_streaming_url_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_create_app_block_builder_streaming_url(

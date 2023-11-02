@@ -66,7 +66,7 @@ impl SetDefaultSenderIdInputBuilder {
     /// Consumes the builder and constructs a [`SetDefaultSenderIdInput`](crate::operation::set_default_sender_id::SetDefaultSenderIdInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::set_default_sender_id::SetDefaultSenderIdInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::set_default_sender_id::SetDefaultSenderIdInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::set_default_sender_id::SetDefaultSenderIdInput {
             configuration_set_name: self.configuration_set_name,

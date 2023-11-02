@@ -113,16 +113,16 @@ impl UpdateDetectorRequestBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`message_id`](crate::types::builders::UpdateDetectorRequestBuilder::message_id)
     /// - [`detector_model_name`](crate::types::builders::UpdateDetectorRequestBuilder::detector_model_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::UpdateDetectorRequest, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::UpdateDetectorRequest, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::UpdateDetectorRequest {
             message_id: self.message_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "message_id",
                     "message_id was not specified but it is required when building UpdateDetectorRequest",
                 )
             })?,
             detector_model_name: self.detector_model_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "detector_model_name",
                     "detector_model_name was not specified but it is required when building UpdateDetectorRequest",
                 )

@@ -2,7 +2,7 @@
 pub fn ser_splunk_destination_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SplunkDestinationConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("HECEndpoint").string(input.hec_endpoint.as_str());
     }

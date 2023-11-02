@@ -45,10 +45,10 @@ impl DeprecationRequestDetailsBuilder {
     /// Consumes the builder and constructs a [`DeprecationRequestDetails`](crate::types::DeprecationRequestDetails).
     /// This method will fail if any of the following fields are not set:
     /// - [`deprecation_at`](crate::types::builders::DeprecationRequestDetailsBuilder::deprecation_at)
-    pub fn build(self) -> ::std::result::Result<crate::types::DeprecationRequestDetails, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DeprecationRequestDetails, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DeprecationRequestDetails {
             deprecation_at: self.deprecation_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "deprecation_at",
                     "deprecation_at was not specified but it is required when building DeprecationRequestDetails",
                 )

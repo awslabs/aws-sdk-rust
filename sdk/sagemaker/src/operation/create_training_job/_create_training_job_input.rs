@@ -632,7 +632,7 @@ impl CreateTrainingJobInputBuilder {
     /// Consumes the builder and constructs a [`CreateTrainingJobInput`](crate::operation::create_training_job::CreateTrainingJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_training_job::CreateTrainingJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_training_job::CreateTrainingJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_training_job::CreateTrainingJobInput {
             training_job_name: self.training_job_name,
             hyper_parameters: self.hyper_parameters,

@@ -116,7 +116,7 @@ impl GetLinkAttributesInputBuilder {
     /// Consumes the builder and constructs a [`GetLinkAttributesInput`](crate::operation::get_link_attributes::GetLinkAttributesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_link_attributes::GetLinkAttributesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_link_attributes::GetLinkAttributesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_link_attributes::GetLinkAttributesInput {
             directory_arn: self.directory_arn,
             typed_link_specifier: self.typed_link_specifier,

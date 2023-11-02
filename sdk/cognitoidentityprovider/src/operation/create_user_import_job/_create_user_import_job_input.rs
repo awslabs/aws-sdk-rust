@@ -89,7 +89,7 @@ impl CreateUserImportJobInputBuilder {
     /// Consumes the builder and constructs a [`CreateUserImportJobInput`](crate::operation::create_user_import_job::CreateUserImportJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_user_import_job::CreateUserImportJobInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_user_import_job::CreateUserImportJobInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_user_import_job::CreateUserImportJobInput {
             job_name: self.job_name,

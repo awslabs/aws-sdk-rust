@@ -130,7 +130,7 @@ impl UpdateDashboardInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDashboardInput`](crate::operation::update_dashboard::UpdateDashboardInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_dashboard::UpdateDashboardInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_dashboard::UpdateDashboardInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_dashboard::UpdateDashboardInput {
             dashboard_id: self.dashboard_id,
             dashboard_name: self.dashboard_name,

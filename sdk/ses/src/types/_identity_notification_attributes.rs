@@ -179,22 +179,22 @@ impl IdentityNotificationAttributesBuilder {
     /// - [`bounce_topic`](crate::types::builders::IdentityNotificationAttributesBuilder::bounce_topic)
     /// - [`complaint_topic`](crate::types::builders::IdentityNotificationAttributesBuilder::complaint_topic)
     /// - [`delivery_topic`](crate::types::builders::IdentityNotificationAttributesBuilder::delivery_topic)
-    pub fn build(self) -> ::std::result::Result<crate::types::IdentityNotificationAttributes, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::IdentityNotificationAttributes, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::IdentityNotificationAttributes {
             bounce_topic: self.bounce_topic.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "bounce_topic",
                     "bounce_topic was not specified but it is required when building IdentityNotificationAttributes",
                 )
             })?,
             complaint_topic: self.complaint_topic.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "complaint_topic",
                     "complaint_topic was not specified but it is required when building IdentityNotificationAttributes",
                 )
             })?,
             delivery_topic: self.delivery_topic.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "delivery_topic",
                     "delivery_topic was not specified but it is required when building IdentityNotificationAttributes",
                 )

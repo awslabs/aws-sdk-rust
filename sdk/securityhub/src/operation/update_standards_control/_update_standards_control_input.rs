@@ -86,8 +86,10 @@ impl UpdateStandardsControlInputBuilder {
     /// Consumes the builder and constructs a [`UpdateStandardsControlInput`](crate::operation::update_standards_control::UpdateStandardsControlInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_standards_control::UpdateStandardsControlInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::update_standards_control::UpdateStandardsControlInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::update_standards_control::UpdateStandardsControlInput {
             standards_control_arn: self.standards_control_arn,
             control_status: self.control_status,

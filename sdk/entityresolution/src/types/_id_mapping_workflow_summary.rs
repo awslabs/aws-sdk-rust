@@ -116,28 +116,28 @@ impl IdMappingWorkflowSummaryBuilder {
     /// - [`workflow_arn`](crate::types::builders::IdMappingWorkflowSummaryBuilder::workflow_arn)
     /// - [`created_at`](crate::types::builders::IdMappingWorkflowSummaryBuilder::created_at)
     /// - [`updated_at`](crate::types::builders::IdMappingWorkflowSummaryBuilder::updated_at)
-    pub fn build(self) -> ::std::result::Result<crate::types::IdMappingWorkflowSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::IdMappingWorkflowSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::IdMappingWorkflowSummary {
             workflow_name: self.workflow_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "workflow_name",
                     "workflow_name was not specified but it is required when building IdMappingWorkflowSummary",
                 )
             })?,
             workflow_arn: self.workflow_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "workflow_arn",
                     "workflow_arn was not specified but it is required when building IdMappingWorkflowSummary",
                 )
             })?,
             created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
                     "created_at was not specified but it is required when building IdMappingWorkflowSummary",
                 )
             })?,
             updated_at: self.updated_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "updated_at",
                     "updated_at was not specified but it is required when building IdMappingWorkflowSummary",
                 )

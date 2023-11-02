@@ -2,7 +2,7 @@
 pub fn ser_search_resources_criteria_block(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SearchResourcesCriteriaBlock,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.and {
         let mut array_2 = object.key("and").start_array();
         for item_3 in var_1 {

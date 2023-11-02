@@ -89,10 +89,10 @@ impl ExportComponentsOutputBuilder {
     /// - [`entities`](crate::operation::export_components::builders::ExportComponentsOutputBuilder::entities)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::export_components::ExportComponentsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::export_components::ExportComponentsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::export_components::ExportComponentsOutput {
             entities: self.entities.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "entities",
                     "entities was not specified but it is required when building ExportComponentsOutput",
                 )

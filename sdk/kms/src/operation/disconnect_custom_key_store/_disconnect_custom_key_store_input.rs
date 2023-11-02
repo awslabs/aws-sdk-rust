@@ -46,7 +46,7 @@ impl DisconnectCustomKeyStoreInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disconnect_custom_key_store::DisconnectCustomKeyStoreInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disconnect_custom_key_store::DisconnectCustomKeyStoreInput {
             custom_key_store_id: self.custom_key_store_id,

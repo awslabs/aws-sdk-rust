@@ -66,7 +66,7 @@ impl DeleteThingShadowInputBuilder {
     /// Consumes the builder and constructs a [`DeleteThingShadowInput`](crate::operation::delete_thing_shadow::DeleteThingShadowInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_thing_shadow::DeleteThingShadowInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_thing_shadow::DeleteThingShadowInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_thing_shadow::DeleteThingShadowInput {
             thing_name: self.thing_name,
             shadow_name: self.shadow_name,

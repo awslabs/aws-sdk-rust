@@ -44,7 +44,7 @@ impl DeleteEndpointConfigInputBuilder {
     /// Consumes the builder and constructs a [`DeleteEndpointConfigInput`](crate::operation::delete_endpoint_config::DeleteEndpointConfigInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_endpoint_config::DeleteEndpointConfigInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_endpoint_config::DeleteEndpointConfigInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_endpoint_config::DeleteEndpointConfigInput {
             endpoint_config_name: self.endpoint_config_name,

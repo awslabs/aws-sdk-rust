@@ -91,16 +91,16 @@ impl S3ContentLocationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`bucket_arn`](crate::types::builders::S3ContentLocationBuilder::bucket_arn)
     /// - [`file_key`](crate::types::builders::S3ContentLocationBuilder::file_key)
-    pub fn build(self) -> ::std::result::Result<crate::types::S3ContentLocation, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::S3ContentLocation, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::S3ContentLocation {
             bucket_arn: self.bucket_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "bucket_arn",
                     "bucket_arn was not specified but it is required when building S3ContentLocation",
                 )
             })?,
             file_key: self.file_key.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "file_key",
                     "file_key was not specified but it is required when building S3ContentLocation",
                 )

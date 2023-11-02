@@ -119,7 +119,7 @@ impl BatchDeleteCustomVocabularyItemInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_delete_custom_vocabulary_item::BatchDeleteCustomVocabularyItemInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::batch_delete_custom_vocabulary_item::BatchDeleteCustomVocabularyItemInput {

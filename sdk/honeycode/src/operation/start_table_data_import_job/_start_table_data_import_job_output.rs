@@ -88,17 +88,17 @@ impl StartTableDataImportJobOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_table_data_import_job::StartTableDataImportJobOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_table_data_import_job::StartTableDataImportJobOutput {
             job_id: self.job_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "job_id",
                     "job_id was not specified but it is required when building StartTableDataImportJobOutput",
                 )
             })?,
             job_status: self.job_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "job_status",
                     "job_status was not specified but it is required when building StartTableDataImportJobOutput",
                 )

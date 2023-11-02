@@ -158,7 +158,7 @@ impl GetRateBasedStatementManagedKeysInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_rate_based_statement_managed_keys::GetRateBasedStatementManagedKeysInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_rate_based_statement_managed_keys::GetRateBasedStatementManagedKeysInput {

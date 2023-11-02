@@ -41,7 +41,7 @@ pub fn de_analytics_filter(
 pub fn ser_analytics_filter(
     input: &crate::types::AnalyticsFilter,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     let mut scope_writer = writer.finish();
     match input {
         crate::types::AnalyticsFilter::Prefix(inner) => {
@@ -57,7 +57,7 @@ pub fn ser_analytics_filter(
             crate::protocol_serde::shape_analytics_and_operator::ser_analytics_and_operator(inner, inner_writer)?
         }
         crate::types::AnalyticsFilter::Unknown => {
-            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+            return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "AnalyticsFilter",
             ))
         }

@@ -2,7 +2,7 @@
 pub fn ser_single_select_question_rule_category_automation(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SingleSelectQuestionRuleCategoryAutomation,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Category").string(input.category.as_str());
     }

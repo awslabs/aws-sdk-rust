@@ -310,16 +310,16 @@ impl IndexFieldBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`index_field_name`](crate::types::builders::IndexFieldBuilder::index_field_name)
     /// - [`index_field_type`](crate::types::builders::IndexFieldBuilder::index_field_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::IndexField, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::IndexField, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::IndexField {
             index_field_name: self.index_field_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "index_field_name",
                     "index_field_name was not specified but it is required when building IndexField",
                 )
             })?,
             index_field_type: self.index_field_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "index_field_type",
                     "index_field_type was not specified but it is required when building IndexField",
                 )

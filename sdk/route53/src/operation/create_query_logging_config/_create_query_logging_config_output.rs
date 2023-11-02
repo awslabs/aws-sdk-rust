@@ -87,12 +87,12 @@ impl CreateQueryLoggingConfigOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_query_logging_config::CreateQueryLoggingConfigOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_query_logging_config::CreateQueryLoggingConfigOutput {
             query_logging_config: self.query_logging_config,
             location: self.location.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "location",
                     "location was not specified but it is required when building CreateQueryLoggingConfigOutput",
                 )

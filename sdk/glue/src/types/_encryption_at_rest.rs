@@ -66,10 +66,10 @@ impl EncryptionAtRestBuilder {
     /// Consumes the builder and constructs a [`EncryptionAtRest`](crate::types::EncryptionAtRest).
     /// This method will fail if any of the following fields are not set:
     /// - [`catalog_encryption_mode`](crate::types::builders::EncryptionAtRestBuilder::catalog_encryption_mode)
-    pub fn build(self) -> ::std::result::Result<crate::types::EncryptionAtRest, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::EncryptionAtRest, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EncryptionAtRest {
             catalog_encryption_mode: self.catalog_encryption_mode.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "catalog_encryption_mode",
                     "catalog_encryption_mode was not specified but it is required when building EncryptionAtRest",
                 )

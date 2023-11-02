@@ -90,16 +90,16 @@ impl FieldSeriesItemBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`field_id`](crate::types::builders::FieldSeriesItemBuilder::field_id)
     /// - [`axis_binding`](crate::types::builders::FieldSeriesItemBuilder::axis_binding)
-    pub fn build(self) -> ::std::result::Result<crate::types::FieldSeriesItem, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::FieldSeriesItem, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FieldSeriesItem {
             field_id: self.field_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "field_id",
                     "field_id was not specified but it is required when building FieldSeriesItem",
                 )
             })?,
             axis_binding: self.axis_binding.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "axis_binding",
                     "axis_binding was not specified but it is required when building FieldSeriesItem",
                 )

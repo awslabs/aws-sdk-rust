@@ -42,7 +42,9 @@ impl StopFailbackInputBuilder {
         &self.recovery_instance_id
     }
     /// Consumes the builder and constructs a [`StopFailbackInput`](crate::operation::stop_failback::StopFailbackInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::stop_failback::StopFailbackInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::stop_failback::StopFailbackInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_failback::StopFailbackInput {
             recovery_instance_id: self.recovery_instance_id,
         })

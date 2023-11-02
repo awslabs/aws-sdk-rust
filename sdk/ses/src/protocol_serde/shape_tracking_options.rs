@@ -3,7 +3,7 @@
 pub fn ser_tracking_options(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::TrackingOptions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("CustomRedirectDomain");
     if let Some(var_2) = &input.custom_redirect_domain {

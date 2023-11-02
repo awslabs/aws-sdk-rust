@@ -2,7 +2,7 @@
 pub fn ser_create_hit_type_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_hit_type::CreateHitTypeInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.auto_approval_delay_in_seconds {
         object.key("AutoApprovalDelayInSeconds").number(
             #[allow(clippy::useless_conversion)]

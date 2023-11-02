@@ -64,7 +64,7 @@ impl ListMetricStreamsInputBuilder {
     /// Consumes the builder and constructs a [`ListMetricStreamsInput`](crate::operation::list_metric_streams::ListMetricStreamsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_metric_streams::ListMetricStreamsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_metric_streams::ListMetricStreamsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_metric_streams::ListMetricStreamsInput {
             next_token: self.next_token,
             max_results: self.max_results,

@@ -182,7 +182,7 @@ impl PutObjectLockConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_object_lock_configuration::PutObjectLockConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_object_lock_configuration::PutObjectLockConfigurationInput {
             bucket: self.bucket,

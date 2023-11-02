@@ -194,14 +194,14 @@ impl GranteeBuilder {
     /// Consumes the builder and constructs a [`Grantee`](crate::types::Grantee).
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::GranteeBuilder::r#type)
-    pub fn build(self) -> ::std::result::Result<crate::types::Grantee, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Grantee, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Grantee {
             display_name: self.display_name,
             email_address: self.email_address,
             id: self.id,
             uri: self.uri,
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building Grantee",
                 )

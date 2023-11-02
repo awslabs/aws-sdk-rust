@@ -103,22 +103,22 @@ impl SessionKeyEmvCommonBuilder {
     /// - [`primary_account_number`](crate::types::builders::SessionKeyEmvCommonBuilder::primary_account_number)
     /// - [`pan_sequence_number`](crate::types::builders::SessionKeyEmvCommonBuilder::pan_sequence_number)
     /// - [`application_transaction_counter`](crate::types::builders::SessionKeyEmvCommonBuilder::application_transaction_counter)
-    pub fn build(self) -> ::std::result::Result<crate::types::SessionKeyEmvCommon, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SessionKeyEmvCommon, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SessionKeyEmvCommon {
             primary_account_number: self.primary_account_number.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "primary_account_number",
                     "primary_account_number was not specified but it is required when building SessionKeyEmvCommon",
                 )
             })?,
             pan_sequence_number: self.pan_sequence_number.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "pan_sequence_number",
                     "pan_sequence_number was not specified but it is required when building SessionKeyEmvCommon",
                 )
             })?,
             application_transaction_counter: self.application_transaction_counter.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "application_transaction_counter",
                     "application_transaction_counter was not specified but it is required when building SessionKeyEmvCommon",
                 )

@@ -77,7 +77,7 @@ impl DisableKeyInputBuilder {
         &self.key_id
     }
     /// Consumes the builder and constructs a [`DisableKeyInput`](crate::operation::disable_key::DisableKeyInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::disable_key::DisableKeyInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::disable_key::DisableKeyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::disable_key::DisableKeyInput { key_id: self.key_id })
     }
 }

@@ -109,10 +109,10 @@ impl TemplateBuilder {
     /// Consumes the builder and constructs a [`Template`](crate::types::Template).
     /// This method will fail if any of the following fields are not set:
     /// - [`template_name`](crate::types::builders::TemplateBuilder::template_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::Template, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Template, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Template {
             template_name: self.template_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "template_name",
                     "template_name was not specified but it is required when building Template",
                 )

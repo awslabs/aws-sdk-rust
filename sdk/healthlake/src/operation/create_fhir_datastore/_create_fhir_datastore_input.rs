@@ -178,7 +178,7 @@ impl CreateFhirDatastoreInputBuilder {
     /// Consumes the builder and constructs a [`CreateFhirDatastoreInput`](crate::operation::create_fhir_datastore::CreateFhirDatastoreInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_fhir_datastore::CreateFhirDatastoreInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_fhir_datastore::CreateFhirDatastoreInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_fhir_datastore::CreateFhirDatastoreInput {
             datastore_name: self.datastore_name,

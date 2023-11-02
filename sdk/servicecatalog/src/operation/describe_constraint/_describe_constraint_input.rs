@@ -85,7 +85,7 @@ impl DescribeConstraintInputBuilder {
     /// Consumes the builder and constructs a [`DescribeConstraintInput`](crate::operation::describe_constraint::DescribeConstraintInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_constraint::DescribeConstraintInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_constraint::DescribeConstraintInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_constraint::DescribeConstraintInput {
             accept_language: self.accept_language,
             id: self.id,

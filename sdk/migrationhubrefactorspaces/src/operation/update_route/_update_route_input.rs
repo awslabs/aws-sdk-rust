@@ -108,7 +108,7 @@ impl UpdateRouteInputBuilder {
         &self.activation_state
     }
     /// Consumes the builder and constructs a [`UpdateRouteInput`](crate::operation::update_route::UpdateRouteInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_route::UpdateRouteInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_route::UpdateRouteInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_route::UpdateRouteInput {
             environment_identifier: self.environment_identifier,
             application_identifier: self.application_identifier,

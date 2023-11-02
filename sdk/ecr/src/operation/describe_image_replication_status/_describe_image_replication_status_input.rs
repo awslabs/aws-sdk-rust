@@ -89,7 +89,7 @@ impl DescribeImageReplicationStatusInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_image_replication_status::DescribeImageReplicationStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_image_replication_status::DescribeImageReplicationStatusInput {
             repository_name: self.repository_name,

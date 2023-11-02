@@ -72,16 +72,16 @@ impl IotSiteWiseAssetModelPropertyIdentifierBuilder {
     /// - [`property_id`](crate::types::builders::IotSiteWiseAssetModelPropertyIdentifierBuilder::property_id)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::IotSiteWiseAssetModelPropertyIdentifier, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::IotSiteWiseAssetModelPropertyIdentifier, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::IotSiteWiseAssetModelPropertyIdentifier {
             asset_model_id: self.asset_model_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "asset_model_id",
                     "asset_model_id was not specified but it is required when building IotSiteWiseAssetModelPropertyIdentifier",
                 )
             })?,
             property_id: self.property_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "property_id",
                     "property_id was not specified but it is required when building IotSiteWiseAssetModelPropertyIdentifier",
                 )

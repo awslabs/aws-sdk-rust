@@ -110,17 +110,17 @@ impl ConnectorSsmCommandConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`s3_output_enabled`](crate::types::builders::ConnectorSsmCommandConfigBuilder::s3_output_enabled)
     /// - [`cloud_watch_output_enabled`](crate::types::builders::ConnectorSsmCommandConfigBuilder::cloud_watch_output_enabled)
-    pub fn build(self) -> ::std::result::Result<crate::types::ConnectorSsmCommandConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ConnectorSsmCommandConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ConnectorSsmCommandConfig {
             s3_output_enabled: self.s3_output_enabled.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "s3_output_enabled",
                     "s3_output_enabled was not specified but it is required when building ConnectorSsmCommandConfig",
                 )
             })?,
             output_s3_bucket_name: self.output_s3_bucket_name,
             cloud_watch_output_enabled: self.cloud_watch_output_enabled.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "cloud_watch_output_enabled",
                     "cloud_watch_output_enabled was not specified but it is required when building ConnectorSsmCommandConfig",
                 )

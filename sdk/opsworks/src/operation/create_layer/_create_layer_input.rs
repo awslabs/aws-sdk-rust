@@ -455,7 +455,7 @@ impl CreateLayerInputBuilder {
         &self.lifecycle_event_configuration
     }
     /// Consumes the builder and constructs a [`CreateLayerInput`](crate::operation::create_layer::CreateLayerInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_layer::CreateLayerInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_layer::CreateLayerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_layer::CreateLayerInput {
             stack_id: self.stack_id,
             r#type: self.r#type,

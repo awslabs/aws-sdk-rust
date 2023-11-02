@@ -228,7 +228,7 @@ impl TemplateV3Builder {
     /// Consumes the builder and constructs a [`TemplateV3`](crate::types::TemplateV3).
     /// This method will fail if any of the following fields are not set:
     /// - [`hash_algorithm`](crate::types::builders::TemplateV3Builder::hash_algorithm)
-    pub fn build(self) -> ::std::result::Result<crate::types::TemplateV3, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TemplateV3, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TemplateV3 {
             certificate_validity: self.certificate_validity,
             superseded_templates: self.superseded_templates,
@@ -238,7 +238,7 @@ impl TemplateV3Builder {
             subject_name_flags: self.subject_name_flags,
             general_flags: self.general_flags,
             hash_algorithm: self.hash_algorithm.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "hash_algorithm",
                     "hash_algorithm was not specified but it is required when building TemplateV3",
                 )

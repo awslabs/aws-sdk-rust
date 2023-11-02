@@ -73,7 +73,7 @@ impl AssignInstanceInputBuilder {
     /// Consumes the builder and constructs a [`AssignInstanceInput`](crate::operation::assign_instance::AssignInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::assign_instance::AssignInstanceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::assign_instance::AssignInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::assign_instance::AssignInstanceInput {
             instance_id: self.instance_id,
             layer_ids: self.layer_ids,

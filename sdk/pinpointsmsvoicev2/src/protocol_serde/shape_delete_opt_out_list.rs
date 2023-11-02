@@ -131,12 +131,12 @@ pub fn de_delete_opt_out_list_http_response(
 
 pub fn ser_delete_opt_out_list_input(
     input: &crate::operation::delete_opt_out_list::DeleteOptOutListInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_delete_opt_out_list_input::ser_delete_opt_out_list_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_delete_opt_out_list(

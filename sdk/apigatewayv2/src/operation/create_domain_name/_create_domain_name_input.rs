@@ -122,7 +122,7 @@ impl CreateDomainNameInputBuilder {
     /// Consumes the builder and constructs a [`CreateDomainNameInput`](crate::operation::create_domain_name::CreateDomainNameInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_domain_name::CreateDomainNameInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_domain_name::CreateDomainNameInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_domain_name::CreateDomainNameInput {
             domain_name: self.domain_name,
             domain_name_configurations: self.domain_name_configurations,

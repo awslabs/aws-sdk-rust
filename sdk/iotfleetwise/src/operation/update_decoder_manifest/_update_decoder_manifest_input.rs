@@ -260,7 +260,7 @@ impl UpdateDecoderManifestInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDecoderManifestInput`](crate::operation::update_decoder_manifest::UpdateDecoderManifestInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_decoder_manifest::UpdateDecoderManifestInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_decoder_manifest::UpdateDecoderManifestInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_decoder_manifest::UpdateDecoderManifestInput {
             name: self.name,

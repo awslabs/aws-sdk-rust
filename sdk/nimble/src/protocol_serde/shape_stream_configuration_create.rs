@@ -2,7 +2,7 @@
 pub fn ser_stream_configuration_create(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::StreamConfigurationCreate,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("clipboardMode").string(input.clipboard_mode.as_str());
     }

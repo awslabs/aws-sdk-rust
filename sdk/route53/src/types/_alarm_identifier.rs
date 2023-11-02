@@ -104,16 +104,16 @@ impl AlarmIdentifierBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`region`](crate::types::builders::AlarmIdentifierBuilder::region)
     /// - [`name`](crate::types::builders::AlarmIdentifierBuilder::name)
-    pub fn build(self) -> ::std::result::Result<crate::types::AlarmIdentifier, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AlarmIdentifier, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AlarmIdentifier {
             region: self.region.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "region",
                     "region was not specified but it is required when building AlarmIdentifier",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building AlarmIdentifier",
                 )

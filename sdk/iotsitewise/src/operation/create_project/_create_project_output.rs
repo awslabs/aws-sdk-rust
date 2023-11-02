@@ -92,16 +92,16 @@ impl CreateProjectOutputBuilder {
     /// - [`project_arn`](crate::operation::create_project::builders::CreateProjectOutputBuilder::project_arn)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_project::CreateProjectOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_project::CreateProjectOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_project::CreateProjectOutput {
             project_id: self.project_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "project_id",
                     "project_id was not specified but it is required when building CreateProjectOutput",
                 )
             })?,
             project_arn: self.project_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "project_arn",
                     "project_arn was not specified but it is required when building CreateProjectOutput",
                 )

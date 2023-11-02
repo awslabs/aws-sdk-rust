@@ -115,22 +115,22 @@ impl CreateGrokClassifierRequestBuilder {
     /// - [`classification`](crate::types::builders::CreateGrokClassifierRequestBuilder::classification)
     /// - [`name`](crate::types::builders::CreateGrokClassifierRequestBuilder::name)
     /// - [`grok_pattern`](crate::types::builders::CreateGrokClassifierRequestBuilder::grok_pattern)
-    pub fn build(self) -> ::std::result::Result<crate::types::CreateGrokClassifierRequest, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CreateGrokClassifierRequest, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CreateGrokClassifierRequest {
             classification: self.classification.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "classification",
                     "classification was not specified but it is required when building CreateGrokClassifierRequest",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building CreateGrokClassifierRequest",
                 )
             })?,
             grok_pattern: self.grok_pattern.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "grok_pattern",
                     "grok_pattern was not specified but it is required when building CreateGrokClassifierRequest",
                 )

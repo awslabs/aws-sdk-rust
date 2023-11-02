@@ -89,10 +89,10 @@ impl ListConnectionsOutputBuilder {
     /// - [`connection_summary_list`](crate::operation::list_connections::builders::ListConnectionsOutputBuilder::connection_summary_list)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_connections::ListConnectionsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_connections::ListConnectionsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_connections::ListConnectionsOutput {
             connection_summary_list: self.connection_summary_list.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "connection_summary_list",
                     "connection_summary_list was not specified but it is required when building ListConnectionsOutput",
                 )

@@ -268,10 +268,12 @@ impl BatchGetAssetPropertyAggregatesEntryBuilder {
     /// - [`resolution`](crate::types::builders::BatchGetAssetPropertyAggregatesEntryBuilder::resolution)
     /// - [`start_date`](crate::types::builders::BatchGetAssetPropertyAggregatesEntryBuilder::start_date)
     /// - [`end_date`](crate::types::builders::BatchGetAssetPropertyAggregatesEntryBuilder::end_date)
-    pub fn build(self) -> ::std::result::Result<crate::types::BatchGetAssetPropertyAggregatesEntry, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::BatchGetAssetPropertyAggregatesEntry, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::BatchGetAssetPropertyAggregatesEntry {
             entry_id: self.entry_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "entry_id",
                     "entry_id was not specified but it is required when building BatchGetAssetPropertyAggregatesEntry",
                 )
@@ -280,25 +282,25 @@ impl BatchGetAssetPropertyAggregatesEntryBuilder {
             property_id: self.property_id,
             property_alias: self.property_alias,
             aggregate_types: self.aggregate_types.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "aggregate_types",
                     "aggregate_types was not specified but it is required when building BatchGetAssetPropertyAggregatesEntry",
                 )
             })?,
             resolution: self.resolution.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resolution",
                     "resolution was not specified but it is required when building BatchGetAssetPropertyAggregatesEntry",
                 )
             })?,
             start_date: self.start_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "start_date",
                     "start_date was not specified but it is required when building BatchGetAssetPropertyAggregatesEntry",
                 )
             })?,
             end_date: self.end_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "end_date",
                     "end_date was not specified but it is required when building BatchGetAssetPropertyAggregatesEntry",
                 )

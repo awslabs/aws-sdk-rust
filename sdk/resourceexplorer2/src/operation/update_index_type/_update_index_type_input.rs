@@ -66,7 +66,7 @@ impl UpdateIndexTypeInputBuilder {
     /// Consumes the builder and constructs a [`UpdateIndexTypeInput`](crate::operation::update_index_type::UpdateIndexTypeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_index_type::UpdateIndexTypeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_index_type::UpdateIndexTypeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_index_type::UpdateIndexTypeInput {
             arn: self.arn,
             r#type: self.r#type,

@@ -95,7 +95,7 @@ impl UpdateLinkAttributesInputBuilder {
     /// Consumes the builder and constructs a [`UpdateLinkAttributesInput`](crate::operation::update_link_attributes::UpdateLinkAttributesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_link_attributes::UpdateLinkAttributesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_link_attributes::UpdateLinkAttributesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_link_attributes::UpdateLinkAttributesInput {
             directory_arn: self.directory_arn,

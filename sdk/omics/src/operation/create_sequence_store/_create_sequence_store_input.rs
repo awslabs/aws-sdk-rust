@@ -155,7 +155,7 @@ impl CreateSequenceStoreInputBuilder {
     /// Consumes the builder and constructs a [`CreateSequenceStoreInput`](crate::operation::create_sequence_store::CreateSequenceStoreInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_sequence_store::CreateSequenceStoreInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_sequence_store::CreateSequenceStoreInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_sequence_store::CreateSequenceStoreInput {
             name: self.name,

@@ -46,7 +46,7 @@ impl DescribeModelPackageGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_model_package_group::DescribeModelPackageGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_model_package_group::DescribeModelPackageGroupInput {
             model_package_group_name: self.model_package_group_name,

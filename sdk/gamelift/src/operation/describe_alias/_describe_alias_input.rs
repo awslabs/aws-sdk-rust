@@ -44,7 +44,7 @@ impl DescribeAliasInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAliasInput`](crate::operation::describe_alias::DescribeAliasInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_alias::DescribeAliasInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_alias::DescribeAliasInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_alias::DescribeAliasInput { alias_id: self.alias_id })
     }
 }

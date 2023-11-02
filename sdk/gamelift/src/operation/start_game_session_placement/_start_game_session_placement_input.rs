@@ -219,7 +219,7 @@ impl StartGameSessionPlacementInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_game_session_placement::StartGameSessionPlacementInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_game_session_placement::StartGameSessionPlacementInput {
             placement_id: self.placement_id,

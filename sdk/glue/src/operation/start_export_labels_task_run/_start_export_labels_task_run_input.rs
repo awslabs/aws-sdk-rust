@@ -68,7 +68,7 @@ impl StartExportLabelsTaskRunInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_export_labels_task_run::StartExportLabelsTaskRunInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_export_labels_task_run::StartExportLabelsTaskRunInput {
             transform_id: self.transform_id,

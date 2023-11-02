@@ -277,28 +277,28 @@ impl PoolInformationBuilder {
     /// - [`message_type`](crate::types::builders::PoolInformationBuilder::message_type)
     /// - [`opt_out_list_name`](crate::types::builders::PoolInformationBuilder::opt_out_list_name)
     /// - [`created_timestamp`](crate::types::builders::PoolInformationBuilder::created_timestamp)
-    pub fn build(self) -> ::std::result::Result<crate::types::PoolInformation, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PoolInformation, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PoolInformation {
             pool_arn: self.pool_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "pool_arn",
                     "pool_arn was not specified but it is required when building PoolInformation",
                 )
             })?,
             pool_id: self.pool_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "pool_id",
                     "pool_id was not specified but it is required when building PoolInformation",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building PoolInformation",
                 )
             })?,
             message_type: self.message_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "message_type",
                     "message_type was not specified but it is required when building PoolInformation",
                 )
@@ -307,7 +307,7 @@ impl PoolInformationBuilder {
             two_way_channel_arn: self.two_way_channel_arn,
             self_managed_opt_outs_enabled: self.self_managed_opt_outs_enabled.unwrap_or_default(),
             opt_out_list_name: self.opt_out_list_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "opt_out_list_name",
                     "opt_out_list_name was not specified but it is required when building PoolInformation",
                 )
@@ -315,7 +315,7 @@ impl PoolInformationBuilder {
             shared_routes_enabled: self.shared_routes_enabled.unwrap_or_default(),
             deletion_protection_enabled: self.deletion_protection_enabled.unwrap_or_default(),
             created_timestamp: self.created_timestamp.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_timestamp",
                     "created_timestamp was not specified but it is required when building PoolInformation",
                 )

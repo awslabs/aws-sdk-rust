@@ -65,7 +65,9 @@ impl DeleteBranchInputBuilder {
         &self.branch_name
     }
     /// Consumes the builder and constructs a [`DeleteBranchInput`](crate::operation::delete_branch::DeleteBranchInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_branch::DeleteBranchInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_branch::DeleteBranchInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_branch::DeleteBranchInput {
             repository_name: self.repository_name,
             branch_name: self.branch_name,

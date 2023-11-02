@@ -46,7 +46,7 @@ impl StopThingRegistrationTaskInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_thing_registration_task::StopThingRegistrationTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::stop_thing_registration_task::StopThingRegistrationTaskInput { task_id: self.task_id })
     }

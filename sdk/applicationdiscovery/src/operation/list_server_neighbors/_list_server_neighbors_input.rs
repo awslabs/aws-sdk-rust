@@ -136,7 +136,7 @@ impl ListServerNeighborsInputBuilder {
     /// Consumes the builder and constructs a [`ListServerNeighborsInput`](crate::operation::list_server_neighbors::ListServerNeighborsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_server_neighbors::ListServerNeighborsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_server_neighbors::ListServerNeighborsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_server_neighbors::ListServerNeighborsInput {
             configuration_id: self.configuration_id,

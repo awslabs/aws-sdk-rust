@@ -270,17 +270,17 @@ impl OrganizationCustomRuleMetadataBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`lambda_function_arn`](crate::types::builders::OrganizationCustomRuleMetadataBuilder::lambda_function_arn)
     /// - [`organization_config_rule_trigger_types`](crate::types::builders::OrganizationCustomRuleMetadataBuilder::organization_config_rule_trigger_types)
-    pub fn build(self) -> ::std::result::Result<crate::types::OrganizationCustomRuleMetadata, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::OrganizationCustomRuleMetadata, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::OrganizationCustomRuleMetadata {
             description: self.description,
             lambda_function_arn: self.lambda_function_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "lambda_function_arn",
                     "lambda_function_arn was not specified but it is required when building OrganizationCustomRuleMetadata",
                 )
             })?,
             organization_config_rule_trigger_types: self.organization_config_rule_trigger_types.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "organization_config_rule_trigger_types",
                     "organization_config_rule_trigger_types was not specified but it is required when building OrganizationCustomRuleMetadata",
                 )

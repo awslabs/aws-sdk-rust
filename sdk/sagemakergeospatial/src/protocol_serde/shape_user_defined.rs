@@ -48,7 +48,7 @@ where
 pub fn ser_user_defined(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UserDefined,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Value").number(
             #[allow(clippy::useless_conversion)]

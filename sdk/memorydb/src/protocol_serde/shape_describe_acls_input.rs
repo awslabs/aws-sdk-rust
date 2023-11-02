@@ -2,7 +2,7 @@
 pub fn ser_describe_acls_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_acls::DescribeAcLsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.acl_name {
         object.key("ACLName").string(var_1.as_str());
     }

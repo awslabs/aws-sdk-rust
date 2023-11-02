@@ -92,12 +92,12 @@ impl SearchRelatedItemsOutputBuilder {
     /// - [`related_items`](crate::operation::search_related_items::builders::SearchRelatedItemsOutputBuilder::related_items)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::search_related_items::SearchRelatedItemsOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::search_related_items::SearchRelatedItemsOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::search_related_items::SearchRelatedItemsOutput {
             next_token: self.next_token,
             related_items: self.related_items.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "related_items",
                     "related_items was not specified but it is required when building SearchRelatedItemsOutput",
                 )

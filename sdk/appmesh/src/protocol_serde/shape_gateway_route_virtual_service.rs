@@ -2,7 +2,7 @@
 pub fn ser_gateway_route_virtual_service(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GatewayRouteVirtualService,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("virtualServiceName").string(input.virtual_service_name.as_str());
     }

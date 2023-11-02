@@ -158,30 +158,30 @@ impl DescribeDraftAppVersionResourcesImportStatusOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_draft_app_version_resources_import_status::DescribeDraftAppVersionResourcesImportStatusOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_draft_app_version_resources_import_status::DescribeDraftAppVersionResourcesImportStatusOutput {
                 app_arn: self.app_arn.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
                         "app_arn",
                         "app_arn was not specified but it is required when building DescribeDraftAppVersionResourcesImportStatusOutput",
                     )
                 })?,
                 app_version: self.app_version.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
                         "app_version",
                         "app_version was not specified but it is required when building DescribeDraftAppVersionResourcesImportStatusOutput",
                     )
                 })?,
                 status: self.status.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
                         "status",
                         "status was not specified but it is required when building DescribeDraftAppVersionResourcesImportStatusOutput",
                     )
                 })?,
                 status_change_time: self.status_change_time.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
                         "status_change_time",
                         "status_change_time was not specified but it is required when building DescribeDraftAppVersionResourcesImportStatusOutput",
                     )

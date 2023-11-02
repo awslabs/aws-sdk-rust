@@ -115,7 +115,7 @@ impl SearchFoldersInputBuilder {
     /// Consumes the builder and constructs a [`SearchFoldersInput`](crate::operation::search_folders::SearchFoldersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::search_folders::SearchFoldersInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::search_folders::SearchFoldersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_folders::SearchFoldersInput {
             aws_account_id: self.aws_account_id,
             filters: self.filters,

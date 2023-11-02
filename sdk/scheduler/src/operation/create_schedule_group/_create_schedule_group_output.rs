@@ -63,11 +63,11 @@ impl CreateScheduleGroupOutputBuilder {
     /// - [`schedule_group_arn`](crate::operation::create_schedule_group::builders::CreateScheduleGroupOutputBuilder::schedule_group_arn)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_schedule_group::CreateScheduleGroupOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_schedule_group::CreateScheduleGroupOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_schedule_group::CreateScheduleGroupOutput {
             schedule_group_arn: self.schedule_group_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "schedule_group_arn",
                     "schedule_group_arn was not specified but it is required when building CreateScheduleGroupOutput",
                 )

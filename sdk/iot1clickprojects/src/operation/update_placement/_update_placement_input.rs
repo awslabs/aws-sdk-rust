@@ -93,7 +93,7 @@ impl UpdatePlacementInputBuilder {
     /// Consumes the builder and constructs a [`UpdatePlacementInput`](crate::operation::update_placement::UpdatePlacementInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_placement::UpdatePlacementInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_placement::UpdatePlacementInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_placement::UpdatePlacementInput {
             placement_name: self.placement_name,
             project_name: self.project_name,

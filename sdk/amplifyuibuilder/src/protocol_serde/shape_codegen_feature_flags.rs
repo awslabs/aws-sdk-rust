@@ -2,7 +2,7 @@
 pub fn ser_codegen_feature_flags(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CodegenFeatureFlags,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.is_relationship_supported {
         object.key("isRelationshipSupported").boolean(*var_1);
     }

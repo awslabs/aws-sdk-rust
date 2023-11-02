@@ -2,7 +2,7 @@
 pub fn ser_timestamp_column(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TimestampColumn,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.column_name {
         object.key("ColumnName").string(var_1.as_str());
     }

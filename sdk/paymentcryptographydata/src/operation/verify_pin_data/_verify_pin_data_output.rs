@@ -135,28 +135,28 @@ impl VerifyPinDataOutputBuilder {
     /// - [`encryption_key_check_value`](crate::operation::verify_pin_data::builders::VerifyPinDataOutputBuilder::encryption_key_check_value)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::verify_pin_data::VerifyPinDataOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::verify_pin_data::VerifyPinDataOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::verify_pin_data::VerifyPinDataOutput {
             verification_key_arn: self.verification_key_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "verification_key_arn",
                     "verification_key_arn was not specified but it is required when building VerifyPinDataOutput",
                 )
             })?,
             verification_key_check_value: self.verification_key_check_value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "verification_key_check_value",
                     "verification_key_check_value was not specified but it is required when building VerifyPinDataOutput",
                 )
             })?,
             encryption_key_arn: self.encryption_key_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "encryption_key_arn",
                     "encryption_key_arn was not specified but it is required when building VerifyPinDataOutput",
                 )
             })?,
             encryption_key_check_value: self.encryption_key_check_value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "encryption_key_check_value",
                     "encryption_key_check_value was not specified but it is required when building VerifyPinDataOutput",
                 )

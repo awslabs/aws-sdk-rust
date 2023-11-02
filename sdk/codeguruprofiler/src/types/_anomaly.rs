@@ -97,17 +97,17 @@ impl AnomalyBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`reason`](crate::types::builders::AnomalyBuilder::reason)
     /// - [`instances`](crate::types::builders::AnomalyBuilder::instances)
-    pub fn build(self) -> ::std::result::Result<crate::types::Anomaly, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Anomaly, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Anomaly {
             metric: self.metric,
             reason: self.reason.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "reason",
                     "reason was not specified but it is required when building Anomaly",
                 )
             })?,
             instances: self.instances.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "instances",
                     "instances was not specified but it is required when building Anomaly",
                 )

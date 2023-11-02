@@ -107,7 +107,7 @@ impl ListLogPatternSetsInputBuilder {
     /// Consumes the builder and constructs a [`ListLogPatternSetsInput`](crate::operation::list_log_pattern_sets::ListLogPatternSetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_log_pattern_sets::ListLogPatternSetsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_log_pattern_sets::ListLogPatternSetsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_log_pattern_sets::ListLogPatternSetsInput {
             resource_group_name: self.resource_group_name,

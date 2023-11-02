@@ -2,7 +2,7 @@
 pub fn ser_create_studio_lifecycle_config_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_studio_lifecycle_config::CreateStudioLifecycleConfigInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.studio_lifecycle_config_name {
         object.key("StudioLifecycleConfigName").string(var_1.as_str());
     }

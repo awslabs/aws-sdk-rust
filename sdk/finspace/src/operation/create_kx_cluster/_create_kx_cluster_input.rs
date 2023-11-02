@@ -505,7 +505,7 @@ impl CreateKxClusterInputBuilder {
     /// Consumes the builder and constructs a [`CreateKxClusterInput`](crate::operation::create_kx_cluster::CreateKxClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_kx_cluster::CreateKxClusterInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_kx_cluster::CreateKxClusterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_kx_cluster::CreateKxClusterInput {
             client_token: self.client_token,
             environment_id: self.environment_id,

@@ -64,7 +64,7 @@ impl DeleteArtifactInputBuilder {
     /// Consumes the builder and constructs a [`DeleteArtifactInput`](crate::operation::delete_artifact::DeleteArtifactInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_artifact::DeleteArtifactInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_artifact::DeleteArtifactInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_artifact::DeleteArtifactInput {
             artifact_arn: self.artifact_arn,
             source: self.source,

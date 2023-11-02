@@ -44,7 +44,7 @@ impl DeleteTrialComponentInputBuilder {
     /// Consumes the builder and constructs a [`DeleteTrialComponentInput`](crate::operation::delete_trial_component::DeleteTrialComponentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_trial_component::DeleteTrialComponentInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_trial_component::DeleteTrialComponentInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_trial_component::DeleteTrialComponentInput {
             trial_component_name: self.trial_component_name,

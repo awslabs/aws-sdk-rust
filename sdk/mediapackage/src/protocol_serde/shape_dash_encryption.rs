@@ -45,7 +45,7 @@ where
 pub fn ser_dash_encryption(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DashEncryption,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.key_rotation_interval_seconds {
         object.key("keyRotationIntervalSeconds").number(
             #[allow(clippy::useless_conversion)]

@@ -180,7 +180,7 @@ impl CreatePermissionGroupInputBuilder {
     /// Consumes the builder and constructs a [`CreatePermissionGroupInput`](crate::operation::create_permission_group::CreatePermissionGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_permission_group::CreatePermissionGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_permission_group::CreatePermissionGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_permission_group::CreatePermissionGroupInput {
             name: self.name,

@@ -18,7 +18,7 @@ impl DescribeDrtAccessInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDrtAccessInput`](crate::operation::describe_drt_access::DescribeDrtAccessInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_drt_access::DescribeDrtAccessInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_drt_access::DescribeDrtAccessInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_drt_access::DescribeDrtAccessInput {})
     }
 }

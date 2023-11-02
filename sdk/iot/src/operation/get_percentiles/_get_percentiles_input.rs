@@ -136,7 +136,7 @@ impl GetPercentilesInputBuilder {
     /// Consumes the builder and constructs a [`GetPercentilesInput`](crate::operation::get_percentiles::GetPercentilesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_percentiles::GetPercentilesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_percentiles::GetPercentilesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_percentiles::GetPercentilesInput {
             index_name: self.index_name,
             query_string: self.query_string,

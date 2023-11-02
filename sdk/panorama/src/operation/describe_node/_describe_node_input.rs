@@ -63,7 +63,9 @@ impl DescribeNodeInputBuilder {
         &self.owner_account
     }
     /// Consumes the builder and constructs a [`DescribeNodeInput`](crate::operation::describe_node::DescribeNodeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_node::DescribeNodeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::describe_node::DescribeNodeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_node::DescribeNodeInput {
             node_id: self.node_id,
             owner_account: self.owner_account,

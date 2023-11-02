@@ -112,7 +112,7 @@ impl RollbackStackInputBuilder {
     /// Consumes the builder and constructs a [`RollbackStackInput`](crate::operation::rollback_stack::RollbackStackInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::rollback_stack::RollbackStackInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::rollback_stack::RollbackStackInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::rollback_stack::RollbackStackInput {
             stack_name: self.stack_name,
             role_arn: self.role_arn,

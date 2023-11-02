@@ -44,7 +44,7 @@ impl ListDeploymentConfigsInputBuilder {
     /// Consumes the builder and constructs a [`ListDeploymentConfigsInput`](crate::operation::list_deployment_configs::ListDeploymentConfigsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_deployment_configs::ListDeploymentConfigsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_deployment_configs::ListDeploymentConfigsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_deployment_configs::ListDeploymentConfigsInput { next_token: self.next_token })
     }

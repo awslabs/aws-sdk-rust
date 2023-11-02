@@ -86,7 +86,7 @@ impl ListClusterJobsInputBuilder {
     /// Consumes the builder and constructs a [`ListClusterJobsInput`](crate::operation::list_cluster_jobs::ListClusterJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_cluster_jobs::ListClusterJobsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_cluster_jobs::ListClusterJobsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_cluster_jobs::ListClusterJobsInput {
             cluster_id: self.cluster_id,
             max_results: self.max_results,

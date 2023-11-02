@@ -121,16 +121,16 @@ impl LedgerEncryptionDescriptionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`kms_key_arn`](crate::types::builders::LedgerEncryptionDescriptionBuilder::kms_key_arn)
     /// - [`encryption_status`](crate::types::builders::LedgerEncryptionDescriptionBuilder::encryption_status)
-    pub fn build(self) -> ::std::result::Result<crate::types::LedgerEncryptionDescription, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::LedgerEncryptionDescription, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::LedgerEncryptionDescription {
             kms_key_arn: self.kms_key_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "kms_key_arn",
                     "kms_key_arn was not specified but it is required when building LedgerEncryptionDescription",
                 )
             })?,
             encryption_status: self.encryption_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "encryption_status",
                     "encryption_status was not specified but it is required when building LedgerEncryptionDescription",
                 )

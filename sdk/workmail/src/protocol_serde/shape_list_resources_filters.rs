@@ -2,7 +2,7 @@
 pub fn ser_list_resources_filters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ListResourcesFilters,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.name_prefix {
         object.key("NamePrefix").string(var_1.as_str());
     }

@@ -70,16 +70,16 @@ impl VersionDeleteErrorBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`version_name`](crate::types::builders::VersionDeleteErrorBuilder::version_name)
     /// - [`message`](crate::types::builders::VersionDeleteErrorBuilder::message)
-    pub fn build(self) -> ::std::result::Result<crate::types::VersionDeleteError, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::VersionDeleteError, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::VersionDeleteError {
             version_name: self.version_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "version_name",
                     "version_name was not specified but it is required when building VersionDeleteError",
                 )
             })?,
             message: self.message.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "message",
                     "message was not specified but it is required when building VersionDeleteError",
                 )

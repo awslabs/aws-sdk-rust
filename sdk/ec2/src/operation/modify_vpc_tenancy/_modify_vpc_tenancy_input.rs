@@ -87,7 +87,7 @@ impl ModifyVpcTenancyInputBuilder {
     /// Consumes the builder and constructs a [`ModifyVpcTenancyInput`](crate::operation::modify_vpc_tenancy::ModifyVpcTenancyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::modify_vpc_tenancy::ModifyVpcTenancyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::modify_vpc_tenancy::ModifyVpcTenancyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::modify_vpc_tenancy::ModifyVpcTenancyInput {
             vpc_id: self.vpc_id,
             instance_tenancy: self.instance_tenancy,

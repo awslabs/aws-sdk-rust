@@ -233,7 +233,7 @@ impl ListSubscriptionsInputBuilder {
     /// Consumes the builder and constructs a [`ListSubscriptionsInput`](crate::operation::list_subscriptions::ListSubscriptionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_subscriptions::ListSubscriptionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_subscriptions::ListSubscriptionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_subscriptions::ListSubscriptionsInput {
             domain_identifier: self.domain_identifier,
             subscription_request_identifier: self.subscription_request_identifier,

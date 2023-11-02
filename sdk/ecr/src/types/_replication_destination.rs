@@ -70,16 +70,16 @@ impl ReplicationDestinationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`region`](crate::types::builders::ReplicationDestinationBuilder::region)
     /// - [`registry_id`](crate::types::builders::ReplicationDestinationBuilder::registry_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::ReplicationDestination, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ReplicationDestination, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ReplicationDestination {
             region: self.region.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "region",
                     "region was not specified but it is required when building ReplicationDestination",
                 )
             })?,
             registry_id: self.registry_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "registry_id",
                     "registry_id was not specified but it is required when building ReplicationDestination",
                 )

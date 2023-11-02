@@ -2,7 +2,7 @@
 pub fn ser_prompt_attempt_specification(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PromptAttemptSpecification,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.allow_interrupt {
         object.key("allowInterrupt").boolean(*var_1);
     }

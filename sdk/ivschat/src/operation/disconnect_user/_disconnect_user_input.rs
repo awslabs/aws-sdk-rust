@@ -87,7 +87,7 @@ impl DisconnectUserInputBuilder {
     /// Consumes the builder and constructs a [`DisconnectUserInput`](crate::operation::disconnect_user::DisconnectUserInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::disconnect_user::DisconnectUserInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::disconnect_user::DisconnectUserInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::disconnect_user::DisconnectUserInput {
             room_identifier: self.room_identifier,
             user_id: self.user_id,

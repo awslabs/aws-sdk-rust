@@ -109,7 +109,8 @@ impl StartTestExecutionInputBuilder {
     /// Consumes the builder and constructs a [`StartTestExecutionInput`](crate::operation::start_test_execution::StartTestExecutionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_test_execution::StartTestExecutionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_test_execution::StartTestExecutionInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::start_test_execution::StartTestExecutionInput {
             test_set_id: self.test_set_id,
             target: self.target,

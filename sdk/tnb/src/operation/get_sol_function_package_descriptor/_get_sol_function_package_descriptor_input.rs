@@ -68,7 +68,7 @@ impl GetSolFunctionPackageDescriptorInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorInput {

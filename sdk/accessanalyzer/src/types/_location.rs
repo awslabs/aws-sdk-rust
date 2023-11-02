@@ -73,10 +73,10 @@ impl LocationBuilder {
     /// Consumes the builder and constructs a [`Location`](crate::types::Location).
     /// This method will fail if any of the following fields are not set:
     /// - [`path`](crate::types::builders::LocationBuilder::path)
-    pub fn build(self) -> ::std::result::Result<crate::types::Location, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Location, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Location {
             path: self.path.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "path",
                     "path was not specified but it is required when building Location",
                 )

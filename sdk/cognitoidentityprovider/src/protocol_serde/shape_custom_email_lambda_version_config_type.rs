@@ -2,7 +2,7 @@
 pub fn ser_custom_email_lambda_version_config_type(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CustomEmailLambdaVersionConfigType,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("LambdaVersion").string(input.lambda_version.as_str());
     }

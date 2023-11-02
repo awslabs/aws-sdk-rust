@@ -128,7 +128,7 @@ impl ListAutoScalingConfigurationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_auto_scaling_configurations::ListAutoScalingConfigurationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_auto_scaling_configurations::ListAutoScalingConfigurationsInput {
             auto_scaling_configuration_name: self.auto_scaling_configuration_name,

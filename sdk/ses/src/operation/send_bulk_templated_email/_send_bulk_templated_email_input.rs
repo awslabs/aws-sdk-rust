@@ -322,7 +322,7 @@ impl SendBulkTemplatedEmailInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::send_bulk_templated_email::SendBulkTemplatedEmailInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::send_bulk_templated_email::SendBulkTemplatedEmailInput {
             source: self.source,

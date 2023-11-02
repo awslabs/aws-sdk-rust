@@ -158,28 +158,28 @@ impl AssessmentRunInProgressExceptionBuilder {
     /// - [`can_retry`](crate::types::error::builders::AssessmentRunInProgressExceptionBuilder::can_retry)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::error::AssessmentRunInProgressException, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::error::AssessmentRunInProgressException, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::error::AssessmentRunInProgressException {
             message: self.message.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "message",
                     "message was not specified but it is required when building AssessmentRunInProgressException",
                 )
             })?,
             assessment_run_arns: self.assessment_run_arns.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "assessment_run_arns",
                     "assessment_run_arns was not specified but it is required when building AssessmentRunInProgressException",
                 )
             })?,
             assessment_run_arns_truncated: self.assessment_run_arns_truncated.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "assessment_run_arns_truncated",
                     "assessment_run_arns_truncated was not specified but it is required when building AssessmentRunInProgressException",
                 )
             })?,
             can_retry: self.can_retry.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "can_retry",
                     "can_retry was not specified but it is required when building AssessmentRunInProgressException",
                 )

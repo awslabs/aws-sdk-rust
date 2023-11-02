@@ -2,7 +2,7 @@
 pub fn ser_infor_nexus_connector_profile_properties(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::InforNexusConnectorProfileProperties,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("instanceUrl").string(input.instance_url.as_str());
     }

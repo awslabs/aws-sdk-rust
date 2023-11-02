@@ -67,10 +67,10 @@ impl DevEnvironmentRepositorySummaryBuilder {
     /// Consumes the builder and constructs a [`DevEnvironmentRepositorySummary`](crate::types::DevEnvironmentRepositorySummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`repository_name`](crate::types::builders::DevEnvironmentRepositorySummaryBuilder::repository_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::DevEnvironmentRepositorySummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DevEnvironmentRepositorySummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DevEnvironmentRepositorySummary {
             repository_name: self.repository_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "repository_name",
                     "repository_name was not specified but it is required when building DevEnvironmentRepositorySummary",
                 )

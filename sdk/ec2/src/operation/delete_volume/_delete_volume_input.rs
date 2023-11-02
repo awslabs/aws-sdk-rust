@@ -63,7 +63,9 @@ impl DeleteVolumeInputBuilder {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`DeleteVolumeInput`](crate::operation::delete_volume::DeleteVolumeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_volume::DeleteVolumeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_volume::DeleteVolumeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_volume::DeleteVolumeInput {
             volume_id: self.volume_id,
             dry_run: self.dry_run,

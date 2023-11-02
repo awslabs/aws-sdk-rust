@@ -42,7 +42,7 @@ impl GetStageInputBuilder {
         &self.arn
     }
     /// Consumes the builder and constructs a [`GetStageInput`](crate::operation::get_stage::GetStageInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_stage::GetStageInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_stage::GetStageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_stage::GetStageInput { arn: self.arn })
     }
 }

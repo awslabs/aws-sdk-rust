@@ -96,7 +96,7 @@ impl UpdateAuthorizerInputBuilder {
     /// Consumes the builder and constructs a [`UpdateAuthorizerInput`](crate::operation::update_authorizer::UpdateAuthorizerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_authorizer::UpdateAuthorizerInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_authorizer::UpdateAuthorizerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_authorizer::UpdateAuthorizerInput {
             rest_api_id: self.rest_api_id,
             authorizer_id: self.authorizer_id,

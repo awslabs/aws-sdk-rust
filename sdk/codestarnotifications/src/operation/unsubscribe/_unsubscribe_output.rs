@@ -61,10 +61,10 @@ impl UnsubscribeOutputBuilder {
     /// Consumes the builder and constructs a [`UnsubscribeOutput`](crate::operation::unsubscribe::UnsubscribeOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::operation::unsubscribe::builders::UnsubscribeOutputBuilder::arn)
-    pub fn build(self) -> ::std::result::Result<crate::operation::unsubscribe::UnsubscribeOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::unsubscribe::UnsubscribeOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::unsubscribe::UnsubscribeOutput {
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building UnsubscribeOutput",
                 )

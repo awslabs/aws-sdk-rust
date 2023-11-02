@@ -161,30 +161,30 @@ impl DescribeGatewayCapabilityConfigurationOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_gateway_capability_configuration::DescribeGatewayCapabilityConfigurationOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_gateway_capability_configuration::DescribeGatewayCapabilityConfigurationOutput {
                 gateway_id: self.gateway_id.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
                         "gateway_id",
                         "gateway_id was not specified but it is required when building DescribeGatewayCapabilityConfigurationOutput",
                     )
                 })?,
                 capability_namespace: self.capability_namespace.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
                         "capability_namespace",
                         "capability_namespace was not specified but it is required when building DescribeGatewayCapabilityConfigurationOutput",
                     )
                 })?,
                 capability_configuration: self.capability_configuration.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
                         "capability_configuration",
                         "capability_configuration was not specified but it is required when building DescribeGatewayCapabilityConfigurationOutput",
                     )
                 })?,
                 capability_sync_status: self.capability_sync_status.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
                         "capability_sync_status",
                         "capability_sync_status was not specified but it is required when building DescribeGatewayCapabilityConfigurationOutput",
                     )

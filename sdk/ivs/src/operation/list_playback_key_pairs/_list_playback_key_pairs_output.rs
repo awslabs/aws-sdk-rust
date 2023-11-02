@@ -89,11 +89,11 @@ impl ListPlaybackKeyPairsOutputBuilder {
     /// - [`key_pairs`](crate::operation::list_playback_key_pairs::builders::ListPlaybackKeyPairsOutputBuilder::key_pairs)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_playback_key_pairs::ListPlaybackKeyPairsOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_playback_key_pairs::ListPlaybackKeyPairsOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_playback_key_pairs::ListPlaybackKeyPairsOutput {
             key_pairs: self.key_pairs.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "key_pairs",
                     "key_pairs was not specified but it is required when building ListPlaybackKeyPairsOutput",
                 )

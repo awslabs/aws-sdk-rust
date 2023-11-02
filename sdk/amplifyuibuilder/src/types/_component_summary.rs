@@ -142,34 +142,34 @@ impl ComponentSummaryBuilder {
     /// - [`id`](crate::types::builders::ComponentSummaryBuilder::id)
     /// - [`name`](crate::types::builders::ComponentSummaryBuilder::name)
     /// - [`component_type`](crate::types::builders::ComponentSummaryBuilder::component_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::ComponentSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ComponentSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ComponentSummary {
             app_id: self.app_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "app_id",
                     "app_id was not specified but it is required when building ComponentSummary",
                 )
             })?,
             environment_name: self.environment_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "environment_name",
                     "environment_name was not specified but it is required when building ComponentSummary",
                 )
             })?,
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building ComponentSummary",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building ComponentSummary",
                 )
             })?,
             component_type: self.component_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "component_type",
                     "component_type was not specified but it is required when building ComponentSummary",
                 )

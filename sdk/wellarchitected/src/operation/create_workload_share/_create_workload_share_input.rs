@@ -126,7 +126,7 @@ impl CreateWorkloadShareInputBuilder {
     /// Consumes the builder and constructs a [`CreateWorkloadShareInput`](crate::operation::create_workload_share::CreateWorkloadShareInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_workload_share::CreateWorkloadShareInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_workload_share::CreateWorkloadShareInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_workload_share::CreateWorkloadShareInput {
             workload_id: self.workload_id,

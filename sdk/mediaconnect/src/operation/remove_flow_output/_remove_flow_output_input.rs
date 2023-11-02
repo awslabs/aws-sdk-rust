@@ -66,7 +66,7 @@ impl RemoveFlowOutputInputBuilder {
     /// Consumes the builder and constructs a [`RemoveFlowOutputInput`](crate::operation::remove_flow_output::RemoveFlowOutputInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::remove_flow_output::RemoveFlowOutputInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::remove_flow_output::RemoveFlowOutputInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::remove_flow_output::RemoveFlowOutputInput {
             flow_arn: self.flow_arn,
             output_arn: self.output_arn,

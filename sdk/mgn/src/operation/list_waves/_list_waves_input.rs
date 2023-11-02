@@ -104,7 +104,7 @@ impl ListWavesInputBuilder {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`ListWavesInput`](crate::operation::list_waves::ListWavesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_waves::ListWavesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_waves::ListWavesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_waves::ListWavesInput {
             filters: self.filters,
             max_results: self.max_results,

@@ -74,11 +74,11 @@ impl GetBlacklistReportsOutputBuilder {
     /// - [`blacklist_report`](crate::operation::get_blacklist_reports::builders::GetBlacklistReportsOutputBuilder::blacklist_report)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_blacklist_reports::GetBlacklistReportsOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_blacklist_reports::GetBlacklistReportsOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_blacklist_reports::GetBlacklistReportsOutput {
             blacklist_report: self.blacklist_report.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "blacklist_report",
                     "blacklist_report was not specified but it is required when building GetBlacklistReportsOutput",
                 )

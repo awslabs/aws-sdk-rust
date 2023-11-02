@@ -151,12 +151,12 @@ impl NotifyConfigurationTypeBuilder {
     /// Consumes the builder and constructs a [`NotifyConfigurationType`](crate::types::NotifyConfigurationType).
     /// This method will fail if any of the following fields are not set:
     /// - [`source_arn`](crate::types::builders::NotifyConfigurationTypeBuilder::source_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::NotifyConfigurationType, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::NotifyConfigurationType, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::NotifyConfigurationType {
             from: self.from,
             reply_to: self.reply_to,
             source_arn: self.source_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source_arn",
                     "source_arn was not specified but it is required when building NotifyConfigurationType",
                 )

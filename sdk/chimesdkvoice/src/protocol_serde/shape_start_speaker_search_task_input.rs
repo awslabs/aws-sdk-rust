@@ -2,7 +2,7 @@
 pub fn ser_start_speaker_search_task_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_speaker_search_task::StartSpeakerSearchTaskInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.call_leg {
         object.key("CallLeg").string(var_1.as_str());
     }

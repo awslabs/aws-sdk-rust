@@ -179,7 +179,7 @@ impl CreateIntegrationInputBuilder {
     /// Consumes the builder and constructs a [`CreateIntegrationInput`](crate::operation::create_integration::CreateIntegrationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_integration::CreateIntegrationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_integration::CreateIntegrationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_integration::CreateIntegrationInput {
             source_arn: self.source_arn,
             target_arn: self.target_arn,

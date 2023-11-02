@@ -180,7 +180,7 @@ impl DescribeTrafficMirrorTargetsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_traffic_mirror_targets::DescribeTrafficMirrorTargetsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_traffic_mirror_targets::DescribeTrafficMirrorTargetsInput {
             traffic_mirror_target_ids: self.traffic_mirror_target_ids,

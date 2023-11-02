@@ -148,7 +148,7 @@ impl DescribeMetricFiltersInputBuilder {
     /// Consumes the builder and constructs a [`DescribeMetricFiltersInput`](crate::operation::describe_metric_filters::DescribeMetricFiltersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_metric_filters::DescribeMetricFiltersInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_metric_filters::DescribeMetricFiltersInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_metric_filters::DescribeMetricFiltersInput {
             log_group_name: self.log_group_name,

@@ -93,8 +93,10 @@ impl DescribeGlobalNetworksInputBuilder {
     /// Consumes the builder and constructs a [`DescribeGlobalNetworksInput`](crate::operation::describe_global_networks::DescribeGlobalNetworksInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_global_networks::DescribeGlobalNetworksInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::describe_global_networks::DescribeGlobalNetworksInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::describe_global_networks::DescribeGlobalNetworksInput {
             global_network_ids: self.global_network_ids,
             max_results: self.max_results,

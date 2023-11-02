@@ -104,7 +104,9 @@ impl ListFindingsInputBuilder {
         &self.sort_criteria
     }
     /// Consumes the builder and constructs a [`ListFindingsInput`](crate::operation::list_findings::ListFindingsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_findings::ListFindingsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_findings::ListFindingsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_findings::ListFindingsInput {
             max_results: self.max_results,
             next_token: self.next_token,

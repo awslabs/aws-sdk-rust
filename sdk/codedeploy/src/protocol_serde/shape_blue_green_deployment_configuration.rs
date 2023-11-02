@@ -2,7 +2,7 @@
 pub fn ser_blue_green_deployment_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BlueGreenDeploymentConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.terminate_blue_instances_on_deployment_success {
         #[allow(unused_mut)]
         let mut object_2 = object.key("terminateBlueInstancesOnDeploymentSuccess").start_object();

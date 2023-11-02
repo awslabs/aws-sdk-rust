@@ -2,7 +2,7 @@
 pub fn ser_table_field_wells(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TableFieldWells,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.table_aggregated_field_wells {
         #[allow(unused_mut)]
         let mut object_2 = object.key("TableAggregatedFieldWells").start_object();

@@ -201,22 +201,22 @@ impl TableCreationParametersBuilder {
     /// - [`table_name`](crate::types::builders::TableCreationParametersBuilder::table_name)
     /// - [`attribute_definitions`](crate::types::builders::TableCreationParametersBuilder::attribute_definitions)
     /// - [`key_schema`](crate::types::builders::TableCreationParametersBuilder::key_schema)
-    pub fn build(self) -> ::std::result::Result<crate::types::TableCreationParameters, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TableCreationParameters, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TableCreationParameters {
             table_name: self.table_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "table_name",
                     "table_name was not specified but it is required when building TableCreationParameters",
                 )
             })?,
             attribute_definitions: self.attribute_definitions.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "attribute_definitions",
                     "attribute_definitions was not specified but it is required when building TableCreationParameters",
                 )
             })?,
             key_schema: self.key_schema.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "key_schema",
                     "key_schema was not specified but it is required when building TableCreationParameters",
                 )

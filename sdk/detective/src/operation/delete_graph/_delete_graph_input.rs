@@ -42,7 +42,7 @@ impl DeleteGraphInputBuilder {
         &self.graph_arn
     }
     /// Consumes the builder and constructs a [`DeleteGraphInput`](crate::operation::delete_graph::DeleteGraphInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_graph::DeleteGraphInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_graph::DeleteGraphInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_graph::DeleteGraphInput { graph_arn: self.graph_arn })
     }
 }

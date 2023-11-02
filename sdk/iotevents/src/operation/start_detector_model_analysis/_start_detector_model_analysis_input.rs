@@ -46,7 +46,7 @@ impl StartDetectorModelAnalysisInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_detector_model_analysis::StartDetectorModelAnalysisInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_detector_model_analysis::StartDetectorModelAnalysisInput {
             detector_model_definition: self.detector_model_definition,

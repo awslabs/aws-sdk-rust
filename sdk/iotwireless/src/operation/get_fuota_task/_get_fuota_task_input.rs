@@ -44,7 +44,7 @@ impl GetFuotaTaskInputBuilder {
     /// Consumes the builder and constructs a [`GetFuotaTaskInput`](crate::operation::get_fuota_task::GetFuotaTaskInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_fuota_task::GetFuotaTaskInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_fuota_task::GetFuotaTaskInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_fuota_task::GetFuotaTaskInput { id: self.id })
     }
 }

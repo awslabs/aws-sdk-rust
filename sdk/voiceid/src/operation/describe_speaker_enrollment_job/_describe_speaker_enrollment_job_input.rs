@@ -68,7 +68,7 @@ impl DescribeSpeakerEnrollmentJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_speaker_enrollment_job::DescribeSpeakerEnrollmentJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_speaker_enrollment_job::DescribeSpeakerEnrollmentJobInput {
             domain_id: self.domain_id,

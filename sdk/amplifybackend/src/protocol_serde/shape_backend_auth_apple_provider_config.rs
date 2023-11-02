@@ -2,7 +2,7 @@
 pub fn ser_backend_auth_apple_provider_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BackendAuthAppleProviderConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.client_id {
         object.key("client_id").string(var_1.as_str());
     }

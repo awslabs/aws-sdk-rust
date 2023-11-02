@@ -83,7 +83,7 @@ impl GetSnapshotInputBuilder {
         &self.snapshot_arn
     }
     /// Consumes the builder and constructs a [`GetSnapshotInput`](crate::operation::get_snapshot::GetSnapshotInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_snapshot::GetSnapshotInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_snapshot::GetSnapshotInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_snapshot::GetSnapshotInput {
             snapshot_name: self.snapshot_name,
             owner_account: self.owner_account,

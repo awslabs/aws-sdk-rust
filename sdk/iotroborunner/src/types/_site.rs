@@ -117,22 +117,25 @@ impl SiteBuilder {
     /// - [`name`](crate::types::builders::SiteBuilder::name)
     /// - [`country_code`](crate::types::builders::SiteBuilder::country_code)
     /// - [`created_at`](crate::types::builders::SiteBuilder::created_at)
-    pub fn build(self) -> ::std::result::Result<crate::types::Site, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Site, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Site {
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field("arn", "arn was not specified but it is required when building Site")
+                ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building Site")
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field("name", "name was not specified but it is required when building Site")
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building Site",
+                )
             })?,
             country_code: self.country_code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "country_code",
                     "country_code was not specified but it is required when building Site",
                 )
             })?,
             created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
                     "created_at was not specified but it is required when building Site",
                 )

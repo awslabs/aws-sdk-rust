@@ -69,10 +69,10 @@ impl TestExecutionResultFilterByBuilder {
     /// Consumes the builder and constructs a [`TestExecutionResultFilterBy`](crate::types::TestExecutionResultFilterBy).
     /// This method will fail if any of the following fields are not set:
     /// - [`result_type_filter`](crate::types::builders::TestExecutionResultFilterByBuilder::result_type_filter)
-    pub fn build(self) -> ::std::result::Result<crate::types::TestExecutionResultFilterBy, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TestExecutionResultFilterBy, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TestExecutionResultFilterBy {
             result_type_filter: self.result_type_filter.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "result_type_filter",
                     "result_type_filter was not specified but it is required when building TestExecutionResultFilterBy",
                 )

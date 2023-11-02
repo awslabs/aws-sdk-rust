@@ -92,22 +92,22 @@ impl BatchPutGeofenceSuccessBuilder {
     /// - [`geofence_id`](crate::types::builders::BatchPutGeofenceSuccessBuilder::geofence_id)
     /// - [`create_time`](crate::types::builders::BatchPutGeofenceSuccessBuilder::create_time)
     /// - [`update_time`](crate::types::builders::BatchPutGeofenceSuccessBuilder::update_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::BatchPutGeofenceSuccess, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::BatchPutGeofenceSuccess, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::BatchPutGeofenceSuccess {
             geofence_id: self.geofence_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "geofence_id",
                     "geofence_id was not specified but it is required when building BatchPutGeofenceSuccess",
                 )
             })?,
             create_time: self.create_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "create_time",
                     "create_time was not specified but it is required when building BatchPutGeofenceSuccess",
                 )
             })?,
             update_time: self.update_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "update_time",
                     "update_time was not specified but it is required when building BatchPutGeofenceSuccess",
                 )

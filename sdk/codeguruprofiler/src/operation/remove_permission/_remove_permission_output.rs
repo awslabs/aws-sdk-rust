@@ -88,16 +88,16 @@ impl RemovePermissionOutputBuilder {
     /// - [`revision_id`](crate::operation::remove_permission::builders::RemovePermissionOutputBuilder::revision_id)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::remove_permission::RemovePermissionOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::remove_permission::RemovePermissionOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::remove_permission::RemovePermissionOutput {
             policy: self.policy.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "policy",
                     "policy was not specified but it is required when building RemovePermissionOutput",
                 )
             })?,
             revision_id: self.revision_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "revision_id",
                     "revision_id was not specified but it is required when building RemovePermissionOutput",
                 )

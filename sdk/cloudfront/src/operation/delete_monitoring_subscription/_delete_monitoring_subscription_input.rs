@@ -46,7 +46,7 @@ impl DeleteMonitoringSubscriptionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_monitoring_subscription::DeleteMonitoringSubscriptionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_monitoring_subscription::DeleteMonitoringSubscriptionInput {
             distribution_id: self.distribution_id,

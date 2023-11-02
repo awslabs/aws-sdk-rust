@@ -90,7 +90,7 @@ impl GetNodeInputBuilder {
         &self.node_id
     }
     /// Consumes the builder and constructs a [`GetNodeInput`](crate::operation::get_node::GetNodeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_node::GetNodeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_node::GetNodeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_node::GetNodeInput {
             network_id: self.network_id,
             member_id: self.member_id,

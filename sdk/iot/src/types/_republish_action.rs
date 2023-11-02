@@ -112,16 +112,16 @@ impl RepublishActionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`role_arn`](crate::types::builders::RepublishActionBuilder::role_arn)
     /// - [`topic`](crate::types::builders::RepublishActionBuilder::topic)
-    pub fn build(self) -> ::std::result::Result<crate::types::RepublishAction, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RepublishAction, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RepublishAction {
             role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role_arn",
                     "role_arn was not specified but it is required when building RepublishAction",
                 )
             })?,
             topic: self.topic.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "topic",
                     "topic was not specified but it is required when building RepublishAction",
                 )

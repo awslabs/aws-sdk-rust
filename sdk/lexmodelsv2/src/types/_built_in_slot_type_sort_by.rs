@@ -68,16 +68,16 @@ impl BuiltInSlotTypeSortByBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`attribute`](crate::types::builders::BuiltInSlotTypeSortByBuilder::attribute)
     /// - [`order`](crate::types::builders::BuiltInSlotTypeSortByBuilder::order)
-    pub fn build(self) -> ::std::result::Result<crate::types::BuiltInSlotTypeSortBy, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::BuiltInSlotTypeSortBy, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::BuiltInSlotTypeSortBy {
             attribute: self.attribute.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "attribute",
                     "attribute was not specified but it is required when building BuiltInSlotTypeSortBy",
                 )
             })?,
             order: self.order.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "order",
                     "order was not specified but it is required when building BuiltInSlotTypeSortBy",
                 )

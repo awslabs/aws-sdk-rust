@@ -88,7 +88,7 @@ impl GetBackendJobInputBuilder {
     /// Consumes the builder and constructs a [`GetBackendJobInput`](crate::operation::get_backend_job::GetBackendJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_backend_job::GetBackendJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_backend_job::GetBackendJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_backend_job::GetBackendJobInput {
             app_id: self.app_id,
             backend_environment_name: self.backend_environment_name,

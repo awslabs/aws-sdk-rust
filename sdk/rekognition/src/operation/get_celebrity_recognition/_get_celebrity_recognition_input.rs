@@ -109,7 +109,7 @@ impl GetCelebrityRecognitionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_celebrity_recognition::GetCelebrityRecognitionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_celebrity_recognition::GetCelebrityRecognitionInput {
             job_id: self.job_id,

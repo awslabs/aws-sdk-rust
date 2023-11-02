@@ -110,18 +110,18 @@ impl MaintenanceStartTimeBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`hour_of_day`](crate::types::builders::MaintenanceStartTimeBuilder::hour_of_day)
     /// - [`minute_of_hour`](crate::types::builders::MaintenanceStartTimeBuilder::minute_of_hour)
-    pub fn build(self) -> ::std::result::Result<crate::types::MaintenanceStartTime, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::MaintenanceStartTime, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MaintenanceStartTime {
             day_of_month: self.day_of_month,
             day_of_week: self.day_of_week,
             hour_of_day: self.hour_of_day.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "hour_of_day",
                     "hour_of_day was not specified but it is required when building MaintenanceStartTime",
                 )
             })?,
             minute_of_hour: self.minute_of_hour.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "minute_of_hour",
                     "minute_of_hour was not specified but it is required when building MaintenanceStartTime",
                 )

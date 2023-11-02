@@ -176,7 +176,7 @@ impl PostCommentForPullRequestInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::post_comment_for_pull_request::PostCommentForPullRequestInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::post_comment_for_pull_request::PostCommentForPullRequestInput {
             pull_request_id: self.pull_request_id,

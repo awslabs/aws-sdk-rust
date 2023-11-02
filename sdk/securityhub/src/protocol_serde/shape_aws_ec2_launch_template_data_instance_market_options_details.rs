@@ -2,7 +2,7 @@
 pub fn ser_aws_ec2_launch_template_data_instance_market_options_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEc2LaunchTemplateDataInstanceMarketOptionsDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.market_type {
         object.key("MarketType").string(var_1.as_str());
     }

@@ -70,16 +70,18 @@ impl PutMultiRegionAccessPointPolicyInputBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::PutMultiRegionAccessPointPolicyInputBuilder::name)
     /// - [`policy`](crate::types::builders::PutMultiRegionAccessPointPolicyInputBuilder::policy)
-    pub fn build(self) -> ::std::result::Result<crate::types::PutMultiRegionAccessPointPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::PutMultiRegionAccessPointPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PutMultiRegionAccessPointPolicyInput {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building PutMultiRegionAccessPointPolicyInput",
                 )
             })?,
             policy: self.policy.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "policy",
                     "policy was not specified but it is required when building PutMultiRegionAccessPointPolicyInput",
                 )

@@ -44,7 +44,7 @@ impl DeleteSimulationInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSimulationInput`](crate::operation::delete_simulation::DeleteSimulationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_simulation::DeleteSimulationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_simulation::DeleteSimulationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_simulation::DeleteSimulationInput { simulation: self.simulation })
     }
 }

@@ -90,7 +90,7 @@ impl ListDistributionsByResponseHeadersPolicyIdInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_distributions_by_response_headers_policy_id::ListDistributionsByResponseHeadersPolicyIdInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_distributions_by_response_headers_policy_id::ListDistributionsByResponseHeadersPolicyIdInput {

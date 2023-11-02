@@ -74,16 +74,16 @@ impl HashAlgorithmOptionsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`allowed_values`](crate::types::builders::HashAlgorithmOptionsBuilder::allowed_values)
     /// - [`default_value`](crate::types::builders::HashAlgorithmOptionsBuilder::default_value)
-    pub fn build(self) -> ::std::result::Result<crate::types::HashAlgorithmOptions, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::HashAlgorithmOptions, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::HashAlgorithmOptions {
             allowed_values: self.allowed_values.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "allowed_values",
                     "allowed_values was not specified but it is required when building HashAlgorithmOptions",
                 )
             })?,
             default_value: self.default_value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "default_value",
                     "default_value was not specified but it is required when building HashAlgorithmOptions",
                 )

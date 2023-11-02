@@ -51,7 +51,7 @@ impl BatchGetChannelInputBuilder {
     /// Consumes the builder and constructs a [`BatchGetChannelInput`](crate::operation::batch_get_channel::BatchGetChannelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_get_channel::BatchGetChannelInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::batch_get_channel::BatchGetChannelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::batch_get_channel::BatchGetChannelInput { arns: self.arns })
     }
 }

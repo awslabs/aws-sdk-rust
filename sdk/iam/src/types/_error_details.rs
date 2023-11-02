@@ -71,16 +71,16 @@ impl ErrorDetailsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`message`](crate::types::builders::ErrorDetailsBuilder::message)
     /// - [`code`](crate::types::builders::ErrorDetailsBuilder::code)
-    pub fn build(self) -> ::std::result::Result<crate::types::ErrorDetails, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ErrorDetails, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ErrorDetails {
             message: self.message.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "message",
                     "message was not specified but it is required when building ErrorDetails",
                 )
             })?,
             code: self.code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "code",
                     "code was not specified but it is required when building ErrorDetails",
                 )

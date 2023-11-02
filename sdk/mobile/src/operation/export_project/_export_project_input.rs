@@ -45,7 +45,7 @@ impl ExportProjectInputBuilder {
     /// Consumes the builder and constructs a [`ExportProjectInput`](crate::operation::export_project::ExportProjectInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::export_project::ExportProjectInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::export_project::ExportProjectInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::export_project::ExportProjectInput { project_id: self.project_id })
     }
 }

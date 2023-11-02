@@ -88,10 +88,10 @@ impl CapacityProviderStrategyItemBuilder {
     /// Consumes the builder and constructs a [`CapacityProviderStrategyItem`](crate::types::CapacityProviderStrategyItem).
     /// This method will fail if any of the following fields are not set:
     /// - [`capacity_provider`](crate::types::builders::CapacityProviderStrategyItemBuilder::capacity_provider)
-    pub fn build(self) -> ::std::result::Result<crate::types::CapacityProviderStrategyItem, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CapacityProviderStrategyItem, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CapacityProviderStrategyItem {
             capacity_provider: self.capacity_provider.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "capacity_provider",
                     "capacity_provider was not specified but it is required when building CapacityProviderStrategyItem",
                 )

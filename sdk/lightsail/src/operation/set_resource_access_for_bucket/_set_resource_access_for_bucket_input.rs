@@ -115,7 +115,7 @@ impl SetResourceAccessForBucketInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_resource_access_for_bucket::SetResourceAccessForBucketInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::set_resource_access_for_bucket::SetResourceAccessForBucketInput {
             resource_name: self.resource_name,

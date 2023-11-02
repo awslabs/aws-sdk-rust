@@ -2,7 +2,7 @@
 pub fn ser_aws_s3_bucket_server_side_encryption_rule(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsS3BucketServerSideEncryptionRule,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.apply_server_side_encryption_by_default {
         #[allow(unused_mut)]
         let mut object_2 = object.key("ApplyServerSideEncryptionByDefault").start_object();

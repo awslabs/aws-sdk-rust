@@ -161,34 +161,34 @@ impl TemplateSyncConfigBuilder {
     /// - [`repository_provider`](crate::types::builders::TemplateSyncConfigBuilder::repository_provider)
     /// - [`repository_name`](crate::types::builders::TemplateSyncConfigBuilder::repository_name)
     /// - [`branch`](crate::types::builders::TemplateSyncConfigBuilder::branch)
-    pub fn build(self) -> ::std::result::Result<crate::types::TemplateSyncConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TemplateSyncConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TemplateSyncConfig {
             template_name: self.template_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "template_name",
                     "template_name was not specified but it is required when building TemplateSyncConfig",
                 )
             })?,
             template_type: self.template_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "template_type",
                     "template_type was not specified but it is required when building TemplateSyncConfig",
                 )
             })?,
             repository_provider: self.repository_provider.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "repository_provider",
                     "repository_provider was not specified but it is required when building TemplateSyncConfig",
                 )
             })?,
             repository_name: self.repository_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "repository_name",
                     "repository_name was not specified but it is required when building TemplateSyncConfig",
                 )
             })?,
             branch: self.branch.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "branch",
                     "branch was not specified but it is required when building TemplateSyncConfig",
                 )

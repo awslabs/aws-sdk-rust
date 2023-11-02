@@ -45,7 +45,7 @@ impl PauseCampaignInputBuilder {
     /// Consumes the builder and constructs a [`PauseCampaignInput`](crate::operation::pause_campaign::PauseCampaignInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::pause_campaign::PauseCampaignInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::pause_campaign::PauseCampaignInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::pause_campaign::PauseCampaignInput { id: self.id })
     }
 }

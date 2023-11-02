@@ -42,7 +42,7 @@ impl GetAppInputBuilder {
         &self.application_id
     }
     /// Consumes the builder and constructs a [`GetAppInput`](crate::operation::get_app::GetAppInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_app::GetAppInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_app::GetAppInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_app::GetAppInput {
             application_id: self.application_id,
         })

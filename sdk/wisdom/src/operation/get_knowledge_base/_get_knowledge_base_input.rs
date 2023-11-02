@@ -44,7 +44,7 @@ impl GetKnowledgeBaseInputBuilder {
     /// Consumes the builder and constructs a [`GetKnowledgeBaseInput`](crate::operation::get_knowledge_base::GetKnowledgeBaseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_knowledge_base::GetKnowledgeBaseInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_knowledge_base::GetKnowledgeBaseInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_knowledge_base::GetKnowledgeBaseInput {
             knowledge_base_id: self.knowledge_base_id,
         })

@@ -74,7 +74,7 @@ impl UpdateRecoveryGroupInputBuilder {
     /// Consumes the builder and constructs a [`UpdateRecoveryGroupInput`](crate::operation::update_recovery_group::UpdateRecoveryGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_recovery_group::UpdateRecoveryGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_recovery_group::UpdateRecoveryGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_recovery_group::UpdateRecoveryGroupInput {
             cells: self.cells,

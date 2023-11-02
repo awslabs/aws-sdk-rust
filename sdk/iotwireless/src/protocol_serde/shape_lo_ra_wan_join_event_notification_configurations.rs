@@ -42,7 +42,7 @@ where
 pub fn ser_lo_ra_wan_join_event_notification_configurations(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LoRaWanJoinEventNotificationConfigurations,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.dev_eui_event_topic {
         object.key("DevEuiEventTopic").string(var_1.as_str());
     }

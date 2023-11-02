@@ -2,7 +2,7 @@
 pub fn ser_action_revision(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ActionRevision,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("revisionId").string(input.revision_id.as_str());
     }

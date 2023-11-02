@@ -86,7 +86,7 @@ impl ListComponentVersionsInputBuilder {
     /// Consumes the builder and constructs a [`ListComponentVersionsInput`](crate::operation::list_component_versions::ListComponentVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_component_versions::ListComponentVersionsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_component_versions::ListComponentVersionsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_component_versions::ListComponentVersionsInput {
             arn: self.arn,

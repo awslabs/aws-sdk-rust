@@ -483,7 +483,7 @@ impl SimulateCustomPolicyInputBuilder {
     /// Consumes the builder and constructs a [`SimulateCustomPolicyInput`](crate::operation::simulate_custom_policy::SimulateCustomPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::simulate_custom_policy::SimulateCustomPolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::simulate_custom_policy::SimulateCustomPolicyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::simulate_custom_policy::SimulateCustomPolicyInput {
             policy_input_list: self.policy_input_list,

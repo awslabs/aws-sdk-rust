@@ -94,22 +94,24 @@ impl BatchDeleteRumMetricDefinitionsErrorBuilder {
     /// - [`metric_definition_id`](crate::types::builders::BatchDeleteRumMetricDefinitionsErrorBuilder::metric_definition_id)
     /// - [`error_code`](crate::types::builders::BatchDeleteRumMetricDefinitionsErrorBuilder::error_code)
     /// - [`error_message`](crate::types::builders::BatchDeleteRumMetricDefinitionsErrorBuilder::error_message)
-    pub fn build(self) -> ::std::result::Result<crate::types::BatchDeleteRumMetricDefinitionsError, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::BatchDeleteRumMetricDefinitionsError, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::BatchDeleteRumMetricDefinitionsError {
             metric_definition_id: self.metric_definition_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "metric_definition_id",
                     "metric_definition_id was not specified but it is required when building BatchDeleteRumMetricDefinitionsError",
                 )
             })?,
             error_code: self.error_code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "error_code",
                     "error_code was not specified but it is required when building BatchDeleteRumMetricDefinitionsError",
                 )
             })?,
             error_message: self.error_message.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "error_message",
                     "error_message was not specified but it is required when building BatchDeleteRumMetricDefinitionsError",
                 )

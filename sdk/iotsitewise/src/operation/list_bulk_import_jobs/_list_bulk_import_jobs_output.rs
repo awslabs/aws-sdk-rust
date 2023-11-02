@@ -89,11 +89,11 @@ impl ListBulkImportJobsOutputBuilder {
     /// - [`job_summaries`](crate::operation::list_bulk_import_jobs::builders::ListBulkImportJobsOutputBuilder::job_summaries)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_bulk_import_jobs::ListBulkImportJobsOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_bulk_import_jobs::ListBulkImportJobsOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_bulk_import_jobs::ListBulkImportJobsOutput {
             job_summaries: self.job_summaries.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "job_summaries",
                     "job_summaries was not specified but it is required when building ListBulkImportJobsOutput",
                 )

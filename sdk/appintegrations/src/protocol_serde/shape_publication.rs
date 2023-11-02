@@ -2,7 +2,7 @@
 pub fn ser_publication(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Publication,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Event").string(input.event.as_str());
     }

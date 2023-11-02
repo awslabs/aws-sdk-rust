@@ -75,7 +75,7 @@ impl SetSmbGuestPasswordInputBuilder {
     /// Consumes the builder and constructs a [`SetSmbGuestPasswordInput`](crate::operation::set_smb_guest_password::SetSmbGuestPasswordInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::set_smb_guest_password::SetSmbGuestPasswordInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::set_smb_guest_password::SetSmbGuestPasswordInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::set_smb_guest_password::SetSmbGuestPasswordInput {
             gateway_arn: self.gateway_arn,

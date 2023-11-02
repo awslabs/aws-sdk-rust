@@ -149,7 +149,9 @@ impl ListOutpostsInputBuilder {
         &self.availability_zone_id_filter
     }
     /// Consumes the builder and constructs a [`ListOutpostsInput`](crate::operation::list_outposts::ListOutpostsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_outposts::ListOutpostsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_outposts::ListOutpostsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_outposts::ListOutpostsInput {
             next_token: self.next_token,
             max_results: self.max_results,

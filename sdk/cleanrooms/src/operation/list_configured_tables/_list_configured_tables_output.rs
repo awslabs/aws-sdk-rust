@@ -89,11 +89,11 @@ impl ListConfiguredTablesOutputBuilder {
     /// - [`configured_table_summaries`](crate::operation::list_configured_tables::builders::ListConfiguredTablesOutputBuilder::configured_table_summaries)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_configured_tables::ListConfiguredTablesOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_configured_tables::ListConfiguredTablesOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_configured_tables::ListConfiguredTablesOutput {
             configured_table_summaries: self.configured_table_summaries.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "configured_table_summaries",
                     "configured_table_summaries was not specified but it is required when building ListConfiguredTablesOutput",
                 )

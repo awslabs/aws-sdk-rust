@@ -2,7 +2,7 @@
 pub fn ser_table_field_image_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TableFieldImageConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.sizing_options {
         #[allow(unused_mut)]
         let mut object_2 = object.key("SizingOptions").start_object();

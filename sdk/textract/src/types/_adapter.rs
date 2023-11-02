@@ -134,17 +134,17 @@ impl AdapterBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`adapter_id`](crate::types::builders::AdapterBuilder::adapter_id)
     /// - [`version`](crate::types::builders::AdapterBuilder::version)
-    pub fn build(self) -> ::std::result::Result<crate::types::Adapter, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Adapter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Adapter {
             adapter_id: self.adapter_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "adapter_id",
                     "adapter_id was not specified but it is required when building Adapter",
                 )
             })?,
             pages: self.pages,
             version: self.version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "version",
                     "version was not specified but it is required when building Adapter",
                 )

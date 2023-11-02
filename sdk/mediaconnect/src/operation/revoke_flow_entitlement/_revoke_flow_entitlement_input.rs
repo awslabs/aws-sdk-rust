@@ -66,7 +66,7 @@ impl RevokeFlowEntitlementInputBuilder {
     /// Consumes the builder and constructs a [`RevokeFlowEntitlementInput`](crate::operation::revoke_flow_entitlement::RevokeFlowEntitlementInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::revoke_flow_entitlement::RevokeFlowEntitlementInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::revoke_flow_entitlement::RevokeFlowEntitlementInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::revoke_flow_entitlement::RevokeFlowEntitlementInput {
             entitlement_arn: self.entitlement_arn,

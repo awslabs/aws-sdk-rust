@@ -48,8 +48,10 @@ impl ResetDistributionCacheInputBuilder {
     /// Consumes the builder and constructs a [`ResetDistributionCacheInput`](crate::operation::reset_distribution_cache::ResetDistributionCacheInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::reset_distribution_cache::ResetDistributionCacheInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::reset_distribution_cache::ResetDistributionCacheInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::reset_distribution_cache::ResetDistributionCacheInput {
             distribution_name: self.distribution_name,
         })

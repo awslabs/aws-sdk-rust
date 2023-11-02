@@ -110,16 +110,16 @@ impl PayloadBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`content_expression`](crate::types::builders::PayloadBuilder::content_expression)
     /// - [`r#type`](crate::types::builders::PayloadBuilder::r#type)
-    pub fn build(self) -> ::std::result::Result<crate::types::Payload, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Payload, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Payload {
             content_expression: self.content_expression.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "content_expression",
                     "content_expression was not specified but it is required when building Payload",
                 )
             })?,
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building Payload",
                 )

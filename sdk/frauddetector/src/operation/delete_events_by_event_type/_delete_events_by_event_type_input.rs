@@ -46,7 +46,7 @@ impl DeleteEventsByEventTypeInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_events_by_event_type::DeleteEventsByEventTypeInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_events_by_event_type::DeleteEventsByEventTypeInput {
             event_type_name: self.event_type_name,

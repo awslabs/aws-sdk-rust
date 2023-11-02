@@ -174,7 +174,7 @@ impl CreateDecoderManifestInputBuilder {
     /// Consumes the builder and constructs a [`CreateDecoderManifestInput`](crate::operation::create_decoder_manifest::CreateDecoderManifestInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_decoder_manifest::CreateDecoderManifestInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_decoder_manifest::CreateDecoderManifestInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_decoder_manifest::CreateDecoderManifestInput {
             name: self.name,

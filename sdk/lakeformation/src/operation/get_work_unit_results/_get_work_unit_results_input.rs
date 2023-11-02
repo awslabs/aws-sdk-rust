@@ -97,7 +97,7 @@ impl GetWorkUnitResultsInputBuilder {
     /// Consumes the builder and constructs a [`GetWorkUnitResultsInput`](crate::operation::get_work_unit_results::GetWorkUnitResultsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_work_unit_results::GetWorkUnitResultsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_work_unit_results::GetWorkUnitResultsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_work_unit_results::GetWorkUnitResultsInput {
             query_id: self.query_id,

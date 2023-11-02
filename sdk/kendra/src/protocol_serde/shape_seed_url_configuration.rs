@@ -2,7 +2,7 @@
 pub fn ser_seed_url_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SeedUrlConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("SeedUrls").start_array();
         for item_2 in &input.seed_urls {

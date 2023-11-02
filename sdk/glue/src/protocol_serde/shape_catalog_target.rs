@@ -2,7 +2,7 @@
 pub fn ser_catalog_target(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CatalogTarget,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("DatabaseName").string(input.database_name.as_str());
     }

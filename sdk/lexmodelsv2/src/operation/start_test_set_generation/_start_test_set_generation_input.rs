@@ -163,7 +163,7 @@ impl StartTestSetGenerationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_test_set_generation::StartTestSetGenerationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_test_set_generation::StartTestSetGenerationInput {
             test_set_name: self.test_set_name,

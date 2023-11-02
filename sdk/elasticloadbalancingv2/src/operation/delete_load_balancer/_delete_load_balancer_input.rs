@@ -44,7 +44,8 @@ impl DeleteLoadBalancerInputBuilder {
     /// Consumes the builder and constructs a [`DeleteLoadBalancerInput`](crate::operation::delete_load_balancer::DeleteLoadBalancerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_load_balancer::DeleteLoadBalancerInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_load_balancer::DeleteLoadBalancerInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::delete_load_balancer::DeleteLoadBalancerInput {
             load_balancer_arn: self.load_balancer_arn,
         })

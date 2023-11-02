@@ -2,7 +2,7 @@
 pub fn ser_gateway_network(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GatewayNetwork,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.cidr_block {
         object.key("cidrBlock").string(var_1.as_str());
     }

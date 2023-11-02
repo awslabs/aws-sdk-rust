@@ -2,7 +2,7 @@
 pub fn ser_import_application_usage_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::import_application_usage::ImportApplicationUsageInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.source_s3_location {
         #[allow(unused_mut)]
         let mut object_2 = object.key("sourceS3Location").start_object();

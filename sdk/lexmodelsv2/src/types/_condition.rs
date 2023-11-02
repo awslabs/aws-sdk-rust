@@ -46,10 +46,10 @@ impl ConditionBuilder {
     /// Consumes the builder and constructs a [`Condition`](crate::types::Condition).
     /// This method will fail if any of the following fields are not set:
     /// - [`expression_string`](crate::types::builders::ConditionBuilder::expression_string)
-    pub fn build(self) -> ::std::result::Result<crate::types::Condition, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Condition, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Condition {
             expression_string: self.expression_string.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "expression_string",
                     "expression_string was not specified but it is required when building Condition",
                 )

@@ -116,16 +116,16 @@ impl BotRecommendationSummaryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`bot_recommendation_status`](crate::types::builders::BotRecommendationSummaryBuilder::bot_recommendation_status)
     /// - [`bot_recommendation_id`](crate::types::builders::BotRecommendationSummaryBuilder::bot_recommendation_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::BotRecommendationSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::BotRecommendationSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::BotRecommendationSummary {
             bot_recommendation_status: self.bot_recommendation_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "bot_recommendation_status",
                     "bot_recommendation_status was not specified but it is required when building BotRecommendationSummary",
                 )
             })?,
             bot_recommendation_id: self.bot_recommendation_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "bot_recommendation_id",
                     "bot_recommendation_id was not specified but it is required when building BotRecommendationSummary",
                 )

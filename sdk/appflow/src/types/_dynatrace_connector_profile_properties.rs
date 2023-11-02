@@ -46,10 +46,10 @@ impl DynatraceConnectorProfilePropertiesBuilder {
     /// Consumes the builder and constructs a [`DynatraceConnectorProfileProperties`](crate::types::DynatraceConnectorProfileProperties).
     /// This method will fail if any of the following fields are not set:
     /// - [`instance_url`](crate::types::builders::DynatraceConnectorProfilePropertiesBuilder::instance_url)
-    pub fn build(self) -> ::std::result::Result<crate::types::DynatraceConnectorProfileProperties, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DynatraceConnectorProfileProperties, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DynatraceConnectorProfileProperties {
             instance_url: self.instance_url.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "instance_url",
                     "instance_url was not specified but it is required when building DynatraceConnectorProfileProperties",
                 )

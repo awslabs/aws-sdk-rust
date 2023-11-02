@@ -86,10 +86,10 @@ impl CodeConfigurationBuilder {
     /// Consumes the builder and constructs a [`CodeConfiguration`](crate::types::CodeConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`configuration_source`](crate::types::builders::CodeConfigurationBuilder::configuration_source)
-    pub fn build(self) -> ::std::result::Result<crate::types::CodeConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CodeConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CodeConfiguration {
             configuration_source: self.configuration_source.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "configuration_source",
                     "configuration_source was not specified but it is required when building CodeConfiguration",
                 )

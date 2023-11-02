@@ -88,7 +88,7 @@ impl DescribeListenerCertificatesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_listener_certificates::DescribeListenerCertificatesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_listener_certificates::DescribeListenerCertificatesInput {
             listener_arn: self.listener_arn,

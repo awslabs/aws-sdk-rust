@@ -89,11 +89,11 @@ impl GetCommentReactionsOutputBuilder {
     /// - [`reactions_for_comment`](crate::operation::get_comment_reactions::builders::GetCommentReactionsOutputBuilder::reactions_for_comment)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_comment_reactions::GetCommentReactionsOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_comment_reactions::GetCommentReactionsOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_comment_reactions::GetCommentReactionsOutput {
             reactions_for_comment: self.reactions_for_comment.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "reactions_for_comment",
                     "reactions_for_comment was not specified but it is required when building GetCommentReactionsOutput",
                 )

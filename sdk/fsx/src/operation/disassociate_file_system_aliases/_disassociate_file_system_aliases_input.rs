@@ -97,7 +97,7 @@ impl DisassociateFileSystemAliasesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_file_system_aliases::DisassociateFileSystemAliasesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disassociate_file_system_aliases::DisassociateFileSystemAliasesInput {
             client_request_token: self.client_request_token,

@@ -89,10 +89,10 @@ impl ListPlaceIndexesOutputBuilder {
     /// - [`entries`](crate::operation::list_place_indexes::builders::ListPlaceIndexesOutputBuilder::entries)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_place_indexes::ListPlaceIndexesOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_place_indexes::ListPlaceIndexesOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_place_indexes::ListPlaceIndexesOutput {
             entries: self.entries.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "entries",
                     "entries was not specified but it is required when building ListPlaceIndexesOutput",
                 )

@@ -599,7 +599,7 @@ impl UpdateAssociationInputBuilder {
     /// Consumes the builder and constructs a [`UpdateAssociationInput`](crate::operation::update_association::UpdateAssociationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_association::UpdateAssociationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_association::UpdateAssociationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_association::UpdateAssociationInput {
             association_id: self.association_id,
             parameters: self.parameters,

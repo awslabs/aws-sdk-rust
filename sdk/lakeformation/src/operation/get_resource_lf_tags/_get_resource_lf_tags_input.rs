@@ -86,7 +86,7 @@ impl GetResourceLfTagsInputBuilder {
     /// Consumes the builder and constructs a [`GetResourceLfTagsInput`](crate::operation::get_resource_lf_tags::GetResourceLfTagsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_resource_lf_tags::GetResourceLfTagsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_resource_lf_tags::GetResourceLfTagsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_resource_lf_tags::GetResourceLfTagsInput {
             catalog_id: self.catalog_id,
             resource: self.resource,

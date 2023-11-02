@@ -66,7 +66,7 @@ impl DeletePipelineInputBuilder {
     /// Consumes the builder and constructs a [`DeletePipelineInput`](crate::operation::delete_pipeline::DeletePipelineInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_pipeline::DeletePipelineInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_pipeline::DeletePipelineInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_pipeline::DeletePipelineInput {
             pipeline_name: self.pipeline_name,
             client_request_token: self.client_request_token,

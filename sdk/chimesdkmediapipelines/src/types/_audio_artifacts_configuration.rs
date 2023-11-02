@@ -45,10 +45,10 @@ impl AudioArtifactsConfigurationBuilder {
     /// Consumes the builder and constructs a [`AudioArtifactsConfiguration`](crate::types::AudioArtifactsConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`mux_type`](crate::types::builders::AudioArtifactsConfigurationBuilder::mux_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::AudioArtifactsConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AudioArtifactsConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AudioArtifactsConfiguration {
             mux_type: self.mux_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "mux_type",
                     "mux_type was not specified but it is required when building AudioArtifactsConfiguration",
                 )

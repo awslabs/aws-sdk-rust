@@ -45,10 +45,10 @@ impl StatusReasonBuilder {
     /// Consumes the builder and constructs a [`StatusReason`](crate::types::StatusReason).
     /// This method will fail if any of the following fields are not set:
     /// - [`code`](crate::types::builders::StatusReasonBuilder::code)
-    pub fn build(self) -> ::std::result::Result<crate::types::StatusReason, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::StatusReason, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::StatusReason {
             code: self.code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "code",
                     "code was not specified but it is required when building StatusReason",
                 )

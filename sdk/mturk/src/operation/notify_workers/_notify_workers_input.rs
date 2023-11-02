@@ -95,7 +95,7 @@ impl NotifyWorkersInputBuilder {
     /// Consumes the builder and constructs a [`NotifyWorkersInput`](crate::operation::notify_workers::NotifyWorkersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::notify_workers::NotifyWorkersInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::notify_workers::NotifyWorkersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::notify_workers::NotifyWorkersInput {
             subject: self.subject,
             message_text: self.message_text,

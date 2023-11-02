@@ -44,8 +44,10 @@ impl DescribeClientBrandingInputBuilder {
     /// Consumes the builder and constructs a [`DescribeClientBrandingInput`](crate::operation::describe_client_branding::DescribeClientBrandingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_client_branding::DescribeClientBrandingInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::describe_client_branding::DescribeClientBrandingInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::describe_client_branding::DescribeClientBrandingInput {
             resource_id: self.resource_id,
         })

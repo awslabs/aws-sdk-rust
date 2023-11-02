@@ -44,7 +44,7 @@ where
 pub fn ser_kms_key_to_grant(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::KmsKeyToGrant,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("KmsKeyArn").string(input.kms_key_arn.as_str());
     }

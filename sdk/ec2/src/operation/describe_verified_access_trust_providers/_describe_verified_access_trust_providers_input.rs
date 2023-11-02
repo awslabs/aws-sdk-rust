@@ -145,7 +145,7 @@ impl DescribeVerifiedAccessTrustProvidersInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_verified_access_trust_providers::DescribeVerifiedAccessTrustProvidersInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_verified_access_trust_providers::DescribeVerifiedAccessTrustProvidersInput {

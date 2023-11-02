@@ -72,10 +72,10 @@ impl AddressFieldBuilder {
     /// Consumes the builder and constructs a [`AddressField`](crate::types::AddressField).
     /// This method will fail if any of the following fields are not set:
     /// - [`identifier`](crate::types::builders::AddressFieldBuilder::identifier)
-    pub fn build(self) -> ::std::result::Result<crate::types::AddressField, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AddressField, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AddressField {
             identifier: self.identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "identifier",
                     "identifier was not specified but it is required when building AddressField",
                 )

@@ -89,10 +89,10 @@ impl ListRulesPackagesOutputBuilder {
     /// - [`rules_package_arns`](crate::operation::list_rules_packages::builders::ListRulesPackagesOutputBuilder::rules_package_arns)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_rules_packages::ListRulesPackagesOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_rules_packages::ListRulesPackagesOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_rules_packages::ListRulesPackagesOutput {
             rules_package_arns: self.rules_package_arns.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "rules_package_arns",
                     "rules_package_arns was not specified but it is required when building ListRulesPackagesOutput",
                 )

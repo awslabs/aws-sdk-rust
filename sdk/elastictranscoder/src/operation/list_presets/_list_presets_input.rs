@@ -63,7 +63,7 @@ impl ListPresetsInputBuilder {
         &self.page_token
     }
     /// Consumes the builder and constructs a [`ListPresetsInput`](crate::operation::list_presets::ListPresetsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_presets::ListPresetsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_presets::ListPresetsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_presets::ListPresetsInput {
             ascending: self.ascending,
             page_token: self.page_token,

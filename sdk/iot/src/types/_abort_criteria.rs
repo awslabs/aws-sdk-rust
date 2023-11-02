@@ -119,28 +119,28 @@ impl AbortCriteriaBuilder {
     /// - [`action`](crate::types::builders::AbortCriteriaBuilder::action)
     /// - [`threshold_percentage`](crate::types::builders::AbortCriteriaBuilder::threshold_percentage)
     /// - [`min_number_of_executed_things`](crate::types::builders::AbortCriteriaBuilder::min_number_of_executed_things)
-    pub fn build(self) -> ::std::result::Result<crate::types::AbortCriteria, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AbortCriteria, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AbortCriteria {
             failure_type: self.failure_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "failure_type",
                     "failure_type was not specified but it is required when building AbortCriteria",
                 )
             })?,
             action: self.action.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "action",
                     "action was not specified but it is required when building AbortCriteria",
                 )
             })?,
             threshold_percentage: self.threshold_percentage.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "threshold_percentage",
                     "threshold_percentage was not specified but it is required when building AbortCriteria",
                 )
             })?,
             min_number_of_executed_things: self.min_number_of_executed_things.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "min_number_of_executed_things",
                     "min_number_of_executed_things was not specified but it is required when building AbortCriteria",
                 )

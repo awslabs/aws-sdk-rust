@@ -120,28 +120,28 @@ impl ArchiveRuleSummaryBuilder {
     /// - [`filter`](crate::types::builders::ArchiveRuleSummaryBuilder::filter)
     /// - [`created_at`](crate::types::builders::ArchiveRuleSummaryBuilder::created_at)
     /// - [`updated_at`](crate::types::builders::ArchiveRuleSummaryBuilder::updated_at)
-    pub fn build(self) -> ::std::result::Result<crate::types::ArchiveRuleSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ArchiveRuleSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ArchiveRuleSummary {
             rule_name: self.rule_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "rule_name",
                     "rule_name was not specified but it is required when building ArchiveRuleSummary",
                 )
             })?,
             filter: self.filter.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "filter",
                     "filter was not specified but it is required when building ArchiveRuleSummary",
                 )
             })?,
             created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
                     "created_at was not specified but it is required when building ArchiveRuleSummary",
                 )
             })?,
             updated_at: self.updated_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "updated_at",
                     "updated_at was not specified but it is required when building ArchiveRuleSummary",
                 )

@@ -258,28 +258,30 @@ impl GetImageSetOutputBuilder {
     /// - [`image_set_id`](crate::operation::get_image_set::builders::GetImageSetOutputBuilder::image_set_id)
     /// - [`version_id`](crate::operation::get_image_set::builders::GetImageSetOutputBuilder::version_id)
     /// - [`image_set_state`](crate::operation::get_image_set::builders::GetImageSetOutputBuilder::image_set_state)
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_image_set::GetImageSetOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_image_set::GetImageSetOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_image_set::GetImageSetOutput {
             datastore_id: self.datastore_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "datastore_id",
                     "datastore_id was not specified but it is required when building GetImageSetOutput",
                 )
             })?,
             image_set_id: self.image_set_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "image_set_id",
                     "image_set_id was not specified but it is required when building GetImageSetOutput",
                 )
             })?,
             version_id: self.version_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "version_id",
                     "version_id was not specified but it is required when building GetImageSetOutput",
                 )
             })?,
             image_set_state: self.image_set_state.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "image_set_state",
                     "image_set_state was not specified but it is required when building GetImageSetOutput",
                 )

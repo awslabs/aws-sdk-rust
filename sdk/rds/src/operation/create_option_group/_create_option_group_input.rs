@@ -245,7 +245,7 @@ impl CreateOptionGroupInputBuilder {
     /// Consumes the builder and constructs a [`CreateOptionGroupInput`](crate::operation::create_option_group::CreateOptionGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_option_group::CreateOptionGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_option_group::CreateOptionGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_option_group::CreateOptionGroupInput {
             option_group_name: self.option_group_name,
             engine_name: self.engine_name,

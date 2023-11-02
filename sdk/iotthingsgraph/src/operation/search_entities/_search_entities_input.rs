@@ -148,7 +148,7 @@ impl SearchEntitiesInputBuilder {
     /// Consumes the builder and constructs a [`SearchEntitiesInput`](crate::operation::search_entities::SearchEntitiesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::search_entities::SearchEntitiesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::search_entities::SearchEntitiesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_entities::SearchEntitiesInput {
             entity_types: self.entity_types,
             filters: self.filters,

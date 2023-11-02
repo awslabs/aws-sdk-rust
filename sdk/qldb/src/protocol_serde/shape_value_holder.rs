@@ -42,7 +42,7 @@ where
 pub fn ser_value_holder(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ValueHolder,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.ion_text {
         object.key("IonText").string(var_1.as_str());
     }

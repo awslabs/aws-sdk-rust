@@ -86,7 +86,7 @@ impl DescribeWarmPoolInputBuilder {
     /// Consumes the builder and constructs a [`DescribeWarmPoolInput`](crate::operation::describe_warm_pool::DescribeWarmPoolInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_warm_pool::DescribeWarmPoolInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_warm_pool::DescribeWarmPoolInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_warm_pool::DescribeWarmPoolInput {
             auto_scaling_group_name: self.auto_scaling_group_name,
             max_records: self.max_records,

@@ -2,7 +2,7 @@
 pub fn ser_create_anomaly_subscription_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_anomaly_subscription::CreateAnomalySubscriptionInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.anomaly_subscription {
         #[allow(unused_mut)]
         let mut object_2 = object.key("AnomalySubscription").start_object();

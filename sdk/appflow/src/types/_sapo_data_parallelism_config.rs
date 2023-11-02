@@ -45,10 +45,10 @@ impl SapoDataParallelismConfigBuilder {
     /// Consumes the builder and constructs a [`SapoDataParallelismConfig`](crate::types::SapoDataParallelismConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`max_parallelism`](crate::types::builders::SapoDataParallelismConfigBuilder::max_parallelism)
-    pub fn build(self) -> ::std::result::Result<crate::types::SapoDataParallelismConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SapoDataParallelismConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SapoDataParallelismConfig {
             max_parallelism: self.max_parallelism.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "max_parallelism",
                     "max_parallelism was not specified but it is required when building SapoDataParallelismConfig",
                 )

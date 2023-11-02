@@ -66,7 +66,7 @@ impl DescribeProjectInputBuilder {
     /// Consumes the builder and constructs a [`DescribeProjectInput`](crate::operation::describe_project::DescribeProjectInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_project::DescribeProjectInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_project::DescribeProjectInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_project::DescribeProjectInput {
             project_id: self.project_id,
             sync_from_resources: self.sync_from_resources,

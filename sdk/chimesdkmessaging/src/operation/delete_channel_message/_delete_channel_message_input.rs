@@ -119,7 +119,7 @@ impl DeleteChannelMessageInputBuilder {
     /// Consumes the builder and constructs a [`DeleteChannelMessageInput`](crate::operation::delete_channel_message::DeleteChannelMessageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_channel_message::DeleteChannelMessageInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_channel_message::DeleteChannelMessageInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_channel_message::DeleteChannelMessageInput {
             channel_arn: self.channel_arn,

@@ -100,7 +100,7 @@ impl DescribeAutoScalingInstancesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_auto_scaling_instances::DescribeAutoScalingInstancesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_auto_scaling_instances::DescribeAutoScalingInstancesInput {
             instance_ids: self.instance_ids,

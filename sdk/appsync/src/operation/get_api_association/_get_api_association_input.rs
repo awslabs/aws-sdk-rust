@@ -44,7 +44,7 @@ impl GetApiAssociationInputBuilder {
     /// Consumes the builder and constructs a [`GetApiAssociationInput`](crate::operation::get_api_association::GetApiAssociationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_api_association::GetApiAssociationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_api_association::GetApiAssociationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_api_association::GetApiAssociationInput {
             domain_name: self.domain_name,
         })

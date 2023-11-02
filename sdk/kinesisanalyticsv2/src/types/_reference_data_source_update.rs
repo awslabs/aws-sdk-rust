@@ -109,10 +109,10 @@ impl ReferenceDataSourceUpdateBuilder {
     /// Consumes the builder and constructs a [`ReferenceDataSourceUpdate`](crate::types::ReferenceDataSourceUpdate).
     /// This method will fail if any of the following fields are not set:
     /// - [`reference_id`](crate::types::builders::ReferenceDataSourceUpdateBuilder::reference_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::ReferenceDataSourceUpdate, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ReferenceDataSourceUpdate, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ReferenceDataSourceUpdate {
             reference_id: self.reference_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "reference_id",
                     "reference_id was not specified but it is required when building ReferenceDataSourceUpdate",
                 )

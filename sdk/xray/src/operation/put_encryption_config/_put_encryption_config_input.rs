@@ -95,7 +95,7 @@ impl PutEncryptionConfigInputBuilder {
     /// Consumes the builder and constructs a [`PutEncryptionConfigInput`](crate::operation::put_encryption_config::PutEncryptionConfigInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_encryption_config::PutEncryptionConfigInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::put_encryption_config::PutEncryptionConfigInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::put_encryption_config::PutEncryptionConfigInput {
             key_id: self.key_id,

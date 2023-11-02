@@ -109,7 +109,7 @@ impl GetAssociatedIpv6PoolCidrsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_associated_ipv6_pool_cidrs::GetAssociatedIpv6PoolCidrsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_associated_ipv6_pool_cidrs::GetAssociatedIpv6PoolCidrsInput {
             pool_id: self.pool_id,

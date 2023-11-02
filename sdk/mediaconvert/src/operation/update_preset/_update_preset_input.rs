@@ -105,7 +105,9 @@ impl UpdatePresetInputBuilder {
         &self.settings
     }
     /// Consumes the builder and constructs a [`UpdatePresetInput`](crate::operation::update_preset::UpdatePresetInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_preset::UpdatePresetInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_preset::UpdatePresetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_preset::UpdatePresetInput {
             category: self.category,
             description: self.description,

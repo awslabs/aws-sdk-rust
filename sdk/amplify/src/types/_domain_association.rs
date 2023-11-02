@@ -240,22 +240,22 @@ impl DomainAssociationBuilder {
     /// - [`domain_status`](crate::types::builders::DomainAssociationBuilder::domain_status)
     /// - [`status_reason`](crate::types::builders::DomainAssociationBuilder::status_reason)
     /// - [`sub_domains`](crate::types::builders::DomainAssociationBuilder::sub_domains)
-    pub fn build(self) -> ::std::result::Result<crate::types::DomainAssociation, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DomainAssociation, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DomainAssociation {
             domain_association_arn: self.domain_association_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "domain_association_arn",
                     "domain_association_arn was not specified but it is required when building DomainAssociation",
                 )
             })?,
             domain_name: self.domain_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "domain_name",
                     "domain_name was not specified but it is required when building DomainAssociation",
                 )
             })?,
             enable_auto_sub_domain: self.enable_auto_sub_domain.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "enable_auto_sub_domain",
                     "enable_auto_sub_domain was not specified but it is required when building DomainAssociation",
                 )
@@ -263,20 +263,20 @@ impl DomainAssociationBuilder {
             auto_sub_domain_creation_patterns: self.auto_sub_domain_creation_patterns,
             auto_sub_domain_iam_role: self.auto_sub_domain_iam_role,
             domain_status: self.domain_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "domain_status",
                     "domain_status was not specified but it is required when building DomainAssociation",
                 )
             })?,
             status_reason: self.status_reason.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status_reason",
                     "status_reason was not specified but it is required when building DomainAssociation",
                 )
             })?,
             certificate_verification_dns_record: self.certificate_verification_dns_record,
             sub_domains: self.sub_domains.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "sub_domains",
                     "sub_domains was not specified but it is required when building DomainAssociation",
                 )

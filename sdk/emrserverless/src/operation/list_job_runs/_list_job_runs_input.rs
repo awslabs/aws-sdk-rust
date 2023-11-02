@@ -155,7 +155,7 @@ impl ListJobRunsInputBuilder {
         &self.states
     }
     /// Consumes the builder and constructs a [`ListJobRunsInput`](crate::operation::list_job_runs::ListJobRunsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_job_runs::ListJobRunsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_job_runs::ListJobRunsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_job_runs::ListJobRunsInput {
             application_id: self.application_id,
             next_token: self.next_token,

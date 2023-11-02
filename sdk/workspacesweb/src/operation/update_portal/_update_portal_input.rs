@@ -103,7 +103,9 @@ impl UpdatePortalInputBuilder {
         &self.authentication_type
     }
     /// Consumes the builder and constructs a [`UpdatePortalInput`](crate::operation::update_portal::UpdatePortalInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_portal::UpdatePortalInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_portal::UpdatePortalInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_portal::UpdatePortalInput {
             portal_arn: self.portal_arn,
             display_name: self.display_name,

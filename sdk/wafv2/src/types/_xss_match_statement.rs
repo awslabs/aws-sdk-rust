@@ -73,11 +73,11 @@ impl XssMatchStatementBuilder {
     /// Consumes the builder and constructs a [`XssMatchStatement`](crate::types::XssMatchStatement).
     /// This method will fail if any of the following fields are not set:
     /// - [`text_transformations`](crate::types::builders::XssMatchStatementBuilder::text_transformations)
-    pub fn build(self) -> ::std::result::Result<crate::types::XssMatchStatement, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::XssMatchStatement, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::XssMatchStatement {
             field_to_match: self.field_to_match,
             text_transformations: self.text_transformations.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "text_transformations",
                     "text_transformations was not specified but it is required when building XssMatchStatement",
                 )

@@ -320,7 +320,7 @@ impl DeleteScalingPolicyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteScalingPolicyInput`](crate::operation::delete_scaling_policy::DeleteScalingPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_scaling_policy::DeleteScalingPolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_scaling_policy::DeleteScalingPolicyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_scaling_policy::DeleteScalingPolicyInput {
             policy_name: self.policy_name,

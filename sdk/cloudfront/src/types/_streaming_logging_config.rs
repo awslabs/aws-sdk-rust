@@ -93,22 +93,22 @@ impl StreamingLoggingConfigBuilder {
     /// - [`enabled`](crate::types::builders::StreamingLoggingConfigBuilder::enabled)
     /// - [`bucket`](crate::types::builders::StreamingLoggingConfigBuilder::bucket)
     /// - [`prefix`](crate::types::builders::StreamingLoggingConfigBuilder::prefix)
-    pub fn build(self) -> ::std::result::Result<crate::types::StreamingLoggingConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::StreamingLoggingConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::StreamingLoggingConfig {
             enabled: self.enabled.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "enabled",
                     "enabled was not specified but it is required when building StreamingLoggingConfig",
                 )
             })?,
             bucket: self.bucket.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "bucket",
                     "bucket was not specified but it is required when building StreamingLoggingConfig",
                 )
             })?,
             prefix: self.prefix.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "prefix",
                     "prefix was not specified but it is required when building StreamingLoggingConfig",
                 )

@@ -42,7 +42,7 @@ impl DescribeAppInputBuilder {
         &self.app_arn
     }
     /// Consumes the builder and constructs a [`DescribeAppInput`](crate::operation::describe_app::DescribeAppInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_app::DescribeAppInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_app::DescribeAppInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_app::DescribeAppInput { app_arn: self.app_arn })
     }
 }

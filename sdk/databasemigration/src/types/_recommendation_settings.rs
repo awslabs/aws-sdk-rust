@@ -70,16 +70,16 @@ impl RecommendationSettingsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`instance_sizing_type`](crate::types::builders::RecommendationSettingsBuilder::instance_sizing_type)
     /// - [`workload_type`](crate::types::builders::RecommendationSettingsBuilder::workload_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::RecommendationSettings, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RecommendationSettings, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RecommendationSettings {
             instance_sizing_type: self.instance_sizing_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "instance_sizing_type",
                     "instance_sizing_type was not specified but it is required when building RecommendationSettings",
                 )
             })?,
             workload_type: self.workload_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "workload_type",
                     "workload_type was not specified but it is required when building RecommendationSettings",
                 )

@@ -89,10 +89,10 @@ impl MessageAttributeValueBuilder {
     /// Consumes the builder and constructs a [`MessageAttributeValue`](crate::types::MessageAttributeValue).
     /// This method will fail if any of the following fields are not set:
     /// - [`data_type`](crate::types::builders::MessageAttributeValueBuilder::data_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::MessageAttributeValue, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::MessageAttributeValue, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MessageAttributeValue {
             data_type: self.data_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_type",
                     "data_type was not specified but it is required when building MessageAttributeValue",
                 )

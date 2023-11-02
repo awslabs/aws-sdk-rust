@@ -2,7 +2,7 @@
 pub fn ser_describe_observation_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_observation::DescribeObservationInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.observation_id {
         object.key("ObservationId").string(var_1.as_str());
     }

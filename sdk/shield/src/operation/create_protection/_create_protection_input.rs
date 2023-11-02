@@ -140,7 +140,7 @@ impl CreateProtectionInputBuilder {
     /// Consumes the builder and constructs a [`CreateProtectionInput`](crate::operation::create_protection::CreateProtectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_protection::CreateProtectionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_protection::CreateProtectionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_protection::CreateProtectionInput {
             name: self.name,
             resource_arn: self.resource_arn,

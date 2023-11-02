@@ -84,7 +84,9 @@ impl ListContentsInputBuilder {
         &self.knowledge_base_id
     }
     /// Consumes the builder and constructs a [`ListContentsInput`](crate::operation::list_contents::ListContentsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_contents::ListContentsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_contents::ListContentsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_contents::ListContentsInput {
             next_token: self.next_token,
             max_results: self.max_results,

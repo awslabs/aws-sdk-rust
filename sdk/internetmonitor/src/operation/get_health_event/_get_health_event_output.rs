@@ -292,22 +292,22 @@ impl GetHealthEventOutputBuilder {
     /// - [`impact_type`](crate::operation::get_health_event::builders::GetHealthEventOutputBuilder::impact_type)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_health_event::GetHealthEventOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_health_event::GetHealthEventOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_health_event::GetHealthEventOutput {
             event_arn: self.event_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "event_arn",
                     "event_arn was not specified but it is required when building GetHealthEventOutput",
                 )
             })?,
             event_id: self.event_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "event_id",
                     "event_id was not specified but it is required when building GetHealthEventOutput",
                 )
             })?,
             started_at: self.started_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "started_at",
                     "started_at was not specified but it is required when building GetHealthEventOutput",
                 )
@@ -315,26 +315,26 @@ impl GetHealthEventOutputBuilder {
             ended_at: self.ended_at,
             created_at: self.created_at,
             last_updated_at: self.last_updated_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_updated_at",
                     "last_updated_at was not specified but it is required when building GetHealthEventOutput",
                 )
             })?,
             impacted_locations: self.impacted_locations.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "impacted_locations",
                     "impacted_locations was not specified but it is required when building GetHealthEventOutput",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building GetHealthEventOutput",
                 )
             })?,
             percent_of_total_traffic_impacted: self.percent_of_total_traffic_impacted,
             impact_type: self.impact_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "impact_type",
                     "impact_type was not specified but it is required when building GetHealthEventOutput",
                 )

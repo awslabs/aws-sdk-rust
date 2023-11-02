@@ -129,17 +129,17 @@ impl GetAssetContractOutputBuilder {
     /// - [`deployer_address`](crate::operation::get_asset_contract::builders::GetAssetContractOutputBuilder::deployer_address)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_asset_contract::GetAssetContractOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_asset_contract::GetAssetContractOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_asset_contract::GetAssetContractOutput {
             contract_identifier: self.contract_identifier,
             token_standard: self.token_standard.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "token_standard",
                     "token_standard was not specified but it is required when building GetAssetContractOutput",
                 )
             })?,
             deployer_address: self.deployer_address.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "deployer_address",
                     "deployer_address was not specified but it is required when building GetAssetContractOutput",
                 )

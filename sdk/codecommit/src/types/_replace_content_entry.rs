@@ -111,16 +111,16 @@ impl ReplaceContentEntryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`file_path`](crate::types::builders::ReplaceContentEntryBuilder::file_path)
     /// - [`replacement_type`](crate::types::builders::ReplaceContentEntryBuilder::replacement_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::ReplaceContentEntry, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ReplaceContentEntry, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ReplaceContentEntry {
             file_path: self.file_path.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "file_path",
                     "file_path was not specified but it is required when building ReplaceContentEntry",
                 )
             })?,
             replacement_type: self.replacement_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "replacement_type",
                     "replacement_type was not specified but it is required when building ReplaceContentEntry",
                 )

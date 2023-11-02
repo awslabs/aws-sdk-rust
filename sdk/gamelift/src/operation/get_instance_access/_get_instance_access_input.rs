@@ -76,7 +76,7 @@ impl GetInstanceAccessInputBuilder {
     /// Consumes the builder and constructs a [`GetInstanceAccessInput`](crate::operation::get_instance_access::GetInstanceAccessInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_instance_access::GetInstanceAccessInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_instance_access::GetInstanceAccessInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_instance_access::GetInstanceAccessInput {
             fleet_id: self.fleet_id,
             instance_id: self.instance_id,

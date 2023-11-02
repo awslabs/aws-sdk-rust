@@ -127,28 +127,28 @@ impl CredentialsBuilder {
     /// - [`secret_access_key`](crate::types::builders::CredentialsBuilder::secret_access_key)
     /// - [`session_token`](crate::types::builders::CredentialsBuilder::session_token)
     /// - [`expiration`](crate::types::builders::CredentialsBuilder::expiration)
-    pub fn build(self) -> ::std::result::Result<crate::types::Credentials, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Credentials, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Credentials {
             access_key_id: self.access_key_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "access_key_id",
                     "access_key_id was not specified but it is required when building Credentials",
                 )
             })?,
             secret_access_key: self.secret_access_key.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "secret_access_key",
                     "secret_access_key was not specified but it is required when building Credentials",
                 )
             })?,
             session_token: self.session_token.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "session_token",
                     "session_token was not specified but it is required when building Credentials",
                 )
             })?,
             expiration: self.expiration.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "expiration",
                     "expiration was not specified but it is required when building Credentials",
                 )

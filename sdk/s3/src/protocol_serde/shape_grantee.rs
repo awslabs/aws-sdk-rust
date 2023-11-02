@@ -2,7 +2,7 @@
 pub fn ser_grantee(
     input: &crate::types::Grantee,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     let mut writer = writer;
     {
         writer.write_attribute("xsi:type", input.r#type.as_str());

@@ -2,7 +2,7 @@
 pub fn ser_remote_access_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RemoteAccessConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.ec2_ssh_key {
         object.key("ec2SshKey").string(var_1.as_str());
     }

@@ -68,10 +68,10 @@ impl FieldValueBuilder {
     /// Consumes the builder and constructs a [`FieldValue`](crate::types::FieldValue).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::FieldValueBuilder::id)
-    pub fn build(self) -> ::std::result::Result<crate::types::FieldValue, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::FieldValue, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FieldValue {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building FieldValue",
                 )

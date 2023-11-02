@@ -72,7 +72,8 @@ impl DeleteVpcEndpointsInputBuilder {
     /// Consumes the builder and constructs a [`DeleteVpcEndpointsInput`](crate::operation::delete_vpc_endpoints::DeleteVpcEndpointsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_vpc_endpoints::DeleteVpcEndpointsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_vpc_endpoints::DeleteVpcEndpointsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::delete_vpc_endpoints::DeleteVpcEndpointsInput {
             dry_run: self.dry_run,
             vpc_endpoint_ids: self.vpc_endpoint_ids,

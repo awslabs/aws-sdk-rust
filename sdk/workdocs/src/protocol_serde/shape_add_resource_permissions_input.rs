@@ -2,7 +2,7 @@
 pub fn ser_add_resource_permissions_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::add_resource_permissions::AddResourcePermissionsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.notification_options {
         #[allow(unused_mut)]
         let mut object_2 = object.key("NotificationOptions").start_object();

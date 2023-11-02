@@ -46,7 +46,7 @@ impl ClaimDevicesByClaimCodeInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::claim_devices_by_claim_code::ClaimDevicesByClaimCodeInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::claim_devices_by_claim_code::ClaimDevicesByClaimCodeInput { claim_code: self.claim_code })
     }

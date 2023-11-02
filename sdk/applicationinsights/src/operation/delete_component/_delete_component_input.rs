@@ -66,7 +66,7 @@ impl DeleteComponentInputBuilder {
     /// Consumes the builder and constructs a [`DeleteComponentInput`](crate::operation::delete_component::DeleteComponentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_component::DeleteComponentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_component::DeleteComponentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_component::DeleteComponentInput {
             resource_group_name: self.resource_group_name,
             component_name: self.component_name,

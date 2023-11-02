@@ -95,7 +95,7 @@ impl IsMemberInGroupsInputBuilder {
     /// Consumes the builder and constructs a [`IsMemberInGroupsInput`](crate::operation::is_member_in_groups::IsMemberInGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::is_member_in_groups::IsMemberInGroupsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::is_member_in_groups::IsMemberInGroupsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::is_member_in_groups::IsMemberInGroupsInput {
             identity_store_id: self.identity_store_id,
             member_id: self.member_id,

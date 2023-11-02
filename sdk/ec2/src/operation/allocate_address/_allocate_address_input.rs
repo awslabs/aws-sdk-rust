@@ -182,7 +182,7 @@ impl AllocateAddressInputBuilder {
     /// Consumes the builder and constructs a [`AllocateAddressInput`](crate::operation::allocate_address::AllocateAddressInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::allocate_address::AllocateAddressInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::allocate_address::AllocateAddressInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::allocate_address::AllocateAddressInput {
             domain: self.domain,
             address: self.address,

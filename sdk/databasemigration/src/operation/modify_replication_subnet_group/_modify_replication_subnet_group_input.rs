@@ -97,7 +97,7 @@ impl ModifyReplicationSubnetGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_replication_subnet_group::ModifyReplicationSubnetGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::modify_replication_subnet_group::ModifyReplicationSubnetGroupInput {
             replication_subnet_group_identifier: self.replication_subnet_group_identifier,

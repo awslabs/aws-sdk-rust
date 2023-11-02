@@ -89,7 +89,7 @@ impl RequestCancelWorkflowExecutionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::request_cancel_workflow_execution::RequestCancelWorkflowExecutionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::request_cancel_workflow_execution::RequestCancelWorkflowExecutionInput {
             domain: self.domain,

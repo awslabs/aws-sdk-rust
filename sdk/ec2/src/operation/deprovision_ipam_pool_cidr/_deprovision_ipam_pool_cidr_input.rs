@@ -88,7 +88,7 @@ impl DeprovisionIpamPoolCidrInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deprovision_ipam_pool_cidr::DeprovisionIpamPoolCidrInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::deprovision_ipam_pool_cidr::DeprovisionIpamPoolCidrInput {
             dry_run: self.dry_run,

@@ -88,7 +88,7 @@ impl GetTableMetadataInputBuilder {
     /// Consumes the builder and constructs a [`GetTableMetadataInput`](crate::operation::get_table_metadata::GetTableMetadataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_table_metadata::GetTableMetadataInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_table_metadata::GetTableMetadataInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_table_metadata::GetTableMetadataInput {
             catalog_name: self.catalog_name,
             database_name: self.database_name,

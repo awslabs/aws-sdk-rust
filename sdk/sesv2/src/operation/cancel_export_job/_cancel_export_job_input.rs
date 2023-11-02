@@ -45,7 +45,7 @@ impl CancelExportJobInputBuilder {
     /// Consumes the builder and constructs a [`CancelExportJobInput`](crate::operation::cancel_export_job::CancelExportJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::cancel_export_job::CancelExportJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::cancel_export_job::CancelExportJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::cancel_export_job::CancelExportJobInput { job_id: self.job_id })
     }
 }

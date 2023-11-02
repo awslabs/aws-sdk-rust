@@ -108,7 +108,7 @@ impl CreateViewVersionInputBuilder {
     /// Consumes the builder and constructs a [`CreateViewVersionInput`](crate::operation::create_view_version::CreateViewVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_view_version::CreateViewVersionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_view_version::CreateViewVersionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_view_version::CreateViewVersionInput {
             instance_id: self.instance_id,
             view_id: self.view_id,

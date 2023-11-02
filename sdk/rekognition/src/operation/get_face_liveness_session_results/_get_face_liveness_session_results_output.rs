@@ -159,17 +159,17 @@ impl GetFaceLivenessSessionResultsOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsOutput {
             session_id: self.session_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "session_id",
                     "session_id was not specified but it is required when building GetFaceLivenessSessionResultsOutput",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building GetFaceLivenessSessionResultsOutput",
                 )

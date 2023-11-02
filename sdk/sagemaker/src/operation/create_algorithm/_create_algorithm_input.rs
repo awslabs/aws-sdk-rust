@@ -249,7 +249,7 @@ impl CreateAlgorithmInputBuilder {
     /// Consumes the builder and constructs a [`CreateAlgorithmInput`](crate::operation::create_algorithm::CreateAlgorithmInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_algorithm::CreateAlgorithmInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_algorithm::CreateAlgorithmInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_algorithm::CreateAlgorithmInput {
             algorithm_name: self.algorithm_name,
             algorithm_description: self.algorithm_description,

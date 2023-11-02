@@ -109,7 +109,7 @@ impl ExecuteProvisionedProductPlanInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::execute_provisioned_product_plan::ExecuteProvisionedProductPlanInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::execute_provisioned_product_plan::ExecuteProvisionedProductPlanInput {
             accept_language: self.accept_language,

@@ -53,7 +53,7 @@ where
 pub fn ser_cloud_watch_log_delivery_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CloudWatchLogDeliveryOptions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("logType").string(input.log_type.as_str());
     }

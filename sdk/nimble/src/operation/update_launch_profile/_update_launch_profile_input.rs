@@ -222,7 +222,7 @@ impl UpdateLaunchProfileInputBuilder {
     /// Consumes the builder and constructs a [`UpdateLaunchProfileInput`](crate::operation::update_launch_profile::UpdateLaunchProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_launch_profile::UpdateLaunchProfileInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_launch_profile::UpdateLaunchProfileInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_launch_profile::UpdateLaunchProfileInput {
             client_token: self.client_token,

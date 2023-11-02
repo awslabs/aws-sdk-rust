@@ -196,7 +196,7 @@ impl CreateAcceleratorInputBuilder {
     /// Consumes the builder and constructs a [`CreateAcceleratorInput`](crate::operation::create_accelerator::CreateAcceleratorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_accelerator::CreateAcceleratorInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_accelerator::CreateAcceleratorInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_accelerator::CreateAcceleratorInput {
             name: self.name,
             ip_address_type: self.ip_address_type,

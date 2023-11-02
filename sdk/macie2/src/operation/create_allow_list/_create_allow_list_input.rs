@@ -141,7 +141,7 @@ impl CreateAllowListInputBuilder {
     /// Consumes the builder and constructs a [`CreateAllowListInput`](crate::operation::create_allow_list::CreateAllowListInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_allow_list::CreateAllowListInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_allow_list::CreateAllowListInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_allow_list::CreateAllowListInput {
             client_token: self.client_token,
             criteria: self.criteria,

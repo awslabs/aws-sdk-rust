@@ -145,7 +145,7 @@ impl CreateModelManifestInputBuilder {
     /// Consumes the builder and constructs a [`CreateModelManifestInput`](crate::operation::create_model_manifest::CreateModelManifestInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_model_manifest::CreateModelManifestInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_model_manifest::CreateModelManifestInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_model_manifest::CreateModelManifestInput {
             name: self.name,

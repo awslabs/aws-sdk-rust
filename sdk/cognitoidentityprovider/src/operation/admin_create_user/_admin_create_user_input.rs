@@ -406,7 +406,7 @@ impl AdminCreateUserInputBuilder {
     /// Consumes the builder and constructs a [`AdminCreateUserInput`](crate::operation::admin_create_user::AdminCreateUserInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::admin_create_user::AdminCreateUserInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::admin_create_user::AdminCreateUserInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::admin_create_user::AdminCreateUserInput {
             user_pool_id: self.user_pool_id,
             username: self.username,

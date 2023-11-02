@@ -66,7 +66,7 @@ impl GetStreamingImageInputBuilder {
     /// Consumes the builder and constructs a [`GetStreamingImageInput`](crate::operation::get_streaming_image::GetStreamingImageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_streaming_image::GetStreamingImageInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_streaming_image::GetStreamingImageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_streaming_image::GetStreamingImageInput {
             streaming_image_id: self.streaming_image_id,
             studio_id: self.studio_id,

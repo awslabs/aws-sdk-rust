@@ -181,7 +181,8 @@ impl CreateGatewayRouteInputBuilder {
     /// Consumes the builder and constructs a [`CreateGatewayRouteInput`](crate::operation::create_gateway_route::CreateGatewayRouteInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_gateway_route::CreateGatewayRouteInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_gateway_route::CreateGatewayRouteInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_gateway_route::CreateGatewayRouteInput {
             gateway_route_name: self.gateway_route_name,
             mesh_name: self.mesh_name,

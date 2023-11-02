@@ -118,7 +118,8 @@ impl UpdateMailboxQuotaInputBuilder {
     /// Consumes the builder and constructs a [`UpdateMailboxQuotaInput`](crate::operation::update_mailbox_quota::UpdateMailboxQuotaInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_mailbox_quota::UpdateMailboxQuotaInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_mailbox_quota::UpdateMailboxQuotaInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::update_mailbox_quota::UpdateMailboxQuotaInput {
             organization_id: self.organization_id,
             user_id: self.user_id,

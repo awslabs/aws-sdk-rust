@@ -47,7 +47,7 @@ impl DeleteMediaInsightsPipelineConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_media_insights_pipeline_configuration::DeleteMediaInsightsPipelineConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_media_insights_pipeline_configuration::DeleteMediaInsightsPipelineConfigurationInput {

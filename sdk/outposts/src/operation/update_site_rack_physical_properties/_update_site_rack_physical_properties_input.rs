@@ -415,7 +415,7 @@ impl UpdateSiteRackPhysicalPropertiesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_site_rack_physical_properties::UpdateSiteRackPhysicalPropertiesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::update_site_rack_physical_properties::UpdateSiteRackPhysicalPropertiesInput {

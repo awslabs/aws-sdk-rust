@@ -88,7 +88,7 @@ impl UpdateEncryptionKeyInputBuilder {
     /// Consumes the builder and constructs a [`UpdateEncryptionKeyInput`](crate::operation::update_encryption_key::UpdateEncryptionKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_encryption_key::UpdateEncryptionKeyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_encryption_key::UpdateEncryptionKeyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_encryption_key::UpdateEncryptionKeyInput {
             kms_key_id: self.kms_key_id,

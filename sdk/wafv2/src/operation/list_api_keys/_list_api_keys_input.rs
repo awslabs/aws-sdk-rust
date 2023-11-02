@@ -109,7 +109,7 @@ impl ListApiKeysInputBuilder {
         &self.limit
     }
     /// Consumes the builder and constructs a [`ListApiKeysInput`](crate::operation::list_api_keys::ListApiKeysInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_api_keys::ListApiKeysInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_api_keys::ListApiKeysInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_api_keys::ListApiKeysInput {
             scope: self.scope,
             next_marker: self.next_marker,

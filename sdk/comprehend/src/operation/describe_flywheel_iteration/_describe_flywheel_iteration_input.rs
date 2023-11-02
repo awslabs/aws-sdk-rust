@@ -68,7 +68,7 @@ impl DescribeFlywheelIterationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_flywheel_iteration::DescribeFlywheelIterationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_flywheel_iteration::DescribeFlywheelIterationInput {
             flywheel_arn: self.flywheel_arn,

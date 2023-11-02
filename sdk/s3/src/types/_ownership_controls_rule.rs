@@ -60,10 +60,10 @@ impl OwnershipControlsRuleBuilder {
     /// Consumes the builder and constructs a [`OwnershipControlsRule`](crate::types::OwnershipControlsRule).
     /// This method will fail if any of the following fields are not set:
     /// - [`object_ownership`](crate::types::builders::OwnershipControlsRuleBuilder::object_ownership)
-    pub fn build(self) -> ::std::result::Result<crate::types::OwnershipControlsRule, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::OwnershipControlsRule, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::OwnershipControlsRule {
             object_ownership: self.object_ownership.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "object_ownership",
                     "object_ownership was not specified but it is required when building OwnershipControlsRule",
                 )

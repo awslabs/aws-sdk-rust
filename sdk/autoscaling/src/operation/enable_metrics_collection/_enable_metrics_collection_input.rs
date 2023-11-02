@@ -222,7 +222,7 @@ impl EnableMetricsCollectionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::enable_metrics_collection::EnableMetricsCollectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::enable_metrics_collection::EnableMetricsCollectionInput {
             auto_scaling_group_name: self.auto_scaling_group_name,

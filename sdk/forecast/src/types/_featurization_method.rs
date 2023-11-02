@@ -158,10 +158,10 @@ impl FeaturizationMethodBuilder {
     /// Consumes the builder and constructs a [`FeaturizationMethod`](crate::types::FeaturizationMethod).
     /// This method will fail if any of the following fields are not set:
     /// - [`featurization_method_name`](crate::types::builders::FeaturizationMethodBuilder::featurization_method_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::FeaturizationMethod, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::FeaturizationMethod, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FeaturizationMethod {
             featurization_method_name: self.featurization_method_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "featurization_method_name",
                     "featurization_method_name was not specified but it is required when building FeaturizationMethod",
                 )

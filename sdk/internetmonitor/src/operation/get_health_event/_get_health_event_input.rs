@@ -66,7 +66,7 @@ impl GetHealthEventInputBuilder {
     /// Consumes the builder and constructs a [`GetHealthEventInput`](crate::operation::get_health_event::GetHealthEventInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_health_event::GetHealthEventInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_health_event::GetHealthEventInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_health_event::GetHealthEventInput {
             monitor_name: self.monitor_name,
             event_id: self.event_id,

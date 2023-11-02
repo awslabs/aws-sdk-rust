@@ -130,7 +130,7 @@ impl UpdateWorkteamInputBuilder {
     /// Consumes the builder and constructs a [`UpdateWorkteamInput`](crate::operation::update_workteam::UpdateWorkteamInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_workteam::UpdateWorkteamInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_workteam::UpdateWorkteamInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_workteam::UpdateWorkteamInput {
             workteam_name: self.workteam_name,
             member_definitions: self.member_definitions,

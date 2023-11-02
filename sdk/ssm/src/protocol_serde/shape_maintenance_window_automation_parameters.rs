@@ -47,7 +47,7 @@ where
 pub fn ser_maintenance_window_automation_parameters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MaintenanceWindowAutomationParameters,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.document_version {
         object.key("DocumentVersion").string(var_1.as_str());
     }

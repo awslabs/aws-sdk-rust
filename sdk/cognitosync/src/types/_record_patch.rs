@@ -134,23 +134,23 @@ impl RecordPatchBuilder {
     /// - [`op`](crate::types::builders::RecordPatchBuilder::op)
     /// - [`key`](crate::types::builders::RecordPatchBuilder::key)
     /// - [`sync_count`](crate::types::builders::RecordPatchBuilder::sync_count)
-    pub fn build(self) -> ::std::result::Result<crate::types::RecordPatch, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RecordPatch, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RecordPatch {
             op: self.op.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "op",
                     "op was not specified but it is required when building RecordPatch",
                 )
             })?,
             key: self.key.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "key",
                     "key was not specified but it is required when building RecordPatch",
                 )
             })?,
             value: self.value,
             sync_count: self.sync_count.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "sync_count",
                     "sync_count was not specified but it is required when building RecordPatch",
                 )

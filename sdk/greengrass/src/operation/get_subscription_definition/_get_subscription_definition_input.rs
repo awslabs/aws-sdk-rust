@@ -46,7 +46,7 @@ impl GetSubscriptionDefinitionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_subscription_definition::GetSubscriptionDefinitionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_subscription_definition::GetSubscriptionDefinitionInput {
             subscription_definition_id: self.subscription_definition_id,

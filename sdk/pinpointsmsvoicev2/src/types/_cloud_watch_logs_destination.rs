@@ -70,16 +70,16 @@ impl CloudWatchLogsDestinationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`iam_role_arn`](crate::types::builders::CloudWatchLogsDestinationBuilder::iam_role_arn)
     /// - [`log_group_arn`](crate::types::builders::CloudWatchLogsDestinationBuilder::log_group_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::CloudWatchLogsDestination, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CloudWatchLogsDestination, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CloudWatchLogsDestination {
             iam_role_arn: self.iam_role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "iam_role_arn",
                     "iam_role_arn was not specified but it is required when building CloudWatchLogsDestination",
                 )
             })?,
             log_group_arn: self.log_group_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "log_group_arn",
                     "log_group_arn was not specified but it is required when building CloudWatchLogsDestination",
                 )

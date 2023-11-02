@@ -244,7 +244,7 @@ impl GetComplianceSummaryInputBuilder {
     /// Consumes the builder and constructs a [`GetComplianceSummaryInput`](crate::operation::get_compliance_summary::GetComplianceSummaryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_compliance_summary::GetComplianceSummaryInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_compliance_summary::GetComplianceSummaryInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_compliance_summary::GetComplianceSummaryInput {
             target_id_filters: self.target_id_filters,

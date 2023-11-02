@@ -2,7 +2,7 @@
 pub fn ser_render_ui_template_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::render_ui_template::RenderUiTemplateInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.ui_template {
         #[allow(unused_mut)]
         let mut object_2 = object.key("UiTemplate").start_object();

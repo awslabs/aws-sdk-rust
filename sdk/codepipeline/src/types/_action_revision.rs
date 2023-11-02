@@ -93,22 +93,22 @@ impl ActionRevisionBuilder {
     /// - [`revision_id`](crate::types::builders::ActionRevisionBuilder::revision_id)
     /// - [`revision_change_id`](crate::types::builders::ActionRevisionBuilder::revision_change_id)
     /// - [`created`](crate::types::builders::ActionRevisionBuilder::created)
-    pub fn build(self) -> ::std::result::Result<crate::types::ActionRevision, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ActionRevision, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ActionRevision {
             revision_id: self.revision_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "revision_id",
                     "revision_id was not specified but it is required when building ActionRevision",
                 )
             })?,
             revision_change_id: self.revision_change_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "revision_change_id",
                     "revision_change_id was not specified but it is required when building ActionRevision",
                 )
             })?,
             created: self.created.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created",
                     "created was not specified but it is required when building ActionRevision",
                 )

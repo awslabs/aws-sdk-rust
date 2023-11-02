@@ -143,7 +143,7 @@ impl CreateRulesetInputBuilder {
     /// Consumes the builder and constructs a [`CreateRulesetInput`](crate::operation::create_ruleset::CreateRulesetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_ruleset::CreateRulesetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_ruleset::CreateRulesetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_ruleset::CreateRulesetInput {
             name: self.name,
             description: self.description,

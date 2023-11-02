@@ -2,7 +2,7 @@
 pub fn ser_extensions_v4(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ExtensionsV4,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.key_usage {
         #[allow(unused_mut)]
         let mut object_2 = object.key("KeyUsage").start_object();

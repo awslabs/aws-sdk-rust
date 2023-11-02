@@ -44,7 +44,7 @@ impl GetDeviceInstanceInputBuilder {
     /// Consumes the builder and constructs a [`GetDeviceInstanceInput`](crate::operation::get_device_instance::GetDeviceInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_device_instance::GetDeviceInstanceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_device_instance::GetDeviceInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_device_instance::GetDeviceInstanceInput { arn: self.arn })
     }
 }

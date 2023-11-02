@@ -69,16 +69,16 @@ impl FunctionAssociationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`function_arn`](crate::types::builders::FunctionAssociationBuilder::function_arn)
     /// - [`event_type`](crate::types::builders::FunctionAssociationBuilder::event_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::FunctionAssociation, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::FunctionAssociation, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FunctionAssociation {
             function_arn: self.function_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "function_arn",
                     "function_arn was not specified but it is required when building FunctionAssociation",
                 )
             })?,
             event_type: self.event_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "event_type",
                     "event_type was not specified but it is required when building FunctionAssociation",
                 )

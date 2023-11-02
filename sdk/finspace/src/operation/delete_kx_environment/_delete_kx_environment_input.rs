@@ -44,7 +44,7 @@ impl DeleteKxEnvironmentInputBuilder {
     /// Consumes the builder and constructs a [`DeleteKxEnvironmentInput`](crate::operation::delete_kx_environment::DeleteKxEnvironmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_kx_environment::DeleteKxEnvironmentInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_kx_environment::DeleteKxEnvironmentInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_kx_environment::DeleteKxEnvironmentInput {
             environment_id: self.environment_id,

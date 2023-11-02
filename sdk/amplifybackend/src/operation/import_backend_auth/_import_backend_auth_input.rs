@@ -154,7 +154,7 @@ impl ImportBackendAuthInputBuilder {
     /// Consumes the builder and constructs a [`ImportBackendAuthInput`](crate::operation::import_backend_auth::ImportBackendAuthInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::import_backend_auth::ImportBackendAuthInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::import_backend_auth::ImportBackendAuthInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::import_backend_auth::ImportBackendAuthInput {
             app_id: self.app_id,
             backend_environment_name: self.backend_environment_name,

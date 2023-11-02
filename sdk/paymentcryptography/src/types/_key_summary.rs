@@ -161,35 +161,35 @@ impl KeySummaryBuilder {
     /// - [`key_check_value`](crate::types::builders::KeySummaryBuilder::key_check_value)
     /// - [`exportable`](crate::types::builders::KeySummaryBuilder::exportable)
     /// - [`enabled`](crate::types::builders::KeySummaryBuilder::enabled)
-    pub fn build(self) -> ::std::result::Result<crate::types::KeySummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::KeySummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::KeySummary {
             key_arn: self.key_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "key_arn",
                     "key_arn was not specified but it is required when building KeySummary",
                 )
             })?,
             key_state: self.key_state.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "key_state",
                     "key_state was not specified but it is required when building KeySummary",
                 )
             })?,
             key_attributes: self.key_attributes,
             key_check_value: self.key_check_value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "key_check_value",
                     "key_check_value was not specified but it is required when building KeySummary",
                 )
             })?,
             exportable: self.exportable.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "exportable",
                     "exportable was not specified but it is required when building KeySummary",
                 )
             })?,
             enabled: self.enabled.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "enabled",
                     "enabled was not specified but it is required when building KeySummary",
                 )

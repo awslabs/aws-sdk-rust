@@ -106,7 +106,7 @@ impl GetFeedbackInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`GetFeedbackInput`](crate::operation::get_feedback::GetFeedbackInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_feedback::GetFeedbackInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_feedback::GetFeedbackInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_feedback::GetFeedbackInput {
             anomaly_detector_arn: self.anomaly_detector_arn,
             anomaly_group_time_series_feedback: self.anomaly_group_time_series_feedback,

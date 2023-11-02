@@ -90,7 +90,7 @@ impl SuspendContactRecordingInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::suspend_contact_recording::SuspendContactRecordingInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::suspend_contact_recording::SuspendContactRecordingInput {
             instance_id: self.instance_id,

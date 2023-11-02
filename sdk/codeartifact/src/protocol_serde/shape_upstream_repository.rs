@@ -2,7 +2,7 @@
 pub fn ser_upstream_repository(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UpstreamRepository,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("repositoryName").string(input.repository_name.as_str());
     }

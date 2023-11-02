@@ -53,7 +53,7 @@ impl DistributeDatasetEntriesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::distribute_dataset_entries::DistributeDatasetEntriesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::distribute_dataset_entries::DistributeDatasetEntriesInput { datasets: self.datasets })
     }

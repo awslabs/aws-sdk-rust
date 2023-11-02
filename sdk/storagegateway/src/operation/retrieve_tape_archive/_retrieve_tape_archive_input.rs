@@ -72,7 +72,7 @@ impl RetrieveTapeArchiveInputBuilder {
     /// Consumes the builder and constructs a [`RetrieveTapeArchiveInput`](crate::operation::retrieve_tape_archive::RetrieveTapeArchiveInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::retrieve_tape_archive::RetrieveTapeArchiveInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::retrieve_tape_archive::RetrieveTapeArchiveInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::retrieve_tape_archive::RetrieveTapeArchiveInput {
             tape_arn: self.tape_arn,

@@ -46,10 +46,10 @@ impl RedshiftDataShareAssetSourceEntryBuilder {
     /// Consumes the builder and constructs a [`RedshiftDataShareAssetSourceEntry`](crate::types::RedshiftDataShareAssetSourceEntry).
     /// This method will fail if any of the following fields are not set:
     /// - [`data_share_arn`](crate::types::builders::RedshiftDataShareAssetSourceEntryBuilder::data_share_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::RedshiftDataShareAssetSourceEntry, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RedshiftDataShareAssetSourceEntry, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RedshiftDataShareAssetSourceEntry {
             data_share_arn: self.data_share_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_share_arn",
                     "data_share_arn was not specified but it is required when building RedshiftDataShareAssetSourceEntry",
                 )

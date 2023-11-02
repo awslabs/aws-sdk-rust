@@ -126,7 +126,7 @@ impl DecreaseReplicationFactorInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::decrease_replication_factor::DecreaseReplicationFactorInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::decrease_replication_factor::DecreaseReplicationFactorInput {
             cluster_name: self.cluster_name,

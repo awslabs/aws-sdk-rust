@@ -66,7 +66,7 @@ impl UpdateAdmChannelInputBuilder {
     /// Consumes the builder and constructs a [`UpdateAdmChannelInput`](crate::operation::update_adm_channel::UpdateAdmChannelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_adm_channel::UpdateAdmChannelInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_adm_channel::UpdateAdmChannelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_adm_channel::UpdateAdmChannelInput {
             adm_channel_request: self.adm_channel_request,
             application_id: self.application_id,

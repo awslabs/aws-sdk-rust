@@ -2,7 +2,7 @@
 pub fn ser_source_control_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SourceControlDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.provider {
         object.key("Provider").string(var_1.as_str());
     }

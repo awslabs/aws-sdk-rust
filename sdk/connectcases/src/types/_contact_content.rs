@@ -93,22 +93,22 @@ impl ContactContentBuilder {
     /// - [`contact_arn`](crate::types::builders::ContactContentBuilder::contact_arn)
     /// - [`channel`](crate::types::builders::ContactContentBuilder::channel)
     /// - [`connected_to_system_time`](crate::types::builders::ContactContentBuilder::connected_to_system_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::ContactContent, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ContactContent, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ContactContent {
             contact_arn: self.contact_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "contact_arn",
                     "contact_arn was not specified but it is required when building ContactContent",
                 )
             })?,
             channel: self.channel.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "channel",
                     "channel was not specified but it is required when building ContactContent",
                 )
             })?,
             connected_to_system_time: self.connected_to_system_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "connected_to_system_time",
                     "connected_to_system_time was not specified but it is required when building ContactContent",
                 )

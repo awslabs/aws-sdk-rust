@@ -150,7 +150,7 @@ impl ListWhatIfForecastExportsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_what_if_forecast_exports::ListWhatIfForecastExportsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_what_if_forecast_exports::ListWhatIfForecastExportsInput {
             next_token: self.next_token,

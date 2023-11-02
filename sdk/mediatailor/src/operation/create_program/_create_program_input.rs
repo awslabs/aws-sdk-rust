@@ -181,7 +181,7 @@ impl CreateProgramInputBuilder {
     /// Consumes the builder and constructs a [`CreateProgramInput`](crate::operation::create_program::CreateProgramInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_program::CreateProgramInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_program::CreateProgramInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_program::CreateProgramInput {
             ad_breaks: self.ad_breaks,
             channel_name: self.channel_name,

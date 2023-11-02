@@ -44,7 +44,8 @@ impl GetFederationTokenInputBuilder {
     /// Consumes the builder and constructs a [`GetFederationTokenInput`](crate::operation::get_federation_token::GetFederationTokenInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_federation_token::GetFederationTokenInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_federation_token::GetFederationTokenInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::get_federation_token::GetFederationTokenInput {
             instance_id: self.instance_id,
         })

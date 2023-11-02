@@ -88,7 +88,7 @@ impl GetKxConnectionStringInputBuilder {
     /// Consumes the builder and constructs a [`GetKxConnectionStringInput`](crate::operation::get_kx_connection_string::GetKxConnectionStringInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_kx_connection_string::GetKxConnectionStringInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_kx_connection_string::GetKxConnectionStringInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_kx_connection_string::GetKxConnectionStringInput {
             user_arn: self.user_arn,

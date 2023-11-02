@@ -165,40 +165,40 @@ impl VehicleSummaryBuilder {
     /// - [`decoder_manifest_arn`](crate::types::builders::VehicleSummaryBuilder::decoder_manifest_arn)
     /// - [`creation_time`](crate::types::builders::VehicleSummaryBuilder::creation_time)
     /// - [`last_modification_time`](crate::types::builders::VehicleSummaryBuilder::last_modification_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::VehicleSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::VehicleSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::VehicleSummary {
             vehicle_name: self.vehicle_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "vehicle_name",
                     "vehicle_name was not specified but it is required when building VehicleSummary",
                 )
             })?,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building VehicleSummary",
                 )
             })?,
             model_manifest_arn: self.model_manifest_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "model_manifest_arn",
                     "model_manifest_arn was not specified but it is required when building VehicleSummary",
                 )
             })?,
             decoder_manifest_arn: self.decoder_manifest_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "decoder_manifest_arn",
                     "decoder_manifest_arn was not specified but it is required when building VehicleSummary",
                 )
             })?,
             creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_time",
                     "creation_time was not specified but it is required when building VehicleSummary",
                 )
             })?,
             last_modification_time: self.last_modification_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_modification_time",
                     "last_modification_time was not specified but it is required when building VehicleSummary",
                 )

@@ -91,12 +91,12 @@ impl ListAppAssessmentComplianceDriftsOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_app_assessment_compliance_drifts::ListAppAssessmentComplianceDriftsOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_app_assessment_compliance_drifts::ListAppAssessmentComplianceDriftsOutput {
                 compliance_drifts: self.compliance_drifts.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
                         "compliance_drifts",
                         "compliance_drifts was not specified but it is required when building ListAppAssessmentComplianceDriftsOutput",
                     )

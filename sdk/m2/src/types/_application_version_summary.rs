@@ -112,23 +112,23 @@ impl ApplicationVersionSummaryBuilder {
     /// - [`application_version`](crate::types::builders::ApplicationVersionSummaryBuilder::application_version)
     /// - [`status`](crate::types::builders::ApplicationVersionSummaryBuilder::status)
     /// - [`creation_time`](crate::types::builders::ApplicationVersionSummaryBuilder::creation_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::ApplicationVersionSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ApplicationVersionSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ApplicationVersionSummary {
             application_version: self.application_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "application_version",
                     "application_version was not specified but it is required when building ApplicationVersionSummary",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building ApplicationVersionSummary",
                 )
             })?,
             status_reason: self.status_reason,
             creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_time",
                     "creation_time was not specified but it is required when building ApplicationVersionSummary",
                 )

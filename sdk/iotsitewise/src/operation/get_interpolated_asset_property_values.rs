@@ -186,7 +186,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetInterpola
             fn uri_base(
                 _input: &crate::operation::get_interpolated_asset_property_values::GetInterpolatedAssetPropertyValuesInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 use ::std::fmt::Write as _;
                 ::std::write!(output, "/properties/interpolated").expect("formatting should succeed");
                 ::std::result::Result::Ok(())
@@ -194,7 +194,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetInterpola
             fn uri_query(
                 _input: &crate::operation::get_interpolated_asset_property_values::GetInterpolatedAssetPropertyValuesInput,
                 mut output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_1) = &_input.asset_id {
                     {
@@ -213,7 +213,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetInterpola
                 }
                 let inner_4 = &_input.start_time_in_seconds;
                 let inner_4 = inner_4.as_ref().ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field("start_time_in_seconds", "cannot be empty or unset")
+                    ::aws_smithy_types::error::operation::BuildError::missing_field("start_time_in_seconds", "cannot be empty or unset")
                 })?;
                 query.push_kv("startTimeInSeconds", ::aws_smithy_types::primitive::Encoder::from(*inner_4).encode());
                 if let ::std::option::Option::Some(inner_5) = &_input.start_time_offset_in_nanos {
@@ -223,7 +223,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetInterpola
                 }
                 let inner_6 = &_input.end_time_in_seconds;
                 let inner_6 = inner_6.as_ref().ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field("end_time_in_seconds", "cannot be empty or unset")
+                    ::aws_smithy_types::error::operation::BuildError::missing_field("end_time_in_seconds", "cannot be empty or unset")
                 })?;
                 query.push_kv("endTimeInSeconds", ::aws_smithy_types::primitive::Encoder::from(*inner_6).encode());
                 if let ::std::option::Option::Some(inner_7) = &_input.end_time_offset_in_nanos {
@@ -234,11 +234,11 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetInterpola
                 let inner_8 = &_input.quality;
                 let inner_8 = inner_8
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("quality", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("quality", "cannot be empty or unset"))?;
                 query.push_kv("quality", &::aws_smithy_http::query::fmt_string(&inner_8));
                 let inner_9 = &_input.interval_in_seconds;
                 let inner_9 = inner_9.as_ref().ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field("interval_in_seconds", "cannot be empty or unset")
+                    ::aws_smithy_types::error::operation::BuildError::missing_field("interval_in_seconds", "cannot be empty or unset")
                 })?;
                 query.push_kv("intervalInSeconds", ::aws_smithy_types::primitive::Encoder::from(*inner_9).encode());
                 if let ::std::option::Option::Some(inner_10) = &_input.next_token {
@@ -254,9 +254,9 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetInterpola
                 let inner_12 = &_input.r#type;
                 let inner_12 = inner_12
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("r#type", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "cannot be empty or unset"))?;
                 if inner_12.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "r#type",
                         "cannot be empty or unset",
                     ));
@@ -276,7 +276,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetInterpola
             fn update_http_builder(
                 input: &crate::operation::get_interpolated_asset_property_values::GetInterpolatedAssetPropertyValuesInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -285,7 +285,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetInterpola
             let mut builder = update_http_builder(&input, ::http::request::Builder::new())?;
             builder
         };
-        let body = ::aws_smithy_http::body::SdkBody::from("");
+        let body = ::aws_smithy_types::body::SdkBody::from("");
 
         ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }

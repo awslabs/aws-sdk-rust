@@ -98,7 +98,7 @@ impl ListRecoveryPointsByResourceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_recovery_points_by_resource::ListRecoveryPointsByResourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_recovery_points_by_resource::ListRecoveryPointsByResourceInput {
             resource_arn: self.resource_arn,

@@ -94,22 +94,22 @@ impl FieldOptionErrorBuilder {
     /// - [`message`](crate::types::builders::FieldOptionErrorBuilder::message)
     /// - [`error_code`](crate::types::builders::FieldOptionErrorBuilder::error_code)
     /// - [`value`](crate::types::builders::FieldOptionErrorBuilder::value)
-    pub fn build(self) -> ::std::result::Result<crate::types::FieldOptionError, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::FieldOptionError, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FieldOptionError {
             message: self.message.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "message",
                     "message was not specified but it is required when building FieldOptionError",
                 )
             })?,
             error_code: self.error_code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "error_code",
                     "error_code was not specified but it is required when building FieldOptionError",
                 )
             })?,
             value: self.value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "value",
                     "value was not specified but it is required when building FieldOptionError",
                 )

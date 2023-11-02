@@ -223,7 +223,7 @@ impl PutEventTypeInputBuilder {
     /// Consumes the builder and constructs a [`PutEventTypeInput`](crate::operation::put_event_type::PutEventTypeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_event_type::PutEventTypeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_event_type::PutEventTypeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_event_type::PutEventTypeInput {
             name: self.name,
             description: self.description,

@@ -90,7 +90,7 @@ impl DeleteMultiRegionAccessPointInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_multi_region_access_point::DeleteMultiRegionAccessPointInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_multi_region_access_point::DeleteMultiRegionAccessPointInput {
             account_id: self.account_id,

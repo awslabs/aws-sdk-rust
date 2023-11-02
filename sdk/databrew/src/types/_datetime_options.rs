@@ -88,10 +88,10 @@ impl DatetimeOptionsBuilder {
     /// Consumes the builder and constructs a [`DatetimeOptions`](crate::types::DatetimeOptions).
     /// This method will fail if any of the following fields are not set:
     /// - [`format`](crate::types::builders::DatetimeOptionsBuilder::format)
-    pub fn build(self) -> ::std::result::Result<crate::types::DatetimeOptions, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DatetimeOptions, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DatetimeOptions {
             format: self.format.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "format",
                     "format was not specified but it is required when building DatetimeOptions",
                 )

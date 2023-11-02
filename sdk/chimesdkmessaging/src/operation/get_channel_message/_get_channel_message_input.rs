@@ -119,7 +119,7 @@ impl GetChannelMessageInputBuilder {
     /// Consumes the builder and constructs a [`GetChannelMessageInput`](crate::operation::get_channel_message::GetChannelMessageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_channel_message::GetChannelMessageInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_channel_message::GetChannelMessageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_channel_message::GetChannelMessageInput {
             channel_arn: self.channel_arn,
             message_id: self.message_id,

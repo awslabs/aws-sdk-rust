@@ -90,10 +90,10 @@ impl ListBranchesOutputBuilder {
     /// - [`branches`](crate::operation::list_branches::builders::ListBranchesOutputBuilder::branches)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_branches::ListBranchesOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_branches::ListBranchesOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_branches::ListBranchesOutput {
             branches: self.branches.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "branches",
                     "branches was not specified but it is required when building ListBranchesOutput",
                 )

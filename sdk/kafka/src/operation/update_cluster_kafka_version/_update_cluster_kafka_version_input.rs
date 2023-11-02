@@ -111,7 +111,7 @@ impl UpdateClusterKafkaVersionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_cluster_kafka_version::UpdateClusterKafkaVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_cluster_kafka_version::UpdateClusterKafkaVersionInput {
             cluster_arn: self.cluster_arn,

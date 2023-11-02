@@ -273,10 +273,10 @@ impl JobBuilder {
     /// Consumes the builder and constructs a [`Job`](crate::types::Job).
     /// This method will fail if any of the following fields are not set:
     /// - [`job_id`](crate::types::builders::JobBuilder::job_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::Job, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Job, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Job {
             job_id: self.job_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "job_id",
                     "job_id was not specified but it is required when building Job",
                 )

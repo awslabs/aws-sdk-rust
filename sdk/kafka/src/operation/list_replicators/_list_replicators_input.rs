@@ -85,7 +85,7 @@ impl ListReplicatorsInputBuilder {
     /// Consumes the builder and constructs a [`ListReplicatorsInput`](crate::operation::list_replicators::ListReplicatorsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_replicators::ListReplicatorsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_replicators::ListReplicatorsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_replicators::ListReplicatorsInput {
             max_results: self.max_results,
             next_token: self.next_token,

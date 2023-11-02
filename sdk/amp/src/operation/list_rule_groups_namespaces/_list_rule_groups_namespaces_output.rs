@@ -92,11 +92,11 @@ impl ListRuleGroupsNamespacesOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespacesOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespacesOutput {
             rule_groups_namespaces: self.rule_groups_namespaces.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "rule_groups_namespaces",
                     "rule_groups_namespaces was not specified but it is required when building ListRuleGroupsNamespacesOutput",
                 )

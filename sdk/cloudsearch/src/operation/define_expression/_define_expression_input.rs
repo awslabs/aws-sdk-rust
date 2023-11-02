@@ -67,7 +67,7 @@ impl DefineExpressionInputBuilder {
     /// Consumes the builder and constructs a [`DefineExpressionInput`](crate::operation::define_expression::DefineExpressionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::define_expression::DefineExpressionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::define_expression::DefineExpressionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::define_expression::DefineExpressionInput {
             domain_name: self.domain_name,
             expression: self.expression,

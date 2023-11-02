@@ -54,7 +54,7 @@ impl DeleteContactMethodInputBuilder {
     /// Consumes the builder and constructs a [`DeleteContactMethodInput`](crate::operation::delete_contact_method::DeleteContactMethodInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_contact_method::DeleteContactMethodInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_contact_method::DeleteContactMethodInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_contact_method::DeleteContactMethodInput { protocol: self.protocol })
     }

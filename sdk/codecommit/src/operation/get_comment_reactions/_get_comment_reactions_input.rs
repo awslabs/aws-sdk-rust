@@ -107,7 +107,7 @@ impl GetCommentReactionsInputBuilder {
     /// Consumes the builder and constructs a [`GetCommentReactionsInput`](crate::operation::get_comment_reactions::GetCommentReactionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_comment_reactions::GetCommentReactionsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_comment_reactions::GetCommentReactionsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_comment_reactions::GetCommentReactionsInput {
             comment_id: self.comment_id,

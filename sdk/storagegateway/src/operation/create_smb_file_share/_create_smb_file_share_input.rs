@@ -795,7 +795,7 @@ impl CreateSmbFileShareInputBuilder {
     /// Consumes the builder and constructs a [`CreateSmbFileShareInput`](crate::operation::create_smb_file_share::CreateSmbFileShareInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_smb_file_share::CreateSmbFileShareInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_smb_file_share::CreateSmbFileShareInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_smb_file_share::CreateSmbFileShareInput {
             client_token: self.client_token,

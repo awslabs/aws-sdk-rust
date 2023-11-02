@@ -46,10 +46,10 @@ impl KinesisFirehoseInputUpdateBuilder {
     /// Consumes the builder and constructs a [`KinesisFirehoseInputUpdate`](crate::types::KinesisFirehoseInputUpdate).
     /// This method will fail if any of the following fields are not set:
     /// - [`resource_arn_update`](crate::types::builders::KinesisFirehoseInputUpdateBuilder::resource_arn_update)
-    pub fn build(self) -> ::std::result::Result<crate::types::KinesisFirehoseInputUpdate, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::KinesisFirehoseInputUpdate, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::KinesisFirehoseInputUpdate {
             resource_arn_update: self.resource_arn_update.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_arn_update",
                     "resource_arn_update was not specified but it is required when building KinesisFirehoseInputUpdate",
                 )

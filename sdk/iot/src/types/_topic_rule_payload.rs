@@ -159,17 +159,17 @@ impl TopicRulePayloadBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`sql`](crate::types::builders::TopicRulePayloadBuilder::sql)
     /// - [`actions`](crate::types::builders::TopicRulePayloadBuilder::actions)
-    pub fn build(self) -> ::std::result::Result<crate::types::TopicRulePayload, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TopicRulePayload, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TopicRulePayload {
             sql: self.sql.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "sql",
                     "sql was not specified but it is required when building TopicRulePayload",
                 )
             })?,
             description: self.description,
             actions: self.actions.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "actions",
                     "actions was not specified but it is required when building TopicRulePayload",
                 )

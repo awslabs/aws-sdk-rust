@@ -353,48 +353,48 @@ impl IncidentRecordBuilder {
     /// - [`last_modified_time`](crate::types::builders::IncidentRecordBuilder::last_modified_time)
     /// - [`last_modified_by`](crate::types::builders::IncidentRecordBuilder::last_modified_by)
     /// - [`dedupe_string`](crate::types::builders::IncidentRecordBuilder::dedupe_string)
-    pub fn build(self) -> ::std::result::Result<crate::types::IncidentRecord, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::IncidentRecord, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::IncidentRecord {
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building IncidentRecord",
                 )
             })?,
             title: self.title.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "title",
                     "title was not specified but it is required when building IncidentRecord",
                 )
             })?,
             summary: self.summary,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building IncidentRecord",
                 )
             })?,
             impact: self.impact.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "impact",
                     "impact was not specified but it is required when building IncidentRecord",
                 )
             })?,
             creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_time",
                     "creation_time was not specified but it is required when building IncidentRecord",
                 )
             })?,
             resolved_time: self.resolved_time,
             last_modified_time: self.last_modified_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_modified_time",
                     "last_modified_time was not specified but it is required when building IncidentRecord",
                 )
             })?,
             last_modified_by: self.last_modified_by.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_modified_by",
                     "last_modified_by was not specified but it is required when building IncidentRecord",
                 )
@@ -402,7 +402,7 @@ impl IncidentRecordBuilder {
             automation_executions: self.automation_executions,
             incident_record_source: self.incident_record_source,
             dedupe_string: self.dedupe_string.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "dedupe_string",
                     "dedupe_string was not specified but it is required when building IncidentRecord",
                 )

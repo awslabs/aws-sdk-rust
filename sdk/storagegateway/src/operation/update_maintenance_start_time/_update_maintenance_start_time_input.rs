@@ -139,7 +139,7 @@ impl UpdateMaintenanceStartTimeInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_maintenance_start_time::UpdateMaintenanceStartTimeInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_maintenance_start_time::UpdateMaintenanceStartTimeInput {
             gateway_arn: self.gateway_arn,

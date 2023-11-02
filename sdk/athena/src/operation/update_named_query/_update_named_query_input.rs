@@ -109,7 +109,7 @@ impl UpdateNamedQueryInputBuilder {
     /// Consumes the builder and constructs a [`UpdateNamedQueryInput`](crate::operation::update_named_query::UpdateNamedQueryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_named_query::UpdateNamedQueryInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_named_query::UpdateNamedQueryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_named_query::UpdateNamedQueryInput {
             named_query_id: self.named_query_id,
             name: self.name,

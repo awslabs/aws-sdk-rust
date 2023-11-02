@@ -94,22 +94,22 @@ impl QueryLoggingConfigBuilder {
     /// - [`id`](crate::types::builders::QueryLoggingConfigBuilder::id)
     /// - [`hosted_zone_id`](crate::types::builders::QueryLoggingConfigBuilder::hosted_zone_id)
     /// - [`cloud_watch_logs_log_group_arn`](crate::types::builders::QueryLoggingConfigBuilder::cloud_watch_logs_log_group_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::QueryLoggingConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::QueryLoggingConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::QueryLoggingConfig {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building QueryLoggingConfig",
                 )
             })?,
             hosted_zone_id: self.hosted_zone_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "hosted_zone_id",
                     "hosted_zone_id was not specified but it is required when building QueryLoggingConfig",
                 )
             })?,
             cloud_watch_logs_log_group_arn: self.cloud_watch_logs_log_group_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "cloud_watch_logs_log_group_arn",
                     "cloud_watch_logs_log_group_arn was not specified but it is required when building QueryLoggingConfig",
                 )

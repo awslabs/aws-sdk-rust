@@ -89,11 +89,11 @@ impl ListScheduledQueriesOutputBuilder {
     /// - [`scheduled_queries`](crate::operation::list_scheduled_queries::builders::ListScheduledQueriesOutputBuilder::scheduled_queries)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_scheduled_queries::ListScheduledQueriesOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_scheduled_queries::ListScheduledQueriesOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_scheduled_queries::ListScheduledQueriesOutput {
             scheduled_queries: self.scheduled_queries.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "scheduled_queries",
                     "scheduled_queries was not specified but it is required when building ListScheduledQueriesOutput",
                 )

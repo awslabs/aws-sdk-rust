@@ -64,7 +64,7 @@ impl DescribeStreamSummaryInputBuilder {
     /// Consumes the builder and constructs a [`DescribeStreamSummaryInput`](crate::operation::describe_stream_summary::DescribeStreamSummaryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_stream_summary::DescribeStreamSummaryInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_stream_summary::DescribeStreamSummaryInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_stream_summary::DescribeStreamSummaryInput {
             stream_name: self.stream_name,

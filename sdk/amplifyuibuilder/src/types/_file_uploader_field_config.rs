@@ -163,16 +163,16 @@ impl FileUploaderFieldConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`access_level`](crate::types::builders::FileUploaderFieldConfigBuilder::access_level)
     /// - [`accepted_file_types`](crate::types::builders::FileUploaderFieldConfigBuilder::accepted_file_types)
-    pub fn build(self) -> ::std::result::Result<crate::types::FileUploaderFieldConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::FileUploaderFieldConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FileUploaderFieldConfig {
             access_level: self.access_level.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "access_level",
                     "access_level was not specified but it is required when building FileUploaderFieldConfig",
                 )
             })?,
             accepted_file_types: self.accepted_file_types.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "accepted_file_types",
                     "accepted_file_types was not specified but it is required when building FileUploaderFieldConfig",
                 )

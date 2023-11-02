@@ -101,8 +101,10 @@ impl PutFunctionConcurrencyInputBuilder {
     /// Consumes the builder and constructs a [`PutFunctionConcurrencyInput`](crate::operation::put_function_concurrency::PutFunctionConcurrencyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_function_concurrency::PutFunctionConcurrencyInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::put_function_concurrency::PutFunctionConcurrencyInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::put_function_concurrency::PutFunctionConcurrencyInput {
             function_name: self.function_name,
             reserved_concurrent_executions: self.reserved_concurrent_executions,

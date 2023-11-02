@@ -2,7 +2,7 @@
 pub fn ser_start_calculation_execution_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_calculation_execution::StartCalculationExecutionInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.session_id {
         object.key("SessionId").string(var_1.as_str());
     }

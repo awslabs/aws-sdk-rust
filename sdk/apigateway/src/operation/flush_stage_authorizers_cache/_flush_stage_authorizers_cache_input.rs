@@ -69,7 +69,7 @@ impl FlushStageAuthorizersCacheInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::flush_stage_authorizers_cache::FlushStageAuthorizersCacheInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::flush_stage_authorizers_cache::FlushStageAuthorizersCacheInput {
             rest_api_id: self.rest_api_id,

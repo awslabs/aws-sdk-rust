@@ -190,7 +190,7 @@ impl DecreaseReplicaCountInputBuilder {
     /// Consumes the builder and constructs a [`DecreaseReplicaCountInput`](crate::operation::decrease_replica_count::DecreaseReplicaCountInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::decrease_replica_count::DecreaseReplicaCountInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::decrease_replica_count::DecreaseReplicaCountInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::decrease_replica_count::DecreaseReplicaCountInput {
             replication_group_id: self.replication_group_id,

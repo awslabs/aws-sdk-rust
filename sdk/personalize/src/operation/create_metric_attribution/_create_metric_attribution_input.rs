@@ -119,7 +119,7 @@ impl CreateMetricAttributionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_metric_attribution::CreateMetricAttributionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_metric_attribution::CreateMetricAttributionInput {
             name: self.name,

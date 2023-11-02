@@ -89,7 +89,7 @@ impl RemoveRoleFromDbClusterInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_role_from_db_cluster::RemoveRoleFromDbClusterInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::remove_role_from_db_cluster::RemoveRoleFromDbClusterInput {
             db_cluster_identifier: self.db_cluster_identifier,

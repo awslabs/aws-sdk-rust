@@ -109,7 +109,7 @@ impl MoveByoipCidrToIpamInputBuilder {
     /// Consumes the builder and constructs a [`MoveByoipCidrToIpamInput`](crate::operation::move_byoip_cidr_to_ipam::MoveByoipCidrToIpamInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::move_byoip_cidr_to_ipam::MoveByoipCidrToIpamInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::move_byoip_cidr_to_ipam::MoveByoipCidrToIpamInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::move_byoip_cidr_to_ipam::MoveByoipCidrToIpamInput {
             dry_run: self.dry_run,

@@ -75,16 +75,16 @@ impl CustomAttributeBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`object_identifier`](crate::types::builders::CustomAttributeBuilder::object_identifier)
     /// - [`value`](crate::types::builders::CustomAttributeBuilder::value)
-    pub fn build(self) -> ::std::result::Result<crate::types::CustomAttribute, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CustomAttribute, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CustomAttribute {
             object_identifier: self.object_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "object_identifier",
                     "object_identifier was not specified but it is required when building CustomAttribute",
                 )
             })?,
             value: self.value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "value",
                     "value was not specified but it is required when building CustomAttribute",
                 )

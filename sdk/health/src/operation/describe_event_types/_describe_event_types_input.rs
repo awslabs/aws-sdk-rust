@@ -116,7 +116,8 @@ impl DescribeEventTypesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeEventTypesInput`](crate::operation::describe_event_types::DescribeEventTypesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_event_types::DescribeEventTypesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_event_types::DescribeEventTypesInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::describe_event_types::DescribeEventTypesInput {
             filter: self.filter,
             locale: self.locale,

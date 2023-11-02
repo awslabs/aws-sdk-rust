@@ -66,7 +66,7 @@ impl DeleteWorkspaceApiKeyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteWorkspaceApiKeyInput`](crate::operation::delete_workspace_api_key::DeleteWorkspaceApiKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_workspace_api_key::DeleteWorkspaceApiKeyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_workspace_api_key::DeleteWorkspaceApiKeyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_workspace_api_key::DeleteWorkspaceApiKeyInput {
             key_name: self.key_name,

@@ -138,24 +138,24 @@ impl AssociateCustomDomainOutputBuilder {
     /// - [`vpc_dns_targets`](crate::operation::associate_custom_domain::builders::AssociateCustomDomainOutputBuilder::vpc_dns_targets)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::associate_custom_domain::AssociateCustomDomainOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::associate_custom_domain::AssociateCustomDomainOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::associate_custom_domain::AssociateCustomDomainOutput {
             dns_target: self.dns_target.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "dns_target",
                     "dns_target was not specified but it is required when building AssociateCustomDomainOutput",
                 )
             })?,
             service_arn: self.service_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "service_arn",
                     "service_arn was not specified but it is required when building AssociateCustomDomainOutput",
                 )
             })?,
             custom_domain: self.custom_domain,
             vpc_dns_targets: self.vpc_dns_targets.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "vpc_dns_targets",
                     "vpc_dns_targets was not specified but it is required when building AssociateCustomDomainOutput",
                 )

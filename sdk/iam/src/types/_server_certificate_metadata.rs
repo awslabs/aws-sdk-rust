@@ -161,28 +161,28 @@ impl ServerCertificateMetadataBuilder {
     /// - [`server_certificate_name`](crate::types::builders::ServerCertificateMetadataBuilder::server_certificate_name)
     /// - [`server_certificate_id`](crate::types::builders::ServerCertificateMetadataBuilder::server_certificate_id)
     /// - [`arn`](crate::types::builders::ServerCertificateMetadataBuilder::arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::ServerCertificateMetadata, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ServerCertificateMetadata, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ServerCertificateMetadata {
             path: self.path.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "path",
                     "path was not specified but it is required when building ServerCertificateMetadata",
                 )
             })?,
             server_certificate_name: self.server_certificate_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "server_certificate_name",
                     "server_certificate_name was not specified but it is required when building ServerCertificateMetadata",
                 )
             })?,
             server_certificate_id: self.server_certificate_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "server_certificate_id",
                     "server_certificate_id was not specified but it is required when building ServerCertificateMetadata",
                 )
             })?,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building ServerCertificateMetadata",
                 )

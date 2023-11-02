@@ -284,59 +284,59 @@ impl GrantBuilder {
     /// - [`grant_status`](crate::types::builders::GrantBuilder::grant_status)
     /// - [`version`](crate::types::builders::GrantBuilder::version)
     /// - [`granted_operations`](crate::types::builders::GrantBuilder::granted_operations)
-    pub fn build(self) -> ::std::result::Result<crate::types::Grant, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Grant, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Grant {
             grant_arn: self.grant_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "grant_arn",
                     "grant_arn was not specified but it is required when building Grant",
                 )
             })?,
             grant_name: self.grant_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "grant_name",
                     "grant_name was not specified but it is required when building Grant",
                 )
             })?,
             parent_arn: self.parent_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "parent_arn",
                     "parent_arn was not specified but it is required when building Grant",
                 )
             })?,
             license_arn: self.license_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "license_arn",
                     "license_arn was not specified but it is required when building Grant",
                 )
             })?,
             grantee_principal_arn: self.grantee_principal_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "grantee_principal_arn",
                     "grantee_principal_arn was not specified but it is required when building Grant",
                 )
             })?,
             home_region: self.home_region.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "home_region",
                     "home_region was not specified but it is required when building Grant",
                 )
             })?,
             grant_status: self.grant_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "grant_status",
                     "grant_status was not specified but it is required when building Grant",
                 )
             })?,
             status_reason: self.status_reason,
             version: self.version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "version",
                     "version was not specified but it is required when building Grant",
                 )
             })?,
             granted_operations: self.granted_operations.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "granted_operations",
                     "granted_operations was not specified but it is required when building Grant",
                 )

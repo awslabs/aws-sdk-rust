@@ -66,7 +66,7 @@ impl DescribeHostKeyInputBuilder {
     /// Consumes the builder and constructs a [`DescribeHostKeyInput`](crate::operation::describe_host_key::DescribeHostKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_host_key::DescribeHostKeyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_host_key::DescribeHostKeyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_host_key::DescribeHostKeyInput {
             server_id: self.server_id,
             host_key_id: self.host_key_id,

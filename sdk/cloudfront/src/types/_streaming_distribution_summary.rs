@@ -282,34 +282,34 @@ impl StreamingDistributionSummaryBuilder {
     /// - [`comment`](crate::types::builders::StreamingDistributionSummaryBuilder::comment)
     /// - [`price_class`](crate::types::builders::StreamingDistributionSummaryBuilder::price_class)
     /// - [`enabled`](crate::types::builders::StreamingDistributionSummaryBuilder::enabled)
-    pub fn build(self) -> ::std::result::Result<crate::types::StreamingDistributionSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::StreamingDistributionSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::StreamingDistributionSummary {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building StreamingDistributionSummary",
                 )
             })?,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building StreamingDistributionSummary",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building StreamingDistributionSummary",
                 )
             })?,
             last_modified_time: self.last_modified_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_modified_time",
                     "last_modified_time was not specified but it is required when building StreamingDistributionSummary",
                 )
             })?,
             domain_name: self.domain_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "domain_name",
                     "domain_name was not specified but it is required when building StreamingDistributionSummary",
                 )
@@ -318,19 +318,19 @@ impl StreamingDistributionSummaryBuilder {
             aliases: self.aliases,
             trusted_signers: self.trusted_signers,
             comment: self.comment.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "comment",
                     "comment was not specified but it is required when building StreamingDistributionSummary",
                 )
             })?,
             price_class: self.price_class.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "price_class",
                     "price_class was not specified but it is required when building StreamingDistributionSummary",
                 )
             })?,
             enabled: self.enabled.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "enabled",
                     "enabled was not specified but it is required when building StreamingDistributionSummary",
                 )

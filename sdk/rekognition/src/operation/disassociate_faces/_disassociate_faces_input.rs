@@ -116,7 +116,7 @@ impl DisassociateFacesInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateFacesInput`](crate::operation::disassociate_faces::DisassociateFacesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::disassociate_faces::DisassociateFacesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::disassociate_faces::DisassociateFacesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::disassociate_faces::DisassociateFacesInput {
             collection_id: self.collection_id,
             user_id: self.user_id,

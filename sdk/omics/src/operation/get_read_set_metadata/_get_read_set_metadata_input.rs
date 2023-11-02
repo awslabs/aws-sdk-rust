@@ -66,7 +66,7 @@ impl GetReadSetMetadataInputBuilder {
     /// Consumes the builder and constructs a [`GetReadSetMetadataInput`](crate::operation::get_read_set_metadata::GetReadSetMetadataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_read_set_metadata::GetReadSetMetadataInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_read_set_metadata::GetReadSetMetadataInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_read_set_metadata::GetReadSetMetadataInput {
             id: self.id,

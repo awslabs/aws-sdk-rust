@@ -225,7 +225,7 @@ impl ExportEbsVolumeRecommendationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::export_ebs_volume_recommendations::ExportEbsVolumeRecommendationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::export_ebs_volume_recommendations::ExportEbsVolumeRecommendationsInput {
             account_ids: self.account_ids,

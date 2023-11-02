@@ -177,22 +177,22 @@ impl DatastorePropertiesBuilder {
     /// - [`datastore_id`](crate::types::builders::DatastorePropertiesBuilder::datastore_id)
     /// - [`datastore_name`](crate::types::builders::DatastorePropertiesBuilder::datastore_name)
     /// - [`datastore_status`](crate::types::builders::DatastorePropertiesBuilder::datastore_status)
-    pub fn build(self) -> ::std::result::Result<crate::types::DatastoreProperties, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DatastoreProperties, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DatastoreProperties {
             datastore_id: self.datastore_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "datastore_id",
                     "datastore_id was not specified but it is required when building DatastoreProperties",
                 )
             })?,
             datastore_name: self.datastore_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "datastore_name",
                     "datastore_name was not specified but it is required when building DatastoreProperties",
                 )
             })?,
             datastore_status: self.datastore_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "datastore_status",
                     "datastore_status was not specified but it is required when building DatastoreProperties",
                 )

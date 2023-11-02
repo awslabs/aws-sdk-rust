@@ -168,16 +168,16 @@ impl ListTrackersResponseEntryBuilder {
     /// - [`description`](crate::types::builders::ListTrackersResponseEntryBuilder::description)
     /// - [`create_time`](crate::types::builders::ListTrackersResponseEntryBuilder::create_time)
     /// - [`update_time`](crate::types::builders::ListTrackersResponseEntryBuilder::update_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::ListTrackersResponseEntry, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ListTrackersResponseEntry, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ListTrackersResponseEntry {
             tracker_name: self.tracker_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "tracker_name",
                     "tracker_name was not specified but it is required when building ListTrackersResponseEntry",
                 )
             })?,
             description: self.description.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "description",
                     "description was not specified but it is required when building ListTrackersResponseEntry",
                 )
@@ -185,13 +185,13 @@ impl ListTrackersResponseEntryBuilder {
             pricing_plan: self.pricing_plan,
             pricing_plan_data_source: self.pricing_plan_data_source,
             create_time: self.create_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "create_time",
                     "create_time was not specified but it is required when building ListTrackersResponseEntry",
                 )
             })?,
             update_time: self.update_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "update_time",
                     "update_time was not specified but it is required when building ListTrackersResponseEntry",
                 )

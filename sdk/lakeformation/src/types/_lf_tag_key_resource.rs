@@ -96,17 +96,17 @@ impl LfTagKeyResourceBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`tag_key`](crate::types::builders::LfTagKeyResourceBuilder::tag_key)
     /// - [`tag_values`](crate::types::builders::LfTagKeyResourceBuilder::tag_values)
-    pub fn build(self) -> ::std::result::Result<crate::types::LfTagKeyResource, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::LfTagKeyResource, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::LfTagKeyResource {
             catalog_id: self.catalog_id,
             tag_key: self.tag_key.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "tag_key",
                     "tag_key was not specified but it is required when building LfTagKeyResource",
                 )
             })?,
             tag_values: self.tag_values.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "tag_values",
                     "tag_values was not specified but it is required when building LfTagKeyResource",
                 )

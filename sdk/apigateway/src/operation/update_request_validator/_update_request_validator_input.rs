@@ -96,8 +96,10 @@ impl UpdateRequestValidatorInputBuilder {
     /// Consumes the builder and constructs a [`UpdateRequestValidatorInput`](crate::operation::update_request_validator::UpdateRequestValidatorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_request_validator::UpdateRequestValidatorInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::update_request_validator::UpdateRequestValidatorInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::update_request_validator::UpdateRequestValidatorInput {
             rest_api_id: self.rest_api_id,
             request_validator_id: self.request_validator_id,

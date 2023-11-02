@@ -46,7 +46,7 @@ impl DeactivateContactChannelInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deactivate_contact_channel::DeactivateContactChannelInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::deactivate_contact_channel::DeactivateContactChannelInput {
             contact_channel_id: self.contact_channel_id,

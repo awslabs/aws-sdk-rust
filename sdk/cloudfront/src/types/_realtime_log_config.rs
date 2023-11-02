@@ -156,34 +156,34 @@ impl RealtimeLogConfigBuilder {
     /// - [`sampling_rate`](crate::types::builders::RealtimeLogConfigBuilder::sampling_rate)
     /// - [`end_points`](crate::types::builders::RealtimeLogConfigBuilder::end_points)
     /// - [`fields`](crate::types::builders::RealtimeLogConfigBuilder::fields)
-    pub fn build(self) -> ::std::result::Result<crate::types::RealtimeLogConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RealtimeLogConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RealtimeLogConfig {
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building RealtimeLogConfig",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building RealtimeLogConfig",
                 )
             })?,
             sampling_rate: self.sampling_rate.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "sampling_rate",
                     "sampling_rate was not specified but it is required when building RealtimeLogConfig",
                 )
             })?,
             end_points: self.end_points.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "end_points",
                     "end_points was not specified but it is required when building RealtimeLogConfig",
                 )
             })?,
             fields: self.fields.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "fields",
                     "fields was not specified but it is required when building RealtimeLogConfig",
                 )

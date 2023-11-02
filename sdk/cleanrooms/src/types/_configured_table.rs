@@ -264,22 +264,22 @@ impl ConfiguredTableBuilder {
     /// - [`analysis_rule_types`](crate::types::builders::ConfiguredTableBuilder::analysis_rule_types)
     /// - [`analysis_method`](crate::types::builders::ConfiguredTableBuilder::analysis_method)
     /// - [`allowed_columns`](crate::types::builders::ConfiguredTableBuilder::allowed_columns)
-    pub fn build(self) -> ::std::result::Result<crate::types::ConfiguredTable, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ConfiguredTable, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ConfiguredTable {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building ConfiguredTable",
                 )
             })?,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building ConfiguredTable",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building ConfiguredTable",
                 )
@@ -287,31 +287,31 @@ impl ConfiguredTableBuilder {
             description: self.description,
             table_reference: self.table_reference,
             create_time: self.create_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "create_time",
                     "create_time was not specified but it is required when building ConfiguredTable",
                 )
             })?,
             update_time: self.update_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "update_time",
                     "update_time was not specified but it is required when building ConfiguredTable",
                 )
             })?,
             analysis_rule_types: self.analysis_rule_types.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "analysis_rule_types",
                     "analysis_rule_types was not specified but it is required when building ConfiguredTable",
                 )
             })?,
             analysis_method: self.analysis_method.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "analysis_method",
                     "analysis_method was not specified but it is required when building ConfiguredTable",
                 )
             })?,
             allowed_columns: self.allowed_columns.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "allowed_columns",
                     "allowed_columns was not specified but it is required when building ConfiguredTable",
                 )

@@ -65,7 +65,7 @@ impl GetCommitInputBuilder {
         &self.commit_id
     }
     /// Consumes the builder and constructs a [`GetCommitInput`](crate::operation::get_commit::GetCommitInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_commit::GetCommitInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_commit::GetCommitInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_commit::GetCommitInput {
             repository_name: self.repository_name,
             commit_id: self.commit_id,

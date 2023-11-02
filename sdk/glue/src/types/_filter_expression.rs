@@ -95,17 +95,17 @@ impl FilterExpressionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`operation`](crate::types::builders::FilterExpressionBuilder::operation)
     /// - [`values`](crate::types::builders::FilterExpressionBuilder::values)
-    pub fn build(self) -> ::std::result::Result<crate::types::FilterExpression, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::FilterExpression, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FilterExpression {
             operation: self.operation.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "operation",
                     "operation was not specified but it is required when building FilterExpression",
                 )
             })?,
             negated: self.negated,
             values: self.values.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "values",
                     "values was not specified but it is required when building FilterExpression",
                 )

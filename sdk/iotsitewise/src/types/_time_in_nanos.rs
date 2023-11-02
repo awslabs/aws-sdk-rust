@@ -66,10 +66,10 @@ impl TimeInNanosBuilder {
     /// Consumes the builder and constructs a [`TimeInNanos`](crate::types::TimeInNanos).
     /// This method will fail if any of the following fields are not set:
     /// - [`time_in_seconds`](crate::types::builders::TimeInNanosBuilder::time_in_seconds)
-    pub fn build(self) -> ::std::result::Result<crate::types::TimeInNanos, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TimeInNanos, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TimeInNanos {
             time_in_seconds: self.time_in_seconds.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "time_in_seconds",
                     "time_in_seconds was not specified but it is required when building TimeInNanos",
                 )

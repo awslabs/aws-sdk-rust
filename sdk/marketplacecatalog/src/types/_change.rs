@@ -160,10 +160,10 @@ impl ChangeBuilder {
     /// Consumes the builder and constructs a [`Change`](crate::types::Change).
     /// This method will fail if any of the following fields are not set:
     /// - [`change_type`](crate::types::builders::ChangeBuilder::change_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::Change, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Change, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Change {
             change_type: self.change_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "change_type",
                     "change_type was not specified but it is required when building Change",
                 )

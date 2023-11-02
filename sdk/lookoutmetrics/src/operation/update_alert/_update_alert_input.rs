@@ -126,7 +126,7 @@ impl UpdateAlertInputBuilder {
         &self.alert_filters
     }
     /// Consumes the builder and constructs a [`UpdateAlertInput`](crate::operation::update_alert::UpdateAlertInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_alert::UpdateAlertInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_alert::UpdateAlertInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_alert::UpdateAlertInput {
             alert_arn: self.alert_arn,
             alert_description: self.alert_description,

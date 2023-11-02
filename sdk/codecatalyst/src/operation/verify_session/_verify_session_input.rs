@@ -18,7 +18,7 @@ impl VerifySessionInputBuilder {
     /// Consumes the builder and constructs a [`VerifySessionInput`](crate::operation::verify_session::VerifySessionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::verify_session::VerifySessionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::verify_session::VerifySessionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::verify_session::VerifySessionInput {})
     }
 }

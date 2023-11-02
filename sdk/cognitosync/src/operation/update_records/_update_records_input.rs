@@ -182,7 +182,7 @@ impl UpdateRecordsInputBuilder {
     /// Consumes the builder and constructs a [`UpdateRecordsInput`](crate::operation::update_records::UpdateRecordsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_records::UpdateRecordsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_records::UpdateRecordsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_records::UpdateRecordsInput {
             identity_pool_id: self.identity_pool_id,
             identity_id: self.identity_id,

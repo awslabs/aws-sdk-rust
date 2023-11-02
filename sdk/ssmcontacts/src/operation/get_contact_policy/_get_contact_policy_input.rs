@@ -44,7 +44,7 @@ impl GetContactPolicyInputBuilder {
     /// Consumes the builder and constructs a [`GetContactPolicyInput`](crate::operation::get_contact_policy::GetContactPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_contact_policy::GetContactPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_contact_policy::GetContactPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_contact_policy::GetContactPolicyInput {
             contact_arn: self.contact_arn,
         })

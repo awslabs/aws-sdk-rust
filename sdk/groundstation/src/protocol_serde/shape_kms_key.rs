@@ -2,7 +2,7 @@
 pub fn ser_kms_key(
     object_11: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::KmsKey,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::KmsKey::KmsKeyArn(inner) => {
             object_11.key("kmsKeyArn").string(inner.as_str());
@@ -13,7 +13,7 @@ pub fn ser_kms_key(
         crate::types::KmsKey::KmsAliasName(inner) => {
             object_11.key("kmsAliasName").string(inner.as_str());
         }
-        crate::types::KmsKey::Unknown => return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant("KmsKey")),
+        crate::types::KmsKey::Unknown => return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("KmsKey")),
     }
     Ok(())
 }
@@ -31,12 +31,17 @@ where
             match tokens.next().transpose()? {
                 Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                 Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                    let key = key.to_unescaped()?;
+                    if key == "__type" {
+                        ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                        continue;
+                    }
                     if variant.is_some() {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
                             "encountered mixed variants in union",
                         ));
                     }
-                    variant = match key.to_unescaped()?.as_ref() {
+                    variant = match key.as_ref() {
                         "kmsKeyArn" => Some(crate::types::KmsKey::KmsKeyArn(
                             ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                 .map(|s| s.to_unescaped().map(|u| u.into_owned()))

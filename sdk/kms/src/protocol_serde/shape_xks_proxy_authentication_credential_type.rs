@@ -2,7 +2,7 @@
 pub fn ser_xks_proxy_authentication_credential_type(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::XksProxyAuthenticationCredentialType,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("AccessKeyId").string(input.access_key_id.as_str());
     }

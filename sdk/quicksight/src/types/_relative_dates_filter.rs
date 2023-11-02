@@ -303,10 +303,10 @@ impl RelativeDatesFilterBuilder {
     /// - [`time_granularity`](crate::types::builders::RelativeDatesFilterBuilder::time_granularity)
     /// - [`relative_date_type`](crate::types::builders::RelativeDatesFilterBuilder::relative_date_type)
     /// - [`null_option`](crate::types::builders::RelativeDatesFilterBuilder::null_option)
-    pub fn build(self) -> ::std::result::Result<crate::types::RelativeDatesFilter, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RelativeDatesFilter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RelativeDatesFilter {
             filter_id: self.filter_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "filter_id",
                     "filter_id was not specified but it is required when building RelativeDatesFilter",
                 )
@@ -315,13 +315,13 @@ impl RelativeDatesFilterBuilder {
             anchor_date_configuration: self.anchor_date_configuration,
             minimum_granularity: self.minimum_granularity,
             time_granularity: self.time_granularity.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "time_granularity",
                     "time_granularity was not specified but it is required when building RelativeDatesFilter",
                 )
             })?,
             relative_date_type: self.relative_date_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "relative_date_type",
                     "relative_date_type was not specified but it is required when building RelativeDatesFilter",
                 )
@@ -329,7 +329,7 @@ impl RelativeDatesFilterBuilder {
             relative_date_value: self.relative_date_value,
             parameter_name: self.parameter_name,
             null_option: self.null_option.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "null_option",
                     "null_option was not specified but it is required when building RelativeDatesFilter",
                 )

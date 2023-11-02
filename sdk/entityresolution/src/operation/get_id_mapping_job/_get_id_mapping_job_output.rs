@@ -172,22 +172,22 @@ impl GetIdMappingJobOutputBuilder {
     /// - [`start_time`](crate::operation::get_id_mapping_job::builders::GetIdMappingJobOutputBuilder::start_time)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_id_mapping_job::GetIdMappingJobOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_id_mapping_job::GetIdMappingJobOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_id_mapping_job::GetIdMappingJobOutput {
             job_id: self.job_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "job_id",
                     "job_id was not specified but it is required when building GetIdMappingJobOutput",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building GetIdMappingJobOutput",
                 )
             })?,
             start_time: self.start_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "start_time",
                     "start_time was not specified but it is required when building GetIdMappingJobOutput",
                 )

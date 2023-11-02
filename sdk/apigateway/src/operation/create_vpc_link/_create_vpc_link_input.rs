@@ -122,7 +122,7 @@ impl CreateVpcLinkInputBuilder {
     /// Consumes the builder and constructs a [`CreateVpcLinkInput`](crate::operation::create_vpc_link::CreateVpcLinkInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_vpc_link::CreateVpcLinkInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_vpc_link::CreateVpcLinkInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_vpc_link::CreateVpcLinkInput {
             name: self.name,
             description: self.description,

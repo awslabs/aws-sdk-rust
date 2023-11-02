@@ -2,7 +2,7 @@
 pub fn ser_data_path_type(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DataPathType,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.pivot_table_data_path_type {
         object.key("PivotTableDataPathType").string(var_1.as_str());
     }

@@ -146,7 +146,7 @@ impl ListNetworkResourcesInputBuilder {
     /// Consumes the builder and constructs a [`ListNetworkResourcesInput`](crate::operation::list_network_resources::ListNetworkResourcesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_network_resources::ListNetworkResourcesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_network_resources::ListNetworkResourcesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_network_resources::ListNetworkResourcesInput {
             filters: self.filters,

@@ -44,7 +44,8 @@ impl DeleteResolverRuleInputBuilder {
     /// Consumes the builder and constructs a [`DeleteResolverRuleInput`](crate::operation::delete_resolver_rule::DeleteResolverRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_resolver_rule::DeleteResolverRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_resolver_rule::DeleteResolverRuleInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::delete_resolver_rule::DeleteResolverRuleInput {
             resolver_rule_id: self.resolver_rule_id,
         })

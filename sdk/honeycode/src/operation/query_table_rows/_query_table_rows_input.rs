@@ -145,7 +145,7 @@ impl QueryTableRowsInputBuilder {
     /// Consumes the builder and constructs a [`QueryTableRowsInput`](crate::operation::query_table_rows::QueryTableRowsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::query_table_rows::QueryTableRowsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::query_table_rows::QueryTableRowsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::query_table_rows::QueryTableRowsInput {
             workbook_id: self.workbook_id,
             table_id: self.table_id,

@@ -67,10 +67,10 @@ impl AnomalyDateIntervalBuilder {
     /// Consumes the builder and constructs a [`AnomalyDateInterval`](crate::types::AnomalyDateInterval).
     /// This method will fail if any of the following fields are not set:
     /// - [`start_date`](crate::types::builders::AnomalyDateIntervalBuilder::start_date)
-    pub fn build(self) -> ::std::result::Result<crate::types::AnomalyDateInterval, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AnomalyDateInterval, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AnomalyDateInterval {
             start_date: self.start_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "start_date",
                     "start_date was not specified but it is required when building AnomalyDateInterval",
                 )

@@ -51,7 +51,8 @@ impl EnableAlarmActionsInputBuilder {
     /// Consumes the builder and constructs a [`EnableAlarmActionsInput`](crate::operation::enable_alarm_actions::EnableAlarmActionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::enable_alarm_actions::EnableAlarmActionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::enable_alarm_actions::EnableAlarmActionsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::enable_alarm_actions::EnableAlarmActionsInput {
             alarm_names: self.alarm_names,
         })

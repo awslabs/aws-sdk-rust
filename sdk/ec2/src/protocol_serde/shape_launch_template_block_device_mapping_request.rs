@@ -3,7 +3,7 @@
 pub fn ser_launch_template_block_device_mapping_request(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::LaunchTemplateBlockDeviceMappingRequest,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("DeviceName");
     if let Some(var_2) = &input.device_name {

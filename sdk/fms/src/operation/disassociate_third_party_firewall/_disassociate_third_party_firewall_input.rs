@@ -46,7 +46,7 @@ impl DisassociateThirdPartyFirewallInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_third_party_firewall::DisassociateThirdPartyFirewallInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disassociate_third_party_firewall::DisassociateThirdPartyFirewallInput {
             third_party_firewall: self.third_party_firewall,

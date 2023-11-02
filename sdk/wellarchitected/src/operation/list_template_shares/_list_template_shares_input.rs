@@ -128,7 +128,8 @@ impl ListTemplateSharesInputBuilder {
     /// Consumes the builder and constructs a [`ListTemplateSharesInput`](crate::operation::list_template_shares::ListTemplateSharesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_template_shares::ListTemplateSharesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_template_shares::ListTemplateSharesInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::list_template_shares::ListTemplateSharesInput {
             template_arn: self.template_arn,
             shared_with_prefix: self.shared_with_prefix,

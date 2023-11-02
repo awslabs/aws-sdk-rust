@@ -2,7 +2,7 @@
 pub fn ser_resource_data_sync_s3_destination(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ResourceDataSyncS3Destination,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("BucketName").string(input.bucket_name.as_str());
     }

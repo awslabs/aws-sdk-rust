@@ -140,7 +140,7 @@ impl GetShardIteratorInputBuilder {
     /// Consumes the builder and constructs a [`GetShardIteratorInput`](crate::operation::get_shard_iterator::GetShardIteratorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_shard_iterator::GetShardIteratorInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_shard_iterator::GetShardIteratorInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_shard_iterator::GetShardIteratorInput {
             stream_arn: self.stream_arn,
             shard_id: self.shard_id,

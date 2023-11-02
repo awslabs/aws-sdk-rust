@@ -69,16 +69,16 @@ impl PropertyNotificationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`topic`](crate::types::builders::PropertyNotificationBuilder::topic)
     /// - [`state`](crate::types::builders::PropertyNotificationBuilder::state)
-    pub fn build(self) -> ::std::result::Result<crate::types::PropertyNotification, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PropertyNotification, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PropertyNotification {
             topic: self.topic.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "topic",
                     "topic was not specified but it is required when building PropertyNotification",
                 )
             })?,
             state: self.state.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "state",
                     "state was not specified but it is required when building PropertyNotification",
                 )

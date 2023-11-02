@@ -66,7 +66,7 @@ impl GetIntegrationInputBuilder {
     /// Consumes the builder and constructs a [`GetIntegrationInput`](crate::operation::get_integration::GetIntegrationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_integration::GetIntegrationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_integration::GetIntegrationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_integration::GetIntegrationInput {
             api_id: self.api_id,
             integration_id: self.integration_id,

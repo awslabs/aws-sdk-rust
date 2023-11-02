@@ -2,7 +2,7 @@
 pub fn ser_delete_instance_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_instance::DeleteInstanceInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.instance_name {
         object.key("instanceName").string(var_1.as_str());
     }

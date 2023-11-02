@@ -262,7 +262,7 @@ impl ListStackInstanceResourceDriftsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_stack_instance_resource_drifts::ListStackInstanceResourceDriftsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_stack_instance_resource_drifts::ListStackInstanceResourceDriftsInput {

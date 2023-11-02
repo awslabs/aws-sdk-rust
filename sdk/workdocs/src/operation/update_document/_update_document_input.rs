@@ -139,7 +139,7 @@ impl UpdateDocumentInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDocumentInput`](crate::operation::update_document::UpdateDocumentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_document::UpdateDocumentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_document::UpdateDocumentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_document::UpdateDocumentInput {
             authentication_token: self.authentication_token,
             document_id: self.document_id,

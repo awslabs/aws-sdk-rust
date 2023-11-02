@@ -129,7 +129,7 @@ impl CreateMediaPipelineKinesisVideoStreamPoolInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_media_pipeline_kinesis_video_stream_pool::CreateMediaPipelineKinesisVideoStreamPoolInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::create_media_pipeline_kinesis_video_stream_pool::CreateMediaPipelineKinesisVideoStreamPoolInput {

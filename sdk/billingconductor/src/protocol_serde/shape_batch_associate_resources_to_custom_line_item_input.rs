@@ -2,7 +2,7 @@
 pub fn ser_batch_associate_resources_to_custom_line_item_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::batch_associate_resources_to_custom_line_item::BatchAssociateResourcesToCustomLineItemInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.billing_period_range {
         #[allow(unused_mut)]
         let mut object_2 = object.key("BillingPeriodRange").start_object();

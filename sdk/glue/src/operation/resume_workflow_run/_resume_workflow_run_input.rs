@@ -95,7 +95,7 @@ impl ResumeWorkflowRunInputBuilder {
     /// Consumes the builder and constructs a [`ResumeWorkflowRunInput`](crate::operation::resume_workflow_run::ResumeWorkflowRunInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::resume_workflow_run::ResumeWorkflowRunInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::resume_workflow_run::ResumeWorkflowRunInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::resume_workflow_run::ResumeWorkflowRunInput {
             name: self.name,
             run_id: self.run_id,

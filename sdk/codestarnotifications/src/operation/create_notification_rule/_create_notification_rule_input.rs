@@ -239,8 +239,10 @@ impl CreateNotificationRuleInputBuilder {
     /// Consumes the builder and constructs a [`CreateNotificationRuleInput`](crate::operation::create_notification_rule::CreateNotificationRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_notification_rule::CreateNotificationRuleInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::create_notification_rule::CreateNotificationRuleInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::create_notification_rule::CreateNotificationRuleInput {
             name: self.name,
             event_type_ids: self.event_type_ids,

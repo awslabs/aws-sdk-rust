@@ -91,13 +91,13 @@ impl ListEnvironmentTemplateVersionsOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_environment_template_versions::ListEnvironmentTemplateVersionsOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_environment_template_versions::ListEnvironmentTemplateVersionsOutput {
                 next_token: self.next_token,
                 template_versions: self.template_versions.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
                         "template_versions",
                         "template_versions was not specified but it is required when building ListEnvironmentTemplateVersionsOutput",
                     )

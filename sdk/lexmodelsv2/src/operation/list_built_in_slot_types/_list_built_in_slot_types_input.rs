@@ -107,7 +107,7 @@ impl ListBuiltInSlotTypesInputBuilder {
     /// Consumes the builder and constructs a [`ListBuiltInSlotTypesInput`](crate::operation::list_built_in_slot_types::ListBuiltInSlotTypesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_built_in_slot_types::ListBuiltInSlotTypesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_built_in_slot_types::ListBuiltInSlotTypesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_built_in_slot_types::ListBuiltInSlotTypesInput {
             locale_id: self.locale_id,

@@ -421,7 +421,9 @@ impl UpdateBranchInputBuilder {
         &self.backend_environment_arn
     }
     /// Consumes the builder and constructs a [`UpdateBranchInput`](crate::operation::update_branch::UpdateBranchInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_branch::UpdateBranchInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_branch::UpdateBranchInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_branch::UpdateBranchInput {
             app_id: self.app_id,
             branch_name: self.branch_name,

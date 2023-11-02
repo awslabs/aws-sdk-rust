@@ -44,7 +44,8 @@ impl GetBrowserSettingsInputBuilder {
     /// Consumes the builder and constructs a [`GetBrowserSettingsInput`](crate::operation::get_browser_settings::GetBrowserSettingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_browser_settings::GetBrowserSettingsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_browser_settings::GetBrowserSettingsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::get_browser_settings::GetBrowserSettingsInput {
             browser_settings_arn: self.browser_settings_arn,
         })

@@ -81,10 +81,10 @@ impl S3EncryptionConfigurationBuilder {
     /// Consumes the builder and constructs a [`S3EncryptionConfiguration`](crate::types::S3EncryptionConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`object_encryption_type`](crate::types::builders::S3EncryptionConfigurationBuilder::object_encryption_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::S3EncryptionConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::S3EncryptionConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::S3EncryptionConfiguration {
             object_encryption_type: self.object_encryption_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "object_encryption_type",
                     "object_encryption_type was not specified but it is required when building S3EncryptionConfiguration",
                 )

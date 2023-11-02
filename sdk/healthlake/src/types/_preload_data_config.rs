@@ -45,10 +45,10 @@ impl PreloadDataConfigBuilder {
     /// Consumes the builder and constructs a [`PreloadDataConfig`](crate::types::PreloadDataConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`preload_data_type`](crate::types::builders::PreloadDataConfigBuilder::preload_data_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::PreloadDataConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PreloadDataConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PreloadDataConfig {
             preload_data_type: self.preload_data_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "preload_data_type",
                     "preload_data_type was not specified but it is required when building PreloadDataConfig",
                 )

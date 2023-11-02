@@ -67,7 +67,7 @@ impl GetNetworkInsightsAccessScopeContentInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_network_insights_access_scope_content::GetNetworkInsightsAccessScopeContentInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_network_insights_access_scope_content::GetNetworkInsightsAccessScopeContentInput {

@@ -89,17 +89,17 @@ impl AssociateBrowserSettingsOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_browser_settings::AssociateBrowserSettingsOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::associate_browser_settings::AssociateBrowserSettingsOutput {
             portal_arn: self.portal_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "portal_arn",
                     "portal_arn was not specified but it is required when building AssociateBrowserSettingsOutput",
                 )
             })?,
             browser_settings_arn: self.browser_settings_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "browser_settings_arn",
                     "browser_settings_arn was not specified but it is required when building AssociateBrowserSettingsOutput",
                 )

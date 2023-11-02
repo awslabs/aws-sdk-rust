@@ -116,7 +116,7 @@ impl BatchCreatePartitionInputBuilder {
     /// Consumes the builder and constructs a [`BatchCreatePartitionInput`](crate::operation::batch_create_partition::BatchCreatePartitionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_create_partition::BatchCreatePartitionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::batch_create_partition::BatchCreatePartitionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::batch_create_partition::BatchCreatePartitionInput {
             catalog_id: self.catalog_id,

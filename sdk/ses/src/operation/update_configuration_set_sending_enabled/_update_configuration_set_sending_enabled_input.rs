@@ -69,7 +69,7 @@ impl UpdateConfigurationSetSendingEnabledInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_configuration_set_sending_enabled::UpdateConfigurationSetSendingEnabledInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::update_configuration_set_sending_enabled::UpdateConfigurationSetSendingEnabledInput {

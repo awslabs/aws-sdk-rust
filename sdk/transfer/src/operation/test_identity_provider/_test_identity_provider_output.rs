@@ -137,14 +137,14 @@ impl TestIdentityProviderOutputBuilder {
     /// - [`url`](crate::operation::test_identity_provider::builders::TestIdentityProviderOutputBuilder::url)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::test_identity_provider::TestIdentityProviderOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::test_identity_provider::TestIdentityProviderOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::test_identity_provider::TestIdentityProviderOutput {
             response: self.response,
             status_code: self.status_code.unwrap_or_default(),
             message: self.message,
             url: self.url.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "url",
                     "url was not specified but it is required when building TestIdentityProviderOutput",
                 )

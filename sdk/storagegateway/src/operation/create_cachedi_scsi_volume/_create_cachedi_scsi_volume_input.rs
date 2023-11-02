@@ -272,7 +272,7 @@ impl CreateCachediScsiVolumeInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_cachedi_scsi_volume::CreateCachediScsiVolumeInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_cachedi_scsi_volume::CreateCachediScsiVolumeInput {
             gateway_arn: self.gateway_arn,

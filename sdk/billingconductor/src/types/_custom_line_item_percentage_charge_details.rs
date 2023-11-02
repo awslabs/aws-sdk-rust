@@ -76,10 +76,10 @@ impl CustomLineItemPercentageChargeDetailsBuilder {
     /// - [`percentage_value`](crate::types::builders::CustomLineItemPercentageChargeDetailsBuilder::percentage_value)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::CustomLineItemPercentageChargeDetails, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::CustomLineItemPercentageChargeDetails, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CustomLineItemPercentageChargeDetails {
             percentage_value: self.percentage_value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "percentage_value",
                     "percentage_value was not specified but it is required when building CustomLineItemPercentageChargeDetails",
                 )

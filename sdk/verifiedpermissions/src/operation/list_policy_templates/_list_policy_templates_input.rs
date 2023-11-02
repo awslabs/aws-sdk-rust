@@ -91,7 +91,7 @@ impl ListPolicyTemplatesInputBuilder {
     /// Consumes the builder and constructs a [`ListPolicyTemplatesInput`](crate::operation::list_policy_templates::ListPolicyTemplatesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_policy_templates::ListPolicyTemplatesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_policy_templates::ListPolicyTemplatesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_policy_templates::ListPolicyTemplatesInput {
             policy_store_id: self.policy_store_id,

@@ -66,7 +66,7 @@ impl GetAccessPolicyInputBuilder {
     /// Consumes the builder and constructs a [`GetAccessPolicyInput`](crate::operation::get_access_policy::GetAccessPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_access_policy::GetAccessPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_access_policy::GetAccessPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_access_policy::GetAccessPolicyInput {
             r#type: self.r#type,
             name: self.name,

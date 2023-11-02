@@ -63,10 +63,10 @@ impl StartEngagementOutputBuilder {
     /// - [`engagement_arn`](crate::operation::start_engagement::builders::StartEngagementOutputBuilder::engagement_arn)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_engagement::StartEngagementOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_engagement::StartEngagementOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_engagement::StartEngagementOutput {
             engagement_arn: self.engagement_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "engagement_arn",
                     "engagement_arn was not specified but it is required when building StartEngagementOutput",
                 )

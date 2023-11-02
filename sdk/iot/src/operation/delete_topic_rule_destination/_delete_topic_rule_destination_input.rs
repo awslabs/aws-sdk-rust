@@ -46,7 +46,7 @@ impl DeleteTopicRuleDestinationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_topic_rule_destination::DeleteTopicRuleDestinationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_topic_rule_destination::DeleteTopicRuleDestinationInput { arn: self.arn })
     }

@@ -73,16 +73,16 @@ impl RegexPatternSetUpdateBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`action`](crate::types::builders::RegexPatternSetUpdateBuilder::action)
     /// - [`regex_pattern_string`](crate::types::builders::RegexPatternSetUpdateBuilder::regex_pattern_string)
-    pub fn build(self) -> ::std::result::Result<crate::types::RegexPatternSetUpdate, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RegexPatternSetUpdate, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RegexPatternSetUpdate {
             action: self.action.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "action",
                     "action was not specified but it is required when building RegexPatternSetUpdate",
                 )
             })?,
             regex_pattern_string: self.regex_pattern_string.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "regex_pattern_string",
                     "regex_pattern_string was not specified but it is required when building RegexPatternSetUpdate",
                 )

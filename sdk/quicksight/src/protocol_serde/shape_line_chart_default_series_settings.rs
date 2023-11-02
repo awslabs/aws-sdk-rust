@@ -2,7 +2,7 @@
 pub fn ser_line_chart_default_series_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LineChartDefaultSeriesSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.axis_binding {
         object.key("AxisBinding").string(var_1.as_str());
     }

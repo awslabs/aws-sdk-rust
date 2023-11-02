@@ -91,16 +91,16 @@ impl AdditionalResultAttributeBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`key`](crate::types::builders::AdditionalResultAttributeBuilder::key)
     /// - [`value_type`](crate::types::builders::AdditionalResultAttributeBuilder::value_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::AdditionalResultAttribute, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AdditionalResultAttribute, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AdditionalResultAttribute {
             key: self.key.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "key",
                     "key was not specified but it is required when building AdditionalResultAttribute",
                 )
             })?,
             value_type: self.value_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "value_type",
                     "value_type was not specified but it is required when building AdditionalResultAttribute",
                 )

@@ -68,16 +68,16 @@ impl RetentionPeriodBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`retention_period_value`](crate::types::builders::RetentionPeriodBuilder::retention_period_value)
     /// - [`retention_period_unit`](crate::types::builders::RetentionPeriodBuilder::retention_period_unit)
-    pub fn build(self) -> ::std::result::Result<crate::types::RetentionPeriod, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RetentionPeriod, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RetentionPeriod {
             retention_period_value: self.retention_period_value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "retention_period_value",
                     "retention_period_value was not specified but it is required when building RetentionPeriod",
                 )
             })?,
             retention_period_unit: self.retention_period_unit.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "retention_period_unit",
                     "retention_period_unit was not specified but it is required when building RetentionPeriod",
                 )

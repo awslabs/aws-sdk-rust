@@ -86,7 +86,7 @@ impl ListProjectPoliciesInputBuilder {
     /// Consumes the builder and constructs a [`ListProjectPoliciesInput`](crate::operation::list_project_policies::ListProjectPoliciesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_project_policies::ListProjectPoliciesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_project_policies::ListProjectPoliciesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_project_policies::ListProjectPoliciesInput {
             project_arn: self.project_arn,

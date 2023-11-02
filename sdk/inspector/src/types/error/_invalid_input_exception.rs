@@ -127,22 +127,22 @@ impl InvalidInputExceptionBuilder {
     /// - [`message`](crate::types::error::builders::InvalidInputExceptionBuilder::message)
     /// - [`error_code`](crate::types::error::builders::InvalidInputExceptionBuilder::error_code)
     /// - [`can_retry`](crate::types::error::builders::InvalidInputExceptionBuilder::can_retry)
-    pub fn build(self) -> ::std::result::Result<crate::types::error::InvalidInputException, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::error::InvalidInputException, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::error::InvalidInputException {
             message: self.message.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "message",
                     "message was not specified but it is required when building InvalidInputException",
                 )
             })?,
             error_code: self.error_code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "error_code",
                     "error_code was not specified but it is required when building InvalidInputException",
                 )
             })?,
             can_retry: self.can_retry.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "can_retry",
                     "can_retry was not specified but it is required when building InvalidInputException",
                 )

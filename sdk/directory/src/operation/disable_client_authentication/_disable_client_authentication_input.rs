@@ -68,7 +68,7 @@ impl DisableClientAuthenticationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disable_client_authentication::DisableClientAuthenticationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disable_client_authentication::DisableClientAuthenticationInput {
             directory_id: self.directory_id,

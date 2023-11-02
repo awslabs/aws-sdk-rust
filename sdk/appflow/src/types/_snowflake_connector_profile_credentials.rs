@@ -78,16 +78,18 @@ impl SnowflakeConnectorProfileCredentialsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`username`](crate::types::builders::SnowflakeConnectorProfileCredentialsBuilder::username)
     /// - [`password`](crate::types::builders::SnowflakeConnectorProfileCredentialsBuilder::password)
-    pub fn build(self) -> ::std::result::Result<crate::types::SnowflakeConnectorProfileCredentials, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::SnowflakeConnectorProfileCredentials, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SnowflakeConnectorProfileCredentials {
             username: self.username.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "username",
                     "username was not specified but it is required when building SnowflakeConnectorProfileCredentials",
                 )
             })?,
             password: self.password.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "password",
                     "password was not specified but it is required when building SnowflakeConnectorProfileCredentials",
                 )

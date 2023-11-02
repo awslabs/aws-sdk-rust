@@ -48,10 +48,10 @@ impl DisassociateClientDeviceFromCoreDeviceEntryBuilder {
     /// - [`thing_name`](crate::types::builders::DisassociateClientDeviceFromCoreDeviceEntryBuilder::thing_name)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::DisassociateClientDeviceFromCoreDeviceEntry, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::DisassociateClientDeviceFromCoreDeviceEntry, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DisassociateClientDeviceFromCoreDeviceEntry {
             thing_name: self.thing_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "thing_name",
                     "thing_name was not specified but it is required when building DisassociateClientDeviceFromCoreDeviceEntry",
                 )

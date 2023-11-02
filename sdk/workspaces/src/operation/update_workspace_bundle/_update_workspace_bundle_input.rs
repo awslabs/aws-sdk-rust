@@ -64,7 +64,7 @@ impl UpdateWorkspaceBundleInputBuilder {
     /// Consumes the builder and constructs a [`UpdateWorkspaceBundleInput`](crate::operation::update_workspace_bundle::UpdateWorkspaceBundleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_workspace_bundle::UpdateWorkspaceBundleInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_workspace_bundle::UpdateWorkspaceBundleInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_workspace_bundle::UpdateWorkspaceBundleInput {
             bundle_id: self.bundle_id,

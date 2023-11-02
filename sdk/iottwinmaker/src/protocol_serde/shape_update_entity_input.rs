@@ -2,7 +2,7 @@
 pub fn ser_update_entity_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_entity::UpdateEntityInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.component_updates {
         #[allow(unused_mut)]
         let mut object_2 = object.key("componentUpdates").start_object();

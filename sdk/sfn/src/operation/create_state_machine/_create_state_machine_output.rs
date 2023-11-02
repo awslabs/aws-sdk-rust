@@ -107,17 +107,17 @@ impl CreateStateMachineOutputBuilder {
     /// - [`creation_date`](crate::operation::create_state_machine::builders::CreateStateMachineOutputBuilder::creation_date)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_state_machine::CreateStateMachineOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_state_machine::CreateStateMachineOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_state_machine::CreateStateMachineOutput {
             state_machine_arn: self.state_machine_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "state_machine_arn",
                     "state_machine_arn was not specified but it is required when building CreateStateMachineOutput",
                 )
             })?,
             creation_date: self.creation_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_date",
                     "creation_date was not specified but it is required when building CreateStateMachineOutput",
                 )

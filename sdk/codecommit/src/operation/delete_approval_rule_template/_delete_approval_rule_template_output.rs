@@ -65,11 +65,11 @@ impl DeleteApprovalRuleTemplateOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_approval_rule_template::DeleteApprovalRuleTemplateOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_approval_rule_template::DeleteApprovalRuleTemplateOutput {
             approval_rule_template_id: self.approval_rule_template_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "approval_rule_template_id",
                     "approval_rule_template_id was not specified but it is required when building DeleteApprovalRuleTemplateOutput",
                 )

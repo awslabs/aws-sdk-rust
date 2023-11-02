@@ -44,7 +44,7 @@ impl GetQualificationTypeInputBuilder {
     /// Consumes the builder and constructs a [`GetQualificationTypeInput`](crate::operation::get_qualification_type::GetQualificationTypeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_qualification_type::GetQualificationTypeInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_qualification_type::GetQualificationTypeInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_qualification_type::GetQualificationTypeInput {
             qualification_type_id: self.qualification_type_id,

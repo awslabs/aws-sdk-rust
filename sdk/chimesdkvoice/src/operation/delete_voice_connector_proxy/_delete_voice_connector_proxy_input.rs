@@ -46,7 +46,7 @@ impl DeleteVoiceConnectorProxyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_voice_connector_proxy::DeleteVoiceConnectorProxyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_voice_connector_proxy::DeleteVoiceConnectorProxyInput {
             voice_connector_id: self.voice_connector_id,

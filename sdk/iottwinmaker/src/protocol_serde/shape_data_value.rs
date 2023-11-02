@@ -2,7 +2,7 @@
 pub fn ser_data_value(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DataValue,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.boolean_value {
         object.key("booleanValue").boolean(*var_1);
     }

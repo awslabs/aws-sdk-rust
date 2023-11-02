@@ -124,7 +124,7 @@ impl AcceptAddressTransferInputBuilder {
     /// Consumes the builder and constructs a [`AcceptAddressTransferInput`](crate::operation::accept_address_transfer::AcceptAddressTransferInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::accept_address_transfer::AcceptAddressTransferInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::accept_address_transfer::AcceptAddressTransferInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::accept_address_transfer::AcceptAddressTransferInput {
             address: self.address,

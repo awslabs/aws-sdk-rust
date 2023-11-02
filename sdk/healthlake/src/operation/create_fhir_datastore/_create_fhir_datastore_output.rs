@@ -134,29 +134,29 @@ impl CreateFhirDatastoreOutputBuilder {
     /// - [`datastore_endpoint`](crate::operation::create_fhir_datastore::builders::CreateFhirDatastoreOutputBuilder::datastore_endpoint)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_fhir_datastore::CreateFhirDatastoreOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_fhir_datastore::CreateFhirDatastoreOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_fhir_datastore::CreateFhirDatastoreOutput {
             datastore_id: self.datastore_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "datastore_id",
                     "datastore_id was not specified but it is required when building CreateFhirDatastoreOutput",
                 )
             })?,
             datastore_arn: self.datastore_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "datastore_arn",
                     "datastore_arn was not specified but it is required when building CreateFhirDatastoreOutput",
                 )
             })?,
             datastore_status: self.datastore_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "datastore_status",
                     "datastore_status was not specified but it is required when building CreateFhirDatastoreOutput",
                 )
             })?,
             datastore_endpoint: self.datastore_endpoint.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "datastore_endpoint",
                     "datastore_endpoint was not specified but it is required when building CreateFhirDatastoreOutput",
                 )

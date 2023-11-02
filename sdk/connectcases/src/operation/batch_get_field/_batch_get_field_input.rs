@@ -73,7 +73,7 @@ impl BatchGetFieldInputBuilder {
     /// Consumes the builder and constructs a [`BatchGetFieldInput`](crate::operation::batch_get_field::BatchGetFieldInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_get_field::BatchGetFieldInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::batch_get_field::BatchGetFieldInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::batch_get_field::BatchGetFieldInput {
             domain_id: self.domain_id,
             fields: self.fields,

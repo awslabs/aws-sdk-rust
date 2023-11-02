@@ -111,7 +111,7 @@ impl CreatePublishingDestinationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_publishing_destination::CreatePublishingDestinationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_publishing_destination::CreatePublishingDestinationInput {
             detector_id: self.detector_id,

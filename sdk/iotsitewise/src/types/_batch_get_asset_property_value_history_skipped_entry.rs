@@ -92,16 +92,16 @@ impl BatchGetAssetPropertyValueHistorySkippedEntryBuilder {
     /// - [`completion_status`](crate::types::builders::BatchGetAssetPropertyValueHistorySkippedEntryBuilder::completion_status)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::BatchGetAssetPropertyValueHistorySkippedEntry, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::BatchGetAssetPropertyValueHistorySkippedEntry, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::BatchGetAssetPropertyValueHistorySkippedEntry {
             entry_id: self.entry_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "entry_id",
                     "entry_id was not specified but it is required when building BatchGetAssetPropertyValueHistorySkippedEntry",
                 )
             })?,
             completion_status: self.completion_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "completion_status",
                     "completion_status was not specified but it is required when building BatchGetAssetPropertyValueHistorySkippedEntry",
                 )

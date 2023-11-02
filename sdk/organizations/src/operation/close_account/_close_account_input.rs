@@ -42,7 +42,9 @@ impl CloseAccountInputBuilder {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`CloseAccountInput`](crate::operation::close_account::CloseAccountInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::close_account::CloseAccountInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::close_account::CloseAccountInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::close_account::CloseAccountInput { account_id: self.account_id })
     }
 }

@@ -54,10 +54,10 @@ impl FilledMapConditionalFormattingBuilder {
     /// Consumes the builder and constructs a [`FilledMapConditionalFormatting`](crate::types::FilledMapConditionalFormatting).
     /// This method will fail if any of the following fields are not set:
     /// - [`conditional_formatting_options`](crate::types::builders::FilledMapConditionalFormattingBuilder::conditional_formatting_options)
-    pub fn build(self) -> ::std::result::Result<crate::types::FilledMapConditionalFormatting, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::FilledMapConditionalFormatting, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FilledMapConditionalFormatting {
             conditional_formatting_options: self.conditional_formatting_options.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "conditional_formatting_options",
                     "conditional_formatting_options was not specified but it is required when building FilledMapConditionalFormatting",
                 )

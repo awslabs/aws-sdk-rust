@@ -46,7 +46,7 @@ impl GetWirelessGatewayTaskInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_wireless_gateway_task::GetWirelessGatewayTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_wireless_gateway_task::GetWirelessGatewayTaskInput { id: self.id })
     }

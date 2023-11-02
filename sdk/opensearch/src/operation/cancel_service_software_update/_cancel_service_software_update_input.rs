@@ -47,7 +47,7 @@ impl CancelServiceSoftwareUpdateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_service_software_update::CancelServiceSoftwareUpdateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::cancel_service_software_update::CancelServiceSoftwareUpdateInput {
             domain_name: self.domain_name,

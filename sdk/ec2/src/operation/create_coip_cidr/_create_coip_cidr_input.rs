@@ -87,7 +87,7 @@ impl CreateCoipCidrInputBuilder {
     /// Consumes the builder and constructs a [`CreateCoipCidrInput`](crate::operation::create_coip_cidr::CreateCoipCidrInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_coip_cidr::CreateCoipCidrInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_coip_cidr::CreateCoipCidrInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_coip_cidr::CreateCoipCidrInput {
             cidr: self.cidr,
             coip_pool_id: self.coip_pool_id,

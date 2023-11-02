@@ -130,14 +130,14 @@ impl DescribeOrganizationHealthOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_organization_health::DescribeOrganizationHealthOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_organization_health::DescribeOrganizationHealthOutput {
             open_reactive_insights: self.open_reactive_insights.unwrap_or_default(),
             open_proactive_insights: self.open_proactive_insights.unwrap_or_default(),
             metrics_analyzed: self.metrics_analyzed.unwrap_or_default(),
             resource_hours: self.resource_hours.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_hours",
                     "resource_hours was not specified but it is required when building DescribeOrganizationHealthOutput",
                 )

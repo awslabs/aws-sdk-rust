@@ -52,7 +52,7 @@ where
 pub fn ser_thing_group_indexing_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ThingGroupIndexingConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("thingGroupIndexingMode").string(input.thing_group_indexing_mode.as_str());
     }

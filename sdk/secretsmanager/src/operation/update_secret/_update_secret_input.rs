@@ -219,7 +219,9 @@ impl UpdateSecretInputBuilder {
         &self.secret_string
     }
     /// Consumes the builder and constructs a [`UpdateSecretInput`](crate::operation::update_secret::UpdateSecretInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_secret::UpdateSecretInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_secret::UpdateSecretInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_secret::UpdateSecretInput {
             secret_id: self.secret_id,
             client_request_token: self.client_request_token,

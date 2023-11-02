@@ -113,11 +113,11 @@ impl ListInstanceProfilesForRoleOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_instance_profiles_for_role::ListInstanceProfilesForRoleOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_instance_profiles_for_role::ListInstanceProfilesForRoleOutput {
             instance_profiles: self.instance_profiles.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "instance_profiles",
                     "instance_profiles was not specified but it is required when building ListInstanceProfilesForRoleOutput",
                 )

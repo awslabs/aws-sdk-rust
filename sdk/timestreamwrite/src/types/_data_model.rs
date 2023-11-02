@@ -164,12 +164,12 @@ impl DataModelBuilder {
     /// Consumes the builder and constructs a [`DataModel`](crate::types::DataModel).
     /// This method will fail if any of the following fields are not set:
     /// - [`dimension_mappings`](crate::types::builders::DataModelBuilder::dimension_mappings)
-    pub fn build(self) -> ::std::result::Result<crate::types::DataModel, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DataModel, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DataModel {
             time_column: self.time_column,
             time_unit: self.time_unit,
             dimension_mappings: self.dimension_mappings.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "dimension_mappings",
                     "dimension_mappings was not specified but it is required when building DataModel",
                 )

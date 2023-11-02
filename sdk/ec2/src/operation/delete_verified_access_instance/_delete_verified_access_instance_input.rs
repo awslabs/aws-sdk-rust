@@ -88,7 +88,7 @@ impl DeleteVerifiedAccessInstanceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_verified_access_instance::DeleteVerifiedAccessInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_verified_access_instance::DeleteVerifiedAccessInstanceInput {
             verified_access_instance_id: self.verified_access_instance_id,

@@ -67,7 +67,7 @@ impl StopAutomationExecutionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_automation_execution::StopAutomationExecutionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::stop_automation_execution::StopAutomationExecutionInput {
             automation_execution_id: self.automation_execution_id,

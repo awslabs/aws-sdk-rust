@@ -108,7 +108,7 @@ impl RemoveThingFromThingGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_thing_from_thing_group::RemoveThingFromThingGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::remove_thing_from_thing_group::RemoveThingFromThingGroupInput {
             thing_group_name: self.thing_group_name,

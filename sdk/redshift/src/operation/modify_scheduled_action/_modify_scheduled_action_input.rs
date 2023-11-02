@@ -191,7 +191,7 @@ impl ModifyScheduledActionInputBuilder {
     /// Consumes the builder and constructs a [`ModifyScheduledActionInput`](crate::operation::modify_scheduled_action::ModifyScheduledActionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::modify_scheduled_action::ModifyScheduledActionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::modify_scheduled_action::ModifyScheduledActionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::modify_scheduled_action::ModifyScheduledActionInput {
             scheduled_action_name: self.scheduled_action_name,

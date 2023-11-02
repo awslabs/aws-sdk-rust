@@ -130,7 +130,7 @@ where
 pub fn ser_dash_package(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DashPackage,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.ad_triggers {
         let mut array_2 = object.key("adTriggers").start_array();
         for item_3 in var_1 {

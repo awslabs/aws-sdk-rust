@@ -86,17 +86,17 @@ impl NotifyObjectCompleteOutputBuilder {
     /// - [`object_checksum_algorithm`](crate::operation::notify_object_complete::builders::NotifyObjectCompleteOutputBuilder::object_checksum_algorithm)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::notify_object_complete::NotifyObjectCompleteOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::notify_object_complete::NotifyObjectCompleteOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::notify_object_complete::NotifyObjectCompleteOutput {
             object_checksum: self.object_checksum.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "object_checksum",
                     "object_checksum was not specified but it is required when building NotifyObjectCompleteOutput",
                 )
             })?,
             object_checksum_algorithm: self.object_checksum_algorithm.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "object_checksum_algorithm",
                     "object_checksum_algorithm was not specified but it is required when building NotifyObjectCompleteOutput",
                 )

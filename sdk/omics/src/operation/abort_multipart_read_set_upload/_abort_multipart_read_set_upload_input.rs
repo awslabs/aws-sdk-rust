@@ -68,7 +68,7 @@ impl AbortMultipartReadSetUploadInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::abort_multipart_read_set_upload::AbortMultipartReadSetUploadInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::abort_multipart_read_set_upload::AbortMultipartReadSetUploadInput {
             sequence_store_id: self.sequence_store_id,

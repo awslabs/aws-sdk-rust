@@ -232,7 +232,9 @@ impl CreateLaunchInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateLaunchInput`](crate::operation::create_launch::CreateLaunchInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_launch::CreateLaunchInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_launch::CreateLaunchInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_launch::CreateLaunchInput {
             project: self.project,
             name: self.name,

@@ -96,7 +96,7 @@ impl GetInsightsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`GetInsightsInput`](crate::operation::get_insights::GetInsightsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_insights::GetInsightsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_insights::GetInsightsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_insights::GetInsightsInput {
             insight_arns: self.insight_arns,
             next_token: self.next_token,

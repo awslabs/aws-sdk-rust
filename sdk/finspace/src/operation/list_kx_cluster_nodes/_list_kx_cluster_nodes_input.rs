@@ -108,7 +108,7 @@ impl ListKxClusterNodesInputBuilder {
     /// Consumes the builder and constructs a [`ListKxClusterNodesInput`](crate::operation::list_kx_cluster_nodes::ListKxClusterNodesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_kx_cluster_nodes::ListKxClusterNodesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_kx_cluster_nodes::ListKxClusterNodesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_kx_cluster_nodes::ListKxClusterNodesInput {
             environment_id: self.environment_id,

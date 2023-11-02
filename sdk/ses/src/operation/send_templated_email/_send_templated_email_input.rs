@@ -309,7 +309,8 @@ impl SendTemplatedEmailInputBuilder {
     /// Consumes the builder and constructs a [`SendTemplatedEmailInput`](crate::operation::send_templated_email::SendTemplatedEmailInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::send_templated_email::SendTemplatedEmailInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::send_templated_email::SendTemplatedEmailInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::send_templated_email::SendTemplatedEmailInput {
             source: self.source,
             destination: self.destination,

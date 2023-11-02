@@ -74,16 +74,16 @@ impl OptedOutFilterBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::OptedOutFilterBuilder::name)
     /// - [`values`](crate::types::builders::OptedOutFilterBuilder::values)
-    pub fn build(self) -> ::std::result::Result<crate::types::OptedOutFilter, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::OptedOutFilter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::OptedOutFilter {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building OptedOutFilter",
                 )
             })?,
             values: self.values.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "values",
                     "values was not specified but it is required when building OptedOutFilter",
                 )

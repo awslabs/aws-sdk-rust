@@ -44,7 +44,7 @@ impl DeleteCommentContentInputBuilder {
     /// Consumes the builder and constructs a [`DeleteCommentContentInput`](crate::operation::delete_comment_content::DeleteCommentContentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_comment_content::DeleteCommentContentInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_comment_content::DeleteCommentContentInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_comment_content::DeleteCommentContentInput { comment_id: self.comment_id })
     }

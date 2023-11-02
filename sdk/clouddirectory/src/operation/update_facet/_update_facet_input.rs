@@ -114,7 +114,7 @@ impl UpdateFacetInputBuilder {
         &self.object_type
     }
     /// Consumes the builder and constructs a [`UpdateFacetInput`](crate::operation::update_facet::UpdateFacetInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_facet::UpdateFacetInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_facet::UpdateFacetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_facet::UpdateFacetInput {
             schema_arn: self.schema_arn,
             name: self.name,

@@ -95,7 +95,7 @@ impl CreateAccessPreviewInputBuilder {
     /// Consumes the builder and constructs a [`CreateAccessPreviewInput`](crate::operation::create_access_preview::CreateAccessPreviewInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_access_preview::CreateAccessPreviewInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_access_preview::CreateAccessPreviewInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_access_preview::CreateAccessPreviewInput {
             analyzer_arn: self.analyzer_arn,

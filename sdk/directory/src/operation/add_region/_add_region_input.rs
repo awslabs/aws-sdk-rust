@@ -86,7 +86,7 @@ impl AddRegionInputBuilder {
         &self.vpc_settings
     }
     /// Consumes the builder and constructs a [`AddRegionInput`](crate::operation::add_region::AddRegionInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::add_region::AddRegionInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::add_region::AddRegionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::add_region::AddRegionInput {
             directory_id: self.directory_id,
             region_name: self.region_name,

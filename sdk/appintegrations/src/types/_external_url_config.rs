@@ -75,10 +75,10 @@ impl ExternalUrlConfigBuilder {
     /// Consumes the builder and constructs a [`ExternalUrlConfig`](crate::types::ExternalUrlConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`access_url`](crate::types::builders::ExternalUrlConfigBuilder::access_url)
-    pub fn build(self) -> ::std::result::Result<crate::types::ExternalUrlConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ExternalUrlConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ExternalUrlConfig {
             access_url: self.access_url.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "access_url",
                     "access_url was not specified but it is required when building ExternalUrlConfig",
                 )

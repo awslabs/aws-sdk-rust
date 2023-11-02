@@ -124,7 +124,7 @@ impl DescribeConfigurationSetsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_configuration_sets::DescribeConfigurationSetsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_configuration_sets::DescribeConfigurationSetsInput {
             configuration_set_names: self.configuration_set_names,

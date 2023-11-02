@@ -75,7 +75,7 @@ impl GetBucketAclInputBuilder {
     /// Consumes the builder and constructs a [`GetBucketAclInput`](crate::operation::get_bucket_acl::GetBucketAclInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_bucket_acl::GetBucketAclInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_bucket_acl::GetBucketAclInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_bucket_acl::GetBucketAclInput {
             bucket: self.bucket,
             expected_bucket_owner: self.expected_bucket_owner,

@@ -131,7 +131,7 @@ impl ListGroupsOlderThanOrderingIdInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_groups_older_than_ordering_id::ListGroupsOlderThanOrderingIdInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_groups_older_than_ordering_id::ListGroupsOlderThanOrderingIdInput {
             index_id: self.index_id,

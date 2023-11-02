@@ -173,15 +173,15 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for AddLayerVers
             fn uri_base(
                 _input: &crate::operation::add_layer_version_permission::AddLayerVersionPermissionInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 use ::std::fmt::Write as _;
                 let input_1 = &_input.layer_name;
                 let input_1 = input_1
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("layer_name", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("layer_name", "cannot be empty or unset"))?;
                 let layer_name = ::aws_smithy_http::label::fmt_string(input_1, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if layer_name.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "layer_name",
                         "cannot be empty or unset",
                     ));
@@ -189,11 +189,11 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for AddLayerVers
                 let input_2 = &_input.version_number;
                 let input_2 = input_2
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("version_number", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("version_number", "cannot be empty or unset"))?;
                 let mut version_number_encoder = ::aws_smithy_types::primitive::Encoder::from(*input_2);
                 let version_number = version_number_encoder.encode();
                 if version_number.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "version_number",
                         "cannot be empty or unset",
                     ));
@@ -210,7 +210,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for AddLayerVers
             fn uri_query(
                 _input: &crate::operation::add_layer_version_permission::AddLayerVersionPermissionInput,
                 mut output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_3) = &_input.revision_id {
                     {
@@ -223,7 +223,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for AddLayerVers
             fn update_http_builder(
                 input: &crate::operation::add_layer_version_permission::AddLayerVersionPermissionInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -233,7 +233,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for AddLayerVers
             builder = _header_serialization_settings.set_default_header(builder, ::http::header::CONTENT_TYPE, "application/json");
             builder
         };
-        let body = ::aws_smithy_http::body::SdkBody::from(
+        let body = ::aws_smithy_types::body::SdkBody::from(
             crate::protocol_serde::shape_add_layer_version_permission::ser_add_layer_version_permission_input(&input)?,
         );
         if let Some(content_length) = body.content_length() {

@@ -329,7 +329,7 @@ impl DescribeRecipeOutputBuilder {
     /// - [`name`](crate::operation::describe_recipe::builders::DescribeRecipeOutputBuilder::name)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_recipe::DescribeRecipeOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_recipe::DescribeRecipeOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_recipe::DescribeRecipeOutput {
             created_by: self.created_by,
             create_date: self.create_date,
@@ -340,7 +340,7 @@ impl DescribeRecipeOutputBuilder {
             published_date: self.published_date,
             description: self.description,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building DescribeRecipeOutput",
                 )

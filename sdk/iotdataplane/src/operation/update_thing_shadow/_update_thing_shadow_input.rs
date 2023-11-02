@@ -88,7 +88,7 @@ impl UpdateThingShadowInputBuilder {
     /// Consumes the builder and constructs a [`UpdateThingShadowInput`](crate::operation::update_thing_shadow::UpdateThingShadowInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_thing_shadow::UpdateThingShadowInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_thing_shadow::UpdateThingShadowInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_thing_shadow::UpdateThingShadowInput {
             thing_name: self.thing_name,
             shadow_name: self.shadow_name,

@@ -44,7 +44,7 @@ impl InferIcd10CmInputBuilder {
     /// Consumes the builder and constructs a [`InferIcd10CmInput`](crate::operation::infer_icd10_cm::InferIcd10CmInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::infer_icd10_cm::InferIcd10CmInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::infer_icd10_cm::InferIcd10CmInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::infer_icd10_cm::InferIcd10CmInput { text: self.text })
     }
 }

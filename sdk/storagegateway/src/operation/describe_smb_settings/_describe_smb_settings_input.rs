@@ -44,7 +44,7 @@ impl DescribeSmbSettingsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeSmbSettingsInput`](crate::operation::describe_smb_settings::DescribeSmbSettingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_smb_settings::DescribeSmbSettingsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_smb_settings::DescribeSmbSettingsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_smb_settings::DescribeSmbSettingsInput {
             gateway_arn: self.gateway_arn,

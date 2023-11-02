@@ -64,7 +64,7 @@ impl DeleteTopicInputBuilder {
         &self.topic_id
     }
     /// Consumes the builder and constructs a [`DeleteTopicInput`](crate::operation::delete_topic::DeleteTopicInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_topic::DeleteTopicInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_topic::DeleteTopicInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_topic::DeleteTopicInput {
             aws_account_id: self.aws_account_id,
             topic_id: self.topic_id,

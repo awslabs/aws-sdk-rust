@@ -67,7 +67,7 @@ impl DeleteNetworkInsightsAnalysisInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_network_insights_analysis::DeleteNetworkInsightsAnalysisInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_network_insights_analysis::DeleteNetworkInsightsAnalysisInput {
             dry_run: self.dry_run,

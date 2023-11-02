@@ -46,10 +46,10 @@ impl CustomDomainConfigTypeBuilder {
     /// Consumes the builder and constructs a [`CustomDomainConfigType`](crate::types::CustomDomainConfigType).
     /// This method will fail if any of the following fields are not set:
     /// - [`certificate_arn`](crate::types::builders::CustomDomainConfigTypeBuilder::certificate_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::CustomDomainConfigType, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CustomDomainConfigType, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CustomDomainConfigType {
             certificate_arn: self.certificate_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "certificate_arn",
                     "certificate_arn was not specified but it is required when building CustomDomainConfigType",
                 )

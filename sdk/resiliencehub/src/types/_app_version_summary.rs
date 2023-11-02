@@ -109,10 +109,10 @@ impl AppVersionSummaryBuilder {
     /// Consumes the builder and constructs a [`AppVersionSummary`](crate::types::AppVersionSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`app_version`](crate::types::builders::AppVersionSummaryBuilder::app_version)
-    pub fn build(self) -> ::std::result::Result<crate::types::AppVersionSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AppVersionSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AppVersionSummary {
             app_version: self.app_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "app_version",
                     "app_version was not specified but it is required when building AppVersionSummary",
                 )

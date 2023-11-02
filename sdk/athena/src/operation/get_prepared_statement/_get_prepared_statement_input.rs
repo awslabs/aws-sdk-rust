@@ -66,7 +66,7 @@ impl GetPreparedStatementInputBuilder {
     /// Consumes the builder and constructs a [`GetPreparedStatementInput`](crate::operation::get_prepared_statement::GetPreparedStatementInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_prepared_statement::GetPreparedStatementInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_prepared_statement::GetPreparedStatementInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_prepared_statement::GetPreparedStatementInput {
             statement_name: self.statement_name,

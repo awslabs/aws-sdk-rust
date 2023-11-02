@@ -130,10 +130,10 @@ impl GrowthRateComputationBuilder {
     /// Consumes the builder and constructs a [`GrowthRateComputation`](crate::types::GrowthRateComputation).
     /// This method will fail if any of the following fields are not set:
     /// - [`computation_id`](crate::types::builders::GrowthRateComputationBuilder::computation_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::GrowthRateComputation, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::GrowthRateComputation, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::GrowthRateComputation {
             computation_id: self.computation_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "computation_id",
                     "computation_id was not specified but it is required when building GrowthRateComputation",
                 )

@@ -122,16 +122,16 @@ impl TaskSubmittedEventDetailsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`resource_type`](crate::types::builders::TaskSubmittedEventDetailsBuilder::resource_type)
     /// - [`resource`](crate::types::builders::TaskSubmittedEventDetailsBuilder::resource)
-    pub fn build(self) -> ::std::result::Result<crate::types::TaskSubmittedEventDetails, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TaskSubmittedEventDetails, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TaskSubmittedEventDetails {
             resource_type: self.resource_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_type",
                     "resource_type was not specified but it is required when building TaskSubmittedEventDetails",
                 )
             })?,
             resource: self.resource.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource",
                     "resource was not specified but it is required when building TaskSubmittedEventDetails",
                 )

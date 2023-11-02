@@ -314,53 +314,53 @@ impl KeyBuilder {
     /// - [`key_state`](crate::types::builders::KeyBuilder::key_state)
     /// - [`key_origin`](crate::types::builders::KeyBuilder::key_origin)
     /// - [`create_timestamp`](crate::types::builders::KeyBuilder::create_timestamp)
-    pub fn build(self) -> ::std::result::Result<crate::types::Key, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Key, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Key {
             key_arn: self.key_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "key_arn",
                     "key_arn was not specified but it is required when building Key",
                 )
             })?,
             key_attributes: self.key_attributes,
             key_check_value: self.key_check_value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "key_check_value",
                     "key_check_value was not specified but it is required when building Key",
                 )
             })?,
             key_check_value_algorithm: self.key_check_value_algorithm.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "key_check_value_algorithm",
                     "key_check_value_algorithm was not specified but it is required when building Key",
                 )
             })?,
             enabled: self.enabled.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "enabled",
                     "enabled was not specified but it is required when building Key",
                 )
             })?,
             exportable: self.exportable.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "exportable",
                     "exportable was not specified but it is required when building Key",
                 )
             })?,
             key_state: self.key_state.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "key_state",
                     "key_state was not specified but it is required when building Key",
                 )
             })?,
             key_origin: self.key_origin.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "key_origin",
                     "key_origin was not specified but it is required when building Key",
                 )
             })?,
             create_timestamp: self.create_timestamp.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "create_timestamp",
                     "create_timestamp was not specified but it is required when building Key",
                 )

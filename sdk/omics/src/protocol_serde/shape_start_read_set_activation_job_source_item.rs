@@ -2,7 +2,7 @@
 pub fn ser_start_read_set_activation_job_source_item(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::StartReadSetActivationJobSourceItem,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("readSetId").string(input.read_set_id.as_str());
     }

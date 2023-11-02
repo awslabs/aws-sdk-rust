@@ -75,10 +75,10 @@ impl RefreshTokenRequestBodyBuilder {
     /// Consumes the builder and constructs a [`RefreshTokenRequestBody`](crate::types::RefreshTokenRequestBody).
     /// This method will fail if any of the following fields are not set:
     /// - [`token`](crate::types::builders::RefreshTokenRequestBodyBuilder::token)
-    pub fn build(self) -> ::std::result::Result<crate::types::RefreshTokenRequestBody, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RefreshTokenRequestBody, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RefreshTokenRequestBody {
             token: self.token.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "token",
                     "token was not specified but it is required when building RefreshTokenRequestBody",
                 )

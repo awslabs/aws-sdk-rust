@@ -170,22 +170,22 @@ impl IpSetForwardedIpConfigBuilder {
     /// - [`header_name`](crate::types::builders::IpSetForwardedIpConfigBuilder::header_name)
     /// - [`fallback_behavior`](crate::types::builders::IpSetForwardedIpConfigBuilder::fallback_behavior)
     /// - [`position`](crate::types::builders::IpSetForwardedIpConfigBuilder::position)
-    pub fn build(self) -> ::std::result::Result<crate::types::IpSetForwardedIpConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::IpSetForwardedIpConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::IpSetForwardedIpConfig {
             header_name: self.header_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "header_name",
                     "header_name was not specified but it is required when building IpSetForwardedIpConfig",
                 )
             })?,
             fallback_behavior: self.fallback_behavior.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "fallback_behavior",
                     "fallback_behavior was not specified but it is required when building IpSetForwardedIpConfig",
                 )
             })?,
             position: self.position.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "position",
                     "position was not specified but it is required when building IpSetForwardedIpConfig",
                 )

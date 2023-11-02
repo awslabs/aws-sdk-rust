@@ -117,7 +117,7 @@ impl UpdateResourceShareInputBuilder {
     /// Consumes the builder and constructs a [`UpdateResourceShareInput`](crate::operation::update_resource_share::UpdateResourceShareInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_resource_share::UpdateResourceShareInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_resource_share::UpdateResourceShareInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_resource_share::UpdateResourceShareInput {
             resource_share_arn: self.resource_share_arn,

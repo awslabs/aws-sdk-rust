@@ -66,7 +66,7 @@ impl CreateTagOptionInputBuilder {
     /// Consumes the builder and constructs a [`CreateTagOptionInput`](crate::operation::create_tag_option::CreateTagOptionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_tag_option::CreateTagOptionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_tag_option::CreateTagOptionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_tag_option::CreateTagOptionInput {
             key: self.key,
             value: self.value,

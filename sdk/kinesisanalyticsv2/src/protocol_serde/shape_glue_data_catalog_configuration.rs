@@ -2,7 +2,7 @@
 pub fn ser_glue_data_catalog_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GlueDataCatalogConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("DatabaseARN").string(input.database_arn.as_str());
     }

@@ -72,10 +72,10 @@ impl EndpointStateBuilder {
     /// Consumes the builder and constructs a [`EndpointState`](crate::types::EndpointState).
     /// This method will fail if any of the following fields are not set:
     /// - [`status`](crate::types::builders::EndpointStateBuilder::status)
-    pub fn build(self) -> ::std::result::Result<crate::types::EndpointState, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::EndpointState, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EndpointState {
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building EndpointState",
                 )

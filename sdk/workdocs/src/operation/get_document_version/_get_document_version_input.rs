@@ -140,7 +140,8 @@ impl GetDocumentVersionInputBuilder {
     /// Consumes the builder and constructs a [`GetDocumentVersionInput`](crate::operation::get_document_version::GetDocumentVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_document_version::GetDocumentVersionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_document_version::GetDocumentVersionInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::get_document_version::GetDocumentVersionInput {
             authentication_token: self.authentication_token,
             document_id: self.document_id,

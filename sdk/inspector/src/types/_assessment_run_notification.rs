@@ -154,23 +154,23 @@ impl AssessmentRunNotificationBuilder {
     /// - [`date`](crate::types::builders::AssessmentRunNotificationBuilder::date)
     /// - [`event`](crate::types::builders::AssessmentRunNotificationBuilder::event)
     /// - [`error`](crate::types::builders::AssessmentRunNotificationBuilder::error)
-    pub fn build(self) -> ::std::result::Result<crate::types::AssessmentRunNotification, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AssessmentRunNotification, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AssessmentRunNotification {
             date: self.date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "date",
                     "date was not specified but it is required when building AssessmentRunNotification",
                 )
             })?,
             event: self.event.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "event",
                     "event was not specified but it is required when building AssessmentRunNotification",
                 )
             })?,
             message: self.message,
             error: self.error.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "error",
                     "error was not specified but it is required when building AssessmentRunNotification",
                 )

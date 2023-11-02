@@ -44,7 +44,7 @@ impl StopGuiSessionInputBuilder {
     /// Consumes the builder and constructs a [`StopGuiSessionInput`](crate::operation::stop_gui_session::StopGuiSessionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_gui_session::StopGuiSessionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::stop_gui_session::StopGuiSessionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_gui_session::StopGuiSessionInput {
             resource_name: self.resource_name,
         })

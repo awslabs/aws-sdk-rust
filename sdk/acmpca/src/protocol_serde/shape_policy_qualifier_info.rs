@@ -2,7 +2,7 @@
 pub fn ser_policy_qualifier_info(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PolicyQualifierInfo,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("PolicyQualifierId").string(input.policy_qualifier_id.as_str());
     }

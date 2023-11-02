@@ -130,7 +130,7 @@ impl SetTaskStatusInputBuilder {
     /// Consumes the builder and constructs a [`SetTaskStatusInput`](crate::operation::set_task_status::SetTaskStatusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::set_task_status::SetTaskStatusInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::set_task_status::SetTaskStatusInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::set_task_status::SetTaskStatusInput {
             task_id: self.task_id,
             task_status: self.task_status,

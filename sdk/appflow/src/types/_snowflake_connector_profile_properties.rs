@@ -188,22 +188,22 @@ impl SnowflakeConnectorProfilePropertiesBuilder {
     /// - [`warehouse`](crate::types::builders::SnowflakeConnectorProfilePropertiesBuilder::warehouse)
     /// - [`stage`](crate::types::builders::SnowflakeConnectorProfilePropertiesBuilder::stage)
     /// - [`bucket_name`](crate::types::builders::SnowflakeConnectorProfilePropertiesBuilder::bucket_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::SnowflakeConnectorProfileProperties, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SnowflakeConnectorProfileProperties, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SnowflakeConnectorProfileProperties {
             warehouse: self.warehouse.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "warehouse",
                     "warehouse was not specified but it is required when building SnowflakeConnectorProfileProperties",
                 )
             })?,
             stage: self.stage.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "stage",
                     "stage was not specified but it is required when building SnowflakeConnectorProfileProperties",
                 )
             })?,
             bucket_name: self.bucket_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "bucket_name",
                     "bucket_name was not specified but it is required when building SnowflakeConnectorProfileProperties",
                 )

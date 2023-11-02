@@ -51,7 +51,7 @@ impl DeleteInvitationsInputBuilder {
     /// Consumes the builder and constructs a [`DeleteInvitationsInput`](crate::operation::delete_invitations::DeleteInvitationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_invitations::DeleteInvitationsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_invitations::DeleteInvitationsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_invitations::DeleteInvitationsInput {
             account_ids: self.account_ids,
         })

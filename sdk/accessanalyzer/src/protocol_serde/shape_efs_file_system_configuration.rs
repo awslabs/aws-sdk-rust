@@ -2,7 +2,7 @@
 pub fn ser_efs_file_system_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EfsFileSystemConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.file_system_policy {
         object.key("fileSystemPolicy").string(var_1.as_str());
     }

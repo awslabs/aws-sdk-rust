@@ -2,7 +2,7 @@
 pub fn ser_ip_organization_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IpOrganizationDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.asn {
         object.key("Asn").number(
             #[allow(clippy::useless_conversion)]

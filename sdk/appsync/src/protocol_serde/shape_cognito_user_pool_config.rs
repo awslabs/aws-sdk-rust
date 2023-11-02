@@ -2,7 +2,7 @@
 pub fn ser_cognito_user_pool_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CognitoUserPoolConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("userPoolId").string(input.user_pool_id.as_str());
     }

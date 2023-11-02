@@ -91,16 +91,16 @@ impl ParticipantTimerConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`participant_role`](crate::types::builders::ParticipantTimerConfigurationBuilder::participant_role)
     /// - [`timer_type`](crate::types::builders::ParticipantTimerConfigurationBuilder::timer_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::ParticipantTimerConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ParticipantTimerConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ParticipantTimerConfiguration {
             participant_role: self.participant_role.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "participant_role",
                     "participant_role was not specified but it is required when building ParticipantTimerConfiguration",
                 )
             })?,
             timer_type: self.timer_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "timer_type",
                     "timer_type was not specified but it is required when building ParticipantTimerConfiguration",
                 )

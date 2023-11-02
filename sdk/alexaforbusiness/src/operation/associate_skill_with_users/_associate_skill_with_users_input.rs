@@ -46,7 +46,7 @@ impl AssociateSkillWithUsersInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_skill_with_users::AssociateSkillWithUsersInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::associate_skill_with_users::AssociateSkillWithUsersInput { skill_id: self.skill_id })
     }

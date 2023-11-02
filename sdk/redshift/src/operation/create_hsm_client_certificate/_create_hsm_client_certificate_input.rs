@@ -76,7 +76,7 @@ impl CreateHsmClientCertificateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_hsm_client_certificate::CreateHsmClientCertificateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_hsm_client_certificate::CreateHsmClientCertificateInput {
             hsm_client_certificate_identifier: self.hsm_client_certificate_identifier,

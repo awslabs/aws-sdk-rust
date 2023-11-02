@@ -473,29 +473,29 @@ impl DescribeExecutionOutputBuilder {
     /// - [`start_date`](crate::operation::describe_execution::builders::DescribeExecutionOutputBuilder::start_date)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_execution::DescribeExecutionOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_execution::DescribeExecutionOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_execution::DescribeExecutionOutput {
             execution_arn: self.execution_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "execution_arn",
                     "execution_arn was not specified but it is required when building DescribeExecutionOutput",
                 )
             })?,
             state_machine_arn: self.state_machine_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "state_machine_arn",
                     "state_machine_arn was not specified but it is required when building DescribeExecutionOutput",
                 )
             })?,
             name: self.name,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building DescribeExecutionOutput",
                 )
             })?,
             start_date: self.start_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "start_date",
                     "start_date was not specified but it is required when building DescribeExecutionOutput",
                 )

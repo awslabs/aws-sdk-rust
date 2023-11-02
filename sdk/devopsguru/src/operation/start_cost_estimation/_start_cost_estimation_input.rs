@@ -65,7 +65,7 @@ impl StartCostEstimationInputBuilder {
     /// Consumes the builder and constructs a [`StartCostEstimationInput`](crate::operation::start_cost_estimation::StartCostEstimationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_cost_estimation::StartCostEstimationInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::start_cost_estimation::StartCostEstimationInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_cost_estimation::StartCostEstimationInput {
             resource_collection: self.resource_collection,

@@ -2,7 +2,7 @@
 pub fn ser_document_reader_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DocumentReaderConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("DocumentReadAction").string(input.document_read_action.as_str());
     }

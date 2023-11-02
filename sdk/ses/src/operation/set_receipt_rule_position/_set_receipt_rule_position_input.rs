@@ -90,7 +90,7 @@ impl SetReceiptRulePositionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_receipt_rule_position::SetReceiptRulePositionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::set_receipt_rule_position::SetReceiptRulePositionInput {
             rule_set_name: self.rule_set_name,

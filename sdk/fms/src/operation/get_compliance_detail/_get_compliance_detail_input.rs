@@ -66,7 +66,7 @@ impl GetComplianceDetailInputBuilder {
     /// Consumes the builder and constructs a [`GetComplianceDetailInput`](crate::operation::get_compliance_detail::GetComplianceDetailInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_compliance_detail::GetComplianceDetailInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_compliance_detail::GetComplianceDetailInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_compliance_detail::GetComplianceDetailInput {
             policy_id: self.policy_id,

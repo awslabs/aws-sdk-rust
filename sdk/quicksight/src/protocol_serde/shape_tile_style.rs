@@ -2,7 +2,7 @@
 pub fn ser_tile_style(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TileStyle,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.border {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Border").start_object();

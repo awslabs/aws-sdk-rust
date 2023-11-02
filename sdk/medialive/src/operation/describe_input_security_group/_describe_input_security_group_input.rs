@@ -47,7 +47,7 @@ impl DescribeInputSecurityGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_input_security_group::DescribeInputSecurityGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_input_security_group::DescribeInputSecurityGroupInput {
             input_security_group_id: self.input_security_group_id,

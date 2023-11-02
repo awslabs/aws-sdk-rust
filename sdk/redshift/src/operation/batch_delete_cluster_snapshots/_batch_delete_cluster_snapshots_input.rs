@@ -53,7 +53,7 @@ impl BatchDeleteClusterSnapshotsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_delete_cluster_snapshots::BatchDeleteClusterSnapshotsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::batch_delete_cluster_snapshots::BatchDeleteClusterSnapshotsInput {
             identifiers: self.identifiers,

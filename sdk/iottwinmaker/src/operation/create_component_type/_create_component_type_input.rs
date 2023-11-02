@@ -282,7 +282,7 @@ impl CreateComponentTypeInputBuilder {
     /// Consumes the builder and constructs a [`CreateComponentTypeInput`](crate::operation::create_component_type::CreateComponentTypeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_component_type::CreateComponentTypeInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_component_type::CreateComponentTypeInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_component_type::CreateComponentTypeInput {
             workspace_id: self.workspace_id,

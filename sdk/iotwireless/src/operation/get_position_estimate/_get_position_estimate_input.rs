@@ -135,7 +135,7 @@ impl GetPositionEstimateInputBuilder {
     /// Consumes the builder and constructs a [`GetPositionEstimateInput`](crate::operation::get_position_estimate::GetPositionEstimateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_position_estimate::GetPositionEstimateInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_position_estimate::GetPositionEstimateInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_position_estimate::GetPositionEstimateInput {
             wi_fi_access_points: self.wi_fi_access_points,

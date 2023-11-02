@@ -101,7 +101,7 @@ impl UpdateResourceSetInputBuilder {
     /// Consumes the builder and constructs a [`UpdateResourceSetInput`](crate::operation::update_resource_set::UpdateResourceSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_resource_set::UpdateResourceSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_resource_set::UpdateResourceSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_resource_set::UpdateResourceSetInput {
             resource_set_name: self.resource_set_name,
             resource_set_type: self.resource_set_type,

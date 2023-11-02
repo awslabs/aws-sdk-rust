@@ -89,12 +89,12 @@ impl ListEndpointAccessOutputBuilder {
     /// - [`endpoints`](crate::operation::list_endpoint_access::builders::ListEndpointAccessOutputBuilder::endpoints)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_endpoint_access::ListEndpointAccessOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_endpoint_access::ListEndpointAccessOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_endpoint_access::ListEndpointAccessOutput {
             next_token: self.next_token,
             endpoints: self.endpoints.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "endpoints",
                     "endpoints was not specified but it is required when building ListEndpointAccessOutput",
                 )

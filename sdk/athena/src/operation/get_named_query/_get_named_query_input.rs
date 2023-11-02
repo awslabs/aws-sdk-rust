@@ -44,7 +44,7 @@ impl GetNamedQueryInputBuilder {
     /// Consumes the builder and constructs a [`GetNamedQueryInput`](crate::operation::get_named_query::GetNamedQueryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_named_query::GetNamedQueryInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_named_query::GetNamedQueryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_named_query::GetNamedQueryInput {
             named_query_id: self.named_query_id,
         })

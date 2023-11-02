@@ -290,7 +290,7 @@ impl StartBackupJobInputBuilder {
     /// Consumes the builder and constructs a [`StartBackupJobInput`](crate::operation::start_backup_job::StartBackupJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_backup_job::StartBackupJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_backup_job::StartBackupJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_backup_job::StartBackupJobInput {
             backup_vault_name: self.backup_vault_name,
             resource_arn: self.resource_arn,

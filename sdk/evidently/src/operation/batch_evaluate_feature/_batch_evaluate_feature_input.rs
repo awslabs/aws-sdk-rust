@@ -73,7 +73,7 @@ impl BatchEvaluateFeatureInputBuilder {
     /// Consumes the builder and constructs a [`BatchEvaluateFeatureInput`](crate::operation::batch_evaluate_feature::BatchEvaluateFeatureInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_evaluate_feature::BatchEvaluateFeatureInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::batch_evaluate_feature::BatchEvaluateFeatureInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::batch_evaluate_feature::BatchEvaluateFeatureInput {
             project: self.project,

@@ -119,7 +119,7 @@ impl PutEmailIdentityMailFromAttributesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_email_identity_mail_from_attributes::PutEmailIdentityMailFromAttributesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::put_email_identity_mail_from_attributes::PutEmailIdentityMailFromAttributesInput {

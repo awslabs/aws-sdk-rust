@@ -102,7 +102,7 @@ impl ResetCacheParameterGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reset_cache_parameter_group::ResetCacheParameterGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::reset_cache_parameter_group::ResetCacheParameterGroupInput {
             cache_parameter_group_name: self.cache_parameter_group_name,

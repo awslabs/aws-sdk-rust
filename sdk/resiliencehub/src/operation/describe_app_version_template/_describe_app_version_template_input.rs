@@ -68,7 +68,7 @@ impl DescribeAppVersionTemplateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_app_version_template::DescribeAppVersionTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_app_version_template::DescribeAppVersionTemplateInput {
             app_arn: self.app_arn,

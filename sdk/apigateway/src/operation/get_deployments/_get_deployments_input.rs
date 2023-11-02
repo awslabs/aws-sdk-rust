@@ -87,7 +87,7 @@ impl GetDeploymentsInputBuilder {
     /// Consumes the builder and constructs a [`GetDeploymentsInput`](crate::operation::get_deployments::GetDeploymentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_deployments::GetDeploymentsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_deployments::GetDeploymentsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_deployments::GetDeploymentsInput {
             rest_api_id: self.rest_api_id,
             position: self.position,

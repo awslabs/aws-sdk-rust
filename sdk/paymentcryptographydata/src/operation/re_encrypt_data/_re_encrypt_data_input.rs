@@ -143,7 +143,7 @@ impl ReEncryptDataInputBuilder {
     /// Consumes the builder and constructs a [`ReEncryptDataInput`](crate::operation::re_encrypt_data::ReEncryptDataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::re_encrypt_data::ReEncryptDataInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::re_encrypt_data::ReEncryptDataInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::re_encrypt_data::ReEncryptDataInput {
             incoming_key_identifier: self.incoming_key_identifier,
             outgoing_key_identifier: self.outgoing_key_identifier,

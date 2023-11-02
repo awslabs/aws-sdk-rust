@@ -2,7 +2,7 @@
 pub fn ser_data_lake_lifecycle_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DataLakeLifecycleConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.expiration {
         #[allow(unused_mut)]
         let mut object_2 = object.key("expiration").start_object();

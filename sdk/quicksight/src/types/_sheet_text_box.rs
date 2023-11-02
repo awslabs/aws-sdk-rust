@@ -67,10 +67,10 @@ impl SheetTextBoxBuilder {
     /// Consumes the builder and constructs a [`SheetTextBox`](crate::types::SheetTextBox).
     /// This method will fail if any of the following fields are not set:
     /// - [`sheet_text_box_id`](crate::types::builders::SheetTextBoxBuilder::sheet_text_box_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::SheetTextBox, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SheetTextBox, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SheetTextBox {
             sheet_text_box_id: self.sheet_text_box_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "sheet_text_box_id",
                     "sheet_text_box_id was not specified but it is required when building SheetTextBox",
                 )

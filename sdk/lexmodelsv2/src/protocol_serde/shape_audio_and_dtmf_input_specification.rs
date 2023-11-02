@@ -2,7 +2,7 @@
 pub fn ser_audio_and_dtmf_input_specification(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AudioAndDtmfInputSpecification,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("startTimeoutMs").number(
             #[allow(clippy::useless_conversion)]

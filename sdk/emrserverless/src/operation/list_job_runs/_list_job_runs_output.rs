@@ -87,10 +87,12 @@ impl ListJobRunsOutputBuilder {
     /// Consumes the builder and constructs a [`ListJobRunsOutput`](crate::operation::list_job_runs::ListJobRunsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`job_runs`](crate::operation::list_job_runs::builders::ListJobRunsOutputBuilder::job_runs)
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_job_runs::ListJobRunsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_job_runs::ListJobRunsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_job_runs::ListJobRunsOutput {
             job_runs: self.job_runs.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "job_runs",
                     "job_runs was not specified but it is required when building ListJobRunsOutput",
                 )

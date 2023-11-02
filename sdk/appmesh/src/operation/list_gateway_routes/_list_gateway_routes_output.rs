@@ -89,10 +89,10 @@ impl ListGatewayRoutesOutputBuilder {
     /// - [`gateway_routes`](crate::operation::list_gateway_routes::builders::ListGatewayRoutesOutputBuilder::gateway_routes)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_gateway_routes::ListGatewayRoutesOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_gateway_routes::ListGatewayRoutesOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_gateway_routes::ListGatewayRoutesOutput {
             gateway_routes: self.gateway_routes.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "gateway_routes",
                     "gateway_routes was not specified but it is required when building ListGatewayRoutesOutput",
                 )

@@ -242,7 +242,7 @@ impl CreateSecurityProfileInputBuilder {
     /// Consumes the builder and constructs a [`CreateSecurityProfileInput`](crate::operation::create_security_profile::CreateSecurityProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_security_profile::CreateSecurityProfileInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_security_profile::CreateSecurityProfileInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_security_profile::CreateSecurityProfileInput {
             security_profile_name: self.security_profile_name,

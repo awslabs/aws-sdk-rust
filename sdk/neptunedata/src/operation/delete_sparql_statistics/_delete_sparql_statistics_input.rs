@@ -18,8 +18,10 @@ impl DeleteSparqlStatisticsInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSparqlStatisticsInput`](crate::operation::delete_sparql_statistics::DeleteSparqlStatisticsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_sparql_statistics::DeleteSparqlStatisticsInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::delete_sparql_statistics::DeleteSparqlStatisticsInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::delete_sparql_statistics::DeleteSparqlStatisticsInput {})
     }
 }

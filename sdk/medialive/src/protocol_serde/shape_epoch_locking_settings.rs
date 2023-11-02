@@ -2,7 +2,7 @@
 pub fn ser_epoch_locking_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EpochLockingSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.custom_epoch {
         object.key("customEpoch").string(var_1.as_str());
     }

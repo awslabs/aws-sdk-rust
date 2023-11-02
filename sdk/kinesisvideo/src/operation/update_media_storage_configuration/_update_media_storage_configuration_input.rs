@@ -68,7 +68,7 @@ impl UpdateMediaStorageConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_media_storage_configuration::UpdateMediaStorageConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::update_media_storage_configuration::UpdateMediaStorageConfigurationInput {

@@ -650,7 +650,7 @@ impl ModifyDbClusterInputBuilder {
     /// Consumes the builder and constructs a [`ModifyDbClusterInput`](crate::operation::modify_db_cluster::ModifyDbClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::modify_db_cluster::ModifyDbClusterInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::modify_db_cluster::ModifyDbClusterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::modify_db_cluster::ModifyDbClusterInput {
             db_cluster_identifier: self.db_cluster_identifier,
             new_db_cluster_identifier: self.new_db_cluster_identifier,

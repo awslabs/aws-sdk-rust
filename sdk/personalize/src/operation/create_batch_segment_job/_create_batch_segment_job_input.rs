@@ -203,7 +203,7 @@ impl CreateBatchSegmentJobInputBuilder {
     /// Consumes the builder and constructs a [`CreateBatchSegmentJobInput`](crate::operation::create_batch_segment_job::CreateBatchSegmentJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_batch_segment_job::CreateBatchSegmentJobInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_batch_segment_job::CreateBatchSegmentJobInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_batch_segment_job::CreateBatchSegmentJobInput {
             job_name: self.job_name,

@@ -2,7 +2,7 @@
 pub fn ser_aws_ec2_launch_template_data_hibernation_options_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEc2LaunchTemplateDataHibernationOptionsDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.configured {
         object.key("Configured").boolean(*var_1);
     }

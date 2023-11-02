@@ -2,7 +2,7 @@
 pub fn ser_connector_profile_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ConnectorProfileConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.connector_profile_properties {
         #[allow(unused_mut)]
         let mut object_2 = object.key("connectorProfileProperties").start_object();

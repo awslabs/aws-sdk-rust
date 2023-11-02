@@ -2,7 +2,7 @@
 pub fn ser_export_journal_to_s3_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::export_journal_to_s3::ExportJournalToS3Input,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.exclusive_end_time {
         object
             .key("ExclusiveEndTime")

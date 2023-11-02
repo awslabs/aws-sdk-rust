@@ -68,7 +68,7 @@ impl GetTypedLinkFacetInformationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_typed_link_facet_information::GetTypedLinkFacetInformationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_typed_link_facet_information::GetTypedLinkFacetInformationInput {
             schema_arn: self.schema_arn,

@@ -446,21 +446,21 @@ impl AppBuilder {
     /// - [`app_arn`](crate::types::builders::AppBuilder::app_arn)
     /// - [`name`](crate::types::builders::AppBuilder::name)
     /// - [`creation_time`](crate::types::builders::AppBuilder::creation_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::App, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::App, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::App {
             app_arn: self.app_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "app_arn",
                     "app_arn was not specified but it is required when building App",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field("name", "name was not specified but it is required when building App")
+                ::aws_smithy_types::error::operation::BuildError::missing_field("name", "name was not specified but it is required when building App")
             })?,
             description: self.description,
             policy_arn: self.policy_arn,
             creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_time",
                     "creation_time was not specified but it is required when building App",
                 )

@@ -463,13 +463,13 @@ impl CreateReplicationConfigurationTemplateOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_replication_configuration_template::CreateReplicationConfigurationTemplateOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::create_replication_configuration_template::CreateReplicationConfigurationTemplateOutput {
                 replication_configuration_template_id: self.replication_configuration_template_id
                     .ok_or_else(||
-                        ::aws_smithy_http::operation::error::BuildError::missing_field("replication_configuration_template_id", "replication_configuration_template_id was not specified but it is required when building CreateReplicationConfigurationTemplateOutput")
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("replication_configuration_template_id", "replication_configuration_template_id was not specified but it is required when building CreateReplicationConfigurationTemplateOutput")
                     )?
                 ,
                 arn: self.arn

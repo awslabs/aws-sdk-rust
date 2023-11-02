@@ -46,10 +46,10 @@ impl WorkflowExecutionFilterBuilder {
     /// Consumes the builder and constructs a [`WorkflowExecutionFilter`](crate::types::WorkflowExecutionFilter).
     /// This method will fail if any of the following fields are not set:
     /// - [`workflow_id`](crate::types::builders::WorkflowExecutionFilterBuilder::workflow_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::WorkflowExecutionFilter, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::WorkflowExecutionFilter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::WorkflowExecutionFilter {
             workflow_id: self.workflow_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "workflow_id",
                     "workflow_id was not specified but it is required when building WorkflowExecutionFilter",
                 )

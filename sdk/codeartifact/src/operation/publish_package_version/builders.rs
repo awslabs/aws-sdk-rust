@@ -210,17 +210,17 @@ impl PublishPackageVersionFluentBuilder {
         self.inner.get_package_version()
     }
     /// <p>The content of the asset to publish.</p>
-    pub fn asset_content(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
+    pub fn asset_content(mut self, input: ::aws_smithy_types::byte_stream::ByteStream) -> Self {
         self.inner = self.inner.asset_content(input);
         self
     }
     /// <p>The content of the asset to publish.</p>
-    pub fn set_asset_content(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
+    pub fn set_asset_content(mut self, input: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>) -> Self {
         self.inner = self.inner.set_asset_content(input);
         self
     }
     /// <p>The content of the asset to publish.</p>
-    pub fn get_asset_content(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+    pub fn get_asset_content(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
         self.inner.get_asset_content()
     }
     /// <p>The name of the asset to publish. Asset names can include Unicode letters and numbers, and the following special characters: <code>~ ! @ ^ &amp; ( ) - ` _ + [ ] { } ; , . `</code> </p>

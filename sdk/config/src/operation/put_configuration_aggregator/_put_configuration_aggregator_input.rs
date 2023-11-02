@@ -125,7 +125,7 @@ impl PutConfigurationAggregatorInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_configuration_aggregator::PutConfigurationAggregatorInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_configuration_aggregator::PutConfigurationAggregatorInput {
             configuration_aggregator_name: self.configuration_aggregator_name,

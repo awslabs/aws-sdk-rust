@@ -47,7 +47,7 @@ impl CancelDeploymentJobInputBuilder {
     /// Consumes the builder and constructs a [`CancelDeploymentJobInput`](crate::operation::cancel_deployment_job::CancelDeploymentJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::cancel_deployment_job::CancelDeploymentJobInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::cancel_deployment_job::CancelDeploymentJobInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::cancel_deployment_job::CancelDeploymentJobInput { job: self.job })
     }

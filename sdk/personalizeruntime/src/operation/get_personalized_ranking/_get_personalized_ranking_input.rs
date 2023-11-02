@@ -183,8 +183,10 @@ impl GetPersonalizedRankingInputBuilder {
     /// Consumes the builder and constructs a [`GetPersonalizedRankingInput`](crate::operation::get_personalized_ranking::GetPersonalizedRankingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_personalized_ranking::GetPersonalizedRankingInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::get_personalized_ranking::GetPersonalizedRankingInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::get_personalized_ranking::GetPersonalizedRankingInput {
             campaign_arn: self.campaign_arn,
             input_list: self.input_list,

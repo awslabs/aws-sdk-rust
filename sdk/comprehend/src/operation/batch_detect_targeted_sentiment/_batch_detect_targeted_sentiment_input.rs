@@ -83,7 +83,7 @@ impl BatchDetectTargetedSentimentInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_detect_targeted_sentiment::BatchDetectTargetedSentimentInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::batch_detect_targeted_sentiment::BatchDetectTargetedSentimentInput {
             text_list: self.text_list,

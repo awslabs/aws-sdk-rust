@@ -67,10 +67,10 @@ impl DecimalNumberBuilder {
     /// Consumes the builder and constructs a [`DecimalNumber`](crate::types::DecimalNumber).
     /// This method will fail if any of the following fields are not set:
     /// - [`unscaled_value`](crate::types::builders::DecimalNumberBuilder::unscaled_value)
-    pub fn build(self) -> ::std::result::Result<crate::types::DecimalNumber, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DecimalNumber, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DecimalNumber {
             unscaled_value: self.unscaled_value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "unscaled_value",
                     "unscaled_value was not specified but it is required when building DecimalNumber",
                 )

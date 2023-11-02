@@ -89,12 +89,12 @@ impl ListPagesByContactOutputBuilder {
     /// - [`pages`](crate::operation::list_pages_by_contact::builders::ListPagesByContactOutputBuilder::pages)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_pages_by_contact::ListPagesByContactOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_pages_by_contact::ListPagesByContactOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_pages_by_contact::ListPagesByContactOutput {
             next_token: self.next_token,
             pages: self.pages.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "pages",
                     "pages was not specified but it is required when building ListPagesByContactOutput",
                 )

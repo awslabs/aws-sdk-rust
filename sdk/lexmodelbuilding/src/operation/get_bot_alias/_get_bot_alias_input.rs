@@ -64,7 +64,7 @@ impl GetBotAliasInputBuilder {
         &self.bot_name
     }
     /// Consumes the builder and constructs a [`GetBotAliasInput`](crate::operation::get_bot_alias::GetBotAliasInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_bot_alias::GetBotAliasInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_bot_alias::GetBotAliasInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_bot_alias::GetBotAliasInput {
             name: self.name,
             bot_name: self.bot_name,

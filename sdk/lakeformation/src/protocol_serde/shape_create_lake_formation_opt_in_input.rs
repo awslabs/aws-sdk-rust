@@ -2,7 +2,7 @@
 pub fn ser_create_lake_formation_opt_in_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_lake_formation_opt_in::CreateLakeFormationOptInInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.principal {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Principal").start_object();

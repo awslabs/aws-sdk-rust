@@ -92,7 +92,7 @@ impl AddTagsToStreamInputBuilder {
     /// Consumes the builder and constructs a [`AddTagsToStreamInput`](crate::operation::add_tags_to_stream::AddTagsToStreamInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::add_tags_to_stream::AddTagsToStreamInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::add_tags_to_stream::AddTagsToStreamInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::add_tags_to_stream::AddTagsToStreamInput {
             stream_name: self.stream_name,
             tags: self.tags,

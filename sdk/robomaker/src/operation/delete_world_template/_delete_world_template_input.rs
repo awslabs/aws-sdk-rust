@@ -44,7 +44,7 @@ impl DeleteWorldTemplateInputBuilder {
     /// Consumes the builder and constructs a [`DeleteWorldTemplateInput`](crate::operation::delete_world_template::DeleteWorldTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_world_template::DeleteWorldTemplateInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_world_template::DeleteWorldTemplateInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_world_template::DeleteWorldTemplateInput { template: self.template })
     }

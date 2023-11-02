@@ -94,22 +94,22 @@ impl ResourcePolicyBuilder {
     /// - [`policy_document`](crate::types::builders::ResourcePolicyBuilder::policy_document)
     /// - [`policy_id`](crate::types::builders::ResourcePolicyBuilder::policy_id)
     /// - [`ram_resource_share_region`](crate::types::builders::ResourcePolicyBuilder::ram_resource_share_region)
-    pub fn build(self) -> ::std::result::Result<crate::types::ResourcePolicy, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ResourcePolicy, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ResourcePolicy {
             policy_document: self.policy_document.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "policy_document",
                     "policy_document was not specified but it is required when building ResourcePolicy",
                 )
             })?,
             policy_id: self.policy_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "policy_id",
                     "policy_id was not specified but it is required when building ResourcePolicy",
                 )
             })?,
             ram_resource_share_region: self.ram_resource_share_region.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "ram_resource_share_region",
                     "ram_resource_share_region was not specified but it is required when building ResourcePolicy",
                 )

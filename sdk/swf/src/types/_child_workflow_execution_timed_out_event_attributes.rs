@@ -135,12 +135,12 @@ impl ChildWorkflowExecutionTimedOutEventAttributesBuilder {
     /// - [`timeout_type`](crate::types::builders::ChildWorkflowExecutionTimedOutEventAttributesBuilder::timeout_type)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::ChildWorkflowExecutionTimedOutEventAttributes, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::ChildWorkflowExecutionTimedOutEventAttributes, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ChildWorkflowExecutionTimedOutEventAttributes {
             workflow_execution: self.workflow_execution,
             workflow_type: self.workflow_type,
             timeout_type: self.timeout_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "timeout_type",
                     "timeout_type was not specified but it is required when building ChildWorkflowExecutionTimedOutEventAttributes",
                 )

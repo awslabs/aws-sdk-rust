@@ -108,8 +108,10 @@ impl ListConflictingAliasesInputBuilder {
     /// Consumes the builder and constructs a [`ListConflictingAliasesInput`](crate::operation::list_conflicting_aliases::ListConflictingAliasesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_conflicting_aliases::ListConflictingAliasesInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::list_conflicting_aliases::ListConflictingAliasesInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::list_conflicting_aliases::ListConflictingAliasesInput {
             distribution_id: self.distribution_id,
             alias: self.alias,

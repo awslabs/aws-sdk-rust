@@ -92,13 +92,16 @@ impl KeyGroupBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::KeyGroupBuilder::id)
     /// - [`last_modified_time`](crate::types::builders::KeyGroupBuilder::last_modified_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::KeyGroup, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::KeyGroup, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::KeyGroup {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field("id", "id was not specified but it is required when building KeyGroup")
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building KeyGroup",
+                )
             })?,
             last_modified_time: self.last_modified_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_modified_time",
                     "last_modified_time was not specified but it is required when building KeyGroup",
                 )

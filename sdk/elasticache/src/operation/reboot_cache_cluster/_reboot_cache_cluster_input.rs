@@ -74,7 +74,8 @@ impl RebootCacheClusterInputBuilder {
     /// Consumes the builder and constructs a [`RebootCacheClusterInput`](crate::operation::reboot_cache_cluster::RebootCacheClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::reboot_cache_cluster::RebootCacheClusterInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::reboot_cache_cluster::RebootCacheClusterInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::reboot_cache_cluster::RebootCacheClusterInput {
             cache_cluster_id: self.cache_cluster_id,
             cache_node_ids_to_reboot: self.cache_node_ids_to_reboot,

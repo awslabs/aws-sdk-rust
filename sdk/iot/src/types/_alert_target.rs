@@ -70,16 +70,16 @@ impl AlertTargetBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`alert_target_arn`](crate::types::builders::AlertTargetBuilder::alert_target_arn)
     /// - [`role_arn`](crate::types::builders::AlertTargetBuilder::role_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::AlertTarget, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AlertTarget, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AlertTarget {
             alert_target_arn: self.alert_target_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "alert_target_arn",
                     "alert_target_arn was not specified but it is required when building AlertTarget",
                 )
             })?,
             role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role_arn",
                     "role_arn was not specified but it is required when building AlertTarget",
                 )

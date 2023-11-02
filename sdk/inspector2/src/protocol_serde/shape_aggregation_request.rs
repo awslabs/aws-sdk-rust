@@ -2,7 +2,7 @@
 pub fn ser_aggregation_request(
     object_6: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AggregationRequest,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::AggregationRequest::AccountAggregation(inner) => {
             #[allow(unused_mut)]
@@ -71,7 +71,7 @@ pub fn ser_aggregation_request(
             object_11.finish();
         }
         crate::types::AggregationRequest::Unknown => {
-            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+            return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "AggregationRequest",
             ))
         }

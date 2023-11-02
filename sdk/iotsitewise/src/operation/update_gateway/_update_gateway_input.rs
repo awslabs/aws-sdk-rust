@@ -66,7 +66,7 @@ impl UpdateGatewayInputBuilder {
     /// Consumes the builder and constructs a [`UpdateGatewayInput`](crate::operation::update_gateway::UpdateGatewayInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_gateway::UpdateGatewayInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_gateway::UpdateGatewayInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_gateway::UpdateGatewayInput {
             gateway_id: self.gateway_id,
             gateway_name: self.gateway_name,

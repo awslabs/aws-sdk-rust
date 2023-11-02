@@ -46,7 +46,7 @@ impl RebootRelationalDatabaseInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reboot_relational_database::RebootRelationalDatabaseInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::reboot_relational_database::RebootRelationalDatabaseInput {
             relational_database_name: self.relational_database_name,

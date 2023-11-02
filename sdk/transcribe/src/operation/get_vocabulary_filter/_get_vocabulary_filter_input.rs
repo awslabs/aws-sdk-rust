@@ -44,7 +44,7 @@ impl GetVocabularyFilterInputBuilder {
     /// Consumes the builder and constructs a [`GetVocabularyFilterInput`](crate::operation::get_vocabulary_filter::GetVocabularyFilterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_vocabulary_filter::GetVocabularyFilterInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_vocabulary_filter::GetVocabularyFilterInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_vocabulary_filter::GetVocabularyFilterInput {
             vocabulary_filter_name: self.vocabulary_filter_name,

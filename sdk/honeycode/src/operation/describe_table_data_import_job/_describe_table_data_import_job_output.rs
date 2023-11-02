@@ -131,17 +131,17 @@ impl DescribeTableDataImportJobOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_table_data_import_job::DescribeTableDataImportJobOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_table_data_import_job::DescribeTableDataImportJobOutput {
             job_status: self.job_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "job_status",
                     "job_status was not specified but it is required when building DescribeTableDataImportJobOutput",
                 )
             })?,
             message: self.message.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "message",
                     "message was not specified but it is required when building DescribeTableDataImportJobOutput",
                 )

@@ -65,7 +65,7 @@ impl ResumeReplicationInputBuilder {
     /// Consumes the builder and constructs a [`ResumeReplicationInput`](crate::operation::resume_replication::ResumeReplicationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::resume_replication::ResumeReplicationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::resume_replication::ResumeReplicationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::resume_replication::ResumeReplicationInput {
             source_server_id: self.source_server_id,
             account_id: self.account_id,

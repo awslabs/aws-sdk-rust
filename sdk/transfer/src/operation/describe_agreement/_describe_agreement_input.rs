@@ -66,7 +66,7 @@ impl DescribeAgreementInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAgreementInput`](crate::operation::describe_agreement::DescribeAgreementInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_agreement::DescribeAgreementInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_agreement::DescribeAgreementInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_agreement::DescribeAgreementInput {
             agreement_id: self.agreement_id,
             server_id: self.server_id,

@@ -44,7 +44,7 @@ impl DeleteProjectVersionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteProjectVersionInput`](crate::operation::delete_project_version::DeleteProjectVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_project_version::DeleteProjectVersionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_project_version::DeleteProjectVersionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_project_version::DeleteProjectVersionInput {
             project_version_arn: self.project_version_arn,

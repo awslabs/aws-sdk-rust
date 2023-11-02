@@ -44,7 +44,7 @@ impl CancelResourceRequestInputBuilder {
     /// Consumes the builder and constructs a [`CancelResourceRequestInput`](crate::operation::cancel_resource_request::CancelResourceRequestInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::cancel_resource_request::CancelResourceRequestInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::cancel_resource_request::CancelResourceRequestInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::cancel_resource_request::CancelResourceRequestInput {
             request_token: self.request_token,

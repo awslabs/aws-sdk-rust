@@ -18,7 +18,7 @@ impl ExportConfigurationsInputBuilder {
     /// Consumes the builder and constructs a [`ExportConfigurationsInput`](crate::operation::export_configurations::ExportConfigurationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::export_configurations::ExportConfigurationsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::export_configurations::ExportConfigurationsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::export_configurations::ExportConfigurationsInput {})
     }

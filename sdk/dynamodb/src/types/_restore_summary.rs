@@ -110,18 +110,18 @@ impl RestoreSummaryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`restore_date_time`](crate::types::builders::RestoreSummaryBuilder::restore_date_time)
     /// - [`restore_in_progress`](crate::types::builders::RestoreSummaryBuilder::restore_in_progress)
-    pub fn build(self) -> ::std::result::Result<crate::types::RestoreSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RestoreSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RestoreSummary {
             source_backup_arn: self.source_backup_arn,
             source_table_arn: self.source_table_arn,
             restore_date_time: self.restore_date_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "restore_date_time",
                     "restore_date_time was not specified but it is required when building RestoreSummary",
                 )
             })?,
             restore_in_progress: self.restore_in_progress.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "restore_in_progress",
                     "restore_in_progress was not specified but it is required when building RestoreSummary",
                 )

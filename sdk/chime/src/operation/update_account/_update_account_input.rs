@@ -86,7 +86,7 @@ impl UpdateAccountInputBuilder {
     /// Consumes the builder and constructs a [`UpdateAccountInput`](crate::operation::update_account::UpdateAccountInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_account::UpdateAccountInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_account::UpdateAccountInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_account::UpdateAccountInput {
             account_id: self.account_id,
             name: self.name,

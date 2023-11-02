@@ -2,7 +2,7 @@
 pub fn ser_geo_location(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GeoLocation,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.lon {
         object.key("Lon").number(
             #[allow(clippy::useless_conversion)]

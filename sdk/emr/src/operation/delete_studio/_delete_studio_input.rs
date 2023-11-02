@@ -42,7 +42,9 @@ impl DeleteStudioInputBuilder {
         &self.studio_id
     }
     /// Consumes the builder and constructs a [`DeleteStudioInput`](crate::operation::delete_studio::DeleteStudioInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_studio::DeleteStudioInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_studio::DeleteStudioInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_studio::DeleteStudioInput { studio_id: self.studio_id })
     }
 }

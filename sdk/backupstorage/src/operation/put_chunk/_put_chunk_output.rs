@@ -84,16 +84,16 @@ impl PutChunkOutputBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`chunk_checksum`](crate::operation::put_chunk::builders::PutChunkOutputBuilder::chunk_checksum)
     /// - [`chunk_checksum_algorithm`](crate::operation::put_chunk::builders::PutChunkOutputBuilder::chunk_checksum_algorithm)
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_chunk::PutChunkOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_chunk::PutChunkOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_chunk::PutChunkOutput {
             chunk_checksum: self.chunk_checksum.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "chunk_checksum",
                     "chunk_checksum was not specified but it is required when building PutChunkOutput",
                 )
             })?,
             chunk_checksum_algorithm: self.chunk_checksum_algorithm.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "chunk_checksum_algorithm",
                     "chunk_checksum_algorithm was not specified but it is required when building PutChunkOutput",
                 )

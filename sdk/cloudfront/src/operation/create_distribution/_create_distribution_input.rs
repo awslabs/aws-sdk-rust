@@ -45,7 +45,7 @@ impl CreateDistributionInputBuilder {
     /// Consumes the builder and constructs a [`CreateDistributionInput`](crate::operation::create_distribution::CreateDistributionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_distribution::CreateDistributionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_distribution::CreateDistributionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_distribution::CreateDistributionInput {
             distribution_config: self.distribution_config,
         })

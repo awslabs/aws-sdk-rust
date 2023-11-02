@@ -98,7 +98,7 @@ impl BatchDisassociateResourcesFromCustomLineItemInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_disassociate_resources_from_custom_line_item::BatchDisassociateResourcesFromCustomLineItemInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::batch_disassociate_resources_from_custom_line_item::BatchDisassociateResourcesFromCustomLineItemInput {

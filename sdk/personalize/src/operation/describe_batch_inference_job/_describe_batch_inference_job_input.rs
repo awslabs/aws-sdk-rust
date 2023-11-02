@@ -46,7 +46,7 @@ impl DescribeBatchInferenceJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_batch_inference_job::DescribeBatchInferenceJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_batch_inference_job::DescribeBatchInferenceJobInput {
             batch_inference_job_arn: self.batch_inference_job_arn,

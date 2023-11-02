@@ -88,7 +88,7 @@ impl InitializeClusterInputBuilder {
     /// Consumes the builder and constructs a [`InitializeClusterInput`](crate::operation::initialize_cluster::InitializeClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::initialize_cluster::InitializeClusterInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::initialize_cluster::InitializeClusterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::initialize_cluster::InitializeClusterInput {
             cluster_id: self.cluster_id,
             signed_cert: self.signed_cert,

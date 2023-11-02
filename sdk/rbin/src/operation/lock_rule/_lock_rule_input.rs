@@ -64,7 +64,7 @@ impl LockRuleInputBuilder {
         &self.lock_configuration
     }
     /// Consumes the builder and constructs a [`LockRuleInput`](crate::operation::lock_rule::LockRuleInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::lock_rule::LockRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::lock_rule::LockRuleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::lock_rule::LockRuleInput {
             identifier: self.identifier,
             lock_configuration: self.lock_configuration,

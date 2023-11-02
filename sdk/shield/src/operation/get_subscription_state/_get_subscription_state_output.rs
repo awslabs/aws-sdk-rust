@@ -62,11 +62,11 @@ impl GetSubscriptionStateOutputBuilder {
     /// - [`subscription_state`](crate::operation::get_subscription_state::builders::GetSubscriptionStateOutputBuilder::subscription_state)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_subscription_state::GetSubscriptionStateOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_subscription_state::GetSubscriptionStateOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_subscription_state::GetSubscriptionStateOutput {
             subscription_state: self.subscription_state.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "subscription_state",
                     "subscription_state was not specified but it is required when building GetSubscriptionStateOutput",
                 )

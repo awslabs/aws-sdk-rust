@@ -42,7 +42,9 @@ impl DescribeFlowInputBuilder {
         &self.flow_name
     }
     /// Consumes the builder and constructs a [`DescribeFlowInput`](crate::operation::describe_flow::DescribeFlowInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_flow::DescribeFlowInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::describe_flow::DescribeFlowInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_flow::DescribeFlowInput { flow_name: self.flow_name })
     }
 }

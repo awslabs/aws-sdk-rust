@@ -44,7 +44,7 @@ impl GetConnectAttachmentInputBuilder {
     /// Consumes the builder and constructs a [`GetConnectAttachmentInput`](crate::operation::get_connect_attachment::GetConnectAttachmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_connect_attachment::GetConnectAttachmentInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_connect_attachment::GetConnectAttachmentInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_connect_attachment::GetConnectAttachmentInput {
             attachment_id: self.attachment_id,

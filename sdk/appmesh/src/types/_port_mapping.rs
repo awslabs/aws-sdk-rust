@@ -67,11 +67,11 @@ impl PortMappingBuilder {
     /// Consumes the builder and constructs a [`PortMapping`](crate::types::PortMapping).
     /// This method will fail if any of the following fields are not set:
     /// - [`protocol`](crate::types::builders::PortMappingBuilder::protocol)
-    pub fn build(self) -> ::std::result::Result<crate::types::PortMapping, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PortMapping, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PortMapping {
             port: self.port.unwrap_or_default(),
             protocol: self.protocol.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "protocol",
                     "protocol was not specified but it is required when building PortMapping",
                 )

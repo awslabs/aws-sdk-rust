@@ -2,7 +2,7 @@
 pub fn ser_certificate_validity(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CertificateValidity,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.validity_period {
         #[allow(unused_mut)]
         let mut object_2 = object.key("ValidityPeriod").start_object();

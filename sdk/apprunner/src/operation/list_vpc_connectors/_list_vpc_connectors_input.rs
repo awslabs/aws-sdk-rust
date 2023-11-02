@@ -74,7 +74,7 @@ impl ListVpcConnectorsInputBuilder {
     /// Consumes the builder and constructs a [`ListVpcConnectorsInput`](crate::operation::list_vpc_connectors::ListVpcConnectorsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_vpc_connectors::ListVpcConnectorsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_vpc_connectors::ListVpcConnectorsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_vpc_connectors::ListVpcConnectorsInput {
             max_results: self.max_results,
             next_token: self.next_token,

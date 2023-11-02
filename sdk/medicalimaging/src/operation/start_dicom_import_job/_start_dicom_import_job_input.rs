@@ -153,7 +153,7 @@ impl StartDicomImportJobInputBuilder {
     /// Consumes the builder and constructs a [`StartDicomImportJobInput`](crate::operation::start_dicom_import_job::StartDicomImportJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_dicom_import_job::StartDicomImportJobInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::start_dicom_import_job::StartDicomImportJobInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_dicom_import_job::StartDicomImportJobInput {
             job_name: self.job_name,

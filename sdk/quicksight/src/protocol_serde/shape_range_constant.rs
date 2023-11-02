@@ -2,7 +2,7 @@
 pub fn ser_range_constant(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RangeConstant,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.minimum {
         object.key("Minimum").string(var_1.as_str());
     }

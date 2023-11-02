@@ -75,7 +75,7 @@ impl BatchDeleteFeaturedResultsSetInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_delete_featured_results_set::BatchDeleteFeaturedResultsSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::batch_delete_featured_results_set::BatchDeleteFeaturedResultsSetInput {
             index_id: self.index_id,

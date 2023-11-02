@@ -108,8 +108,10 @@ impl ListSourceRepositoriesInputBuilder {
     /// Consumes the builder and constructs a [`ListSourceRepositoriesInput`](crate::operation::list_source_repositories::ListSourceRepositoriesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_source_repositories::ListSourceRepositoriesInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::list_source_repositories::ListSourceRepositoriesInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::list_source_repositories::ListSourceRepositoriesInput {
             space_name: self.space_name,
             project_name: self.project_name,

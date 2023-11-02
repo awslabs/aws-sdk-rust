@@ -92,16 +92,16 @@ impl ListApplicationsOutputBuilder {
     /// - [`has_more_applications`](crate::operation::list_applications::builders::ListApplicationsOutputBuilder::has_more_applications)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_applications::ListApplicationsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_applications::ListApplicationsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_applications::ListApplicationsOutput {
             application_summaries: self.application_summaries.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "application_summaries",
                     "application_summaries was not specified but it is required when building ListApplicationsOutput",
                 )
             })?,
             has_more_applications: self.has_more_applications.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "has_more_applications",
                     "has_more_applications was not specified but it is required when building ListApplicationsOutput",
                 )

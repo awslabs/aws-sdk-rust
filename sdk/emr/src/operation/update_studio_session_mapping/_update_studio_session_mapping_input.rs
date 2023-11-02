@@ -132,7 +132,7 @@ impl UpdateStudioSessionMappingInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_studio_session_mapping::UpdateStudioSessionMappingInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_studio_session_mapping::UpdateStudioSessionMappingInput {
             studio_id: self.studio_id,

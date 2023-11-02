@@ -65,10 +65,10 @@ impl SuppressionListDestinationBuilder {
     /// Consumes the builder and constructs a [`SuppressionListDestination`](crate::types::SuppressionListDestination).
     /// This method will fail if any of the following fields are not set:
     /// - [`suppression_list_import_action`](crate::types::builders::SuppressionListDestinationBuilder::suppression_list_import_action)
-    pub fn build(self) -> ::std::result::Result<crate::types::SuppressionListDestination, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SuppressionListDestination, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SuppressionListDestination {
             suppression_list_import_action: self.suppression_list_import_action.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "suppression_list_import_action",
                     "suppression_list_import_action was not specified but it is required when building SuppressionListDestination",
                 )

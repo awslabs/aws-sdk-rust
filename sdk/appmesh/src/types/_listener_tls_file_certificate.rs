@@ -70,16 +70,16 @@ impl ListenerTlsFileCertificateBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`certificate_chain`](crate::types::builders::ListenerTlsFileCertificateBuilder::certificate_chain)
     /// - [`private_key`](crate::types::builders::ListenerTlsFileCertificateBuilder::private_key)
-    pub fn build(self) -> ::std::result::Result<crate::types::ListenerTlsFileCertificate, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ListenerTlsFileCertificate, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ListenerTlsFileCertificate {
             certificate_chain: self.certificate_chain.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "certificate_chain",
                     "certificate_chain was not specified but it is required when building ListenerTlsFileCertificate",
                 )
             })?,
             private_key: self.private_key.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "private_key",
                     "private_key was not specified but it is required when building ListenerTlsFileCertificate",
                 )

@@ -68,7 +68,7 @@ impl ModifyWorkspacePropertiesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_workspace_properties::ModifyWorkspacePropertiesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::modify_workspace_properties::ModifyWorkspacePropertiesInput {
             workspace_id: self.workspace_id,

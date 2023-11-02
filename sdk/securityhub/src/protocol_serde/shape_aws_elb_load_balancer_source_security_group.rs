@@ -2,7 +2,7 @@
 pub fn ser_aws_elb_load_balancer_source_security_group(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsElbLoadBalancerSourceSecurityGroup,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.group_name {
         object.key("GroupName").string(var_1.as_str());
     }

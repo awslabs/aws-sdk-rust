@@ -87,10 +87,10 @@ impl ListStagesOutputBuilder {
     /// Consumes the builder and constructs a [`ListStagesOutput`](crate::operation::list_stages::ListStagesOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`stages`](crate::operation::list_stages::builders::ListStagesOutputBuilder::stages)
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_stages::ListStagesOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_stages::ListStagesOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_stages::ListStagesOutput {
             stages: self.stages.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "stages",
                     "stages was not specified but it is required when building ListStagesOutput",
                 )

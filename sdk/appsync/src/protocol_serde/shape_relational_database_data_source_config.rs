@@ -2,7 +2,7 @@
 pub fn ser_relational_database_data_source_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RelationalDatabaseDataSourceConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.relational_database_source_type {
         object.key("relationalDatabaseSourceType").string(var_1.as_str());
     }

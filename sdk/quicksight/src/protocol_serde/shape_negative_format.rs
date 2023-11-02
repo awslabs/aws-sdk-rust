@@ -2,7 +2,7 @@
 pub fn ser_negative_format(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::NegativeFormat,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.prefix {
         object.key("Prefix").string(var_1.as_str());
     }

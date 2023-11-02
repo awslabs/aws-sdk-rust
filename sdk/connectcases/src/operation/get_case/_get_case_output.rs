@@ -143,16 +143,16 @@ impl GetCaseOutputBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`fields`](crate::operation::get_case::builders::GetCaseOutputBuilder::fields)
     /// - [`template_id`](crate::operation::get_case::builders::GetCaseOutputBuilder::template_id)
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_case::GetCaseOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_case::GetCaseOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_case::GetCaseOutput {
             fields: self.fields.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "fields",
                     "fields was not specified but it is required when building GetCaseOutput",
                 )
             })?,
             template_id: self.template_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "template_id",
                     "template_id was not specified but it is required when building GetCaseOutput",
                 )

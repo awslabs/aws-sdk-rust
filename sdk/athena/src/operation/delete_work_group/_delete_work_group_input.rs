@@ -65,7 +65,7 @@ impl DeleteWorkGroupInputBuilder {
     /// Consumes the builder and constructs a [`DeleteWorkGroupInput`](crate::operation::delete_work_group::DeleteWorkGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_work_group::DeleteWorkGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_work_group::DeleteWorkGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_work_group::DeleteWorkGroupInput {
             work_group: self.work_group,
             recursive_delete_option: self.recursive_delete_option,

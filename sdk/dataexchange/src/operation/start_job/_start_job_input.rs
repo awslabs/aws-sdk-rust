@@ -42,7 +42,7 @@ impl StartJobInputBuilder {
         &self.job_id
     }
     /// Consumes the builder and constructs a [`StartJobInput`](crate::operation::start_job::StartJobInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::start_job::StartJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_job::StartJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_job::StartJobInput { job_id: self.job_id })
     }
 }

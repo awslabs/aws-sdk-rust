@@ -116,7 +116,7 @@ impl DescribePrincipalIdFormatInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_principal_id_format::DescribePrincipalIdFormatInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_principal_id_format::DescribePrincipalIdFormatInput {
             dry_run: self.dry_run,

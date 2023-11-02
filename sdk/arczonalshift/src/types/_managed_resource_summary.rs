@@ -96,12 +96,12 @@ impl ManagedResourceSummaryBuilder {
     /// Consumes the builder and constructs a [`ManagedResourceSummary`](crate::types::ManagedResourceSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`availability_zones`](crate::types::builders::ManagedResourceSummaryBuilder::availability_zones)
-    pub fn build(self) -> ::std::result::Result<crate::types::ManagedResourceSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ManagedResourceSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ManagedResourceSummary {
             arn: self.arn,
             name: self.name,
             availability_zones: self.availability_zones.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "availability_zones",
                     "availability_zones was not specified but it is required when building ManagedResourceSummary",
                 )

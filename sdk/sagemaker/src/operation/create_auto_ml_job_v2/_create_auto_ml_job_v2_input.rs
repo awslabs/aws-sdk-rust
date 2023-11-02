@@ -327,7 +327,8 @@ impl CreateAutoMlJobV2InputBuilder {
     /// Consumes the builder and constructs a [`CreateAutoMlJobV2Input`](crate::operation::create_auto_ml_job_v2::CreateAutoMlJobV2Input).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_auto_ml_job_v2::CreateAutoMlJobV2Input, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_auto_ml_job_v2::CreateAutoMlJobV2Input, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_auto_ml_job_v2::CreateAutoMlJobV2Input {
             auto_ml_job_name: self.auto_ml_job_name,
             auto_ml_job_input_data_config: self.auto_ml_job_input_data_config,

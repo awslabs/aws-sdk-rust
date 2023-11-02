@@ -46,10 +46,10 @@ impl GlueDataCatalogConfigurationBuilder {
     /// Consumes the builder and constructs a [`GlueDataCatalogConfiguration`](crate::types::GlueDataCatalogConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`database_arn`](crate::types::builders::GlueDataCatalogConfigurationBuilder::database_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::GlueDataCatalogConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::GlueDataCatalogConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::GlueDataCatalogConfiguration {
             database_arn: self.database_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "database_arn",
                     "database_arn was not specified but it is required when building GlueDataCatalogConfiguration",
                 )

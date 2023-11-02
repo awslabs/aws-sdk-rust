@@ -90,7 +90,7 @@ impl PurchaseReservedInstanceOfferingInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::purchase_reserved_instance_offering::PurchaseReservedInstanceOfferingInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::purchase_reserved_instance_offering::PurchaseReservedInstanceOfferingInput {

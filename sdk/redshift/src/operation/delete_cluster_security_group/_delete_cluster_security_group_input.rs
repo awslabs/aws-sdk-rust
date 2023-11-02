@@ -47,7 +47,7 @@ impl DeleteClusterSecurityGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_cluster_security_group::DeleteClusterSecurityGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_cluster_security_group::DeleteClusterSecurityGroupInput {
             cluster_security_group_name: self.cluster_security_group_name,

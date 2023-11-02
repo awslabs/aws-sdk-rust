@@ -68,10 +68,10 @@ impl ApacheKafkaClusterBuilder {
     /// Consumes the builder and constructs a [`ApacheKafkaCluster`](crate::types::ApacheKafkaCluster).
     /// This method will fail if any of the following fields are not set:
     /// - [`bootstrap_servers`](crate::types::builders::ApacheKafkaClusterBuilder::bootstrap_servers)
-    pub fn build(self) -> ::std::result::Result<crate::types::ApacheKafkaCluster, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ApacheKafkaCluster, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ApacheKafkaCluster {
             bootstrap_servers: self.bootstrap_servers.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "bootstrap_servers",
                     "bootstrap_servers was not specified but it is required when building ApacheKafkaCluster",
                 )

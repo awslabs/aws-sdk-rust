@@ -109,7 +109,7 @@ impl UpdateWorkloadInputBuilder {
     /// Consumes the builder and constructs a [`UpdateWorkloadInput`](crate::operation::update_workload::UpdateWorkloadInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_workload::UpdateWorkloadInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_workload::UpdateWorkloadInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_workload::UpdateWorkloadInput {
             resource_group_name: self.resource_group_name,
             component_name: self.component_name,

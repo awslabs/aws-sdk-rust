@@ -167,29 +167,29 @@ impl CvssScoreDetailsBuilder {
     /// - [`version`](crate::types::builders::CvssScoreDetailsBuilder::version)
     /// - [`score`](crate::types::builders::CvssScoreDetailsBuilder::score)
     /// - [`scoring_vector`](crate::types::builders::CvssScoreDetailsBuilder::scoring_vector)
-    pub fn build(self) -> ::std::result::Result<crate::types::CvssScoreDetails, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CvssScoreDetails, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CvssScoreDetails {
             score_source: self.score_source.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "score_source",
                     "score_source was not specified but it is required when building CvssScoreDetails",
                 )
             })?,
             cvss_source: self.cvss_source,
             version: self.version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "version",
                     "version was not specified but it is required when building CvssScoreDetails",
                 )
             })?,
             score: self.score.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "score",
                     "score was not specified but it is required when building CvssScoreDetails",
                 )
             })?,
             scoring_vector: self.scoring_vector.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "scoring_vector",
                     "scoring_vector was not specified but it is required when building CvssScoreDetails",
                 )

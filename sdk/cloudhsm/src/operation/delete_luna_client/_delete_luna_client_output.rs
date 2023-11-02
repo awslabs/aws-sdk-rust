@@ -63,10 +63,10 @@ impl DeleteLunaClientOutputBuilder {
     /// - [`status`](crate::operation::delete_luna_client::builders::DeleteLunaClientOutputBuilder::status)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_luna_client::DeleteLunaClientOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_luna_client::DeleteLunaClientOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_luna_client::DeleteLunaClientOutput {
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building DeleteLunaClientOutput",
                 )

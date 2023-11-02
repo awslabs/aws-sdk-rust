@@ -65,7 +65,7 @@ impl StopDbInstanceInputBuilder {
     /// Consumes the builder and constructs a [`StopDbInstanceInput`](crate::operation::stop_db_instance::StopDbInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_db_instance::StopDbInstanceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::stop_db_instance::StopDbInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_db_instance::StopDbInstanceInput {
             db_instance_identifier: self.db_instance_identifier,
             db_snapshot_identifier: self.db_snapshot_identifier,

@@ -95,7 +95,7 @@ impl UntagAttendeeInputBuilder {
     /// Consumes the builder and constructs a [`UntagAttendeeInput`](crate::operation::untag_attendee::UntagAttendeeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::untag_attendee::UntagAttendeeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::untag_attendee::UntagAttendeeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::untag_attendee::UntagAttendeeInput {
             meeting_id: self.meeting_id,
             attendee_id: self.attendee_id,

@@ -91,7 +91,7 @@ impl GetDomainStatisticsReportInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_domain_statistics_report::GetDomainStatisticsReportInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_domain_statistics_report::GetDomainStatisticsReportInput {
             domain: self.domain,

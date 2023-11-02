@@ -2,7 +2,7 @@
 pub fn ser_firewall_policy_stateless_rule_group_references_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FirewallPolicyStatelessRuleGroupReferencesDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.priority {
         object.key("Priority").number(
             #[allow(clippy::useless_conversion)]

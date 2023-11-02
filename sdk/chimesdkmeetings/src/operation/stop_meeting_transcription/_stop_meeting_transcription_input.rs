@@ -46,7 +46,7 @@ impl StopMeetingTranscriptionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_meeting_transcription::StopMeetingTranscriptionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::stop_meeting_transcription::StopMeetingTranscriptionInput { meeting_id: self.meeting_id })
     }

@@ -2,7 +2,7 @@
 pub fn ser_delete_scheduled_action_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_scheduled_action::DeleteScheduledActionInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.service_namespace {
         object.key("ServiceNamespace").string(var_1.as_str());
     }

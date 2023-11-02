@@ -72,10 +72,10 @@ impl ConnectedHomeSettingsBuilder {
     /// Consumes the builder and constructs a [`ConnectedHomeSettings`](crate::types::ConnectedHomeSettings).
     /// This method will fail if any of the following fields are not set:
     /// - [`labels`](crate::types::builders::ConnectedHomeSettingsBuilder::labels)
-    pub fn build(self) -> ::std::result::Result<crate::types::ConnectedHomeSettings, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ConnectedHomeSettings, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ConnectedHomeSettings {
             labels: self.labels.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "labels",
                     "labels was not specified but it is required when building ConnectedHomeSettings",
                 )

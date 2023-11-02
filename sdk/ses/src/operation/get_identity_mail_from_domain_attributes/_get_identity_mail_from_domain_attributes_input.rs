@@ -54,7 +54,7 @@ impl GetIdentityMailFromDomainAttributesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_identity_mail_from_domain_attributes::GetIdentityMailFromDomainAttributesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_identity_mail_from_domain_attributes::GetIdentityMailFromDomainAttributesInput { identities: self.identities },

@@ -102,18 +102,18 @@ impl BatchDisassociateApprovalRuleTemplateFromRepositoriesOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_disassociate_approval_rule_template_from_repositories::BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::batch_disassociate_approval_rule_template_from_repositories::BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput {
                 disassociated_repository_names: self.disassociated_repository_names
                     .ok_or_else(||
-                        ::aws_smithy_http::operation::error::BuildError::missing_field("disassociated_repository_names", "disassociated_repository_names was not specified but it is required when building BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput")
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("disassociated_repository_names", "disassociated_repository_names was not specified but it is required when building BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput")
                     )?
                 ,
                 errors: self.errors
                     .ok_or_else(||
-                        ::aws_smithy_http::operation::error::BuildError::missing_field("errors", "errors was not specified but it is required when building BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput")
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("errors", "errors was not specified but it is required when building BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput")
                     )?
                 ,
                 _request_id: self._request_id,

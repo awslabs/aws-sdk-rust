@@ -281,46 +281,46 @@ impl MultipartReadSetUploadListItemBuilder {
     /// - [`generated_from`](crate::types::builders::MultipartReadSetUploadListItemBuilder::generated_from)
     /// - [`reference_arn`](crate::types::builders::MultipartReadSetUploadListItemBuilder::reference_arn)
     /// - [`creation_time`](crate::types::builders::MultipartReadSetUploadListItemBuilder::creation_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::MultipartReadSetUploadListItem, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::MultipartReadSetUploadListItem, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MultipartReadSetUploadListItem {
             sequence_store_id: self.sequence_store_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "sequence_store_id",
                     "sequence_store_id was not specified but it is required when building MultipartReadSetUploadListItem",
                 )
             })?,
             upload_id: self.upload_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "upload_id",
                     "upload_id was not specified but it is required when building MultipartReadSetUploadListItem",
                 )
             })?,
             source_file_type: self.source_file_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source_file_type",
                     "source_file_type was not specified but it is required when building MultipartReadSetUploadListItem",
                 )
             })?,
             subject_id: self.subject_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "subject_id",
                     "subject_id was not specified but it is required when building MultipartReadSetUploadListItem",
                 )
             })?,
             sample_id: self.sample_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "sample_id",
                     "sample_id was not specified but it is required when building MultipartReadSetUploadListItem",
                 )
             })?,
             generated_from: self.generated_from.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "generated_from",
                     "generated_from was not specified but it is required when building MultipartReadSetUploadListItem",
                 )
             })?,
             reference_arn: self.reference_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "reference_arn",
                     "reference_arn was not specified but it is required when building MultipartReadSetUploadListItem",
                 )
@@ -329,7 +329,7 @@ impl MultipartReadSetUploadListItemBuilder {
             description: self.description,
             tags: self.tags,
             creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_time",
                     "creation_time was not specified but it is required when building MultipartReadSetUploadListItem",
                 )

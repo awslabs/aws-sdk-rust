@@ -2,7 +2,7 @@
 pub fn ser_template_v2(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TemplateV2,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.certificate_validity {
         #[allow(unused_mut)]
         let mut object_2 = object.key("CertificateValidity").start_object();

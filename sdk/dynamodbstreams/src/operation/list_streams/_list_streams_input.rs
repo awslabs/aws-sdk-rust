@@ -84,7 +84,7 @@ impl ListStreamsInputBuilder {
         &self.exclusive_start_stream_arn
     }
     /// Consumes the builder and constructs a [`ListStreamsInput`](crate::operation::list_streams::ListStreamsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_streams::ListStreamsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_streams::ListStreamsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_streams::ListStreamsInput {
             table_name: self.table_name,
             limit: self.limit,

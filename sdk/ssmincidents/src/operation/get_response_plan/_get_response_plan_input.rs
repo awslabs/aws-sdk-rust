@@ -44,7 +44,7 @@ impl GetResponsePlanInputBuilder {
     /// Consumes the builder and constructs a [`GetResponsePlanInput`](crate::operation::get_response_plan::GetResponsePlanInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_response_plan::GetResponsePlanInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_response_plan::GetResponsePlanInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_response_plan::GetResponsePlanInput { arn: self.arn })
     }
 }

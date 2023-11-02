@@ -46,7 +46,7 @@ impl ExportSourceNetworkCfnTemplateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::export_source_network_cfn_template::ExportSourceNetworkCfnTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::export_source_network_cfn_template::ExportSourceNetworkCfnTemplateInput {

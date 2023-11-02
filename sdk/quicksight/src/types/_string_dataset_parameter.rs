@@ -114,22 +114,22 @@ impl StringDatasetParameterBuilder {
     /// - [`id`](crate::types::builders::StringDatasetParameterBuilder::id)
     /// - [`name`](crate::types::builders::StringDatasetParameterBuilder::name)
     /// - [`value_type`](crate::types::builders::StringDatasetParameterBuilder::value_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::StringDatasetParameter, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::StringDatasetParameter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::StringDatasetParameter {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building StringDatasetParameter",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building StringDatasetParameter",
                 )
             })?,
             value_type: self.value_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "value_type",
                     "value_type was not specified but it is required when building StringDatasetParameter",
                 )

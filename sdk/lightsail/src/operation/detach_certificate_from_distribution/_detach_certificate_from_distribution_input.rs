@@ -51,7 +51,7 @@ impl DetachCertificateFromDistributionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::detach_certificate_from_distribution::DetachCertificateFromDistributionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::detach_certificate_from_distribution::DetachCertificateFromDistributionInput {

@@ -238,10 +238,10 @@ impl NumericEqualityFilterBuilder {
     /// - [`filter_id`](crate::types::builders::NumericEqualityFilterBuilder::filter_id)
     /// - [`match_operator`](crate::types::builders::NumericEqualityFilterBuilder::match_operator)
     /// - [`null_option`](crate::types::builders::NumericEqualityFilterBuilder::null_option)
-    pub fn build(self) -> ::std::result::Result<crate::types::NumericEqualityFilter, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::NumericEqualityFilter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::NumericEqualityFilter {
             filter_id: self.filter_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "filter_id",
                     "filter_id was not specified but it is required when building NumericEqualityFilter",
                 )
@@ -250,7 +250,7 @@ impl NumericEqualityFilterBuilder {
             value: self.value,
             select_all_options: self.select_all_options,
             match_operator: self.match_operator.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "match_operator",
                     "match_operator was not specified but it is required when building NumericEqualityFilter",
                 )
@@ -258,7 +258,7 @@ impl NumericEqualityFilterBuilder {
             aggregation_function: self.aggregation_function,
             parameter_name: self.parameter_name,
             null_option: self.null_option.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "null_option",
                     "null_option was not specified but it is required when building NumericEqualityFilter",
                 )

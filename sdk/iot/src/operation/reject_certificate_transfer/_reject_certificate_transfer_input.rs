@@ -68,7 +68,7 @@ impl RejectCertificateTransferInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reject_certificate_transfer::RejectCertificateTransferInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::reject_certificate_transfer::RejectCertificateTransferInput {
             certificate_id: self.certificate_id,

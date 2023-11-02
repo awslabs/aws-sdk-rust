@@ -2,7 +2,7 @@
 pub fn ser_numeric_question_property_value_automation(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::NumericQuestionPropertyValueAutomation,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Label").string(input.label.as_str());
     }

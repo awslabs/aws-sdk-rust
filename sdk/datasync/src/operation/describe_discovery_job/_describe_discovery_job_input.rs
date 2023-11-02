@@ -44,7 +44,7 @@ impl DescribeDiscoveryJobInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDiscoveryJobInput`](crate::operation::describe_discovery_job::DescribeDiscoveryJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_discovery_job::DescribeDiscoveryJobInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_discovery_job::DescribeDiscoveryJobInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_discovery_job::DescribeDiscoveryJobInput {
             discovery_job_arn: self.discovery_job_arn,

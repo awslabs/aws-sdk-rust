@@ -259,7 +259,7 @@ impl CreateUnreferencedMergeCommitInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitInput {
             repository_name: self.repository_name,

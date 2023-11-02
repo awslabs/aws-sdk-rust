@@ -44,7 +44,7 @@ impl GetConferenceProviderInputBuilder {
     /// Consumes the builder and constructs a [`GetConferenceProviderInput`](crate::operation::get_conference_provider::GetConferenceProviderInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_conference_provider::GetConferenceProviderInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_conference_provider::GetConferenceProviderInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_conference_provider::GetConferenceProviderInput {
             conference_provider_arn: self.conference_provider_arn,

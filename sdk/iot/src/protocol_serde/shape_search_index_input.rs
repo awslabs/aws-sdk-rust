@@ -2,7 +2,7 @@
 pub fn ser_search_index_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::search_index::SearchIndexInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.index_name {
         object.key("indexName").string(var_1.as_str());
     }

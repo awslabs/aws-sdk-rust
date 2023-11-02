@@ -2,7 +2,7 @@
 pub fn ser_data_format_conversion_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DataFormatConversionConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.schema_configuration {
         #[allow(unused_mut)]
         let mut object_2 = object.key("SchemaConfiguration").start_object();

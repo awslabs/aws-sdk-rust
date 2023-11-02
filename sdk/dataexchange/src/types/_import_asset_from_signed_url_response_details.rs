@@ -159,23 +159,23 @@ impl ImportAssetFromSignedUrlResponseDetailsBuilder {
     /// - [`revision_id`](crate::types::builders::ImportAssetFromSignedUrlResponseDetailsBuilder::revision_id)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::ImportAssetFromSignedUrlResponseDetails, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::ImportAssetFromSignedUrlResponseDetails, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ImportAssetFromSignedUrlResponseDetails {
             asset_name: self.asset_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "asset_name",
                     "asset_name was not specified but it is required when building ImportAssetFromSignedUrlResponseDetails",
                 )
             })?,
             data_set_id: self.data_set_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_set_id",
                     "data_set_id was not specified but it is required when building ImportAssetFromSignedUrlResponseDetails",
                 )
             })?,
             md5_hash: self.md5_hash,
             revision_id: self.revision_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "revision_id",
                     "revision_id was not specified but it is required when building ImportAssetFromSignedUrlResponseDetails",
                 )

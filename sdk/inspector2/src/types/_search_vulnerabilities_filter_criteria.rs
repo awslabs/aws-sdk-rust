@@ -51,10 +51,10 @@ impl SearchVulnerabilitiesFilterCriteriaBuilder {
     /// Consumes the builder and constructs a [`SearchVulnerabilitiesFilterCriteria`](crate::types::SearchVulnerabilitiesFilterCriteria).
     /// This method will fail if any of the following fields are not set:
     /// - [`vulnerability_ids`](crate::types::builders::SearchVulnerabilitiesFilterCriteriaBuilder::vulnerability_ids)
-    pub fn build(self) -> ::std::result::Result<crate::types::SearchVulnerabilitiesFilterCriteria, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SearchVulnerabilitiesFilterCriteria, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SearchVulnerabilitiesFilterCriteria {
             vulnerability_ids: self.vulnerability_ids.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "vulnerability_ids",
                     "vulnerability_ids was not specified but it is required when building SearchVulnerabilitiesFilterCriteria",
                 )

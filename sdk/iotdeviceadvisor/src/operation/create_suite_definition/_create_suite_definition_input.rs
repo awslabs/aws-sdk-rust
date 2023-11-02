@@ -71,7 +71,7 @@ impl CreateSuiteDefinitionInputBuilder {
     /// Consumes the builder and constructs a [`CreateSuiteDefinitionInput`](crate::operation::create_suite_definition::CreateSuiteDefinitionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_suite_definition::CreateSuiteDefinitionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_suite_definition::CreateSuiteDefinitionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_suite_definition::CreateSuiteDefinitionInput {
             suite_definition_configuration: self.suite_definition_configuration,

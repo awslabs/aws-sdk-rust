@@ -144,7 +144,9 @@ impl DetectLabelsInputBuilder {
         &self.settings
     }
     /// Consumes the builder and constructs a [`DetectLabelsInput`](crate::operation::detect_labels::DetectLabelsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::detect_labels::DetectLabelsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::detect_labels::DetectLabelsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::detect_labels::DetectLabelsInput {
             image: self.image,
             max_labels: self.max_labels,

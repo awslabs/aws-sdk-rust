@@ -45,10 +45,10 @@ impl MissingCompleteSensorDataBuilder {
     /// Consumes the builder and constructs a [`MissingCompleteSensorData`](crate::types::MissingCompleteSensorData).
     /// This method will fail if any of the following fields are not set:
     /// - [`affected_sensor_count`](crate::types::builders::MissingCompleteSensorDataBuilder::affected_sensor_count)
-    pub fn build(self) -> ::std::result::Result<crate::types::MissingCompleteSensorData, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::MissingCompleteSensorData, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MissingCompleteSensorData {
             affected_sensor_count: self.affected_sensor_count.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "affected_sensor_count",
                     "affected_sensor_count was not specified but it is required when building MissingCompleteSensorData",
                 )

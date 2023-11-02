@@ -125,7 +125,7 @@ impl CreatePullRequestInputBuilder {
     /// Consumes the builder and constructs a [`CreatePullRequestInput`](crate::operation::create_pull_request::CreatePullRequestInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_pull_request::CreatePullRequestInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_pull_request::CreatePullRequestInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_pull_request::CreatePullRequestInput {
             title: self.title,
             description: self.description,

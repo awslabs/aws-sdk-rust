@@ -754,7 +754,7 @@ impl StartTranscriptionJobInputBuilder {
     /// Consumes the builder and constructs a [`StartTranscriptionJobInput`](crate::operation::start_transcription_job::StartTranscriptionJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_transcription_job::StartTranscriptionJobInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::start_transcription_job::StartTranscriptionJobInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_transcription_job::StartTranscriptionJobInput {
             transcription_job_name: self.transcription_job_name,

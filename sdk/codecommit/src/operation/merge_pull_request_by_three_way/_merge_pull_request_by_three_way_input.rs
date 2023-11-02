@@ -236,7 +236,7 @@ impl MergePullRequestByThreeWayInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayInput {
             pull_request_id: self.pull_request_id,

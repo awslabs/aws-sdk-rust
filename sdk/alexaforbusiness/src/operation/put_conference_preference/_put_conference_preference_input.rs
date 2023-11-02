@@ -46,7 +46,7 @@ impl PutConferencePreferenceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_conference_preference::PutConferencePreferenceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_conference_preference::PutConferencePreferenceInput {
             conference_preference: self.conference_preference,

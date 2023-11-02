@@ -42,7 +42,7 @@ impl GetRuleInputBuilder {
         &self.identifier
     }
     /// Consumes the builder and constructs a [`GetRuleInput`](crate::operation::get_rule::GetRuleInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_rule::GetRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_rule::GetRuleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_rule::GetRuleInput { identifier: self.identifier })
     }
 }

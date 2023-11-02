@@ -2,7 +2,7 @@
 pub fn ser_stop_notebook_execution_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::stop_notebook_execution::StopNotebookExecutionInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.notebook_execution_id {
         object.key("NotebookExecutionId").string(var_1.as_str());
     }

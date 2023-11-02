@@ -93,17 +93,17 @@ impl AssetBundleImportJobRefreshScheduleOverrideParametersBuilder {
     /// - [`schedule_id`](crate::types::builders::AssetBundleImportJobRefreshScheduleOverrideParametersBuilder::schedule_id)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::AssetBundleImportJobRefreshScheduleOverrideParameters, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::types::AssetBundleImportJobRefreshScheduleOverrideParameters, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::types::AssetBundleImportJobRefreshScheduleOverrideParameters {
             data_set_id: self.data_set_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_set_id",
                     "data_set_id was not specified but it is required when building AssetBundleImportJobRefreshScheduleOverrideParameters",
                 )
             })?,
             schedule_id: self.schedule_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "schedule_id",
                     "schedule_id was not specified but it is required when building AssetBundleImportJobRefreshScheduleOverrideParameters",
                 )

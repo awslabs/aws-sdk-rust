@@ -74,11 +74,11 @@ impl SchemaChangeRequestDetailsBuilder {
     /// Consumes the builder and constructs a [`SchemaChangeRequestDetails`](crate::types::SchemaChangeRequestDetails).
     /// This method will fail if any of the following fields are not set:
     /// - [`schema_change_at`](crate::types::builders::SchemaChangeRequestDetailsBuilder::schema_change_at)
-    pub fn build(self) -> ::std::result::Result<crate::types::SchemaChangeRequestDetails, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SchemaChangeRequestDetails, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SchemaChangeRequestDetails {
             changes: self.changes,
             schema_change_at: self.schema_change_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "schema_change_at",
                     "schema_change_at was not specified but it is required when building SchemaChangeRequestDetails",
                 )

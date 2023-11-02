@@ -108,7 +108,7 @@ impl ListIngestionsInputBuilder {
     /// Consumes the builder and constructs a [`ListIngestionsInput`](crate::operation::list_ingestions::ListIngestionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_ingestions::ListIngestionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_ingestions::ListIngestionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_ingestions::ListIngestionsInput {
             data_set_id: self.data_set_id,
             next_token: self.next_token,

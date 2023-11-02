@@ -88,7 +88,7 @@ impl DeleteViewVersionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteViewVersionInput`](crate::operation::delete_view_version::DeleteViewVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_view_version::DeleteViewVersionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_view_version::DeleteViewVersionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_view_version::DeleteViewVersionInput {
             instance_id: self.instance_id,
             view_id: self.view_id,

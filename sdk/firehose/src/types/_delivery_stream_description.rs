@@ -320,22 +320,22 @@ impl DeliveryStreamDescriptionBuilder {
     /// - [`version_id`](crate::types::builders::DeliveryStreamDescriptionBuilder::version_id)
     /// - [`destinations`](crate::types::builders::DeliveryStreamDescriptionBuilder::destinations)
     /// - [`has_more_destinations`](crate::types::builders::DeliveryStreamDescriptionBuilder::has_more_destinations)
-    pub fn build(self) -> ::std::result::Result<crate::types::DeliveryStreamDescription, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DeliveryStreamDescription, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DeliveryStreamDescription {
             delivery_stream_name: self.delivery_stream_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "delivery_stream_name",
                     "delivery_stream_name was not specified but it is required when building DeliveryStreamDescription",
                 )
             })?,
             delivery_stream_arn: self.delivery_stream_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "delivery_stream_arn",
                     "delivery_stream_arn was not specified but it is required when building DeliveryStreamDescription",
                 )
             })?,
             delivery_stream_status: self.delivery_stream_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "delivery_stream_status",
                     "delivery_stream_status was not specified but it is required when building DeliveryStreamDescription",
                 )
@@ -343,13 +343,13 @@ impl DeliveryStreamDescriptionBuilder {
             failure_description: self.failure_description,
             delivery_stream_encryption_configuration: self.delivery_stream_encryption_configuration,
             delivery_stream_type: self.delivery_stream_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "delivery_stream_type",
                     "delivery_stream_type was not specified but it is required when building DeliveryStreamDescription",
                 )
             })?,
             version_id: self.version_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "version_id",
                     "version_id was not specified but it is required when building DeliveryStreamDescription",
                 )
@@ -358,13 +358,13 @@ impl DeliveryStreamDescriptionBuilder {
             last_update_timestamp: self.last_update_timestamp,
             source: self.source,
             destinations: self.destinations.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "destinations",
                     "destinations was not specified but it is required when building DeliveryStreamDescription",
                 )
             })?,
             has_more_destinations: self.has_more_destinations.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "has_more_destinations",
                     "has_more_destinations was not specified but it is required when building DeliveryStreamDescription",
                 )

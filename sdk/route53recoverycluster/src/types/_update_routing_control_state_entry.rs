@@ -69,16 +69,16 @@ impl UpdateRoutingControlStateEntryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`routing_control_arn`](crate::types::builders::UpdateRoutingControlStateEntryBuilder::routing_control_arn)
     /// - [`routing_control_state`](crate::types::builders::UpdateRoutingControlStateEntryBuilder::routing_control_state)
-    pub fn build(self) -> ::std::result::Result<crate::types::UpdateRoutingControlStateEntry, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::UpdateRoutingControlStateEntry, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::UpdateRoutingControlStateEntry {
             routing_control_arn: self.routing_control_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "routing_control_arn",
                     "routing_control_arn was not specified but it is required when building UpdateRoutingControlStateEntry",
                 )
             })?,
             routing_control_state: self.routing_control_state.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "routing_control_state",
                     "routing_control_state was not specified but it is required when building UpdateRoutingControlStateEntry",
                 )

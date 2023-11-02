@@ -2,7 +2,7 @@
 pub fn ser_topic_refresh_schedule(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TopicRefreshSchedule,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("IsEnabled").boolean(input.is_enabled);
     }

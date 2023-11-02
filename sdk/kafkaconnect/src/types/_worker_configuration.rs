@@ -68,11 +68,11 @@ impl WorkerConfigurationBuilder {
     /// Consumes the builder and constructs a [`WorkerConfiguration`](crate::types::WorkerConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`worker_configuration_arn`](crate::types::builders::WorkerConfigurationBuilder::worker_configuration_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::WorkerConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::WorkerConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::WorkerConfiguration {
             revision: self.revision.unwrap_or_default(),
             worker_configuration_arn: self.worker_configuration_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "worker_configuration_arn",
                     "worker_configuration_arn was not specified but it is required when building WorkerConfiguration",
                 )

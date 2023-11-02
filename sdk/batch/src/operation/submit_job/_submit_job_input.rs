@@ -384,7 +384,7 @@ impl SubmitJobInputBuilder {
         &self.eks_properties_override
     }
     /// Consumes the builder and constructs a [`SubmitJobInput`](crate::operation::submit_job::SubmitJobInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::submit_job::SubmitJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::submit_job::SubmitJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::submit_job::SubmitJobInput {
             job_name: self.job_name,
             job_queue: self.job_queue,

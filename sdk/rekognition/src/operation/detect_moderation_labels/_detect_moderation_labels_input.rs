@@ -117,8 +117,10 @@ impl DetectModerationLabelsInputBuilder {
     /// Consumes the builder and constructs a [`DetectModerationLabelsInput`](crate::operation::detect_moderation_labels::DetectModerationLabelsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::detect_moderation_labels::DetectModerationLabelsInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::detect_moderation_labels::DetectModerationLabelsInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::detect_moderation_labels::DetectModerationLabelsInput {
             image: self.image,
             min_confidence: self.min_confidence,

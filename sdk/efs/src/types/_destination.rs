@@ -134,22 +134,22 @@ impl DestinationBuilder {
     /// - [`status`](crate::types::builders::DestinationBuilder::status)
     /// - [`file_system_id`](crate::types::builders::DestinationBuilder::file_system_id)
     /// - [`region`](crate::types::builders::DestinationBuilder::region)
-    pub fn build(self) -> ::std::result::Result<crate::types::Destination, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Destination, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Destination {
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building Destination",
                 )
             })?,
             file_system_id: self.file_system_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "file_system_id",
                     "file_system_id was not specified but it is required when building Destination",
                 )
             })?,
             region: self.region.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "region",
                     "region was not specified but it is required when building Destination",
                 )

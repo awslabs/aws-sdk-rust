@@ -2,7 +2,7 @@
 pub fn ser_re_encryption_attributes(
     object_3: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ReEncryptionAttributes,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::ReEncryptionAttributes::Symmetric(inner) => {
             #[allow(unused_mut)]
@@ -17,7 +17,7 @@ pub fn ser_re_encryption_attributes(
             object_2.finish();
         }
         crate::types::ReEncryptionAttributes::Unknown => {
-            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+            return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "ReEncryptionAttributes",
             ))
         }

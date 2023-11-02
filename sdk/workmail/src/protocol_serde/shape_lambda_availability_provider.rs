@@ -2,7 +2,7 @@
 pub fn ser_lambda_availability_provider(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LambdaAvailabilityProvider,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("LambdaArn").string(input.lambda_arn.as_str());
     }

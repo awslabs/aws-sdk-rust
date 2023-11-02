@@ -196,7 +196,7 @@ impl UpdateFirewallPolicyInputBuilder {
     /// Consumes the builder and constructs a [`UpdateFirewallPolicyInput`](crate::operation::update_firewall_policy::UpdateFirewallPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_firewall_policy::UpdateFirewallPolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_firewall_policy::UpdateFirewallPolicyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_firewall_policy::UpdateFirewallPolicyInput {
             update_token: self.update_token,

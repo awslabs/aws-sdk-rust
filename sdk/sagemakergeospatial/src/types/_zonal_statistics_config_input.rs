@@ -155,16 +155,16 @@ impl ZonalStatisticsConfigInputBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`zone_s3_path`](crate::types::builders::ZonalStatisticsConfigInputBuilder::zone_s3_path)
     /// - [`statistics`](crate::types::builders::ZonalStatisticsConfigInputBuilder::statistics)
-    pub fn build(self) -> ::std::result::Result<crate::types::ZonalStatisticsConfigInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ZonalStatisticsConfigInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ZonalStatisticsConfigInput {
             zone_s3_path: self.zone_s3_path.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "zone_s3_path",
                     "zone_s3_path was not specified but it is required when building ZonalStatisticsConfigInput",
                 )
             })?,
             statistics: self.statistics.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "statistics",
                     "statistics was not specified but it is required when building ZonalStatisticsConfigInput",
                 )

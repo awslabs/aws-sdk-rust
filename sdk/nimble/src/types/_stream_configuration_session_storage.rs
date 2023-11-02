@@ -72,11 +72,11 @@ impl StreamConfigurationSessionStorageBuilder {
     /// Consumes the builder and constructs a [`StreamConfigurationSessionStorage`](crate::types::StreamConfigurationSessionStorage).
     /// This method will fail if any of the following fields are not set:
     /// - [`mode`](crate::types::builders::StreamConfigurationSessionStorageBuilder::mode)
-    pub fn build(self) -> ::std::result::Result<crate::types::StreamConfigurationSessionStorage, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::StreamConfigurationSessionStorage, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::StreamConfigurationSessionStorage {
             root: self.root,
             mode: self.mode.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "mode",
                     "mode was not specified but it is required when building StreamConfigurationSessionStorage",
                 )

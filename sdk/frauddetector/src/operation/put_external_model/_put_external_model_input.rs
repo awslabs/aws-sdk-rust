@@ -183,7 +183,7 @@ impl PutExternalModelInputBuilder {
     /// Consumes the builder and constructs a [`PutExternalModelInput`](crate::operation::put_external_model::PutExternalModelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_external_model::PutExternalModelInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_external_model::PutExternalModelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_external_model::PutExternalModelInput {
             model_endpoint: self.model_endpoint,
             model_source: self.model_source,

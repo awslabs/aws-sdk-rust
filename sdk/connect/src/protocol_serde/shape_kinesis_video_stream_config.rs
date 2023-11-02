@@ -2,7 +2,7 @@
 pub fn ser_kinesis_video_stream_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::KinesisVideoStreamConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Prefix").string(input.prefix.as_str());
     }

@@ -329,7 +329,7 @@ impl CopyPackageVersionsInputBuilder {
     /// Consumes the builder and constructs a [`CopyPackageVersionsInput`](crate::operation::copy_package_versions::CopyPackageVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::copy_package_versions::CopyPackageVersionsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::copy_package_versions::CopyPackageVersionsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::copy_package_versions::CopyPackageVersionsInput {
             domain: self.domain,

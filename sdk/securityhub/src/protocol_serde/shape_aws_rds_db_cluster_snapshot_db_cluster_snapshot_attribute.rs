@@ -2,7 +2,7 @@
 pub fn ser_aws_rds_db_cluster_snapshot_db_cluster_snapshot_attribute(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsRdsDbClusterSnapshotDbClusterSnapshotAttribute,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.attribute_name {
         object.key("AttributeName").string(var_1.as_str());
     }

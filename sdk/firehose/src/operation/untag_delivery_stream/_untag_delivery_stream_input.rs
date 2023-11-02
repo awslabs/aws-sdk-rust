@@ -73,7 +73,7 @@ impl UntagDeliveryStreamInputBuilder {
     /// Consumes the builder and constructs a [`UntagDeliveryStreamInput`](crate::operation::untag_delivery_stream::UntagDeliveryStreamInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::untag_delivery_stream::UntagDeliveryStreamInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::untag_delivery_stream::UntagDeliveryStreamInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::untag_delivery_stream::UntagDeliveryStreamInput {
             delivery_stream_name: self.delivery_stream_name,

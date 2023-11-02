@@ -88,7 +88,7 @@ impl ListResourceSharePermissionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_resource_share_permissions::ListResourceSharePermissionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_resource_share_permissions::ListResourceSharePermissionsInput {
             resource_share_arn: self.resource_share_arn,

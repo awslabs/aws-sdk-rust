@@ -108,10 +108,10 @@ impl AutoScalingGroupProviderBuilder {
     /// Consumes the builder and constructs a [`AutoScalingGroupProvider`](crate::types::AutoScalingGroupProvider).
     /// This method will fail if any of the following fields are not set:
     /// - [`auto_scaling_group_arn`](crate::types::builders::AutoScalingGroupProviderBuilder::auto_scaling_group_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::AutoScalingGroupProvider, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AutoScalingGroupProvider, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AutoScalingGroupProvider {
             auto_scaling_group_arn: self.auto_scaling_group_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "auto_scaling_group_arn",
                     "auto_scaling_group_arn was not specified but it is required when building AutoScalingGroupProvider",
                 )

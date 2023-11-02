@@ -225,7 +225,7 @@ impl CampaignSummaryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`creation_time`](crate::types::builders::CampaignSummaryBuilder::creation_time)
     /// - [`last_modification_time`](crate::types::builders::CampaignSummaryBuilder::last_modification_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::CampaignSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CampaignSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CampaignSummary {
             arn: self.arn,
             name: self.name,
@@ -234,13 +234,13 @@ impl CampaignSummaryBuilder {
             target_arn: self.target_arn,
             status: self.status,
             creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_time",
                     "creation_time was not specified but it is required when building CampaignSummary",
                 )
             })?,
             last_modification_time: self.last_modification_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_modification_time",
                     "last_modification_time was not specified but it is required when building CampaignSummary",
                 )

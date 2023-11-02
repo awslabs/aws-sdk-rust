@@ -257,7 +257,7 @@ impl ListModelPackagesInputBuilder {
     /// Consumes the builder and constructs a [`ListModelPackagesInput`](crate::operation::list_model_packages::ListModelPackagesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_model_packages::ListModelPackagesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_model_packages::ListModelPackagesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_model_packages::ListModelPackagesInput {
             creation_time_after: self.creation_time_after,
             creation_time_before: self.creation_time_before,

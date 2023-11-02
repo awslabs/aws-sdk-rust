@@ -63,10 +63,10 @@ impl StartBatchJobOutputBuilder {
     /// - [`execution_id`](crate::operation::start_batch_job::builders::StartBatchJobOutputBuilder::execution_id)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_batch_job::StartBatchJobOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_batch_job::StartBatchJobOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_batch_job::StartBatchJobOutput {
             execution_id: self.execution_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "execution_id",
                     "execution_id was not specified but it is required when building StartBatchJobOutput",
                 )

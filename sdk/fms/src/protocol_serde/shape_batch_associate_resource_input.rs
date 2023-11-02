@@ -2,7 +2,7 @@
 pub fn ser_batch_associate_resource_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::batch_associate_resource::BatchAssociateResourceInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.resource_set_identifier {
         object.key("ResourceSetIdentifier").string(var_1.as_str());
     }

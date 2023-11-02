@@ -93,22 +93,22 @@ impl BatchDeleteAgentErrorBuilder {
     /// - [`agent_id`](crate::types::builders::BatchDeleteAgentErrorBuilder::agent_id)
     /// - [`error_message`](crate::types::builders::BatchDeleteAgentErrorBuilder::error_message)
     /// - [`error_code`](crate::types::builders::BatchDeleteAgentErrorBuilder::error_code)
-    pub fn build(self) -> ::std::result::Result<crate::types::BatchDeleteAgentError, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::BatchDeleteAgentError, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::BatchDeleteAgentError {
             agent_id: self.agent_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "agent_id",
                     "agent_id was not specified but it is required when building BatchDeleteAgentError",
                 )
             })?,
             error_message: self.error_message.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "error_message",
                     "error_message was not specified but it is required when building BatchDeleteAgentError",
                 )
             })?,
             error_code: self.error_code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "error_code",
                     "error_code was not specified but it is required when building BatchDeleteAgentError",
                 )

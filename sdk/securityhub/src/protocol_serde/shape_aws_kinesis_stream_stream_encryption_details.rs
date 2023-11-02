@@ -2,7 +2,7 @@
 pub fn ser_aws_kinesis_stream_stream_encryption_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsKinesisStreamStreamEncryptionDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.encryption_type {
         object.key("EncryptionType").string(var_1.as_str());
     }

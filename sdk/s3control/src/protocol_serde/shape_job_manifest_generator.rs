@@ -2,7 +2,7 @@
 pub fn ser_job_manifest_generator(
     input: &crate::types::JobManifestGenerator,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     let mut scope_writer = writer.finish();
     match input {
         crate::types::JobManifestGenerator::S3JobManifestGenerator(inner) => {
@@ -10,7 +10,7 @@ pub fn ser_job_manifest_generator(
             crate::protocol_serde::shape_s3_job_manifest_generator::ser_s3_job_manifest_generator(inner, inner_writer)?
         }
         crate::types::JobManifestGenerator::Unknown => {
-            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+            return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "JobManifestGenerator",
             ))
         }

@@ -66,7 +66,7 @@ impl CancelSchemaExtensionInputBuilder {
     /// Consumes the builder and constructs a [`CancelSchemaExtensionInput`](crate::operation::cancel_schema_extension::CancelSchemaExtensionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::cancel_schema_extension::CancelSchemaExtensionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::cancel_schema_extension::CancelSchemaExtensionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::cancel_schema_extension::CancelSchemaExtensionInput {
             directory_id: self.directory_id,

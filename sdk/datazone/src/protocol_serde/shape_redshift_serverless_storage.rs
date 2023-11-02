@@ -2,7 +2,7 @@
 pub fn ser_redshift_serverless_storage(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RedshiftServerlessStorage,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("workgroupName").string(input.workgroup_name.as_str());
     }

@@ -64,7 +64,7 @@ impl DeleteSceneInputBuilder {
         &self.scene_id
     }
     /// Consumes the builder and constructs a [`DeleteSceneInput`](crate::operation::delete_scene::DeleteSceneInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_scene::DeleteSceneInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_scene::DeleteSceneInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_scene::DeleteSceneInput {
             workspace_id: self.workspace_id,
             scene_id: self.scene_id,

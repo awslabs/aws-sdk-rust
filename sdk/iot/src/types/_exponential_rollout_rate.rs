@@ -95,16 +95,16 @@ impl ExponentialRolloutRateBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`base_rate_per_minute`](crate::types::builders::ExponentialRolloutRateBuilder::base_rate_per_minute)
     /// - [`increment_factor`](crate::types::builders::ExponentialRolloutRateBuilder::increment_factor)
-    pub fn build(self) -> ::std::result::Result<crate::types::ExponentialRolloutRate, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ExponentialRolloutRate, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ExponentialRolloutRate {
             base_rate_per_minute: self.base_rate_per_minute.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "base_rate_per_minute",
                     "base_rate_per_minute was not specified but it is required when building ExponentialRolloutRate",
                 )
             })?,
             increment_factor: self.increment_factor.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "increment_factor",
                     "increment_factor was not specified but it is required when building ExponentialRolloutRate",
                 )

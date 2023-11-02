@@ -69,16 +69,16 @@ impl ContractIdentifierBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`network`](crate::types::builders::ContractIdentifierBuilder::network)
     /// - [`contract_address`](crate::types::builders::ContractIdentifierBuilder::contract_address)
-    pub fn build(self) -> ::std::result::Result<crate::types::ContractIdentifier, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ContractIdentifier, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ContractIdentifier {
             network: self.network.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "network",
                     "network was not specified but it is required when building ContractIdentifier",
                 )
             })?,
             contract_address: self.contract_address.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "contract_address",
                     "contract_address was not specified but it is required when building ContractIdentifier",
                 )

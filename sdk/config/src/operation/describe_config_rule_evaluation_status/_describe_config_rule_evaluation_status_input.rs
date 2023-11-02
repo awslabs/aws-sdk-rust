@@ -106,7 +106,7 @@ impl DescribeConfigRuleEvaluationStatusInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_config_rule_evaluation_status::DescribeConfigRuleEvaluationStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_config_rule_evaluation_status::DescribeConfigRuleEvaluationStatusInput {

@@ -2,7 +2,7 @@
 pub fn ser_data_set_reference(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DataSetReference,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("DataSetPlaceholder").string(input.data_set_placeholder.as_str());
     }

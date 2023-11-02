@@ -46,7 +46,7 @@ impl DeleteServiceSyncConfigInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_service_sync_config::DeleteServiceSyncConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_service_sync_config::DeleteServiceSyncConfigInput {
             service_name: self.service_name,

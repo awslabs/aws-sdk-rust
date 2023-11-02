@@ -253,7 +253,7 @@ impl GetSpotPlacementScoresInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_spot_placement_scores::GetSpotPlacementScoresInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_spot_placement_scores::GetSpotPlacementScoresInput {
             instance_types: self.instance_types,

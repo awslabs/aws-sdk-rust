@@ -2,7 +2,7 @@
 pub fn ser_create_patch_baseline_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_patch_baseline::CreatePatchBaselineInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.operating_system {
         object.key("OperatingSystem").string(var_1.as_str());
     }

@@ -99,10 +99,10 @@ impl TokenIdentifierBuilder {
     /// Consumes the builder and constructs a [`TokenIdentifier`](crate::types::TokenIdentifier).
     /// This method will fail if any of the following fields are not set:
     /// - [`network`](crate::types::builders::TokenIdentifierBuilder::network)
-    pub fn build(self) -> ::std::result::Result<crate::types::TokenIdentifier, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TokenIdentifier, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TokenIdentifier {
             network: self.network.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "network",
                     "network was not specified but it is required when building TokenIdentifier",
                 )

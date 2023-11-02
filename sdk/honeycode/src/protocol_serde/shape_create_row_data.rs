@@ -2,7 +2,7 @@
 pub fn ser_create_row_data(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CreateRowData,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("batchItemId").string(input.batch_item_id.as_str());
     }

@@ -81,7 +81,7 @@ impl BatchDetectKeyPhrasesInputBuilder {
     /// Consumes the builder and constructs a [`BatchDetectKeyPhrasesInput`](crate::operation::batch_detect_key_phrases::BatchDetectKeyPhrasesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_detect_key_phrases::BatchDetectKeyPhrasesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::batch_detect_key_phrases::BatchDetectKeyPhrasesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::batch_detect_key_phrases::BatchDetectKeyPhrasesInput {
             text_list: self.text_list,

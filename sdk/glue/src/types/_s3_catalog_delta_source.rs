@@ -157,22 +157,22 @@ impl S3CatalogDeltaSourceBuilder {
     /// - [`name`](crate::types::builders::S3CatalogDeltaSourceBuilder::name)
     /// - [`database`](crate::types::builders::S3CatalogDeltaSourceBuilder::database)
     /// - [`table`](crate::types::builders::S3CatalogDeltaSourceBuilder::table)
-    pub fn build(self) -> ::std::result::Result<crate::types::S3CatalogDeltaSource, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::S3CatalogDeltaSource, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::S3CatalogDeltaSource {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building S3CatalogDeltaSource",
                 )
             })?,
             database: self.database.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "database",
                     "database was not specified but it is required when building S3CatalogDeltaSource",
                 )
             })?,
             table: self.table.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "table",
                     "table was not specified but it is required when building S3CatalogDeltaSource",
                 )

@@ -113,17 +113,17 @@ impl SelectParametersBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`expression_type`](crate::types::builders::SelectParametersBuilder::expression_type)
     /// - [`expression`](crate::types::builders::SelectParametersBuilder::expression)
-    pub fn build(self) -> ::std::result::Result<crate::types::SelectParameters, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SelectParameters, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SelectParameters {
             input_serialization: self.input_serialization,
             expression_type: self.expression_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "expression_type",
                     "expression_type was not specified but it is required when building SelectParameters",
                 )
             })?,
             expression: self.expression.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "expression",
                     "expression was not specified but it is required when building SelectParameters",
                 )

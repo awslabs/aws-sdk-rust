@@ -96,7 +96,7 @@ impl DescribeInboundConnectionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_inbound_connections::DescribeInboundConnectionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_inbound_connections::DescribeInboundConnectionsInput {
             filters: self.filters,

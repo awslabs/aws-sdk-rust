@@ -211,7 +211,7 @@ impl CreateMlEndpointInputBuilder {
     /// Consumes the builder and constructs a [`CreateMlEndpointInput`](crate::operation::create_ml_endpoint::CreateMlEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_ml_endpoint::CreateMlEndpointInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_ml_endpoint::CreateMlEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_ml_endpoint::CreateMlEndpointInput {
             id: self.id,
             ml_model_training_job_id: self.ml_model_training_job_id,

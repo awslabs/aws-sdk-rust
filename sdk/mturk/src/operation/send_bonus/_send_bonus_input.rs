@@ -129,7 +129,7 @@ impl SendBonusInputBuilder {
         &self.unique_request_token
     }
     /// Consumes the builder and constructs a [`SendBonusInput`](crate::operation::send_bonus::SendBonusInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::send_bonus::SendBonusInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::send_bonus::SendBonusInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::send_bonus::SendBonusInput {
             worker_id: self.worker_id,
             bonus_amount: self.bonus_amount,

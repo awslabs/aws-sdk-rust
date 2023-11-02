@@ -46,7 +46,7 @@ impl DeleteDatasetImportJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_dataset_import_job::DeleteDatasetImportJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_dataset_import_job::DeleteDatasetImportJobInput {
             dataset_import_job_arn: self.dataset_import_job_arn,

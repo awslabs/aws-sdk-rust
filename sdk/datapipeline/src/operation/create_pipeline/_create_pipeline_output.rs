@@ -64,10 +64,10 @@ impl CreatePipelineOutputBuilder {
     /// - [`pipeline_id`](crate::operation::create_pipeline::builders::CreatePipelineOutputBuilder::pipeline_id)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_pipeline::CreatePipelineOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_pipeline::CreatePipelineOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_pipeline::CreatePipelineOutput {
             pipeline_id: self.pipeline_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "pipeline_id",
                     "pipeline_id was not specified but it is required when building CreatePipelineOutput",
                 )

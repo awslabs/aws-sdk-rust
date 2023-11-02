@@ -339,22 +339,22 @@ impl CodegenJobBuilder {
     /// - [`id`](crate::types::builders::CodegenJobBuilder::id)
     /// - [`app_id`](crate::types::builders::CodegenJobBuilder::app_id)
     /// - [`environment_name`](crate::types::builders::CodegenJobBuilder::environment_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::CodegenJob, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CodegenJob, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CodegenJob {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building CodegenJob",
                 )
             })?,
             app_id: self.app_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "app_id",
                     "app_id was not specified but it is required when building CodegenJob",
                 )
             })?,
             environment_name: self.environment_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "environment_name",
                     "environment_name was not specified but it is required when building CodegenJob",
                 )

@@ -109,7 +109,7 @@ impl StartHumanLoopInputBuilder {
     /// Consumes the builder and constructs a [`StartHumanLoopInput`](crate::operation::start_human_loop::StartHumanLoopInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_human_loop::StartHumanLoopInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_human_loop::StartHumanLoopInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_human_loop::StartHumanLoopInput {
             human_loop_name: self.human_loop_name,
             flow_definition_arn: self.flow_definition_arn,

@@ -2,7 +2,7 @@
 pub fn ser_start_text_translation_job_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_text_translation_job::StartTextTranslationJobInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.job_name {
         object.key("JobName").string(var_1.as_str());
     }

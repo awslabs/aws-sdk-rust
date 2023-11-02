@@ -444,7 +444,7 @@ impl CreateNodegroupInputBuilder {
     /// Consumes the builder and constructs a [`CreateNodegroupInput`](crate::operation::create_nodegroup::CreateNodegroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_nodegroup::CreateNodegroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_nodegroup::CreateNodegroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_nodegroup::CreateNodegroupInput {
             cluster_name: self.cluster_name,
             nodegroup_name: self.nodegroup_name,

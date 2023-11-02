@@ -213,7 +213,7 @@ impl CreateLabelInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateLabelInput`](crate::operation::create_label::CreateLabelInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_label::CreateLabelInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_label::CreateLabelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_label::CreateLabelInput {
             label_group_name: self.label_group_name,
             start_time: self.start_time,

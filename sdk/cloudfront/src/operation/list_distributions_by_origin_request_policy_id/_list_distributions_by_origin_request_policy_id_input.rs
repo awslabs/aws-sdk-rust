@@ -89,7 +89,7 @@ impl ListDistributionsByOriginRequestPolicyIdInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_distributions_by_origin_request_policy_id::ListDistributionsByOriginRequestPolicyIdInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_distributions_by_origin_request_policy_id::ListDistributionsByOriginRequestPolicyIdInput {

@@ -2,7 +2,7 @@
 pub fn ser_drop_down_control_display_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DropDownControlDisplayOptions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.select_all_options {
         #[allow(unused_mut)]
         let mut object_2 = object.key("SelectAllOptions").start_object();

@@ -46,10 +46,10 @@ impl HttpConfigurationBuilder {
     /// Consumes the builder and constructs a [`HttpConfiguration`](crate::types::HttpConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`base_url`](crate::types::builders::HttpConfigurationBuilder::base_url)
-    pub fn build(self) -> ::std::result::Result<crate::types::HttpConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::HttpConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::HttpConfiguration {
             base_url: self.base_url.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "base_url",
                     "base_url was not specified but it is required when building HttpConfiguration",
                 )

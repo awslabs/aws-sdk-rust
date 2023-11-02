@@ -2,7 +2,7 @@
 pub fn ser_tdscdma_local_id(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TdscdmaLocalId,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Uarfcn").number(
             #[allow(clippy::useless_conversion)]

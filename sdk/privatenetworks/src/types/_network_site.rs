@@ -264,30 +264,30 @@ impl NetworkSiteBuilder {
     /// - [`network_site_name`](crate::types::builders::NetworkSiteBuilder::network_site_name)
     /// - [`status`](crate::types::builders::NetworkSiteBuilder::status)
     /// - [`network_arn`](crate::types::builders::NetworkSiteBuilder::network_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::NetworkSite, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::NetworkSite, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::NetworkSite {
             network_site_arn: self.network_site_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "network_site_arn",
                     "network_site_arn was not specified but it is required when building NetworkSite",
                 )
             })?,
             network_site_name: self.network_site_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "network_site_name",
                     "network_site_name was not specified but it is required when building NetworkSite",
                 )
             })?,
             description: self.description,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building NetworkSite",
                 )
             })?,
             status_reason: self.status_reason,
             network_arn: self.network_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "network_arn",
                     "network_arn was not specified but it is required when building NetworkSite",
                 )

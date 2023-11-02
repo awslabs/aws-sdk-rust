@@ -178,7 +178,7 @@ impl CopyOptionGroupInputBuilder {
     /// Consumes the builder and constructs a [`CopyOptionGroupInput`](crate::operation::copy_option_group::CopyOptionGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::copy_option_group::CopyOptionGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::copy_option_group::CopyOptionGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::copy_option_group::CopyOptionGroupInput {
             source_option_group_identifier: self.source_option_group_identifier,
             target_option_group_identifier: self.target_option_group_identifier,

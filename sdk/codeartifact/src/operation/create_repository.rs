@@ -173,7 +173,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for CreateReposi
             fn uri_base(
                 _input: &crate::operation::create_repository::CreateRepositoryInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 use ::std::fmt::Write as _;
                 ::std::write!(output, "/v1/repository").expect("formatting should succeed");
                 ::std::result::Result::Ok(())
@@ -181,14 +181,14 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for CreateReposi
             fn uri_query(
                 _input: &crate::operation::create_repository::CreateRepositoryInput,
                 mut output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 let inner_1 = &_input.domain;
                 let inner_1 = inner_1
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("domain", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("domain", "cannot be empty or unset"))?;
                 if inner_1.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "domain",
                         "cannot be empty or unset",
                     ));
@@ -202,9 +202,9 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for CreateReposi
                 let inner_3 = &_input.repository;
                 let inner_3 = inner_3
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("repository", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("repository", "cannot be empty or unset"))?;
                 if inner_3.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "repository",
                         "cannot be empty or unset",
                     ));
@@ -216,7 +216,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for CreateReposi
             fn update_http_builder(
                 input: &crate::operation::create_repository::CreateRepositoryInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -226,7 +226,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for CreateReposi
             builder = _header_serialization_settings.set_default_header(builder, ::http::header::CONTENT_TYPE, "application/json");
             builder
         };
-        let body = ::aws_smithy_http::body::SdkBody::from(crate::protocol_serde::shape_create_repository::ser_create_repository_input(&input)?);
+        let body = ::aws_smithy_types::body::SdkBody::from(crate::protocol_serde::shape_create_repository::ser_create_repository_input(&input)?);
         if let Some(content_length) = body.content_length() {
             let content_length = content_length.to_string();
             request_builder = _header_serialization_settings.set_default_header(request_builder, ::http::header::CONTENT_LENGTH, &content_length);

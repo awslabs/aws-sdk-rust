@@ -44,7 +44,7 @@ impl GetConnectionStatusInputBuilder {
     /// Consumes the builder and constructs a [`GetConnectionStatusInput`](crate::operation::get_connection_status::GetConnectionStatusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_connection_status::GetConnectionStatusInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_connection_status::GetConnectionStatusInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_connection_status::GetConnectionStatusInput { target: self.target })
     }

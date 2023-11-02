@@ -2,7 +2,7 @@
 pub fn ser_enrollment_flags_v3(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EnrollmentFlagsV3,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.include_symmetric_algorithms {
         object.key("IncludeSymmetricAlgorithms").boolean(*var_1);
     }

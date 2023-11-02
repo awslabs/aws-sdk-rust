@@ -224,7 +224,7 @@ impl PutKeyPolicyInputBuilder {
     /// Consumes the builder and constructs a [`PutKeyPolicyInput`](crate::operation::put_key_policy::PutKeyPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_key_policy::PutKeyPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_key_policy::PutKeyPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_key_policy::PutKeyPolicyInput {
             key_id: self.key_id,
             policy_name: self.policy_name,

@@ -66,7 +66,7 @@ impl GetBlueprintRunInputBuilder {
     /// Consumes the builder and constructs a [`GetBlueprintRunInput`](crate::operation::get_blueprint_run::GetBlueprintRunInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_blueprint_run::GetBlueprintRunInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_blueprint_run::GetBlueprintRunInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_blueprint_run::GetBlueprintRunInput {
             blueprint_name: self.blueprint_name,
             run_id: self.run_id,

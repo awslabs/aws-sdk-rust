@@ -65,7 +65,7 @@ impl UnarchiveApplicationInputBuilder {
     /// Consumes the builder and constructs a [`UnarchiveApplicationInput`](crate::operation::unarchive_application::UnarchiveApplicationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::unarchive_application::UnarchiveApplicationInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::unarchive_application::UnarchiveApplicationInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::unarchive_application::UnarchiveApplicationInput {
             application_id: self.application_id,

@@ -139,7 +139,7 @@ impl GetCertificatesInputBuilder {
     /// Consumes the builder and constructs a [`GetCertificatesInput`](crate::operation::get_certificates::GetCertificatesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_certificates::GetCertificatesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_certificates::GetCertificatesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_certificates::GetCertificatesInput {
             certificate_statuses: self.certificate_statuses,
             include_certificate_details: self.include_certificate_details,

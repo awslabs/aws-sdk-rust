@@ -167,7 +167,7 @@ impl CreateWorkforceInputBuilder {
     /// Consumes the builder and constructs a [`CreateWorkforceInput`](crate::operation::create_workforce::CreateWorkforceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_workforce::CreateWorkforceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_workforce::CreateWorkforceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_workforce::CreateWorkforceInput {
             cognito_config: self.cognito_config,
             oidc_config: self.oidc_config,

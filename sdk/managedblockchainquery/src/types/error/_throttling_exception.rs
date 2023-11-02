@@ -154,22 +154,22 @@ impl ThrottlingExceptionBuilder {
     /// - [`message`](crate::types::error::builders::ThrottlingExceptionBuilder::message)
     /// - [`service_code`](crate::types::error::builders::ThrottlingExceptionBuilder::service_code)
     /// - [`quota_code`](crate::types::error::builders::ThrottlingExceptionBuilder::quota_code)
-    pub fn build(self) -> ::std::result::Result<crate::types::error::ThrottlingException, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::error::ThrottlingException, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::error::ThrottlingException {
             message: self.message.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "message",
                     "message was not specified but it is required when building ThrottlingException",
                 )
             })?,
             service_code: self.service_code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "service_code",
                     "service_code was not specified but it is required when building ThrottlingException",
                 )
             })?,
             quota_code: self.quota_code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "quota_code",
                     "quota_code was not specified but it is required when building ThrottlingException",
                 )

@@ -65,7 +65,7 @@ impl GetDataQualityMetricsInputBuilder {
     /// Consumes the builder and constructs a [`GetDataQualityMetricsInput`](crate::operation::get_data_quality_metrics::GetDataQualityMetricsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_data_quality_metrics::GetDataQualityMetricsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_data_quality_metrics::GetDataQualityMetricsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_data_quality_metrics::GetDataQualityMetricsInput {
             anomaly_detector_arn: self.anomaly_detector_arn,

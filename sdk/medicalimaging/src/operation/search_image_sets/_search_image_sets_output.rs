@@ -92,10 +92,10 @@ impl SearchImageSetsOutputBuilder {
     /// - [`image_sets_metadata_summaries`](crate::operation::search_image_sets::builders::SearchImageSetsOutputBuilder::image_sets_metadata_summaries)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::search_image_sets::SearchImageSetsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::search_image_sets::SearchImageSetsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_image_sets::SearchImageSetsOutput {
             image_sets_metadata_summaries: self.image_sets_metadata_summaries.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "image_sets_metadata_summaries",
                     "image_sets_metadata_summaries was not specified but it is required when building SearchImageSetsOutput",
                 )

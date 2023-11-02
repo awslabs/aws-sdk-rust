@@ -45,7 +45,7 @@ impl DeleteWebhookInputBuilder {
     /// Consumes the builder and constructs a [`DeleteWebhookInput`](crate::operation::delete_webhook::DeleteWebhookInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_webhook::DeleteWebhookInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_webhook::DeleteWebhookInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_webhook::DeleteWebhookInput { webhook_id: self.webhook_id })
     }
 }

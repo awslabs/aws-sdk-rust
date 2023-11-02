@@ -123,7 +123,7 @@ impl CreateDataflowEndpointGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpointGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpointGroupInput {
             endpoint_details: self.endpoint_details,

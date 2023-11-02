@@ -183,7 +183,7 @@ impl GetProfileInputBuilder {
         &self.accept
     }
     /// Consumes the builder and constructs a [`GetProfileInput`](crate::operation::get_profile::GetProfileInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_profile::GetProfileInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_profile::GetProfileInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_profile::GetProfileInput {
             profiling_group_name: self.profiling_group_name,
             start_time: self.start_time,

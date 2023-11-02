@@ -2,7 +2,7 @@
 pub fn ser_hdfs_name_node(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::HdfsNameNode,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Hostname").string(input.hostname.as_str());
     }

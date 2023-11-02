@@ -131,7 +131,7 @@ impl DisableAwsNetworkPerformanceMetricSubscriptionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disable_aws_network_performance_metric_subscription::DisableAwsNetworkPerformanceMetricSubscriptionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::disable_aws_network_performance_metric_subscription::DisableAwsNetworkPerformanceMetricSubscriptionInput {

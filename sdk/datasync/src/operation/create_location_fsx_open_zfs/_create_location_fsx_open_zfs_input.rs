@@ -147,7 +147,7 @@ impl CreateLocationFsxOpenZfsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_location_fsx_open_zfs::CreateLocationFsxOpenZfsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_location_fsx_open_zfs::CreateLocationFsxOpenZfsInput {
             fsx_filesystem_arn: self.fsx_filesystem_arn,

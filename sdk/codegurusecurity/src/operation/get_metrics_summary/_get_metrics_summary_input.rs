@@ -44,7 +44,7 @@ impl GetMetricsSummaryInputBuilder {
     /// Consumes the builder and constructs a [`GetMetricsSummaryInput`](crate::operation::get_metrics_summary::GetMetricsSummaryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_metrics_summary::GetMetricsSummaryInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_metrics_summary::GetMetricsSummaryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_metrics_summary::GetMetricsSummaryInput { date: self.date })
     }
 }

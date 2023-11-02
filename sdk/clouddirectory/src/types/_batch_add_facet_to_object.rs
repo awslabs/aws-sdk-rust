@@ -95,11 +95,11 @@ impl BatchAddFacetToObjectBuilder {
     /// Consumes the builder and constructs a [`BatchAddFacetToObject`](crate::types::BatchAddFacetToObject).
     /// This method will fail if any of the following fields are not set:
     /// - [`object_attribute_list`](crate::types::builders::BatchAddFacetToObjectBuilder::object_attribute_list)
-    pub fn build(self) -> ::std::result::Result<crate::types::BatchAddFacetToObject, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::BatchAddFacetToObject, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::BatchAddFacetToObject {
             schema_facet: self.schema_facet,
             object_attribute_list: self.object_attribute_list.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "object_attribute_list",
                     "object_attribute_list was not specified but it is required when building BatchAddFacetToObject",
                 )

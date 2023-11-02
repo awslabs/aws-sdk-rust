@@ -157,7 +157,7 @@ impl CreateAgentStatusInputBuilder {
     /// Consumes the builder and constructs a [`CreateAgentStatusInput`](crate::operation::create_agent_status::CreateAgentStatusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_agent_status::CreateAgentStatusInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_agent_status::CreateAgentStatusInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_agent_status::CreateAgentStatusInput {
             instance_id: self.instance_id,
             name: self.name,

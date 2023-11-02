@@ -65,8 +65,10 @@ impl UpdateLoggerDefinitionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateLoggerDefinitionInput`](crate::operation::update_logger_definition::UpdateLoggerDefinitionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_logger_definition::UpdateLoggerDefinitionInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::update_logger_definition::UpdateLoggerDefinitionInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::update_logger_definition::UpdateLoggerDefinitionInput {
             logger_definition_id: self.logger_definition_id,
             name: self.name,

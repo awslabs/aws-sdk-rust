@@ -130,7 +130,7 @@ impl ListThemesInputBuilder {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`ListThemesInput`](crate::operation::list_themes::ListThemesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_themes::ListThemesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_themes::ListThemesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_themes::ListThemesInput {
             aws_account_id: self.aws_account_id,
             next_token: self.next_token,

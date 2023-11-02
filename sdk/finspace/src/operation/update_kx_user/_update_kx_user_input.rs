@@ -109,7 +109,7 @@ impl UpdateKxUserInputBuilder {
     /// Consumes the builder and constructs a [`UpdateKxUserInput`](crate::operation::update_kx_user::UpdateKxUserInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_kx_user::UpdateKxUserInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_kx_user::UpdateKxUserInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_kx_user::UpdateKxUserInput {
             environment_id: self.environment_id,
             user_name: self.user_name,

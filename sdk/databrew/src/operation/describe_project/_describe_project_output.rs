@@ -367,7 +367,7 @@ impl DescribeProjectOutputBuilder {
     /// - [`name`](crate::operation::describe_project::builders::DescribeProjectOutputBuilder::name)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_project::DescribeProjectOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_project::DescribeProjectOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_project::DescribeProjectOutput {
             create_date: self.create_date,
             created_by: self.created_by,
@@ -375,7 +375,7 @@ impl DescribeProjectOutputBuilder {
             last_modified_date: self.last_modified_date,
             last_modified_by: self.last_modified_by,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building DescribeProjectOutput",
                 )

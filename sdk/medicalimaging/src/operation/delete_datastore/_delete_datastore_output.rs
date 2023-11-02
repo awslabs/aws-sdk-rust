@@ -86,16 +86,16 @@ impl DeleteDatastoreOutputBuilder {
     /// - [`datastore_status`](crate::operation::delete_datastore::builders::DeleteDatastoreOutputBuilder::datastore_status)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_datastore::DeleteDatastoreOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_datastore::DeleteDatastoreOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_datastore::DeleteDatastoreOutput {
             datastore_id: self.datastore_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "datastore_id",
                     "datastore_id was not specified but it is required when building DeleteDatastoreOutput",
                 )
             })?,
             datastore_status: self.datastore_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "datastore_status",
                     "datastore_status was not specified but it is required when building DeleteDatastoreOutput",
                 )

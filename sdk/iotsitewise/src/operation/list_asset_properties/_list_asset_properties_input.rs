@@ -132,7 +132,7 @@ impl ListAssetPropertiesInputBuilder {
     /// Consumes the builder and constructs a [`ListAssetPropertiesInput`](crate::operation::list_asset_properties::ListAssetPropertiesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_asset_properties::ListAssetPropertiesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_asset_properties::ListAssetPropertiesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_asset_properties::ListAssetPropertiesInput {
             asset_id: self.asset_id,

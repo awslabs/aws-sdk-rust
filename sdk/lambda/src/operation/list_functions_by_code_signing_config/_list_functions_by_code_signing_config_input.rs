@@ -88,7 +88,7 @@ impl ListFunctionsByCodeSigningConfigInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_functions_by_code_signing_config::ListFunctionsByCodeSigningConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_functions_by_code_signing_config::ListFunctionsByCodeSigningConfigInput {

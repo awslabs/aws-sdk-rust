@@ -67,7 +67,7 @@ impl DeleteSuggesterInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSuggesterInput`](crate::operation::delete_suggester::DeleteSuggesterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_suggester::DeleteSuggesterInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_suggester::DeleteSuggesterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_suggester::DeleteSuggesterInput {
             domain_name: self.domain_name,
             suggester_name: self.suggester_name,

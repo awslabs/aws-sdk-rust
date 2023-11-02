@@ -179,8 +179,10 @@ impl CreateEventDestinationInputBuilder {
     /// Consumes the builder and constructs a [`CreateEventDestinationInput`](crate::operation::create_event_destination::CreateEventDestinationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_event_destination::CreateEventDestinationInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::create_event_destination::CreateEventDestinationInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::create_event_destination::CreateEventDestinationInput {
             configuration_set_name: self.configuration_set_name,
             event_destination_name: self.event_destination_name,

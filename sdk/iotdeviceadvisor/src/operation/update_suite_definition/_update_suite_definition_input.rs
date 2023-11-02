@@ -66,7 +66,7 @@ impl UpdateSuiteDefinitionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateSuiteDefinitionInput`](crate::operation::update_suite_definition::UpdateSuiteDefinitionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_suite_definition::UpdateSuiteDefinitionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_suite_definition::UpdateSuiteDefinitionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_suite_definition::UpdateSuiteDefinitionInput {
             suite_definition_id: self.suite_definition_id,

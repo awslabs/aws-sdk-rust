@@ -2,7 +2,7 @@
 pub fn ser_asset_property_timestamp(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AssetPropertyTimestamp,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("timeInSeconds").string(input.time_in_seconds.as_str());
     }

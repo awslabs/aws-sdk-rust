@@ -216,7 +216,7 @@ impl CreateVocabularyInputBuilder {
     /// Consumes the builder and constructs a [`CreateVocabularyInput`](crate::operation::create_vocabulary::CreateVocabularyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_vocabulary::CreateVocabularyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_vocabulary::CreateVocabularyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_vocabulary::CreateVocabularyInput {
             vocabulary_name: self.vocabulary_name,
             language_code: self.language_code,

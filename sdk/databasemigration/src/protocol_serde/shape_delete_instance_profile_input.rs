@@ -2,7 +2,7 @@
 pub fn ser_delete_instance_profile_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_instance_profile::DeleteInstanceProfileInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.instance_profile_identifier {
         object.key("InstanceProfileIdentifier").string(var_1.as_str());
     }

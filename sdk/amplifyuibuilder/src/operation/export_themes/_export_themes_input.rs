@@ -85,7 +85,9 @@ impl ExportThemesInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ExportThemesInput`](crate::operation::export_themes::ExportThemesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::export_themes::ExportThemesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::export_themes::ExportThemesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::export_themes::ExportThemesInput {
             app_id: self.app_id,
             environment_name: self.environment_name,

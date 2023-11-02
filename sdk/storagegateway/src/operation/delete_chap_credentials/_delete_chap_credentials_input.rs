@@ -71,7 +71,7 @@ impl DeleteChapCredentialsInputBuilder {
     /// Consumes the builder and constructs a [`DeleteChapCredentialsInput`](crate::operation::delete_chap_credentials::DeleteChapCredentialsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_chap_credentials::DeleteChapCredentialsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_chap_credentials::DeleteChapCredentialsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_chap_credentials::DeleteChapCredentialsInput {
             target_arn: self.target_arn,

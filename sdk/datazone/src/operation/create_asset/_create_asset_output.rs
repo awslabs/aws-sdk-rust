@@ -485,35 +485,35 @@ impl CreateAssetOutputBuilder {
     /// - [`owning_project_id`](crate::operation::create_asset::builders::CreateAssetOutputBuilder::owning_project_id)
     /// - [`domain_id`](crate::operation::create_asset::builders::CreateAssetOutputBuilder::domain_id)
     /// - [`forms_output`](crate::operation::create_asset::builders::CreateAssetOutputBuilder::forms_output)
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_asset::CreateAssetOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_asset::CreateAssetOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_asset::CreateAssetOutput {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building CreateAssetOutput",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building CreateAssetOutput",
                 )
             })?,
             type_identifier: self.type_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "type_identifier",
                     "type_identifier was not specified but it is required when building CreateAssetOutput",
                 )
             })?,
             type_revision: self.type_revision.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "type_revision",
                     "type_revision was not specified but it is required when building CreateAssetOutput",
                 )
             })?,
             external_identifier: self.external_identifier,
             revision: self.revision.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "revision",
                     "revision was not specified but it is required when building CreateAssetOutput",
                 )
@@ -525,20 +525,20 @@ impl CreateAssetOutputBuilder {
             first_revision_created_by: self.first_revision_created_by,
             glossary_terms: self.glossary_terms,
             owning_project_id: self.owning_project_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "owning_project_id",
                     "owning_project_id was not specified but it is required when building CreateAssetOutput",
                 )
             })?,
             domain_id: self.domain_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "domain_id",
                     "domain_id was not specified but it is required when building CreateAssetOutput",
                 )
             })?,
             listing: self.listing,
             forms_output: self.forms_output.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "forms_output",
                     "forms_output was not specified but it is required when building CreateAssetOutput",
                 )

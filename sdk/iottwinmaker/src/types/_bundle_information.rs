@@ -72,10 +72,10 @@ impl BundleInformationBuilder {
     /// Consumes the builder and constructs a [`BundleInformation`](crate::types::BundleInformation).
     /// This method will fail if any of the following fields are not set:
     /// - [`bundle_names`](crate::types::builders::BundleInformationBuilder::bundle_names)
-    pub fn build(self) -> ::std::result::Result<crate::types::BundleInformation, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::BundleInformation, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::BundleInformation {
             bundle_names: self.bundle_names.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "bundle_names",
                     "bundle_names was not specified but it is required when building BundleInformation",
                 )

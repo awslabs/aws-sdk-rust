@@ -121,12 +121,12 @@ impl BatchCreateTableRowsOutputBuilder {
     /// - [`created_rows`](crate::operation::batch_create_table_rows::builders::BatchCreateTableRowsOutputBuilder::created_rows)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_create_table_rows::BatchCreateTableRowsOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::batch_create_table_rows::BatchCreateTableRowsOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::batch_create_table_rows::BatchCreateTableRowsOutput {
             workbook_cursor: self.workbook_cursor.unwrap_or_default(),
             created_rows: self.created_rows.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_rows",
                     "created_rows was not specified but it is required when building BatchCreateTableRowsOutput",
                 )

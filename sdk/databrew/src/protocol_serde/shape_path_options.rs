@@ -2,7 +2,7 @@
 pub fn ser_path_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PathOptions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.last_modified_date_condition {
         #[allow(unused_mut)]
         let mut object_2 = object.key("LastModifiedDateCondition").start_object();

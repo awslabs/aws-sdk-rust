@@ -284,10 +284,10 @@ impl SearchPlaceIndexForSuggestionsSummaryBuilder {
     /// - [`data_source`](crate::types::builders::SearchPlaceIndexForSuggestionsSummaryBuilder::data_source)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::SearchPlaceIndexForSuggestionsSummary, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::SearchPlaceIndexForSuggestionsSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SearchPlaceIndexForSuggestionsSummary {
             text: self.text.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "text",
                     "text was not specified but it is required when building SearchPlaceIndexForSuggestionsSummary",
                 )
@@ -297,7 +297,7 @@ impl SearchPlaceIndexForSuggestionsSummaryBuilder {
             filter_countries: self.filter_countries,
             max_results: self.max_results,
             data_source: self.data_source.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_source",
                     "data_source was not specified but it is required when building SearchPlaceIndexForSuggestionsSummary",
                 )

@@ -44,7 +44,7 @@ impl GetLayerVersionByArnInputBuilder {
     /// Consumes the builder and constructs a [`GetLayerVersionByArnInput`](crate::operation::get_layer_version_by_arn::GetLayerVersionByArnInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_layer_version_by_arn::GetLayerVersionByArnInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_layer_version_by_arn::GetLayerVersionByArnInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_layer_version_by_arn::GetLayerVersionByArnInput { arn: self.arn })
     }

@@ -92,7 +92,7 @@ impl PutLabelInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`PutLabelInput`](crate::operation::put_label::PutLabelInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_label::PutLabelInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_label::PutLabelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_label::PutLabelInput {
             name: self.name,
             description: self.description,

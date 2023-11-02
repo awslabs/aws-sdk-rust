@@ -2,7 +2,7 @@
 pub fn ser_transcription_messages_concatenation_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TranscriptionMessagesConcatenationConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("State").string(input.state.as_str());
     }

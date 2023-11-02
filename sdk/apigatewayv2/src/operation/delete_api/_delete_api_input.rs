@@ -42,7 +42,7 @@ impl DeleteApiInputBuilder {
         &self.api_id
     }
     /// Consumes the builder and constructs a [`DeleteApiInput`](crate::operation::delete_api::DeleteApiInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_api::DeleteApiInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_api::DeleteApiInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_api::DeleteApiInput { api_id: self.api_id })
     }
 }

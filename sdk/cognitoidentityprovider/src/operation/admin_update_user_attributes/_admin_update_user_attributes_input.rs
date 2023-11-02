@@ -202,7 +202,7 @@ impl AdminUpdateUserAttributesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::admin_update_user_attributes::AdminUpdateUserAttributesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::admin_update_user_attributes::AdminUpdateUserAttributesInput {
             user_pool_id: self.user_pool_id,

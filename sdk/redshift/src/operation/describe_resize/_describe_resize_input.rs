@@ -50,7 +50,7 @@ impl DescribeResizeInputBuilder {
     /// Consumes the builder and constructs a [`DescribeResizeInput`](crate::operation::describe_resize::DescribeResizeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_resize::DescribeResizeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_resize::DescribeResizeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_resize::DescribeResizeInput {
             cluster_identifier: self.cluster_identifier,
         })

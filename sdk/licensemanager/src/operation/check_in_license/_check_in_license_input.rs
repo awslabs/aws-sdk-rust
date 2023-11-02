@@ -65,7 +65,7 @@ impl CheckInLicenseInputBuilder {
     /// Consumes the builder and constructs a [`CheckInLicenseInput`](crate::operation::check_in_license::CheckInLicenseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::check_in_license::CheckInLicenseInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::check_in_license::CheckInLicenseInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::check_in_license::CheckInLicenseInput {
             license_consumption_token: self.license_consumption_token,
             beneficiary: self.beneficiary,

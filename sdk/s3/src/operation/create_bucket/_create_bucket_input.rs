@@ -251,7 +251,9 @@ impl CreateBucketInputBuilder {
         &self.object_ownership
     }
     /// Consumes the builder and constructs a [`CreateBucketInput`](crate::operation::create_bucket::CreateBucketInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_bucket::CreateBucketInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_bucket::CreateBucketInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_bucket::CreateBucketInput {
             acl: self.acl,
             bucket: self.bucket,

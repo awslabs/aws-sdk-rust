@@ -2,7 +2,7 @@
 pub fn ser_ec2_instance_aggregation(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Ec2InstanceAggregation,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.amis {
         let mut array_2 = object.key("amis").start_array();
         for item_3 in var_1 {

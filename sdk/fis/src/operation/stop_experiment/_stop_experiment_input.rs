@@ -44,7 +44,7 @@ impl StopExperimentInputBuilder {
     /// Consumes the builder and constructs a [`StopExperimentInput`](crate::operation::stop_experiment::StopExperimentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_experiment::StopExperimentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::stop_experiment::StopExperimentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_experiment::StopExperimentInput { id: self.id })
     }
 }

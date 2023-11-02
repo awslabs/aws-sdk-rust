@@ -56,7 +56,7 @@ impl CreateResourceGroupInputBuilder {
     /// Consumes the builder and constructs a [`CreateResourceGroupInput`](crate::operation::create_resource_group::CreateResourceGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_resource_group::CreateResourceGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_resource_group::CreateResourceGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_resource_group::CreateResourceGroupInput {
             resource_group_tags: self.resource_group_tags,

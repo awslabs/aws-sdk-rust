@@ -259,7 +259,7 @@ impl UpdateEventDataStoreInputBuilder {
     /// Consumes the builder and constructs a [`UpdateEventDataStoreInput`](crate::operation::update_event_data_store::UpdateEventDataStoreInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_event_data_store::UpdateEventDataStoreInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_event_data_store::UpdateEventDataStoreInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_event_data_store::UpdateEventDataStoreInput {
             event_data_store: self.event_data_store,

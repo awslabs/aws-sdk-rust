@@ -70,16 +70,16 @@ impl DimensionNameValueBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`dimension_name`](crate::types::builders::DimensionNameValueBuilder::dimension_name)
     /// - [`dimension_value`](crate::types::builders::DimensionNameValueBuilder::dimension_value)
-    pub fn build(self) -> ::std::result::Result<crate::types::DimensionNameValue, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DimensionNameValue, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DimensionNameValue {
             dimension_name: self.dimension_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "dimension_name",
                     "dimension_name was not specified but it is required when building DimensionNameValue",
                 )
             })?,
             dimension_value: self.dimension_value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "dimension_value",
                     "dimension_value was not specified but it is required when building DimensionNameValue",
                 )

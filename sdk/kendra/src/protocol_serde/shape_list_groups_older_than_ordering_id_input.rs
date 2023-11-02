@@ -2,7 +2,7 @@
 pub fn ser_list_groups_older_than_ordering_id_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_groups_older_than_ordering_id::ListGroupsOlderThanOrderingIdInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.index_id {
         object.key("IndexId").string(var_1.as_str());
     }

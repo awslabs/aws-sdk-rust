@@ -83,10 +83,10 @@ impl ServiceConnectClientAliasBuilder {
     /// Consumes the builder and constructs a [`ServiceConnectClientAlias`](crate::types::ServiceConnectClientAlias).
     /// This method will fail if any of the following fields are not set:
     /// - [`port`](crate::types::builders::ServiceConnectClientAliasBuilder::port)
-    pub fn build(self) -> ::std::result::Result<crate::types::ServiceConnectClientAlias, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ServiceConnectClientAlias, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ServiceConnectClientAlias {
             port: self.port.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "port",
                     "port was not specified but it is required when building ServiceConnectClientAlias",
                 )

@@ -46,7 +46,7 @@ impl RegisterDefaultPatchBaselineInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_default_patch_baseline::RegisterDefaultPatchBaselineInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::register_default_patch_baseline::RegisterDefaultPatchBaselineInput {
             baseline_id: self.baseline_id,

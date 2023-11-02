@@ -163,7 +163,7 @@ impl CreateAdapterInputBuilder {
     /// Consumes the builder and constructs a [`CreateAdapterInput`](crate::operation::create_adapter::CreateAdapterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_adapter::CreateAdapterInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_adapter::CreateAdapterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_adapter::CreateAdapterInput {
             adapter_name: self.adapter_name,
             client_request_token: self.client_request_token,

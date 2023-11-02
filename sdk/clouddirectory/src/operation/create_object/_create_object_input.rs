@@ -142,7 +142,9 @@ impl CreateObjectInputBuilder {
         &self.link_name
     }
     /// Consumes the builder and constructs a [`CreateObjectInput`](crate::operation::create_object::CreateObjectInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_object::CreateObjectInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_object::CreateObjectInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_object::CreateObjectInput {
             directory_arn: self.directory_arn,
             schema_facets: self.schema_facets,

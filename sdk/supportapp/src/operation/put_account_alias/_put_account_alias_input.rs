@@ -44,7 +44,7 @@ impl PutAccountAliasInputBuilder {
     /// Consumes the builder and constructs a [`PutAccountAliasInput`](crate::operation::put_account_alias::PutAccountAliasInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_account_alias::PutAccountAliasInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_account_alias::PutAccountAliasInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_account_alias::PutAccountAliasInput {
             account_alias: self.account_alias,
         })

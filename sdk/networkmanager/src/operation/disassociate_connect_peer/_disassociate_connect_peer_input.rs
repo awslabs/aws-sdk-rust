@@ -68,7 +68,7 @@ impl DisassociateConnectPeerInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_connect_peer::DisassociateConnectPeerInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disassociate_connect_peer::DisassociateConnectPeerInput {
             global_network_id: self.global_network_id,

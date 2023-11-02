@@ -80,7 +80,7 @@ impl GetAccountLimitInputBuilder {
     /// Consumes the builder and constructs a [`GetAccountLimitInput`](crate::operation::get_account_limit::GetAccountLimitInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_account_limit::GetAccountLimitInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_account_limit::GetAccountLimitInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_account_limit::GetAccountLimitInput { r#type: self.r#type })
     }
 }

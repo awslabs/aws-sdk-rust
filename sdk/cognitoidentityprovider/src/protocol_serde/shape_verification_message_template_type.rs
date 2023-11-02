@@ -2,7 +2,7 @@
 pub fn ser_verification_message_template_type(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VerificationMessageTemplateType,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.sms_message {
         object.key("SmsMessage").string(var_1.as_str());
     }

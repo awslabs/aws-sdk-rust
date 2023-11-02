@@ -96,7 +96,7 @@ impl PutInvitationConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_invitation_configuration::PutInvitationConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_invitation_configuration::PutInvitationConfigurationInput {
             organization_name: self.organization_name,

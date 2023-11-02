@@ -79,10 +79,10 @@ impl VerifyDomainDkimOutputBuilder {
     /// - [`dkim_tokens`](crate::operation::verify_domain_dkim::builders::VerifyDomainDkimOutputBuilder::dkim_tokens)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::verify_domain_dkim::VerifyDomainDkimOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::verify_domain_dkim::VerifyDomainDkimOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::verify_domain_dkim::VerifyDomainDkimOutput {
             dkim_tokens: self.dkim_tokens.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "dkim_tokens",
                     "dkim_tokens was not specified but it is required when building VerifyDomainDkimOutput",
                 )

@@ -2,7 +2,7 @@
 pub fn ser_api_key_restrictions(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ApiKeyRestrictions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("AllowActions").start_array();
         for item_2 in &input.allow_actions {

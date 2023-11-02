@@ -66,7 +66,7 @@ impl PutBackupPolicyInputBuilder {
     /// Consumes the builder and constructs a [`PutBackupPolicyInput`](crate::operation::put_backup_policy::PutBackupPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_backup_policy::PutBackupPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_backup_policy::PutBackupPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_backup_policy::PutBackupPolicyInput {
             file_system_id: self.file_system_id,
             backup_policy: self.backup_policy,

@@ -169,10 +169,10 @@ impl ImpersonationRuleBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`impersonation_rule_id`](crate::types::builders::ImpersonationRuleBuilder::impersonation_rule_id)
     /// - [`effect`](crate::types::builders::ImpersonationRuleBuilder::effect)
-    pub fn build(self) -> ::std::result::Result<crate::types::ImpersonationRule, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ImpersonationRule, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ImpersonationRule {
             impersonation_rule_id: self.impersonation_rule_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "impersonation_rule_id",
                     "impersonation_rule_id was not specified but it is required when building ImpersonationRule",
                 )
@@ -180,7 +180,7 @@ impl ImpersonationRuleBuilder {
             name: self.name,
             description: self.description,
             effect: self.effect.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "effect",
                     "effect was not specified but it is required when building ImpersonationRule",
                 )

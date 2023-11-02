@@ -51,10 +51,10 @@ impl EnvironmentPropertyUpdatesBuilder {
     /// Consumes the builder and constructs a [`EnvironmentPropertyUpdates`](crate::types::EnvironmentPropertyUpdates).
     /// This method will fail if any of the following fields are not set:
     /// - [`property_groups`](crate::types::builders::EnvironmentPropertyUpdatesBuilder::property_groups)
-    pub fn build(self) -> ::std::result::Result<crate::types::EnvironmentPropertyUpdates, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::EnvironmentPropertyUpdates, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EnvironmentPropertyUpdates {
             property_groups: self.property_groups.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "property_groups",
                     "property_groups was not specified but it is required when building EnvironmentPropertyUpdates",
                 )

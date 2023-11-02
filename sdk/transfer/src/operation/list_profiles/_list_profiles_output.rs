@@ -89,11 +89,11 @@ impl ListProfilesOutputBuilder {
     /// - [`profiles`](crate::operation::list_profiles::builders::ListProfilesOutputBuilder::profiles)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_profiles::ListProfilesOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_profiles::ListProfilesOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_profiles::ListProfilesOutput {
             next_token: self.next_token,
             profiles: self.profiles.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "profiles",
                     "profiles was not specified but it is required when building ListProfilesOutput",
                 )

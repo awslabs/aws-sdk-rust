@@ -88,10 +88,10 @@ impl DataProviderDescriptorDefinitionBuilder {
     /// Consumes the builder and constructs a [`DataProviderDescriptorDefinition`](crate::types::DataProviderDescriptorDefinition).
     /// This method will fail if any of the following fields are not set:
     /// - [`data_provider_identifier`](crate::types::builders::DataProviderDescriptorDefinitionBuilder::data_provider_identifier)
-    pub fn build(self) -> ::std::result::Result<crate::types::DataProviderDescriptorDefinition, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DataProviderDescriptorDefinition, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DataProviderDescriptorDefinition {
             data_provider_identifier: self.data_provider_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_provider_identifier",
                     "data_provider_identifier was not specified but it is required when building DataProviderDescriptorDefinition",
                 )

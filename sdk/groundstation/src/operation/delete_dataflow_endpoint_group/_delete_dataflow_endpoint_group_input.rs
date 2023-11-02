@@ -47,7 +47,7 @@ impl DeleteDataflowEndpointGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_dataflow_endpoint_group::DeleteDataflowEndpointGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_dataflow_endpoint_group::DeleteDataflowEndpointGroupInput {
             dataflow_endpoint_group_id: self.dataflow_endpoint_group_id,

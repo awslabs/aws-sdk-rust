@@ -66,7 +66,8 @@ impl TestRenderTemplateInputBuilder {
     /// Consumes the builder and constructs a [`TestRenderTemplateInput`](crate::operation::test_render_template::TestRenderTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::test_render_template::TestRenderTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::test_render_template::TestRenderTemplateInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::test_render_template::TestRenderTemplateInput {
             template_name: self.template_name,
             template_data: self.template_data,

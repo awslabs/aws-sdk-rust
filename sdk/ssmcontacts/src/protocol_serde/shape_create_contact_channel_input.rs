@@ -2,7 +2,7 @@
 pub fn ser_create_contact_channel_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_contact_channel::CreateContactChannelInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.contact_id {
         object.key("ContactId").string(var_1.as_str());
     }

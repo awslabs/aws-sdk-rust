@@ -112,10 +112,10 @@ impl OutlierDetectionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`max_server_errors`](crate::types::builders::OutlierDetectionBuilder::max_server_errors)
     /// - [`max_ejection_percent`](crate::types::builders::OutlierDetectionBuilder::max_ejection_percent)
-    pub fn build(self) -> ::std::result::Result<crate::types::OutlierDetection, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::OutlierDetection, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::OutlierDetection {
             max_server_errors: self.max_server_errors.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "max_server_errors",
                     "max_server_errors was not specified but it is required when building OutlierDetection",
                 )
@@ -123,7 +123,7 @@ impl OutlierDetectionBuilder {
             interval: self.interval,
             base_ejection_duration: self.base_ejection_duration,
             max_ejection_percent: self.max_ejection_percent.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "max_ejection_percent",
                     "max_ejection_percent was not specified but it is required when building OutlierDetection",
                 )

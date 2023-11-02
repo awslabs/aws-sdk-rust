@@ -65,7 +65,7 @@ impl DeleteBucketWebsiteInputBuilder {
     /// Consumes the builder and constructs a [`DeleteBucketWebsiteInput`](crate::operation::delete_bucket_website::DeleteBucketWebsiteInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_bucket_website::DeleteBucketWebsiteInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_bucket_website::DeleteBucketWebsiteInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_bucket_website::DeleteBucketWebsiteInput {
             bucket: self.bucket,

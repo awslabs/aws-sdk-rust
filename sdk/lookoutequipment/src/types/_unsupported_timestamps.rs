@@ -45,10 +45,10 @@ impl UnsupportedTimestampsBuilder {
     /// Consumes the builder and constructs a [`UnsupportedTimestamps`](crate::types::UnsupportedTimestamps).
     /// This method will fail if any of the following fields are not set:
     /// - [`total_number_of_unsupported_timestamps`](crate::types::builders::UnsupportedTimestampsBuilder::total_number_of_unsupported_timestamps)
-    pub fn build(self) -> ::std::result::Result<crate::types::UnsupportedTimestamps, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::UnsupportedTimestamps, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::UnsupportedTimestamps {
             total_number_of_unsupported_timestamps: self.total_number_of_unsupported_timestamps.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "total_number_of_unsupported_timestamps",
                     "total_number_of_unsupported_timestamps was not specified but it is required when building UnsupportedTimestamps",
                 )

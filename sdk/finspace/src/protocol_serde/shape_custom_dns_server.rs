@@ -2,7 +2,7 @@
 pub fn ser_custom_dns_server(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CustomDnsServer,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("customDNSServerName").string(input.custom_dns_server_name.as_str());
     }

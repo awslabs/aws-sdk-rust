@@ -72,16 +72,16 @@ impl HomeDirectoryMapEntryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`entry`](crate::types::builders::HomeDirectoryMapEntryBuilder::entry)
     /// - [`target`](crate::types::builders::HomeDirectoryMapEntryBuilder::target)
-    pub fn build(self) -> ::std::result::Result<crate::types::HomeDirectoryMapEntry, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::HomeDirectoryMapEntry, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::HomeDirectoryMapEntry {
             entry: self.entry.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "entry",
                     "entry was not specified but it is required when building HomeDirectoryMapEntry",
                 )
             })?,
             target: self.target.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "target",
                     "target was not specified but it is required when building HomeDirectoryMapEntry",
                 )

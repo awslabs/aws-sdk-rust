@@ -173,10 +173,10 @@ impl RateBasedRuleBuilder {
     /// - [`match_predicates`](crate::types::builders::RateBasedRuleBuilder::match_predicates)
     /// - [`rate_key`](crate::types::builders::RateBasedRuleBuilder::rate_key)
     /// - [`rate_limit`](crate::types::builders::RateBasedRuleBuilder::rate_limit)
-    pub fn build(self) -> ::std::result::Result<crate::types::RateBasedRule, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RateBasedRule, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RateBasedRule {
             rule_id: self.rule_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "rule_id",
                     "rule_id was not specified but it is required when building RateBasedRule",
                 )
@@ -184,19 +184,19 @@ impl RateBasedRuleBuilder {
             name: self.name,
             metric_name: self.metric_name,
             match_predicates: self.match_predicates.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "match_predicates",
                     "match_predicates was not specified but it is required when building RateBasedRule",
                 )
             })?,
             rate_key: self.rate_key.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "rate_key",
                     "rate_key was not specified but it is required when building RateBasedRule",
                 )
             })?,
             rate_limit: self.rate_limit.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "rate_limit",
                     "rate_limit was not specified but it is required when building RateBasedRule",
                 )

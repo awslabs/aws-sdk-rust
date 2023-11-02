@@ -46,7 +46,7 @@ impl CreatePresignedNotebookUrlInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_presigned_notebook_url::CreatePresignedNotebookUrlInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_presigned_notebook_url::CreatePresignedNotebookUrlInput { session_id: self.session_id })
     }

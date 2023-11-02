@@ -42,7 +42,7 @@ where
 pub fn ser_lo_ra_wan_join_resource_type_event_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LoRaWanJoinResourceTypeEventConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.wireless_device_event_topic {
         object.key("WirelessDeviceEventTopic").string(var_1.as_str());
     }

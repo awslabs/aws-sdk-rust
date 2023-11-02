@@ -44,7 +44,7 @@ impl GetCompatibleVersionsInputBuilder {
     /// Consumes the builder and constructs a [`GetCompatibleVersionsInput`](crate::operation::get_compatible_versions::GetCompatibleVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_compatible_versions::GetCompatibleVersionsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_compatible_versions::GetCompatibleVersionsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_compatible_versions::GetCompatibleVersionsInput {
             domain_name: self.domain_name,

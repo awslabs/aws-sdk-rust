@@ -75,16 +75,16 @@ impl JoinColumnBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`from`](crate::types::builders::JoinColumnBuilder::from)
     /// - [`keys`](crate::types::builders::JoinColumnBuilder::keys)
-    pub fn build(self) -> ::std::result::Result<crate::types::JoinColumn, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::JoinColumn, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::JoinColumn {
             from: self.from.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "from",
                     "from was not specified but it is required when building JoinColumn",
                 )
             })?,
             keys: self.keys.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "keys",
                     "keys was not specified but it is required when building JoinColumn",
                 )

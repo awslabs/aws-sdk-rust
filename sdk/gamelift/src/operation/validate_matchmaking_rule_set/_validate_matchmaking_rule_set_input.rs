@@ -46,7 +46,7 @@ impl ValidateMatchmakingRuleSetInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetInput {
             rule_set_body: self.rule_set_body,

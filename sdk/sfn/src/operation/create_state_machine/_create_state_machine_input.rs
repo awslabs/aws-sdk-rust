@@ -302,7 +302,8 @@ impl CreateStateMachineInputBuilder {
     /// Consumes the builder and constructs a [`CreateStateMachineInput`](crate::operation::create_state_machine::CreateStateMachineInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_state_machine::CreateStateMachineInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_state_machine::CreateStateMachineInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_state_machine::CreateStateMachineInput {
             name: self.name,
             definition: self.definition,

@@ -114,7 +114,7 @@ impl PutServiceQuotaIncreaseRequestIntoTemplateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_service_quota_increase_request_into_template::PutServiceQuotaIncreaseRequestIntoTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::put_service_quota_increase_request_into_template::PutServiceQuotaIncreaseRequestIntoTemplateInput {

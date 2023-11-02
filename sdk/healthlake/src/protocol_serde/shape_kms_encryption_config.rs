@@ -2,7 +2,7 @@
 pub fn ser_kms_encryption_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::KmsEncryptionConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("CmkType").string(input.cmk_type.as_str());
     }

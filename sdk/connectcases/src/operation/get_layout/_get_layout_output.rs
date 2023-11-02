@@ -163,22 +163,22 @@ impl GetLayoutOutputBuilder {
     /// - [`layout_id`](crate::operation::get_layout::builders::GetLayoutOutputBuilder::layout_id)
     /// - [`layout_arn`](crate::operation::get_layout::builders::GetLayoutOutputBuilder::layout_arn)
     /// - [`name`](crate::operation::get_layout::builders::GetLayoutOutputBuilder::name)
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_layout::GetLayoutOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_layout::GetLayoutOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_layout::GetLayoutOutput {
             layout_id: self.layout_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "layout_id",
                     "layout_id was not specified but it is required when building GetLayoutOutput",
                 )
             })?,
             layout_arn: self.layout_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "layout_arn",
                     "layout_arn was not specified but it is required when building GetLayoutOutput",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building GetLayoutOutput",
                 )

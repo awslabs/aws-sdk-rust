@@ -44,7 +44,7 @@ impl DeprovisionByoipCidrInputBuilder {
     /// Consumes the builder and constructs a [`DeprovisionByoipCidrInput`](crate::operation::deprovision_byoip_cidr::DeprovisionByoipCidrInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::deprovision_byoip_cidr::DeprovisionByoipCidrInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::deprovision_byoip_cidr::DeprovisionByoipCidrInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::deprovision_byoip_cidr::DeprovisionByoipCidrInput { cidr: self.cidr })
     }

@@ -173,7 +173,7 @@ impl CreateOpenIdConnectProviderInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_open_id_connect_provider::CreateOpenIdConnectProviderInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_open_id_connect_provider::CreateOpenIdConnectProviderInput {
             url: self.url,

@@ -151,10 +151,10 @@ impl CreateExperimentTemplateActionInputBuilder {
     /// Consumes the builder and constructs a [`CreateExperimentTemplateActionInput`](crate::types::CreateExperimentTemplateActionInput).
     /// This method will fail if any of the following fields are not set:
     /// - [`action_id`](crate::types::builders::CreateExperimentTemplateActionInputBuilder::action_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::CreateExperimentTemplateActionInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CreateExperimentTemplateActionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CreateExperimentTemplateActionInput {
             action_id: self.action_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "action_id",
                     "action_id was not specified but it is required when building CreateExperimentTemplateActionInput",
                 )

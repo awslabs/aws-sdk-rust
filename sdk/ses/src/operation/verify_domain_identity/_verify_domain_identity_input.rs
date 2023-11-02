@@ -45,7 +45,7 @@ impl VerifyDomainIdentityInputBuilder {
     /// Consumes the builder and constructs a [`VerifyDomainIdentityInput`](crate::operation::verify_domain_identity::VerifyDomainIdentityInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::verify_domain_identity::VerifyDomainIdentityInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::verify_domain_identity::VerifyDomainIdentityInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::verify_domain_identity::VerifyDomainIdentityInput { domain: self.domain })
     }

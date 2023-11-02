@@ -46,7 +46,7 @@ impl ConfirmTopicRuleDestinationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::confirm_topic_rule_destination::ConfirmTopicRuleDestinationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::confirm_topic_rule_destination::ConfirmTopicRuleDestinationInput {
             confirmation_token: self.confirmation_token,

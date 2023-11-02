@@ -212,52 +212,52 @@ impl ConfiguredTableAssociationSummaryBuilder {
     /// - [`update_time`](crate::types::builders::ConfiguredTableAssociationSummaryBuilder::update_time)
     /// - [`id`](crate::types::builders::ConfiguredTableAssociationSummaryBuilder::id)
     /// - [`arn`](crate::types::builders::ConfiguredTableAssociationSummaryBuilder::arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::ConfiguredTableAssociationSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ConfiguredTableAssociationSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ConfiguredTableAssociationSummary {
             configured_table_id: self.configured_table_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "configured_table_id",
                     "configured_table_id was not specified but it is required when building ConfiguredTableAssociationSummary",
                 )
             })?,
             membership_id: self.membership_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "membership_id",
                     "membership_id was not specified but it is required when building ConfiguredTableAssociationSummary",
                 )
             })?,
             membership_arn: self.membership_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "membership_arn",
                     "membership_arn was not specified but it is required when building ConfiguredTableAssociationSummary",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building ConfiguredTableAssociationSummary",
                 )
             })?,
             create_time: self.create_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "create_time",
                     "create_time was not specified but it is required when building ConfiguredTableAssociationSummary",
                 )
             })?,
             update_time: self.update_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "update_time",
                     "update_time was not specified but it is required when building ConfiguredTableAssociationSummary",
                 )
             })?,
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building ConfiguredTableAssociationSummary",
                 )
             })?,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building ConfiguredTableAssociationSummary",
                 )

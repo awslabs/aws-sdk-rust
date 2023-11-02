@@ -160,7 +160,7 @@ impl CreateRoomInputBuilder {
         &self.logging_configuration_identifiers
     }
     /// Consumes the builder and constructs a [`CreateRoomInput`](crate::operation::create_room::CreateRoomInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_room::CreateRoomInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_room::CreateRoomInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_room::CreateRoomInput {
             name: self.name,
             maximum_message_rate_per_second: self.maximum_message_rate_per_second,

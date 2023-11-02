@@ -88,7 +88,7 @@ impl ListSkillsStoreSkillsByCategoryInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_skills_store_skills_by_category::ListSkillsStoreSkillsByCategoryInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_skills_store_skills_by_category::ListSkillsStoreSkillsByCategoryInput {

@@ -51,7 +51,7 @@ impl BatchGetCrawlersInputBuilder {
     /// Consumes the builder and constructs a [`BatchGetCrawlersInput`](crate::operation::batch_get_crawlers::BatchGetCrawlersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_get_crawlers::BatchGetCrawlersInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::batch_get_crawlers::BatchGetCrawlersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::batch_get_crawlers::BatchGetCrawlersInput {
             crawler_names: self.crawler_names,
         })

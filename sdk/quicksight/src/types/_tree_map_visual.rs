@@ -168,10 +168,10 @@ impl TreeMapVisualBuilder {
     /// Consumes the builder and constructs a [`TreeMapVisual`](crate::types::TreeMapVisual).
     /// This method will fail if any of the following fields are not set:
     /// - [`visual_id`](crate::types::builders::TreeMapVisualBuilder::visual_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::TreeMapVisual, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TreeMapVisual, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TreeMapVisual {
             visual_id: self.visual_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "visual_id",
                     "visual_id was not specified but it is required when building TreeMapVisual",
                 )

@@ -44,7 +44,7 @@ impl GetTargetGroupInputBuilder {
     /// Consumes the builder and constructs a [`GetTargetGroupInput`](crate::operation::get_target_group::GetTargetGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_target_group::GetTargetGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_target_group::GetTargetGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_target_group::GetTargetGroupInput {
             target_group_identifier: self.target_group_identifier,
         })

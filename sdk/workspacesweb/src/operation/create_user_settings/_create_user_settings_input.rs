@@ -328,7 +328,8 @@ impl CreateUserSettingsInputBuilder {
     /// Consumes the builder and constructs a [`CreateUserSettingsInput`](crate::operation::create_user_settings::CreateUserSettingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_user_settings::CreateUserSettingsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_user_settings::CreateUserSettingsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_user_settings::CreateUserSettingsInput {
             copy_allowed: self.copy_allowed,
             paste_allowed: self.paste_allowed,

@@ -96,7 +96,7 @@ impl PurchaseScheduledInstancesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::purchase_scheduled_instances::PurchaseScheduledInstancesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::purchase_scheduled_instances::PurchaseScheduledInstancesInput {
             client_token: self.client_token,

@@ -56,10 +56,10 @@ impl IamUserIdentityBuilder {
     /// Consumes the builder and constructs a [`IamUserIdentity`](crate::types::IamUserIdentity).
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::IamUserIdentityBuilder::arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::IamUserIdentity, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::IamUserIdentity, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::IamUserIdentity {
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building IamUserIdentity",
                 )

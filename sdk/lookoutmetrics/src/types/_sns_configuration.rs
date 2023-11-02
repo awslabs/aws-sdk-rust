@@ -116,16 +116,16 @@ impl SnsConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`role_arn`](crate::types::builders::SnsConfigurationBuilder::role_arn)
     /// - [`sns_topic_arn`](crate::types::builders::SnsConfigurationBuilder::sns_topic_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::SnsConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SnsConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SnsConfiguration {
             role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role_arn",
                     "role_arn was not specified but it is required when building SnsConfiguration",
                 )
             })?,
             sns_topic_arn: self.sns_topic_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "sns_topic_arn",
                     "sns_topic_arn was not specified but it is required when building SnsConfiguration",
                 )

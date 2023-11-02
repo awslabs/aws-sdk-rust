@@ -73,7 +73,7 @@ impl BatchPutMetricsInputBuilder {
     /// Consumes the builder and constructs a [`BatchPutMetricsInput`](crate::operation::batch_put_metrics::BatchPutMetricsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_put_metrics::BatchPutMetricsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::batch_put_metrics::BatchPutMetricsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::batch_put_metrics::BatchPutMetricsInput {
             trial_component_name: self.trial_component_name,
             metric_data: self.metric_data,

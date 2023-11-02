@@ -2,7 +2,7 @@
 pub fn ser_approval_result(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ApprovalResult,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("summary").string(input.summary.as_str());
     }

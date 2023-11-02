@@ -69,16 +69,16 @@ impl VoiceConnectorItemBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`voice_connector_id`](crate::types::builders::VoiceConnectorItemBuilder::voice_connector_id)
     /// - [`priority`](crate::types::builders::VoiceConnectorItemBuilder::priority)
-    pub fn build(self) -> ::std::result::Result<crate::types::VoiceConnectorItem, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::VoiceConnectorItem, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::VoiceConnectorItem {
             voice_connector_id: self.voice_connector_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "voice_connector_id",
                     "voice_connector_id was not specified but it is required when building VoiceConnectorItem",
                 )
             })?,
             priority: self.priority.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "priority",
                     "priority was not specified but it is required when building VoiceConnectorItem",
                 )

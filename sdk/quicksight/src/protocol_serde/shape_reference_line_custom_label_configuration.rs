@@ -2,7 +2,7 @@
 pub fn ser_reference_line_custom_label_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ReferenceLineCustomLabelConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("CustomLabel").string(input.custom_label.as_str());
     }

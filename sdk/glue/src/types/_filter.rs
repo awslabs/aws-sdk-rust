@@ -127,28 +127,28 @@ impl FilterBuilder {
     /// - [`inputs`](crate::types::builders::FilterBuilder::inputs)
     /// - [`logical_operator`](crate::types::builders::FilterBuilder::logical_operator)
     /// - [`filters`](crate::types::builders::FilterBuilder::filters)
-    pub fn build(self) -> ::std::result::Result<crate::types::Filter, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Filter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Filter {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building Filter",
                 )
             })?,
             inputs: self.inputs.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "inputs",
                     "inputs was not specified but it is required when building Filter",
                 )
             })?,
             logical_operator: self.logical_operator.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "logical_operator",
                     "logical_operator was not specified but it is required when building Filter",
                 )
             })?,
             filters: self.filters.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "filters",
                     "filters was not specified but it is required when building Filter",
                 )

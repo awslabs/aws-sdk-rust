@@ -2,7 +2,7 @@
 pub fn ser_software_update_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SoftwareUpdateOptions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.auto_software_update_enabled {
         object.key("AutoSoftwareUpdateEnabled").boolean(*var_1);
     }

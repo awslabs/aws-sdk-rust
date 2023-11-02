@@ -2,7 +2,7 @@
 pub fn ser_slot_type_regex_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SlotTypeRegexConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("pattern").string(input.pattern.as_str());
     }

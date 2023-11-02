@@ -180,7 +180,7 @@ impl PutRuntimeManagementConfigInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_runtime_management_config::PutRuntimeManagementConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_runtime_management_config::PutRuntimeManagementConfigInput {
             function_name: self.function_name,

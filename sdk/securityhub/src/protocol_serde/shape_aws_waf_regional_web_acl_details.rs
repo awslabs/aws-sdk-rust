@@ -2,7 +2,7 @@
 pub fn ser_aws_waf_regional_web_acl_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsWafRegionalWebAclDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.default_action {
         object.key("DefaultAction").string(var_1.as_str());
     }

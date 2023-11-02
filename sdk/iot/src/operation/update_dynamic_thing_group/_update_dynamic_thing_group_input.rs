@@ -172,7 +172,7 @@ impl UpdateDynamicThingGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_dynamic_thing_group::UpdateDynamicThingGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_dynamic_thing_group::UpdateDynamicThingGroupInput {
             thing_group_name: self.thing_group_name,

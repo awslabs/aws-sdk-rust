@@ -133,23 +133,23 @@ impl GetTagsOutputBuilder {
     /// - [`tags`](crate::operation::get_tags::builders::GetTagsOutputBuilder::tags)
     /// - [`return_size`](crate::operation::get_tags::builders::GetTagsOutputBuilder::return_size)
     /// - [`total_size`](crate::operation::get_tags::builders::GetTagsOutputBuilder::total_size)
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_tags::GetTagsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_tags::GetTagsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_tags::GetTagsOutput {
             next_page_token: self.next_page_token,
             tags: self.tags.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "tags",
                     "tags was not specified but it is required when building GetTagsOutput",
                 )
             })?,
             return_size: self.return_size.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "return_size",
                     "return_size was not specified but it is required when building GetTagsOutput",
                 )
             })?,
             total_size: self.total_size.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "total_size",
                     "total_size was not specified but it is required when building GetTagsOutput",
                 )

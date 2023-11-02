@@ -158,7 +158,7 @@ impl ListBotLocalesInputBuilder {
     /// Consumes the builder and constructs a [`ListBotLocalesInput`](crate::operation::list_bot_locales::ListBotLocalesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_bot_locales::ListBotLocalesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_bot_locales::ListBotLocalesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_bot_locales::ListBotLocalesInput {
             bot_id: self.bot_id,
             bot_version: self.bot_version,

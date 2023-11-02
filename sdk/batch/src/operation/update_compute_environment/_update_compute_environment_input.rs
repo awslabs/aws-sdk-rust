@@ -202,7 +202,7 @@ impl UpdateComputeEnvironmentInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_compute_environment::UpdateComputeEnvironmentInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_compute_environment::UpdateComputeEnvironmentInput {
             compute_environment: self.compute_environment,

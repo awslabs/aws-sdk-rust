@@ -2,7 +2,7 @@
 pub fn ser_subtitles(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Subtitles,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.formats {
         let mut array_2 = object.key("Formats").start_array();
         for item_3 in var_1 {

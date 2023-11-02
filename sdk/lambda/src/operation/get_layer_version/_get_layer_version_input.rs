@@ -66,7 +66,7 @@ impl GetLayerVersionInputBuilder {
     /// Consumes the builder and constructs a [`GetLayerVersionInput`](crate::operation::get_layer_version::GetLayerVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_layer_version::GetLayerVersionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_layer_version::GetLayerVersionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_layer_version::GetLayerVersionInput {
             layer_name: self.layer_name,
             version_number: self.version_number,

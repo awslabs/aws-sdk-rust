@@ -2,7 +2,7 @@
 pub fn ser_access_control_attribute_value(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AccessControlAttributeValue,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("Source").start_array();
         for item_2 in &input.source {

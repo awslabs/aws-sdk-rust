@@ -2,7 +2,7 @@
 pub fn ser_schedule_activity_task_decision_attributes(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ScheduleActivityTaskDecisionAttributes,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.activity_type {
         #[allow(unused_mut)]
         let mut object_2 = object.key("activityType").start_object();

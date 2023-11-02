@@ -67,7 +67,7 @@ impl StartOnDemandReplicationRunInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunInput {
             replication_job_id: self.replication_job_id,

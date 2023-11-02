@@ -46,7 +46,7 @@ impl DeleteForecastExportJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_forecast_export_job::DeleteForecastExportJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_forecast_export_job::DeleteForecastExportJobInput {
             forecast_export_job_arn: self.forecast_export_job_arn,

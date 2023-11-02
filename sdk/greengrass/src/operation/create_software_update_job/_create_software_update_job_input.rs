@@ -183,7 +183,7 @@ impl CreateSoftwareUpdateJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_software_update_job::CreateSoftwareUpdateJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_software_update_job::CreateSoftwareUpdateJobInput {
             amzn_client_token: self.amzn_client_token,

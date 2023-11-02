@@ -2,7 +2,7 @@
 pub fn ser_computation_preference(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ComputationPreference,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("PricingPlanArn").string(input.pricing_plan_arn.as_str());
     }

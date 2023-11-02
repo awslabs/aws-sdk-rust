@@ -42,7 +42,7 @@ where
 pub fn ser_advanced_recognition_setting(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AdvancedRecognitionSetting,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.audio_recognition_strategy {
         object.key("audioRecognitionStrategy").string(var_1.as_str());
     }

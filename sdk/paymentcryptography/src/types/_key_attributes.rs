@@ -118,22 +118,22 @@ impl KeyAttributesBuilder {
     /// - [`key_usage`](crate::types::builders::KeyAttributesBuilder::key_usage)
     /// - [`key_class`](crate::types::builders::KeyAttributesBuilder::key_class)
     /// - [`key_algorithm`](crate::types::builders::KeyAttributesBuilder::key_algorithm)
-    pub fn build(self) -> ::std::result::Result<crate::types::KeyAttributes, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::KeyAttributes, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::KeyAttributes {
             key_usage: self.key_usage.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "key_usage",
                     "key_usage was not specified but it is required when building KeyAttributes",
                 )
             })?,
             key_class: self.key_class.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "key_class",
                     "key_class was not specified but it is required when building KeyAttributes",
                 )
             })?,
             key_algorithm: self.key_algorithm.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "key_algorithm",
                     "key_algorithm was not specified but it is required when building KeyAttributes",
                 )

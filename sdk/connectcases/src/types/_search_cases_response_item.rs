@@ -131,22 +131,22 @@ impl SearchCasesResponseItemBuilder {
     /// - [`case_id`](crate::types::builders::SearchCasesResponseItemBuilder::case_id)
     /// - [`template_id`](crate::types::builders::SearchCasesResponseItemBuilder::template_id)
     /// - [`fields`](crate::types::builders::SearchCasesResponseItemBuilder::fields)
-    pub fn build(self) -> ::std::result::Result<crate::types::SearchCasesResponseItem, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SearchCasesResponseItem, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SearchCasesResponseItem {
             case_id: self.case_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "case_id",
                     "case_id was not specified but it is required when building SearchCasesResponseItem",
                 )
             })?,
             template_id: self.template_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "template_id",
                     "template_id was not specified but it is required when building SearchCasesResponseItem",
                 )
             })?,
             fields: self.fields.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "fields",
                     "fields was not specified but it is required when building SearchCasesResponseItem",
                 )

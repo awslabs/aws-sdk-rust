@@ -79,10 +79,10 @@ impl CompleteWorkflowExecutionFailedEventAttributesBuilder {
     /// - [`cause`](crate::types::builders::CompleteWorkflowExecutionFailedEventAttributesBuilder::cause)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::CompleteWorkflowExecutionFailedEventAttributes, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::CompleteWorkflowExecutionFailedEventAttributes, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CompleteWorkflowExecutionFailedEventAttributes {
             cause: self.cause.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "cause",
                     "cause was not specified but it is required when building CompleteWorkflowExecutionFailedEventAttributes",
                 )

@@ -280,48 +280,48 @@ impl EvaluationBuilder {
     /// - [`status`](crate::types::builders::EvaluationBuilder::status)
     /// - [`created_time`](crate::types::builders::EvaluationBuilder::created_time)
     /// - [`last_modified_time`](crate::types::builders::EvaluationBuilder::last_modified_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::Evaluation, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Evaluation, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Evaluation {
             evaluation_id: self.evaluation_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "evaluation_id",
                     "evaluation_id was not specified but it is required when building Evaluation",
                 )
             })?,
             evaluation_arn: self.evaluation_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "evaluation_arn",
                     "evaluation_arn was not specified but it is required when building Evaluation",
                 )
             })?,
             metadata: self.metadata,
             answers: self.answers.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "answers",
                     "answers was not specified but it is required when building Evaluation",
                 )
             })?,
             notes: self.notes.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "notes",
                     "notes was not specified but it is required when building Evaluation",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building Evaluation",
                 )
             })?,
             scores: self.scores,
             created_time: self.created_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_time",
                     "created_time was not specified but it is required when building Evaluation",
                 )
             })?,
             last_modified_time: self.last_modified_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_modified_time",
                     "last_modified_time was not specified but it is required when building Evaluation",
                 )

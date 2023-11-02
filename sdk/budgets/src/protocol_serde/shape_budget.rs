@@ -2,7 +2,7 @@
 pub fn ser_budget(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Budget,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("BudgetName").string(input.budget_name.as_str());
     }

@@ -93,7 +93,7 @@ impl StartInstancesInputBuilder {
     /// Consumes the builder and constructs a [`StartInstancesInput`](crate::operation::start_instances::StartInstancesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_instances::StartInstancesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_instances::StartInstancesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_instances::StartInstancesInput {
             instance_ids: self.instance_ids,
             additional_info: self.additional_info,

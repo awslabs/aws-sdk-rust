@@ -2,7 +2,7 @@
 pub fn ser_sort_property(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SortProperty,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("field").string(input.field.as_str());
     }

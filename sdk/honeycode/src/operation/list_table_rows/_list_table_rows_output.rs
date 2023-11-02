@@ -169,16 +169,16 @@ impl ListTableRowsOutputBuilder {
     /// - [`rows`](crate::operation::list_table_rows::builders::ListTableRowsOutputBuilder::rows)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_table_rows::ListTableRowsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_table_rows::ListTableRowsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_table_rows::ListTableRowsOutput {
             column_ids: self.column_ids.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "column_ids",
                     "column_ids was not specified but it is required when building ListTableRowsOutput",
                 )
             })?,
             rows: self.rows.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "rows",
                     "rows was not specified but it is required when building ListTableRowsOutput",
                 )

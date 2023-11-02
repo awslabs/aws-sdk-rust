@@ -100,16 +100,16 @@ impl WorkflowExecutionTimedOutEventAttributesBuilder {
     /// - [`child_policy`](crate::types::builders::WorkflowExecutionTimedOutEventAttributesBuilder::child_policy)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::WorkflowExecutionTimedOutEventAttributes, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::WorkflowExecutionTimedOutEventAttributes, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::WorkflowExecutionTimedOutEventAttributes {
             timeout_type: self.timeout_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "timeout_type",
                     "timeout_type was not specified but it is required when building WorkflowExecutionTimedOutEventAttributes",
                 )
             })?,
             child_policy: self.child_policy.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "child_policy",
                     "child_policy was not specified but it is required when building WorkflowExecutionTimedOutEventAttributes",
                 )

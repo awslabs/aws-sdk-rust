@@ -70,7 +70,7 @@ impl DisassociateApprovalRuleTemplateFromRepositoryInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryInput {

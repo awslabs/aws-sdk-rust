@@ -66,10 +66,10 @@ impl CloudWatchLogDeliveryOptionsBuilder {
     /// Consumes the builder and constructs a [`CloudWatchLogDeliveryOptions`](crate::types::CloudWatchLogDeliveryOptions).
     /// This method will fail if any of the following fields are not set:
     /// - [`log_type`](crate::types::builders::CloudWatchLogDeliveryOptionsBuilder::log_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::CloudWatchLogDeliveryOptions, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CloudWatchLogDeliveryOptions, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CloudWatchLogDeliveryOptions {
             log_type: self.log_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "log_type",
                     "log_type was not specified but it is required when building CloudWatchLogDeliveryOptions",
                 )

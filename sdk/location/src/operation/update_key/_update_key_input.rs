@@ -162,7 +162,7 @@ impl UpdateKeyInputBuilder {
         &self.restrictions
     }
     /// Consumes the builder and constructs a [`UpdateKeyInput`](crate::operation::update_key::UpdateKeyInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_key::UpdateKeyInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_key::UpdateKeyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_key::UpdateKeyInput {
             key_name: self.key_name,
             description: self.description,

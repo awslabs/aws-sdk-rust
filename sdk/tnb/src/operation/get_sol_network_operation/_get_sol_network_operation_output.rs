@@ -263,12 +263,12 @@ impl GetSolNetworkOperationOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_sol_network_operation::GetSolNetworkOperationOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_sol_network_operation::GetSolNetworkOperationOutput {
             id: self.id,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building GetSolNetworkOperationOutput",
                 )

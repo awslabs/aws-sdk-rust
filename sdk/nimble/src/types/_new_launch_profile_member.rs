@@ -69,16 +69,16 @@ impl NewLaunchProfileMemberBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`persona`](crate::types::builders::NewLaunchProfileMemberBuilder::persona)
     /// - [`principal_id`](crate::types::builders::NewLaunchProfileMemberBuilder::principal_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::NewLaunchProfileMember, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::NewLaunchProfileMember, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::NewLaunchProfileMember {
             persona: self.persona.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "persona",
                     "persona was not specified but it is required when building NewLaunchProfileMember",
                 )
             })?,
             principal_id: self.principal_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "principal_id",
                     "principal_id was not specified but it is required when building NewLaunchProfileMember",
                 )

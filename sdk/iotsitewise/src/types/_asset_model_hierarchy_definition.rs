@@ -70,16 +70,16 @@ impl AssetModelHierarchyDefinitionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::AssetModelHierarchyDefinitionBuilder::name)
     /// - [`child_asset_model_id`](crate::types::builders::AssetModelHierarchyDefinitionBuilder::child_asset_model_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::AssetModelHierarchyDefinition, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AssetModelHierarchyDefinition, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AssetModelHierarchyDefinition {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building AssetModelHierarchyDefinition",
                 )
             })?,
             child_asset_model_id: self.child_asset_model_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "child_asset_model_id",
                     "child_asset_model_id was not specified but it is required when building AssetModelHierarchyDefinition",
                 )

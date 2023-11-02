@@ -265,7 +265,7 @@ impl AssumeRoleWithWebIdentityInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityInput {
             role_arn: self.role_arn,

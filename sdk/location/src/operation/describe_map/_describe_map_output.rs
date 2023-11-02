@@ -269,43 +269,43 @@ impl DescribeMapOutputBuilder {
     /// - [`description`](crate::operation::describe_map::builders::DescribeMapOutputBuilder::description)
     /// - [`create_time`](crate::operation::describe_map::builders::DescribeMapOutputBuilder::create_time)
     /// - [`update_time`](crate::operation::describe_map::builders::DescribeMapOutputBuilder::update_time)
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_map::DescribeMapOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_map::DescribeMapOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_map::DescribeMapOutput {
             map_name: self.map_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "map_name",
                     "map_name was not specified but it is required when building DescribeMapOutput",
                 )
             })?,
             map_arn: self.map_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "map_arn",
                     "map_arn was not specified but it is required when building DescribeMapOutput",
                 )
             })?,
             pricing_plan: self.pricing_plan,
             data_source: self.data_source.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_source",
                     "data_source was not specified but it is required when building DescribeMapOutput",
                 )
             })?,
             configuration: self.configuration,
             description: self.description.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "description",
                     "description was not specified but it is required when building DescribeMapOutput",
                 )
             })?,
             tags: self.tags,
             create_time: self.create_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "create_time",
                     "create_time was not specified but it is required when building DescribeMapOutput",
                 )
             })?,
             update_time: self.update_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "update_time",
                     "update_time was not specified but it is required when building DescribeMapOutput",
                 )

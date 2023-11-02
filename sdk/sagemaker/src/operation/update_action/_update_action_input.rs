@@ -140,7 +140,9 @@ impl UpdateActionInputBuilder {
         &self.properties_to_remove
     }
     /// Consumes the builder and constructs a [`UpdateActionInput`](crate::operation::update_action::UpdateActionInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_action::UpdateActionInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_action::UpdateActionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_action::UpdateActionInput {
             action_name: self.action_name,
             description: self.description,

@@ -197,7 +197,7 @@ impl StartIncidentInputBuilder {
     /// Consumes the builder and constructs a [`StartIncidentInput`](crate::operation::start_incident::StartIncidentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_incident::StartIncidentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_incident::StartIncidentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_incident::StartIncidentInput {
             client_token: self.client_token,
             response_plan_arn: self.response_plan_arn,

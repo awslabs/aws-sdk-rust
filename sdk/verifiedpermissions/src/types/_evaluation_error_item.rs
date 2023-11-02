@@ -54,10 +54,10 @@ impl EvaluationErrorItemBuilder {
     /// Consumes the builder and constructs a [`EvaluationErrorItem`](crate::types::EvaluationErrorItem).
     /// This method will fail if any of the following fields are not set:
     /// - [`error_description`](crate::types::builders::EvaluationErrorItemBuilder::error_description)
-    pub fn build(self) -> ::std::result::Result<crate::types::EvaluationErrorItem, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::EvaluationErrorItem, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EvaluationErrorItem {
             error_description: self.error_description.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "error_description",
                     "error_description was not specified but it is required when building EvaluationErrorItem",
                 )

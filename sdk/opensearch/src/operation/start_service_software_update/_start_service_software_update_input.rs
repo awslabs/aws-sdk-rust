@@ -119,7 +119,7 @@ impl StartServiceSoftwareUpdateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_service_software_update::StartServiceSoftwareUpdateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_service_software_update::StartServiceSoftwareUpdateInput {
             domain_name: self.domain_name,

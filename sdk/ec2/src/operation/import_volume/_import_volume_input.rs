@@ -128,7 +128,9 @@ impl ImportVolumeInputBuilder {
         &self.volume
     }
     /// Consumes the builder and constructs a [`ImportVolumeInput`](crate::operation::import_volume::ImportVolumeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::import_volume::ImportVolumeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::import_volume::ImportVolumeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::import_volume::ImportVolumeInput {
             availability_zone: self.availability_zone,
             description: self.description,

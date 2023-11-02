@@ -94,22 +94,22 @@ impl S3ImportSourceBuilder {
     /// - [`s3_location_uri`](crate::types::builders::S3ImportSourceBuilder::s3_location_uri)
     /// - [`s3_bucket_region`](crate::types::builders::S3ImportSourceBuilder::s3_bucket_region)
     /// - [`s3_bucket_access_role_arn`](crate::types::builders::S3ImportSourceBuilder::s3_bucket_access_role_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::S3ImportSource, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::S3ImportSource, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::S3ImportSource {
             s3_location_uri: self.s3_location_uri.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "s3_location_uri",
                     "s3_location_uri was not specified but it is required when building S3ImportSource",
                 )
             })?,
             s3_bucket_region: self.s3_bucket_region.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "s3_bucket_region",
                     "s3_bucket_region was not specified but it is required when building S3ImportSource",
                 )
             })?,
             s3_bucket_access_role_arn: self.s3_bucket_access_role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "s3_bucket_access_role_arn",
                     "s3_bucket_access_role_arn was not specified but it is required when building S3ImportSource",
                 )

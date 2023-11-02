@@ -43,7 +43,9 @@ impl ReadPipelineInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`ReadPipelineInput`](crate::operation::read_pipeline::ReadPipelineInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::read_pipeline::ReadPipelineInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::read_pipeline::ReadPipelineInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::read_pipeline::ReadPipelineInput { id: self.id })
     }
 }

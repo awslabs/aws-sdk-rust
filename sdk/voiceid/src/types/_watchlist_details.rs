@@ -46,10 +46,10 @@ impl WatchlistDetailsBuilder {
     /// Consumes the builder and constructs a [`WatchlistDetails`](crate::types::WatchlistDetails).
     /// This method will fail if any of the following fields are not set:
     /// - [`default_watchlist_id`](crate::types::builders::WatchlistDetailsBuilder::default_watchlist_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::WatchlistDetails, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::WatchlistDetails, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::WatchlistDetails {
             default_watchlist_id: self.default_watchlist_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "default_watchlist_id",
                     "default_watchlist_id was not specified but it is required when building WatchlistDetails",
                 )

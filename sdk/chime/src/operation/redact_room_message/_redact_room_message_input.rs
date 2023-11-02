@@ -88,7 +88,7 @@ impl RedactRoomMessageInputBuilder {
     /// Consumes the builder and constructs a [`RedactRoomMessageInput`](crate::operation::redact_room_message::RedactRoomMessageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::redact_room_message::RedactRoomMessageInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::redact_room_message::RedactRoomMessageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::redact_room_message::RedactRoomMessageInput {
             account_id: self.account_id,
             room_id: self.room_id,

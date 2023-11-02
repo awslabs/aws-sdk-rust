@@ -75,7 +75,7 @@ impl DescribeRdsDbInstancesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_rds_db_instances::DescribeRdsDbInstancesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_rds_db_instances::DescribeRdsDbInstancesInput {
             stack_id: self.stack_id,

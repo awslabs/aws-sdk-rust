@@ -2,7 +2,7 @@
 pub fn ser_body(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Body,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.oversize_handling {
         object.key("OversizeHandling").string(var_1.as_str());
     }

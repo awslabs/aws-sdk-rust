@@ -78,7 +78,7 @@ impl DescribeBundleAssociationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_bundle_associations::DescribeBundleAssociationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_bundle_associations::DescribeBundleAssociationsInput {
             bundle_id: self.bundle_id,

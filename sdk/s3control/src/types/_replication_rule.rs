@@ -273,14 +273,14 @@ impl ReplicationRuleBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`status`](crate::types::builders::ReplicationRuleBuilder::status)
     /// - [`bucket`](crate::types::builders::ReplicationRuleBuilder::bucket)
-    pub fn build(self) -> ::std::result::Result<crate::types::ReplicationRule, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ReplicationRule, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ReplicationRule {
             id: self.id,
             priority: self.priority,
             prefix: self.prefix,
             filter: self.filter,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building ReplicationRule",
                 )
@@ -290,7 +290,7 @@ impl ReplicationRuleBuilder {
             destination: self.destination,
             delete_marker_replication: self.delete_marker_replication,
             bucket: self.bucket.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "bucket",
                     "bucket was not specified but it is required when building ReplicationRule",
                 )

@@ -3,7 +3,7 @@
 pub fn ser_ipv4_prefix_specification_request(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::Ipv4PrefixSpecificationRequest,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Ipv4Prefix");
     if let Some(var_2) = &input.ipv4_prefix {

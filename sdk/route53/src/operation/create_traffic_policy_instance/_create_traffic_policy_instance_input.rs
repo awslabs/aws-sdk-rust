@@ -135,7 +135,7 @@ impl CreateTrafficPolicyInstanceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_traffic_policy_instance::CreateTrafficPolicyInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_traffic_policy_instance::CreateTrafficPolicyInstanceInput {
             hosted_zone_id: self.hosted_zone_id,

@@ -70,16 +70,16 @@ impl RoomSkillParameterBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`parameter_key`](crate::types::builders::RoomSkillParameterBuilder::parameter_key)
     /// - [`parameter_value`](crate::types::builders::RoomSkillParameterBuilder::parameter_value)
-    pub fn build(self) -> ::std::result::Result<crate::types::RoomSkillParameter, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RoomSkillParameter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RoomSkillParameter {
             parameter_key: self.parameter_key.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "parameter_key",
                     "parameter_key was not specified but it is required when building RoomSkillParameter",
                 )
             })?,
             parameter_value: self.parameter_value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "parameter_value",
                     "parameter_value was not specified but it is required when building RoomSkillParameter",
                 )

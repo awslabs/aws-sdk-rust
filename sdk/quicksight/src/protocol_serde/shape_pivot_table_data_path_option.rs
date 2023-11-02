@@ -2,7 +2,7 @@
 pub fn ser_pivot_table_data_path_option(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PivotTableDataPathOption,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("DataPathList").start_array();
         for item_2 in &input.data_path_list {

@@ -172,7 +172,7 @@ impl ListCandidatesForAutoMlJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_candidates_for_auto_ml_job::ListCandidatesForAutoMlJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_candidates_for_auto_ml_job::ListCandidatesForAutoMlJobInput {
             auto_ml_job_name: self.auto_ml_job_name,

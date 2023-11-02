@@ -107,7 +107,7 @@ impl ListResponseHeadersPoliciesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_response_headers_policies::ListResponseHeadersPoliciesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_response_headers_policies::ListResponseHeadersPoliciesInput {
             r#type: self.r#type,

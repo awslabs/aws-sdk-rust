@@ -92,22 +92,22 @@ impl CompleteReadSetUploadPartListItemBuilder {
     /// - [`part_number`](crate::types::builders::CompleteReadSetUploadPartListItemBuilder::part_number)
     /// - [`part_source`](crate::types::builders::CompleteReadSetUploadPartListItemBuilder::part_source)
     /// - [`checksum`](crate::types::builders::CompleteReadSetUploadPartListItemBuilder::checksum)
-    pub fn build(self) -> ::std::result::Result<crate::types::CompleteReadSetUploadPartListItem, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CompleteReadSetUploadPartListItem, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CompleteReadSetUploadPartListItem {
             part_number: self.part_number.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "part_number",
                     "part_number was not specified but it is required when building CompleteReadSetUploadPartListItem",
                 )
             })?,
             part_source: self.part_source.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "part_source",
                     "part_source was not specified but it is required when building CompleteReadSetUploadPartListItem",
                 )
             })?,
             checksum: self.checksum.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "checksum",
                     "checksum was not specified but it is required when building CompleteReadSetUploadPartListItem",
                 )

@@ -150,7 +150,7 @@ impl DeleteMailboxPermissionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_mailbox_permissions::DeleteMailboxPermissionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_mailbox_permissions::DeleteMailboxPermissionsInput {
             organization_id: self.organization_id,

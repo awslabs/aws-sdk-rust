@@ -68,7 +68,7 @@ impl GetResourceDefinitionVersionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_resource_definition_version::GetResourceDefinitionVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_resource_definition_version::GetResourceDefinitionVersionInput {
             resource_definition_id: self.resource_definition_id,

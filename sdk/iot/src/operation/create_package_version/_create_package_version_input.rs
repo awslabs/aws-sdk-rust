@@ -179,7 +179,7 @@ impl CreatePackageVersionInputBuilder {
     /// Consumes the builder and constructs a [`CreatePackageVersionInput`](crate::operation::create_package_version::CreatePackageVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_package_version::CreatePackageVersionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_package_version::CreatePackageVersionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_package_version::CreatePackageVersionInput {
             package_name: self.package_name,

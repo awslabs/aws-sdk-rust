@@ -2,7 +2,7 @@
 pub fn ser_update_smb_file_share_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_smb_file_share::UpdateSmbFileShareInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.file_share_arn {
         object.key("FileShareARN").string(var_1.as_str());
     }

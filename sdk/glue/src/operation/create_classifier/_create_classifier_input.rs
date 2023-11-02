@@ -106,7 +106,7 @@ impl CreateClassifierInputBuilder {
     /// Consumes the builder and constructs a [`CreateClassifierInput`](crate::operation::create_classifier::CreateClassifierInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_classifier::CreateClassifierInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_classifier::CreateClassifierInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_classifier::CreateClassifierInput {
             grok_classifier: self.grok_classifier,
             xml_classifier: self.xml_classifier,

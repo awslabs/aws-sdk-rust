@@ -91,7 +91,7 @@ impl InitiateJobInputBuilder {
         &self.job_parameters
     }
     /// Consumes the builder and constructs a [`InitiateJobInput`](crate::operation::initiate_job::InitiateJobInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::initiate_job::InitiateJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::initiate_job::InitiateJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::initiate_job::InitiateJobInput {
             account_id: self.account_id,
             vault_name: self.vault_name,

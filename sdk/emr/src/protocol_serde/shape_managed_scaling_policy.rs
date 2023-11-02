@@ -38,7 +38,7 @@ where
 pub fn ser_managed_scaling_policy(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ManagedScalingPolicy,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.compute_limits {
         #[allow(unused_mut)]
         let mut object_2 = object.key("ComputeLimits").start_object();

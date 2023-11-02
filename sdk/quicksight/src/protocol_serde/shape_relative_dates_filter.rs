@@ -2,7 +2,7 @@
 pub fn ser_relative_dates_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RelativeDatesFilter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("FilterId").string(input.filter_id.as_str());
     }

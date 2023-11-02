@@ -102,7 +102,8 @@ impl UpdateFlowTemplateInputBuilder {
     /// Consumes the builder and constructs a [`UpdateFlowTemplateInput`](crate::operation::update_flow_template::UpdateFlowTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_flow_template::UpdateFlowTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_flow_template::UpdateFlowTemplateInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::update_flow_template::UpdateFlowTemplateInput {
             id: self.id,
             definition: self.definition,

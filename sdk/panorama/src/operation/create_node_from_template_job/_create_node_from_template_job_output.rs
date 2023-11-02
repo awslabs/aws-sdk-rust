@@ -65,11 +65,11 @@ impl CreateNodeFromTemplateJobOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_node_from_template_job::CreateNodeFromTemplateJobOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_node_from_template_job::CreateNodeFromTemplateJobOutput {
             job_id: self.job_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "job_id",
                     "job_id was not specified but it is required when building CreateNodeFromTemplateJobOutput",
                 )

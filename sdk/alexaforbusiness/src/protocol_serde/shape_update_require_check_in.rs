@@ -2,7 +2,7 @@
 pub fn ser_update_require_check_in(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UpdateRequireCheckIn,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.release_after_minutes {
         object.key("ReleaseAfterMinutes").number(
             #[allow(clippy::useless_conversion)]

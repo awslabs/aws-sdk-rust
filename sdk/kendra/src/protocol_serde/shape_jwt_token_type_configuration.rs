@@ -2,7 +2,7 @@
 pub fn ser_jwt_token_type_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::JwtTokenTypeConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("KeyLocation").string(input.key_location.as_str());
     }

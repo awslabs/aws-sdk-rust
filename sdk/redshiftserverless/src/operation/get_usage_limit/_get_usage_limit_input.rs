@@ -44,7 +44,7 @@ impl GetUsageLimitInputBuilder {
     /// Consumes the builder and constructs a [`GetUsageLimitInput`](crate::operation::get_usage_limit::GetUsageLimitInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_usage_limit::GetUsageLimitInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_usage_limit::GetUsageLimitInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_usage_limit::GetUsageLimitInput {
             usage_limit_id: self.usage_limit_id,
         })

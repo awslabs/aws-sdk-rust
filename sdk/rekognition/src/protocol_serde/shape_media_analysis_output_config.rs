@@ -53,7 +53,7 @@ where
 pub fn ser_media_analysis_output_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MediaAnalysisOutputConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("S3Bucket").string(input.s3_bucket.as_str());
     }

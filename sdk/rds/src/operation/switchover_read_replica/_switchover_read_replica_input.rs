@@ -64,7 +64,7 @@ impl SwitchoverReadReplicaInputBuilder {
     /// Consumes the builder and constructs a [`SwitchoverReadReplicaInput`](crate::operation::switchover_read_replica::SwitchoverReadReplicaInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::switchover_read_replica::SwitchoverReadReplicaInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::switchover_read_replica::SwitchoverReadReplicaInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::switchover_read_replica::SwitchoverReadReplicaInput {
             db_instance_identifier: self.db_instance_identifier,

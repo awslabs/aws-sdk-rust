@@ -2,7 +2,7 @@
 pub fn ser_database_lf_tag_policy_and_permissions(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DatabaseLfTagPolicyAndPermissions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("Expression").start_array();
         for item_2 in &input.expression {

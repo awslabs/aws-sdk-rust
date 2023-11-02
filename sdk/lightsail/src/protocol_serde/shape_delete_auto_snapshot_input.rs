@@ -2,7 +2,7 @@
 pub fn ser_delete_auto_snapshot_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_auto_snapshot::DeleteAutoSnapshotInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.resource_name {
         object.key("resourceName").string(var_1.as_str());
     }

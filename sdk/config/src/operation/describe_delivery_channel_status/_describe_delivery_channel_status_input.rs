@@ -54,7 +54,7 @@ impl DescribeDeliveryChannelStatusInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_delivery_channel_status::DescribeDeliveryChannelStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_delivery_channel_status::DescribeDeliveryChannelStatusInput {
             delivery_channel_names: self.delivery_channel_names,

@@ -68,10 +68,10 @@ impl StartRecommendationsRequestEntryBuilder {
     /// Consumes the builder and constructs a [`StartRecommendationsRequestEntry`](crate::types::StartRecommendationsRequestEntry).
     /// This method will fail if any of the following fields are not set:
     /// - [`database_id`](crate::types::builders::StartRecommendationsRequestEntryBuilder::database_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::StartRecommendationsRequestEntry, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::StartRecommendationsRequestEntry, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::StartRecommendationsRequestEntry {
             database_id: self.database_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "database_id",
                     "database_id was not specified but it is required when building StartRecommendationsRequestEntry",
                 )

@@ -91,16 +91,16 @@ impl HumanLoopConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`human_loop_name`](crate::types::builders::HumanLoopConfigBuilder::human_loop_name)
     /// - [`flow_definition_arn`](crate::types::builders::HumanLoopConfigBuilder::flow_definition_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::HumanLoopConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::HumanLoopConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::HumanLoopConfig {
             human_loop_name: self.human_loop_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "human_loop_name",
                     "human_loop_name was not specified but it is required when building HumanLoopConfig",
                 )
             })?,
             flow_definition_arn: self.flow_definition_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "flow_definition_arn",
                     "flow_definition_arn was not specified but it is required when building HumanLoopConfig",
                 )

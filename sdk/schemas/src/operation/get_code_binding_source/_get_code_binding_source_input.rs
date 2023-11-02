@@ -109,7 +109,7 @@ impl GetCodeBindingSourceInputBuilder {
     /// Consumes the builder and constructs a [`GetCodeBindingSourceInput`](crate::operation::get_code_binding_source::GetCodeBindingSourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_code_binding_source::GetCodeBindingSourceInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_code_binding_source::GetCodeBindingSourceInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_code_binding_source::GetCodeBindingSourceInput {
             language: self.language,

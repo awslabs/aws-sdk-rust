@@ -85,7 +85,9 @@ impl ExportBundleInputBuilder {
         &self.platform
     }
     /// Consumes the builder and constructs a [`ExportBundleInput`](crate::operation::export_bundle::ExportBundleInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::export_bundle::ExportBundleInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::export_bundle::ExportBundleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::export_bundle::ExportBundleInput {
             bundle_id: self.bundle_id,
             project_id: self.project_id,

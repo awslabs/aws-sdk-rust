@@ -67,7 +67,8 @@ impl UpdateControlPanelInputBuilder {
     /// Consumes the builder and constructs a [`UpdateControlPanelInput`](crate::operation::update_control_panel::UpdateControlPanelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_control_panel::UpdateControlPanelInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_control_panel::UpdateControlPanelInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::update_control_panel::UpdateControlPanelInput {
             control_panel_arn: self.control_panel_arn,
             control_panel_name: self.control_panel_name,

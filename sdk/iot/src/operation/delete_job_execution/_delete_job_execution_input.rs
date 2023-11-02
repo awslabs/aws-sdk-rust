@@ -165,7 +165,8 @@ impl DeleteJobExecutionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteJobExecutionInput`](crate::operation::delete_job_execution::DeleteJobExecutionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_job_execution::DeleteJobExecutionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_job_execution::DeleteJobExecutionInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::delete_job_execution::DeleteJobExecutionInput {
             job_id: self.job_id,
             thing_name: self.thing_name,

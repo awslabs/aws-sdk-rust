@@ -65,7 +65,7 @@ impl ResetJobBookmarkInputBuilder {
     /// Consumes the builder and constructs a [`ResetJobBookmarkInput`](crate::operation::reset_job_bookmark::ResetJobBookmarkInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::reset_job_bookmark::ResetJobBookmarkInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::reset_job_bookmark::ResetJobBookmarkInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::reset_job_bookmark::ResetJobBookmarkInput {
             job_name: self.job_name,
             run_id: self.run_id,

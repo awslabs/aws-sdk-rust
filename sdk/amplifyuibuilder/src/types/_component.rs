@@ -497,67 +497,67 @@ impl ComponentBuilder {
     /// - [`overrides`](crate::types::builders::ComponentBuilder::overrides)
     /// - [`binding_properties`](crate::types::builders::ComponentBuilder::binding_properties)
     /// - [`created_at`](crate::types::builders::ComponentBuilder::created_at)
-    pub fn build(self) -> ::std::result::Result<crate::types::Component, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Component, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Component {
             app_id: self.app_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "app_id",
                     "app_id was not specified but it is required when building Component",
                 )
             })?,
             environment_name: self.environment_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "environment_name",
                     "environment_name was not specified but it is required when building Component",
                 )
             })?,
             source_id: self.source_id,
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building Component",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building Component",
                 )
             })?,
             component_type: self.component_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "component_type",
                     "component_type was not specified but it is required when building Component",
                 )
             })?,
             properties: self.properties.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "properties",
                     "properties was not specified but it is required when building Component",
                 )
             })?,
             children: self.children,
             variants: self.variants.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "variants",
                     "variants was not specified but it is required when building Component",
                 )
             })?,
             overrides: self.overrides.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "overrides",
                     "overrides was not specified but it is required when building Component",
                 )
             })?,
             binding_properties: self.binding_properties.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "binding_properties",
                     "binding_properties was not specified but it is required when building Component",
                 )
             })?,
             collection_properties: self.collection_properties,
             created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
                     "created_at was not specified but it is required when building Component",
                 )

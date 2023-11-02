@@ -67,7 +67,7 @@ impl AcceptTransitGatewayVpcAttachmentInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::accept_transit_gateway_vpc_attachment::AcceptTransitGatewayVpcAttachmentInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::accept_transit_gateway_vpc_attachment::AcceptTransitGatewayVpcAttachmentInput {

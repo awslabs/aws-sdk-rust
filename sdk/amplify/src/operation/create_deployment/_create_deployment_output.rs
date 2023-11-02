@@ -120,17 +120,17 @@ impl CreateDeploymentOutputBuilder {
     /// - [`zip_upload_url`](crate::operation::create_deployment::builders::CreateDeploymentOutputBuilder::zip_upload_url)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_deployment::CreateDeploymentOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_deployment::CreateDeploymentOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_deployment::CreateDeploymentOutput {
             job_id: self.job_id,
             file_upload_urls: self.file_upload_urls.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "file_upload_urls",
                     "file_upload_urls was not specified but it is required when building CreateDeploymentOutput",
                 )
             })?,
             zip_upload_url: self.zip_upload_url.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "zip_upload_url",
                     "zip_upload_url was not specified but it is required when building CreateDeploymentOutput",
                 )

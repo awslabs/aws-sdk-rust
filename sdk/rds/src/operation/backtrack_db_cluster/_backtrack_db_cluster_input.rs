@@ -184,7 +184,8 @@ impl BacktrackDbClusterInputBuilder {
     /// Consumes the builder and constructs a [`BacktrackDbClusterInput`](crate::operation::backtrack_db_cluster::BacktrackDbClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::backtrack_db_cluster::BacktrackDbClusterInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::backtrack_db_cluster::BacktrackDbClusterInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::backtrack_db_cluster::BacktrackDbClusterInput {
             db_cluster_identifier: self.db_cluster_identifier,
             backtrack_to: self.backtrack_to,

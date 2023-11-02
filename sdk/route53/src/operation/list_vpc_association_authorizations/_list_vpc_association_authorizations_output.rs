@@ -116,19 +116,19 @@ impl ListVpcAssociationAuthorizationsOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_vpc_association_authorizations::ListVpcAssociationAuthorizationsOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_vpc_association_authorizations::ListVpcAssociationAuthorizationsOutput {
                 hosted_zone_id: self.hosted_zone_id.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
                         "hosted_zone_id",
                         "hosted_zone_id was not specified but it is required when building ListVpcAssociationAuthorizationsOutput",
                     )
                 })?,
                 next_token: self.next_token,
                 vpcs: self.vpcs.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
                         "vpcs",
                         "vpcs was not specified but it is required when building ListVpcAssociationAuthorizationsOutput",
                     )

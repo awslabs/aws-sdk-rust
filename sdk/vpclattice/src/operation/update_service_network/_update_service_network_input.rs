@@ -86,7 +86,7 @@ impl UpdateServiceNetworkInputBuilder {
     /// Consumes the builder and constructs a [`UpdateServiceNetworkInput`](crate::operation::update_service_network::UpdateServiceNetworkInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_service_network::UpdateServiceNetworkInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_service_network::UpdateServiceNetworkInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_service_network::UpdateServiceNetworkInput {
             service_network_identifier: self.service_network_identifier,

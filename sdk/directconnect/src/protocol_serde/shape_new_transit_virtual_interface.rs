@@ -2,7 +2,7 @@
 pub fn ser_new_transit_virtual_interface(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::NewTransitVirtualInterface,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.virtual_interface_name {
         object.key("virtualInterfaceName").string(var_1.as_str());
     }

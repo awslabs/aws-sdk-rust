@@ -46,7 +46,7 @@ impl DeleteFunctionDefinitionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_function_definition::DeleteFunctionDefinitionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_function_definition::DeleteFunctionDefinitionInput {
             function_definition_id: self.function_definition_id,

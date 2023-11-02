@@ -66,7 +66,7 @@ impl DeleteListenerInputBuilder {
     /// Consumes the builder and constructs a [`DeleteListenerInput`](crate::operation::delete_listener::DeleteListenerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_listener::DeleteListenerInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_listener::DeleteListenerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_listener::DeleteListenerInput {
             service_identifier: self.service_identifier,
             listener_identifier: self.listener_identifier,

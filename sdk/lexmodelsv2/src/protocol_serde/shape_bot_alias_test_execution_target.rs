@@ -60,7 +60,7 @@ where
 pub fn ser_bot_alias_test_execution_target(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BotAliasTestExecutionTarget,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("botId").string(input.bot_id.as_str());
     }

@@ -244,7 +244,7 @@ impl ReplaceNetworkAclEntryInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::replace_network_acl_entry::ReplaceNetworkAclEntryInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::replace_network_acl_entry::ReplaceNetworkAclEntryInput {
             cidr_block: self.cidr_block,

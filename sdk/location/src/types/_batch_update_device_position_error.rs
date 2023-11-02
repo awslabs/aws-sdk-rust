@@ -91,16 +91,16 @@ impl BatchUpdateDevicePositionErrorBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`device_id`](crate::types::builders::BatchUpdateDevicePositionErrorBuilder::device_id)
     /// - [`sample_time`](crate::types::builders::BatchUpdateDevicePositionErrorBuilder::sample_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::BatchUpdateDevicePositionError, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::BatchUpdateDevicePositionError, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::BatchUpdateDevicePositionError {
             device_id: self.device_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "device_id",
                     "device_id was not specified but it is required when building BatchUpdateDevicePositionError",
                 )
             })?,
             sample_time: self.sample_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "sample_time",
                     "sample_time was not specified but it is required when building BatchUpdateDevicePositionError",
                 )

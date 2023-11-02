@@ -78,16 +78,16 @@ impl MemberFabricConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`admin_username`](crate::types::builders::MemberFabricConfigurationBuilder::admin_username)
     /// - [`admin_password`](crate::types::builders::MemberFabricConfigurationBuilder::admin_password)
-    pub fn build(self) -> ::std::result::Result<crate::types::MemberFabricConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::MemberFabricConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MemberFabricConfiguration {
             admin_username: self.admin_username.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "admin_username",
                     "admin_username was not specified but it is required when building MemberFabricConfiguration",
                 )
             })?,
             admin_password: self.admin_password.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "admin_password",
                     "admin_password was not specified but it is required when building MemberFabricConfiguration",
                 )

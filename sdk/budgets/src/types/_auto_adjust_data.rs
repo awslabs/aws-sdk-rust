@@ -87,10 +87,10 @@ impl AutoAdjustDataBuilder {
     /// Consumes the builder and constructs a [`AutoAdjustData`](crate::types::AutoAdjustData).
     /// This method will fail if any of the following fields are not set:
     /// - [`auto_adjust_type`](crate::types::builders::AutoAdjustDataBuilder::auto_adjust_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::AutoAdjustData, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AutoAdjustData, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AutoAdjustData {
             auto_adjust_type: self.auto_adjust_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "auto_adjust_type",
                     "auto_adjust_type was not specified but it is required when building AutoAdjustData",
                 )

@@ -2,7 +2,7 @@
 pub fn ser_accept_qualification_request_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::accept_qualification_request::AcceptQualificationRequestInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.qualification_request_id {
         object.key("QualificationRequestId").string(var_1.as_str());
     }

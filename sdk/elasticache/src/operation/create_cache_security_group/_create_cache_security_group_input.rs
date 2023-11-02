@@ -108,7 +108,7 @@ impl CreateCacheSecurityGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_cache_security_group::CreateCacheSecurityGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_cache_security_group::CreateCacheSecurityGroupInput {
             cache_security_group_name: self.cache_security_group_name,

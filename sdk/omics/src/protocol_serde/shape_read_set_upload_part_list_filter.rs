@@ -2,7 +2,7 @@
 pub fn ser_read_set_upload_part_list_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ReadSetUploadPartListFilter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.created_after {
         object
             .key("createdAfter")

@@ -46,7 +46,7 @@ impl CreateExclusionsPreviewInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_exclusions_preview::CreateExclusionsPreviewInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_exclusions_preview::CreateExclusionsPreviewInput {
             assessment_template_arn: self.assessment_template_arn,

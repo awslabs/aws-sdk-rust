@@ -2,7 +2,7 @@
 pub fn ser_composited_video_artifacts_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CompositedVideoArtifactsConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.layout {
         object.key("Layout").string(var_1.as_str());
     }

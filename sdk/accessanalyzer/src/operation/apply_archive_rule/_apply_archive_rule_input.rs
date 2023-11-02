@@ -88,7 +88,7 @@ impl ApplyArchiveRuleInputBuilder {
     /// Consumes the builder and constructs a [`ApplyArchiveRuleInput`](crate::operation::apply_archive_rule::ApplyArchiveRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::apply_archive_rule::ApplyArchiveRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::apply_archive_rule::ApplyArchiveRuleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::apply_archive_rule::ApplyArchiveRuleInput {
             analyzer_arn: self.analyzer_arn,
             rule_name: self.rule_name,

@@ -69,16 +69,16 @@ impl ClusteringKeyBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::ClusteringKeyBuilder::name)
     /// - [`order_by`](crate::types::builders::ClusteringKeyBuilder::order_by)
-    pub fn build(self) -> ::std::result::Result<crate::types::ClusteringKey, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ClusteringKey, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ClusteringKey {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building ClusteringKey",
                 )
             })?,
             order_by: self.order_by.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "order_by",
                     "order_by was not specified but it is required when building ClusteringKey",
                 )

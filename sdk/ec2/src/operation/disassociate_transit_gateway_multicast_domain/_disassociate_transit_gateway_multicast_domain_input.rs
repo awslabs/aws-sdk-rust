@@ -119,7 +119,7 @@ impl DisassociateTransitGatewayMulticastDomainInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_transit_gateway_multicast_domain::DisassociateTransitGatewayMulticastDomainInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::disassociate_transit_gateway_multicast_domain::DisassociateTransitGatewayMulticastDomainInput {

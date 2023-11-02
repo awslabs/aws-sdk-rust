@@ -84,16 +84,16 @@ impl RegistryCredentialBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`credential`](crate::types::builders::RegistryCredentialBuilder::credential)
     /// - [`credential_provider`](crate::types::builders::RegistryCredentialBuilder::credential_provider)
-    pub fn build(self) -> ::std::result::Result<crate::types::RegistryCredential, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RegistryCredential, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RegistryCredential {
             credential: self.credential.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "credential",
                     "credential was not specified but it is required when building RegistryCredential",
                 )
             })?,
             credential_provider: self.credential_provider.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "credential_provider",
                     "credential_provider was not specified but it is required when building RegistryCredential",
                 )

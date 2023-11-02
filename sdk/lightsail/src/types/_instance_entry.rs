@@ -198,29 +198,29 @@ impl InstanceEntryBuilder {
     /// - [`instance_type`](crate::types::builders::InstanceEntryBuilder::instance_type)
     /// - [`port_info_source`](crate::types::builders::InstanceEntryBuilder::port_info_source)
     /// - [`availability_zone`](crate::types::builders::InstanceEntryBuilder::availability_zone)
-    pub fn build(self) -> ::std::result::Result<crate::types::InstanceEntry, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::InstanceEntry, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::InstanceEntry {
             source_name: self.source_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source_name",
                     "source_name was not specified but it is required when building InstanceEntry",
                 )
             })?,
             instance_type: self.instance_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "instance_type",
                     "instance_type was not specified but it is required when building InstanceEntry",
                 )
             })?,
             port_info_source: self.port_info_source.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "port_info_source",
                     "port_info_source was not specified but it is required when building InstanceEntry",
                 )
             })?,
             user_data: self.user_data,
             availability_zone: self.availability_zone.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "availability_zone",
                     "availability_zone was not specified but it is required when building InstanceEntry",
                 )

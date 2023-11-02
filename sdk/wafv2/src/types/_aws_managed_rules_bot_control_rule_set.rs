@@ -81,10 +81,10 @@ impl AwsManagedRulesBotControlRuleSetBuilder {
     /// Consumes the builder and constructs a [`AwsManagedRulesBotControlRuleSet`](crate::types::AwsManagedRulesBotControlRuleSet).
     /// This method will fail if any of the following fields are not set:
     /// - [`inspection_level`](crate::types::builders::AwsManagedRulesBotControlRuleSetBuilder::inspection_level)
-    pub fn build(self) -> ::std::result::Result<crate::types::AwsManagedRulesBotControlRuleSet, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AwsManagedRulesBotControlRuleSet, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AwsManagedRulesBotControlRuleSet {
             inspection_level: self.inspection_level.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "inspection_level",
                     "inspection_level was not specified but it is required when building AwsManagedRulesBotControlRuleSet",
                 )

@@ -67,10 +67,10 @@ impl MediaAnalysisOutputConfigBuilder {
     /// Consumes the builder and constructs a [`MediaAnalysisOutputConfig`](crate::types::MediaAnalysisOutputConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`s3_bucket`](crate::types::builders::MediaAnalysisOutputConfigBuilder::s3_bucket)
-    pub fn build(self) -> ::std::result::Result<crate::types::MediaAnalysisOutputConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::MediaAnalysisOutputConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MediaAnalysisOutputConfig {
             s3_bucket: self.s3_bucket.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "s3_bucket",
                     "s3_bucket was not specified but it is required when building MediaAnalysisOutputConfig",
                 )

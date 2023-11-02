@@ -140,7 +140,7 @@ impl ListEarthObservationJobsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_earth_observation_jobs::ListEarthObservationJobsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_earth_observation_jobs::ListEarthObservationJobsInput {
             status_equals: self.status_equals,

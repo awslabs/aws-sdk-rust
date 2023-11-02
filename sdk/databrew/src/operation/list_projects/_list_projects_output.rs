@@ -89,10 +89,10 @@ impl ListProjectsOutputBuilder {
     /// - [`projects`](crate::operation::list_projects::builders::ListProjectsOutputBuilder::projects)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_projects::ListProjectsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_projects::ListProjectsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_projects::ListProjectsOutput {
             projects: self.projects.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "projects",
                     "projects was not specified but it is required when building ListProjectsOutput",
                 )

@@ -160,7 +160,7 @@ impl PutBucketPolicyInputBuilder {
     /// Consumes the builder and constructs a [`PutBucketPolicyInput`](crate::operation::put_bucket_policy::PutBucketPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_bucket_policy::PutBucketPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_bucket_policy::PutBucketPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_bucket_policy::PutBucketPolicyInput {
             bucket: self.bucket,
             content_md5: self.content_md5,

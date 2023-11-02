@@ -2,7 +2,7 @@
 pub fn ser_default_action(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DefaultAction,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.block {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Block").start_object();

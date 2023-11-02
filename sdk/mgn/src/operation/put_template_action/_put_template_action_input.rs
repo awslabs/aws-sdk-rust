@@ -353,7 +353,7 @@ impl PutTemplateActionInputBuilder {
     /// Consumes the builder and constructs a [`PutTemplateActionInput`](crate::operation::put_template_action::PutTemplateActionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_template_action::PutTemplateActionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_template_action::PutTemplateActionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_template_action::PutTemplateActionInput {
             launch_configuration_template_id: self.launch_configuration_template_id,
             action_name: self.action_name,

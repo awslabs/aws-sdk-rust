@@ -93,7 +93,7 @@ impl CreateInvitationsInputBuilder {
     /// Consumes the builder and constructs a [`CreateInvitationsInput`](crate::operation::create_invitations::CreateInvitationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_invitations::CreateInvitationsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_invitations::CreateInvitationsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_invitations::CreateInvitationsInput {
             account_ids: self.account_ids,
             disable_email_notification: self.disable_email_notification,

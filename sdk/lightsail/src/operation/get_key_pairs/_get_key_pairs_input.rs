@@ -67,7 +67,7 @@ impl GetKeyPairsInputBuilder {
         &self.include_default_key_pair
     }
     /// Consumes the builder and constructs a [`GetKeyPairsInput`](crate::operation::get_key_pairs::GetKeyPairsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_key_pairs::GetKeyPairsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_key_pairs::GetKeyPairsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_key_pairs::GetKeyPairsInput {
             page_token: self.page_token,
             include_default_key_pair: self.include_default_key_pair,

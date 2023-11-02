@@ -2,7 +2,7 @@
 pub fn ser_anonymous_user_q_search_bar_embedding_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AnonymousUserQSearchBarEmbeddingConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("InitialTopicId").string(input.initial_topic_id.as_str());
     }

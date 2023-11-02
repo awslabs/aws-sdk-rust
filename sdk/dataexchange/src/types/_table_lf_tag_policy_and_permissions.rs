@@ -80,16 +80,16 @@ impl TableLfTagPolicyAndPermissionsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`expression`](crate::types::builders::TableLfTagPolicyAndPermissionsBuilder::expression)
     /// - [`permissions`](crate::types::builders::TableLfTagPolicyAndPermissionsBuilder::permissions)
-    pub fn build(self) -> ::std::result::Result<crate::types::TableLfTagPolicyAndPermissions, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TableLfTagPolicyAndPermissions, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TableLfTagPolicyAndPermissions {
             expression: self.expression.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "expression",
                     "expression was not specified but it is required when building TableLfTagPolicyAndPermissions",
                 )
             })?,
             permissions: self.permissions.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "permissions",
                     "permissions was not specified but it is required when building TableLfTagPolicyAndPermissions",
                 )

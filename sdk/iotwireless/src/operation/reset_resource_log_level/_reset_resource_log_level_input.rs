@@ -66,7 +66,7 @@ impl ResetResourceLogLevelInputBuilder {
     /// Consumes the builder and constructs a [`ResetResourceLogLevelInput`](crate::operation::reset_resource_log_level::ResetResourceLogLevelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::reset_resource_log_level::ResetResourceLogLevelInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::reset_resource_log_level::ResetResourceLogLevelInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::reset_resource_log_level::ResetResourceLogLevelInput {
             resource_identifier: self.resource_identifier,

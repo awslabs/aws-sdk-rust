@@ -67,10 +67,10 @@ impl TargetBuilder {
     /// Consumes the builder and constructs a [`Target`](crate::types::Target).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::TargetBuilder::id)
-    pub fn build(self) -> ::std::result::Result<crate::types::Target, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Target, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Target {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field("id", "id was not specified but it is required when building Target")
+                ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building Target")
             })?,
             port: self.port,
         })

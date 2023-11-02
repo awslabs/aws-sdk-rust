@@ -42,7 +42,7 @@ impl GetPackageInputBuilder {
         &self.package_name
     }
     /// Consumes the builder and constructs a [`GetPackageInput`](crate::operation::get_package::GetPackageInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_package::GetPackageInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_package::GetPackageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_package::GetPackageInput {
             package_name: self.package_name,
         })

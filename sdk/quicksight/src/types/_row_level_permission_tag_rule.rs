@@ -122,16 +122,16 @@ impl RowLevelPermissionTagRuleBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`tag_key`](crate::types::builders::RowLevelPermissionTagRuleBuilder::tag_key)
     /// - [`column_name`](crate::types::builders::RowLevelPermissionTagRuleBuilder::column_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::RowLevelPermissionTagRule, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RowLevelPermissionTagRule, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RowLevelPermissionTagRule {
             tag_key: self.tag_key.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "tag_key",
                     "tag_key was not specified but it is required when building RowLevelPermissionTagRule",
                 )
             })?,
             column_name: self.column_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "column_name",
                     "column_name was not specified but it is required when building RowLevelPermissionTagRule",
                 )

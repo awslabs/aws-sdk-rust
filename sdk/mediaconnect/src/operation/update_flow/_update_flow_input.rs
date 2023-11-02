@@ -85,7 +85,7 @@ impl UpdateFlowInputBuilder {
         &self.maintenance
     }
     /// Consumes the builder and constructs a [`UpdateFlowInput`](crate::operation::update_flow::UpdateFlowInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_flow::UpdateFlowInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_flow::UpdateFlowInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_flow::UpdateFlowInput {
             flow_arn: self.flow_arn,
             source_failover_config: self.source_failover_config,

@@ -213,19 +213,22 @@ impl UpdateBuilder {
     /// - [`key`](crate::types::builders::UpdateBuilder::key)
     /// - [`update_expression`](crate::types::builders::UpdateBuilder::update_expression)
     /// - [`table_name`](crate::types::builders::UpdateBuilder::table_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::Update, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Update, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Update {
             key: self.key.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field("key", "key was not specified but it is required when building Update")
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "key",
+                    "key was not specified but it is required when building Update",
+                )
             })?,
             update_expression: self.update_expression.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "update_expression",
                     "update_expression was not specified but it is required when building Update",
                 )
             })?,
             table_name: self.table_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "table_name",
                     "table_name was not specified but it is required when building Update",
                 )

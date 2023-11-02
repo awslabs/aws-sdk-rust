@@ -86,7 +86,7 @@ impl ListMailDomainsInputBuilder {
     /// Consumes the builder and constructs a [`ListMailDomainsInput`](crate::operation::list_mail_domains::ListMailDomainsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_mail_domains::ListMailDomainsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_mail_domains::ListMailDomainsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_mail_domains::ListMailDomainsInput {
             organization_id: self.organization_id,
             max_results: self.max_results,

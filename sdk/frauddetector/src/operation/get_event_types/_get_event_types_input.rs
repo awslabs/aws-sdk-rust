@@ -85,7 +85,7 @@ impl GetEventTypesInputBuilder {
     /// Consumes the builder and constructs a [`GetEventTypesInput`](crate::operation::get_event_types::GetEventTypesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_event_types::GetEventTypesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_event_types::GetEventTypesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_event_types::GetEventTypesInput {
             name: self.name,
             next_token: self.next_token,

@@ -119,7 +119,7 @@ impl ListHostedZonesByVpcInputBuilder {
     /// Consumes the builder and constructs a [`ListHostedZonesByVpcInput`](crate::operation::list_hosted_zones_by_vpc::ListHostedZonesByVpcInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_hosted_zones_by_vpc::ListHostedZonesByVpcInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_hosted_zones_by_vpc::ListHostedZonesByVpcInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_hosted_zones_by_vpc::ListHostedZonesByVpcInput {
             vpc_id: self.vpc_id,

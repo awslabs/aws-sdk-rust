@@ -89,10 +89,10 @@ impl ListTransactionsOutputBuilder {
     /// - [`transactions`](crate::operation::list_transactions::builders::ListTransactionsOutputBuilder::transactions)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_transactions::ListTransactionsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_transactions::ListTransactionsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_transactions::ListTransactionsOutput {
             transactions: self.transactions.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "transactions",
                     "transactions was not specified but it is required when building ListTransactionsOutput",
                 )

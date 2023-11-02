@@ -2,7 +2,7 @@
 pub fn ser_describe_ec2_instance_limits_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_ec2_instance_limits::DescribeEc2InstanceLimitsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.ec2_instance_type {
         object.key("EC2InstanceType").string(var_1.as_str());
     }

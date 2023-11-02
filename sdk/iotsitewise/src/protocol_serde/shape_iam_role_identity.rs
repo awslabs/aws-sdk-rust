@@ -2,7 +2,7 @@
 pub fn ser_iam_role_identity(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IamRoleIdentity,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("arn").string(input.arn.as_str());
     }

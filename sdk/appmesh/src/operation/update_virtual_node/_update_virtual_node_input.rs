@@ -130,7 +130,7 @@ impl UpdateVirtualNodeInputBuilder {
     /// Consumes the builder and constructs a [`UpdateVirtualNodeInput`](crate::operation::update_virtual_node::UpdateVirtualNodeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_virtual_node::UpdateVirtualNodeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_virtual_node::UpdateVirtualNodeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_virtual_node::UpdateVirtualNodeInput {
             virtual_node_name: self.virtual_node_name,
             mesh_name: self.mesh_name,

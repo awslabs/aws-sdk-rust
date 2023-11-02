@@ -2,7 +2,7 @@
 pub fn ser_logging(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Logging,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.access_log {
         #[allow(unused_mut)]
         let mut object_2 = object.key("accessLog").start_object();

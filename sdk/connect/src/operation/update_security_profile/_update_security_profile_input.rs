@@ -215,7 +215,7 @@ impl UpdateSecurityProfileInputBuilder {
     /// Consumes the builder and constructs a [`UpdateSecurityProfileInput`](crate::operation::update_security_profile::UpdateSecurityProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_security_profile::UpdateSecurityProfileInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_security_profile::UpdateSecurityProfileInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_security_profile::UpdateSecurityProfileInput {
             description: self.description,

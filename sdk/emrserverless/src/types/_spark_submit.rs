@@ -105,10 +105,10 @@ impl SparkSubmitBuilder {
     /// Consumes the builder and constructs a [`SparkSubmit`](crate::types::SparkSubmit).
     /// This method will fail if any of the following fields are not set:
     /// - [`entry_point`](crate::types::builders::SparkSubmitBuilder::entry_point)
-    pub fn build(self) -> ::std::result::Result<crate::types::SparkSubmit, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SparkSubmit, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SparkSubmit {
             entry_point: self.entry_point.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "entry_point",
                     "entry_point was not specified but it is required when building SparkSubmit",
                 )

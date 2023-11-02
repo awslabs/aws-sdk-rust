@@ -68,7 +68,7 @@ impl AssociateApplicationFleetInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_application_fleet::AssociateApplicationFleetInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::associate_application_fleet::AssociateApplicationFleetInput {
             fleet_name: self.fleet_name,

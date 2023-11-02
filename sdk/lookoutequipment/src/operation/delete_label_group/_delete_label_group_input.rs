@@ -44,7 +44,7 @@ impl DeleteLabelGroupInputBuilder {
     /// Consumes the builder and constructs a [`DeleteLabelGroupInput`](crate::operation::delete_label_group::DeleteLabelGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_label_group::DeleteLabelGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_label_group::DeleteLabelGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_label_group::DeleteLabelGroupInput {
             label_group_name: self.label_group_name,
         })

@@ -146,17 +146,17 @@ impl DeploymentLaunchConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`package_name`](crate::types::builders::DeploymentLaunchConfigBuilder::package_name)
     /// - [`launch_file`](crate::types::builders::DeploymentLaunchConfigBuilder::launch_file)
-    pub fn build(self) -> ::std::result::Result<crate::types::DeploymentLaunchConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DeploymentLaunchConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DeploymentLaunchConfig {
             package_name: self.package_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "package_name",
                     "package_name was not specified but it is required when building DeploymentLaunchConfig",
                 )
             })?,
             pre_launch_file: self.pre_launch_file,
             launch_file: self.launch_file.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "launch_file",
                     "launch_file was not specified but it is required when building DeploymentLaunchConfig",
                 )

@@ -69,16 +69,16 @@ impl ApprovalResultBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`summary`](crate::types::builders::ApprovalResultBuilder::summary)
     /// - [`status`](crate::types::builders::ApprovalResultBuilder::status)
-    pub fn build(self) -> ::std::result::Result<crate::types::ApprovalResult, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ApprovalResult, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ApprovalResult {
             summary: self.summary.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "summary",
                     "summary was not specified but it is required when building ApprovalResult",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building ApprovalResult",
                 )

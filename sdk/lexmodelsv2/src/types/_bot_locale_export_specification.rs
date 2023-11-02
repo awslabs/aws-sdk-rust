@@ -94,22 +94,22 @@ impl BotLocaleExportSpecificationBuilder {
     /// - [`bot_id`](crate::types::builders::BotLocaleExportSpecificationBuilder::bot_id)
     /// - [`bot_version`](crate::types::builders::BotLocaleExportSpecificationBuilder::bot_version)
     /// - [`locale_id`](crate::types::builders::BotLocaleExportSpecificationBuilder::locale_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::BotLocaleExportSpecification, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::BotLocaleExportSpecification, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::BotLocaleExportSpecification {
             bot_id: self.bot_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "bot_id",
                     "bot_id was not specified but it is required when building BotLocaleExportSpecification",
                 )
             })?,
             bot_version: self.bot_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "bot_version",
                     "bot_version was not specified but it is required when building BotLocaleExportSpecification",
                 )
             })?,
             locale_id: self.locale_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "locale_id",
                     "locale_id was not specified but it is required when building BotLocaleExportSpecification",
                 )

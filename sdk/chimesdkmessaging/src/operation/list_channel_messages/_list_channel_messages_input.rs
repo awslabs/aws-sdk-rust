@@ -216,7 +216,7 @@ impl ListChannelMessagesInputBuilder {
     /// Consumes the builder and constructs a [`ListChannelMessagesInput`](crate::operation::list_channel_messages::ListChannelMessagesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_channel_messages::ListChannelMessagesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_channel_messages::ListChannelMessagesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_channel_messages::ListChannelMessagesInput {
             channel_arn: self.channel_arn,

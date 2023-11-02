@@ -2,7 +2,7 @@
 pub fn ser_find_matches_parameters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FindMatchesParameters,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.primary_key_column_name {
         object.key("PrimaryKeyColumnName").string(var_1.as_str());
     }

@@ -193,7 +193,7 @@ impl ListLabelingJobsForWorkteamInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_labeling_jobs_for_workteam::ListLabelingJobsForWorkteamInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_labeling_jobs_for_workteam::ListLabelingJobsForWorkteamInput {
             workteam_arn: self.workteam_arn,

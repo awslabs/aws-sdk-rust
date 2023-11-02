@@ -46,7 +46,7 @@ impl EnableAwsServiceAccessInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::enable_aws_service_access::EnableAwsServiceAccessInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::enable_aws_service_access::EnableAwsServiceAccessInput {
             service_principal: self.service_principal,

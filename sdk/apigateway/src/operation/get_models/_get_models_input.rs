@@ -85,7 +85,7 @@ impl GetModelsInputBuilder {
         &self.limit
     }
     /// Consumes the builder and constructs a [`GetModelsInput`](crate::operation::get_models::GetModelsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_models::GetModelsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_models::GetModelsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_models::GetModelsInput {
             rest_api_id: self.rest_api_id,
             position: self.position,

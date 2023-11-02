@@ -66,10 +66,10 @@ impl QueryArgProfileConfigBuilder {
     /// Consumes the builder and constructs a [`QueryArgProfileConfig`](crate::types::QueryArgProfileConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`forward_when_query_arg_profile_is_unknown`](crate::types::builders::QueryArgProfileConfigBuilder::forward_when_query_arg_profile_is_unknown)
-    pub fn build(self) -> ::std::result::Result<crate::types::QueryArgProfileConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::QueryArgProfileConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::QueryArgProfileConfig {
             forward_when_query_arg_profile_is_unknown: self.forward_when_query_arg_profile_is_unknown.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "forward_when_query_arg_profile_is_unknown",
                     "forward_when_query_arg_profile_is_unknown was not specified but it is required when building QueryArgProfileConfig",
                 )

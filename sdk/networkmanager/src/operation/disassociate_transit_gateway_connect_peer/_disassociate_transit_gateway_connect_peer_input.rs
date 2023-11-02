@@ -68,7 +68,7 @@ impl DisassociateTransitGatewayConnectPeerInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_transit_gateway_connect_peer::DisassociateTransitGatewayConnectPeerInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::disassociate_transit_gateway_connect_peer::DisassociateTransitGatewayConnectPeerInput {

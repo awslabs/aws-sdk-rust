@@ -105,7 +105,7 @@ impl DeleteHsmInputBuilder {
         &self.eni_ip
     }
     /// Consumes the builder and constructs a [`DeleteHsmInput`](crate::operation::delete_hsm::DeleteHsmInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_hsm::DeleteHsmInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_hsm::DeleteHsmInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_hsm::DeleteHsmInput {
             cluster_id: self.cluster_id,
             hsm_id: self.hsm_id,

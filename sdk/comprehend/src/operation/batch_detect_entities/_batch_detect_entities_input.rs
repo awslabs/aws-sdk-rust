@@ -81,7 +81,7 @@ impl BatchDetectEntitiesInputBuilder {
     /// Consumes the builder and constructs a [`BatchDetectEntitiesInput`](crate::operation::batch_detect_entities::BatchDetectEntitiesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_detect_entities::BatchDetectEntitiesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::batch_detect_entities::BatchDetectEntitiesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::batch_detect_entities::BatchDetectEntitiesInput {
             text_list: self.text_list,

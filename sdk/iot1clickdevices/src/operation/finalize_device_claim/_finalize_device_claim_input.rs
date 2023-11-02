@@ -76,7 +76,7 @@ impl FinalizeDeviceClaimInputBuilder {
     /// Consumes the builder and constructs a [`FinalizeDeviceClaimInput`](crate::operation::finalize_device_claim::FinalizeDeviceClaimInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::finalize_device_claim::FinalizeDeviceClaimInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::finalize_device_claim::FinalizeDeviceClaimInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::finalize_device_claim::FinalizeDeviceClaimInput {
             device_id: self.device_id,

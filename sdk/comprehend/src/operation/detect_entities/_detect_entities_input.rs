@@ -178,7 +178,7 @@ impl DetectEntitiesInputBuilder {
     /// Consumes the builder and constructs a [`DetectEntitiesInput`](crate::operation::detect_entities::DetectEntitiesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::detect_entities::DetectEntitiesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::detect_entities::DetectEntitiesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::detect_entities::DetectEntitiesInput {
             text: self.text,
             language_code: self.language_code,

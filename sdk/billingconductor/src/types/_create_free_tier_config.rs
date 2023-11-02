@@ -45,10 +45,10 @@ impl CreateFreeTierConfigBuilder {
     /// Consumes the builder and constructs a [`CreateFreeTierConfig`](crate::types::CreateFreeTierConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`activated`](crate::types::builders::CreateFreeTierConfigBuilder::activated)
-    pub fn build(self) -> ::std::result::Result<crate::types::CreateFreeTierConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CreateFreeTierConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CreateFreeTierConfig {
             activated: self.activated.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "activated",
                     "activated was not specified but it is required when building CreateFreeTierConfig",
                 )

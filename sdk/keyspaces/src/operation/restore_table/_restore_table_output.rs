@@ -63,10 +63,10 @@ impl RestoreTableOutputBuilder {
     /// - [`restored_table_arn`](crate::operation::restore_table::builders::RestoreTableOutputBuilder::restored_table_arn)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::restore_table::RestoreTableOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::restore_table::RestoreTableOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::restore_table::RestoreTableOutput {
             restored_table_arn: self.restored_table_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "restored_table_arn",
                     "restored_table_arn was not specified but it is required when building RestoreTableOutput",
                 )

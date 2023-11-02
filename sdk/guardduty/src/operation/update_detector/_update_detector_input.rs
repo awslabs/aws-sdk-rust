@@ -146,7 +146,7 @@ impl UpdateDetectorInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDetectorInput`](crate::operation::update_detector::UpdateDetectorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_detector::UpdateDetectorInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_detector::UpdateDetectorInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_detector::UpdateDetectorInput {
             detector_id: self.detector_id,
             enable: self.enable,

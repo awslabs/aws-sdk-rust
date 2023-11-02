@@ -67,7 +67,7 @@ impl UpdateTimeToLiveInputBuilder {
     /// Consumes the builder and constructs a [`UpdateTimeToLiveInput`](crate::operation::update_time_to_live::UpdateTimeToLiveInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_time_to_live::UpdateTimeToLiveInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_time_to_live::UpdateTimeToLiveInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_time_to_live::UpdateTimeToLiveInput {
             table_name: self.table_name,
             time_to_live_specification: self.time_to_live_specification,

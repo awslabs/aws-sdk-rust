@@ -83,7 +83,7 @@ impl GetIntentsInputBuilder {
         &self.name_contains
     }
     /// Consumes the builder and constructs a [`GetIntentsInput`](crate::operation::get_intents::GetIntentsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_intents::GetIntentsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_intents::GetIntentsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_intents::GetIntentsInput {
             next_token: self.next_token,
             max_results: self.max_results,

@@ -66,7 +66,7 @@ impl PutRetentionSettingsInputBuilder {
     /// Consumes the builder and constructs a [`PutRetentionSettingsInput`](crate::operation::put_retention_settings::PutRetentionSettingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_retention_settings::PutRetentionSettingsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::put_retention_settings::PutRetentionSettingsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::put_retention_settings::PutRetentionSettingsInput {
             account_id: self.account_id,

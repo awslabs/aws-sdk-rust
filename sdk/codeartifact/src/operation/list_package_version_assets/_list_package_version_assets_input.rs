@@ -248,7 +248,7 @@ impl ListPackageVersionAssetsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_package_version_assets::ListPackageVersionAssetsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_package_version_assets::ListPackageVersionAssetsInput {
             domain: self.domain,

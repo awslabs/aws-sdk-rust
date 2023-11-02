@@ -44,7 +44,7 @@ where
 pub fn ser_slot_value_regex_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SlotValueRegexFilter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("pattern").string(input.pattern.as_str());
     }

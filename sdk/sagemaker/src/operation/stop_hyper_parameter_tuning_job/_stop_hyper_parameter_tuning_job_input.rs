@@ -46,7 +46,7 @@ impl StopHyperParameterTuningJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_hyper_parameter_tuning_job::StopHyperParameterTuningJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::stop_hyper_parameter_tuning_job::StopHyperParameterTuningJobInput {
             hyper_parameter_tuning_job_name: self.hyper_parameter_tuning_job_name,

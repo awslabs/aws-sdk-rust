@@ -225,22 +225,22 @@ impl SplunkDestinationConfigurationBuilder {
     /// - [`hec_endpoint`](crate::types::builders::SplunkDestinationConfigurationBuilder::hec_endpoint)
     /// - [`hec_endpoint_type`](crate::types::builders::SplunkDestinationConfigurationBuilder::hec_endpoint_type)
     /// - [`hec_token`](crate::types::builders::SplunkDestinationConfigurationBuilder::hec_token)
-    pub fn build(self) -> ::std::result::Result<crate::types::SplunkDestinationConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SplunkDestinationConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SplunkDestinationConfiguration {
             hec_endpoint: self.hec_endpoint.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "hec_endpoint",
                     "hec_endpoint was not specified but it is required when building SplunkDestinationConfiguration",
                 )
             })?,
             hec_endpoint_type: self.hec_endpoint_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "hec_endpoint_type",
                     "hec_endpoint_type was not specified but it is required when building SplunkDestinationConfiguration",
                 )
             })?,
             hec_token: self.hec_token.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "hec_token",
                     "hec_token was not specified but it is required when building SplunkDestinationConfiguration",
                 )

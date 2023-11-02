@@ -74,10 +74,10 @@ impl JobManifestSpecBuilder {
     /// Consumes the builder and constructs a [`JobManifestSpec`](crate::types::JobManifestSpec).
     /// This method will fail if any of the following fields are not set:
     /// - [`format`](crate::types::builders::JobManifestSpecBuilder::format)
-    pub fn build(self) -> ::std::result::Result<crate::types::JobManifestSpec, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::JobManifestSpec, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::JobManifestSpec {
             format: self.format.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "format",
                     "format was not specified but it is required when building JobManifestSpec",
                 )

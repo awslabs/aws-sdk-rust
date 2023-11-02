@@ -353,7 +353,7 @@ impl DescribeEvaluationsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeEvaluationsInput`](crate::operation::describe_evaluations::DescribeEvaluationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_evaluations::DescribeEvaluationsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_evaluations::DescribeEvaluationsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_evaluations::DescribeEvaluationsInput {
             filter_variable: self.filter_variable,

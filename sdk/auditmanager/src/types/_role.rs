@@ -89,16 +89,16 @@ impl RoleBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`role_type`](crate::types::builders::RoleBuilder::role_type)
     /// - [`role_arn`](crate::types::builders::RoleBuilder::role_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::Role, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Role, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Role {
             role_type: self.role_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role_type",
                     "role_type was not specified but it is required when building Role",
                 )
             })?,
             role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role_arn",
                     "role_arn was not specified but it is required when building Role",
                 )

@@ -74,7 +74,7 @@ impl ConfigureLogsForPlaybackConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::configure_logs_for_playback_configuration::ConfigureLogsForPlaybackConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::configure_logs_for_playback_configuration::ConfigureLogsForPlaybackConfigurationInput {

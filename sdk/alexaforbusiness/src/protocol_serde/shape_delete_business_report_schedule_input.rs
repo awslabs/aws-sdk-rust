@@ -2,7 +2,7 @@
 pub fn ser_delete_business_report_schedule_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_business_report_schedule::DeleteBusinessReportScheduleInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.schedule_arn {
         object.key("ScheduleArn").string(var_1.as_str());
     }

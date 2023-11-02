@@ -200,7 +200,7 @@ impl DescribeTrafficMirrorSessionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_traffic_mirror_sessions::DescribeTrafficMirrorSessionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_traffic_mirror_sessions::DescribeTrafficMirrorSessionsInput {
             traffic_mirror_session_ids: self.traffic_mirror_session_ids,

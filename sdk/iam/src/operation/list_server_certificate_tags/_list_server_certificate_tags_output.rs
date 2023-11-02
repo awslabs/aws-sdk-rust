@@ -112,11 +112,11 @@ impl ListServerCertificateTagsOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_server_certificate_tags::ListServerCertificateTagsOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_server_certificate_tags::ListServerCertificateTagsOutput {
             tags: self.tags.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "tags",
                     "tags was not specified but it is required when building ListServerCertificateTagsOutput",
                 )

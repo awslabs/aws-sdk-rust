@@ -69,16 +69,16 @@ impl SsmParameterStoreParameterBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`parameter_type`](crate::types::builders::SsmParameterStoreParameterBuilder::parameter_type)
     /// - [`parameter_name`](crate::types::builders::SsmParameterStoreParameterBuilder::parameter_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::SsmParameterStoreParameter, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SsmParameterStoreParameter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SsmParameterStoreParameter {
             parameter_type: self.parameter_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "parameter_type",
                     "parameter_type was not specified but it is required when building SsmParameterStoreParameter",
                 )
             })?,
             parameter_name: self.parameter_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "parameter_name",
                     "parameter_name was not specified but it is required when building SsmParameterStoreParameter",
                 )

@@ -199,7 +199,7 @@ impl ListLensReviewImprovementsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_lens_review_improvements::ListLensReviewImprovementsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_lens_review_improvements::ListLensReviewImprovementsInput {
             workload_id: self.workload_id,

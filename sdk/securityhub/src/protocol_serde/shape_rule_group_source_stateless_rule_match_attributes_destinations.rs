@@ -2,7 +2,7 @@
 pub fn ser_rule_group_source_stateless_rule_match_attributes_destinations(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RuleGroupSourceStatelessRuleMatchAttributesDestinations,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.address_definition {
         object.key("AddressDefinition").string(var_1.as_str());
     }

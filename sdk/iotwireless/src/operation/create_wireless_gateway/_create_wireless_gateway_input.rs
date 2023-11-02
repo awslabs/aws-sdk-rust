@@ -136,7 +136,7 @@ impl CreateWirelessGatewayInputBuilder {
     /// Consumes the builder and constructs a [`CreateWirelessGatewayInput`](crate::operation::create_wireless_gateway::CreateWirelessGatewayInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_wireless_gateway::CreateWirelessGatewayInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_wireless_gateway::CreateWirelessGatewayInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_wireless_gateway::CreateWirelessGatewayInput {
             name: self.name,

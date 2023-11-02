@@ -69,16 +69,16 @@ impl ResourceConflictBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`resource_id`](crate::types::builders::ResourceConflictBuilder::resource_id)
     /// - [`resource_type`](crate::types::builders::ResourceConflictBuilder::resource_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::ResourceConflict, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ResourceConflict, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ResourceConflict {
             resource_id: self.resource_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_id",
                     "resource_id was not specified but it is required when building ResourceConflict",
                 )
             })?,
             resource_type: self.resource_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_type",
                     "resource_type was not specified but it is required when building ResourceConflict",
                 )

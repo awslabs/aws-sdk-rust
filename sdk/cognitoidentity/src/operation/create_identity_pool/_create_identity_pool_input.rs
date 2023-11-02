@@ -269,7 +269,8 @@ impl CreateIdentityPoolInputBuilder {
     /// Consumes the builder and constructs a [`CreateIdentityPoolInput`](crate::operation::create_identity_pool::CreateIdentityPoolInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_identity_pool::CreateIdentityPoolInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_identity_pool::CreateIdentityPoolInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_identity_pool::CreateIdentityPoolInput {
             identity_pool_name: self.identity_pool_name,
             allow_unauthenticated_identities: self.allow_unauthenticated_identities,

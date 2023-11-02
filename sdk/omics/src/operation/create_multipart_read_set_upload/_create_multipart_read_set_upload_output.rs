@@ -297,42 +297,42 @@ impl CreateMultipartReadSetUploadOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_multipart_read_set_upload::CreateMultipartReadSetUploadOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_multipart_read_set_upload::CreateMultipartReadSetUploadOutput {
             sequence_store_id: self.sequence_store_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "sequence_store_id",
                     "sequence_store_id was not specified but it is required when building CreateMultipartReadSetUploadOutput",
                 )
             })?,
             upload_id: self.upload_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "upload_id",
                     "upload_id was not specified but it is required when building CreateMultipartReadSetUploadOutput",
                 )
             })?,
             source_file_type: self.source_file_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source_file_type",
                     "source_file_type was not specified but it is required when building CreateMultipartReadSetUploadOutput",
                 )
             })?,
             subject_id: self.subject_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "subject_id",
                     "subject_id was not specified but it is required when building CreateMultipartReadSetUploadOutput",
                 )
             })?,
             sample_id: self.sample_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "sample_id",
                     "sample_id was not specified but it is required when building CreateMultipartReadSetUploadOutput",
                 )
             })?,
             generated_from: self.generated_from,
             reference_arn: self.reference_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "reference_arn",
                     "reference_arn was not specified but it is required when building CreateMultipartReadSetUploadOutput",
                 )
@@ -341,7 +341,7 @@ impl CreateMultipartReadSetUploadOutputBuilder {
             description: self.description,
             tags: self.tags,
             creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_time",
                     "creation_time was not specified but it is required when building CreateMultipartReadSetUploadOutput",
                 )

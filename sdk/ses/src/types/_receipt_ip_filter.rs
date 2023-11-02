@@ -70,16 +70,16 @@ impl ReceiptIpFilterBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`policy`](crate::types::builders::ReceiptIpFilterBuilder::policy)
     /// - [`cidr`](crate::types::builders::ReceiptIpFilterBuilder::cidr)
-    pub fn build(self) -> ::std::result::Result<crate::types::ReceiptIpFilter, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ReceiptIpFilter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ReceiptIpFilter {
             policy: self.policy.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "policy",
                     "policy was not specified but it is required when building ReceiptIpFilter",
                 )
             })?,
             cidr: self.cidr.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "cidr",
                     "cidr was not specified but it is required when building ReceiptIpFilter",
                 )

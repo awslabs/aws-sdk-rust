@@ -161,7 +161,9 @@ impl UpdateEntityInputBuilder {
         &self.parent_entity_update
     }
     /// Consumes the builder and constructs a [`UpdateEntityInput`](crate::operation::update_entity::UpdateEntityInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_entity::UpdateEntityInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_entity::UpdateEntityInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_entity::UpdateEntityInput {
             workspace_id: self.workspace_id,
             entity_id: self.entity_id,

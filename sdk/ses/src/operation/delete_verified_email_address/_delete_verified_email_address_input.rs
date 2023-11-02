@@ -47,7 +47,7 @@ impl DeleteVerifiedEmailAddressInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_verified_email_address::DeleteVerifiedEmailAddressInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_verified_email_address::DeleteVerifiedEmailAddressInput {
             email_address: self.email_address,

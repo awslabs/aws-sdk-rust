@@ -44,7 +44,7 @@ impl GetSchemaAsJsonInputBuilder {
     /// Consumes the builder and constructs a [`GetSchemaAsJsonInput`](crate::operation::get_schema_as_json::GetSchemaAsJsonInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_schema_as_json::GetSchemaAsJsonInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_schema_as_json::GetSchemaAsJsonInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_schema_as_json::GetSchemaAsJsonInput { schema_arn: self.schema_arn })
     }
 }

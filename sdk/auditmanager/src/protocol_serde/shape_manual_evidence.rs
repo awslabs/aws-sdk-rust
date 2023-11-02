@@ -2,7 +2,7 @@
 pub fn ser_manual_evidence(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ManualEvidence,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.s3_resource_path {
         object.key("s3ResourcePath").string(var_1.as_str());
     }

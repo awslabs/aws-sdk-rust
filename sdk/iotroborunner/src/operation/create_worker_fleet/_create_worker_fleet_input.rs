@@ -108,7 +108,7 @@ impl CreateWorkerFleetInputBuilder {
     /// Consumes the builder and constructs a [`CreateWorkerFleetInput`](crate::operation::create_worker_fleet::CreateWorkerFleetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_worker_fleet::CreateWorkerFleetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_worker_fleet::CreateWorkerFleetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_worker_fleet::CreateWorkerFleetInput {
             client_token: self.client_token,
             name: self.name,

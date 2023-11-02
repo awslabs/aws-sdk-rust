@@ -176,15 +176,15 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for UploadArchiv
             fn uri_base(
                 _input: &crate::operation::upload_archive::UploadArchiveInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 use ::std::fmt::Write as _;
                 let input_1 = &_input.account_id;
                 let input_1 = input_1
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("account_id", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("account_id", "cannot be empty or unset"))?;
                 let account_id = ::aws_smithy_http::label::fmt_string(input_1, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if account_id.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "account_id",
                         "cannot be empty or unset",
                     ));
@@ -192,10 +192,10 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for UploadArchiv
                 let input_2 = &_input.vault_name;
                 let input_2 = input_2
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("vault_name", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("vault_name", "cannot be empty or unset"))?;
                 let vault_name = ::aws_smithy_http::label::fmt_string(input_2, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if vault_name.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "vault_name",
                         "cannot be empty or unset",
                     ));
@@ -213,7 +213,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for UploadArchiv
             fn update_http_builder(
                 input: &crate::operation::upload_archive::UploadArchiveInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::protocol_serde::shape_upload_archive::ser_upload_archive_headers(input, builder)?;
@@ -315,7 +315,7 @@ mod upload_archive_request_test {
             .upload_archive()
             .set_account_id(::std::option::Option::Some("foo".to_owned()))
             .set_vault_name(::std::option::Option::Some("bar".to_owned()))
-            .set_body(::std::option::Option::Some(::aws_smithy_http::byte_stream::ByteStream::from_static(
+            .set_body(::std::option::Option::Some(::aws_smithy_types::byte_stream::ByteStream::from_static(
                 b"hello world",
             )))
             .send()

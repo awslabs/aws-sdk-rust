@@ -138,7 +138,7 @@ impl UpdateShardCountInputBuilder {
     /// Consumes the builder and constructs a [`UpdateShardCountInput`](crate::operation::update_shard_count::UpdateShardCountInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_shard_count::UpdateShardCountInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_shard_count::UpdateShardCountInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_shard_count::UpdateShardCountInput {
             stream_name: self.stream_name,
             target_shard_count: self.target_shard_count,

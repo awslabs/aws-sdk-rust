@@ -69,7 +69,7 @@ impl DeleteSqlInjectionMatchSetInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_sql_injection_match_set::DeleteSqlInjectionMatchSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_sql_injection_match_set::DeleteSqlInjectionMatchSetInput {
             sql_injection_match_set_id: self.sql_injection_match_set_id,

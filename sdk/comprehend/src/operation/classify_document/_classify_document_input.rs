@@ -132,7 +132,7 @@ impl ClassifyDocumentInputBuilder {
     /// Consumes the builder and constructs a [`ClassifyDocumentInput`](crate::operation::classify_document::ClassifyDocumentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::classify_document::ClassifyDocumentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::classify_document::ClassifyDocumentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::classify_document::ClassifyDocumentInput {
             text: self.text,
             endpoint_arn: self.endpoint_arn,

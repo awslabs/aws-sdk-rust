@@ -44,7 +44,7 @@ impl ResumeServiceInputBuilder {
     /// Consumes the builder and constructs a [`ResumeServiceInput`](crate::operation::resume_service::ResumeServiceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::resume_service::ResumeServiceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::resume_service::ResumeServiceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::resume_service::ResumeServiceInput {
             service_arn: self.service_arn,
         })

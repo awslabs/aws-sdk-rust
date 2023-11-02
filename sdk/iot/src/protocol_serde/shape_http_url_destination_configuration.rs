@@ -2,7 +2,7 @@
 pub fn ser_http_url_destination_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::HttpUrlDestinationConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("confirmationUrl").string(input.confirmation_url.as_str());
     }

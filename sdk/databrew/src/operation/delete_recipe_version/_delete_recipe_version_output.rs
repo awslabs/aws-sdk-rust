@@ -87,17 +87,17 @@ impl DeleteRecipeVersionOutputBuilder {
     /// - [`recipe_version`](crate::operation::delete_recipe_version::builders::DeleteRecipeVersionOutputBuilder::recipe_version)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_recipe_version::DeleteRecipeVersionOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_recipe_version::DeleteRecipeVersionOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_recipe_version::DeleteRecipeVersionOutput {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building DeleteRecipeVersionOutput",
                 )
             })?,
             recipe_version: self.recipe_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "recipe_version",
                     "recipe_version was not specified but it is required when building DeleteRecipeVersionOutput",
                 )

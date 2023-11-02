@@ -108,7 +108,7 @@ impl ListImageSetVersionsInputBuilder {
     /// Consumes the builder and constructs a [`ListImageSetVersionsInput`](crate::operation::list_image_set_versions::ListImageSetVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_image_set_versions::ListImageSetVersionsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_image_set_versions::ListImageSetVersionsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_image_set_versions::ListImageSetVersionsInput {
             datastore_id: self.datastore_id,

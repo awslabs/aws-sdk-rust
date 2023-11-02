@@ -2,7 +2,7 @@
 pub fn ser_device_position_update(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DevicePositionUpdate,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("DeviceId").string(input.device_id.as_str());
     }

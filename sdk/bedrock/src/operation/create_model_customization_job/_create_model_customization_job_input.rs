@@ -332,7 +332,7 @@ impl CreateModelCustomizationJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_model_customization_job::CreateModelCustomizationJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_model_customization_job::CreateModelCustomizationJobInput {
             job_name: self.job_name,

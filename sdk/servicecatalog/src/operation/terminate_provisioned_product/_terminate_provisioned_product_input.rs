@@ -171,7 +171,7 @@ impl TerminateProvisionedProductInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::terminate_provisioned_product::TerminateProvisionedProductInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::terminate_provisioned_product::TerminateProvisionedProductInput {
             provisioned_product_name: self.provisioned_product_name,

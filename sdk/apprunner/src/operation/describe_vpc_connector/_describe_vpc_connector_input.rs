@@ -49,7 +49,7 @@ impl DescribeVpcConnectorInputBuilder {
     /// Consumes the builder and constructs a [`DescribeVpcConnectorInput`](crate::operation::describe_vpc_connector::DescribeVpcConnectorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_vpc_connector::DescribeVpcConnectorInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_vpc_connector::DescribeVpcConnectorInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_vpc_connector::DescribeVpcConnectorInput {
             vpc_connector_arn: self.vpc_connector_arn,

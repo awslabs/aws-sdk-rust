@@ -314,26 +314,26 @@ impl EnvironmentBuilder {
     /// - [`r#type`](crate::types::builders::EnvironmentBuilder::r#type)
     /// - [`arn`](crate::types::builders::EnvironmentBuilder::arn)
     /// - [`owner_arn`](crate::types::builders::EnvironmentBuilder::owner_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::Environment, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Environment, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Environment {
             id: self.id,
             name: self.name,
             description: self.description,
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building Environment",
                 )
             })?,
             connection_type: self.connection_type,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building Environment",
                 )
             })?,
             owner_arn: self.owner_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "owner_arn",
                     "owner_arn was not specified but it is required when building Environment",
                 )

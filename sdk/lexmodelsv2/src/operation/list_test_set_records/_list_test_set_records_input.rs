@@ -86,7 +86,7 @@ impl ListTestSetRecordsInputBuilder {
     /// Consumes the builder and constructs a [`ListTestSetRecordsInput`](crate::operation::list_test_set_records::ListTestSetRecordsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_test_set_records::ListTestSetRecordsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_test_set_records::ListTestSetRecordsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_test_set_records::ListTestSetRecordsInput {
             test_set_id: self.test_set_id,

@@ -44,7 +44,7 @@ impl GetAgentConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`GetAgentConfigurationInput`](crate::operation::get_agent_configuration::GetAgentConfigurationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_agent_configuration::GetAgentConfigurationInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_agent_configuration::GetAgentConfigurationInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_agent_configuration::GetAgentConfigurationInput { agent_id: self.agent_id })
     }

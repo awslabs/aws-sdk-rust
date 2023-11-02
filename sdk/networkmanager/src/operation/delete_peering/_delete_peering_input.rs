@@ -44,7 +44,7 @@ impl DeletePeeringInputBuilder {
     /// Consumes the builder and constructs a [`DeletePeeringInput`](crate::operation::delete_peering::DeletePeeringInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_peering::DeletePeeringInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_peering::DeletePeeringInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_peering::DeletePeeringInput { peering_id: self.peering_id })
     }
 }

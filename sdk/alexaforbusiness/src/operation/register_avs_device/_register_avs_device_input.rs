@@ -181,7 +181,7 @@ impl RegisterAvsDeviceInputBuilder {
     /// Consumes the builder and constructs a [`RegisterAvsDeviceInput`](crate::operation::register_avs_device::RegisterAvsDeviceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::register_avs_device::RegisterAvsDeviceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::register_avs_device::RegisterAvsDeviceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::register_avs_device::RegisterAvsDeviceInput {
             client_id: self.client_id,
             user_code: self.user_code,

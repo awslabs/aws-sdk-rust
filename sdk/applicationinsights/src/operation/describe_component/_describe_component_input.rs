@@ -87,7 +87,7 @@ impl DescribeComponentInputBuilder {
     /// Consumes the builder and constructs a [`DescribeComponentInput`](crate::operation::describe_component::DescribeComponentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_component::DescribeComponentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_component::DescribeComponentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_component::DescribeComponentInput {
             resource_group_name: self.resource_group_name,
             component_name: self.component_name,

@@ -121,7 +121,7 @@ impl UpdateLfTagInputBuilder {
         &self.tag_values_to_add
     }
     /// Consumes the builder and constructs a [`UpdateLfTagInput`](crate::operation::update_lf_tag::UpdateLfTagInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_lf_tag::UpdateLfTagInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_lf_tag::UpdateLfTagInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_lf_tag::UpdateLfTagInput {
             catalog_id: self.catalog_id,
             tag_key: self.tag_key,

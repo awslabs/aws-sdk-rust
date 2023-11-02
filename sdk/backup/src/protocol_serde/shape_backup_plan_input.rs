@@ -2,7 +2,7 @@
 pub fn ser_backup_plan_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BackupPlanInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("BackupPlanName").string(input.backup_plan_name.as_str());
     }

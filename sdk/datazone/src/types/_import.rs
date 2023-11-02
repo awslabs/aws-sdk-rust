@@ -78,16 +78,16 @@ impl ImportBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::ImportBuilder::name)
     /// - [`revision`](crate::types::builders::ImportBuilder::revision)
-    pub fn build(self) -> ::std::result::Result<crate::types::Import, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Import, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Import {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building Import",
                 )
             })?,
             revision: self.revision.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "revision",
                     "revision was not specified but it is required when building Import",
                 )

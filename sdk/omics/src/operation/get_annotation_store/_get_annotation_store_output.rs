@@ -388,55 +388,55 @@ impl GetAnnotationStoreOutputBuilder {
     /// - [`num_versions`](crate::operation::get_annotation_store::builders::GetAnnotationStoreOutputBuilder::num_versions)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_annotation_store::GetAnnotationStoreOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_annotation_store::GetAnnotationStoreOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_annotation_store::GetAnnotationStoreOutput {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building GetAnnotationStoreOutput",
                 )
             })?,
             reference: self.reference,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building GetAnnotationStoreOutput",
                 )
             })?,
             store_arn: self.store_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "store_arn",
                     "store_arn was not specified but it is required when building GetAnnotationStoreOutput",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building GetAnnotationStoreOutput",
                 )
             })?,
             description: self.description.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "description",
                     "description was not specified but it is required when building GetAnnotationStoreOutput",
                 )
             })?,
             sse_config: self.sse_config,
             creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_time",
                     "creation_time was not specified but it is required when building GetAnnotationStoreOutput",
                 )
             })?,
             update_time: self.update_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "update_time",
                     "update_time was not specified but it is required when building GetAnnotationStoreOutput",
                 )
             })?,
             tags: self.tags.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "tags",
                     "tags was not specified but it is required when building GetAnnotationStoreOutput",
                 )
@@ -444,19 +444,19 @@ impl GetAnnotationStoreOutputBuilder {
             store_options: self.store_options,
             store_format: self.store_format,
             status_message: self.status_message.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status_message",
                     "status_message was not specified but it is required when building GetAnnotationStoreOutput",
                 )
             })?,
             store_size_bytes: self.store_size_bytes.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "store_size_bytes",
                     "store_size_bytes was not specified but it is required when building GetAnnotationStoreOutput",
                 )
             })?,
             num_versions: self.num_versions.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "num_versions",
                     "num_versions was not specified but it is required when building GetAnnotationStoreOutput",
                 )

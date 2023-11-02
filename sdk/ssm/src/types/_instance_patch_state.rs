@@ -592,22 +592,22 @@ impl InstancePatchStateBuilder {
     /// - [`operation_start_time`](crate::types::builders::InstancePatchStateBuilder::operation_start_time)
     /// - [`operation_end_time`](crate::types::builders::InstancePatchStateBuilder::operation_end_time)
     /// - [`operation`](crate::types::builders::InstancePatchStateBuilder::operation)
-    pub fn build(self) -> ::std::result::Result<crate::types::InstancePatchState, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::InstancePatchState, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::InstancePatchState {
             instance_id: self.instance_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "instance_id",
                     "instance_id was not specified but it is required when building InstancePatchState",
                 )
             })?,
             patch_group: self.patch_group.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "patch_group",
                     "patch_group was not specified but it is required when building InstancePatchState",
                 )
             })?,
             baseline_id: self.baseline_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "baseline_id",
                     "baseline_id was not specified but it is required when building InstancePatchState",
                 )
@@ -624,19 +624,19 @@ impl InstancePatchStateBuilder {
             unreported_not_applicable_count: self.unreported_not_applicable_count,
             not_applicable_count: self.not_applicable_count.unwrap_or_default(),
             operation_start_time: self.operation_start_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "operation_start_time",
                     "operation_start_time was not specified but it is required when building InstancePatchState",
                 )
             })?,
             operation_end_time: self.operation_end_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "operation_end_time",
                     "operation_end_time was not specified but it is required when building InstancePatchState",
                 )
             })?,
             operation: self.operation.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "operation",
                     "operation was not specified but it is required when building InstancePatchState",
                 )

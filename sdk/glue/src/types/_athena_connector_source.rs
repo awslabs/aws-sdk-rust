@@ -192,35 +192,35 @@ impl AthenaConnectorSourceBuilder {
     /// - [`connector_name`](crate::types::builders::AthenaConnectorSourceBuilder::connector_name)
     /// - [`connection_type`](crate::types::builders::AthenaConnectorSourceBuilder::connection_type)
     /// - [`schema_name`](crate::types::builders::AthenaConnectorSourceBuilder::schema_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::AthenaConnectorSource, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AthenaConnectorSource, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AthenaConnectorSource {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building AthenaConnectorSource",
                 )
             })?,
             connection_name: self.connection_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "connection_name",
                     "connection_name was not specified but it is required when building AthenaConnectorSource",
                 )
             })?,
             connector_name: self.connector_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "connector_name",
                     "connector_name was not specified but it is required when building AthenaConnectorSource",
                 )
             })?,
             connection_type: self.connection_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "connection_type",
                     "connection_type was not specified but it is required when building AthenaConnectorSource",
                 )
             })?,
             connection_table: self.connection_table,
             schema_name: self.schema_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "schema_name",
                     "schema_name was not specified but it is required when building AthenaConnectorSource",
                 )

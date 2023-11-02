@@ -94,7 +94,7 @@ impl ListEulaAcceptancesInputBuilder {
     /// Consumes the builder and constructs a [`ListEulaAcceptancesInput`](crate::operation::list_eula_acceptances::ListEulaAcceptancesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_eula_acceptances::ListEulaAcceptancesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_eula_acceptances::ListEulaAcceptancesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_eula_acceptances::ListEulaAcceptancesInput {
             eula_ids: self.eula_ids,

@@ -72,7 +72,9 @@ impl RebootBrokerInputBuilder {
         &self.cluster_arn
     }
     /// Consumes the builder and constructs a [`RebootBrokerInput`](crate::operation::reboot_broker::RebootBrokerInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::reboot_broker::RebootBrokerInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::reboot_broker::RebootBrokerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::reboot_broker::RebootBrokerInput {
             broker_ids: self.broker_ids,
             cluster_arn: self.cluster_arn,

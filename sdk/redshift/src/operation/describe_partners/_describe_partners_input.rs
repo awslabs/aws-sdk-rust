@@ -108,7 +108,7 @@ impl DescribePartnersInputBuilder {
     /// Consumes the builder and constructs a [`DescribePartnersInput`](crate::operation::describe_partners::DescribePartnersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_partners::DescribePartnersInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_partners::DescribePartnersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_partners::DescribePartnersInput {
             account_id: self.account_id,
             cluster_identifier: self.cluster_identifier,

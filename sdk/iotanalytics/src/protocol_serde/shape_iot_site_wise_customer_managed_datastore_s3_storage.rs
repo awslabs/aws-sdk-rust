@@ -2,7 +2,7 @@
 pub fn ser_iot_site_wise_customer_managed_datastore_s3_storage(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IotSiteWiseCustomerManagedDatastoreS3Storage,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("bucket").string(input.bucket.as_str());
     }

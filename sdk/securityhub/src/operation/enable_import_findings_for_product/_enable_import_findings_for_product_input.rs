@@ -46,7 +46,7 @@ impl EnableImportFindingsForProductInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::enable_import_findings_for_product::EnableImportFindingsForProductInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::enable_import_findings_for_product::EnableImportFindingsForProductInput {

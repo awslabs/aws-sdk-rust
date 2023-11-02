@@ -122,7 +122,7 @@ impl CreateCustomRoutingEndpointGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_custom_routing_endpoint_group::CreateCustomRoutingEndpointGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::create_custom_routing_endpoint_group::CreateCustomRoutingEndpointGroupInput {

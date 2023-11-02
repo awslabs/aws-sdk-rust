@@ -86,7 +86,7 @@ impl UpdateDiscovererInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDiscovererInput`](crate::operation::update_discoverer::UpdateDiscovererInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_discoverer::UpdateDiscovererInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_discoverer::UpdateDiscovererInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_discoverer::UpdateDiscovererInput {
             description: self.description,
             discoverer_id: self.discoverer_id,

@@ -53,10 +53,10 @@ impl SearchFilterBuilder {
     /// Consumes the builder and constructs a [`SearchFilter`](crate::types::SearchFilter).
     /// This method will fail if any of the following fields are not set:
     /// - [`filter_string`](crate::types::builders::SearchFilterBuilder::filter_string)
-    pub fn build(self) -> ::std::result::Result<crate::types::SearchFilter, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SearchFilter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SearchFilter {
             filter_string: self.filter_string.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "filter_string",
                     "filter_string was not specified but it is required when building SearchFilter",
                 )

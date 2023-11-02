@@ -83,7 +83,7 @@ impl BatchGetCommitsInputBuilder {
     /// Consumes the builder and constructs a [`BatchGetCommitsInput`](crate::operation::batch_get_commits::BatchGetCommitsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_get_commits::BatchGetCommitsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::batch_get_commits::BatchGetCommitsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::batch_get_commits::BatchGetCommitsInput {
             commit_ids: self.commit_ids,
             repository_name: self.repository_name,

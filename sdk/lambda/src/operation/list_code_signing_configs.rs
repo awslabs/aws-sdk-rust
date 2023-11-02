@@ -173,7 +173,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListCodeSign
             fn uri_base(
                 _input: &crate::operation::list_code_signing_configs::ListCodeSigningConfigsInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 use ::std::fmt::Write as _;
                 ::std::write!(output, "/2020-04-22/code-signing-configs").expect("formatting should succeed");
                 ::std::result::Result::Ok(())
@@ -181,7 +181,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListCodeSign
             fn uri_query(
                 _input: &crate::operation::list_code_signing_configs::ListCodeSigningConfigsInput,
                 mut output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_1) = &_input.marker {
                     {
@@ -199,7 +199,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListCodeSign
             fn update_http_builder(
                 input: &crate::operation::list_code_signing_configs::ListCodeSigningConfigsInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -208,7 +208,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListCodeSign
             let mut builder = update_http_builder(&input, ::http::request::Builder::new())?;
             builder
         };
-        let body = ::aws_smithy_http::body::SdkBody::from("");
+        let body = ::aws_smithy_types::body::SdkBody::from("");
 
         ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }

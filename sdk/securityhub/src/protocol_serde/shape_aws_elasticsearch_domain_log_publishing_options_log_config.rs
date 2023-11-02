@@ -2,7 +2,7 @@
 pub fn ser_aws_elasticsearch_domain_log_publishing_options_log_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsElasticsearchDomainLogPublishingOptionsLogConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.cloud_watch_logs_log_group_arn {
         object.key("CloudWatchLogsLogGroupArn").string(var_1.as_str());
     }

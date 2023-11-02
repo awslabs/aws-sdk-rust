@@ -107,7 +107,7 @@ impl GetStatisticsInputBuilder {
     /// Consumes the builder and constructs a [`GetStatisticsInput`](crate::operation::get_statistics::GetStatisticsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_statistics::GetStatisticsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_statistics::GetStatisticsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_statistics::GetStatisticsInput {
             index_name: self.index_name,
             query_string: self.query_string,

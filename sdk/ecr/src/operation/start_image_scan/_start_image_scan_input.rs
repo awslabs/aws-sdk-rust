@@ -87,7 +87,7 @@ impl StartImageScanInputBuilder {
     /// Consumes the builder and constructs a [`StartImageScanInput`](crate::operation::start_image_scan::StartImageScanInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_image_scan::StartImageScanInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_image_scan::StartImageScanInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_image_scan::StartImageScanInput {
             registry_id: self.registry_id,
             repository_name: self.repository_name,

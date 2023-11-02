@@ -125,8 +125,10 @@ impl AddResourcePermissionsInputBuilder {
     /// Consumes the builder and constructs a [`AddResourcePermissionsInput`](crate::operation::add_resource_permissions::AddResourcePermissionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::add_resource_permissions::AddResourcePermissionsInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::add_resource_permissions::AddResourcePermissionsInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::add_resource_permissions::AddResourcePermissionsInput {
             authentication_token: self.authentication_token,
             resource_id: self.resource_id,

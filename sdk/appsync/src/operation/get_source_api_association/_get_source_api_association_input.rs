@@ -68,7 +68,7 @@ impl GetSourceApiAssociationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_source_api_association::GetSourceApiAssociationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_source_api_association::GetSourceApiAssociationInput {
             merged_api_identifier: self.merged_api_identifier,

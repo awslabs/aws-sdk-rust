@@ -181,7 +181,7 @@ impl ListIncomingTypedLinksInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_incoming_typed_links::ListIncomingTypedLinksInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_incoming_typed_links::ListIncomingTypedLinksInput {
             directory_arn: self.directory_arn,

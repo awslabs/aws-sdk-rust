@@ -200,8 +200,10 @@ impl CreateAnalysisTemplateInputBuilder {
     /// Consumes the builder and constructs a [`CreateAnalysisTemplateInput`](crate::operation::create_analysis_template::CreateAnalysisTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_analysis_template::CreateAnalysisTemplateInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::create_analysis_template::CreateAnalysisTemplateInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::create_analysis_template::CreateAnalysisTemplateInput {
             description: self.description,
             membership_identifier: self.membership_identifier,

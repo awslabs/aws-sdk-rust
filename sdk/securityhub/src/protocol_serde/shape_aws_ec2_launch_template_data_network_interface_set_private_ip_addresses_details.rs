@@ -2,7 +2,7 @@
 pub fn ser_aws_ec2_launch_template_data_network_interface_set_private_ip_addresses_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.primary {
         object.key("Primary").boolean(*var_1);
     }

@@ -216,7 +216,7 @@ impl UpdateLocationSmbInputBuilder {
     /// Consumes the builder and constructs a [`UpdateLocationSmbInput`](crate::operation::update_location_smb::UpdateLocationSmbInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_location_smb::UpdateLocationSmbInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_location_smb::UpdateLocationSmbInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_location_smb::UpdateLocationSmbInput {
             location_arn: self.location_arn,
             subdirectory: self.subdirectory,

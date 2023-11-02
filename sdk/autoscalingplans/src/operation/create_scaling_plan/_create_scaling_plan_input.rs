@@ -105,7 +105,7 @@ impl CreateScalingPlanInputBuilder {
     /// Consumes the builder and constructs a [`CreateScalingPlanInput`](crate::operation::create_scaling_plan::CreateScalingPlanInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_scaling_plan::CreateScalingPlanInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_scaling_plan::CreateScalingPlanInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_scaling_plan::CreateScalingPlanInput {
             scaling_plan_name: self.scaling_plan_name,
             application_source: self.application_source,

@@ -44,7 +44,7 @@ impl DeleteDataIntegrationInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDataIntegrationInput`](crate::operation::delete_data_integration::DeleteDataIntegrationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_data_integration::DeleteDataIntegrationInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_data_integration::DeleteDataIntegrationInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_data_integration::DeleteDataIntegrationInput {
             data_integration_identifier: self.data_integration_identifier,

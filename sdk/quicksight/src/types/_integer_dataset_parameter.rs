@@ -114,22 +114,22 @@ impl IntegerDatasetParameterBuilder {
     /// - [`id`](crate::types::builders::IntegerDatasetParameterBuilder::id)
     /// - [`name`](crate::types::builders::IntegerDatasetParameterBuilder::name)
     /// - [`value_type`](crate::types::builders::IntegerDatasetParameterBuilder::value_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::IntegerDatasetParameter, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::IntegerDatasetParameter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::IntegerDatasetParameter {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building IntegerDatasetParameter",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building IntegerDatasetParameter",
                 )
             })?,
             value_type: self.value_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "value_type",
                     "value_type was not specified but it is required when building IntegerDatasetParameter",
                 )

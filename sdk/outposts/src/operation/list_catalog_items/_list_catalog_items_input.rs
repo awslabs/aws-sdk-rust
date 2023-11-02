@@ -151,7 +151,7 @@ impl ListCatalogItemsInputBuilder {
     /// Consumes the builder and constructs a [`ListCatalogItemsInput`](crate::operation::list_catalog_items::ListCatalogItemsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_catalog_items::ListCatalogItemsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_catalog_items::ListCatalogItemsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_catalog_items::ListCatalogItemsInput {
             next_token: self.next_token,
             max_results: self.max_results,

@@ -125,7 +125,7 @@ impl DescribeOrganizationOverviewInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_organization_overview::DescribeOrganizationOverviewInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_organization_overview::DescribeOrganizationOverviewInput {
             from_time: self.from_time,

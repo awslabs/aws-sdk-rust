@@ -45,10 +45,10 @@ impl DuplicateTimestampsBuilder {
     /// Consumes the builder and constructs a [`DuplicateTimestamps`](crate::types::DuplicateTimestamps).
     /// This method will fail if any of the following fields are not set:
     /// - [`total_number_of_duplicate_timestamps`](crate::types::builders::DuplicateTimestampsBuilder::total_number_of_duplicate_timestamps)
-    pub fn build(self) -> ::std::result::Result<crate::types::DuplicateTimestamps, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DuplicateTimestamps, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DuplicateTimestamps {
             total_number_of_duplicate_timestamps: self.total_number_of_duplicate_timestamps.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "total_number_of_duplicate_timestamps",
                     "total_number_of_duplicate_timestamps was not specified but it is required when building DuplicateTimestamps",
                 )

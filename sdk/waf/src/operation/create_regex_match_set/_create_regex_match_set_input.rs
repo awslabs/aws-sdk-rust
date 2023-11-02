@@ -66,7 +66,7 @@ impl CreateRegexMatchSetInputBuilder {
     /// Consumes the builder and constructs a [`CreateRegexMatchSetInput`](crate::operation::create_regex_match_set::CreateRegexMatchSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_regex_match_set::CreateRegexMatchSetInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_regex_match_set::CreateRegexMatchSetInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_regex_match_set::CreateRegexMatchSetInput {
             name: self.name,

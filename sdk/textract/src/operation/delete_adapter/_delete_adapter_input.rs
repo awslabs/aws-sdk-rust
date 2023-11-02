@@ -44,7 +44,7 @@ impl DeleteAdapterInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAdapterInput`](crate::operation::delete_adapter::DeleteAdapterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_adapter::DeleteAdapterInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_adapter::DeleteAdapterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_adapter::DeleteAdapterInput { adapter_id: self.adapter_id })
     }
 }

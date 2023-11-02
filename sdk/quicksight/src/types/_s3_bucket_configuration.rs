@@ -94,22 +94,22 @@ impl S3BucketConfigurationBuilder {
     /// - [`bucket_name`](crate::types::builders::S3BucketConfigurationBuilder::bucket_name)
     /// - [`bucket_prefix`](crate::types::builders::S3BucketConfigurationBuilder::bucket_prefix)
     /// - [`bucket_region`](crate::types::builders::S3BucketConfigurationBuilder::bucket_region)
-    pub fn build(self) -> ::std::result::Result<crate::types::S3BucketConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::S3BucketConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::S3BucketConfiguration {
             bucket_name: self.bucket_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "bucket_name",
                     "bucket_name was not specified but it is required when building S3BucketConfiguration",
                 )
             })?,
             bucket_prefix: self.bucket_prefix.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "bucket_prefix",
                     "bucket_prefix was not specified but it is required when building S3BucketConfiguration",
                 )
             })?,
             bucket_region: self.bucket_region.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "bucket_region",
                     "bucket_region was not specified but it is required when building S3BucketConfiguration",
                 )

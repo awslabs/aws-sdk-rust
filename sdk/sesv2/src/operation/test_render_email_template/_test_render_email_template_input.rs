@@ -69,7 +69,7 @@ impl TestRenderEmailTemplateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::test_render_email_template::TestRenderEmailTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::test_render_email_template::TestRenderEmailTemplateInput {
             template_name: self.template_name,

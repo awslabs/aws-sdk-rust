@@ -64,7 +64,7 @@ impl GetContentInputBuilder {
         &self.knowledge_base_id
     }
     /// Consumes the builder and constructs a [`GetContentInput`](crate::operation::get_content::GetContentInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_content::GetContentInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_content::GetContentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_content::GetContentInput {
             content_id: self.content_id,
             knowledge_base_id: self.knowledge_base_id,

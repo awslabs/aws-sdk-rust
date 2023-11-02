@@ -42,7 +42,7 @@ impl GetOutpostInputBuilder {
         &self.outpost_id
     }
     /// Consumes the builder and constructs a [`GetOutpostInput`](crate::operation::get_outpost::GetOutpostInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_outpost::GetOutpostInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_outpost::GetOutpostInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_outpost::GetOutpostInput { outpost_id: self.outpost_id })
     }
 }

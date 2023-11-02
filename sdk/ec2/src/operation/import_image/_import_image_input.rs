@@ -468,7 +468,7 @@ impl ImportImageInputBuilder {
         &self.boot_mode
     }
     /// Consumes the builder and constructs a [`ImportImageInput`](crate::operation::import_image::ImportImageInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::import_image::ImportImageInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::import_image::ImportImageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::import_image::ImportImageInput {
             architecture: self.architecture,
             client_data: self.client_data,

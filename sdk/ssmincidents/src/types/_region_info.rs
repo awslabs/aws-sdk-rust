@@ -110,18 +110,18 @@ impl RegionInfoBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`status`](crate::types::builders::RegionInfoBuilder::status)
     /// - [`status_update_date_time`](crate::types::builders::RegionInfoBuilder::status_update_date_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::RegionInfo, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RegionInfo, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RegionInfo {
             sse_kms_key_id: self.sse_kms_key_id,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building RegionInfo",
                 )
             })?,
             status_message: self.status_message,
             status_update_date_time: self.status_update_date_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status_update_date_time",
                     "status_update_date_time was not specified but it is required when building RegionInfo",
                 )

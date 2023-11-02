@@ -332,10 +332,10 @@ impl IdentityProviderBuilder {
     /// Consumes the builder and constructs a [`IdentityProvider`](crate::types::IdentityProvider).
     /// This method will fail if any of the following fields are not set:
     /// - [`identity_provider_arn`](crate::types::builders::IdentityProviderBuilder::identity_provider_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::IdentityProvider, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::IdentityProvider, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::IdentityProvider {
             identity_provider_arn: self.identity_provider_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "identity_provider_arn",
                     "identity_provider_arn was not specified but it is required when building IdentityProvider",
                 )

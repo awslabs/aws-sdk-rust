@@ -18,7 +18,7 @@ impl CreateSubscriptionInputBuilder {
     /// Consumes the builder and constructs a [`CreateSubscriptionInput`](crate::operation::create_subscription::CreateSubscriptionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_subscription::CreateSubscriptionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_subscription::CreateSubscriptionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_subscription::CreateSubscriptionInput {})
     }
 }

@@ -2,7 +2,7 @@
 pub fn ser_signal_external_workflow_execution_decision_attributes(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SignalExternalWorkflowExecutionDecisionAttributes,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("workflowId").string(input.workflow_id.as_str());
     }

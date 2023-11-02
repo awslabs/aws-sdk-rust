@@ -196,7 +196,9 @@ impl CreatePortalInputBuilder {
         &self.authentication_type
     }
     /// Consumes the builder and constructs a [`CreatePortalInput`](crate::operation::create_portal::CreatePortalInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_portal::CreatePortalInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_portal::CreatePortalInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_portal::CreatePortalInput {
             display_name: self.display_name,
             tags: self.tags,

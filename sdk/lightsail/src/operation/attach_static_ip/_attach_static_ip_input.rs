@@ -66,7 +66,7 @@ impl AttachStaticIpInputBuilder {
     /// Consumes the builder and constructs a [`AttachStaticIpInput`](crate::operation::attach_static_ip::AttachStaticIpInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::attach_static_ip::AttachStaticIpInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::attach_static_ip::AttachStaticIpInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::attach_static_ip::AttachStaticIpInput {
             static_ip_name: self.static_ip_name,
             instance_name: self.instance_name,

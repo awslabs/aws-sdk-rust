@@ -73,8 +73,10 @@ impl BatchEvaluateGeofencesInputBuilder {
     /// Consumes the builder and constructs a [`BatchEvaluateGeofencesInput`](crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesInput {
             collection_name: self.collection_name,
             device_position_updates: self.device_position_updates,

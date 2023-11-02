@@ -90,10 +90,10 @@ impl ListProfileTimesOutputBuilder {
     /// - [`profile_times`](crate::operation::list_profile_times::builders::ListProfileTimesOutputBuilder::profile_times)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_profile_times::ListProfileTimesOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_profile_times::ListProfileTimesOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_profile_times::ListProfileTimesOutput {
             profile_times: self.profile_times.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "profile_times",
                     "profile_times was not specified but it is required when building ListProfileTimesOutput",
                 )

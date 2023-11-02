@@ -2,7 +2,7 @@
 pub fn ser_request_output_item(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RequestOutputItem,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.dash_playlist_settings {
         #[allow(unused_mut)]
         let mut object_2 = object.key("DashPlaylistSettings").start_object();

@@ -97,11 +97,11 @@ impl AccountTakeoverActionTypeBuilder {
     /// Consumes the builder and constructs a [`AccountTakeoverActionType`](crate::types::AccountTakeoverActionType).
     /// This method will fail if any of the following fields are not set:
     /// - [`event_action`](crate::types::builders::AccountTakeoverActionTypeBuilder::event_action)
-    pub fn build(self) -> ::std::result::Result<crate::types::AccountTakeoverActionType, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AccountTakeoverActionType, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AccountTakeoverActionType {
             notify: self.notify.unwrap_or_default(),
             event_action: self.event_action.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "event_action",
                     "event_action was not specified but it is required when building AccountTakeoverActionType",
                 )

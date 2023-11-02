@@ -289,7 +289,9 @@ impl CreateAccessInputBuilder {
         &self.external_id
     }
     /// Consumes the builder and constructs a [`CreateAccessInput`](crate::operation::create_access::CreateAccessInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_access::CreateAccessInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_access::CreateAccessInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_access::CreateAccessInput {
             home_directory: self.home_directory,
             home_directory_type: self.home_directory_type,

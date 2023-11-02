@@ -68,7 +68,7 @@ impl GetAccessPointForObjectLambdaInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_access_point_for_object_lambda::GetAccessPointForObjectLambdaInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_access_point_for_object_lambda::GetAccessPointForObjectLambdaInput {
             account_id: self.account_id,

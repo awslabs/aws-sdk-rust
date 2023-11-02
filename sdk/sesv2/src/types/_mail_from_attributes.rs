@@ -127,22 +127,22 @@ impl MailFromAttributesBuilder {
     /// - [`mail_from_domain`](crate::types::builders::MailFromAttributesBuilder::mail_from_domain)
     /// - [`mail_from_domain_status`](crate::types::builders::MailFromAttributesBuilder::mail_from_domain_status)
     /// - [`behavior_on_mx_failure`](crate::types::builders::MailFromAttributesBuilder::behavior_on_mx_failure)
-    pub fn build(self) -> ::std::result::Result<crate::types::MailFromAttributes, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::MailFromAttributes, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MailFromAttributes {
             mail_from_domain: self.mail_from_domain.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "mail_from_domain",
                     "mail_from_domain was not specified but it is required when building MailFromAttributes",
                 )
             })?,
             mail_from_domain_status: self.mail_from_domain_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "mail_from_domain_status",
                     "mail_from_domain_status was not specified but it is required when building MailFromAttributes",
                 )
             })?,
             behavior_on_mx_failure: self.behavior_on_mx_failure.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "behavior_on_mx_failure",
                     "behavior_on_mx_failure was not specified but it is required when building MailFromAttributes",
                 )

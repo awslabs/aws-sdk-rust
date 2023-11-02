@@ -49,7 +49,7 @@ impl AnalyzeIdInputBuilder {
         &self.document_pages
     }
     /// Consumes the builder and constructs a [`AnalyzeIdInput`](crate::operation::analyze_id::AnalyzeIdInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::analyze_id::AnalyzeIdInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::analyze_id::AnalyzeIdInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::analyze_id::AnalyzeIdInput {
             document_pages: self.document_pages,
         })

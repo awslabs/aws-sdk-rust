@@ -2,7 +2,7 @@
 pub fn ser_s3_recording_sink_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::S3RecordingSinkConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.destination {
         object.key("Destination").string(var_1.as_str());
     }

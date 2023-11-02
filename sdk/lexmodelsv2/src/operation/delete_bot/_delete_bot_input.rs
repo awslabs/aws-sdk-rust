@@ -63,7 +63,7 @@ impl DeleteBotInputBuilder {
         &self.skip_resource_in_use_check
     }
     /// Consumes the builder and constructs a [`DeleteBotInput`](crate::operation::delete_bot::DeleteBotInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_bot::DeleteBotInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_bot::DeleteBotInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_bot::DeleteBotInput {
             bot_id: self.bot_id,
             skip_resource_in_use_check: self.skip_resource_in_use_check,

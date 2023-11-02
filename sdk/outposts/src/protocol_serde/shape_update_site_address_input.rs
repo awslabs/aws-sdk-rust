@@ -2,7 +2,7 @@
 pub fn ser_update_site_address_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_site_address::UpdateSiteAddressInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.address {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Address").start_object();

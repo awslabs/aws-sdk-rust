@@ -166,7 +166,7 @@ impl GetCoipPoolUsageInputBuilder {
     /// Consumes the builder and constructs a [`GetCoipPoolUsageInput`](crate::operation::get_coip_pool_usage::GetCoipPoolUsageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_coip_pool_usage::GetCoipPoolUsageInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_coip_pool_usage::GetCoipPoolUsageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_coip_pool_usage::GetCoipPoolUsageInput {
             pool_id: self.pool_id,
             filters: self.filters,

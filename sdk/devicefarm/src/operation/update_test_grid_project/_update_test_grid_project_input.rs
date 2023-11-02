@@ -107,7 +107,7 @@ impl UpdateTestGridProjectInputBuilder {
     /// Consumes the builder and constructs a [`UpdateTestGridProjectInput`](crate::operation::update_test_grid_project::UpdateTestGridProjectInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_test_grid_project::UpdateTestGridProjectInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_test_grid_project::UpdateTestGridProjectInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_test_grid_project::UpdateTestGridProjectInput {
             project_arn: self.project_arn,

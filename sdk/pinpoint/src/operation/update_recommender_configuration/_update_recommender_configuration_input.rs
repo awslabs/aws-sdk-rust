@@ -68,7 +68,7 @@ impl UpdateRecommenderConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_recommender_configuration::UpdateRecommenderConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_recommender_configuration::UpdateRecommenderConfigurationInput {
             recommender_id: self.recommender_id,

@@ -44,7 +44,7 @@ impl GetNetworkProfileInputBuilder {
     /// Consumes the builder and constructs a [`GetNetworkProfileInput`](crate::operation::get_network_profile::GetNetworkProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_network_profile::GetNetworkProfileInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_network_profile::GetNetworkProfileInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_network_profile::GetNetworkProfileInput { arn: self.arn })
     }
 }

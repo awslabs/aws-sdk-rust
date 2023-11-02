@@ -88,7 +88,7 @@ impl CancelMlModelTransformJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_ml_model_transform_job::CancelMlModelTransformJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::cancel_ml_model_transform_job::CancelMlModelTransformJobInput {
             id: self.id,

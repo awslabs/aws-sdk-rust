@@ -68,7 +68,7 @@ impl DescribeInstanceAttributeInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_instance_attribute::DescribeInstanceAttributeInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_instance_attribute::DescribeInstanceAttributeInput {
             instance_id: self.instance_id,

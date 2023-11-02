@@ -136,7 +136,7 @@ impl ImportCrlInputBuilder {
         &self.trust_anchor_arn
     }
     /// Consumes the builder and constructs a [`ImportCrlInput`](crate::operation::import_crl::ImportCrlInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::import_crl::ImportCrlInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::import_crl::ImportCrlInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::import_crl::ImportCrlInput {
             name: self.name,
             crl_data: self.crl_data,

@@ -68,7 +68,7 @@ impl StartMetadataModelConversionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_metadata_model_conversion::StartMetadataModelConversionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_metadata_model_conversion::StartMetadataModelConversionInput {
             migration_project_identifier: self.migration_project_identifier,

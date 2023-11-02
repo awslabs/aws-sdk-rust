@@ -2,7 +2,7 @@
 pub fn ser_confluence_space_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ConfluenceSpaceConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.crawl_personal_spaces {
         object.key("CrawlPersonalSpaces").boolean(input.crawl_personal_spaces);
     }

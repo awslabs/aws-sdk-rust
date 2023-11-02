@@ -44,8 +44,10 @@ impl DeleteMatchingWorkflowInputBuilder {
     /// Consumes the builder and constructs a [`DeleteMatchingWorkflowInput`](crate::operation::delete_matching_workflow::DeleteMatchingWorkflowInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_matching_workflow::DeleteMatchingWorkflowInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::delete_matching_workflow::DeleteMatchingWorkflowInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::delete_matching_workflow::DeleteMatchingWorkflowInput {
             workflow_name: self.workflow_name,
         })

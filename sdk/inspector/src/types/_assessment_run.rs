@@ -396,52 +396,52 @@ impl AssessmentRunBuilder {
     /// - [`state_changes`](crate::types::builders::AssessmentRunBuilder::state_changes)
     /// - [`notifications`](crate::types::builders::AssessmentRunBuilder::notifications)
     /// - [`finding_counts`](crate::types::builders::AssessmentRunBuilder::finding_counts)
-    pub fn build(self) -> ::std::result::Result<crate::types::AssessmentRun, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AssessmentRun, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AssessmentRun {
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building AssessmentRun",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building AssessmentRun",
                 )
             })?,
             assessment_template_arn: self.assessment_template_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "assessment_template_arn",
                     "assessment_template_arn was not specified but it is required when building AssessmentRun",
                 )
             })?,
             state: self.state.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "state",
                     "state was not specified but it is required when building AssessmentRun",
                 )
             })?,
             duration_in_seconds: self.duration_in_seconds.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "duration_in_seconds",
                     "duration_in_seconds was not specified but it is required when building AssessmentRun",
                 )
             })?,
             rules_package_arns: self.rules_package_arns.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "rules_package_arns",
                     "rules_package_arns was not specified but it is required when building AssessmentRun",
                 )
             })?,
             user_attributes_for_findings: self.user_attributes_for_findings.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "user_attributes_for_findings",
                     "user_attributes_for_findings was not specified but it is required when building AssessmentRun",
                 )
             })?,
             created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
                     "created_at was not specified but it is required when building AssessmentRun",
                 )
@@ -449,31 +449,31 @@ impl AssessmentRunBuilder {
             started_at: self.started_at,
             completed_at: self.completed_at,
             state_changed_at: self.state_changed_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "state_changed_at",
                     "state_changed_at was not specified but it is required when building AssessmentRun",
                 )
             })?,
             data_collected: self.data_collected.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_collected",
                     "data_collected was not specified but it is required when building AssessmentRun",
                 )
             })?,
             state_changes: self.state_changes.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "state_changes",
                     "state_changes was not specified but it is required when building AssessmentRun",
                 )
             })?,
             notifications: self.notifications.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "notifications",
                     "notifications was not specified but it is required when building AssessmentRun",
                 )
             })?,
             finding_counts: self.finding_counts.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "finding_counts",
                     "finding_counts was not specified but it is required when building AssessmentRun",
                 )

@@ -44,7 +44,7 @@ impl DescribeCustomMetricInputBuilder {
     /// Consumes the builder and constructs a [`DescribeCustomMetricInput`](crate::operation::describe_custom_metric::DescribeCustomMetricInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_custom_metric::DescribeCustomMetricInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_custom_metric::DescribeCustomMetricInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_custom_metric::DescribeCustomMetricInput {
             metric_name: self.metric_name,

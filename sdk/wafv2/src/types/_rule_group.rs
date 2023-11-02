@@ -372,28 +372,28 @@ impl RuleGroupBuilder {
     /// - [`id`](crate::types::builders::RuleGroupBuilder::id)
     /// - [`capacity`](crate::types::builders::RuleGroupBuilder::capacity)
     /// - [`arn`](crate::types::builders::RuleGroupBuilder::arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::RuleGroup, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RuleGroup, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RuleGroup {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building RuleGroup",
                 )
             })?,
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building RuleGroup",
                 )
             })?,
             capacity: self.capacity.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "capacity",
                     "capacity was not specified but it is required when building RuleGroup",
                 )
             })?,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building RuleGroup",
                 )

@@ -86,7 +86,7 @@ impl UpdateConnectorInputBuilder {
     /// Consumes the builder and constructs a [`UpdateConnectorInput`](crate::operation::update_connector::UpdateConnectorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_connector::UpdateConnectorInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_connector::UpdateConnectorInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_connector::UpdateConnectorInput {
             connector_id: self.connector_id,
             name: self.name,

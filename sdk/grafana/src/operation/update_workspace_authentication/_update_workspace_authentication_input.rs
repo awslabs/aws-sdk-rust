@@ -96,7 +96,7 @@ impl UpdateWorkspaceAuthenticationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_workspace_authentication::UpdateWorkspaceAuthenticationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_workspace_authentication::UpdateWorkspaceAuthenticationInput {
             workspace_id: self.workspace_id,

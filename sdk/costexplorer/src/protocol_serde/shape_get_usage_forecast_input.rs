@@ -2,7 +2,7 @@
 pub fn ser_get_usage_forecast_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_usage_forecast::GetUsageForecastInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.time_period {
         #[allow(unused_mut)]
         let mut object_2 = object.key("TimePeriod").start_object();

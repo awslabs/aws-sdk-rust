@@ -66,10 +66,10 @@ impl RuleTriggerEventSourceBuilder {
     /// Consumes the builder and constructs a [`RuleTriggerEventSource`](crate::types::RuleTriggerEventSource).
     /// This method will fail if any of the following fields are not set:
     /// - [`event_source_name`](crate::types::builders::RuleTriggerEventSourceBuilder::event_source_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::RuleTriggerEventSource, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RuleTriggerEventSource, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RuleTriggerEventSource {
             event_source_name: self.event_source_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "event_source_name",
                     "event_source_name was not specified but it is required when building RuleTriggerEventSource",
                 )

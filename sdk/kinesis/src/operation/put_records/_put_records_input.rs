@@ -92,7 +92,7 @@ impl PutRecordsInputBuilder {
         &self.stream_arn
     }
     /// Consumes the builder and constructs a [`PutRecordsInput`](crate::operation::put_records::PutRecordsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_records::PutRecordsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_records::PutRecordsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_records::PutRecordsInput {
             records: self.records,
             stream_name: self.stream_name,

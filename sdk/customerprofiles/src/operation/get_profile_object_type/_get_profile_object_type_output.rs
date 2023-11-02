@@ -342,17 +342,17 @@ impl GetProfileObjectTypeOutputBuilder {
     /// - [`description`](crate::operation::get_profile_object_type::builders::GetProfileObjectTypeOutputBuilder::description)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_profile_object_type::GetProfileObjectTypeOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_profile_object_type::GetProfileObjectTypeOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_profile_object_type::GetProfileObjectTypeOutput {
             object_type_name: self.object_type_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "object_type_name",
                     "object_type_name was not specified but it is required when building GetProfileObjectTypeOutput",
                 )
             })?,
             description: self.description.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "description",
                     "description was not specified but it is required when building GetProfileObjectTypeOutput",
                 )

@@ -95,12 +95,12 @@ impl ListDomainDeliverabilityCampaignsOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_domain_deliverability_campaigns::ListDomainDeliverabilityCampaignsOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_domain_deliverability_campaigns::ListDomainDeliverabilityCampaignsOutput {
                 domain_deliverability_campaigns: self.domain_deliverability_campaigns.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
                         "domain_deliverability_campaigns",
                         "domain_deliverability_campaigns was not specified but it is required when building ListDomainDeliverabilityCampaignsOutput",
                     )

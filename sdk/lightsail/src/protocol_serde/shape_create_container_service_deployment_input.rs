@@ -2,7 +2,7 @@
 pub fn ser_create_container_service_deployment_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_container_service_deployment::CreateContainerServiceDeploymentInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.service_name {
         object.key("serviceName").string(var_1.as_str());
     }

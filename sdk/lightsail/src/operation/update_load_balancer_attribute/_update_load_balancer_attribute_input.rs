@@ -130,7 +130,7 @@ impl UpdateLoadBalancerAttributeInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_load_balancer_attribute::UpdateLoadBalancerAttributeInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_load_balancer_attribute::UpdateLoadBalancerAttributeInput {
             load_balancer_name: self.load_balancer_name,

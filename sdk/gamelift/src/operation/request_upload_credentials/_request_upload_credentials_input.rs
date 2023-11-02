@@ -46,7 +46,7 @@ impl RequestUploadCredentialsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::request_upload_credentials::RequestUploadCredentialsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::request_upload_credentials::RequestUploadCredentialsInput { build_id: self.build_id })
     }

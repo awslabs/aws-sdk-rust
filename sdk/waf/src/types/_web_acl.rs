@@ -169,10 +169,10 @@ impl WebAclBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`web_acl_id`](crate::types::builders::WebAclBuilder::web_acl_id)
     /// - [`rules`](crate::types::builders::WebAclBuilder::rules)
-    pub fn build(self) -> ::std::result::Result<crate::types::WebAcl, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::WebAcl, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::WebAcl {
             web_acl_id: self.web_acl_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "web_acl_id",
                     "web_acl_id was not specified but it is required when building WebAcl",
                 )
@@ -181,7 +181,7 @@ impl WebAclBuilder {
             metric_name: self.metric_name,
             default_action: self.default_action,
             rules: self.rules.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "rules",
                     "rules was not specified but it is required when building WebAcl",
                 )

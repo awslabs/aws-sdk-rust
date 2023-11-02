@@ -114,7 +114,7 @@ impl ListMultipartUploadsInputBuilder {
     /// Consumes the builder and constructs a [`ListMultipartUploadsInput`](crate::operation::list_multipart_uploads::ListMultipartUploadsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_multipart_uploads::ListMultipartUploadsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_multipart_uploads::ListMultipartUploadsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_multipart_uploads::ListMultipartUploadsInput {
             account_id: self.account_id,

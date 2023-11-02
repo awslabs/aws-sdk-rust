@@ -94,7 +94,7 @@ impl CreateCoipPoolInputBuilder {
     /// Consumes the builder and constructs a [`CreateCoipPoolInput`](crate::operation::create_coip_pool::CreateCoipPoolInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_coip_pool::CreateCoipPoolInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_coip_pool::CreateCoipPoolInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_coip_pool::CreateCoipPoolInput {
             local_gateway_route_table_id: self.local_gateway_route_table_id,
             tag_specifications: self.tag_specifications,

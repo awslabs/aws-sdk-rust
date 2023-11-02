@@ -46,7 +46,7 @@ impl DeleteExperimentTemplateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_experiment_template::DeleteExperimentTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_experiment_template::DeleteExperimentTemplateInput { id: self.id })
     }

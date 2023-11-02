@@ -147,7 +147,7 @@ impl PutEventSelectorsInputBuilder {
     /// Consumes the builder and constructs a [`PutEventSelectorsInput`](crate::operation::put_event_selectors::PutEventSelectorsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_event_selectors::PutEventSelectorsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_event_selectors::PutEventSelectorsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_event_selectors::PutEventSelectorsInput {
             trail_name: self.trail_name,
             event_selectors: self.event_selectors,

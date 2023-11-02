@@ -2,7 +2,7 @@
 pub fn ser_image_scanning_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ImageScanningConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.image_scanning_enabled {
         object.key("imageScanningEnabled").boolean(*var_1);
     }

@@ -134,7 +134,7 @@ impl GetDevicesInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`GetDevicesInput`](crate::operation::get_devices::GetDevicesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_devices::GetDevicesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_devices::GetDevicesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_devices::GetDevicesInput {
             global_network_id: self.global_network_id,
             device_ids: self.device_ids,

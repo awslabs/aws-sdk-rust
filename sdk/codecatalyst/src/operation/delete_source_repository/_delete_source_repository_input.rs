@@ -88,8 +88,10 @@ impl DeleteSourceRepositoryInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSourceRepositoryInput`](crate::operation::delete_source_repository::DeleteSourceRepositoryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_source_repository::DeleteSourceRepositoryInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::delete_source_repository::DeleteSourceRepositoryInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::delete_source_repository::DeleteSourceRepositoryInput {
             space_name: self.space_name,
             project_name: self.project_name,

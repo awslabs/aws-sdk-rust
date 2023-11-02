@@ -183,7 +183,7 @@ impl StartLabelDetectionInputBuilder {
     /// Consumes the builder and constructs a [`StartLabelDetectionInput`](crate::operation::start_label_detection::StartLabelDetectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_label_detection::StartLabelDetectionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::start_label_detection::StartLabelDetectionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_label_detection::StartLabelDetectionInput {
             video: self.video,

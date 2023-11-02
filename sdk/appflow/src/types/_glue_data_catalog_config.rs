@@ -111,22 +111,22 @@ impl GlueDataCatalogConfigBuilder {
     /// - [`role_arn`](crate::types::builders::GlueDataCatalogConfigBuilder::role_arn)
     /// - [`database_name`](crate::types::builders::GlueDataCatalogConfigBuilder::database_name)
     /// - [`table_prefix`](crate::types::builders::GlueDataCatalogConfigBuilder::table_prefix)
-    pub fn build(self) -> ::std::result::Result<crate::types::GlueDataCatalogConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::GlueDataCatalogConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::GlueDataCatalogConfig {
             role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role_arn",
                     "role_arn was not specified but it is required when building GlueDataCatalogConfig",
                 )
             })?,
             database_name: self.database_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "database_name",
                     "database_name was not specified but it is required when building GlueDataCatalogConfig",
                 )
             })?,
             table_prefix: self.table_prefix.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "table_prefix",
                     "table_prefix was not specified but it is required when building GlueDataCatalogConfig",
                 )

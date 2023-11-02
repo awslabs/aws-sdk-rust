@@ -108,7 +108,7 @@ impl GetExportInputBuilder {
         &self.export_type
     }
     /// Consumes the builder and constructs a [`GetExportInput`](crate::operation::get_export::GetExportInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_export::GetExportInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_export::GetExportInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_export::GetExportInput {
             name: self.name,
             version: self.version,

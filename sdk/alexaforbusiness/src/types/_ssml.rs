@@ -69,16 +69,16 @@ impl SsmlBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`locale`](crate::types::builders::SsmlBuilder::locale)
     /// - [`value`](crate::types::builders::SsmlBuilder::value)
-    pub fn build(self) -> ::std::result::Result<crate::types::Ssml, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Ssml, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Ssml {
             locale: self.locale.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "locale",
                     "locale was not specified but it is required when building Ssml",
                 )
             })?,
             value: self.value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "value",
                     "value was not specified but it is required when building Ssml",
                 )

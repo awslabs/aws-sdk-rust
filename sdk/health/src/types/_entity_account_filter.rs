@@ -106,10 +106,10 @@ impl EntityAccountFilterBuilder {
     /// Consumes the builder and constructs a [`EntityAccountFilter`](crate::types::EntityAccountFilter).
     /// This method will fail if any of the following fields are not set:
     /// - [`event_arn`](crate::types::builders::EntityAccountFilterBuilder::event_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::EntityAccountFilter, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::EntityAccountFilter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EntityAccountFilter {
             event_arn: self.event_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "event_arn",
                     "event_arn was not specified but it is required when building EntityAccountFilter",
                 )

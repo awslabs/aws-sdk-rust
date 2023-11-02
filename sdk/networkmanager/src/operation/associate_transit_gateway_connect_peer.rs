@@ -186,15 +186,15 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for AssociateTra
             fn uri_base(
                 _input: &crate::operation::associate_transit_gateway_connect_peer::AssociateTransitGatewayConnectPeerInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 use ::std::fmt::Write as _;
                 let input_1 = &_input.global_network_id;
-                let input_1 = input_1
-                    .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("global_network_id", "cannot be empty or unset"))?;
+                let input_1 = input_1.as_ref().ok_or_else(|| {
+                    ::aws_smithy_types::error::operation::BuildError::missing_field("global_network_id", "cannot be empty or unset")
+                })?;
                 let global_network_id = ::aws_smithy_http::label::fmt_string(input_1, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if global_network_id.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "global_network_id",
                         "cannot be empty or unset",
                     ));
@@ -211,7 +211,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for AssociateTra
             fn update_http_builder(
                 input: &crate::operation::associate_transit_gateway_connect_peer::AssociateTransitGatewayConnectPeerInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 ::std::result::Result::Ok(builder.method("POST").uri(uri))
@@ -220,7 +220,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for AssociateTra
             builder = _header_serialization_settings.set_default_header(builder, ::http::header::CONTENT_TYPE, "application/json");
             builder
         };
-        let body = ::aws_smithy_http::body::SdkBody::from(
+        let body = ::aws_smithy_types::body::SdkBody::from(
             crate::protocol_serde::shape_associate_transit_gateway_connect_peer::ser_associate_transit_gateway_connect_peer_input(&input)?,
         );
         if let Some(content_length) = body.content_length() {

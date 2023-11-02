@@ -46,7 +46,7 @@ impl DeleteEventSourceMappingInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_event_source_mapping::DeleteEventSourceMappingInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_event_source_mapping::DeleteEventSourceMappingInput { uuid: self.uuid })
     }

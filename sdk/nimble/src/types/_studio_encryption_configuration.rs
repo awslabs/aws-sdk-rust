@@ -66,11 +66,11 @@ impl StudioEncryptionConfigurationBuilder {
     /// Consumes the builder and constructs a [`StudioEncryptionConfiguration`](crate::types::StudioEncryptionConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`key_type`](crate::types::builders::StudioEncryptionConfigurationBuilder::key_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::StudioEncryptionConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::StudioEncryptionConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::StudioEncryptionConfiguration {
             key_arn: self.key_arn,
             key_type: self.key_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "key_type",
                     "key_type was not specified but it is required when building StudioEncryptionConfiguration",
                 )

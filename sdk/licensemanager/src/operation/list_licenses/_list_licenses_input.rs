@@ -150,7 +150,9 @@ impl ListLicensesInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListLicensesInput`](crate::operation::list_licenses::ListLicensesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_licenses::ListLicensesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_licenses::ListLicensesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_licenses::ListLicensesInput {
             license_arns: self.license_arns,
             filters: self.filters,

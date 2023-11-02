@@ -92,7 +92,7 @@ impl GetMappingInputBuilder {
         &self.location
     }
     /// Consumes the builder and constructs a [`GetMappingInput`](crate::operation::get_mapping::GetMappingInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_mapping::GetMappingInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_mapping::GetMappingInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_mapping::GetMappingInput {
             source: self.source,
             sinks: self.sinks,

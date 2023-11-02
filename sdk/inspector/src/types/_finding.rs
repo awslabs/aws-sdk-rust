@@ -423,10 +423,10 @@ impl FindingBuilder {
     /// - [`user_attributes`](crate::types::builders::FindingBuilder::user_attributes)
     /// - [`created_at`](crate::types::builders::FindingBuilder::created_at)
     /// - [`updated_at`](crate::types::builders::FindingBuilder::updated_at)
-    pub fn build(self) -> ::std::result::Result<crate::types::Finding, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Finding, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Finding {
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building Finding",
                 )
@@ -445,25 +445,25 @@ impl FindingBuilder {
             confidence: self.confidence.unwrap_or_default(),
             indicator_of_compromise: self.indicator_of_compromise,
             attributes: self.attributes.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "attributes",
                     "attributes was not specified but it is required when building Finding",
                 )
             })?,
             user_attributes: self.user_attributes.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "user_attributes",
                     "user_attributes was not specified but it is required when building Finding",
                 )
             })?,
             created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
                     "created_at was not specified but it is required when building Finding",
                 )
             })?,
             updated_at: self.updated_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "updated_at",
                     "updated_at was not specified but it is required when building Finding",
                 )

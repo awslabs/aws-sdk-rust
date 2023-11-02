@@ -2,7 +2,7 @@
 pub fn ser_aws_ecs_service_network_configuration_aws_vpc_configuration_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.assign_public_ip {
         object.key("AssignPublicIp").string(var_1.as_str());
     }

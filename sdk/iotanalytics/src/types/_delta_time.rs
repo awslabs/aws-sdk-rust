@@ -69,16 +69,16 @@ impl DeltaTimeBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`offset_seconds`](crate::types::builders::DeltaTimeBuilder::offset_seconds)
     /// - [`time_expression`](crate::types::builders::DeltaTimeBuilder::time_expression)
-    pub fn build(self) -> ::std::result::Result<crate::types::DeltaTime, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DeltaTime, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DeltaTime {
             offset_seconds: self.offset_seconds.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "offset_seconds",
                     "offset_seconds was not specified but it is required when building DeltaTime",
                 )
             })?,
             time_expression: self.time_expression.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "time_expression",
                     "time_expression was not specified but it is required when building DeltaTime",
                 )

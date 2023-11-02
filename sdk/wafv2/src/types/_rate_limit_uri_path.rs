@@ -51,10 +51,10 @@ impl RateLimitUriPathBuilder {
     /// Consumes the builder and constructs a [`RateLimitUriPath`](crate::types::RateLimitUriPath).
     /// This method will fail if any of the following fields are not set:
     /// - [`text_transformations`](crate::types::builders::RateLimitUriPathBuilder::text_transformations)
-    pub fn build(self) -> ::std::result::Result<crate::types::RateLimitUriPath, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RateLimitUriPath, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RateLimitUriPath {
             text_transformations: self.text_transformations.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "text_transformations",
                     "text_transformations was not specified but it is required when building RateLimitUriPath",
                 )

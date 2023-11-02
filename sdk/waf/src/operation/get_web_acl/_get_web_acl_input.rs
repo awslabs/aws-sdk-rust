@@ -42,7 +42,7 @@ impl GetWebAclInputBuilder {
         &self.web_acl_id
     }
     /// Consumes the builder and constructs a [`GetWebAclInput`](crate::operation::get_web_acl::GetWebAclInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_web_acl::GetWebAclInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_web_acl::GetWebAclInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_web_acl::GetWebAclInput { web_acl_id: self.web_acl_id })
     }
 }

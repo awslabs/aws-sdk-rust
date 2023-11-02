@@ -303,7 +303,7 @@ impl StartSnapshotInputBuilder {
     /// Consumes the builder and constructs a [`StartSnapshotInput`](crate::operation::start_snapshot::StartSnapshotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_snapshot::StartSnapshotInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_snapshot::StartSnapshotInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_snapshot::StartSnapshotInput {
             volume_size: self.volume_size,
             parent_snapshot_id: self.parent_snapshot_id,

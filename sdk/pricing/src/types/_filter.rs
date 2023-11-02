@@ -108,22 +108,22 @@ impl FilterBuilder {
     /// - [`r#type`](crate::types::builders::FilterBuilder::r#type)
     /// - [`field`](crate::types::builders::FilterBuilder::field)
     /// - [`value`](crate::types::builders::FilterBuilder::value)
-    pub fn build(self) -> ::std::result::Result<crate::types::Filter, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Filter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Filter {
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building Filter",
                 )
             })?,
             field: self.field.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "field",
                     "field was not specified but it is required when building Filter",
                 )
             })?,
             value: self.value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "value",
                     "value was not specified but it is required when building Filter",
                 )

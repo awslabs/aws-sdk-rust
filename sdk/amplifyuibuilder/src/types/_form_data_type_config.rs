@@ -69,16 +69,16 @@ impl FormDataTypeConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`data_source_type`](crate::types::builders::FormDataTypeConfigBuilder::data_source_type)
     /// - [`data_type_name`](crate::types::builders::FormDataTypeConfigBuilder::data_type_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::FormDataTypeConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::FormDataTypeConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FormDataTypeConfig {
             data_source_type: self.data_source_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_source_type",
                     "data_source_type was not specified but it is required when building FormDataTypeConfig",
                 )
             })?,
             data_type_name: self.data_type_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_type_name",
                     "data_type_name was not specified but it is required when building FormDataTypeConfig",
                 )

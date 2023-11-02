@@ -266,10 +266,10 @@ impl DescribeRulesetOutputBuilder {
     /// - [`name`](crate::operation::describe_ruleset::builders::DescribeRulesetOutputBuilder::name)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_ruleset::DescribeRulesetOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_ruleset::DescribeRulesetOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_ruleset::DescribeRulesetOutput {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building DescribeRulesetOutput",
                 )

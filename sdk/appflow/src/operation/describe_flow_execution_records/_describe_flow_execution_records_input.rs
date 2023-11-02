@@ -88,7 +88,7 @@ impl DescribeFlowExecutionRecordsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_flow_execution_records::DescribeFlowExecutionRecordsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_flow_execution_records::DescribeFlowExecutionRecordsInput {
             flow_name: self.flow_name,

@@ -204,7 +204,7 @@ impl RegisterCaCertificateInputBuilder {
     /// Consumes the builder and constructs a [`RegisterCaCertificateInput`](crate::operation::register_ca_certificate::RegisterCaCertificateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::register_ca_certificate::RegisterCaCertificateInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::register_ca_certificate::RegisterCaCertificateInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::register_ca_certificate::RegisterCaCertificateInput {
             ca_certificate: self.ca_certificate,

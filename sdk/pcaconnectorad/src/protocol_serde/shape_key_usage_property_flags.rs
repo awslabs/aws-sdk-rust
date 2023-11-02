@@ -2,7 +2,7 @@
 pub fn ser_key_usage_property_flags(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::KeyUsagePropertyFlags,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.decrypt {
         object.key("Decrypt").boolean(*var_1);
     }

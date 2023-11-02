@@ -42,7 +42,7 @@ impl GetStreamInputBuilder {
         &self.channel_arn
     }
     /// Consumes the builder and constructs a [`GetStreamInput`](crate::operation::get_stream::GetStreamInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_stream::GetStreamInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_stream::GetStreamInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_stream::GetStreamInput {
             channel_arn: self.channel_arn,
         })

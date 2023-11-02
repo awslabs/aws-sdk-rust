@@ -108,8 +108,10 @@ impl NotifyApplicationStateInputBuilder {
     /// Consumes the builder and constructs a [`NotifyApplicationStateInput`](crate::operation::notify_application_state::NotifyApplicationStateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::notify_application_state::NotifyApplicationStateInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::notify_application_state::NotifyApplicationStateInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::notify_application_state::NotifyApplicationStateInput {
             application_id: self.application_id,
             status: self.status,

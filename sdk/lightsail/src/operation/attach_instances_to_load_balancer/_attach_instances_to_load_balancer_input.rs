@@ -85,7 +85,7 @@ impl AttachInstancesToLoadBalancerInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::attach_instances_to_load_balancer::AttachInstancesToLoadBalancerInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::attach_instances_to_load_balancer::AttachInstancesToLoadBalancerInput {
             load_balancer_name: self.load_balancer_name,

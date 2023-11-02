@@ -110,17 +110,17 @@ impl CapacityAllocationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`status`](crate::types::builders::CapacityAllocationBuilder::status)
     /// - [`request_time`](crate::types::builders::CapacityAllocationBuilder::request_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::CapacityAllocation, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CapacityAllocation, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CapacityAllocation {
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building CapacityAllocation",
                 )
             })?,
             status_message: self.status_message,
             request_time: self.request_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "request_time",
                     "request_time was not specified but it is required when building CapacityAllocation",
                 )

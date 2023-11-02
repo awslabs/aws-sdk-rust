@@ -90,10 +90,10 @@ impl MemberAccountEc2DeepInspectionStatusStateBuilder {
     /// - [`account_id`](crate::types::builders::MemberAccountEc2DeepInspectionStatusStateBuilder::account_id)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::MemberAccountEc2DeepInspectionStatusState, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::MemberAccountEc2DeepInspectionStatusState, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MemberAccountEc2DeepInspectionStatusState {
             account_id: self.account_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "account_id",
                     "account_id was not specified but it is required when building MemberAccountEc2DeepInspectionStatusState",
                 )

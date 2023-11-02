@@ -94,7 +94,7 @@ impl UpdateContactListInputBuilder {
     /// Consumes the builder and constructs a [`UpdateContactListInput`](crate::operation::update_contact_list::UpdateContactListInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_contact_list::UpdateContactListInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_contact_list::UpdateContactListInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_contact_list::UpdateContactListInput {
             contact_list_name: self.contact_list_name,
             topics: self.topics,

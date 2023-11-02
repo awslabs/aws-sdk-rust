@@ -204,7 +204,7 @@ impl UpdateLicenseManagerReportGeneratorInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_license_manager_report_generator::UpdateLicenseManagerReportGeneratorInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::update_license_manager_report_generator::UpdateLicenseManagerReportGeneratorInput {

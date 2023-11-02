@@ -94,22 +94,22 @@ impl ThirdPartySourceRepositoryBuilder {
     /// - [`name`](crate::types::builders::ThirdPartySourceRepositoryBuilder::name)
     /// - [`connection_arn`](crate::types::builders::ThirdPartySourceRepositoryBuilder::connection_arn)
     /// - [`owner`](crate::types::builders::ThirdPartySourceRepositoryBuilder::owner)
-    pub fn build(self) -> ::std::result::Result<crate::types::ThirdPartySourceRepository, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ThirdPartySourceRepository, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ThirdPartySourceRepository {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building ThirdPartySourceRepository",
                 )
             })?,
             connection_arn: self.connection_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "connection_arn",
                     "connection_arn was not specified but it is required when building ThirdPartySourceRepository",
                 )
             })?,
             owner: self.owner.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "owner",
                     "owner was not specified but it is required when building ThirdPartySourceRepository",
                 )

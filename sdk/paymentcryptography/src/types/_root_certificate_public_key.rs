@@ -76,11 +76,11 @@ impl RootCertificatePublicKeyBuilder {
     /// Consumes the builder and constructs a [`RootCertificatePublicKey`](crate::types::RootCertificatePublicKey).
     /// This method will fail if any of the following fields are not set:
     /// - [`public_key_certificate`](crate::types::builders::RootCertificatePublicKeyBuilder::public_key_certificate)
-    pub fn build(self) -> ::std::result::Result<crate::types::RootCertificatePublicKey, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RootCertificatePublicKey, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RootCertificatePublicKey {
             key_attributes: self.key_attributes,
             public_key_certificate: self.public_key_certificate.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "public_key_certificate",
                     "public_key_certificate was not specified but it is required when building RootCertificatePublicKey",
                 )

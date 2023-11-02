@@ -2,7 +2,7 @@
 pub fn ser_virtual_router_service_provider(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VirtualRouterServiceProvider,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("virtualRouterName").string(input.virtual_router_name.as_str());
     }

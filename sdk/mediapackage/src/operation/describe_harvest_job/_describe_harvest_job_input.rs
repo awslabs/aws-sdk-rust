@@ -44,7 +44,8 @@ impl DescribeHarvestJobInputBuilder {
     /// Consumes the builder and constructs a [`DescribeHarvestJobInput`](crate::operation::describe_harvest_job::DescribeHarvestJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_harvest_job::DescribeHarvestJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_harvest_job::DescribeHarvestJobInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::describe_harvest_job::DescribeHarvestJobInput { id: self.id })
     }
 }

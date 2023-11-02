@@ -113,23 +113,23 @@ impl LogSettingsRequestBuilder {
     /// - [`log_type`](crate::types::builders::LogSettingsRequestBuilder::log_type)
     /// - [`destination`](crate::types::builders::LogSettingsRequestBuilder::destination)
     /// - [`resource_arn`](crate::types::builders::LogSettingsRequestBuilder::resource_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::LogSettingsRequest, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::LogSettingsRequest, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::LogSettingsRequest {
             log_type: self.log_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "log_type",
                     "log_type was not specified but it is required when building LogSettingsRequest",
                 )
             })?,
             destination: self.destination.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "destination",
                     "destination was not specified but it is required when building LogSettingsRequest",
                 )
             })?,
             kms_key_arn: self.kms_key_arn,
             resource_arn: self.resource_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_arn",
                     "resource_arn was not specified but it is required when building LogSettingsRequest",
                 )

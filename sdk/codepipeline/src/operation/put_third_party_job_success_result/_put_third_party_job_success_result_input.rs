@@ -132,7 +132,7 @@ impl PutThirdPartyJobSuccessResultInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_third_party_job_success_result::PutThirdPartyJobSuccessResultInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_third_party_job_success_result::PutThirdPartyJobSuccessResultInput {
             job_id: self.job_id,

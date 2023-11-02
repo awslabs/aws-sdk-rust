@@ -2,7 +2,7 @@
 pub fn ser_font(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Font,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.font_family {
         object.key("FontFamily").string(var_1.as_str());
     }

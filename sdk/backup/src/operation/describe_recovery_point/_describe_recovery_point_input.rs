@@ -87,7 +87,7 @@ impl DescribeRecoveryPointInputBuilder {
     /// Consumes the builder and constructs a [`DescribeRecoveryPointInput`](crate::operation::describe_recovery_point::DescribeRecoveryPointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_recovery_point::DescribeRecoveryPointInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_recovery_point::DescribeRecoveryPointInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_recovery_point::DescribeRecoveryPointInput {
             backup_vault_name: self.backup_vault_name,

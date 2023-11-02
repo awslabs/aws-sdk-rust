@@ -124,7 +124,7 @@ impl DescribeStorageVirtualMachinesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_storage_virtual_machines::DescribeStorageVirtualMachinesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_storage_virtual_machines::DescribeStorageVirtualMachinesInput {
             storage_virtual_machine_ids: self.storage_virtual_machine_ids,

@@ -206,7 +206,7 @@ impl ListDataSourcesInputBuilder {
     /// Consumes the builder and constructs a [`ListDataSourcesInput`](crate::operation::list_data_sources::ListDataSourcesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_data_sources::ListDataSourcesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_data_sources::ListDataSourcesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_data_sources::ListDataSourcesInput {
             domain_identifier: self.domain_identifier,
             project_identifier: self.project_identifier,

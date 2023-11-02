@@ -116,7 +116,7 @@ impl ListOpsItemRelatedItemsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_ops_item_related_items::ListOpsItemRelatedItemsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_ops_item_related_items::ListOpsItemRelatedItemsInput {
             ops_item_id: self.ops_item_id,

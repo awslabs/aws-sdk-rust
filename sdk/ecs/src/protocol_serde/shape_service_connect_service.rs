@@ -2,7 +2,7 @@
 pub fn ser_service_connect_service(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ServiceConnectService,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("portName").string(input.port_name.as_str());
     }

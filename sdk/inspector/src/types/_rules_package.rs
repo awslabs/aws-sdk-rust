@@ -139,28 +139,28 @@ impl RulesPackageBuilder {
     /// - [`name`](crate::types::builders::RulesPackageBuilder::name)
     /// - [`version`](crate::types::builders::RulesPackageBuilder::version)
     /// - [`provider`](crate::types::builders::RulesPackageBuilder::provider)
-    pub fn build(self) -> ::std::result::Result<crate::types::RulesPackage, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RulesPackage, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RulesPackage {
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building RulesPackage",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building RulesPackage",
                 )
             })?,
             version: self.version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "version",
                     "version was not specified but it is required when building RulesPackage",
                 )
             })?,
             provider: self.provider.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "provider",
                     "provider was not specified but it is required when building RulesPackage",
                 )

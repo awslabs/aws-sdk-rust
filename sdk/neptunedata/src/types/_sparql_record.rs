@@ -140,23 +140,23 @@ impl SparqlRecordBuilder {
     /// - [`commit_timestamp_in_millis`](crate::types::builders::SparqlRecordBuilder::commit_timestamp_in_millis)
     /// - [`event_id`](crate::types::builders::SparqlRecordBuilder::event_id)
     /// - [`op`](crate::types::builders::SparqlRecordBuilder::op)
-    pub fn build(self) -> ::std::result::Result<crate::types::SparqlRecord, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SparqlRecord, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SparqlRecord {
             commit_timestamp_in_millis: self.commit_timestamp_in_millis.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "commit_timestamp_in_millis",
                     "commit_timestamp_in_millis was not specified but it is required when building SparqlRecord",
                 )
             })?,
             event_id: self.event_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "event_id",
                     "event_id was not specified but it is required when building SparqlRecord",
                 )
             })?,
             data: self.data,
             op: self.op.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "op",
                     "op was not specified but it is required when building SparqlRecord",
                 )

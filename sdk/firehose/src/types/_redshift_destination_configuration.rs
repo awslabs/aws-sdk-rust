@@ -289,29 +289,29 @@ impl RedshiftDestinationConfigurationBuilder {
     /// - [`cluster_jdbcurl`](crate::types::builders::RedshiftDestinationConfigurationBuilder::cluster_jdbcurl)
     /// - [`username`](crate::types::builders::RedshiftDestinationConfigurationBuilder::username)
     /// - [`password`](crate::types::builders::RedshiftDestinationConfigurationBuilder::password)
-    pub fn build(self) -> ::std::result::Result<crate::types::RedshiftDestinationConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RedshiftDestinationConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RedshiftDestinationConfiguration {
             role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role_arn",
                     "role_arn was not specified but it is required when building RedshiftDestinationConfiguration",
                 )
             })?,
             cluster_jdbcurl: self.cluster_jdbcurl.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "cluster_jdbcurl",
                     "cluster_jdbcurl was not specified but it is required when building RedshiftDestinationConfiguration",
                 )
             })?,
             copy_command: self.copy_command,
             username: self.username.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "username",
                     "username was not specified but it is required when building RedshiftDestinationConfiguration",
                 )
             })?,
             password: self.password.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "password",
                     "password was not specified but it is required when building RedshiftDestinationConfiguration",
                 )

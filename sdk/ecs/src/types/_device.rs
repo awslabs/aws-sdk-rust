@@ -96,10 +96,10 @@ impl DeviceBuilder {
     /// Consumes the builder and constructs a [`Device`](crate::types::Device).
     /// This method will fail if any of the following fields are not set:
     /// - [`host_path`](crate::types::builders::DeviceBuilder::host_path)
-    pub fn build(self) -> ::std::result::Result<crate::types::Device, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Device, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Device {
             host_path: self.host_path.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "host_path",
                     "host_path was not specified but it is required when building Device",
                 )

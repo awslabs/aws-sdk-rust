@@ -44,7 +44,7 @@ impl DeleteVpcLinkInputBuilder {
     /// Consumes the builder and constructs a [`DeleteVpcLinkInput`](crate::operation::delete_vpc_link::DeleteVpcLinkInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_vpc_link::DeleteVpcLinkInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_vpc_link::DeleteVpcLinkInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_vpc_link::DeleteVpcLinkInput {
             vpc_link_id: self.vpc_link_id,
         })

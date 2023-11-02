@@ -69,10 +69,10 @@ impl DescribePipelinesOutputBuilder {
     /// - [`pipeline_description_list`](crate::operation::describe_pipelines::builders::DescribePipelinesOutputBuilder::pipeline_description_list)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_pipelines::DescribePipelinesOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_pipelines::DescribePipelinesOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_pipelines::DescribePipelinesOutput {
             pipeline_description_list: self.pipeline_description_list.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "pipeline_description_list",
                     "pipeline_description_list was not specified but it is required when building DescribePipelinesOutput",
                 )

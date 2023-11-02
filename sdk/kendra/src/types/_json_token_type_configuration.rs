@@ -70,16 +70,16 @@ impl JsonTokenTypeConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`user_name_attribute_field`](crate::types::builders::JsonTokenTypeConfigurationBuilder::user_name_attribute_field)
     /// - [`group_attribute_field`](crate::types::builders::JsonTokenTypeConfigurationBuilder::group_attribute_field)
-    pub fn build(self) -> ::std::result::Result<crate::types::JsonTokenTypeConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::JsonTokenTypeConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::JsonTokenTypeConfiguration {
             user_name_attribute_field: self.user_name_attribute_field.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "user_name_attribute_field",
                     "user_name_attribute_field was not specified but it is required when building JsonTokenTypeConfiguration",
                 )
             })?,
             group_attribute_field: self.group_attribute_field.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "group_attribute_field",
                     "group_attribute_field was not specified but it is required when building JsonTokenTypeConfiguration",
                 )

@@ -305,7 +305,7 @@ impl UpdateStackInstancesInputBuilder {
     /// Consumes the builder and constructs a [`UpdateStackInstancesInput`](crate::operation::update_stack_instances::UpdateStackInstancesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_stack_instances::UpdateStackInstancesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_stack_instances::UpdateStackInstancesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_stack_instances::UpdateStackInstancesInput {
             stack_set_name: self.stack_set_name,

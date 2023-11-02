@@ -2,7 +2,7 @@
 pub fn ser_dataset_metadata(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DatasetMetadata,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("DatasetArn").string(input.dataset_arn.as_str());
     }

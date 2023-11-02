@@ -2,7 +2,7 @@
 pub fn ser_visual_custom_action(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VisualCustomAction,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("CustomActionId").string(input.custom_action_id.as_str());
     }

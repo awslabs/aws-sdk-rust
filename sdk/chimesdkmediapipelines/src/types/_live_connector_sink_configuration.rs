@@ -67,10 +67,10 @@ impl LiveConnectorSinkConfigurationBuilder {
     /// Consumes the builder and constructs a [`LiveConnectorSinkConfiguration`](crate::types::LiveConnectorSinkConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`sink_type`](crate::types::builders::LiveConnectorSinkConfigurationBuilder::sink_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::LiveConnectorSinkConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::LiveConnectorSinkConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::LiveConnectorSinkConfiguration {
             sink_type: self.sink_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "sink_type",
                     "sink_type was not specified but it is required when building LiveConnectorSinkConfiguration",
                 )

@@ -136,29 +136,29 @@ impl ResolveAppVersionResourcesOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::resolve_app_version_resources::ResolveAppVersionResourcesOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::resolve_app_version_resources::ResolveAppVersionResourcesOutput {
             app_arn: self.app_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "app_arn",
                     "app_arn was not specified but it is required when building ResolveAppVersionResourcesOutput",
                 )
             })?,
             app_version: self.app_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "app_version",
                     "app_version was not specified but it is required when building ResolveAppVersionResourcesOutput",
                 )
             })?,
             resolution_id: self.resolution_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resolution_id",
                     "resolution_id was not specified but it is required when building ResolveAppVersionResourcesOutput",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building ResolveAppVersionResourcesOutput",
                 )

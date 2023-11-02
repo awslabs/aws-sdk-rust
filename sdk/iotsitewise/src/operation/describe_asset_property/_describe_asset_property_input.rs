@@ -66,7 +66,7 @@ impl DescribeAssetPropertyInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAssetPropertyInput`](crate::operation::describe_asset_property::DescribeAssetPropertyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_asset_property::DescribeAssetPropertyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_asset_property::DescribeAssetPropertyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_asset_property::DescribeAssetPropertyInput {
             asset_id: self.asset_id,

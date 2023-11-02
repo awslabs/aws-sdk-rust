@@ -313,22 +313,22 @@ impl RemediationConfigurationBuilder {
     /// - [`config_rule_name`](crate::types::builders::RemediationConfigurationBuilder::config_rule_name)
     /// - [`target_type`](crate::types::builders::RemediationConfigurationBuilder::target_type)
     /// - [`target_id`](crate::types::builders::RemediationConfigurationBuilder::target_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::RemediationConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RemediationConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RemediationConfiguration {
             config_rule_name: self.config_rule_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "config_rule_name",
                     "config_rule_name was not specified but it is required when building RemediationConfiguration",
                 )
             })?,
             target_type: self.target_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "target_type",
                     "target_type was not specified but it is required when building RemediationConfiguration",
                 )
             })?,
             target_id: self.target_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "target_id",
                     "target_id was not specified but it is required when building RemediationConfiguration",
                 )

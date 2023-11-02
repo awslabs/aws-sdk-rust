@@ -109,7 +109,7 @@ impl PutBucketVersioningInputBuilder {
     /// Consumes the builder and constructs a [`PutBucketVersioningInput`](crate::operation::put_bucket_versioning::PutBucketVersioningInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_bucket_versioning::PutBucketVersioningInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::put_bucket_versioning::PutBucketVersioningInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::put_bucket_versioning::PutBucketVersioningInput {
             account_id: self.account_id,

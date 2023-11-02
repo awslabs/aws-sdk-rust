@@ -140,7 +140,7 @@ impl CreateDataSourceFromS3InputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_data_source_from_s3::CreateDataSourceFromS3Input,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_data_source_from_s3::CreateDataSourceFromS3Input {
             data_source_id: self.data_source_id,

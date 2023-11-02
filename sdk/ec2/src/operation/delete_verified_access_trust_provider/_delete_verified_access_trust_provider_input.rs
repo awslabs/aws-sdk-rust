@@ -88,7 +88,7 @@ impl DeleteVerifiedAccessTrustProviderInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_verified_access_trust_provider::DeleteVerifiedAccessTrustProviderInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_verified_access_trust_provider::DeleteVerifiedAccessTrustProviderInput {

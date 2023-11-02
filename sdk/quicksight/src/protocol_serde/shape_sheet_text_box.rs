@@ -2,7 +2,7 @@
 pub fn ser_sheet_text_box(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SheetTextBox,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("SheetTextBoxId").string(input.sheet_text_box_id.as_str());
     }

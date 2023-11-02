@@ -163,7 +163,7 @@ impl DescribePrefixListsInputBuilder {
     /// Consumes the builder and constructs a [`DescribePrefixListsInput`](crate::operation::describe_prefix_lists::DescribePrefixListsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_prefix_lists::DescribePrefixListsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_prefix_lists::DescribePrefixListsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_prefix_lists::DescribePrefixListsInput {
             dry_run: self.dry_run,

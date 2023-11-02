@@ -86,7 +86,7 @@ impl ListDatasetLabelsInputBuilder {
     /// Consumes the builder and constructs a [`ListDatasetLabelsInput`](crate::operation::list_dataset_labels::ListDatasetLabelsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_dataset_labels::ListDatasetLabelsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_dataset_labels::ListDatasetLabelsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_dataset_labels::ListDatasetLabelsInput {
             dataset_arn: self.dataset_arn,
             next_token: self.next_token,

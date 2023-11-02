@@ -86,7 +86,7 @@ impl GetTypeInputBuilder {
         &self.format
     }
     /// Consumes the builder and constructs a [`GetTypeInput`](crate::operation::get_type::GetTypeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_type::GetTypeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_type::GetTypeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_type::GetTypeInput {
             api_id: self.api_id,
             type_name: self.type_name,

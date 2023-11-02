@@ -89,11 +89,11 @@ impl ListEnabledControlsOutputBuilder {
     /// - [`enabled_controls`](crate::operation::list_enabled_controls::builders::ListEnabledControlsOutputBuilder::enabled_controls)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_enabled_controls::ListEnabledControlsOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_enabled_controls::ListEnabledControlsOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_enabled_controls::ListEnabledControlsOutput {
             enabled_controls: self.enabled_controls.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "enabled_controls",
                     "enabled_controls was not specified but it is required when building ListEnabledControlsOutput",
                 )

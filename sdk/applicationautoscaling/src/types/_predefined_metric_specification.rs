@@ -157,10 +157,10 @@ impl PredefinedMetricSpecificationBuilder {
     /// Consumes the builder and constructs a [`PredefinedMetricSpecification`](crate::types::PredefinedMetricSpecification).
     /// This method will fail if any of the following fields are not set:
     /// - [`predefined_metric_type`](crate::types::builders::PredefinedMetricSpecificationBuilder::predefined_metric_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::PredefinedMetricSpecification, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PredefinedMetricSpecification, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PredefinedMetricSpecification {
             predefined_metric_type: self.predefined_metric_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "predefined_metric_type",
                     "predefined_metric_type was not specified but it is required when building PredefinedMetricSpecification",
                 )

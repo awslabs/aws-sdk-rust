@@ -88,7 +88,7 @@ impl ListDistributionsByCachePolicyIdInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_distributions_by_cache_policy_id::ListDistributionsByCachePolicyIdInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_distributions_by_cache_policy_id::ListDistributionsByCachePolicyIdInput {

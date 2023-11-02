@@ -88,7 +88,7 @@ impl UpdatePartnerAccountInputBuilder {
     /// Consumes the builder and constructs a [`UpdatePartnerAccountInput`](crate::operation::update_partner_account::UpdatePartnerAccountInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_partner_account::UpdatePartnerAccountInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_partner_account::UpdatePartnerAccountInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_partner_account::UpdatePartnerAccountInput {
             sidewalk: self.sidewalk,

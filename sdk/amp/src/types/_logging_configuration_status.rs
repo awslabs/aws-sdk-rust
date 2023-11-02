@@ -66,10 +66,10 @@ impl LoggingConfigurationStatusBuilder {
     /// Consumes the builder and constructs a [`LoggingConfigurationStatus`](crate::types::LoggingConfigurationStatus).
     /// This method will fail if any of the following fields are not set:
     /// - [`status_code`](crate::types::builders::LoggingConfigurationStatusBuilder::status_code)
-    pub fn build(self) -> ::std::result::Result<crate::types::LoggingConfigurationStatus, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::LoggingConfigurationStatus, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::LoggingConfigurationStatus {
             status_code: self.status_code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status_code",
                     "status_code was not specified but it is required when building LoggingConfigurationStatus",
                 )

@@ -44,7 +44,7 @@ impl DeleteScheduledAuditInputBuilder {
     /// Consumes the builder and constructs a [`DeleteScheduledAuditInput`](crate::operation::delete_scheduled_audit::DeleteScheduledAuditInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_scheduled_audit::DeleteScheduledAuditInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_scheduled_audit::DeleteScheduledAuditInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_scheduled_audit::DeleteScheduledAuditInput {
             scheduled_audit_name: self.scheduled_audit_name,

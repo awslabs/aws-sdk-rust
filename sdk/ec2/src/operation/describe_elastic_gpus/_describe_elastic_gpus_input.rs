@@ -178,7 +178,7 @@ impl DescribeElasticGpusInputBuilder {
     /// Consumes the builder and constructs a [`DescribeElasticGpusInput`](crate::operation::describe_elastic_gpus::DescribeElasticGpusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_elastic_gpus::DescribeElasticGpusInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_elastic_gpus::DescribeElasticGpusInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_elastic_gpus::DescribeElasticGpusInput {
             elastic_gpu_ids: self.elastic_gpu_ids,

@@ -64,7 +64,7 @@ impl DeleteStageInputBuilder {
         &self.stage_name
     }
     /// Consumes the builder and constructs a [`DeleteStageInput`](crate::operation::delete_stage::DeleteStageInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_stage::DeleteStageInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_stage::DeleteStageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_stage::DeleteStageInput {
             api_id: self.api_id,
             stage_name: self.stage_name,

@@ -42,7 +42,7 @@ where
 pub fn ser_clip_range(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ClipRange,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("EndOffsetMillis").number(
             #[allow(clippy::useless_conversion)]

@@ -167,7 +167,7 @@ impl ListModelsInputBuilder {
         &self.creation_time_after
     }
     /// Consumes the builder and constructs a [`ListModelsInput`](crate::operation::list_models::ListModelsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_models::ListModelsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_models::ListModelsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_models::ListModelsInput {
             sort_by: self.sort_by,
             sort_order: self.sort_order,

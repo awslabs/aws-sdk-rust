@@ -346,35 +346,35 @@ impl GetSolFunctionInstanceOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_sol_function_instance::GetSolFunctionInstanceOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_sol_function_instance::GetSolFunctionInstanceOutput {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building GetSolFunctionInstanceOutput",
                 )
             })?,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building GetSolFunctionInstanceOutput",
                 )
             })?,
             ns_instance_id: self.ns_instance_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "ns_instance_id",
                     "ns_instance_id was not specified but it is required when building GetSolFunctionInstanceOutput",
                 )
             })?,
             vnf_pkg_id: self.vnf_pkg_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "vnf_pkg_id",
                     "vnf_pkg_id was not specified but it is required when building GetSolFunctionInstanceOutput",
                 )
             })?,
             vnfd_id: self.vnfd_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "vnfd_id",
                     "vnfd_id was not specified but it is required when building GetSolFunctionInstanceOutput",
                 )
@@ -383,7 +383,7 @@ impl GetSolFunctionInstanceOutputBuilder {
             vnf_product_name: self.vnf_product_name,
             vnfd_version: self.vnfd_version,
             instantiation_state: self.instantiation_state.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "instantiation_state",
                     "instantiation_state was not specified but it is required when building GetSolFunctionInstanceOutput",
                 )

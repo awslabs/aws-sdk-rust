@@ -277,47 +277,47 @@ impl PropertyDefinitionResponseBuilder {
     /// - [`is_imported`](crate::types::builders::PropertyDefinitionResponseBuilder::is_imported)
     /// - [`is_final`](crate::types::builders::PropertyDefinitionResponseBuilder::is_final)
     /// - [`is_inherited`](crate::types::builders::PropertyDefinitionResponseBuilder::is_inherited)
-    pub fn build(self) -> ::std::result::Result<crate::types::PropertyDefinitionResponse, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PropertyDefinitionResponse, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PropertyDefinitionResponse {
             data_type: self.data_type,
             is_time_series: self.is_time_series.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "is_time_series",
                     "is_time_series was not specified but it is required when building PropertyDefinitionResponse",
                 )
             })?,
             is_required_in_entity: self.is_required_in_entity.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "is_required_in_entity",
                     "is_required_in_entity was not specified but it is required when building PropertyDefinitionResponse",
                 )
             })?,
             is_external_id: self.is_external_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "is_external_id",
                     "is_external_id was not specified but it is required when building PropertyDefinitionResponse",
                 )
             })?,
             is_stored_externally: self.is_stored_externally.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "is_stored_externally",
                     "is_stored_externally was not specified but it is required when building PropertyDefinitionResponse",
                 )
             })?,
             is_imported: self.is_imported.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "is_imported",
                     "is_imported was not specified but it is required when building PropertyDefinitionResponse",
                 )
             })?,
             is_final: self.is_final.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "is_final",
                     "is_final was not specified but it is required when building PropertyDefinitionResponse",
                 )
             })?,
             is_inherited: self.is_inherited.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "is_inherited",
                     "is_inherited was not specified but it is required when building PropertyDefinitionResponse",
                 )

@@ -150,7 +150,7 @@ impl StartVariantImportJobInputBuilder {
     /// Consumes the builder and constructs a [`StartVariantImportJobInput`](crate::operation::start_variant_import_job::StartVariantImportJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_variant_import_job::StartVariantImportJobInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::start_variant_import_job::StartVariantImportJobInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_variant_import_job::StartVariantImportJobInput {
             destination_name: self.destination_name,

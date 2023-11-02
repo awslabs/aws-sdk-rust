@@ -130,7 +130,7 @@ impl UpdateDataRetentionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDataRetentionInput`](crate::operation::update_data_retention::UpdateDataRetentionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_data_retention::UpdateDataRetentionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_data_retention::UpdateDataRetentionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_data_retention::UpdateDataRetentionInput {
             stream_name: self.stream_name,

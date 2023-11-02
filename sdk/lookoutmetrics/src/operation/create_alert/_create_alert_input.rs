@@ -176,7 +176,7 @@ impl CreateAlertInputBuilder {
         &self.alert_filters
     }
     /// Consumes the builder and constructs a [`CreateAlertInput`](crate::operation::create_alert::CreateAlertInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_alert::CreateAlertInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_alert::CreateAlertInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_alert::CreateAlertInput {
             alert_name: self.alert_name,
             alert_sensitivity_threshold: self.alert_sensitivity_threshold,

@@ -106,7 +106,7 @@ impl ListRulesInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListRulesInput`](crate::operation::list_rules::ListRulesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_rules::ListRulesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_rules::ListRulesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_rules::ListRulesInput {
             service_identifier: self.service_identifier,
             listener_identifier: self.listener_identifier,

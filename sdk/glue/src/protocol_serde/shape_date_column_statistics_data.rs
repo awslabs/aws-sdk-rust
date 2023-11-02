@@ -2,7 +2,7 @@
 pub fn ser_date_column_statistics_data(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DateColumnStatisticsData,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.minimum_value {
         object
             .key("MinimumValue")

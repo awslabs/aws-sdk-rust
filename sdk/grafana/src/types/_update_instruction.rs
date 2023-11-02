@@ -97,22 +97,22 @@ impl UpdateInstructionBuilder {
     /// - [`action`](crate::types::builders::UpdateInstructionBuilder::action)
     /// - [`role`](crate::types::builders::UpdateInstructionBuilder::role)
     /// - [`users`](crate::types::builders::UpdateInstructionBuilder::users)
-    pub fn build(self) -> ::std::result::Result<crate::types::UpdateInstruction, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::UpdateInstruction, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::UpdateInstruction {
             action: self.action.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "action",
                     "action was not specified but it is required when building UpdateInstruction",
                 )
             })?,
             role: self.role.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role",
                     "role was not specified but it is required when building UpdateInstruction",
                 )
             })?,
             users: self.users.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "users",
                     "users was not specified but it is required when building UpdateInstruction",
                 )

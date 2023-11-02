@@ -123,11 +123,11 @@ impl WorkmailActionBuilder {
     /// Consumes the builder and constructs a [`WorkmailAction`](crate::types::WorkmailAction).
     /// This method will fail if any of the following fields are not set:
     /// - [`organization_arn`](crate::types::builders::WorkmailActionBuilder::organization_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::WorkmailAction, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::WorkmailAction, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::WorkmailAction {
             topic_arn: self.topic_arn,
             organization_arn: self.organization_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "organization_arn",
                     "organization_arn was not specified but it is required when building WorkmailAction",
                 )

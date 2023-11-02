@@ -91,11 +91,11 @@ impl ListAppComponentCompliancesOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_app_component_compliances::ListAppComponentCompliancesOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_app_component_compliances::ListAppComponentCompliancesOutput {
             component_compliances: self.component_compliances.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "component_compliances",
                     "component_compliances was not specified but it is required when building ListAppComponentCompliancesOutput",
                 )

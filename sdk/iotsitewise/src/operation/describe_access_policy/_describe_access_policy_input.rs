@@ -44,7 +44,7 @@ impl DescribeAccessPolicyInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAccessPolicyInput`](crate::operation::describe_access_policy::DescribeAccessPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_access_policy::DescribeAccessPolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_access_policy::DescribeAccessPolicyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_access_policy::DescribeAccessPolicyInput {
             access_policy_id: self.access_policy_id,

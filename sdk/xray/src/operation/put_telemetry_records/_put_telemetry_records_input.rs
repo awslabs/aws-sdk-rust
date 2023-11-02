@@ -114,7 +114,7 @@ impl PutTelemetryRecordsInputBuilder {
     /// Consumes the builder and constructs a [`PutTelemetryRecordsInput`](crate::operation::put_telemetry_records::PutTelemetryRecordsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_telemetry_records::PutTelemetryRecordsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::put_telemetry_records::PutTelemetryRecordsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::put_telemetry_records::PutTelemetryRecordsInput {
             telemetry_records: self.telemetry_records,

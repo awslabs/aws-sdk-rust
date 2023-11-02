@@ -87,7 +87,7 @@ impl ResetAddressAttributeInputBuilder {
     /// Consumes the builder and constructs a [`ResetAddressAttributeInput`](crate::operation::reset_address_attribute::ResetAddressAttributeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::reset_address_attribute::ResetAddressAttributeInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::reset_address_attribute::ResetAddressAttributeInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::reset_address_attribute::ResetAddressAttributeInput {
             allocation_id: self.allocation_id,

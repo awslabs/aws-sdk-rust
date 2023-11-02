@@ -66,10 +66,10 @@ impl EthernetPayloadBuilder {
     /// Consumes the builder and constructs a [`EthernetPayload`](crate::types::EthernetPayload).
     /// This method will fail if any of the following fields are not set:
     /// - [`connection_type`](crate::types::builders::EthernetPayloadBuilder::connection_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::EthernetPayload, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::EthernetPayload, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EthernetPayload {
             connection_type: self.connection_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "connection_type",
                     "connection_type was not specified but it is required when building EthernetPayload",
                 )

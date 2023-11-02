@@ -88,8 +88,10 @@ impl UpdateImagePermissionsInputBuilder {
     /// Consumes the builder and constructs a [`UpdateImagePermissionsInput`](crate::operation::update_image_permissions::UpdateImagePermissionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_image_permissions::UpdateImagePermissionsInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::update_image_permissions::UpdateImagePermissionsInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::update_image_permissions::UpdateImagePermissionsInput {
             name: self.name,
             shared_account_id: self.shared_account_id,

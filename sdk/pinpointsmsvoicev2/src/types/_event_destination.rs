@@ -162,22 +162,22 @@ impl EventDestinationBuilder {
     /// - [`event_destination_name`](crate::types::builders::EventDestinationBuilder::event_destination_name)
     /// - [`enabled`](crate::types::builders::EventDestinationBuilder::enabled)
     /// - [`matching_event_types`](crate::types::builders::EventDestinationBuilder::matching_event_types)
-    pub fn build(self) -> ::std::result::Result<crate::types::EventDestination, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::EventDestination, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EventDestination {
             event_destination_name: self.event_destination_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "event_destination_name",
                     "event_destination_name was not specified but it is required when building EventDestination",
                 )
             })?,
             enabled: self.enabled.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "enabled",
                     "enabled was not specified but it is required when building EventDestination",
                 )
             })?,
             matching_event_types: self.matching_event_types.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "matching_event_types",
                     "matching_event_types was not specified but it is required when building EventDestination",
                 )

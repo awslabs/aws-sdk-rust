@@ -380,7 +380,7 @@ impl CreateEnvironmentEc2InputBuilder {
     /// Consumes the builder and constructs a [`CreateEnvironmentEc2Input`](crate::operation::create_environment_ec2::CreateEnvironmentEc2Input).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_environment_ec2::CreateEnvironmentEc2Input, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_environment_ec2::CreateEnvironmentEc2Input, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_environment_ec2::CreateEnvironmentEc2Input {
             name: self.name,

@@ -99,16 +99,16 @@ impl CustomActionUrlOperationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`url_template`](crate::types::builders::CustomActionUrlOperationBuilder::url_template)
     /// - [`url_target`](crate::types::builders::CustomActionUrlOperationBuilder::url_target)
-    pub fn build(self) -> ::std::result::Result<crate::types::CustomActionUrlOperation, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CustomActionUrlOperation, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CustomActionUrlOperation {
             url_template: self.url_template.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "url_template",
                     "url_template was not specified but it is required when building CustomActionUrlOperation",
                 )
             })?,
             url_target: self.url_target.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "url_target",
                     "url_target was not specified but it is required when building CustomActionUrlOperation",
                 )

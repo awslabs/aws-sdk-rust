@@ -101,7 +101,7 @@ impl UpdateDatabaseInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDatabaseInput`](crate::operation::update_database::UpdateDatabaseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_database::UpdateDatabaseInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_database::UpdateDatabaseInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_database::UpdateDatabaseInput {
             database_name: self.database_name,
             kms_key_id: self.kms_key_id,

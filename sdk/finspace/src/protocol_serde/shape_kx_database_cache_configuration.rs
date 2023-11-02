@@ -2,7 +2,7 @@
 pub fn ser_kx_database_cache_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::KxDatabaseCacheConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("cacheType").string(input.cache_type.as_str());
     }

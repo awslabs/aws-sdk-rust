@@ -188,7 +188,7 @@ impl StartQueryExecutionInputBuilder {
     /// Consumes the builder and constructs a [`StartQueryExecutionInput`](crate::operation::start_query_execution::StartQueryExecutionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_query_execution::StartQueryExecutionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::start_query_execution::StartQueryExecutionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_query_execution::StartQueryExecutionInput {
             query_string: self.query_string,

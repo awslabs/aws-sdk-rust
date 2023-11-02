@@ -65,7 +65,7 @@ impl DeleteBucketTaggingInputBuilder {
     /// Consumes the builder and constructs a [`DeleteBucketTaggingInput`](crate::operation::delete_bucket_tagging::DeleteBucketTaggingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_bucket_tagging::DeleteBucketTaggingInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_bucket_tagging::DeleteBucketTaggingInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_bucket_tagging::DeleteBucketTaggingInput {
             bucket: self.bucket,

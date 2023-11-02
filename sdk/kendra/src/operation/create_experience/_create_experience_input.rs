@@ -150,7 +150,7 @@ impl CreateExperienceInputBuilder {
     /// Consumes the builder and constructs a [`CreateExperienceInput`](crate::operation::create_experience::CreateExperienceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_experience::CreateExperienceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_experience::CreateExperienceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_experience::CreateExperienceInput {
             name: self.name,
             index_id: self.index_id,

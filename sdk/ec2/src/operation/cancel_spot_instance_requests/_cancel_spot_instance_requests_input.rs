@@ -75,7 +75,7 @@ impl CancelSpotInstanceRequestsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_spot_instance_requests::CancelSpotInstanceRequestsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::cancel_spot_instance_requests::CancelSpotInstanceRequestsInput {
             dry_run: self.dry_run,

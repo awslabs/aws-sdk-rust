@@ -95,7 +95,7 @@ impl CopyBackupToRegionInputBuilder {
     /// Consumes the builder and constructs a [`CopyBackupToRegionInput`](crate::operation::copy_backup_to_region::CopyBackupToRegionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::copy_backup_to_region::CopyBackupToRegionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::copy_backup_to_region::CopyBackupToRegionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::copy_backup_to_region::CopyBackupToRegionInput {
             destination_region: self.destination_region,

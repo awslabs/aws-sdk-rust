@@ -130,7 +130,7 @@ impl ModifyPrivateDnsNameOptionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_private_dns_name_options::ModifyPrivateDnsNameOptionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::modify_private_dns_name_options::ModifyPrivateDnsNameOptionsInput {
             dry_run: self.dry_run,

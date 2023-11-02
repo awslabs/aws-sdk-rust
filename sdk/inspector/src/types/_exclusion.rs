@@ -176,34 +176,34 @@ impl ExclusionBuilder {
     /// - [`description`](crate::types::builders::ExclusionBuilder::description)
     /// - [`recommendation`](crate::types::builders::ExclusionBuilder::recommendation)
     /// - [`scopes`](crate::types::builders::ExclusionBuilder::scopes)
-    pub fn build(self) -> ::std::result::Result<crate::types::Exclusion, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Exclusion, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Exclusion {
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building Exclusion",
                 )
             })?,
             title: self.title.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "title",
                     "title was not specified but it is required when building Exclusion",
                 )
             })?,
             description: self.description.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "description",
                     "description was not specified but it is required when building Exclusion",
                 )
             })?,
             recommendation: self.recommendation.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "recommendation",
                     "recommendation was not specified but it is required when building Exclusion",
                 )
             })?,
             scopes: self.scopes.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "scopes",
                     "scopes was not specified but it is required when building Exclusion",
                 )

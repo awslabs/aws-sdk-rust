@@ -44,7 +44,7 @@ impl DeleteContainerInputBuilder {
     /// Consumes the builder and constructs a [`DeleteContainerInput`](crate::operation::delete_container::DeleteContainerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_container::DeleteContainerInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_container::DeleteContainerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_container::DeleteContainerInput {
             container_name: self.container_name,
         })

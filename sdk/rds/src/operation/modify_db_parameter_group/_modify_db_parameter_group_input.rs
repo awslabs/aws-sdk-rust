@@ -131,7 +131,7 @@ impl ModifyDbParameterGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_db_parameter_group::ModifyDbParameterGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::modify_db_parameter_group::ModifyDbParameterGroupInput {
             db_parameter_group_name: self.db_parameter_group_name,

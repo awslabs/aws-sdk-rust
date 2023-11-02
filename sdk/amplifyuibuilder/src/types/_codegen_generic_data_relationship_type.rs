@@ -232,16 +232,16 @@ impl CodegenGenericDataRelationshipTypeBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::CodegenGenericDataRelationshipTypeBuilder::r#type)
     /// - [`related_model_name`](crate::types::builders::CodegenGenericDataRelationshipTypeBuilder::related_model_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::CodegenGenericDataRelationshipType, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CodegenGenericDataRelationshipType, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CodegenGenericDataRelationshipType {
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building CodegenGenericDataRelationshipType",
                 )
             })?,
             related_model_name: self.related_model_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "related_model_name",
                     "related_model_name was not specified but it is required when building CodegenGenericDataRelationshipType",
                 )

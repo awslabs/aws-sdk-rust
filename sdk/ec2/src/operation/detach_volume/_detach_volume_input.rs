@@ -126,7 +126,9 @@ impl DetachVolumeInputBuilder {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`DetachVolumeInput`](crate::operation::detach_volume::DetachVolumeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::detach_volume::DetachVolumeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::detach_volume::DetachVolumeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::detach_volume::DetachVolumeInput {
             device: self.device,
             force: self.force,

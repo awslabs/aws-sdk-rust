@@ -80,7 +80,7 @@ where
 pub fn ser_test_set_import_resource_specification(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TestSetImportResourceSpecification,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("testSetName").string(input.test_set_name.as_str());
     }

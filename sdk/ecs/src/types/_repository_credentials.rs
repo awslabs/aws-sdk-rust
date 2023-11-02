@@ -56,10 +56,10 @@ impl RepositoryCredentialsBuilder {
     /// Consumes the builder and constructs a [`RepositoryCredentials`](crate::types::RepositoryCredentials).
     /// This method will fail if any of the following fields are not set:
     /// - [`credentials_parameter`](crate::types::builders::RepositoryCredentialsBuilder::credentials_parameter)
-    pub fn build(self) -> ::std::result::Result<crate::types::RepositoryCredentials, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RepositoryCredentials, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RepositoryCredentials {
             credentials_parameter: self.credentials_parameter.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "credentials_parameter",
                     "credentials_parameter was not specified but it is required when building RepositoryCredentials",
                 )

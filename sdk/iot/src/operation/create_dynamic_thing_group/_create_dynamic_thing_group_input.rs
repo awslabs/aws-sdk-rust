@@ -185,7 +185,7 @@ impl CreateDynamicThingGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_dynamic_thing_group::CreateDynamicThingGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_dynamic_thing_group::CreateDynamicThingGroupInput {
             thing_group_name: self.thing_group_name,

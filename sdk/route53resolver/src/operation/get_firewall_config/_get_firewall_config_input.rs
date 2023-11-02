@@ -44,7 +44,7 @@ impl GetFirewallConfigInputBuilder {
     /// Consumes the builder and constructs a [`GetFirewallConfigInput`](crate::operation::get_firewall_config::GetFirewallConfigInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_firewall_config::GetFirewallConfigInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_firewall_config::GetFirewallConfigInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_firewall_config::GetFirewallConfigInput {
             resource_id: self.resource_id,
         })

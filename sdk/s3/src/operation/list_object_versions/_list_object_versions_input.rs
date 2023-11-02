@@ -256,7 +256,8 @@ impl ListObjectVersionsInputBuilder {
     /// Consumes the builder and constructs a [`ListObjectVersionsInput`](crate::operation::list_object_versions::ListObjectVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_object_versions::ListObjectVersionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_object_versions::ListObjectVersionsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::list_object_versions::ListObjectVersionsInput {
             bucket: self.bucket,
             delimiter: self.delimiter,

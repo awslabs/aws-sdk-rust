@@ -123,7 +123,9 @@ impl DeleteLabelsInputBuilder {
         &self.delete_all
     }
     /// Consumes the builder and constructs a [`DeleteLabelsInput`](crate::operation::delete_labels::DeleteLabelsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_labels::DeleteLabelsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_labels::DeleteLabelsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_labels::DeleteLabelsInput {
             resource_id: self.resource_id,
             authentication_token: self.authentication_token,

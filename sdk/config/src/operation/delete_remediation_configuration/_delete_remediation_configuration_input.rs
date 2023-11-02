@@ -67,7 +67,7 @@ impl DeleteRemediationConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_remediation_configuration::DeleteRemediationConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_remediation_configuration::DeleteRemediationConfigurationInput {
             config_rule_name: self.config_rule_name,

@@ -266,37 +266,37 @@ impl RevisionEntryBuilder {
     /// - [`data_set_id`](crate::types::builders::RevisionEntryBuilder::data_set_id)
     /// - [`id`](crate::types::builders::RevisionEntryBuilder::id)
     /// - [`updated_at`](crate::types::builders::RevisionEntryBuilder::updated_at)
-    pub fn build(self) -> ::std::result::Result<crate::types::RevisionEntry, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RevisionEntry, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RevisionEntry {
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building RevisionEntry",
                 )
             })?,
             comment: self.comment,
             created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
                     "created_at was not specified but it is required when building RevisionEntry",
                 )
             })?,
             data_set_id: self.data_set_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_set_id",
                     "data_set_id was not specified but it is required when building RevisionEntry",
                 )
             })?,
             finalized: self.finalized.unwrap_or_default(),
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building RevisionEntry",
                 )
             })?,
             source_id: self.source_id,
             updated_at: self.updated_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "updated_at",
                     "updated_at was not specified but it is required when building RevisionEntry",
                 )

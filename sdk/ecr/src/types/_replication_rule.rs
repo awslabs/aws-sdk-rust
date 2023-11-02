@@ -80,10 +80,10 @@ impl ReplicationRuleBuilder {
     /// Consumes the builder and constructs a [`ReplicationRule`](crate::types::ReplicationRule).
     /// This method will fail if any of the following fields are not set:
     /// - [`destinations`](crate::types::builders::ReplicationRuleBuilder::destinations)
-    pub fn build(self) -> ::std::result::Result<crate::types::ReplicationRule, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ReplicationRule, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ReplicationRule {
             destinations: self.destinations.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "destinations",
                     "destinations was not specified but it is required when building ReplicationRule",
                 )

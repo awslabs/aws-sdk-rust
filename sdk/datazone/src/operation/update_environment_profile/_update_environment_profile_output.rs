@@ -335,17 +335,17 @@ impl UpdateEnvironmentProfileOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_environment_profile::UpdateEnvironmentProfileOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_environment_profile::UpdateEnvironmentProfileOutput {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building UpdateEnvironmentProfileOutput",
                 )
             })?,
             domain_id: self.domain_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "domain_id",
                     "domain_id was not specified but it is required when building UpdateEnvironmentProfileOutput",
                 )
@@ -353,7 +353,7 @@ impl UpdateEnvironmentProfileOutputBuilder {
             aws_account_id: self.aws_account_id,
             aws_account_region: self.aws_account_region,
             created_by: self.created_by.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_by",
                     "created_by was not specified but it is required when building UpdateEnvironmentProfileOutput",
                 )
@@ -361,14 +361,14 @@ impl UpdateEnvironmentProfileOutputBuilder {
             created_at: self.created_at,
             updated_at: self.updated_at,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building UpdateEnvironmentProfileOutput",
                 )
             })?,
             description: self.description,
             environment_blueprint_id: self.environment_blueprint_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "environment_blueprint_id",
                     "environment_blueprint_id was not specified but it is required when building UpdateEnvironmentProfileOutput",
                 )

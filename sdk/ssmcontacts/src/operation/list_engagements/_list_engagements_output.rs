@@ -89,11 +89,11 @@ impl ListEngagementsOutputBuilder {
     /// - [`engagements`](crate::operation::list_engagements::builders::ListEngagementsOutputBuilder::engagements)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_engagements::ListEngagementsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_engagements::ListEngagementsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_engagements::ListEngagementsOutput {
             next_token: self.next_token,
             engagements: self.engagements.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "engagements",
                     "engagements was not specified but it is required when building ListEngagementsOutput",
                 )

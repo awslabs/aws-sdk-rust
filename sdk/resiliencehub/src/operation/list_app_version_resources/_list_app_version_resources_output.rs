@@ -115,17 +115,17 @@ impl ListAppVersionResourcesOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_app_version_resources::ListAppVersionResourcesOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_app_version_resources::ListAppVersionResourcesOutput {
             physical_resources: self.physical_resources.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "physical_resources",
                     "physical_resources was not specified but it is required when building ListAppVersionResourcesOutput",
                 )
             })?,
             resolution_id: self.resolution_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resolution_id",
                     "resolution_id was not specified but it is required when building ListAppVersionResourcesOutput",
                 )

@@ -69,7 +69,7 @@ impl SyncDeploymentJobInputBuilder {
     /// Consumes the builder and constructs a [`SyncDeploymentJobInput`](crate::operation::sync_deployment_job::SyncDeploymentJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::sync_deployment_job::SyncDeploymentJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::sync_deployment_job::SyncDeploymentJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::sync_deployment_job::SyncDeploymentJobInput {
             client_request_token: self.client_request_token,
             fleet: self.fleet,

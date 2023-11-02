@@ -44,7 +44,7 @@ impl StopDiscoveryJobInputBuilder {
     /// Consumes the builder and constructs a [`StopDiscoveryJobInput`](crate::operation::stop_discovery_job::StopDiscoveryJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_discovery_job::StopDiscoveryJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::stop_discovery_job::StopDiscoveryJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_discovery_job::StopDiscoveryJobInput {
             discovery_job_arn: self.discovery_job_arn,
         })

@@ -87,17 +87,17 @@ impl AssociateUserSettingsOutputBuilder {
     /// - [`user_settings_arn`](crate::operation::associate_user_settings::builders::AssociateUserSettingsOutputBuilder::user_settings_arn)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::associate_user_settings::AssociateUserSettingsOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::associate_user_settings::AssociateUserSettingsOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::associate_user_settings::AssociateUserSettingsOutput {
             portal_arn: self.portal_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "portal_arn",
                     "portal_arn was not specified but it is required when building AssociateUserSettingsOutput",
                 )
             })?,
             user_settings_arn: self.user_settings_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "user_settings_arn",
                     "user_settings_arn was not specified but it is required when building AssociateUserSettingsOutput",
                 )

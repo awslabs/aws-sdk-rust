@@ -89,10 +89,10 @@ impl ListContainersOutputBuilder {
     /// - [`containers`](crate::operation::list_containers::builders::ListContainersOutputBuilder::containers)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_containers::ListContainersOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_containers::ListContainersOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_containers::ListContainersOutput {
             containers: self.containers.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "containers",
                     "containers was not specified but it is required when building ListContainersOutput",
                 )

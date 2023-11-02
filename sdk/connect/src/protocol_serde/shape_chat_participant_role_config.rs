@@ -2,7 +2,7 @@
 pub fn ser_chat_participant_role_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ChatParticipantRoleConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("ParticipantTimerConfigList").start_array();
         for item_2 in &input.participant_timer_config_list {

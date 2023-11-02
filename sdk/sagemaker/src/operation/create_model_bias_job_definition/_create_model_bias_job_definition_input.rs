@@ -248,7 +248,7 @@ impl CreateModelBiasJobDefinitionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_model_bias_job_definition::CreateModelBiasJobDefinitionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_model_bias_job_definition::CreateModelBiasJobDefinitionInput {
             job_definition_name: self.job_definition_name,

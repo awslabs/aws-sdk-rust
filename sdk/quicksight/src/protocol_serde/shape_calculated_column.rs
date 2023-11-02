@@ -2,7 +2,7 @@
 pub fn ser_calculated_column(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CalculatedColumn,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("ColumnName").string(input.column_name.as_str());
     }

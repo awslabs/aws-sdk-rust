@@ -2,7 +2,7 @@
 pub fn ser_amazonopensearchservice_buffering_hints(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AmazonopensearchserviceBufferingHints,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.interval_in_seconds {
         object.key("IntervalInSeconds").number(
             #[allow(clippy::useless_conversion)]

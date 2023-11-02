@@ -119,7 +119,7 @@ impl UpdateStorageVirtualMachineInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_storage_virtual_machine::UpdateStorageVirtualMachineInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_storage_virtual_machine::UpdateStorageVirtualMachineInput {
             active_directory_configuration: self.active_directory_configuration,

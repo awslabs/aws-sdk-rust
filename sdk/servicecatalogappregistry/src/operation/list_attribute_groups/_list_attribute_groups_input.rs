@@ -64,7 +64,7 @@ impl ListAttributeGroupsInputBuilder {
     /// Consumes the builder and constructs a [`ListAttributeGroupsInput`](crate::operation::list_attribute_groups::ListAttributeGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_attribute_groups::ListAttributeGroupsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_attribute_groups::ListAttributeGroupsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_attribute_groups::ListAttributeGroupsInput {
             next_token: self.next_token,

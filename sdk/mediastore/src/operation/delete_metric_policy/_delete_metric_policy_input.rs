@@ -44,7 +44,8 @@ impl DeleteMetricPolicyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteMetricPolicyInput`](crate::operation::delete_metric_policy::DeleteMetricPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_metric_policy::DeleteMetricPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_metric_policy::DeleteMetricPolicyInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::delete_metric_policy::DeleteMetricPolicyInput {
             container_name: self.container_name,
         })

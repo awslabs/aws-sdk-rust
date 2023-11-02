@@ -67,10 +67,10 @@ impl ValidationConfigurationBuilder {
     /// Consumes the builder and constructs a [`ValidationConfiguration`](crate::types::ValidationConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`ruleset_arn`](crate::types::builders::ValidationConfigurationBuilder::ruleset_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::ValidationConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ValidationConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ValidationConfiguration {
             ruleset_arn: self.ruleset_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "ruleset_arn",
                     "ruleset_arn was not specified but it is required when building ValidationConfiguration",
                 )

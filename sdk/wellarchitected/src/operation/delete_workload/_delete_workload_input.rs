@@ -82,7 +82,7 @@ impl DeleteWorkloadInputBuilder {
     /// Consumes the builder and constructs a [`DeleteWorkloadInput`](crate::operation::delete_workload::DeleteWorkloadInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_workload::DeleteWorkloadInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_workload::DeleteWorkloadInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_workload::DeleteWorkloadInput {
             workload_id: self.workload_id,
             client_request_token: self.client_request_token,

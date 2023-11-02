@@ -64,7 +64,7 @@ impl ListAnomalyDetectorsInputBuilder {
     /// Consumes the builder and constructs a [`ListAnomalyDetectorsInput`](crate::operation::list_anomaly_detectors::ListAnomalyDetectorsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_anomaly_detectors::ListAnomalyDetectorsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_anomaly_detectors::ListAnomalyDetectorsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_anomaly_detectors::ListAnomalyDetectorsInput {
             max_results: self.max_results,

@@ -265,7 +265,7 @@ impl StartDocumentClassificationJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_document_classification_job::StartDocumentClassificationJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_document_classification_job::StartDocumentClassificationJobInput {
             job_name: self.job_name,

@@ -110,10 +110,10 @@ impl ListUserTagsOutputBuilder {
     /// - [`tags`](crate::operation::list_user_tags::builders::ListUserTagsOutputBuilder::tags)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_user_tags::ListUserTagsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_user_tags::ListUserTagsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_user_tags::ListUserTagsOutput {
             tags: self.tags.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "tags",
                     "tags was not specified but it is required when building ListUserTagsOutput",
                 )

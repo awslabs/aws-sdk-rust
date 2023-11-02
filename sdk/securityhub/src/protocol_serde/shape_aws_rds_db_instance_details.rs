@@ -2,7 +2,7 @@
 pub fn ser_aws_rds_db_instance_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsRdsDbInstanceDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.associated_roles {
         let mut array_2 = object.key("AssociatedRoles").start_array();
         for item_3 in var_1 {

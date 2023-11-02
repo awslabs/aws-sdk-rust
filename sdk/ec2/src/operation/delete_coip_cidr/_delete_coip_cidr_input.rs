@@ -87,7 +87,7 @@ impl DeleteCoipCidrInputBuilder {
     /// Consumes the builder and constructs a [`DeleteCoipCidrInput`](crate::operation::delete_coip_cidr::DeleteCoipCidrInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_coip_cidr::DeleteCoipCidrInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_coip_cidr::DeleteCoipCidrInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_coip_cidr::DeleteCoipCidrInput {
             cidr: self.cidr,
             coip_pool_id: self.coip_pool_id,

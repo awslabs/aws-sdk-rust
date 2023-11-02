@@ -101,7 +101,7 @@ impl UpdateGroupQueryInputBuilder {
     /// Consumes the builder and constructs a [`UpdateGroupQueryInput`](crate::operation::update_group_query::UpdateGroupQueryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_group_query::UpdateGroupQueryInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_group_query::UpdateGroupQueryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_group_query::UpdateGroupQueryInput {
             group_name: self.group_name,
             group: self.group,

@@ -307,7 +307,7 @@ impl SignUpInputBuilder {
         &self.client_metadata
     }
     /// Consumes the builder and constructs a [`SignUpInput`](crate::operation::sign_up::SignUpInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::sign_up::SignUpInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::sign_up::SignUpInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::sign_up::SignUpInput {
             client_id: self.client_id,
             secret_hash: self.secret_hash,

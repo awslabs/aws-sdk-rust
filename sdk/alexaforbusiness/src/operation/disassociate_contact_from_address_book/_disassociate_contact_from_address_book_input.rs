@@ -68,7 +68,7 @@ impl DisassociateContactFromAddressBookInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_contact_from_address_book::DisassociateContactFromAddressBookInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::disassociate_contact_from_address_book::DisassociateContactFromAddressBookInput {

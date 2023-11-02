@@ -78,7 +78,7 @@ impl DisableInputBuilder {
         &self.resource_types
     }
     /// Consumes the builder and constructs a [`DisableInput`](crate::operation::disable::DisableInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::disable::DisableInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::disable::DisableInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::disable::DisableInput {
             account_ids: self.account_ids,
             resource_types: self.resource_types,

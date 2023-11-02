@@ -46,7 +46,7 @@ impl DescribeGeofenceCollectionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_geofence_collection::DescribeGeofenceCollectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_geofence_collection::DescribeGeofenceCollectionInput {
             collection_name: self.collection_name,

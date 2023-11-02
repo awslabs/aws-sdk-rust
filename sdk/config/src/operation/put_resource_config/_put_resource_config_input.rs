@@ -188,7 +188,7 @@ impl PutResourceConfigInputBuilder {
     /// Consumes the builder and constructs a [`PutResourceConfigInput`](crate::operation::put_resource_config::PutResourceConfigInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_resource_config::PutResourceConfigInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_resource_config::PutResourceConfigInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_resource_config::PutResourceConfigInput {
             resource_type: self.resource_type,
             schema_version_id: self.schema_version_id,

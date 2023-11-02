@@ -89,10 +89,10 @@ impl ListMlTransformsOutputBuilder {
     /// - [`transform_ids`](crate::operation::list_ml_transforms::builders::ListMlTransformsOutputBuilder::transform_ids)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_ml_transforms::ListMlTransformsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_ml_transforms::ListMlTransformsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_ml_transforms::ListMlTransformsOutput {
             transform_ids: self.transform_ids.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "transform_ids",
                     "transform_ids was not specified but it is required when building ListMlTransformsOutput",
                 )

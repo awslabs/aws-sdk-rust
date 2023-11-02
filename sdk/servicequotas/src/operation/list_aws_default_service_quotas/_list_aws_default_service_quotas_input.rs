@@ -98,7 +98,7 @@ impl ListAwsDefaultServiceQuotasInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_aws_default_service_quotas::ListAwsDefaultServiceQuotasInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_aws_default_service_quotas::ListAwsDefaultServiceQuotasInput {
             service_code: self.service_code,

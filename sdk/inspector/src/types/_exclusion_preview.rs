@@ -152,28 +152,28 @@ impl ExclusionPreviewBuilder {
     /// - [`description`](crate::types::builders::ExclusionPreviewBuilder::description)
     /// - [`recommendation`](crate::types::builders::ExclusionPreviewBuilder::recommendation)
     /// - [`scopes`](crate::types::builders::ExclusionPreviewBuilder::scopes)
-    pub fn build(self) -> ::std::result::Result<crate::types::ExclusionPreview, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ExclusionPreview, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ExclusionPreview {
             title: self.title.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "title",
                     "title was not specified but it is required when building ExclusionPreview",
                 )
             })?,
             description: self.description.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "description",
                     "description was not specified but it is required when building ExclusionPreview",
                 )
             })?,
             recommendation: self.recommendation.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "recommendation",
                     "recommendation was not specified but it is required when building ExclusionPreview",
                 )
             })?,
             scopes: self.scopes.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "scopes",
                     "scopes was not specified but it is required when building ExclusionPreview",
                 )

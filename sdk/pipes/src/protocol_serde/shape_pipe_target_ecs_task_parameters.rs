@@ -2,7 +2,7 @@
 pub fn ser_pipe_target_ecs_task_parameters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PipeTargetEcsTaskParameters,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("TaskDefinitionArn").string(input.task_definition_arn.as_str());
     }

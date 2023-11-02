@@ -2,7 +2,7 @@
 pub fn ser_start_reference_import_job_source_item(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::StartReferenceImportJobSourceItem,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("sourceFile").string(input.source_file.as_str());
     }

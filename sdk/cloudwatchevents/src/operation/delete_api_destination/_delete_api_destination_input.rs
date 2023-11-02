@@ -44,7 +44,7 @@ impl DeleteApiDestinationInputBuilder {
     /// Consumes the builder and constructs a [`DeleteApiDestinationInput`](crate::operation::delete_api_destination::DeleteApiDestinationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_api_destination::DeleteApiDestinationInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_api_destination::DeleteApiDestinationInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_api_destination::DeleteApiDestinationInput { name: self.name })
     }

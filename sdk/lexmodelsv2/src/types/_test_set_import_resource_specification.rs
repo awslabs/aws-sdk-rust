@@ -188,17 +188,17 @@ impl TestSetImportResourceSpecificationBuilder {
     /// - [`test_set_name`](crate::types::builders::TestSetImportResourceSpecificationBuilder::test_set_name)
     /// - [`role_arn`](crate::types::builders::TestSetImportResourceSpecificationBuilder::role_arn)
     /// - [`modality`](crate::types::builders::TestSetImportResourceSpecificationBuilder::modality)
-    pub fn build(self) -> ::std::result::Result<crate::types::TestSetImportResourceSpecification, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TestSetImportResourceSpecification, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TestSetImportResourceSpecification {
             test_set_name: self.test_set_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "test_set_name",
                     "test_set_name was not specified but it is required when building TestSetImportResourceSpecification",
                 )
             })?,
             description: self.description,
             role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role_arn",
                     "role_arn was not specified but it is required when building TestSetImportResourceSpecification",
                 )
@@ -206,7 +206,7 @@ impl TestSetImportResourceSpecificationBuilder {
             storage_location: self.storage_location,
             import_input_location: self.import_input_location,
             modality: self.modality.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "modality",
                     "modality was not specified but it is required when building TestSetImportResourceSpecification",
                 )

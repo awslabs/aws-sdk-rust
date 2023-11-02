@@ -169,7 +169,7 @@ impl DescribeDbClusterParametersInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_db_cluster_parameters::DescribeDbClusterParametersInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_db_cluster_parameters::DescribeDbClusterParametersInput {
             db_cluster_parameter_group_name: self.db_cluster_parameter_group_name,

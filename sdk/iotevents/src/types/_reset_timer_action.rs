@@ -46,10 +46,10 @@ impl ResetTimerActionBuilder {
     /// Consumes the builder and constructs a [`ResetTimerAction`](crate::types::ResetTimerAction).
     /// This method will fail if any of the following fields are not set:
     /// - [`timer_name`](crate::types::builders::ResetTimerActionBuilder::timer_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::ResetTimerAction, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ResetTimerAction, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ResetTimerAction {
             timer_name: self.timer_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "timer_name",
                     "timer_name was not specified but it is required when building ResetTimerAction",
                 )

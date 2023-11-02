@@ -87,16 +87,16 @@ impl CreateLayoutOutputBuilder {
     /// - [`layout_arn`](crate::operation::create_layout::builders::CreateLayoutOutputBuilder::layout_arn)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_layout::CreateLayoutOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_layout::CreateLayoutOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_layout::CreateLayoutOutput {
             layout_id: self.layout_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "layout_id",
                     "layout_id was not specified but it is required when building CreateLayoutOutput",
                 )
             })?,
             layout_arn: self.layout_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "layout_arn",
                     "layout_arn was not specified but it is required when building CreateLayoutOutput",
                 )

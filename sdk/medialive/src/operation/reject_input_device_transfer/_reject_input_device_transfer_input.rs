@@ -47,7 +47,7 @@ impl RejectInputDeviceTransferInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reject_input_device_transfer::RejectInputDeviceTransferInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::reject_input_device_transfer::RejectInputDeviceTransferInput {
             input_device_id: self.input_device_id,

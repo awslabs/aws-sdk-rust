@@ -3,7 +3,7 @@
 pub fn ser_metric_stream_statistics_metric(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::MetricStreamStatisticsMetric,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Namespace");
     if let Some(var_2) = &input.namespace {

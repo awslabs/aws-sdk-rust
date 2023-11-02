@@ -114,22 +114,22 @@ impl ModelVersionBuilder {
     /// - [`model_id`](crate::types::builders::ModelVersionBuilder::model_id)
     /// - [`model_type`](crate::types::builders::ModelVersionBuilder::model_type)
     /// - [`model_version_number`](crate::types::builders::ModelVersionBuilder::model_version_number)
-    pub fn build(self) -> ::std::result::Result<crate::types::ModelVersion, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ModelVersion, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ModelVersion {
             model_id: self.model_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "model_id",
                     "model_id was not specified but it is required when building ModelVersion",
                 )
             })?,
             model_type: self.model_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "model_type",
                     "model_type was not specified but it is required when building ModelVersion",
                 )
             })?,
             model_version_number: self.model_version_number.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "model_version_number",
                     "model_version_number was not specified but it is required when building ModelVersion",
                 )

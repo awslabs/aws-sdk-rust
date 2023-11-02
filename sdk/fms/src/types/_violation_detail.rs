@@ -197,34 +197,34 @@ impl ViolationDetailBuilder {
     /// - [`resource_id`](crate::types::builders::ViolationDetailBuilder::resource_id)
     /// - [`resource_type`](crate::types::builders::ViolationDetailBuilder::resource_type)
     /// - [`resource_violations`](crate::types::builders::ViolationDetailBuilder::resource_violations)
-    pub fn build(self) -> ::std::result::Result<crate::types::ViolationDetail, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ViolationDetail, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ViolationDetail {
             policy_id: self.policy_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "policy_id",
                     "policy_id was not specified but it is required when building ViolationDetail",
                 )
             })?,
             member_account: self.member_account.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "member_account",
                     "member_account was not specified but it is required when building ViolationDetail",
                 )
             })?,
             resource_id: self.resource_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_id",
                     "resource_id was not specified but it is required when building ViolationDetail",
                 )
             })?,
             resource_type: self.resource_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_type",
                     "resource_type was not specified but it is required when building ViolationDetail",
                 )
             })?,
             resource_violations: self.resource_violations.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_violations",
                     "resource_violations was not specified but it is required when building ViolationDetail",
                 )

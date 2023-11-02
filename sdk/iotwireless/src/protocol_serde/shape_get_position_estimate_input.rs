@@ -2,7 +2,7 @@
 pub fn ser_get_position_estimate_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_position_estimate::GetPositionEstimateInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.cell_towers {
         #[allow(unused_mut)]
         let mut object_2 = object.key("CellTowers").start_object();

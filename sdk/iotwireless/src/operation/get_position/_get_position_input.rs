@@ -65,7 +65,7 @@ impl GetPositionInputBuilder {
         &self.resource_type
     }
     /// Consumes the builder and constructs a [`GetPositionInput`](crate::operation::get_position::GetPositionInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_position::GetPositionInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_position::GetPositionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_position::GetPositionInput {
             resource_identifier: self.resource_identifier,
             resource_type: self.resource_type,

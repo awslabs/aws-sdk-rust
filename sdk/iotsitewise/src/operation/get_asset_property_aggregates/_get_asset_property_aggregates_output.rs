@@ -91,11 +91,11 @@ impl GetAssetPropertyAggregatesOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesOutput {
             aggregated_values: self.aggregated_values.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "aggregated_values",
                     "aggregated_values was not specified but it is required when building GetAssetPropertyAggregatesOutput",
                 )

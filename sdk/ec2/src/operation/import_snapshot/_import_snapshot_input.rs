@@ -269,7 +269,7 @@ impl ImportSnapshotInputBuilder {
     /// Consumes the builder and constructs a [`ImportSnapshotInput`](crate::operation::import_snapshot::ImportSnapshotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::import_snapshot::ImportSnapshotInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::import_snapshot::ImportSnapshotInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::import_snapshot::ImportSnapshotInput {
             client_data: self.client_data,
             client_token: self.client_token,

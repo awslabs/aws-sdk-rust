@@ -88,7 +88,7 @@ impl ListJournalKinesisStreamsForLedgerInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_journal_kinesis_streams_for_ledger::ListJournalKinesisStreamsForLedgerInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_journal_kinesis_streams_for_ledger::ListJournalKinesisStreamsForLedgerInput {

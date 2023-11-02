@@ -42,7 +42,7 @@ impl StopTriggerInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`StopTriggerInput`](crate::operation::stop_trigger::StopTriggerInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::stop_trigger::StopTriggerInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_trigger::StopTriggerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_trigger::StopTriggerInput { name: self.name })
     }
 }

@@ -75,10 +75,10 @@ impl RuleOptionBuilder {
     /// Consumes the builder and constructs a [`RuleOption`](crate::types::RuleOption).
     /// This method will fail if any of the following fields are not set:
     /// - [`keyword`](crate::types::builders::RuleOptionBuilder::keyword)
-    pub fn build(self) -> ::std::result::Result<crate::types::RuleOption, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RuleOption, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RuleOption {
             keyword: self.keyword.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "keyword",
                     "keyword was not specified but it is required when building RuleOption",
                 )

@@ -89,16 +89,16 @@ impl AnalyticsBinBySpecificationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::AnalyticsBinBySpecificationBuilder::name)
     /// - [`interval`](crate::types::builders::AnalyticsBinBySpecificationBuilder::interval)
-    pub fn build(self) -> ::std::result::Result<crate::types::AnalyticsBinBySpecification, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AnalyticsBinBySpecification, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AnalyticsBinBySpecification {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building AnalyticsBinBySpecification",
                 )
             })?,
             interval: self.interval.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "interval",
                     "interval was not specified but it is required when building AnalyticsBinBySpecification",
                 )

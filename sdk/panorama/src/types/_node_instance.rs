@@ -174,10 +174,10 @@ impl NodeInstanceBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`node_instance_id`](crate::types::builders::NodeInstanceBuilder::node_instance_id)
     /// - [`current_status`](crate::types::builders::NodeInstanceBuilder::current_status)
-    pub fn build(self) -> ::std::result::Result<crate::types::NodeInstance, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::NodeInstance, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::NodeInstance {
             node_instance_id: self.node_instance_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "node_instance_id",
                     "node_instance_id was not specified but it is required when building NodeInstance",
                 )
@@ -188,7 +188,7 @@ impl NodeInstanceBuilder {
             package_patch_version: self.package_patch_version,
             node_name: self.node_name,
             current_status: self.current_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "current_status",
                     "current_status was not specified but it is required when building NodeInstance",
                 )

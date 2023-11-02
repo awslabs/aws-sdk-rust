@@ -73,7 +73,7 @@ impl UpdateDevicesInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDevicesInput`](crate::operation::update_devices::UpdateDevicesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_devices::UpdateDevicesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_devices::UpdateDevicesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_devices::UpdateDevicesInput {
             device_fleet_name: self.device_fleet_name,
             devices: self.devices,

@@ -101,7 +101,7 @@ impl GetSecretValueInputBuilder {
     /// Consumes the builder and constructs a [`GetSecretValueInput`](crate::operation::get_secret_value::GetSecretValueInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_secret_value::GetSecretValueInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_secret_value::GetSecretValueInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_secret_value::GetSecretValueInput {
             secret_id: self.secret_id,
             version_id: self.version_id,

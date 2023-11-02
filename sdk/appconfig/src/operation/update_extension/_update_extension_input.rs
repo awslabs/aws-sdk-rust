@@ -148,7 +148,7 @@ impl UpdateExtensionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateExtensionInput`](crate::operation::update_extension::UpdateExtensionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_extension::UpdateExtensionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_extension::UpdateExtensionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_extension::UpdateExtensionInput {
             extension_identifier: self.extension_identifier,
             description: self.description,

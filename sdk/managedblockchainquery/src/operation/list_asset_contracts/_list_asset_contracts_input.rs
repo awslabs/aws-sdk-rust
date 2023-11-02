@@ -86,7 +86,8 @@ impl ListAssetContractsInputBuilder {
     /// Consumes the builder and constructs a [`ListAssetContractsInput`](crate::operation::list_asset_contracts::ListAssetContractsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_asset_contracts::ListAssetContractsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_asset_contracts::ListAssetContractsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::list_asset_contracts::ListAssetContractsInput {
             contract_filter: self.contract_filter,
             next_token: self.next_token,

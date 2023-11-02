@@ -113,7 +113,7 @@ impl MergeDeveloperIdentitiesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::merge_developer_identities::MergeDeveloperIdentitiesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::merge_developer_identities::MergeDeveloperIdentitiesInput {
             source_user_identifier: self.source_user_identifier,

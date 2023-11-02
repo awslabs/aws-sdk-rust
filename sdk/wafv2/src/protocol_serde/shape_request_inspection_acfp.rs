@@ -2,7 +2,7 @@
 pub fn ser_request_inspection_acfp(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RequestInspectionAcfp,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("PayloadType").string(input.payload_type.as_str());
     }

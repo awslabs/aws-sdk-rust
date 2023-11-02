@@ -234,40 +234,40 @@ impl JdbcConnectorTargetBuilder {
     /// - [`connection_table`](crate::types::builders::JdbcConnectorTargetBuilder::connection_table)
     /// - [`connector_name`](crate::types::builders::JdbcConnectorTargetBuilder::connector_name)
     /// - [`connection_type`](crate::types::builders::JdbcConnectorTargetBuilder::connection_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::JdbcConnectorTarget, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::JdbcConnectorTarget, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::JdbcConnectorTarget {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building JdbcConnectorTarget",
                 )
             })?,
             inputs: self.inputs.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "inputs",
                     "inputs was not specified but it is required when building JdbcConnectorTarget",
                 )
             })?,
             connection_name: self.connection_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "connection_name",
                     "connection_name was not specified but it is required when building JdbcConnectorTarget",
                 )
             })?,
             connection_table: self.connection_table.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "connection_table",
                     "connection_table was not specified but it is required when building JdbcConnectorTarget",
                 )
             })?,
             connector_name: self.connector_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "connector_name",
                     "connector_name was not specified but it is required when building JdbcConnectorTarget",
                 )
             })?,
             connection_type: self.connection_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "connection_type",
                     "connection_type was not specified but it is required when building JdbcConnectorTarget",
                 )

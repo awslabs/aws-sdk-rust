@@ -2,7 +2,7 @@
 pub fn ser_cloud_watch_logs_log_group(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CloudWatchLogsLogGroup,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.log_group_arn {
         object.key("logGroupArn").string(var_1.as_str());
     }

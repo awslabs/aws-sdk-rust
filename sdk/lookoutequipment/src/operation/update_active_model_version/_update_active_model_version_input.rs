@@ -68,7 +68,7 @@ impl UpdateActiveModelVersionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_active_model_version::UpdateActiveModelVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_active_model_version::UpdateActiveModelVersionInput {
             model_name: self.model_name,

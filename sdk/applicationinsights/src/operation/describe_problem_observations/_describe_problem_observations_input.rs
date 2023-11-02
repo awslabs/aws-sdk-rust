@@ -67,7 +67,7 @@ impl DescribeProblemObservationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_problem_observations::DescribeProblemObservationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_problem_observations::DescribeProblemObservationsInput {
             problem_id: self.problem_id,

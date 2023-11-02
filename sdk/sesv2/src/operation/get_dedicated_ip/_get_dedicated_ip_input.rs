@@ -45,7 +45,7 @@ impl GetDedicatedIpInputBuilder {
     /// Consumes the builder and constructs a [`GetDedicatedIpInput`](crate::operation::get_dedicated_ip::GetDedicatedIpInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_dedicated_ip::GetDedicatedIpInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_dedicated_ip::GetDedicatedIpInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_dedicated_ip::GetDedicatedIpInput { ip: self.ip })
     }
 }

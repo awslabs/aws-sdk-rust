@@ -53,7 +53,7 @@ impl BatchDeletePhoneNumberInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_delete_phone_number::BatchDeletePhoneNumberInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::batch_delete_phone_number::BatchDeletePhoneNumberInput {
             phone_number_ids: self.phone_number_ids,

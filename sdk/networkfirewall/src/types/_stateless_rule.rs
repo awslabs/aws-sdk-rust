@@ -77,11 +77,11 @@ impl StatelessRuleBuilder {
     /// Consumes the builder and constructs a [`StatelessRule`](crate::types::StatelessRule).
     /// This method will fail if any of the following fields are not set:
     /// - [`priority`](crate::types::builders::StatelessRuleBuilder::priority)
-    pub fn build(self) -> ::std::result::Result<crate::types::StatelessRule, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::StatelessRule, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::StatelessRule {
             rule_definition: self.rule_definition,
             priority: self.priority.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "priority",
                     "priority was not specified but it is required when building StatelessRule",
                 )

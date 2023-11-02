@@ -88,7 +88,7 @@ impl GetEvidenceFolderInputBuilder {
     /// Consumes the builder and constructs a [`GetEvidenceFolderInput`](crate::operation::get_evidence_folder::GetEvidenceFolderInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_evidence_folder::GetEvidenceFolderInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_evidence_folder::GetEvidenceFolderInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_evidence_folder::GetEvidenceFolderInput {
             assessment_id: self.assessment_id,
             control_set_id: self.control_set_id,

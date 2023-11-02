@@ -149,16 +149,16 @@ impl SessionFilterBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`key`](crate::types::builders::SessionFilterBuilder::key)
     /// - [`value`](crate::types::builders::SessionFilterBuilder::value)
-    pub fn build(self) -> ::std::result::Result<crate::types::SessionFilter, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SessionFilter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SessionFilter {
             key: self.key.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "key",
                     "key was not specified but it is required when building SessionFilter",
                 )
             })?,
             value: self.value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "value",
                     "value was not specified but it is required when building SessionFilter",
                 )

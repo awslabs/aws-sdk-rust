@@ -72,16 +72,16 @@ impl VirtualGatewayListenerTlsFileCertificateBuilder {
     /// - [`private_key`](crate::types::builders::VirtualGatewayListenerTlsFileCertificateBuilder::private_key)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::VirtualGatewayListenerTlsFileCertificate, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::VirtualGatewayListenerTlsFileCertificate, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::VirtualGatewayListenerTlsFileCertificate {
             certificate_chain: self.certificate_chain.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "certificate_chain",
                     "certificate_chain was not specified but it is required when building VirtualGatewayListenerTlsFileCertificate",
                 )
             })?,
             private_key: self.private_key.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "private_key",
                     "private_key was not specified but it is required when building VirtualGatewayListenerTlsFileCertificate",
                 )

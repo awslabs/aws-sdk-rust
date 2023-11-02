@@ -70,16 +70,16 @@ impl LambdaCodeHookBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`lambda_arn`](crate::types::builders::LambdaCodeHookBuilder::lambda_arn)
     /// - [`code_hook_interface_version`](crate::types::builders::LambdaCodeHookBuilder::code_hook_interface_version)
-    pub fn build(self) -> ::std::result::Result<crate::types::LambdaCodeHook, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::LambdaCodeHook, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::LambdaCodeHook {
             lambda_arn: self.lambda_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "lambda_arn",
                     "lambda_arn was not specified but it is required when building LambdaCodeHook",
                 )
             })?,
             code_hook_interface_version: self.code_hook_interface_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "code_hook_interface_version",
                     "code_hook_interface_version was not specified but it is required when building LambdaCodeHook",
                 )

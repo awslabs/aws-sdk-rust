@@ -97,16 +97,16 @@ impl IngestedFilesSummaryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`total_number_of_files`](crate::types::builders::IngestedFilesSummaryBuilder::total_number_of_files)
     /// - [`ingested_number_of_files`](crate::types::builders::IngestedFilesSummaryBuilder::ingested_number_of_files)
-    pub fn build(self) -> ::std::result::Result<crate::types::IngestedFilesSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::IngestedFilesSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::IngestedFilesSummary {
             total_number_of_files: self.total_number_of_files.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "total_number_of_files",
                     "total_number_of_files was not specified but it is required when building IngestedFilesSummary",
                 )
             })?,
             ingested_number_of_files: self.ingested_number_of_files.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "ingested_number_of_files",
                     "ingested_number_of_files was not specified but it is required when building IngestedFilesSummary",
                 )

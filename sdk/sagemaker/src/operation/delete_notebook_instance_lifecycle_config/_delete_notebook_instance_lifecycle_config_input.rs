@@ -46,7 +46,7 @@ impl DeleteNotebookInstanceLifecycleConfigInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_notebook_instance_lifecycle_config::DeleteNotebookInstanceLifecycleConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_notebook_instance_lifecycle_config::DeleteNotebookInstanceLifecycleConfigInput {

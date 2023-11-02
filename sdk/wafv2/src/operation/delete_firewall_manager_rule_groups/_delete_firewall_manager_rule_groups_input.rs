@@ -68,7 +68,7 @@ impl DeleteFirewallManagerRuleGroupsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_firewall_manager_rule_groups::DeleteFirewallManagerRuleGroupsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_firewall_manager_rule_groups::DeleteFirewallManagerRuleGroupsInput {

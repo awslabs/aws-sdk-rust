@@ -87,7 +87,7 @@ impl GetHostedZoneLimitInputBuilder {
     /// Consumes the builder and constructs a [`GetHostedZoneLimitInput`](crate::operation::get_hosted_zone_limit::GetHostedZoneLimitInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_hosted_zone_limit::GetHostedZoneLimitInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_hosted_zone_limit::GetHostedZoneLimitInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_hosted_zone_limit::GetHostedZoneLimitInput {
             r#type: self.r#type,

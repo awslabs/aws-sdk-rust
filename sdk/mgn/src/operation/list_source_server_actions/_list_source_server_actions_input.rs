@@ -130,7 +130,7 @@ impl ListSourceServerActionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_source_server_actions::ListSourceServerActionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_source_server_actions::ListSourceServerActionsInput {
             source_server_id: self.source_server_id,

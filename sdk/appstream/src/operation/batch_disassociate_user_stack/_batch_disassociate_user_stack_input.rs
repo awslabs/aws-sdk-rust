@@ -53,7 +53,7 @@ impl BatchDisassociateUserStackInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_disassociate_user_stack::BatchDisassociateUserStackInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::batch_disassociate_user_stack::BatchDisassociateUserStackInput {
             user_stack_associations: self.user_stack_associations,

@@ -53,7 +53,7 @@ where
 pub fn ser_edge_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EdgeConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("HubDeviceArn").string(input.hub_device_arn.as_str());
     }

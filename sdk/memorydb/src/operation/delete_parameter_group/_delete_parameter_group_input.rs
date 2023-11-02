@@ -44,7 +44,7 @@ impl DeleteParameterGroupInputBuilder {
     /// Consumes the builder and constructs a [`DeleteParameterGroupInput`](crate::operation::delete_parameter_group::DeleteParameterGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_parameter_group::DeleteParameterGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_parameter_group::DeleteParameterGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_parameter_group::DeleteParameterGroupInput {
             parameter_group_name: self.parameter_group_name,

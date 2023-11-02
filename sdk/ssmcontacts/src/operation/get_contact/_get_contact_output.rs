@@ -151,23 +151,23 @@ impl GetContactOutputBuilder {
     /// - [`contact_arn`](crate::operation::get_contact::builders::GetContactOutputBuilder::contact_arn)
     /// - [`alias`](crate::operation::get_contact::builders::GetContactOutputBuilder::alias)
     /// - [`r#type`](crate::operation::get_contact::builders::GetContactOutputBuilder::r#type)
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_contact::GetContactOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_contact::GetContactOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_contact::GetContactOutput {
             contact_arn: self.contact_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "contact_arn",
                     "contact_arn was not specified but it is required when building GetContactOutput",
                 )
             })?,
             alias: self.alias.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "alias",
                     "alias was not specified but it is required when building GetContactOutput",
                 )
             })?,
             display_name: self.display_name,
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building GetContactOutput",
                 )

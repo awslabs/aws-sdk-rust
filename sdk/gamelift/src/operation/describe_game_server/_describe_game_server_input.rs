@@ -66,7 +66,8 @@ impl DescribeGameServerInputBuilder {
     /// Consumes the builder and constructs a [`DescribeGameServerInput`](crate::operation::describe_game_server::DescribeGameServerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_game_server::DescribeGameServerInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_game_server::DescribeGameServerInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::describe_game_server::DescribeGameServerInput {
             game_server_group_name: self.game_server_group_name,
             game_server_id: self.game_server_id,

@@ -275,35 +275,35 @@ impl GetProviderServiceOutputBuilder {
     /// - [`provider_entity_output_definition`](crate::operation::get_provider_service::builders::GetProviderServiceOutputBuilder::provider_entity_output_definition)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_provider_service::GetProviderServiceOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_provider_service::GetProviderServiceOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_provider_service::GetProviderServiceOutput {
             provider_name: self.provider_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "provider_name",
                     "provider_name was not specified but it is required when building GetProviderServiceOutput",
                 )
             })?,
             provider_service_name: self.provider_service_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "provider_service_name",
                     "provider_service_name was not specified but it is required when building GetProviderServiceOutput",
                 )
             })?,
             provider_service_display_name: self.provider_service_display_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "provider_service_display_name",
                     "provider_service_display_name was not specified but it is required when building GetProviderServiceOutput",
                 )
             })?,
             provider_service_type: self.provider_service_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "provider_service_type",
                     "provider_service_type was not specified but it is required when building GetProviderServiceOutput",
                 )
             })?,
             provider_service_arn: self.provider_service_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "provider_service_arn",
                     "provider_service_arn was not specified but it is required when building GetProviderServiceOutput",
                 )
@@ -311,13 +311,13 @@ impl GetProviderServiceOutputBuilder {
             provider_configuration_definition: self.provider_configuration_definition,
             provider_endpoint_configuration: self.provider_endpoint_configuration,
             anonymized_output: self.anonymized_output.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "anonymized_output",
                     "anonymized_output was not specified but it is required when building GetProviderServiceOutput",
                 )
             })?,
             provider_entity_output_definition: self.provider_entity_output_definition.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "provider_entity_output_definition",
                     "provider_entity_output_definition was not specified but it is required when building GetProviderServiceOutput",
                 )

@@ -2,7 +2,7 @@
 pub fn ser_pivot_table_field_subtotal_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PivotTableFieldSubtotalOptions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.field_id {
         object.key("FieldId").string(var_1.as_str());
     }

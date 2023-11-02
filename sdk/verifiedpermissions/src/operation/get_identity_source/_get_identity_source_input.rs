@@ -66,7 +66,7 @@ impl GetIdentitySourceInputBuilder {
     /// Consumes the builder and constructs a [`GetIdentitySourceInput`](crate::operation::get_identity_source::GetIdentitySourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_identity_source::GetIdentitySourceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_identity_source::GetIdentitySourceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_identity_source::GetIdentitySourceInput {
             policy_store_id: self.policy_store_id,
             identity_source_id: self.identity_source_id,

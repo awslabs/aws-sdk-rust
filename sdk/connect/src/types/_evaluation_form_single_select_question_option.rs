@@ -114,16 +114,16 @@ impl EvaluationFormSingleSelectQuestionOptionBuilder {
     /// - [`text`](crate::types::builders::EvaluationFormSingleSelectQuestionOptionBuilder::text)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::EvaluationFormSingleSelectQuestionOption, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::EvaluationFormSingleSelectQuestionOption, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EvaluationFormSingleSelectQuestionOption {
             ref_id: self.ref_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "ref_id",
                     "ref_id was not specified but it is required when building EvaluationFormSingleSelectQuestionOption",
                 )
             })?,
             text: self.text.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "text",
                     "text was not specified but it is required when building EvaluationFormSingleSelectQuestionOption",
                 )

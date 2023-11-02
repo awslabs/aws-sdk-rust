@@ -106,7 +106,7 @@ impl SetSecurityGroupsInputBuilder {
     /// Consumes the builder and constructs a [`SetSecurityGroupsInput`](crate::operation::set_security_groups::SetSecurityGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::set_security_groups::SetSecurityGroupsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::set_security_groups::SetSecurityGroupsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::set_security_groups::SetSecurityGroupsInput {
             load_balancer_arn: self.load_balancer_arn,
             security_groups: self.security_groups,

@@ -44,7 +44,7 @@ impl StopTrainingJobInputBuilder {
     /// Consumes the builder and constructs a [`StopTrainingJobInput`](crate::operation::stop_training_job::StopTrainingJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_training_job::StopTrainingJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::stop_training_job::StopTrainingJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_training_job::StopTrainingJobInput {
             training_job_name: self.training_job_name,
         })

@@ -88,7 +88,7 @@ impl ListHiTsForQualificationTypeInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_hits_for_qualification_type::ListHiTsForQualificationTypeInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_hits_for_qualification_type::ListHiTsForQualificationTypeInput {
             qualification_type_id: self.qualification_type_id,

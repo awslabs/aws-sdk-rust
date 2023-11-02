@@ -108,13 +108,13 @@ impl PrivateKeyFlagsV3Builder {
     /// Consumes the builder and constructs a [`PrivateKeyFlagsV3`](crate::types::PrivateKeyFlagsV3).
     /// This method will fail if any of the following fields are not set:
     /// - [`client_version`](crate::types::builders::PrivateKeyFlagsV3Builder::client_version)
-    pub fn build(self) -> ::std::result::Result<crate::types::PrivateKeyFlagsV3, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PrivateKeyFlagsV3, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PrivateKeyFlagsV3 {
             exportable_key: self.exportable_key,
             strong_key_protection_required: self.strong_key_protection_required,
             require_alternate_signature_algorithm: self.require_alternate_signature_algorithm,
             client_version: self.client_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "client_version",
                     "client_version was not specified but it is required when building PrivateKeyFlagsV3",
                 )

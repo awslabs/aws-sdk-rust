@@ -91,7 +91,7 @@ impl DeleteResourceInputBuilder {
     /// Consumes the builder and constructs a [`DeleteResourceInput`](crate::operation::delete_resource::DeleteResourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_resource::DeleteResourceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_resource::DeleteResourceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_resource::DeleteResourceInput {
             organization_id: self.organization_id,
             resource_id: self.resource_id,

@@ -201,7 +201,7 @@ impl GetDimensionKeyDetailsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_dimension_key_details::GetDimensionKeyDetailsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_dimension_key_details::GetDimensionKeyDetailsInput {
             service_type: self.service_type,

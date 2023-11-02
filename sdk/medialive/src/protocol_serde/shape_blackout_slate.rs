@@ -2,7 +2,7 @@
 pub fn ser_blackout_slate(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BlackoutSlate,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.blackout_slate_image {
         #[allow(unused_mut)]
         let mut object_2 = object.key("blackoutSlateImage").start_object();

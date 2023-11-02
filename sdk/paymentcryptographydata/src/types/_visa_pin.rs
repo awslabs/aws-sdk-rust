@@ -45,10 +45,10 @@ impl VisaPinBuilder {
     /// Consumes the builder and constructs a [`VisaPin`](crate::types::VisaPin).
     /// This method will fail if any of the following fields are not set:
     /// - [`pin_verification_key_index`](crate::types::builders::VisaPinBuilder::pin_verification_key_index)
-    pub fn build(self) -> ::std::result::Result<crate::types::VisaPin, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::VisaPin, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::VisaPin {
             pin_verification_key_index: self.pin_verification_key_index.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "pin_verification_key_index",
                     "pin_verification_key_index was not specified but it is required when building VisaPin",
                 )

@@ -44,7 +44,7 @@ impl DescribeTransformJobInputBuilder {
     /// Consumes the builder and constructs a [`DescribeTransformJobInput`](crate::operation::describe_transform_job::DescribeTransformJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_transform_job::DescribeTransformJobInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_transform_job::DescribeTransformJobInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_transform_job::DescribeTransformJobInput {
             transform_job_name: self.transform_job_name,

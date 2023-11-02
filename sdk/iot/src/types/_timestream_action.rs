@@ -154,28 +154,28 @@ impl TimestreamActionBuilder {
     /// - [`database_name`](crate::types::builders::TimestreamActionBuilder::database_name)
     /// - [`table_name`](crate::types::builders::TimestreamActionBuilder::table_name)
     /// - [`dimensions`](crate::types::builders::TimestreamActionBuilder::dimensions)
-    pub fn build(self) -> ::std::result::Result<crate::types::TimestreamAction, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TimestreamAction, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TimestreamAction {
             role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role_arn",
                     "role_arn was not specified but it is required when building TimestreamAction",
                 )
             })?,
             database_name: self.database_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "database_name",
                     "database_name was not specified but it is required when building TimestreamAction",
                 )
             })?,
             table_name: self.table_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "table_name",
                     "table_name was not specified but it is required when building TimestreamAction",
                 )
             })?,
             dimensions: self.dimensions.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "dimensions",
                     "dimensions was not specified but it is required when building TimestreamAction",
                 )

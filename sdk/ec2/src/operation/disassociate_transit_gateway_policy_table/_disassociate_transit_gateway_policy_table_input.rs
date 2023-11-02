@@ -89,7 +89,7 @@ impl DisassociateTransitGatewayPolicyTableInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_transit_gateway_policy_table::DisassociateTransitGatewayPolicyTableInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::disassociate_transit_gateway_policy_table::DisassociateTransitGatewayPolicyTableInput {

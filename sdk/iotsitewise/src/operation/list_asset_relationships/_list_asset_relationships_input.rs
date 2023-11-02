@@ -123,8 +123,10 @@ impl ListAssetRelationshipsInputBuilder {
     /// Consumes the builder and constructs a [`ListAssetRelationshipsInput`](crate::operation::list_asset_relationships::ListAssetRelationshipsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_asset_relationships::ListAssetRelationshipsInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::list_asset_relationships::ListAssetRelationshipsInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::list_asset_relationships::ListAssetRelationshipsInput {
             asset_id: self.asset_id,
             traversal_type: self.traversal_type,

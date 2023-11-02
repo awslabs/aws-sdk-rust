@@ -2,7 +2,7 @@
 pub fn ser_logical_resource_id(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LogicalResourceId,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("identifier").string(input.identifier.as_str());
     }

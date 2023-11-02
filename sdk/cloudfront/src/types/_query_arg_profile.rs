@@ -70,16 +70,16 @@ impl QueryArgProfileBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`query_arg`](crate::types::builders::QueryArgProfileBuilder::query_arg)
     /// - [`profile_id`](crate::types::builders::QueryArgProfileBuilder::profile_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::QueryArgProfile, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::QueryArgProfile, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::QueryArgProfile {
             query_arg: self.query_arg.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "query_arg",
                     "query_arg was not specified but it is required when building QueryArgProfile",
                 )
             })?,
             profile_id: self.profile_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "profile_id",
                     "profile_id was not specified but it is required when building QueryArgProfile",
                 )

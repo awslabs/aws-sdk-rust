@@ -210,52 +210,52 @@ impl IngestionBuilder {
     /// - [`updated_at`](crate::types::builders::IngestionBuilder::updated_at)
     /// - [`state`](crate::types::builders::IngestionBuilder::state)
     /// - [`ingestion_type`](crate::types::builders::IngestionBuilder::ingestion_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::Ingestion, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Ingestion, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Ingestion {
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building Ingestion",
                 )
             })?,
             app_bundle_arn: self.app_bundle_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "app_bundle_arn",
                     "app_bundle_arn was not specified but it is required when building Ingestion",
                 )
             })?,
             app: self.app.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "app",
                     "app was not specified but it is required when building Ingestion",
                 )
             })?,
             tenant_id: self.tenant_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "tenant_id",
                     "tenant_id was not specified but it is required when building Ingestion",
                 )
             })?,
             created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
                     "created_at was not specified but it is required when building Ingestion",
                 )
             })?,
             updated_at: self.updated_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "updated_at",
                     "updated_at was not specified but it is required when building Ingestion",
                 )
             })?,
             state: self.state.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "state",
                     "state was not specified but it is required when building Ingestion",
                 )
             })?,
             ingestion_type: self.ingestion_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "ingestion_type",
                     "ingestion_type was not specified but it is required when building Ingestion",
                 )

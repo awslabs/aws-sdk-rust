@@ -2,7 +2,7 @@
 pub fn ser_register_user_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::register_user::RegisterUserInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.custom_federation_provider_url {
         object.key("CustomFederationProviderUrl").string(var_1.as_str());
     }

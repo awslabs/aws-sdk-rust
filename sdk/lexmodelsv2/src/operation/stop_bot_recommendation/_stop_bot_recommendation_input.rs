@@ -110,7 +110,7 @@ impl StopBotRecommendationInputBuilder {
     /// Consumes the builder and constructs a [`StopBotRecommendationInput`](crate::operation::stop_bot_recommendation::StopBotRecommendationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_bot_recommendation::StopBotRecommendationInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::stop_bot_recommendation::StopBotRecommendationInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::stop_bot_recommendation::StopBotRecommendationInput {
             bot_id: self.bot_id,

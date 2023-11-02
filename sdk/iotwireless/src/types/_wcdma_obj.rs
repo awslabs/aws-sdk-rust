@@ -204,23 +204,23 @@ impl WcdmaObjBuilder {
     /// - [`mcc`](crate::types::builders::WcdmaObjBuilder::mcc)
     /// - [`mnc`](crate::types::builders::WcdmaObjBuilder::mnc)
     /// - [`utran_cid`](crate::types::builders::WcdmaObjBuilder::utran_cid)
-    pub fn build(self) -> ::std::result::Result<crate::types::WcdmaObj, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::WcdmaObj, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::WcdmaObj {
             mcc: self.mcc.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "mcc",
                     "mcc was not specified but it is required when building WcdmaObj",
                 )
             })?,
             mnc: self.mnc.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "mnc",
                     "mnc was not specified but it is required when building WcdmaObj",
                 )
             })?,
             lac: self.lac,
             utran_cid: self.utran_cid.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "utran_cid",
                     "utran_cid was not specified but it is required when building WcdmaObj",
                 )

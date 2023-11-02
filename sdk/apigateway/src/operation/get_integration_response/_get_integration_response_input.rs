@@ -111,8 +111,10 @@ impl GetIntegrationResponseInputBuilder {
     /// Consumes the builder and constructs a [`GetIntegrationResponseInput`](crate::operation::get_integration_response::GetIntegrationResponseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_integration_response::GetIntegrationResponseInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::get_integration_response::GetIntegrationResponseInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::get_integration_response::GetIntegrationResponseInput {
             rest_api_id: self.rest_api_id,
             resource_id: self.resource_id,

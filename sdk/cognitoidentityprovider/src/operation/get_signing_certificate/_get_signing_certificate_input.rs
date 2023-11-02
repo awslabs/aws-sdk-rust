@@ -45,7 +45,7 @@ impl GetSigningCertificateInputBuilder {
     /// Consumes the builder and constructs a [`GetSigningCertificateInput`](crate::operation::get_signing_certificate::GetSigningCertificateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_signing_certificate::GetSigningCertificateInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_signing_certificate::GetSigningCertificateInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_signing_certificate::GetSigningCertificateInput {
             user_pool_id: self.user_pool_id,

@@ -43,7 +43,7 @@ impl DeleteHapgInputBuilder {
         &self.hapg_arn
     }
     /// Consumes the builder and constructs a [`DeleteHapgInput`](crate::operation::delete_hapg::DeleteHapgInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_hapg::DeleteHapgInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_hapg::DeleteHapgInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_hapg::DeleteHapgInput { hapg_arn: self.hapg_arn })
     }
 }

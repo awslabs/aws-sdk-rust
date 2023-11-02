@@ -46,7 +46,7 @@ impl DeleteUserPermissionsBoundaryInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_user_permissions_boundary::DeleteUserPermissionsBoundaryInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_user_permissions_boundary::DeleteUserPermissionsBoundaryInput {
             user_name: self.user_name,

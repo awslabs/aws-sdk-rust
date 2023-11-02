@@ -113,7 +113,7 @@ impl AddApplicationInputProcessingConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationInput {

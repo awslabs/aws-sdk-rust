@@ -42,7 +42,7 @@ impl GetDomainInputBuilder {
         &self.identifier
     }
     /// Consumes the builder and constructs a [`GetDomainInput`](crate::operation::get_domain::GetDomainInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_domain::GetDomainInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_domain::GetDomainInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_domain::GetDomainInput { identifier: self.identifier })
     }
 }

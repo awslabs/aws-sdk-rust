@@ -339,28 +339,31 @@ impl FormBuilder {
     /// - [`fields`](crate::types::builders::FormBuilder::fields)
     /// - [`sectional_elements`](crate::types::builders::FormBuilder::sectional_elements)
     /// - [`schema_version`](crate::types::builders::FormBuilder::schema_version)
-    pub fn build(self) -> ::std::result::Result<crate::types::Form, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Form, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Form {
             app_id: self.app_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "app_id",
                     "app_id was not specified but it is required when building Form",
                 )
             })?,
             environment_name: self.environment_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "environment_name",
                     "environment_name was not specified but it is required when building Form",
                 )
             })?,
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field("id", "id was not specified but it is required when building Form")
+                ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building Form")
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field("name", "name was not specified but it is required when building Form")
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building Form",
+                )
             })?,
             form_action_type: self.form_action_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "form_action_type",
                     "form_action_type was not specified but it is required when building Form",
                 )
@@ -368,19 +371,19 @@ impl FormBuilder {
             style: self.style,
             data_type: self.data_type,
             fields: self.fields.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "fields",
                     "fields was not specified but it is required when building Form",
                 )
             })?,
             sectional_elements: self.sectional_elements.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "sectional_elements",
                     "sectional_elements was not specified but it is required when building Form",
                 )
             })?,
             schema_version: self.schema_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "schema_version",
                     "schema_version was not specified but it is required when building Form",
                 )

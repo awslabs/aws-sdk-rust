@@ -76,7 +76,7 @@ impl AttachRolePolicyInputBuilder {
     /// Consumes the builder and constructs a [`AttachRolePolicyInput`](crate::operation::attach_role_policy::AttachRolePolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::attach_role_policy::AttachRolePolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::attach_role_policy::AttachRolePolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::attach_role_policy::AttachRolePolicyInput {
             role_name: self.role_name,
             policy_arn: self.policy_arn,

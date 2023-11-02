@@ -65,11 +65,11 @@ impl GetTrafficPolicyInstanceCountOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_traffic_policy_instance_count::GetTrafficPolicyInstanceCountOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_traffic_policy_instance_count::GetTrafficPolicyInstanceCountOutput {
             traffic_policy_instance_count: self.traffic_policy_instance_count.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "traffic_policy_instance_count",
                     "traffic_policy_instance_count was not specified but it is required when building GetTrafficPolicyInstanceCountOutput",
                 )

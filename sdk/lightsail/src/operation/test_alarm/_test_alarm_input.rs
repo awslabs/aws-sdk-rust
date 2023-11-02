@@ -94,7 +94,7 @@ impl TestAlarmInputBuilder {
         &self.state
     }
     /// Consumes the builder and constructs a [`TestAlarmInput`](crate::operation::test_alarm::TestAlarmInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::test_alarm::TestAlarmInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::test_alarm::TestAlarmInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::test_alarm::TestAlarmInput {
             alarm_name: self.alarm_name,
             state: self.state,

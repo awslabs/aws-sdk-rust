@@ -166,25 +166,25 @@ impl BatchGetTokenBalanceErrorItemBuilder {
     /// - [`error_code`](crate::types::builders::BatchGetTokenBalanceErrorItemBuilder::error_code)
     /// - [`error_message`](crate::types::builders::BatchGetTokenBalanceErrorItemBuilder::error_message)
     /// - [`error_type`](crate::types::builders::BatchGetTokenBalanceErrorItemBuilder::error_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::BatchGetTokenBalanceErrorItem, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::BatchGetTokenBalanceErrorItem, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::BatchGetTokenBalanceErrorItem {
             token_identifier: self.token_identifier,
             owner_identifier: self.owner_identifier,
             at_blockchain_instant: self.at_blockchain_instant,
             error_code: self.error_code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "error_code",
                     "error_code was not specified but it is required when building BatchGetTokenBalanceErrorItem",
                 )
             })?,
             error_message: self.error_message.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "error_message",
                     "error_message was not specified but it is required when building BatchGetTokenBalanceErrorItem",
                 )
             })?,
             error_type: self.error_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "error_type",
                     "error_type was not specified but it is required when building BatchGetTokenBalanceErrorItem",
                 )

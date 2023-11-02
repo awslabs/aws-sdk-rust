@@ -107,7 +107,7 @@ impl DescribeEntitlementsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeEntitlementsInput`](crate::operation::describe_entitlements::DescribeEntitlementsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_entitlements::DescribeEntitlementsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_entitlements::DescribeEntitlementsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_entitlements::DescribeEntitlementsInput {
             name: self.name,

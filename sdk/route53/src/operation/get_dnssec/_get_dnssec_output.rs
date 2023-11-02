@@ -88,11 +88,11 @@ impl GetDnssecOutputBuilder {
     /// Consumes the builder and constructs a [`GetDnssecOutput`](crate::operation::get_dnssec::GetDnssecOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`key_signing_keys`](crate::operation::get_dnssec::builders::GetDnssecOutputBuilder::key_signing_keys)
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_dnssec::GetDnssecOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_dnssec::GetDnssecOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_dnssec::GetDnssecOutput {
             status: self.status,
             key_signing_keys: self.key_signing_keys.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "key_signing_keys",
                     "key_signing_keys was not specified but it is required when building GetDnssecOutput",
                 )

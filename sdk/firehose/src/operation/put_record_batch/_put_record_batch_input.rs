@@ -73,7 +73,7 @@ impl PutRecordBatchInputBuilder {
     /// Consumes the builder and constructs a [`PutRecordBatchInput`](crate::operation::put_record_batch::PutRecordBatchInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_record_batch::PutRecordBatchInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_record_batch::PutRecordBatchInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_record_batch::PutRecordBatchInput {
             delivery_stream_name: self.delivery_stream_name,
             records: self.records,

@@ -67,10 +67,10 @@ impl LicenseSpecificationBuilder {
     /// Consumes the builder and constructs a [`LicenseSpecification`](crate::types::LicenseSpecification).
     /// This method will fail if any of the following fields are not set:
     /// - [`license_configuration_arn`](crate::types::builders::LicenseSpecificationBuilder::license_configuration_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::LicenseSpecification, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::LicenseSpecification, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::LicenseSpecification {
             license_configuration_arn: self.license_configuration_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "license_configuration_arn",
                     "license_configuration_arn was not specified but it is required when building LicenseSpecification",
                 )

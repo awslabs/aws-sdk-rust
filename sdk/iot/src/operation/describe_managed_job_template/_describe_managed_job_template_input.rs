@@ -67,7 +67,7 @@ impl DescribeManagedJobTemplateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_managed_job_template::DescribeManagedJobTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_managed_job_template::DescribeManagedJobTemplateInput {
             template_name: self.template_name,

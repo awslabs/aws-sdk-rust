@@ -59,7 +59,7 @@ where
 pub fn ser_maintenance_window_task_invocation_parameters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MaintenanceWindowTaskInvocationParameters,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.run_command {
         #[allow(unused_mut)]
         let mut object_2 = object.key("RunCommand").start_object();

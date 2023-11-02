@@ -88,7 +88,7 @@ impl PutUserStatusInputBuilder {
     /// Consumes the builder and constructs a [`PutUserStatusInput`](crate::operation::put_user_status::PutUserStatusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_user_status::PutUserStatusInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_user_status::PutUserStatusInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_user_status::PutUserStatusInput {
             user_id: self.user_id,
             instance_id: self.instance_id,

@@ -161,22 +161,22 @@ impl DataSourceConfigBuilder {
     /// - [`name`](crate::types::builders::DataSourceConfigBuilder::name)
     /// - [`s3_bucket`](crate::types::builders::DataSourceConfigBuilder::s3_bucket)
     /// - [`s3_keys`](crate::types::builders::DataSourceConfigBuilder::s3_keys)
-    pub fn build(self) -> ::std::result::Result<crate::types::DataSourceConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DataSourceConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DataSourceConfig {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building DataSourceConfig",
                 )
             })?,
             s3_bucket: self.s3_bucket.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "s3_bucket",
                     "s3_bucket was not specified but it is required when building DataSourceConfig",
                 )
             })?,
             s3_keys: self.s3_keys.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "s3_keys",
                     "s3_keys was not specified but it is required when building DataSourceConfig",
                 )

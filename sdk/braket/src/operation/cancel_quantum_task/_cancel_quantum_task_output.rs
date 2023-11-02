@@ -86,16 +86,16 @@ impl CancelQuantumTaskOutputBuilder {
     /// - [`cancellation_status`](crate::operation::cancel_quantum_task::builders::CancelQuantumTaskOutputBuilder::cancellation_status)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::cancel_quantum_task::CancelQuantumTaskOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::cancel_quantum_task::CancelQuantumTaskOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::cancel_quantum_task::CancelQuantumTaskOutput {
             quantum_task_arn: self.quantum_task_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "quantum_task_arn",
                     "quantum_task_arn was not specified but it is required when building CancelQuantumTaskOutput",
                 )
             })?,
             cancellation_status: self.cancellation_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "cancellation_status",
                     "cancellation_status was not specified but it is required when building CancelQuantumTaskOutput",
                 )

@@ -94,16 +94,16 @@ impl AttributeDefinitionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`attribute_name`](crate::types::builders::AttributeDefinitionBuilder::attribute_name)
     /// - [`attribute_type`](crate::types::builders::AttributeDefinitionBuilder::attribute_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::AttributeDefinition, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AttributeDefinition, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AttributeDefinition {
             attribute_name: self.attribute_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "attribute_name",
                     "attribute_name was not specified but it is required when building AttributeDefinition",
                 )
             })?,
             attribute_type: self.attribute_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "attribute_type",
                     "attribute_type was not specified but it is required when building AttributeDefinition",
                 )

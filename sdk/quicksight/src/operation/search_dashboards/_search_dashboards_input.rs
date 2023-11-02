@@ -115,7 +115,7 @@ impl SearchDashboardsInputBuilder {
     /// Consumes the builder and constructs a [`SearchDashboardsInput`](crate::operation::search_dashboards::SearchDashboardsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::search_dashboards::SearchDashboardsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::search_dashboards::SearchDashboardsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_dashboards::SearchDashboardsInput {
             aws_account_id: self.aws_account_id,
             filters: self.filters,

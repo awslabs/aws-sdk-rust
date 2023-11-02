@@ -141,10 +141,10 @@ impl ActivityScheduledEventDetailsBuilder {
     /// Consumes the builder and constructs a [`ActivityScheduledEventDetails`](crate::types::ActivityScheduledEventDetails).
     /// This method will fail if any of the following fields are not set:
     /// - [`resource`](crate::types::builders::ActivityScheduledEventDetailsBuilder::resource)
-    pub fn build(self) -> ::std::result::Result<crate::types::ActivityScheduledEventDetails, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ActivityScheduledEventDetails, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ActivityScheduledEventDetails {
             resource: self.resource.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource",
                     "resource was not specified but it is required when building ActivityScheduledEventDetails",
                 )

@@ -2,7 +2,7 @@
 pub fn ser_deregister_patch_baseline_for_patch_group_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::deregister_patch_baseline_for_patch_group::DeregisterPatchBaselineForPatchGroupInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.baseline_id {
         object.key("BaselineId").string(var_1.as_str());
     }

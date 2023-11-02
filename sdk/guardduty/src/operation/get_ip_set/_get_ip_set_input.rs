@@ -64,7 +64,7 @@ impl GetIpSetInputBuilder {
         &self.ip_set_id
     }
     /// Consumes the builder and constructs a [`GetIpSetInput`](crate::operation::get_ip_set::GetIpSetInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_ip_set::GetIpSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_ip_set::GetIpSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_ip_set::GetIpSetInput {
             detector_id: self.detector_id,
             ip_set_id: self.ip_set_id,

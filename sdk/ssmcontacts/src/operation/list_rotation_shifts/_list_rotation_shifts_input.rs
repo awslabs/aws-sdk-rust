@@ -129,7 +129,8 @@ impl ListRotationShiftsInputBuilder {
     /// Consumes the builder and constructs a [`ListRotationShiftsInput`](crate::operation::list_rotation_shifts::ListRotationShiftsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_rotation_shifts::ListRotationShiftsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_rotation_shifts::ListRotationShiftsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::list_rotation_shifts::ListRotationShiftsInput {
             rotation_id: self.rotation_id,
             start_time: self.start_time,

@@ -85,7 +85,7 @@ impl DeletePortfolioInputBuilder {
     /// Consumes the builder and constructs a [`DeletePortfolioInput`](crate::operation::delete_portfolio::DeletePortfolioInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_portfolio::DeletePortfolioInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_portfolio::DeletePortfolioInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_portfolio::DeletePortfolioInput {
             accept_language: self.accept_language,
             id: self.id,

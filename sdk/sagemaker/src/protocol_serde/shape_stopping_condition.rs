@@ -2,7 +2,7 @@
 pub fn ser_stopping_condition(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::StoppingCondition,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.max_runtime_in_seconds {
         object.key("MaxRuntimeInSeconds").number(
             #[allow(clippy::useless_conversion)]

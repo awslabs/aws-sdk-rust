@@ -339,65 +339,65 @@ impl GetProvisionedModelThroughputOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_provisioned_model_throughput::GetProvisionedModelThroughputOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_provisioned_model_throughput::GetProvisionedModelThroughputOutput {
             model_units: self.model_units.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "model_units",
                     "model_units was not specified but it is required when building GetProvisionedModelThroughputOutput",
                 )
             })?,
             desired_model_units: self.desired_model_units.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "desired_model_units",
                     "desired_model_units was not specified but it is required when building GetProvisionedModelThroughputOutput",
                 )
             })?,
             provisioned_model_name: self.provisioned_model_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "provisioned_model_name",
                     "provisioned_model_name was not specified but it is required when building GetProvisionedModelThroughputOutput",
                 )
             })?,
             provisioned_model_arn: self.provisioned_model_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "provisioned_model_arn",
                     "provisioned_model_arn was not specified but it is required when building GetProvisionedModelThroughputOutput",
                 )
             })?,
             model_arn: self.model_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "model_arn",
                     "model_arn was not specified but it is required when building GetProvisionedModelThroughputOutput",
                 )
             })?,
             desired_model_arn: self.desired_model_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "desired_model_arn",
                     "desired_model_arn was not specified but it is required when building GetProvisionedModelThroughputOutput",
                 )
             })?,
             foundation_model_arn: self.foundation_model_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "foundation_model_arn",
                     "foundation_model_arn was not specified but it is required when building GetProvisionedModelThroughputOutput",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building GetProvisionedModelThroughputOutput",
                 )
             })?,
             creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_time",
                     "creation_time was not specified but it is required when building GetProvisionedModelThroughputOutput",
                 )
             })?,
             last_modified_time: self.last_modified_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_modified_time",
                     "last_modified_time was not specified but it is required when building GetProvisionedModelThroughputOutput",
                 )

@@ -46,7 +46,7 @@ impl GetWirelessGatewayStatisticsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_wireless_gateway_statistics::GetWirelessGatewayStatisticsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_wireless_gateway_statistics::GetWirelessGatewayStatisticsInput {
             wireless_gateway_id: self.wireless_gateway_id,

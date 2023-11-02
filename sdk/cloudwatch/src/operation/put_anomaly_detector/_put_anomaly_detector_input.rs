@@ -292,7 +292,8 @@ impl PutAnomalyDetectorInputBuilder {
     /// Consumes the builder and constructs a [`PutAnomalyDetectorInput`](crate::operation::put_anomaly_detector::PutAnomalyDetectorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_anomaly_detector::PutAnomalyDetectorInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_anomaly_detector::PutAnomalyDetectorInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::put_anomaly_detector::PutAnomalyDetectorInput {
             namespace: self.namespace,
             metric_name: self.metric_name,

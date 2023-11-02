@@ -51,7 +51,7 @@ impl DescribeMatchmakingInputBuilder {
     /// Consumes the builder and constructs a [`DescribeMatchmakingInput`](crate::operation::describe_matchmaking::DescribeMatchmakingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_matchmaking::DescribeMatchmakingInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_matchmaking::DescribeMatchmakingInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_matchmaking::DescribeMatchmakingInput { ticket_ids: self.ticket_ids })
     }

@@ -89,11 +89,11 @@ impl ListAccessPreviewsOutputBuilder {
     /// - [`access_previews`](crate::operation::list_access_previews::builders::ListAccessPreviewsOutputBuilder::access_previews)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_access_previews::ListAccessPreviewsOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_access_previews::ListAccessPreviewsOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_access_previews::ListAccessPreviewsOutput {
             access_previews: self.access_previews.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "access_previews",
                     "access_previews was not specified but it is required when building ListAccessPreviewsOutput",
                 )

@@ -277,40 +277,40 @@ impl DistributionBuilder {
     /// - [`last_modified_time`](crate::types::builders::DistributionBuilder::last_modified_time)
     /// - [`in_progress_invalidation_batches`](crate::types::builders::DistributionBuilder::in_progress_invalidation_batches)
     /// - [`domain_name`](crate::types::builders::DistributionBuilder::domain_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::Distribution, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Distribution, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Distribution {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building Distribution",
                 )
             })?,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building Distribution",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building Distribution",
                 )
             })?,
             last_modified_time: self.last_modified_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_modified_time",
                     "last_modified_time was not specified but it is required when building Distribution",
                 )
             })?,
             in_progress_invalidation_batches: self.in_progress_invalidation_batches.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "in_progress_invalidation_batches",
                     "in_progress_invalidation_batches was not specified but it is required when building Distribution",
                 )
             })?,
             domain_name: self.domain_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "domain_name",
                     "domain_name was not specified but it is required when building Distribution",
                 )

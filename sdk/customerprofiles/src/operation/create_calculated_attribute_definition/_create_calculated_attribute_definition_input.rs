@@ -216,7 +216,7 @@ impl CreateCalculatedAttributeDefinitionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_calculated_attribute_definition::CreateCalculatedAttributeDefinitionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::create_calculated_attribute_definition::CreateCalculatedAttributeDefinitionInput {

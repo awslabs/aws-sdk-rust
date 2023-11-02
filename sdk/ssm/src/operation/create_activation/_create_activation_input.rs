@@ -251,7 +251,7 @@ impl CreateActivationInputBuilder {
     /// Consumes the builder and constructs a [`CreateActivationInput`](crate::operation::create_activation::CreateActivationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_activation::CreateActivationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_activation::CreateActivationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_activation::CreateActivationInput {
             description: self.description,
             default_instance_name: self.default_instance_name,

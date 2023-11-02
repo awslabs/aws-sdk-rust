@@ -2,7 +2,7 @@
 pub fn ser_kafka_cluster(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::KafkaCluster,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.apache_kafka_cluster {
         #[allow(unused_mut)]
         let mut object_2 = object.key("apacheKafkaCluster").start_object();

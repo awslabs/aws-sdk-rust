@@ -96,10 +96,10 @@ impl FrameworkControlBuilder {
     /// Consumes the builder and constructs a [`FrameworkControl`](crate::types::FrameworkControl).
     /// This method will fail if any of the following fields are not set:
     /// - [`control_name`](crate::types::builders::FrameworkControlBuilder::control_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::FrameworkControl, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::FrameworkControl, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FrameworkControl {
             control_name: self.control_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "control_name",
                     "control_name was not specified but it is required when building FrameworkControl",
                 )

@@ -73,7 +73,7 @@ impl UngroupResourcesInputBuilder {
     /// Consumes the builder and constructs a [`UngroupResourcesInput`](crate::operation::ungroup_resources::UngroupResourcesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::ungroup_resources::UngroupResourcesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::ungroup_resources::UngroupResourcesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::ungroup_resources::UngroupResourcesInput {
             group: self.group,
             resource_arns: self.resource_arns,

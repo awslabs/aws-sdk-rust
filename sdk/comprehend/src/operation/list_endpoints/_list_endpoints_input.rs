@@ -85,7 +85,7 @@ impl ListEndpointsInputBuilder {
     /// Consumes the builder and constructs a [`ListEndpointsInput`](crate::operation::list_endpoints::ListEndpointsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_endpoints::ListEndpointsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_endpoints::ListEndpointsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_endpoints::ListEndpointsInput {
             filter: self.filter,
             next_token: self.next_token,

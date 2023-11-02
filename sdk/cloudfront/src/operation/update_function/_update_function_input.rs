@@ -120,7 +120,7 @@ impl UpdateFunctionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateFunctionInput`](crate::operation::update_function::UpdateFunctionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_function::UpdateFunctionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_function::UpdateFunctionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_function::UpdateFunctionInput {
             name: self.name,
             if_match: self.if_match,

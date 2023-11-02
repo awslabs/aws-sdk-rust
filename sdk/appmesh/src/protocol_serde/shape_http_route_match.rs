@@ -2,7 +2,7 @@
 pub fn ser_http_route_match(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::HttpRouteMatch,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.prefix {
         object.key("prefix").string(var_1.as_str());
     }

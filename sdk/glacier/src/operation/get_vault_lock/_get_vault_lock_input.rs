@@ -72,7 +72,7 @@ impl GetVaultLockInputBuilder {
     /// Consumes the builder and constructs a [`GetVaultLockInput`](crate::operation::get_vault_lock::GetVaultLockInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_vault_lock::GetVaultLockInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_vault_lock::GetVaultLockInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_vault_lock::GetVaultLockInput {
             account_id: self.account_id,
             vault_name: self.vault_name,

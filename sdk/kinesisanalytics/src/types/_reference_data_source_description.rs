@@ -113,16 +113,16 @@ impl ReferenceDataSourceDescriptionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`reference_id`](crate::types::builders::ReferenceDataSourceDescriptionBuilder::reference_id)
     /// - [`table_name`](crate::types::builders::ReferenceDataSourceDescriptionBuilder::table_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::ReferenceDataSourceDescription, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ReferenceDataSourceDescription, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ReferenceDataSourceDescription {
             reference_id: self.reference_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "reference_id",
                     "reference_id was not specified but it is required when building ReferenceDataSourceDescription",
                 )
             })?,
             table_name: self.table_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "table_name",
                     "table_name was not specified but it is required when building ReferenceDataSourceDescription",
                 )

@@ -198,22 +198,22 @@ impl ImageSetPropertiesBuilder {
     /// - [`image_set_id`](crate::types::builders::ImageSetPropertiesBuilder::image_set_id)
     /// - [`version_id`](crate::types::builders::ImageSetPropertiesBuilder::version_id)
     /// - [`image_set_state`](crate::types::builders::ImageSetPropertiesBuilder::image_set_state)
-    pub fn build(self) -> ::std::result::Result<crate::types::ImageSetProperties, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ImageSetProperties, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ImageSetProperties {
             image_set_id: self.image_set_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "image_set_id",
                     "image_set_id was not specified but it is required when building ImageSetProperties",
                 )
             })?,
             version_id: self.version_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "version_id",
                     "version_id was not specified but it is required when building ImageSetProperties",
                 )
             })?,
             image_set_state: self.image_set_state.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "image_set_state",
                     "image_set_state was not specified but it is required when building ImageSetProperties",
                 )

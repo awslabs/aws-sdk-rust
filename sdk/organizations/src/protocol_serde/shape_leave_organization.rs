@@ -182,6 +182,6 @@ pub fn de_leave_organization_http_response(
 
 pub fn ser_leave_organization_input(
     _input: &crate::operation::leave_organization::LeaveOrganizationInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
-    Ok(::aws_smithy_http::body::SdkBody::from("{}"))
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+    Ok(::aws_smithy_types::body::SdkBody::from("{}"))
 }

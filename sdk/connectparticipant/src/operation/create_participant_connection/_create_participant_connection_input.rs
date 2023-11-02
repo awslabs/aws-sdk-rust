@@ -101,7 +101,7 @@ impl CreateParticipantConnectionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_participant_connection::CreateParticipantConnectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_participant_connection::CreateParticipantConnectionInput {
             r#type: self.r#type,

@@ -2,7 +2,7 @@
 pub fn ser_request_body_associated_resource_type_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RequestBodyAssociatedResourceTypeConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object
             .key("DefaultSizeInspectionLimit")

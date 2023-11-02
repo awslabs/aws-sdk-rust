@@ -202,7 +202,7 @@ impl CreateContactChannelInputBuilder {
     /// Consumes the builder and constructs a [`CreateContactChannelInput`](crate::operation::create_contact_channel::CreateContactChannelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_contact_channel::CreateContactChannelInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_contact_channel::CreateContactChannelInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_contact_channel::CreateContactChannelInput {
             contact_id: self.contact_id,

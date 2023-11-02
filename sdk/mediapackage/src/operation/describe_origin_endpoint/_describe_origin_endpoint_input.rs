@@ -44,8 +44,10 @@ impl DescribeOriginEndpointInputBuilder {
     /// Consumes the builder and constructs a [`DescribeOriginEndpointInput`](crate::operation::describe_origin_endpoint::DescribeOriginEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_origin_endpoint::DescribeOriginEndpointInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::describe_origin_endpoint::DescribeOriginEndpointInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::describe_origin_endpoint::DescribeOriginEndpointInput { id: self.id })
     }
 }

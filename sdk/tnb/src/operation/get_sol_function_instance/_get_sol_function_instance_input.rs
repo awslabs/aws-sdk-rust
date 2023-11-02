@@ -46,7 +46,7 @@ impl GetSolFunctionInstanceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_sol_function_instance::GetSolFunctionInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_sol_function_instance::GetSolFunctionInstanceInput {
             vnf_instance_id: self.vnf_instance_id,

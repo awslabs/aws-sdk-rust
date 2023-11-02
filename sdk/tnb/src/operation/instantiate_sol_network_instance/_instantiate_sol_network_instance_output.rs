@@ -101,11 +101,11 @@ impl InstantiateSolNetworkInstanceOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceOutput {
             ns_lcm_op_occ_id: self.ns_lcm_op_occ_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "ns_lcm_op_occ_id",
                     "ns_lcm_op_occ_id was not specified but it is required when building InstantiateSolNetworkInstanceOutput",
                 )

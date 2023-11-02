@@ -155,7 +155,7 @@ impl CreateTemplateSyncConfigInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_template_sync_config::CreateTemplateSyncConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_template_sync_config::CreateTemplateSyncConfigInput {
             template_name: self.template_name,

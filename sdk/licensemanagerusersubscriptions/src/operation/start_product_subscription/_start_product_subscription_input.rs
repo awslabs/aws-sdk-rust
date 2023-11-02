@@ -111,7 +111,7 @@ impl StartProductSubscriptionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_product_subscription::StartProductSubscriptionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_product_subscription::StartProductSubscriptionInput {
             username: self.username,

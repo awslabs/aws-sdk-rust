@@ -109,7 +109,8 @@ impl GenerateAccessLogsInputBuilder {
     /// Consumes the builder and constructs a [`GenerateAccessLogsInput`](crate::operation::generate_access_logs::GenerateAccessLogsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::generate_access_logs::GenerateAccessLogsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::generate_access_logs::GenerateAccessLogsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::generate_access_logs::GenerateAccessLogsInput {
             start_time: self.start_time,
             end_time: self.end_time,

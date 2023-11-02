@@ -242,22 +242,22 @@ impl DescribePackageOutputBuilder {
     /// - [`tags`](crate::operation::describe_package::builders::DescribePackageOutputBuilder::tags)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_package::DescribePackageOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_package::DescribePackageOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_package::DescribePackageOutput {
             package_id: self.package_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "package_id",
                     "package_id was not specified but it is required when building DescribePackageOutput",
                 )
             })?,
             package_name: self.package_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "package_name",
                     "package_name was not specified but it is required when building DescribePackageOutput",
                 )
             })?,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building DescribePackageOutput",
                 )
@@ -266,13 +266,13 @@ impl DescribePackageOutputBuilder {
             read_access_principal_arns: self.read_access_principal_arns,
             write_access_principal_arns: self.write_access_principal_arns,
             created_time: self.created_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_time",
                     "created_time was not specified but it is required when building DescribePackageOutput",
                 )
             })?,
             tags: self.tags.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "tags",
                     "tags was not specified but it is required when building DescribePackageOutput",
                 )

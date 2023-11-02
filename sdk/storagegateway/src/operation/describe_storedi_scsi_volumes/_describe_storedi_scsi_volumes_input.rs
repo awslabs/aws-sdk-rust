@@ -54,7 +54,7 @@ impl DescribeStorediScsiVolumesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_storedi_scsi_volumes::DescribeStorediScsiVolumesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_storedi_scsi_volumes::DescribeStorediScsiVolumesInput {
             volume_arns: self.volume_arns,

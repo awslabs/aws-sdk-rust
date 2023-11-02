@@ -89,11 +89,11 @@ impl ListCasesForContactOutputBuilder {
     /// - [`cases`](crate::operation::list_cases_for_contact::builders::ListCasesForContactOutputBuilder::cases)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_cases_for_contact::ListCasesForContactOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_cases_for_contact::ListCasesForContactOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_cases_for_contact::ListCasesForContactOutput {
             cases: self.cases.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "cases",
                     "cases was not specified but it is required when building ListCasesForContactOutput",
                 )

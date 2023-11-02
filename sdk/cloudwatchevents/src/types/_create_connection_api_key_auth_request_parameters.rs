@@ -80,16 +80,16 @@ impl CreateConnectionApiKeyAuthRequestParametersBuilder {
     /// - [`api_key_value`](crate::types::builders::CreateConnectionApiKeyAuthRequestParametersBuilder::api_key_value)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::CreateConnectionApiKeyAuthRequestParameters, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::CreateConnectionApiKeyAuthRequestParameters, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CreateConnectionApiKeyAuthRequestParameters {
             api_key_name: self.api_key_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "api_key_name",
                     "api_key_name was not specified but it is required when building CreateConnectionApiKeyAuthRequestParameters",
                 )
             })?,
             api_key_value: self.api_key_value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "api_key_value",
                     "api_key_value was not specified but it is required when building CreateConnectionApiKeyAuthRequestParameters",
                 )

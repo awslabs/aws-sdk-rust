@@ -2,7 +2,7 @@
 pub fn ser_magnetic_store_write_properties(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MagneticStoreWriteProperties,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("EnableMagneticStoreWrites").boolean(input.enable_magnetic_store_writes);
     }

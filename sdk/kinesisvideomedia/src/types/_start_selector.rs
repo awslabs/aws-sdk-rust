@@ -158,10 +158,10 @@ impl StartSelectorBuilder {
     /// Consumes the builder and constructs a [`StartSelector`](crate::types::StartSelector).
     /// This method will fail if any of the following fields are not set:
     /// - [`start_selector_type`](crate::types::builders::StartSelectorBuilder::start_selector_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::StartSelector, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::StartSelector, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::StartSelector {
             start_selector_type: self.start_selector_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "start_selector_type",
                     "start_selector_type was not specified but it is required when building StartSelector",
                 )

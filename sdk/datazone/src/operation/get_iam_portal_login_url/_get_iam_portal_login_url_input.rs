@@ -44,7 +44,7 @@ impl GetIamPortalLoginUrlInputBuilder {
     /// Consumes the builder and constructs a [`GetIamPortalLoginUrlInput`](crate::operation::get_iam_portal_login_url::GetIamPortalLoginUrlInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_iam_portal_login_url::GetIamPortalLoginUrlInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_iam_portal_login_url::GetIamPortalLoginUrlInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_iam_portal_login_url::GetIamPortalLoginUrlInput {
             domain_identifier: self.domain_identifier,

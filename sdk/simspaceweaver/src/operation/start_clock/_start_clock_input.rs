@@ -42,7 +42,7 @@ impl StartClockInputBuilder {
         &self.simulation
     }
     /// Consumes the builder and constructs a [`StartClockInput`](crate::operation::start_clock::StartClockInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::start_clock::StartClockInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_clock::StartClockInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_clock::StartClockInput { simulation: self.simulation })
     }
 }

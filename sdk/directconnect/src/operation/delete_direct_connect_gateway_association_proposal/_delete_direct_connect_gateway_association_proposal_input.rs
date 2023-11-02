@@ -48,7 +48,7 @@ impl DeleteDirectConnectGatewayAssociationProposalInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_direct_connect_gateway_association_proposal::DeleteDirectConnectGatewayAssociationProposalInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_direct_connect_gateway_association_proposal::DeleteDirectConnectGatewayAssociationProposalInput {

@@ -115,7 +115,7 @@ impl CreateFindingAggregatorInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_finding_aggregator::CreateFindingAggregatorInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_finding_aggregator::CreateFindingAggregatorInput {
             region_linking_mode: self.region_linking_mode,

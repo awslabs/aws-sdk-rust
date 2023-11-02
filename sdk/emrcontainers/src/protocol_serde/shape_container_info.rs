@@ -2,7 +2,7 @@
 pub fn ser_container_info(
     object_2: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ContainerInfo,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::ContainerInfo::EksInfo(inner) => {
             #[allow(unused_mut)]
@@ -11,7 +11,7 @@ pub fn ser_container_info(
             object_1.finish();
         }
         crate::types::ContainerInfo::Unknown => {
-            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant("ContainerInfo"))
+            return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("ContainerInfo"))
         }
     }
     Ok(())
@@ -30,12 +30,17 @@ where
             match tokens.next().transpose()? {
                 Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                 Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                    let key = key.to_unescaped()?;
+                    if key == "__type" {
+                        ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                        continue;
+                    }
                     if variant.is_some() {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
                             "encountered mixed variants in union",
                         ));
                     }
-                    variant = match key.to_unescaped()?.as_ref() {
+                    variant = match key.as_ref() {
                         "eksInfo" => Some(crate::types::ContainerInfo::EksInfo(
                             crate::protocol_serde::shape_eks_info::de_eks_info(tokens)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'eksInfo' cannot be null")

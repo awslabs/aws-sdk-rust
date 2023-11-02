@@ -2,7 +2,7 @@
 pub fn ser_list_domains_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_domains::ListDomainsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.fleet_arn {
         object.key("FleetArn").string(var_1.as_str());
     }

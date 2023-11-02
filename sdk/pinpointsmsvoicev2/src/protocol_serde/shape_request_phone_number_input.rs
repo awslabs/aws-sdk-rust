@@ -2,7 +2,7 @@
 pub fn ser_request_phone_number_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::request_phone_number::RequestPhoneNumberInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.iso_country_code {
         object.key("IsoCountryCode").string(var_1.as_str());
     }

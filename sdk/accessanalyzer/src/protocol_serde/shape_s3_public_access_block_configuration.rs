@@ -2,7 +2,7 @@
 pub fn ser_s3_public_access_block_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::S3PublicAccessBlockConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("ignorePublicAcls").boolean(input.ignore_public_acls);
     }

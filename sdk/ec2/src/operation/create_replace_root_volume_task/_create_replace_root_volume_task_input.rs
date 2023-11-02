@@ -190,7 +190,7 @@ impl CreateReplaceRootVolumeTaskInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_replace_root_volume_task::CreateReplaceRootVolumeTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_replace_root_volume_task::CreateReplaceRootVolumeTaskInput {
             instance_id: self.instance_id,

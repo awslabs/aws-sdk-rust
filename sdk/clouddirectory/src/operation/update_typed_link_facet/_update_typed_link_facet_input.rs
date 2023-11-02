@@ -124,7 +124,7 @@ impl UpdateTypedLinkFacetInputBuilder {
     /// Consumes the builder and constructs a [`UpdateTypedLinkFacetInput`](crate::operation::update_typed_link_facet::UpdateTypedLinkFacetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_typed_link_facet::UpdateTypedLinkFacetInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_typed_link_facet::UpdateTypedLinkFacetInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_typed_link_facet::UpdateTypedLinkFacetInput {
             schema_arn: self.schema_arn,

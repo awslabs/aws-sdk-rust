@@ -2,7 +2,7 @@
 pub fn ser_virtual_service_backend(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VirtualServiceBackend,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("virtualServiceName").string(input.virtual_service_name.as_str());
     }

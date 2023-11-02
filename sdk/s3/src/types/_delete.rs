@@ -72,10 +72,10 @@ impl DeleteBuilder {
     /// Consumes the builder and constructs a [`Delete`](crate::types::Delete).
     /// This method will fail if any of the following fields are not set:
     /// - [`objects`](crate::types::builders::DeleteBuilder::objects)
-    pub fn build(self) -> ::std::result::Result<crate::types::Delete, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Delete, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Delete {
             objects: self.objects.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "objects",
                     "objects was not specified but it is required when building Delete",
                 )

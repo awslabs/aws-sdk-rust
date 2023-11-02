@@ -305,11 +305,11 @@ impl InputTransformerBuilder {
     /// Consumes the builder and constructs a [`InputTransformer`](crate::types::InputTransformer).
     /// This method will fail if any of the following fields are not set:
     /// - [`input_template`](crate::types::builders::InputTransformerBuilder::input_template)
-    pub fn build(self) -> ::std::result::Result<crate::types::InputTransformer, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::InputTransformer, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::InputTransformer {
             input_paths_map: self.input_paths_map,
             input_template: self.input_template.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "input_template",
                     "input_template was not specified but it is required when building InputTransformer",
                 )

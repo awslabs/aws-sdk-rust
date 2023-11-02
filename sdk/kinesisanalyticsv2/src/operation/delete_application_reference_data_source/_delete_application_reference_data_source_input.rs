@@ -90,7 +90,7 @@ impl DeleteApplicationReferenceDataSourceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_application_reference_data_source::DeleteApplicationReferenceDataSourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_application_reference_data_source::DeleteApplicationReferenceDataSourceInput {

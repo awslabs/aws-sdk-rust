@@ -159,7 +159,7 @@ impl CreateDbParameterGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_db_parameter_group::CreateDbParameterGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_db_parameter_group::CreateDbParameterGroupInput {
             db_parameter_group_name: self.db_parameter_group_name,

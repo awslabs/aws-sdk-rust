@@ -46,10 +46,10 @@ impl GreengrassV2Builder {
     /// Consumes the builder and constructs a [`GreengrassV2`](crate::types::GreengrassV2).
     /// This method will fail if any of the following fields are not set:
     /// - [`core_device_thing_name`](crate::types::builders::GreengrassV2Builder::core_device_thing_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::GreengrassV2, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::GreengrassV2, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::GreengrassV2 {
             core_device_thing_name: self.core_device_thing_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "core_device_thing_name",
                     "core_device_thing_name was not specified but it is required when building GreengrassV2",
                 )

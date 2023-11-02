@@ -47,7 +47,7 @@ impl DeleteConfigurationRecorderInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_configuration_recorder::DeleteConfigurationRecorderInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_configuration_recorder::DeleteConfigurationRecorderInput {
             configuration_recorder_name: self.configuration_recorder_name,

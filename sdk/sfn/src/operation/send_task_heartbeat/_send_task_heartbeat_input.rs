@@ -44,7 +44,7 @@ impl SendTaskHeartbeatInputBuilder {
     /// Consumes the builder and constructs a [`SendTaskHeartbeatInput`](crate::operation::send_task_heartbeat::SendTaskHeartbeatInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::send_task_heartbeat::SendTaskHeartbeatInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::send_task_heartbeat::SendTaskHeartbeatInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::send_task_heartbeat::SendTaskHeartbeatInput { task_token: self.task_token })
     }
 }

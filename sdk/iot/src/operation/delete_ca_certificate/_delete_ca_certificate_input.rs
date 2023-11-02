@@ -45,7 +45,7 @@ impl DeleteCaCertificateInputBuilder {
     /// Consumes the builder and constructs a [`DeleteCaCertificateInput`](crate::operation::delete_ca_certificate::DeleteCaCertificateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_ca_certificate::DeleteCaCertificateInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_ca_certificate::DeleteCaCertificateInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_ca_certificate::DeleteCaCertificateInput {
             certificate_id: self.certificate_id,

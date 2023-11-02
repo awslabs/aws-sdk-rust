@@ -53,7 +53,7 @@ impl DescribeTimeBasedAutoScalingInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_time_based_auto_scaling::DescribeTimeBasedAutoScalingInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_time_based_auto_scaling::DescribeTimeBasedAutoScalingInput {
             instance_ids: self.instance_ids,

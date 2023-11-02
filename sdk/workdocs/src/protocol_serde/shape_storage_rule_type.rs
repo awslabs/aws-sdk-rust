@@ -2,7 +2,7 @@
 pub fn ser_storage_rule_type(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::StorageRuleType,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.storage_allocated_in_bytes {
         object.key("StorageAllocatedInBytes").number(
             #[allow(clippy::useless_conversion)]

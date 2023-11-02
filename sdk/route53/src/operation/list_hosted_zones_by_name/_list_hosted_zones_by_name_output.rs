@@ -210,11 +210,11 @@ impl ListHostedZonesByNameOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_hosted_zones_by_name::ListHostedZonesByNameOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_hosted_zones_by_name::ListHostedZonesByNameOutput {
             hosted_zones: self.hosted_zones.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "hosted_zones",
                     "hosted_zones was not specified but it is required when building ListHostedZonesByNameOutput",
                 )
@@ -225,7 +225,7 @@ impl ListHostedZonesByNameOutputBuilder {
             next_dns_name: self.next_dns_name,
             next_hosted_zone_id: self.next_hosted_zone_id,
             max_items: self.max_items.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "max_items",
                     "max_items was not specified but it is required when building ListHostedZonesByNameOutput",
                 )

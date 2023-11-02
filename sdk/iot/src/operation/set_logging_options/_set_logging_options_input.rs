@@ -45,7 +45,7 @@ impl SetLoggingOptionsInputBuilder {
     /// Consumes the builder and constructs a [`SetLoggingOptionsInput`](crate::operation::set_logging_options::SetLoggingOptionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::set_logging_options::SetLoggingOptionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::set_logging_options::SetLoggingOptionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::set_logging_options::SetLoggingOptionsInput {
             logging_options_payload: self.logging_options_payload,
         })

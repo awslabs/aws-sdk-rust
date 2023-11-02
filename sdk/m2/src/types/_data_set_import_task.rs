@@ -91,16 +91,16 @@ impl DataSetImportTaskBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`task_id`](crate::types::builders::DataSetImportTaskBuilder::task_id)
     /// - [`status`](crate::types::builders::DataSetImportTaskBuilder::status)
-    pub fn build(self) -> ::std::result::Result<crate::types::DataSetImportTask, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DataSetImportTask, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DataSetImportTask {
             task_id: self.task_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "task_id",
                     "task_id was not specified but it is required when building DataSetImportTask",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building DataSetImportTask",
                 )

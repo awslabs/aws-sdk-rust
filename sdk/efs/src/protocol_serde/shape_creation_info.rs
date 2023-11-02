@@ -58,7 +58,7 @@ where
 pub fn ser_creation_info(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CreationInfo,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("OwnerUid").number(
             #[allow(clippy::useless_conversion)]

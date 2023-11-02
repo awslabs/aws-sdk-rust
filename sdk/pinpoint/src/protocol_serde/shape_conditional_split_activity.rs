@@ -2,7 +2,7 @@
 pub fn ser_conditional_split_activity(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ConditionalSplitActivity,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.condition {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Condition").start_object();

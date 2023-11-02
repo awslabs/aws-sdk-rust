@@ -2,7 +2,7 @@
 pub fn ser_nex_guard_file_marker_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::NexGuardFileMarkerSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.license {
         object.key("license").string(var_1.as_str());
     }

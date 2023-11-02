@@ -118,7 +118,7 @@ impl ExportMetadataModelAssessmentInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::export_metadata_model_assessment::ExportMetadataModelAssessmentInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::export_metadata_model_assessment::ExportMetadataModelAssessmentInput {
             migration_project_identifier: self.migration_project_identifier,

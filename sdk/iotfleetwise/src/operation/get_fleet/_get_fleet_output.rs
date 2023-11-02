@@ -176,35 +176,35 @@ impl GetFleetOutputBuilder {
     /// - [`signal_catalog_arn`](crate::operation::get_fleet::builders::GetFleetOutputBuilder::signal_catalog_arn)
     /// - [`creation_time`](crate::operation::get_fleet::builders::GetFleetOutputBuilder::creation_time)
     /// - [`last_modification_time`](crate::operation::get_fleet::builders::GetFleetOutputBuilder::last_modification_time)
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_fleet::GetFleetOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_fleet::GetFleetOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_fleet::GetFleetOutput {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building GetFleetOutput",
                 )
             })?,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building GetFleetOutput",
                 )
             })?,
             description: self.description,
             signal_catalog_arn: self.signal_catalog_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "signal_catalog_arn",
                     "signal_catalog_arn was not specified but it is required when building GetFleetOutput",
                 )
             })?,
             creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_time",
                     "creation_time was not specified but it is required when building GetFleetOutput",
                 )
             })?,
             last_modification_time: self.last_modification_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_modification_time",
                     "last_modification_time was not specified but it is required when building GetFleetOutput",
                 )

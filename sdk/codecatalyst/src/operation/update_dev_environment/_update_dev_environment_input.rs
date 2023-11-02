@@ -221,7 +221,7 @@ impl UpdateDevEnvironmentInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDevEnvironmentInput`](crate::operation::update_dev_environment::UpdateDevEnvironmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_dev_environment::UpdateDevEnvironmentInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_dev_environment::UpdateDevEnvironmentInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_dev_environment::UpdateDevEnvironmentInput {
             space_name: self.space_name,

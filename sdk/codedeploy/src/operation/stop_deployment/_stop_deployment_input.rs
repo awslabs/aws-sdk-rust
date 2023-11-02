@@ -66,7 +66,7 @@ impl StopDeploymentInputBuilder {
     /// Consumes the builder and constructs a [`StopDeploymentInput`](crate::operation::stop_deployment::StopDeploymentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_deployment::StopDeploymentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::stop_deployment::StopDeploymentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_deployment::StopDeploymentInput {
             deployment_id: self.deployment_id,
             auto_rollback_enabled: self.auto_rollback_enabled,

@@ -87,7 +87,7 @@ impl CancelStatementInputBuilder {
     /// Consumes the builder and constructs a [`CancelStatementInput`](crate::operation::cancel_statement::CancelStatementInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::cancel_statement::CancelStatementInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::cancel_statement::CancelStatementInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::cancel_statement::CancelStatementInput {
             session_id: self.session_id,
             id: self.id,

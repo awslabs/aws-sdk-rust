@@ -72,7 +72,7 @@ impl ListAppInstancesInputBuilder {
     /// Consumes the builder and constructs a [`ListAppInstancesInput`](crate::operation::list_app_instances::ListAppInstancesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_app_instances::ListAppInstancesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_app_instances::ListAppInstancesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_app_instances::ListAppInstancesInput {
             max_results: self.max_results,
             next_token: self.next_token,

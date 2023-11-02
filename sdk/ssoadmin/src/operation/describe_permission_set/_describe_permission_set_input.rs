@@ -66,7 +66,7 @@ impl DescribePermissionSetInputBuilder {
     /// Consumes the builder and constructs a [`DescribePermissionSetInput`](crate::operation::describe_permission_set::DescribePermissionSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_permission_set::DescribePermissionSetInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_permission_set::DescribePermissionSetInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_permission_set::DescribePermissionSetInput {
             instance_arn: self.instance_arn,

@@ -58,7 +58,7 @@ where
 pub fn ser_transit_gateway_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TransitGatewayConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("transitGatewayID").string(input.transit_gateway_id.as_str());
     }

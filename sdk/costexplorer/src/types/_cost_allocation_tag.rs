@@ -134,22 +134,22 @@ impl CostAllocationTagBuilder {
     /// - [`tag_key`](crate::types::builders::CostAllocationTagBuilder::tag_key)
     /// - [`r#type`](crate::types::builders::CostAllocationTagBuilder::r#type)
     /// - [`status`](crate::types::builders::CostAllocationTagBuilder::status)
-    pub fn build(self) -> ::std::result::Result<crate::types::CostAllocationTag, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CostAllocationTag, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CostAllocationTag {
             tag_key: self.tag_key.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "tag_key",
                     "tag_key was not specified but it is required when building CostAllocationTag",
                 )
             })?,
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building CostAllocationTag",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building CostAllocationTag",
                 )

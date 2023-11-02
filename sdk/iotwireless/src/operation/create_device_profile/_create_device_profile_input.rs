@@ -135,7 +135,7 @@ impl CreateDeviceProfileInputBuilder {
     /// Consumes the builder and constructs a [`CreateDeviceProfileInput`](crate::operation::create_device_profile::CreateDeviceProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_device_profile::CreateDeviceProfileInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_device_profile::CreateDeviceProfileInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_device_profile::CreateDeviceProfileInput {
             name: self.name,

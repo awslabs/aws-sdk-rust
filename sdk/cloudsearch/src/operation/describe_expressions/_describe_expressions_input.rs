@@ -95,7 +95,7 @@ impl DescribeExpressionsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeExpressionsInput`](crate::operation::describe_expressions::DescribeExpressionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_expressions::DescribeExpressionsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_expressions::DescribeExpressionsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_expressions::DescribeExpressionsInput {
             domain_name: self.domain_name,

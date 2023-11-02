@@ -208,7 +208,7 @@ impl DescribeInstanceEventWindowsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_instance_event_windows::DescribeInstanceEventWindowsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_instance_event_windows::DescribeInstanceEventWindowsInput {
             dry_run: self.dry_run,

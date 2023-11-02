@@ -174,7 +174,7 @@ impl CreateNodeInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateNodeInput`](crate::operation::create_node::CreateNodeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_node::CreateNodeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_node::CreateNodeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_node::CreateNodeInput {
             client_request_token: self.client_request_token,
             network_id: self.network_id,

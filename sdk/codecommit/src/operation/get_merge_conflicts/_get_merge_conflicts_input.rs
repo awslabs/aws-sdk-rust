@@ -194,7 +194,7 @@ impl GetMergeConflictsInputBuilder {
     /// Consumes the builder and constructs a [`GetMergeConflictsInput`](crate::operation::get_merge_conflicts::GetMergeConflictsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_merge_conflicts::GetMergeConflictsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_merge_conflicts::GetMergeConflictsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_merge_conflicts::GetMergeConflictsInput {
             repository_name: self.repository_name,
             destination_commit_specifier: self.destination_commit_specifier,

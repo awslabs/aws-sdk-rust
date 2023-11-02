@@ -177,7 +177,9 @@ impl ListEntitiesInputBuilder {
         &self.ownership_type
     }
     /// Consumes the builder and constructs a [`ListEntitiesInput`](crate::operation::list_entities::ListEntitiesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_entities::ListEntitiesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_entities::ListEntitiesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_entities::ListEntitiesInput {
             catalog: self.catalog,
             entity_type: self.entity_type,

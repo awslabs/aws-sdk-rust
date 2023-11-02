@@ -46,7 +46,7 @@ impl DescribeEventsDetectionJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_events_detection_job::DescribeEventsDetectionJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_events_detection_job::DescribeEventsDetectionJobInput { job_id: self.job_id })
     }

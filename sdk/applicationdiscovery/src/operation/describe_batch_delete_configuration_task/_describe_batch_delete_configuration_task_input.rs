@@ -46,7 +46,7 @@ impl DescribeBatchDeleteConfigurationTaskInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_batch_delete_configuration_task::DescribeBatchDeleteConfigurationTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_batch_delete_configuration_task::DescribeBatchDeleteConfigurationTaskInput { task_id: self.task_id },

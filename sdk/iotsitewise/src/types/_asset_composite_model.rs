@@ -141,23 +141,23 @@ impl AssetCompositeModelBuilder {
     /// - [`name`](crate::types::builders::AssetCompositeModelBuilder::name)
     /// - [`r#type`](crate::types::builders::AssetCompositeModelBuilder::r#type)
     /// - [`properties`](crate::types::builders::AssetCompositeModelBuilder::properties)
-    pub fn build(self) -> ::std::result::Result<crate::types::AssetCompositeModel, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AssetCompositeModel, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AssetCompositeModel {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building AssetCompositeModel",
                 )
             })?,
             description: self.description,
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building AssetCompositeModel",
                 )
             })?,
             properties: self.properties.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "properties",
                     "properties was not specified but it is required when building AssetCompositeModel",
                 )

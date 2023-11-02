@@ -2,7 +2,7 @@
 pub fn ser_project_source_version(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ProjectSourceVersion,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("sourceIdentifier").string(input.source_identifier.as_str());
     }

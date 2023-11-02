@@ -2,7 +2,7 @@
 pub fn ser_aws_sns_topic_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsSnsTopicDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.kms_master_key_id {
         object.key("KmsMasterKeyId").string(var_1.as_str());
     }

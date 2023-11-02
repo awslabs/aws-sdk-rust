@@ -94,7 +94,7 @@ impl GetCoverageStatisticsInputBuilder {
     /// Consumes the builder and constructs a [`GetCoverageStatisticsInput`](crate::operation::get_coverage_statistics::GetCoverageStatisticsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_coverage_statistics::GetCoverageStatisticsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_coverage_statistics::GetCoverageStatisticsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_coverage_statistics::GetCoverageStatisticsInput {
             detector_id: self.detector_id,

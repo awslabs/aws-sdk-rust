@@ -251,22 +251,22 @@ impl ConformancePackDetailBuilder {
     /// - [`conformance_pack_name`](crate::types::builders::ConformancePackDetailBuilder::conformance_pack_name)
     /// - [`conformance_pack_arn`](crate::types::builders::ConformancePackDetailBuilder::conformance_pack_arn)
     /// - [`conformance_pack_id`](crate::types::builders::ConformancePackDetailBuilder::conformance_pack_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::ConformancePackDetail, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ConformancePackDetail, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ConformancePackDetail {
             conformance_pack_name: self.conformance_pack_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "conformance_pack_name",
                     "conformance_pack_name was not specified but it is required when building ConformancePackDetail",
                 )
             })?,
             conformance_pack_arn: self.conformance_pack_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "conformance_pack_arn",
                     "conformance_pack_arn was not specified but it is required when building ConformancePackDetail",
                 )
             })?,
             conformance_pack_id: self.conformance_pack_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "conformance_pack_id",
                     "conformance_pack_id was not specified but it is required when building ConformancePackDetail",
                 )

@@ -2,7 +2,7 @@
 pub fn ser_chime_sdk_meeting_live_connector_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ChimeSdkMeetingLiveConnectorConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Arn").string(input.arn.as_str());
     }

@@ -92,22 +92,22 @@ impl LookbackWindowBuilder {
     /// - [`column_name`](crate::types::builders::LookbackWindowBuilder::column_name)
     /// - [`size`](crate::types::builders::LookbackWindowBuilder::size)
     /// - [`size_unit`](crate::types::builders::LookbackWindowBuilder::size_unit)
-    pub fn build(self) -> ::std::result::Result<crate::types::LookbackWindow, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::LookbackWindow, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::LookbackWindow {
             column_name: self.column_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "column_name",
                     "column_name was not specified but it is required when building LookbackWindow",
                 )
             })?,
             size: self.size.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "size",
                     "size was not specified but it is required when building LookbackWindow",
                 )
             })?,
             size_unit: self.size_unit.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "size_unit",
                     "size_unit was not specified but it is required when building LookbackWindow",
                 )

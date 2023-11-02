@@ -99,7 +99,7 @@ impl SetLoadBalancerPoliciesForBackendServerInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_load_balancer_policies_for_backend_server::SetLoadBalancerPoliciesForBackendServerInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::set_load_balancer_policies_for_backend_server::SetLoadBalancerPoliciesForBackendServerInput {

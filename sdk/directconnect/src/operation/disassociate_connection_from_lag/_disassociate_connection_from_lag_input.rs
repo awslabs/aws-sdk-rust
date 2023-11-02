@@ -68,7 +68,7 @@ impl DisassociateConnectionFromLagInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_connection_from_lag::DisassociateConnectionFromLagInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disassociate_connection_from_lag::DisassociateConnectionFromLagInput {
             connection_id: self.connection_id,

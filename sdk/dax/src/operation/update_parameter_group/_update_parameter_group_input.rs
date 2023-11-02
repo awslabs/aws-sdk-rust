@@ -83,7 +83,7 @@ impl UpdateParameterGroupInputBuilder {
     /// Consumes the builder and constructs a [`UpdateParameterGroupInput`](crate::operation::update_parameter_group::UpdateParameterGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_parameter_group::UpdateParameterGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_parameter_group::UpdateParameterGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_parameter_group::UpdateParameterGroupInput {
             parameter_group_name: self.parameter_group_name,

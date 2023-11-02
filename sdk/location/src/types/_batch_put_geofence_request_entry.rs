@@ -126,10 +126,10 @@ impl BatchPutGeofenceRequestEntryBuilder {
     /// Consumes the builder and constructs a [`BatchPutGeofenceRequestEntry`](crate::types::BatchPutGeofenceRequestEntry).
     /// This method will fail if any of the following fields are not set:
     /// - [`geofence_id`](crate::types::builders::BatchPutGeofenceRequestEntryBuilder::geofence_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::BatchPutGeofenceRequestEntry, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::BatchPutGeofenceRequestEntry, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::BatchPutGeofenceRequestEntry {
             geofence_id: self.geofence_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "geofence_id",
                     "geofence_id was not specified but it is required when building BatchPutGeofenceRequestEntry",
                 )

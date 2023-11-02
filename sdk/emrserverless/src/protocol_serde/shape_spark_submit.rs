@@ -2,7 +2,7 @@
 pub fn ser_spark_submit(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SparkSubmit,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("entryPoint").string(input.entry_point.as_str());
     }

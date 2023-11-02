@@ -89,11 +89,11 @@ impl ListVirtualGatewaysOutputBuilder {
     /// - [`virtual_gateways`](crate::operation::list_virtual_gateways::builders::ListVirtualGatewaysOutputBuilder::virtual_gateways)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_virtual_gateways::ListVirtualGatewaysOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_virtual_gateways::ListVirtualGatewaysOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_virtual_gateways::ListVirtualGatewaysOutput {
             virtual_gateways: self.virtual_gateways.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "virtual_gateways",
                     "virtual_gateways was not specified but it is required when building ListVirtualGatewaysOutput",
                 )

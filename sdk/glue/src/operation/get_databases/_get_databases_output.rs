@@ -89,10 +89,10 @@ impl GetDatabasesOutputBuilder {
     /// - [`database_list`](crate::operation::get_databases::builders::GetDatabasesOutputBuilder::database_list)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_databases::GetDatabasesOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_databases::GetDatabasesOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_databases::GetDatabasesOutput {
             database_list: self.database_list.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "database_list",
                     "database_list was not specified but it is required when building GetDatabasesOutput",
                 )

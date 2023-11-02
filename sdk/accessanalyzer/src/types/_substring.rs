@@ -68,16 +68,16 @@ impl SubstringBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`start`](crate::types::builders::SubstringBuilder::start)
     /// - [`length`](crate::types::builders::SubstringBuilder::length)
-    pub fn build(self) -> ::std::result::Result<crate::types::Substring, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Substring, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Substring {
             start: self.start.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "start",
                     "start was not specified but it is required when building Substring",
                 )
             })?,
             length: self.length.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "length",
                     "length was not specified but it is required when building Substring",
                 )

@@ -269,7 +269,7 @@ impl ModifySubnetAttributeInputBuilder {
     /// Consumes the builder and constructs a [`ModifySubnetAttributeInput`](crate::operation::modify_subnet_attribute::ModifySubnetAttributeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::modify_subnet_attribute::ModifySubnetAttributeInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::modify_subnet_attribute::ModifySubnetAttributeInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::modify_subnet_attribute::ModifySubnetAttributeInput {
             assign_ipv6_address_on_creation: self.assign_ipv6_address_on_creation,

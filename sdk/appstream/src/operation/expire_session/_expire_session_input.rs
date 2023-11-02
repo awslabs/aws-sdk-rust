@@ -44,7 +44,7 @@ impl ExpireSessionInputBuilder {
     /// Consumes the builder and constructs a [`ExpireSessionInput`](crate::operation::expire_session::ExpireSessionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::expire_session::ExpireSessionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::expire_session::ExpireSessionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::expire_session::ExpireSessionInput { session_id: self.session_id })
     }
 }

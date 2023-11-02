@@ -70,7 +70,7 @@ impl GetPermissionInputBuilder {
     /// Consumes the builder and constructs a [`GetPermissionInput`](crate::operation::get_permission::GetPermissionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_permission::GetPermissionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_permission::GetPermissionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_permission::GetPermissionInput {
             permission_arn: self.permission_arn,
             permission_version: self.permission_version,

@@ -2,7 +2,7 @@
 pub fn ser_license_conversion_context(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LicenseConversionContext,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.usage_operation {
         object.key("UsageOperation").string(var_1.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_update_relational_database_parameters_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_relational_database_parameters::UpdateRelationalDatabaseParametersInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.relational_database_name {
         object.key("relationalDatabaseName").string(var_1.as_str());
     }

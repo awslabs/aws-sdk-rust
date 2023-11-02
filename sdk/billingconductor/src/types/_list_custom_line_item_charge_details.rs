@@ -116,12 +116,12 @@ impl ListCustomLineItemChargeDetailsBuilder {
     /// Consumes the builder and constructs a [`ListCustomLineItemChargeDetails`](crate::types::ListCustomLineItemChargeDetails).
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::ListCustomLineItemChargeDetailsBuilder::r#type)
-    pub fn build(self) -> ::std::result::Result<crate::types::ListCustomLineItemChargeDetails, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ListCustomLineItemChargeDetails, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ListCustomLineItemChargeDetails {
             flat: self.flat,
             percentage: self.percentage,
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building ListCustomLineItemChargeDetails",
                 )

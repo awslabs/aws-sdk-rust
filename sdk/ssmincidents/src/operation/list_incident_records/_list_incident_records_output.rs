@@ -89,11 +89,11 @@ impl ListIncidentRecordsOutputBuilder {
     /// - [`incident_record_summaries`](crate::operation::list_incident_records::builders::ListIncidentRecordsOutputBuilder::incident_record_summaries)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_incident_records::ListIncidentRecordsOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_incident_records::ListIncidentRecordsOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_incident_records::ListIncidentRecordsOutput {
             incident_record_summaries: self.incident_record_summaries.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "incident_record_summaries",
                     "incident_record_summaries was not specified but it is required when building ListIncidentRecordsOutput",
                 )

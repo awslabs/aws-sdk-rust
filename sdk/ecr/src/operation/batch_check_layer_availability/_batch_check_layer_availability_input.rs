@@ -96,7 +96,7 @@ impl BatchCheckLayerAvailabilityInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_check_layer_availability::BatchCheckLayerAvailabilityInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::batch_check_layer_availability::BatchCheckLayerAvailabilityInput {
             registry_id: self.registry_id,

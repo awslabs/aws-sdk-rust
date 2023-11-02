@@ -130,7 +130,7 @@ impl DescribePullRequestEventsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_pull_request_events::DescribePullRequestEventsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_pull_request_events::DescribePullRequestEventsInput {
             pull_request_id: self.pull_request_id,

@@ -64,7 +64,7 @@ impl ExportKeyInputBuilder {
         &self.export_key_identifier
     }
     /// Consumes the builder and constructs a [`ExportKeyInput`](crate::operation::export_key::ExportKeyInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::export_key::ExportKeyInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::export_key::ExportKeyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::export_key::ExportKeyInput {
             key_material: self.key_material,
             export_key_identifier: self.export_key_identifier,

@@ -65,7 +65,7 @@ impl DeleteSecurityConfigInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSecurityConfigInput`](crate::operation::delete_security_config::DeleteSecurityConfigInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_security_config::DeleteSecurityConfigInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_security_config::DeleteSecurityConfigInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_security_config::DeleteSecurityConfigInput {
             id: self.id,

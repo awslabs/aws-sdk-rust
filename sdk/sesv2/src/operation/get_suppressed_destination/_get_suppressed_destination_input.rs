@@ -47,7 +47,7 @@ impl GetSuppressedDestinationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_suppressed_destination::GetSuppressedDestinationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_suppressed_destination::GetSuppressedDestinationInput {
             email_address: self.email_address,

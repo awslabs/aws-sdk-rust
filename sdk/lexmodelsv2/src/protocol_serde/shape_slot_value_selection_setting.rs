@@ -55,7 +55,7 @@ where
 pub fn ser_slot_value_selection_setting(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SlotValueSelectionSetting,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("resolutionStrategy").string(input.resolution_strategy.as_str());
     }

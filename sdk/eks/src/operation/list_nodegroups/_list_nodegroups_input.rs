@@ -86,7 +86,7 @@ impl ListNodegroupsInputBuilder {
     /// Consumes the builder and constructs a [`ListNodegroupsInput`](crate::operation::list_nodegroups::ListNodegroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_nodegroups::ListNodegroupsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_nodegroups::ListNodegroupsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_nodegroups::ListNodegroupsInput {
             cluster_name: self.cluster_name,
             max_results: self.max_results,

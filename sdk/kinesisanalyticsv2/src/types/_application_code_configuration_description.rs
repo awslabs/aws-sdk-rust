@@ -68,10 +68,10 @@ impl ApplicationCodeConfigurationDescriptionBuilder {
     /// - [`code_content_type`](crate::types::builders::ApplicationCodeConfigurationDescriptionBuilder::code_content_type)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::ApplicationCodeConfigurationDescription, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::ApplicationCodeConfigurationDescription, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ApplicationCodeConfigurationDescription {
             code_content_type: self.code_content_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "code_content_type",
                     "code_content_type was not specified but it is required when building ApplicationCodeConfigurationDescription",
                 )

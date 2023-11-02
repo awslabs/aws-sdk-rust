@@ -256,11 +256,11 @@ impl SqlInjectionMatchTupleBuilder {
     /// Consumes the builder and constructs a [`SqlInjectionMatchTuple`](crate::types::SqlInjectionMatchTuple).
     /// This method will fail if any of the following fields are not set:
     /// - [`text_transformation`](crate::types::builders::SqlInjectionMatchTupleBuilder::text_transformation)
-    pub fn build(self) -> ::std::result::Result<crate::types::SqlInjectionMatchTuple, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SqlInjectionMatchTuple, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SqlInjectionMatchTuple {
             field_to_match: self.field_to_match,
             text_transformation: self.text_transformation.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "text_transformation",
                     "text_transformation was not specified but it is required when building SqlInjectionMatchTuple",
                 )

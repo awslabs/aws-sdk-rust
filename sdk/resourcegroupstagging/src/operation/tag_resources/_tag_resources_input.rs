@@ -81,7 +81,9 @@ impl TagResourcesInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`TagResourcesInput`](crate::operation::tag_resources::TagResourcesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::tag_resources::TagResourcesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::tag_resources::TagResourcesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::tag_resources::TagResourcesInput {
             resource_arn_list: self.resource_arn_list,
             tags: self.tags,

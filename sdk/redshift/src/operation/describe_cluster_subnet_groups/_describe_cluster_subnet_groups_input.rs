@@ -156,7 +156,7 @@ impl DescribeClusterSubnetGroupsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_cluster_subnet_groups::DescribeClusterSubnetGroupsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_cluster_subnet_groups::DescribeClusterSubnetGroupsInput {
             cluster_subnet_group_name: self.cluster_subnet_group_name,

@@ -88,7 +88,7 @@ impl ListMultiRegionAccessPointsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_multi_region_access_points::ListMultiRegionAccessPointsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_multi_region_access_points::ListMultiRegionAccessPointsInput {
             account_id: self.account_id,

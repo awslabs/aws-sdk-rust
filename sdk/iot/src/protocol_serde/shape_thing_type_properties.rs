@@ -2,7 +2,7 @@
 pub fn ser_thing_type_properties(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ThingTypeProperties,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.thing_type_description {
         object.key("thingTypeDescription").string(var_1.as_str());
     }

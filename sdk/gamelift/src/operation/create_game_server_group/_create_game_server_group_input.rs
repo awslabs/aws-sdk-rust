@@ -317,7 +317,7 @@ impl CreateGameServerGroupInputBuilder {
     /// Consumes the builder and constructs a [`CreateGameServerGroupInput`](crate::operation::create_game_server_group::CreateGameServerGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_game_server_group::CreateGameServerGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_game_server_group::CreateGameServerGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_game_server_group::CreateGameServerGroupInput {
             game_server_group_name: self.game_server_group_name,

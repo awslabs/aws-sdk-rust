@@ -2,7 +2,7 @@
 pub fn ser_cartesian_coordinates(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CartesianCoordinates,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("x").number(
             #[allow(clippy::useless_conversion)]

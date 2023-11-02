@@ -109,7 +109,7 @@ impl DescribeStaleSecurityGroupsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_stale_security_groups::DescribeStaleSecurityGroupsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_stale_security_groups::DescribeStaleSecurityGroupsInput {
             dry_run: self.dry_run,

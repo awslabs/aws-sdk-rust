@@ -228,43 +228,45 @@ impl GetReferenceImportJobOutputBuilder {
     /// - [`sources`](crate::operation::get_reference_import_job::builders::GetReferenceImportJobOutputBuilder::sources)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_reference_import_job::GetReferenceImportJobOutput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::get_reference_import_job::GetReferenceImportJobOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::get_reference_import_job::GetReferenceImportJobOutput {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building GetReferenceImportJobOutput",
                 )
             })?,
             reference_store_id: self.reference_store_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "reference_store_id",
                     "reference_store_id was not specified but it is required when building GetReferenceImportJobOutput",
                 )
             })?,
             role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role_arn",
                     "role_arn was not specified but it is required when building GetReferenceImportJobOutput",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building GetReferenceImportJobOutput",
                 )
             })?,
             status_message: self.status_message,
             creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_time",
                     "creation_time was not specified but it is required when building GetReferenceImportJobOutput",
                 )
             })?,
             completion_time: self.completion_time,
             sources: self.sources.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "sources",
                     "sources was not specified but it is required when building GetReferenceImportJobOutput",
                 )

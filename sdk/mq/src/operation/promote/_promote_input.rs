@@ -65,7 +65,7 @@ impl PromoteInputBuilder {
         &self.mode
     }
     /// Consumes the builder and constructs a [`PromoteInput`](crate::operation::promote::PromoteInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::promote::PromoteInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::promote::PromoteInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::promote::PromoteInput {
             broker_id: self.broker_id,
             mode: self.mode,

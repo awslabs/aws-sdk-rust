@@ -2,7 +2,7 @@
 pub fn ser_delete_conference_provider_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_conference_provider::DeleteConferenceProviderInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.conference_provider_arn {
         object.key("ConferenceProviderArn").string(var_1.as_str());
     }

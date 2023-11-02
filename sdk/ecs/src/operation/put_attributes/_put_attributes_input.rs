@@ -72,7 +72,7 @@ impl PutAttributesInputBuilder {
     /// Consumes the builder and constructs a [`PutAttributesInput`](crate::operation::put_attributes::PutAttributesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_attributes::PutAttributesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_attributes::PutAttributesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_attributes::PutAttributesInput {
             cluster: self.cluster,
             attributes: self.attributes,

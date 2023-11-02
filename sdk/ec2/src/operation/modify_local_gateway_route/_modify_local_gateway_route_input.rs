@@ -151,7 +151,7 @@ impl ModifyLocalGatewayRouteInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_local_gateway_route::ModifyLocalGatewayRouteInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::modify_local_gateway_route::ModifyLocalGatewayRouteInput {
             destination_cidr_block: self.destination_cidr_block,

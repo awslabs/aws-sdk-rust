@@ -214,37 +214,37 @@ impl UpdateIdMappingWorkflowOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_id_mapping_workflow::UpdateIdMappingWorkflowOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_id_mapping_workflow::UpdateIdMappingWorkflowOutput {
             workflow_name: self.workflow_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "workflow_name",
                     "workflow_name was not specified but it is required when building UpdateIdMappingWorkflowOutput",
                 )
             })?,
             workflow_arn: self.workflow_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "workflow_arn",
                     "workflow_arn was not specified but it is required when building UpdateIdMappingWorkflowOutput",
                 )
             })?,
             description: self.description,
             input_source_config: self.input_source_config.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "input_source_config",
                     "input_source_config was not specified but it is required when building UpdateIdMappingWorkflowOutput",
                 )
             })?,
             output_source_config: self.output_source_config.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "output_source_config",
                     "output_source_config was not specified but it is required when building UpdateIdMappingWorkflowOutput",
                 )
             })?,
             id_mapping_techniques: self.id_mapping_techniques,
             role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role_arn",
                     "role_arn was not specified but it is required when building UpdateIdMappingWorkflowOutput",
                 )

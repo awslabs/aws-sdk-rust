@@ -137,29 +137,29 @@ impl StopDevEnvironmentSessionOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_dev_environment_session::StopDevEnvironmentSessionOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::stop_dev_environment_session::StopDevEnvironmentSessionOutput {
             space_name: self.space_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "space_name",
                     "space_name was not specified but it is required when building StopDevEnvironmentSessionOutput",
                 )
             })?,
             project_name: self.project_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "project_name",
                     "project_name was not specified but it is required when building StopDevEnvironmentSessionOutput",
                 )
             })?,
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building StopDevEnvironmentSessionOutput",
                 )
             })?,
             session_id: self.session_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "session_id",
                     "session_id was not specified but it is required when building StopDevEnvironmentSessionOutput",
                 )

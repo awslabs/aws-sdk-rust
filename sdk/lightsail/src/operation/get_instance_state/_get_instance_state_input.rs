@@ -44,7 +44,7 @@ impl GetInstanceStateInputBuilder {
     /// Consumes the builder and constructs a [`GetInstanceStateInput`](crate::operation::get_instance_state::GetInstanceStateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_instance_state::GetInstanceStateInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_instance_state::GetInstanceStateInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_instance_state::GetInstanceStateInput {
             instance_name: self.instance_name,
         })

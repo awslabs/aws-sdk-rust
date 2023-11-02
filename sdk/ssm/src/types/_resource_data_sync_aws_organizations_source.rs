@@ -80,10 +80,10 @@ impl ResourceDataSyncAwsOrganizationsSourceBuilder {
     /// - [`organization_source_type`](crate::types::builders::ResourceDataSyncAwsOrganizationsSourceBuilder::organization_source_type)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::ResourceDataSyncAwsOrganizationsSource, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::ResourceDataSyncAwsOrganizationsSource, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ResourceDataSyncAwsOrganizationsSource {
             organization_source_type: self.organization_source_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "organization_source_type",
                     "organization_source_type was not specified but it is required when building ResourceDataSyncAwsOrganizationsSource",
                 )

@@ -2,7 +2,7 @@
 pub fn ser_global_secondary_index(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GlobalSecondaryIndex,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("IndexName").string(input.index_name.as_str());
     }

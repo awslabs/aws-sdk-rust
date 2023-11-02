@@ -70,16 +70,16 @@ impl CloudWatchLogGroupLogDestinationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`cloud_watch_log_group_arn`](crate::types::builders::CloudWatchLogGroupLogDestinationBuilder::cloud_watch_log_group_arn)
     /// - [`log_prefix`](crate::types::builders::CloudWatchLogGroupLogDestinationBuilder::log_prefix)
-    pub fn build(self) -> ::std::result::Result<crate::types::CloudWatchLogGroupLogDestination, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CloudWatchLogGroupLogDestination, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CloudWatchLogGroupLogDestination {
             cloud_watch_log_group_arn: self.cloud_watch_log_group_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "cloud_watch_log_group_arn",
                     "cloud_watch_log_group_arn was not specified but it is required when building CloudWatchLogGroupLogDestination",
                 )
             })?,
             log_prefix: self.log_prefix.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "log_prefix",
                     "log_prefix was not specified but it is required when building CloudWatchLogGroupLogDestination",
                 )

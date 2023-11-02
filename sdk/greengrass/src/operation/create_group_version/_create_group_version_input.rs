@@ -212,7 +212,8 @@ impl CreateGroupVersionInputBuilder {
     /// Consumes the builder and constructs a [`CreateGroupVersionInput`](crate::operation::create_group_version::CreateGroupVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_group_version::CreateGroupVersionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_group_version::CreateGroupVersionInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_group_version::CreateGroupVersionInput {
             amzn_client_token: self.amzn_client_token,
             connector_definition_version_arn: self.connector_definition_version_arn,

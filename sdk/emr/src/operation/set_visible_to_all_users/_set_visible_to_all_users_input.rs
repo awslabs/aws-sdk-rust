@@ -74,7 +74,7 @@ impl SetVisibleToAllUsersInputBuilder {
     /// Consumes the builder and constructs a [`SetVisibleToAllUsersInput`](crate::operation::set_visible_to_all_users::SetVisibleToAllUsersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::set_visible_to_all_users::SetVisibleToAllUsersInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::set_visible_to_all_users::SetVisibleToAllUsersInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::set_visible_to_all_users::SetVisibleToAllUsersInput {
             job_flow_ids: self.job_flow_ids,

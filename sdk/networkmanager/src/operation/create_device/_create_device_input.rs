@@ -275,7 +275,9 @@ impl CreateDeviceInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateDeviceInput`](crate::operation::create_device::CreateDeviceInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_device::CreateDeviceInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_device::CreateDeviceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_device::CreateDeviceInput {
             global_network_id: self.global_network_id,
             aws_location: self.aws_location,

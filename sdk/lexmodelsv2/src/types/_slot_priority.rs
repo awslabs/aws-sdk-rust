@@ -69,16 +69,16 @@ impl SlotPriorityBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`priority`](crate::types::builders::SlotPriorityBuilder::priority)
     /// - [`slot_id`](crate::types::builders::SlotPriorityBuilder::slot_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::SlotPriority, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SlotPriority, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SlotPriority {
             priority: self.priority.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "priority",
                     "priority was not specified but it is required when building SlotPriority",
                 )
             })?,
             slot_id: self.slot_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "slot_id",
                     "slot_id was not specified but it is required when building SlotPriority",
                 )

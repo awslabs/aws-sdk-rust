@@ -51,7 +51,7 @@ impl BatchGetProjectsInputBuilder {
     /// Consumes the builder and constructs a [`BatchGetProjectsInput`](crate::operation::batch_get_projects::BatchGetProjectsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_get_projects::BatchGetProjectsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::batch_get_projects::BatchGetProjectsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::batch_get_projects::BatchGetProjectsInput { names: self.names })
     }
 }

@@ -91,17 +91,17 @@ impl TopicBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`subject`](crate::types::builders::TopicBuilder::subject)
     /// - [`role`](crate::types::builders::TopicBuilder::role)
-    pub fn build(self) -> ::std::result::Result<crate::types::Topic, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Topic, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Topic {
             subject: self.subject.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "subject",
                     "subject was not specified but it is required when building Topic",
                 )
             })?,
             resource: self.resource,
             role: self.role.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role",
                     "role was not specified but it is required when building Topic",
                 )

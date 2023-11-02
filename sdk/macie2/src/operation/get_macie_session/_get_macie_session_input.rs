@@ -18,7 +18,7 @@ impl GetMacieSessionInputBuilder {
     /// Consumes the builder and constructs a [`GetMacieSessionInput`](crate::operation::get_macie_session::GetMacieSessionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_macie_session::GetMacieSessionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_macie_session::GetMacieSessionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_macie_session::GetMacieSessionInput {})
     }
 }

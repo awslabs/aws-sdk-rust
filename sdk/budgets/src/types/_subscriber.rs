@@ -87,16 +87,16 @@ impl SubscriberBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`subscription_type`](crate::types::builders::SubscriberBuilder::subscription_type)
     /// - [`address`](crate::types::builders::SubscriberBuilder::address)
-    pub fn build(self) -> ::std::result::Result<crate::types::Subscriber, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Subscriber, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Subscriber {
             subscription_type: self.subscription_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "subscription_type",
                     "subscription_type was not specified but it is required when building Subscriber",
                 )
             })?,
             address: self.address.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "address",
                     "address was not specified but it is required when building Subscriber",
                 )

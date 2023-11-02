@@ -2,7 +2,7 @@
 pub fn ser_resource_server_scope_type(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ResourceServerScopeType,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("ScopeName").string(input.scope_name.as_str());
     }

@@ -159,12 +159,12 @@ impl ListTrafficPolicyInstancesByHostedZoneOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_traffic_policy_instances_by_hosted_zone::ListTrafficPolicyInstancesByHostedZoneOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_traffic_policy_instances_by_hosted_zone::ListTrafficPolicyInstancesByHostedZoneOutput {
                 traffic_policy_instances: self.traffic_policy_instances.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
                         "traffic_policy_instances",
                         "traffic_policy_instances was not specified but it is required when building ListTrafficPolicyInstancesByHostedZoneOutput",
                     )
@@ -173,7 +173,7 @@ impl ListTrafficPolicyInstancesByHostedZoneOutputBuilder {
                 traffic_policy_instance_type_marker: self.traffic_policy_instance_type_marker,
                 is_truncated: self.is_truncated.unwrap_or_default(),
                 max_items: self.max_items.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
                         "max_items",
                         "max_items was not specified but it is required when building ListTrafficPolicyInstancesByHostedZoneOutput",
                     )

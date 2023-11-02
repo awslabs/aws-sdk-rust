@@ -51,10 +51,10 @@ impl ProjectOperationBuilder {
     /// Consumes the builder and constructs a [`ProjectOperation`](crate::types::ProjectOperation).
     /// This method will fail if any of the following fields are not set:
     /// - [`projected_columns`](crate::types::builders::ProjectOperationBuilder::projected_columns)
-    pub fn build(self) -> ::std::result::Result<crate::types::ProjectOperation, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ProjectOperation, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ProjectOperation {
             projected_columns: self.projected_columns.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "projected_columns",
                     "projected_columns was not specified but it is required when building ProjectOperation",
                 )

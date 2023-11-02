@@ -97,16 +97,16 @@ impl KeyGroupConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::KeyGroupConfigBuilder::name)
     /// - [`items`](crate::types::builders::KeyGroupConfigBuilder::items)
-    pub fn build(self) -> ::std::result::Result<crate::types::KeyGroupConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::KeyGroupConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::KeyGroupConfig {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building KeyGroupConfig",
                 )
             })?,
             items: self.items.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "items",
                     "items was not specified but it is required when building KeyGroupConfig",
                 )

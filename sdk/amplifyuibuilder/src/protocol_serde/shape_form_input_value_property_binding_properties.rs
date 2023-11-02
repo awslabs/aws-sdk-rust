@@ -2,7 +2,7 @@
 pub fn ser_form_input_value_property_binding_properties(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FormInputValuePropertyBindingProperties,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("property").string(input.property.as_str());
     }

@@ -68,16 +68,16 @@ impl S3PublicAccessBlockConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`ignore_public_acls`](crate::types::builders::S3PublicAccessBlockConfigurationBuilder::ignore_public_acls)
     /// - [`restrict_public_buckets`](crate::types::builders::S3PublicAccessBlockConfigurationBuilder::restrict_public_buckets)
-    pub fn build(self) -> ::std::result::Result<crate::types::S3PublicAccessBlockConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::S3PublicAccessBlockConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::S3PublicAccessBlockConfiguration {
             ignore_public_acls: self.ignore_public_acls.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "ignore_public_acls",
                     "ignore_public_acls was not specified but it is required when building S3PublicAccessBlockConfiguration",
                 )
             })?,
             restrict_public_buckets: self.restrict_public_buckets.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "restrict_public_buckets",
                     "restrict_public_buckets was not specified but it is required when building S3PublicAccessBlockConfiguration",
                 )

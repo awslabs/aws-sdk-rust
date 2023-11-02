@@ -44,7 +44,7 @@ impl DescribeAlgorithmInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAlgorithmInput`](crate::operation::describe_algorithm::DescribeAlgorithmInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_algorithm::DescribeAlgorithmInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_algorithm::DescribeAlgorithmInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_algorithm::DescribeAlgorithmInput {
             algorithm_name: self.algorithm_name,
         })

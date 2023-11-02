@@ -2,7 +2,7 @@
 pub fn ser_acl_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AclConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("AllowedGroupsColumnName").string(input.allowed_groups_column_name.as_str());
     }

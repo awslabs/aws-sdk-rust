@@ -116,7 +116,7 @@ impl BatchUpdatePartitionInputBuilder {
     /// Consumes the builder and constructs a [`BatchUpdatePartitionInput`](crate::operation::batch_update_partition::BatchUpdatePartitionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_update_partition::BatchUpdatePartitionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::batch_update_partition::BatchUpdatePartitionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::batch_update_partition::BatchUpdatePartitionInput {
             catalog_id: self.catalog_id,

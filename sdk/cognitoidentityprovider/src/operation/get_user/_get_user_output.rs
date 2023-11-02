@@ -187,16 +187,16 @@ impl GetUserOutputBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`username`](crate::operation::get_user::builders::GetUserOutputBuilder::username)
     /// - [`user_attributes`](crate::operation::get_user::builders::GetUserOutputBuilder::user_attributes)
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_user::GetUserOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_user::GetUserOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_user::GetUserOutput {
             username: self.username.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "username",
                     "username was not specified but it is required when building GetUserOutput",
                 )
             })?,
             user_attributes: self.user_attributes.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "user_attributes",
                     "user_attributes was not specified but it is required when building GetUserOutput",
                 )

@@ -134,29 +134,29 @@ impl ExecuteBudgetActionOutputBuilder {
     /// - [`execution_type`](crate::operation::execute_budget_action::builders::ExecuteBudgetActionOutputBuilder::execution_type)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::execute_budget_action::ExecuteBudgetActionOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::execute_budget_action::ExecuteBudgetActionOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::execute_budget_action::ExecuteBudgetActionOutput {
             account_id: self.account_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "account_id",
                     "account_id was not specified but it is required when building ExecuteBudgetActionOutput",
                 )
             })?,
             budget_name: self.budget_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "budget_name",
                     "budget_name was not specified but it is required when building ExecuteBudgetActionOutput",
                 )
             })?,
             action_id: self.action_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "action_id",
                     "action_id was not specified but it is required when building ExecuteBudgetActionOutput",
                 )
             })?,
             execution_type: self.execution_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "execution_type",
                     "execution_type was not specified but it is required when building ExecuteBudgetActionOutput",
                 )

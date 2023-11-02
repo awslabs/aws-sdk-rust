@@ -2,7 +2,7 @@
 pub fn ser_aws_managed_rules_bot_control_rule_set(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsManagedRulesBotControlRuleSet,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("InspectionLevel").string(input.inspection_level.as_str());
     }

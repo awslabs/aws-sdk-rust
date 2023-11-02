@@ -98,7 +98,9 @@ impl RefreshCacheInputBuilder {
         &self.recursive
     }
     /// Consumes the builder and constructs a [`RefreshCacheInput`](crate::operation::refresh_cache::RefreshCacheInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::refresh_cache::RefreshCacheInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::refresh_cache::RefreshCacheInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::refresh_cache::RefreshCacheInput {
             file_share_arn: self.file_share_arn,
             folder_list: self.folder_list,

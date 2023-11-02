@@ -143,10 +143,10 @@ impl CapacitySpecificationSummaryBuilder {
     /// Consumes the builder and constructs a [`CapacitySpecificationSummary`](crate::types::CapacitySpecificationSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`throughput_mode`](crate::types::builders::CapacitySpecificationSummaryBuilder::throughput_mode)
-    pub fn build(self) -> ::std::result::Result<crate::types::CapacitySpecificationSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CapacitySpecificationSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CapacitySpecificationSummary {
             throughput_mode: self.throughput_mode.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "throughput_mode",
                     "throughput_mode was not specified but it is required when building CapacitySpecificationSummary",
                 )

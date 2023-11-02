@@ -92,7 +92,9 @@ impl CreateConfigInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateConfigInput`](crate::operation::create_config::CreateConfigInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_config::CreateConfigInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_config::CreateConfigInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_config::CreateConfigInput {
             name: self.name,
             config_data: self.config_data,

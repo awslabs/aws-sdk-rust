@@ -75,16 +75,16 @@ impl DetectorModelDefinitionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`states`](crate::types::builders::DetectorModelDefinitionBuilder::states)
     /// - [`initial_state_name`](crate::types::builders::DetectorModelDefinitionBuilder::initial_state_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::DetectorModelDefinition, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DetectorModelDefinition, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DetectorModelDefinition {
             states: self.states.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "states",
                     "states was not specified but it is required when building DetectorModelDefinition",
                 )
             })?,
             initial_state_name: self.initial_state_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "initial_state_name",
                     "initial_state_name was not specified but it is required when building DetectorModelDefinition",
                 )

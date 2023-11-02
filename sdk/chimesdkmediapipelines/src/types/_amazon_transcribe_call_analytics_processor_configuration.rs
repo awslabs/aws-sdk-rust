@@ -417,11 +417,11 @@ impl AmazonTranscribeCallAnalyticsProcessorConfigurationBuilder {
     /// - [`language_code`](crate::types::builders::AmazonTranscribeCallAnalyticsProcessorConfigurationBuilder::language_code)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::AmazonTranscribeCallAnalyticsProcessorConfiguration, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::types::AmazonTranscribeCallAnalyticsProcessorConfiguration, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::types::AmazonTranscribeCallAnalyticsProcessorConfiguration {
             language_code: self.language_code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "language_code",
                     "language_code was not specified but it is required when building AmazonTranscribeCallAnalyticsProcessorConfiguration",
                 )

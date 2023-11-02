@@ -3,7 +3,7 @@
 pub fn ser_remove_ipam_operating_region(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::RemoveIpamOperatingRegion,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("RegionName");
     if let Some(var_2) = &input.region_name {

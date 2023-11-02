@@ -81,7 +81,7 @@ impl CreateInputSecurityGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_input_security_group::CreateInputSecurityGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_input_security_group::CreateInputSecurityGroupInput {
             tags: self.tags,

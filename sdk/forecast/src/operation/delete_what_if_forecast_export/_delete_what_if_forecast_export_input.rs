@@ -46,7 +46,7 @@ impl DeleteWhatIfForecastExportInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_what_if_forecast_export::DeleteWhatIfForecastExportInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_what_if_forecast_export::DeleteWhatIfForecastExportInput {
             what_if_forecast_export_arn: self.what_if_forecast_export_arn,

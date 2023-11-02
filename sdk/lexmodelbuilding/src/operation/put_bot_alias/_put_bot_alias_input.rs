@@ -188,7 +188,7 @@ impl PutBotAliasInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`PutBotAliasInput`](crate::operation::put_bot_alias::PutBotAliasInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_bot_alias::PutBotAliasInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_bot_alias::PutBotAliasInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_bot_alias::PutBotAliasInput {
             name: self.name,
             description: self.description,

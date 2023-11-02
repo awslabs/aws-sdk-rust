@@ -268,10 +268,10 @@ impl JournalKinesisStreamDescriptionBuilder {
     /// - [`stream_id`](crate::types::builders::JournalKinesisStreamDescriptionBuilder::stream_id)
     /// - [`status`](crate::types::builders::JournalKinesisStreamDescriptionBuilder::status)
     /// - [`stream_name`](crate::types::builders::JournalKinesisStreamDescriptionBuilder::stream_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::JournalKinesisStreamDescription, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::JournalKinesisStreamDescription, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::JournalKinesisStreamDescription {
             ledger_name: self.ledger_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "ledger_name",
                     "ledger_name was not specified but it is required when building JournalKinesisStreamDescription",
                 )
@@ -280,20 +280,20 @@ impl JournalKinesisStreamDescriptionBuilder {
             inclusive_start_time: self.inclusive_start_time,
             exclusive_end_time: self.exclusive_end_time,
             role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role_arn",
                     "role_arn was not specified but it is required when building JournalKinesisStreamDescription",
                 )
             })?,
             stream_id: self.stream_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "stream_id",
                     "stream_id was not specified but it is required when building JournalKinesisStreamDescription",
                 )
             })?,
             arn: self.arn,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building JournalKinesisStreamDescription",
                 )
@@ -301,7 +301,7 @@ impl JournalKinesisStreamDescriptionBuilder {
             kinesis_configuration: self.kinesis_configuration,
             error_cause: self.error_cause,
             stream_name: self.stream_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "stream_name",
                     "stream_name was not specified but it is required when building JournalKinesisStreamDescription",
                 )

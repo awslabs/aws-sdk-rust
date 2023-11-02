@@ -2,7 +2,7 @@
 pub fn ser_anchor_date_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AnchorDateConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.anchor_option {
         object.key("AnchorOption").string(var_1.as_str());
     }

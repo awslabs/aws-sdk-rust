@@ -2,7 +2,7 @@
 pub fn ser_resource_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ResourceDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.aws_auto_scaling_auto_scaling_group {
         #[allow(unused_mut)]
         let mut object_2 = object.key("AwsAutoScalingAutoScalingGroup").start_object();

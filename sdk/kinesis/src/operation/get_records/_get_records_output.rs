@@ -138,10 +138,10 @@ impl GetRecordsOutputBuilder {
     /// Consumes the builder and constructs a [`GetRecordsOutput`](crate::operation::get_records::GetRecordsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`records`](crate::operation::get_records::builders::GetRecordsOutputBuilder::records)
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_records::GetRecordsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_records::GetRecordsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_records::GetRecordsOutput {
             records: self.records.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "records",
                     "records was not specified but it is required when building GetRecordsOutput",
                 )

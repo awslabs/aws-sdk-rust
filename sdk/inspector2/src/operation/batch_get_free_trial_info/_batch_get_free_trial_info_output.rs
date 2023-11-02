@@ -99,17 +99,17 @@ impl BatchGetFreeTrialInfoOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoOutput {
             accounts: self.accounts.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "accounts",
                     "accounts was not specified but it is required when building BatchGetFreeTrialInfoOutput",
                 )
             })?,
             failed_accounts: self.failed_accounts.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "failed_accounts",
                     "failed_accounts was not specified but it is required when building BatchGetFreeTrialInfoOutput",
                 )

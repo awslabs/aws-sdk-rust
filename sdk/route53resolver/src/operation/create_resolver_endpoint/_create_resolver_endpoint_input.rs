@@ -257,8 +257,10 @@ impl CreateResolverEndpointInputBuilder {
     /// Consumes the builder and constructs a [`CreateResolverEndpointInput`](crate::operation::create_resolver_endpoint::CreateResolverEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_resolver_endpoint::CreateResolverEndpointInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::create_resolver_endpoint::CreateResolverEndpointInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::create_resolver_endpoint::CreateResolverEndpointInput {
             creator_request_id: self.creator_request_id,
             name: self.name,

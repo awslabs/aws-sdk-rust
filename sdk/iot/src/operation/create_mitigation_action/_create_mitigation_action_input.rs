@@ -117,8 +117,10 @@ impl CreateMitigationActionInputBuilder {
     /// Consumes the builder and constructs a [`CreateMitigationActionInput`](crate::operation::create_mitigation_action::CreateMitigationActionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_mitigation_action::CreateMitigationActionInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::create_mitigation_action::CreateMitigationActionInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::create_mitigation_action::CreateMitigationActionInput {
             action_name: self.action_name,
             role_arn: self.role_arn,

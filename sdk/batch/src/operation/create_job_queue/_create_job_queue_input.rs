@@ -175,7 +175,7 @@ impl CreateJobQueueInputBuilder {
     /// Consumes the builder and constructs a [`CreateJobQueueInput`](crate::operation::create_job_queue::CreateJobQueueInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_job_queue::CreateJobQueueInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_job_queue::CreateJobQueueInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_job_queue::CreateJobQueueInput {
             job_queue_name: self.job_queue_name,
             state: self.state,

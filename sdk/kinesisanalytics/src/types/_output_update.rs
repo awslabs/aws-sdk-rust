@@ -151,10 +151,10 @@ impl OutputUpdateBuilder {
     /// Consumes the builder and constructs a [`OutputUpdate`](crate::types::OutputUpdate).
     /// This method will fail if any of the following fields are not set:
     /// - [`output_id`](crate::types::builders::OutputUpdateBuilder::output_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::OutputUpdate, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::OutputUpdate, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::OutputUpdate {
             output_id: self.output_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "output_id",
                     "output_id was not specified but it is required when building OutputUpdate",
                 )

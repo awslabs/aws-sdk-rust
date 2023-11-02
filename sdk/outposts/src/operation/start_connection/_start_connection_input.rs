@@ -110,7 +110,7 @@ impl StartConnectionInputBuilder {
     /// Consumes the builder and constructs a [`StartConnectionInput`](crate::operation::start_connection::StartConnectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_connection::StartConnectionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_connection::StartConnectionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_connection::StartConnectionInput {
             device_serial_number: self.device_serial_number,
             asset_id: self.asset_id,

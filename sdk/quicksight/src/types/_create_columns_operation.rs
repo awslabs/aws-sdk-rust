@@ -51,10 +51,10 @@ impl CreateColumnsOperationBuilder {
     /// Consumes the builder and constructs a [`CreateColumnsOperation`](crate::types::CreateColumnsOperation).
     /// This method will fail if any of the following fields are not set:
     /// - [`columns`](crate::types::builders::CreateColumnsOperationBuilder::columns)
-    pub fn build(self) -> ::std::result::Result<crate::types::CreateColumnsOperation, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CreateColumnsOperation, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CreateColumnsOperation {
             columns: self.columns.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "columns",
                     "columns was not specified but it is required when building CreateColumnsOperation",
                 )

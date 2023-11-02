@@ -106,7 +106,7 @@ impl ListPricingRulesInputBuilder {
     /// Consumes the builder and constructs a [`ListPricingRulesInput`](crate::operation::list_pricing_rules::ListPricingRulesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_pricing_rules::ListPricingRulesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_pricing_rules::ListPricingRulesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_pricing_rules::ListPricingRulesInput {
             billing_period: self.billing_period,
             filters: self.filters,

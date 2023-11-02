@@ -42,7 +42,7 @@ impl GetDiskInputBuilder {
         &self.disk_name
     }
     /// Consumes the builder and constructs a [`GetDiskInput`](crate::operation::get_disk::GetDiskInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_disk::GetDiskInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_disk::GetDiskInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_disk::GetDiskInput { disk_name: self.disk_name })
     }
 }

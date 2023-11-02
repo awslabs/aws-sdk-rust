@@ -107,7 +107,7 @@ impl CreateFormInputBuilder {
         &self.form_to_create
     }
     /// Consumes the builder and constructs a [`CreateFormInput`](crate::operation::create_form::CreateFormInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_form::CreateFormInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_form::CreateFormInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_form::CreateFormInput {
             app_id: self.app_id,
             environment_name: self.environment_name,

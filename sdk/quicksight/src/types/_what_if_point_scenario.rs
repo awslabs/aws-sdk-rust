@@ -67,10 +67,10 @@ impl WhatIfPointScenarioBuilder {
     /// Consumes the builder and constructs a [`WhatIfPointScenario`](crate::types::WhatIfPointScenario).
     /// This method will fail if any of the following fields are not set:
     /// - [`date`](crate::types::builders::WhatIfPointScenarioBuilder::date)
-    pub fn build(self) -> ::std::result::Result<crate::types::WhatIfPointScenario, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::WhatIfPointScenario, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::WhatIfPointScenario {
             date: self.date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "date",
                     "date was not specified but it is required when building WhatIfPointScenario",
                 )

@@ -171,7 +171,7 @@ impl UpdateNodegroupConfigInputBuilder {
     /// Consumes the builder and constructs a [`UpdateNodegroupConfigInput`](crate::operation::update_nodegroup_config::UpdateNodegroupConfigInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_nodegroup_config::UpdateNodegroupConfigInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_nodegroup_config::UpdateNodegroupConfigInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_nodegroup_config::UpdateNodegroupConfigInput {
             cluster_name: self.cluster_name,

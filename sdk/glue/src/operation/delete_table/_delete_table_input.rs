@@ -106,7 +106,7 @@ impl DeleteTableInputBuilder {
         &self.transaction_id
     }
     /// Consumes the builder and constructs a [`DeleteTableInput`](crate::operation::delete_table::DeleteTableInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_table::DeleteTableInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_table::DeleteTableInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_table::DeleteTableInput {
             catalog_id: self.catalog_id,
             database_name: self.database_name,

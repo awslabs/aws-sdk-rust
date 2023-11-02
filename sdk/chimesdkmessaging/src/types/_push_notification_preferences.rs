@@ -74,10 +74,10 @@ impl PushNotificationPreferencesBuilder {
     /// Consumes the builder and constructs a [`PushNotificationPreferences`](crate::types::PushNotificationPreferences).
     /// This method will fail if any of the following fields are not set:
     /// - [`allow_notifications`](crate::types::builders::PushNotificationPreferencesBuilder::allow_notifications)
-    pub fn build(self) -> ::std::result::Result<crate::types::PushNotificationPreferences, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PushNotificationPreferences, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PushNotificationPreferences {
             allow_notifications: self.allow_notifications.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "allow_notifications",
                     "allow_notifications was not specified but it is required when building PushNotificationPreferences",
                 )

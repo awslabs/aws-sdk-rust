@@ -65,7 +65,7 @@ impl DeleteConnectorInputBuilder {
     /// Consumes the builder and constructs a [`DeleteConnectorInput`](crate::operation::delete_connector::DeleteConnectorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_connector::DeleteConnectorInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_connector::DeleteConnectorInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_connector::DeleteConnectorInput {
             connector_arn: self.connector_arn,
             current_version: self.current_version,

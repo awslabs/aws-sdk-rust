@@ -2,7 +2,7 @@
 pub fn ser_rate_limit_uri_path(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RateLimitUriPath,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("TextTransformations").start_array();
         for item_2 in &input.text_transformations {

@@ -64,7 +64,7 @@ impl ListLoaderJobsInputBuilder {
     /// Consumes the builder and constructs a [`ListLoaderJobsInput`](crate::operation::list_loader_jobs::ListLoaderJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_loader_jobs::ListLoaderJobsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_loader_jobs::ListLoaderJobsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_loader_jobs::ListLoaderJobsInput {
             limit: self.limit,
             include_queued_loads: self.include_queued_loads,

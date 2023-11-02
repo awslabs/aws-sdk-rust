@@ -51,10 +51,10 @@ impl SearchExpressionBuilder {
     /// Consumes the builder and constructs a [`SearchExpression`](crate::types::SearchExpression).
     /// This method will fail if any of the following fields are not set:
     /// - [`filters`](crate::types::builders::SearchExpressionBuilder::filters)
-    pub fn build(self) -> ::std::result::Result<crate::types::SearchExpression, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SearchExpression, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SearchExpression {
             filters: self.filters.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "filters",
                     "filters was not specified but it is required when building SearchExpression",
                 )

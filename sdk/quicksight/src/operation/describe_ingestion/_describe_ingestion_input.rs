@@ -88,7 +88,7 @@ impl DescribeIngestionInputBuilder {
     /// Consumes the builder and constructs a [`DescribeIngestionInput`](crate::operation::describe_ingestion::DescribeIngestionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_ingestion::DescribeIngestionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_ingestion::DescribeIngestionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_ingestion::DescribeIngestionInput {
             aws_account_id: self.aws_account_id,
             data_set_id: self.data_set_id,

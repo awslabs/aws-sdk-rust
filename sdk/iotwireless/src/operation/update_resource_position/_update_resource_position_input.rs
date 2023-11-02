@@ -87,8 +87,10 @@ impl UpdateResourcePositionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateResourcePositionInput`](crate::operation::update_resource_position::UpdateResourcePositionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_resource_position::UpdateResourcePositionInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::update_resource_position::UpdateResourcePositionInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::update_resource_position::UpdateResourcePositionInput {
             resource_identifier: self.resource_identifier,
             resource_type: self.resource_type,

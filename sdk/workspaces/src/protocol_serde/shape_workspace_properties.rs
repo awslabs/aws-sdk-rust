@@ -2,7 +2,7 @@
 pub fn ser_workspace_properties(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::WorkspaceProperties,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.running_mode {
         object.key("RunningMode").string(var_1.as_str());
     }

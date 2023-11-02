@@ -97,7 +97,7 @@ impl ListVpcIngressConnectionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_vpc_ingress_connections::ListVpcIngressConnectionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_vpc_ingress_connections::ListVpcIngressConnectionsInput {
             filter: self.filter,

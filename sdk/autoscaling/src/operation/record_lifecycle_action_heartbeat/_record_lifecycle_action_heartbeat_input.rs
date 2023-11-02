@@ -110,7 +110,7 @@ impl RecordLifecycleActionHeartbeatInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::record_lifecycle_action_heartbeat::RecordLifecycleActionHeartbeatInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::record_lifecycle_action_heartbeat::RecordLifecycleActionHeartbeatInput {
             lifecycle_hook_name: self.lifecycle_hook_name,

@@ -105,7 +105,7 @@ impl UpdateSiteInputBuilder {
         &self.notes
     }
     /// Consumes the builder and constructs a [`UpdateSiteInput`](crate::operation::update_site::UpdateSiteInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_site::UpdateSiteInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_site::UpdateSiteInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_site::UpdateSiteInput {
             site_id: self.site_id,
             name: self.name,

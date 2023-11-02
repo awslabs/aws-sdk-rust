@@ -106,17 +106,17 @@ impl IpSetBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`ip_set_id`](crate::types::builders::IpSetBuilder::ip_set_id)
     /// - [`ip_set_descriptors`](crate::types::builders::IpSetBuilder::ip_set_descriptors)
-    pub fn build(self) -> ::std::result::Result<crate::types::IpSet, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::IpSet, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::IpSet {
             ip_set_id: self.ip_set_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "ip_set_id",
                     "ip_set_id was not specified but it is required when building IpSet",
                 )
             })?,
             name: self.name,
             ip_set_descriptors: self.ip_set_descriptors.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "ip_set_descriptors",
                     "ip_set_descriptors was not specified but it is required when building IpSet",
                 )

@@ -65,11 +65,11 @@ impl CreateModelCustomizationJobOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_model_customization_job::CreateModelCustomizationJobOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_model_customization_job::CreateModelCustomizationJobOutput {
             job_arn: self.job_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "job_arn",
                     "job_arn was not specified but it is required when building CreateModelCustomizationJobOutput",
                 )

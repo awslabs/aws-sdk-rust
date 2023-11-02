@@ -44,7 +44,7 @@ impl StopDbClusterInputBuilder {
     /// Consumes the builder and constructs a [`StopDbClusterInput`](crate::operation::stop_db_cluster::StopDbClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_db_cluster::StopDbClusterInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::stop_db_cluster::StopDbClusterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_db_cluster::StopDbClusterInput {
             db_cluster_identifier: self.db_cluster_identifier,
         })

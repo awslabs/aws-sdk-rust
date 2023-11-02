@@ -2,7 +2,7 @@
 pub fn ser_stream_processor_data_sharing_preference(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::StreamProcessorDataSharingPreference,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("OptIn").boolean(input.opt_in);
     }

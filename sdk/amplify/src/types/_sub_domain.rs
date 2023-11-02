@@ -91,17 +91,17 @@ impl SubDomainBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`verified`](crate::types::builders::SubDomainBuilder::verified)
     /// - [`dns_record`](crate::types::builders::SubDomainBuilder::dns_record)
-    pub fn build(self) -> ::std::result::Result<crate::types::SubDomain, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SubDomain, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SubDomain {
             sub_domain_setting: self.sub_domain_setting,
             verified: self.verified.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "verified",
                     "verified was not specified but it is required when building SubDomain",
                 )
             })?,
             dns_record: self.dns_record.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "dns_record",
                     "dns_record was not specified but it is required when building SubDomain",
                 )

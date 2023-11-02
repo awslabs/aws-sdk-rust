@@ -46,10 +46,10 @@ impl ImageFrameInformationBuilder {
     /// Consumes the builder and constructs a [`ImageFrameInformation`](crate::types::ImageFrameInformation).
     /// This method will fail if any of the following fields are not set:
     /// - [`image_frame_id`](crate::types::builders::ImageFrameInformationBuilder::image_frame_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::ImageFrameInformation, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ImageFrameInformation, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ImageFrameInformation {
             image_frame_id: self.image_frame_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "image_frame_id",
                     "image_frame_id was not specified but it is required when building ImageFrameInformation",
                 )

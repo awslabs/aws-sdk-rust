@@ -50,7 +50,7 @@ impl DisableSnapshotCopyInputBuilder {
     /// Consumes the builder and constructs a [`DisableSnapshotCopyInput`](crate::operation::disable_snapshot_copy::DisableSnapshotCopyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::disable_snapshot_copy::DisableSnapshotCopyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::disable_snapshot_copy::DisableSnapshotCopyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::disable_snapshot_copy::DisableSnapshotCopyInput {
             cluster_identifier: self.cluster_identifier,

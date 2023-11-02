@@ -89,11 +89,11 @@ impl ListKeyspacesOutputBuilder {
     /// - [`keyspaces`](crate::operation::list_keyspaces::builders::ListKeyspacesOutputBuilder::keyspaces)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_keyspaces::ListKeyspacesOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_keyspaces::ListKeyspacesOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_keyspaces::ListKeyspacesOutput {
             next_token: self.next_token,
             keyspaces: self.keyspaces.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "keyspaces",
                     "keyspaces was not specified but it is required when building ListKeyspacesOutput",
                 )

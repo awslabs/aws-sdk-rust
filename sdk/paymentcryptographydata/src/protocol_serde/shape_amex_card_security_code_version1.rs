@@ -2,7 +2,7 @@
 pub fn ser_amex_card_security_code_version1(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AmexCardSecurityCodeVersion1,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("CardExpiryDate").string(input.card_expiry_date.as_str());
     }

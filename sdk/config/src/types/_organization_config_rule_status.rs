@@ -192,16 +192,16 @@ impl OrganizationConfigRuleStatusBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`organization_config_rule_name`](crate::types::builders::OrganizationConfigRuleStatusBuilder::organization_config_rule_name)
     /// - [`organization_rule_status`](crate::types::builders::OrganizationConfigRuleStatusBuilder::organization_rule_status)
-    pub fn build(self) -> ::std::result::Result<crate::types::OrganizationConfigRuleStatus, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::OrganizationConfigRuleStatus, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::OrganizationConfigRuleStatus {
             organization_config_rule_name: self.organization_config_rule_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "organization_config_rule_name",
                     "organization_config_rule_name was not specified but it is required when building OrganizationConfigRuleStatus",
                 )
             })?,
             organization_rule_status: self.organization_rule_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "organization_rule_status",
                     "organization_rule_status was not specified but it is required when building OrganizationConfigRuleStatus",
                 )

@@ -165,7 +165,7 @@ impl CreateConfiguredTableInputBuilder {
     /// Consumes the builder and constructs a [`CreateConfiguredTableInput`](crate::operation::create_configured_table::CreateConfiguredTableInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_configured_table::CreateConfiguredTableInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_configured_table::CreateConfiguredTableInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_configured_table::CreateConfiguredTableInput {
             name: self.name,

@@ -70,16 +70,16 @@ impl BranchDiffSourceCodeTypeBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`source_branch_name`](crate::types::builders::BranchDiffSourceCodeTypeBuilder::source_branch_name)
     /// - [`destination_branch_name`](crate::types::builders::BranchDiffSourceCodeTypeBuilder::destination_branch_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::BranchDiffSourceCodeType, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::BranchDiffSourceCodeType, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::BranchDiffSourceCodeType {
             source_branch_name: self.source_branch_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source_branch_name",
                     "source_branch_name was not specified but it is required when building BranchDiffSourceCodeType",
                 )
             })?,
             destination_branch_name: self.destination_branch_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "destination_branch_name",
                     "destination_branch_name was not specified but it is required when building BranchDiffSourceCodeType",
                 )

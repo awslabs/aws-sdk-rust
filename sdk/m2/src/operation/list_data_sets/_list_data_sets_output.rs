@@ -89,10 +89,10 @@ impl ListDataSetsOutputBuilder {
     /// - [`data_sets`](crate::operation::list_data_sets::builders::ListDataSetsOutputBuilder::data_sets)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_data_sets::ListDataSetsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_data_sets::ListDataSetsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_data_sets::ListDataSetsOutput {
             data_sets: self.data_sets.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_sets",
                     "data_sets was not specified but it is required when building ListDataSetsOutput",
                 )

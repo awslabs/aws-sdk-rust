@@ -281,12 +281,12 @@ pub fn de_manage_sparql_statistics_http_response(
 
 pub fn ser_manage_sparql_statistics_input(
     input: &crate::operation::manage_sparql_statistics::ManageSparqlStatisticsInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_manage_sparql_statistics_input::ser_manage_sparql_statistics_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_manage_sparql_statistics(

@@ -70,16 +70,16 @@ impl FailedBatchItemBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::FailedBatchItemBuilder::id)
     /// - [`error_message`](crate::types::builders::FailedBatchItemBuilder::error_message)
-    pub fn build(self) -> ::std::result::Result<crate::types::FailedBatchItem, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::FailedBatchItem, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FailedBatchItem {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building FailedBatchItem",
                 )
             })?,
             error_message: self.error_message.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "error_message",
                     "error_message was not specified but it is required when building FailedBatchItem",
                 )

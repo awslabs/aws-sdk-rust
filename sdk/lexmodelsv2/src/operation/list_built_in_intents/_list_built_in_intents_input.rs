@@ -107,7 +107,7 @@ impl ListBuiltInIntentsInputBuilder {
     /// Consumes the builder and constructs a [`ListBuiltInIntentsInput`](crate::operation::list_built_in_intents::ListBuiltInIntentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_built_in_intents::ListBuiltInIntentsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_built_in_intents::ListBuiltInIntentsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_built_in_intents::ListBuiltInIntentsInput {
             locale_id: self.locale_id,

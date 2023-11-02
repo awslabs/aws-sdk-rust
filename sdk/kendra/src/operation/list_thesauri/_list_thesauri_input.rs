@@ -84,7 +84,9 @@ impl ListThesauriInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListThesauriInput`](crate::operation::list_thesauri::ListThesauriInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_thesauri::ListThesauriInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_thesauri::ListThesauriInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_thesauri::ListThesauriInput {
             index_id: self.index_id,
             next_token: self.next_token,

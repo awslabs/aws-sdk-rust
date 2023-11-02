@@ -2,7 +2,7 @@
 pub fn ser_virtual_gateway_tls_validation_context_sds_trust(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VirtualGatewayTlsValidationContextSdsTrust,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("secretName").string(input.secret_name.as_str());
     }

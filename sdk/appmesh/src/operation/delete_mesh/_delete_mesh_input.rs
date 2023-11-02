@@ -42,7 +42,7 @@ impl DeleteMeshInputBuilder {
         &self.mesh_name
     }
     /// Consumes the builder and constructs a [`DeleteMeshInput`](crate::operation::delete_mesh::DeleteMeshInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_mesh::DeleteMeshInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_mesh::DeleteMeshInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_mesh::DeleteMeshInput { mesh_name: self.mesh_name })
     }
 }

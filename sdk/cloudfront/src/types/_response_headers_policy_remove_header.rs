@@ -46,10 +46,10 @@ impl ResponseHeadersPolicyRemoveHeaderBuilder {
     /// Consumes the builder and constructs a [`ResponseHeadersPolicyRemoveHeader`](crate::types::ResponseHeadersPolicyRemoveHeader).
     /// This method will fail if any of the following fields are not set:
     /// - [`header`](crate::types::builders::ResponseHeadersPolicyRemoveHeaderBuilder::header)
-    pub fn build(self) -> ::std::result::Result<crate::types::ResponseHeadersPolicyRemoveHeader, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ResponseHeadersPolicyRemoveHeader, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ResponseHeadersPolicyRemoveHeader {
             header: self.header.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "header",
                     "header was not specified but it is required when building ResponseHeadersPolicyRemoveHeader",
                 )

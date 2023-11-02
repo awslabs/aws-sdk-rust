@@ -51,7 +51,7 @@ impl PutTraceSegmentsInputBuilder {
     /// Consumes the builder and constructs a [`PutTraceSegmentsInput`](crate::operation::put_trace_segments::PutTraceSegmentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_trace_segments::PutTraceSegmentsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_trace_segments::PutTraceSegmentsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_trace_segments::PutTraceSegmentsInput {
             trace_segment_documents: self.trace_segment_documents,
         })

@@ -69,16 +69,16 @@ impl JobScheduleBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`day_of_the_week`](crate::types::builders::JobScheduleBuilder::day_of_the_week)
     /// - [`time`](crate::types::builders::JobScheduleBuilder::time)
-    pub fn build(self) -> ::std::result::Result<crate::types::JobSchedule, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::JobSchedule, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::JobSchedule {
             day_of_the_week: self.day_of_the_week.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "day_of_the_week",
                     "day_of_the_week was not specified but it is required when building JobSchedule",
                 )
             })?,
             time: self.time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "time",
                     "time was not specified but it is required when building JobSchedule",
                 )

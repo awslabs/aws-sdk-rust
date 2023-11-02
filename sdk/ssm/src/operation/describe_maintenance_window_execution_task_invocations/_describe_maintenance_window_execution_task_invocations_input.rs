@@ -139,7 +139,7 @@ impl DescribeMaintenanceWindowExecutionTaskInvocationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_maintenance_window_execution_task_invocations::DescribeMaintenanceWindowExecutionTaskInvocationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_maintenance_window_execution_task_invocations::DescribeMaintenanceWindowExecutionTaskInvocationsInput {

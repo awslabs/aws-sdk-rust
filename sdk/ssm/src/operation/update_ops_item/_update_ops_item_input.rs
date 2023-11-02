@@ -417,7 +417,7 @@ impl UpdateOpsItemInputBuilder {
     /// Consumes the builder and constructs a [`UpdateOpsItemInput`](crate::operation::update_ops_item::UpdateOpsItemInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_ops_item::UpdateOpsItemInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_ops_item::UpdateOpsItemInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_ops_item::UpdateOpsItemInput {
             description: self.description,
             operational_data: self.operational_data,

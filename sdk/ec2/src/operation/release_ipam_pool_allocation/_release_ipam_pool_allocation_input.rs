@@ -111,7 +111,7 @@ impl ReleaseIpamPoolAllocationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::release_ipam_pool_allocation::ReleaseIpamPoolAllocationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::release_ipam_pool_allocation::ReleaseIpamPoolAllocationInput {
             dry_run: self.dry_run,

@@ -45,7 +45,7 @@ impl StartMultiplexInputBuilder {
     /// Consumes the builder and constructs a [`StartMultiplexInput`](crate::operation::start_multiplex::StartMultiplexInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_multiplex::StartMultiplexInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_multiplex::StartMultiplexInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_multiplex::StartMultiplexInput {
             multiplex_id: self.multiplex_id,
         })

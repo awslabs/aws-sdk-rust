@@ -81,7 +81,7 @@ impl TerminateSolNetworkInstanceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::terminate_sol_network_instance::TerminateSolNetworkInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::terminate_sol_network_instance::TerminateSolNetworkInstanceInput {
             ns_instance_id: self.ns_instance_id,

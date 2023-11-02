@@ -44,7 +44,7 @@ impl GetSchemaMappingInputBuilder {
     /// Consumes the builder and constructs a [`GetSchemaMappingInput`](crate::operation::get_schema_mapping::GetSchemaMappingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_schema_mapping::GetSchemaMappingInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_schema_mapping::GetSchemaMappingInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_schema_mapping::GetSchemaMappingInput {
             schema_name: self.schema_name,
         })

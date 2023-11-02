@@ -118,28 +118,28 @@ impl CodeStarParametersBuilder {
     /// - [`repository`](crate::types::builders::CodeStarParametersBuilder::repository)
     /// - [`branch`](crate::types::builders::CodeStarParametersBuilder::branch)
     /// - [`artifact_path`](crate::types::builders::CodeStarParametersBuilder::artifact_path)
-    pub fn build(self) -> ::std::result::Result<crate::types::CodeStarParameters, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CodeStarParameters, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CodeStarParameters {
             connection_arn: self.connection_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "connection_arn",
                     "connection_arn was not specified but it is required when building CodeStarParameters",
                 )
             })?,
             repository: self.repository.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "repository",
                     "repository was not specified but it is required when building CodeStarParameters",
                 )
             })?,
             branch: self.branch.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "branch",
                     "branch was not specified but it is required when building CodeStarParameters",
                 )
             })?,
             artifact_path: self.artifact_path.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "artifact_path",
                     "artifact_path was not specified but it is required when building CodeStarParameters",
                 )

@@ -199,7 +199,7 @@ impl CreateMicrosoftAdInputBuilder {
     /// Consumes the builder and constructs a [`CreateMicrosoftAdInput`](crate::operation::create_microsoft_ad::CreateMicrosoftAdInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_microsoft_ad::CreateMicrosoftAdInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_microsoft_ad::CreateMicrosoftAdInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_microsoft_ad::CreateMicrosoftAdInput {
             name: self.name,
             short_name: self.short_name,

@@ -61,10 +61,10 @@ impl GetBlobOutputBuilder {
     /// Consumes the builder and constructs a [`GetBlobOutput`](crate::operation::get_blob::GetBlobOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`content`](crate::operation::get_blob::builders::GetBlobOutputBuilder::content)
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_blob::GetBlobOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_blob::GetBlobOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_blob::GetBlobOutput {
             content: self.content.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "content",
                     "content was not specified but it is required when building GetBlobOutput",
                 )

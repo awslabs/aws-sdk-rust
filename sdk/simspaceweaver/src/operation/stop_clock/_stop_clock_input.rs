@@ -42,7 +42,7 @@ impl StopClockInputBuilder {
         &self.simulation
     }
     /// Consumes the builder and constructs a [`StopClockInput`](crate::operation::stop_clock::StopClockInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::stop_clock::StopClockInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_clock::StopClockInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_clock::StopClockInput { simulation: self.simulation })
     }
 }

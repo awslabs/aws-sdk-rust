@@ -196,7 +196,7 @@ impl DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsInputBuilder
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsInput`](crate::operation::describe_local_gateway_route_table_virtual_interface_group_associations::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_local_gateway_route_table_virtual_interface_group_associations::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsInput, ::aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_local_gateway_route_table_virtual_interface_group_associations::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsInput, ::aws_smithy_types::error::operation::BuildError>{
         ::std::result::Result::Ok(
             crate::operation::describe_local_gateway_route_table_virtual_interface_group_associations::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsInput {
                 local_gateway_route_table_virtual_interface_group_association_ids: self.local_gateway_route_table_virtual_interface_group_association_ids

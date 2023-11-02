@@ -2,7 +2,7 @@
 pub fn ser_captions(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Captions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.merge_policy {
         object.key("MergePolicy").string(var_1.as_str());
     }

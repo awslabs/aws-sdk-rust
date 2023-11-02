@@ -139,7 +139,7 @@ impl CreateLensVersionInputBuilder {
     /// Consumes the builder and constructs a [`CreateLensVersionInput`](crate::operation::create_lens_version::CreateLensVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_lens_version::CreateLensVersionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_lens_version::CreateLensVersionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_lens_version::CreateLensVersionInput {
             lens_alias: self.lens_alias,
             lens_version: self.lens_version,

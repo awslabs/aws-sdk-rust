@@ -2,7 +2,7 @@
 pub fn ser_font_size(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FontSize,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.relative {
         object.key("Relative").string(var_1.as_str());
     }

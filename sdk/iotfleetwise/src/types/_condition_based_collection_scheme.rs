@@ -119,10 +119,10 @@ impl ConditionBasedCollectionSchemeBuilder {
     /// Consumes the builder and constructs a [`ConditionBasedCollectionScheme`](crate::types::ConditionBasedCollectionScheme).
     /// This method will fail if any of the following fields are not set:
     /// - [`expression`](crate::types::builders::ConditionBasedCollectionSchemeBuilder::expression)
-    pub fn build(self) -> ::std::result::Result<crate::types::ConditionBasedCollectionScheme, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ConditionBasedCollectionScheme, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ConditionBasedCollectionScheme {
             expression: self.expression.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "expression",
                     "expression was not specified but it is required when building ConditionBasedCollectionScheme",
                 )

@@ -67,7 +67,7 @@ impl FlushStageCacheInputBuilder {
     /// Consumes the builder and constructs a [`FlushStageCacheInput`](crate::operation::flush_stage_cache::FlushStageCacheInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::flush_stage_cache::FlushStageCacheInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::flush_stage_cache::FlushStageCacheInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::flush_stage_cache::FlushStageCacheInput {
             rest_api_id: self.rest_api_id,
             stage_name: self.stage_name,

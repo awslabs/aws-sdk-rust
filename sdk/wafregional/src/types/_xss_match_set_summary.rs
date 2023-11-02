@@ -79,16 +79,16 @@ impl XssMatchSetSummaryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`xss_match_set_id`](crate::types::builders::XssMatchSetSummaryBuilder::xss_match_set_id)
     /// - [`name`](crate::types::builders::XssMatchSetSummaryBuilder::name)
-    pub fn build(self) -> ::std::result::Result<crate::types::XssMatchSetSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::XssMatchSetSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::XssMatchSetSummary {
             xss_match_set_id: self.xss_match_set_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "xss_match_set_id",
                     "xss_match_set_id was not specified but it is required when building XssMatchSetSummary",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building XssMatchSetSummary",
                 )

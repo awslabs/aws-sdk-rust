@@ -129,7 +129,7 @@ impl AddPermissionInputBuilder {
     /// Consumes the builder and constructs a [`AddPermissionInput`](crate::operation::add_permission::AddPermissionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::add_permission::AddPermissionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::add_permission::AddPermissionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::add_permission::AddPermissionInput {
             topic_arn: self.topic_arn,
             label: self.label,

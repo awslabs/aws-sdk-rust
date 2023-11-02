@@ -124,23 +124,23 @@ impl ProcessorBuilder {
     /// - [`name`](crate::types::builders::ProcessorBuilder::name)
     /// - [`execution_order`](crate::types::builders::ProcessorBuilder::execution_order)
     /// - [`fallback_action`](crate::types::builders::ProcessorBuilder::fallback_action)
-    pub fn build(self) -> ::std::result::Result<crate::types::Processor, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Processor, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Processor {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building Processor",
                 )
             })?,
             configuration: self.configuration,
             execution_order: self.execution_order.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "execution_order",
                     "execution_order was not specified but it is required when building Processor",
                 )
             })?,
             fallback_action: self.fallback_action.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "fallback_action",
                     "fallback_action was not specified but it is required when building Processor",
                 )

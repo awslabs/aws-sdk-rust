@@ -66,7 +66,7 @@ impl GetTimelineEventInputBuilder {
     /// Consumes the builder and constructs a [`GetTimelineEventInput`](crate::operation::get_timeline_event::GetTimelineEventInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_timeline_event::GetTimelineEventInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_timeline_event::GetTimelineEventInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_timeline_event::GetTimelineEventInput {
             incident_record_arn: self.incident_record_arn,
             event_id: self.event_id,

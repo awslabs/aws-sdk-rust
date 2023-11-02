@@ -89,10 +89,10 @@ impl ListMonitorsOutputBuilder {
     /// - [`monitors`](crate::operation::list_monitors::builders::ListMonitorsOutputBuilder::monitors)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_monitors::ListMonitorsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_monitors::ListMonitorsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_monitors::ListMonitorsOutput {
             monitors: self.monitors.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "monitors",
                     "monitors was not specified but it is required when building ListMonitorsOutput",
                 )

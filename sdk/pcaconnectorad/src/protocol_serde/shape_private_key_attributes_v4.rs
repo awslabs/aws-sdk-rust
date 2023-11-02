@@ -2,7 +2,7 @@
 pub fn ser_private_key_attributes_v4(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PrivateKeyAttributesV4,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("MinimalKeyLength").number(
             #[allow(clippy::useless_conversion)]

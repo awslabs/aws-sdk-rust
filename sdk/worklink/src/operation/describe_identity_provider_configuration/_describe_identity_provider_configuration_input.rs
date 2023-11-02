@@ -46,7 +46,7 @@ impl DescribeIdentityProviderConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_identity_provider_configuration::DescribeIdentityProviderConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_identity_provider_configuration::DescribeIdentityProviderConfigurationInput { fleet_arn: self.fleet_arn },

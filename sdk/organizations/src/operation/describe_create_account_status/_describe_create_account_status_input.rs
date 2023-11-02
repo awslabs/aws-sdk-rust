@@ -51,7 +51,7 @@ impl DescribeCreateAccountStatusInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_create_account_status::DescribeCreateAccountStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_create_account_status::DescribeCreateAccountStatusInput {
             create_account_request_id: self.create_account_request_id,

@@ -94,22 +94,22 @@ impl LayoutSummaryBuilder {
     /// - [`layout_id`](crate::types::builders::LayoutSummaryBuilder::layout_id)
     /// - [`layout_arn`](crate::types::builders::LayoutSummaryBuilder::layout_arn)
     /// - [`name`](crate::types::builders::LayoutSummaryBuilder::name)
-    pub fn build(self) -> ::std::result::Result<crate::types::LayoutSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::LayoutSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::LayoutSummary {
             layout_id: self.layout_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "layout_id",
                     "layout_id was not specified but it is required when building LayoutSummary",
                 )
             })?,
             layout_arn: self.layout_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "layout_arn",
                     "layout_arn was not specified but it is required when building LayoutSummary",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building LayoutSummary",
                 )

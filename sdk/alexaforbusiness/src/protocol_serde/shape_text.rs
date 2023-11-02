@@ -2,7 +2,7 @@
 pub fn ser_text(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Text,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Locale").string(input.locale.as_str());
     }

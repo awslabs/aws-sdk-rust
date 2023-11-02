@@ -66,7 +66,7 @@ impl DeleteWatchlistInputBuilder {
     /// Consumes the builder and constructs a [`DeleteWatchlistInput`](crate::operation::delete_watchlist::DeleteWatchlistInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_watchlist::DeleteWatchlistInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_watchlist::DeleteWatchlistInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_watchlist::DeleteWatchlistInput {
             domain_id: self.domain_id,
             watchlist_id: self.watchlist_id,

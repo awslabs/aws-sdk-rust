@@ -89,10 +89,10 @@ impl ListGatewaysOutputBuilder {
     /// - [`gateway_summaries`](crate::operation::list_gateways::builders::ListGatewaysOutputBuilder::gateway_summaries)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_gateways::ListGatewaysOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_gateways::ListGatewaysOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_gateways::ListGatewaysOutput {
             gateway_summaries: self.gateway_summaries.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "gateway_summaries",
                     "gateway_summaries was not specified but it is required when building ListGatewaysOutput",
                 )

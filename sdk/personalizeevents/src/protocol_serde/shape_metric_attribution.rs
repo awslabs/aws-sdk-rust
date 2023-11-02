@@ -2,7 +2,7 @@
 pub fn ser_metric_attribution(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MetricAttribution,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("eventAttributionSource").string(input.event_attribution_source.as_str());
     }

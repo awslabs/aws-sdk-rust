@@ -106,16 +106,16 @@ impl KeySchemaElementBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`attribute_name`](crate::types::builders::KeySchemaElementBuilder::attribute_name)
     /// - [`key_type`](crate::types::builders::KeySchemaElementBuilder::key_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::KeySchemaElement, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::KeySchemaElement, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::KeySchemaElement {
             attribute_name: self.attribute_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "attribute_name",
                     "attribute_name was not specified but it is required when building KeySchemaElement",
                 )
             })?,
             key_type: self.key_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "key_type",
                     "key_type was not specified but it is required when building KeySchemaElement",
                 )

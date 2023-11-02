@@ -131,7 +131,7 @@ impl UpdateBackendJobInputBuilder {
     /// Consumes the builder and constructs a [`UpdateBackendJobInput`](crate::operation::update_backend_job::UpdateBackendJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_backend_job::UpdateBackendJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_backend_job::UpdateBackendJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_backend_job::UpdateBackendJobInput {
             app_id: self.app_id,
             backend_environment_name: self.backend_environment_name,

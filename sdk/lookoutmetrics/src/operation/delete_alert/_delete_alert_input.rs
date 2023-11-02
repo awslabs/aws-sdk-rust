@@ -42,7 +42,7 @@ impl DeleteAlertInputBuilder {
         &self.alert_arn
     }
     /// Consumes the builder and constructs a [`DeleteAlertInput`](crate::operation::delete_alert::DeleteAlertInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_alert::DeleteAlertInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_alert::DeleteAlertInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_alert::DeleteAlertInput { alert_arn: self.alert_arn })
     }
 }

@@ -44,7 +44,7 @@ impl GetVocabularyInputBuilder {
     /// Consumes the builder and constructs a [`GetVocabularyInput`](crate::operation::get_vocabulary::GetVocabularyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_vocabulary::GetVocabularyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_vocabulary::GetVocabularyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_vocabulary::GetVocabularyInput {
             vocabulary_name: self.vocabulary_name,
         })

@@ -64,7 +64,9 @@ impl AttachPolicyInputBuilder {
         &self.target
     }
     /// Consumes the builder and constructs a [`AttachPolicyInput`](crate::operation::attach_policy::AttachPolicyInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::attach_policy::AttachPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::attach_policy::AttachPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::attach_policy::AttachPolicyInput {
             policy_name: self.policy_name,
             target: self.target,

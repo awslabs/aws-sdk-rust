@@ -76,7 +76,7 @@ impl BatchDisassociateScramSecretInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_disassociate_scram_secret::BatchDisassociateScramSecretInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::batch_disassociate_scram_secret::BatchDisassociateScramSecretInput {
             cluster_arn: self.cluster_arn,

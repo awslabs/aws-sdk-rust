@@ -208,29 +208,29 @@ impl ImageGenerationConfigurationBuilder {
     /// - [`image_selector_type`](crate::types::builders::ImageGenerationConfigurationBuilder::image_selector_type)
     /// - [`sampling_interval`](crate::types::builders::ImageGenerationConfigurationBuilder::sampling_interval)
     /// - [`format`](crate::types::builders::ImageGenerationConfigurationBuilder::format)
-    pub fn build(self) -> ::std::result::Result<crate::types::ImageGenerationConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ImageGenerationConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ImageGenerationConfiguration {
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building ImageGenerationConfiguration",
                 )
             })?,
             image_selector_type: self.image_selector_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "image_selector_type",
                     "image_selector_type was not specified but it is required when building ImageGenerationConfiguration",
                 )
             })?,
             destination_config: self.destination_config,
             sampling_interval: self.sampling_interval.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "sampling_interval",
                     "sampling_interval was not specified but it is required when building ImageGenerationConfiguration",
                 )
             })?,
             format: self.format.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "format",
                     "format was not specified but it is required when building ImageGenerationConfiguration",
                 )

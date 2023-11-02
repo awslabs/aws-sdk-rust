@@ -368,53 +368,53 @@ impl StreamDescriptionBuilder {
     /// - [`retention_period_hours`](crate::types::builders::StreamDescriptionBuilder::retention_period_hours)
     /// - [`stream_creation_timestamp`](crate::types::builders::StreamDescriptionBuilder::stream_creation_timestamp)
     /// - [`enhanced_monitoring`](crate::types::builders::StreamDescriptionBuilder::enhanced_monitoring)
-    pub fn build(self) -> ::std::result::Result<crate::types::StreamDescription, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::StreamDescription, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::StreamDescription {
             stream_name: self.stream_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "stream_name",
                     "stream_name was not specified but it is required when building StreamDescription",
                 )
             })?,
             stream_arn: self.stream_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "stream_arn",
                     "stream_arn was not specified but it is required when building StreamDescription",
                 )
             })?,
             stream_status: self.stream_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "stream_status",
                     "stream_status was not specified but it is required when building StreamDescription",
                 )
             })?,
             stream_mode_details: self.stream_mode_details,
             shards: self.shards.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "shards",
                     "shards was not specified but it is required when building StreamDescription",
                 )
             })?,
             has_more_shards: self.has_more_shards.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "has_more_shards",
                     "has_more_shards was not specified but it is required when building StreamDescription",
                 )
             })?,
             retention_period_hours: self.retention_period_hours.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "retention_period_hours",
                     "retention_period_hours was not specified but it is required when building StreamDescription",
                 )
             })?,
             stream_creation_timestamp: self.stream_creation_timestamp.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "stream_creation_timestamp",
                     "stream_creation_timestamp was not specified but it is required when building StreamDescription",
                 )
             })?,
             enhanced_monitoring: self.enhanced_monitoring.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "enhanced_monitoring",
                     "enhanced_monitoring was not specified but it is required when building StreamDescription",
                 )

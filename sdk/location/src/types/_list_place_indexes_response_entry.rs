@@ -196,35 +196,35 @@ impl ListPlaceIndexesResponseEntryBuilder {
     /// - [`data_source`](crate::types::builders::ListPlaceIndexesResponseEntryBuilder::data_source)
     /// - [`create_time`](crate::types::builders::ListPlaceIndexesResponseEntryBuilder::create_time)
     /// - [`update_time`](crate::types::builders::ListPlaceIndexesResponseEntryBuilder::update_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::ListPlaceIndexesResponseEntry, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ListPlaceIndexesResponseEntry, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ListPlaceIndexesResponseEntry {
             index_name: self.index_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "index_name",
                     "index_name was not specified but it is required when building ListPlaceIndexesResponseEntry",
                 )
             })?,
             description: self.description.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "description",
                     "description was not specified but it is required when building ListPlaceIndexesResponseEntry",
                 )
             })?,
             data_source: self.data_source.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_source",
                     "data_source was not specified but it is required when building ListPlaceIndexesResponseEntry",
                 )
             })?,
             pricing_plan: self.pricing_plan,
             create_time: self.create_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "create_time",
                     "create_time was not specified but it is required when building ListPlaceIndexesResponseEntry",
                 )
             })?,
             update_time: self.update_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "update_time",
                     "update_time was not specified but it is required when building ListPlaceIndexesResponseEntry",
                 )

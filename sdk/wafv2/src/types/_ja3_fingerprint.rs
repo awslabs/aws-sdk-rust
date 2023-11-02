@@ -74,10 +74,10 @@ impl Ja3FingerprintBuilder {
     /// Consumes the builder and constructs a [`Ja3Fingerprint`](crate::types::Ja3Fingerprint).
     /// This method will fail if any of the following fields are not set:
     /// - [`fallback_behavior`](crate::types::builders::Ja3FingerprintBuilder::fallback_behavior)
-    pub fn build(self) -> ::std::result::Result<crate::types::Ja3Fingerprint, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Ja3Fingerprint, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Ja3Fingerprint {
             fallback_behavior: self.fallback_behavior.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "fallback_behavior",
                     "fallback_behavior was not specified but it is required when building Ja3Fingerprint",
                 )

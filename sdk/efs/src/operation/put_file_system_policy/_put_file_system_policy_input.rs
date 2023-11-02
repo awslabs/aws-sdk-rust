@@ -87,7 +87,7 @@ impl PutFileSystemPolicyInputBuilder {
     /// Consumes the builder and constructs a [`PutFileSystemPolicyInput`](crate::operation::put_file_system_policy::PutFileSystemPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_file_system_policy::PutFileSystemPolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::put_file_system_policy::PutFileSystemPolicyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::put_file_system_policy::PutFileSystemPolicyInput {
             file_system_id: self.file_system_id,

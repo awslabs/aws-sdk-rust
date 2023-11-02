@@ -589,22 +589,22 @@ impl ElasticsearchDomainStatusBuilder {
     /// - [`domain_id`](crate::types::builders::ElasticsearchDomainStatusBuilder::domain_id)
     /// - [`domain_name`](crate::types::builders::ElasticsearchDomainStatusBuilder::domain_name)
     /// - [`arn`](crate::types::builders::ElasticsearchDomainStatusBuilder::arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::ElasticsearchDomainStatus, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ElasticsearchDomainStatus, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ElasticsearchDomainStatus {
             domain_id: self.domain_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "domain_id",
                     "domain_id was not specified but it is required when building ElasticsearchDomainStatus",
                 )
             })?,
             domain_name: self.domain_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "domain_name",
                     "domain_name was not specified but it is required when building ElasticsearchDomainStatus",
                 )
             })?,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building ElasticsearchDomainStatus",
                 )

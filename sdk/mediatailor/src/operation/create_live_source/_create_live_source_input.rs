@@ -122,7 +122,7 @@ impl CreateLiveSourceInputBuilder {
     /// Consumes the builder and constructs a [`CreateLiveSourceInput`](crate::operation::create_live_source::CreateLiveSourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_live_source::CreateLiveSourceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_live_source::CreateLiveSourceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_live_source::CreateLiveSourceInput {
             http_package_configurations: self.http_package_configurations,
             live_source_name: self.live_source_name,

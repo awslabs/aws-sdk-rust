@@ -46,7 +46,7 @@ impl GetVoiceConnectorGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_voice_connector_group::GetVoiceConnectorGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_voice_connector_group::GetVoiceConnectorGroupInput {
             voice_connector_group_id: self.voice_connector_group_id,

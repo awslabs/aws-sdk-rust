@@ -2,7 +2,7 @@
 pub fn ser_saml_config_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SamlConfigOptions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("metadata").string(input.metadata.as_str());
     }

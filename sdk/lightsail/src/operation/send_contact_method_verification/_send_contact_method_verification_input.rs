@@ -46,7 +46,7 @@ impl SendContactMethodVerificationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::send_contact_method_verification::SendContactMethodVerificationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::send_contact_method_verification::SendContactMethodVerificationInput { protocol: self.protocol })
     }

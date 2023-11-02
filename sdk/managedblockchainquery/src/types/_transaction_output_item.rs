@@ -92,22 +92,22 @@ impl TransactionOutputItemBuilder {
     /// - [`transaction_hash`](crate::types::builders::TransactionOutputItemBuilder::transaction_hash)
     /// - [`network`](crate::types::builders::TransactionOutputItemBuilder::network)
     /// - [`transaction_timestamp`](crate::types::builders::TransactionOutputItemBuilder::transaction_timestamp)
-    pub fn build(self) -> ::std::result::Result<crate::types::TransactionOutputItem, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TransactionOutputItem, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TransactionOutputItem {
             transaction_hash: self.transaction_hash.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "transaction_hash",
                     "transaction_hash was not specified but it is required when building TransactionOutputItem",
                 )
             })?,
             network: self.network.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "network",
                     "network was not specified but it is required when building TransactionOutputItem",
                 )
             })?,
             transaction_timestamp: self.transaction_timestamp.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "transaction_timestamp",
                     "transaction_timestamp was not specified but it is required when building TransactionOutputItem",
                 )

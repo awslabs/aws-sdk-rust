@@ -45,10 +45,10 @@ impl TrackingConfigBuilder {
     /// Consumes the builder and constructs a [`TrackingConfig`](crate::types::TrackingConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`autotrack`](crate::types::builders::TrackingConfigBuilder::autotrack)
-    pub fn build(self) -> ::std::result::Result<crate::types::TrackingConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TrackingConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TrackingConfig {
             autotrack: self.autotrack.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "autotrack",
                     "autotrack was not specified but it is required when building TrackingConfig",
                 )

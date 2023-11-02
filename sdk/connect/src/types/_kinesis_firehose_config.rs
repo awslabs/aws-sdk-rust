@@ -46,10 +46,10 @@ impl KinesisFirehoseConfigBuilder {
     /// Consumes the builder and constructs a [`KinesisFirehoseConfig`](crate::types::KinesisFirehoseConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`firehose_arn`](crate::types::builders::KinesisFirehoseConfigBuilder::firehose_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::KinesisFirehoseConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::KinesisFirehoseConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::KinesisFirehoseConfig {
             firehose_arn: self.firehose_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "firehose_arn",
                     "firehose_arn was not specified but it is required when building KinesisFirehoseConfig",
                 )

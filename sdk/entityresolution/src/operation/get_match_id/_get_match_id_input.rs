@@ -77,7 +77,7 @@ impl GetMatchIdInputBuilder {
         &self.record
     }
     /// Consumes the builder and constructs a [`GetMatchIdInput`](crate::operation::get_match_id::GetMatchIdInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_match_id::GetMatchIdInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_match_id::GetMatchIdInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_match_id::GetMatchIdInput {
             workflow_name: self.workflow_name,
             record: self.record,

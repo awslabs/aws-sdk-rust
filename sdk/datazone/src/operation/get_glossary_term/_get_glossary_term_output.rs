@@ -324,28 +324,28 @@ impl GetGlossaryTermOutputBuilder {
     /// - [`status`](crate::operation::get_glossary_term::builders::GetGlossaryTermOutputBuilder::status)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_glossary_term::GetGlossaryTermOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_glossary_term::GetGlossaryTermOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_glossary_term::GetGlossaryTermOutput {
             domain_id: self.domain_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "domain_id",
                     "domain_id was not specified but it is required when building GetGlossaryTermOutput",
                 )
             })?,
             glossary_id: self.glossary_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "glossary_id",
                     "glossary_id was not specified but it is required when building GetGlossaryTermOutput",
                 )
             })?,
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building GetGlossaryTermOutput",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building GetGlossaryTermOutput",
                 )
@@ -354,7 +354,7 @@ impl GetGlossaryTermOutputBuilder {
             long_description: self.long_description,
             term_relations: self.term_relations,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building GetGlossaryTermOutput",
                 )

@@ -69,16 +69,16 @@ impl ConformancePackComplianceSummaryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`conformance_pack_name`](crate::types::builders::ConformancePackComplianceSummaryBuilder::conformance_pack_name)
     /// - [`conformance_pack_compliance_status`](crate::types::builders::ConformancePackComplianceSummaryBuilder::conformance_pack_compliance_status)
-    pub fn build(self) -> ::std::result::Result<crate::types::ConformancePackComplianceSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ConformancePackComplianceSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ConformancePackComplianceSummary {
             conformance_pack_name: self.conformance_pack_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "conformance_pack_name",
                     "conformance_pack_name was not specified but it is required when building ConformancePackComplianceSummary",
                 )
             })?,
             conformance_pack_compliance_status: self.conformance_pack_compliance_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "conformance_pack_compliance_status",
                     "conformance_pack_compliance_status was not specified but it is required when building ConformancePackComplianceSummary",
                 )

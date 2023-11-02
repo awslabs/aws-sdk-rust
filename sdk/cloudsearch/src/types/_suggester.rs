@@ -68,10 +68,10 @@ impl SuggesterBuilder {
     /// Consumes the builder and constructs a [`Suggester`](crate::types::Suggester).
     /// This method will fail if any of the following fields are not set:
     /// - [`suggester_name`](crate::types::builders::SuggesterBuilder::suggester_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::Suggester, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Suggester, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Suggester {
             suggester_name: self.suggester_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "suggester_name",
                     "suggester_name was not specified but it is required when building Suggester",
                 )

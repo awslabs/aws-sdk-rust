@@ -68,7 +68,7 @@ impl DeregisterIdentityProviderInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_identity_provider::DeregisterIdentityProviderInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::deregister_identity_provider::DeregisterIdentityProviderInput {
             identity_provider: self.identity_provider,

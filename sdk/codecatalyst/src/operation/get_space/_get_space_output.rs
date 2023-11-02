@@ -127,16 +127,16 @@ impl GetSpaceOutputBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::operation::get_space::builders::GetSpaceOutputBuilder::name)
     /// - [`region_name`](crate::operation::get_space::builders::GetSpaceOutputBuilder::region_name)
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_space::GetSpaceOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_space::GetSpaceOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_space::GetSpaceOutput {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building GetSpaceOutput",
                 )
             })?,
             region_name: self.region_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "region_name",
                     "region_name was not specified but it is required when building GetSpaceOutput",
                 )

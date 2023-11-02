@@ -292,7 +292,8 @@ impl UpdateFunctionCodeInputBuilder {
     /// Consumes the builder and constructs a [`UpdateFunctionCodeInput`](crate::operation::update_function_code::UpdateFunctionCodeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_function_code::UpdateFunctionCodeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_function_code::UpdateFunctionCodeInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::update_function_code::UpdateFunctionCodeInput {
             function_name: self.function_name,
             zip_file: self.zip_file,

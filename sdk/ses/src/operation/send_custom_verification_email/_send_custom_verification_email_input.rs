@@ -90,7 +90,7 @@ impl SendCustomVerificationEmailInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::send_custom_verification_email::SendCustomVerificationEmailInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::send_custom_verification_email::SendCustomVerificationEmailInput {
             email_address: self.email_address,

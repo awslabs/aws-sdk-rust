@@ -111,7 +111,7 @@ impl DisassociateExternalConnectionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_external_connection::DisassociateExternalConnectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disassociate_external_connection::DisassociateExternalConnectionInput {
             domain: self.domain,

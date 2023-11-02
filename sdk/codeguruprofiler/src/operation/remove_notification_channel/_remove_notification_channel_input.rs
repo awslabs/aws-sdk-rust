@@ -69,7 +69,7 @@ impl RemoveNotificationChannelInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_notification_channel::RemoveNotificationChannelInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::remove_notification_channel::RemoveNotificationChannelInput {
             profiling_group_name: self.profiling_group_name,

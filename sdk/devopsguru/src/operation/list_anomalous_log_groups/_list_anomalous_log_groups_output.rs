@@ -115,17 +115,17 @@ impl ListAnomalousLogGroupsOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_anomalous_log_groups::ListAnomalousLogGroupsOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_anomalous_log_groups::ListAnomalousLogGroupsOutput {
             insight_id: self.insight_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "insight_id",
                     "insight_id was not specified but it is required when building ListAnomalousLogGroupsOutput",
                 )
             })?,
             anomalous_log_groups: self.anomalous_log_groups.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "anomalous_log_groups",
                     "anomalous_log_groups was not specified but it is required when building ListAnomalousLogGroupsOutput",
                 )

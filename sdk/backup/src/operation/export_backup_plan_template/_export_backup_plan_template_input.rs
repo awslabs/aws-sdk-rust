@@ -46,7 +46,7 @@ impl ExportBackupPlanTemplateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::export_backup_plan_template::ExportBackupPlanTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::export_backup_plan_template::ExportBackupPlanTemplateInput {
             backup_plan_id: self.backup_plan_id,

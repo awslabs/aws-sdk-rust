@@ -157,22 +157,22 @@ impl TimeLimitExceededExceptionBuilder {
     /// - [`detailed_message`](crate::types::error::builders::TimeLimitExceededExceptionBuilder::detailed_message)
     /// - [`request_id`](crate::types::error::builders::TimeLimitExceededExceptionBuilder::request_id)
     /// - [`code`](crate::types::error::builders::TimeLimitExceededExceptionBuilder::code)
-    pub fn build(self) -> ::std::result::Result<crate::types::error::TimeLimitExceededException, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::error::TimeLimitExceededException, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::error::TimeLimitExceededException {
             detailed_message: self.detailed_message.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "detailed_message",
                     "detailed_message was not specified but it is required when building TimeLimitExceededException",
                 )
             })?,
             request_id: self.request_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "request_id",
                     "request_id was not specified but it is required when building TimeLimitExceededException",
                 )
             })?,
             code: self.code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "code",
                     "code was not specified but it is required when building TimeLimitExceededException",
                 )

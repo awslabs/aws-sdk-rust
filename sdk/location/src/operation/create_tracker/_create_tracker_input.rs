@@ -373,7 +373,7 @@ impl CreateTrackerInputBuilder {
     /// Consumes the builder and constructs a [`CreateTrackerInput`](crate::operation::create_tracker::CreateTrackerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_tracker::CreateTrackerInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_tracker::CreateTrackerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_tracker::CreateTrackerInput {
             tracker_name: self.tracker_name,
             pricing_plan: self.pricing_plan,

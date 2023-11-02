@@ -67,10 +67,10 @@ impl IdMappingTechniquesBuilder {
     /// Consumes the builder and constructs a [`IdMappingTechniques`](crate::types::IdMappingTechniques).
     /// This method will fail if any of the following fields are not set:
     /// - [`id_mapping_type`](crate::types::builders::IdMappingTechniquesBuilder::id_mapping_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::IdMappingTechniques, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::IdMappingTechniques, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::IdMappingTechniques {
             id_mapping_type: self.id_mapping_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id_mapping_type",
                     "id_mapping_type was not specified but it is required when building IdMappingTechniques",
                 )

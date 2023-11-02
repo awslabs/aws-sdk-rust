@@ -91,12 +91,12 @@ impl ListAppVersionResourceMappingsOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_app_version_resource_mappings::ListAppVersionResourceMappingsOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_app_version_resource_mappings::ListAppVersionResourceMappingsOutput {
                 resource_mappings: self.resource_mappings.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
                         "resource_mappings",
                         "resource_mappings was not specified but it is required when building ListAppVersionResourceMappingsOutput",
                     )

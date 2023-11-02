@@ -509,10 +509,10 @@ impl CreateDataSourceOutputBuilder {
     /// - [`environment_id`](crate::operation::create_data_source::builders::CreateDataSourceOutputBuilder::environment_id)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_data_source::CreateDataSourceOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_data_source::CreateDataSourceOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_data_source::CreateDataSourceOutput {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building CreateDataSourceOutput",
                 )
@@ -520,26 +520,26 @@ impl CreateDataSourceOutputBuilder {
             status: self.status,
             r#type: self.r#type,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building CreateDataSourceOutput",
                 )
             })?,
             description: self.description,
             domain_id: self.domain_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "domain_id",
                     "domain_id was not specified but it is required when building CreateDataSourceOutput",
                 )
             })?,
             project_id: self.project_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "project_id",
                     "project_id was not specified but it is required when building CreateDataSourceOutput",
                 )
             })?,
             environment_id: self.environment_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "environment_id",
                     "environment_id was not specified but it is required when building CreateDataSourceOutput",
                 )

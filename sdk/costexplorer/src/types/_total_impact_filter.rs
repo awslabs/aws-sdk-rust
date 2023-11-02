@@ -88,10 +88,10 @@ impl TotalImpactFilterBuilder {
     /// Consumes the builder and constructs a [`TotalImpactFilter`](crate::types::TotalImpactFilter).
     /// This method will fail if any of the following fields are not set:
     /// - [`numeric_operator`](crate::types::builders::TotalImpactFilterBuilder::numeric_operator)
-    pub fn build(self) -> ::std::result::Result<crate::types::TotalImpactFilter, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TotalImpactFilter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TotalImpactFilter {
             numeric_operator: self.numeric_operator.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "numeric_operator",
                     "numeric_operator was not specified but it is required when building TotalImpactFilter",
                 )

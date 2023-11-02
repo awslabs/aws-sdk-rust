@@ -111,7 +111,7 @@ impl DisassociateCreatedArtifactInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_created_artifact::DisassociateCreatedArtifactInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disassociate_created_artifact::DisassociateCreatedArtifactInput {
             progress_update_stream: self.progress_update_stream,

@@ -172,7 +172,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListAccessPo
             fn uri_base(
                 _input: &crate::operation::list_access_points::ListAccessPointsInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 use ::std::fmt::Write as _;
                 ::std::write!(output, "/v20180820/accesspoint").expect("formatting should succeed");
                 ::std::result::Result::Ok(())
@@ -180,7 +180,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListAccessPo
             fn uri_query(
                 _input: &crate::operation::list_access_points::ListAccessPointsInput,
                 mut output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_1) = &_input.bucket {
                     {
@@ -203,7 +203,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListAccessPo
             fn update_http_builder(
                 input: &crate::operation::list_access_points::ListAccessPointsInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -213,7 +213,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListAccessPo
             let mut builder = update_http_builder(&input, ::http::request::Builder::new())?;
             builder
         };
-        let body = ::aws_smithy_http::body::SdkBody::from("");
+        let body = ::aws_smithy_types::body::SdkBody::from("");
 
         ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
@@ -253,7 +253,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListAccessPoi
                     .account_id
                     .clone()
                     .filter(|f| !AsRef::<str>::as_ref(f).trim().is_empty())
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("account_id", "A required field was not set"))?,
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("account_id", "A required field was not set"))?,
             ))
             .set_bucket(_input.bucket.clone())
             .build()

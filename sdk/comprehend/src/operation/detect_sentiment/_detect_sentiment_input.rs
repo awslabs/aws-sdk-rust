@@ -74,7 +74,7 @@ impl DetectSentimentInputBuilder {
     /// Consumes the builder and constructs a [`DetectSentimentInput`](crate::operation::detect_sentiment::DetectSentimentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::detect_sentiment::DetectSentimentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::detect_sentiment::DetectSentimentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::detect_sentiment::DetectSentimentInput {
             text: self.text,
             language_code: self.language_code,

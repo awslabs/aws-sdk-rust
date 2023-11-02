@@ -158,22 +158,22 @@ impl SamplingStatisticsDocumentBuilder {
     /// - [`rule_name`](crate::types::builders::SamplingStatisticsDocumentBuilder::rule_name)
     /// - [`client_id`](crate::types::builders::SamplingStatisticsDocumentBuilder::client_id)
     /// - [`timestamp`](crate::types::builders::SamplingStatisticsDocumentBuilder::timestamp)
-    pub fn build(self) -> ::std::result::Result<crate::types::SamplingStatisticsDocument, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SamplingStatisticsDocument, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SamplingStatisticsDocument {
             rule_name: self.rule_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "rule_name",
                     "rule_name was not specified but it is required when building SamplingStatisticsDocument",
                 )
             })?,
             client_id: self.client_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "client_id",
                     "client_id was not specified but it is required when building SamplingStatisticsDocument",
                 )
             })?,
             timestamp: self.timestamp.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "timestamp",
                     "timestamp was not specified but it is required when building SamplingStatisticsDocument",
                 )

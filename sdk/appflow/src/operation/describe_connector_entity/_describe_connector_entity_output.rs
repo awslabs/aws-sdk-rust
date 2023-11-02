@@ -70,11 +70,11 @@ impl DescribeConnectorEntityOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_connector_entity::DescribeConnectorEntityOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_connector_entity::DescribeConnectorEntityOutput {
             connector_entity_fields: self.connector_entity_fields.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "connector_entity_fields",
                     "connector_entity_fields was not specified but it is required when building DescribeConnectorEntityOutput",
                 )

@@ -151,7 +151,7 @@ impl StartDocumentTextDetectionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_document_text_detection::StartDocumentTextDetectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_document_text_detection::StartDocumentTextDetectionInput {
             document_location: self.document_location,

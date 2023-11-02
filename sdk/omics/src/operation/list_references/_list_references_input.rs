@@ -107,7 +107,7 @@ impl ListReferencesInputBuilder {
     /// Consumes the builder and constructs a [`ListReferencesInput`](crate::operation::list_references::ListReferencesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_references::ListReferencesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_references::ListReferencesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_references::ListReferencesInput {
             reference_store_id: self.reference_store_id,
             max_results: self.max_results,

@@ -150,10 +150,10 @@ impl TelemetryRecordBuilder {
     /// Consumes the builder and constructs a [`TelemetryRecord`](crate::types::TelemetryRecord).
     /// This method will fail if any of the following fields are not set:
     /// - [`timestamp`](crate::types::builders::TelemetryRecordBuilder::timestamp)
-    pub fn build(self) -> ::std::result::Result<crate::types::TelemetryRecord, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TelemetryRecord, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TelemetryRecord {
             timestamp: self.timestamp.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "timestamp",
                     "timestamp was not specified but it is required when building TelemetryRecord",
                 )

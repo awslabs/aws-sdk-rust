@@ -109,7 +109,7 @@ impl CreateMilestoneInputBuilder {
     /// Consumes the builder and constructs a [`CreateMilestoneInput`](crate::operation::create_milestone::CreateMilestoneInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_milestone::CreateMilestoneInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_milestone::CreateMilestoneInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_milestone::CreateMilestoneInput {
             workload_id: self.workload_id,
             milestone_name: self.milestone_name,

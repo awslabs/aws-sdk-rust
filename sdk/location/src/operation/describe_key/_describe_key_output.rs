@@ -279,41 +279,41 @@ impl DescribeKeyOutputBuilder {
     /// - [`create_time`](crate::operation::describe_key::builders::DescribeKeyOutputBuilder::create_time)
     /// - [`expire_time`](crate::operation::describe_key::builders::DescribeKeyOutputBuilder::expire_time)
     /// - [`update_time`](crate::operation::describe_key::builders::DescribeKeyOutputBuilder::update_time)
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_key::DescribeKeyOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_key::DescribeKeyOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_key::DescribeKeyOutput {
             key: self.key.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "key",
                     "key was not specified but it is required when building DescribeKeyOutput",
                 )
             })?,
             key_arn: self.key_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "key_arn",
                     "key_arn was not specified but it is required when building DescribeKeyOutput",
                 )
             })?,
             key_name: self.key_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "key_name",
                     "key_name was not specified but it is required when building DescribeKeyOutput",
                 )
             })?,
             restrictions: self.restrictions,
             create_time: self.create_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "create_time",
                     "create_time was not specified but it is required when building DescribeKeyOutput",
                 )
             })?,
             expire_time: self.expire_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "expire_time",
                     "expire_time was not specified but it is required when building DescribeKeyOutput",
                 )
             })?,
             update_time: self.update_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "update_time",
                     "update_time was not specified but it is required when building DescribeKeyOutput",
                 )

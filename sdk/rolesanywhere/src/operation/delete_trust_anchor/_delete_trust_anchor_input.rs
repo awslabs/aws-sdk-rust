@@ -44,7 +44,7 @@ impl DeleteTrustAnchorInputBuilder {
     /// Consumes the builder and constructs a [`DeleteTrustAnchorInput`](crate::operation::delete_trust_anchor::DeleteTrustAnchorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_trust_anchor::DeleteTrustAnchorInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_trust_anchor::DeleteTrustAnchorInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_trust_anchor::DeleteTrustAnchorInput {
             trust_anchor_id: self.trust_anchor_id,
         })

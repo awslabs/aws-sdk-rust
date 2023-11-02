@@ -45,10 +45,10 @@ impl CrossChannelBehaviorBuilder {
     /// Consumes the builder and constructs a [`CrossChannelBehavior`](crate::types::CrossChannelBehavior).
     /// This method will fail if any of the following fields are not set:
     /// - [`behavior_type`](crate::types::builders::CrossChannelBehaviorBuilder::behavior_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::CrossChannelBehavior, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CrossChannelBehavior, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CrossChannelBehavior {
             behavior_type: self.behavior_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "behavior_type",
                     "behavior_type was not specified but it is required when building CrossChannelBehavior",
                 )

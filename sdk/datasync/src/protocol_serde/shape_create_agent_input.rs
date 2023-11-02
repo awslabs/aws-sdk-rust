@@ -2,7 +2,7 @@
 pub fn ser_create_agent_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_agent::CreateAgentInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.activation_key {
         object.key("ActivationKey").string(var_1.as_str());
     }

@@ -45,10 +45,10 @@ impl AgentOrchestrationConfigBuilder {
     /// Consumes the builder and constructs a [`AgentOrchestrationConfig`](crate::types::AgentOrchestrationConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`profiling_enabled`](crate::types::builders::AgentOrchestrationConfigBuilder::profiling_enabled)
-    pub fn build(self) -> ::std::result::Result<crate::types::AgentOrchestrationConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AgentOrchestrationConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AgentOrchestrationConfig {
             profiling_enabled: self.profiling_enabled.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "profiling_enabled",
                     "profiling_enabled was not specified but it is required when building AgentOrchestrationConfig",
                 )

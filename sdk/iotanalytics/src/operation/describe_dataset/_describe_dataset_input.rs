@@ -44,7 +44,7 @@ impl DescribeDatasetInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDatasetInput`](crate::operation::describe_dataset::DescribeDatasetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_dataset::DescribeDatasetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_dataset::DescribeDatasetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_dataset::DescribeDatasetInput {
             dataset_name: self.dataset_name,
         })

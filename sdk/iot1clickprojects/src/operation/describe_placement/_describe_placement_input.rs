@@ -66,7 +66,7 @@ impl DescribePlacementInputBuilder {
     /// Consumes the builder and constructs a [`DescribePlacementInput`](crate::operation::describe_placement::DescribePlacementInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_placement::DescribePlacementInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_placement::DescribePlacementInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_placement::DescribePlacementInput {
             placement_name: self.placement_name,
             project_name: self.project_name,

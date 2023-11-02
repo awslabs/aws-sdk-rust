@@ -115,7 +115,7 @@ impl CreateThingGroupInputBuilder {
     /// Consumes the builder and constructs a [`CreateThingGroupInput`](crate::operation::create_thing_group::CreateThingGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_thing_group::CreateThingGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_thing_group::CreateThingGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_thing_group::CreateThingGroupInput {
             thing_group_name: self.thing_group_name,
             parent_group_name: self.parent_group_name,

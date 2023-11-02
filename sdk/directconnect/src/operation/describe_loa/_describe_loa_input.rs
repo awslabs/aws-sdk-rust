@@ -84,7 +84,7 @@ impl DescribeLoaInputBuilder {
         &self.loa_content_type
     }
     /// Consumes the builder and constructs a [`DescribeLoaInput`](crate::operation::describe_loa::DescribeLoaInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_loa::DescribeLoaInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_loa::DescribeLoaInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_loa::DescribeLoaInput {
             connection_id: self.connection_id,
             provider_name: self.provider_name,

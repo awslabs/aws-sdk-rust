@@ -88,7 +88,7 @@ impl PutChannelPolicyInputBuilder {
     /// Consumes the builder and constructs a [`PutChannelPolicyInput`](crate::operation::put_channel_policy::PutChannelPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_channel_policy::PutChannelPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_channel_policy::PutChannelPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_channel_policy::PutChannelPolicyInput {
             channel_group_name: self.channel_group_name,
             channel_name: self.channel_name,

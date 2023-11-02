@@ -259,7 +259,7 @@ impl DescribeDbClusterBacktracksInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_db_cluster_backtracks::DescribeDbClusterBacktracksInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_db_cluster_backtracks::DescribeDbClusterBacktracksInput {
             db_cluster_identifier: self.db_cluster_identifier,

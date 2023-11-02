@@ -106,7 +106,9 @@ impl StartCutoverInputBuilder {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`StartCutoverInput`](crate::operation::start_cutover::StartCutoverInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::start_cutover::StartCutoverInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::start_cutover::StartCutoverInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_cutover::StartCutoverInput {
             source_server_ids: self.source_server_ids,
             tags: self.tags,

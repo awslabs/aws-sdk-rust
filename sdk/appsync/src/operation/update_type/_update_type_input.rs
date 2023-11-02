@@ -107,7 +107,7 @@ impl UpdateTypeInputBuilder {
         &self.format
     }
     /// Consumes the builder and constructs a [`UpdateTypeInput`](crate::operation::update_type::UpdateTypeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_type::UpdateTypeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_type::UpdateTypeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_type::UpdateTypeInput {
             api_id: self.api_id,
             type_name: self.type_name,

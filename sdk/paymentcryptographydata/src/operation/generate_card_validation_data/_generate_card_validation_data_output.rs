@@ -113,23 +113,23 @@ impl GenerateCardValidationDataOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::generate_card_validation_data::GenerateCardValidationDataOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::generate_card_validation_data::GenerateCardValidationDataOutput {
             key_arn: self.key_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "key_arn",
                     "key_arn was not specified but it is required when building GenerateCardValidationDataOutput",
                 )
             })?,
             key_check_value: self.key_check_value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "key_check_value",
                     "key_check_value was not specified but it is required when building GenerateCardValidationDataOutput",
                 )
             })?,
             validation_data: self.validation_data.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "validation_data",
                     "validation_data was not specified but it is required when building GenerateCardValidationDataOutput",
                 )

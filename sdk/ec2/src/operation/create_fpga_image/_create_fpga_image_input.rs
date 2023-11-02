@@ -178,7 +178,7 @@ impl CreateFpgaImageInputBuilder {
     /// Consumes the builder and constructs a [`CreateFpgaImageInput`](crate::operation::create_fpga_image::CreateFpgaImageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_fpga_image::CreateFpgaImageInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_fpga_image::CreateFpgaImageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_fpga_image::CreateFpgaImageInput {
             dry_run: self.dry_run,
             input_storage_location: self.input_storage_location,

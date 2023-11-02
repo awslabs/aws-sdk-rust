@@ -152,7 +152,7 @@ impl UpdateSignalCatalogInputBuilder {
     /// Consumes the builder and constructs a [`UpdateSignalCatalogInput`](crate::operation::update_signal_catalog::UpdateSignalCatalogInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_signal_catalog::UpdateSignalCatalogInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_signal_catalog::UpdateSignalCatalogInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_signal_catalog::UpdateSignalCatalogInput {
             name: self.name,

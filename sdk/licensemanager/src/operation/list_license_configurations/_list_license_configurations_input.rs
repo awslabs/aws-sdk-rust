@@ -149,7 +149,7 @@ impl ListLicenseConfigurationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_license_configurations::ListLicenseConfigurationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_license_configurations::ListLicenseConfigurationsInput {
             license_configuration_arns: self.license_configuration_arns,

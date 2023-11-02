@@ -2,7 +2,7 @@
 pub fn ser_aws_auto_scaling_launch_configuration_metadata_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsAutoScalingLaunchConfigurationMetadataOptions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.http_endpoint {
         object.key("HttpEndpoint").string(var_1.as_str());
     }

@@ -109,7 +109,7 @@ impl ListReadSetActivationJobsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_read_set_activation_jobs::ListReadSetActivationJobsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_read_set_activation_jobs::ListReadSetActivationJobsInput {
             sequence_store_id: self.sequence_store_id,

@@ -2,7 +2,7 @@
 pub fn ser_batch_put_geofence_request_entry(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BatchPutGeofenceRequestEntry,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("GeofenceId").string(input.geofence_id.as_str());
     }

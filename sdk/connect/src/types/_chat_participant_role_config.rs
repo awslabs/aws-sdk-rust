@@ -54,10 +54,10 @@ impl ChatParticipantRoleConfigBuilder {
     /// Consumes the builder and constructs a [`ChatParticipantRoleConfig`](crate::types::ChatParticipantRoleConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`participant_timer_config_list`](crate::types::builders::ChatParticipantRoleConfigBuilder::participant_timer_config_list)
-    pub fn build(self) -> ::std::result::Result<crate::types::ChatParticipantRoleConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ChatParticipantRoleConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ChatParticipantRoleConfig {
             participant_timer_config_list: self.participant_timer_config_list.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "participant_timer_config_list",
                     "participant_timer_config_list was not specified but it is required when building ChatParticipantRoleConfig",
                 )

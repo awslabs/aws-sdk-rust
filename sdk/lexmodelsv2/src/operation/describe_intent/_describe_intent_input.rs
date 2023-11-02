@@ -110,7 +110,7 @@ impl DescribeIntentInputBuilder {
     /// Consumes the builder and constructs a [`DescribeIntentInput`](crate::operation::describe_intent::DescribeIntentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_intent::DescribeIntentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_intent::DescribeIntentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_intent::DescribeIntentInput {
             intent_id: self.intent_id,
             bot_id: self.bot_id,

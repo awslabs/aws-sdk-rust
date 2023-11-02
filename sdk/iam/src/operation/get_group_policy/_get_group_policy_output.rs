@@ -117,22 +117,22 @@ impl GetGroupPolicyOutputBuilder {
     /// - [`policy_document`](crate::operation::get_group_policy::builders::GetGroupPolicyOutputBuilder::policy_document)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_group_policy::GetGroupPolicyOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_group_policy::GetGroupPolicyOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_group_policy::GetGroupPolicyOutput {
             group_name: self.group_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "group_name",
                     "group_name was not specified but it is required when building GetGroupPolicyOutput",
                 )
             })?,
             policy_name: self.policy_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "policy_name",
                     "policy_name was not specified but it is required when building GetGroupPolicyOutput",
                 )
             })?,
             policy_document: self.policy_document.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "policy_document",
                     "policy_document was not specified but it is required when building GetGroupPolicyOutput",
                 )

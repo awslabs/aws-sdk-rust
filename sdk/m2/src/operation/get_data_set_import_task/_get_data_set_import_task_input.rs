@@ -66,7 +66,7 @@ impl GetDataSetImportTaskInputBuilder {
     /// Consumes the builder and constructs a [`GetDataSetImportTaskInput`](crate::operation::get_data_set_import_task::GetDataSetImportTaskInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_data_set_import_task::GetDataSetImportTaskInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_data_set_import_task::GetDataSetImportTaskInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_data_set_import_task::GetDataSetImportTaskInput {
             application_id: self.application_id,

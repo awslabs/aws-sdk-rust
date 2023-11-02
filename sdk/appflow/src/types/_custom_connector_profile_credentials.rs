@@ -129,10 +129,10 @@ impl CustomConnectorProfileCredentialsBuilder {
     /// Consumes the builder and constructs a [`CustomConnectorProfileCredentials`](crate::types::CustomConnectorProfileCredentials).
     /// This method will fail if any of the following fields are not set:
     /// - [`authentication_type`](crate::types::builders::CustomConnectorProfileCredentialsBuilder::authentication_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::CustomConnectorProfileCredentials, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CustomConnectorProfileCredentials, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CustomConnectorProfileCredentials {
             authentication_type: self.authentication_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "authentication_type",
                     "authentication_type was not specified but it is required when building CustomConnectorProfileCredentials",
                 )

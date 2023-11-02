@@ -2,7 +2,7 @@
 pub fn ser_create_topic_refresh_schedule_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_topic_refresh_schedule::CreateTopicRefreshScheduleInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.dataset_arn {
         object.key("DatasetArn").string(var_1.as_str());
     }

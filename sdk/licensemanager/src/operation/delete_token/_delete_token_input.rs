@@ -42,7 +42,7 @@ impl DeleteTokenInputBuilder {
         &self.token_id
     }
     /// Consumes the builder and constructs a [`DeleteTokenInput`](crate::operation::delete_token::DeleteTokenInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_token::DeleteTokenInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_token::DeleteTokenInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_token::DeleteTokenInput { token_id: self.token_id })
     }
 }

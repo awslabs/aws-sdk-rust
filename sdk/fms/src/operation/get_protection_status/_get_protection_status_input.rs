@@ -149,7 +149,7 @@ impl GetProtectionStatusInputBuilder {
     /// Consumes the builder and constructs a [`GetProtectionStatusInput`](crate::operation::get_protection_status::GetProtectionStatusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_protection_status::GetProtectionStatusInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_protection_status::GetProtectionStatusInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_protection_status::GetProtectionStatusInput {
             policy_id: self.policy_id,

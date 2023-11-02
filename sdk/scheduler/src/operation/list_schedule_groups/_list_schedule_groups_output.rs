@@ -89,12 +89,12 @@ impl ListScheduleGroupsOutputBuilder {
     /// - [`schedule_groups`](crate::operation::list_schedule_groups::builders::ListScheduleGroupsOutputBuilder::schedule_groups)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_schedule_groups::ListScheduleGroupsOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_schedule_groups::ListScheduleGroupsOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_schedule_groups::ListScheduleGroupsOutput {
             next_token: self.next_token,
             schedule_groups: self.schedule_groups.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "schedule_groups",
                     "schedule_groups was not specified but it is required when building ListScheduleGroupsOutput",
                 )

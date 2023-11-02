@@ -2,7 +2,7 @@
 pub fn ser_aws_msk_cluster_cluster_info_client_authentication_sasl_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsMskClusterClusterInfoClientAuthenticationSaslDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.iam {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Iam").start_object();

@@ -68,7 +68,7 @@ impl UpdateApnsSandboxChannelInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_apns_sandbox_channel::UpdateApnsSandboxChannelInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_apns_sandbox_channel::UpdateApnsSandboxChannelInput {
             apns_sandbox_channel_request: self.apns_sandbox_channel_request,

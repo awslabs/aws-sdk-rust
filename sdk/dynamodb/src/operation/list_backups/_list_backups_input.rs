@@ -176,7 +176,7 @@ impl ListBackupsInputBuilder {
         &self.backup_type
     }
     /// Consumes the builder and constructs a [`ListBackupsInput`](crate::operation::list_backups::ListBackupsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_backups::ListBackupsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_backups::ListBackupsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_backups::ListBackupsInput {
             table_name: self.table_name,
             limit: self.limit,

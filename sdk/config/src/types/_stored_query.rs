@@ -130,12 +130,12 @@ impl StoredQueryBuilder {
     /// Consumes the builder and constructs a [`StoredQuery`](crate::types::StoredQuery).
     /// This method will fail if any of the following fields are not set:
     /// - [`query_name`](crate::types::builders::StoredQueryBuilder::query_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::StoredQuery, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::StoredQuery, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::StoredQuery {
             query_id: self.query_id,
             query_arn: self.query_arn,
             query_name: self.query_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "query_name",
                     "query_name was not specified but it is required when building StoredQuery",
                 )

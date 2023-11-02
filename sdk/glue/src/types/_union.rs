@@ -108,22 +108,22 @@ impl UnionBuilder {
     /// - [`name`](crate::types::builders::UnionBuilder::name)
     /// - [`inputs`](crate::types::builders::UnionBuilder::inputs)
     /// - [`union_type`](crate::types::builders::UnionBuilder::union_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::Union, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Union, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Union {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building Union",
                 )
             })?,
             inputs: self.inputs.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "inputs",
                     "inputs was not specified but it is required when building Union",
                 )
             })?,
             union_type: self.union_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "union_type",
                     "union_type was not specified but it is required when building Union",
                 )

@@ -118,7 +118,7 @@ impl DescribeAwsNetworkPerformanceMetricSubscriptionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_aws_network_performance_metric_subscriptions::DescribeAwsNetworkPerformanceMetricSubscriptionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_aws_network_performance_metric_subscriptions::DescribeAwsNetworkPerformanceMetricSubscriptionsInput {

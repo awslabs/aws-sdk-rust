@@ -106,16 +106,16 @@ impl ServiceTemporarilyUnavailableExceptionBuilder {
     /// - [`can_retry`](crate::types::error::builders::ServiceTemporarilyUnavailableExceptionBuilder::can_retry)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::error::ServiceTemporarilyUnavailableException, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::error::ServiceTemporarilyUnavailableException, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::error::ServiceTemporarilyUnavailableException {
             message: self.message.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "message",
                     "message was not specified but it is required when building ServiceTemporarilyUnavailableException",
                 )
             })?,
             can_retry: self.can_retry.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "can_retry",
                     "can_retry was not specified but it is required when building ServiceTemporarilyUnavailableException",
                 )

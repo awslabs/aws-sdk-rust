@@ -88,7 +88,7 @@ impl DescribeLoadBalancerTargetGroupsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_load_balancer_target_groups::DescribeLoadBalancerTargetGroupsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_load_balancer_target_groups::DescribeLoadBalancerTargetGroupsInput {

@@ -143,10 +143,10 @@ impl SapoDataDestinationPropertiesBuilder {
     /// Consumes the builder and constructs a [`SapoDataDestinationProperties`](crate::types::SapoDataDestinationProperties).
     /// This method will fail if any of the following fields are not set:
     /// - [`object_path`](crate::types::builders::SapoDataDestinationPropertiesBuilder::object_path)
-    pub fn build(self) -> ::std::result::Result<crate::types::SapoDataDestinationProperties, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SapoDataDestinationProperties, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SapoDataDestinationProperties {
             object_path: self.object_path.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "object_path",
                     "object_path was not specified but it is required when building SapoDataDestinationProperties",
                 )

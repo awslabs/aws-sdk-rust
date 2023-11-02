@@ -110,7 +110,7 @@ impl GetDataCellsFilterInputBuilder {
     /// Consumes the builder and constructs a [`GetDataCellsFilterInput`](crate::operation::get_data_cells_filter::GetDataCellsFilterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_data_cells_filter::GetDataCellsFilterInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_data_cells_filter::GetDataCellsFilterInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_data_cells_filter::GetDataCellsFilterInput {
             table_catalog_id: self.table_catalog_id,

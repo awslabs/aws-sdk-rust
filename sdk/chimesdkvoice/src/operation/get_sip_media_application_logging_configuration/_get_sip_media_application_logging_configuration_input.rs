@@ -47,7 +47,7 @@ impl GetSipMediaApplicationLoggingConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_sip_media_application_logging_configuration::GetSipMediaApplicationLoggingConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_sip_media_application_logging_configuration::GetSipMediaApplicationLoggingConfigurationInput {

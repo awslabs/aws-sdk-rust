@@ -112,16 +112,16 @@ impl CurrentRevisionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`revision`](crate::types::builders::CurrentRevisionBuilder::revision)
     /// - [`change_identifier`](crate::types::builders::CurrentRevisionBuilder::change_identifier)
-    pub fn build(self) -> ::std::result::Result<crate::types::CurrentRevision, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CurrentRevision, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CurrentRevision {
             revision: self.revision.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "revision",
                     "revision was not specified but it is required when building CurrentRevision",
                 )
             })?,
             change_identifier: self.change_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "change_identifier",
                     "change_identifier was not specified but it is required when building CurrentRevision",
                 )

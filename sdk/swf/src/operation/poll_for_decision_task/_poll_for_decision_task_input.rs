@@ -196,7 +196,7 @@ impl PollForDecisionTaskInputBuilder {
     /// Consumes the builder and constructs a [`PollForDecisionTaskInput`](crate::operation::poll_for_decision_task::PollForDecisionTaskInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::poll_for_decision_task::PollForDecisionTaskInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::poll_for_decision_task::PollForDecisionTaskInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::poll_for_decision_task::PollForDecisionTaskInput {
             domain: self.domain,

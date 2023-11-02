@@ -128,7 +128,7 @@ impl CreateActivityInputBuilder {
     /// Consumes the builder and constructs a [`CreateActivityInput`](crate::operation::create_activity::CreateActivityInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_activity::CreateActivityInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_activity::CreateActivityInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_activity::CreateActivityInput {
             name: self.name,
             tags: self.tags,

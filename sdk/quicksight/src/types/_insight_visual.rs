@@ -163,10 +163,10 @@ impl InsightVisualBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`visual_id`](crate::types::builders::InsightVisualBuilder::visual_id)
     /// - [`data_set_identifier`](crate::types::builders::InsightVisualBuilder::data_set_identifier)
-    pub fn build(self) -> ::std::result::Result<crate::types::InsightVisual, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::InsightVisual, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::InsightVisual {
             visual_id: self.visual_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "visual_id",
                     "visual_id was not specified but it is required when building InsightVisual",
                 )
@@ -176,7 +176,7 @@ impl InsightVisualBuilder {
             insight_configuration: self.insight_configuration,
             actions: self.actions,
             data_set_identifier: self.data_set_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_set_identifier",
                     "data_set_identifier was not specified but it is required when building InsightVisual",
                 )

@@ -67,10 +67,10 @@ impl LabelsS3InputConfigurationBuilder {
     /// Consumes the builder and constructs a [`LabelsS3InputConfiguration`](crate::types::LabelsS3InputConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`bucket`](crate::types::builders::LabelsS3InputConfigurationBuilder::bucket)
-    pub fn build(self) -> ::std::result::Result<crate::types::LabelsS3InputConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::LabelsS3InputConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::LabelsS3InputConfiguration {
             bucket: self.bucket.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "bucket",
                     "bucket was not specified but it is required when building LabelsS3InputConfiguration",
                 )

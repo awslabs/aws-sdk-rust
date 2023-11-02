@@ -46,7 +46,7 @@ impl DisableDomainAutoRenewInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disable_domain_auto_renew::DisableDomainAutoRenewInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disable_domain_auto_renew::DisableDomainAutoRenewInput {
             domain_name: self.domain_name,

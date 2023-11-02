@@ -66,7 +66,8 @@ impl DeleteCacheClusterInputBuilder {
     /// Consumes the builder and constructs a [`DeleteCacheClusterInput`](crate::operation::delete_cache_cluster::DeleteCacheClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_cache_cluster::DeleteCacheClusterInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_cache_cluster::DeleteCacheClusterInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::delete_cache_cluster::DeleteCacheClusterInput {
             cache_cluster_id: self.cache_cluster_id,
             final_snapshot_identifier: self.final_snapshot_identifier,

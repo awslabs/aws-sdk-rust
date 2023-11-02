@@ -2,7 +2,7 @@
 pub fn ser_historical_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::HistoricalOptions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("BudgetAdjustmentPeriod").number(
             #[allow(clippy::useless_conversion)]

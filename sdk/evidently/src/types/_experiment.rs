@@ -441,23 +441,23 @@ impl ExperimentBuilder {
     /// - [`created_time`](crate::types::builders::ExperimentBuilder::created_time)
     /// - [`last_updated_time`](crate::types::builders::ExperimentBuilder::last_updated_time)
     /// - [`r#type`](crate::types::builders::ExperimentBuilder::r#type)
-    pub fn build(self) -> ::std::result::Result<crate::types::Experiment, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Experiment, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Experiment {
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building Experiment",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building Experiment",
                 )
             })?,
             project: self.project,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building Experiment",
                 )
@@ -465,13 +465,13 @@ impl ExperimentBuilder {
             status_reason: self.status_reason,
             description: self.description,
             created_time: self.created_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_time",
                     "created_time was not specified but it is required when building Experiment",
                 )
             })?,
             last_updated_time: self.last_updated_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_updated_time",
                     "last_updated_time was not specified but it is required when building Experiment",
                 )
@@ -484,7 +484,7 @@ impl ExperimentBuilder {
             sampling_rate: self.sampling_rate.unwrap_or_default(),
             segment: self.segment,
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building Experiment",
                 )

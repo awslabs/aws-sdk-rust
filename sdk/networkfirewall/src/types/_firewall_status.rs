@@ -129,16 +129,16 @@ impl FirewallStatusBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`status`](crate::types::builders::FirewallStatusBuilder::status)
     /// - [`configuration_sync_state_summary`](crate::types::builders::FirewallStatusBuilder::configuration_sync_state_summary)
-    pub fn build(self) -> ::std::result::Result<crate::types::FirewallStatus, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::FirewallStatus, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FirewallStatus {
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building FirewallStatus",
                 )
             })?,
             configuration_sync_state_summary: self.configuration_sync_state_summary.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "configuration_sync_state_summary",
                     "configuration_sync_state_summary was not specified but it is required when building FirewallStatus",
                 )

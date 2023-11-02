@@ -212,22 +212,22 @@ impl OidcIdentityProviderConfigRequestBuilder {
     /// - [`identity_provider_config_name`](crate::types::builders::OidcIdentityProviderConfigRequestBuilder::identity_provider_config_name)
     /// - [`issuer_url`](crate::types::builders::OidcIdentityProviderConfigRequestBuilder::issuer_url)
     /// - [`client_id`](crate::types::builders::OidcIdentityProviderConfigRequestBuilder::client_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::OidcIdentityProviderConfigRequest, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::OidcIdentityProviderConfigRequest, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::OidcIdentityProviderConfigRequest {
             identity_provider_config_name: self.identity_provider_config_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "identity_provider_config_name",
                     "identity_provider_config_name was not specified but it is required when building OidcIdentityProviderConfigRequest",
                 )
             })?,
             issuer_url: self.issuer_url.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "issuer_url",
                     "issuer_url was not specified but it is required when building OidcIdentityProviderConfigRequest",
                 )
             })?,
             client_id: self.client_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "client_id",
                     "client_id was not specified but it is required when building OidcIdentityProviderConfigRequest",
                 )

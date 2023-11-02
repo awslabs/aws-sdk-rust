@@ -48,10 +48,10 @@ impl RateLimitLabelNamespaceBuilder {
     /// Consumes the builder and constructs a [`RateLimitLabelNamespace`](crate::types::RateLimitLabelNamespace).
     /// This method will fail if any of the following fields are not set:
     /// - [`namespace`](crate::types::builders::RateLimitLabelNamespaceBuilder::namespace)
-    pub fn build(self) -> ::std::result::Result<crate::types::RateLimitLabelNamespace, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RateLimitLabelNamespace, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RateLimitLabelNamespace {
             namespace: self.namespace.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "namespace",
                     "namespace was not specified but it is required when building RateLimitLabelNamespace",
                 )

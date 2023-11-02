@@ -66,7 +66,7 @@ impl DescribeMigrationTaskInputBuilder {
     /// Consumes the builder and constructs a [`DescribeMigrationTaskInput`](crate::operation::describe_migration_task::DescribeMigrationTaskInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_migration_task::DescribeMigrationTaskInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_migration_task::DescribeMigrationTaskInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_migration_task::DescribeMigrationTaskInput {
             progress_update_stream: self.progress_update_stream,

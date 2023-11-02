@@ -140,7 +140,8 @@ impl SearchUserProfilesInputBuilder {
     /// Consumes the builder and constructs a [`SearchUserProfilesInput`](crate::operation::search_user_profiles::SearchUserProfilesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::search_user_profiles::SearchUserProfilesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::search_user_profiles::SearchUserProfilesInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::search_user_profiles::SearchUserProfilesInput {
             domain_identifier: self.domain_identifier,
             user_type: self.user_type,

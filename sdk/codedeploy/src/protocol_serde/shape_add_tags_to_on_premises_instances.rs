@@ -171,10 +171,10 @@ pub fn de_add_tags_to_on_premises_instances_http_response(
 
 pub fn ser_add_tags_to_on_premises_instances_input(
     input: &crate::operation::add_tags_to_on_premises_instances::AddTagsToOnPremisesInstancesInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_add_tags_to_on_premises_instances_input::ser_add_tags_to_on_premises_instances_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

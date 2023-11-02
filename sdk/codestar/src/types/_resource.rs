@@ -46,10 +46,13 @@ impl ResourceBuilder {
     /// Consumes the builder and constructs a [`Resource`](crate::types::Resource).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::ResourceBuilder::id)
-    pub fn build(self) -> ::std::result::Result<crate::types::Resource, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Resource, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Resource {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field("id", "id was not specified but it is required when building Resource")
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building Resource",
+                )
             })?,
         })
     }

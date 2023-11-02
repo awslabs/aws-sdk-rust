@@ -68,7 +68,7 @@ impl DeleteInlinePolicyFromPermissionSetInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_inline_policy_from_permission_set::DeleteInlinePolicyFromPermissionSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_inline_policy_from_permission_set::DeleteInlinePolicyFromPermissionSetInput {

@@ -2,7 +2,7 @@
 pub fn ser_configure_logs_for_playback_configuration_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::configure_logs_for_playback_configuration::ConfigureLogsForPlaybackConfigurationInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.percent_enabled {
         object.key("PercentEnabled").number(
             #[allow(clippy::useless_conversion)]

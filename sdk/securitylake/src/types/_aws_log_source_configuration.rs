@@ -125,17 +125,17 @@ impl AwsLogSourceConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`regions`](crate::types::builders::AwsLogSourceConfigurationBuilder::regions)
     /// - [`source_name`](crate::types::builders::AwsLogSourceConfigurationBuilder::source_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::AwsLogSourceConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AwsLogSourceConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AwsLogSourceConfiguration {
             accounts: self.accounts,
             regions: self.regions.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "regions",
                     "regions was not specified but it is required when building AwsLogSourceConfiguration",
                 )
             })?,
             source_name: self.source_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source_name",
                     "source_name was not specified but it is required when building AwsLogSourceConfiguration",
                 )

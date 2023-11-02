@@ -295,7 +295,7 @@ impl RegisterContainerInstanceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_container_instance::RegisterContainerInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::register_container_instance::RegisterContainerInstanceInput {
             cluster: self.cluster,

@@ -252,7 +252,7 @@ impl CreateFuotaTaskInputBuilder {
     /// Consumes the builder and constructs a [`CreateFuotaTaskInput`](crate::operation::create_fuota_task::CreateFuotaTaskInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_fuota_task::CreateFuotaTaskInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_fuota_task::CreateFuotaTaskInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_fuota_task::CreateFuotaTaskInput {
             name: self.name,
             description: self.description,

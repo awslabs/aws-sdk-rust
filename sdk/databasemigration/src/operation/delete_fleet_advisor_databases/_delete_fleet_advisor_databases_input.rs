@@ -53,7 +53,7 @@ impl DeleteFleetAdvisorDatabasesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_fleet_advisor_databases::DeleteFleetAdvisorDatabasesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_fleet_advisor_databases::DeleteFleetAdvisorDatabasesInput {
             database_ids: self.database_ids,

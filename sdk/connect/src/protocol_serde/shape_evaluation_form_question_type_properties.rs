@@ -2,7 +2,7 @@
 pub fn ser_evaluation_form_question_type_properties(
     object_3: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EvaluationFormQuestionTypeProperties,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::EvaluationFormQuestionTypeProperties::Numeric(inner) => {
             #[allow(unused_mut)]
@@ -23,7 +23,7 @@ pub fn ser_evaluation_form_question_type_properties(
             object_2.finish();
         }
         crate::types::EvaluationFormQuestionTypeProperties::Unknown => {
-            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+            return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "EvaluationFormQuestionTypeProperties",
             ))
         }
@@ -44,12 +44,17 @@ where
             match tokens.next().transpose()? {
                 Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                 Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                    let key = key.to_unescaped()?;
+                    if key == "__type" {
+                        ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                        continue;
+                    }
                     if variant.is_some() {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
                             "encountered mixed variants in union",
                         ));
                     }
-                    variant = match key.to_unescaped()?.as_ref() {
+                    variant = match key.as_ref() {
                             "Numeric" => {
                                 Some(crate::types::EvaluationFormQuestionTypeProperties::Numeric(
                                     crate::protocol_serde::shape_evaluation_form_numeric_question_properties::de_evaluation_form_numeric_question_properties(tokens)?

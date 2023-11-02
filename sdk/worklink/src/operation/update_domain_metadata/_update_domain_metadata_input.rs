@@ -87,7 +87,7 @@ impl UpdateDomainMetadataInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDomainMetadataInput`](crate::operation::update_domain_metadata::UpdateDomainMetadataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_domain_metadata::UpdateDomainMetadataInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_domain_metadata::UpdateDomainMetadataInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_domain_metadata::UpdateDomainMetadataInput {
             fleet_arn: self.fleet_arn,

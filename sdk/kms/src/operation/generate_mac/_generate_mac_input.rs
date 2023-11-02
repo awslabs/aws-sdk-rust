@@ -172,7 +172,7 @@ impl GenerateMacInputBuilder {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`GenerateMacInput`](crate::operation::generate_mac::GenerateMacInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::generate_mac::GenerateMacInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::generate_mac::GenerateMacInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::generate_mac::GenerateMacInput {
             message: self.message,
             key_id: self.key_id,

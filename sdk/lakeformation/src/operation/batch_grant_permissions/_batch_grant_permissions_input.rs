@@ -72,7 +72,7 @@ impl BatchGrantPermissionsInputBuilder {
     /// Consumes the builder and constructs a [`BatchGrantPermissionsInput`](crate::operation::batch_grant_permissions::BatchGrantPermissionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_grant_permissions::BatchGrantPermissionsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::batch_grant_permissions::BatchGrantPermissionsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::batch_grant_permissions::BatchGrantPermissionsInput {
             catalog_id: self.catalog_id,

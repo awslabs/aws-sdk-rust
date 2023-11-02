@@ -111,7 +111,7 @@ impl DisassociateDiscoveredResourceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_discovered_resource::DisassociateDiscoveredResourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disassociate_discovered_resource::DisassociateDiscoveredResourceInput {
             progress_update_stream: self.progress_update_stream,

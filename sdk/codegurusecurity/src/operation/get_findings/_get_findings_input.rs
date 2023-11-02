@@ -105,7 +105,7 @@ impl GetFindingsInputBuilder {
         &self.status
     }
     /// Consumes the builder and constructs a [`GetFindingsInput`](crate::operation::get_findings::GetFindingsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_findings::GetFindingsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_findings::GetFindingsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_findings::GetFindingsInput {
             scan_name: self.scan_name,
             next_token: self.next_token,

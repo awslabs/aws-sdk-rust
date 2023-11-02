@@ -44,8 +44,10 @@ impl GetConnectorDefinitionInputBuilder {
     /// Consumes the builder and constructs a [`GetConnectorDefinitionInput`](crate::operation::get_connector_definition::GetConnectorDefinitionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_connector_definition::GetConnectorDefinitionInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::get_connector_definition::GetConnectorDefinitionInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::get_connector_definition::GetConnectorDefinitionInput {
             connector_definition_id: self.connector_definition_id,
         })

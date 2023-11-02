@@ -85,7 +85,7 @@ impl ListReleaseLabelsInputBuilder {
     /// Consumes the builder and constructs a [`ListReleaseLabelsInput`](crate::operation::list_release_labels::ListReleaseLabelsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_release_labels::ListReleaseLabelsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_release_labels::ListReleaseLabelsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_release_labels::ListReleaseLabelsInput {
             filters: self.filters,
             next_token: self.next_token,

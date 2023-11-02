@@ -278,7 +278,7 @@ impl CreatePipeInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreatePipeInput`](crate::operation::create_pipe::CreatePipeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_pipe::CreatePipeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_pipe::CreatePipeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_pipe::CreatePipeInput {
             name: self.name,
             description: self.description,

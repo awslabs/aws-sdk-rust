@@ -44,7 +44,7 @@ impl DescribeStorageSystemInputBuilder {
     /// Consumes the builder and constructs a [`DescribeStorageSystemInput`](crate::operation::describe_storage_system::DescribeStorageSystemInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_storage_system::DescribeStorageSystemInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_storage_system::DescribeStorageSystemInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_storage_system::DescribeStorageSystemInput {
             storage_system_arn: self.storage_system_arn,

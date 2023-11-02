@@ -2,7 +2,7 @@
 pub fn ser_replica_configuration_request(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ReplicaConfigurationRequest,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.replica_count != 0 {
         object.key("ReplicaCount").number(
             #[allow(clippy::useless_conversion)]

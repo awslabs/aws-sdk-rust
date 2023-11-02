@@ -89,7 +89,7 @@ impl UpdatePublicDnsNamespaceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_public_dns_namespace::UpdatePublicDnsNamespaceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_public_dns_namespace::UpdatePublicDnsNamespaceInput {
             id: self.id,

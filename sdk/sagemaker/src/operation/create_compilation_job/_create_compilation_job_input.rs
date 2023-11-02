@@ -242,7 +242,7 @@ impl CreateCompilationJobInputBuilder {
     /// Consumes the builder and constructs a [`CreateCompilationJobInput`](crate::operation::create_compilation_job::CreateCompilationJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_compilation_job::CreateCompilationJobInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_compilation_job::CreateCompilationJobInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_compilation_job::CreateCompilationJobInput {
             compilation_job_name: self.compilation_job_name,

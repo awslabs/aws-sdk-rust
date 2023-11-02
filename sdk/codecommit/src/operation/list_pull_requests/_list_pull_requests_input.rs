@@ -128,7 +128,7 @@ impl ListPullRequestsInputBuilder {
     /// Consumes the builder and constructs a [`ListPullRequestsInput`](crate::operation::list_pull_requests::ListPullRequestsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_pull_requests::ListPullRequestsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_pull_requests::ListPullRequestsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_pull_requests::ListPullRequestsInput {
             repository_name: self.repository_name,
             author_arn: self.author_arn,

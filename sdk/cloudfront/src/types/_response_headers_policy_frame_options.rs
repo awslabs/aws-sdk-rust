@@ -74,16 +74,16 @@ impl ResponseHeadersPolicyFrameOptionsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`r#override`](crate::types::builders::ResponseHeadersPolicyFrameOptionsBuilder::r#override)
     /// - [`frame_option`](crate::types::builders::ResponseHeadersPolicyFrameOptionsBuilder::frame_option)
-    pub fn build(self) -> ::std::result::Result<crate::types::ResponseHeadersPolicyFrameOptions, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ResponseHeadersPolicyFrameOptions, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ResponseHeadersPolicyFrameOptions {
             r#override: self.r#override.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#override",
                     "r#override was not specified but it is required when building ResponseHeadersPolicyFrameOptions",
                 )
             })?,
             frame_option: self.frame_option.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "frame_option",
                     "frame_option was not specified but it is required when building ResponseHeadersPolicyFrameOptions",
                 )

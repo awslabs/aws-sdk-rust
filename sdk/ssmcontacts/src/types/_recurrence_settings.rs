@@ -190,20 +190,20 @@ impl RecurrenceSettingsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`number_of_on_calls`](crate::types::builders::RecurrenceSettingsBuilder::number_of_on_calls)
     /// - [`recurrence_multiplier`](crate::types::builders::RecurrenceSettingsBuilder::recurrence_multiplier)
-    pub fn build(self) -> ::std::result::Result<crate::types::RecurrenceSettings, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RecurrenceSettings, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RecurrenceSettings {
             monthly_settings: self.monthly_settings,
             weekly_settings: self.weekly_settings,
             daily_settings: self.daily_settings,
             number_of_on_calls: self.number_of_on_calls.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "number_of_on_calls",
                     "number_of_on_calls was not specified but it is required when building RecurrenceSettings",
                 )
             })?,
             shift_coverages: self.shift_coverages,
             recurrence_multiplier: self.recurrence_multiplier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "recurrence_multiplier",
                     "recurrence_multiplier was not specified but it is required when building RecurrenceSettings",
                 )

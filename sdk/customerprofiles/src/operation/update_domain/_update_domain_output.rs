@@ -246,10 +246,10 @@ impl UpdateDomainOutputBuilder {
     /// - [`last_updated_at`](crate::operation::update_domain::builders::UpdateDomainOutputBuilder::last_updated_at)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_domain::UpdateDomainOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_domain::UpdateDomainOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_domain::UpdateDomainOutput {
             domain_name: self.domain_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "domain_name",
                     "domain_name was not specified but it is required when building UpdateDomainOutput",
                 )
@@ -260,13 +260,13 @@ impl UpdateDomainOutputBuilder {
             matching: self.matching,
             rule_based_matching: self.rule_based_matching,
             created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
                     "created_at was not specified but it is required when building UpdateDomainOutput",
                 )
             })?,
             last_updated_at: self.last_updated_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_updated_at",
                     "last_updated_at was not specified but it is required when building UpdateDomainOutput",
                 )

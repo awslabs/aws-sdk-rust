@@ -510,40 +510,40 @@ impl ScalingInstructionBuilder {
     /// - [`min_capacity`](crate::types::builders::ScalingInstructionBuilder::min_capacity)
     /// - [`max_capacity`](crate::types::builders::ScalingInstructionBuilder::max_capacity)
     /// - [`target_tracking_configurations`](crate::types::builders::ScalingInstructionBuilder::target_tracking_configurations)
-    pub fn build(self) -> ::std::result::Result<crate::types::ScalingInstruction, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ScalingInstruction, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ScalingInstruction {
             service_namespace: self.service_namespace.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "service_namespace",
                     "service_namespace was not specified but it is required when building ScalingInstruction",
                 )
             })?,
             resource_id: self.resource_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_id",
                     "resource_id was not specified but it is required when building ScalingInstruction",
                 )
             })?,
             scalable_dimension: self.scalable_dimension.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "scalable_dimension",
                     "scalable_dimension was not specified but it is required when building ScalingInstruction",
                 )
             })?,
             min_capacity: self.min_capacity.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "min_capacity",
                     "min_capacity was not specified but it is required when building ScalingInstruction",
                 )
             })?,
             max_capacity: self.max_capacity.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "max_capacity",
                     "max_capacity was not specified but it is required when building ScalingInstruction",
                 )
             })?,
             target_tracking_configurations: self.target_tracking_configurations.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "target_tracking_configurations",
                     "target_tracking_configurations was not specified but it is required when building ScalingInstruction",
                 )

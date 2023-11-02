@@ -163,10 +163,10 @@ impl TopBottomFilterBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`filter_id`](crate::types::builders::TopBottomFilterBuilder::filter_id)
     /// - [`aggregation_sort_configurations`](crate::types::builders::TopBottomFilterBuilder::aggregation_sort_configurations)
-    pub fn build(self) -> ::std::result::Result<crate::types::TopBottomFilter, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TopBottomFilter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TopBottomFilter {
             filter_id: self.filter_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "filter_id",
                     "filter_id was not specified but it is required when building TopBottomFilter",
                 )
@@ -174,7 +174,7 @@ impl TopBottomFilterBuilder {
             column: self.column,
             limit: self.limit,
             aggregation_sort_configurations: self.aggregation_sort_configurations.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "aggregation_sort_configurations",
                     "aggregation_sort_configurations was not specified but it is required when building TopBottomFilter",
                 )

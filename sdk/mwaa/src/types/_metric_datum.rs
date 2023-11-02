@@ -161,16 +161,16 @@ impl MetricDatumBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`metric_name`](crate::types::builders::MetricDatumBuilder::metric_name)
     /// - [`timestamp`](crate::types::builders::MetricDatumBuilder::timestamp)
-    pub fn build(self) -> ::std::result::Result<crate::types::MetricDatum, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::MetricDatum, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MetricDatum {
             metric_name: self.metric_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "metric_name",
                     "metric_name was not specified but it is required when building MetricDatum",
                 )
             })?,
             timestamp: self.timestamp.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "timestamp",
                     "timestamp was not specified but it is required when building MetricDatum",
                 )

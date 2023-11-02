@@ -213,7 +213,9 @@ impl SearchTablesInputBuilder {
         &self.resource_share_type
     }
     /// Consumes the builder and constructs a [`SearchTablesInput`](crate::operation::search_tables::SearchTablesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::search_tables::SearchTablesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::search_tables::SearchTablesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_tables::SearchTablesInput {
             catalog_id: self.catalog_id,
             next_token: self.next_token,

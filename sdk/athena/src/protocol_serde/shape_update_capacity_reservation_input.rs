@@ -2,7 +2,7 @@
 pub fn ser_update_capacity_reservation_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_capacity_reservation::UpdateCapacityReservationInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.target_dpus {
         object.key("TargetDpus").number(
             #[allow(clippy::useless_conversion)]

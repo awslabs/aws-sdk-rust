@@ -95,7 +95,7 @@ impl UpdateSipMediaApplicationCallInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_sip_media_application_call::UpdateSipMediaApplicationCallInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_sip_media_application_call::UpdateSipMediaApplicationCallInput {
             sip_media_application_id: self.sip_media_application_id,

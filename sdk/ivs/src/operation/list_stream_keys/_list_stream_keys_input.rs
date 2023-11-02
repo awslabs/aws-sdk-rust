@@ -86,7 +86,7 @@ impl ListStreamKeysInputBuilder {
     /// Consumes the builder and constructs a [`ListStreamKeysInput`](crate::operation::list_stream_keys::ListStreamKeysInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_stream_keys::ListStreamKeysInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_stream_keys::ListStreamKeysInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_stream_keys::ListStreamKeysInput {
             channel_arn: self.channel_arn,
             next_token: self.next_token,

@@ -64,7 +64,7 @@ impl GetProposalInputBuilder {
         &self.proposal_id
     }
     /// Consumes the builder and constructs a [`GetProposalInput`](crate::operation::get_proposal::GetProposalInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_proposal::GetProposalInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_proposal::GetProposalInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_proposal::GetProposalInput {
             network_id: self.network_id,
             proposal_id: self.proposal_id,

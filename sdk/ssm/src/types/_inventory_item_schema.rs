@@ -117,17 +117,17 @@ impl InventoryItemSchemaBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`type_name`](crate::types::builders::InventoryItemSchemaBuilder::type_name)
     /// - [`attributes`](crate::types::builders::InventoryItemSchemaBuilder::attributes)
-    pub fn build(self) -> ::std::result::Result<crate::types::InventoryItemSchema, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::InventoryItemSchema, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::InventoryItemSchema {
             type_name: self.type_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "type_name",
                     "type_name was not specified but it is required when building InventoryItemSchema",
                 )
             })?,
             version: self.version,
             attributes: self.attributes.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "attributes",
                     "attributes was not specified but it is required when building InventoryItemSchema",
                 )

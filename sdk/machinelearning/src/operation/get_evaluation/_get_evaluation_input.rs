@@ -44,7 +44,7 @@ impl GetEvaluationInputBuilder {
     /// Consumes the builder and constructs a [`GetEvaluationInput`](crate::operation::get_evaluation::GetEvaluationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_evaluation::GetEvaluationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_evaluation::GetEvaluationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_evaluation::GetEvaluationInput {
             evaluation_id: self.evaluation_id,
         })

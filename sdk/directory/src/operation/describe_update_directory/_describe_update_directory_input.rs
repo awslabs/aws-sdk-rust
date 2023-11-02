@@ -110,7 +110,7 @@ impl DescribeUpdateDirectoryInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_update_directory::DescribeUpdateDirectoryInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_update_directory::DescribeUpdateDirectoryInput {
             directory_id: self.directory_id,

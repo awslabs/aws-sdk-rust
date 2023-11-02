@@ -129,10 +129,10 @@ pub fn de_update_rules_of_ip_group_http_response(
 
 pub fn ser_update_rules_of_ip_group_input(
     input: &crate::operation::update_rules_of_ip_group::UpdateRulesOfIpGroupInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_update_rules_of_ip_group_input::ser_update_rules_of_ip_group_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

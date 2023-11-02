@@ -70,7 +70,7 @@ impl GetAccessPointConfigurationForObjectLambdaInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_access_point_configuration_for_object_lambda::GetAccessPointConfigurationForObjectLambdaInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_access_point_configuration_for_object_lambda::GetAccessPointConfigurationForObjectLambdaInput {

@@ -2,7 +2,7 @@
 pub fn ser_pinpoint_destination(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PinpointDestination,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.application_arn {
         object.key("ApplicationArn").string(var_1.as_str());
     }

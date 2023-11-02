@@ -106,16 +106,16 @@ impl OutpostConfigRequestBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`outpost_arns`](crate::types::builders::OutpostConfigRequestBuilder::outpost_arns)
     /// - [`control_plane_instance_type`](crate::types::builders::OutpostConfigRequestBuilder::control_plane_instance_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::OutpostConfigRequest, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::OutpostConfigRequest, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::OutpostConfigRequest {
             outpost_arns: self.outpost_arns.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "outpost_arns",
                     "outpost_arns was not specified but it is required when building OutpostConfigRequest",
                 )
             })?,
             control_plane_instance_type: self.control_plane_instance_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "control_plane_instance_type",
                     "control_plane_instance_type was not specified but it is required when building OutpostConfigRequest",
                 )

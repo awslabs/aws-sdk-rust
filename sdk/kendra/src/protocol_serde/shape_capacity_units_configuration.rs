@@ -53,7 +53,7 @@ where
 pub fn ser_capacity_units_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CapacityUnitsConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("StorageCapacityUnits").number(
             #[allow(clippy::useless_conversion)]

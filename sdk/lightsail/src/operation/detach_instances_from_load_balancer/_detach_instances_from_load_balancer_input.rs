@@ -75,7 +75,7 @@ impl DetachInstancesFromLoadBalancerInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::detach_instances_from_load_balancer::DetachInstancesFromLoadBalancerInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::detach_instances_from_load_balancer::DetachInstancesFromLoadBalancerInput {

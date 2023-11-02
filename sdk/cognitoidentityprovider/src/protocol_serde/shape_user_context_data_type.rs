@@ -2,7 +2,7 @@
 pub fn ser_user_context_data_type(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UserContextDataType,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.ip_address {
         object.key("IpAddress").string(var_1.as_str());
     }

@@ -88,7 +88,7 @@ impl PurchaseOfferingInputBuilder {
     /// Consumes the builder and constructs a [`PurchaseOfferingInput`](crate::operation::purchase_offering::PurchaseOfferingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::purchase_offering::PurchaseOfferingInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::purchase_offering::PurchaseOfferingInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::purchase_offering::PurchaseOfferingInput {
             offering_id: self.offering_id,
             quantity: self.quantity,

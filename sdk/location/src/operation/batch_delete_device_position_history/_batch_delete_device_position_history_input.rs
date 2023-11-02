@@ -90,7 +90,7 @@ impl BatchDeleteDevicePositionHistoryInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_delete_device_position_history::BatchDeleteDevicePositionHistoryInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::batch_delete_device_position_history::BatchDeleteDevicePositionHistoryInput {

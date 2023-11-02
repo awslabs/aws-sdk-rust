@@ -130,7 +130,7 @@ impl ListStackInstancesForProvisionedProductInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProductInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProductInput {

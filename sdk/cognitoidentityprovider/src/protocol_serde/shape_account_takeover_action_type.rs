@@ -2,7 +2,7 @@
 pub fn ser_account_takeover_action_type(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AccountTakeoverActionType,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Notify").boolean(input.notify);
     }

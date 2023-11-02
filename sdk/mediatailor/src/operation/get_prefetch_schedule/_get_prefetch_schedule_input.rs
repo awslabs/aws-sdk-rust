@@ -66,7 +66,7 @@ impl GetPrefetchScheduleInputBuilder {
     /// Consumes the builder and constructs a [`GetPrefetchScheduleInput`](crate::operation::get_prefetch_schedule::GetPrefetchScheduleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_prefetch_schedule::GetPrefetchScheduleInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_prefetch_schedule::GetPrefetchScheduleInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_prefetch_schedule::GetPrefetchScheduleInput {
             name: self.name,

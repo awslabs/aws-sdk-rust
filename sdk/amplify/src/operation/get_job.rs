@@ -159,15 +159,15 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetJobReques
             fn uri_base(
                 _input: &crate::operation::get_job::GetJobInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 use ::std::fmt::Write as _;
                 let input_1 = &_input.app_id;
                 let input_1 = input_1
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("app_id", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("app_id", "cannot be empty or unset"))?;
                 let app_id = ::aws_smithy_http::label::fmt_string(input_1, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if app_id.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "app_id",
                         "cannot be empty or unset",
                     ));
@@ -175,10 +175,10 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetJobReques
                 let input_2 = &_input.branch_name;
                 let input_2 = input_2
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("branch_name", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("branch_name", "cannot be empty or unset"))?;
                 let branch_name = ::aws_smithy_http::label::fmt_string(input_2, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if branch_name.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "branch_name",
                         "cannot be empty or unset",
                     ));
@@ -186,10 +186,10 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetJobReques
                 let input_3 = &_input.job_id;
                 let input_3 = input_3
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("job_id", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("job_id", "cannot be empty or unset"))?;
                 let job_id = ::aws_smithy_http::label::fmt_string(input_3, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if job_id.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "job_id",
                         "cannot be empty or unset",
                     ));
@@ -208,7 +208,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetJobReques
             fn update_http_builder(
                 input: &crate::operation::get_job::GetJobInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 ::std::result::Result::Ok(builder.method("GET").uri(uri))
@@ -216,7 +216,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetJobReques
             let mut builder = update_http_builder(&input, ::http::request::Builder::new())?;
             builder
         };
-        let body = ::aws_smithy_http::body::SdkBody::from("");
+        let body = ::aws_smithy_types::body::SdkBody::from("");
 
         ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }

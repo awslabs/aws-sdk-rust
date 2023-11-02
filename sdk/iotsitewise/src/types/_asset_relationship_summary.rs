@@ -86,11 +86,11 @@ impl AssetRelationshipSummaryBuilder {
     /// Consumes the builder and constructs a [`AssetRelationshipSummary`](crate::types::AssetRelationshipSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`relationship_type`](crate::types::builders::AssetRelationshipSummaryBuilder::relationship_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::AssetRelationshipSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AssetRelationshipSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AssetRelationshipSummary {
             hierarchy_info: self.hierarchy_info,
             relationship_type: self.relationship_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "relationship_type",
                     "relationship_type was not specified but it is required when building AssetRelationshipSummary",
                 )

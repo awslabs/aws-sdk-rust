@@ -137,7 +137,7 @@ impl CreateSnapshotCopyGrantInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantInput {
             snapshot_copy_grant_name: self.snapshot_copy_grant_name,

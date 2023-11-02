@@ -130,7 +130,7 @@ impl ImportCertificateInputBuilder {
     /// Consumes the builder and constructs a [`ImportCertificateInput`](crate::operation::import_certificate::ImportCertificateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::import_certificate::ImportCertificateInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::import_certificate::ImportCertificateInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::import_certificate::ImportCertificateInput {
             certificate_identifier: self.certificate_identifier,
             certificate_pem: self.certificate_pem,

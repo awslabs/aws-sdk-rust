@@ -73,7 +73,7 @@ impl BatchDeleteReadSetInputBuilder {
     /// Consumes the builder and constructs a [`BatchDeleteReadSetInput`](crate::operation::batch_delete_read_set::BatchDeleteReadSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_delete_read_set::BatchDeleteReadSetInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::batch_delete_read_set::BatchDeleteReadSetInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::batch_delete_read_set::BatchDeleteReadSetInput {
             ids: self.ids,

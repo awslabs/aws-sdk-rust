@@ -215,10 +215,10 @@ impl DescribedHostKeyBuilder {
     /// Consumes the builder and constructs a [`DescribedHostKey`](crate::types::DescribedHostKey).
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::DescribedHostKeyBuilder::arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::DescribedHostKey, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DescribedHostKey, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DescribedHostKey {
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building DescribedHostKey",
                 )

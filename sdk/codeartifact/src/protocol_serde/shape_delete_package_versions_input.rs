@@ -2,7 +2,7 @@
 pub fn ser_delete_package_versions_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_package_versions::DeletePackageVersionsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.expected_status {
         object.key("expectedStatus").string(var_1.as_str());
     }

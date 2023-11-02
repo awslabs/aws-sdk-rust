@@ -45,10 +45,10 @@ impl InventoryScheduleBuilder {
     /// Consumes the builder and constructs a [`InventorySchedule`](crate::types::InventorySchedule).
     /// This method will fail if any of the following fields are not set:
     /// - [`frequency`](crate::types::builders::InventoryScheduleBuilder::frequency)
-    pub fn build(self) -> ::std::result::Result<crate::types::InventorySchedule, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::InventorySchedule, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::InventorySchedule {
             frequency: self.frequency.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "frequency",
                     "frequency was not specified but it is required when building InventorySchedule",
                 )

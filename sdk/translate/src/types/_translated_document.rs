@@ -52,10 +52,10 @@ impl TranslatedDocumentBuilder {
     /// Consumes the builder and constructs a [`TranslatedDocument`](crate::types::TranslatedDocument).
     /// This method will fail if any of the following fields are not set:
     /// - [`content`](crate::types::builders::TranslatedDocumentBuilder::content)
-    pub fn build(self) -> ::std::result::Result<crate::types::TranslatedDocument, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TranslatedDocument, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TranslatedDocument {
             content: self.content.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "content",
                     "content was not specified but it is required when building TranslatedDocument",
                 )

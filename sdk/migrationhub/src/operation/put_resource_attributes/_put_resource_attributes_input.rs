@@ -151,7 +151,7 @@ impl PutResourceAttributesInputBuilder {
     /// Consumes the builder and constructs a [`PutResourceAttributesInput`](crate::operation::put_resource_attributes::PutResourceAttributesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_resource_attributes::PutResourceAttributesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::put_resource_attributes::PutResourceAttributesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::put_resource_attributes::PutResourceAttributesInput {
             progress_update_stream: self.progress_update_stream,

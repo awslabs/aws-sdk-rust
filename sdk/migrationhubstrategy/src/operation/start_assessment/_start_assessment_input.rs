@@ -114,7 +114,7 @@ impl StartAssessmentInputBuilder {
     /// Consumes the builder and constructs a [`StartAssessmentInput`](crate::operation::start_assessment::StartAssessmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_assessment::StartAssessmentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_assessment::StartAssessmentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_assessment::StartAssessmentInput {
             s3bucket_for_analysis_data: self.s3bucket_for_analysis_data,
             s3bucket_for_report_data: self.s3bucket_for_report_data,

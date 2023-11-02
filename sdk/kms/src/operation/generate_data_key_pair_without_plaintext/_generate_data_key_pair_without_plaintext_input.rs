@@ -232,7 +232,7 @@ impl GenerateDataKeyPairWithoutPlaintextInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::generate_data_key_pair_without_plaintext::GenerateDataKeyPairWithoutPlaintextInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::generate_data_key_pair_without_plaintext::GenerateDataKeyPairWithoutPlaintextInput {

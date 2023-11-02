@@ -234,7 +234,7 @@ impl PutSessionInputBuilder {
         &self.response_content_type
     }
     /// Consumes the builder and constructs a [`PutSessionInput`](crate::operation::put_session::PutSessionInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_session::PutSessionInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_session::PutSessionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_session::PutSessionInput {
             bot_id: self.bot_id,
             bot_alias_id: self.bot_alias_id,

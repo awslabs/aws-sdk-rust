@@ -44,7 +44,7 @@ impl GetPipelineBlueprintInputBuilder {
     /// Consumes the builder and constructs a [`GetPipelineBlueprintInput`](crate::operation::get_pipeline_blueprint::GetPipelineBlueprintInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_pipeline_blueprint::GetPipelineBlueprintInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_pipeline_blueprint::GetPipelineBlueprintInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_pipeline_blueprint::GetPipelineBlueprintInput {
             blueprint_name: self.blueprint_name,

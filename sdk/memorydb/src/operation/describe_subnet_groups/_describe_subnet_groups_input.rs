@@ -85,7 +85,7 @@ impl DescribeSubnetGroupsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeSubnetGroupsInput`](crate::operation::describe_subnet_groups::DescribeSubnetGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_subnet_groups::DescribeSubnetGroupsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_subnet_groups::DescribeSubnetGroupsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_subnet_groups::DescribeSubnetGroupsInput {
             subnet_group_name: self.subnet_group_name,

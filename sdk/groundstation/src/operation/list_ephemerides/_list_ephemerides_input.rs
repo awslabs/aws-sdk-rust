@@ -159,7 +159,7 @@ impl ListEphemeridesInputBuilder {
     /// Consumes the builder and constructs a [`ListEphemeridesInput`](crate::operation::list_ephemerides::ListEphemeridesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_ephemerides::ListEphemeridesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_ephemerides::ListEphemeridesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_ephemerides::ListEphemeridesInput {
             satellite_id: self.satellite_id,
             start_time: self.start_time,

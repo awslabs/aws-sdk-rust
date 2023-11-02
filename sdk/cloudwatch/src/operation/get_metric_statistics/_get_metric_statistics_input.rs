@@ -315,7 +315,7 @@ impl GetMetricStatisticsInputBuilder {
     /// Consumes the builder and constructs a [`GetMetricStatisticsInput`](crate::operation::get_metric_statistics::GetMetricStatisticsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_metric_statistics::GetMetricStatisticsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_metric_statistics::GetMetricStatisticsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_metric_statistics::GetMetricStatisticsInput {
             namespace: self.namespace,

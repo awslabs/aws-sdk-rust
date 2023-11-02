@@ -996,7 +996,7 @@ impl RestoreFromClusterSnapshotInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotInput {
             cluster_identifier: self.cluster_identifier,

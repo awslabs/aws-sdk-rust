@@ -111,11 +111,13 @@ impl ListVirtualMfaDevicesOutputBuilder {
     /// - [`virtual_mfa_devices`](crate::operation::list_virtual_mfa_devices::builders::ListVirtualMfaDevicesOutputBuilder::virtual_mfa_devices)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_virtual_mfa_devices::ListVirtualMfaDevicesOutput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::list_virtual_mfa_devices::ListVirtualMfaDevicesOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::list_virtual_mfa_devices::ListVirtualMfaDevicesOutput {
             virtual_mfa_devices: self.virtual_mfa_devices.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "virtual_mfa_devices",
                     "virtual_mfa_devices was not specified but it is required when building ListVirtualMfaDevicesOutput",
                 )

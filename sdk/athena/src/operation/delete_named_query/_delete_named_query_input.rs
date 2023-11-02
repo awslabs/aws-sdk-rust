@@ -44,7 +44,7 @@ impl DeleteNamedQueryInputBuilder {
     /// Consumes the builder and constructs a [`DeleteNamedQueryInput`](crate::operation::delete_named_query::DeleteNamedQueryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_named_query::DeleteNamedQueryInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_named_query::DeleteNamedQueryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_named_query::DeleteNamedQueryInput {
             named_query_id: self.named_query_id,
         })

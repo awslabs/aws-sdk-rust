@@ -123,7 +123,7 @@ impl CreateOpsMetadataInputBuilder {
     /// Consumes the builder and constructs a [`CreateOpsMetadataInput`](crate::operation::create_ops_metadata::CreateOpsMetadataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_ops_metadata::CreateOpsMetadataInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_ops_metadata::CreateOpsMetadataInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_ops_metadata::CreateOpsMetadataInput {
             resource_id: self.resource_id,
             metadata: self.metadata,

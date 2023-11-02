@@ -2,7 +2,7 @@
 pub fn ser_cloud_watch_logs_destination(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CloudWatchLogsDestination,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.iam_role_arn {
         object.key("IamRoleArn").string(var_1.as_str());
     }

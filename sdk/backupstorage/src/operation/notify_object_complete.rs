@@ -179,15 +179,15 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for NotifyObject
             fn uri_base(
                 _input: &crate::operation::notify_object_complete::NotifyObjectCompleteInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 use ::std::fmt::Write as _;
                 let input_1 = &_input.backup_job_id;
                 let input_1 = input_1
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("backup_job_id", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("backup_job_id", "cannot be empty or unset"))?;
                 let backup_job_id = ::aws_smithy_http::label::fmt_string(input_1, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if backup_job_id.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "backup_job_id",
                         "cannot be empty or unset",
                     ));
@@ -195,10 +195,10 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for NotifyObject
                 let input_2 = &_input.upload_id;
                 let input_2 = input_2
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("upload_id", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("upload_id", "cannot be empty or unset"))?;
                 let upload_id = ::aws_smithy_http::label::fmt_string(input_2, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if upload_id.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "upload_id",
                         "cannot be empty or unset",
                     ));
@@ -215,14 +215,14 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for NotifyObject
             fn uri_query(
                 _input: &crate::operation::notify_object_complete::NotifyObjectCompleteInput,
                 mut output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 let inner_3 = &_input.object_checksum;
                 let inner_3 = inner_3
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("object_checksum", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("object_checksum", "cannot be empty or unset"))?;
                 if inner_3.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "object_checksum",
                         "cannot be empty or unset",
                     ));
@@ -230,7 +230,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for NotifyObject
                 query.push_kv("checksum", &::aws_smithy_http::query::fmt_string(&inner_3));
                 let inner_4 = &_input.object_checksum_algorithm;
                 let inner_4 = inner_4.as_ref().ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field("object_checksum_algorithm", "cannot be empty or unset")
+                    ::aws_smithy_types::error::operation::BuildError::missing_field("object_checksum_algorithm", "cannot be empty or unset")
                 })?;
                 query.push_kv("checksum-algorithm", &::aws_smithy_http::query::fmt_string(&inner_4));
                 if let ::std::option::Option::Some(inner_5) = &_input.metadata_string {
@@ -259,7 +259,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for NotifyObject
             fn update_http_builder(
                 input: &crate::operation::notify_object_complete::NotifyObjectCompleteInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;

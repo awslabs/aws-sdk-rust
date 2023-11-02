@@ -64,7 +64,7 @@ impl GetListenerInputBuilder {
         &self.listener_identifier
     }
     /// Consumes the builder and constructs a [`GetListenerInput`](crate::operation::get_listener::GetListenerInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_listener::GetListenerInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_listener::GetListenerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_listener::GetListenerInput {
             service_identifier: self.service_identifier,
             listener_identifier: self.listener_identifier,

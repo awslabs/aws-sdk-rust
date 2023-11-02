@@ -75,10 +75,10 @@ impl SummarizedAttackVectorBuilder {
     /// Consumes the builder and constructs a [`SummarizedAttackVector`](crate::types::SummarizedAttackVector).
     /// This method will fail if any of the following fields are not set:
     /// - [`vector_type`](crate::types::builders::SummarizedAttackVectorBuilder::vector_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::SummarizedAttackVector, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SummarizedAttackVector, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SummarizedAttackVector {
             vector_type: self.vector_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "vector_type",
                     "vector_type was not specified but it is required when building SummarizedAttackVector",
                 )

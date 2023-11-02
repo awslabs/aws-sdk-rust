@@ -46,7 +46,7 @@ impl DeleteSubscriberNotificationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_subscriber_notification::DeleteSubscriberNotificationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_subscriber_notification::DeleteSubscriberNotificationInput {
             subscriber_id: self.subscriber_id,

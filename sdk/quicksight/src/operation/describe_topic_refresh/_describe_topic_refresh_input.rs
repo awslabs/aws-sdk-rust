@@ -88,7 +88,7 @@ impl DescribeTopicRefreshInputBuilder {
     /// Consumes the builder and constructs a [`DescribeTopicRefreshInput`](crate::operation::describe_topic_refresh::DescribeTopicRefreshInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_topic_refresh::DescribeTopicRefreshInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_topic_refresh::DescribeTopicRefreshInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_topic_refresh::DescribeTopicRefreshInput {
             aws_account_id: self.aws_account_id,

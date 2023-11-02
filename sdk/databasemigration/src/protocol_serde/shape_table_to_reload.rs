@@ -2,7 +2,7 @@
 pub fn ser_table_to_reload(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TableToReload,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("SchemaName").string(input.schema_name.as_str());
     }

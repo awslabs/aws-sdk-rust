@@ -262,7 +262,7 @@ impl PublishInputBuilder {
         &self.message_expiry
     }
     /// Consumes the builder and constructs a [`PublishInput`](crate::operation::publish::PublishInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::publish::PublishInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::publish::PublishInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::publish::PublishInput {
             topic: self.topic,
             qos: self.qos,

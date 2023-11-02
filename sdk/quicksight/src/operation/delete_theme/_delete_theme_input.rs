@@ -90,7 +90,7 @@ impl DeleteThemeInputBuilder {
         &self.version_number
     }
     /// Consumes the builder and constructs a [`DeleteThemeInput`](crate::operation::delete_theme::DeleteThemeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_theme::DeleteThemeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_theme::DeleteThemeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_theme::DeleteThemeInput {
             aws_account_id: self.aws_account_id,
             theme_id: self.theme_id,

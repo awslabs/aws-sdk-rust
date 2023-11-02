@@ -98,7 +98,7 @@ impl ListInstanceProfileTagsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_instance_profile_tags::ListInstanceProfileTagsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_instance_profile_tags::ListInstanceProfileTagsInput {
             instance_profile_name: self.instance_profile_name,

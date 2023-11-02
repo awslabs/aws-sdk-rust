@@ -66,7 +66,7 @@ impl UpdateSmsChannelInputBuilder {
     /// Consumes the builder and constructs a [`UpdateSmsChannelInput`](crate::operation::update_sms_channel::UpdateSmsChannelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_sms_channel::UpdateSmsChannelInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_sms_channel::UpdateSmsChannelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_sms_channel::UpdateSmsChannelInput {
             application_id: self.application_id,
             sms_channel_request: self.sms_channel_request,

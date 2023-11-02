@@ -2,7 +2,7 @@
 pub fn ser_bandwidth(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Bandwidth,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.upload_speed {
         object.key("UploadSpeed").number(
             #[allow(clippy::useless_conversion)]

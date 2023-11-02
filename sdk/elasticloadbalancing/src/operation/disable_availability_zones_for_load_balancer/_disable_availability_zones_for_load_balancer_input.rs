@@ -77,7 +77,7 @@ impl DisableAvailabilityZonesForLoadBalancerInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disable_availability_zones_for_load_balancer::DisableAvailabilityZonesForLoadBalancerInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::disable_availability_zones_for_load_balancer::DisableAvailabilityZonesForLoadBalancerInput {

@@ -73,7 +73,7 @@ impl RegisterTargetsInputBuilder {
     /// Consumes the builder and constructs a [`RegisterTargetsInput`](crate::operation::register_targets::RegisterTargetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::register_targets::RegisterTargetsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::register_targets::RegisterTargetsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::register_targets::RegisterTargetsInput {
             target_group_arn: self.target_group_arn,
             targets: self.targets,

@@ -44,7 +44,7 @@ impl GetRegexPatternSetInputBuilder {
     /// Consumes the builder and constructs a [`GetRegexPatternSetInput`](crate::operation::get_regex_pattern_set::GetRegexPatternSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_regex_pattern_set::GetRegexPatternSetInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_regex_pattern_set::GetRegexPatternSetInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_regex_pattern_set::GetRegexPatternSetInput {
             regex_pattern_set_id: self.regex_pattern_set_id,

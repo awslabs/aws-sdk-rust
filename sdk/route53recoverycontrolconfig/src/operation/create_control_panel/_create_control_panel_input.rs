@@ -115,7 +115,8 @@ impl CreateControlPanelInputBuilder {
     /// Consumes the builder and constructs a [`CreateControlPanelInput`](crate::operation::create_control_panel::CreateControlPanelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_control_panel::CreateControlPanelInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_control_panel::CreateControlPanelInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_control_panel::CreateControlPanelInput {
             client_token: self.client_token,
             cluster_arn: self.cluster_arn,

@@ -127,25 +127,28 @@ impl JoinBuilder {
     /// - [`inputs`](crate::types::builders::JoinBuilder::inputs)
     /// - [`join_type`](crate::types::builders::JoinBuilder::join_type)
     /// - [`columns`](crate::types::builders::JoinBuilder::columns)
-    pub fn build(self) -> ::std::result::Result<crate::types::Join, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Join, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Join {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field("name", "name was not specified but it is required when building Join")
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "name",
+                    "name was not specified but it is required when building Join",
+                )
             })?,
             inputs: self.inputs.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "inputs",
                     "inputs was not specified but it is required when building Join",
                 )
             })?,
             join_type: self.join_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "join_type",
                     "join_type was not specified but it is required when building Join",
                 )
             })?,
             columns: self.columns.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "columns",
                     "columns was not specified but it is required when building Join",
                 )

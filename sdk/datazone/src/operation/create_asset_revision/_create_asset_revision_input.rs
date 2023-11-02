@@ -245,7 +245,7 @@ impl CreateAssetRevisionInputBuilder {
     /// Consumes the builder and constructs a [`CreateAssetRevisionInput`](crate::operation::create_asset_revision::CreateAssetRevisionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_asset_revision::CreateAssetRevisionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_asset_revision::CreateAssetRevisionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_asset_revision::CreateAssetRevisionInput {
             name: self.name,

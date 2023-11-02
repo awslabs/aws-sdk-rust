@@ -49,7 +49,8 @@ impl DeleteModelPackageInputBuilder {
     /// Consumes the builder and constructs a [`DeleteModelPackageInput`](crate::operation::delete_model_package::DeleteModelPackageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_model_package::DeleteModelPackageInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_model_package::DeleteModelPackageInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::delete_model_package::DeleteModelPackageInput {
             model_package_name: self.model_package_name,
         })

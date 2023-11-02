@@ -2,7 +2,7 @@
 pub fn ser_describe_connector_profiles_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_connector_profiles::DescribeConnectorProfilesInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.connector_label {
         object.key("connectorLabel").string(var_1.as_str());
     }

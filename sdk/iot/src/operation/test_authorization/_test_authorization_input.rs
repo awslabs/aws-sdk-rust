@@ -172,7 +172,7 @@ impl TestAuthorizationInputBuilder {
     /// Consumes the builder and constructs a [`TestAuthorizationInput`](crate::operation::test_authorization::TestAuthorizationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::test_authorization::TestAuthorizationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::test_authorization::TestAuthorizationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::test_authorization::TestAuthorizationInput {
             principal: self.principal,
             cognito_identity_pool_id: self.cognito_identity_pool_id,

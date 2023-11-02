@@ -91,7 +91,7 @@ impl ListAppsListsInputBuilder {
     /// Consumes the builder and constructs a [`ListAppsListsInput`](crate::operation::list_apps_lists::ListAppsListsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_apps_lists::ListAppsListsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_apps_lists::ListAppsListsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_apps_lists::ListAppsListsInput {
             default_lists: self.default_lists,
             next_token: self.next_token,

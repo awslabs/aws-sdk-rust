@@ -67,7 +67,7 @@ impl ExecuteOpenCypherQueryInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryInput {
             open_cypher_query: self.open_cypher_query,

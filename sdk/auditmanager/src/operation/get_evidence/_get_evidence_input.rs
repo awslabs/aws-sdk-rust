@@ -108,7 +108,7 @@ impl GetEvidenceInputBuilder {
         &self.evidence_id
     }
     /// Consumes the builder and constructs a [`GetEvidenceInput`](crate::operation::get_evidence::GetEvidenceInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_evidence::GetEvidenceInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_evidence::GetEvidenceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_evidence::GetEvidenceInput {
             assessment_id: self.assessment_id,
             control_set_id: self.control_set_id,

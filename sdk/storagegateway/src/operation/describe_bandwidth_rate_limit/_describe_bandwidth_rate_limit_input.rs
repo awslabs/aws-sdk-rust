@@ -47,7 +47,7 @@ impl DescribeBandwidthRateLimitInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_bandwidth_rate_limit::DescribeBandwidthRateLimitInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_bandwidth_rate_limit::DescribeBandwidthRateLimitInput {
             gateway_arn: self.gateway_arn,

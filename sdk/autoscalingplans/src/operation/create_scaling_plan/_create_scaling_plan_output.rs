@@ -62,10 +62,10 @@ impl CreateScalingPlanOutputBuilder {
     /// - [`scaling_plan_version`](crate::operation::create_scaling_plan::builders::CreateScalingPlanOutputBuilder::scaling_plan_version)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_scaling_plan::CreateScalingPlanOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_scaling_plan::CreateScalingPlanOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_scaling_plan::CreateScalingPlanOutput {
             scaling_plan_version: self.scaling_plan_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "scaling_plan_version",
                     "scaling_plan_version was not specified but it is required when building CreateScalingPlanOutput",
                 )

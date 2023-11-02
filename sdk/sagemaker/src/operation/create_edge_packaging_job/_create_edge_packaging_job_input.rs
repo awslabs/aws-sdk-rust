@@ -206,7 +206,7 @@ impl CreateEdgePackagingJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_edge_packaging_job::CreateEdgePackagingJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_edge_packaging_job::CreateEdgePackagingJobInput {
             edge_packaging_job_name: self.edge_packaging_job_name,

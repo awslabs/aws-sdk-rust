@@ -108,7 +108,7 @@ impl ListAnalyzedResourcesInputBuilder {
     /// Consumes the builder and constructs a [`ListAnalyzedResourcesInput`](crate::operation::list_analyzed_resources::ListAnalyzedResourcesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_analyzed_resources::ListAnalyzedResourcesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_analyzed_resources::ListAnalyzedResourcesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_analyzed_resources::ListAnalyzedResourcesInput {
             analyzer_arn: self.analyzer_arn,

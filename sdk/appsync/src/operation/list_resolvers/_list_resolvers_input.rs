@@ -108,7 +108,7 @@ impl ListResolversInputBuilder {
     /// Consumes the builder and constructs a [`ListResolversInput`](crate::operation::list_resolvers::ListResolversInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_resolvers::ListResolversInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_resolvers::ListResolversInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_resolvers::ListResolversInput {
             api_id: self.api_id,
             type_name: self.type_name,

@@ -64,7 +64,7 @@ impl ListRateBasedRulesInputBuilder {
     /// Consumes the builder and constructs a [`ListRateBasedRulesInput`](crate::operation::list_rate_based_rules::ListRateBasedRulesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_rate_based_rules::ListRateBasedRulesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_rate_based_rules::ListRateBasedRulesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_rate_based_rules::ListRateBasedRulesInput {
             next_marker: self.next_marker,

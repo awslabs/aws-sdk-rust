@@ -231,7 +231,7 @@ impl ListTablesInputBuilder {
         &self.workgroup_name
     }
     /// Consumes the builder and constructs a [`ListTablesInput`](crate::operation::list_tables::ListTablesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_tables::ListTablesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_tables::ListTablesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_tables::ListTablesInput {
             cluster_identifier: self.cluster_identifier,
             secret_arn: self.secret_arn,

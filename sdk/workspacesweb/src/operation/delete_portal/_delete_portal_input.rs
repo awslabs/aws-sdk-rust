@@ -42,7 +42,9 @@ impl DeletePortalInputBuilder {
         &self.portal_arn
     }
     /// Consumes the builder and constructs a [`DeletePortalInput`](crate::operation::delete_portal::DeletePortalInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_portal::DeletePortalInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_portal::DeletePortalInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_portal::DeletePortalInput { portal_arn: self.portal_arn })
     }
 }

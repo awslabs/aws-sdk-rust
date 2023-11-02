@@ -51,7 +51,7 @@ impl DeleteParametersInputBuilder {
     /// Consumes the builder and constructs a [`DeleteParametersInput`](crate::operation::delete_parameters::DeleteParametersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_parameters::DeleteParametersInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_parameters::DeleteParametersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_parameters::DeleteParametersInput { names: self.names })
     }
 }

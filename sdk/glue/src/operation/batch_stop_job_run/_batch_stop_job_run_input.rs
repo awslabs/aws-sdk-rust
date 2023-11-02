@@ -73,7 +73,7 @@ impl BatchStopJobRunInputBuilder {
     /// Consumes the builder and constructs a [`BatchStopJobRunInput`](crate::operation::batch_stop_job_run::BatchStopJobRunInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_stop_job_run::BatchStopJobRunInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::batch_stop_job_run::BatchStopJobRunInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::batch_stop_job_run::BatchStopJobRunInput {
             job_name: self.job_name,
             job_run_ids: self.job_run_ids,

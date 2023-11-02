@@ -75,10 +75,10 @@ impl ReviewPolicyBuilder {
     /// Consumes the builder and constructs a [`ReviewPolicy`](crate::types::ReviewPolicy).
     /// This method will fail if any of the following fields are not set:
     /// - [`policy_name`](crate::types::builders::ReviewPolicyBuilder::policy_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::ReviewPolicy, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ReviewPolicy, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ReviewPolicy {
             policy_name: self.policy_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "policy_name",
                     "policy_name was not specified but it is required when building ReviewPolicy",
                 )

@@ -107,17 +107,17 @@ impl GetDataSetImportTaskOutputBuilder {
     /// - [`status`](crate::operation::get_data_set_import_task::builders::GetDataSetImportTaskOutputBuilder::status)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_data_set_import_task::GetDataSetImportTaskOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_data_set_import_task::GetDataSetImportTaskOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_data_set_import_task::GetDataSetImportTaskOutput {
             task_id: self.task_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "task_id",
                     "task_id was not specified but it is required when building GetDataSetImportTaskOutput",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building GetDataSetImportTaskOutput",
                 )

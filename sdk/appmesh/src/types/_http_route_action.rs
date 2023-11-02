@@ -51,10 +51,10 @@ impl HttpRouteActionBuilder {
     /// Consumes the builder and constructs a [`HttpRouteAction`](crate::types::HttpRouteAction).
     /// This method will fail if any of the following fields are not set:
     /// - [`weighted_targets`](crate::types::builders::HttpRouteActionBuilder::weighted_targets)
-    pub fn build(self) -> ::std::result::Result<crate::types::HttpRouteAction, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::HttpRouteAction, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::HttpRouteAction {
             weighted_targets: self.weighted_targets.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "weighted_targets",
                     "weighted_targets was not specified but it is required when building HttpRouteAction",
                 )

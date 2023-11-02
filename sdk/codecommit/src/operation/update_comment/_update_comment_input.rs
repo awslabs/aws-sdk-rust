@@ -66,7 +66,7 @@ impl UpdateCommentInputBuilder {
     /// Consumes the builder and constructs a [`UpdateCommentInput`](crate::operation::update_comment::UpdateCommentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_comment::UpdateCommentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_comment::UpdateCommentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_comment::UpdateCommentInput {
             comment_id: self.comment_id,
             content: self.content,

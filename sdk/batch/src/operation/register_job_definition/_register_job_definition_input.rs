@@ -362,7 +362,7 @@ impl RegisterJobDefinitionInputBuilder {
     /// Consumes the builder and constructs a [`RegisterJobDefinitionInput`](crate::operation::register_job_definition::RegisterJobDefinitionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::register_job_definition::RegisterJobDefinitionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::register_job_definition::RegisterJobDefinitionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::register_job_definition::RegisterJobDefinitionInput {
             job_definition_name: self.job_definition_name,

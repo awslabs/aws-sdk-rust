@@ -426,7 +426,7 @@ impl CreateLabelingJobInputBuilder {
     /// Consumes the builder and constructs a [`CreateLabelingJobInput`](crate::operation::create_labeling_job::CreateLabelingJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_labeling_job::CreateLabelingJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_labeling_job::CreateLabelingJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_labeling_job::CreateLabelingJobInput {
             labeling_job_name: self.labeling_job_name,
             label_attribute_name: self.label_attribute_name,

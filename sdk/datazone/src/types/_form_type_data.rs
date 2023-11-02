@@ -309,22 +309,22 @@ impl FormTypeDataBuilder {
     /// - [`domain_id`](crate::types::builders::FormTypeDataBuilder::domain_id)
     /// - [`name`](crate::types::builders::FormTypeDataBuilder::name)
     /// - [`revision`](crate::types::builders::FormTypeDataBuilder::revision)
-    pub fn build(self) -> ::std::result::Result<crate::types::FormTypeData, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::FormTypeData, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FormTypeData {
             domain_id: self.domain_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "domain_id",
                     "domain_id was not specified but it is required when building FormTypeData",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building FormTypeData",
                 )
             })?,
             revision: self.revision.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "revision",
                     "revision was not specified but it is required when building FormTypeData",
                 )

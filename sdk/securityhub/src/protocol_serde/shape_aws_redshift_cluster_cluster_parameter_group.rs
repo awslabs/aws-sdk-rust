@@ -2,7 +2,7 @@
 pub fn ser_aws_redshift_cluster_cluster_parameter_group(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsRedshiftClusterClusterParameterGroup,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.cluster_parameter_status_list {
         let mut array_2 = object.key("ClusterParameterStatusList").start_array();
         for item_3 in var_1 {

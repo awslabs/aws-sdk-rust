@@ -207,10 +207,10 @@ impl PredefinedLoadMetricSpecificationBuilder {
     /// Consumes the builder and constructs a [`PredefinedLoadMetricSpecification`](crate::types::PredefinedLoadMetricSpecification).
     /// This method will fail if any of the following fields are not set:
     /// - [`predefined_load_metric_type`](crate::types::builders::PredefinedLoadMetricSpecificationBuilder::predefined_load_metric_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::PredefinedLoadMetricSpecification, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PredefinedLoadMetricSpecification, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PredefinedLoadMetricSpecification {
             predefined_load_metric_type: self.predefined_load_metric_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "predefined_load_metric_type",
                     "predefined_load_metric_type was not specified but it is required when building PredefinedLoadMetricSpecification",
                 )

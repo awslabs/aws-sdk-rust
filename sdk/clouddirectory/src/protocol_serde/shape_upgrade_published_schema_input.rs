@@ -2,7 +2,7 @@
 pub fn ser_upgrade_published_schema_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::upgrade_published_schema::UpgradePublishedSchemaInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.development_schema_arn {
         object.key("DevelopmentSchemaArn").string(var_1.as_str());
     }

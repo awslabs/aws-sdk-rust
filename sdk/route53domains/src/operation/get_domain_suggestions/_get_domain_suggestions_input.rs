@@ -128,7 +128,7 @@ impl GetDomainSuggestionsInputBuilder {
     /// Consumes the builder and constructs a [`GetDomainSuggestionsInput`](crate::operation::get_domain_suggestions::GetDomainSuggestionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_domain_suggestions::GetDomainSuggestionsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_domain_suggestions::GetDomainSuggestionsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_domain_suggestions::GetDomainSuggestionsInput {
             domain_name: self.domain_name,

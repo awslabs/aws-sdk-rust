@@ -68,7 +68,7 @@ impl RebalanceSlotsInGlobalReplicationGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::rebalance_slots_in_global_replication_group::RebalanceSlotsInGlobalReplicationGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::rebalance_slots_in_global_replication_group::RebalanceSlotsInGlobalReplicationGroupInput {

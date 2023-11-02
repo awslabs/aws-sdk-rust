@@ -65,8 +65,10 @@ impl AbortEnvironmentUpdateInputBuilder {
     /// Consumes the builder and constructs a [`AbortEnvironmentUpdateInput`](crate::operation::abort_environment_update::AbortEnvironmentUpdateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::abort_environment_update::AbortEnvironmentUpdateInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::abort_environment_update::AbortEnvironmentUpdateInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::abort_environment_update::AbortEnvironmentUpdateInput {
             environment_id: self.environment_id,
             environment_name: self.environment_name,

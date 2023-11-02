@@ -122,7 +122,7 @@ impl DescribePoolsInputBuilder {
     /// Consumes the builder and constructs a [`DescribePoolsInput`](crate::operation::describe_pools::DescribePoolsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_pools::DescribePoolsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_pools::DescribePoolsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_pools::DescribePoolsInput {
             pool_ids: self.pool_ids,
             filters: self.filters,

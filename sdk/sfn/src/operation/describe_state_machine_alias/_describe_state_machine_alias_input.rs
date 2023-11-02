@@ -46,7 +46,7 @@ impl DescribeStateMachineAliasInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_state_machine_alias::DescribeStateMachineAliasInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_state_machine_alias::DescribeStateMachineAliasInput {
             state_machine_alias_arn: self.state_machine_alias_arn,

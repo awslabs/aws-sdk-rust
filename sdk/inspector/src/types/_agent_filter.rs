@@ -80,16 +80,16 @@ impl AgentFilterBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`agent_healths`](crate::types::builders::AgentFilterBuilder::agent_healths)
     /// - [`agent_health_codes`](crate::types::builders::AgentFilterBuilder::agent_health_codes)
-    pub fn build(self) -> ::std::result::Result<crate::types::AgentFilter, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AgentFilter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AgentFilter {
             agent_healths: self.agent_healths.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "agent_healths",
                     "agent_healths was not specified but it is required when building AgentFilter",
                 )
             })?,
             agent_health_codes: self.agent_health_codes.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "agent_health_codes",
                     "agent_health_codes was not specified but it is required when building AgentFilter",
                 )

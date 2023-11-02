@@ -44,7 +44,7 @@ impl DeleteClassifierInputBuilder {
     /// Consumes the builder and constructs a [`DeleteClassifierInput`](crate::operation::delete_classifier::DeleteClassifierInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_classifier::DeleteClassifierInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_classifier::DeleteClassifierInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_classifier::DeleteClassifierInput { name: self.name })
     }
 }

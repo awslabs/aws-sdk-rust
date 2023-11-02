@@ -75,7 +75,7 @@ impl RestartAppServerInputBuilder {
     /// Consumes the builder and constructs a [`RestartAppServerInput`](crate::operation::restart_app_server::RestartAppServerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::restart_app_server::RestartAppServerInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::restart_app_server::RestartAppServerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::restart_app_server::RestartAppServerInput {
             environment_id: self.environment_id,
             environment_name: self.environment_name,

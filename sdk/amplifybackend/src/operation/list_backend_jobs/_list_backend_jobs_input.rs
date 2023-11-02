@@ -172,7 +172,7 @@ impl ListBackendJobsInputBuilder {
     /// Consumes the builder and constructs a [`ListBackendJobsInput`](crate::operation::list_backend_jobs::ListBackendJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_backend_jobs::ListBackendJobsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_backend_jobs::ListBackendJobsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_backend_jobs::ListBackendJobsInput {
             app_id: self.app_id,
             backend_environment_name: self.backend_environment_name,

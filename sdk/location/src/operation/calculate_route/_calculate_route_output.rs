@@ -141,10 +141,10 @@ impl CalculateRouteOutputBuilder {
     /// - [`legs`](crate::operation::calculate_route::builders::CalculateRouteOutputBuilder::legs)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::calculate_route::CalculateRouteOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::calculate_route::CalculateRouteOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::calculate_route::CalculateRouteOutput {
             legs: self.legs.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "legs",
                     "legs was not specified but it is required when building CalculateRouteOutput",
                 )

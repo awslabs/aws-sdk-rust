@@ -148,7 +148,7 @@ impl ListSharedReportGroupsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_shared_report_groups::ListSharedReportGroupsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_shared_report_groups::ListSharedReportGroupsInput {
             sort_order: self.sort_order,

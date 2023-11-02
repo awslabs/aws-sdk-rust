@@ -267,36 +267,36 @@ impl CreateFormDataBuilder {
     /// - [`fields`](crate::types::builders::CreateFormDataBuilder::fields)
     /// - [`sectional_elements`](crate::types::builders::CreateFormDataBuilder::sectional_elements)
     /// - [`schema_version`](crate::types::builders::CreateFormDataBuilder::schema_version)
-    pub fn build(self) -> ::std::result::Result<crate::types::CreateFormData, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CreateFormData, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CreateFormData {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building CreateFormData",
                 )
             })?,
             data_type: self.data_type,
             form_action_type: self.form_action_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "form_action_type",
                     "form_action_type was not specified but it is required when building CreateFormData",
                 )
             })?,
             fields: self.fields.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "fields",
                     "fields was not specified but it is required when building CreateFormData",
                 )
             })?,
             style: self.style,
             sectional_elements: self.sectional_elements.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "sectional_elements",
                     "sectional_elements was not specified but it is required when building CreateFormData",
                 )
             })?,
             schema_version: self.schema_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "schema_version",
                     "schema_version was not specified but it is required when building CreateFormData",
                 )

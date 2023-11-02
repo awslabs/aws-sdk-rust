@@ -66,7 +66,7 @@ impl DescribeFleetAdvisorLsaAnalysisInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_fleet_advisor_lsa_analysis::DescribeFleetAdvisorLsaAnalysisInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_fleet_advisor_lsa_analysis::DescribeFleetAdvisorLsaAnalysisInput {

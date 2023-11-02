@@ -122,7 +122,7 @@ impl DescribePhoneNumbersInputBuilder {
     /// Consumes the builder and constructs a [`DescribePhoneNumbersInput`](crate::operation::describe_phone_numbers::DescribePhoneNumbersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_phone_numbers::DescribePhoneNumbersInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_phone_numbers::DescribePhoneNumbersInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_phone_numbers::DescribePhoneNumbersInput {
             phone_number_ids: self.phone_number_ids,

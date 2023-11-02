@@ -85,7 +85,7 @@ impl DeleteProductInputBuilder {
     /// Consumes the builder and constructs a [`DeleteProductInput`](crate::operation::delete_product::DeleteProductInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_product::DeleteProductInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_product::DeleteProductInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_product::DeleteProductInput {
             accept_language: self.accept_language,
             id: self.id,

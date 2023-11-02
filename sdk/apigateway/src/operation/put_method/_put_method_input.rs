@@ -283,7 +283,7 @@ impl PutMethodInputBuilder {
         &self.authorization_scopes
     }
     /// Consumes the builder and constructs a [`PutMethodInput`](crate::operation::put_method::PutMethodInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_method::PutMethodInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_method::PutMethodInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_method::PutMethodInput {
             rest_api_id: self.rest_api_id,
             resource_id: self.resource_id,

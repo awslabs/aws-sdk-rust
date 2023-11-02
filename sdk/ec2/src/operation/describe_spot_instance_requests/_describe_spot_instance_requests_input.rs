@@ -356,7 +356,7 @@ impl DescribeSpotInstanceRequestsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_spot_instance_requests::DescribeSpotInstanceRequestsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_spot_instance_requests::DescribeSpotInstanceRequestsInput {
             filters: self.filters,

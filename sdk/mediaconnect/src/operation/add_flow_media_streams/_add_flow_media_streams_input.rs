@@ -74,7 +74,7 @@ impl AddFlowMediaStreamsInputBuilder {
     /// Consumes the builder and constructs a [`AddFlowMediaStreamsInput`](crate::operation::add_flow_media_streams::AddFlowMediaStreamsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::add_flow_media_streams::AddFlowMediaStreamsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::add_flow_media_streams::AddFlowMediaStreamsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::add_flow_media_streams::AddFlowMediaStreamsInput {
             flow_arn: self.flow_arn,

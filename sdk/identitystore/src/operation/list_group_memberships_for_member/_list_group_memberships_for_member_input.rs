@@ -110,7 +110,7 @@ impl ListGroupMembershipsForMemberInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_group_memberships_for_member::ListGroupMembershipsForMemberInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_group_memberships_for_member::ListGroupMembershipsForMemberInput {
             identity_store_id: self.identity_store_id,

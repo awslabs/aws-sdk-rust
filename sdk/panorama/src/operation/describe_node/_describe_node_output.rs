@@ -364,53 +364,53 @@ impl DescribeNodeOutputBuilder {
     /// - [`last_updated_time`](crate::operation::describe_node::builders::DescribeNodeOutputBuilder::last_updated_time)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_node::DescribeNodeOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_node::DescribeNodeOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_node::DescribeNodeOutput {
             node_id: self.node_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "node_id",
                     "node_id was not specified but it is required when building DescribeNodeOutput",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building DescribeNodeOutput",
                 )
             })?,
             category: self.category.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "category",
                     "category was not specified but it is required when building DescribeNodeOutput",
                 )
             })?,
             owner_account: self.owner_account.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "owner_account",
                     "owner_account was not specified but it is required when building DescribeNodeOutput",
                 )
             })?,
             package_name: self.package_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "package_name",
                     "package_name was not specified but it is required when building DescribeNodeOutput",
                 )
             })?,
             package_id: self.package_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "package_id",
                     "package_id was not specified but it is required when building DescribeNodeOutput",
                 )
             })?,
             package_arn: self.package_arn,
             package_version: self.package_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "package_version",
                     "package_version was not specified but it is required when building DescribeNodeOutput",
                 )
             })?,
             patch_version: self.patch_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "patch_version",
                     "patch_version was not specified but it is required when building DescribeNodeOutput",
                 )
@@ -418,19 +418,19 @@ impl DescribeNodeOutputBuilder {
             node_interface: self.node_interface,
             asset_name: self.asset_name,
             description: self.description.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "description",
                     "description was not specified but it is required when building DescribeNodeOutput",
                 )
             })?,
             created_time: self.created_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_time",
                     "created_time was not specified but it is required when building DescribeNodeOutput",
                 )
             })?,
             last_updated_time: self.last_updated_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_updated_time",
                     "last_updated_time was not specified but it is required when building DescribeNodeOutput",
                 )

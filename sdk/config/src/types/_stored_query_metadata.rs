@@ -115,22 +115,22 @@ impl StoredQueryMetadataBuilder {
     /// - [`query_id`](crate::types::builders::StoredQueryMetadataBuilder::query_id)
     /// - [`query_arn`](crate::types::builders::StoredQueryMetadataBuilder::query_arn)
     /// - [`query_name`](crate::types::builders::StoredQueryMetadataBuilder::query_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::StoredQueryMetadata, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::StoredQueryMetadata, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::StoredQueryMetadata {
             query_id: self.query_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "query_id",
                     "query_id was not specified but it is required when building StoredQueryMetadata",
                 )
             })?,
             query_arn: self.query_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "query_arn",
                     "query_arn was not specified but it is required when building StoredQueryMetadata",
                 )
             })?,
             query_name: self.query_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "query_name",
                     "query_name was not specified but it is required when building StoredQueryMetadata",
                 )

@@ -93,7 +93,7 @@ impl DescribeOptOutListsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeOptOutListsInput`](crate::operation::describe_opt_out_lists::DescribeOptOutListsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_opt_out_lists::DescribeOptOutListsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_opt_out_lists::DescribeOptOutListsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_opt_out_lists::DescribeOptOutListsInput {
             opt_out_list_names: self.opt_out_list_names,

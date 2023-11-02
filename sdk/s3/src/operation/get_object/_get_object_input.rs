@@ -515,7 +515,7 @@ impl GetObjectInputBuilder {
         &self.checksum_mode
     }
     /// Consumes the builder and constructs a [`GetObjectInput`](crate::operation::get_object::GetObjectInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_object::GetObjectInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_object::GetObjectInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_object::GetObjectInput {
             bucket: self.bucket,
             if_match: self.if_match,

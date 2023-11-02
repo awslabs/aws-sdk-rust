@@ -47,7 +47,7 @@ impl DisassociateFromMasterAccountInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_from_master_account::DisassociateFromMasterAccountInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disassociate_from_master_account::DisassociateFromMasterAccountInput {
             detector_id: self.detector_id,

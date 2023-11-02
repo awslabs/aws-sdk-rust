@@ -91,16 +91,16 @@ impl FilterActivityBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::FilterActivityBuilder::name)
     /// - [`filter`](crate::types::builders::FilterActivityBuilder::filter)
-    pub fn build(self) -> ::std::result::Result<crate::types::FilterActivity, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::FilterActivity, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FilterActivity {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building FilterActivity",
                 )
             })?,
             filter: self.filter.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "filter",
                     "filter was not specified but it is required when building FilterActivity",
                 )

@@ -68,16 +68,16 @@ impl CreateInstantBookingBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`duration_in_minutes`](crate::types::builders::CreateInstantBookingBuilder::duration_in_minutes)
     /// - [`enabled`](crate::types::builders::CreateInstantBookingBuilder::enabled)
-    pub fn build(self) -> ::std::result::Result<crate::types::CreateInstantBooking, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CreateInstantBooking, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CreateInstantBooking {
             duration_in_minutes: self.duration_in_minutes.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "duration_in_minutes",
                     "duration_in_minutes was not specified but it is required when building CreateInstantBooking",
                 )
             })?,
             enabled: self.enabled.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "enabled",
                     "enabled was not specified but it is required when building CreateInstantBooking",
                 )

@@ -44,7 +44,8 @@ impl DeleteParallelDataInputBuilder {
     /// Consumes the builder and constructs a [`DeleteParallelDataInput`](crate::operation::delete_parallel_data::DeleteParallelDataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_parallel_data::DeleteParallelDataInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_parallel_data::DeleteParallelDataInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::delete_parallel_data::DeleteParallelDataInput { name: self.name })
     }
 }

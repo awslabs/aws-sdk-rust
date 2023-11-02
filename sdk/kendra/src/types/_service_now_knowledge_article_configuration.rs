@@ -203,13 +203,13 @@ impl ServiceNowKnowledgeArticleConfigurationBuilder {
     /// - [`document_data_field_name`](crate::types::builders::ServiceNowKnowledgeArticleConfigurationBuilder::document_data_field_name)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::ServiceNowKnowledgeArticleConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::ServiceNowKnowledgeArticleConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ServiceNowKnowledgeArticleConfiguration {
             crawl_attachments: self.crawl_attachments.unwrap_or_default(),
             include_attachment_file_patterns: self.include_attachment_file_patterns,
             exclude_attachment_file_patterns: self.exclude_attachment_file_patterns,
             document_data_field_name: self.document_data_field_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "document_data_field_name",
                     "document_data_field_name was not specified but it is required when building ServiceNowKnowledgeArticleConfiguration",
                 )

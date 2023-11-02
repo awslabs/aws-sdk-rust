@@ -86,7 +86,7 @@ impl ListHoursOfOperationsInputBuilder {
     /// Consumes the builder and constructs a [`ListHoursOfOperationsInput`](crate::operation::list_hours_of_operations::ListHoursOfOperationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_hours_of_operations::ListHoursOfOperationsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_hours_of_operations::ListHoursOfOperationsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_hours_of_operations::ListHoursOfOperationsInput {
             instance_id: self.instance_id,

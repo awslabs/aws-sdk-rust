@@ -118,7 +118,7 @@ impl CreateTransitGatewayConnectInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_transit_gateway_connect::CreateTransitGatewayConnectInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_transit_gateway_connect::CreateTransitGatewayConnectInput {
             transport_transit_gateway_attachment_id: self.transport_transit_gateway_attachment_id,

@@ -161,7 +161,7 @@ impl DescribeSnapshotCopyGrantsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_snapshot_copy_grants::DescribeSnapshotCopyGrantsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_snapshot_copy_grants::DescribeSnapshotCopyGrantsInput {
             snapshot_copy_grant_name: self.snapshot_copy_grant_name,

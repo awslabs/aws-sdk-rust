@@ -2,7 +2,7 @@
 pub fn ser_aws_managed_rules_acfp_rule_set(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsManagedRulesAcfpRuleSet,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("CreationPath").string(input.creation_path.as_str());
     }

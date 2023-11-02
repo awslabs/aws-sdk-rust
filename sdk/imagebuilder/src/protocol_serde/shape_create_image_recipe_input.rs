@@ -2,7 +2,7 @@
 pub fn ser_create_image_recipe_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_image_recipe::CreateImageRecipeInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.additional_instance_configuration {
         #[allow(unused_mut)]
         let mut object_2 = object.key("additionalInstanceConfiguration").start_object();

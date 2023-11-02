@@ -94,22 +94,22 @@ impl MfaDeviceBuilder {
     /// - [`user_name`](crate::types::builders::MfaDeviceBuilder::user_name)
     /// - [`serial_number`](crate::types::builders::MfaDeviceBuilder::serial_number)
     /// - [`enable_date`](crate::types::builders::MfaDeviceBuilder::enable_date)
-    pub fn build(self) -> ::std::result::Result<crate::types::MfaDevice, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::MfaDevice, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MfaDevice {
             user_name: self.user_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "user_name",
                     "user_name was not specified but it is required when building MfaDevice",
                 )
             })?,
             serial_number: self.serial_number.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "serial_number",
                     "serial_number was not specified but it is required when building MfaDevice",
                 )
             })?,
             enable_date: self.enable_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "enable_date",
                     "enable_date was not specified but it is required when building MfaDevice",
                 )

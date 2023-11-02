@@ -107,7 +107,7 @@ impl ModifyTransitGatewayInputBuilder {
     /// Consumes the builder and constructs a [`ModifyTransitGatewayInput`](crate::operation::modify_transit_gateway::ModifyTransitGatewayInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::modify_transit_gateway::ModifyTransitGatewayInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::modify_transit_gateway::ModifyTransitGatewayInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::modify_transit_gateway::ModifyTransitGatewayInput {
             transit_gateway_id: self.transit_gateway_id,

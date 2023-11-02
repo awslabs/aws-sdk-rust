@@ -134,7 +134,7 @@ impl CopyDistributionInputBuilder {
     /// Consumes the builder and constructs a [`CopyDistributionInput`](crate::operation::copy_distribution::CopyDistributionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::copy_distribution::CopyDistributionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::copy_distribution::CopyDistributionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::copy_distribution::CopyDistributionInput {
             primary_distribution_id: self.primary_distribution_id,
             staging: self.staging,

@@ -68,16 +68,16 @@ impl SemtechGnssConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`status`](crate::types::builders::SemtechGnssConfigurationBuilder::status)
     /// - [`fec`](crate::types::builders::SemtechGnssConfigurationBuilder::fec)
-    pub fn build(self) -> ::std::result::Result<crate::types::SemtechGnssConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SemtechGnssConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SemtechGnssConfiguration {
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building SemtechGnssConfiguration",
                 )
             })?,
             fec: self.fec.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "fec",
                     "fec was not specified but it is required when building SemtechGnssConfiguration",
                 )

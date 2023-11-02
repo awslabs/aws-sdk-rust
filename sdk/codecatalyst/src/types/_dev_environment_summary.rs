@@ -325,37 +325,37 @@ impl DevEnvironmentSummaryBuilder {
     /// - [`status`](crate::types::builders::DevEnvironmentSummaryBuilder::status)
     /// - [`repositories`](crate::types::builders::DevEnvironmentSummaryBuilder::repositories)
     /// - [`instance_type`](crate::types::builders::DevEnvironmentSummaryBuilder::instance_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::DevEnvironmentSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DevEnvironmentSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DevEnvironmentSummary {
             space_name: self.space_name,
             project_name: self.project_name,
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building DevEnvironmentSummary",
                 )
             })?,
             last_updated_time: self.last_updated_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_updated_time",
                     "last_updated_time was not specified but it is required when building DevEnvironmentSummary",
                 )
             })?,
             creator_id: self.creator_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creator_id",
                     "creator_id was not specified but it is required when building DevEnvironmentSummary",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building DevEnvironmentSummary",
                 )
             })?,
             status_reason: self.status_reason,
             repositories: self.repositories.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "repositories",
                     "repositories was not specified but it is required when building DevEnvironmentSummary",
                 )
@@ -363,7 +363,7 @@ impl DevEnvironmentSummaryBuilder {
             alias: self.alias,
             ides: self.ides,
             instance_type: self.instance_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "instance_type",
                     "instance_type was not specified but it is required when building DevEnvironmentSummary",
                 )

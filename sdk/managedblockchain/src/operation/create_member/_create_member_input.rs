@@ -108,7 +108,9 @@ impl CreateMemberInputBuilder {
         &self.member_configuration
     }
     /// Consumes the builder and constructs a [`CreateMemberInput`](crate::operation::create_member::CreateMemberInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_member::CreateMemberInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_member::CreateMemberInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_member::CreateMemberInput {
             client_request_token: self.client_request_token,
             invitation_id: self.invitation_id,

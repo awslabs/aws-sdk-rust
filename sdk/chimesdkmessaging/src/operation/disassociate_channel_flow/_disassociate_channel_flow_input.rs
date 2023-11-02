@@ -90,7 +90,7 @@ impl DisassociateChannelFlowInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_channel_flow::DisassociateChannelFlowInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disassociate_channel_flow::DisassociateChannelFlowInput {
             channel_arn: self.channel_arn,

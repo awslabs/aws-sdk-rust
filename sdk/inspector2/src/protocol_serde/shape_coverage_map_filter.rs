@@ -2,7 +2,7 @@
 pub fn ser_coverage_map_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CoverageMapFilter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("comparison").string(input.comparison.as_str());
     }

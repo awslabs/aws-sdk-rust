@@ -42,7 +42,7 @@ impl ResetCacheInputBuilder {
         &self.gateway_arn
     }
     /// Consumes the builder and constructs a [`ResetCacheInput`](crate::operation::reset_cache::ResetCacheInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::reset_cache::ResetCacheInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::reset_cache::ResetCacheInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::reset_cache::ResetCacheInput {
             gateway_arn: self.gateway_arn,
         })

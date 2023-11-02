@@ -51,7 +51,7 @@ impl CreateOrUpdateTagsInputBuilder {
     /// Consumes the builder and constructs a [`CreateOrUpdateTagsInput`](crate::operation::create_or_update_tags::CreateOrUpdateTagsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_or_update_tags::CreateOrUpdateTagsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_or_update_tags::CreateOrUpdateTagsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_or_update_tags::CreateOrUpdateTagsInput { tags: self.tags })
     }

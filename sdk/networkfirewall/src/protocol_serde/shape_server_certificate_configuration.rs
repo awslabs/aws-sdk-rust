@@ -2,7 +2,7 @@
 pub fn ser_server_certificate_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ServerCertificateConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.server_certificates {
         let mut array_2 = object.key("ServerCertificates").start_array();
         for item_3 in var_1 {

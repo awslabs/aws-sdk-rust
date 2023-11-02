@@ -225,10 +225,10 @@ impl GoogleDriveConfigurationBuilder {
     /// Consumes the builder and constructs a [`GoogleDriveConfiguration`](crate::types::GoogleDriveConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`secret_arn`](crate::types::builders::GoogleDriveConfigurationBuilder::secret_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::GoogleDriveConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::GoogleDriveConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::GoogleDriveConfiguration {
             secret_arn: self.secret_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "secret_arn",
                     "secret_arn was not specified but it is required when building GoogleDriveConfiguration",
                 )

@@ -2,7 +2,7 @@
 pub fn ser_copy_source_image_set_information(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CopySourceImageSetInformation,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("latestVersionId").string(input.latest_version_id.as_str());
     }

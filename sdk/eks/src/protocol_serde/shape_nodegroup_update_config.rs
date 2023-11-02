@@ -2,7 +2,7 @@
 pub fn ser_nodegroup_update_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::NodegroupUpdateConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.max_unavailable {
         object.key("maxUnavailable").number(
             #[allow(clippy::useless_conversion)]

@@ -87,7 +87,7 @@ impl UpdateMultiplexInputBuilder {
     /// Consumes the builder and constructs a [`UpdateMultiplexInput`](crate::operation::update_multiplex::UpdateMultiplexInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_multiplex::UpdateMultiplexInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_multiplex::UpdateMultiplexInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_multiplex::UpdateMultiplexInput {
             multiplex_id: self.multiplex_id,
             multiplex_settings: self.multiplex_settings,

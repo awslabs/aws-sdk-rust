@@ -156,10 +156,10 @@ impl FilterListConfigurationBuilder {
     /// Consumes the builder and constructs a [`FilterListConfiguration`](crate::types::FilterListConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`match_operator`](crate::types::builders::FilterListConfigurationBuilder::match_operator)
-    pub fn build(self) -> ::std::result::Result<crate::types::FilterListConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::FilterListConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FilterListConfiguration {
             match_operator: self.match_operator.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "match_operator",
                     "match_operator was not specified but it is required when building FilterListConfiguration",
                 )

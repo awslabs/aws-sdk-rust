@@ -75,10 +75,10 @@ impl IpRuleBuilder {
     /// Consumes the builder and constructs a [`IpRule`](crate::types::IpRule).
     /// This method will fail if any of the following fields are not set:
     /// - [`ip_range`](crate::types::builders::IpRuleBuilder::ip_range)
-    pub fn build(self) -> ::std::result::Result<crate::types::IpRule, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::IpRule, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::IpRule {
             ip_range: self.ip_range.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "ip_range",
                     "ip_range was not specified but it is required when building IpRule",
                 )

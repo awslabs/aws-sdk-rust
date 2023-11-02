@@ -141,22 +141,22 @@ impl SpigotBuilder {
     /// - [`name`](crate::types::builders::SpigotBuilder::name)
     /// - [`inputs`](crate::types::builders::SpigotBuilder::inputs)
     /// - [`path`](crate::types::builders::SpigotBuilder::path)
-    pub fn build(self) -> ::std::result::Result<crate::types::Spigot, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Spigot, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Spigot {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building Spigot",
                 )
             })?,
             inputs: self.inputs.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "inputs",
                     "inputs was not specified but it is required when building Spigot",
                 )
             })?,
             path: self.path.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "path",
                     "path was not specified but it is required when building Spigot",
                 )

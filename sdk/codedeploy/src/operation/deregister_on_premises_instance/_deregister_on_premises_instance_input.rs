@@ -47,7 +47,7 @@ impl DeregisterOnPremisesInstanceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_on_premises_instance::DeregisterOnPremisesInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::deregister_on_premises_instance::DeregisterOnPremisesInstanceInput {
             instance_name: self.instance_name,

@@ -53,10 +53,10 @@ impl NullValueFormatConfigurationBuilder {
     /// Consumes the builder and constructs a [`NullValueFormatConfiguration`](crate::types::NullValueFormatConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`null_string`](crate::types::builders::NullValueFormatConfigurationBuilder::null_string)
-    pub fn build(self) -> ::std::result::Result<crate::types::NullValueFormatConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::NullValueFormatConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::NullValueFormatConfiguration {
             null_string: self.null_string.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "null_string",
                     "null_string was not specified but it is required when building NullValueFormatConfiguration",
                 )

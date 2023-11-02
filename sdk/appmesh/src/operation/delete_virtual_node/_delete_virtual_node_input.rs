@@ -88,7 +88,7 @@ impl DeleteVirtualNodeInputBuilder {
     /// Consumes the builder and constructs a [`DeleteVirtualNodeInput`](crate::operation::delete_virtual_node::DeleteVirtualNodeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_virtual_node::DeleteVirtualNodeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_virtual_node::DeleteVirtualNodeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_virtual_node::DeleteVirtualNodeInput {
             virtual_node_name: self.virtual_node_name,
             mesh_name: self.mesh_name,

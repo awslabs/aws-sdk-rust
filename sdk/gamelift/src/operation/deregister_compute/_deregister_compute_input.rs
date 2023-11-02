@@ -66,7 +66,7 @@ impl DeregisterComputeInputBuilder {
     /// Consumes the builder and constructs a [`DeregisterComputeInput`](crate::operation::deregister_compute::DeregisterComputeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::deregister_compute::DeregisterComputeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::deregister_compute::DeregisterComputeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::deregister_compute::DeregisterComputeInput {
             fleet_id: self.fleet_id,
             compute_name: self.compute_name,

@@ -111,16 +111,16 @@ impl DialogCodeHookInvocationSettingBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`enable_code_hook_invocation`](crate::types::builders::DialogCodeHookInvocationSettingBuilder::enable_code_hook_invocation)
     /// - [`active`](crate::types::builders::DialogCodeHookInvocationSettingBuilder::active)
-    pub fn build(self) -> ::std::result::Result<crate::types::DialogCodeHookInvocationSetting, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DialogCodeHookInvocationSetting, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DialogCodeHookInvocationSetting {
             enable_code_hook_invocation: self.enable_code_hook_invocation.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "enable_code_hook_invocation",
                     "enable_code_hook_invocation was not specified but it is required when building DialogCodeHookInvocationSetting",
                 )
             })?,
             active: self.active.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "active",
                     "active was not specified but it is required when building DialogCodeHookInvocationSetting",
                 )

@@ -200,8 +200,10 @@ impl CreateConfigurationSetInputBuilder {
     /// Consumes the builder and constructs a [`CreateConfigurationSetInput`](crate::operation::create_configuration_set::CreateConfigurationSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_configuration_set::CreateConfigurationSetInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::create_configuration_set::CreateConfigurationSetInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::create_configuration_set::CreateConfigurationSetInput {
             configuration_set_name: self.configuration_set_name,
             tracking_options: self.tracking_options,

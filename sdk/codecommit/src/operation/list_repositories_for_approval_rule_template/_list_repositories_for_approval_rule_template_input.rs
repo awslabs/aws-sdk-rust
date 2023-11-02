@@ -89,7 +89,7 @@ impl ListRepositoriesForApprovalRuleTemplateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_repositories_for_approval_rule_template::ListRepositoriesForApprovalRuleTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_repositories_for_approval_rule_template::ListRepositoriesForApprovalRuleTemplateInput {

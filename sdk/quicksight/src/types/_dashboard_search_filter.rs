@@ -142,10 +142,10 @@ impl DashboardSearchFilterBuilder {
     /// Consumes the builder and constructs a [`DashboardSearchFilter`](crate::types::DashboardSearchFilter).
     /// This method will fail if any of the following fields are not set:
     /// - [`operator`](crate::types::builders::DashboardSearchFilterBuilder::operator)
-    pub fn build(self) -> ::std::result::Result<crate::types::DashboardSearchFilter, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DashboardSearchFilter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DashboardSearchFilter {
             operator: self.operator.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "operator",
                     "operator was not specified but it is required when building DashboardSearchFilter",
                 )

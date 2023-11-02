@@ -2,7 +2,7 @@
 pub fn ser_delimited_text_import_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DelimitedTextImportOptions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("delimiter").string(input.delimiter.as_str());
     }

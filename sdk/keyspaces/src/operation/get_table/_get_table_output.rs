@@ -339,22 +339,22 @@ impl GetTableOutputBuilder {
     /// - [`keyspace_name`](crate::operation::get_table::builders::GetTableOutputBuilder::keyspace_name)
     /// - [`table_name`](crate::operation::get_table::builders::GetTableOutputBuilder::table_name)
     /// - [`resource_arn`](crate::operation::get_table::builders::GetTableOutputBuilder::resource_arn)
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_table::GetTableOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_table::GetTableOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_table::GetTableOutput {
             keyspace_name: self.keyspace_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "keyspace_name",
                     "keyspace_name was not specified but it is required when building GetTableOutput",
                 )
             })?,
             table_name: self.table_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "table_name",
                     "table_name was not specified but it is required when building GetTableOutput",
                 )
             })?,
             resource_arn: self.resource_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_arn",
                     "resource_arn was not specified but it is required when building GetTableOutput",
                 )

@@ -209,23 +209,23 @@ impl EvaluateDataQualityMultiFrameBuilder {
     /// - [`name`](crate::types::builders::EvaluateDataQualityMultiFrameBuilder::name)
     /// - [`inputs`](crate::types::builders::EvaluateDataQualityMultiFrameBuilder::inputs)
     /// - [`ruleset`](crate::types::builders::EvaluateDataQualityMultiFrameBuilder::ruleset)
-    pub fn build(self) -> ::std::result::Result<crate::types::EvaluateDataQualityMultiFrame, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::EvaluateDataQualityMultiFrame, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EvaluateDataQualityMultiFrame {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building EvaluateDataQualityMultiFrame",
                 )
             })?,
             inputs: self.inputs.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "inputs",
                     "inputs was not specified but it is required when building EvaluateDataQualityMultiFrame",
                 )
             })?,
             additional_data_sources: self.additional_data_sources,
             ruleset: self.ruleset.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "ruleset",
                     "ruleset was not specified but it is required when building EvaluateDataQualityMultiFrame",
                 )

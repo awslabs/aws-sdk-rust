@@ -108,7 +108,7 @@ impl ListCertificatesByCaInputBuilder {
     /// Consumes the builder and constructs a [`ListCertificatesByCaInput`](crate::operation::list_certificates_by_ca::ListCertificatesByCaInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_certificates_by_ca::ListCertificatesByCaInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_certificates_by_ca::ListCertificatesByCaInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_certificates_by_ca::ListCertificatesByCaInput {
             ca_certificate_id: self.ca_certificate_id,

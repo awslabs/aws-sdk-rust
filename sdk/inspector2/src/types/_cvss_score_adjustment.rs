@@ -70,16 +70,16 @@ impl CvssScoreAdjustmentBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`metric`](crate::types::builders::CvssScoreAdjustmentBuilder::metric)
     /// - [`reason`](crate::types::builders::CvssScoreAdjustmentBuilder::reason)
-    pub fn build(self) -> ::std::result::Result<crate::types::CvssScoreAdjustment, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CvssScoreAdjustment, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CvssScoreAdjustment {
             metric: self.metric.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "metric",
                     "metric was not specified but it is required when building CvssScoreAdjustment",
                 )
             })?,
             reason: self.reason.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "reason",
                     "reason was not specified but it is required when building CvssScoreAdjustment",
                 )

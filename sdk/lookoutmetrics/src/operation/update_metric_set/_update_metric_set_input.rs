@@ -236,7 +236,7 @@ impl UpdateMetricSetInputBuilder {
     /// Consumes the builder and constructs a [`UpdateMetricSetInput`](crate::operation::update_metric_set::UpdateMetricSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_metric_set::UpdateMetricSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_metric_set::UpdateMetricSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_metric_set::UpdateMetricSetInput {
             metric_set_arn: self.metric_set_arn,
             metric_set_description: self.metric_set_description,

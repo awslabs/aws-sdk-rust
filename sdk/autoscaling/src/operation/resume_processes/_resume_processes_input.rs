@@ -133,7 +133,7 @@ impl ResumeProcessesInputBuilder {
     /// Consumes the builder and constructs a [`ResumeProcessesInput`](crate::operation::resume_processes::ResumeProcessesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::resume_processes::ResumeProcessesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::resume_processes::ResumeProcessesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::resume_processes::ResumeProcessesInput {
             auto_scaling_group_name: self.auto_scaling_group_name,
             scaling_processes: self.scaling_processes,

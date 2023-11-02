@@ -48,11 +48,11 @@ impl ExperimentTemplateCloudWatchLogsLogConfigurationInputBuilder {
     /// - [`log_group_arn`](crate::types::builders::ExperimentTemplateCloudWatchLogsLogConfigurationInputBuilder::log_group_arn)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::ExperimentTemplateCloudWatchLogsLogConfigurationInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::types::ExperimentTemplateCloudWatchLogsLogConfigurationInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::types::ExperimentTemplateCloudWatchLogsLogConfigurationInput {
             log_group_arn: self.log_group_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "log_group_arn",
                     "log_group_arn was not specified but it is required when building ExperimentTemplateCloudWatchLogsLogConfigurationInput",
                 )

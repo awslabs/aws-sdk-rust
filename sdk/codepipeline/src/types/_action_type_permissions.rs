@@ -51,10 +51,10 @@ impl ActionTypePermissionsBuilder {
     /// Consumes the builder and constructs a [`ActionTypePermissions`](crate::types::ActionTypePermissions).
     /// This method will fail if any of the following fields are not set:
     /// - [`allowed_accounts`](crate::types::builders::ActionTypePermissionsBuilder::allowed_accounts)
-    pub fn build(self) -> ::std::result::Result<crate::types::ActionTypePermissions, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ActionTypePermissions, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ActionTypePermissions {
             allowed_accounts: self.allowed_accounts.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "allowed_accounts",
                     "allowed_accounts was not specified but it is required when building ActionTypePermissions",
                 )

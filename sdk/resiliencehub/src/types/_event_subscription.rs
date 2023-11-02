@@ -90,16 +90,16 @@ impl EventSubscriptionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::EventSubscriptionBuilder::name)
     /// - [`event_type`](crate::types::builders::EventSubscriptionBuilder::event_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::EventSubscription, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::EventSubscription, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EventSubscription {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building EventSubscription",
                 )
             })?,
             event_type: self.event_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "event_type",
                     "event_type was not specified but it is required when building EventSubscription",
                 )

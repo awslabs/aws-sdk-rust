@@ -109,11 +109,11 @@ impl UpdateStateMachineOutputBuilder {
     /// - [`update_date`](crate::operation::update_state_machine::builders::UpdateStateMachineOutputBuilder::update_date)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_state_machine::UpdateStateMachineOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_state_machine::UpdateStateMachineOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_state_machine::UpdateStateMachineOutput {
             update_date: self.update_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "update_date",
                     "update_date was not specified but it is required when building UpdateStateMachineOutput",
                 )

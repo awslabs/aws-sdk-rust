@@ -209,7 +209,7 @@ impl ListHubsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListHubsInput`](crate::operation::list_hubs::ListHubsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_hubs::ListHubsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_hubs::ListHubsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_hubs::ListHubsInput {
             name_contains: self.name_contains,
             creation_time_before: self.creation_time_before,

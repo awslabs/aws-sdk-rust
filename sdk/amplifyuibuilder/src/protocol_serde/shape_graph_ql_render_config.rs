@@ -2,7 +2,7 @@
 pub fn ser_graph_ql_render_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GraphQlRenderConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("typesFilePath").string(input.types_file_path.as_str());
     }

@@ -93,7 +93,8 @@ impl CreatePartnerInputInputBuilder {
     /// Consumes the builder and constructs a [`CreatePartnerInputInput`](crate::operation::create_partner_input::CreatePartnerInputInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_partner_input::CreatePartnerInputInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_partner_input::CreatePartnerInputInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_partner_input::CreatePartnerInputInput {
             input_id: self.input_id,
             request_id: self.request_id,

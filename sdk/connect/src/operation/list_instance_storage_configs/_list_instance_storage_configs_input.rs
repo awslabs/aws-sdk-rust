@@ -110,7 +110,7 @@ impl ListInstanceStorageConfigsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_instance_storage_configs::ListInstanceStorageConfigsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_instance_storage_configs::ListInstanceStorageConfigsInput {
             instance_id: self.instance_id,

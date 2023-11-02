@@ -2,7 +2,7 @@
 pub fn ser_tag_resource_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::tag_resource::TagResourceInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.tags {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Tags").start_object();

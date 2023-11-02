@@ -142,7 +142,7 @@ impl CreateListInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateListInput`](crate::operation::create_list::CreateListInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_list::CreateListInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_list::CreateListInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_list::CreateListInput {
             name: self.name,
             elements: self.elements,

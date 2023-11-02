@@ -45,7 +45,7 @@ impl DisableRadiusInputBuilder {
     /// Consumes the builder and constructs a [`DisableRadiusInput`](crate::operation::disable_radius::DisableRadiusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::disable_radius::DisableRadiusInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::disable_radius::DisableRadiusInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::disable_radius::DisableRadiusInput {
             directory_id: self.directory_id,
         })

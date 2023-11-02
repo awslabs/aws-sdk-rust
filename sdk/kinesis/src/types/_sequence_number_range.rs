@@ -67,10 +67,10 @@ impl SequenceNumberRangeBuilder {
     /// Consumes the builder and constructs a [`SequenceNumberRange`](crate::types::SequenceNumberRange).
     /// This method will fail if any of the following fields are not set:
     /// - [`starting_sequence_number`](crate::types::builders::SequenceNumberRangeBuilder::starting_sequence_number)
-    pub fn build(self) -> ::std::result::Result<crate::types::SequenceNumberRange, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SequenceNumberRange, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SequenceNumberRange {
             starting_sequence_number: self.starting_sequence_number.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "starting_sequence_number",
                     "starting_sequence_number was not specified but it is required when building SequenceNumberRange",
                 )

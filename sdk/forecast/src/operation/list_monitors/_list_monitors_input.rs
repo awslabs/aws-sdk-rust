@@ -131,7 +131,9 @@ impl ListMonitorsInputBuilder {
         &self.filters
     }
     /// Consumes the builder and constructs a [`ListMonitorsInput`](crate::operation::list_monitors::ListMonitorsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_monitors::ListMonitorsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_monitors::ListMonitorsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_monitors::ListMonitorsInput {
             next_token: self.next_token,
             max_results: self.max_results,

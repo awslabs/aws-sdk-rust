@@ -123,22 +123,22 @@ impl CustomSqlBuilder {
     /// - [`data_source_arn`](crate::types::builders::CustomSqlBuilder::data_source_arn)
     /// - [`name`](crate::types::builders::CustomSqlBuilder::name)
     /// - [`sql_query`](crate::types::builders::CustomSqlBuilder::sql_query)
-    pub fn build(self) -> ::std::result::Result<crate::types::CustomSql, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CustomSql, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CustomSql {
             data_source_arn: self.data_source_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_source_arn",
                     "data_source_arn was not specified but it is required when building CustomSql",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building CustomSql",
                 )
             })?,
             sql_query: self.sql_query.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "sql_query",
                     "sql_query was not specified but it is required when building CustomSql",
                 )

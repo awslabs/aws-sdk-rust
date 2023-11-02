@@ -2,7 +2,7 @@
 pub fn ser_create_application_version_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_application_version::CreateApplicationVersionInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.source_code_archive_url {
         object.key("sourceCodeArchiveUrl").string(var_1.as_str());
     }

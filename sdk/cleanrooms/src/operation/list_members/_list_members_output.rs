@@ -87,11 +87,11 @@ impl ListMembersOutputBuilder {
     /// Consumes the builder and constructs a [`ListMembersOutput`](crate::operation::list_members::ListMembersOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`member_summaries`](crate::operation::list_members::builders::ListMembersOutputBuilder::member_summaries)
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_members::ListMembersOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_members::ListMembersOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_members::ListMembersOutput {
             next_token: self.next_token,
             member_summaries: self.member_summaries.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "member_summaries",
                     "member_summaries was not specified but it is required when building ListMembersOutput",
                 )

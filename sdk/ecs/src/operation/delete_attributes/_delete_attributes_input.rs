@@ -72,7 +72,7 @@ impl DeleteAttributesInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAttributesInput`](crate::operation::delete_attributes::DeleteAttributesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_attributes::DeleteAttributesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_attributes::DeleteAttributesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_attributes::DeleteAttributesInput {
             cluster: self.cluster,
             attributes: self.attributes,

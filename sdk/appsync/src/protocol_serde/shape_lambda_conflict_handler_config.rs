@@ -2,7 +2,7 @@
 pub fn ser_lambda_conflict_handler_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LambdaConflictHandlerConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.lambda_conflict_handler_arn {
         object.key("lambdaConflictHandlerArn").string(var_1.as_str());
     }

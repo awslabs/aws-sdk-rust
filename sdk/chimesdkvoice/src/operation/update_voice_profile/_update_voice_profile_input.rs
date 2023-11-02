@@ -66,7 +66,8 @@ impl UpdateVoiceProfileInputBuilder {
     /// Consumes the builder and constructs a [`UpdateVoiceProfileInput`](crate::operation::update_voice_profile::UpdateVoiceProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_voice_profile::UpdateVoiceProfileInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_voice_profile::UpdateVoiceProfileInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::update_voice_profile::UpdateVoiceProfileInput {
             voice_profile_id: self.voice_profile_id,
             speaker_search_task_id: self.speaker_search_task_id,

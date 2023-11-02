@@ -71,7 +71,7 @@ impl ExitStandbyInputBuilder {
         &self.auto_scaling_group_name
     }
     /// Consumes the builder and constructs a [`ExitStandbyInput`](crate::operation::exit_standby::ExitStandbyInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::exit_standby::ExitStandbyInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::exit_standby::ExitStandbyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::exit_standby::ExitStandbyInput {
             instance_ids: self.instance_ids,
             auto_scaling_group_name: self.auto_scaling_group_name,

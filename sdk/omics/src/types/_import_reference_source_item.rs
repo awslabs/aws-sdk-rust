@@ -156,11 +156,11 @@ impl ImportReferenceSourceItemBuilder {
     /// Consumes the builder and constructs a [`ImportReferenceSourceItem`](crate::types::ImportReferenceSourceItem).
     /// This method will fail if any of the following fields are not set:
     /// - [`status`](crate::types::builders::ImportReferenceSourceItemBuilder::status)
-    pub fn build(self) -> ::std::result::Result<crate::types::ImportReferenceSourceItem, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ImportReferenceSourceItem, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ImportReferenceSourceItem {
             source_file: self.source_file,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building ImportReferenceSourceItem",
                 )

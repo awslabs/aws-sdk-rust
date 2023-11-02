@@ -142,7 +142,7 @@ impl UpdateThingInputBuilder {
         &self.remove_thing_type
     }
     /// Consumes the builder and constructs a [`UpdateThingInput`](crate::operation::update_thing::UpdateThingInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_thing::UpdateThingInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_thing::UpdateThingInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_thing::UpdateThingInput {
             thing_name: self.thing_name,
             thing_type_name: self.thing_type_name,

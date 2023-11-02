@@ -175,16 +175,16 @@ impl AccessDetailBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`service_name`](crate::types::builders::AccessDetailBuilder::service_name)
     /// - [`service_namespace`](crate::types::builders::AccessDetailBuilder::service_namespace)
-    pub fn build(self) -> ::std::result::Result<crate::types::AccessDetail, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AccessDetail, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AccessDetail {
             service_name: self.service_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "service_name",
                     "service_name was not specified but it is required when building AccessDetail",
                 )
             })?,
             service_namespace: self.service_namespace.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "service_namespace",
                     "service_namespace was not specified but it is required when building AccessDetail",
                 )

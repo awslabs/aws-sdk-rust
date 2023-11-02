@@ -18,8 +18,10 @@ impl DescribeGlobalSettingsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeGlobalSettingsInput`](crate::operation::describe_global_settings::DescribeGlobalSettingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_global_settings::DescribeGlobalSettingsInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::describe_global_settings::DescribeGlobalSettingsInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::describe_global_settings::DescribeGlobalSettingsInput {})
     }
 }

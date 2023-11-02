@@ -52,7 +52,7 @@ impl GetCampaignStateBatchInputBuilder {
     /// Consumes the builder and constructs a [`GetCampaignStateBatchInput`](crate::operation::get_campaign_state_batch::GetCampaignStateBatchInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_campaign_state_batch::GetCampaignStateBatchInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_campaign_state_batch::GetCampaignStateBatchInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_campaign_state_batch::GetCampaignStateBatchInput {
             campaign_ids: self.campaign_ids,

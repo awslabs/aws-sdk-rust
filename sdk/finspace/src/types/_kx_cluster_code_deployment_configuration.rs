@@ -65,10 +65,12 @@ impl KxClusterCodeDeploymentConfigurationBuilder {
     /// Consumes the builder and constructs a [`KxClusterCodeDeploymentConfiguration`](crate::types::KxClusterCodeDeploymentConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`deployment_strategy`](crate::types::builders::KxClusterCodeDeploymentConfigurationBuilder::deployment_strategy)
-    pub fn build(self) -> ::std::result::Result<crate::types::KxClusterCodeDeploymentConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::KxClusterCodeDeploymentConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::KxClusterCodeDeploymentConfiguration {
             deployment_strategy: self.deployment_strategy.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "deployment_strategy",
                     "deployment_strategy was not specified but it is required when building KxClusterCodeDeploymentConfiguration",
                 )

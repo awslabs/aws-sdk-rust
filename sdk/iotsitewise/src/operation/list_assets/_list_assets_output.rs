@@ -87,10 +87,10 @@ impl ListAssetsOutputBuilder {
     /// Consumes the builder and constructs a [`ListAssetsOutput`](crate::operation::list_assets::ListAssetsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`asset_summaries`](crate::operation::list_assets::builders::ListAssetsOutputBuilder::asset_summaries)
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_assets::ListAssetsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_assets::ListAssetsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_assets::ListAssetsOutput {
             asset_summaries: self.asset_summaries.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "asset_summaries",
                     "asset_summaries was not specified but it is required when building ListAssetsOutput",
                 )

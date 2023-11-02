@@ -63,11 +63,11 @@ impl StartContactStreamingOutputBuilder {
     /// - [`streaming_id`](crate::operation::start_contact_streaming::builders::StartContactStreamingOutputBuilder::streaming_id)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_contact_streaming::StartContactStreamingOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::start_contact_streaming::StartContactStreamingOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_contact_streaming::StartContactStreamingOutput {
             streaming_id: self.streaming_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "streaming_id",
                     "streaming_id was not specified but it is required when building StartContactStreamingOutput",
                 )

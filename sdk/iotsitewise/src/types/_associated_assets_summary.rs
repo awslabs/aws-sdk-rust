@@ -241,47 +241,47 @@ impl AssociatedAssetsSummaryBuilder {
     /// - [`creation_date`](crate::types::builders::AssociatedAssetsSummaryBuilder::creation_date)
     /// - [`last_update_date`](crate::types::builders::AssociatedAssetsSummaryBuilder::last_update_date)
     /// - [`hierarchies`](crate::types::builders::AssociatedAssetsSummaryBuilder::hierarchies)
-    pub fn build(self) -> ::std::result::Result<crate::types::AssociatedAssetsSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AssociatedAssetsSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AssociatedAssetsSummary {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building AssociatedAssetsSummary",
                 )
             })?,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building AssociatedAssetsSummary",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building AssociatedAssetsSummary",
                 )
             })?,
             asset_model_id: self.asset_model_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "asset_model_id",
                     "asset_model_id was not specified but it is required when building AssociatedAssetsSummary",
                 )
             })?,
             creation_date: self.creation_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_date",
                     "creation_date was not specified but it is required when building AssociatedAssetsSummary",
                 )
             })?,
             last_update_date: self.last_update_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_update_date",
                     "last_update_date was not specified but it is required when building AssociatedAssetsSummary",
                 )
             })?,
             status: self.status,
             hierarchies: self.hierarchies.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "hierarchies",
                     "hierarchies was not specified but it is required when building AssociatedAssetsSummary",
                 )

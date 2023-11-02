@@ -96,7 +96,7 @@ impl DescribeCustomDomainsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeCustomDomainsInput`](crate::operation::describe_custom_domains::DescribeCustomDomainsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_custom_domains::DescribeCustomDomainsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_custom_domains::DescribeCustomDomainsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_custom_domains::DescribeCustomDomainsInput {
             service_arn: self.service_arn,

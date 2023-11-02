@@ -172,7 +172,7 @@ impl GetOpsSummaryInputBuilder {
     /// Consumes the builder and constructs a [`GetOpsSummaryInput`](crate::operation::get_ops_summary::GetOpsSummaryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_ops_summary::GetOpsSummaryInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_ops_summary::GetOpsSummaryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_ops_summary::GetOpsSummaryInput {
             sync_name: self.sync_name,
             filters: self.filters,

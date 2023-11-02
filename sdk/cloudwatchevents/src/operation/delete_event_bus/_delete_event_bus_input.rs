@@ -44,7 +44,7 @@ impl DeleteEventBusInputBuilder {
     /// Consumes the builder and constructs a [`DeleteEventBusInput`](crate::operation::delete_event_bus::DeleteEventBusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_event_bus::DeleteEventBusInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_event_bus::DeleteEventBusInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_event_bus::DeleteEventBusInput { name: self.name })
     }
 }

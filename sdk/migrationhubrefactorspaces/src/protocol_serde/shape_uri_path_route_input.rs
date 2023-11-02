@@ -60,7 +60,7 @@ where
 pub fn ser_uri_path_route_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UriPathRouteInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("SourcePath").string(input.source_path.as_str());
     }

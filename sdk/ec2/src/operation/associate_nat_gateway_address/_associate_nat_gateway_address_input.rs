@@ -125,7 +125,7 @@ impl AssociateNatGatewayAddressInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_nat_gateway_address::AssociateNatGatewayAddressInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::associate_nat_gateway_address::AssociateNatGatewayAddressInput {
             nat_gateway_id: self.nat_gateway_id,

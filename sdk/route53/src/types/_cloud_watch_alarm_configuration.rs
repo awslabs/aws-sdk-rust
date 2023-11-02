@@ -214,46 +214,46 @@ impl CloudWatchAlarmConfigurationBuilder {
     /// - [`metric_name`](crate::types::builders::CloudWatchAlarmConfigurationBuilder::metric_name)
     /// - [`namespace`](crate::types::builders::CloudWatchAlarmConfigurationBuilder::namespace)
     /// - [`statistic`](crate::types::builders::CloudWatchAlarmConfigurationBuilder::statistic)
-    pub fn build(self) -> ::std::result::Result<crate::types::CloudWatchAlarmConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CloudWatchAlarmConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CloudWatchAlarmConfiguration {
             evaluation_periods: self.evaluation_periods.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "evaluation_periods",
                     "evaluation_periods was not specified but it is required when building CloudWatchAlarmConfiguration",
                 )
             })?,
             threshold: self.threshold.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "threshold",
                     "threshold was not specified but it is required when building CloudWatchAlarmConfiguration",
                 )
             })?,
             comparison_operator: self.comparison_operator.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "comparison_operator",
                     "comparison_operator was not specified but it is required when building CloudWatchAlarmConfiguration",
                 )
             })?,
             period: self.period.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "period",
                     "period was not specified but it is required when building CloudWatchAlarmConfiguration",
                 )
             })?,
             metric_name: self.metric_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "metric_name",
                     "metric_name was not specified but it is required when building CloudWatchAlarmConfiguration",
                 )
             })?,
             namespace: self.namespace.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "namespace",
                     "namespace was not specified but it is required when building CloudWatchAlarmConfiguration",
                 )
             })?,
             statistic: self.statistic.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "statistic",
                     "statistic was not specified but it is required when building CloudWatchAlarmConfiguration",
                 )

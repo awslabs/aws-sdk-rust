@@ -51,10 +51,10 @@ impl ShiftDetailsBuilder {
     /// Consumes the builder and constructs a [`ShiftDetails`](crate::types::ShiftDetails).
     /// This method will fail if any of the following fields are not set:
     /// - [`overridden_contact_ids`](crate::types::builders::ShiftDetailsBuilder::overridden_contact_ids)
-    pub fn build(self) -> ::std::result::Result<crate::types::ShiftDetails, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ShiftDetails, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ShiftDetails {
             overridden_contact_ids: self.overridden_contact_ids.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "overridden_contact_ids",
                     "overridden_contact_ids was not specified but it is required when building ShiftDetails",
                 )

@@ -110,7 +110,7 @@ impl RegisterRdsDbInstanceInputBuilder {
     /// Consumes the builder and constructs a [`RegisterRdsDbInstanceInput`](crate::operation::register_rds_db_instance::RegisterRdsDbInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::register_rds_db_instance::RegisterRdsDbInstanceInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::register_rds_db_instance::RegisterRdsDbInstanceInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::register_rds_db_instance::RegisterRdsDbInstanceInput {
             stack_id: self.stack_id,

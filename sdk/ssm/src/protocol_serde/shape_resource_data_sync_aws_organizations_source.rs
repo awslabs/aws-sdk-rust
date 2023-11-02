@@ -2,7 +2,7 @@
 pub fn ser_resource_data_sync_aws_organizations_source(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ResourceDataSyncAwsOrganizationsSource,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("OrganizationSourceType").string(input.organization_source_type.as_str());
     }

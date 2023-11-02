@@ -2,7 +2,7 @@
 pub fn ser_create_app_instance_admin_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_app_instance_admin::CreateAppInstanceAdminInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.app_instance_admin_arn {
         object.key("AppInstanceAdminArn").string(var_1.as_str());
     }

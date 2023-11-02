@@ -87,8 +87,10 @@ impl UpdateAnalysisTemplateInputBuilder {
     /// Consumes the builder and constructs a [`UpdateAnalysisTemplateInput`](crate::operation::update_analysis_template::UpdateAnalysisTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_analysis_template::UpdateAnalysisTemplateInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::update_analysis_template::UpdateAnalysisTemplateInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::update_analysis_template::UpdateAnalysisTemplateInput {
             membership_identifier: self.membership_identifier,
             analysis_template_identifier: self.analysis_template_identifier,

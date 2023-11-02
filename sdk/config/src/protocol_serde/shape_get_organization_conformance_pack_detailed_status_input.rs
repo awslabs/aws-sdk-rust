@@ -2,7 +2,7 @@
 pub fn ser_get_organization_conformance_pack_detailed_status_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_organization_conformance_pack_detailed_status::GetOrganizationConformancePackDetailedStatusInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.organization_conformance_pack_name {
         object.key("OrganizationConformancePackName").string(var_1.as_str());
     }

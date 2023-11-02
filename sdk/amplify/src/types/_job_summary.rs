@@ -231,53 +231,53 @@ impl JobSummaryBuilder {
     /// - [`start_time`](crate::types::builders::JobSummaryBuilder::start_time)
     /// - [`status`](crate::types::builders::JobSummaryBuilder::status)
     /// - [`job_type`](crate::types::builders::JobSummaryBuilder::job_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::JobSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::JobSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::JobSummary {
             job_arn: self.job_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "job_arn",
                     "job_arn was not specified but it is required when building JobSummary",
                 )
             })?,
             job_id: self.job_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "job_id",
                     "job_id was not specified but it is required when building JobSummary",
                 )
             })?,
             commit_id: self.commit_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "commit_id",
                     "commit_id was not specified but it is required when building JobSummary",
                 )
             })?,
             commit_message: self.commit_message.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "commit_message",
                     "commit_message was not specified but it is required when building JobSummary",
                 )
             })?,
             commit_time: self.commit_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "commit_time",
                     "commit_time was not specified but it is required when building JobSummary",
                 )
             })?,
             start_time: self.start_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "start_time",
                     "start_time was not specified but it is required when building JobSummary",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building JobSummary",
                 )
             })?,
             end_time: self.end_time,
             job_type: self.job_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "job_type",
                     "job_type was not specified but it is required when building JobSummary",
                 )

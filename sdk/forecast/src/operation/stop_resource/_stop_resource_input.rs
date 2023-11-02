@@ -42,7 +42,9 @@ impl StopResourceInputBuilder {
         &self.resource_arn
     }
     /// Consumes the builder and constructs a [`StopResourceInput`](crate::operation::stop_resource::StopResourceInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::stop_resource::StopResourceInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::stop_resource::StopResourceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_resource::StopResourceInput {
             resource_arn: self.resource_arn,
         })

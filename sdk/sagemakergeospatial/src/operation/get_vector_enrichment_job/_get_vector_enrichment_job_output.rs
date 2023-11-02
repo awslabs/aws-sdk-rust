@@ -360,41 +360,41 @@ impl GetVectorEnrichmentJobOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobOutput {
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building GetVectorEnrichmentJobOutput",
                 )
             })?,
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building GetVectorEnrichmentJobOutput",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building GetVectorEnrichmentJobOutput",
                 )
             })?,
             creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_time",
                     "creation_time was not specified but it is required when building GetVectorEnrichmentJobOutput",
                 )
             })?,
             duration_in_seconds: self.duration_in_seconds.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "duration_in_seconds",
                     "duration_in_seconds was not specified but it is required when building GetVectorEnrichmentJobOutput",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building GetVectorEnrichmentJobOutput",
                 )
@@ -403,7 +403,7 @@ impl GetVectorEnrichmentJobOutputBuilder {
             input_config: self.input_config,
             job_config: self.job_config,
             execution_role_arn: self.execution_role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "execution_role_arn",
                     "execution_role_arn was not specified but it is required when building GetVectorEnrichmentJobOutput",
                 )

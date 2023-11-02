@@ -91,7 +91,7 @@ impl GetVehicleStatusInputBuilder {
     /// Consumes the builder and constructs a [`GetVehicleStatusInput`](crate::operation::get_vehicle_status::GetVehicleStatusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_vehicle_status::GetVehicleStatusInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_vehicle_status::GetVehicleStatusInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_vehicle_status::GetVehicleStatusInput {
             next_token: self.next_token,
             max_results: self.max_results,

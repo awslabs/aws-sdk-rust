@@ -108,7 +108,7 @@ impl ListCreatedArtifactsInputBuilder {
     /// Consumes the builder and constructs a [`ListCreatedArtifactsInput`](crate::operation::list_created_artifacts::ListCreatedArtifactsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_created_artifacts::ListCreatedArtifactsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_created_artifacts::ListCreatedArtifactsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_created_artifacts::ListCreatedArtifactsInput {
             progress_update_stream: self.progress_update_stream,

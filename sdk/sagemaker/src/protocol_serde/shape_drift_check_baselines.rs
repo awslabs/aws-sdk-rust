@@ -2,7 +2,7 @@
 pub fn ser_drift_check_baselines(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DriftCheckBaselines,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.bias {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Bias").start_object();

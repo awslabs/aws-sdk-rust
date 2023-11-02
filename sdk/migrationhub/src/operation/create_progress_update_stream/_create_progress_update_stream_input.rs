@@ -67,7 +67,7 @@ impl CreateProgressUpdateStreamInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_progress_update_stream::CreateProgressUpdateStreamInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_progress_update_stream::CreateProgressUpdateStreamInput {
             progress_update_stream_name: self.progress_update_stream_name,

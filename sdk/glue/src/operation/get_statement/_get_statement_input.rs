@@ -85,7 +85,9 @@ impl GetStatementInputBuilder {
         &self.request_origin
     }
     /// Consumes the builder and constructs a [`GetStatementInput`](crate::operation::get_statement::GetStatementInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_statement::GetStatementInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_statement::GetStatementInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_statement::GetStatementInput {
             session_id: self.session_id,
             id: self.id,

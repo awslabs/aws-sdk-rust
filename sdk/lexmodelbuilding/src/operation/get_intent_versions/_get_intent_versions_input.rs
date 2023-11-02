@@ -86,7 +86,7 @@ impl GetIntentVersionsInputBuilder {
     /// Consumes the builder and constructs a [`GetIntentVersionsInput`](crate::operation::get_intent_versions::GetIntentVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_intent_versions::GetIntentVersionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_intent_versions::GetIntentVersionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_intent_versions::GetIntentVersionsInput {
             name: self.name,
             next_token: self.next_token,

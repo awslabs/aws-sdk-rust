@@ -83,7 +83,7 @@ impl GetOutcomesInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`GetOutcomesInput`](crate::operation::get_outcomes::GetOutcomesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_outcomes::GetOutcomesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_outcomes::GetOutcomesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_outcomes::GetOutcomesInput {
             name: self.name,
             next_token: self.next_token,

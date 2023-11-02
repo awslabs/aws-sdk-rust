@@ -321,16 +321,16 @@ impl PhysicalResourceIdBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`identifier`](crate::types::builders::PhysicalResourceIdBuilder::identifier)
     /// - [`r#type`](crate::types::builders::PhysicalResourceIdBuilder::r#type)
-    pub fn build(self) -> ::std::result::Result<crate::types::PhysicalResourceId, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PhysicalResourceId, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PhysicalResourceId {
             identifier: self.identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "identifier",
                     "identifier was not specified but it is required when building PhysicalResourceId",
                 )
             })?,
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building PhysicalResourceId",
                 )

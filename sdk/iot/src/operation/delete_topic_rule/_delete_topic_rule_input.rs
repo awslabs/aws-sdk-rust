@@ -45,7 +45,7 @@ impl DeleteTopicRuleInputBuilder {
     /// Consumes the builder and constructs a [`DeleteTopicRuleInput`](crate::operation::delete_topic_rule::DeleteTopicRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_topic_rule::DeleteTopicRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_topic_rule::DeleteTopicRuleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_topic_rule::DeleteTopicRuleInput { rule_name: self.rule_name })
     }
 }

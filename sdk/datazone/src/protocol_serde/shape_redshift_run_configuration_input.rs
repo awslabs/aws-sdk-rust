@@ -2,7 +2,7 @@
 pub fn ser_redshift_run_configuration_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RedshiftRunConfigurationInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.data_access_role {
         object.key("dataAccessRole").string(var_1.as_str());
     }

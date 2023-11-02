@@ -68,7 +68,7 @@ impl UpdateSolNetworkPackageInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_sol_network_package::UpdateSolNetworkPackageInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_sol_network_package::UpdateSolNetworkPackageInput {
             nsd_info_id: self.nsd_info_id,

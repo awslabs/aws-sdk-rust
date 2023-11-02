@@ -112,16 +112,16 @@ impl SpaceSummaryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::SpaceSummaryBuilder::name)
     /// - [`region_name`](crate::types::builders::SpaceSummaryBuilder::region_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::SpaceSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SpaceSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SpaceSummary {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building SpaceSummary",
                 )
             })?,
             region_name: self.region_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "region_name",
                     "region_name was not specified but it is required when building SpaceSummary",
                 )

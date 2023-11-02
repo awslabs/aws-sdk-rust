@@ -86,7 +86,7 @@ impl SuggestInputBuilder {
         &self.size
     }
     /// Consumes the builder and constructs a [`SuggestInput`](crate::operation::suggest::SuggestInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::suggest::SuggestInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::suggest::SuggestInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::suggest::SuggestInput {
             query: self.query,
             suggester: self.suggester,

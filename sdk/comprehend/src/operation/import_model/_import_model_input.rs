@@ -175,7 +175,7 @@ impl ImportModelInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`ImportModelInput`](crate::operation::import_model::ImportModelInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::import_model::ImportModelInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::import_model::ImportModelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::import_model::ImportModelInput {
             source_model_arn: self.source_model_arn,
             model_name: self.model_name,

@@ -2,7 +2,7 @@
 pub fn ser_update_account_settings_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_account_settings::UpdateAccountSettingsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.group_lifecycle_events_desired_status {
         object.key("GroupLifecycleEventsDesiredStatus").string(var_1.as_str());
     }

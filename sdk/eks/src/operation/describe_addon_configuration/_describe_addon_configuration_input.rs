@@ -68,7 +68,7 @@ impl DescribeAddonConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_addon_configuration::DescribeAddonConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_addon_configuration::DescribeAddonConfigurationInput {
             addon_name: self.addon_name,

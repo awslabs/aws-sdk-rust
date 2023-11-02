@@ -2,7 +2,7 @@
 pub fn ser_blue_green_update_policy(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BlueGreenUpdatePolicy,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.traffic_routing_configuration {
         #[allow(unused_mut)]
         let mut object_2 = object.key("TrafficRoutingConfiguration").start_object();

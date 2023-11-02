@@ -2,7 +2,7 @@
 pub fn ser_code_repository(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CodeRepository,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("RepositoryUrl").string(input.repository_url.as_str());
     }

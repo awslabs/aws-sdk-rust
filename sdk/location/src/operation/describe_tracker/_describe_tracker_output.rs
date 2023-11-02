@@ -355,22 +355,22 @@ impl DescribeTrackerOutputBuilder {
     /// - [`update_time`](crate::operation::describe_tracker::builders::DescribeTrackerOutputBuilder::update_time)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_tracker::DescribeTrackerOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_tracker::DescribeTrackerOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_tracker::DescribeTrackerOutput {
             tracker_name: self.tracker_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "tracker_name",
                     "tracker_name was not specified but it is required when building DescribeTrackerOutput",
                 )
             })?,
             tracker_arn: self.tracker_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "tracker_arn",
                     "tracker_arn was not specified but it is required when building DescribeTrackerOutput",
                 )
             })?,
             description: self.description.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "description",
                     "description was not specified but it is required when building DescribeTrackerOutput",
                 )
@@ -379,13 +379,13 @@ impl DescribeTrackerOutputBuilder {
             pricing_plan_data_source: self.pricing_plan_data_source,
             tags: self.tags,
             create_time: self.create_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "create_time",
                     "create_time was not specified but it is required when building DescribeTrackerOutput",
                 )
             })?,
             update_time: self.update_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "update_time",
                     "update_time was not specified but it is required when building DescribeTrackerOutput",
                 )

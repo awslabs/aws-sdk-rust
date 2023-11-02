@@ -124,7 +124,7 @@ impl PutEventsInputBuilder {
         &self.event_list
     }
     /// Consumes the builder and constructs a [`PutEventsInput`](crate::operation::put_events::PutEventsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_events::PutEventsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_events::PutEventsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_events::PutEventsInput {
             tracking_id: self.tracking_id,
             user_id: self.user_id,

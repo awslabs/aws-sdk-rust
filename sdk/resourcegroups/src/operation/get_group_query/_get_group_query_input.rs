@@ -69,7 +69,7 @@ impl GetGroupQueryInputBuilder {
     /// Consumes the builder and constructs a [`GetGroupQueryInput`](crate::operation::get_group_query::GetGroupQueryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_group_query::GetGroupQueryInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_group_query::GetGroupQueryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_group_query::GetGroupQueryInput {
             group_name: self.group_name,
             group: self.group,

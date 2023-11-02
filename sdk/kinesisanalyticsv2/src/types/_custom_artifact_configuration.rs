@@ -87,10 +87,10 @@ impl CustomArtifactConfigurationBuilder {
     /// Consumes the builder and constructs a [`CustomArtifactConfiguration`](crate::types::CustomArtifactConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`artifact_type`](crate::types::builders::CustomArtifactConfigurationBuilder::artifact_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::CustomArtifactConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CustomArtifactConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CustomArtifactConfiguration {
             artifact_type: self.artifact_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "artifact_type",
                     "artifact_type was not specified but it is required when building CustomArtifactConfiguration",
                 )

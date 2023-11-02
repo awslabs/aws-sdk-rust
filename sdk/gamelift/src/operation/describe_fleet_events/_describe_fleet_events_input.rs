@@ -128,7 +128,7 @@ impl DescribeFleetEventsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeFleetEventsInput`](crate::operation::describe_fleet_events::DescribeFleetEventsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_fleet_events::DescribeFleetEventsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_fleet_events::DescribeFleetEventsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_fleet_events::DescribeFleetEventsInput {
             fleet_id: self.fleet_id,

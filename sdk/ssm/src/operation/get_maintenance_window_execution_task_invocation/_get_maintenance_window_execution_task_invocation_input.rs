@@ -92,7 +92,7 @@ impl GetMaintenanceWindowExecutionTaskInvocationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_maintenance_window_execution_task_invocation::GetMaintenanceWindowExecutionTaskInvocationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_maintenance_window_execution_task_invocation::GetMaintenanceWindowExecutionTaskInvocationInput {

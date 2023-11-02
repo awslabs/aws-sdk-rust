@@ -2,7 +2,7 @@
 pub fn ser_test_connection_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::test_connection::TestConnectionInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.replication_instance_arn {
         object.key("ReplicationInstanceArn").string(var_1.as_str());
     }

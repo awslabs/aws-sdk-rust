@@ -95,7 +95,7 @@ impl ResetServiceSettingInputBuilder {
     /// Consumes the builder and constructs a [`ResetServiceSettingInput`](crate::operation::reset_service_setting::ResetServiceSettingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::reset_service_setting::ResetServiceSettingInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::reset_service_setting::ResetServiceSettingInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::reset_service_setting::ResetServiceSettingInput { setting_id: self.setting_id })
     }

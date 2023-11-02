@@ -46,7 +46,7 @@ impl ListVolumeRecoveryPointsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_volume_recovery_points::ListVolumeRecoveryPointsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_volume_recovery_points::ListVolumeRecoveryPointsInput {
             gateway_arn: self.gateway_arn,

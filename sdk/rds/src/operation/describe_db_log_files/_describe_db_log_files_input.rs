@@ -199,7 +199,7 @@ impl DescribeDbLogFilesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDbLogFilesInput`](crate::operation::describe_db_log_files::DescribeDbLogFilesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_db_log_files::DescribeDbLogFilesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_db_log_files::DescribeDbLogFilesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_db_log_files::DescribeDbLogFilesInput {
             db_instance_identifier: self.db_instance_identifier,

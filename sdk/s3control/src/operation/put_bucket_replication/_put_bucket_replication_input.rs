@@ -148,7 +148,7 @@ impl PutBucketReplicationInputBuilder {
     /// Consumes the builder and constructs a [`PutBucketReplicationInput`](crate::operation::put_bucket_replication::PutBucketReplicationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_bucket_replication::PutBucketReplicationInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::put_bucket_replication::PutBucketReplicationInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::put_bucket_replication::PutBucketReplicationInput {
             account_id: self.account_id,

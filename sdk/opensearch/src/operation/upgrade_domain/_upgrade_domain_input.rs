@@ -122,7 +122,7 @@ impl UpgradeDomainInputBuilder {
     /// Consumes the builder and constructs a [`UpgradeDomainInput`](crate::operation::upgrade_domain::UpgradeDomainInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::upgrade_domain::UpgradeDomainInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::upgrade_domain::UpgradeDomainInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::upgrade_domain::UpgradeDomainInput {
             domain_name: self.domain_name,
             target_version: self.target_version,

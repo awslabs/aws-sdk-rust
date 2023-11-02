@@ -87,7 +87,7 @@ impl AttachInternetGatewayInputBuilder {
     /// Consumes the builder and constructs a [`AttachInternetGatewayInput`](crate::operation::attach_internet_gateway::AttachInternetGatewayInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::attach_internet_gateway::AttachInternetGatewayInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::attach_internet_gateway::AttachInternetGatewayInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::attach_internet_gateway::AttachInternetGatewayInput {
             dry_run: self.dry_run,

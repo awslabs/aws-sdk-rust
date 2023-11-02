@@ -69,16 +69,16 @@ impl ConnectionAliasPermissionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`shared_account_id`](crate::types::builders::ConnectionAliasPermissionBuilder::shared_account_id)
     /// - [`allow_association`](crate::types::builders::ConnectionAliasPermissionBuilder::allow_association)
-    pub fn build(self) -> ::std::result::Result<crate::types::ConnectionAliasPermission, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ConnectionAliasPermission, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ConnectionAliasPermission {
             shared_account_id: self.shared_account_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "shared_account_id",
                     "shared_account_id was not specified but it is required when building ConnectionAliasPermission",
                 )
             })?,
             allow_association: self.allow_association.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "allow_association",
                     "allow_association was not specified but it is required when building ConnectionAliasPermission",
                 )

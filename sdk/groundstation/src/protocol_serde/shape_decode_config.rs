@@ -2,7 +2,7 @@
 pub fn ser_decode_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DecodeConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("unvalidatedJSON").string(input.unvalidated_json.as_str());
     }

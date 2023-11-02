@@ -66,7 +66,7 @@ impl GetObjectMetadataInputBuilder {
     /// Consumes the builder and constructs a [`GetObjectMetadataInput`](crate::operation::get_object_metadata::GetObjectMetadataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_object_metadata::GetObjectMetadataInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_object_metadata::GetObjectMetadataInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_object_metadata::GetObjectMetadataInput {
             storage_job_id: self.storage_job_id,
             object_token: self.object_token,

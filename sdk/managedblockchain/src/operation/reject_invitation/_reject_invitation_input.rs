@@ -44,7 +44,7 @@ impl RejectInvitationInputBuilder {
     /// Consumes the builder and constructs a [`RejectInvitationInput`](crate::operation::reject_invitation::RejectInvitationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::reject_invitation::RejectInvitationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::reject_invitation::RejectInvitationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::reject_invitation::RejectInvitationInput {
             invitation_id: self.invitation_id,
         })

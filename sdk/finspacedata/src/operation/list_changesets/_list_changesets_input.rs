@@ -87,7 +87,7 @@ impl ListChangesetsInputBuilder {
     /// Consumes the builder and constructs a [`ListChangesetsInput`](crate::operation::list_changesets::ListChangesetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_changesets::ListChangesetsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_changesets::ListChangesetsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_changesets::ListChangesetsInput {
             dataset_id: self.dataset_id,
             max_results: self.max_results,

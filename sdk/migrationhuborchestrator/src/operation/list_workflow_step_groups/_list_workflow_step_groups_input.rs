@@ -88,7 +88,7 @@ impl ListWorkflowStepGroupsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_workflow_step_groups::ListWorkflowStepGroupsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_workflow_step_groups::ListWorkflowStepGroupsInput {
             next_token: self.next_token,

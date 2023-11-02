@@ -116,7 +116,7 @@ impl UpdateSipRuleInputBuilder {
     /// Consumes the builder and constructs a [`UpdateSipRuleInput`](crate::operation::update_sip_rule::UpdateSipRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_sip_rule::UpdateSipRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_sip_rule::UpdateSipRuleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_sip_rule::UpdateSipRuleInput {
             sip_rule_id: self.sip_rule_id,
             name: self.name,

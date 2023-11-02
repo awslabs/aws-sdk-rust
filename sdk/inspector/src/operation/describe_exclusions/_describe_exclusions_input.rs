@@ -72,7 +72,7 @@ impl DescribeExclusionsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeExclusionsInput`](crate::operation::describe_exclusions::DescribeExclusionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_exclusions::DescribeExclusionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_exclusions::DescribeExclusionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_exclusions::DescribeExclusionsInput {
             exclusion_arns: self.exclusion_arns,
             locale: self.locale,

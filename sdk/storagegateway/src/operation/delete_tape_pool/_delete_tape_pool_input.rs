@@ -44,7 +44,7 @@ impl DeleteTapePoolInputBuilder {
     /// Consumes the builder and constructs a [`DeleteTapePoolInput`](crate::operation::delete_tape_pool::DeleteTapePoolInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_tape_pool::DeleteTapePoolInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_tape_pool::DeleteTapePoolInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_tape_pool::DeleteTapePoolInput { pool_arn: self.pool_arn })
     }
 }

@@ -66,7 +66,7 @@ impl DescribeWatchlistInputBuilder {
     /// Consumes the builder and constructs a [`DescribeWatchlistInput`](crate::operation::describe_watchlist::DescribeWatchlistInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_watchlist::DescribeWatchlistInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_watchlist::DescribeWatchlistInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_watchlist::DescribeWatchlistInput {
             domain_id: self.domain_id,
             watchlist_id: self.watchlist_id,

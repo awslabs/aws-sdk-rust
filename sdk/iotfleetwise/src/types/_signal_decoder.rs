@@ -135,22 +135,22 @@ impl SignalDecoderBuilder {
     /// - [`fully_qualified_name`](crate::types::builders::SignalDecoderBuilder::fully_qualified_name)
     /// - [`r#type`](crate::types::builders::SignalDecoderBuilder::r#type)
     /// - [`interface_id`](crate::types::builders::SignalDecoderBuilder::interface_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::SignalDecoder, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SignalDecoder, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SignalDecoder {
             fully_qualified_name: self.fully_qualified_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "fully_qualified_name",
                     "fully_qualified_name was not specified but it is required when building SignalDecoder",
                 )
             })?,
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building SignalDecoder",
                 )
             })?,
             interface_id: self.interface_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "interface_id",
                     "interface_id was not specified but it is required when building SignalDecoder",
                 )

@@ -46,7 +46,7 @@ impl StartExtensionPackAssociationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_extension_pack_association::StartExtensionPackAssociationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_extension_pack_association::StartExtensionPackAssociationInput {
             migration_project_identifier: self.migration_project_identifier,

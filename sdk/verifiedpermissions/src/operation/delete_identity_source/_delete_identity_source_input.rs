@@ -66,7 +66,7 @@ impl DeleteIdentitySourceInputBuilder {
     /// Consumes the builder and constructs a [`DeleteIdentitySourceInput`](crate::operation::delete_identity_source::DeleteIdentitySourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_identity_source::DeleteIdentitySourceInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_identity_source::DeleteIdentitySourceInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_identity_source::DeleteIdentitySourceInput {
             policy_store_id: self.policy_store_id,

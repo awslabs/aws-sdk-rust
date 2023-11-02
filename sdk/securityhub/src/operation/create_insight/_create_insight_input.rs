@@ -88,7 +88,7 @@ impl CreateInsightInputBuilder {
     /// Consumes the builder and constructs a [`CreateInsightInput`](crate::operation::create_insight::CreateInsightInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_insight::CreateInsightInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_insight::CreateInsightInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_insight::CreateInsightInput {
             name: self.name,
             filters: self.filters,

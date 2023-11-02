@@ -95,7 +95,7 @@ impl ListDistributionConfigurationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_distribution_configurations::ListDistributionConfigurationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_distribution_configurations::ListDistributionConfigurationsInput {
             filters: self.filters,

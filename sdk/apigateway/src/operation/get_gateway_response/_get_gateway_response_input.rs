@@ -67,7 +67,8 @@ impl GetGatewayResponseInputBuilder {
     /// Consumes the builder and constructs a [`GetGatewayResponseInput`](crate::operation::get_gateway_response::GetGatewayResponseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_gateway_response::GetGatewayResponseInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_gateway_response::GetGatewayResponseInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::get_gateway_response::GetGatewayResponseInput {
             rest_api_id: self.rest_api_id,
             response_type: self.response_type,

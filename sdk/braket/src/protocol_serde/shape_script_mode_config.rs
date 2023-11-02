@@ -2,7 +2,7 @@
 pub fn ser_script_mode_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ScriptModeConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("entryPoint").string(input.entry_point.as_str());
     }

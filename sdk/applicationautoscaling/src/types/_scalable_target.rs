@@ -437,46 +437,46 @@ impl ScalableTargetBuilder {
     /// - [`max_capacity`](crate::types::builders::ScalableTargetBuilder::max_capacity)
     /// - [`role_arn`](crate::types::builders::ScalableTargetBuilder::role_arn)
     /// - [`creation_time`](crate::types::builders::ScalableTargetBuilder::creation_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::ScalableTarget, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ScalableTarget, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ScalableTarget {
             service_namespace: self.service_namespace.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "service_namespace",
                     "service_namespace was not specified but it is required when building ScalableTarget",
                 )
             })?,
             resource_id: self.resource_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_id",
                     "resource_id was not specified but it is required when building ScalableTarget",
                 )
             })?,
             scalable_dimension: self.scalable_dimension.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "scalable_dimension",
                     "scalable_dimension was not specified but it is required when building ScalableTarget",
                 )
             })?,
             min_capacity: self.min_capacity.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "min_capacity",
                     "min_capacity was not specified but it is required when building ScalableTarget",
                 )
             })?,
             max_capacity: self.max_capacity.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "max_capacity",
                     "max_capacity was not specified but it is required when building ScalableTarget",
                 )
             })?,
             role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role_arn",
                     "role_arn was not specified but it is required when building ScalableTarget",
                 )
             })?,
             creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_time",
                     "creation_time was not specified but it is required when building ScalableTarget",
                 )

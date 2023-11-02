@@ -66,7 +66,7 @@ impl AssociateRoleToGroupInputBuilder {
     /// Consumes the builder and constructs a [`AssociateRoleToGroupInput`](crate::operation::associate_role_to_group::AssociateRoleToGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::associate_role_to_group::AssociateRoleToGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::associate_role_to_group::AssociateRoleToGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::associate_role_to_group::AssociateRoleToGroupInput {
             group_id: self.group_id,

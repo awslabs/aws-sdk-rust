@@ -43,7 +43,7 @@ impl ExtendTransactionInputBuilder {
     /// Consumes the builder and constructs a [`ExtendTransactionInput`](crate::operation::extend_transaction::ExtendTransactionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::extend_transaction::ExtendTransactionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::extend_transaction::ExtendTransactionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::extend_transaction::ExtendTransactionInput {
             transaction_id: self.transaction_id,
         })

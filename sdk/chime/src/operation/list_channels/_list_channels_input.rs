@@ -137,7 +137,9 @@ impl ListChannelsInputBuilder {
         &self.chime_bearer
     }
     /// Consumes the builder and constructs a [`ListChannelsInput`](crate::operation::list_channels::ListChannelsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_channels::ListChannelsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_channels::ListChannelsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_channels::ListChannelsInput {
             app_instance_arn: self.app_instance_arn,
             privacy: self.privacy,

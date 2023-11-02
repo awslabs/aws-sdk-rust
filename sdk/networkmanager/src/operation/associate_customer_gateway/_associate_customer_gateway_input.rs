@@ -111,7 +111,7 @@ impl AssociateCustomerGatewayInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_customer_gateway::AssociateCustomerGatewayInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::associate_customer_gateway::AssociateCustomerGatewayInput {
             customer_gateway_arn: self.customer_gateway_arn,

@@ -81,7 +81,7 @@ impl ChangeMessageVisibilityBatchInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatchInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatchInput {
             queue_url: self.queue_url,

@@ -96,7 +96,7 @@ impl ModifyClusterSnapshotInputBuilder {
     /// Consumes the builder and constructs a [`ModifyClusterSnapshotInput`](crate::operation::modify_cluster_snapshot::ModifyClusterSnapshotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::modify_cluster_snapshot::ModifyClusterSnapshotInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::modify_cluster_snapshot::ModifyClusterSnapshotInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::modify_cluster_snapshot::ModifyClusterSnapshotInput {
             snapshot_identifier: self.snapshot_identifier,

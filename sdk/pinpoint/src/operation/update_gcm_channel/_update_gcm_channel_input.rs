@@ -66,7 +66,7 @@ impl UpdateGcmChannelInputBuilder {
     /// Consumes the builder and constructs a [`UpdateGcmChannelInput`](crate::operation::update_gcm_channel::UpdateGcmChannelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_gcm_channel::UpdateGcmChannelInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_gcm_channel::UpdateGcmChannelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_gcm_channel::UpdateGcmChannelInput {
             application_id: self.application_id,
             gcm_channel_request: self.gcm_channel_request,

@@ -261,7 +261,7 @@ impl CreateTrafficMirrorSessionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_traffic_mirror_session::CreateTrafficMirrorSessionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_traffic_mirror_session::CreateTrafficMirrorSessionInput {
             network_interface_id: self.network_interface_id,

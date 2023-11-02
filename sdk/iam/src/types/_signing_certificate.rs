@@ -139,28 +139,28 @@ impl SigningCertificateBuilder {
     /// - [`certificate_id`](crate::types::builders::SigningCertificateBuilder::certificate_id)
     /// - [`certificate_body`](crate::types::builders::SigningCertificateBuilder::certificate_body)
     /// - [`status`](crate::types::builders::SigningCertificateBuilder::status)
-    pub fn build(self) -> ::std::result::Result<crate::types::SigningCertificate, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SigningCertificate, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SigningCertificate {
             user_name: self.user_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "user_name",
                     "user_name was not specified but it is required when building SigningCertificate",
                 )
             })?,
             certificate_id: self.certificate_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "certificate_id",
                     "certificate_id was not specified but it is required when building SigningCertificate",
                 )
             })?,
             certificate_body: self.certificate_body.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "certificate_body",
                     "certificate_body was not specified but it is required when building SigningCertificate",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building SigningCertificate",
                 )

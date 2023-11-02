@@ -91,12 +91,12 @@ impl ListWorkflowStepGroupsOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_workflow_step_groups::ListWorkflowStepGroupsOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_workflow_step_groups::ListWorkflowStepGroupsOutput {
             next_token: self.next_token,
             workflow_step_groups_summary: self.workflow_step_groups_summary.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "workflow_step_groups_summary",
                     "workflow_step_groups_summary was not specified but it is required when building ListWorkflowStepGroupsOutput",
                 )

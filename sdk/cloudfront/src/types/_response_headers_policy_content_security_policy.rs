@@ -72,16 +72,16 @@ impl ResponseHeadersPolicyContentSecurityPolicyBuilder {
     /// - [`content_security_policy`](crate::types::builders::ResponseHeadersPolicyContentSecurityPolicyBuilder::content_security_policy)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::ResponseHeadersPolicyContentSecurityPolicy, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::ResponseHeadersPolicyContentSecurityPolicy, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ResponseHeadersPolicyContentSecurityPolicy {
             r#override: self.r#override.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#override",
                     "r#override was not specified but it is required when building ResponseHeadersPolicyContentSecurityPolicy",
                 )
             })?,
             content_security_policy: self.content_security_policy.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "content_security_policy",
                     "content_security_policy was not specified but it is required when building ResponseHeadersPolicyContentSecurityPolicy",
                 )

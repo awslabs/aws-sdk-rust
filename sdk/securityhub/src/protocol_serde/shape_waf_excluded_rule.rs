@@ -2,7 +2,7 @@
 pub fn ser_waf_excluded_rule(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::WafExcludedRule,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.rule_id {
         object.key("RuleId").string(var_1.as_str());
     }

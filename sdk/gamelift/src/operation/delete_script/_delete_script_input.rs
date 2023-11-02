@@ -42,7 +42,9 @@ impl DeleteScriptInputBuilder {
         &self.script_id
     }
     /// Consumes the builder and constructs a [`DeleteScriptInput`](crate::operation::delete_script::DeleteScriptInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_script::DeleteScriptInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_script::DeleteScriptInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_script::DeleteScriptInput { script_id: self.script_id })
     }
 }

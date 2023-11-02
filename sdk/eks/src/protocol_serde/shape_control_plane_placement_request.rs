@@ -2,7 +2,7 @@
 pub fn ser_control_plane_placement_request(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ControlPlanePlacementRequest,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.group_name {
         object.key("groupName").string(var_1.as_str());
     }

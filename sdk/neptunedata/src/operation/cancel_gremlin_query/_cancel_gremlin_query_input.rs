@@ -44,7 +44,8 @@ impl CancelGremlinQueryInputBuilder {
     /// Consumes the builder and constructs a [`CancelGremlinQueryInput`](crate::operation::cancel_gremlin_query::CancelGremlinQueryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::cancel_gremlin_query::CancelGremlinQueryInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::cancel_gremlin_query::CancelGremlinQueryInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::cancel_gremlin_query::CancelGremlinQueryInput { query_id: self.query_id })
     }
 }

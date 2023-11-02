@@ -86,7 +86,7 @@ impl ListWorkerFleetsInputBuilder {
     /// Consumes the builder and constructs a [`ListWorkerFleetsInput`](crate::operation::list_worker_fleets::ListWorkerFleetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_worker_fleets::ListWorkerFleetsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_worker_fleets::ListWorkerFleetsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_worker_fleets::ListWorkerFleetsInput {
             site: self.site,
             max_results: self.max_results,

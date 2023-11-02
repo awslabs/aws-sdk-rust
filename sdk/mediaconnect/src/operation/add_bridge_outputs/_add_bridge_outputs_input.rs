@@ -74,7 +74,7 @@ impl AddBridgeOutputsInputBuilder {
     /// Consumes the builder and constructs a [`AddBridgeOutputsInput`](crate::operation::add_bridge_outputs::AddBridgeOutputsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::add_bridge_outputs::AddBridgeOutputsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::add_bridge_outputs::AddBridgeOutputsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::add_bridge_outputs::AddBridgeOutputsInput {
             bridge_arn: self.bridge_arn,
             outputs: self.outputs,

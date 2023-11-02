@@ -75,16 +75,16 @@ impl ReplicationConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`role`](crate::types::builders::ReplicationConfigurationBuilder::role)
     /// - [`rules`](crate::types::builders::ReplicationConfigurationBuilder::rules)
-    pub fn build(self) -> ::std::result::Result<crate::types::ReplicationConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ReplicationConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ReplicationConfiguration {
             role: self.role.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role",
                     "role was not specified but it is required when building ReplicationConfiguration",
                 )
             })?,
             rules: self.rules.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "rules",
                     "rules was not specified but it is required when building ReplicationConfiguration",
                 )

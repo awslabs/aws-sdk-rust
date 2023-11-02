@@ -50,7 +50,7 @@ impl DescribeLoggingStatusInputBuilder {
     /// Consumes the builder and constructs a [`DescribeLoggingStatusInput`](crate::operation::describe_logging_status::DescribeLoggingStatusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_logging_status::DescribeLoggingStatusInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_logging_status::DescribeLoggingStatusInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_logging_status::DescribeLoggingStatusInput {
             cluster_identifier: self.cluster_identifier,

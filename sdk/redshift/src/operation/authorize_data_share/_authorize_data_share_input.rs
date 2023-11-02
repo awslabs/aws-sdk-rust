@@ -66,7 +66,8 @@ impl AuthorizeDataShareInputBuilder {
     /// Consumes the builder and constructs a [`AuthorizeDataShareInput`](crate::operation::authorize_data_share::AuthorizeDataShareInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::authorize_data_share::AuthorizeDataShareInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::authorize_data_share::AuthorizeDataShareInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::authorize_data_share::AuthorizeDataShareInput {
             data_share_arn: self.data_share_arn,
             consumer_identifier: self.consumer_identifier,

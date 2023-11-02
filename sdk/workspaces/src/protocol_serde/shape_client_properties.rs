@@ -2,7 +2,7 @@
 pub fn ser_client_properties(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ClientProperties,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.reconnect_enabled {
         object.key("ReconnectEnabled").string(var_1.as_str());
     }

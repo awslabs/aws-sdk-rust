@@ -2,7 +2,7 @@
 pub fn ser_put_config_rule_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_config_rule::PutConfigRuleInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.config_rule {
         #[allow(unused_mut)]
         let mut object_2 = object.key("ConfigRule").start_object();

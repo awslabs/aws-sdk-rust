@@ -46,10 +46,10 @@ impl RelatedOpsItemBuilder {
     /// Consumes the builder and constructs a [`RelatedOpsItem`](crate::types::RelatedOpsItem).
     /// This method will fail if any of the following fields are not set:
     /// - [`ops_item_id`](crate::types::builders::RelatedOpsItemBuilder::ops_item_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::RelatedOpsItem, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RelatedOpsItem, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RelatedOpsItem {
             ops_item_id: self.ops_item_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "ops_item_id",
                     "ops_item_id was not specified but it is required when building RelatedOpsItem",
                 )

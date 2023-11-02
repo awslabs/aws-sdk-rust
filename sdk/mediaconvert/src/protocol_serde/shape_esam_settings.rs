@@ -2,7 +2,7 @@
 pub fn ser_esam_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EsamSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.manifest_confirm_condition_notification {
         #[allow(unused_mut)]
         let mut object_2 = object.key("manifestConfirmConditionNotification").start_object();

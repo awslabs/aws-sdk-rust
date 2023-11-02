@@ -2,7 +2,7 @@
 pub fn ser_put_project_events_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_project_events::PutProjectEventsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.events {
         let mut array_2 = object.key("events").start_array();
         for item_3 in var_1 {

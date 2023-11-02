@@ -86,11 +86,11 @@ impl CreateHealthCheckOutputBuilder {
     /// - [`location`](crate::operation::create_health_check::builders::CreateHealthCheckOutputBuilder::location)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_health_check::CreateHealthCheckOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_health_check::CreateHealthCheckOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_health_check::CreateHealthCheckOutput {
             health_check: self.health_check,
             location: self.location.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "location",
                     "location was not specified but it is required when building CreateHealthCheckOutput",
                 )

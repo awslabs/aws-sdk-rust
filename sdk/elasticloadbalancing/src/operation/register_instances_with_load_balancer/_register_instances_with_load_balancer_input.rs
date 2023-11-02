@@ -76,7 +76,7 @@ impl RegisterInstancesWithLoadBalancerInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_instances_with_load_balancer::RegisterInstancesWithLoadBalancerInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::register_instances_with_load_balancer::RegisterInstancesWithLoadBalancerInput {

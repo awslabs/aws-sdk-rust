@@ -2,7 +2,7 @@
 pub fn ser_node_exporter_info(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::NodeExporterInfo,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.enabled_in_broker {
         object.key("enabledInBroker").boolean(*var_1);
     }

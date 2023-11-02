@@ -2,7 +2,7 @@
 pub fn ser_numeric_range_filter_value(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::NumericRangeFilterValue,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.static_value {
         object.key("StaticValue").number(
             #[allow(clippy::useless_conversion)]

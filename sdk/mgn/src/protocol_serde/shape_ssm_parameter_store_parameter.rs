@@ -2,7 +2,7 @@
 pub fn ser_ssm_parameter_store_parameter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SsmParameterStoreParameter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("parameterType").string(input.parameter_type.as_str());
     }

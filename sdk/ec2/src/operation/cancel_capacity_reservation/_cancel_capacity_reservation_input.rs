@@ -67,7 +67,7 @@ impl CancelCapacityReservationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_capacity_reservation::CancelCapacityReservationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::cancel_capacity_reservation::CancelCapacityReservationInput {
             capacity_reservation_id: self.capacity_reservation_id,

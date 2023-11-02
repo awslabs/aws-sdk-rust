@@ -214,7 +214,7 @@ impl DisassociateResourceShareInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_resource_share::DisassociateResourceShareInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disassociate_resource_share::DisassociateResourceShareInput {
             resource_share_arn: self.resource_share_arn,

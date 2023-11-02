@@ -132,7 +132,7 @@ impl ListTypesByAssociationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_types_by_association::ListTypesByAssociationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_types_by_association::ListTypesByAssociationInput {
             merged_api_identifier: self.merged_api_identifier,

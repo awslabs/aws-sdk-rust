@@ -131,11 +131,11 @@ impl GetGroupOutputBuilder {
     /// Consumes the builder and constructs a [`GetGroupOutput`](crate::operation::get_group::GetGroupOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`users`](crate::operation::get_group::builders::GetGroupOutputBuilder::users)
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_group::GetGroupOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_group::GetGroupOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_group::GetGroupOutput {
             group: self.group,
             users: self.users.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "users",
                     "users was not specified but it is required when building GetGroupOutput",
                 )

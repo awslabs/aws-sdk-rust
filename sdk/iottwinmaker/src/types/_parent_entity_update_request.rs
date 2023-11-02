@@ -66,10 +66,10 @@ impl ParentEntityUpdateRequestBuilder {
     /// Consumes the builder and constructs a [`ParentEntityUpdateRequest`](crate::types::ParentEntityUpdateRequest).
     /// This method will fail if any of the following fields are not set:
     /// - [`update_type`](crate::types::builders::ParentEntityUpdateRequestBuilder::update_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::ParentEntityUpdateRequest, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ParentEntityUpdateRequest, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ParentEntityUpdateRequest {
             update_type: self.update_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "update_type",
                     "update_type was not specified but it is required when building ParentEntityUpdateRequest",
                 )

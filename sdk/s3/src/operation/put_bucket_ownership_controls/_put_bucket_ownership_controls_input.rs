@@ -115,7 +115,7 @@ impl PutBucketOwnershipControlsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_bucket_ownership_controls::PutBucketOwnershipControlsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_bucket_ownership_controls::PutBucketOwnershipControlsInput {
             bucket: self.bucket,

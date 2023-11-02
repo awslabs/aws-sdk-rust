@@ -66,7 +66,7 @@ impl DeleteIngestionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteIngestionInput`](crate::operation::delete_ingestion::DeleteIngestionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_ingestion::DeleteIngestionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_ingestion::DeleteIngestionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_ingestion::DeleteIngestionInput {
             app_bundle_identifier: self.app_bundle_identifier,
             ingestion_identifier: self.ingestion_identifier,

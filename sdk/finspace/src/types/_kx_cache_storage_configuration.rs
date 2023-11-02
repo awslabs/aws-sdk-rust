@@ -99,16 +99,16 @@ impl KxCacheStorageConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::KxCacheStorageConfigurationBuilder::r#type)
     /// - [`size`](crate::types::builders::KxCacheStorageConfigurationBuilder::size)
-    pub fn build(self) -> ::std::result::Result<crate::types::KxCacheStorageConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::KxCacheStorageConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::KxCacheStorageConfiguration {
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building KxCacheStorageConfiguration",
                 )
             })?,
             size: self.size.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "size",
                     "size was not specified but it is required when building KxCacheStorageConfiguration",
                 )

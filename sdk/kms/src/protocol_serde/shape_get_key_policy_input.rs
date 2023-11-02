@@ -2,7 +2,7 @@
 pub fn ser_get_key_policy_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_key_policy::GetKeyPolicyInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.key_id {
         object.key("KeyId").string(var_1.as_str());
     }

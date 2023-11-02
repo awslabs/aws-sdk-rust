@@ -170,7 +170,7 @@ impl CreateSourceLocationInputBuilder {
     /// Consumes the builder and constructs a [`CreateSourceLocationInput`](crate::operation::create_source_location::CreateSourceLocationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_source_location::CreateSourceLocationInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_source_location::CreateSourceLocationInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_source_location::CreateSourceLocationInput {
             access_configuration: self.access_configuration,

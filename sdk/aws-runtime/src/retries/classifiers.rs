@@ -111,11 +111,11 @@ where
 #[cfg(test)]
 mod test {
     use crate::retries::classifiers::AwsErrorCodeClassifier;
-    use aws_smithy_http::body::SdkBody;
     use aws_smithy_runtime_api::client::interceptors::context::InterceptorContext;
     use aws_smithy_runtime_api::client::interceptors::context::{Error, Input};
     use aws_smithy_runtime_api::client::orchestrator::OrchestratorError;
     use aws_smithy_runtime_api::client::retries::classifiers::{ClassifyRetry, RetryAction};
+    use aws_smithy_types::body::SdkBody;
     use aws_smithy_types::error::metadata::ProvideErrorMetadata;
     use aws_smithy_types::error::ErrorMetadata;
     use aws_smithy_types::retry::ErrorKind;

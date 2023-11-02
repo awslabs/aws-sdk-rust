@@ -117,28 +117,28 @@ impl DefaultVocabularyBuilder {
     /// - [`language_code`](crate::types::builders::DefaultVocabularyBuilder::language_code)
     /// - [`vocabulary_id`](crate::types::builders::DefaultVocabularyBuilder::vocabulary_id)
     /// - [`vocabulary_name`](crate::types::builders::DefaultVocabularyBuilder::vocabulary_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::DefaultVocabulary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DefaultVocabulary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DefaultVocabulary {
             instance_id: self.instance_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "instance_id",
                     "instance_id was not specified but it is required when building DefaultVocabulary",
                 )
             })?,
             language_code: self.language_code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "language_code",
                     "language_code was not specified but it is required when building DefaultVocabulary",
                 )
             })?,
             vocabulary_id: self.vocabulary_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "vocabulary_id",
                     "vocabulary_id was not specified but it is required when building DefaultVocabulary",
                 )
             })?,
             vocabulary_name: self.vocabulary_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "vocabulary_name",
                     "vocabulary_name was not specified but it is required when building DefaultVocabulary",
                 )

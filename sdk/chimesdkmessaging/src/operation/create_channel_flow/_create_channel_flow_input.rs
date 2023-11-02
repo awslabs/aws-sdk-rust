@@ -157,7 +157,7 @@ impl CreateChannelFlowInputBuilder {
     /// Consumes the builder and constructs a [`CreateChannelFlowInput`](crate::operation::create_channel_flow::CreateChannelFlowInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_channel_flow::CreateChannelFlowInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_channel_flow::CreateChannelFlowInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_channel_flow::CreateChannelFlowInput {
             app_instance_arn: self.app_instance_arn,
             processors: self.processors,

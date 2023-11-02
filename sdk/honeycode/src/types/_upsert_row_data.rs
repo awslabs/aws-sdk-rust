@@ -104,17 +104,17 @@ impl UpsertRowDataBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`batch_item_id`](crate::types::builders::UpsertRowDataBuilder::batch_item_id)
     /// - [`cells_to_update`](crate::types::builders::UpsertRowDataBuilder::cells_to_update)
-    pub fn build(self) -> ::std::result::Result<crate::types::UpsertRowData, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::UpsertRowData, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::UpsertRowData {
             batch_item_id: self.batch_item_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "batch_item_id",
                     "batch_item_id was not specified but it is required when building UpsertRowData",
                 )
             })?,
             filter: self.filter,
             cells_to_update: self.cells_to_update.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "cells_to_update",
                     "cells_to_update was not specified but it is required when building UpsertRowData",
                 )

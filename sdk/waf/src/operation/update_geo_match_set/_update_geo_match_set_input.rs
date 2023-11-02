@@ -115,7 +115,7 @@ impl UpdateGeoMatchSetInputBuilder {
     /// Consumes the builder and constructs a [`UpdateGeoMatchSetInput`](crate::operation::update_geo_match_set::UpdateGeoMatchSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_geo_match_set::UpdateGeoMatchSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_geo_match_set::UpdateGeoMatchSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_geo_match_set::UpdateGeoMatchSetInput {
             geo_match_set_id: self.geo_match_set_id,
             change_token: self.change_token,

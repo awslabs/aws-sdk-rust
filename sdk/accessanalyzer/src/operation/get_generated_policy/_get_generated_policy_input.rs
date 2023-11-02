@@ -96,7 +96,8 @@ impl GetGeneratedPolicyInputBuilder {
     /// Consumes the builder and constructs a [`GetGeneratedPolicyInput`](crate::operation::get_generated_policy::GetGeneratedPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_generated_policy::GetGeneratedPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_generated_policy::GetGeneratedPolicyInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::get_generated_policy::GetGeneratedPolicyInput {
             job_id: self.job_id,
             include_resource_placeholders: self.include_resource_placeholders,

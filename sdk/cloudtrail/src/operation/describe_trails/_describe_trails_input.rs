@@ -113,7 +113,7 @@ impl DescribeTrailsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeTrailsInput`](crate::operation::describe_trails::DescribeTrailsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_trails::DescribeTrailsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_trails::DescribeTrailsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_trails::DescribeTrailsInput {
             trail_name_list: self.trail_name_list,
             include_shadow_trails: self.include_shadow_trails,

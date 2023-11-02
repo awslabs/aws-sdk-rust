@@ -46,7 +46,7 @@ impl CancelWorldGenerationJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_world_generation_job::CancelWorldGenerationJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::cancel_world_generation_job::CancelWorldGenerationJobInput { job: self.job })
     }

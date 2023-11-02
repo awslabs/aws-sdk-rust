@@ -88,7 +88,7 @@ impl AttachVpnGatewayInputBuilder {
     /// Consumes the builder and constructs a [`AttachVpnGatewayInput`](crate::operation::attach_vpn_gateway::AttachVpnGatewayInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::attach_vpn_gateway::AttachVpnGatewayInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::attach_vpn_gateway::AttachVpnGatewayInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::attach_vpn_gateway::AttachVpnGatewayInput {
             vpc_id: self.vpc_id,
             vpn_gateway_id: self.vpn_gateway_id,

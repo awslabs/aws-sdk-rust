@@ -70,16 +70,16 @@ impl TypedLinkSchemaAndFacetNameBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`schema_arn`](crate::types::builders::TypedLinkSchemaAndFacetNameBuilder::schema_arn)
     /// - [`typed_link_name`](crate::types::builders::TypedLinkSchemaAndFacetNameBuilder::typed_link_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::TypedLinkSchemaAndFacetName, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TypedLinkSchemaAndFacetName, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TypedLinkSchemaAndFacetName {
             schema_arn: self.schema_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "schema_arn",
                     "schema_arn was not specified but it is required when building TypedLinkSchemaAndFacetName",
                 )
             })?,
             typed_link_name: self.typed_link_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "typed_link_name",
                     "typed_link_name was not specified but it is required when building TypedLinkSchemaAndFacetName",
                 )

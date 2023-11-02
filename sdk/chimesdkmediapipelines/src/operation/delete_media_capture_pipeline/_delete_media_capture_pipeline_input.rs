@@ -46,7 +46,7 @@ impl DeleteMediaCapturePipelineInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_media_capture_pipeline::DeleteMediaCapturePipelineInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_media_capture_pipeline::DeleteMediaCapturePipelineInput {
             media_pipeline_id: self.media_pipeline_id,

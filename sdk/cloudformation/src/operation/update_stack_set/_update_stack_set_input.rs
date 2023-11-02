@@ -727,7 +727,7 @@ impl UpdateStackSetInputBuilder {
     /// Consumes the builder and constructs a [`UpdateStackSetInput`](crate::operation::update_stack_set::UpdateStackSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_stack_set::UpdateStackSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_stack_set::UpdateStackSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_stack_set::UpdateStackSetInput {
             stack_set_name: self.stack_set_name,
             description: self.description,

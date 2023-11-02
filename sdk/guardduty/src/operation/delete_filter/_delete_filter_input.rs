@@ -64,7 +64,9 @@ impl DeleteFilterInputBuilder {
         &self.filter_name
     }
     /// Consumes the builder and constructs a [`DeleteFilterInput`](crate::operation::delete_filter::DeleteFilterInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_filter::DeleteFilterInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_filter::DeleteFilterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_filter::DeleteFilterInput {
             detector_id: self.detector_id,
             filter_name: self.filter_name,

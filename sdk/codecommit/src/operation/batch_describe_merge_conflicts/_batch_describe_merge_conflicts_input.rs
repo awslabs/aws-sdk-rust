@@ -246,7 +246,7 @@ impl BatchDescribeMergeConflictsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_describe_merge_conflicts::BatchDescribeMergeConflictsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::batch_describe_merge_conflicts::BatchDescribeMergeConflictsInput {
             repository_name: self.repository_name,

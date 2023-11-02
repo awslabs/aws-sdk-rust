@@ -86,7 +86,8 @@ impl PutContainerPolicyInputBuilder {
     /// Consumes the builder and constructs a [`PutContainerPolicyInput`](crate::operation::put_container_policy::PutContainerPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_container_policy::PutContainerPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_container_policy::PutContainerPolicyInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::put_container_policy::PutContainerPolicyInput {
             container_name: self.container_name,
             policy: self.policy,

@@ -2,7 +2,7 @@
 pub fn ser_event_orchestration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EventOrchestration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("eventBridgeEnabled").boolean(input.event_bridge_enabled);
     }

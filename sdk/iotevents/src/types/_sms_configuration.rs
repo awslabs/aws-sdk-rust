@@ -103,12 +103,12 @@ impl SmsConfigurationBuilder {
     /// Consumes the builder and constructs a [`SmsConfiguration`](crate::types::SmsConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`recipients`](crate::types::builders::SmsConfigurationBuilder::recipients)
-    pub fn build(self) -> ::std::result::Result<crate::types::SmsConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SmsConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SmsConfiguration {
             sender_id: self.sender_id,
             additional_message: self.additional_message,
             recipients: self.recipients.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "recipients",
                     "recipients was not specified but it is required when building SmsConfiguration",
                 )

@@ -89,12 +89,12 @@ impl ListReferenceStoresOutputBuilder {
     /// - [`reference_stores`](crate::operation::list_reference_stores::builders::ListReferenceStoresOutputBuilder::reference_stores)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_reference_stores::ListReferenceStoresOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_reference_stores::ListReferenceStoresOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_reference_stores::ListReferenceStoresOutput {
             next_token: self.next_token,
             reference_stores: self.reference_stores.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "reference_stores",
                     "reference_stores was not specified but it is required when building ListReferenceStoresOutput",
                 )

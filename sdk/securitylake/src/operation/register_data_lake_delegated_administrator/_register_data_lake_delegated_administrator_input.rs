@@ -46,7 +46,7 @@ impl RegisterDataLakeDelegatedAdministratorInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_data_lake_delegated_administrator::RegisterDataLakeDelegatedAdministratorInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::register_data_lake_delegated_administrator::RegisterDataLakeDelegatedAdministratorInput { account_id: self.account_id },

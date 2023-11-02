@@ -46,7 +46,7 @@ impl GetQueryRuntimeStatisticsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_query_runtime_statistics::GetQueryRuntimeStatisticsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_query_runtime_statistics::GetQueryRuntimeStatisticsInput {
             query_execution_id: self.query_execution_id,

@@ -2,7 +2,7 @@
 pub fn ser_password_policy_type(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PasswordPolicyType,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.minimum_length {
         object.key("MinimumLength").number(
             #[allow(clippy::useless_conversion)]

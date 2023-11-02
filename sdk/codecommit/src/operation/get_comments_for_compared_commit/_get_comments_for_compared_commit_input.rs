@@ -131,7 +131,7 @@ impl GetCommentsForComparedCommitInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_comments_for_compared_commit::GetCommentsForComparedCommitInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_comments_for_compared_commit::GetCommentsForComparedCommitInput {
             repository_name: self.repository_name,

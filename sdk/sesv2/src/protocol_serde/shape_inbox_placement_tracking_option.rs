@@ -2,7 +2,7 @@
 pub fn ser_inbox_placement_tracking_option(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::InboxPlacementTrackingOption,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.global {
         object.key("Global").boolean(input.global);
     }

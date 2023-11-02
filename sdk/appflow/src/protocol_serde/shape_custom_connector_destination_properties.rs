@@ -2,7 +2,7 @@
 pub fn ser_custom_connector_destination_properties(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CustomConnectorDestinationProperties,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("entityName").string(input.entity_name.as_str());
     }

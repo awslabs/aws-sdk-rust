@@ -2,7 +2,7 @@
 pub fn ser_update_flow_output_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_flow_output::UpdateFlowOutputInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.cidr_allow_list {
         let mut array_2 = object.key("cidrAllowList").start_array();
         for item_3 in var_1 {

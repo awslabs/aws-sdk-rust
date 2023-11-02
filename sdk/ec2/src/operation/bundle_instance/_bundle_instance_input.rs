@@ -103,7 +103,7 @@ impl BundleInstanceInputBuilder {
     /// Consumes the builder and constructs a [`BundleInstanceInput`](crate::operation::bundle_instance::BundleInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::bundle_instance::BundleInstanceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::bundle_instance::BundleInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::bundle_instance::BundleInstanceInput {
             instance_id: self.instance_id,
             storage: self.storage,

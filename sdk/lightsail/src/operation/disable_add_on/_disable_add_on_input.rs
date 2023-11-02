@@ -66,7 +66,7 @@ impl DisableAddOnInputBuilder {
     /// Consumes the builder and constructs a [`DisableAddOnInput`](crate::operation::disable_add_on::DisableAddOnInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::disable_add_on::DisableAddOnInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::disable_add_on::DisableAddOnInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::disable_add_on::DisableAddOnInput {
             add_on_type: self.add_on_type,
             resource_name: self.resource_name,

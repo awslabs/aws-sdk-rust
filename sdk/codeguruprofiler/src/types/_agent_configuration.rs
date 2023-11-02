@@ -135,16 +135,16 @@ impl AgentConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`should_profile`](crate::types::builders::AgentConfigurationBuilder::should_profile)
     /// - [`period_in_seconds`](crate::types::builders::AgentConfigurationBuilder::period_in_seconds)
-    pub fn build(self) -> ::std::result::Result<crate::types::AgentConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AgentConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AgentConfiguration {
             should_profile: self.should_profile.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "should_profile",
                     "should_profile was not specified but it is required when building AgentConfiguration",
                 )
             })?,
             period_in_seconds: self.period_in_seconds.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "period_in_seconds",
                     "period_in_seconds was not specified but it is required when building AgentConfiguration",
                 )

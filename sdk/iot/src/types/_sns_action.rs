@@ -91,16 +91,16 @@ impl SnsActionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`target_arn`](crate::types::builders::SnsActionBuilder::target_arn)
     /// - [`role_arn`](crate::types::builders::SnsActionBuilder::role_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::SnsAction, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SnsAction, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SnsAction {
             target_arn: self.target_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "target_arn",
                     "target_arn was not specified but it is required when building SnsAction",
                 )
             })?,
             role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role_arn",
                     "role_arn was not specified but it is required when building SnsAction",
                 )

@@ -49,7 +49,8 @@ impl StopProjectVersionInputBuilder {
     /// Consumes the builder and constructs a [`StopProjectVersionInput`](crate::operation::stop_project_version::StopProjectVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_project_version::StopProjectVersionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::stop_project_version::StopProjectVersionInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::stop_project_version::StopProjectVersionInput {
             project_version_arn: self.project_version_arn,
         })

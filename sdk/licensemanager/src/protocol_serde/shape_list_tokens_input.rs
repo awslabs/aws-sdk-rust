@@ -2,7 +2,7 @@
 pub fn ser_list_tokens_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_tokens::ListTokensInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.token_ids {
         let mut array_2 = object.key("TokenIds").start_array();
         for item_3 in var_1 {

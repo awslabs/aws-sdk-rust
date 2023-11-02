@@ -86,7 +86,7 @@ impl DeleteUtterancesInputBuilder {
     /// Consumes the builder and constructs a [`DeleteUtterancesInput`](crate::operation::delete_utterances::DeleteUtterancesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_utterances::DeleteUtterancesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_utterances::DeleteUtterancesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_utterances::DeleteUtterancesInput {
             bot_id: self.bot_id,
             locale_id: self.locale_id,

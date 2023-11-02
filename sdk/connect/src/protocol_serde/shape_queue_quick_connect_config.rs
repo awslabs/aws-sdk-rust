@@ -2,7 +2,7 @@
 pub fn ser_queue_quick_connect_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::QueueQuickConnectConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("QueueId").string(input.queue_id.as_str());
     }

@@ -84,7 +84,9 @@ impl ListJourneysInputBuilder {
         &self.token
     }
     /// Consumes the builder and constructs a [`ListJourneysInput`](crate::operation::list_journeys::ListJourneysInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_journeys::ListJourneysInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_journeys::ListJourneysInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_journeys::ListJourneysInput {
             application_id: self.application_id,
             page_size: self.page_size,

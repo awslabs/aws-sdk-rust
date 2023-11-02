@@ -66,8 +66,10 @@ impl ModifyBackupAttributesInputBuilder {
     /// Consumes the builder and constructs a [`ModifyBackupAttributesInput`](crate::operation::modify_backup_attributes::ModifyBackupAttributesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::modify_backup_attributes::ModifyBackupAttributesInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::modify_backup_attributes::ModifyBackupAttributesInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::modify_backup_attributes::ModifyBackupAttributesInput {
             backup_id: self.backup_id,
             never_expires: self.never_expires,

@@ -2,7 +2,7 @@
 pub fn ser_describe_connect_client_add_ins_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_connect_client_add_ins::DescribeConnectClientAddInsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.resource_id {
         object.key("ResourceId").string(var_1.as_str());
     }

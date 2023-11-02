@@ -82,7 +82,7 @@ impl EnableUserInputBuilder {
         &self.authentication_type
     }
     /// Consumes the builder and constructs a [`EnableUserInput`](crate::operation::enable_user::EnableUserInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::enable_user::EnableUserInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::enable_user::EnableUserInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::enable_user::EnableUserInput {
             user_name: self.user_name,
             authentication_type: self.authentication_type,

@@ -89,11 +89,11 @@ impl ListConnectorsOutputBuilder {
     /// - [`connectors`](crate::operation::list_connectors::builders::ListConnectorsOutputBuilder::connectors)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_connectors::ListConnectorsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_connectors::ListConnectorsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_connectors::ListConnectorsOutput {
             next_token: self.next_token,
             connectors: self.connectors.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "connectors",
                     "connectors was not specified but it is required when building ListConnectorsOutput",
                 )

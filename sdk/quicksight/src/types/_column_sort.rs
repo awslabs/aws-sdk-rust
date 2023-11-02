@@ -88,11 +88,11 @@ impl ColumnSortBuilder {
     /// Consumes the builder and constructs a [`ColumnSort`](crate::types::ColumnSort).
     /// This method will fail if any of the following fields are not set:
     /// - [`direction`](crate::types::builders::ColumnSortBuilder::direction)
-    pub fn build(self) -> ::std::result::Result<crate::types::ColumnSort, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ColumnSort, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ColumnSort {
             sort_by: self.sort_by,
             direction: self.direction.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "direction",
                     "direction was not specified but it is required when building ColumnSort",
                 )

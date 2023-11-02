@@ -139,7 +139,7 @@ impl PutRumEventsInputBuilder {
     /// Consumes the builder and constructs a [`PutRumEventsInput`](crate::operation::put_rum_events::PutRumEventsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_rum_events::PutRumEventsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_rum_events::PutRumEventsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_rum_events::PutRumEventsInput {
             id: self.id,
             batch_id: self.batch_id,

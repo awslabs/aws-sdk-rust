@@ -94,7 +94,7 @@ impl DescribeTapeArchivesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeTapeArchivesInput`](crate::operation::describe_tape_archives::DescribeTapeArchivesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_tape_archives::DescribeTapeArchivesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_tape_archives::DescribeTapeArchivesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_tape_archives::DescribeTapeArchivesInput {
             tape_arns: self.tape_arns,

@@ -42,7 +42,7 @@ impl DeletePoolInputBuilder {
         &self.pool_id
     }
     /// Consumes the builder and constructs a [`DeletePoolInput`](crate::operation::delete_pool::DeletePoolInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_pool::DeletePoolInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_pool::DeletePoolInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_pool::DeletePoolInput { pool_id: self.pool_id })
     }
 }

@@ -2,7 +2,7 @@
 pub fn ser_workload_discovery_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::WorkloadDiscoveryConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.trusted_advisor_integration_status {
         object.key("TrustedAdvisorIntegrationStatus").string(var_1.as_str());
     }

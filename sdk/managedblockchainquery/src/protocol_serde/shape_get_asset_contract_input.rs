@@ -2,7 +2,7 @@
 pub fn ser_get_asset_contract_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_asset_contract::GetAssetContractInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.contract_identifier {
         #[allow(unused_mut)]
         let mut object_2 = object.key("contractIdentifier").start_object();

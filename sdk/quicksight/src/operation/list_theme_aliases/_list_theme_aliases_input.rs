@@ -108,7 +108,7 @@ impl ListThemeAliasesInputBuilder {
     /// Consumes the builder and constructs a [`ListThemeAliasesInput`](crate::operation::list_theme_aliases::ListThemeAliasesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_theme_aliases::ListThemeAliasesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_theme_aliases::ListThemeAliasesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_theme_aliases::ListThemeAliasesInput {
             aws_account_id: self.aws_account_id,
             theme_id: self.theme_id,

@@ -54,7 +54,7 @@ impl GetSystemInstanceInputBuilder {
     /// Consumes the builder and constructs a [`GetSystemInstanceInput`](crate::operation::get_system_instance::GetSystemInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_system_instance::GetSystemInstanceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_system_instance::GetSystemInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_system_instance::GetSystemInstanceInput { id: self.id })
     }
 }

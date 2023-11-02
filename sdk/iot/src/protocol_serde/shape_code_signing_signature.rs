@@ -2,7 +2,7 @@
 pub fn ser_code_signing_signature(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CodeSigningSignature,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.inline_document {
         object.key("inlineDocument").string_unchecked(&::aws_smithy_types::base64::encode(var_1));
     }

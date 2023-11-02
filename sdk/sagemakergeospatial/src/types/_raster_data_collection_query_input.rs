@@ -120,10 +120,10 @@ impl RasterDataCollectionQueryInputBuilder {
     /// Consumes the builder and constructs a [`RasterDataCollectionQueryInput`](crate::types::RasterDataCollectionQueryInput).
     /// This method will fail if any of the following fields are not set:
     /// - [`raster_data_collection_arn`](crate::types::builders::RasterDataCollectionQueryInputBuilder::raster_data_collection_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::RasterDataCollectionQueryInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RasterDataCollectionQueryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RasterDataCollectionQueryInput {
             raster_data_collection_arn: self.raster_data_collection_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "raster_data_collection_arn",
                     "raster_data_collection_arn was not specified but it is required when building RasterDataCollectionQueryInput",
                 )

@@ -87,10 +87,10 @@ impl ListLinksOutputBuilder {
     /// Consumes the builder and constructs a [`ListLinksOutput`](crate::operation::list_links::ListLinksOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`items`](crate::operation::list_links::builders::ListLinksOutputBuilder::items)
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_links::ListLinksOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_links::ListLinksOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_links::ListLinksOutput {
             items: self.items.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "items",
                     "items was not specified but it is required when building ListLinksOutput",
                 )

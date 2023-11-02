@@ -42,7 +42,7 @@ impl StartServerInputBuilder {
         &self.server_id
     }
     /// Consumes the builder and constructs a [`StartServerInput`](crate::operation::start_server::StartServerInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::start_server::StartServerInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_server::StartServerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_server::StartServerInput { server_id: self.server_id })
     }
 }

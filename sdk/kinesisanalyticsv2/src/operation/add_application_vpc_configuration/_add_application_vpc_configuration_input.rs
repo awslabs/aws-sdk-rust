@@ -110,7 +110,7 @@ impl AddApplicationVpcConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_application_vpc_configuration::AddApplicationVpcConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::add_application_vpc_configuration::AddApplicationVpcConfigurationInput {
             application_name: self.application_name,

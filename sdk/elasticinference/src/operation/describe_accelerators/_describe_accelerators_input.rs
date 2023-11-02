@@ -122,7 +122,7 @@ impl DescribeAcceleratorsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAcceleratorsInput`](crate::operation::describe_accelerators::DescribeAcceleratorsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_accelerators::DescribeAcceleratorsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_accelerators::DescribeAcceleratorsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_accelerators::DescribeAcceleratorsInput {
             accelerator_ids: self.accelerator_ids,

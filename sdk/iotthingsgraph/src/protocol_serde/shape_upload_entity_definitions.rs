@@ -96,12 +96,12 @@ pub fn de_upload_entity_definitions_http_response(
 
 pub fn ser_upload_entity_definitions_input(
     input: &crate::operation::upload_entity_definitions::UploadEntityDefinitionsInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_upload_entity_definitions_input::ser_upload_entity_definitions_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_upload_entity_definitions(

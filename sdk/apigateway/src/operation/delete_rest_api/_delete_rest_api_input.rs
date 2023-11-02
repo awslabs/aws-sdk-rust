@@ -45,7 +45,7 @@ impl DeleteRestApiInputBuilder {
     /// Consumes the builder and constructs a [`DeleteRestApiInput`](crate::operation::delete_rest_api::DeleteRestApiInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_rest_api::DeleteRestApiInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_rest_api::DeleteRestApiInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_rest_api::DeleteRestApiInput {
             rest_api_id: self.rest_api_id,
         })

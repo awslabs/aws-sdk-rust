@@ -2,7 +2,7 @@
 pub fn ser_predicate(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Predicate,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Negated").boolean(input.negated);
     }

@@ -65,7 +65,7 @@ impl GetRepositoryPolicyInputBuilder {
     /// Consumes the builder and constructs a [`GetRepositoryPolicyInput`](crate::operation::get_repository_policy::GetRepositoryPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_repository_policy::GetRepositoryPolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_repository_policy::GetRepositoryPolicyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_repository_policy::GetRepositoryPolicyInput {
             registry_id: self.registry_id,

@@ -106,17 +106,17 @@ impl BatchDetectSentimentOutputBuilder {
     /// - [`error_list`](crate::operation::batch_detect_sentiment::builders::BatchDetectSentimentOutputBuilder::error_list)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_detect_sentiment::BatchDetectSentimentOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::batch_detect_sentiment::BatchDetectSentimentOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::batch_detect_sentiment::BatchDetectSentimentOutput {
             result_list: self.result_list.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "result_list",
                     "result_list was not specified but it is required when building BatchDetectSentimentOutput",
                 )
             })?,
             error_list: self.error_list.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "error_list",
                     "error_list was not specified but it is required when building BatchDetectSentimentOutput",
                 )

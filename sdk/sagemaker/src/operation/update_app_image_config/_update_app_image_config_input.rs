@@ -65,7 +65,7 @@ impl UpdateAppImageConfigInputBuilder {
     /// Consumes the builder and constructs a [`UpdateAppImageConfigInput`](crate::operation::update_app_image_config::UpdateAppImageConfigInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_app_image_config::UpdateAppImageConfigInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_app_image_config::UpdateAppImageConfigInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_app_image_config::UpdateAppImageConfigInput {
             app_image_config_name: self.app_image_config_name,

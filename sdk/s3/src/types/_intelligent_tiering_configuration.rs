@@ -120,23 +120,23 @@ impl IntelligentTieringConfigurationBuilder {
     /// - [`id`](crate::types::builders::IntelligentTieringConfigurationBuilder::id)
     /// - [`status`](crate::types::builders::IntelligentTieringConfigurationBuilder::status)
     /// - [`tierings`](crate::types::builders::IntelligentTieringConfigurationBuilder::tierings)
-    pub fn build(self) -> ::std::result::Result<crate::types::IntelligentTieringConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::IntelligentTieringConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::IntelligentTieringConfiguration {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building IntelligentTieringConfiguration",
                 )
             })?,
             filter: self.filter,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building IntelligentTieringConfiguration",
                 )
             })?,
             tierings: self.tierings.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "tierings",
                     "tierings was not specified but it is required when building IntelligentTieringConfiguration",
                 )

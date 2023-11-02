@@ -181,7 +181,7 @@ impl CreateFlowDefinitionInputBuilder {
     /// Consumes the builder and constructs a [`CreateFlowDefinitionInput`](crate::operation::create_flow_definition::CreateFlowDefinitionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_flow_definition::CreateFlowDefinitionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_flow_definition::CreateFlowDefinitionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_flow_definition::CreateFlowDefinitionInput {
             flow_definition_name: self.flow_definition_name,

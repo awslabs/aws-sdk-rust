@@ -102,18 +102,18 @@ impl BatchAssociateApprovalRuleTemplateWithRepositoriesOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_associate_approval_rule_template_with_repositories::BatchAssociateApprovalRuleTemplateWithRepositoriesOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::batch_associate_approval_rule_template_with_repositories::BatchAssociateApprovalRuleTemplateWithRepositoriesOutput {
                 associated_repository_names: self.associated_repository_names
                     .ok_or_else(||
-                        ::aws_smithy_http::operation::error::BuildError::missing_field("associated_repository_names", "associated_repository_names was not specified but it is required when building BatchAssociateApprovalRuleTemplateWithRepositoriesOutput")
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("associated_repository_names", "associated_repository_names was not specified but it is required when building BatchAssociateApprovalRuleTemplateWithRepositoriesOutput")
                     )?
                 ,
                 errors: self.errors
                     .ok_or_else(||
-                        ::aws_smithy_http::operation::error::BuildError::missing_field("errors", "errors was not specified but it is required when building BatchAssociateApprovalRuleTemplateWithRepositoriesOutput")
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("errors", "errors was not specified but it is required when building BatchAssociateApprovalRuleTemplateWithRepositoriesOutput")
                     )?
                 ,
                 _request_id: self._request_id,

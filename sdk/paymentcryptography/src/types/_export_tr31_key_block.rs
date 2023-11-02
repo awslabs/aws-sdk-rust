@@ -46,10 +46,10 @@ impl ExportTr31KeyBlockBuilder {
     /// Consumes the builder and constructs a [`ExportTr31KeyBlock`](crate::types::ExportTr31KeyBlock).
     /// This method will fail if any of the following fields are not set:
     /// - [`wrapping_key_identifier`](crate::types::builders::ExportTr31KeyBlockBuilder::wrapping_key_identifier)
-    pub fn build(self) -> ::std::result::Result<crate::types::ExportTr31KeyBlock, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ExportTr31KeyBlock, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ExportTr31KeyBlock {
             wrapping_key_identifier: self.wrapping_key_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "wrapping_key_identifier",
                     "wrapping_key_identifier was not specified but it is required when building ExportTr31KeyBlock",
                 )

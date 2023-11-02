@@ -53,10 +53,10 @@ impl AnonymousUserDashboardEmbeddingConfigurationBuilder {
     /// - [`initial_dashboard_id`](crate::types::builders::AnonymousUserDashboardEmbeddingConfigurationBuilder::initial_dashboard_id)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::AnonymousUserDashboardEmbeddingConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::AnonymousUserDashboardEmbeddingConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AnonymousUserDashboardEmbeddingConfiguration {
             initial_dashboard_id: self.initial_dashboard_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "initial_dashboard_id",
                     "initial_dashboard_id was not specified but it is required when building AnonymousUserDashboardEmbeddingConfiguration",
                 )

@@ -129,22 +129,22 @@ impl LogDestinationConfigBuilder {
     /// - [`log_type`](crate::types::builders::LogDestinationConfigBuilder::log_type)
     /// - [`log_destination_type`](crate::types::builders::LogDestinationConfigBuilder::log_destination_type)
     /// - [`log_destination`](crate::types::builders::LogDestinationConfigBuilder::log_destination)
-    pub fn build(self) -> ::std::result::Result<crate::types::LogDestinationConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::LogDestinationConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::LogDestinationConfig {
             log_type: self.log_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "log_type",
                     "log_type was not specified but it is required when building LogDestinationConfig",
                 )
             })?,
             log_destination_type: self.log_destination_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "log_destination_type",
                     "log_destination_type was not specified but it is required when building LogDestinationConfig",
                 )
             })?,
             log_destination: self.log_destination.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "log_destination",
                     "log_destination was not specified but it is required when building LogDestinationConfig",
                 )

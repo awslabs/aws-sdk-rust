@@ -190,34 +190,34 @@ impl AssistantAssociationDataBuilder {
     /// - [`assistant_id`](crate::types::builders::AssistantAssociationDataBuilder::assistant_id)
     /// - [`assistant_arn`](crate::types::builders::AssistantAssociationDataBuilder::assistant_arn)
     /// - [`association_type`](crate::types::builders::AssistantAssociationDataBuilder::association_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::AssistantAssociationData, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AssistantAssociationData, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AssistantAssociationData {
             assistant_association_id: self.assistant_association_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "assistant_association_id",
                     "assistant_association_id was not specified but it is required when building AssistantAssociationData",
                 )
             })?,
             assistant_association_arn: self.assistant_association_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "assistant_association_arn",
                     "assistant_association_arn was not specified but it is required when building AssistantAssociationData",
                 )
             })?,
             assistant_id: self.assistant_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "assistant_id",
                     "assistant_id was not specified but it is required when building AssistantAssociationData",
                 )
             })?,
             assistant_arn: self.assistant_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "assistant_arn",
                     "assistant_arn was not specified but it is required when building AssistantAssociationData",
                 )
             })?,
             association_type: self.association_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "association_type",
                     "association_type was not specified but it is required when building AssistantAssociationData",
                 )

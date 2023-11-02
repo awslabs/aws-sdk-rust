@@ -144,7 +144,7 @@ impl UpdateModelManifestInputBuilder {
     /// Consumes the builder and constructs a [`UpdateModelManifestInput`](crate::operation::update_model_manifest::UpdateModelManifestInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_model_manifest::UpdateModelManifestInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_model_manifest::UpdateModelManifestInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_model_manifest::UpdateModelManifestInput {
             name: self.name,

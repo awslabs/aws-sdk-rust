@@ -66,7 +66,7 @@ impl StartSchemaMergeInputBuilder {
     /// Consumes the builder and constructs a [`StartSchemaMergeInput`](crate::operation::start_schema_merge::StartSchemaMergeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_schema_merge::StartSchemaMergeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_schema_merge::StartSchemaMergeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_schema_merge::StartSchemaMergeInput {
             association_id: self.association_id,
             merged_api_identifier: self.merged_api_identifier,

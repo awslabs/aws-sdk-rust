@@ -389,13 +389,13 @@ mod tests {
     use aws_smithy_async::rt::sleep::TokioSleep;
     use aws_smithy_async::test_util::instant_time_and_sleep;
     use aws_smithy_async::time::{StaticTimeSource, TimeSource};
-    use aws_smithy_http::body::SdkBody;
     use aws_smithy_runtime::client::http::test_util::{
         capture_request, ReplayEvent, StaticReplayClient,
     };
     use aws_smithy_runtime::test_util::capture_test_logs::capture_test_logs;
     use aws_smithy_runtime_api::client::http::HttpClient;
     use aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder;
+    use aws_smithy_types::body::SdkBody;
     use aws_smithy_types::date_time::Format;
     use aws_smithy_types::retry::RetryConfig;
     use aws_smithy_types::DateTime;

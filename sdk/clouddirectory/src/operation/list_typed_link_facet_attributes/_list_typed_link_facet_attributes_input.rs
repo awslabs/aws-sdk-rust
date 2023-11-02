@@ -110,7 +110,7 @@ impl ListTypedLinkFacetAttributesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_typed_link_facet_attributes::ListTypedLinkFacetAttributesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_typed_link_facet_attributes::ListTypedLinkFacetAttributesInput {
             schema_arn: self.schema_arn,

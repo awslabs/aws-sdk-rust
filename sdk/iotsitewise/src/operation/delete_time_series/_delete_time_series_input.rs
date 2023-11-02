@@ -106,7 +106,7 @@ impl DeleteTimeSeriesInputBuilder {
     /// Consumes the builder and constructs a [`DeleteTimeSeriesInput`](crate::operation::delete_time_series::DeleteTimeSeriesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_time_series::DeleteTimeSeriesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_time_series::DeleteTimeSeriesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_time_series::DeleteTimeSeriesInput {
             alias: self.alias,
             asset_id: self.asset_id,

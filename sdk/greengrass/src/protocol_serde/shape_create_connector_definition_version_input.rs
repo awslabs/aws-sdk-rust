@@ -2,7 +2,7 @@
 pub fn ser_create_connector_definition_version_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_connector_definition_version::CreateConnectorDefinitionVersionInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.connectors {
         let mut array_2 = object.key("Connectors").start_array();
         for item_3 in var_1 {

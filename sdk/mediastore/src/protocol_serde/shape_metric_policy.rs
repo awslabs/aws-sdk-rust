@@ -48,7 +48,7 @@ where
 pub fn ser_metric_policy(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MetricPolicy,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("ContainerLevelMetrics").string(input.container_level_metrics.as_str());
     }

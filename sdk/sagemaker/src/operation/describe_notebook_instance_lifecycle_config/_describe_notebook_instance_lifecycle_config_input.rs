@@ -46,7 +46,7 @@ impl DescribeNotebookInstanceLifecycleConfigInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_notebook_instance_lifecycle_config::DescribeNotebookInstanceLifecycleConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_notebook_instance_lifecycle_config::DescribeNotebookInstanceLifecycleConfigInput {

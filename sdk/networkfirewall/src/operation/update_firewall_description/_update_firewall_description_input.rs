@@ -128,7 +128,7 @@ impl UpdateFirewallDescriptionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_firewall_description::UpdateFirewallDescriptionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_firewall_description::UpdateFirewallDescriptionInput {
             update_token: self.update_token,

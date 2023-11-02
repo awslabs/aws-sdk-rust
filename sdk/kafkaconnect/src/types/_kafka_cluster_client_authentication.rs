@@ -45,10 +45,10 @@ impl KafkaClusterClientAuthenticationBuilder {
     /// Consumes the builder and constructs a [`KafkaClusterClientAuthentication`](crate::types::KafkaClusterClientAuthentication).
     /// This method will fail if any of the following fields are not set:
     /// - [`authentication_type`](crate::types::builders::KafkaClusterClientAuthenticationBuilder::authentication_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::KafkaClusterClientAuthentication, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::KafkaClusterClientAuthentication, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::KafkaClusterClientAuthentication {
             authentication_type: self.authentication_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "authentication_type",
                     "authentication_type was not specified but it is required when building KafkaClusterClientAuthentication",
                 )

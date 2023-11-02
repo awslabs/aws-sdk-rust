@@ -86,16 +86,16 @@ impl CreateDatastoreOutputBuilder {
     /// - [`datastore_status`](crate::operation::create_datastore::builders::CreateDatastoreOutputBuilder::datastore_status)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_datastore::CreateDatastoreOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_datastore::CreateDatastoreOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_datastore::CreateDatastoreOutput {
             datastore_id: self.datastore_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "datastore_id",
                     "datastore_id was not specified but it is required when building CreateDatastoreOutput",
                 )
             })?,
             datastore_status: self.datastore_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "datastore_status",
                     "datastore_status was not specified but it is required when building CreateDatastoreOutput",
                 )

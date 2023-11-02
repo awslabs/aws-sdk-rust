@@ -122,7 +122,8 @@ impl SearchAddressBooksInputBuilder {
     /// Consumes the builder and constructs a [`SearchAddressBooksInput`](crate::operation::search_address_books::SearchAddressBooksInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::search_address_books::SearchAddressBooksInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::search_address_books::SearchAddressBooksInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::search_address_books::SearchAddressBooksInput {
             filters: self.filters,
             sort_criteria: self.sort_criteria,

@@ -45,7 +45,7 @@ impl DeleteApiCacheInputBuilder {
     /// Consumes the builder and constructs a [`DeleteApiCacheInput`](crate::operation::delete_api_cache::DeleteApiCacheInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_api_cache::DeleteApiCacheInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_api_cache::DeleteApiCacheInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_api_cache::DeleteApiCacheInput { api_id: self.api_id })
     }
 }

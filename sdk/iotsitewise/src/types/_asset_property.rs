@@ -177,16 +177,16 @@ impl AssetPropertyBuilder {
     /// - [`id`](crate::types::builders::AssetPropertyBuilder::id)
     /// - [`name`](crate::types::builders::AssetPropertyBuilder::name)
     /// - [`data_type`](crate::types::builders::AssetPropertyBuilder::data_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::AssetProperty, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AssetProperty, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AssetProperty {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building AssetProperty",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building AssetProperty",
                 )
@@ -194,7 +194,7 @@ impl AssetPropertyBuilder {
             alias: self.alias,
             notification: self.notification,
             data_type: self.data_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_type",
                     "data_type was not specified but it is required when building AssetProperty",
                 )

@@ -2,7 +2,7 @@
 pub fn ser_async_inference_notification_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AsyncInferenceNotificationConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.success_topic {
         object.key("SuccessTopic").string(var_1.as_str());
     }

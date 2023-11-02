@@ -46,7 +46,7 @@ impl DescribeSolutionVersionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_solution_version::DescribeSolutionVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_solution_version::DescribeSolutionVersionInput {
             solution_version_arn: self.solution_version_arn,

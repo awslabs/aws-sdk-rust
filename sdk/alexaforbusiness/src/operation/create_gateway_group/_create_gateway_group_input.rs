@@ -116,7 +116,8 @@ impl CreateGatewayGroupInputBuilder {
     /// Consumes the builder and constructs a [`CreateGatewayGroupInput`](crate::operation::create_gateway_group::CreateGatewayGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_gateway_group::CreateGatewayGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_gateway_group::CreateGatewayGroupInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_gateway_group::CreateGatewayGroupInput {
             name: self.name,
             description: self.description,

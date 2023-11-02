@@ -51,7 +51,8 @@ impl EnableInsightRulesInputBuilder {
     /// Consumes the builder and constructs a [`EnableInsightRulesInput`](crate::operation::enable_insight_rules::EnableInsightRulesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::enable_insight_rules::EnableInsightRulesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::enable_insight_rules::EnableInsightRulesInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::enable_insight_rules::EnableInsightRulesInput { rule_names: self.rule_names })
     }
 }

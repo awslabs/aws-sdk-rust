@@ -138,7 +138,9 @@ impl CreateScriptInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateScriptInput`](crate::operation::create_script::CreateScriptInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_script::CreateScriptInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_script::CreateScriptInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_script::CreateScriptInput {
             name: self.name,
             version: self.version,

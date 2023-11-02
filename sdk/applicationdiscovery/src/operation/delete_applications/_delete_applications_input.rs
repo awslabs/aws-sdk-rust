@@ -51,7 +51,7 @@ impl DeleteApplicationsInputBuilder {
     /// Consumes the builder and constructs a [`DeleteApplicationsInput`](crate::operation::delete_applications::DeleteApplicationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_applications::DeleteApplicationsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_applications::DeleteApplicationsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_applications::DeleteApplicationsInput {
             configuration_ids: self.configuration_ids,
         })

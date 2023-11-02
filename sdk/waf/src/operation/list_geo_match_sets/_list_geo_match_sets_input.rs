@@ -64,7 +64,7 @@ impl ListGeoMatchSetsInputBuilder {
     /// Consumes the builder and constructs a [`ListGeoMatchSetsInput`](crate::operation::list_geo_match_sets::ListGeoMatchSetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_geo_match_sets::ListGeoMatchSetsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_geo_match_sets::ListGeoMatchSetsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_geo_match_sets::ListGeoMatchSetsInput {
             next_marker: self.next_marker,
             limit: self.limit,

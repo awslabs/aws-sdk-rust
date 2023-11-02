@@ -2,7 +2,7 @@
 pub fn ser_aws_lambda_layer_version_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsLambdaLayerVersionDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.version {
         object.key("Version").number(
             #[allow(clippy::useless_conversion)]

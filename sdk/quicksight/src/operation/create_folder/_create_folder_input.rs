@@ -216,7 +216,9 @@ impl CreateFolderInputBuilder {
         &self.sharing_model
     }
     /// Consumes the builder and constructs a [`CreateFolderInput`](crate::operation::create_folder::CreateFolderInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_folder::CreateFolderInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_folder::CreateFolderInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_folder::CreateFolderInput {
             aws_account_id: self.aws_account_id,
             folder_id: self.folder_id,

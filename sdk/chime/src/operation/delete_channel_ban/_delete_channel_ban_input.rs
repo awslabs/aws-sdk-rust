@@ -87,7 +87,7 @@ impl DeleteChannelBanInputBuilder {
     /// Consumes the builder and constructs a [`DeleteChannelBanInput`](crate::operation::delete_channel_ban::DeleteChannelBanInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_channel_ban::DeleteChannelBanInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_channel_ban::DeleteChannelBanInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_channel_ban::DeleteChannelBanInput {
             channel_arn: self.channel_arn,
             member_arn: self.member_arn,

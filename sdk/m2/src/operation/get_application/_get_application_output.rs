@@ -513,29 +513,29 @@ impl GetApplicationOutputBuilder {
     /// - [`creation_time`](crate::operation::get_application::builders::GetApplicationOutputBuilder::creation_time)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_application::GetApplicationOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_application::GetApplicationOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_application::GetApplicationOutput {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building GetApplicationOutput",
                 )
             })?,
             description: self.description,
             application_id: self.application_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "application_id",
                     "application_id was not specified but it is required when building GetApplicationOutput",
                 )
             })?,
             application_arn: self.application_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "application_arn",
                     "application_arn was not specified but it is required when building GetApplicationOutput",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building GetApplicationOutput",
                 )
@@ -543,14 +543,14 @@ impl GetApplicationOutputBuilder {
             latest_version: self.latest_version,
             deployed_version: self.deployed_version,
             engine_type: self.engine_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "engine_type",
                     "engine_type was not specified but it is required when building GetApplicationOutput",
                 )
             })?,
             log_groups: self.log_groups,
             creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_time",
                     "creation_time was not specified but it is required when building GetApplicationOutput",
                 )

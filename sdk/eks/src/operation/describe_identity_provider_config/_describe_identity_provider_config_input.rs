@@ -68,7 +68,7 @@ impl DescribeIdentityProviderConfigInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_identity_provider_config::DescribeIdentityProviderConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_identity_provider_config::DescribeIdentityProviderConfigInput {
             cluster_name: self.cluster_name,

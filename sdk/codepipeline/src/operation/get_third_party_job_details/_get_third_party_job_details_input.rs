@@ -69,7 +69,7 @@ impl GetThirdPartyJobDetailsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_third_party_job_details::GetThirdPartyJobDetailsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_third_party_job_details::GetThirdPartyJobDetailsInput {
             job_id: self.job_id,

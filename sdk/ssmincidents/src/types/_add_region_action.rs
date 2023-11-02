@@ -67,10 +67,10 @@ impl AddRegionActionBuilder {
     /// Consumes the builder and constructs a [`AddRegionAction`](crate::types::AddRegionAction).
     /// This method will fail if any of the following fields are not set:
     /// - [`region_name`](crate::types::builders::AddRegionActionBuilder::region_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::AddRegionAction, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AddRegionAction, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AddRegionAction {
             region_name: self.region_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "region_name",
                     "region_name was not specified but it is required when building AddRegionAction",
                 )

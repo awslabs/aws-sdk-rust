@@ -86,7 +86,7 @@ impl DeleteScheduleInputBuilder {
     /// Consumes the builder and constructs a [`DeleteScheduleInput`](crate::operation::delete_schedule::DeleteScheduleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_schedule::DeleteScheduleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_schedule::DeleteScheduleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_schedule::DeleteScheduleInput {
             name: self.name,
             group_name: self.group_name,

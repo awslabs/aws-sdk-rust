@@ -166,7 +166,7 @@ impl DownloadDbLogFilePortionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::download_db_log_file_portion::DownloadDbLogFilePortionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::download_db_log_file_portion::DownloadDbLogFilePortionInput {
             db_instance_identifier: self.db_instance_identifier,

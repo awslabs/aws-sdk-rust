@@ -46,10 +46,10 @@ impl OriginDetailsBuilder {
     /// Consumes the builder and constructs a [`OriginDetails`](crate::types::OriginDetails).
     /// This method will fail if any of the following fields are not set:
     /// - [`product_id`](crate::types::builders::OriginDetailsBuilder::product_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::OriginDetails, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::OriginDetails, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::OriginDetails {
             product_id: self.product_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "product_id",
                     "product_id was not specified but it is required when building OriginDetails",
                 )

@@ -70,7 +70,7 @@ impl DeleteAllowListInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAllowListInput`](crate::operation::delete_allow_list::DeleteAllowListInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_allow_list::DeleteAllowListInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_allow_list::DeleteAllowListInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_allow_list::DeleteAllowListInput {
             id: self.id,
             ignore_job_checks: self.ignore_job_checks,

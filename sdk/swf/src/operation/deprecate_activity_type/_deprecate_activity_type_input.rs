@@ -66,7 +66,7 @@ impl DeprecateActivityTypeInputBuilder {
     /// Consumes the builder and constructs a [`DeprecateActivityTypeInput`](crate::operation::deprecate_activity_type::DeprecateActivityTypeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::deprecate_activity_type::DeprecateActivityTypeInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::deprecate_activity_type::DeprecateActivityTypeInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::deprecate_activity_type::DeprecateActivityTypeInput {
             domain: self.domain,

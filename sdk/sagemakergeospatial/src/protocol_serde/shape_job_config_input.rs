@@ -12,12 +12,17 @@ where
             match tokens.next().transpose()? {
                 Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                 Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                    let key = key.to_unescaped()?;
+                    if key == "__type" {
+                        ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                        continue;
+                    }
                     if variant.is_some() {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
                             "encountered mixed variants in union",
                         ));
                     }
-                    variant = match key.to_unescaped()?.as_ref() {
+                    variant = match key.as_ref() {
                         "BandMathConfig" => Some(crate::types::JobConfigInput::BandMathConfig(
                             crate::protocol_serde::shape_band_math_config_input::de_band_math_config_input(tokens)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'BandMathConfig' cannot be null")
@@ -100,7 +105,7 @@ where
 pub fn ser_job_config_input(
     object_6: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::JobConfigInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::JobConfigInput::BandMathConfig(inner) => {
             #[allow(unused_mut)]
@@ -157,7 +162,9 @@ pub fn ser_job_config_input(
             object_9.finish();
         }
         crate::types::JobConfigInput::Unknown => {
-            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant("JobConfigInput"))
+            return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
+                "JobConfigInput",
+            ))
         }
     }
     Ok(())

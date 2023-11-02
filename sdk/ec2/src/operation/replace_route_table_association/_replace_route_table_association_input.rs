@@ -89,7 +89,7 @@ impl ReplaceRouteTableAssociationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::replace_route_table_association::ReplaceRouteTableAssociationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::replace_route_table_association::ReplaceRouteTableAssociationInput {
             association_id: self.association_id,

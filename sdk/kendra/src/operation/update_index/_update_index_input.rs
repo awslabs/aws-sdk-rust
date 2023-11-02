@@ -236,7 +236,7 @@ impl UpdateIndexInputBuilder {
         &self.user_group_resolution_configuration
     }
     /// Consumes the builder and constructs a [`UpdateIndexInput`](crate::operation::update_index::UpdateIndexInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_index::UpdateIndexInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_index::UpdateIndexInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_index::UpdateIndexInput {
             id: self.id,
             name: self.name,

@@ -157,16 +157,16 @@ impl HealthCheckBuilder {
     /// - [`id`](crate::types::builders::HealthCheckBuilder::id)
     /// - [`caller_reference`](crate::types::builders::HealthCheckBuilder::caller_reference)
     /// - [`health_check_version`](crate::types::builders::HealthCheckBuilder::health_check_version)
-    pub fn build(self) -> ::std::result::Result<crate::types::HealthCheck, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::HealthCheck, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::HealthCheck {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building HealthCheck",
                 )
             })?,
             caller_reference: self.caller_reference.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "caller_reference",
                     "caller_reference was not specified but it is required when building HealthCheck",
                 )
@@ -174,7 +174,7 @@ impl HealthCheckBuilder {
             linked_service: self.linked_service,
             health_check_config: self.health_check_config,
             health_check_version: self.health_check_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "health_check_version",
                     "health_check_version was not specified but it is required when building HealthCheck",
                 )

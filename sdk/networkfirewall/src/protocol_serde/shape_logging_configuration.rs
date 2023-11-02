@@ -42,7 +42,7 @@ where
 pub fn ser_logging_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LoggingConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("LogDestinationConfigs").start_array();
         for item_2 in &input.log_destination_configs {

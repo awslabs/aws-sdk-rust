@@ -192,7 +192,7 @@ impl DescribeVpnGatewaysInputBuilder {
     /// Consumes the builder and constructs a [`DescribeVpnGatewaysInput`](crate::operation::describe_vpn_gateways::DescribeVpnGatewaysInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_vpn_gateways::DescribeVpnGatewaysInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_vpn_gateways::DescribeVpnGatewaysInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_vpn_gateways::DescribeVpnGatewaysInput {
             filters: self.filters,

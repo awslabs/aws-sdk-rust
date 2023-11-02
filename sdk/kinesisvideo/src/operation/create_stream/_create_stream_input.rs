@@ -198,7 +198,9 @@ impl CreateStreamInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateStreamInput`](crate::operation::create_stream::CreateStreamInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_stream::CreateStreamInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_stream::CreateStreamInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_stream::CreateStreamInput {
             device_name: self.device_name,
             stream_name: self.stream_name,

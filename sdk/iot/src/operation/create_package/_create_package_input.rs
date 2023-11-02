@@ -123,7 +123,7 @@ impl CreatePackageInputBuilder {
     /// Consumes the builder and constructs a [`CreatePackageInput`](crate::operation::create_package::CreatePackageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_package::CreatePackageInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_package::CreatePackageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_package::CreatePackageInput {
             package_name: self.package_name,
             description: self.description,

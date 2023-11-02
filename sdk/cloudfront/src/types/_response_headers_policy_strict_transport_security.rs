@@ -113,10 +113,10 @@ impl ResponseHeadersPolicyStrictTransportSecurityBuilder {
     /// - [`access_control_max_age_sec`](crate::types::builders::ResponseHeadersPolicyStrictTransportSecurityBuilder::access_control_max_age_sec)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::ResponseHeadersPolicyStrictTransportSecurity, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::ResponseHeadersPolicyStrictTransportSecurity, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ResponseHeadersPolicyStrictTransportSecurity {
             r#override: self.r#override.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#override",
                     "r#override was not specified but it is required when building ResponseHeadersPolicyStrictTransportSecurity",
                 )
@@ -124,7 +124,7 @@ impl ResponseHeadersPolicyStrictTransportSecurityBuilder {
             include_subdomains: self.include_subdomains,
             preload: self.preload,
             access_control_max_age_sec: self.access_control_max_age_sec.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "access_control_max_age_sec",
                     "access_control_max_age_sec was not specified but it is required when building ResponseHeadersPolicyStrictTransportSecurity",
                 )

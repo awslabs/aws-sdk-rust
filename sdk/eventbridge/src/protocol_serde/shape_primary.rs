@@ -44,7 +44,7 @@ where
 pub fn ser_primary(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Primary,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("HealthCheck").string(input.health_check.as_str());
     }

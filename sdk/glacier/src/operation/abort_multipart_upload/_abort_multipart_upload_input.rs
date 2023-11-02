@@ -95,7 +95,7 @@ impl AbortMultipartUploadInputBuilder {
     /// Consumes the builder and constructs a [`AbortMultipartUploadInput`](crate::operation::abort_multipart_upload::AbortMultipartUploadInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::abort_multipart_upload::AbortMultipartUploadInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::abort_multipart_upload::AbortMultipartUploadInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::abort_multipart_upload::AbortMultipartUploadInput {
             account_id: self.account_id,

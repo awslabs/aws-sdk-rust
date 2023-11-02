@@ -328,7 +328,7 @@ impl ProjectBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::ProjectBuilder::name)
     /// - [`recipe_name`](crate::types::builders::ProjectBuilder::recipe_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::Project, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Project, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Project {
             account_id: self.account_id,
             create_date: self.create_date,
@@ -337,13 +337,13 @@ impl ProjectBuilder {
             last_modified_date: self.last_modified_date,
             last_modified_by: self.last_modified_by,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building Project",
                 )
             })?,
             recipe_name: self.recipe_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "recipe_name",
                     "recipe_name was not specified but it is required when building Project",
                 )

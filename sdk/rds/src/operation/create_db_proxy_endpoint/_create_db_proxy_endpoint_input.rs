@@ -174,7 +174,7 @@ impl CreateDbProxyEndpointInputBuilder {
     /// Consumes the builder and constructs a [`CreateDbProxyEndpointInput`](crate::operation::create_db_proxy_endpoint::CreateDbProxyEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_db_proxy_endpoint::CreateDbProxyEndpointInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_db_proxy_endpoint::CreateDbProxyEndpointInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_db_proxy_endpoint::CreateDbProxyEndpointInput {
             db_proxy_name: self.db_proxy_name,

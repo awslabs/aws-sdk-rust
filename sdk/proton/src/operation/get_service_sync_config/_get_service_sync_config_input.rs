@@ -44,7 +44,7 @@ impl GetServiceSyncConfigInputBuilder {
     /// Consumes the builder and constructs a [`GetServiceSyncConfigInput`](crate::operation::get_service_sync_config::GetServiceSyncConfigInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_service_sync_config::GetServiceSyncConfigInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_service_sync_config::GetServiceSyncConfigInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_service_sync_config::GetServiceSyncConfigInput {
             service_name: self.service_name,

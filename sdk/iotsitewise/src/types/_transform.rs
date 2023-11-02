@@ -102,16 +102,16 @@ impl TransformBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`expression`](crate::types::builders::TransformBuilder::expression)
     /// - [`variables`](crate::types::builders::TransformBuilder::variables)
-    pub fn build(self) -> ::std::result::Result<crate::types::Transform, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Transform, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Transform {
             expression: self.expression.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "expression",
                     "expression was not specified but it is required when building Transform",
                 )
             })?,
             variables: self.variables.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "variables",
                     "variables was not specified but it is required when building Transform",
                 )

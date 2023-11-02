@@ -215,7 +215,7 @@ impl UpdateWorkgroupInputBuilder {
     /// Consumes the builder and constructs a [`UpdateWorkgroupInput`](crate::operation::update_workgroup::UpdateWorkgroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_workgroup::UpdateWorkgroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_workgroup::UpdateWorkgroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_workgroup::UpdateWorkgroupInput {
             workgroup_name: self.workgroup_name,
             base_capacity: self.base_capacity,

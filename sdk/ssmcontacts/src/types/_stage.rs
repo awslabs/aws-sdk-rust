@@ -74,16 +74,16 @@ impl StageBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`duration_in_minutes`](crate::types::builders::StageBuilder::duration_in_minutes)
     /// - [`targets`](crate::types::builders::StageBuilder::targets)
-    pub fn build(self) -> ::std::result::Result<crate::types::Stage, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Stage, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Stage {
             duration_in_minutes: self.duration_in_minutes.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "duration_in_minutes",
                     "duration_in_minutes was not specified but it is required when building Stage",
                 )
             })?,
             targets: self.targets.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "targets",
                     "targets was not specified but it is required when building Stage",
                 )

@@ -153,28 +153,28 @@ impl DirectoryConnectSettingsBuilder {
     /// - [`subnet_ids`](crate::types::builders::DirectoryConnectSettingsBuilder::subnet_ids)
     /// - [`customer_dns_ips`](crate::types::builders::DirectoryConnectSettingsBuilder::customer_dns_ips)
     /// - [`customer_user_name`](crate::types::builders::DirectoryConnectSettingsBuilder::customer_user_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::DirectoryConnectSettings, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DirectoryConnectSettings, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DirectoryConnectSettings {
             vpc_id: self.vpc_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "vpc_id",
                     "vpc_id was not specified but it is required when building DirectoryConnectSettings",
                 )
             })?,
             subnet_ids: self.subnet_ids.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "subnet_ids",
                     "subnet_ids was not specified but it is required when building DirectoryConnectSettings",
                 )
             })?,
             customer_dns_ips: self.customer_dns_ips.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "customer_dns_ips",
                     "customer_dns_ips was not specified but it is required when building DirectoryConnectSettings",
                 )
             })?,
             customer_user_name: self.customer_user_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "customer_user_name",
                     "customer_user_name was not specified but it is required when building DirectoryConnectSettings",
                 )

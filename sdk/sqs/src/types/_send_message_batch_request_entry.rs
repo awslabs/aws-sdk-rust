@@ -400,16 +400,16 @@ impl SendMessageBatchRequestEntryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::SendMessageBatchRequestEntryBuilder::id)
     /// - [`message_body`](crate::types::builders::SendMessageBatchRequestEntryBuilder::message_body)
-    pub fn build(self) -> ::std::result::Result<crate::types::SendMessageBatchRequestEntry, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SendMessageBatchRequestEntry, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SendMessageBatchRequestEntry {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building SendMessageBatchRequestEntry",
                 )
             })?,
             message_body: self.message_body.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "message_body",
                     "message_body was not specified but it is required when building SendMessageBatchRequestEntry",
                 )

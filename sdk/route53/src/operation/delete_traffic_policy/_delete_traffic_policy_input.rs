@@ -67,7 +67,7 @@ impl DeleteTrafficPolicyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteTrafficPolicyInput`](crate::operation::delete_traffic_policy::DeleteTrafficPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_traffic_policy::DeleteTrafficPolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_traffic_policy::DeleteTrafficPolicyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_traffic_policy::DeleteTrafficPolicyInput {
             id: self.id,

@@ -67,11 +67,11 @@ impl OrderByBuilder {
     /// Consumes the builder and constructs a [`OrderBy`](crate::types::OrderBy).
     /// This method will fail if any of the following fields are not set:
     /// - [`property_name`](crate::types::builders::OrderByBuilder::property_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::OrderBy, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::OrderBy, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::OrderBy {
             order: self.order,
             property_name: self.property_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "property_name",
                     "property_name was not specified but it is required when building OrderBy",
                 )

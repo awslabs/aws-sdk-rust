@@ -42,7 +42,7 @@ impl GetRotationInputBuilder {
         &self.rotation_id
     }
     /// Consumes the builder and constructs a [`GetRotationInput`](crate::operation::get_rotation::GetRotationInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_rotation::GetRotationInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_rotation::GetRotationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_rotation::GetRotationInput {
             rotation_id: self.rotation_id,
         })

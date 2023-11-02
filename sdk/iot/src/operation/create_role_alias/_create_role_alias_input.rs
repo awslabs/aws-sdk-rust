@@ -141,7 +141,7 @@ impl CreateRoleAliasInputBuilder {
     /// Consumes the builder and constructs a [`CreateRoleAliasInput`](crate::operation::create_role_alias::CreateRoleAliasInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_role_alias::CreateRoleAliasInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_role_alias::CreateRoleAliasInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_role_alias::CreateRoleAliasInput {
             role_alias: self.role_alias,
             role_arn: self.role_arn,

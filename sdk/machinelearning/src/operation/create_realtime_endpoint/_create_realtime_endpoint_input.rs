@@ -44,8 +44,10 @@ impl CreateRealtimeEndpointInputBuilder {
     /// Consumes the builder and constructs a [`CreateRealtimeEndpointInput`](crate::operation::create_realtime_endpoint::CreateRealtimeEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_realtime_endpoint::CreateRealtimeEndpointInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::create_realtime_endpoint::CreateRealtimeEndpointInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::create_realtime_endpoint::CreateRealtimeEndpointInput {
             ml_model_id: self.ml_model_id,
         })

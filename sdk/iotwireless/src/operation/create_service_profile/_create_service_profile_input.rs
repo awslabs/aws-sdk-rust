@@ -114,7 +114,7 @@ impl CreateServiceProfileInputBuilder {
     /// Consumes the builder and constructs a [`CreateServiceProfileInput`](crate::operation::create_service_profile::CreateServiceProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_service_profile::CreateServiceProfileInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_service_profile::CreateServiceProfileInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_service_profile::CreateServiceProfileInput {
             name: self.name,

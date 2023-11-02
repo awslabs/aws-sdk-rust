@@ -94,7 +94,7 @@ impl StartFleetActionsInputBuilder {
     /// Consumes the builder and constructs a [`StartFleetActionsInput`](crate::operation::start_fleet_actions::StartFleetActionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_fleet_actions::StartFleetActionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_fleet_actions::StartFleetActionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_fleet_actions::StartFleetActionsInput {
             fleet_id: self.fleet_id,
             actions: self.actions,

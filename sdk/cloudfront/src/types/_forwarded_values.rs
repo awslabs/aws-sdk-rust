@@ -197,10 +197,10 @@ impl ForwardedValuesBuilder {
     /// Consumes the builder and constructs a [`ForwardedValues`](crate::types::ForwardedValues).
     /// This method will fail if any of the following fields are not set:
     /// - [`query_string`](crate::types::builders::ForwardedValuesBuilder::query_string)
-    pub fn build(self) -> ::std::result::Result<crate::types::ForwardedValues, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ForwardedValues, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ForwardedValues {
             query_string: self.query_string.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "query_string",
                     "query_string was not specified but it is required when building ForwardedValues",
                 )

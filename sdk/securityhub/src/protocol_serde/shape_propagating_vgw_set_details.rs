@@ -2,7 +2,7 @@
 pub fn ser_propagating_vgw_set_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PropagatingVgwSetDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.gateway_id {
         object.key("GatewayId").string(var_1.as_str());
     }

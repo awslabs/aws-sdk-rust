@@ -72,7 +72,7 @@ impl StartDeliveryStreamEncryptionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_delivery_stream_encryption::StartDeliveryStreamEncryptionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_delivery_stream_encryption::StartDeliveryStreamEncryptionInput {
             delivery_stream_name: self.delivery_stream_name,

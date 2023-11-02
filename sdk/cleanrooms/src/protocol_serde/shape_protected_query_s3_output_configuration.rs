@@ -2,7 +2,7 @@
 pub fn ser_protected_query_s3_output_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ProtectedQueryS3OutputConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("resultFormat").string(input.result_format.as_str());
     }

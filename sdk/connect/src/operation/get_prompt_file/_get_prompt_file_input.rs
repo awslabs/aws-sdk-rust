@@ -66,7 +66,7 @@ impl GetPromptFileInputBuilder {
     /// Consumes the builder and constructs a [`GetPromptFileInput`](crate::operation::get_prompt_file::GetPromptFileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_prompt_file::GetPromptFileInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_prompt_file::GetPromptFileInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_prompt_file::GetPromptFileInput {
             instance_id: self.instance_id,
             prompt_id: self.prompt_id,

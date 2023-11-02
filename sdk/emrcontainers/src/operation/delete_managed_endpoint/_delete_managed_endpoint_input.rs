@@ -66,7 +66,7 @@ impl DeleteManagedEndpointInputBuilder {
     /// Consumes the builder and constructs a [`DeleteManagedEndpointInput`](crate::operation::delete_managed_endpoint::DeleteManagedEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_managed_endpoint::DeleteManagedEndpointInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_managed_endpoint::DeleteManagedEndpointInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_managed_endpoint::DeleteManagedEndpointInput {
             id: self.id,

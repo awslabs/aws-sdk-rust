@@ -2,7 +2,7 @@
 pub fn ser_dashboard_source_template(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DashboardSourceTemplate,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("DataSetReferences").start_array();
         for item_2 in &input.data_set_references {

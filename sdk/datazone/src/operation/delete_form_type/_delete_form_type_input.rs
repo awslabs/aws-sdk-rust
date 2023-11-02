@@ -66,7 +66,7 @@ impl DeleteFormTypeInputBuilder {
     /// Consumes the builder and constructs a [`DeleteFormTypeInput`](crate::operation::delete_form_type::DeleteFormTypeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_form_type::DeleteFormTypeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_form_type::DeleteFormTypeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_form_type::DeleteFormTypeInput {
             domain_identifier: self.domain_identifier,
             form_type_identifier: self.form_type_identifier,

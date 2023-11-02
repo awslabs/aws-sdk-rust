@@ -48,10 +48,10 @@ impl VirtualGatewayListenerTlsAcmCertificateBuilder {
     /// - [`certificate_arn`](crate::types::builders::VirtualGatewayListenerTlsAcmCertificateBuilder::certificate_arn)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::VirtualGatewayListenerTlsAcmCertificate, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::VirtualGatewayListenerTlsAcmCertificate, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::VirtualGatewayListenerTlsAcmCertificate {
             certificate_arn: self.certificate_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "certificate_arn",
                     "certificate_arn was not specified but it is required when building VirtualGatewayListenerTlsAcmCertificate",
                 )

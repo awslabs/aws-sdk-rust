@@ -68,7 +68,7 @@ impl GetTrustStoreCertificateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_trust_store_certificate::GetTrustStoreCertificateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_trust_store_certificate::GetTrustStoreCertificateInput {
             trust_store_arn: self.trust_store_arn,

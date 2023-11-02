@@ -270,34 +270,34 @@ impl DataSourceRunSummaryBuilder {
     /// - [`project_id`](crate::types::builders::DataSourceRunSummaryBuilder::project_id)
     /// - [`created_at`](crate::types::builders::DataSourceRunSummaryBuilder::created_at)
     /// - [`updated_at`](crate::types::builders::DataSourceRunSummaryBuilder::updated_at)
-    pub fn build(self) -> ::std::result::Result<crate::types::DataSourceRunSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DataSourceRunSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DataSourceRunSummary {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building DataSourceRunSummary",
                 )
             })?,
             data_source_id: self.data_source_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_source_id",
                     "data_source_id was not specified but it is required when building DataSourceRunSummary",
                 )
             })?,
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building DataSourceRunSummary",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building DataSourceRunSummary",
                 )
             })?,
             project_id: self.project_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "project_id",
                     "project_id was not specified but it is required when building DataSourceRunSummary",
                 )
@@ -305,13 +305,13 @@ impl DataSourceRunSummaryBuilder {
             run_statistics_for_assets: self.run_statistics_for_assets,
             error_message: self.error_message,
             created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
                     "created_at was not specified but it is required when building DataSourceRunSummary",
                 )
             })?,
             updated_at: self.updated_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "updated_at",
                     "updated_at was not specified but it is required when building DataSourceRunSummary",
                 )

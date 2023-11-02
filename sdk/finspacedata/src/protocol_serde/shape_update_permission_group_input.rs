@@ -2,7 +2,7 @@
 pub fn ser_update_permission_group_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_permission_group::UpdatePermissionGroupInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.application_permissions {
         let mut array_2 = object.key("applicationPermissions").start_array();
         for item_3 in var_1 {

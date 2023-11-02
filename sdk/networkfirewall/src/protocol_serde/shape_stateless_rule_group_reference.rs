@@ -2,7 +2,7 @@
 pub fn ser_stateless_rule_group_reference(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::StatelessRuleGroupReference,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("ResourceArn").string(input.resource_arn.as_str());
     }

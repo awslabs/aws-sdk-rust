@@ -185,22 +185,22 @@ impl ContactChannelBuilder {
     /// - [`contact_arn`](crate::types::builders::ContactChannelBuilder::contact_arn)
     /// - [`name`](crate::types::builders::ContactChannelBuilder::name)
     /// - [`activation_status`](crate::types::builders::ContactChannelBuilder::activation_status)
-    pub fn build(self) -> ::std::result::Result<crate::types::ContactChannel, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ContactChannel, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ContactChannel {
             contact_channel_arn: self.contact_channel_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "contact_channel_arn",
                     "contact_channel_arn was not specified but it is required when building ContactChannel",
                 )
             })?,
             contact_arn: self.contact_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "contact_arn",
                     "contact_arn was not specified but it is required when building ContactChannel",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building ContactChannel",
                 )
@@ -208,7 +208,7 @@ impl ContactChannelBuilder {
             r#type: self.r#type,
             delivery_address: self.delivery_address,
             activation_status: self.activation_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "activation_status",
                     "activation_status was not specified but it is required when building ContactChannel",
                 )

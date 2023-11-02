@@ -2,7 +2,7 @@
 pub fn ser_total_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TotalOptions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.totals_visibility {
         object.key("TotalsVisibility").string(var_1.as_str());
     }

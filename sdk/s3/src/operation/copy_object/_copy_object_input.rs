@@ -1117,7 +1117,7 @@ impl CopyObjectInputBuilder {
         &self.expected_source_bucket_owner
     }
     /// Consumes the builder and constructs a [`CopyObjectInput`](crate::operation::copy_object::CopyObjectInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::copy_object::CopyObjectInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::copy_object::CopyObjectInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::copy_object::CopyObjectInput {
             acl: self.acl,
             bucket: self.bucket,

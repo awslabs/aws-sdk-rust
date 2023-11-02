@@ -127,23 +127,23 @@ impl UpdateGeofenceCollectionOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_geofence_collection::UpdateGeofenceCollectionOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_geofence_collection::UpdateGeofenceCollectionOutput {
             collection_name: self.collection_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "collection_name",
                     "collection_name was not specified but it is required when building UpdateGeofenceCollectionOutput",
                 )
             })?,
             collection_arn: self.collection_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "collection_arn",
                     "collection_arn was not specified but it is required when building UpdateGeofenceCollectionOutput",
                 )
             })?,
             update_time: self.update_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "update_time",
                     "update_time was not specified but it is required when building UpdateGeofenceCollectionOutput",
                 )

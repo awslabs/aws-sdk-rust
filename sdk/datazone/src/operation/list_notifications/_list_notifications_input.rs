@@ -200,7 +200,7 @@ impl ListNotificationsInputBuilder {
     /// Consumes the builder and constructs a [`ListNotificationsInput`](crate::operation::list_notifications::ListNotificationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_notifications::ListNotificationsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_notifications::ListNotificationsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_notifications::ListNotificationsInput {
             domain_identifier: self.domain_identifier,
             r#type: self.r#type,

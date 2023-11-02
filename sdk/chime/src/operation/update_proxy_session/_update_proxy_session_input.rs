@@ -116,7 +116,8 @@ impl UpdateProxySessionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateProxySessionInput`](crate::operation::update_proxy_session::UpdateProxySessionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_proxy_session::UpdateProxySessionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_proxy_session::UpdateProxySessionInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::update_proxy_session::UpdateProxySessionInput {
             voice_connector_id: self.voice_connector_id,
             proxy_session_id: self.proxy_session_id,

@@ -216,8 +216,10 @@ impl CreateVocabularyFilterInputBuilder {
     /// Consumes the builder and constructs a [`CreateVocabularyFilterInput`](crate::operation::create_vocabulary_filter::CreateVocabularyFilterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_vocabulary_filter::CreateVocabularyFilterInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::create_vocabulary_filter::CreateVocabularyFilterInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::create_vocabulary_filter::CreateVocabularyFilterInput {
             vocabulary_filter_name: self.vocabulary_filter_name,
             language_code: self.language_code,

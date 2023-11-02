@@ -63,10 +63,10 @@ impl AssociateMemberOutputBuilder {
     /// - [`account_id`](crate::operation::associate_member::builders::AssociateMemberOutputBuilder::account_id)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::associate_member::AssociateMemberOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::associate_member::AssociateMemberOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::associate_member::AssociateMemberOutput {
             account_id: self.account_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "account_id",
                     "account_id was not specified but it is required when building AssociateMemberOutput",
                 )

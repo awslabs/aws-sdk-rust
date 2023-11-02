@@ -529,7 +529,9 @@ impl CreateBrokerInputBuilder {
         &self.data_replication_primary_broker_arn
     }
     /// Consumes the builder and constructs a [`CreateBrokerInput`](crate::operation::create_broker::CreateBrokerInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_broker::CreateBrokerInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_broker::CreateBrokerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_broker::CreateBrokerInput {
             authentication_strategy: self.authentication_strategy,
             auto_minor_version_upgrade: self.auto_minor_version_upgrade,

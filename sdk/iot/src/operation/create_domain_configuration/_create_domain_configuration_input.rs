@@ -239,7 +239,7 @@ impl CreateDomainConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_domain_configuration::CreateDomainConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_domain_configuration::CreateDomainConfigurationInput {
             domain_configuration_name: self.domain_configuration_name,

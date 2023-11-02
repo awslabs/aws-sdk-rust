@@ -2,7 +2,7 @@
 pub fn ser_aws_sns_topic_subscription(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsSnsTopicSubscription,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.endpoint {
         object.key("Endpoint").string(var_1.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_dataset_org_attributes(
     object_3: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DatasetOrgAttributes,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::DatasetOrgAttributes::Vsam(inner) => {
             #[allow(unused_mut)]
@@ -29,7 +29,7 @@ pub fn ser_dataset_org_attributes(
             object_4.finish();
         }
         crate::types::DatasetOrgAttributes::Unknown => {
-            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+            return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "DatasetOrgAttributes",
             ))
         }

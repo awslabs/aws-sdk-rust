@@ -249,16 +249,16 @@ impl DeviceSelectionConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`filters`](crate::types::builders::DeviceSelectionConfigurationBuilder::filters)
     /// - [`max_devices`](crate::types::builders::DeviceSelectionConfigurationBuilder::max_devices)
-    pub fn build(self) -> ::std::result::Result<crate::types::DeviceSelectionConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DeviceSelectionConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DeviceSelectionConfiguration {
             filters: self.filters.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "filters",
                     "filters was not specified but it is required when building DeviceSelectionConfiguration",
                 )
             })?,
             max_devices: self.max_devices.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "max_devices",
                     "max_devices was not specified but it is required when building DeviceSelectionConfiguration",
                 )

@@ -88,7 +88,8 @@ impl GetCampaignVersionInputBuilder {
     /// Consumes the builder and constructs a [`GetCampaignVersionInput`](crate::operation::get_campaign_version::GetCampaignVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_campaign_version::GetCampaignVersionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_campaign_version::GetCampaignVersionInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::get_campaign_version::GetCampaignVersionInput {
             application_id: self.application_id,
             campaign_id: self.campaign_id,

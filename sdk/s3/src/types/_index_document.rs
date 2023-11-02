@@ -56,10 +56,10 @@ impl IndexDocumentBuilder {
     /// Consumes the builder and constructs a [`IndexDocument`](crate::types::IndexDocument).
     /// This method will fail if any of the following fields are not set:
     /// - [`suffix`](crate::types::builders::IndexDocumentBuilder::suffix)
-    pub fn build(self) -> ::std::result::Result<crate::types::IndexDocument, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::IndexDocument, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::IndexDocument {
             suffix: self.suffix.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "suffix",
                     "suffix was not specified but it is required when building IndexDocument",
                 )

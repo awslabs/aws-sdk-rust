@@ -192,30 +192,30 @@ impl LiveSourceBuilder {
     /// - [`http_package_configurations`](crate::types::builders::LiveSourceBuilder::http_package_configurations)
     /// - [`live_source_name`](crate::types::builders::LiveSourceBuilder::live_source_name)
     /// - [`source_location_name`](crate::types::builders::LiveSourceBuilder::source_location_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::LiveSource, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::LiveSource, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::LiveSource {
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building LiveSource",
                 )
             })?,
             creation_time: self.creation_time,
             http_package_configurations: self.http_package_configurations.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "http_package_configurations",
                     "http_package_configurations was not specified but it is required when building LiveSource",
                 )
             })?,
             last_modified_time: self.last_modified_time,
             live_source_name: self.live_source_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "live_source_name",
                     "live_source_name was not specified but it is required when building LiveSource",
                 )
             })?,
             source_location_name: self.source_location_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source_location_name",
                     "source_location_name was not specified but it is required when building LiveSource",
                 )

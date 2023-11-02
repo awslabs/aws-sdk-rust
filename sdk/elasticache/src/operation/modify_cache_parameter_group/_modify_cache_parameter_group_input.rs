@@ -76,7 +76,7 @@ impl ModifyCacheParameterGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_cache_parameter_group::ModifyCacheParameterGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::modify_cache_parameter_group::ModifyCacheParameterGroupInput {
             cache_parameter_group_name: self.cache_parameter_group_name,

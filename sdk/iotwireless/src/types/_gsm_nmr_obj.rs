@@ -110,16 +110,16 @@ impl GsmNmrObjBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`bsic`](crate::types::builders::GsmNmrObjBuilder::bsic)
     /// - [`bcch`](crate::types::builders::GsmNmrObjBuilder::bcch)
-    pub fn build(self) -> ::std::result::Result<crate::types::GsmNmrObj, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::GsmNmrObj, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::GsmNmrObj {
             bsic: self.bsic.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "bsic",
                     "bsic was not specified but it is required when building GsmNmrObj",
                 )
             })?,
             bcch: self.bcch.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "bcch",
                     "bcch was not specified but it is required when building GsmNmrObj",
                 )

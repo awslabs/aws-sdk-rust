@@ -44,7 +44,7 @@ impl GetServiceNetworkInputBuilder {
     /// Consumes the builder and constructs a [`GetServiceNetworkInput`](crate::operation::get_service_network::GetServiceNetworkInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_service_network::GetServiceNetworkInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_service_network::GetServiceNetworkInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_service_network::GetServiceNetworkInput {
             service_network_identifier: self.service_network_identifier,
         })

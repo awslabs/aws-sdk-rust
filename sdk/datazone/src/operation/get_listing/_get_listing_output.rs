@@ -295,22 +295,22 @@ impl GetListingOutputBuilder {
     /// - [`domain_id`](crate::operation::get_listing::builders::GetListingOutputBuilder::domain_id)
     /// - [`id`](crate::operation::get_listing::builders::GetListingOutputBuilder::id)
     /// - [`listing_revision`](crate::operation::get_listing::builders::GetListingOutputBuilder::listing_revision)
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_listing::GetListingOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_listing::GetListingOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_listing::GetListingOutput {
             domain_id: self.domain_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "domain_id",
                     "domain_id was not specified but it is required when building GetListingOutput",
                 )
             })?,
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building GetListingOutput",
                 )
             })?,
             listing_revision: self.listing_revision.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "listing_revision",
                     "listing_revision was not specified but it is required when building GetListingOutput",
                 )

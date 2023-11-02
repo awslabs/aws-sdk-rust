@@ -106,7 +106,9 @@ impl UpdateBridgeInputBuilder {
         &self.source_failover_config
     }
     /// Consumes the builder and constructs a [`UpdateBridgeInput`](crate::operation::update_bridge::UpdateBridgeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_bridge::UpdateBridgeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_bridge::UpdateBridgeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_bridge::UpdateBridgeInput {
             bridge_arn: self.bridge_arn,
             egress_gateway_bridge: self.egress_gateway_bridge,

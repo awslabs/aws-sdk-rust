@@ -46,7 +46,7 @@ impl StopEventsDetectionJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_events_detection_job::StopEventsDetectionJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::stop_events_detection_job::StopEventsDetectionJobInput { job_id: self.job_id })
     }

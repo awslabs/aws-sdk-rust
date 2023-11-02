@@ -118,7 +118,7 @@ impl CreateSiteToSiteVpnAttachmentInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_site_to_site_vpn_attachment::CreateSiteToSiteVpnAttachmentInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_site_to_site_vpn_attachment::CreateSiteToSiteVpnAttachmentInput {
             core_network_id: self.core_network_id,

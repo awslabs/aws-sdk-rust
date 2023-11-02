@@ -260,17 +260,17 @@ impl IngestionBuilder {
     /// - [`arn`](crate::types::builders::IngestionBuilder::arn)
     /// - [`ingestion_status`](crate::types::builders::IngestionBuilder::ingestion_status)
     /// - [`created_time`](crate::types::builders::IngestionBuilder::created_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::Ingestion, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Ingestion, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Ingestion {
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building Ingestion",
                 )
             })?,
             ingestion_id: self.ingestion_id,
             ingestion_status: self.ingestion_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "ingestion_status",
                     "ingestion_status was not specified but it is required when building Ingestion",
                 )
@@ -279,7 +279,7 @@ impl IngestionBuilder {
             row_info: self.row_info,
             queue_info: self.queue_info,
             created_time: self.created_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_time",
                     "created_time was not specified but it is required when building Ingestion",
                 )

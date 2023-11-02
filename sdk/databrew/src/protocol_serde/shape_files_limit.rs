@@ -2,7 +2,7 @@
 pub fn ser_files_limit(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FilesLimit,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("MaxFiles").number(
             #[allow(clippy::useless_conversion)]

@@ -87,17 +87,17 @@ impl GetGroupMembershipIdOutputBuilder {
     /// - [`identity_store_id`](crate::operation::get_group_membership_id::builders::GetGroupMembershipIdOutputBuilder::identity_store_id)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_group_membership_id::GetGroupMembershipIdOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_group_membership_id::GetGroupMembershipIdOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_group_membership_id::GetGroupMembershipIdOutput {
             membership_id: self.membership_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "membership_id",
                     "membership_id was not specified but it is required when building GetGroupMembershipIdOutput",
                 )
             })?,
             identity_store_id: self.identity_store_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "identity_store_id",
                     "identity_store_id was not specified but it is required when building GetGroupMembershipIdOutput",
                 )

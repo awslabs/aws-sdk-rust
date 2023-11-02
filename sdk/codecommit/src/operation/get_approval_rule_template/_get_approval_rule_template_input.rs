@@ -46,7 +46,7 @@ impl GetApprovalRuleTemplateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_approval_rule_template::GetApprovalRuleTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_approval_rule_template::GetApprovalRuleTemplateInput {
             approval_rule_template_name: self.approval_rule_template_name,

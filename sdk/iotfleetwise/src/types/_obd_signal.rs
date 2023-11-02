@@ -221,26 +221,26 @@ impl ObdSignalBuilder {
     /// - [`scaling`](crate::types::builders::ObdSignalBuilder::scaling)
     /// - [`offset`](crate::types::builders::ObdSignalBuilder::offset)
     /// - [`byte_length`](crate::types::builders::ObdSignalBuilder::byte_length)
-    pub fn build(self) -> ::std::result::Result<crate::types::ObdSignal, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ObdSignal, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ObdSignal {
             pid_response_length: self.pid_response_length.unwrap_or_default(),
             service_mode: self.service_mode.unwrap_or_default(),
             pid: self.pid.unwrap_or_default(),
             scaling: self.scaling.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "scaling",
                     "scaling was not specified but it is required when building ObdSignal",
                 )
             })?,
             offset: self.offset.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "offset",
                     "offset was not specified but it is required when building ObdSignal",
                 )
             })?,
             start_byte: self.start_byte.unwrap_or_default(),
             byte_length: self.byte_length.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "byte_length",
                     "byte_length was not specified but it is required when building ObdSignal",
                 )

@@ -136,16 +136,16 @@ impl VirtualRouterDataBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`mesh_name`](crate::types::builders::VirtualRouterDataBuilder::mesh_name)
     /// - [`virtual_router_name`](crate::types::builders::VirtualRouterDataBuilder::virtual_router_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::VirtualRouterData, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::VirtualRouterData, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::VirtualRouterData {
             mesh_name: self.mesh_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "mesh_name",
                     "mesh_name was not specified but it is required when building VirtualRouterData",
                 )
             })?,
             virtual_router_name: self.virtual_router_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "virtual_router_name",
                     "virtual_router_name was not specified but it is required when building VirtualRouterData",
                 )

@@ -63,10 +63,10 @@ impl UpdateCertificateOutputBuilder {
     /// - [`certificate_id`](crate::operation::update_certificate::builders::UpdateCertificateOutputBuilder::certificate_id)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_certificate::UpdateCertificateOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_certificate::UpdateCertificateOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_certificate::UpdateCertificateOutput {
             certificate_id: self.certificate_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "certificate_id",
                     "certificate_id was not specified but it is required when building UpdateCertificateOutput",
                 )

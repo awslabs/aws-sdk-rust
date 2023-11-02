@@ -66,7 +66,7 @@ impl ResetAuthorizersCacheInputBuilder {
     /// Consumes the builder and constructs a [`ResetAuthorizersCacheInput`](crate::operation::reset_authorizers_cache::ResetAuthorizersCacheInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::reset_authorizers_cache::ResetAuthorizersCacheInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::reset_authorizers_cache::ResetAuthorizersCacheInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::reset_authorizers_cache::ResetAuthorizersCacheInput {
             api_id: self.api_id,

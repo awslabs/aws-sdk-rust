@@ -89,11 +89,11 @@ impl ListAppInputSourcesOutputBuilder {
     /// - [`app_input_sources`](crate::operation::list_app_input_sources::builders::ListAppInputSourcesOutputBuilder::app_input_sources)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_app_input_sources::ListAppInputSourcesOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_app_input_sources::ListAppInputSourcesOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_app_input_sources::ListAppInputSourcesOutput {
             app_input_sources: self.app_input_sources.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "app_input_sources",
                     "app_input_sources was not specified but it is required when building ListAppInputSourcesOutput",
                 )

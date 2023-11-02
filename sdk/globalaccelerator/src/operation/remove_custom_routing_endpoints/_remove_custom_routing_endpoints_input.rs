@@ -75,7 +75,7 @@ impl RemoveCustomRoutingEndpointsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_custom_routing_endpoints::RemoveCustomRoutingEndpointsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::remove_custom_routing_endpoints::RemoveCustomRoutingEndpointsInput {
             endpoint_ids: self.endpoint_ids,

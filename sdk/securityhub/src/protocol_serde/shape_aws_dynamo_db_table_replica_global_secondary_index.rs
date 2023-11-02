@@ -2,7 +2,7 @@
 pub fn ser_aws_dynamo_db_table_replica_global_secondary_index(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsDynamoDbTableReplicaGlobalSecondaryIndex,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.index_name {
         object.key("IndexName").string(var_1.as_str());
     }

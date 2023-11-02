@@ -215,7 +215,7 @@ impl CreateLocationAzureBlobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_location_azure_blob::CreateLocationAzureBlobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_location_azure_blob::CreateLocationAzureBlobInput {
             container_url: self.container_url,

@@ -88,7 +88,7 @@ impl ListTagsForDeliveryStreamInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_tags_for_delivery_stream::ListTagsForDeliveryStreamInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_tags_for_delivery_stream::ListTagsForDeliveryStreamInput {
             delivery_stream_name: self.delivery_stream_name,

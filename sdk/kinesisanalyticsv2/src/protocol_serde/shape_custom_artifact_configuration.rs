@@ -2,7 +2,7 @@
 pub fn ser_custom_artifact_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CustomArtifactConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("ArtifactType").string(input.artifact_type.as_str());
     }

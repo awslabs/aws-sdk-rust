@@ -91,7 +91,7 @@ impl SendEventInputBuilder {
         &self.attributes
     }
     /// Consumes the builder and constructs a [`SendEventInput`](crate::operation::send_event::SendEventInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::send_event::SendEventInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::send_event::SendEventInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::send_event::SendEventInput {
             room_identifier: self.room_identifier,
             event_name: self.event_name,

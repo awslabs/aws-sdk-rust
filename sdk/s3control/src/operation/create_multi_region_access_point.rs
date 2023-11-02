@@ -189,7 +189,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for CreateMultiR
             fn uri_base(
                 _input: &crate::operation::create_multi_region_access_point::CreateMultiRegionAccessPointInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 use ::std::fmt::Write as _;
                 ::std::write!(output, "/v20180820/async-requests/mrap/create").expect("formatting should succeed");
                 ::std::result::Result::Ok(())
@@ -198,7 +198,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for CreateMultiR
             fn update_http_builder(
                 input: &crate::operation::create_multi_region_access_point::CreateMultiRegionAccessPointInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 let builder =
@@ -209,7 +209,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for CreateMultiR
             builder = _header_serialization_settings.set_default_header(builder, ::http::header::CONTENT_TYPE, "application/xml");
             builder
         };
-        let body = ::aws_smithy_http::body::SdkBody::from(
+        let body = ::aws_smithy_types::body::SdkBody::from(
             crate::protocol_serde::shape_create_multi_region_access_point::ser_create_multi_region_access_point_op_input(&input)?,
         );
         if let Some(content_length) = body.content_length() {
@@ -254,7 +254,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateMultiRe
                     .account_id
                     .clone()
                     .filter(|f| !AsRef::<str>::as_ref(f).trim().is_empty())
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("account_id", "A required field was not set"))?,
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("account_id", "A required field was not set"))?,
             ))
             .build()
             .map_err(|err| {

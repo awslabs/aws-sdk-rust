@@ -255,7 +255,7 @@ impl UpdateComponentTypeInputBuilder {
     /// Consumes the builder and constructs a [`UpdateComponentTypeInput`](crate::operation::update_component_type::UpdateComponentTypeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_component_type::UpdateComponentTypeInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_component_type::UpdateComponentTypeInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_component_type::UpdateComponentTypeInput {
             workspace_id: self.workspace_id,

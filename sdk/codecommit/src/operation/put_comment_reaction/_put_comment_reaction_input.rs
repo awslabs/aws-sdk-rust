@@ -66,7 +66,8 @@ impl PutCommentReactionInputBuilder {
     /// Consumes the builder and constructs a [`PutCommentReactionInput`](crate::operation::put_comment_reaction::PutCommentReactionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_comment_reaction::PutCommentReactionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_comment_reaction::PutCommentReactionInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::put_comment_reaction::PutCommentReactionInput {
             comment_id: self.comment_id,
             reaction_value: self.reaction_value,

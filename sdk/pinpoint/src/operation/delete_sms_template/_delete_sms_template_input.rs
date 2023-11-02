@@ -105,7 +105,7 @@ impl DeleteSmsTemplateInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSmsTemplateInput`](crate::operation::delete_sms_template::DeleteSmsTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_sms_template::DeleteSmsTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_sms_template::DeleteSmsTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_sms_template::DeleteSmsTemplateInput {
             template_name: self.template_name,
             version: self.version,

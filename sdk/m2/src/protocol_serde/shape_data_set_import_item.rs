@@ -2,7 +2,7 @@
 pub fn ser_data_set_import_item(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DataSetImportItem,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.data_set {
         #[allow(unused_mut)]
         let mut object_2 = object.key("dataSet").start_object();

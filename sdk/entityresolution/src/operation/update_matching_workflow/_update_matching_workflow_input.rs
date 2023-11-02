@@ -188,8 +188,10 @@ impl UpdateMatchingWorkflowInputBuilder {
     /// Consumes the builder and constructs a [`UpdateMatchingWorkflowInput`](crate::operation::update_matching_workflow::UpdateMatchingWorkflowInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_matching_workflow::UpdateMatchingWorkflowInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::update_matching_workflow::UpdateMatchingWorkflowInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::update_matching_workflow::UpdateMatchingWorkflowInput {
             workflow_name: self.workflow_name,
             description: self.description,

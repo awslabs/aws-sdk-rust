@@ -46,7 +46,7 @@ impl StartMlEvaluationTaskRunInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_ml_evaluation_task_run::StartMlEvaluationTaskRunInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_ml_evaluation_task_run::StartMlEvaluationTaskRunInput {
             transform_id: self.transform_id,

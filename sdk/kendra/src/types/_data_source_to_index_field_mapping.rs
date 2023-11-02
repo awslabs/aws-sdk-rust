@@ -91,17 +91,17 @@ impl DataSourceToIndexFieldMappingBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`data_source_field_name`](crate::types::builders::DataSourceToIndexFieldMappingBuilder::data_source_field_name)
     /// - [`index_field_name`](crate::types::builders::DataSourceToIndexFieldMappingBuilder::index_field_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::DataSourceToIndexFieldMapping, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DataSourceToIndexFieldMapping, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DataSourceToIndexFieldMapping {
             data_source_field_name: self.data_source_field_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_source_field_name",
                     "data_source_field_name was not specified but it is required when building DataSourceToIndexFieldMapping",
                 )
             })?,
             date_field_format: self.date_field_format,
             index_field_name: self.index_field_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "index_field_name",
                     "index_field_name was not specified but it is required when building DataSourceToIndexFieldMapping",
                 )

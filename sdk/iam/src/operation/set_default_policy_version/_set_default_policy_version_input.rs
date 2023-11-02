@@ -78,7 +78,7 @@ impl SetDefaultPolicyVersionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_default_policy_version::SetDefaultPolicyVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::set_default_policy_version::SetDefaultPolicyVersionInput {
             policy_arn: self.policy_arn,

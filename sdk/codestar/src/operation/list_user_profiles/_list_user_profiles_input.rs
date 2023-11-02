@@ -64,7 +64,7 @@ impl ListUserProfilesInputBuilder {
     /// Consumes the builder and constructs a [`ListUserProfilesInput`](crate::operation::list_user_profiles::ListUserProfilesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_user_profiles::ListUserProfilesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_user_profiles::ListUserProfilesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_user_profiles::ListUserProfilesInput {
             next_token: self.next_token,
             max_results: self.max_results,

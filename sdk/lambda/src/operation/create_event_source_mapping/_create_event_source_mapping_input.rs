@@ -689,7 +689,7 @@ impl CreateEventSourceMappingInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_event_source_mapping::CreateEventSourceMappingInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_event_source_mapping::CreateEventSourceMappingInput {
             event_source_arn: self.event_source_arn,

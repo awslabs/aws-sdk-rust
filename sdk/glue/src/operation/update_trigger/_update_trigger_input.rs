@@ -66,7 +66,7 @@ impl UpdateTriggerInputBuilder {
     /// Consumes the builder and constructs a [`UpdateTriggerInput`](crate::operation::update_trigger::UpdateTriggerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_trigger::UpdateTriggerInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_trigger::UpdateTriggerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_trigger::UpdateTriggerInput {
             name: self.name,
             trigger_update: self.trigger_update,

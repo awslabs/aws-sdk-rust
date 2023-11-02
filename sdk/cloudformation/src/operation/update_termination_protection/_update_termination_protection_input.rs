@@ -68,7 +68,7 @@ impl UpdateTerminationProtectionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_termination_protection::UpdateTerminationProtectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_termination_protection::UpdateTerminationProtectionInput {
             enable_termination_protection: self.enable_termination_protection,

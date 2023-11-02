@@ -102,7 +102,7 @@ impl UploadSigningCertificateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::upload_signing_certificate::UploadSigningCertificateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::upload_signing_certificate::UploadSigningCertificateInput {
             user_name: self.user_name,

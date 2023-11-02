@@ -142,7 +142,7 @@ impl CreateVpnGatewayInputBuilder {
     /// Consumes the builder and constructs a [`CreateVpnGatewayInput`](crate::operation::create_vpn_gateway::CreateVpnGatewayInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_vpn_gateway::CreateVpnGatewayInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_vpn_gateway::CreateVpnGatewayInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_vpn_gateway::CreateVpnGatewayInput {
             availability_zone: self.availability_zone,
             r#type: self.r#type,

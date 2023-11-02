@@ -2,7 +2,7 @@
 pub fn ser_describe_data_repository_associations_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_data_repository_associations::DescribeDataRepositoryAssociationsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.association_ids {
         let mut array_2 = object.key("AssociationIds").start_array();
         for item_3 in var_1 {

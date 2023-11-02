@@ -18,8 +18,10 @@ impl ClearDefaultAuthorizerInputBuilder {
     /// Consumes the builder and constructs a [`ClearDefaultAuthorizerInput`](crate::operation::clear_default_authorizer::ClearDefaultAuthorizerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::clear_default_authorizer::ClearDefaultAuthorizerInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::clear_default_authorizer::ClearDefaultAuthorizerInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::clear_default_authorizer::ClearDefaultAuthorizerInput {})
     }
 }

@@ -2,7 +2,7 @@
 pub fn ser_outbound_call_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::OutboundCallConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("connectContactFlowId").string(input.connect_contact_flow_id.as_str());
     }

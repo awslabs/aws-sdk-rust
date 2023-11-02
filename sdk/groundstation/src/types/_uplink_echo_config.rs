@@ -70,16 +70,16 @@ impl UplinkEchoConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`enabled`](crate::types::builders::UplinkEchoConfigBuilder::enabled)
     /// - [`antenna_uplink_config_arn`](crate::types::builders::UplinkEchoConfigBuilder::antenna_uplink_config_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::UplinkEchoConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::UplinkEchoConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::UplinkEchoConfig {
             enabled: self.enabled.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "enabled",
                     "enabled was not specified but it is required when building UplinkEchoConfig",
                 )
             })?,
             antenna_uplink_config_arn: self.antenna_uplink_config_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "antenna_uplink_config_arn",
                     "antenna_uplink_config_arn was not specified but it is required when building UplinkEchoConfig",
                 )

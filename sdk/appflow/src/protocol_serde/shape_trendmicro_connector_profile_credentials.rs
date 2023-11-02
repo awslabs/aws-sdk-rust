@@ -2,7 +2,7 @@
 pub fn ser_trendmicro_connector_profile_credentials(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TrendmicroConnectorProfileCredentials,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("apiSecretKey").string(input.api_secret_key.as_str());
     }

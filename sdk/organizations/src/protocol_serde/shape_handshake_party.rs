@@ -2,7 +2,7 @@
 pub fn ser_handshake_party(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::HandshakeParty,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Id").string(input.id.as_str());
     }

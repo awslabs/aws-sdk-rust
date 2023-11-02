@@ -2,7 +2,7 @@
 pub fn ser_column_tag(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ColumnTag,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.column_geographic_role {
         object.key("ColumnGeographicRole").string(var_1.as_str());
     }

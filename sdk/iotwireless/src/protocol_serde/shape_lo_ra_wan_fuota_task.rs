@@ -2,7 +2,7 @@
 pub fn ser_lo_ra_wan_fuota_task(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LoRaWanFuotaTask,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.rf_region {
         object.key("RfRegion").string(var_1.as_str());
     }

@@ -72,7 +72,7 @@ impl CreatePublicIpv4PoolInputBuilder {
     /// Consumes the builder and constructs a [`CreatePublicIpv4PoolInput`](crate::operation::create_public_ipv4_pool::CreatePublicIpv4PoolInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_public_ipv4_pool::CreatePublicIpv4PoolInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_public_ipv4_pool::CreatePublicIpv4PoolInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_public_ipv4_pool::CreatePublicIpv4PoolInput {
             dry_run: self.dry_run,

@@ -2,7 +2,7 @@
 pub fn ser_entity(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Entity,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("entityType").string(input.entity_type.as_str());
     }

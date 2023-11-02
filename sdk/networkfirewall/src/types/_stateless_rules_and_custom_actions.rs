@@ -80,10 +80,10 @@ impl StatelessRulesAndCustomActionsBuilder {
     /// Consumes the builder and constructs a [`StatelessRulesAndCustomActions`](crate::types::StatelessRulesAndCustomActions).
     /// This method will fail if any of the following fields are not set:
     /// - [`stateless_rules`](crate::types::builders::StatelessRulesAndCustomActionsBuilder::stateless_rules)
-    pub fn build(self) -> ::std::result::Result<crate::types::StatelessRulesAndCustomActions, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::StatelessRulesAndCustomActions, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::StatelessRulesAndCustomActions {
             stateless_rules: self.stateless_rules.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "stateless_rules",
                     "stateless_rules was not specified but it is required when building StatelessRulesAndCustomActions",
                 )

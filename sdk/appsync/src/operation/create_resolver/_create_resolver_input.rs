@@ -328,7 +328,7 @@ impl CreateResolverInputBuilder {
     /// Consumes the builder and constructs a [`CreateResolverInput`](crate::operation::create_resolver::CreateResolverInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_resolver::CreateResolverInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_resolver::CreateResolverInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_resolver::CreateResolverInput {
             api_id: self.api_id,
             type_name: self.type_name,

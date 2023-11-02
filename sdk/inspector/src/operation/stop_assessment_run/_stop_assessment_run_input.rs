@@ -65,7 +65,7 @@ impl StopAssessmentRunInputBuilder {
     /// Consumes the builder and constructs a [`StopAssessmentRunInput`](crate::operation::stop_assessment_run::StopAssessmentRunInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_assessment_run::StopAssessmentRunInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::stop_assessment_run::StopAssessmentRunInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_assessment_run::StopAssessmentRunInput {
             assessment_run_arn: self.assessment_run_arn,
             stop_action: self.stop_action,

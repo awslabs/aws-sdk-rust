@@ -44,7 +44,7 @@ impl DeleteProtectionGroupInputBuilder {
     /// Consumes the builder and constructs a [`DeleteProtectionGroupInput`](crate::operation::delete_protection_group::DeleteProtectionGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_protection_group::DeleteProtectionGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_protection_group::DeleteProtectionGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_protection_group::DeleteProtectionGroupInput {
             protection_group_id: self.protection_group_id,

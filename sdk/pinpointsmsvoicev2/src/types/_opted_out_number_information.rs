@@ -91,16 +91,16 @@ impl OptedOutNumberInformationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`opted_out_number`](crate::types::builders::OptedOutNumberInformationBuilder::opted_out_number)
     /// - [`opted_out_timestamp`](crate::types::builders::OptedOutNumberInformationBuilder::opted_out_timestamp)
-    pub fn build(self) -> ::std::result::Result<crate::types::OptedOutNumberInformation, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::OptedOutNumberInformation, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::OptedOutNumberInformation {
             opted_out_number: self.opted_out_number.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "opted_out_number",
                     "opted_out_number was not specified but it is required when building OptedOutNumberInformation",
                 )
             })?,
             opted_out_timestamp: self.opted_out_timestamp.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "opted_out_timestamp",
                     "opted_out_timestamp was not specified but it is required when building OptedOutNumberInformation",
                 )

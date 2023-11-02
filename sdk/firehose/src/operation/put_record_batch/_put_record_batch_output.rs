@@ -112,17 +112,17 @@ impl PutRecordBatchOutputBuilder {
     /// - [`request_responses`](crate::operation::put_record_batch::builders::PutRecordBatchOutputBuilder::request_responses)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_record_batch::PutRecordBatchOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_record_batch::PutRecordBatchOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_record_batch::PutRecordBatchOutput {
             failed_put_count: self.failed_put_count.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "failed_put_count",
                     "failed_put_count was not specified but it is required when building PutRecordBatchOutput",
                 )
             })?,
             encrypted: self.encrypted,
             request_responses: self.request_responses.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "request_responses",
                     "request_responses was not specified but it is required when building PutRecordBatchOutput",
                 )

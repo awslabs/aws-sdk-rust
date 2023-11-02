@@ -88,7 +88,7 @@ impl ListRecoveryPointsByLegalHoldInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_recovery_points_by_legal_hold::ListRecoveryPointsByLegalHoldInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_recovery_points_by_legal_hold::ListRecoveryPointsByLegalHoldInput {
             legal_hold_id: self.legal_hold_id,

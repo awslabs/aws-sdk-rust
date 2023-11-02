@@ -166,7 +166,7 @@ impl DescribeBundleTasksInputBuilder {
     /// Consumes the builder and constructs a [`DescribeBundleTasksInput`](crate::operation::describe_bundle_tasks::DescribeBundleTasksInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_bundle_tasks::DescribeBundleTasksInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_bundle_tasks::DescribeBundleTasksInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_bundle_tasks::DescribeBundleTasksInput {
             bundle_ids: self.bundle_ids,

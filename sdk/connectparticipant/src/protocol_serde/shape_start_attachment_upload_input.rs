@@ -2,7 +2,7 @@
 pub fn ser_start_attachment_upload_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_attachment_upload::StartAttachmentUploadInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.attachment_name {
         object.key("AttachmentName").string(var_1.as_str());
     }

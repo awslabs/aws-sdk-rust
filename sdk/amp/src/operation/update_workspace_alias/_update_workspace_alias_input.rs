@@ -87,7 +87,7 @@ impl UpdateWorkspaceAliasInputBuilder {
     /// Consumes the builder and constructs a [`UpdateWorkspaceAliasInput`](crate::operation::update_workspace_alias::UpdateWorkspaceAliasInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_workspace_alias::UpdateWorkspaceAliasInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_workspace_alias::UpdateWorkspaceAliasInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_workspace_alias::UpdateWorkspaceAliasInput {
             workspace_id: self.workspace_id,

@@ -388,7 +388,7 @@ impl CreatePatchBaselineInputBuilder {
     /// Consumes the builder and constructs a [`CreatePatchBaselineInput`](crate::operation::create_patch_baseline::CreatePatchBaselineInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_patch_baseline::CreatePatchBaselineInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_patch_baseline::CreatePatchBaselineInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_patch_baseline::CreatePatchBaselineInput {
             operating_system: self.operating_system,

@@ -414,36 +414,36 @@ impl ApplicationDetailBuilder {
     /// - [`runtime_environment`](crate::types::builders::ApplicationDetailBuilder::runtime_environment)
     /// - [`application_status`](crate::types::builders::ApplicationDetailBuilder::application_status)
     /// - [`application_version_id`](crate::types::builders::ApplicationDetailBuilder::application_version_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::ApplicationDetail, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ApplicationDetail, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ApplicationDetail {
             application_arn: self.application_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "application_arn",
                     "application_arn was not specified but it is required when building ApplicationDetail",
                 )
             })?,
             application_description: self.application_description,
             application_name: self.application_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "application_name",
                     "application_name was not specified but it is required when building ApplicationDetail",
                 )
             })?,
             runtime_environment: self.runtime_environment.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "runtime_environment",
                     "runtime_environment was not specified but it is required when building ApplicationDetail",
                 )
             })?,
             service_execution_role: self.service_execution_role,
             application_status: self.application_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "application_status",
                     "application_status was not specified but it is required when building ApplicationDetail",
                 )
             })?,
             application_version_id: self.application_version_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "application_version_id",
                     "application_version_id was not specified but it is required when building ApplicationDetail",
                 )

@@ -87,7 +87,7 @@ impl GetMethodInputBuilder {
         &self.http_method
     }
     /// Consumes the builder and constructs a [`GetMethodInput`](crate::operation::get_method::GetMethodInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_method::GetMethodInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_method::GetMethodInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_method::GetMethodInput {
             rest_api_id: self.rest_api_id,
             resource_id: self.resource_id,

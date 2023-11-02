@@ -207,7 +207,7 @@ impl SearchListingsInputBuilder {
     /// Consumes the builder and constructs a [`SearchListingsInput`](crate::operation::search_listings::SearchListingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::search_listings::SearchListingsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::search_listings::SearchListingsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_listings::SearchListingsInput {
             domain_identifier: self.domain_identifier,
             search_text: self.search_text,

@@ -98,7 +98,7 @@ impl ListPlatformVersionsInputBuilder {
     /// Consumes the builder and constructs a [`ListPlatformVersionsInput`](crate::operation::list_platform_versions::ListPlatformVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_platform_versions::ListPlatformVersionsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_platform_versions::ListPlatformVersionsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_platform_versions::ListPlatformVersionsInput {
             filters: self.filters,

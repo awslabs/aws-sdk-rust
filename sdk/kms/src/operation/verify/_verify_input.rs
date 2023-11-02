@@ -312,7 +312,7 @@ impl VerifyInputBuilder {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`VerifyInput`](crate::operation::verify::VerifyInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::verify::VerifyInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::verify::VerifyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::verify::VerifyInput {
             key_id: self.key_id,
             message: self.message,

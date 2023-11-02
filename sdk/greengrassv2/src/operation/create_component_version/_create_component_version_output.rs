@@ -155,24 +155,24 @@ impl CreateComponentVersionOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_component_version::CreateComponentVersionOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_component_version::CreateComponentVersionOutput {
             arn: self.arn,
             component_name: self.component_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "component_name",
                     "component_name was not specified but it is required when building CreateComponentVersionOutput",
                 )
             })?,
             component_version: self.component_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "component_version",
                     "component_version was not specified but it is required when building CreateComponentVersionOutput",
                 )
             })?,
             creation_timestamp: self.creation_timestamp.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_timestamp",
                     "creation_timestamp was not specified but it is required when building CreateComponentVersionOutput",
                 )

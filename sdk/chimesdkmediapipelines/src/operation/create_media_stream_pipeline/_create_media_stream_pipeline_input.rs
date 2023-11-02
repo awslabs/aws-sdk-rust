@@ -142,7 +142,7 @@ impl CreateMediaStreamPipelineInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_media_stream_pipeline::CreateMediaStreamPipelineInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_media_stream_pipeline::CreateMediaStreamPipelineInput {
             sources: self.sources,

@@ -126,7 +126,7 @@ impl GetApiKeysInputBuilder {
         &self.include_values
     }
     /// Consumes the builder and constructs a [`GetApiKeysInput`](crate::operation::get_api_keys::GetApiKeysInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_api_keys::GetApiKeysInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_api_keys::GetApiKeysInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_api_keys::GetApiKeysInput {
             position: self.position,
             limit: self.limit,

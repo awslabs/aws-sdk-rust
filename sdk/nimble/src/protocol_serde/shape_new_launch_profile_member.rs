@@ -2,7 +2,7 @@
 pub fn ser_new_launch_profile_member(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::NewLaunchProfileMember,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("persona").string(input.persona.as_str());
     }

@@ -67,10 +67,10 @@ impl WeeklySettingBuilder {
     /// Consumes the builder and constructs a [`WeeklySetting`](crate::types::WeeklySetting).
     /// This method will fail if any of the following fields are not set:
     /// - [`day_of_week`](crate::types::builders::WeeklySettingBuilder::day_of_week)
-    pub fn build(self) -> ::std::result::Result<crate::types::WeeklySetting, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::WeeklySetting, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::WeeklySetting {
             day_of_week: self.day_of_week.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "day_of_week",
                     "day_of_week was not specified but it is required when building WeeklySetting",
                 )

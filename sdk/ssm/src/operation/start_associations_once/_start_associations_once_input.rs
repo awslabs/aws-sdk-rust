@@ -51,7 +51,7 @@ impl StartAssociationsOnceInputBuilder {
     /// Consumes the builder and constructs a [`StartAssociationsOnceInput`](crate::operation::start_associations_once::StartAssociationsOnceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_associations_once::StartAssociationsOnceInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::start_associations_once::StartAssociationsOnceInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_associations_once::StartAssociationsOnceInput {
             association_ids: self.association_ids,

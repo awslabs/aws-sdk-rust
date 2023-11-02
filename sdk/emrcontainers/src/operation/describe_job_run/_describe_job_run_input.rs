@@ -66,7 +66,7 @@ impl DescribeJobRunInputBuilder {
     /// Consumes the builder and constructs a [`DescribeJobRunInput`](crate::operation::describe_job_run::DescribeJobRunInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_job_run::DescribeJobRunInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_job_run::DescribeJobRunInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_job_run::DescribeJobRunInput {
             id: self.id,
             virtual_cluster_id: self.virtual_cluster_id,

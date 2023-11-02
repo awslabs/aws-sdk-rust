@@ -108,7 +108,7 @@ impl StopStreamingSessionInputBuilder {
     /// Consumes the builder and constructs a [`StopStreamingSessionInput`](crate::operation::stop_streaming_session::StopStreamingSessionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_streaming_session::StopStreamingSessionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::stop_streaming_session::StopStreamingSessionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::stop_streaming_session::StopStreamingSessionInput {
             client_token: self.client_token,

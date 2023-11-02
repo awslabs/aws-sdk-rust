@@ -75,16 +75,16 @@ impl ParameterObjectBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::ParameterObjectBuilder::id)
     /// - [`attributes`](crate::types::builders::ParameterObjectBuilder::attributes)
-    pub fn build(self) -> ::std::result::Result<crate::types::ParameterObject, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ParameterObject, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ParameterObject {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building ParameterObject",
                 )
             })?,
             attributes: self.attributes.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "attributes",
                     "attributes was not specified but it is required when building ParameterObject",
                 )

@@ -109,22 +109,22 @@ impl KinesisVideoStreamSourceRuntimeConfigurationBuilder {
     /// - [`media_sample_rate`](crate::types::builders::KinesisVideoStreamSourceRuntimeConfigurationBuilder::media_sample_rate)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::KinesisVideoStreamSourceRuntimeConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::KinesisVideoStreamSourceRuntimeConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::KinesisVideoStreamSourceRuntimeConfiguration {
             streams: self.streams.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "streams",
                     "streams was not specified but it is required when building KinesisVideoStreamSourceRuntimeConfiguration",
                 )
             })?,
             media_encoding: self.media_encoding.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "media_encoding",
                     "media_encoding was not specified but it is required when building KinesisVideoStreamSourceRuntimeConfiguration",
                 )
             })?,
             media_sample_rate: self.media_sample_rate.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "media_sample_rate",
                     "media_sample_rate was not specified but it is required when building KinesisVideoStreamSourceRuntimeConfiguration",
                 )

@@ -339,53 +339,53 @@ impl GetQuantumTaskOutputBuilder {
     /// - [`created_at`](crate::operation::get_quantum_task::builders::GetQuantumTaskOutputBuilder::created_at)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_quantum_task::GetQuantumTaskOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_quantum_task::GetQuantumTaskOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_quantum_task::GetQuantumTaskOutput {
             quantum_task_arn: self.quantum_task_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "quantum_task_arn",
                     "quantum_task_arn was not specified but it is required when building GetQuantumTaskOutput",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building GetQuantumTaskOutput",
                 )
             })?,
             failure_reason: self.failure_reason,
             device_arn: self.device_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "device_arn",
                     "device_arn was not specified but it is required when building GetQuantumTaskOutput",
                 )
             })?,
             device_parameters: self.device_parameters.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "device_parameters",
                     "device_parameters was not specified but it is required when building GetQuantumTaskOutput",
                 )
             })?,
             shots: self.shots.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "shots",
                     "shots was not specified but it is required when building GetQuantumTaskOutput",
                 )
             })?,
             output_s3_bucket: self.output_s3_bucket.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "output_s3_bucket",
                     "output_s3_bucket was not specified but it is required when building GetQuantumTaskOutput",
                 )
             })?,
             output_s3_directory: self.output_s3_directory.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "output_s3_directory",
                     "output_s3_directory was not specified but it is required when building GetQuantumTaskOutput",
                 )
             })?,
             created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
                     "created_at was not specified but it is required when building GetQuantumTaskOutput",
                 )

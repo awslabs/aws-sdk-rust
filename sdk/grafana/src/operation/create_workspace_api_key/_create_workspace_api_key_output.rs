@@ -121,23 +121,25 @@ impl CreateWorkspaceApiKeyOutputBuilder {
     /// - [`workspace_id`](crate::operation::create_workspace_api_key::builders::CreateWorkspaceApiKeyOutputBuilder::workspace_id)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_workspace_api_key::CreateWorkspaceApiKeyOutput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::create_workspace_api_key::CreateWorkspaceApiKeyOutput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::create_workspace_api_key::CreateWorkspaceApiKeyOutput {
             key_name: self.key_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "key_name",
                     "key_name was not specified but it is required when building CreateWorkspaceApiKeyOutput",
                 )
             })?,
             key: self.key.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "key",
                     "key was not specified but it is required when building CreateWorkspaceApiKeyOutput",
                 )
             })?,
             workspace_id: self.workspace_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "workspace_id",
                     "workspace_id was not specified but it is required when building CreateWorkspaceApiKeyOutput",
                 )

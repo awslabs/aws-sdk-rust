@@ -88,8 +88,10 @@ impl UpdateMultiplexProgramInputBuilder {
     /// Consumes the builder and constructs a [`UpdateMultiplexProgramInput`](crate::operation::update_multiplex_program::UpdateMultiplexProgramInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_multiplex_program::UpdateMultiplexProgramInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::update_multiplex_program::UpdateMultiplexProgramInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::update_multiplex_program::UpdateMultiplexProgramInput {
             multiplex_id: self.multiplex_id,
             multiplex_program_settings: self.multiplex_program_settings,

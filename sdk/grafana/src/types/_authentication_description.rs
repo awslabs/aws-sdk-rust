@@ -93,10 +93,10 @@ impl AuthenticationDescriptionBuilder {
     /// Consumes the builder and constructs a [`AuthenticationDescription`](crate::types::AuthenticationDescription).
     /// This method will fail if any of the following fields are not set:
     /// - [`providers`](crate::types::builders::AuthenticationDescriptionBuilder::providers)
-    pub fn build(self) -> ::std::result::Result<crate::types::AuthenticationDescription, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AuthenticationDescription, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AuthenticationDescription {
             providers: self.providers.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "providers",
                     "providers was not specified but it is required when building AuthenticationDescription",
                 )

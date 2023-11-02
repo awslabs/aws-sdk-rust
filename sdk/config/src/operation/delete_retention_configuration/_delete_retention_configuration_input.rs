@@ -46,7 +46,7 @@ impl DeleteRetentionConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_retention_configuration::DeleteRetentionConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_retention_configuration::DeleteRetentionConfigurationInput {
             retention_configuration_name: self.retention_configuration_name,

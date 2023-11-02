@@ -87,10 +87,10 @@ impl FilesLimitBuilder {
     /// Consumes the builder and constructs a [`FilesLimit`](crate::types::FilesLimit).
     /// This method will fail if any of the following fields are not set:
     /// - [`max_files`](crate::types::builders::FilesLimitBuilder::max_files)
-    pub fn build(self) -> ::std::result::Result<crate::types::FilesLimit, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::FilesLimit, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FilesLimit {
             max_files: self.max_files.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "max_files",
                     "max_files was not specified but it is required when building FilesLimit",
                 )

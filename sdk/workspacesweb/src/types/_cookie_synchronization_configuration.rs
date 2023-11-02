@@ -88,10 +88,10 @@ impl CookieSynchronizationConfigurationBuilder {
     /// Consumes the builder and constructs a [`CookieSynchronizationConfiguration`](crate::types::CookieSynchronizationConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`allowlist`](crate::types::builders::CookieSynchronizationConfigurationBuilder::allowlist)
-    pub fn build(self) -> ::std::result::Result<crate::types::CookieSynchronizationConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CookieSynchronizationConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CookieSynchronizationConfiguration {
             allowlist: self.allowlist.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "allowlist",
                     "allowlist was not specified but it is required when building CookieSynchronizationConfiguration",
                 )

@@ -68,7 +68,7 @@ impl UpdateHostedZoneCommentInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_hosted_zone_comment::UpdateHostedZoneCommentInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_hosted_zone_comment::UpdateHostedZoneCommentInput {
             id: self.id,

@@ -144,7 +144,7 @@ impl GetRevocationStatusInputBuilder {
     /// Consumes the builder and constructs a [`GetRevocationStatusInput`](crate::operation::get_revocation_status::GetRevocationStatusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_revocation_status::GetRevocationStatusInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_revocation_status::GetRevocationStatusInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_revocation_status::GetRevocationStatusInput {
             signature_timestamp: self.signature_timestamp,

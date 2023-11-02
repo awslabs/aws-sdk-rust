@@ -152,10 +152,10 @@ impl MaximumMinimumComputationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`computation_id`](crate::types::builders::MaximumMinimumComputationBuilder::computation_id)
     /// - [`r#type`](crate::types::builders::MaximumMinimumComputationBuilder::r#type)
-    pub fn build(self) -> ::std::result::Result<crate::types::MaximumMinimumComputation, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::MaximumMinimumComputation, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MaximumMinimumComputation {
             computation_id: self.computation_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "computation_id",
                     "computation_id was not specified but it is required when building MaximumMinimumComputation",
                 )
@@ -164,7 +164,7 @@ impl MaximumMinimumComputationBuilder {
             time: self.time,
             value: self.value,
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building MaximumMinimumComputation",
                 )

@@ -47,10 +47,10 @@ impl ApplicationSnapshotConfigurationUpdateBuilder {
     /// - [`snapshots_enabled_update`](crate::types::builders::ApplicationSnapshotConfigurationUpdateBuilder::snapshots_enabled_update)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::ApplicationSnapshotConfigurationUpdate, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::ApplicationSnapshotConfigurationUpdate, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ApplicationSnapshotConfigurationUpdate {
             snapshots_enabled_update: self.snapshots_enabled_update.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "snapshots_enabled_update",
                     "snapshots_enabled_update was not specified but it is required when building ApplicationSnapshotConfigurationUpdate",
                 )

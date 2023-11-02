@@ -128,7 +128,7 @@ impl ListDatasetContentsInputBuilder {
     /// Consumes the builder and constructs a [`ListDatasetContentsInput`](crate::operation::list_dataset_contents::ListDatasetContentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_dataset_contents::ListDatasetContentsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_dataset_contents::ListDatasetContentsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_dataset_contents::ListDatasetContentsInput {
             dataset_name: self.dataset_name,

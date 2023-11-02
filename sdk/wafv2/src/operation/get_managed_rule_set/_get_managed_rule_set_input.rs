@@ -118,7 +118,7 @@ impl GetManagedRuleSetInputBuilder {
     /// Consumes the builder and constructs a [`GetManagedRuleSetInput`](crate::operation::get_managed_rule_set::GetManagedRuleSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_managed_rule_set::GetManagedRuleSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_managed_rule_set::GetManagedRuleSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_managed_rule_set::GetManagedRuleSetInput {
             name: self.name,
             scope: self.scope,

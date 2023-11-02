@@ -44,7 +44,7 @@ impl DescribeTrainingJobInputBuilder {
     /// Consumes the builder and constructs a [`DescribeTrainingJobInput`](crate::operation::describe_training_job::DescribeTrainingJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_training_job::DescribeTrainingJobInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_training_job::DescribeTrainingJobInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_training_job::DescribeTrainingJobInput {
             training_job_name: self.training_job_name,

@@ -185,7 +185,7 @@ impl ModifyCustomDbEngineVersionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_custom_db_engine_version::ModifyCustomDbEngineVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::modify_custom_db_engine_version::ModifyCustomDbEngineVersionInput {
             engine: self.engine,

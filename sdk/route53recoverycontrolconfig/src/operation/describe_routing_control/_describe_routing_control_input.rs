@@ -44,8 +44,10 @@ impl DescribeRoutingControlInputBuilder {
     /// Consumes the builder and constructs a [`DescribeRoutingControlInput`](crate::operation::describe_routing_control::DescribeRoutingControlInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_routing_control::DescribeRoutingControlInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::describe_routing_control::DescribeRoutingControlInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::describe_routing_control::DescribeRoutingControlInput {
             routing_control_arn: self.routing_control_arn,
         })

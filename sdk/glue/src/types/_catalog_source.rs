@@ -94,22 +94,22 @@ impl CatalogSourceBuilder {
     /// - [`name`](crate::types::builders::CatalogSourceBuilder::name)
     /// - [`database`](crate::types::builders::CatalogSourceBuilder::database)
     /// - [`table`](crate::types::builders::CatalogSourceBuilder::table)
-    pub fn build(self) -> ::std::result::Result<crate::types::CatalogSource, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CatalogSource, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CatalogSource {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building CatalogSource",
                 )
             })?,
             database: self.database.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "database",
                     "database was not specified but it is required when building CatalogSource",
                 )
             })?,
             table: self.table.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "table",
                     "table was not specified but it is required when building CatalogSource",
                 )

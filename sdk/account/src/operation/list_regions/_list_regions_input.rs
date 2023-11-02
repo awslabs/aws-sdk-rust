@@ -127,7 +127,7 @@ impl ListRegionsInputBuilder {
         &self.region_opt_status_contains
     }
     /// Consumes the builder and constructs a [`ListRegionsInput`](crate::operation::list_regions::ListRegionsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_regions::ListRegionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_regions::ListRegionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_regions::ListRegionsInput {
             account_id: self.account_id,
             max_results: self.max_results,

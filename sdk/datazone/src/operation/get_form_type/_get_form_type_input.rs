@@ -85,7 +85,7 @@ impl GetFormTypeInputBuilder {
         &self.revision
     }
     /// Consumes the builder and constructs a [`GetFormTypeInput`](crate::operation::get_form_type::GetFormTypeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_form_type::GetFormTypeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_form_type::GetFormTypeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_form_type::GetFormTypeInput {
             domain_identifier: self.domain_identifier,
             form_type_identifier: self.form_type_identifier,

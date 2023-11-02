@@ -108,7 +108,7 @@ impl StartRecoveryInputBuilder {
     /// Consumes the builder and constructs a [`StartRecoveryInput`](crate::operation::start_recovery::StartRecoveryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_recovery::StartRecoveryInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_recovery::StartRecoveryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_recovery::StartRecoveryInput {
             source_servers: self.source_servers,
             is_drill: self.is_drill,

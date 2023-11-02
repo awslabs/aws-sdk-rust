@@ -228,7 +228,7 @@ impl PutFileInputBuilder {
         &self.email
     }
     /// Consumes the builder and constructs a [`PutFileInput`](crate::operation::put_file::PutFileInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_file::PutFileInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_file::PutFileInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_file::PutFileInput {
             repository_name: self.repository_name,
             branch_name: self.branch_name,

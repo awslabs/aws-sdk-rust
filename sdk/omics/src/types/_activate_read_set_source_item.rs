@@ -90,16 +90,16 @@ impl ActivateReadSetSourceItemBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`read_set_id`](crate::types::builders::ActivateReadSetSourceItemBuilder::read_set_id)
     /// - [`status`](crate::types::builders::ActivateReadSetSourceItemBuilder::status)
-    pub fn build(self) -> ::std::result::Result<crate::types::ActivateReadSetSourceItem, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ActivateReadSetSourceItem, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ActivateReadSetSourceItem {
             read_set_id: self.read_set_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "read_set_id",
                     "read_set_id was not specified but it is required when building ActivateReadSetSourceItem",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building ActivateReadSetSourceItem",
                 )

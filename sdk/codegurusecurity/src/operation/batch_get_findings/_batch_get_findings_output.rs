@@ -97,16 +97,16 @@ impl BatchGetFindingsOutputBuilder {
     /// - [`failed_findings`](crate::operation::batch_get_findings::builders::BatchGetFindingsOutputBuilder::failed_findings)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_get_findings::BatchGetFindingsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::batch_get_findings::BatchGetFindingsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::batch_get_findings::BatchGetFindingsOutput {
             findings: self.findings.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "findings",
                     "findings was not specified but it is required when building BatchGetFindingsOutput",
                 )
             })?,
             failed_findings: self.failed_findings.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "failed_findings",
                     "failed_findings was not specified but it is required when building BatchGetFindingsOutput",
                 )

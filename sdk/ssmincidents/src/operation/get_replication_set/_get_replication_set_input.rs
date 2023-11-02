@@ -44,7 +44,7 @@ impl GetReplicationSetInputBuilder {
     /// Consumes the builder and constructs a [`GetReplicationSetInput`](crate::operation::get_replication_set::GetReplicationSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_replication_set::GetReplicationSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_replication_set::GetReplicationSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_replication_set::GetReplicationSetInput { arn: self.arn })
     }
 }

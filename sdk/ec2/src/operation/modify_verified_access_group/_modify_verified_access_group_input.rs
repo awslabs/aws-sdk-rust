@@ -130,7 +130,7 @@ impl ModifyVerifiedAccessGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_verified_access_group::ModifyVerifiedAccessGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::modify_verified_access_group::ModifyVerifiedAccessGroupInput {
             verified_access_group_id: self.verified_access_group_id,

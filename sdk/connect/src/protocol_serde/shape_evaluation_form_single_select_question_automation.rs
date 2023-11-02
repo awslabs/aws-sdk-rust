@@ -2,7 +2,7 @@
 pub fn ser_evaluation_form_single_select_question_automation(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EvaluationFormSingleSelectQuestionAutomation,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("Options").start_array();
         for item_2 in &input.options {

@@ -264,28 +264,28 @@ impl DescribeMapRunOutputBuilder {
     /// - [`start_date`](crate::operation::describe_map_run::builders::DescribeMapRunOutputBuilder::start_date)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_map_run::DescribeMapRunOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_map_run::DescribeMapRunOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_map_run::DescribeMapRunOutput {
             map_run_arn: self.map_run_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "map_run_arn",
                     "map_run_arn was not specified but it is required when building DescribeMapRunOutput",
                 )
             })?,
             execution_arn: self.execution_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "execution_arn",
                     "execution_arn was not specified but it is required when building DescribeMapRunOutput",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building DescribeMapRunOutput",
                 )
             })?,
             start_date: self.start_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "start_date",
                     "start_date was not specified but it is required when building DescribeMapRunOutput",
                 )

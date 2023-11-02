@@ -105,16 +105,16 @@ impl DomainValidationOptionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`domain_name`](crate::types::builders::DomainValidationOptionBuilder::domain_name)
     /// - [`validation_domain`](crate::types::builders::DomainValidationOptionBuilder::validation_domain)
-    pub fn build(self) -> ::std::result::Result<crate::types::DomainValidationOption, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DomainValidationOption, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DomainValidationOption {
             domain_name: self.domain_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "domain_name",
                     "domain_name was not specified but it is required when building DomainValidationOption",
                 )
             })?,
             validation_domain: self.validation_domain.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "validation_domain",
                     "validation_domain was not specified but it is required when building DomainValidationOption",
                 )

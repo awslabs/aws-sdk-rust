@@ -211,10 +211,10 @@ impl CreateExperimentTemplateTargetInputBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`resource_type`](crate::types::builders::CreateExperimentTemplateTargetInputBuilder::resource_type)
     /// - [`selection_mode`](crate::types::builders::CreateExperimentTemplateTargetInputBuilder::selection_mode)
-    pub fn build(self) -> ::std::result::Result<crate::types::CreateExperimentTemplateTargetInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CreateExperimentTemplateTargetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CreateExperimentTemplateTargetInput {
             resource_type: self.resource_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_type",
                     "resource_type was not specified but it is required when building CreateExperimentTemplateTargetInput",
                 )
@@ -223,7 +223,7 @@ impl CreateExperimentTemplateTargetInputBuilder {
             resource_tags: self.resource_tags,
             filters: self.filters,
             selection_mode: self.selection_mode.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "selection_mode",
                     "selection_mode was not specified but it is required when building CreateExperimentTemplateTargetInput",
                 )

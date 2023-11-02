@@ -88,8 +88,10 @@ impl StartDomainMaintenanceInputBuilder {
     /// Consumes the builder and constructs a [`StartDomainMaintenanceInput`](crate::operation::start_domain_maintenance::StartDomainMaintenanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_domain_maintenance::StartDomainMaintenanceInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::start_domain_maintenance::StartDomainMaintenanceInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::start_domain_maintenance::StartDomainMaintenanceInput {
             domain_name: self.domain_name,
             action: self.action,

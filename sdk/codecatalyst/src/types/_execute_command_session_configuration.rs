@@ -75,10 +75,10 @@ impl ExecuteCommandSessionConfigurationBuilder {
     /// Consumes the builder and constructs a [`ExecuteCommandSessionConfiguration`](crate::types::ExecuteCommandSessionConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`command`](crate::types::builders::ExecuteCommandSessionConfigurationBuilder::command)
-    pub fn build(self) -> ::std::result::Result<crate::types::ExecuteCommandSessionConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ExecuteCommandSessionConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ExecuteCommandSessionConfiguration {
             command: self.command.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "command",
                     "command was not specified but it is required when building ExecuteCommandSessionConfiguration",
                 )

@@ -68,7 +68,7 @@ impl DescribeAppInstanceAdminInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_app_instance_admin::DescribeAppInstanceAdminInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_app_instance_admin::DescribeAppInstanceAdminInput {
             app_instance_admin_arn: self.app_instance_admin_arn,

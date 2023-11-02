@@ -109,7 +109,7 @@ impl UpdateJobStatusInputBuilder {
     /// Consumes the builder and constructs a [`UpdateJobStatusInput`](crate::operation::update_job_status::UpdateJobStatusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_job_status::UpdateJobStatusInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_job_status::UpdateJobStatusInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_job_status::UpdateJobStatusInput {
             account_id: self.account_id,
             job_id: self.job_id,

@@ -221,7 +221,7 @@ impl PutOrganizationConformancePackInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackInput {
             organization_conformance_pack_name: self.organization_conformance_pack_name,

@@ -109,7 +109,7 @@ impl DescribeConnectorEntityInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_connector_entity::DescribeConnectorEntityInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_connector_entity::DescribeConnectorEntityInput {
             connector_entity_name: self.connector_entity_name,

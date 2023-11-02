@@ -51,10 +51,10 @@ impl ValidationDataConfigBuilder {
     /// Consumes the builder and constructs a [`ValidationDataConfig`](crate::types::ValidationDataConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`validators`](crate::types::builders::ValidationDataConfigBuilder::validators)
-    pub fn build(self) -> ::std::result::Result<crate::types::ValidationDataConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ValidationDataConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ValidationDataConfig {
             validators: self.validators.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "validators",
                     "validators was not specified but it is required when building ValidationDataConfig",
                 )

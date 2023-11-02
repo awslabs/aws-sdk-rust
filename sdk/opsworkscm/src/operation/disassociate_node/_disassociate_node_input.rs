@@ -115,7 +115,7 @@ impl DisassociateNodeInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateNodeInput`](crate::operation::disassociate_node::DisassociateNodeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::disassociate_node::DisassociateNodeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::disassociate_node::DisassociateNodeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::disassociate_node::DisassociateNodeInput {
             server_name: self.server_name,
             node_name: self.node_name,

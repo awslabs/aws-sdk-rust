@@ -69,7 +69,7 @@ impl RetrieveTapeRecoveryPointInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::retrieve_tape_recovery_point::RetrieveTapeRecoveryPointInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::retrieve_tape_recovery_point::RetrieveTapeRecoveryPointInput {
             tape_arn: self.tape_arn,

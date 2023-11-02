@@ -194,7 +194,8 @@ impl GetTemplateSummaryInputBuilder {
     /// Consumes the builder and constructs a [`GetTemplateSummaryInput`](crate::operation::get_template_summary::GetTemplateSummaryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_template_summary::GetTemplateSummaryInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_template_summary::GetTemplateSummaryInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::get_template_summary::GetTemplateSummaryInput {
             template_body: self.template_body,
             template_url: self.template_url,

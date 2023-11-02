@@ -87,10 +87,10 @@ impl ListRulesOutputBuilder {
     /// Consumes the builder and constructs a [`ListRulesOutput`](crate::operation::list_rules::ListRulesOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`items`](crate::operation::list_rules::builders::ListRulesOutputBuilder::items)
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_rules::ListRulesOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_rules::ListRulesOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_rules::ListRulesOutput {
             items: self.items.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "items",
                     "items was not specified but it is required when building ListRulesOutput",
                 )

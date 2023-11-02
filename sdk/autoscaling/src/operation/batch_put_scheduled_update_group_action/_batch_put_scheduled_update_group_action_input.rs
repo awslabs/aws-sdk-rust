@@ -78,7 +78,7 @@ impl BatchPutScheduledUpdateGroupActionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_put_scheduled_update_group_action::BatchPutScheduledUpdateGroupActionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::batch_put_scheduled_update_group_action::BatchPutScheduledUpdateGroupActionInput {

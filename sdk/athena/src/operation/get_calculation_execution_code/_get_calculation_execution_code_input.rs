@@ -46,7 +46,7 @@ impl GetCalculationExecutionCodeInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_calculation_execution_code::GetCalculationExecutionCodeInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_calculation_execution_code::GetCalculationExecutionCodeInput {
             calculation_execution_id: self.calculation_execution_id,

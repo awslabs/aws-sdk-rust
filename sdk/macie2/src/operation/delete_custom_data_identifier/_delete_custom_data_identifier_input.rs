@@ -46,7 +46,7 @@ impl DeleteCustomDataIdentifierInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_custom_data_identifier::DeleteCustomDataIdentifierInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_custom_data_identifier::DeleteCustomDataIdentifierInput { id: self.id })
     }

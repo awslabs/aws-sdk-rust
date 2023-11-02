@@ -135,7 +135,7 @@ impl CreateHostInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateHostInput`](crate::operation::create_host::CreateHostInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_host::CreateHostInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_host::CreateHostInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_host::CreateHostInput {
             name: self.name,
             provider_type: self.provider_type,

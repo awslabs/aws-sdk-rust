@@ -109,7 +109,9 @@ impl UpdateConfigInputBuilder {
         &self.config_data
     }
     /// Consumes the builder and constructs a [`UpdateConfigInput`](crate::operation::update_config::UpdateConfigInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_config::UpdateConfigInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_config::UpdateConfigInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_config::UpdateConfigInput {
             config_id: self.config_id,
             name: self.name,

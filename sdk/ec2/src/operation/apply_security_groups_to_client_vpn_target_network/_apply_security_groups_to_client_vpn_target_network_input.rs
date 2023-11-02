@@ -119,7 +119,7 @@ impl ApplySecurityGroupsToClientVpnTargetNetworkInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::apply_security_groups_to_client_vpn_target_network::ApplySecurityGroupsToClientVpnTargetNetworkInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::apply_security_groups_to_client_vpn_target_network::ApplySecurityGroupsToClientVpnTargetNetworkInput {

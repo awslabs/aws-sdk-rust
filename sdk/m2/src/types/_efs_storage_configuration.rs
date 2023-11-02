@@ -70,16 +70,16 @@ impl EfsStorageConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`file_system_id`](crate::types::builders::EfsStorageConfigurationBuilder::file_system_id)
     /// - [`mount_point`](crate::types::builders::EfsStorageConfigurationBuilder::mount_point)
-    pub fn build(self) -> ::std::result::Result<crate::types::EfsStorageConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::EfsStorageConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EfsStorageConfiguration {
             file_system_id: self.file_system_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "file_system_id",
                     "file_system_id was not specified but it is required when building EfsStorageConfiguration",
                 )
             })?,
             mount_point: self.mount_point.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "mount_point",
                     "mount_point was not specified but it is required when building EfsStorageConfiguration",
                 )

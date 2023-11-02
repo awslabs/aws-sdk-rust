@@ -148,7 +148,7 @@ impl ImportKeyInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`ImportKeyInput`](crate::operation::import_key::ImportKeyInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::import_key::ImportKeyInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::import_key::ImportKeyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::import_key::ImportKeyInput {
             key_material: self.key_material,
             key_check_value_algorithm: self.key_check_value_algorithm,

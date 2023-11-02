@@ -49,7 +49,7 @@ impl PutKmsEncryptionKeyInputBuilder {
     /// Consumes the builder and constructs a [`PutKmsEncryptionKeyInput`](crate::operation::put_kms_encryption_key::PutKmsEncryptionKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_kms_encryption_key::PutKmsEncryptionKeyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::put_kms_encryption_key::PutKmsEncryptionKeyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::put_kms_encryption_key::PutKmsEncryptionKeyInput {
             kms_encryption_key_arn: self.kms_encryption_key_arn,

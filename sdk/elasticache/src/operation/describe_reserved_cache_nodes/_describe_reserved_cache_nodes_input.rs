@@ -353,7 +353,7 @@ impl DescribeReservedCacheNodesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_reserved_cache_nodes::DescribeReservedCacheNodesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_reserved_cache_nodes::DescribeReservedCacheNodesInput {
             reserved_cache_node_id: self.reserved_cache_node_id,

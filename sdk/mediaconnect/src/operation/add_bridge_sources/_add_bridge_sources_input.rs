@@ -74,7 +74,7 @@ impl AddBridgeSourcesInputBuilder {
     /// Consumes the builder and constructs a [`AddBridgeSourcesInput`](crate::operation::add_bridge_sources::AddBridgeSourcesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::add_bridge_sources::AddBridgeSourcesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::add_bridge_sources::AddBridgeSourcesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::add_bridge_sources::AddBridgeSourcesInput {
             bridge_arn: self.bridge_arn,
             sources: self.sources,

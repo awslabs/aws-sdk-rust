@@ -2,7 +2,7 @@
 pub fn ser_username_configuration_type(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UsernameConfigurationType,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("CaseSensitive").boolean(input.case_sensitive);
     }

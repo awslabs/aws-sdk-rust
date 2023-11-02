@@ -64,7 +64,7 @@ impl DeleteLinkInputBuilder {
         &self.link_id
     }
     /// Consumes the builder and constructs a [`DeleteLinkInput`](crate::operation::delete_link::DeleteLinkInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_link::DeleteLinkInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_link::DeleteLinkInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_link::DeleteLinkInput {
             global_network_id: self.global_network_id,
             link_id: self.link_id,

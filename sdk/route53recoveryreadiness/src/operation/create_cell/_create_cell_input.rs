@@ -98,7 +98,7 @@ impl CreateCellInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateCellInput`](crate::operation::create_cell::CreateCellInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_cell::CreateCellInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_cell::CreateCellInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_cell::CreateCellInput {
             cell_name: self.cell_name,
             cells: self.cells,

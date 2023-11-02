@@ -2,7 +2,7 @@
 pub fn ser_predefined_scaling_metric_specification(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PredefinedScalingMetricSpecification,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object
             .key("PredefinedScalingMetricType")

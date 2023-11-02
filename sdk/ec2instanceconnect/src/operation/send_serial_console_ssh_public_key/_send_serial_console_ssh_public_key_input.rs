@@ -94,7 +94,7 @@ impl SendSerialConsoleSshPublicKeyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSshPublicKeyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSshPublicKeyInput {
             instance_id: self.instance_id,

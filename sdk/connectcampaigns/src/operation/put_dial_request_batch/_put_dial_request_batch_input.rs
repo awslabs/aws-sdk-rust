@@ -74,7 +74,7 @@ impl PutDialRequestBatchInputBuilder {
     /// Consumes the builder and constructs a [`PutDialRequestBatchInput`](crate::operation::put_dial_request_batch::PutDialRequestBatchInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_dial_request_batch::PutDialRequestBatchInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::put_dial_request_batch::PutDialRequestBatchInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::put_dial_request_batch::PutDialRequestBatchInput {
             id: self.id,

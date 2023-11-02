@@ -44,7 +44,7 @@ impl GetGameSessionLogUrlInputBuilder {
     /// Consumes the builder and constructs a [`GetGameSessionLogUrlInput`](crate::operation::get_game_session_log_url::GetGameSessionLogUrlInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_game_session_log_url::GetGameSessionLogUrlInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_game_session_log_url::GetGameSessionLogUrlInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_game_session_log_url::GetGameSessionLogUrlInput {
             game_session_id: self.game_session_id,

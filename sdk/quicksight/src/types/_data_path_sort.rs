@@ -74,16 +74,16 @@ impl DataPathSortBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`direction`](crate::types::builders::DataPathSortBuilder::direction)
     /// - [`sort_paths`](crate::types::builders::DataPathSortBuilder::sort_paths)
-    pub fn build(self) -> ::std::result::Result<crate::types::DataPathSort, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DataPathSort, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DataPathSort {
             direction: self.direction.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "direction",
                     "direction was not specified but it is required when building DataPathSort",
                 )
             })?,
             sort_paths: self.sort_paths.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "sort_paths",
                     "sort_paths was not specified but it is required when building DataPathSort",
                 )

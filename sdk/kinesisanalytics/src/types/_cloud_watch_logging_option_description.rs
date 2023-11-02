@@ -91,17 +91,17 @@ impl CloudWatchLoggingOptionDescriptionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`log_stream_arn`](crate::types::builders::CloudWatchLoggingOptionDescriptionBuilder::log_stream_arn)
     /// - [`role_arn`](crate::types::builders::CloudWatchLoggingOptionDescriptionBuilder::role_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::CloudWatchLoggingOptionDescription, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CloudWatchLoggingOptionDescription, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CloudWatchLoggingOptionDescription {
             cloud_watch_logging_option_id: self.cloud_watch_logging_option_id,
             log_stream_arn: self.log_stream_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "log_stream_arn",
                     "log_stream_arn was not specified but it is required when building CloudWatchLoggingOptionDescription",
                 )
             })?,
             role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role_arn",
                     "role_arn was not specified but it is required when building CloudWatchLoggingOptionDescription",
                 )

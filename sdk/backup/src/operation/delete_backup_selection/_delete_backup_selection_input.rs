@@ -66,7 +66,7 @@ impl DeleteBackupSelectionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteBackupSelectionInput`](crate::operation::delete_backup_selection::DeleteBackupSelectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_backup_selection::DeleteBackupSelectionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_backup_selection::DeleteBackupSelectionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_backup_selection::DeleteBackupSelectionInput {
             backup_plan_id: self.backup_plan_id,

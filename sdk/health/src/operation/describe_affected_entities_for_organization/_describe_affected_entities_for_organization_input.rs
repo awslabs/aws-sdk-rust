@@ -153,7 +153,7 @@ impl DescribeAffectedEntitiesForOrganizationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_affected_entities_for_organization::DescribeAffectedEntitiesForOrganizationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_affected_entities_for_organization::DescribeAffectedEntitiesForOrganizationInput {

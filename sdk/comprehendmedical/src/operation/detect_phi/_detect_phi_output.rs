@@ -111,17 +111,17 @@ impl DetectPhiOutputBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`entities`](crate::operation::detect_phi::builders::DetectPhiOutputBuilder::entities)
     /// - [`model_version`](crate::operation::detect_phi::builders::DetectPhiOutputBuilder::model_version)
-    pub fn build(self) -> ::std::result::Result<crate::operation::detect_phi::DetectPhiOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::detect_phi::DetectPhiOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::detect_phi::DetectPhiOutput {
             entities: self.entities.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "entities",
                     "entities was not specified but it is required when building DetectPhiOutput",
                 )
             })?,
             pagination_token: self.pagination_token,
             model_version: self.model_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "model_version",
                     "model_version was not specified but it is required when building DetectPhiOutput",
                 )

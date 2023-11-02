@@ -259,7 +259,7 @@ impl GetRecommendationsInputBuilder {
     /// Consumes the builder and constructs a [`GetRecommendationsInput`](crate::operation::get_recommendations::GetRecommendationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_recommendations::GetRecommendationsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_recommendations::GetRecommendationsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_recommendations::GetRecommendationsInput {
             campaign_arn: self.campaign_arn,
             item_id: self.item_id,

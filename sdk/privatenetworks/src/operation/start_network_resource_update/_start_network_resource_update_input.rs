@@ -196,7 +196,7 @@ impl StartNetworkResourceUpdateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_network_resource_update::StartNetworkResourceUpdateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_network_resource_update::StartNetworkResourceUpdateInput {
             network_resource_arn: self.network_resource_arn,

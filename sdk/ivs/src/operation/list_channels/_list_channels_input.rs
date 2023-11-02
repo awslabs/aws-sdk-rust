@@ -104,7 +104,9 @@ impl ListChannelsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListChannelsInput`](crate::operation::list_channels::ListChannelsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_channels::ListChannelsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_channels::ListChannelsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_channels::ListChannelsInput {
             filter_by_name: self.filter_by_name,
             filter_by_recording_configuration_arn: self.filter_by_recording_configuration_arn,

@@ -160,29 +160,29 @@ impl SpekeKeyProviderBuilder {
     /// - [`drm_systems`](crate::types::builders::SpekeKeyProviderBuilder::drm_systems)
     /// - [`role_arn`](crate::types::builders::SpekeKeyProviderBuilder::role_arn)
     /// - [`url`](crate::types::builders::SpekeKeyProviderBuilder::url)
-    pub fn build(self) -> ::std::result::Result<crate::types::SpekeKeyProvider, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SpekeKeyProvider, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SpekeKeyProvider {
             encryption_contract_configuration: self.encryption_contract_configuration,
             resource_id: self.resource_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_id",
                     "resource_id was not specified but it is required when building SpekeKeyProvider",
                 )
             })?,
             drm_systems: self.drm_systems.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "drm_systems",
                     "drm_systems was not specified but it is required when building SpekeKeyProvider",
                 )
             })?,
             role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role_arn",
                     "role_arn was not specified but it is required when building SpekeKeyProvider",
                 )
             })?,
             url: self.url.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "url",
                     "url was not specified but it is required when building SpekeKeyProvider",
                 )

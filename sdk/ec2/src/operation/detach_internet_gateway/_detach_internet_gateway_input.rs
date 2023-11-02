@@ -87,7 +87,7 @@ impl DetachInternetGatewayInputBuilder {
     /// Consumes the builder and constructs a [`DetachInternetGatewayInput`](crate::operation::detach_internet_gateway::DetachInternetGatewayInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::detach_internet_gateway::DetachInternetGatewayInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::detach_internet_gateway::DetachInternetGatewayInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::detach_internet_gateway::DetachInternetGatewayInput {
             dry_run: self.dry_run,

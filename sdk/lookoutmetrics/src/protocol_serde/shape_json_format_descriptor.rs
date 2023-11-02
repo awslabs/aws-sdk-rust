@@ -2,7 +2,7 @@
 pub fn ser_json_format_descriptor(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::JsonFormatDescriptor,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.file_compression {
         object.key("FileCompression").string(var_1.as_str());
     }

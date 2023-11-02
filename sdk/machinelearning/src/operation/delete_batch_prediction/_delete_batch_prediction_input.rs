@@ -44,7 +44,7 @@ impl DeleteBatchPredictionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteBatchPredictionInput`](crate::operation::delete_batch_prediction::DeleteBatchPredictionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_batch_prediction::DeleteBatchPredictionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_batch_prediction::DeleteBatchPredictionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_batch_prediction::DeleteBatchPredictionInput {
             batch_prediction_id: self.batch_prediction_id,

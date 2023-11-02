@@ -2,7 +2,7 @@
 pub fn ser_update_firewall_rule_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_firewall_rule::UpdateFirewallRuleInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.firewall_rule_group_id {
         object.key("FirewallRuleGroupId").string(var_1.as_str());
     }

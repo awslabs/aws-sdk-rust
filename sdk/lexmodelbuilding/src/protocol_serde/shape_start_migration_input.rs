@@ -2,7 +2,7 @@
 pub fn ser_start_migration_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_migration::StartMigrationInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.migration_strategy {
         object.key("migrationStrategy").string(var_1.as_str());
     }

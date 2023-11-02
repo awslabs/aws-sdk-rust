@@ -179,7 +179,8 @@ impl CreateDatasetGroupInputBuilder {
     /// Consumes the builder and constructs a [`CreateDatasetGroupInput`](crate::operation::create_dataset_group::CreateDatasetGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_dataset_group::CreateDatasetGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_dataset_group::CreateDatasetGroupInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_dataset_group::CreateDatasetGroupInput {
             dataset_group_name: self.dataset_group_name,
             domain: self.domain,

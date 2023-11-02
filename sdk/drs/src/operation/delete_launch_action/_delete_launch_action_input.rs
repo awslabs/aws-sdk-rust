@@ -66,7 +66,8 @@ impl DeleteLaunchActionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteLaunchActionInput`](crate::operation::delete_launch_action::DeleteLaunchActionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_launch_action::DeleteLaunchActionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_launch_action::DeleteLaunchActionInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::delete_launch_action::DeleteLaunchActionInput {
             resource_id: self.resource_id,
             action_id: self.action_id,

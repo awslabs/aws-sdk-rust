@@ -160,7 +160,7 @@ impl CreateTimelineEventInputBuilder {
     /// Consumes the builder and constructs a [`CreateTimelineEventInput`](crate::operation::create_timeline_event::CreateTimelineEventInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_timeline_event::CreateTimelineEventInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_timeline_event::CreateTimelineEventInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_timeline_event::CreateTimelineEventInput {
             client_token: self.client_token,

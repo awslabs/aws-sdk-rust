@@ -51,7 +51,7 @@ impl DeleteOrganizationalUnitInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_organizational_unit::DeleteOrganizationalUnitInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_organizational_unit::DeleteOrganizationalUnitInput {
             organizational_unit_id: self.organizational_unit_id,

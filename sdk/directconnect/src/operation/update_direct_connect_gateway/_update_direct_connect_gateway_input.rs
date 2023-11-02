@@ -68,7 +68,7 @@ impl UpdateDirectConnectGatewayInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_direct_connect_gateway::UpdateDirectConnectGatewayInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_direct_connect_gateway::UpdateDirectConnectGatewayInput {
             direct_connect_gateway_id: self.direct_connect_gateway_id,

@@ -78,7 +78,7 @@ impl AddRoleToInstanceProfileInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_role_to_instance_profile::AddRoleToInstanceProfileInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::add_role_to_instance_profile::AddRoleToInstanceProfileInput {
             instance_profile_name: self.instance_profile_name,

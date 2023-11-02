@@ -103,7 +103,7 @@ impl CreateTemplateShareInputBuilder {
     /// Consumes the builder and constructs a [`CreateTemplateShareInput`](crate::operation::create_template_share::CreateTemplateShareInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_template_share::CreateTemplateShareInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_template_share::CreateTemplateShareInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_template_share::CreateTemplateShareInput {
             template_arn: self.template_arn,

@@ -132,7 +132,7 @@ impl DeregisterPackageVersionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_package_version::DeregisterPackageVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::deregister_package_version::DeregisterPackageVersionInput {
             owner_account: self.owner_account,

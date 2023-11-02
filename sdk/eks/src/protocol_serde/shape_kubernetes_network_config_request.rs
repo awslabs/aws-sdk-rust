@@ -2,7 +2,7 @@
 pub fn ser_kubernetes_network_config_request(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::KubernetesNetworkConfigRequest,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.service_ipv4_cidr {
         object.key("serviceIpv4Cidr").string(var_1.as_str());
     }

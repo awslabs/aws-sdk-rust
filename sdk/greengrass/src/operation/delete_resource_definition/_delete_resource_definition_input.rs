@@ -46,7 +46,7 @@ impl DeleteResourceDefinitionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_resource_definition::DeleteResourceDefinitionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_resource_definition::DeleteResourceDefinitionInput {
             resource_definition_id: self.resource_definition_id,

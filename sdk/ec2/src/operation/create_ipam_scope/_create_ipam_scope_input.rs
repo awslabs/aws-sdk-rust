@@ -136,7 +136,7 @@ impl CreateIpamScopeInputBuilder {
     /// Consumes the builder and constructs a [`CreateIpamScopeInput`](crate::operation::create_ipam_scope::CreateIpamScopeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_ipam_scope::CreateIpamScopeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_ipam_scope::CreateIpamScopeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_ipam_scope::CreateIpamScopeInput {
             dry_run: self.dry_run,
             ipam_id: self.ipam_id,

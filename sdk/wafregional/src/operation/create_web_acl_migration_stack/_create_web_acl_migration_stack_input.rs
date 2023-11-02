@@ -115,7 +115,7 @@ impl CreateWebAclMigrationStackInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_web_acl_migration_stack::CreateWebAclMigrationStackInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_web_acl_migration_stack::CreateWebAclMigrationStackInput {
             web_acl_id: self.web_acl_id,

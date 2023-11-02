@@ -117,28 +117,28 @@ impl BatchGetFindingsErrorBuilder {
     /// - [`finding_id`](crate::types::builders::BatchGetFindingsErrorBuilder::finding_id)
     /// - [`error_code`](crate::types::builders::BatchGetFindingsErrorBuilder::error_code)
     /// - [`message`](crate::types::builders::BatchGetFindingsErrorBuilder::message)
-    pub fn build(self) -> ::std::result::Result<crate::types::BatchGetFindingsError, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::BatchGetFindingsError, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::BatchGetFindingsError {
             scan_name: self.scan_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "scan_name",
                     "scan_name was not specified but it is required when building BatchGetFindingsError",
                 )
             })?,
             finding_id: self.finding_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "finding_id",
                     "finding_id was not specified but it is required when building BatchGetFindingsError",
                 )
             })?,
             error_code: self.error_code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "error_code",
                     "error_code was not specified but it is required when building BatchGetFindingsError",
                 )
             })?,
             message: self.message.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "message",
                     "message was not specified but it is required when building BatchGetFindingsError",
                 )

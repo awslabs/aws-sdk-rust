@@ -2,7 +2,7 @@
 pub fn ser_asset(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Asset,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.ground_truth_manifest {
         #[allow(unused_mut)]
         let mut object_2 = object.key("GroundTruthManifest").start_object();

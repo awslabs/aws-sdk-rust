@@ -2,7 +2,7 @@
 pub fn ser_run_command_parameters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RunCommandParameters,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("RunCommandTargets").start_array();
         for item_2 in &input.run_command_targets {

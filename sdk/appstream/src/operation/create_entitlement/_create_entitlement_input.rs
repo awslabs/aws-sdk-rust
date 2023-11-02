@@ -138,7 +138,7 @@ impl CreateEntitlementInputBuilder {
     /// Consumes the builder and constructs a [`CreateEntitlementInput`](crate::operation::create_entitlement::CreateEntitlementInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_entitlement::CreateEntitlementInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_entitlement::CreateEntitlementInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_entitlement::CreateEntitlementInput {
             name: self.name,
             stack_name: self.stack_name,

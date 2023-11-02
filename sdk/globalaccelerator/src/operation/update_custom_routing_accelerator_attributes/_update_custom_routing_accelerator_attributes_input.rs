@@ -125,7 +125,7 @@ impl UpdateCustomRoutingAcceleratorAttributesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_custom_routing_accelerator_attributes::UpdateCustomRoutingAcceleratorAttributesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::update_custom_routing_accelerator_attributes::UpdateCustomRoutingAcceleratorAttributesInput {

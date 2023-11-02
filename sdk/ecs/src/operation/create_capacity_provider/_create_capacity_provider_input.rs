@@ -145,8 +145,10 @@ impl CreateCapacityProviderInputBuilder {
     /// Consumes the builder and constructs a [`CreateCapacityProviderInput`](crate::operation::create_capacity_provider::CreateCapacityProviderInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_capacity_provider::CreateCapacityProviderInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::create_capacity_provider::CreateCapacityProviderInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::create_capacity_provider::CreateCapacityProviderInput {
             name: self.name,
             auto_scaling_group_provider: self.auto_scaling_group_provider,

@@ -46,10 +46,10 @@ impl RedshiftServerlessStorageBuilder {
     /// Consumes the builder and constructs a [`RedshiftServerlessStorage`](crate::types::RedshiftServerlessStorage).
     /// This method will fail if any of the following fields are not set:
     /// - [`workgroup_name`](crate::types::builders::RedshiftServerlessStorageBuilder::workgroup_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::RedshiftServerlessStorage, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RedshiftServerlessStorage, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RedshiftServerlessStorage {
             workgroup_name: self.workgroup_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "workgroup_name",
                     "workgroup_name was not specified but it is required when building RedshiftServerlessStorage",
                 )

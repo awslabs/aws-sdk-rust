@@ -66,8 +66,10 @@ impl RegisterTransitGatewayInputBuilder {
     /// Consumes the builder and constructs a [`RegisterTransitGatewayInput`](crate::operation::register_transit_gateway::RegisterTransitGatewayInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::register_transit_gateway::RegisterTransitGatewayInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::register_transit_gateway::RegisterTransitGatewayInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::register_transit_gateway::RegisterTransitGatewayInput {
             global_network_id: self.global_network_id,
             transit_gateway_arn: self.transit_gateway_arn,

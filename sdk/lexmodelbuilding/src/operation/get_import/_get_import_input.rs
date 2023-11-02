@@ -42,7 +42,7 @@ impl GetImportInputBuilder {
         &self.import_id
     }
     /// Consumes the builder and constructs a [`GetImportInput`](crate::operation::get_import::GetImportInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_import::GetImportInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_import::GetImportInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_import::GetImportInput { import_id: self.import_id })
     }
 }

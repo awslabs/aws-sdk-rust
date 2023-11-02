@@ -202,16 +202,16 @@ impl WorkflowExecutionConfigurationBuilder {
     /// - [`task_start_to_close_timeout`](crate::types::builders::WorkflowExecutionConfigurationBuilder::task_start_to_close_timeout)
     /// - [`execution_start_to_close_timeout`](crate::types::builders::WorkflowExecutionConfigurationBuilder::execution_start_to_close_timeout)
     /// - [`child_policy`](crate::types::builders::WorkflowExecutionConfigurationBuilder::child_policy)
-    pub fn build(self) -> ::std::result::Result<crate::types::WorkflowExecutionConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::WorkflowExecutionConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::WorkflowExecutionConfiguration {
             task_start_to_close_timeout: self.task_start_to_close_timeout.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "task_start_to_close_timeout",
                     "task_start_to_close_timeout was not specified but it is required when building WorkflowExecutionConfiguration",
                 )
             })?,
             execution_start_to_close_timeout: self.execution_start_to_close_timeout.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "execution_start_to_close_timeout",
                     "execution_start_to_close_timeout was not specified but it is required when building WorkflowExecutionConfiguration",
                 )
@@ -219,7 +219,7 @@ impl WorkflowExecutionConfigurationBuilder {
             task_list: self.task_list,
             task_priority: self.task_priority,
             child_policy: self.child_policy.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "child_policy",
                     "child_policy was not specified but it is required when building WorkflowExecutionConfiguration",
                 )

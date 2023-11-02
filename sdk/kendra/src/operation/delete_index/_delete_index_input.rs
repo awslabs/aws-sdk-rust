@@ -42,7 +42,7 @@ impl DeleteIndexInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`DeleteIndexInput`](crate::operation::delete_index::DeleteIndexInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_index::DeleteIndexInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_index::DeleteIndexInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_index::DeleteIndexInput { id: self.id })
     }
 }

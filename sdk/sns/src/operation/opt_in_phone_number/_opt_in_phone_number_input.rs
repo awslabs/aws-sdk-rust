@@ -45,7 +45,7 @@ impl OptInPhoneNumberInputBuilder {
     /// Consumes the builder and constructs a [`OptInPhoneNumberInput`](crate::operation::opt_in_phone_number::OptInPhoneNumberInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::opt_in_phone_number::OptInPhoneNumberInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::opt_in_phone_number::OptInPhoneNumberInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::opt_in_phone_number::OptInPhoneNumberInput {
             phone_number: self.phone_number,
         })

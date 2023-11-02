@@ -96,7 +96,7 @@ impl ListTrackerConsumersInputBuilder {
     /// Consumes the builder and constructs a [`ListTrackerConsumersInput`](crate::operation::list_tracker_consumers::ListTrackerConsumersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_tracker_consumers::ListTrackerConsumersInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_tracker_consumers::ListTrackerConsumersInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_tracker_consumers::ListTrackerConsumersInput {
             tracker_name: self.tracker_name,

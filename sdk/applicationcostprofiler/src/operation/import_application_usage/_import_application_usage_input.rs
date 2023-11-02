@@ -44,8 +44,10 @@ impl ImportApplicationUsageInputBuilder {
     /// Consumes the builder and constructs a [`ImportApplicationUsageInput`](crate::operation::import_application_usage::ImportApplicationUsageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::import_application_usage::ImportApplicationUsageInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::import_application_usage::ImportApplicationUsageInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::import_application_usage::ImportApplicationUsageInput {
             source_s3_location: self.source_s3_location,
         })

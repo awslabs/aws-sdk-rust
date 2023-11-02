@@ -109,10 +109,10 @@ impl OpenIdConnectConfigBuilder {
     /// Consumes the builder and constructs a [`OpenIdConnectConfig`](crate::types::OpenIdConnectConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`issuer`](crate::types::builders::OpenIdConnectConfigBuilder::issuer)
-    pub fn build(self) -> ::std::result::Result<crate::types::OpenIdConnectConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::OpenIdConnectConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::OpenIdConnectConfig {
             issuer: self.issuer.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "issuer",
                     "issuer was not specified but it is required when building OpenIdConnectConfig",
                 )

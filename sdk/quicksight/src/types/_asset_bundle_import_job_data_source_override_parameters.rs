@@ -153,10 +153,10 @@ impl AssetBundleImportJobDataSourceOverrideParametersBuilder {
     /// - [`data_source_id`](crate::types::builders::AssetBundleImportJobDataSourceOverrideParametersBuilder::data_source_id)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::AssetBundleImportJobDataSourceOverrideParameters, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::AssetBundleImportJobDataSourceOverrideParameters, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AssetBundleImportJobDataSourceOverrideParameters {
             data_source_id: self.data_source_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_source_id",
                     "data_source_id was not specified but it is required when building AssetBundleImportJobDataSourceOverrideParameters",
                 )

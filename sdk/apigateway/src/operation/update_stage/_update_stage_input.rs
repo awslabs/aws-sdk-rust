@@ -94,7 +94,7 @@ impl UpdateStageInputBuilder {
         &self.patch_operations
     }
     /// Consumes the builder and constructs a [`UpdateStageInput`](crate::operation::update_stage::UpdateStageInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_stage::UpdateStageInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_stage::UpdateStageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_stage::UpdateStageInput {
             rest_api_id: self.rest_api_id,
             stage_name: self.stage_name,

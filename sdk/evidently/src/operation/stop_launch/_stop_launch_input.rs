@@ -106,7 +106,7 @@ impl StopLaunchInputBuilder {
         &self.reason
     }
     /// Consumes the builder and constructs a [`StopLaunchInput`](crate::operation::stop_launch::StopLaunchInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::stop_launch::StopLaunchInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_launch::StopLaunchInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_launch::StopLaunchInput {
             project: self.project,
             launch: self.launch,

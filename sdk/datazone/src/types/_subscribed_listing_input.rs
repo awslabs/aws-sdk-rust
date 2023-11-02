@@ -46,10 +46,10 @@ impl SubscribedListingInputBuilder {
     /// Consumes the builder and constructs a [`SubscribedListingInput`](crate::types::SubscribedListingInput).
     /// This method will fail if any of the following fields are not set:
     /// - [`identifier`](crate::types::builders::SubscribedListingInputBuilder::identifier)
-    pub fn build(self) -> ::std::result::Result<crate::types::SubscribedListingInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SubscribedListingInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SubscribedListingInput {
             identifier: self.identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "identifier",
                     "identifier was not specified but it is required when building SubscribedListingInput",
                 )

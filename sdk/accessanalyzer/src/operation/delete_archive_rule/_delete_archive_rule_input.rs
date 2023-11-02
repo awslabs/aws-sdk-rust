@@ -88,7 +88,7 @@ impl DeleteArchiveRuleInputBuilder {
     /// Consumes the builder and constructs a [`DeleteArchiveRuleInput`](crate::operation::delete_archive_rule::DeleteArchiveRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_archive_rule::DeleteArchiveRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_archive_rule::DeleteArchiveRuleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_archive_rule::DeleteArchiveRuleInput {
             analyzer_name: self.analyzer_name,
             rule_name: self.rule_name,

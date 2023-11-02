@@ -95,17 +95,17 @@ impl ImageRepositoryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`image_identifier`](crate::types::builders::ImageRepositoryBuilder::image_identifier)
     /// - [`image_repository_type`](crate::types::builders::ImageRepositoryBuilder::image_repository_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::ImageRepository, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ImageRepository, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ImageRepository {
             image_identifier: self.image_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "image_identifier",
                     "image_identifier was not specified but it is required when building ImageRepository",
                 )
             })?,
             image_configuration: self.image_configuration,
             image_repository_type: self.image_repository_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "image_repository_type",
                     "image_repository_type was not specified but it is required when building ImageRepository",
                 )

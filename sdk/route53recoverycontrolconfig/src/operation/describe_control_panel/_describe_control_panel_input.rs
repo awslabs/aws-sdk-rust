@@ -44,7 +44,7 @@ impl DescribeControlPanelInputBuilder {
     /// Consumes the builder and constructs a [`DescribeControlPanelInput`](crate::operation::describe_control_panel::DescribeControlPanelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_control_panel::DescribeControlPanelInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_control_panel::DescribeControlPanelInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_control_panel::DescribeControlPanelInput {
             control_panel_arn: self.control_panel_arn,

@@ -2,7 +2,7 @@
 pub fn ser_ecs_inference_accelerator_override(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EcsInferenceAcceleratorOverride,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.device_name {
         object.key("deviceName").string(var_1.as_str());
     }

@@ -87,8 +87,10 @@ impl ConfirmProductInstanceInputBuilder {
     /// Consumes the builder and constructs a [`ConfirmProductInstanceInput`](crate::operation::confirm_product_instance::ConfirmProductInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::confirm_product_instance::ConfirmProductInstanceInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::confirm_product_instance::ConfirmProductInstanceInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::confirm_product_instance::ConfirmProductInstanceInput {
             instance_id: self.instance_id,
             product_code: self.product_code,

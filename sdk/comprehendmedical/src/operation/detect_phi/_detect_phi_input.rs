@@ -42,7 +42,7 @@ impl DetectPhiInputBuilder {
         &self.text
     }
     /// Consumes the builder and constructs a [`DetectPhiInput`](crate::operation::detect_phi::DetectPhiInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::detect_phi::DetectPhiInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::detect_phi::DetectPhiInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::detect_phi::DetectPhiInput { text: self.text })
     }
 }

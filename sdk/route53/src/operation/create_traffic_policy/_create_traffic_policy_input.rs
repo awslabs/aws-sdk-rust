@@ -88,7 +88,7 @@ impl CreateTrafficPolicyInputBuilder {
     /// Consumes the builder and constructs a [`CreateTrafficPolicyInput`](crate::operation::create_traffic_policy::CreateTrafficPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_traffic_policy::CreateTrafficPolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_traffic_policy::CreateTrafficPolicyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_traffic_policy::CreateTrafficPolicyInput {
             name: self.name,

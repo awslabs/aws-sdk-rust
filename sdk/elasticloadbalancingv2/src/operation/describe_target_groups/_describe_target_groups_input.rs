@@ -143,7 +143,7 @@ impl DescribeTargetGroupsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeTargetGroupsInput`](crate::operation::describe_target_groups::DescribeTargetGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_target_groups::DescribeTargetGroupsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_target_groups::DescribeTargetGroupsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_target_groups::DescribeTargetGroupsInput {
             load_balancer_arn: self.load_balancer_arn,

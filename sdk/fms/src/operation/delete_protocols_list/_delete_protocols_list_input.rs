@@ -44,7 +44,7 @@ impl DeleteProtocolsListInputBuilder {
     /// Consumes the builder and constructs a [`DeleteProtocolsListInput`](crate::operation::delete_protocols_list::DeleteProtocolsListInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_protocols_list::DeleteProtocolsListInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_protocols_list::DeleteProtocolsListInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_protocols_list::DeleteProtocolsListInput { list_id: self.list_id })
     }

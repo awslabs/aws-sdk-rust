@@ -78,10 +78,10 @@ impl TemplateSsmDocumentDetailsBuilder {
     /// Consumes the builder and constructs a [`TemplateSsmDocumentDetails`](crate::types::TemplateSsmDocumentDetails).
     /// This method will fail if any of the following fields are not set:
     /// - [`document_name`](crate::types::builders::TemplateSsmDocumentDetailsBuilder::document_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::TemplateSsmDocumentDetails, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TemplateSsmDocumentDetails, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TemplateSsmDocumentDetails {
             document_name: self.document_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "document_name",
                     "document_name was not specified but it is required when building TemplateSsmDocumentDetails",
                 )

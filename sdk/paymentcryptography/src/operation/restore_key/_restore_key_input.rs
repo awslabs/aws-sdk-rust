@@ -42,7 +42,7 @@ impl RestoreKeyInputBuilder {
         &self.key_identifier
     }
     /// Consumes the builder and constructs a [`RestoreKeyInput`](crate::operation::restore_key::RestoreKeyInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::restore_key::RestoreKeyInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::restore_key::RestoreKeyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::restore_key::RestoreKeyInput {
             key_identifier: self.key_identifier,
         })

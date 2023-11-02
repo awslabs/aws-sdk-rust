@@ -66,7 +66,7 @@ impl ListOrganizationServiceAccessStatusInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_organization_service_access_status::ListOrganizationServiceAccessStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_organization_service_access_status::ListOrganizationServiceAccessStatusInput {

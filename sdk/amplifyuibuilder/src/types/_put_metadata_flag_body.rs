@@ -46,10 +46,10 @@ impl PutMetadataFlagBodyBuilder {
     /// Consumes the builder and constructs a [`PutMetadataFlagBody`](crate::types::PutMetadataFlagBody).
     /// This method will fail if any of the following fields are not set:
     /// - [`new_value`](crate::types::builders::PutMetadataFlagBodyBuilder::new_value)
-    pub fn build(self) -> ::std::result::Result<crate::types::PutMetadataFlagBody, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PutMetadataFlagBody, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PutMetadataFlagBody {
             new_value: self.new_value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "new_value",
                     "new_value was not specified but it is required when building PutMetadataFlagBody",
                 )

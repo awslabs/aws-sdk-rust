@@ -103,7 +103,7 @@ where
 pub fn ser_maintenance_window_run_command_parameters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MaintenanceWindowRunCommandParameters,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.comment {
         object.key("Comment").string(var_1.as_str());
     }

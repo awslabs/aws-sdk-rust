@@ -93,22 +93,22 @@ impl AuroraPostgreSqlParametersBuilder {
     /// - [`host`](crate::types::builders::AuroraPostgreSqlParametersBuilder::host)
     /// - [`port`](crate::types::builders::AuroraPostgreSqlParametersBuilder::port)
     /// - [`database`](crate::types::builders::AuroraPostgreSqlParametersBuilder::database)
-    pub fn build(self) -> ::std::result::Result<crate::types::AuroraPostgreSqlParameters, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AuroraPostgreSqlParameters, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AuroraPostgreSqlParameters {
             host: self.host.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "host",
                     "host was not specified but it is required when building AuroraPostgreSqlParameters",
                 )
             })?,
             port: self.port.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "port",
                     "port was not specified but it is required when building AuroraPostgreSqlParameters",
                 )
             })?,
             database: self.database.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "database",
                     "database was not specified but it is required when building AuroraPostgreSqlParameters",
                 )

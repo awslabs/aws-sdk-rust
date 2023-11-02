@@ -2,7 +2,7 @@
 pub fn ser_specifications(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Specifications,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("slotTypeId").string(input.slot_type_id.as_str());
     }

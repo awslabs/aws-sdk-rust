@@ -108,7 +108,7 @@ impl SearchContentInputBuilder {
     /// Consumes the builder and constructs a [`SearchContentInput`](crate::operation::search_content::SearchContentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::search_content::SearchContentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::search_content::SearchContentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_content::SearchContentInput {
             next_token: self.next_token,
             max_results: self.max_results,

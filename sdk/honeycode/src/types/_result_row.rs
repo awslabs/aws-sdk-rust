@@ -72,11 +72,11 @@ impl ResultRowBuilder {
     /// Consumes the builder and constructs a [`ResultRow`](crate::types::ResultRow).
     /// This method will fail if any of the following fields are not set:
     /// - [`data_items`](crate::types::builders::ResultRowBuilder::data_items)
-    pub fn build(self) -> ::std::result::Result<crate::types::ResultRow, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ResultRow, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ResultRow {
             row_id: self.row_id,
             data_items: self.data_items.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_items",
                     "data_items was not specified but it is required when building ResultRow",
                 )

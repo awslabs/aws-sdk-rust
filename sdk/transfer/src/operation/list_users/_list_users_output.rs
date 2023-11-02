@@ -111,17 +111,17 @@ impl ListUsersOutputBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`server_id`](crate::operation::list_users::builders::ListUsersOutputBuilder::server_id)
     /// - [`users`](crate::operation::list_users::builders::ListUsersOutputBuilder::users)
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_users::ListUsersOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_users::ListUsersOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_users::ListUsersOutput {
             next_token: self.next_token,
             server_id: self.server_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "server_id",
                     "server_id was not specified but it is required when building ListUsersOutput",
                 )
             })?,
             users: self.users.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "users",
                     "users was not specified but it is required when building ListUsersOutput",
                 )

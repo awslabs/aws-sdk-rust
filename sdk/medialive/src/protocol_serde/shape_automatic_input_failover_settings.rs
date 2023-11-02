@@ -2,7 +2,7 @@
 pub fn ser_automatic_input_failover_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AutomaticInputFailoverSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.error_clear_time_msec {
         object.key("errorClearTimeMsec").number(
             #[allow(clippy::useless_conversion)]

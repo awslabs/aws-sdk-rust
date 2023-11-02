@@ -110,7 +110,7 @@ impl DescribeScalingPlanResourcesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_scaling_plan_resources::DescribeScalingPlanResourcesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_scaling_plan_resources::DescribeScalingPlanResourcesInput {
             scaling_plan_name: self.scaling_plan_name,

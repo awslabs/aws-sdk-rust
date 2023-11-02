@@ -347,8 +347,10 @@ impl DescribeSecurityGroupsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeSecurityGroupsInput`](crate::operation::describe_security_groups::DescribeSecurityGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_security_groups::DescribeSecurityGroupsInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::describe_security_groups::DescribeSecurityGroupsInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::describe_security_groups::DescribeSecurityGroupsInput {
             filters: self.filters,
             group_ids: self.group_ids,

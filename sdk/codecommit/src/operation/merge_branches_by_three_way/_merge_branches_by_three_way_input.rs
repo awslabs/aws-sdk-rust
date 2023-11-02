@@ -258,7 +258,7 @@ impl MergeBranchesByThreeWayInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::merge_branches_by_three_way::MergeBranchesByThreeWayInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::merge_branches_by_three_way::MergeBranchesByThreeWayInput {
             repository_name: self.repository_name,

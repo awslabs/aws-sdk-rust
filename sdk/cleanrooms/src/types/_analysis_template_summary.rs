@@ -257,58 +257,58 @@ impl AnalysisTemplateSummaryBuilder {
     /// - [`membership_id`](crate::types::builders::AnalysisTemplateSummaryBuilder::membership_id)
     /// - [`collaboration_arn`](crate::types::builders::AnalysisTemplateSummaryBuilder::collaboration_arn)
     /// - [`collaboration_id`](crate::types::builders::AnalysisTemplateSummaryBuilder::collaboration_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::AnalysisTemplateSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AnalysisTemplateSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AnalysisTemplateSummary {
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building AnalysisTemplateSummary",
                 )
             })?,
             create_time: self.create_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "create_time",
                     "create_time was not specified but it is required when building AnalysisTemplateSummary",
                 )
             })?,
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building AnalysisTemplateSummary",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building AnalysisTemplateSummary",
                 )
             })?,
             update_time: self.update_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "update_time",
                     "update_time was not specified but it is required when building AnalysisTemplateSummary",
                 )
             })?,
             membership_arn: self.membership_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "membership_arn",
                     "membership_arn was not specified but it is required when building AnalysisTemplateSummary",
                 )
             })?,
             membership_id: self.membership_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "membership_id",
                     "membership_id was not specified but it is required when building AnalysisTemplateSummary",
                 )
             })?,
             collaboration_arn: self.collaboration_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "collaboration_arn",
                     "collaboration_arn was not specified but it is required when building AnalysisTemplateSummary",
                 )
             })?,
             collaboration_id: self.collaboration_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "collaboration_id",
                     "collaboration_id was not specified but it is required when building AnalysisTemplateSummary",
                 )

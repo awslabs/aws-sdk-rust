@@ -99,7 +99,7 @@ impl ListRobotsInputBuilder {
         &self.filters
     }
     /// Consumes the builder and constructs a [`ListRobotsInput`](crate::operation::list_robots::ListRobotsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_robots::ListRobotsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_robots::ListRobotsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_robots::ListRobotsInput {
             next_token: self.next_token,
             max_results: self.max_results,

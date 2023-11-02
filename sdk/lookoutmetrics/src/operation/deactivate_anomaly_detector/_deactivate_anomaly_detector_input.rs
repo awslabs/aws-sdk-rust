@@ -46,7 +46,7 @@ impl DeactivateAnomalyDetectorInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deactivate_anomaly_detector::DeactivateAnomalyDetectorInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::deactivate_anomaly_detector::DeactivateAnomalyDetectorInput {
             anomaly_detector_arn: self.anomaly_detector_arn,

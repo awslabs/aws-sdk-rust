@@ -73,7 +73,7 @@ impl DeregisterTargetsInputBuilder {
     /// Consumes the builder and constructs a [`DeregisterTargetsInput`](crate::operation::deregister_targets::DeregisterTargetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::deregister_targets::DeregisterTargetsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::deregister_targets::DeregisterTargetsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::deregister_targets::DeregisterTargetsInput {
             target_group_identifier: self.target_group_identifier,
             targets: self.targets,

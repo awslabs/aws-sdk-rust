@@ -167,7 +167,7 @@ impl AllowCustomRoutingTrafficInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::allow_custom_routing_traffic::AllowCustomRoutingTrafficInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::allow_custom_routing_traffic::AllowCustomRoutingTrafficInput {
             endpoint_group_arn: self.endpoint_group_arn,

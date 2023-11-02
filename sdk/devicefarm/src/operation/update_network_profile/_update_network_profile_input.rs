@@ -275,7 +275,7 @@ impl UpdateNetworkProfileInputBuilder {
     /// Consumes the builder and constructs a [`UpdateNetworkProfileInput`](crate::operation::update_network_profile::UpdateNetworkProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_network_profile::UpdateNetworkProfileInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_network_profile::UpdateNetworkProfileInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_network_profile::UpdateNetworkProfileInput {
             arn: self.arn,

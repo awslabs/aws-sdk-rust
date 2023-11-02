@@ -44,7 +44,8 @@ impl GetConfiguredTableInputBuilder {
     /// Consumes the builder and constructs a [`GetConfiguredTableInput`](crate::operation::get_configured_table::GetConfiguredTableInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_configured_table::GetConfiguredTableInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_configured_table::GetConfiguredTableInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::get_configured_table::GetConfiguredTableInput {
             configured_table_identifier: self.configured_table_identifier,
         })

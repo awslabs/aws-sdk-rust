@@ -81,7 +81,7 @@ impl DeleteImportedKeyMaterialInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_imported_key_material::DeleteImportedKeyMaterialInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_imported_key_material::DeleteImportedKeyMaterialInput { key_id: self.key_id })
     }

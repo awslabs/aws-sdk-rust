@@ -78,16 +78,16 @@ impl ExternalIdBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`issuer`](crate::types::builders::ExternalIdBuilder::issuer)
     /// - [`id`](crate::types::builders::ExternalIdBuilder::id)
-    pub fn build(self) -> ::std::result::Result<crate::types::ExternalId, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ExternalId, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ExternalId {
             issuer: self.issuer.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "issuer",
                     "issuer was not specified but it is required when building ExternalId",
                 )
             })?,
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building ExternalId",
                 )

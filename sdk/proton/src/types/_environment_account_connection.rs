@@ -287,58 +287,58 @@ impl EnvironmentAccountConnectionBuilder {
     /// - [`requested_at`](crate::types::builders::EnvironmentAccountConnectionBuilder::requested_at)
     /// - [`last_modified_at`](crate::types::builders::EnvironmentAccountConnectionBuilder::last_modified_at)
     /// - [`status`](crate::types::builders::EnvironmentAccountConnectionBuilder::status)
-    pub fn build(self) -> ::std::result::Result<crate::types::EnvironmentAccountConnection, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::EnvironmentAccountConnection, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EnvironmentAccountConnection {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building EnvironmentAccountConnection",
                 )
             })?,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building EnvironmentAccountConnection",
                 )
             })?,
             management_account_id: self.management_account_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "management_account_id",
                     "management_account_id was not specified but it is required when building EnvironmentAccountConnection",
                 )
             })?,
             environment_account_id: self.environment_account_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "environment_account_id",
                     "environment_account_id was not specified but it is required when building EnvironmentAccountConnection",
                 )
             })?,
             role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role_arn",
                     "role_arn was not specified but it is required when building EnvironmentAccountConnection",
                 )
             })?,
             environment_name: self.environment_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "environment_name",
                     "environment_name was not specified but it is required when building EnvironmentAccountConnection",
                 )
             })?,
             requested_at: self.requested_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "requested_at",
                     "requested_at was not specified but it is required when building EnvironmentAccountConnection",
                 )
             })?,
             last_modified_at: self.last_modified_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_modified_at",
                     "last_modified_at was not specified but it is required when building EnvironmentAccountConnection",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building EnvironmentAccountConnection",
                 )

@@ -2,7 +2,7 @@
 pub fn ser_error_handling_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ErrorHandlingConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.fail_on_first_destination_error {
         object.key("failOnFirstDestinationError").boolean(input.fail_on_first_destination_error);
     }

@@ -43,7 +43,7 @@ impl GetSuiteInputBuilder {
         &self.arn
     }
     /// Consumes the builder and constructs a [`GetSuiteInput`](crate::operation::get_suite::GetSuiteInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_suite::GetSuiteInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_suite::GetSuiteInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_suite::GetSuiteInput { arn: self.arn })
     }
 }

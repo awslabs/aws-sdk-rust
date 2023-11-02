@@ -2,7 +2,7 @@
 pub fn ser_scope(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Scope,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.compliance_resource_types {
         let mut array_2 = object.key("ComplianceResourceTypes").start_array();
         for item_3 in var_1 {

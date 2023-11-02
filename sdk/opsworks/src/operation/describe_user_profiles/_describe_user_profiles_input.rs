@@ -51,7 +51,7 @@ impl DescribeUserProfilesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeUserProfilesInput`](crate::operation::describe_user_profiles::DescribeUserProfilesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_user_profiles::DescribeUserProfilesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_user_profiles::DescribeUserProfilesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_user_profiles::DescribeUserProfilesInput {
             iam_user_arns: self.iam_user_arns,

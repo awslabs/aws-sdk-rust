@@ -122,7 +122,7 @@ impl AdminUpdateAuthEventFeedbackInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::admin_update_auth_event_feedback::AdminUpdateAuthEventFeedbackInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::admin_update_auth_event_feedback::AdminUpdateAuthEventFeedbackInput {
             user_pool_id: self.user_pool_id,

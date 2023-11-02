@@ -163,7 +163,7 @@ impl UpdateProtectionGroupInputBuilder {
     /// Consumes the builder and constructs a [`UpdateProtectionGroupInput`](crate::operation::update_protection_group::UpdateProtectionGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_protection_group::UpdateProtectionGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_protection_group::UpdateProtectionGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_protection_group::UpdateProtectionGroupInput {
             protection_group_id: self.protection_group_id,

@@ -132,7 +132,7 @@ impl ListStreamConsumersInputBuilder {
     /// Consumes the builder and constructs a [`ListStreamConsumersInput`](crate::operation::list_stream_consumers::ListStreamConsumersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_stream_consumers::ListStreamConsumersInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_stream_consumers::ListStreamConsumersInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_stream_consumers::ListStreamConsumersInput {
             stream_arn: self.stream_arn,

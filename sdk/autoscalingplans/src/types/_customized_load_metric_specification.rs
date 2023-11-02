@@ -153,23 +153,23 @@ impl CustomizedLoadMetricSpecificationBuilder {
     /// - [`metric_name`](crate::types::builders::CustomizedLoadMetricSpecificationBuilder::metric_name)
     /// - [`namespace`](crate::types::builders::CustomizedLoadMetricSpecificationBuilder::namespace)
     /// - [`statistic`](crate::types::builders::CustomizedLoadMetricSpecificationBuilder::statistic)
-    pub fn build(self) -> ::std::result::Result<crate::types::CustomizedLoadMetricSpecification, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CustomizedLoadMetricSpecification, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CustomizedLoadMetricSpecification {
             metric_name: self.metric_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "metric_name",
                     "metric_name was not specified but it is required when building CustomizedLoadMetricSpecification",
                 )
             })?,
             namespace: self.namespace.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "namespace",
                     "namespace was not specified but it is required when building CustomizedLoadMetricSpecification",
                 )
             })?,
             dimensions: self.dimensions,
             statistic: self.statistic.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "statistic",
                     "statistic was not specified but it is required when building CustomizedLoadMetricSpecification",
                 )

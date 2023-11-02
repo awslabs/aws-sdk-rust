@@ -66,7 +66,7 @@ impl RemoveTemplateActionInputBuilder {
     /// Consumes the builder and constructs a [`RemoveTemplateActionInput`](crate::operation::remove_template_action::RemoveTemplateActionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::remove_template_action::RemoveTemplateActionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::remove_template_action::RemoveTemplateActionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::remove_template_action::RemoveTemplateActionInput {
             launch_configuration_template_id: self.launch_configuration_template_id,

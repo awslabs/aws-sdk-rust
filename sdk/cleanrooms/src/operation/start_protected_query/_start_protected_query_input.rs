@@ -119,7 +119,7 @@ impl StartProtectedQueryInputBuilder {
     /// Consumes the builder and constructs a [`StartProtectedQueryInput`](crate::operation::start_protected_query::StartProtectedQueryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_protected_query::StartProtectedQueryInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::start_protected_query::StartProtectedQueryInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_protected_query::StartProtectedQueryInput {
             r#type: self.r#type,

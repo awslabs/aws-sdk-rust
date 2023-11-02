@@ -162,35 +162,35 @@ impl RoutingProfileQueueConfigSummaryBuilder {
     /// - [`queue_name`](crate::types::builders::RoutingProfileQueueConfigSummaryBuilder::queue_name)
     /// - [`priority`](crate::types::builders::RoutingProfileQueueConfigSummaryBuilder::priority)
     /// - [`channel`](crate::types::builders::RoutingProfileQueueConfigSummaryBuilder::channel)
-    pub fn build(self) -> ::std::result::Result<crate::types::RoutingProfileQueueConfigSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RoutingProfileQueueConfigSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RoutingProfileQueueConfigSummary {
             queue_id: self.queue_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "queue_id",
                     "queue_id was not specified but it is required when building RoutingProfileQueueConfigSummary",
                 )
             })?,
             queue_arn: self.queue_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "queue_arn",
                     "queue_arn was not specified but it is required when building RoutingProfileQueueConfigSummary",
                 )
             })?,
             queue_name: self.queue_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "queue_name",
                     "queue_name was not specified but it is required when building RoutingProfileQueueConfigSummary",
                 )
             })?,
             priority: self.priority.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "priority",
                     "priority was not specified but it is required when building RoutingProfileQueueConfigSummary",
                 )
             })?,
             delay: self.delay.unwrap_or_default(),
             channel: self.channel.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "channel",
                     "channel was not specified but it is required when building RoutingProfileQueueConfigSummary",
                 )

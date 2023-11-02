@@ -83,7 +83,7 @@ impl ListAlertsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListAlertsInput`](crate::operation::list_alerts::ListAlertsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_alerts::ListAlertsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_alerts::ListAlertsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_alerts::ListAlertsInput {
             anomaly_detector_arn: self.anomaly_detector_arn,
             next_token: self.next_token,

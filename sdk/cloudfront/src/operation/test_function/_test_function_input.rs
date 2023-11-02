@@ -117,7 +117,9 @@ impl TestFunctionInputBuilder {
         &self.event_object
     }
     /// Consumes the builder and constructs a [`TestFunctionInput`](crate::operation::test_function::TestFunctionInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::test_function::TestFunctionInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::test_function::TestFunctionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::test_function::TestFunctionInput {
             name: self.name,
             if_match: self.if_match,

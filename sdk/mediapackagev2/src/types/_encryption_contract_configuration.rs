@@ -173,16 +173,16 @@ impl EncryptionContractConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`preset_speke20_audio`](crate::types::builders::EncryptionContractConfigurationBuilder::preset_speke20_audio)
     /// - [`preset_speke20_video`](crate::types::builders::EncryptionContractConfigurationBuilder::preset_speke20_video)
-    pub fn build(self) -> ::std::result::Result<crate::types::EncryptionContractConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::EncryptionContractConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EncryptionContractConfiguration {
             preset_speke20_audio: self.preset_speke20_audio.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "preset_speke20_audio",
                     "preset_speke20_audio was not specified but it is required when building EncryptionContractConfiguration",
                 )
             })?,
             preset_speke20_video: self.preset_speke20_video.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "preset_speke20_video",
                     "preset_speke20_video was not specified but it is required when building EncryptionContractConfiguration",
                 )

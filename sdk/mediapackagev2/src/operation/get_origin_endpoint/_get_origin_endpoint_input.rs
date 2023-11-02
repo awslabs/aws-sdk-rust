@@ -88,7 +88,7 @@ impl GetOriginEndpointInputBuilder {
     /// Consumes the builder and constructs a [`GetOriginEndpointInput`](crate::operation::get_origin_endpoint::GetOriginEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_origin_endpoint::GetOriginEndpointInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_origin_endpoint::GetOriginEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_origin_endpoint::GetOriginEndpointInput {
             channel_group_name: self.channel_group_name,
             channel_name: self.channel_name,

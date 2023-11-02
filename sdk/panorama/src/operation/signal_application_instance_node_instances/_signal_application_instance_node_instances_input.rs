@@ -75,7 +75,7 @@ impl SignalApplicationInstanceNodeInstancesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesInput {

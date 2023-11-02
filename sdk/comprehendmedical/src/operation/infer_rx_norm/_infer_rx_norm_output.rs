@@ -108,10 +108,12 @@ impl InferRxNormOutputBuilder {
     /// Consumes the builder and constructs a [`InferRxNormOutput`](crate::operation::infer_rx_norm::InferRxNormOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`entities`](crate::operation::infer_rx_norm::builders::InferRxNormOutputBuilder::entities)
-    pub fn build(self) -> ::std::result::Result<crate::operation::infer_rx_norm::InferRxNormOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::infer_rx_norm::InferRxNormOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::infer_rx_norm::InferRxNormOutput {
             entities: self.entities.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "entities",
                     "entities was not specified but it is required when building InferRxNormOutput",
                 )

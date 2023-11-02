@@ -119,7 +119,7 @@ impl ConfirmDeviceInputBuilder {
     /// Consumes the builder and constructs a [`ConfirmDeviceInput`](crate::operation::confirm_device::ConfirmDeviceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::confirm_device::ConfirmDeviceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::confirm_device::ConfirmDeviceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::confirm_device::ConfirmDeviceInput {
             access_token: self.access_token,
             device_key: self.device_key,

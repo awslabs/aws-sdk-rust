@@ -46,7 +46,7 @@ impl GetSolNetworkPackageDescriptorInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorInput {

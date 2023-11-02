@@ -2,7 +2,7 @@
 pub fn ser_create_data_lake_exception_subscription_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_data_lake_exception_subscription::CreateDataLakeExceptionSubscriptionInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.exception_time_to_live {
         object.key("exceptionTimeToLive").number(
             #[allow(clippy::useless_conversion)]

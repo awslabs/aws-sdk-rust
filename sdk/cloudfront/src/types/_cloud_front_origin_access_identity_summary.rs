@@ -96,22 +96,22 @@ impl CloudFrontOriginAccessIdentitySummaryBuilder {
     /// - [`comment`](crate::types::builders::CloudFrontOriginAccessIdentitySummaryBuilder::comment)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::CloudFrontOriginAccessIdentitySummary, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::CloudFrontOriginAccessIdentitySummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CloudFrontOriginAccessIdentitySummary {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building CloudFrontOriginAccessIdentitySummary",
                 )
             })?,
             s3_canonical_user_id: self.s3_canonical_user_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "s3_canonical_user_id",
                     "s3_canonical_user_id was not specified but it is required when building CloudFrontOriginAccessIdentitySummary",
                 )
             })?,
             comment: self.comment.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "comment",
                     "comment was not specified but it is required when building CloudFrontOriginAccessIdentitySummary",
                 )

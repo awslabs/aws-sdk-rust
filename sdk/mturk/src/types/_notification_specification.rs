@@ -147,28 +147,28 @@ impl NotificationSpecificationBuilder {
     /// - [`transport`](crate::types::builders::NotificationSpecificationBuilder::transport)
     /// - [`version`](crate::types::builders::NotificationSpecificationBuilder::version)
     /// - [`event_types`](crate::types::builders::NotificationSpecificationBuilder::event_types)
-    pub fn build(self) -> ::std::result::Result<crate::types::NotificationSpecification, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::NotificationSpecification, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::NotificationSpecification {
             destination: self.destination.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "destination",
                     "destination was not specified but it is required when building NotificationSpecification",
                 )
             })?,
             transport: self.transport.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "transport",
                     "transport was not specified but it is required when building NotificationSpecification",
                 )
             })?,
             version: self.version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "version",
                     "version was not specified but it is required when building NotificationSpecification",
                 )
             })?,
             event_types: self.event_types.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "event_types",
                     "event_types was not specified but it is required when building NotificationSpecification",
                 )

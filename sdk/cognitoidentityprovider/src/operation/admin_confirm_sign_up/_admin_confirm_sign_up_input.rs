@@ -155,7 +155,7 @@ impl AdminConfirmSignUpInputBuilder {
     /// Consumes the builder and constructs a [`AdminConfirmSignUpInput`](crate::operation::admin_confirm_sign_up::AdminConfirmSignUpInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::admin_confirm_sign_up::AdminConfirmSignUpInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::admin_confirm_sign_up::AdminConfirmSignUpInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::admin_confirm_sign_up::AdminConfirmSignUpInput {
             user_pool_id: self.user_pool_id,

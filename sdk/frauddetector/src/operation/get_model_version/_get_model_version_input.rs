@@ -88,7 +88,7 @@ impl GetModelVersionInputBuilder {
     /// Consumes the builder and constructs a [`GetModelVersionInput`](crate::operation::get_model_version::GetModelVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_model_version::GetModelVersionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_model_version::GetModelVersionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_model_version::GetModelVersionInput {
             model_id: self.model_id,
             model_type: self.model_type,

@@ -160,34 +160,34 @@ impl ApplicationSummaryBuilder {
     /// - [`application_status`](crate::types::builders::ApplicationSummaryBuilder::application_status)
     /// - [`application_version_id`](crate::types::builders::ApplicationSummaryBuilder::application_version_id)
     /// - [`runtime_environment`](crate::types::builders::ApplicationSummaryBuilder::runtime_environment)
-    pub fn build(self) -> ::std::result::Result<crate::types::ApplicationSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ApplicationSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ApplicationSummary {
             application_name: self.application_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "application_name",
                     "application_name was not specified but it is required when building ApplicationSummary",
                 )
             })?,
             application_arn: self.application_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "application_arn",
                     "application_arn was not specified but it is required when building ApplicationSummary",
                 )
             })?,
             application_status: self.application_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "application_status",
                     "application_status was not specified but it is required when building ApplicationSummary",
                 )
             })?,
             application_version_id: self.application_version_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "application_version_id",
                     "application_version_id was not specified but it is required when building ApplicationSummary",
                 )
             })?,
             runtime_environment: self.runtime_environment.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "runtime_environment",
                     "runtime_environment was not specified but it is required when building ApplicationSummary",
                 )

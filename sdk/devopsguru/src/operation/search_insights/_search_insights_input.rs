@@ -129,7 +129,7 @@ impl SearchInsightsInputBuilder {
     /// Consumes the builder and constructs a [`SearchInsightsInput`](crate::operation::search_insights::SearchInsightsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::search_insights::SearchInsightsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::search_insights::SearchInsightsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_insights::SearchInsightsInput {
             start_time_range: self.start_time_range,
             filters: self.filters,

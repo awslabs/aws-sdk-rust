@@ -83,7 +83,7 @@ impl BatchCreateDelegationByAssessmentInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_create_delegation_by_assessment::BatchCreateDelegationByAssessmentInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::batch_create_delegation_by_assessment::BatchCreateDelegationByAssessmentInput {

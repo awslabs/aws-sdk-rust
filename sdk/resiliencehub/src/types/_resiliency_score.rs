@@ -72,11 +72,11 @@ impl ResiliencyScoreBuilder {
     /// Consumes the builder and constructs a [`ResiliencyScore`](crate::types::ResiliencyScore).
     /// This method will fail if any of the following fields are not set:
     /// - [`disruption_score`](crate::types::builders::ResiliencyScoreBuilder::disruption_score)
-    pub fn build(self) -> ::std::result::Result<crate::types::ResiliencyScore, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ResiliencyScore, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ResiliencyScore {
             score: self.score.unwrap_or_default(),
             disruption_score: self.disruption_score.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "disruption_score",
                     "disruption_score was not specified but it is required when building ResiliencyScore",
                 )

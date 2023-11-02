@@ -87,10 +87,10 @@ impl ListAliasesOutputBuilder {
     /// Consumes the builder and constructs a [`ListAliasesOutput`](crate::operation::list_aliases::ListAliasesOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`aliases`](crate::operation::list_aliases::builders::ListAliasesOutputBuilder::aliases)
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_aliases::ListAliasesOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_aliases::ListAliasesOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_aliases::ListAliasesOutput {
             aliases: self.aliases.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "aliases",
                     "aliases was not specified but it is required when building ListAliasesOutput",
                 )

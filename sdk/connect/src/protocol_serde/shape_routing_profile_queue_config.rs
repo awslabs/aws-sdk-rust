@@ -2,7 +2,7 @@
 pub fn ser_routing_profile_queue_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RoutingProfileQueueConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.queue_reference {
         #[allow(unused_mut)]
         let mut object_2 = object.key("QueueReference").start_object();

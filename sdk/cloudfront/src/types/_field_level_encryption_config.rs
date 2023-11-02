@@ -109,10 +109,10 @@ impl FieldLevelEncryptionConfigBuilder {
     /// Consumes the builder and constructs a [`FieldLevelEncryptionConfig`](crate::types::FieldLevelEncryptionConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`caller_reference`](crate::types::builders::FieldLevelEncryptionConfigBuilder::caller_reference)
-    pub fn build(self) -> ::std::result::Result<crate::types::FieldLevelEncryptionConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::FieldLevelEncryptionConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FieldLevelEncryptionConfig {
             caller_reference: self.caller_reference.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "caller_reference",
                     "caller_reference was not specified but it is required when building FieldLevelEncryptionConfig",
                 )

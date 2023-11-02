@@ -73,7 +73,7 @@ impl BatchUpdateUserInputBuilder {
     /// Consumes the builder and constructs a [`BatchUpdateUserInput`](crate::operation::batch_update_user::BatchUpdateUserInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_update_user::BatchUpdateUserInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::batch_update_user::BatchUpdateUserInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::batch_update_user::BatchUpdateUserInput {
             account_id: self.account_id,
             update_user_request_items: self.update_user_request_items,

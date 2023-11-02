@@ -42,7 +42,7 @@ impl DeleteMapInputBuilder {
         &self.map_name
     }
     /// Consumes the builder and constructs a [`DeleteMapInput`](crate::operation::delete_map::DeleteMapInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_map::DeleteMapInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_map::DeleteMapInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_map::DeleteMapInput { map_name: self.map_name })
     }
 }

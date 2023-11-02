@@ -43,7 +43,7 @@ impl GetBucketBundlesInputBuilder {
     /// Consumes the builder and constructs a [`GetBucketBundlesInput`](crate::operation::get_bucket_bundles::GetBucketBundlesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_bucket_bundles::GetBucketBundlesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_bucket_bundles::GetBucketBundlesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_bucket_bundles::GetBucketBundlesInput {
             include_inactive: self.include_inactive,
         })

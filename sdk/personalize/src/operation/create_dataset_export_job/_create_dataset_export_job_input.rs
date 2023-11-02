@@ -162,7 +162,7 @@ impl CreateDatasetExportJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_dataset_export_job::CreateDatasetExportJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_dataset_export_job::CreateDatasetExportJobInput {
             job_name: self.job_name,

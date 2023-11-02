@@ -64,7 +64,7 @@ impl GetIntentInputBuilder {
         &self.version
     }
     /// Consumes the builder and constructs a [`GetIntentInput`](crate::operation::get_intent::GetIntentInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_intent::GetIntentInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_intent::GetIntentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_intent::GetIntentInput {
             name: self.name,
             version: self.version,

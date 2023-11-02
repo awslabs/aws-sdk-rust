@@ -863,7 +863,7 @@ impl RunJobFlowInputBuilder {
         &self.ebs_root_volume_throughput
     }
     /// Consumes the builder and constructs a [`RunJobFlowInput`](crate::operation::run_job_flow::RunJobFlowInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::run_job_flow::RunJobFlowInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::run_job_flow::RunJobFlowInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::run_job_flow::RunJobFlowInput {
             name: self.name,
             log_uri: self.log_uri,

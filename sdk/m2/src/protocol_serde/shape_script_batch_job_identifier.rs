@@ -46,7 +46,7 @@ where
 pub fn ser_script_batch_job_identifier(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ScriptBatchJobIdentifier,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("scriptName").string(input.script_name.as_str());
     }

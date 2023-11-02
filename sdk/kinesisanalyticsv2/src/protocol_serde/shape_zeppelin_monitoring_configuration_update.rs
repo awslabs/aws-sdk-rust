@@ -2,7 +2,7 @@
 pub fn ser_zeppelin_monitoring_configuration_update(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ZeppelinMonitoringConfigurationUpdate,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("LogLevelUpdate").string(input.log_level_update.as_str());
     }

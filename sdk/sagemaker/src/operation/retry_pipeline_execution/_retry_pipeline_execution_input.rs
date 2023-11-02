@@ -87,8 +87,10 @@ impl RetryPipelineExecutionInputBuilder {
     /// Consumes the builder and constructs a [`RetryPipelineExecutionInput`](crate::operation::retry_pipeline_execution::RetryPipelineExecutionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::retry_pipeline_execution::RetryPipelineExecutionInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::retry_pipeline_execution::RetryPipelineExecutionInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::retry_pipeline_execution::RetryPipelineExecutionInput {
             pipeline_execution_arn: self.pipeline_execution_arn,
             client_request_token: self.client_request_token,

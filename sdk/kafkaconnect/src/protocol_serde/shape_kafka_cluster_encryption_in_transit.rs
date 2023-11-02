@@ -2,7 +2,7 @@
 pub fn ser_kafka_cluster_encryption_in_transit(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::KafkaClusterEncryptionInTransit,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("encryptionType").string(input.encryption_type.as_str());
     }

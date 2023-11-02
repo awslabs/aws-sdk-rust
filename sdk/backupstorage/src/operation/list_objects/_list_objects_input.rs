@@ -168,7 +168,7 @@ impl ListObjectsInputBuilder {
         &self.created_after
     }
     /// Consumes the builder and constructs a [`ListObjectsInput`](crate::operation::list_objects::ListObjectsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_objects::ListObjectsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_objects::ListObjectsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_objects::ListObjectsInput {
             storage_job_id: self.storage_job_id,
             starting_object_name: self.starting_object_name,

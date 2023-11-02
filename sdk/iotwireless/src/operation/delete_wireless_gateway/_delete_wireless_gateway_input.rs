@@ -44,7 +44,7 @@ impl DeleteWirelessGatewayInputBuilder {
     /// Consumes the builder and constructs a [`DeleteWirelessGatewayInput`](crate::operation::delete_wireless_gateway::DeleteWirelessGatewayInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_wireless_gateway::DeleteWirelessGatewayInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_wireless_gateway::DeleteWirelessGatewayInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_wireless_gateway::DeleteWirelessGatewayInput { id: self.id })
     }

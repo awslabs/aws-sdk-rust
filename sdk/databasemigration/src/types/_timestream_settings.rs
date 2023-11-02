@@ -134,22 +134,22 @@ impl TimestreamSettingsBuilder {
     /// - [`database_name`](crate::types::builders::TimestreamSettingsBuilder::database_name)
     /// - [`memory_duration`](crate::types::builders::TimestreamSettingsBuilder::memory_duration)
     /// - [`magnetic_duration`](crate::types::builders::TimestreamSettingsBuilder::magnetic_duration)
-    pub fn build(self) -> ::std::result::Result<crate::types::TimestreamSettings, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TimestreamSettings, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TimestreamSettings {
             database_name: self.database_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "database_name",
                     "database_name was not specified but it is required when building TimestreamSettings",
                 )
             })?,
             memory_duration: self.memory_duration.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "memory_duration",
                     "memory_duration was not specified but it is required when building TimestreamSettings",
                 )
             })?,
             magnetic_duration: self.magnetic_duration.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "magnetic_duration",
                     "magnetic_duration was not specified but it is required when building TimestreamSettings",
                 )

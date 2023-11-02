@@ -118,7 +118,8 @@ impl CreateSamplingRuleInputBuilder {
     /// Consumes the builder and constructs a [`CreateSamplingRuleInput`](crate::operation::create_sampling_rule::CreateSamplingRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_sampling_rule::CreateSamplingRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_sampling_rule::CreateSamplingRuleInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_sampling_rule::CreateSamplingRuleInput {
             sampling_rule: self.sampling_rule,
             tags: self.tags,

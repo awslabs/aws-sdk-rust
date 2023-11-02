@@ -110,10 +110,10 @@ impl EdgeConfigBuilder {
     /// Consumes the builder and constructs a [`EdgeConfig`](crate::types::EdgeConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`hub_device_arn`](crate::types::builders::EdgeConfigBuilder::hub_device_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::EdgeConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::EdgeConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EdgeConfig {
             hub_device_arn: self.hub_device_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "hub_device_arn",
                     "hub_device_arn was not specified but it is required when building EdgeConfig",
                 )

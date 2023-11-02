@@ -44,7 +44,8 @@ impl DeleteBaiduChannelInputBuilder {
     /// Consumes the builder and constructs a [`DeleteBaiduChannelInput`](crate::operation::delete_baidu_channel::DeleteBaiduChannelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_baidu_channel::DeleteBaiduChannelInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_baidu_channel::DeleteBaiduChannelInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::delete_baidu_channel::DeleteBaiduChannelInput {
             application_id: self.application_id,
         })

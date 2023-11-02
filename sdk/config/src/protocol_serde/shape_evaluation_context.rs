@@ -42,7 +42,7 @@ where
 pub fn ser_evaluation_context(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EvaluationContext,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.evaluation_context_identifier {
         object.key("EvaluationContextIdentifier").string(var_1.as_str());
     }

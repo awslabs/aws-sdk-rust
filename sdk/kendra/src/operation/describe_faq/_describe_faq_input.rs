@@ -64,7 +64,7 @@ impl DescribeFaqInputBuilder {
         &self.index_id
     }
     /// Consumes the builder and constructs a [`DescribeFaqInput`](crate::operation::describe_faq::DescribeFaqInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_faq::DescribeFaqInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_faq::DescribeFaqInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_faq::DescribeFaqInput {
             id: self.id,
             index_id: self.index_id,

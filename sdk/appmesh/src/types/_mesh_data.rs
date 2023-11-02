@@ -112,10 +112,10 @@ impl MeshDataBuilder {
     /// Consumes the builder and constructs a [`MeshData`](crate::types::MeshData).
     /// This method will fail if any of the following fields are not set:
     /// - [`mesh_name`](crate::types::builders::MeshDataBuilder::mesh_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::MeshData, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::MeshData, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MeshData {
             mesh_name: self.mesh_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "mesh_name",
                     "mesh_name was not specified but it is required when building MeshData",
                 )

@@ -12,7 +12,7 @@ pub struct UploadReadSetPartInput {
     /// <p> The number of the part being uploaded. </p>
     pub part_number: ::std::option::Option<i32>,
     /// <p> The read set data to upload for a part. </p>
-    pub payload: ::aws_smithy_http::byte_stream::ByteStream,
+    pub payload: ::aws_smithy_types::byte_stream::ByteStream,
 }
 impl UploadReadSetPartInput {
     /// <p> The Sequence Store ID used for the multipart upload. </p>
@@ -32,7 +32,7 @@ impl UploadReadSetPartInput {
         self.part_number
     }
     /// <p> The read set data to upload for a part. </p>
-    pub fn payload(&self) -> &::aws_smithy_http::byte_stream::ByteStream {
+    pub fn payload(&self) -> &::aws_smithy_types::byte_stream::ByteStream {
         &self.payload
     }
 }
@@ -51,7 +51,7 @@ pub struct UploadReadSetPartInputBuilder {
     pub(crate) upload_id: ::std::option::Option<::std::string::String>,
     pub(crate) part_source: ::std::option::Option<crate::types::ReadSetPartSource>,
     pub(crate) part_number: ::std::option::Option<i32>,
-    pub(crate) payload: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
+    pub(crate) payload: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>,
 }
 impl UploadReadSetPartInputBuilder {
     /// <p> The Sequence Store ID used for the multipart upload. </p>
@@ -116,23 +116,23 @@ impl UploadReadSetPartInputBuilder {
     }
     /// <p> The read set data to upload for a part. </p>
     /// This field is required.
-    pub fn payload(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
+    pub fn payload(mut self, input: ::aws_smithy_types::byte_stream::ByteStream) -> Self {
         self.payload = ::std::option::Option::Some(input);
         self
     }
     /// <p> The read set data to upload for a part. </p>
-    pub fn set_payload(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
+    pub fn set_payload(mut self, input: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>) -> Self {
         self.payload = input;
         self
     }
     /// <p> The read set data to upload for a part. </p>
-    pub fn get_payload(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+    pub fn get_payload(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
         &self.payload
     }
     /// Consumes the builder and constructs a [`UploadReadSetPartInput`](crate::operation::upload_read_set_part::UploadReadSetPartInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::upload_read_set_part::UploadReadSetPartInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::upload_read_set_part::UploadReadSetPartInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::upload_read_set_part::UploadReadSetPartInput {
             sequence_store_id: self.sequence_store_id,
             upload_id: self.upload_id,

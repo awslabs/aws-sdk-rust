@@ -115,28 +115,28 @@ impl ValidationResultBuilder {
     /// - [`state`](crate::types::builders::ValidationResultBuilder::state)
     /// - [`status_code`](crate::types::builders::ValidationResultBuilder::status_code)
     /// - [`status_message`](crate::types::builders::ValidationResultBuilder::status_message)
-    pub fn build(self) -> ::std::result::Result<crate::types::ValidationResult, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ValidationResult, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ValidationResult {
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building ValidationResult",
                 )
             })?,
             state: self.state.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "state",
                     "state was not specified but it is required when building ValidationResult",
                 )
             })?,
             status_code: self.status_code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status_code",
                     "status_code was not specified but it is required when building ValidationResult",
                 )
             })?,
             status_message: self.status_message.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status_message",
                     "status_message was not specified but it is required when building ValidationResult",
                 )

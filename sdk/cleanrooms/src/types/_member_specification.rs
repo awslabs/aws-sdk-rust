@@ -99,22 +99,22 @@ impl MemberSpecificationBuilder {
     /// - [`account_id`](crate::types::builders::MemberSpecificationBuilder::account_id)
     /// - [`member_abilities`](crate::types::builders::MemberSpecificationBuilder::member_abilities)
     /// - [`display_name`](crate::types::builders::MemberSpecificationBuilder::display_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::MemberSpecification, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::MemberSpecification, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MemberSpecification {
             account_id: self.account_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "account_id",
                     "account_id was not specified but it is required when building MemberSpecification",
                 )
             })?,
             member_abilities: self.member_abilities.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "member_abilities",
                     "member_abilities was not specified but it is required when building MemberSpecification",
                 )
             })?,
             display_name: self.display_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "display_name",
                     "display_name was not specified but it is required when building MemberSpecification",
                 )

@@ -90,7 +90,7 @@ impl CreateConnectClientAddInInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_connect_client_add_in::CreateConnectClientAddInInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_connect_client_add_in::CreateConnectClientAddInInput {
             resource_id: self.resource_id,

@@ -2,7 +2,7 @@
 pub fn ser_create_global_table_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_global_table::CreateGlobalTableInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.global_table_name {
         object.key("GlobalTableName").string(var_1.as_str());
     }

@@ -44,7 +44,7 @@ impl DeleteConnectPeerInputBuilder {
     /// Consumes the builder and constructs a [`DeleteConnectPeerInput`](crate::operation::delete_connect_peer::DeleteConnectPeerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_connect_peer::DeleteConnectPeerInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_connect_peer::DeleteConnectPeerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_connect_peer::DeleteConnectPeerInput {
             connect_peer_id: self.connect_peer_id,
         })

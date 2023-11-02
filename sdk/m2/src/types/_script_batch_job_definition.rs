@@ -46,10 +46,10 @@ impl ScriptBatchJobDefinitionBuilder {
     /// Consumes the builder and constructs a [`ScriptBatchJobDefinition`](crate::types::ScriptBatchJobDefinition).
     /// This method will fail if any of the following fields are not set:
     /// - [`script_name`](crate::types::builders::ScriptBatchJobDefinitionBuilder::script_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::ScriptBatchJobDefinition, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ScriptBatchJobDefinition, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ScriptBatchJobDefinition {
             script_name: self.script_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "script_name",
                     "script_name was not specified but it is required when building ScriptBatchJobDefinition",
                 )

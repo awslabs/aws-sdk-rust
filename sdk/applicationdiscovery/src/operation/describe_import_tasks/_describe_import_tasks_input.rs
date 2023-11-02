@@ -93,7 +93,7 @@ impl DescribeImportTasksInputBuilder {
     /// Consumes the builder and constructs a [`DescribeImportTasksInput`](crate::operation::describe_import_tasks::DescribeImportTasksInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_import_tasks::DescribeImportTasksInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_import_tasks::DescribeImportTasksInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_import_tasks::DescribeImportTasksInput {
             filters: self.filters,

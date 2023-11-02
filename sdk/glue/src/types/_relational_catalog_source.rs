@@ -94,22 +94,22 @@ impl RelationalCatalogSourceBuilder {
     /// - [`name`](crate::types::builders::RelationalCatalogSourceBuilder::name)
     /// - [`database`](crate::types::builders::RelationalCatalogSourceBuilder::database)
     /// - [`table`](crate::types::builders::RelationalCatalogSourceBuilder::table)
-    pub fn build(self) -> ::std::result::Result<crate::types::RelationalCatalogSource, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RelationalCatalogSource, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RelationalCatalogSource {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building RelationalCatalogSource",
                 )
             })?,
             database: self.database.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "database",
                     "database was not specified but it is required when building RelationalCatalogSource",
                 )
             })?,
             table: self.table.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "table",
                     "table was not specified but it is required when building RelationalCatalogSource",
                 )

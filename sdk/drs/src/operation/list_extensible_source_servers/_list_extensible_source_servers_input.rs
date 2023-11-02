@@ -88,7 +88,7 @@ impl ListExtensibleSourceServersInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_extensible_source_servers::ListExtensibleSourceServersInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_extensible_source_servers::ListExtensibleSourceServersInput {
             staging_account_id: self.staging_account_id,

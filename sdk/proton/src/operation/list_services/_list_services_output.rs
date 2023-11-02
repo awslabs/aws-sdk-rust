@@ -89,11 +89,11 @@ impl ListServicesOutputBuilder {
     /// - [`services`](crate::operation::list_services::builders::ListServicesOutputBuilder::services)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_services::ListServicesOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_services::ListServicesOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_services::ListServicesOutput {
             next_token: self.next_token,
             services: self.services.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "services",
                     "services was not specified but it is required when building ListServicesOutput",
                 )

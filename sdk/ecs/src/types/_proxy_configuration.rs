@@ -142,11 +142,11 @@ impl ProxyConfigurationBuilder {
     /// Consumes the builder and constructs a [`ProxyConfiguration`](crate::types::ProxyConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`container_name`](crate::types::builders::ProxyConfigurationBuilder::container_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::ProxyConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ProxyConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ProxyConfiguration {
             r#type: self.r#type,
             container_name: self.container_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "container_name",
                     "container_name was not specified but it is required when building ProxyConfiguration",
                 )

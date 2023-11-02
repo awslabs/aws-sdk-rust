@@ -84,10 +84,10 @@ impl GetBucketTaggingOutputBuilder {
     /// - [`tag_set`](crate::operation::get_bucket_tagging::builders::GetBucketTaggingOutputBuilder::tag_set)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_bucket_tagging::GetBucketTaggingOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_bucket_tagging::GetBucketTaggingOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_bucket_tagging::GetBucketTaggingOutput {
             tag_set: self.tag_set.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "tag_set",
                     "tag_set was not specified but it is required when building GetBucketTaggingOutput",
                 )

@@ -66,7 +66,7 @@ impl DescribeEntityInputBuilder {
     /// Consumes the builder and constructs a [`DescribeEntityInput`](crate::operation::describe_entity::DescribeEntityInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_entity::DescribeEntityInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_entity::DescribeEntityInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_entity::DescribeEntityInput {
             catalog: self.catalog,
             entity_id: self.entity_id,

@@ -77,7 +77,7 @@ impl EnableKeyInputBuilder {
         &self.key_id
     }
     /// Consumes the builder and constructs a [`EnableKeyInput`](crate::operation::enable_key::EnableKeyInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::enable_key::EnableKeyInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::enable_key::EnableKeyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::enable_key::EnableKeyInput { key_id: self.key_id })
     }
 }

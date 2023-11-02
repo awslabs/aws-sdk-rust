@@ -245,7 +245,7 @@ impl StartSentimentDetectionJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_sentiment_detection_job::StartSentimentDetectionJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_sentiment_detection_job::StartSentimentDetectionJobInput {
             input_data_config: self.input_data_config,

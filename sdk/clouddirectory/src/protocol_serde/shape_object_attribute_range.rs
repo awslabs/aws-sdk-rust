@@ -2,7 +2,7 @@
 pub fn ser_object_attribute_range(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ObjectAttributeRange,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.attribute_key {
         #[allow(unused_mut)]
         let mut object_2 = object.key("AttributeKey").start_object();

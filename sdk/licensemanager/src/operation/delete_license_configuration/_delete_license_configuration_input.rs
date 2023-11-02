@@ -46,7 +46,7 @@ impl DeleteLicenseConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_license_configuration::DeleteLicenseConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_license_configuration::DeleteLicenseConfigurationInput {
             license_configuration_arn: self.license_configuration_arn,

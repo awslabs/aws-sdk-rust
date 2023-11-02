@@ -225,22 +225,22 @@ impl CdmaObjBuilder {
     /// - [`system_id`](crate::types::builders::CdmaObjBuilder::system_id)
     /// - [`network_id`](crate::types::builders::CdmaObjBuilder::network_id)
     /// - [`base_station_id`](crate::types::builders::CdmaObjBuilder::base_station_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::CdmaObj, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CdmaObj, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CdmaObj {
             system_id: self.system_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "system_id",
                     "system_id was not specified but it is required when building CdmaObj",
                 )
             })?,
             network_id: self.network_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "network_id",
                     "network_id was not specified but it is required when building CdmaObj",
                 )
             })?,
             base_station_id: self.base_station_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "base_station_id",
                     "base_station_id was not specified but it is required when building CdmaObj",
                 )

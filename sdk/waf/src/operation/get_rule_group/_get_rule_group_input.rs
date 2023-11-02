@@ -44,7 +44,7 @@ impl GetRuleGroupInputBuilder {
     /// Consumes the builder and constructs a [`GetRuleGroupInput`](crate::operation::get_rule_group::GetRuleGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_rule_group::GetRuleGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_rule_group::GetRuleGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_rule_group::GetRuleGroupInput {
             rule_group_id: self.rule_group_id,
         })

@@ -78,16 +78,16 @@ impl RedshiftDatabaseCredentialsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`username`](crate::types::builders::RedshiftDatabaseCredentialsBuilder::username)
     /// - [`password`](crate::types::builders::RedshiftDatabaseCredentialsBuilder::password)
-    pub fn build(self) -> ::std::result::Result<crate::types::RedshiftDatabaseCredentials, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RedshiftDatabaseCredentials, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RedshiftDatabaseCredentials {
             username: self.username.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "username",
                     "username was not specified but it is required when building RedshiftDatabaseCredentials",
                 )
             })?,
             password: self.password.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "password",
                     "password was not specified but it is required when building RedshiftDatabaseCredentials",
                 )

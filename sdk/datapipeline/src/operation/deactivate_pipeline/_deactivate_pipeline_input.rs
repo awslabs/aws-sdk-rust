@@ -66,7 +66,7 @@ impl DeactivatePipelineInputBuilder {
     /// Consumes the builder and constructs a [`DeactivatePipelineInput`](crate::operation::deactivate_pipeline::DeactivatePipelineInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::deactivate_pipeline::DeactivatePipelineInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::deactivate_pipeline::DeactivatePipelineInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::deactivate_pipeline::DeactivatePipelineInput {
             pipeline_id: self.pipeline_id,
             cancel_active: self.cancel_active,

@@ -2,7 +2,7 @@
 pub fn ser_container_dependency(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ContainerDependency,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("containerName").string(input.container_name.as_str());
     }

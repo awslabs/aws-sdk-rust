@@ -73,7 +73,7 @@ impl CreateFleetLocationsInputBuilder {
     /// Consumes the builder and constructs a [`CreateFleetLocationsInput`](crate::operation::create_fleet_locations::CreateFleetLocationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_fleet_locations::CreateFleetLocationsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_fleet_locations::CreateFleetLocationsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_fleet_locations::CreateFleetLocationsInput {
             fleet_id: self.fleet_id,

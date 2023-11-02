@@ -67,10 +67,10 @@ impl EndPointBuilder {
     /// Consumes the builder and constructs a [`EndPoint`](crate::types::EndPoint).
     /// This method will fail if any of the following fields are not set:
     /// - [`stream_type`](crate::types::builders::EndPointBuilder::stream_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::EndPoint, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::EndPoint, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EndPoint {
             stream_type: self.stream_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "stream_type",
                     "stream_type was not specified but it is required when building EndPoint",
                 )

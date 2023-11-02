@@ -21,7 +21,7 @@ impl DescribeActiveReceiptRuleSetInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_active_receipt_rule_set::DescribeActiveReceiptRuleSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_active_receipt_rule_set::DescribeActiveReceiptRuleSetInput {})
     }

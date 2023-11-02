@@ -143,7 +143,7 @@ impl StartExportTaskInputBuilder {
     /// Consumes the builder and constructs a [`StartExportTaskInput`](crate::operation::start_export_task::StartExportTaskInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_export_task::StartExportTaskInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_export_task::StartExportTaskInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_export_task::StartExportTaskInput {
             export_data_format: self.export_data_format,
             filters: self.filters,

@@ -541,11 +541,11 @@ impl RecommendationTemplateBuilder {
     /// - [`recommendation_template_arn`](crate::types::builders::RecommendationTemplateBuilder::recommendation_template_arn)
     /// - [`status`](crate::types::builders::RecommendationTemplateBuilder::status)
     /// - [`name`](crate::types::builders::RecommendationTemplateBuilder::name)
-    pub fn build(self) -> ::std::result::Result<crate::types::RecommendationTemplate, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RecommendationTemplate, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RecommendationTemplate {
             templates_location: self.templates_location,
             assessment_arn: self.assessment_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "assessment_arn",
                     "assessment_arn was not specified but it is required when building RecommendationTemplate",
                 )
@@ -553,32 +553,32 @@ impl RecommendationTemplateBuilder {
             app_arn: self.app_arn,
             recommendation_ids: self.recommendation_ids,
             recommendation_types: self.recommendation_types.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "recommendation_types",
                     "recommendation_types was not specified but it is required when building RecommendationTemplate",
                 )
             })?,
             format: self.format.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "format",
                     "format was not specified but it is required when building RecommendationTemplate",
                 )
             })?,
             recommendation_template_arn: self.recommendation_template_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "recommendation_template_arn",
                     "recommendation_template_arn was not specified but it is required when building RecommendationTemplate",
                 )
             })?,
             message: self.message,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building RecommendationTemplate",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building RecommendationTemplate",
                 )

@@ -44,7 +44,7 @@ impl UpdateActionTypeInputBuilder {
     /// Consumes the builder and constructs a [`UpdateActionTypeInput`](crate::operation::update_action_type::UpdateActionTypeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_action_type::UpdateActionTypeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_action_type::UpdateActionTypeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_action_type::UpdateActionTypeInput {
             action_type: self.action_type,
         })

@@ -111,8 +111,10 @@ impl DisableStageTransitionInputBuilder {
     /// Consumes the builder and constructs a [`DisableStageTransitionInput`](crate::operation::disable_stage_transition::DisableStageTransitionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::disable_stage_transition::DisableStageTransitionInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::disable_stage_transition::DisableStageTransitionInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::disable_stage_transition::DisableStageTransitionInput {
             pipeline_name: self.pipeline_name,
             stage_name: self.stage_name,

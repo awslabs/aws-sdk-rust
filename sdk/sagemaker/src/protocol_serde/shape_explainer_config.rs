@@ -2,7 +2,7 @@
 pub fn ser_explainer_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ExplainerConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.clarify_explainer_config {
         #[allow(unused_mut)]
         let mut object_2 = object.key("ClarifyExplainerConfig").start_object();

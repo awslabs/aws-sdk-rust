@@ -295,23 +295,23 @@ impl StreamConfigurationCreateBuilder {
     /// - [`clipboard_mode`](crate::types::builders::StreamConfigurationCreateBuilder::clipboard_mode)
     /// - [`ec2_instance_types`](crate::types::builders::StreamConfigurationCreateBuilder::ec2_instance_types)
     /// - [`streaming_image_ids`](crate::types::builders::StreamConfigurationCreateBuilder::streaming_image_ids)
-    pub fn build(self) -> ::std::result::Result<crate::types::StreamConfigurationCreate, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::StreamConfigurationCreate, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::StreamConfigurationCreate {
             clipboard_mode: self.clipboard_mode.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "clipboard_mode",
                     "clipboard_mode was not specified but it is required when building StreamConfigurationCreate",
                 )
             })?,
             ec2_instance_types: self.ec2_instance_types.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "ec2_instance_types",
                     "ec2_instance_types was not specified but it is required when building StreamConfigurationCreate",
                 )
             })?,
             max_session_length_in_minutes: self.max_session_length_in_minutes.unwrap_or_else(|| 690),
             streaming_image_ids: self.streaming_image_ids.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "streaming_image_ids",
                     "streaming_image_ids was not specified but it is required when building StreamConfigurationCreate",
                 )

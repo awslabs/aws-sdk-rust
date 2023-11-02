@@ -96,10 +96,10 @@ impl EventBuilder {
     /// Consumes the builder and constructs a [`Event`](crate::types::Event).
     /// This method will fail if any of the following fields are not set:
     /// - [`event_name`](crate::types::builders::EventBuilder::event_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::Event, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Event, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Event {
             event_name: self.event_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "event_name",
                     "event_name was not specified but it is required when building Event",
                 )

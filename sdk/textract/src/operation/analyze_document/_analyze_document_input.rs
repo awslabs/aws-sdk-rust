@@ -141,7 +141,7 @@ impl AnalyzeDocumentInputBuilder {
     /// Consumes the builder and constructs a [`AnalyzeDocumentInput`](crate::operation::analyze_document::AnalyzeDocumentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::analyze_document::AnalyzeDocumentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::analyze_document::AnalyzeDocumentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::analyze_document::AnalyzeDocumentInput {
             document: self.document,
             feature_types: self.feature_types,

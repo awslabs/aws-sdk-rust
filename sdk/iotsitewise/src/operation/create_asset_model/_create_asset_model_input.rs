@@ -213,7 +213,7 @@ impl CreateAssetModelInputBuilder {
     /// Consumes the builder and constructs a [`CreateAssetModelInput`](crate::operation::create_asset_model::CreateAssetModelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_asset_model::CreateAssetModelInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_asset_model::CreateAssetModelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_asset_model::CreateAssetModelInput {
             asset_model_name: self.asset_model_name,
             asset_model_description: self.asset_model_description,

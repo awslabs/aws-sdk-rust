@@ -72,10 +72,10 @@ impl VoiceSettingsBuilder {
     /// Consumes the builder and constructs a [`VoiceSettings`](crate::types::VoiceSettings).
     /// This method will fail if any of the following fields are not set:
     /// - [`voice_id`](crate::types::builders::VoiceSettingsBuilder::voice_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::VoiceSettings, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::VoiceSettings, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::VoiceSettings {
             voice_id: self.voice_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "voice_id",
                     "voice_id was not specified but it is required when building VoiceSettings",
                 )

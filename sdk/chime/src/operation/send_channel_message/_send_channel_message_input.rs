@@ -187,7 +187,8 @@ impl SendChannelMessageInputBuilder {
     /// Consumes the builder and constructs a [`SendChannelMessageInput`](crate::operation::send_channel_message::SendChannelMessageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::send_channel_message::SendChannelMessageInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::send_channel_message::SendChannelMessageInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::send_channel_message::SendChannelMessageInput {
             channel_arn: self.channel_arn,
             content: self.content,

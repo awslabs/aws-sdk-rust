@@ -66,7 +66,7 @@ impl ListCallAnalyticsCategoriesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_call_analytics_categories::ListCallAnalyticsCategoriesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_call_analytics_categories::ListCallAnalyticsCategoriesInput {
             next_token: self.next_token,

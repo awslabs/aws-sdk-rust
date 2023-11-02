@@ -66,7 +66,7 @@ impl StopSuiteRunInputBuilder {
     /// Consumes the builder and constructs a [`StopSuiteRunInput`](crate::operation::stop_suite_run::StopSuiteRunInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_suite_run::StopSuiteRunInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::stop_suite_run::StopSuiteRunInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_suite_run::StopSuiteRunInput {
             suite_definition_id: self.suite_definition_id,
             suite_run_id: self.suite_run_id,

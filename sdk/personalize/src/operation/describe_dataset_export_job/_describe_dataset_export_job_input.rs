@@ -46,7 +46,7 @@ impl DescribeDatasetExportJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_dataset_export_job::DescribeDatasetExportJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_dataset_export_job::DescribeDatasetExportJobInput {
             dataset_export_job_arn: self.dataset_export_job_arn,

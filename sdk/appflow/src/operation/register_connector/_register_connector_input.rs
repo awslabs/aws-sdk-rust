@@ -137,7 +137,7 @@ impl RegisterConnectorInputBuilder {
     /// Consumes the builder and constructs a [`RegisterConnectorInput`](crate::operation::register_connector::RegisterConnectorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::register_connector::RegisterConnectorInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::register_connector::RegisterConnectorInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::register_connector::RegisterConnectorInput {
             connector_label: self.connector_label,
             description: self.description,

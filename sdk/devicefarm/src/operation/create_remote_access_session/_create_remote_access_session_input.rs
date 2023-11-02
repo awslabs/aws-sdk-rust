@@ -324,7 +324,7 @@ impl CreateRemoteAccessSessionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_remote_access_session::CreateRemoteAccessSessionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_remote_access_session::CreateRemoteAccessSessionInput {
             project_arn: self.project_arn,

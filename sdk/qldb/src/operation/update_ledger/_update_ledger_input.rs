@@ -164,7 +164,9 @@ impl UpdateLedgerInputBuilder {
         &self.kms_key
     }
     /// Consumes the builder and constructs a [`UpdateLedgerInput`](crate::operation::update_ledger::UpdateLedgerInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_ledger::UpdateLedgerInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_ledger::UpdateLedgerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_ledger::UpdateLedgerInput {
             name: self.name,
             deletion_protection: self.deletion_protection,

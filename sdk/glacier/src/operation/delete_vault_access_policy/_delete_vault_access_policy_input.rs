@@ -74,7 +74,7 @@ impl DeleteVaultAccessPolicyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_vault_access_policy::DeleteVaultAccessPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_vault_access_policy::DeleteVaultAccessPolicyInput {
             account_id: self.account_id,

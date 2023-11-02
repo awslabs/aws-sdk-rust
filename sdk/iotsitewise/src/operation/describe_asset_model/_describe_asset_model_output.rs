@@ -300,54 +300,54 @@ impl DescribeAssetModelOutputBuilder {
     /// - [`asset_model_last_update_date`](crate::operation::describe_asset_model::builders::DescribeAssetModelOutputBuilder::asset_model_last_update_date)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_asset_model::DescribeAssetModelOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_asset_model::DescribeAssetModelOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_asset_model::DescribeAssetModelOutput {
             asset_model_id: self.asset_model_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "asset_model_id",
                     "asset_model_id was not specified but it is required when building DescribeAssetModelOutput",
                 )
             })?,
             asset_model_arn: self.asset_model_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "asset_model_arn",
                     "asset_model_arn was not specified but it is required when building DescribeAssetModelOutput",
                 )
             })?,
             asset_model_name: self.asset_model_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "asset_model_name",
                     "asset_model_name was not specified but it is required when building DescribeAssetModelOutput",
                 )
             })?,
             asset_model_description: self.asset_model_description.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "asset_model_description",
                     "asset_model_description was not specified but it is required when building DescribeAssetModelOutput",
                 )
             })?,
             asset_model_properties: self.asset_model_properties.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "asset_model_properties",
                     "asset_model_properties was not specified but it is required when building DescribeAssetModelOutput",
                 )
             })?,
             asset_model_hierarchies: self.asset_model_hierarchies.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "asset_model_hierarchies",
                     "asset_model_hierarchies was not specified but it is required when building DescribeAssetModelOutput",
                 )
             })?,
             asset_model_composite_models: self.asset_model_composite_models,
             asset_model_creation_date: self.asset_model_creation_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "asset_model_creation_date",
                     "asset_model_creation_date was not specified but it is required when building DescribeAssetModelOutput",
                 )
             })?,
             asset_model_last_update_date: self.asset_model_last_update_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "asset_model_last_update_date",
                     "asset_model_last_update_date was not specified but it is required when building DescribeAssetModelOutput",
                 )

@@ -68,7 +68,7 @@ impl DeleteHoursOfOperationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_hours_of_operation::DeleteHoursOfOperationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_hours_of_operation::DeleteHoursOfOperationInput {
             instance_id: self.instance_id,

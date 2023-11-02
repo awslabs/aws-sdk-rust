@@ -64,7 +64,8 @@ impl ListStorageSystemsInputBuilder {
     /// Consumes the builder and constructs a [`ListStorageSystemsInput`](crate::operation::list_storage_systems::ListStorageSystemsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_storage_systems::ListStorageSystemsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_storage_systems::ListStorageSystemsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::list_storage_systems::ListStorageSystemsInput {
             max_results: self.max_results,
             next_token: self.next_token,

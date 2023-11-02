@@ -243,29 +243,29 @@ impl IpSetBuilder {
     /// - [`arn`](crate::types::builders::IpSetBuilder::arn)
     /// - [`ip_address_version`](crate::types::builders::IpSetBuilder::ip_address_version)
     /// - [`addresses`](crate::types::builders::IpSetBuilder::addresses)
-    pub fn build(self) -> ::std::result::Result<crate::types::IpSet, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::IpSet, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::IpSet {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building IpSet",
                 )
             })?,
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field("id", "id was not specified but it is required when building IpSet")
+                ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building IpSet")
             })?,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field("arn", "arn was not specified but it is required when building IpSet")
+                ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building IpSet")
             })?,
             description: self.description,
             ip_address_version: self.ip_address_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "ip_address_version",
                     "ip_address_version was not specified but it is required when building IpSet",
                 )
             })?,
             addresses: self.addresses.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "addresses",
                     "addresses was not specified but it is required when building IpSet",
                 )

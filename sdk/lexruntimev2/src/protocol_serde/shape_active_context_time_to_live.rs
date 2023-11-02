@@ -2,7 +2,7 @@
 pub fn ser_active_context_time_to_live(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ActiveContextTimeToLive,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("timeToLiveInSeconds").number(
             #[allow(clippy::useless_conversion)]

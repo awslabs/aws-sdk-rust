@@ -91,16 +91,16 @@ impl AccountBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`account_id`](crate::types::builders::AccountBuilder::account_id)
     /// - [`status`](crate::types::builders::AccountBuilder::status)
-    pub fn build(self) -> ::std::result::Result<crate::types::Account, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Account, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Account {
             account_id: self.account_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "account_id",
                     "account_id was not specified but it is required when building Account",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building Account",
                 )

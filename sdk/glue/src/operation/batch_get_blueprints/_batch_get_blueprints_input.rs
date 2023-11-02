@@ -93,7 +93,8 @@ impl BatchGetBlueprintsInputBuilder {
     /// Consumes the builder and constructs a [`BatchGetBlueprintsInput`](crate::operation::batch_get_blueprints::BatchGetBlueprintsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_get_blueprints::BatchGetBlueprintsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::batch_get_blueprints::BatchGetBlueprintsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::batch_get_blueprints::BatchGetBlueprintsInput {
             names: self.names,
             include_blueprint: self.include_blueprint,

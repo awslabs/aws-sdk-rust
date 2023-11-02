@@ -159,7 +159,7 @@ impl CreateVirtualNodeInputBuilder {
     /// Consumes the builder and constructs a [`CreateVirtualNodeInput`](crate::operation::create_virtual_node::CreateVirtualNodeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_virtual_node::CreateVirtualNodeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_virtual_node::CreateVirtualNodeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_virtual_node::CreateVirtualNodeInput {
             virtual_node_name: self.virtual_node_name,
             mesh_name: self.mesh_name,

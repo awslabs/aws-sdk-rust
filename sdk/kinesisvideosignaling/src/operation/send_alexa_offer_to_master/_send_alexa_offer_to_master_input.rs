@@ -90,7 +90,7 @@ impl SendAlexaOfferToMasterInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterInput {
             channel_arn: self.channel_arn,

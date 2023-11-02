@@ -124,7 +124,7 @@ impl ListAttachedRolePoliciesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_attached_role_policies::ListAttachedRolePoliciesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_attached_role_policies::ListAttachedRolePoliciesInput {
             role_name: self.role_name,

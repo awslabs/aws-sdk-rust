@@ -168,7 +168,7 @@ impl GetTablesInputBuilder {
         &self.query_as_of_time
     }
     /// Consumes the builder and constructs a [`GetTablesInput`](crate::operation::get_tables::GetTablesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_tables::GetTablesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_tables::GetTablesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_tables::GetTablesInput {
             catalog_id: self.catalog_id,
             database_name: self.database_name,

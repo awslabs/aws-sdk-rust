@@ -2,7 +2,7 @@
 pub fn ser_get_repository_sync_status_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_repository_sync_status::GetRepositorySyncStatusInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.repository_name {
         object.key("repositoryName").string(var_1.as_str());
     }

@@ -44,7 +44,7 @@ impl TerminateSessionInputBuilder {
     /// Consumes the builder and constructs a [`TerminateSessionInput`](crate::operation::terminate_session::TerminateSessionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::terminate_session::TerminateSessionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::terminate_session::TerminateSessionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::terminate_session::TerminateSessionInput { session_id: self.session_id })
     }
 }

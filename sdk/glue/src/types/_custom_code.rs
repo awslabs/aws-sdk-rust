@@ -152,28 +152,28 @@ impl CustomCodeBuilder {
     /// - [`inputs`](crate::types::builders::CustomCodeBuilder::inputs)
     /// - [`code`](crate::types::builders::CustomCodeBuilder::code)
     /// - [`class_name`](crate::types::builders::CustomCodeBuilder::class_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::CustomCode, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CustomCode, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CustomCode {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building CustomCode",
                 )
             })?,
             inputs: self.inputs.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "inputs",
                     "inputs was not specified but it is required when building CustomCode",
                 )
             })?,
             code: self.code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "code",
                     "code was not specified but it is required when building CustomCode",
                 )
             })?,
             class_name: self.class_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "class_name",
                     "class_name was not specified but it is required when building CustomCode",
                 )

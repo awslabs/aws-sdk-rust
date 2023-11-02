@@ -112,7 +112,7 @@ impl UpdateAcceleratorInputBuilder {
     /// Consumes the builder and constructs a [`UpdateAcceleratorInput`](crate::operation::update_accelerator::UpdateAcceleratorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_accelerator::UpdateAcceleratorInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_accelerator::UpdateAcceleratorInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_accelerator::UpdateAcceleratorInput {
             accelerator_arn: self.accelerator_arn,
             name: self.name,

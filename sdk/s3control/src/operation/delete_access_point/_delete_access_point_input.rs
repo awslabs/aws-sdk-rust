@@ -126,7 +126,7 @@ impl DeleteAccessPointInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAccessPointInput`](crate::operation::delete_access_point::DeleteAccessPointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_access_point::DeleteAccessPointInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_access_point::DeleteAccessPointInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_access_point::DeleteAccessPointInput {
             account_id: self.account_id,
             name: self.name,

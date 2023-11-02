@@ -165,29 +165,29 @@ impl StreamingDistributionListBuilder {
     /// - [`max_items`](crate::types::builders::StreamingDistributionListBuilder::max_items)
     /// - [`is_truncated`](crate::types::builders::StreamingDistributionListBuilder::is_truncated)
     /// - [`quantity`](crate::types::builders::StreamingDistributionListBuilder::quantity)
-    pub fn build(self) -> ::std::result::Result<crate::types::StreamingDistributionList, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::StreamingDistributionList, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::StreamingDistributionList {
             marker: self.marker.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "marker",
                     "marker was not specified but it is required when building StreamingDistributionList",
                 )
             })?,
             next_marker: self.next_marker,
             max_items: self.max_items.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "max_items",
                     "max_items was not specified but it is required when building StreamingDistributionList",
                 )
             })?,
             is_truncated: self.is_truncated.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "is_truncated",
                     "is_truncated was not specified but it is required when building StreamingDistributionList",
                 )
             })?,
             quantity: self.quantity.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "quantity",
                     "quantity was not specified but it is required when building StreamingDistributionList",
                 )

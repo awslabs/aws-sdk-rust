@@ -142,34 +142,34 @@ impl GraphQlRenderConfigBuilder {
     /// - [`mutations_file_path`](crate::types::builders::GraphQlRenderConfigBuilder::mutations_file_path)
     /// - [`subscriptions_file_path`](crate::types::builders::GraphQlRenderConfigBuilder::subscriptions_file_path)
     /// - [`fragments_file_path`](crate::types::builders::GraphQlRenderConfigBuilder::fragments_file_path)
-    pub fn build(self) -> ::std::result::Result<crate::types::GraphQlRenderConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::GraphQlRenderConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::GraphQlRenderConfig {
             types_file_path: self.types_file_path.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "types_file_path",
                     "types_file_path was not specified but it is required when building GraphQlRenderConfig",
                 )
             })?,
             queries_file_path: self.queries_file_path.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "queries_file_path",
                     "queries_file_path was not specified but it is required when building GraphQlRenderConfig",
                 )
             })?,
             mutations_file_path: self.mutations_file_path.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "mutations_file_path",
                     "mutations_file_path was not specified but it is required when building GraphQlRenderConfig",
                 )
             })?,
             subscriptions_file_path: self.subscriptions_file_path.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "subscriptions_file_path",
                     "subscriptions_file_path was not specified but it is required when building GraphQlRenderConfig",
                 )
             })?,
             fragments_file_path: self.fragments_file_path.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "fragments_file_path",
                     "fragments_file_path was not specified but it is required when building GraphQlRenderConfig",
                 )

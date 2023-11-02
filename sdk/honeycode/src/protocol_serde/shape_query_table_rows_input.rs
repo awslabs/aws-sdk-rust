@@ -2,7 +2,7 @@
 pub fn ser_query_table_rows_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::query_table_rows::QueryTableRowsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.filter_formula {
         #[allow(unused_mut)]
         let mut object_2 = object.key("filterFormula").start_object();

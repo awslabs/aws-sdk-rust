@@ -44,7 +44,7 @@ impl DeleteVirtualClusterInputBuilder {
     /// Consumes the builder and constructs a [`DeleteVirtualClusterInput`](crate::operation::delete_virtual_cluster::DeleteVirtualClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_virtual_cluster::DeleteVirtualClusterInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_virtual_cluster::DeleteVirtualClusterInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_virtual_cluster::DeleteVirtualClusterInput { id: self.id })
     }

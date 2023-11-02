@@ -86,10 +86,10 @@ impl GridLayoutScreenCanvasSizeOptionsBuilder {
     /// Consumes the builder and constructs a [`GridLayoutScreenCanvasSizeOptions`](crate::types::GridLayoutScreenCanvasSizeOptions).
     /// This method will fail if any of the following fields are not set:
     /// - [`resize_option`](crate::types::builders::GridLayoutScreenCanvasSizeOptionsBuilder::resize_option)
-    pub fn build(self) -> ::std::result::Result<crate::types::GridLayoutScreenCanvasSizeOptions, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::GridLayoutScreenCanvasSizeOptions, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::GridLayoutScreenCanvasSizeOptions {
             resize_option: self.resize_option.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resize_option",
                     "resize_option was not specified but it is required when building GridLayoutScreenCanvasSizeOptions",
                 )

@@ -2,7 +2,7 @@
 pub fn ser_get_network_routes_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_network_routes::GetNetworkRoutesInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.destination_filters {
         #[allow(unused_mut)]
         let mut object_2 = object.key("DestinationFilters").start_object();

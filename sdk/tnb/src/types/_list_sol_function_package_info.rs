@@ -245,34 +245,34 @@ impl ListSolFunctionPackageInfoBuilder {
     /// - [`onboarding_state`](crate::types::builders::ListSolFunctionPackageInfoBuilder::onboarding_state)
     /// - [`operational_state`](crate::types::builders::ListSolFunctionPackageInfoBuilder::operational_state)
     /// - [`usage_state`](crate::types::builders::ListSolFunctionPackageInfoBuilder::usage_state)
-    pub fn build(self) -> ::std::result::Result<crate::types::ListSolFunctionPackageInfo, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ListSolFunctionPackageInfo, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ListSolFunctionPackageInfo {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building ListSolFunctionPackageInfo",
                 )
             })?,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building ListSolFunctionPackageInfo",
                 )
             })?,
             onboarding_state: self.onboarding_state.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "onboarding_state",
                     "onboarding_state was not specified but it is required when building ListSolFunctionPackageInfo",
                 )
             })?,
             operational_state: self.operational_state.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "operational_state",
                     "operational_state was not specified but it is required when building ListSolFunctionPackageInfo",
                 )
             })?,
             usage_state: self.usage_state.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "usage_state",
                     "usage_state was not specified but it is required when building ListSolFunctionPackageInfo",
                 )

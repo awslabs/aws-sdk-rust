@@ -42,7 +42,7 @@ where
 pub fn ser_business_calling_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BusinessCallingSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.cdr_bucket {
         object.key("CdrBucket").string(var_1.as_str());
     }

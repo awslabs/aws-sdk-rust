@@ -92,16 +92,16 @@ impl ResponseInspectionBodyContainsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`success_strings`](crate::types::builders::ResponseInspectionBodyContainsBuilder::success_strings)
     /// - [`failure_strings`](crate::types::builders::ResponseInspectionBodyContainsBuilder::failure_strings)
-    pub fn build(self) -> ::std::result::Result<crate::types::ResponseInspectionBodyContains, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ResponseInspectionBodyContains, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ResponseInspectionBodyContains {
             success_strings: self.success_strings.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "success_strings",
                     "success_strings was not specified but it is required when building ResponseInspectionBodyContains",
                 )
             })?,
             failure_strings: self.failure_strings.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "failure_strings",
                     "failure_strings was not specified but it is required when building ResponseInspectionBodyContains",
                 )

@@ -278,7 +278,7 @@ impl CreateLicenseInputBuilder {
     /// Consumes the builder and constructs a [`CreateLicenseInput`](crate::operation::create_license::CreateLicenseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_license::CreateLicenseInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_license::CreateLicenseInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_license::CreateLicenseInput {
             license_name: self.license_name,
             product_name: self.product_name,

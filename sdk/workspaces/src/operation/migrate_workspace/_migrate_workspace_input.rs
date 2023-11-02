@@ -66,7 +66,7 @@ impl MigrateWorkspaceInputBuilder {
     /// Consumes the builder and constructs a [`MigrateWorkspaceInput`](crate::operation::migrate_workspace::MigrateWorkspaceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::migrate_workspace::MigrateWorkspaceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::migrate_workspace::MigrateWorkspaceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::migrate_workspace::MigrateWorkspaceInput {
             source_workspace_id: self.source_workspace_id,
             bundle_id: self.bundle_id,

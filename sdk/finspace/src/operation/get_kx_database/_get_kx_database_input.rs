@@ -66,7 +66,7 @@ impl GetKxDatabaseInputBuilder {
     /// Consumes the builder and constructs a [`GetKxDatabaseInput`](crate::operation::get_kx_database::GetKxDatabaseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_kx_database::GetKxDatabaseInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_kx_database::GetKxDatabaseInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_kx_database::GetKxDatabaseInput {
             environment_id: self.environment_id,
             database_name: self.database_name,

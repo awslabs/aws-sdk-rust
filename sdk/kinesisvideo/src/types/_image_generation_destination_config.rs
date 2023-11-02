@@ -70,16 +70,16 @@ impl ImageGenerationDestinationConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`uri`](crate::types::builders::ImageGenerationDestinationConfigBuilder::uri)
     /// - [`destination_region`](crate::types::builders::ImageGenerationDestinationConfigBuilder::destination_region)
-    pub fn build(self) -> ::std::result::Result<crate::types::ImageGenerationDestinationConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ImageGenerationDestinationConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ImageGenerationDestinationConfig {
             uri: self.uri.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "uri",
                     "uri was not specified but it is required when building ImageGenerationDestinationConfig",
                 )
             })?,
             destination_region: self.destination_region.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "destination_region",
                     "destination_region was not specified but it is required when building ImageGenerationDestinationConfig",
                 )

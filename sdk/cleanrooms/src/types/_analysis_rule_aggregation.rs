@@ -217,16 +217,16 @@ impl AnalysisRuleAggregationBuilder {
     /// - [`dimension_columns`](crate::types::builders::AnalysisRuleAggregationBuilder::dimension_columns)
     /// - [`scalar_functions`](crate::types::builders::AnalysisRuleAggregationBuilder::scalar_functions)
     /// - [`output_constraints`](crate::types::builders::AnalysisRuleAggregationBuilder::output_constraints)
-    pub fn build(self) -> ::std::result::Result<crate::types::AnalysisRuleAggregation, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AnalysisRuleAggregation, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AnalysisRuleAggregation {
             aggregate_columns: self.aggregate_columns.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "aggregate_columns",
                     "aggregate_columns was not specified but it is required when building AnalysisRuleAggregation",
                 )
             })?,
             join_columns: self.join_columns.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "join_columns",
                     "join_columns was not specified but it is required when building AnalysisRuleAggregation",
                 )
@@ -234,19 +234,19 @@ impl AnalysisRuleAggregationBuilder {
             join_required: self.join_required,
             allowed_join_operators: self.allowed_join_operators,
             dimension_columns: self.dimension_columns.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "dimension_columns",
                     "dimension_columns was not specified but it is required when building AnalysisRuleAggregation",
                 )
             })?,
             scalar_functions: self.scalar_functions.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "scalar_functions",
                     "scalar_functions was not specified but it is required when building AnalysisRuleAggregation",
                 )
             })?,
             output_constraints: self.output_constraints.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "output_constraints",
                     "output_constraints was not specified but it is required when building AnalysisRuleAggregation",
                 )

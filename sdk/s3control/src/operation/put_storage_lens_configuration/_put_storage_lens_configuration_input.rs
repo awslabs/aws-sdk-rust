@@ -129,7 +129,7 @@ impl PutStorageLensConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_storage_lens_configuration::PutStorageLensConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_storage_lens_configuration::PutStorageLensConfigurationInput {
             config_id: self.config_id,

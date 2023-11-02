@@ -119,7 +119,7 @@ impl ListRobotApplicationsInputBuilder {
     /// Consumes the builder and constructs a [`ListRobotApplicationsInput`](crate::operation::list_robot_applications::ListRobotApplicationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_robot_applications::ListRobotApplicationsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_robot_applications::ListRobotApplicationsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_robot_applications::ListRobotApplicationsInput {
             version_qualifier: self.version_qualifier,

@@ -95,10 +95,10 @@ impl EvaluationFormSingleSelectQuestionPropertiesBuilder {
     /// - [`options`](crate::types::builders::EvaluationFormSingleSelectQuestionPropertiesBuilder::options)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::EvaluationFormSingleSelectQuestionProperties, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::EvaluationFormSingleSelectQuestionProperties, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EvaluationFormSingleSelectQuestionProperties {
             options: self.options.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "options",
                     "options was not specified but it is required when building EvaluationFormSingleSelectQuestionProperties",
                 )

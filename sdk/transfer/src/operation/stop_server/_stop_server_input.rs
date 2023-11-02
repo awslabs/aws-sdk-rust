@@ -42,7 +42,7 @@ impl StopServerInputBuilder {
         &self.server_id
     }
     /// Consumes the builder and constructs a [`StopServerInput`](crate::operation::stop_server::StopServerInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::stop_server::StopServerInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_server::StopServerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_server::StopServerInput { server_id: self.server_id })
     }
 }

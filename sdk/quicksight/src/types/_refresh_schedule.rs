@@ -158,10 +158,10 @@ impl RefreshScheduleBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`schedule_id`](crate::types::builders::RefreshScheduleBuilder::schedule_id)
     /// - [`refresh_type`](crate::types::builders::RefreshScheduleBuilder::refresh_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::RefreshSchedule, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RefreshSchedule, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RefreshSchedule {
             schedule_id: self.schedule_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "schedule_id",
                     "schedule_id was not specified but it is required when building RefreshSchedule",
                 )
@@ -169,7 +169,7 @@ impl RefreshScheduleBuilder {
             schedule_frequency: self.schedule_frequency,
             start_after_date_time: self.start_after_date_time,
             refresh_type: self.refresh_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "refresh_type",
                     "refresh_type was not specified but it is required when building RefreshSchedule",
                 )

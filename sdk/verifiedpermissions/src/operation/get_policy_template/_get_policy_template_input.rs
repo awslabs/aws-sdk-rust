@@ -66,7 +66,7 @@ impl GetPolicyTemplateInputBuilder {
     /// Consumes the builder and constructs a [`GetPolicyTemplateInput`](crate::operation::get_policy_template::GetPolicyTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_policy_template::GetPolicyTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_policy_template::GetPolicyTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_policy_template::GetPolicyTemplateInput {
             policy_store_id: self.policy_store_id,
             policy_template_id: self.policy_template_id,

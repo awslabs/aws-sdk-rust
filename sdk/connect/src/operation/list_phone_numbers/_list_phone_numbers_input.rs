@@ -154,7 +154,7 @@ impl ListPhoneNumbersInputBuilder {
     /// Consumes the builder and constructs a [`ListPhoneNumbersInput`](crate::operation::list_phone_numbers::ListPhoneNumbersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_phone_numbers::ListPhoneNumbersInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_phone_numbers::ListPhoneNumbersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_phone_numbers::ListPhoneNumbersInput {
             instance_id: self.instance_id,
             phone_number_types: self.phone_number_types,

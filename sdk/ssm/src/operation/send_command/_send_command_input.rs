@@ -520,7 +520,7 @@ impl SendCommandInputBuilder {
         &self.alarm_configuration
     }
     /// Consumes the builder and constructs a [`SendCommandInput`](crate::operation::send_command::SendCommandInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::send_command::SendCommandInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::send_command::SendCommandInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::send_command::SendCommandInput {
             instance_ids: self.instance_ids,
             targets: self.targets,

@@ -87,10 +87,10 @@ impl ListLayoutsOutputBuilder {
     /// Consumes the builder and constructs a [`ListLayoutsOutput`](crate::operation::list_layouts::ListLayoutsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`layouts`](crate::operation::list_layouts::builders::ListLayoutsOutputBuilder::layouts)
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_layouts::ListLayoutsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_layouts::ListLayoutsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_layouts::ListLayoutsOutput {
             layouts: self.layouts.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "layouts",
                     "layouts was not specified but it is required when building ListLayoutsOutput",
                 )

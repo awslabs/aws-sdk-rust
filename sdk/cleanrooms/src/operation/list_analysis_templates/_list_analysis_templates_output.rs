@@ -89,12 +89,12 @@ impl ListAnalysisTemplatesOutputBuilder {
     /// - [`analysis_template_summaries`](crate::operation::list_analysis_templates::builders::ListAnalysisTemplatesOutputBuilder::analysis_template_summaries)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_analysis_templates::ListAnalysisTemplatesOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_analysis_templates::ListAnalysisTemplatesOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_analysis_templates::ListAnalysisTemplatesOutput {
             next_token: self.next_token,
             analysis_template_summaries: self.analysis_template_summaries.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "analysis_template_summaries",
                     "analysis_template_summaries was not specified but it is required when building ListAnalysisTemplatesOutput",
                 )

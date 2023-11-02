@@ -179,15 +179,15 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteSipMed
             fn uri_base(
                 _input: &crate::operation::delete_sip_media_application::DeleteSipMediaApplicationInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 use ::std::fmt::Write as _;
                 let input_1 = &_input.sip_media_application_id;
                 let input_1 = input_1.as_ref().ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field("sip_media_application_id", "cannot be empty or unset")
+                    ::aws_smithy_types::error::operation::BuildError::missing_field("sip_media_application_id", "cannot be empty or unset")
                 })?;
                 let sip_media_application_id = ::aws_smithy_http::label::fmt_string(input_1, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if sip_media_application_id.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "sip_media_application_id",
                         "cannot be empty or unset",
                     ));
@@ -204,7 +204,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteSipMed
             fn update_http_builder(
                 input: &crate::operation::delete_sip_media_application::DeleteSipMediaApplicationInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 ::std::result::Result::Ok(builder.method("DELETE").uri(uri))
@@ -212,7 +212,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteSipMed
             let mut builder = update_http_builder(&input, ::http::request::Builder::new())?;
             builder
         };
-        let body = ::aws_smithy_http::body::SdkBody::from("");
+        let body = ::aws_smithy_types::body::SdkBody::from("");
 
         ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }

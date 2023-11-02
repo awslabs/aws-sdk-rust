@@ -2,7 +2,7 @@
 pub fn ser_custom_action_set_parameters_operation(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CustomActionSetParametersOperation,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("ParameterValueConfigurations").start_array();
         for item_2 in &input.parameter_value_configurations {

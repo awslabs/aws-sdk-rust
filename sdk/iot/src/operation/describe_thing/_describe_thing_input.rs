@@ -45,7 +45,7 @@ impl DescribeThingInputBuilder {
     /// Consumes the builder and constructs a [`DescribeThingInput`](crate::operation::describe_thing::DescribeThingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_thing::DescribeThingInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_thing::DescribeThingInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_thing::DescribeThingInput { thing_name: self.thing_name })
     }
 }

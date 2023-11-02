@@ -44,7 +44,7 @@ impl GetAppMonitorInputBuilder {
     /// Consumes the builder and constructs a [`GetAppMonitorInput`](crate::operation::get_app_monitor::GetAppMonitorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_app_monitor::GetAppMonitorInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_app_monitor::GetAppMonitorInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_app_monitor::GetAppMonitorInput { name: self.name })
     }
 }

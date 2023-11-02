@@ -119,7 +119,7 @@ impl UpdateReportGroupInputBuilder {
     /// Consumes the builder and constructs a [`UpdateReportGroupInput`](crate::operation::update_report_group::UpdateReportGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_report_group::UpdateReportGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_report_group::UpdateReportGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_report_group::UpdateReportGroupInput {
             arn: self.arn,
             export_config: self.export_config,

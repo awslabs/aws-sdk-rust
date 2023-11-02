@@ -173,15 +173,15 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for RemoveFlowSo
             fn uri_base(
                 _input: &crate::operation::remove_flow_source::RemoveFlowSourceInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 use ::std::fmt::Write as _;
                 let input_1 = &_input.flow_arn;
                 let input_1 = input_1
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("flow_arn", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("flow_arn", "cannot be empty or unset"))?;
                 let flow_arn = ::aws_smithy_http::label::fmt_string(input_1, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if flow_arn.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "flow_arn",
                         "cannot be empty or unset",
                     ));
@@ -189,10 +189,10 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for RemoveFlowSo
                 let input_2 = &_input.source_arn;
                 let input_2 = input_2
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("source_arn", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("source_arn", "cannot be empty or unset"))?;
                 let source_arn = ::aws_smithy_http::label::fmt_string(input_2, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if source_arn.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "source_arn",
                         "cannot be empty or unset",
                     ));
@@ -210,7 +210,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for RemoveFlowSo
             fn update_http_builder(
                 input: &crate::operation::remove_flow_source::RemoveFlowSourceInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 ::std::result::Result::Ok(builder.method("DELETE").uri(uri))
@@ -218,7 +218,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for RemoveFlowSo
             let mut builder = update_http_builder(&input, ::http::request::Builder::new())?;
             builder
         };
-        let body = ::aws_smithy_http::body::SdkBody::from("");
+        let body = ::aws_smithy_types::body::SdkBody::from("");
 
         ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }

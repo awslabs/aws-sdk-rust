@@ -69,16 +69,16 @@ impl NewStudioMemberBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`persona`](crate::types::builders::NewStudioMemberBuilder::persona)
     /// - [`principal_id`](crate::types::builders::NewStudioMemberBuilder::principal_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::NewStudioMember, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::NewStudioMember, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::NewStudioMember {
             persona: self.persona.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "persona",
                     "persona was not specified but it is required when building NewStudioMember",
                 )
             })?,
             principal_id: self.principal_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "principal_id",
                     "principal_id was not specified but it is required when building NewStudioMember",
                 )

@@ -46,10 +46,10 @@ impl RevisionPublishedBuilder {
     /// Consumes the builder and constructs a [`RevisionPublished`](crate::types::RevisionPublished).
     /// This method will fail if any of the following fields are not set:
     /// - [`data_set_id`](crate::types::builders::RevisionPublishedBuilder::data_set_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::RevisionPublished, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RevisionPublished, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RevisionPublished {
             data_set_id: self.data_set_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_set_id",
                     "data_set_id was not specified but it is required when building RevisionPublished",
                 )

@@ -44,8 +44,10 @@ impl DeleteResolverEndpointInputBuilder {
     /// Consumes the builder and constructs a [`DeleteResolverEndpointInput`](crate::operation::delete_resolver_endpoint::DeleteResolverEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_resolver_endpoint::DeleteResolverEndpointInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::delete_resolver_endpoint::DeleteResolverEndpointInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::delete_resolver_endpoint::DeleteResolverEndpointInput {
             resolver_endpoint_id: self.resolver_endpoint_id,
         })

@@ -108,7 +108,7 @@ impl ListCasesForContactInputBuilder {
     /// Consumes the builder and constructs a [`ListCasesForContactInput`](crate::operation::list_cases_for_contact::ListCasesForContactInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_cases_for_contact::ListCasesForContactInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_cases_for_contact::ListCasesForContactInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_cases_for_contact::ListCasesForContactInput {
             domain_id: self.domain_id,

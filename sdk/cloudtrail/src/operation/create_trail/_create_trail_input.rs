@@ -373,7 +373,7 @@ impl CreateTrailInputBuilder {
         &self.tags_list
     }
     /// Consumes the builder and constructs a [`CreateTrailInput`](crate::operation::create_trail::CreateTrailInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_trail::CreateTrailInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_trail::CreateTrailInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_trail::CreateTrailInput {
             name: self.name,
             s3_bucket_name: self.s3_bucket_name,

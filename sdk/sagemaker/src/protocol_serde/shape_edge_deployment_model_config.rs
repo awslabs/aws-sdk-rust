@@ -2,7 +2,7 @@
 pub fn ser_edge_deployment_model_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EdgeDeploymentModelConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.model_handle {
         object.key("ModelHandle").string(var_1.as_str());
     }

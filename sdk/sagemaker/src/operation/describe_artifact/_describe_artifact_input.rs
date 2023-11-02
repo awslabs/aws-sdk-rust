@@ -44,7 +44,7 @@ impl DescribeArtifactInputBuilder {
     /// Consumes the builder and constructs a [`DescribeArtifactInput`](crate::operation::describe_artifact::DescribeArtifactInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_artifact::DescribeArtifactInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_artifact::DescribeArtifactInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_artifact::DescribeArtifactInput {
             artifact_arn: self.artifact_arn,
         })

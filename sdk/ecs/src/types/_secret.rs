@@ -90,16 +90,16 @@ impl SecretBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::SecretBuilder::name)
     /// - [`value_from`](crate::types::builders::SecretBuilder::value_from)
-    pub fn build(self) -> ::std::result::Result<crate::types::Secret, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Secret, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Secret {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building Secret",
                 )
             })?,
             value_from: self.value_from.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "value_from",
                     "value_from was not specified but it is required when building Secret",
                 )

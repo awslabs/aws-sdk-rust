@@ -109,16 +109,16 @@ impl CommitmentConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`commitment_length`](crate::types::builders::CommitmentConfigurationBuilder::commitment_length)
     /// - [`automatic_renewal`](crate::types::builders::CommitmentConfigurationBuilder::automatic_renewal)
-    pub fn build(self) -> ::std::result::Result<crate::types::CommitmentConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CommitmentConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CommitmentConfiguration {
             commitment_length: self.commitment_length.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "commitment_length",
                     "commitment_length was not specified but it is required when building CommitmentConfiguration",
                 )
             })?,
             automatic_renewal: self.automatic_renewal.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "automatic_renewal",
                     "automatic_renewal was not specified but it is required when building CommitmentConfiguration",
                 )

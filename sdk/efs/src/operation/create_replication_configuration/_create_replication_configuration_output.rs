@@ -190,41 +190,41 @@ impl CreateReplicationConfigurationOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_replication_configuration::CreateReplicationConfigurationOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_replication_configuration::CreateReplicationConfigurationOutput {
             source_file_system_id: self.source_file_system_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source_file_system_id",
                     "source_file_system_id was not specified but it is required when building CreateReplicationConfigurationOutput",
                 )
             })?,
             source_file_system_region: self.source_file_system_region.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source_file_system_region",
                     "source_file_system_region was not specified but it is required when building CreateReplicationConfigurationOutput",
                 )
             })?,
             source_file_system_arn: self.source_file_system_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source_file_system_arn",
                     "source_file_system_arn was not specified but it is required when building CreateReplicationConfigurationOutput",
                 )
             })?,
             original_source_file_system_arn: self.original_source_file_system_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "original_source_file_system_arn",
                     "original_source_file_system_arn was not specified but it is required when building CreateReplicationConfigurationOutput",
                 )
             })?,
             creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_time",
                     "creation_time was not specified but it is required when building CreateReplicationConfigurationOutput",
                 )
             })?,
             destinations: self.destinations.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "destinations",
                     "destinations was not specified but it is required when building CreateReplicationConfigurationOutput",
                 )

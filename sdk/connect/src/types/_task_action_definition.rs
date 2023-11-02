@@ -121,17 +121,17 @@ impl TaskActionDefinitionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::TaskActionDefinitionBuilder::name)
     /// - [`contact_flow_id`](crate::types::builders::TaskActionDefinitionBuilder::contact_flow_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::TaskActionDefinition, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TaskActionDefinition, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TaskActionDefinition {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building TaskActionDefinition",
                 )
             })?,
             description: self.description,
             contact_flow_id: self.contact_flow_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "contact_flow_id",
                     "contact_flow_id was not specified but it is required when building TaskActionDefinition",
                 )

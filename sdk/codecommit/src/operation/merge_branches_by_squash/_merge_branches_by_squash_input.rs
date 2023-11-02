@@ -256,7 +256,7 @@ impl MergeBranchesBySquashInputBuilder {
     /// Consumes the builder and constructs a [`MergeBranchesBySquashInput`](crate::operation::merge_branches_by_squash::MergeBranchesBySquashInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::merge_branches_by_squash::MergeBranchesBySquashInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::merge_branches_by_squash::MergeBranchesBySquashInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::merge_branches_by_squash::MergeBranchesBySquashInput {
             repository_name: self.repository_name,

@@ -98,17 +98,17 @@ impl RegexPatternSetReferenceStatementBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::RegexPatternSetReferenceStatementBuilder::arn)
     /// - [`text_transformations`](crate::types::builders::RegexPatternSetReferenceStatementBuilder::text_transformations)
-    pub fn build(self) -> ::std::result::Result<crate::types::RegexPatternSetReferenceStatement, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RegexPatternSetReferenceStatement, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RegexPatternSetReferenceStatement {
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building RegexPatternSetReferenceStatement",
                 )
             })?,
             field_to_match: self.field_to_match,
             text_transformations: self.text_transformations.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "text_transformations",
                     "text_transformations was not specified but it is required when building RegexPatternSetReferenceStatement",
                 )

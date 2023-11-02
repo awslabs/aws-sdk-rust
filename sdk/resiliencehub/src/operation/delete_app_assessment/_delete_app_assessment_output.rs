@@ -86,17 +86,17 @@ impl DeleteAppAssessmentOutputBuilder {
     /// - [`assessment_status`](crate::operation::delete_app_assessment::builders::DeleteAppAssessmentOutputBuilder::assessment_status)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_app_assessment::DeleteAppAssessmentOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_app_assessment::DeleteAppAssessmentOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_app_assessment::DeleteAppAssessmentOutput {
             assessment_arn: self.assessment_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "assessment_arn",
                     "assessment_arn was not specified but it is required when building DeleteAppAssessmentOutput",
                 )
             })?,
             assessment_status: self.assessment_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "assessment_status",
                     "assessment_status was not specified but it is required when building DeleteAppAssessmentOutput",
                 )

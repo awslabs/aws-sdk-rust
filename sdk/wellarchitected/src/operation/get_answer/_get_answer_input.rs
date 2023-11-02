@@ -128,7 +128,7 @@ impl GetAnswerInputBuilder {
         &self.milestone_number
     }
     /// Consumes the builder and constructs a [`GetAnswerInput`](crate::operation::get_answer::GetAnswerInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_answer::GetAnswerInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_answer::GetAnswerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_answer::GetAnswerInput {
             workload_id: self.workload_id,
             lens_alias: self.lens_alias,

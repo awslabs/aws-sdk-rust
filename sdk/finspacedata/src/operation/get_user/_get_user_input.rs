@@ -42,7 +42,7 @@ impl GetUserInputBuilder {
         &self.user_id
     }
     /// Consumes the builder and constructs a [`GetUserInput`](crate::operation::get_user::GetUserInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_user::GetUserInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_user::GetUserInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_user::GetUserInput { user_id: self.user_id })
     }
 }

@@ -99,16 +99,16 @@ impl DescribeFindingsOutputBuilder {
     /// - [`failed_items`](crate::operation::describe_findings::builders::DescribeFindingsOutputBuilder::failed_items)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_findings::DescribeFindingsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_findings::DescribeFindingsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_findings::DescribeFindingsOutput {
             findings: self.findings.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "findings",
                     "findings was not specified but it is required when building DescribeFindingsOutput",
                 )
             })?,
             failed_items: self.failed_items.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "failed_items",
                     "failed_items was not specified but it is required when building DescribeFindingsOutput",
                 )

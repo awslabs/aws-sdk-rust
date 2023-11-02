@@ -229,28 +229,28 @@ impl AnalyzerSummaryBuilder {
     /// - [`r#type`](crate::types::builders::AnalyzerSummaryBuilder::r#type)
     /// - [`created_at`](crate::types::builders::AnalyzerSummaryBuilder::created_at)
     /// - [`status`](crate::types::builders::AnalyzerSummaryBuilder::status)
-    pub fn build(self) -> ::std::result::Result<crate::types::AnalyzerSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AnalyzerSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AnalyzerSummary {
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building AnalyzerSummary",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building AnalyzerSummary",
                 )
             })?,
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building AnalyzerSummary",
                 )
             })?,
             created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
                     "created_at was not specified but it is required when building AnalyzerSummary",
                 )
@@ -259,7 +259,7 @@ impl AnalyzerSummaryBuilder {
             last_resource_analyzed_at: self.last_resource_analyzed_at,
             tags: self.tags,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building AnalyzerSummary",
                 )

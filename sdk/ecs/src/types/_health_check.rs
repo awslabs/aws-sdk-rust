@@ -211,10 +211,10 @@ impl HealthCheckBuilder {
     /// Consumes the builder and constructs a [`HealthCheck`](crate::types::HealthCheck).
     /// This method will fail if any of the following fields are not set:
     /// - [`command`](crate::types::builders::HealthCheckBuilder::command)
-    pub fn build(self) -> ::std::result::Result<crate::types::HealthCheck, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::HealthCheck, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::HealthCheck {
             command: self.command.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "command",
                     "command was not specified but it is required when building HealthCheck",
                 )

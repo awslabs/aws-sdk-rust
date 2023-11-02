@@ -68,16 +68,16 @@ impl InvalidSensorDataBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`affected_sensor_count`](crate::types::builders::InvalidSensorDataBuilder::affected_sensor_count)
     /// - [`total_number_of_invalid_values`](crate::types::builders::InvalidSensorDataBuilder::total_number_of_invalid_values)
-    pub fn build(self) -> ::std::result::Result<crate::types::InvalidSensorData, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::InvalidSensorData, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::InvalidSensorData {
             affected_sensor_count: self.affected_sensor_count.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "affected_sensor_count",
                     "affected_sensor_count was not specified but it is required when building InvalidSensorData",
                 )
             })?,
             total_number_of_invalid_values: self.total_number_of_invalid_values.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "total_number_of_invalid_values",
                     "total_number_of_invalid_values was not specified but it is required when building InvalidSensorData",
                 )

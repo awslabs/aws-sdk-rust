@@ -2,7 +2,7 @@
 pub fn ser_chime_sdk_meeting_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ChimeSdkMeetingConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.source_configuration {
         #[allow(unused_mut)]
         let mut object_2 = object.key("SourceConfiguration").start_object();

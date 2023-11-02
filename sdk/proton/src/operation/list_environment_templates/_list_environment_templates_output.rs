@@ -91,12 +91,12 @@ impl ListEnvironmentTemplatesOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_environment_templates::ListEnvironmentTemplatesOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_environment_templates::ListEnvironmentTemplatesOutput {
             next_token: self.next_token,
             templates: self.templates.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "templates",
                     "templates was not specified but it is required when building ListEnvironmentTemplatesOutput",
                 )

@@ -67,10 +67,10 @@ impl OriginRequestPolicySummaryBuilder {
     /// Consumes the builder and constructs a [`OriginRequestPolicySummary`](crate::types::OriginRequestPolicySummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::OriginRequestPolicySummaryBuilder::r#type)
-    pub fn build(self) -> ::std::result::Result<crate::types::OriginRequestPolicySummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::OriginRequestPolicySummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::OriginRequestPolicySummary {
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building OriginRequestPolicySummary",
                 )

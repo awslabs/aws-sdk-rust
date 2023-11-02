@@ -179,7 +179,8 @@ impl ListCheckSummariesInputBuilder {
     /// Consumes the builder and constructs a [`ListCheckSummariesInput`](crate::operation::list_check_summaries::ListCheckSummariesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_check_summaries::ListCheckSummariesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_check_summaries::ListCheckSummariesInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::list_check_summaries::ListCheckSummariesInput {
             workload_id: self.workload_id,
             next_token: self.next_token,

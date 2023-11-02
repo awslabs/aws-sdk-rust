@@ -46,7 +46,7 @@ impl DescribeKeyPhrasesDetectionJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_key_phrases_detection_job::DescribeKeyPhrasesDetectionJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_key_phrases_detection_job::DescribeKeyPhrasesDetectionJobInput { job_id: self.job_id })
     }

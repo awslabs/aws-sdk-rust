@@ -139,7 +139,7 @@ impl ExecuteSqlInputBuilder {
         &self.schema
     }
     /// Consumes the builder and constructs a [`ExecuteSqlInput`](crate::operation::execute_sql::ExecuteSqlInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::execute_sql::ExecuteSqlInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::execute_sql::ExecuteSqlInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::execute_sql::ExecuteSqlInput {
             db_cluster_or_instance_arn: self.db_cluster_or_instance_arn,
             aws_secret_store_arn: self.aws_secret_store_arn,

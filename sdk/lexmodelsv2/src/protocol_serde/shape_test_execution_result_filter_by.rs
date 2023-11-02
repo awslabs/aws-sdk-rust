@@ -2,7 +2,7 @@
 pub fn ser_test_execution_result_filter_by(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TestExecutionResultFilterBy,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("resultTypeFilter").string(input.result_type_filter.as_str());
     }

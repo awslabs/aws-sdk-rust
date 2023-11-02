@@ -66,7 +66,7 @@ impl GetTransactionInputBuilder {
     /// Consumes the builder and constructs a [`GetTransactionInput`](crate::operation::get_transaction::GetTransactionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_transaction::GetTransactionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_transaction::GetTransactionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_transaction::GetTransactionInput {
             transaction_hash: self.transaction_hash,
             network: self.network,

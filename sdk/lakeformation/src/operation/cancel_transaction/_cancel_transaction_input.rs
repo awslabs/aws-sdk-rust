@@ -44,7 +44,7 @@ impl CancelTransactionInputBuilder {
     /// Consumes the builder and constructs a [`CancelTransactionInput`](crate::operation::cancel_transaction::CancelTransactionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::cancel_transaction::CancelTransactionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::cancel_transaction::CancelTransactionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::cancel_transaction::CancelTransactionInput {
             transaction_id: self.transaction_id,
         })

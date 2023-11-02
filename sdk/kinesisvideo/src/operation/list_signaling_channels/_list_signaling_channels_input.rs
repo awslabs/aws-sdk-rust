@@ -85,7 +85,7 @@ impl ListSignalingChannelsInputBuilder {
     /// Consumes the builder and constructs a [`ListSignalingChannelsInput`](crate::operation::list_signaling_channels::ListSignalingChannelsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_signaling_channels::ListSignalingChannelsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_signaling_channels::ListSignalingChannelsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_signaling_channels::ListSignalingChannelsInput {
             max_results: self.max_results,

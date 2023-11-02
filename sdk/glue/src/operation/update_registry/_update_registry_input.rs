@@ -66,7 +66,7 @@ impl UpdateRegistryInputBuilder {
     /// Consumes the builder and constructs a [`UpdateRegistryInput`](crate::operation::update_registry::UpdateRegistryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_registry::UpdateRegistryInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_registry::UpdateRegistryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_registry::UpdateRegistryInput {
             registry_id: self.registry_id,
             description: self.description,

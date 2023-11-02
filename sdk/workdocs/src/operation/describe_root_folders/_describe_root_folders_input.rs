@@ -95,7 +95,7 @@ impl DescribeRootFoldersInputBuilder {
     /// Consumes the builder and constructs a [`DescribeRootFoldersInput`](crate::operation::describe_root_folders::DescribeRootFoldersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_root_folders::DescribeRootFoldersInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_root_folders::DescribeRootFoldersInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_root_folders::DescribeRootFoldersInput {
             authentication_token: self.authentication_token,

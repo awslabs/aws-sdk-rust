@@ -169,15 +169,15 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for StopDevEnvir
             fn uri_base(
                 _input: &crate::operation::stop_dev_environment_session::StopDevEnvironmentSessionInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 use ::std::fmt::Write as _;
                 let input_1 = &_input.space_name;
                 let input_1 = input_1
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("space_name", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("space_name", "cannot be empty or unset"))?;
                 let space_name = ::aws_smithy_http::label::fmt_string(input_1, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if space_name.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "space_name",
                         "cannot be empty or unset",
                     ));
@@ -185,10 +185,10 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for StopDevEnvir
                 let input_2 = &_input.project_name;
                 let input_2 = input_2
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("project_name", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("project_name", "cannot be empty or unset"))?;
                 let project_name = ::aws_smithy_http::label::fmt_string(input_2, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if project_name.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "project_name",
                         "cannot be empty or unset",
                     ));
@@ -196,10 +196,10 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for StopDevEnvir
                 let input_3 = &_input.id;
                 let input_3 = input_3
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("id", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("id", "cannot be empty or unset"))?;
                 let id = ::aws_smithy_http::label::fmt_string(input_3, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if id.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     ));
@@ -207,10 +207,10 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for StopDevEnvir
                 let input_4 = &_input.session_id;
                 let input_4 = input_4
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("session_id", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("session_id", "cannot be empty or unset"))?;
                 let session_id = ::aws_smithy_http::label::fmt_string(input_4, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if session_id.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "session_id",
                         "cannot be empty or unset",
                     ));
@@ -230,7 +230,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for StopDevEnvir
             fn update_http_builder(
                 input: &crate::operation::stop_dev_environment_session::StopDevEnvironmentSessionInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 ::std::result::Result::Ok(builder.method("DELETE").uri(uri))
@@ -238,7 +238,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for StopDevEnvir
             let mut builder = update_http_builder(&input, ::http::request::Builder::new())?;
             builder
         };
-        let body = ::aws_smithy_http::body::SdkBody::from("");
+        let body = ::aws_smithy_types::body::SdkBody::from("");
 
         ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }

@@ -2,7 +2,7 @@
 pub fn ser_data_cells_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DataCellsFilter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("TableCatalogId").string(input.table_catalog_id.as_str());
     }

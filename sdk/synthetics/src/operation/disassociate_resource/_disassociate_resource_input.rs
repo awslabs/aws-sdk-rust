@@ -66,7 +66,7 @@ impl DisassociateResourceInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateResourceInput`](crate::operation::disassociate_resource::DisassociateResourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::disassociate_resource::DisassociateResourceInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::disassociate_resource::DisassociateResourceInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::disassociate_resource::DisassociateResourceInput {
             group_identifier: self.group_identifier,

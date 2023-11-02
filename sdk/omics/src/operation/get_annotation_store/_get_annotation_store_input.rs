@@ -44,7 +44,8 @@ impl GetAnnotationStoreInputBuilder {
     /// Consumes the builder and constructs a [`GetAnnotationStoreInput`](crate::operation::get_annotation_store::GetAnnotationStoreInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_annotation_store::GetAnnotationStoreInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_annotation_store::GetAnnotationStoreInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::get_annotation_store::GetAnnotationStoreInput { name: self.name })
     }
 }

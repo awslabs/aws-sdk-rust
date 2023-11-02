@@ -116,7 +116,7 @@ impl CreateStoreImageTaskInputBuilder {
     /// Consumes the builder and constructs a [`CreateStoreImageTaskInput`](crate::operation::create_store_image_task::CreateStoreImageTaskInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_store_image_task::CreateStoreImageTaskInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_store_image_task::CreateStoreImageTaskInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_store_image_task::CreateStoreImageTaskInput {
             image_id: self.image_id,

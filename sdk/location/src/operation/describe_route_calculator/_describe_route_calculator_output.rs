@@ -311,42 +311,42 @@ impl DescribeRouteCalculatorOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_route_calculator::DescribeRouteCalculatorOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_route_calculator::DescribeRouteCalculatorOutput {
             calculator_name: self.calculator_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "calculator_name",
                     "calculator_name was not specified but it is required when building DescribeRouteCalculatorOutput",
                 )
             })?,
             calculator_arn: self.calculator_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "calculator_arn",
                     "calculator_arn was not specified but it is required when building DescribeRouteCalculatorOutput",
                 )
             })?,
             pricing_plan: self.pricing_plan,
             description: self.description.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "description",
                     "description was not specified but it is required when building DescribeRouteCalculatorOutput",
                 )
             })?,
             create_time: self.create_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "create_time",
                     "create_time was not specified but it is required when building DescribeRouteCalculatorOutput",
                 )
             })?,
             update_time: self.update_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "update_time",
                     "update_time was not specified but it is required when building DescribeRouteCalculatorOutput",
                 )
             })?,
             data_source: self.data_source.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_source",
                     "data_source was not specified but it is required when building DescribeRouteCalculatorOutput",
                 )

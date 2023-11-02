@@ -63,10 +63,10 @@ impl DeleteUserProfileOutputBuilder {
     /// - [`user_arn`](crate::operation::delete_user_profile::builders::DeleteUserProfileOutputBuilder::user_arn)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_user_profile::DeleteUserProfileOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_user_profile::DeleteUserProfileOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_user_profile::DeleteUserProfileOutput {
             user_arn: self.user_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "user_arn",
                     "user_arn was not specified but it is required when building DeleteUserProfileOutput",
                 )

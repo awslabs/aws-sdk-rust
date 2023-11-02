@@ -210,7 +210,7 @@ impl DescribeVolumesModificationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_volumes_modifications::DescribeVolumesModificationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_volumes_modifications::DescribeVolumesModificationsInput {
             dry_run: self.dry_run,

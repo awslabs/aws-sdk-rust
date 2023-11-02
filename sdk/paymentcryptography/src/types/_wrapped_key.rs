@@ -102,22 +102,22 @@ impl WrappedKeyBuilder {
     /// - [`wrapping_key_arn`](crate::types::builders::WrappedKeyBuilder::wrapping_key_arn)
     /// - [`wrapped_key_material_format`](crate::types::builders::WrappedKeyBuilder::wrapped_key_material_format)
     /// - [`key_material`](crate::types::builders::WrappedKeyBuilder::key_material)
-    pub fn build(self) -> ::std::result::Result<crate::types::WrappedKey, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::WrappedKey, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::WrappedKey {
             wrapping_key_arn: self.wrapping_key_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "wrapping_key_arn",
                     "wrapping_key_arn was not specified but it is required when building WrappedKey",
                 )
             })?,
             wrapped_key_material_format: self.wrapped_key_material_format.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "wrapped_key_material_format",
                     "wrapped_key_material_format was not specified but it is required when building WrappedKey",
                 )
             })?,
             key_material: self.key_material.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "key_material",
                     "key_material was not specified but it is required when building WrappedKey",
                 )

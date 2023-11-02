@@ -2,7 +2,7 @@
 pub fn ser_list_management_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ListManagementOptions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("ContactListName").string(input.contact_list_name.as_str());
     }

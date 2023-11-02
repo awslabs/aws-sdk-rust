@@ -158,16 +158,16 @@ impl ListKeysResponseEntryBuilder {
     /// - [`expire_time`](crate::types::builders::ListKeysResponseEntryBuilder::expire_time)
     /// - [`create_time`](crate::types::builders::ListKeysResponseEntryBuilder::create_time)
     /// - [`update_time`](crate::types::builders::ListKeysResponseEntryBuilder::update_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::ListKeysResponseEntry, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ListKeysResponseEntry, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ListKeysResponseEntry {
             key_name: self.key_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "key_name",
                     "key_name was not specified but it is required when building ListKeysResponseEntry",
                 )
             })?,
             expire_time: self.expire_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "expire_time",
                     "expire_time was not specified but it is required when building ListKeysResponseEntry",
                 )
@@ -175,13 +175,13 @@ impl ListKeysResponseEntryBuilder {
             description: self.description,
             restrictions: self.restrictions,
             create_time: self.create_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "create_time",
                     "create_time was not specified but it is required when building ListKeysResponseEntry",
                 )
             })?,
             update_time: self.update_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "update_time",
                     "update_time was not specified but it is required when building ListKeysResponseEntry",
                 )

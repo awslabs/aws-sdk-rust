@@ -89,10 +89,10 @@ impl TokenFilterBuilder {
     /// Consumes the builder and constructs a [`TokenFilter`](crate::types::TokenFilter).
     /// This method will fail if any of the following fields are not set:
     /// - [`network`](crate::types::builders::TokenFilterBuilder::network)
-    pub fn build(self) -> ::std::result::Result<crate::types::TokenFilter, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TokenFilter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TokenFilter {
             network: self.network.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "network",
                     "network was not specified but it is required when building TokenFilter",
                 )

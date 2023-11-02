@@ -45,7 +45,7 @@ impl DescribeLocationEfsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeLocationEfsInput`](crate::operation::describe_location_efs::DescribeLocationEfsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_location_efs::DescribeLocationEfsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_location_efs::DescribeLocationEfsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_location_efs::DescribeLocationEfsInput {
             location_arn: self.location_arn,

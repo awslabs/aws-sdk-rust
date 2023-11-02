@@ -2,7 +2,7 @@
 pub fn ser_video_codec_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VideoCodecSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.av1_settings {
         #[allow(unused_mut)]
         let mut object_2 = object.key("av1Settings").start_object();

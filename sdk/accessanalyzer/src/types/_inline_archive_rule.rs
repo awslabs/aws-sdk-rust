@@ -74,16 +74,16 @@ impl InlineArchiveRuleBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`rule_name`](crate::types::builders::InlineArchiveRuleBuilder::rule_name)
     /// - [`filter`](crate::types::builders::InlineArchiveRuleBuilder::filter)
-    pub fn build(self) -> ::std::result::Result<crate::types::InlineArchiveRule, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::InlineArchiveRule, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::InlineArchiveRule {
             rule_name: self.rule_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "rule_name",
                     "rule_name was not specified but it is required when building InlineArchiveRule",
                 )
             })?,
             filter: self.filter.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "filter",
                     "filter was not specified but it is required when building InlineArchiveRule",
                 )

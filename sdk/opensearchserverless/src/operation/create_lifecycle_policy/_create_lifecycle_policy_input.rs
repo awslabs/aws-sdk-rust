@@ -130,7 +130,7 @@ impl CreateLifecyclePolicyInputBuilder {
     /// Consumes the builder and constructs a [`CreateLifecyclePolicyInput`](crate::operation::create_lifecycle_policy::CreateLifecyclePolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_lifecycle_policy::CreateLifecyclePolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_lifecycle_policy::CreateLifecyclePolicyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_lifecycle_policy::CreateLifecyclePolicyInput {
             r#type: self.r#type,

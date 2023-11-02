@@ -2,7 +2,7 @@
 pub fn ser_project_build_batch_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ProjectBuildBatchConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.service_role {
         object.key("serviceRole").string(var_1.as_str());
     }

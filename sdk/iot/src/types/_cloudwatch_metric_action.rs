@@ -163,34 +163,34 @@ impl CloudwatchMetricActionBuilder {
     /// - [`metric_name`](crate::types::builders::CloudwatchMetricActionBuilder::metric_name)
     /// - [`metric_value`](crate::types::builders::CloudwatchMetricActionBuilder::metric_value)
     /// - [`metric_unit`](crate::types::builders::CloudwatchMetricActionBuilder::metric_unit)
-    pub fn build(self) -> ::std::result::Result<crate::types::CloudwatchMetricAction, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CloudwatchMetricAction, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CloudwatchMetricAction {
             role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role_arn",
                     "role_arn was not specified but it is required when building CloudwatchMetricAction",
                 )
             })?,
             metric_namespace: self.metric_namespace.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "metric_namespace",
                     "metric_namespace was not specified but it is required when building CloudwatchMetricAction",
                 )
             })?,
             metric_name: self.metric_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "metric_name",
                     "metric_name was not specified but it is required when building CloudwatchMetricAction",
                 )
             })?,
             metric_value: self.metric_value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "metric_value",
                     "metric_value was not specified but it is required when building CloudwatchMetricAction",
                 )
             })?,
             metric_unit: self.metric_unit.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "metric_unit",
                     "metric_unit was not specified but it is required when building CloudwatchMetricAction",
                 )

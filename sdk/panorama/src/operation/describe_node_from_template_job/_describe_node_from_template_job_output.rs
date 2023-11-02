@@ -338,66 +338,66 @@ impl DescribeNodeFromTemplateJobOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobOutput {
             job_id: self.job_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "job_id",
                     "job_id was not specified but it is required when building DescribeNodeFromTemplateJobOutput",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building DescribeNodeFromTemplateJobOutput",
                 )
             })?,
             status_message: self.status_message.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status_message",
                     "status_message was not specified but it is required when building DescribeNodeFromTemplateJobOutput",
                 )
             })?,
             created_time: self.created_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_time",
                     "created_time was not specified but it is required when building DescribeNodeFromTemplateJobOutput",
                 )
             })?,
             last_updated_time: self.last_updated_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_updated_time",
                     "last_updated_time was not specified but it is required when building DescribeNodeFromTemplateJobOutput",
                 )
             })?,
             output_package_name: self.output_package_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "output_package_name",
                     "output_package_name was not specified but it is required when building DescribeNodeFromTemplateJobOutput",
                 )
             })?,
             output_package_version: self.output_package_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "output_package_version",
                     "output_package_version was not specified but it is required when building DescribeNodeFromTemplateJobOutput",
                 )
             })?,
             node_name: self.node_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "node_name",
                     "node_name was not specified but it is required when building DescribeNodeFromTemplateJobOutput",
                 )
             })?,
             node_description: self.node_description,
             template_type: self.template_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "template_type",
                     "template_type was not specified but it is required when building DescribeNodeFromTemplateJobOutput",
                 )
             })?,
             template_parameters: self.template_parameters.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "template_parameters",
                     "template_parameters was not specified but it is required when building DescribeNodeFromTemplateJobOutput",
                 )

@@ -56,7 +56,7 @@ impl PutRetentionConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_retention_configuration::PutRetentionConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_retention_configuration::PutRetentionConfigurationInput {
             retention_period_in_days: self.retention_period_in_days,

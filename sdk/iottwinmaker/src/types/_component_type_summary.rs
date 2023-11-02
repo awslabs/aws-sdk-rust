@@ -179,28 +179,28 @@ impl ComponentTypeSummaryBuilder {
     /// - [`component_type_id`](crate::types::builders::ComponentTypeSummaryBuilder::component_type_id)
     /// - [`creation_date_time`](crate::types::builders::ComponentTypeSummaryBuilder::creation_date_time)
     /// - [`update_date_time`](crate::types::builders::ComponentTypeSummaryBuilder::update_date_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::ComponentTypeSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ComponentTypeSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ComponentTypeSummary {
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building ComponentTypeSummary",
                 )
             })?,
             component_type_id: self.component_type_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "component_type_id",
                     "component_type_id was not specified but it is required when building ComponentTypeSummary",
                 )
             })?,
             creation_date_time: self.creation_date_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_date_time",
                     "creation_date_time was not specified but it is required when building ComponentTypeSummary",
                 )
             })?,
             update_date_time: self.update_date_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "update_date_time",
                     "update_date_time was not specified but it is required when building ComponentTypeSummary",
                 )

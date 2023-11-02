@@ -90,17 +90,17 @@ impl PutRecordsRequestEntryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`data`](crate::types::builders::PutRecordsRequestEntryBuilder::data)
     /// - [`partition_key`](crate::types::builders::PutRecordsRequestEntryBuilder::partition_key)
-    pub fn build(self) -> ::std::result::Result<crate::types::PutRecordsRequestEntry, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PutRecordsRequestEntry, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PutRecordsRequestEntry {
             data: self.data.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data",
                     "data was not specified but it is required when building PutRecordsRequestEntry",
                 )
             })?,
             explicit_hash_key: self.explicit_hash_key,
             partition_key: self.partition_key.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "partition_key",
                     "partition_key was not specified but it is required when building PutRecordsRequestEntry",
                 )

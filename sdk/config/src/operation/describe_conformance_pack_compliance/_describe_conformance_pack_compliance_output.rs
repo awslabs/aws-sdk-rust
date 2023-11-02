@@ -118,18 +118,18 @@ impl DescribeConformancePackComplianceOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_conformance_pack_compliance::DescribeConformancePackComplianceOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_conformance_pack_compliance::DescribeConformancePackComplianceOutput {
                 conformance_pack_name: self.conformance_pack_name
                     .ok_or_else(||
-                        ::aws_smithy_http::operation::error::BuildError::missing_field("conformance_pack_name", "conformance_pack_name was not specified but it is required when building DescribeConformancePackComplianceOutput")
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("conformance_pack_name", "conformance_pack_name was not specified but it is required when building DescribeConformancePackComplianceOutput")
                     )?
                 ,
                 conformance_pack_rule_compliance_list: self.conformance_pack_rule_compliance_list
                     .ok_or_else(||
-                        ::aws_smithy_http::operation::error::BuildError::missing_field("conformance_pack_rule_compliance_list", "conformance_pack_rule_compliance_list was not specified but it is required when building DescribeConformancePackComplianceOutput")
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("conformance_pack_rule_compliance_list", "conformance_pack_rule_compliance_list was not specified but it is required when building DescribeConformancePackComplianceOutput")
                     )?
                 ,
                 next_token: self.next_token

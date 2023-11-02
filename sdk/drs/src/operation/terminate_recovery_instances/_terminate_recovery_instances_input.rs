@@ -53,7 +53,7 @@ impl TerminateRecoveryInstancesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::terminate_recovery_instances::TerminateRecoveryInstancesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::terminate_recovery_instances::TerminateRecoveryInstancesInput {
             recovery_instance_ids: self.recovery_instance_ids,

@@ -66,7 +66,7 @@ impl DescribeTableInputBuilder {
     /// Consumes the builder and constructs a [`DescribeTableInput`](crate::operation::describe_table::DescribeTableInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_table::DescribeTableInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_table::DescribeTableInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_table::DescribeTableInput {
             database_name: self.database_name,
             table_name: self.table_name,

@@ -101,7 +101,7 @@ impl UpdateBasePathMappingInputBuilder {
     /// Consumes the builder and constructs a [`UpdateBasePathMappingInput`](crate::operation::update_base_path_mapping::UpdateBasePathMappingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_base_path_mapping::UpdateBasePathMappingInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_base_path_mapping::UpdateBasePathMappingInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_base_path_mapping::UpdateBasePathMappingInput {
             domain_name: self.domain_name,

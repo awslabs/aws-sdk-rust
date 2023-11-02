@@ -87,10 +87,10 @@ impl SearchJobsOutputBuilder {
     /// Consumes the builder and constructs a [`SearchJobsOutput`](crate::operation::search_jobs::SearchJobsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`jobs`](crate::operation::search_jobs::builders::SearchJobsOutputBuilder::jobs)
-    pub fn build(self) -> ::std::result::Result<crate::operation::search_jobs::SearchJobsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::search_jobs::SearchJobsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_jobs::SearchJobsOutput {
             jobs: self.jobs.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "jobs",
                     "jobs was not specified but it is required when building SearchJobsOutput",
                 )

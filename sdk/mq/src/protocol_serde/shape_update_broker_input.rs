@@ -2,7 +2,7 @@
 pub fn ser_update_broker_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_broker::UpdateBrokerInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.authentication_strategy {
         object.key("authenticationStrategy").string(var_1.as_str());
     }

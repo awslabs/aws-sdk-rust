@@ -179,15 +179,15 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for UpdateInstan
             fn uri_base(
                 _input: &crate::operation::update_instance_storage_config::UpdateInstanceStorageConfigInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 use ::std::fmt::Write as _;
                 let input_1 = &_input.instance_id;
                 let input_1 = input_1
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("instance_id", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("instance_id", "cannot be empty or unset"))?;
                 let instance_id = ::aws_smithy_http::label::fmt_string(input_1, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if instance_id.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "instance_id",
                         "cannot be empty or unset",
                     ));
@@ -195,10 +195,10 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for UpdateInstan
                 let input_2 = &_input.association_id;
                 let input_2 = input_2
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("association_id", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("association_id", "cannot be empty or unset"))?;
                 let association_id = ::aws_smithy_http::label::fmt_string(input_2, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if association_id.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "association_id",
                         "cannot be empty or unset",
                     ));
@@ -215,12 +215,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for UpdateInstan
             fn uri_query(
                 _input: &crate::operation::update_instance_storage_config::UpdateInstanceStorageConfigInput,
                 mut output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 let inner_3 = &_input.resource_type;
                 let inner_3 = inner_3
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("resource_type", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("resource_type", "cannot be empty or unset"))?;
                 query.push_kv("resourceType", &::aws_smithy_http::query::fmt_string(&inner_3));
                 ::std::result::Result::Ok(())
             }
@@ -228,7 +228,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for UpdateInstan
             fn update_http_builder(
                 input: &crate::operation::update_instance_storage_config::UpdateInstanceStorageConfigInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -238,7 +238,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for UpdateInstan
             builder = _header_serialization_settings.set_default_header(builder, ::http::header::CONTENT_TYPE, "application/json");
             builder
         };
-        let body = ::aws_smithy_http::body::SdkBody::from(
+        let body = ::aws_smithy_types::body::SdkBody::from(
             crate::protocol_serde::shape_update_instance_storage_config::ser_update_instance_storage_config_input(&input)?,
         );
         if let Some(content_length) = body.content_length() {

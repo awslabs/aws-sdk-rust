@@ -86,8 +86,10 @@ impl ListPermissionVersionsInputBuilder {
     /// Consumes the builder and constructs a [`ListPermissionVersionsInput`](crate::operation::list_permission_versions::ListPermissionVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_permission_versions::ListPermissionVersionsInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::list_permission_versions::ListPermissionVersionsInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::list_permission_versions::ListPermissionVersionsInput {
             permission_arn: self.permission_arn,
             next_token: self.next_token,

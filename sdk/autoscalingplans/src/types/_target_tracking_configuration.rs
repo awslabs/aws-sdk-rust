@@ -192,12 +192,12 @@ impl TargetTrackingConfigurationBuilder {
     /// Consumes the builder and constructs a [`TargetTrackingConfiguration`](crate::types::TargetTrackingConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`target_value`](crate::types::builders::TargetTrackingConfigurationBuilder::target_value)
-    pub fn build(self) -> ::std::result::Result<crate::types::TargetTrackingConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TargetTrackingConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TargetTrackingConfiguration {
             predefined_scaling_metric_specification: self.predefined_scaling_metric_specification,
             customized_scaling_metric_specification: self.customized_scaling_metric_specification,
             target_value: self.target_value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "target_value",
                     "target_value was not specified but it is required when building TargetTrackingConfiguration",
                 )

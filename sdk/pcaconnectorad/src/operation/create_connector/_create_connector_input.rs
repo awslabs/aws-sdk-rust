@@ -136,7 +136,7 @@ impl CreateConnectorInputBuilder {
     /// Consumes the builder and constructs a [`CreateConnectorInput`](crate::operation::create_connector::CreateConnectorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_connector::CreateConnectorInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_connector::CreateConnectorInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_connector::CreateConnectorInput {
             directory_id: self.directory_id,
             certificate_authority_arn: self.certificate_authority_arn,

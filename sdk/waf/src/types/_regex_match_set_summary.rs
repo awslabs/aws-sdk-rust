@@ -79,16 +79,16 @@ impl RegexMatchSetSummaryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`regex_match_set_id`](crate::types::builders::RegexMatchSetSummaryBuilder::regex_match_set_id)
     /// - [`name`](crate::types::builders::RegexMatchSetSummaryBuilder::name)
-    pub fn build(self) -> ::std::result::Result<crate::types::RegexMatchSetSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RegexMatchSetSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RegexMatchSetSummary {
             regex_match_set_id: self.regex_match_set_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "regex_match_set_id",
                     "regex_match_set_id was not specified but it is required when building RegexMatchSetSummary",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building RegexMatchSetSummary",
                 )

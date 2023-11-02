@@ -101,17 +101,17 @@ impl DescribeAssessmentTemplatesOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_assessment_templates::DescribeAssessmentTemplatesOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_assessment_templates::DescribeAssessmentTemplatesOutput {
             assessment_templates: self.assessment_templates.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "assessment_templates",
                     "assessment_templates was not specified but it is required when building DescribeAssessmentTemplatesOutput",
                 )
             })?,
             failed_items: self.failed_items.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "failed_items",
                     "failed_items was not specified but it is required when building DescribeAssessmentTemplatesOutput",
                 )

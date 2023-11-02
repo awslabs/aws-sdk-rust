@@ -89,12 +89,12 @@ impl ListContactChannelsOutputBuilder {
     /// - [`contact_channels`](crate::operation::list_contact_channels::builders::ListContactChannelsOutputBuilder::contact_channels)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_contact_channels::ListContactChannelsOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_contact_channels::ListContactChannelsOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_contact_channels::ListContactChannelsOutput {
             next_token: self.next_token,
             contact_channels: self.contact_channels.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "contact_channels",
                     "contact_channels was not specified but it is required when building ListContactChannelsOutput",
                 )

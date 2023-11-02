@@ -232,10 +232,10 @@ impl TemplateVersionDefinitionBuilder {
     /// Consumes the builder and constructs a [`TemplateVersionDefinition`](crate::types::TemplateVersionDefinition).
     /// This method will fail if any of the following fields are not set:
     /// - [`data_set_configurations`](crate::types::builders::TemplateVersionDefinitionBuilder::data_set_configurations)
-    pub fn build(self) -> ::std::result::Result<crate::types::TemplateVersionDefinition, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TemplateVersionDefinition, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TemplateVersionDefinition {
             data_set_configurations: self.data_set_configurations.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_set_configurations",
                     "data_set_configurations was not specified but it is required when building TemplateVersionDefinition",
                 )

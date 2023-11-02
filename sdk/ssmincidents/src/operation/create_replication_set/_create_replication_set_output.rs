@@ -63,11 +63,11 @@ impl CreateReplicationSetOutputBuilder {
     /// - [`arn`](crate::operation::create_replication_set::builders::CreateReplicationSetOutputBuilder::arn)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_replication_set::CreateReplicationSetOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_replication_set::CreateReplicationSetOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_replication_set::CreateReplicationSetOutput {
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building CreateReplicationSetOutput",
                 )

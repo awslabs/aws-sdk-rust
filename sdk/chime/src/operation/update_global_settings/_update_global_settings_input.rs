@@ -64,7 +64,7 @@ impl UpdateGlobalSettingsInputBuilder {
     /// Consumes the builder and constructs a [`UpdateGlobalSettingsInput`](crate::operation::update_global_settings::UpdateGlobalSettingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_global_settings::UpdateGlobalSettingsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_global_settings::UpdateGlobalSettingsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_global_settings::UpdateGlobalSettingsInput {
             business_calling: self.business_calling,

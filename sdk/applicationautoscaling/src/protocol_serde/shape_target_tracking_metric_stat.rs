@@ -2,7 +2,7 @@
 pub fn ser_target_tracking_metric_stat(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TargetTrackingMetricStat,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.metric {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Metric").start_object();

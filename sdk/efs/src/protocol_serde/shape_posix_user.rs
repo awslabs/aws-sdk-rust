@@ -54,7 +54,7 @@ where
 pub fn ser_posix_user(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PosixUser,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Uid").number(
             #[allow(clippy::useless_conversion)]

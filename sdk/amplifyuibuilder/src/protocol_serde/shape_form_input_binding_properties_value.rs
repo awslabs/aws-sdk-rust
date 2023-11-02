@@ -2,7 +2,7 @@
 pub fn ser_form_input_binding_properties_value(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FormInputBindingPropertiesValue,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.r#type {
         object.key("type").string(var_1.as_str());
     }

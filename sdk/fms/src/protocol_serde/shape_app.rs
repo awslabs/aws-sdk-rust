@@ -2,7 +2,7 @@
 pub fn ser_app(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::App,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("AppName").string(input.app_name.as_str());
     }

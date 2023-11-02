@@ -94,22 +94,22 @@ impl MetricAttributeBuilder {
     /// - [`event_type`](crate::types::builders::MetricAttributeBuilder::event_type)
     /// - [`metric_name`](crate::types::builders::MetricAttributeBuilder::metric_name)
     /// - [`expression`](crate::types::builders::MetricAttributeBuilder::expression)
-    pub fn build(self) -> ::std::result::Result<crate::types::MetricAttribute, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::MetricAttribute, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MetricAttribute {
             event_type: self.event_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "event_type",
                     "event_type was not specified but it is required when building MetricAttribute",
                 )
             })?,
             metric_name: self.metric_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "metric_name",
                     "metric_name was not specified but it is required when building MetricAttribute",
                 )
             })?,
             expression: self.expression.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "expression",
                     "expression was not specified but it is required when building MetricAttribute",
                 )

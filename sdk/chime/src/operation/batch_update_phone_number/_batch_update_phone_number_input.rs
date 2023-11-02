@@ -56,7 +56,7 @@ impl BatchUpdatePhoneNumberInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_update_phone_number::BatchUpdatePhoneNumberInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::batch_update_phone_number::BatchUpdatePhoneNumberInput {
             update_phone_number_request_items: self.update_phone_number_request_items,

@@ -615,16 +615,16 @@ impl CacheBehaviorBuilder {
     /// - [`path_pattern`](crate::types::builders::CacheBehaviorBuilder::path_pattern)
     /// - [`target_origin_id`](crate::types::builders::CacheBehaviorBuilder::target_origin_id)
     /// - [`viewer_protocol_policy`](crate::types::builders::CacheBehaviorBuilder::viewer_protocol_policy)
-    pub fn build(self) -> ::std::result::Result<crate::types::CacheBehavior, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CacheBehavior, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CacheBehavior {
             path_pattern: self.path_pattern.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "path_pattern",
                     "path_pattern was not specified but it is required when building CacheBehavior",
                 )
             })?,
             target_origin_id: self.target_origin_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "target_origin_id",
                     "target_origin_id was not specified but it is required when building CacheBehavior",
                 )
@@ -632,7 +632,7 @@ impl CacheBehaviorBuilder {
             trusted_signers: self.trusted_signers,
             trusted_key_groups: self.trusted_key_groups,
             viewer_protocol_policy: self.viewer_protocol_policy.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "viewer_protocol_policy",
                     "viewer_protocol_policy was not specified but it is required when building CacheBehavior",
                 )

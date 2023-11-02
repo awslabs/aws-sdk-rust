@@ -217,7 +217,7 @@ impl GetTableObjectsInputBuilder {
     /// Consumes the builder and constructs a [`GetTableObjectsInput`](crate::operation::get_table_objects::GetTableObjectsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_table_objects::GetTableObjectsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_table_objects::GetTableObjectsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_table_objects::GetTableObjectsInput {
             catalog_id: self.catalog_id,
             database_name: self.database_name,

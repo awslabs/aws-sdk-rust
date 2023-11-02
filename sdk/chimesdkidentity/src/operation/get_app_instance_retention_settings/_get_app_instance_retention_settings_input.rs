@@ -46,7 +46,7 @@ impl GetAppInstanceRetentionSettingsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_app_instance_retention_settings::GetAppInstanceRetentionSettingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_app_instance_retention_settings::GetAppInstanceRetentionSettingsInput {

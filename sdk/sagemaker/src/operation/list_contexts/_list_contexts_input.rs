@@ -188,7 +188,9 @@ impl ListContextsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListContextsInput`](crate::operation::list_contexts::ListContextsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_contexts::ListContextsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_contexts::ListContextsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_contexts::ListContextsInput {
             source_uri: self.source_uri,
             context_type: self.context_type,

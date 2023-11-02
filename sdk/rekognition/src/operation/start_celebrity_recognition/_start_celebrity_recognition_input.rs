@@ -109,7 +109,7 @@ impl StartCelebrityRecognitionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_celebrity_recognition::StartCelebrityRecognitionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_celebrity_recognition::StartCelebrityRecognitionInput {
             video: self.video,

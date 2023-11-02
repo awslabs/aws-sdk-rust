@@ -63,10 +63,10 @@ impl UpdateRulesetOutputBuilder {
     /// - [`name`](crate::operation::update_ruleset::builders::UpdateRulesetOutputBuilder::name)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_ruleset::UpdateRulesetOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_ruleset::UpdateRulesetOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_ruleset::UpdateRulesetOutput {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building UpdateRulesetOutput",
                 )

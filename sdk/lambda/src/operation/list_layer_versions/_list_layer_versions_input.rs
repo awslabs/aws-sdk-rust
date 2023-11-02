@@ -133,7 +133,7 @@ impl ListLayerVersionsInputBuilder {
     /// Consumes the builder and constructs a [`ListLayerVersionsInput`](crate::operation::list_layer_versions::ListLayerVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_layer_versions::ListLayerVersionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_layer_versions::ListLayerVersionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_layer_versions::ListLayerVersionsInput {
             compatible_runtime: self.compatible_runtime,
             layer_name: self.layer_name,

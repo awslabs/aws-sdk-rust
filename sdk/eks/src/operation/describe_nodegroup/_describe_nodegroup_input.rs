@@ -66,7 +66,7 @@ impl DescribeNodegroupInputBuilder {
     /// Consumes the builder and constructs a [`DescribeNodegroupInput`](crate::operation::describe_nodegroup::DescribeNodegroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_nodegroup::DescribeNodegroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_nodegroup::DescribeNodegroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_nodegroup::DescribeNodegroupInput {
             cluster_name: self.cluster_name,
             nodegroup_name: self.nodegroup_name,

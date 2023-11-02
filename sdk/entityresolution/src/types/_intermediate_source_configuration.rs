@@ -46,10 +46,10 @@ impl IntermediateSourceConfigurationBuilder {
     /// Consumes the builder and constructs a [`IntermediateSourceConfiguration`](crate::types::IntermediateSourceConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`intermediate_s3_path`](crate::types::builders::IntermediateSourceConfigurationBuilder::intermediate_s3_path)
-    pub fn build(self) -> ::std::result::Result<crate::types::IntermediateSourceConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::IntermediateSourceConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::IntermediateSourceConfiguration {
             intermediate_s3_path: self.intermediate_s3_path.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "intermediate_s3_path",
                     "intermediate_s3_path was not specified but it is required when building IntermediateSourceConfiguration",
                 )

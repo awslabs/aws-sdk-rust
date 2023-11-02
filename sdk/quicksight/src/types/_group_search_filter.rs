@@ -92,22 +92,22 @@ impl GroupSearchFilterBuilder {
     /// - [`operator`](crate::types::builders::GroupSearchFilterBuilder::operator)
     /// - [`name`](crate::types::builders::GroupSearchFilterBuilder::name)
     /// - [`value`](crate::types::builders::GroupSearchFilterBuilder::value)
-    pub fn build(self) -> ::std::result::Result<crate::types::GroupSearchFilter, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::GroupSearchFilter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::GroupSearchFilter {
             operator: self.operator.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "operator",
                     "operator was not specified but it is required when building GroupSearchFilter",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building GroupSearchFilter",
                 )
             })?,
             value: self.value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "value",
                     "value was not specified but it is required when building GroupSearchFilter",
                 )

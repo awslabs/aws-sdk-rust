@@ -86,7 +86,7 @@ impl DetectFacesInputBuilder {
         &self.attributes
     }
     /// Consumes the builder and constructs a [`DetectFacesInput`](crate::operation::detect_faces::DetectFacesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::detect_faces::DetectFacesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::detect_faces::DetectFacesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::detect_faces::DetectFacesInput {
             image: self.image,
             attributes: self.attributes,

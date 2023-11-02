@@ -66,7 +66,7 @@ impl ModifyLunaClientInputBuilder {
     /// Consumes the builder and constructs a [`ModifyLunaClientInput`](crate::operation::modify_luna_client::ModifyLunaClientInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::modify_luna_client::ModifyLunaClientInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::modify_luna_client::ModifyLunaClientInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::modify_luna_client::ModifyLunaClientInput {
             client_arn: self.client_arn,
             certificate: self.certificate,

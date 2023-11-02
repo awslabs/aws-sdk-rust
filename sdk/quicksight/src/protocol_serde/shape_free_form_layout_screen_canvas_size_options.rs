@@ -2,7 +2,7 @@
 pub fn ser_free_form_layout_screen_canvas_size_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FreeFormLayoutScreenCanvasSizeOptions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("OptimizedViewPortWidth").string(input.optimized_view_port_width.as_str());
     }

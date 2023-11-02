@@ -72,7 +72,7 @@ impl DescribeVaultInputBuilder {
     /// Consumes the builder and constructs a [`DescribeVaultInput`](crate::operation::describe_vault::DescribeVaultInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_vault::DescribeVaultInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_vault::DescribeVaultInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_vault::DescribeVaultInput {
             account_id: self.account_id,
             vault_name: self.vault_name,

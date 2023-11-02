@@ -152,7 +152,7 @@ impl AssociateMacSecKeyInputBuilder {
     /// Consumes the builder and constructs a [`AssociateMacSecKeyInput`](crate::operation::associate_mac_sec_key::AssociateMacSecKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::associate_mac_sec_key::AssociateMacSecKeyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::associate_mac_sec_key::AssociateMacSecKeyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::associate_mac_sec_key::AssociateMacSecKeyInput {
             connection_id: self.connection_id,

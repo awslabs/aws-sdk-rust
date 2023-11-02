@@ -68,7 +68,7 @@ impl PutInboundDmarcSettingsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_inbound_dmarc_settings::PutInboundDmarcSettingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_inbound_dmarc_settings::PutInboundDmarcSettingsInput {
             organization_id: self.organization_id,

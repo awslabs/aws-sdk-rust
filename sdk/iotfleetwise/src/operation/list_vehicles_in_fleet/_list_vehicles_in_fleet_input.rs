@@ -91,7 +91,7 @@ impl ListVehiclesInFleetInputBuilder {
     /// Consumes the builder and constructs a [`ListVehiclesInFleetInput`](crate::operation::list_vehicles_in_fleet::ListVehiclesInFleetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_vehicles_in_fleet::ListVehiclesInFleetInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_vehicles_in_fleet::ListVehiclesInFleetInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_vehicles_in_fleet::ListVehiclesInFleetInput {
             fleet_id: self.fleet_id,

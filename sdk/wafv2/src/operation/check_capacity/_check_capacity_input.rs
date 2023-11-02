@@ -98,7 +98,7 @@ impl CheckCapacityInputBuilder {
     /// Consumes the builder and constructs a [`CheckCapacityInput`](crate::operation::check_capacity::CheckCapacityInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::check_capacity::CheckCapacityInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::check_capacity::CheckCapacityInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::check_capacity::CheckCapacityInput {
             scope: self.scope,
             rules: self.rules,

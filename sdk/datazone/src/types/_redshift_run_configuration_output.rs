@@ -161,13 +161,13 @@ impl RedshiftRunConfigurationOutputBuilder {
     /// Consumes the builder and constructs a [`RedshiftRunConfigurationOutput`](crate::types::RedshiftRunConfigurationOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`relational_filter_configurations`](crate::types::builders::RedshiftRunConfigurationOutputBuilder::relational_filter_configurations)
-    pub fn build(self) -> ::std::result::Result<crate::types::RedshiftRunConfigurationOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RedshiftRunConfigurationOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RedshiftRunConfigurationOutput {
             account_id: self.account_id,
             region: self.region,
             data_access_role: self.data_access_role,
             relational_filter_configurations: self.relational_filter_configurations.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "relational_filter_configurations",
                     "relational_filter_configurations was not specified but it is required when building RedshiftRunConfigurationOutput",
                 )

@@ -55,13 +55,13 @@ pub fn de_reset_deployments_http_response(
 pub fn ser_reset_deployments_headers(
     input: &crate::operation::reset_deployments::ResetDeploymentsInput,
     mut builder: ::http::request::Builder,
-) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
     if let ::std::option::Option::Some(inner_1) = &input.amzn_client_token {
         let formatted_2 = inner_1.as_str();
         if !formatted_2.is_empty() {
             let header_value = formatted_2;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
-                ::aws_smithy_http::operation::error::BuildError::invalid_field(
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
                     "amzn_client_token",
                     format!("`{}` cannot be used as a header value: {}", &header_value, err),
                 )
@@ -74,12 +74,12 @@ pub fn ser_reset_deployments_headers(
 
 pub fn ser_reset_deployments_input(
     input: &crate::operation::reset_deployments::ResetDeploymentsInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_reset_deployments_input::ser_reset_deployments_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_reset_deployments(

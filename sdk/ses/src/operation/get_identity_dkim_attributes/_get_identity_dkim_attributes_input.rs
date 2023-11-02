@@ -54,7 +54,7 @@ impl GetIdentityDkimAttributesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_identity_dkim_attributes::GetIdentityDkimAttributesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_identity_dkim_attributes::GetIdentityDkimAttributesInput { identities: self.identities })
     }

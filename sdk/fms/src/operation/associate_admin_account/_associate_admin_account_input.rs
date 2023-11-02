@@ -44,7 +44,7 @@ impl AssociateAdminAccountInputBuilder {
     /// Consumes the builder and constructs a [`AssociateAdminAccountInput`](crate::operation::associate_admin_account::AssociateAdminAccountInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::associate_admin_account::AssociateAdminAccountInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::associate_admin_account::AssociateAdminAccountInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::associate_admin_account::AssociateAdminAccountInput {
             admin_account: self.admin_account,

@@ -65,7 +65,8 @@ impl DeleteBillingGroupInputBuilder {
     /// Consumes the builder and constructs a [`DeleteBillingGroupInput`](crate::operation::delete_billing_group::DeleteBillingGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_billing_group::DeleteBillingGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_billing_group::DeleteBillingGroupInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::delete_billing_group::DeleteBillingGroupInput {
             billing_group_name: self.billing_group_name,
             expected_version: self.expected_version,

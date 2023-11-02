@@ -88,7 +88,7 @@ impl DeleteRefreshScheduleInputBuilder {
     /// Consumes the builder and constructs a [`DeleteRefreshScheduleInput`](crate::operation::delete_refresh_schedule::DeleteRefreshScheduleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_refresh_schedule::DeleteRefreshScheduleInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_refresh_schedule::DeleteRefreshScheduleInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_refresh_schedule::DeleteRefreshScheduleInput {
             data_set_id: self.data_set_id,

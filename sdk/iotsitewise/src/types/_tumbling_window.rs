@@ -169,10 +169,10 @@ impl TumblingWindowBuilder {
     /// Consumes the builder and constructs a [`TumblingWindow`](crate::types::TumblingWindow).
     /// This method will fail if any of the following fields are not set:
     /// - [`interval`](crate::types::builders::TumblingWindowBuilder::interval)
-    pub fn build(self) -> ::std::result::Result<crate::types::TumblingWindow, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TumblingWindow, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TumblingWindow {
             interval: self.interval.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "interval",
                     "interval was not specified but it is required when building TumblingWindow",
                 )

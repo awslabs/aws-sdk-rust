@@ -49,7 +49,7 @@ impl CancelBatchImportJobInputBuilder {
     /// Consumes the builder and constructs a [`CancelBatchImportJobInput`](crate::operation::cancel_batch_import_job::CancelBatchImportJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::cancel_batch_import_job::CancelBatchImportJobInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::cancel_batch_import_job::CancelBatchImportJobInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::cancel_batch_import_job::CancelBatchImportJobInput { job_id: self.job_id })
     }

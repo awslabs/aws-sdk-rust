@@ -67,10 +67,10 @@ impl MonthlySettingBuilder {
     /// Consumes the builder and constructs a [`MonthlySetting`](crate::types::MonthlySetting).
     /// This method will fail if any of the following fields are not set:
     /// - [`day_of_month`](crate::types::builders::MonthlySettingBuilder::day_of_month)
-    pub fn build(self) -> ::std::result::Result<crate::types::MonthlySetting, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::MonthlySetting, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MonthlySetting {
             day_of_month: self.day_of_month.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "day_of_month",
                     "day_of_month was not specified but it is required when building MonthlySetting",
                 )

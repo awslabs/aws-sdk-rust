@@ -70,11 +70,11 @@ impl BatchEvaluateGeofencesOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::batch_evaluate_geofences::BatchEvaluateGeofencesOutput {
             errors: self.errors.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "errors",
                     "errors was not specified but it is required when building BatchEvaluateGeofencesOutput",
                 )

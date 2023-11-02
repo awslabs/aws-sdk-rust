@@ -120,16 +120,16 @@ impl LambdaFunctionAssociationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`lambda_function_arn`](crate::types::builders::LambdaFunctionAssociationBuilder::lambda_function_arn)
     /// - [`event_type`](crate::types::builders::LambdaFunctionAssociationBuilder::event_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::LambdaFunctionAssociation, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::LambdaFunctionAssociation, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::LambdaFunctionAssociation {
             lambda_function_arn: self.lambda_function_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "lambda_function_arn",
                     "lambda_function_arn was not specified but it is required when building LambdaFunctionAssociation",
                 )
             })?,
             event_type: self.event_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "event_type",
                     "event_type was not specified but it is required when building LambdaFunctionAssociation",
                 )

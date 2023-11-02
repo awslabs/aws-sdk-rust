@@ -90,7 +90,7 @@ impl GetSourceRepositoryCloneUrlsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_source_repository_clone_urls::GetSourceRepositoryCloneUrlsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_source_repository_clone_urls::GetSourceRepositoryCloneUrlsInput {
             space_name: self.space_name,

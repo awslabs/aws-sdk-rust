@@ -212,7 +212,7 @@ impl ListModelVersionsInputBuilder {
     /// Consumes the builder and constructs a [`ListModelVersionsInput`](crate::operation::list_model_versions::ListModelVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_model_versions::ListModelVersionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_model_versions::ListModelVersionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_model_versions::ListModelVersionsInput {
             model_name: self.model_name,
             next_token: self.next_token,

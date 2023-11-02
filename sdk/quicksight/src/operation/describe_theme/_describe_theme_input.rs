@@ -108,7 +108,7 @@ impl DescribeThemeInputBuilder {
     /// Consumes the builder and constructs a [`DescribeThemeInput`](crate::operation::describe_theme::DescribeThemeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_theme::DescribeThemeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_theme::DescribeThemeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_theme::DescribeThemeInput {
             aws_account_id: self.aws_account_id,
             theme_id: self.theme_id,

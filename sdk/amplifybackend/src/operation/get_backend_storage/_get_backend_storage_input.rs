@@ -89,7 +89,7 @@ impl GetBackendStorageInputBuilder {
     /// Consumes the builder and constructs a [`GetBackendStorageInput`](crate::operation::get_backend_storage::GetBackendStorageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_backend_storage::GetBackendStorageInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_backend_storage::GetBackendStorageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_backend_storage::GetBackendStorageInput {
             app_id: self.app_id,
             backend_environment_name: self.backend_environment_name,

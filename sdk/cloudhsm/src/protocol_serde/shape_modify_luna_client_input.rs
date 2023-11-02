@@ -2,7 +2,7 @@
 pub fn ser_modify_luna_client_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::modify_luna_client::ModifyLunaClientInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.client_arn {
         object.key("ClientArn").string(var_1.as_str());
     }

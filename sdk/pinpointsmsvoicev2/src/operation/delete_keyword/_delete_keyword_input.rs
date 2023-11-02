@@ -66,7 +66,7 @@ impl DeleteKeywordInputBuilder {
     /// Consumes the builder and constructs a [`DeleteKeywordInput`](crate::operation::delete_keyword::DeleteKeywordInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_keyword::DeleteKeywordInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_keyword::DeleteKeywordInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_keyword::DeleteKeywordInput {
             origination_identity: self.origination_identity,
             keyword: self.keyword,

@@ -139,7 +139,7 @@ impl ListPendingInvitationResourcesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_pending_invitation_resources::ListPendingInvitationResourcesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_pending_invitation_resources::ListPendingInvitationResourcesInput {
             resource_share_invitation_arn: self.resource_share_invitation_arn,

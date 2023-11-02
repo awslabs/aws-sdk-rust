@@ -68,7 +68,7 @@ impl DescribeDomainChangeProgressInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_domain_change_progress::DescribeDomainChangeProgressInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_domain_change_progress::DescribeDomainChangeProgressInput {
             domain_name: self.domain_name,

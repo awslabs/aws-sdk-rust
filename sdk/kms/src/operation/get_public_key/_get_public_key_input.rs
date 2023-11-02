@@ -123,7 +123,7 @@ impl GetPublicKeyInputBuilder {
     /// Consumes the builder and constructs a [`GetPublicKeyInput`](crate::operation::get_public_key::GetPublicKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_public_key::GetPublicKeyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_public_key::GetPublicKeyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_public_key::GetPublicKeyInput {
             key_id: self.key_id,
             grant_tokens: self.grant_tokens,

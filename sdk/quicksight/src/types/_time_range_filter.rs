@@ -242,10 +242,10 @@ impl TimeRangeFilterBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`filter_id`](crate::types::builders::TimeRangeFilterBuilder::filter_id)
     /// - [`null_option`](crate::types::builders::TimeRangeFilterBuilder::null_option)
-    pub fn build(self) -> ::std::result::Result<crate::types::TimeRangeFilter, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TimeRangeFilter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TimeRangeFilter {
             filter_id: self.filter_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "filter_id",
                     "filter_id was not specified but it is required when building TimeRangeFilter",
                 )
@@ -256,7 +256,7 @@ impl TimeRangeFilterBuilder {
             range_minimum_value: self.range_minimum_value,
             range_maximum_value: self.range_maximum_value,
             null_option: self.null_option.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "null_option",
                     "null_option was not specified but it is required when building TimeRangeFilter",
                 )

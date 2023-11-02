@@ -416,7 +416,7 @@ impl CreateClassificationJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_classification_job::CreateClassificationJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_classification_job::CreateClassificationJobInput {
             allow_list_ids: self.allow_list_ids,

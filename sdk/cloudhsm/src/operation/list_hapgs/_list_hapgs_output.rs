@@ -87,10 +87,10 @@ impl ListHapgsOutputBuilder {
     /// Consumes the builder and constructs a [`ListHapgsOutput`](crate::operation::list_hapgs::ListHapgsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`hapg_list`](crate::operation::list_hapgs::builders::ListHapgsOutputBuilder::hapg_list)
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_hapgs::ListHapgsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_hapgs::ListHapgsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_hapgs::ListHapgsOutput {
             hapg_list: self.hapg_list.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "hapg_list",
                     "hapg_list was not specified but it is required when building ListHapgsOutput",
                 )

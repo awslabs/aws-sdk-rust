@@ -122,16 +122,16 @@ impl AwsCloudMapServiceDiscoveryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`namespace_name`](crate::types::builders::AwsCloudMapServiceDiscoveryBuilder::namespace_name)
     /// - [`service_name`](crate::types::builders::AwsCloudMapServiceDiscoveryBuilder::service_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::AwsCloudMapServiceDiscovery, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AwsCloudMapServiceDiscovery, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AwsCloudMapServiceDiscovery {
             namespace_name: self.namespace_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "namespace_name",
                     "namespace_name was not specified but it is required when building AwsCloudMapServiceDiscovery",
                 )
             })?,
             service_name: self.service_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "service_name",
                     "service_name was not specified but it is required when building AwsCloudMapServiceDiscovery",
                 )

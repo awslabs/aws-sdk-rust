@@ -110,7 +110,7 @@ impl SendWorkflowStepStateInputBuilder {
     /// Consumes the builder and constructs a [`SendWorkflowStepStateInput`](crate::operation::send_workflow_step_state::SendWorkflowStepStateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::send_workflow_step_state::SendWorkflowStepStateInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::send_workflow_step_state::SendWorkflowStepStateInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::send_workflow_step_state::SendWorkflowStepStateInput {
             workflow_id: self.workflow_id,

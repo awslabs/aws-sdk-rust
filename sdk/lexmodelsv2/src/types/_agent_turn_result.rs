@@ -130,10 +130,10 @@ impl AgentTurnResultBuilder {
     /// Consumes the builder and constructs a [`AgentTurnResult`](crate::types::AgentTurnResult).
     /// This method will fail if any of the following fields are not set:
     /// - [`expected_agent_prompt`](crate::types::builders::AgentTurnResultBuilder::expected_agent_prompt)
-    pub fn build(self) -> ::std::result::Result<crate::types::AgentTurnResult, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AgentTurnResult, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AgentTurnResult {
             expected_agent_prompt: self.expected_agent_prompt.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "expected_agent_prompt",
                     "expected_agent_prompt was not specified but it is required when building AgentTurnResult",
                 )

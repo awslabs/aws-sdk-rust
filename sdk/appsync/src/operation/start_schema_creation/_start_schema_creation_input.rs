@@ -66,7 +66,7 @@ impl StartSchemaCreationInputBuilder {
     /// Consumes the builder and constructs a [`StartSchemaCreationInput`](crate::operation::start_schema_creation::StartSchemaCreationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_schema_creation::StartSchemaCreationInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::start_schema_creation::StartSchemaCreationInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_schema_creation::StartSchemaCreationInput {
             api_id: self.api_id,

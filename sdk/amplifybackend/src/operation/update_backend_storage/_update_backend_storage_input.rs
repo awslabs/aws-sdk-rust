@@ -111,7 +111,7 @@ impl UpdateBackendStorageInputBuilder {
     /// Consumes the builder and constructs a [`UpdateBackendStorageInput`](crate::operation::update_backend_storage::UpdateBackendStorageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_backend_storage::UpdateBackendStorageInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_backend_storage::UpdateBackendStorageInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_backend_storage::UpdateBackendStorageInput {
             app_id: self.app_id,

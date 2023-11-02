@@ -118,10 +118,6 @@ path = "../aws-smithy-async"
 features = ["test-util"]
 version = "0.56.1"
 
-[dev-dependencies.aws-smithy-http]
-path = "../aws-smithy-http"
-version = "0.56.1"
-
 [dev-dependencies.aws-smithy-protocol-test]
 path = "../aws-smithy-protocol-test"
 version = "0.56.1"

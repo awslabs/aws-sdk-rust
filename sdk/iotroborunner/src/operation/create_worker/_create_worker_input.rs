@@ -190,7 +190,9 @@ impl CreateWorkerInputBuilder {
         &self.orientation
     }
     /// Consumes the builder and constructs a [`CreateWorkerInput`](crate::operation::create_worker::CreateWorkerInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_worker::CreateWorkerInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_worker::CreateWorkerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_worker::CreateWorkerInput {
             client_token: self.client_token,
             name: self.name,

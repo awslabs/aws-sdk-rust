@@ -89,10 +89,10 @@ impl ListTimeSeriesOutputBuilder {
     /// - [`time_series_summaries`](crate::operation::list_time_series::builders::ListTimeSeriesOutputBuilder::time_series_summaries)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_time_series::ListTimeSeriesOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_time_series::ListTimeSeriesOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_time_series::ListTimeSeriesOutput {
             time_series_summaries: self.time_series_summaries.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "time_series_summaries",
                     "time_series_summaries was not specified but it is required when building ListTimeSeriesOutput",
                 )

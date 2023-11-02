@@ -97,17 +97,17 @@ impl NetworkResourceDefinitionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::NetworkResourceDefinitionBuilder::r#type)
     /// - [`count`](crate::types::builders::NetworkResourceDefinitionBuilder::count)
-    pub fn build(self) -> ::std::result::Result<crate::types::NetworkResourceDefinition, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::NetworkResourceDefinition, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::NetworkResourceDefinition {
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building NetworkResourceDefinition",
                 )
             })?,
             options: self.options,
             count: self.count.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "count",
                     "count was not specified but it is required when building NetworkResourceDefinition",
                 )

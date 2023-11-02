@@ -129,7 +129,7 @@ impl ListDataSourceRunsInputBuilder {
     /// Consumes the builder and constructs a [`ListDataSourceRunsInput`](crate::operation::list_data_source_runs::ListDataSourceRunsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_data_source_runs::ListDataSourceRunsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_data_source_runs::ListDataSourceRunsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_data_source_runs::ListDataSourceRunsInput {
             domain_identifier: self.domain_identifier,

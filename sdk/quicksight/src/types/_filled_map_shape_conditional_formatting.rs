@@ -67,10 +67,10 @@ impl FilledMapShapeConditionalFormattingBuilder {
     /// Consumes the builder and constructs a [`FilledMapShapeConditionalFormatting`](crate::types::FilledMapShapeConditionalFormatting).
     /// This method will fail if any of the following fields are not set:
     /// - [`field_id`](crate::types::builders::FilledMapShapeConditionalFormattingBuilder::field_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::FilledMapShapeConditionalFormatting, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::FilledMapShapeConditionalFormatting, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FilledMapShapeConditionalFormatting {
             field_id: self.field_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "field_id",
                     "field_id was not specified but it is required when building FilledMapShapeConditionalFormatting",
                 )

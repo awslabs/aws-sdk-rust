@@ -2,7 +2,7 @@
 pub fn ser_report_task_runner_heartbeat_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::report_task_runner_heartbeat::ReportTaskRunnerHeartbeatInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.taskrunner_id {
         object.key("taskrunnerId").string(var_1.as_str());
     }

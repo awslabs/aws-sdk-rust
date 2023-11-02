@@ -136,7 +136,7 @@ impl ImportInstanceInputBuilder {
     /// Consumes the builder and constructs a [`ImportInstanceInput`](crate::operation::import_instance::ImportInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::import_instance::ImportInstanceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::import_instance::ImportInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::import_instance::ImportInstanceInput {
             description: self.description,
             disk_images: self.disk_images,

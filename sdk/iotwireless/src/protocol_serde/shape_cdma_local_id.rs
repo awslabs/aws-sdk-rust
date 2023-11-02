@@ -2,7 +2,7 @@
 pub fn ser_cdma_local_id(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CdmaLocalId,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("PnOffset").number(
             #[allow(clippy::useless_conversion)]

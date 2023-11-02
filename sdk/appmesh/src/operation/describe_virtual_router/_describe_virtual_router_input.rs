@@ -87,7 +87,7 @@ impl DescribeVirtualRouterInputBuilder {
     /// Consumes the builder and constructs a [`DescribeVirtualRouterInput`](crate::operation::describe_virtual_router::DescribeVirtualRouterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_virtual_router::DescribeVirtualRouterInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_virtual_router::DescribeVirtualRouterInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_virtual_router::DescribeVirtualRouterInput {
             virtual_router_name: self.virtual_router_name,

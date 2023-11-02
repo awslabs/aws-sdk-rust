@@ -206,11 +206,11 @@ impl PollForDecisionTaskOutputBuilder {
     /// - [`events`](crate::operation::poll_for_decision_task::builders::PollForDecisionTaskOutputBuilder::events)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::poll_for_decision_task::PollForDecisionTaskOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::poll_for_decision_task::PollForDecisionTaskOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::poll_for_decision_task::PollForDecisionTaskOutput {
             task_token: self.task_token.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "task_token",
                     "task_token was not specified but it is required when building PollForDecisionTaskOutput",
                 )
@@ -219,7 +219,7 @@ impl PollForDecisionTaskOutputBuilder {
             workflow_execution: self.workflow_execution,
             workflow_type: self.workflow_type,
             events: self.events.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "events",
                     "events was not specified but it is required when building PollForDecisionTaskOutput",
                 )

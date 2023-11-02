@@ -105,10 +105,10 @@ impl ReplicaAutoScalingUpdateBuilder {
     /// Consumes the builder and constructs a [`ReplicaAutoScalingUpdate`](crate::types::ReplicaAutoScalingUpdate).
     /// This method will fail if any of the following fields are not set:
     /// - [`region_name`](crate::types::builders::ReplicaAutoScalingUpdateBuilder::region_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::ReplicaAutoScalingUpdate, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ReplicaAutoScalingUpdate, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ReplicaAutoScalingUpdate {
             region_name: self.region_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "region_name",
                     "region_name was not specified but it is required when building ReplicaAutoScalingUpdate",
                 )

@@ -46,7 +46,7 @@ impl GetLendingAnalysisSummaryInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_lending_analysis_summary::GetLendingAnalysisSummaryInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_lending_analysis_summary::GetLendingAnalysisSummaryInput { job_id: self.job_id })
     }

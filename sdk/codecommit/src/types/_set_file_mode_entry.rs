@@ -69,16 +69,16 @@ impl SetFileModeEntryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`file_path`](crate::types::builders::SetFileModeEntryBuilder::file_path)
     /// - [`file_mode`](crate::types::builders::SetFileModeEntryBuilder::file_mode)
-    pub fn build(self) -> ::std::result::Result<crate::types::SetFileModeEntry, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SetFileModeEntry, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SetFileModeEntry {
             file_path: self.file_path.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "file_path",
                     "file_path was not specified but it is required when building SetFileModeEntry",
                 )
             })?,
             file_mode: self.file_mode.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "file_mode",
                     "file_mode was not specified but it is required when building SetFileModeEntry",
                 )

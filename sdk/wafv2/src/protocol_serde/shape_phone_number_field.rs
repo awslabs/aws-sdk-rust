@@ -2,7 +2,7 @@
 pub fn ser_phone_number_field(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PhoneNumberField,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Identifier").string(input.identifier.as_str());
     }

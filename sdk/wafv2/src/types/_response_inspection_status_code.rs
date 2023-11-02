@@ -92,16 +92,16 @@ impl ResponseInspectionStatusCodeBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`success_codes`](crate::types::builders::ResponseInspectionStatusCodeBuilder::success_codes)
     /// - [`failure_codes`](crate::types::builders::ResponseInspectionStatusCodeBuilder::failure_codes)
-    pub fn build(self) -> ::std::result::Result<crate::types::ResponseInspectionStatusCode, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ResponseInspectionStatusCode, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ResponseInspectionStatusCode {
             success_codes: self.success_codes.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "success_codes",
                     "success_codes was not specified but it is required when building ResponseInspectionStatusCode",
                 )
             })?,
             failure_codes: self.failure_codes.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "failure_codes",
                     "failure_codes was not specified but it is required when building ResponseInspectionStatusCode",
                 )

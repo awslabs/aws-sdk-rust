@@ -165,35 +165,35 @@ impl RecommendationBuilder {
     /// - [`top_matches`](crate::types::builders::RecommendationBuilder::top_matches)
     /// - [`start_time`](crate::types::builders::RecommendationBuilder::start_time)
     /// - [`end_time`](crate::types::builders::RecommendationBuilder::end_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::Recommendation, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Recommendation, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Recommendation {
             all_matches_count: self.all_matches_count.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "all_matches_count",
                     "all_matches_count was not specified but it is required when building Recommendation",
                 )
             })?,
             all_matches_sum: self.all_matches_sum.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "all_matches_sum",
                     "all_matches_sum was not specified but it is required when building Recommendation",
                 )
             })?,
             pattern: self.pattern,
             top_matches: self.top_matches.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "top_matches",
                     "top_matches was not specified but it is required when building Recommendation",
                 )
             })?,
             start_time: self.start_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "start_time",
                     "start_time was not specified but it is required when building Recommendation",
                 )
             })?,
             end_time: self.end_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "end_time",
                     "end_time was not specified but it is required when building Recommendation",
                 )

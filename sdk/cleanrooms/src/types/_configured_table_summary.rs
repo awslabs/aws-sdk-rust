@@ -192,46 +192,46 @@ impl ConfiguredTableSummaryBuilder {
     /// - [`update_time`](crate::types::builders::ConfiguredTableSummaryBuilder::update_time)
     /// - [`analysis_rule_types`](crate::types::builders::ConfiguredTableSummaryBuilder::analysis_rule_types)
     /// - [`analysis_method`](crate::types::builders::ConfiguredTableSummaryBuilder::analysis_method)
-    pub fn build(self) -> ::std::result::Result<crate::types::ConfiguredTableSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ConfiguredTableSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ConfiguredTableSummary {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building ConfiguredTableSummary",
                 )
             })?,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building ConfiguredTableSummary",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building ConfiguredTableSummary",
                 )
             })?,
             create_time: self.create_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "create_time",
                     "create_time was not specified but it is required when building ConfiguredTableSummary",
                 )
             })?,
             update_time: self.update_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "update_time",
                     "update_time was not specified but it is required when building ConfiguredTableSummary",
                 )
             })?,
             analysis_rule_types: self.analysis_rule_types.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "analysis_rule_types",
                     "analysis_rule_types was not specified but it is required when building ConfiguredTableSummary",
                 )
             })?,
             analysis_method: self.analysis_method.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "analysis_method",
                     "analysis_method was not specified but it is required when building ConfiguredTableSummary",
                 )

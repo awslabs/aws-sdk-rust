@@ -208,28 +208,28 @@ impl ServiceInstanceStateBuilder {
     /// - [`template_name`](crate::types::builders::ServiceInstanceStateBuilder::template_name)
     /// - [`template_major_version`](crate::types::builders::ServiceInstanceStateBuilder::template_major_version)
     /// - [`template_minor_version`](crate::types::builders::ServiceInstanceStateBuilder::template_minor_version)
-    pub fn build(self) -> ::std::result::Result<crate::types::ServiceInstanceState, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ServiceInstanceState, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ServiceInstanceState {
             spec: self.spec.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "spec",
                     "spec was not specified but it is required when building ServiceInstanceState",
                 )
             })?,
             template_name: self.template_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "template_name",
                     "template_name was not specified but it is required when building ServiceInstanceState",
                 )
             })?,
             template_major_version: self.template_major_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "template_major_version",
                     "template_major_version was not specified but it is required when building ServiceInstanceState",
                 )
             })?,
             template_minor_version: self.template_minor_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "template_minor_version",
                     "template_minor_version was not specified but it is required when building ServiceInstanceState",
                 )

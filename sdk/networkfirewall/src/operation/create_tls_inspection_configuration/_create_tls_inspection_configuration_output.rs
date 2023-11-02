@@ -95,12 +95,12 @@ impl CreateTlsInspectionConfigurationOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_tls_inspection_configuration::CreateTlsInspectionConfigurationOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::create_tls_inspection_configuration::CreateTlsInspectionConfigurationOutput {
                 update_token: self.update_token.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
                         "update_token",
                         "update_token was not specified but it is required when building CreateTlsInspectionConfigurationOutput",
                     )

@@ -2,7 +2,7 @@
 pub fn ser_instance_access_control_attribute_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::InstanceAccessControlAttributeConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("AccessControlAttributes").start_array();
         for item_2 in &input.access_control_attributes {

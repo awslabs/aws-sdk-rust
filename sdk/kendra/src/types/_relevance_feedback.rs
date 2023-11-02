@@ -69,16 +69,16 @@ impl RelevanceFeedbackBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`result_id`](crate::types::builders::RelevanceFeedbackBuilder::result_id)
     /// - [`relevance_value`](crate::types::builders::RelevanceFeedbackBuilder::relevance_value)
-    pub fn build(self) -> ::std::result::Result<crate::types::RelevanceFeedback, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RelevanceFeedback, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RelevanceFeedback {
             result_id: self.result_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "result_id",
                     "result_id was not specified but it is required when building RelevanceFeedback",
                 )
             })?,
             relevance_value: self.relevance_value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "relevance_value",
                     "relevance_value was not specified but it is required when building RelevanceFeedback",
                 )

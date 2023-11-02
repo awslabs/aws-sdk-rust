@@ -67,10 +67,10 @@ impl TableFieldLinkConfigurationBuilder {
     /// Consumes the builder and constructs a [`TableFieldLinkConfiguration`](crate::types::TableFieldLinkConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`target`](crate::types::builders::TableFieldLinkConfigurationBuilder::target)
-    pub fn build(self) -> ::std::result::Result<crate::types::TableFieldLinkConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TableFieldLinkConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TableFieldLinkConfiguration {
             target: self.target.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "target",
                     "target was not specified but it is required when building TableFieldLinkConfiguration",
                 )

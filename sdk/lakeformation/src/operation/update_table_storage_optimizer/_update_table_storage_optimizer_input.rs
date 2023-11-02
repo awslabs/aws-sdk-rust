@@ -137,7 +137,7 @@ impl UpdateTableStorageOptimizerInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_table_storage_optimizer::UpdateTableStorageOptimizerInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_table_storage_optimizer::UpdateTableStorageOptimizerInput {
             catalog_id: self.catalog_id,

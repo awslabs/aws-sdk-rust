@@ -54,7 +54,7 @@ impl BatchGetOnPremisesInstancesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_on_premises_instances::BatchGetOnPremisesInstancesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::batch_get_on_premises_instances::BatchGetOnPremisesInstancesInput {
             instance_names: self.instance_names,

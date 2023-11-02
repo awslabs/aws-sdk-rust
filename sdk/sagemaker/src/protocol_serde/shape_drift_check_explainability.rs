@@ -2,7 +2,7 @@
 pub fn ser_drift_check_explainability(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DriftCheckExplainability,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.constraints {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Constraints").start_object();

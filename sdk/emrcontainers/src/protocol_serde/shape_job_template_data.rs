@@ -2,7 +2,7 @@
 pub fn ser_job_template_data(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::JobTemplateData,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("executionRoleArn").string(input.execution_role_arn.as_str());
     }

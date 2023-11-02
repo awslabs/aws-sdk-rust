@@ -46,10 +46,10 @@ impl RedshiftCredentialConfigurationBuilder {
     /// Consumes the builder and constructs a [`RedshiftCredentialConfiguration`](crate::types::RedshiftCredentialConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`secret_manager_arn`](crate::types::builders::RedshiftCredentialConfigurationBuilder::secret_manager_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::RedshiftCredentialConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RedshiftCredentialConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RedshiftCredentialConfiguration {
             secret_manager_arn: self.secret_manager_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "secret_manager_arn",
                     "secret_manager_arn was not specified but it is required when building RedshiftCredentialConfiguration",
                 )

@@ -44,7 +44,7 @@ impl GetAllowListInputBuilder {
     /// Consumes the builder and constructs a [`GetAllowListInput`](crate::operation::get_allow_list::GetAllowListInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_allow_list::GetAllowListInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_allow_list::GetAllowListInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_allow_list::GetAllowListInput { id: self.id })
     }
 }

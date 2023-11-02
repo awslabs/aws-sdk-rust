@@ -44,7 +44,7 @@ impl CancelWorldExportJobInputBuilder {
     /// Consumes the builder and constructs a [`CancelWorldExportJobInput`](crate::operation::cancel_world_export_job::CancelWorldExportJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::cancel_world_export_job::CancelWorldExportJobInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::cancel_world_export_job::CancelWorldExportJobInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::cancel_world_export_job::CancelWorldExportJobInput { job: self.job })
     }

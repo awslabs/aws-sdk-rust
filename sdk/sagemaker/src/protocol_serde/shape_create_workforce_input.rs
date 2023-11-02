@@ -2,7 +2,7 @@
 pub fn ser_create_workforce_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_workforce::CreateWorkforceInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.cognito_config {
         #[allow(unused_mut)]
         let mut object_2 = object.key("CognitoConfig").start_object();

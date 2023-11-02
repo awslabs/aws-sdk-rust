@@ -127,22 +127,22 @@ impl ScheduleLambdaFunctionFailedEventAttributesBuilder {
     /// - [`cause`](crate::types::builders::ScheduleLambdaFunctionFailedEventAttributesBuilder::cause)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::ScheduleLambdaFunctionFailedEventAttributes, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::ScheduleLambdaFunctionFailedEventAttributes, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ScheduleLambdaFunctionFailedEventAttributes {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building ScheduleLambdaFunctionFailedEventAttributes",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building ScheduleLambdaFunctionFailedEventAttributes",
                 )
             })?,
             cause: self.cause.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "cause",
                     "cause was not specified but it is required when building ScheduleLambdaFunctionFailedEventAttributes",
                 )

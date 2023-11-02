@@ -67,7 +67,7 @@ impl DeleteOriginRequestPolicyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_origin_request_policy::DeleteOriginRequestPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_origin_request_policy::DeleteOriginRequestPolicyInput {
             id: self.id,

@@ -44,7 +44,7 @@ impl StartWorkflowInputBuilder {
     /// Consumes the builder and constructs a [`StartWorkflowInput`](crate::operation::start_workflow::StartWorkflowInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_workflow::StartWorkflowInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_workflow::StartWorkflowInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_workflow::StartWorkflowInput { id: self.id })
     }
 }

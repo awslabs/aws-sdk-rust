@@ -73,11 +73,11 @@ impl BatchUpdateObjectAttributesBuilder {
     /// Consumes the builder and constructs a [`BatchUpdateObjectAttributes`](crate::types::BatchUpdateObjectAttributes).
     /// This method will fail if any of the following fields are not set:
     /// - [`attribute_updates`](crate::types::builders::BatchUpdateObjectAttributesBuilder::attribute_updates)
-    pub fn build(self) -> ::std::result::Result<crate::types::BatchUpdateObjectAttributes, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::BatchUpdateObjectAttributes, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::BatchUpdateObjectAttributes {
             object_reference: self.object_reference,
             attribute_updates: self.attribute_updates.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "attribute_updates",
                     "attribute_updates was not specified but it is required when building BatchUpdateObjectAttributes",
                 )

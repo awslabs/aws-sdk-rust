@@ -2,7 +2,7 @@
 pub fn ser_get_work_units_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_work_units::GetWorkUnitsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.next_token {
         object.key("NextToken").string(var_1.as_str());
     }

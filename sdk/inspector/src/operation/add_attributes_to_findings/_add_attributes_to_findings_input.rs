@@ -82,7 +82,7 @@ impl AddAttributesToFindingsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_attributes_to_findings::AddAttributesToFindingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::add_attributes_to_findings::AddAttributesToFindingsInput {
             finding_arns: self.finding_arns,

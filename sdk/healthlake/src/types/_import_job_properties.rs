@@ -243,30 +243,30 @@ impl ImportJobPropertiesBuilder {
     /// - [`job_status`](crate::types::builders::ImportJobPropertiesBuilder::job_status)
     /// - [`submit_time`](crate::types::builders::ImportJobPropertiesBuilder::submit_time)
     /// - [`datastore_id`](crate::types::builders::ImportJobPropertiesBuilder::datastore_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::ImportJobProperties, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ImportJobProperties, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ImportJobProperties {
             job_id: self.job_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "job_id",
                     "job_id was not specified but it is required when building ImportJobProperties",
                 )
             })?,
             job_name: self.job_name,
             job_status: self.job_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "job_status",
                     "job_status was not specified but it is required when building ImportJobProperties",
                 )
             })?,
             submit_time: self.submit_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "submit_time",
                     "submit_time was not specified but it is required when building ImportJobProperties",
                 )
             })?,
             end_time: self.end_time,
             datastore_id: self.datastore_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "datastore_id",
                     "datastore_id was not specified but it is required when building ImportJobProperties",
                 )

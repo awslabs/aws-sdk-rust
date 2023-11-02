@@ -147,7 +147,8 @@ impl StartAppAssessmentInputBuilder {
     /// Consumes the builder and constructs a [`StartAppAssessmentInput`](crate::operation::start_app_assessment::StartAppAssessmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_app_assessment::StartAppAssessmentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_app_assessment::StartAppAssessmentInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::start_app_assessment::StartAppAssessmentInput {
             app_arn: self.app_arn,
             app_version: self.app_version,

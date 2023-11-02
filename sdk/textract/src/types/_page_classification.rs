@@ -80,16 +80,16 @@ impl PageClassificationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`page_type`](crate::types::builders::PageClassificationBuilder::page_type)
     /// - [`page_number`](crate::types::builders::PageClassificationBuilder::page_number)
-    pub fn build(self) -> ::std::result::Result<crate::types::PageClassification, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PageClassification, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PageClassification {
             page_type: self.page_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "page_type",
                     "page_type was not specified but it is required when building PageClassification",
                 )
             })?,
             page_number: self.page_number.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "page_number",
                     "page_number was not specified but it is required when building PageClassification",
                 )

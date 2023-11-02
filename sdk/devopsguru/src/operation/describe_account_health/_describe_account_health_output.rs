@@ -149,14 +149,14 @@ impl DescribeAccountHealthOutputBuilder {
     /// - [`resource_hours`](crate::operation::describe_account_health::builders::DescribeAccountHealthOutputBuilder::resource_hours)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_account_health::DescribeAccountHealthOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_account_health::DescribeAccountHealthOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_account_health::DescribeAccountHealthOutput {
             open_reactive_insights: self.open_reactive_insights.unwrap_or_default(),
             open_proactive_insights: self.open_proactive_insights.unwrap_or_default(),
             metrics_analyzed: self.metrics_analyzed.unwrap_or_default(),
             resource_hours: self.resource_hours.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_hours",
                     "resource_hours was not specified but it is required when building DescribeAccountHealthOutput",
                 )

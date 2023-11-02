@@ -127,7 +127,7 @@ impl ListWorkteamsInputBuilder {
     /// Consumes the builder and constructs a [`ListWorkteamsInput`](crate::operation::list_workteams::ListWorkteamsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_workteams::ListWorkteamsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_workteams::ListWorkteamsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_workteams::ListWorkteamsInput {
             sort_by: self.sort_by,
             sort_order: self.sort_order,

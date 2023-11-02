@@ -124,7 +124,7 @@ impl StopInstancesInputBuilder {
     /// Consumes the builder and constructs a [`StopInstancesInput`](crate::operation::stop_instances::StopInstancesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_instances::StopInstancesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::stop_instances::StopInstancesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_instances::StopInstancesInput {
             instance_ids: self.instance_ids,
             hibernate: self.hibernate,

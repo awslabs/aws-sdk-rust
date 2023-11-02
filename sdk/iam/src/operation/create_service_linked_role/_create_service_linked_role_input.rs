@@ -103,7 +103,7 @@ impl CreateServiceLinkedRoleInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_service_linked_role::CreateServiceLinkedRoleInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_service_linked_role::CreateServiceLinkedRoleInput {
             aws_service_name: self.aws_service_name,

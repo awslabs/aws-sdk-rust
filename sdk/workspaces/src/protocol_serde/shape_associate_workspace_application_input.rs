@@ -2,7 +2,7 @@
 pub fn ser_associate_workspace_application_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::associate_workspace_application::AssociateWorkspaceApplicationInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.workspace_id {
         object.key("WorkspaceId").string(var_1.as_str());
     }

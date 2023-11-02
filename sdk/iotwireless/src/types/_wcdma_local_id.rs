@@ -68,16 +68,16 @@ impl WcdmaLocalIdBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`uarfcndl`](crate::types::builders::WcdmaLocalIdBuilder::uarfcndl)
     /// - [`psc`](crate::types::builders::WcdmaLocalIdBuilder::psc)
-    pub fn build(self) -> ::std::result::Result<crate::types::WcdmaLocalId, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::WcdmaLocalId, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::WcdmaLocalId {
             uarfcndl: self.uarfcndl.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "uarfcndl",
                     "uarfcndl was not specified but it is required when building WcdmaLocalId",
                 )
             })?,
             psc: self.psc.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "psc",
                     "psc was not specified but it is required when building WcdmaLocalId",
                 )

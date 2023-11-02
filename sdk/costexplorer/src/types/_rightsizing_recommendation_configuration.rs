@@ -69,10 +69,10 @@ impl RightsizingRecommendationConfigurationBuilder {
     /// - [`recommendation_target`](crate::types::builders::RightsizingRecommendationConfigurationBuilder::recommendation_target)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::RightsizingRecommendationConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::RightsizingRecommendationConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RightsizingRecommendationConfiguration {
             recommendation_target: self.recommendation_target.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "recommendation_target",
                     "recommendation_target was not specified but it is required when building RightsizingRecommendationConfiguration",
                 )

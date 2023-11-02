@@ -89,11 +89,11 @@ impl ListIdentityProvidersOutputBuilder {
     /// - [`identity_provider_summaries`](crate::operation::list_identity_providers::builders::ListIdentityProvidersOutputBuilder::identity_provider_summaries)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_identity_providers::ListIdentityProvidersOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_identity_providers::ListIdentityProvidersOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_identity_providers::ListIdentityProvidersOutput {
             identity_provider_summaries: self.identity_provider_summaries.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "identity_provider_summaries",
                     "identity_provider_summaries was not specified but it is required when building ListIdentityProvidersOutput",
                 )

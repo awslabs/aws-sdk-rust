@@ -500,22 +500,22 @@ impl ProjectEnvironmentBuilder {
     /// - [`r#type`](crate::types::builders::ProjectEnvironmentBuilder::r#type)
     /// - [`image`](crate::types::builders::ProjectEnvironmentBuilder::image)
     /// - [`compute_type`](crate::types::builders::ProjectEnvironmentBuilder::compute_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::ProjectEnvironment, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ProjectEnvironment, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ProjectEnvironment {
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building ProjectEnvironment",
                 )
             })?,
             image: self.image.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "image",
                     "image was not specified but it is required when building ProjectEnvironment",
                 )
             })?,
             compute_type: self.compute_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "compute_type",
                     "compute_type was not specified but it is required when building ProjectEnvironment",
                 )

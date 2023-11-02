@@ -43,7 +43,7 @@ impl DeleteSystemInstanceInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSystemInstanceInput`](crate::operation::delete_system_instance::DeleteSystemInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_system_instance::DeleteSystemInstanceInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_system_instance::DeleteSystemInstanceInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_system_instance::DeleteSystemInstanceInput { id: self.id })
     }

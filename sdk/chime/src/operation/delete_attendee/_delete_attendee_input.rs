@@ -66,7 +66,7 @@ impl DeleteAttendeeInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAttendeeInput`](crate::operation::delete_attendee::DeleteAttendeeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_attendee::DeleteAttendeeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_attendee::DeleteAttendeeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_attendee::DeleteAttendeeInput {
             meeting_id: self.meeting_id,
             attendee_id: self.attendee_id,

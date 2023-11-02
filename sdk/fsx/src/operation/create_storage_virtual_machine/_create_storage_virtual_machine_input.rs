@@ -222,7 +222,7 @@ impl CreateStorageVirtualMachineInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_storage_virtual_machine::CreateStorageVirtualMachineInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_storage_virtual_machine::CreateStorageVirtualMachineInput {
             active_directory_configuration: self.active_directory_configuration,

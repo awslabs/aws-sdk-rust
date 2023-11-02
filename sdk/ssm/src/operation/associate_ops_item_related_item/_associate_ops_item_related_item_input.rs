@@ -122,7 +122,7 @@ impl AssociateOpsItemRelatedItemInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_ops_item_related_item::AssociateOpsItemRelatedItemInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::associate_ops_item_related_item::AssociateOpsItemRelatedItemInput {
             ops_item_id: self.ops_item_id,

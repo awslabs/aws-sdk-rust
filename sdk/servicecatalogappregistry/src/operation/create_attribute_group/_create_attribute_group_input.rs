@@ -136,7 +136,7 @@ impl CreateAttributeGroupInputBuilder {
     /// Consumes the builder and constructs a [`CreateAttributeGroupInput`](crate::operation::create_attribute_group::CreateAttributeGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_attribute_group::CreateAttributeGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_attribute_group::CreateAttributeGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_attribute_group::CreateAttributeGroupInput {
             name: self.name,

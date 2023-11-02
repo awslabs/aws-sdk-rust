@@ -44,7 +44,7 @@ impl TestConnectionInputBuilder {
     /// Consumes the builder and constructs a [`TestConnectionInput`](crate::operation::test_connection::TestConnectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::test_connection::TestConnectionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::test_connection::TestConnectionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::test_connection::TestConnectionInput {
             connector_id: self.connector_id,
         })

@@ -2,7 +2,7 @@
 pub fn ser_disassociate_signin_delegate_groups_from_account_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::disassociate_signin_delegate_groups_from_account::DisassociateSigninDelegateGroupsFromAccountInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.group_names {
         let mut array_2 = object.key("GroupNames").start_array();
         for item_3 in var_1 {

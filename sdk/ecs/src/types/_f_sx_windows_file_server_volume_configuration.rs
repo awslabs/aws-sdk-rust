@@ -95,16 +95,16 @@ impl FSxWindowsFileServerVolumeConfigurationBuilder {
     /// - [`root_directory`](crate::types::builders::FSxWindowsFileServerVolumeConfigurationBuilder::root_directory)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::FSxWindowsFileServerVolumeConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::FSxWindowsFileServerVolumeConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FSxWindowsFileServerVolumeConfiguration {
             file_system_id: self.file_system_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "file_system_id",
                     "file_system_id was not specified but it is required when building FSxWindowsFileServerVolumeConfiguration",
                 )
             })?,
             root_directory: self.root_directory.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "root_directory",
                     "root_directory was not specified but it is required when building FSxWindowsFileServerVolumeConfiguration",
                 )

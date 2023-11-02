@@ -42,7 +42,7 @@ impl GetMonitorInputBuilder {
         &self.monitor_name
     }
     /// Consumes the builder and constructs a [`GetMonitorInput`](crate::operation::get_monitor::GetMonitorInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_monitor::GetMonitorInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_monitor::GetMonitorInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_monitor::GetMonitorInput {
             monitor_name: self.monitor_name,
         })

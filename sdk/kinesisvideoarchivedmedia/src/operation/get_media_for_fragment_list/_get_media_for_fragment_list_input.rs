@@ -95,7 +95,7 @@ impl GetMediaForFragmentListInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_media_for_fragment_list::GetMediaForFragmentListInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_media_for_fragment_list::GetMediaForFragmentListInput {
             stream_name: self.stream_name,

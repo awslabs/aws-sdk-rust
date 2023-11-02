@@ -66,7 +66,7 @@ impl DeleteDeviceUsageDataInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDeviceUsageDataInput`](crate::operation::delete_device_usage_data::DeleteDeviceUsageDataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_device_usage_data::DeleteDeviceUsageDataInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_device_usage_data::DeleteDeviceUsageDataInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_device_usage_data::DeleteDeviceUsageDataInput {
             device_arn: self.device_arn,

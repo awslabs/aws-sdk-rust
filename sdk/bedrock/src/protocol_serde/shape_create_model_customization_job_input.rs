@@ -2,7 +2,7 @@
 pub fn ser_create_model_customization_job_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_model_customization_job::CreateModelCustomizationJobInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.base_model_identifier {
         object.key("baseModelIdentifier").string(var_1.as_str());
     }

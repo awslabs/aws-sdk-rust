@@ -40,7 +40,7 @@ where
 pub fn ser_test_set_generation_data_source(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TestSetGenerationDataSource,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.conversation_logs_data_source {
         #[allow(unused_mut)]
         let mut object_2 = object.key("conversationLogsDataSource").start_object();

@@ -259,23 +259,23 @@ impl RedshiftDestinationDescriptionBuilder {
     /// - [`role_arn`](crate::types::builders::RedshiftDestinationDescriptionBuilder::role_arn)
     /// - [`cluster_jdbcurl`](crate::types::builders::RedshiftDestinationDescriptionBuilder::cluster_jdbcurl)
     /// - [`username`](crate::types::builders::RedshiftDestinationDescriptionBuilder::username)
-    pub fn build(self) -> ::std::result::Result<crate::types::RedshiftDestinationDescription, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RedshiftDestinationDescription, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RedshiftDestinationDescription {
             role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role_arn",
                     "role_arn was not specified but it is required when building RedshiftDestinationDescription",
                 )
             })?,
             cluster_jdbcurl: self.cluster_jdbcurl.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "cluster_jdbcurl",
                     "cluster_jdbcurl was not specified but it is required when building RedshiftDestinationDescription",
                 )
             })?,
             copy_command: self.copy_command,
             username: self.username.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "username",
                     "username was not specified but it is required when building RedshiftDestinationDescription",
                 )

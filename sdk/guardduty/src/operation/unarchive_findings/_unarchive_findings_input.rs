@@ -73,7 +73,7 @@ impl UnarchiveFindingsInputBuilder {
     /// Consumes the builder and constructs a [`UnarchiveFindingsInput`](crate::operation::unarchive_findings::UnarchiveFindingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::unarchive_findings::UnarchiveFindingsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::unarchive_findings::UnarchiveFindingsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::unarchive_findings::UnarchiveFindingsInput {
             detector_id: self.detector_id,
             finding_ids: self.finding_ids,

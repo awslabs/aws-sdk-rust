@@ -117,17 +117,17 @@ impl OutputSourceBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`output_s3_path`](crate::types::builders::OutputSourceBuilder::output_s3_path)
     /// - [`output`](crate::types::builders::OutputSourceBuilder::output)
-    pub fn build(self) -> ::std::result::Result<crate::types::OutputSource, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::OutputSource, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::OutputSource {
             output_s3_path: self.output_s3_path.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "output_s3_path",
                     "output_s3_path was not specified but it is required when building OutputSource",
                 )
             })?,
             kms_arn: self.kms_arn,
             output: self.output.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "output",
                     "output was not specified but it is required when building OutputSource",
                 )

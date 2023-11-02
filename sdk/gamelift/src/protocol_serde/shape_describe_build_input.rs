@@ -2,7 +2,7 @@
 pub fn ser_describe_build_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_build::DescribeBuildInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.build_id {
         object.key("BuildId").string(var_1.as_str());
     }

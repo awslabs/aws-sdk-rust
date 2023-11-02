@@ -90,7 +90,7 @@ impl EnableVgwRoutePropagationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::enable_vgw_route_propagation::EnableVgwRoutePropagationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::enable_vgw_route_propagation::EnableVgwRoutePropagationInput {
             gateway_id: self.gateway_id,

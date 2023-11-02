@@ -96,22 +96,22 @@ impl TestReportSummaryBuilder {
     /// - [`total`](crate::types::builders::TestReportSummaryBuilder::total)
     /// - [`status_counts`](crate::types::builders::TestReportSummaryBuilder::status_counts)
     /// - [`duration_in_nano_seconds`](crate::types::builders::TestReportSummaryBuilder::duration_in_nano_seconds)
-    pub fn build(self) -> ::std::result::Result<crate::types::TestReportSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TestReportSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TestReportSummary {
             total: self.total.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "total",
                     "total was not specified but it is required when building TestReportSummary",
                 )
             })?,
             status_counts: self.status_counts.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status_counts",
                     "status_counts was not specified but it is required when building TestReportSummary",
                 )
             })?,
             duration_in_nano_seconds: self.duration_in_nano_seconds.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "duration_in_nano_seconds",
                     "duration_in_nano_seconds was not specified but it is required when building TestReportSummary",
                 )

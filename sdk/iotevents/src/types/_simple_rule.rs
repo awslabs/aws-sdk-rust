@@ -93,22 +93,22 @@ impl SimpleRuleBuilder {
     /// - [`input_property`](crate::types::builders::SimpleRuleBuilder::input_property)
     /// - [`comparison_operator`](crate::types::builders::SimpleRuleBuilder::comparison_operator)
     /// - [`threshold`](crate::types::builders::SimpleRuleBuilder::threshold)
-    pub fn build(self) -> ::std::result::Result<crate::types::SimpleRule, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SimpleRule, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SimpleRule {
             input_property: self.input_property.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "input_property",
                     "input_property was not specified but it is required when building SimpleRule",
                 )
             })?,
             comparison_operator: self.comparison_operator.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "comparison_operator",
                     "comparison_operator was not specified but it is required when building SimpleRule",
                 )
             })?,
             threshold: self.threshold.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "threshold",
                     "threshold was not specified but it is required when building SimpleRule",
                 )

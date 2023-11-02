@@ -199,7 +199,9 @@ impl ListContactsInputBuilder {
         &self.mission_profile_arn
     }
     /// Consumes the builder and constructs a [`ListContactsInput`](crate::operation::list_contacts::ListContactsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_contacts::ListContactsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_contacts::ListContactsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_contacts::ListContactsInput {
             max_results: self.max_results,
             next_token: self.next_token,

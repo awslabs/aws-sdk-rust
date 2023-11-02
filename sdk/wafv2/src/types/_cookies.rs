@@ -137,17 +137,17 @@ impl CookiesBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`match_scope`](crate::types::builders::CookiesBuilder::match_scope)
     /// - [`oversize_handling`](crate::types::builders::CookiesBuilder::oversize_handling)
-    pub fn build(self) -> ::std::result::Result<crate::types::Cookies, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Cookies, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Cookies {
             match_pattern: self.match_pattern,
             match_scope: self.match_scope.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "match_scope",
                     "match_scope was not specified but it is required when building Cookies",
                 )
             })?,
             oversize_handling: self.oversize_handling.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "oversize_handling",
                     "oversize_handling was not specified but it is required when building Cookies",
                 )

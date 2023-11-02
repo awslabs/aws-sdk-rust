@@ -91,7 +91,7 @@ impl StartPolicyGenerationInputBuilder {
     /// Consumes the builder and constructs a [`StartPolicyGenerationInput`](crate::operation::start_policy_generation::StartPolicyGenerationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_policy_generation::StartPolicyGenerationInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::start_policy_generation::StartPolicyGenerationInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_policy_generation::StartPolicyGenerationInput {
             policy_generation_details: self.policy_generation_details,

@@ -44,7 +44,7 @@ impl GetVoiceProfileDomainInputBuilder {
     /// Consumes the builder and constructs a [`GetVoiceProfileDomainInput`](crate::operation::get_voice_profile_domain::GetVoiceProfileDomainInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_voice_profile_domain::GetVoiceProfileDomainInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_voice_profile_domain::GetVoiceProfileDomainInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_voice_profile_domain::GetVoiceProfileDomainInput {
             voice_profile_domain_id: self.voice_profile_domain_id,

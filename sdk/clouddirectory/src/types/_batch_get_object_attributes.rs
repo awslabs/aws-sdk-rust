@@ -95,12 +95,12 @@ impl BatchGetObjectAttributesBuilder {
     /// Consumes the builder and constructs a [`BatchGetObjectAttributes`](crate::types::BatchGetObjectAttributes).
     /// This method will fail if any of the following fields are not set:
     /// - [`attribute_names`](crate::types::builders::BatchGetObjectAttributesBuilder::attribute_names)
-    pub fn build(self) -> ::std::result::Result<crate::types::BatchGetObjectAttributes, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::BatchGetObjectAttributes, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::BatchGetObjectAttributes {
             object_reference: self.object_reference,
             schema_facet: self.schema_facet,
             attribute_names: self.attribute_names.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "attribute_names",
                     "attribute_names was not specified but it is required when building BatchGetObjectAttributes",
                 )

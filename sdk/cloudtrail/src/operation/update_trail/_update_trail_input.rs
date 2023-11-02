@@ -353,7 +353,7 @@ impl UpdateTrailInputBuilder {
         &self.is_organization_trail
     }
     /// Consumes the builder and constructs a [`UpdateTrailInput`](crate::operation::update_trail::UpdateTrailInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_trail::UpdateTrailInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_trail::UpdateTrailInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_trail::UpdateTrailInput {
             name: self.name,
             s3_bucket_name: self.s3_bucket_name,

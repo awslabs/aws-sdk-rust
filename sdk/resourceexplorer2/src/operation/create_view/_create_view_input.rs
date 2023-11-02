@@ -176,7 +176,7 @@ impl CreateViewInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateViewInput`](crate::operation::create_view::CreateViewInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_view::CreateViewInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_view::CreateViewInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_view::CreateViewInput {
             client_token: self.client_token,
             view_name: self.view_name,

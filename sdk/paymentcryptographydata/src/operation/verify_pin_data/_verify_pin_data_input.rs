@@ -220,7 +220,7 @@ impl VerifyPinDataInputBuilder {
     /// Consumes the builder and constructs a [`VerifyPinDataInput`](crate::operation::verify_pin_data::VerifyPinDataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::verify_pin_data::VerifyPinDataInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::verify_pin_data::VerifyPinDataInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::verify_pin_data::VerifyPinDataInput {
             verification_key_identifier: self.verification_key_identifier,
             encryption_key_identifier: self.encryption_key_identifier,

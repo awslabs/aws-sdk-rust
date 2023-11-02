@@ -2,7 +2,7 @@
 pub fn ser_aws_api_gateway_method_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsApiGatewayMethodSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.metrics_enabled {
         object.key("MetricsEnabled").boolean(*var_1);
     }

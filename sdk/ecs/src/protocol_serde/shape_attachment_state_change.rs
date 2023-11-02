@@ -2,7 +2,7 @@
 pub fn ser_attachment_state_change(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AttachmentStateChange,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("attachmentArn").string(input.attachment_arn.as_str());
     }

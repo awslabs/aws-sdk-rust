@@ -44,7 +44,7 @@ impl AssociateCertificateInputBuilder {
     /// Consumes the builder and constructs a [`AssociateCertificateInput`](crate::operation::associate_certificate::AssociateCertificateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::associate_certificate::AssociateCertificateInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::associate_certificate::AssociateCertificateInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::associate_certificate::AssociateCertificateInput { arn: self.arn })
     }

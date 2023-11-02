@@ -87,7 +87,7 @@ impl DescribeVirtualNodeInputBuilder {
     /// Consumes the builder and constructs a [`DescribeVirtualNodeInput`](crate::operation::describe_virtual_node::DescribeVirtualNodeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_virtual_node::DescribeVirtualNodeInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_virtual_node::DescribeVirtualNodeInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_virtual_node::DescribeVirtualNodeInput {
             virtual_node_name: self.virtual_node_name,

@@ -102,16 +102,16 @@ impl DocumentBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`content`](crate::types::builders::DocumentBuilder::content)
     /// - [`content_type`](crate::types::builders::DocumentBuilder::content_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::Document, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Document, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Document {
             content: self.content.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "content",
                     "content was not specified but it is required when building Document",
                 )
             })?,
             content_type: self.content_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "content_type",
                     "content_type was not specified but it is required when building Document",
                 )

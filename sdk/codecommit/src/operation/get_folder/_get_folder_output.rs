@@ -222,16 +222,16 @@ impl GetFolderOutputBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`commit_id`](crate::operation::get_folder::builders::GetFolderOutputBuilder::commit_id)
     /// - [`folder_path`](crate::operation::get_folder::builders::GetFolderOutputBuilder::folder_path)
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_folder::GetFolderOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_folder::GetFolderOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_folder::GetFolderOutput {
             commit_id: self.commit_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "commit_id",
                     "commit_id was not specified but it is required when building GetFolderOutput",
                 )
             })?,
             folder_path: self.folder_path.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "folder_path",
                     "folder_path was not specified but it is required when building GetFolderOutput",
                 )

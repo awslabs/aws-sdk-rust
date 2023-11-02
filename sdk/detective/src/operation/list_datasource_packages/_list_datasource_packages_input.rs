@@ -86,8 +86,10 @@ impl ListDatasourcePackagesInputBuilder {
     /// Consumes the builder and constructs a [`ListDatasourcePackagesInput`](crate::operation::list_datasource_packages::ListDatasourcePackagesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_datasource_packages::ListDatasourcePackagesInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::list_datasource_packages::ListDatasourcePackagesInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::list_datasource_packages::ListDatasourcePackagesInput {
             graph_arn: self.graph_arn,
             next_token: self.next_token,

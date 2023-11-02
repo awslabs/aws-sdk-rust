@@ -66,7 +66,7 @@ impl DescribeAnalysisInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAnalysisInput`](crate::operation::describe_analysis::DescribeAnalysisInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_analysis::DescribeAnalysisInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_analysis::DescribeAnalysisInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_analysis::DescribeAnalysisInput {
             aws_account_id: self.aws_account_id,
             analysis_id: self.analysis_id,

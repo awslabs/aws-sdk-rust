@@ -113,7 +113,7 @@ impl ListTargetsInputBuilder {
         &self.targets
     }
     /// Consumes the builder and constructs a [`ListTargetsInput`](crate::operation::list_targets::ListTargetsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_targets::ListTargetsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_targets::ListTargetsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_targets::ListTargetsInput {
             target_group_identifier: self.target_group_identifier,
             max_results: self.max_results,

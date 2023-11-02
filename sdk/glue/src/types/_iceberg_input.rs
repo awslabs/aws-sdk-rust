@@ -66,10 +66,10 @@ impl IcebergInputBuilder {
     /// Consumes the builder and constructs a [`IcebergInput`](crate::types::IcebergInput).
     /// This method will fail if any of the following fields are not set:
     /// - [`metadata_operation`](crate::types::builders::IcebergInputBuilder::metadata_operation)
-    pub fn build(self) -> ::std::result::Result<crate::types::IcebergInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::IcebergInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::IcebergInput {
             metadata_operation: self.metadata_operation.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "metadata_operation",
                     "metadata_operation was not specified but it is required when building IcebergInput",
                 )

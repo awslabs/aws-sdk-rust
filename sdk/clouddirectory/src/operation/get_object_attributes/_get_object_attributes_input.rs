@@ -138,7 +138,7 @@ impl GetObjectAttributesInputBuilder {
     /// Consumes the builder and constructs a [`GetObjectAttributesInput`](crate::operation::get_object_attributes::GetObjectAttributesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_object_attributes::GetObjectAttributesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_object_attributes::GetObjectAttributesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_object_attributes::GetObjectAttributesInput {
             directory_arn: self.directory_arn,

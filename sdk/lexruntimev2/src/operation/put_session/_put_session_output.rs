@@ -15,7 +15,7 @@ pub struct PutSessionOutput {
     /// <p>The identifier of the session that received the data.</p>
     pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>If the requested content type was audio, the audio version of the message to convey to the user.</p>
-    pub audio_stream: ::aws_smithy_http::byte_stream::ByteStream,
+    pub audio_stream: ::aws_smithy_types::byte_stream::ByteStream,
     _request_id: Option<String>,
 }
 impl PutSessionOutput {
@@ -41,7 +41,7 @@ impl PutSessionOutput {
         self.session_id.as_deref()
     }
     /// <p>If the requested content type was audio, the audio version of the message to convey to the user.</p>
-    pub fn audio_stream(&self) -> &::aws_smithy_http::byte_stream::ByteStream {
+    pub fn audio_stream(&self) -> &::aws_smithy_types::byte_stream::ByteStream {
         &self.audio_stream
     }
 }
@@ -66,7 +66,7 @@ pub struct PutSessionOutputBuilder {
     pub(crate) session_state: ::std::option::Option<::std::string::String>,
     pub(crate) request_attributes: ::std::option::Option<::std::string::String>,
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
-    pub(crate) audio_stream: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
+    pub(crate) audio_stream: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>,
     _request_id: Option<String>,
 }
 impl PutSessionOutputBuilder {
@@ -144,17 +144,17 @@ impl PutSessionOutputBuilder {
         &self.session_id
     }
     /// <p>If the requested content type was audio, the audio version of the message to convey to the user.</p>
-    pub fn audio_stream(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
+    pub fn audio_stream(mut self, input: ::aws_smithy_types::byte_stream::ByteStream) -> Self {
         self.audio_stream = ::std::option::Option::Some(input);
         self
     }
     /// <p>If the requested content type was audio, the audio version of the message to convey to the user.</p>
-    pub fn set_audio_stream(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
+    pub fn set_audio_stream(mut self, input: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>) -> Self {
         self.audio_stream = input;
         self
     }
     /// <p>If the requested content type was audio, the audio version of the message to convey to the user.</p>
-    pub fn get_audio_stream(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+    pub fn get_audio_stream(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
         &self.audio_stream
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

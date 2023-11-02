@@ -45,10 +45,10 @@ impl AnalyticsIntentGroupBySpecificationBuilder {
     /// Consumes the builder and constructs a [`AnalyticsIntentGroupBySpecification`](crate::types::AnalyticsIntentGroupBySpecification).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::AnalyticsIntentGroupBySpecificationBuilder::name)
-    pub fn build(self) -> ::std::result::Result<crate::types::AnalyticsIntentGroupBySpecification, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AnalyticsIntentGroupBySpecification, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AnalyticsIntentGroupBySpecification {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building AnalyticsIntentGroupBySpecification",
                 )

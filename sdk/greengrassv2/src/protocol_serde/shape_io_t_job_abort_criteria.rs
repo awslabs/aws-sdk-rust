@@ -2,7 +2,7 @@
 pub fn ser_io_t_job_abort_criteria(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IoTJobAbortCriteria,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("failureType").string(input.failure_type.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_timed_metadata_insertion(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TimedMetadataInsertion,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.id3_insertions {
         let mut array_2 = object.key("id3Insertions").start_array();
         for item_3 in var_1 {

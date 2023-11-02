@@ -74,16 +74,16 @@ impl RuleBasedPropertiesBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`rules`](crate::types::builders::RuleBasedPropertiesBuilder::rules)
     /// - [`attribute_matching_model`](crate::types::builders::RuleBasedPropertiesBuilder::attribute_matching_model)
-    pub fn build(self) -> ::std::result::Result<crate::types::RuleBasedProperties, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RuleBasedProperties, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RuleBasedProperties {
             rules: self.rules.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "rules",
                     "rules was not specified but it is required when building RuleBasedProperties",
                 )
             })?,
             attribute_matching_model: self.attribute_matching_model.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "attribute_matching_model",
                     "attribute_matching_model was not specified but it is required when building RuleBasedProperties",
                 )

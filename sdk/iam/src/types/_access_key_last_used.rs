@@ -174,22 +174,22 @@ impl AccessKeyLastUsedBuilder {
     /// - [`last_used_date`](crate::types::builders::AccessKeyLastUsedBuilder::last_used_date)
     /// - [`service_name`](crate::types::builders::AccessKeyLastUsedBuilder::service_name)
     /// - [`region`](crate::types::builders::AccessKeyLastUsedBuilder::region)
-    pub fn build(self) -> ::std::result::Result<crate::types::AccessKeyLastUsed, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AccessKeyLastUsed, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AccessKeyLastUsed {
             last_used_date: self.last_used_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_used_date",
                     "last_used_date was not specified but it is required when building AccessKeyLastUsed",
                 )
             })?,
             service_name: self.service_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "service_name",
                     "service_name was not specified but it is required when building AccessKeyLastUsed",
                 )
             })?,
             region: self.region.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "region",
                     "region was not specified but it is required when building AccessKeyLastUsed",
                 )

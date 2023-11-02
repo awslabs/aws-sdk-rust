@@ -73,7 +73,7 @@ impl UpdatePermissionsInputBuilder {
     /// Consumes the builder and constructs a [`UpdatePermissionsInput`](crate::operation::update_permissions::UpdatePermissionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_permissions::UpdatePermissionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_permissions::UpdatePermissionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_permissions::UpdatePermissionsInput {
             update_instruction_batch: self.update_instruction_batch,
             workspace_id: self.workspace_id,

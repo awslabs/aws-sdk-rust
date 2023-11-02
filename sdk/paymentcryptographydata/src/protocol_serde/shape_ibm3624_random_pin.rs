@@ -2,7 +2,7 @@
 pub fn ser_ibm3624_random_pin(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Ibm3624RandomPin,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("DecimalizationTable").string(input.decimalization_table.as_str());
     }

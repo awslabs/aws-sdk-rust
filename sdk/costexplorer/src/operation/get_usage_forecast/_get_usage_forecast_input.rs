@@ -285,7 +285,7 @@ impl GetUsageForecastInputBuilder {
     /// Consumes the builder and constructs a [`GetUsageForecastInput`](crate::operation::get_usage_forecast::GetUsageForecastInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_usage_forecast::GetUsageForecastInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_usage_forecast::GetUsageForecastInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_usage_forecast::GetUsageForecastInput {
             time_period: self.time_period,
             metric: self.metric,

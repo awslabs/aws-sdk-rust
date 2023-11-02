@@ -190,10 +190,13 @@ impl DocumentBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::DocumentBuilder::id)
     /// - [`original_score`](crate::types::builders::DocumentBuilder::original_score)
-    pub fn build(self) -> ::std::result::Result<crate::types::Document, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Document, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Document {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field("id", "id was not specified but it is required when building Document")
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building Document",
+                )
             })?,
             group_id: self.group_id,
             title: self.title,
@@ -201,7 +204,7 @@ impl DocumentBuilder {
             tokenized_title: self.tokenized_title,
             tokenized_body: self.tokenized_body,
             original_score: self.original_score.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "original_score",
                     "original_score was not specified but it is required when building Document",
                 )

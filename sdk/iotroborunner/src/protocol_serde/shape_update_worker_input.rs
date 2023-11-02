@@ -2,7 +2,7 @@
 pub fn ser_update_worker_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_worker::UpdateWorkerInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.additional_fixed_properties {
         object.key("additionalFixedProperties").string(var_1.as_str());
     }

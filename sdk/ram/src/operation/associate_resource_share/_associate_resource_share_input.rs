@@ -217,8 +217,10 @@ impl AssociateResourceShareInputBuilder {
     /// Consumes the builder and constructs a [`AssociateResourceShareInput`](crate::operation::associate_resource_share::AssociateResourceShareInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::associate_resource_share::AssociateResourceShareInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::associate_resource_share::AssociateResourceShareInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::associate_resource_share::AssociateResourceShareInput {
             resource_share_arn: self.resource_share_arn,
             resource_arns: self.resource_arns,

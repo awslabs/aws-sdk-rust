@@ -2,7 +2,7 @@
 pub fn ser_app_instance_streaming_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AppInstanceStreamingConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("AppInstanceDataType").string(input.app_instance_data_type.as_str());
     }

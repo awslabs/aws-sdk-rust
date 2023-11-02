@@ -58,7 +58,7 @@ where
 pub fn ser_metric_value(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MetricValue,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.count {
         object.key("count").number(
             #[allow(clippy::useless_conversion)]

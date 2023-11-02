@@ -2,7 +2,7 @@
 pub fn ser_aws_s3_bucket_object_lock_configuration_rule_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsS3BucketObjectLockConfigurationRuleDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.default_retention {
         #[allow(unused_mut)]
         let mut object_2 = object.key("DefaultRetention").start_object();

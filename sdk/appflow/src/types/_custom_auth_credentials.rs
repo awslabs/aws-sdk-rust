@@ -80,10 +80,10 @@ impl CustomAuthCredentialsBuilder {
     /// Consumes the builder and constructs a [`CustomAuthCredentials`](crate::types::CustomAuthCredentials).
     /// This method will fail if any of the following fields are not set:
     /// - [`custom_authentication_type`](crate::types::builders::CustomAuthCredentialsBuilder::custom_authentication_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::CustomAuthCredentials, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CustomAuthCredentials, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CustomAuthCredentials {
             custom_authentication_type: self.custom_authentication_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "custom_authentication_type",
                     "custom_authentication_type was not specified but it is required when building CustomAuthCredentials",
                 )

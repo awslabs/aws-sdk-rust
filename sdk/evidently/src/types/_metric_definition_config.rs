@@ -141,22 +141,22 @@ impl MetricDefinitionConfigBuilder {
     /// - [`name`](crate::types::builders::MetricDefinitionConfigBuilder::name)
     /// - [`entity_id_key`](crate::types::builders::MetricDefinitionConfigBuilder::entity_id_key)
     /// - [`value_key`](crate::types::builders::MetricDefinitionConfigBuilder::value_key)
-    pub fn build(self) -> ::std::result::Result<crate::types::MetricDefinitionConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::MetricDefinitionConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MetricDefinitionConfig {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building MetricDefinitionConfig",
                 )
             })?,
             entity_id_key: self.entity_id_key.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "entity_id_key",
                     "entity_id_key was not specified but it is required when building MetricDefinitionConfig",
                 )
             })?,
             value_key: self.value_key.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "value_key",
                     "value_key was not specified but it is required when building MetricDefinitionConfig",
                 )

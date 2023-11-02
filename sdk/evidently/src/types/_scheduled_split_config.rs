@@ -117,16 +117,16 @@ impl ScheduledSplitConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`start_time`](crate::types::builders::ScheduledSplitConfigBuilder::start_time)
     /// - [`group_weights`](crate::types::builders::ScheduledSplitConfigBuilder::group_weights)
-    pub fn build(self) -> ::std::result::Result<crate::types::ScheduledSplitConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ScheduledSplitConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ScheduledSplitConfig {
             start_time: self.start_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "start_time",
                     "start_time was not specified but it is required when building ScheduledSplitConfig",
                 )
             })?,
             group_weights: self.group_weights.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "group_weights",
                     "group_weights was not specified but it is required when building ScheduledSplitConfig",
                 )

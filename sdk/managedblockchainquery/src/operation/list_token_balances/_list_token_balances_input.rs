@@ -117,7 +117,7 @@ impl ListTokenBalancesInputBuilder {
     /// Consumes the builder and constructs a [`ListTokenBalancesInput`](crate::operation::list_token_balances::ListTokenBalancesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_token_balances::ListTokenBalancesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_token_balances::ListTokenBalancesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_token_balances::ListTokenBalancesInput {
             owner_filter: self.owner_filter,
             token_filter: self.token_filter,

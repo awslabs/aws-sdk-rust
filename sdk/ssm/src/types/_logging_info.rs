@@ -93,17 +93,17 @@ impl LoggingInfoBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`s3_bucket_name`](crate::types::builders::LoggingInfoBuilder::s3_bucket_name)
     /// - [`s3_region`](crate::types::builders::LoggingInfoBuilder::s3_region)
-    pub fn build(self) -> ::std::result::Result<crate::types::LoggingInfo, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::LoggingInfo, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::LoggingInfo {
             s3_bucket_name: self.s3_bucket_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "s3_bucket_name",
                     "s3_bucket_name was not specified but it is required when building LoggingInfo",
                 )
             })?,
             s3_key_prefix: self.s3_key_prefix,
             s3_region: self.s3_region.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "s3_region",
                     "s3_region was not specified but it is required when building LoggingInfo",
                 )

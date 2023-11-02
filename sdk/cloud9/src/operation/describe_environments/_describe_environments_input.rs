@@ -51,7 +51,7 @@ impl DescribeEnvironmentsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeEnvironmentsInput`](crate::operation::describe_environments::DescribeEnvironmentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_environments::DescribeEnvironmentsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_environments::DescribeEnvironmentsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_environments::DescribeEnvironmentsInput {
             environment_ids: self.environment_ids,

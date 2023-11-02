@@ -68,7 +68,7 @@ impl RejectClientVpcConnectionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reject_client_vpc_connection::RejectClientVpcConnectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::reject_client_vpc_connection::RejectClientVpcConnectionInput {
             cluster_arn: self.cluster_arn,

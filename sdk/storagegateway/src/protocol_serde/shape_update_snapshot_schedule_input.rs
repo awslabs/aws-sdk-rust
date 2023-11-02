@@ -2,7 +2,7 @@
 pub fn ser_update_snapshot_schedule_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_snapshot_schedule::UpdateSnapshotScheduleInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.volume_arn {
         object.key("VolumeARN").string(var_1.as_str());
     }

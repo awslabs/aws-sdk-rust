@@ -67,7 +67,7 @@ impl DeleteTrafficMirrorTargetInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_traffic_mirror_target::DeleteTrafficMirrorTargetInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_traffic_mirror_target::DeleteTrafficMirrorTargetInput {
             traffic_mirror_target_id: self.traffic_mirror_target_id,

@@ -73,7 +73,7 @@ impl PutApplicationPolicyInputBuilder {
     /// Consumes the builder and constructs a [`PutApplicationPolicyInput`](crate::operation::put_application_policy::PutApplicationPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_application_policy::PutApplicationPolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::put_application_policy::PutApplicationPolicyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::put_application_policy::PutApplicationPolicyInput {
             application_id: self.application_id,

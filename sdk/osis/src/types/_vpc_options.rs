@@ -80,10 +80,10 @@ impl VpcOptionsBuilder {
     /// Consumes the builder and constructs a [`VpcOptions`](crate::types::VpcOptions).
     /// This method will fail if any of the following fields are not set:
     /// - [`subnet_ids`](crate::types::builders::VpcOptionsBuilder::subnet_ids)
-    pub fn build(self) -> ::std::result::Result<crate::types::VpcOptions, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::VpcOptions, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::VpcOptions {
             subnet_ids: self.subnet_ids.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "subnet_ids",
                     "subnet_ids was not specified but it is required when building VpcOptions",
                 )

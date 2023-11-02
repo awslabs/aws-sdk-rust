@@ -2,7 +2,7 @@
 pub fn ser_modify_hapg_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::modify_hapg::ModifyHapgInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.hapg_arn {
         object.key("HapgArn").string(var_1.as_str());
     }

@@ -87,10 +87,10 @@ impl ListSinksOutputBuilder {
     /// Consumes the builder and constructs a [`ListSinksOutput`](crate::operation::list_sinks::ListSinksOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`items`](crate::operation::list_sinks::builders::ListSinksOutputBuilder::items)
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_sinks::ListSinksOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_sinks::ListSinksOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_sinks::ListSinksOutput {
             items: self.items.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "items",
                     "items was not specified but it is required when building ListSinksOutput",
                 )

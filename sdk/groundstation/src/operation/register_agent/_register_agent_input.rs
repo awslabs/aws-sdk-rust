@@ -66,7 +66,7 @@ impl RegisterAgentInputBuilder {
     /// Consumes the builder and constructs a [`RegisterAgentInput`](crate::operation::register_agent::RegisterAgentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::register_agent::RegisterAgentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::register_agent::RegisterAgentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::register_agent::RegisterAgentInput {
             discovery_data: self.discovery_data,
             agent_details: self.agent_details,

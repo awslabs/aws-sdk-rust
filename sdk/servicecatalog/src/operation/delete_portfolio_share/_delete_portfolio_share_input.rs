@@ -127,7 +127,7 @@ impl DeletePortfolioShareInputBuilder {
     /// Consumes the builder and constructs a [`DeletePortfolioShareInput`](crate::operation::delete_portfolio_share::DeletePortfolioShareInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_portfolio_share::DeletePortfolioShareInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_portfolio_share::DeletePortfolioShareInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_portfolio_share::DeletePortfolioShareInput {
             accept_language: self.accept_language,

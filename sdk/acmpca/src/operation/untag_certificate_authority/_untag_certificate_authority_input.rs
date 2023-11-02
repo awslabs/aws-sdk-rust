@@ -80,7 +80,7 @@ impl UntagCertificateAuthorityInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::untag_certificate_authority::UntagCertificateAuthorityInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::untag_certificate_authority::UntagCertificateAuthorityInput {
             certificate_authority_arn: self.certificate_authority_arn,

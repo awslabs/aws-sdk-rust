@@ -293,40 +293,43 @@ impl WorkerBuilder {
     /// - [`updated_at`](crate::types::builders::WorkerBuilder::updated_at)
     /// - [`name`](crate::types::builders::WorkerBuilder::name)
     /// - [`site`](crate::types::builders::WorkerBuilder::site)
-    pub fn build(self) -> ::std::result::Result<crate::types::Worker, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Worker, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Worker {
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field("arn", "arn was not specified but it is required when building Worker")
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building Worker",
+                )
             })?,
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field("id", "id was not specified but it is required when building Worker")
+                ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building Worker")
             })?,
             fleet: self.fleet.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "fleet",
                     "fleet was not specified but it is required when building Worker",
                 )
             })?,
             created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
                     "created_at was not specified but it is required when building Worker",
                 )
             })?,
             updated_at: self.updated_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "updated_at",
                     "updated_at was not specified but it is required when building Worker",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building Worker",
                 )
             })?,
             site: self.site.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "site",
                     "site was not specified but it is required when building Worker",
                 )

@@ -99,7 +99,7 @@ impl ImportCertificateAuthorityCertificateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::import_certificate_authority_certificate::ImportCertificateAuthorityCertificateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::import_certificate_authority_certificate::ImportCertificateAuthorityCertificateInput {

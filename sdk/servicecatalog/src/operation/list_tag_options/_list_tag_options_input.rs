@@ -85,7 +85,7 @@ impl ListTagOptionsInputBuilder {
     /// Consumes the builder and constructs a [`ListTagOptionsInput`](crate::operation::list_tag_options::ListTagOptionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_tag_options::ListTagOptionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_tag_options::ListTagOptionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_tag_options::ListTagOptionsInput {
             filters: self.filters,
             page_size: self.page_size,

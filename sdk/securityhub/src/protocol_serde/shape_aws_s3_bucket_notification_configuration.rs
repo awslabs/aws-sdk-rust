@@ -2,7 +2,7 @@
 pub fn ser_aws_s3_bucket_notification_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsS3BucketNotificationConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.configurations {
         let mut array_2 = object.key("Configurations").start_array();
         for item_3 in var_1 {

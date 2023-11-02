@@ -234,7 +234,7 @@ impl DisruptionComplianceBuilder {
     /// Consumes the builder and constructs a [`DisruptionCompliance`](crate::types::DisruptionCompliance).
     /// This method will fail if any of the following fields are not set:
     /// - [`compliance_status`](crate::types::builders::DisruptionComplianceBuilder::compliance_status)
-    pub fn build(self) -> ::std::result::Result<crate::types::DisruptionCompliance, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DisruptionCompliance, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DisruptionCompliance {
             achievable_rto_in_secs: self.achievable_rto_in_secs.unwrap_or_default(),
             current_rto_in_secs: self.current_rto_in_secs.unwrap_or_default(),
@@ -244,7 +244,7 @@ impl DisruptionComplianceBuilder {
             rpo_reference_id: self.rpo_reference_id,
             rpo_description: self.rpo_description,
             compliance_status: self.compliance_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "compliance_status",
                     "compliance_status was not specified but it is required when building DisruptionCompliance",
                 )

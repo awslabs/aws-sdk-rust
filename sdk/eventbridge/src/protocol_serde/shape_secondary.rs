@@ -44,7 +44,7 @@ where
 pub fn ser_secondary(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Secondary,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Route").string(input.route.as_str());
     }

@@ -44,7 +44,8 @@ impl DeleteDiskSnapshotInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDiskSnapshotInput`](crate::operation::delete_disk_snapshot::DeleteDiskSnapshotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_disk_snapshot::DeleteDiskSnapshotInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_disk_snapshot::DeleteDiskSnapshotInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::delete_disk_snapshot::DeleteDiskSnapshotInput {
             disk_snapshot_name: self.disk_snapshot_name,
         })

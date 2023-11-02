@@ -2,7 +2,7 @@
 pub fn ser_comment(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Comment,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("message").string(input.message.as_str());
     }

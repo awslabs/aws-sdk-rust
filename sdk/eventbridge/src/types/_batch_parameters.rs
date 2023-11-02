@@ -112,16 +112,16 @@ impl BatchParametersBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`job_definition`](crate::types::builders::BatchParametersBuilder::job_definition)
     /// - [`job_name`](crate::types::builders::BatchParametersBuilder::job_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::BatchParameters, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::BatchParameters, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::BatchParameters {
             job_definition: self.job_definition.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "job_definition",
                     "job_definition was not specified but it is required when building BatchParameters",
                 )
             })?,
             job_name: self.job_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "job_name",
                     "job_name was not specified but it is required when building BatchParameters",
                 )

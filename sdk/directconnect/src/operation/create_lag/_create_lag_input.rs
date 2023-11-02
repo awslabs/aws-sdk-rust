@@ -239,7 +239,7 @@ impl CreateLagInputBuilder {
         &self.request_mac_sec
     }
     /// Consumes the builder and constructs a [`CreateLagInput`](crate::operation::create_lag::CreateLagInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_lag::CreateLagInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_lag::CreateLagInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_lag::CreateLagInput {
             number_of_connections: self.number_of_connections,
             location: self.location,

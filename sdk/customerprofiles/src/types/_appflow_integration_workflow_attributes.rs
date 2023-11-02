@@ -90,16 +90,18 @@ impl AppflowIntegrationWorkflowAttributesBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`source_connector_type`](crate::types::builders::AppflowIntegrationWorkflowAttributesBuilder::source_connector_type)
     /// - [`connector_profile_name`](crate::types::builders::AppflowIntegrationWorkflowAttributesBuilder::connector_profile_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::AppflowIntegrationWorkflowAttributes, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::AppflowIntegrationWorkflowAttributes, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AppflowIntegrationWorkflowAttributes {
             source_connector_type: self.source_connector_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source_connector_type",
                     "source_connector_type was not specified but it is required when building AppflowIntegrationWorkflowAttributes",
                 )
             })?,
             connector_profile_name: self.connector_profile_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "connector_profile_name",
                     "connector_profile_name was not specified but it is required when building AppflowIntegrationWorkflowAttributes",
                 )

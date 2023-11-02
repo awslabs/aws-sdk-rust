@@ -65,11 +65,11 @@ impl CreateAnomalySubscriptionOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_anomaly_subscription::CreateAnomalySubscriptionOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_anomaly_subscription::CreateAnomalySubscriptionOutput {
             subscription_arn: self.subscription_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "subscription_arn",
                     "subscription_arn was not specified but it is required when building CreateAnomalySubscriptionOutput",
                 )

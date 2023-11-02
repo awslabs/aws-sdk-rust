@@ -67,10 +67,10 @@ impl CryptogramVerificationArpcMethod2Builder {
     /// Consumes the builder and constructs a [`CryptogramVerificationArpcMethod2`](crate::types::CryptogramVerificationArpcMethod2).
     /// This method will fail if any of the following fields are not set:
     /// - [`card_status_update`](crate::types::builders::CryptogramVerificationArpcMethod2Builder::card_status_update)
-    pub fn build(self) -> ::std::result::Result<crate::types::CryptogramVerificationArpcMethod2, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CryptogramVerificationArpcMethod2, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CryptogramVerificationArpcMethod2 {
             card_status_update: self.card_status_update.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "card_status_update",
                     "card_status_update was not specified but it is required when building CryptogramVerificationArpcMethod2",
                 )

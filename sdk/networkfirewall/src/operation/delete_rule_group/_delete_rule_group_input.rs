@@ -105,7 +105,7 @@ impl DeleteRuleGroupInputBuilder {
     /// Consumes the builder and constructs a [`DeleteRuleGroupInput`](crate::operation::delete_rule_group::DeleteRuleGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_rule_group::DeleteRuleGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_rule_group::DeleteRuleGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_rule_group::DeleteRuleGroupInput {
             rule_group_name: self.rule_group_name,
             rule_group_arn: self.rule_group_arn,

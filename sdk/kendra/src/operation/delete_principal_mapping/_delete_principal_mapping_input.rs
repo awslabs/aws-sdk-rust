@@ -123,8 +123,10 @@ impl DeletePrincipalMappingInputBuilder {
     /// Consumes the builder and constructs a [`DeletePrincipalMappingInput`](crate::operation::delete_principal_mapping::DeletePrincipalMappingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_principal_mapping::DeletePrincipalMappingInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::delete_principal_mapping::DeletePrincipalMappingInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::delete_principal_mapping::DeletePrincipalMappingInput {
             index_id: self.index_id,
             data_source_id: self.data_source_id,

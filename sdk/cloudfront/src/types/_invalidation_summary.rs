@@ -93,22 +93,22 @@ impl InvalidationSummaryBuilder {
     /// - [`id`](crate::types::builders::InvalidationSummaryBuilder::id)
     /// - [`create_time`](crate::types::builders::InvalidationSummaryBuilder::create_time)
     /// - [`status`](crate::types::builders::InvalidationSummaryBuilder::status)
-    pub fn build(self) -> ::std::result::Result<crate::types::InvalidationSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::InvalidationSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::InvalidationSummary {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building InvalidationSummary",
                 )
             })?,
             create_time: self.create_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "create_time",
                     "create_time was not specified but it is required when building InvalidationSummary",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building InvalidationSummary",
                 )

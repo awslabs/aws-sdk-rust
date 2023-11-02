@@ -2,7 +2,7 @@
 pub fn ser_create_proactive_join(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CreateProactiveJoin,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("EnabledByMotion").boolean(input.enabled_by_motion);
     }

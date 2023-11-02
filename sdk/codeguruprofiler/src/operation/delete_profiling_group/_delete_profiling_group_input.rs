@@ -45,7 +45,7 @@ impl DeleteProfilingGroupInputBuilder {
     /// Consumes the builder and constructs a [`DeleteProfilingGroupInput`](crate::operation::delete_profiling_group::DeleteProfilingGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_profiling_group::DeleteProfilingGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_profiling_group::DeleteProfilingGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_profiling_group::DeleteProfilingGroupInput {
             profiling_group_name: self.profiling_group_name,

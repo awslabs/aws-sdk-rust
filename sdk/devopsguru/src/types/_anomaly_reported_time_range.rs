@@ -66,10 +66,10 @@ impl AnomalyReportedTimeRangeBuilder {
     /// Consumes the builder and constructs a [`AnomalyReportedTimeRange`](crate::types::AnomalyReportedTimeRange).
     /// This method will fail if any of the following fields are not set:
     /// - [`open_time`](crate::types::builders::AnomalyReportedTimeRangeBuilder::open_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::AnomalyReportedTimeRange, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AnomalyReportedTimeRange, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AnomalyReportedTimeRange {
             open_time: self.open_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "open_time",
                     "open_time was not specified but it is required when building AnomalyReportedTimeRange",
                 )

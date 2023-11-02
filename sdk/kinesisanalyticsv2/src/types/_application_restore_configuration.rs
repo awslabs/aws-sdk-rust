@@ -66,10 +66,10 @@ impl ApplicationRestoreConfigurationBuilder {
     /// Consumes the builder and constructs a [`ApplicationRestoreConfiguration`](crate::types::ApplicationRestoreConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`application_restore_type`](crate::types::builders::ApplicationRestoreConfigurationBuilder::application_restore_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::ApplicationRestoreConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ApplicationRestoreConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ApplicationRestoreConfiguration {
             application_restore_type: self.application_restore_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "application_restore_type",
                     "application_restore_type was not specified but it is required when building ApplicationRestoreConfiguration",
                 )

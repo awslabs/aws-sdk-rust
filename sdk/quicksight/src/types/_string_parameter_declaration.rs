@@ -140,16 +140,16 @@ impl StringParameterDeclarationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`parameter_value_type`](crate::types::builders::StringParameterDeclarationBuilder::parameter_value_type)
     /// - [`name`](crate::types::builders::StringParameterDeclarationBuilder::name)
-    pub fn build(self) -> ::std::result::Result<crate::types::StringParameterDeclaration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::StringParameterDeclaration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::StringParameterDeclaration {
             parameter_value_type: self.parameter_value_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "parameter_value_type",
                     "parameter_value_type was not specified but it is required when building StringParameterDeclaration",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building StringParameterDeclaration",
                 )

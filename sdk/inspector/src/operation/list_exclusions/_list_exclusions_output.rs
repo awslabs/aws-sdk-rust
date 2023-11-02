@@ -89,10 +89,10 @@ impl ListExclusionsOutputBuilder {
     /// - [`exclusion_arns`](crate::operation::list_exclusions::builders::ListExclusionsOutputBuilder::exclusion_arns)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_exclusions::ListExclusionsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_exclusions::ListExclusionsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_exclusions::ListExclusionsOutput {
             exclusion_arns: self.exclusion_arns.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "exclusion_arns",
                     "exclusion_arns was not specified but it is required when building ListExclusionsOutput",
                 )

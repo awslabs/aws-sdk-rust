@@ -46,7 +46,7 @@ impl DisassociateGatewayFromServerInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_gateway_from_server::DisassociateGatewayFromServerInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disassociate_gateway_from_server::DisassociateGatewayFromServerInput {
             gateway_arn: self.gateway_arn,

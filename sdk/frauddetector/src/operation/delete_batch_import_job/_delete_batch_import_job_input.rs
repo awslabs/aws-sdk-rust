@@ -44,7 +44,7 @@ impl DeleteBatchImportJobInputBuilder {
     /// Consumes the builder and constructs a [`DeleteBatchImportJobInput`](crate::operation::delete_batch_import_job::DeleteBatchImportJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_batch_import_job::DeleteBatchImportJobInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_batch_import_job::DeleteBatchImportJobInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_batch_import_job::DeleteBatchImportJobInput { job_id: self.job_id })
     }

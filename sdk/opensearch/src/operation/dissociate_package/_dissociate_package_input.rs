@@ -67,7 +67,7 @@ impl DissociatePackageInputBuilder {
     /// Consumes the builder and constructs a [`DissociatePackageInput`](crate::operation::dissociate_package::DissociatePackageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::dissociate_package::DissociatePackageInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::dissociate_package::DissociatePackageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::dissociate_package::DissociatePackageInput {
             package_id: self.package_id,
             domain_name: self.domain_name,

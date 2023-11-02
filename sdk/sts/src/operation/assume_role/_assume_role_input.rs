@@ -441,7 +441,7 @@ impl AssumeRoleInputBuilder {
         &self.provided_contexts
     }
     /// Consumes the builder and constructs a [`AssumeRoleInput`](crate::operation::assume_role::AssumeRoleInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::assume_role::AssumeRoleInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::assume_role::AssumeRoleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::assume_role::AssumeRoleInput {
             role_arn: self.role_arn,
             role_session_name: self.role_session_name,

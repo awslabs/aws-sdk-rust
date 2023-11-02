@@ -86,7 +86,7 @@ impl DescribeLoadBalancersInputBuilder {
     /// Consumes the builder and constructs a [`DescribeLoadBalancersInput`](crate::operation::describe_load_balancers::DescribeLoadBalancersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_load_balancers::DescribeLoadBalancersInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_load_balancers::DescribeLoadBalancersInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_load_balancers::DescribeLoadBalancersInput {
             auto_scaling_group_name: self.auto_scaling_group_name,

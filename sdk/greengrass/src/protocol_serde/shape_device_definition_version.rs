@@ -2,7 +2,7 @@
 pub fn ser_device_definition_version(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DeviceDefinitionVersion,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.devices {
         let mut array_2 = object.key("Devices").start_array();
         for item_3 in var_1 {

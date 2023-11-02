@@ -215,28 +215,28 @@ impl DataCellsFilterBuilder {
     /// - [`database_name`](crate::types::builders::DataCellsFilterBuilder::database_name)
     /// - [`table_name`](crate::types::builders::DataCellsFilterBuilder::table_name)
     /// - [`name`](crate::types::builders::DataCellsFilterBuilder::name)
-    pub fn build(self) -> ::std::result::Result<crate::types::DataCellsFilter, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DataCellsFilter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DataCellsFilter {
             table_catalog_id: self.table_catalog_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "table_catalog_id",
                     "table_catalog_id was not specified but it is required when building DataCellsFilter",
                 )
             })?,
             database_name: self.database_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "database_name",
                     "database_name was not specified but it is required when building DataCellsFilter",
                 )
             })?,
             table_name: self.table_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "table_name",
                     "table_name was not specified but it is required when building DataCellsFilter",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building DataCellsFilter",
                 )

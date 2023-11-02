@@ -75,16 +75,16 @@ impl RunCommandTargetBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`key`](crate::types::builders::RunCommandTargetBuilder::key)
     /// - [`values`](crate::types::builders::RunCommandTargetBuilder::values)
-    pub fn build(self) -> ::std::result::Result<crate::types::RunCommandTarget, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RunCommandTarget, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RunCommandTarget {
             key: self.key.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "key",
                     "key was not specified but it is required when building RunCommandTarget",
                 )
             })?,
             values: self.values.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "values",
                     "values was not specified but it is required when building RunCommandTarget",
                 )

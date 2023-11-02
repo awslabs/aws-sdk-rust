@@ -46,7 +46,7 @@ impl DeleteWirelessDeviceImportTaskInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_wireless_device_import_task::DeleteWirelessDeviceImportTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_wireless_device_import_task::DeleteWirelessDeviceImportTaskInput { id: self.id })
     }

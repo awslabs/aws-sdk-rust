@@ -1106,16 +1106,16 @@ impl AliasTargetBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`hosted_zone_id`](crate::types::builders::AliasTargetBuilder::hosted_zone_id)
     /// - [`dns_name`](crate::types::builders::AliasTargetBuilder::dns_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::AliasTarget, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AliasTarget, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AliasTarget {
             hosted_zone_id: self.hosted_zone_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "hosted_zone_id",
                     "hosted_zone_id was not specified but it is required when building AliasTarget",
                 )
             })?,
             dns_name: self.dns_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "dns_name",
                     "dns_name was not specified but it is required when building AliasTarget",
                 )

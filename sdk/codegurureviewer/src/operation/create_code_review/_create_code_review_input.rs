@@ -114,7 +114,7 @@ impl CreateCodeReviewInputBuilder {
     /// Consumes the builder and constructs a [`CreateCodeReviewInput`](crate::operation::create_code_review::CreateCodeReviewInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_code_review::CreateCodeReviewInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_code_review::CreateCodeReviewInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_code_review::CreateCodeReviewInput {
             name: self.name,
             repository_association_arn: self.repository_association_arn,

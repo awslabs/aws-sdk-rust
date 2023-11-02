@@ -112,7 +112,7 @@ impl ListDevicePoolsInputBuilder {
     /// Consumes the builder and constructs a [`ListDevicePoolsInput`](crate::operation::list_device_pools::ListDevicePoolsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_device_pools::ListDevicePoolsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_device_pools::ListDevicePoolsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_device_pools::ListDevicePoolsInput {
             arn: self.arn,
             r#type: self.r#type,

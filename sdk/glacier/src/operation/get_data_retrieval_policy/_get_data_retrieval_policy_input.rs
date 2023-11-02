@@ -52,7 +52,7 @@ impl GetDataRetrievalPolicyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_data_retrieval_policy::GetDataRetrievalPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_data_retrieval_policy::GetDataRetrievalPolicyInput { account_id: self.account_id })
     }

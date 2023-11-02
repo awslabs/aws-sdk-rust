@@ -91,12 +91,12 @@ impl ListRepositorySyncDefinitionsOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsOutput {
             next_token: self.next_token,
             sync_definitions: self.sync_definitions.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "sync_definitions",
                     "sync_definitions was not specified but it is required when building ListRepositorySyncDefinitionsOutput",
                 )

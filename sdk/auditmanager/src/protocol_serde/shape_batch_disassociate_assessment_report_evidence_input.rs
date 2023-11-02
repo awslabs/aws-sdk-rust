@@ -2,7 +2,7 @@
 pub fn ser_batch_disassociate_assessment_report_evidence_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::batch_disassociate_assessment_report_evidence::BatchDisassociateAssessmentReportEvidenceInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.evidence_folder_id {
         object.key("evidenceFolderId").string(var_1.as_str());
     }

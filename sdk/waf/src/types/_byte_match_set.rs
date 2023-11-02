@@ -106,17 +106,17 @@ impl ByteMatchSetBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`byte_match_set_id`](crate::types::builders::ByteMatchSetBuilder::byte_match_set_id)
     /// - [`byte_match_tuples`](crate::types::builders::ByteMatchSetBuilder::byte_match_tuples)
-    pub fn build(self) -> ::std::result::Result<crate::types::ByteMatchSet, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ByteMatchSet, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ByteMatchSet {
             byte_match_set_id: self.byte_match_set_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "byte_match_set_id",
                     "byte_match_set_id was not specified but it is required when building ByteMatchSet",
                 )
             })?,
             name: self.name,
             byte_match_tuples: self.byte_match_tuples.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "byte_match_tuples",
                     "byte_match_tuples was not specified but it is required when building ByteMatchSet",
                 )

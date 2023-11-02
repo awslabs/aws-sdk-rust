@@ -89,10 +89,10 @@ impl WeightedTargetBuilder {
     /// Consumes the builder and constructs a [`WeightedTarget`](crate::types::WeightedTarget).
     /// This method will fail if any of the following fields are not set:
     /// - [`virtual_node`](crate::types::builders::WeightedTargetBuilder::virtual_node)
-    pub fn build(self) -> ::std::result::Result<crate::types::WeightedTarget, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::WeightedTarget, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::WeightedTarget {
             virtual_node: self.virtual_node.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "virtual_node",
                     "virtual_node was not specified but it is required when building WeightedTarget",
                 )

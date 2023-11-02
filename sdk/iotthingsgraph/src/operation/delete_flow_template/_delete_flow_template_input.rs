@@ -54,7 +54,8 @@ impl DeleteFlowTemplateInputBuilder {
     /// Consumes the builder and constructs a [`DeleteFlowTemplateInput`](crate::operation::delete_flow_template::DeleteFlowTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_flow_template::DeleteFlowTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_flow_template::DeleteFlowTemplateInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::delete_flow_template::DeleteFlowTemplateInput { id: self.id })
     }
 }

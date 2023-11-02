@@ -135,7 +135,7 @@ impl CreateTrialInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateTrialInput`](crate::operation::create_trial::CreateTrialInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_trial::CreateTrialInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_trial::CreateTrialInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_trial::CreateTrialInput {
             trial_name: self.trial_name,
             display_name: self.display_name,

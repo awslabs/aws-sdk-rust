@@ -68,7 +68,7 @@ impl AssociateContactWithAddressBookInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_contact_with_address_book::AssociateContactWithAddressBookInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::associate_contact_with_address_book::AssociateContactWithAddressBookInput {

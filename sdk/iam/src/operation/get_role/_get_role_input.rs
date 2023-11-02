@@ -47,7 +47,7 @@ impl GetRoleInputBuilder {
         &self.role_name
     }
     /// Consumes the builder and constructs a [`GetRoleInput`](crate::operation::get_role::GetRoleInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_role::GetRoleInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_role::GetRoleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_role::GetRoleInput { role_name: self.role_name })
     }
 }

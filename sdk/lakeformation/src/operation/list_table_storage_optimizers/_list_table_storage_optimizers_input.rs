@@ -152,7 +152,7 @@ impl ListTableStorageOptimizersInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_table_storage_optimizers::ListTableStorageOptimizersInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_table_storage_optimizers::ListTableStorageOptimizersInput {
             catalog_id: self.catalog_id,

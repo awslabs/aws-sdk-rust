@@ -153,7 +153,7 @@ impl UpdateSmsTemplateInputBuilder {
     /// Consumes the builder and constructs a [`UpdateSmsTemplateInput`](crate::operation::update_sms_template::UpdateSmsTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_sms_template::UpdateSmsTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_sms_template::UpdateSmsTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_sms_template::UpdateSmsTemplateInput {
             create_new_version: self.create_new_version,
             sms_template_request: self.sms_template_request,

@@ -136,7 +136,7 @@ impl CreateMulticastGroupInputBuilder {
     /// Consumes the builder and constructs a [`CreateMulticastGroupInput`](crate::operation::create_multicast_group::CreateMulticastGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_multicast_group::CreateMulticastGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_multicast_group::CreateMulticastGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_multicast_group::CreateMulticastGroupInput {
             name: self.name,

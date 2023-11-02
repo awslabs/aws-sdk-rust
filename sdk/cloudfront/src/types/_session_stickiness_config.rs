@@ -78,16 +78,16 @@ impl SessionStickinessConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`idle_ttl`](crate::types::builders::SessionStickinessConfigBuilder::idle_ttl)
     /// - [`maximum_ttl`](crate::types::builders::SessionStickinessConfigBuilder::maximum_ttl)
-    pub fn build(self) -> ::std::result::Result<crate::types::SessionStickinessConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SessionStickinessConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SessionStickinessConfig {
             idle_ttl: self.idle_ttl.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "idle_ttl",
                     "idle_ttl was not specified but it is required when building SessionStickinessConfig",
                 )
             })?,
             maximum_ttl: self.maximum_ttl.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "maximum_ttl",
                     "maximum_ttl was not specified but it is required when building SessionStickinessConfig",
                 )

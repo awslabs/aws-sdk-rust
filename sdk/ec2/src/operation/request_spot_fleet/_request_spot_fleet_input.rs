@@ -66,7 +66,7 @@ impl RequestSpotFleetInputBuilder {
     /// Consumes the builder and constructs a [`RequestSpotFleetInput`](crate::operation::request_spot_fleet::RequestSpotFleetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::request_spot_fleet::RequestSpotFleetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::request_spot_fleet::RequestSpotFleetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::request_spot_fleet::RequestSpotFleetInput {
             dry_run: self.dry_run,
             spot_fleet_request_config: self.spot_fleet_request_config,

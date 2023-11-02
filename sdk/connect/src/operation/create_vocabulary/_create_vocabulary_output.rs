@@ -110,22 +110,22 @@ impl CreateVocabularyOutputBuilder {
     /// - [`state`](crate::operation::create_vocabulary::builders::CreateVocabularyOutputBuilder::state)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_vocabulary::CreateVocabularyOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_vocabulary::CreateVocabularyOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_vocabulary::CreateVocabularyOutput {
             vocabulary_arn: self.vocabulary_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "vocabulary_arn",
                     "vocabulary_arn was not specified but it is required when building CreateVocabularyOutput",
                 )
             })?,
             vocabulary_id: self.vocabulary_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "vocabulary_id",
                     "vocabulary_id was not specified but it is required when building CreateVocabularyOutput",
                 )
             })?,
             state: self.state.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "state",
                     "state was not specified but it is required when building CreateVocabularyOutput",
                 )

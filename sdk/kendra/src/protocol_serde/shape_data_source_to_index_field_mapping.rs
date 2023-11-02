@@ -2,7 +2,7 @@
 pub fn ser_data_source_to_index_field_mapping(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DataSourceToIndexFieldMapping,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("DataSourceFieldName").string(input.data_source_field_name.as_str());
     }

@@ -182,7 +182,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListAnalyzab
             fn uri_base(
                 _input: &crate::operation::list_analyzable_servers::ListAnalyzableServersInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 use ::std::fmt::Write as _;
                 ::std::write!(output, "/list-analyzable-servers").expect("formatting should succeed");
                 ::std::result::Result::Ok(())
@@ -191,7 +191,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListAnalyzab
             fn update_http_builder(
                 input: &crate::operation::list_analyzable_servers::ListAnalyzableServersInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 ::std::result::Result::Ok(builder.method("POST").uri(uri))
@@ -200,7 +200,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListAnalyzab
             builder = _header_serialization_settings.set_default_header(builder, ::http::header::CONTENT_TYPE, "application/json");
             builder
         };
-        let body = ::aws_smithy_http::body::SdkBody::from(crate::protocol_serde::shape_list_analyzable_servers::ser_list_analyzable_servers_input(
+        let body = ::aws_smithy_types::body::SdkBody::from(crate::protocol_serde::shape_list_analyzable_servers::ser_list_analyzable_servers_input(
             &input,
         )?);
         if let Some(content_length) = body.content_length() {

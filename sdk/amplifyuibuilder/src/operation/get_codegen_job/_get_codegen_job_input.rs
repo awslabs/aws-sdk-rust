@@ -88,7 +88,7 @@ impl GetCodegenJobInputBuilder {
     /// Consumes the builder and constructs a [`GetCodegenJobInput`](crate::operation::get_codegen_job::GetCodegenJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_codegen_job::GetCodegenJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_codegen_job::GetCodegenJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_codegen_job::GetCodegenJobInput {
             app_id: self.app_id,
             environment_name: self.environment_name,

@@ -53,7 +53,7 @@ impl BatchGetDataQualityResultInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_data_quality_result::BatchGetDataQualityResultInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::batch_get_data_quality_result::BatchGetDataQualityResultInput { result_ids: self.result_ids })
     }

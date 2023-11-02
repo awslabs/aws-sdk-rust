@@ -20,7 +20,7 @@ impl GetRegisterAccountStatusInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_register_account_status::GetRegisterAccountStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_register_account_status::GetRegisterAccountStatusInput {})
     }

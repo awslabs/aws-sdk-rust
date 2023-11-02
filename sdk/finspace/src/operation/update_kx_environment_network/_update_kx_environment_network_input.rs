@@ -117,7 +117,7 @@ impl UpdateKxEnvironmentNetworkInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_kx_environment_network::UpdateKxEnvironmentNetworkInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_kx_environment_network::UpdateKxEnvironmentNetworkInput {
             environment_id: self.environment_id,

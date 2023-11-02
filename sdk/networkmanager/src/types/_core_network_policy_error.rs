@@ -91,16 +91,16 @@ impl CoreNetworkPolicyErrorBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`error_code`](crate::types::builders::CoreNetworkPolicyErrorBuilder::error_code)
     /// - [`message`](crate::types::builders::CoreNetworkPolicyErrorBuilder::message)
-    pub fn build(self) -> ::std::result::Result<crate::types::CoreNetworkPolicyError, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CoreNetworkPolicyError, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CoreNetworkPolicyError {
             error_code: self.error_code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "error_code",
                     "error_code was not specified but it is required when building CoreNetworkPolicyError",
                 )
             })?,
             message: self.message.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "message",
                     "message was not specified but it is required when building CoreNetworkPolicyError",
                 )

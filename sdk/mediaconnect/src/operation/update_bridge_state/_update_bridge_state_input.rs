@@ -67,7 +67,7 @@ impl UpdateBridgeStateInputBuilder {
     /// Consumes the builder and constructs a [`UpdateBridgeStateInput`](crate::operation::update_bridge_state::UpdateBridgeStateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_bridge_state::UpdateBridgeStateInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_bridge_state::UpdateBridgeStateInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_bridge_state::UpdateBridgeStateInput {
             bridge_arn: self.bridge_arn,
             desired_state: self.desired_state,

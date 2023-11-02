@@ -2,7 +2,7 @@
 pub fn ser_dolby_vision(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DolbyVision,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.l6_metadata {
         #[allow(unused_mut)]
         let mut object_2 = object.key("l6Metadata").start_object();

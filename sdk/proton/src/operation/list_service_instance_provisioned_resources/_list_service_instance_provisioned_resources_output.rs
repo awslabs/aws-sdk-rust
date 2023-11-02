@@ -92,13 +92,13 @@ impl ListServiceInstanceProvisionedResourcesOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_service_instance_provisioned_resources::ListServiceInstanceProvisionedResourcesOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_service_instance_provisioned_resources::ListServiceInstanceProvisionedResourcesOutput {
                 next_token: self.next_token,
                 provisioned_resources: self.provisioned_resources.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
                         "provisioned_resources",
                         "provisioned_resources was not specified but it is required when building ListServiceInstanceProvisionedResourcesOutput",
                     )

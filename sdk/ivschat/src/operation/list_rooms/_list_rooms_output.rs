@@ -87,10 +87,10 @@ impl ListRoomsOutputBuilder {
     /// Consumes the builder and constructs a [`ListRoomsOutput`](crate::operation::list_rooms::ListRoomsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`rooms`](crate::operation::list_rooms::builders::ListRoomsOutputBuilder::rooms)
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_rooms::ListRoomsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_rooms::ListRoomsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_rooms::ListRoomsOutput {
             rooms: self.rooms.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "rooms",
                     "rooms was not specified but it is required when building ListRoomsOutput",
                 )

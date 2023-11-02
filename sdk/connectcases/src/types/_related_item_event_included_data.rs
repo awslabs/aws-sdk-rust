@@ -45,10 +45,10 @@ impl RelatedItemEventIncludedDataBuilder {
     /// Consumes the builder and constructs a [`RelatedItemEventIncludedData`](crate::types::RelatedItemEventIncludedData).
     /// This method will fail if any of the following fields are not set:
     /// - [`include_content`](crate::types::builders::RelatedItemEventIncludedDataBuilder::include_content)
-    pub fn build(self) -> ::std::result::Result<crate::types::RelatedItemEventIncludedData, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RelatedItemEventIncludedData, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RelatedItemEventIncludedData {
             include_content: self.include_content.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "include_content",
                     "include_content was not specified but it is required when building RelatedItemEventIncludedData",
                 )

@@ -86,7 +86,7 @@ impl UpdateContactChannelInputBuilder {
     /// Consumes the builder and constructs a [`UpdateContactChannelInput`](crate::operation::update_contact_channel::UpdateContactChannelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_contact_channel::UpdateContactChannelInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_contact_channel::UpdateContactChannelInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_contact_channel::UpdateContactChannelInput {
             contact_channel_id: self.contact_channel_id,

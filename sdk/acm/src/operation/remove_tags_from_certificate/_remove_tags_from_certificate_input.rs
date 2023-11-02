@@ -85,7 +85,7 @@ impl RemoveTagsFromCertificateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_tags_from_certificate::RemoveTagsFromCertificateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::remove_tags_from_certificate::RemoveTagsFromCertificateInput {
             certificate_arn: self.certificate_arn,

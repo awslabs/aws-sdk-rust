@@ -171,7 +171,7 @@ impl RecordHandlerProgressInputBuilder {
     /// Consumes the builder and constructs a [`RecordHandlerProgressInput`](crate::operation::record_handler_progress::RecordHandlerProgressInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::record_handler_progress::RecordHandlerProgressInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::record_handler_progress::RecordHandlerProgressInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::record_handler_progress::RecordHandlerProgressInput {
             bearer_token: self.bearer_token,

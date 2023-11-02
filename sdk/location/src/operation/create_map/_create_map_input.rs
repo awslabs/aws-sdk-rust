@@ -218,7 +218,7 @@ impl CreateMapInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateMapInput`](crate::operation::create_map::CreateMapInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_map::CreateMapInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_map::CreateMapInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_map::CreateMapInput {
             map_name: self.map_name,
             configuration: self.configuration,

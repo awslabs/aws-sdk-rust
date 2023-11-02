@@ -74,16 +74,16 @@ impl EncryptionAlgorithmOptionsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`allowed_values`](crate::types::builders::EncryptionAlgorithmOptionsBuilder::allowed_values)
     /// - [`default_value`](crate::types::builders::EncryptionAlgorithmOptionsBuilder::default_value)
-    pub fn build(self) -> ::std::result::Result<crate::types::EncryptionAlgorithmOptions, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::EncryptionAlgorithmOptions, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EncryptionAlgorithmOptions {
             allowed_values: self.allowed_values.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "allowed_values",
                     "allowed_values was not specified but it is required when building EncryptionAlgorithmOptions",
                 )
             })?,
             default_value: self.default_value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "default_value",
                     "default_value was not specified but it is required when building EncryptionAlgorithmOptions",
                 )

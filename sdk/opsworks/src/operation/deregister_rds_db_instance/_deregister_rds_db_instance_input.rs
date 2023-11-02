@@ -46,7 +46,7 @@ impl DeregisterRdsDbInstanceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_rds_db_instance::DeregisterRdsDbInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::deregister_rds_db_instance::DeregisterRdsDbInstanceInput {
             rds_db_instance_arn: self.rds_db_instance_arn,

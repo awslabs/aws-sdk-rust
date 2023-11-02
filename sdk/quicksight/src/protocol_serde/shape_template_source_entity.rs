@@ -2,7 +2,7 @@
 pub fn ser_template_source_entity(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TemplateSourceEntity,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.source_analysis {
         #[allow(unused_mut)]
         let mut object_2 = object.key("SourceAnalysis").start_object();

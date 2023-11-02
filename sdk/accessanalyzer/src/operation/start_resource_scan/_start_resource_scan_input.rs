@@ -88,7 +88,7 @@ impl StartResourceScanInputBuilder {
     /// Consumes the builder and constructs a [`StartResourceScanInput`](crate::operation::start_resource_scan::StartResourceScanInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_resource_scan::StartResourceScanInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_resource_scan::StartResourceScanInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_resource_scan::StartResourceScanInput {
             analyzer_arn: self.analyzer_arn,
             resource_arn: self.resource_arn,

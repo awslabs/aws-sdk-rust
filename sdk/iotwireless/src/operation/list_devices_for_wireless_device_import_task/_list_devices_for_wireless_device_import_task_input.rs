@@ -109,7 +109,7 @@ impl ListDevicesForWirelessDeviceImportTaskInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_devices_for_wireless_device_import_task::ListDevicesForWirelessDeviceImportTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_devices_for_wireless_device_import_task::ListDevicesForWirelessDeviceImportTaskInput {

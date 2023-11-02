@@ -2,7 +2,7 @@
 pub fn ser_update_connection_basic_auth_request_parameters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UpdateConnectionBasicAuthRequestParameters,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.username {
         object.key("Username").string(var_1.as_str());
     }

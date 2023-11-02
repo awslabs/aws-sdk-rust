@@ -226,35 +226,35 @@ impl DynamicTransformBuilder {
     /// - [`inputs`](crate::types::builders::DynamicTransformBuilder::inputs)
     /// - [`function_name`](crate::types::builders::DynamicTransformBuilder::function_name)
     /// - [`path`](crate::types::builders::DynamicTransformBuilder::path)
-    pub fn build(self) -> ::std::result::Result<crate::types::DynamicTransform, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DynamicTransform, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DynamicTransform {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building DynamicTransform",
                 )
             })?,
             transform_name: self.transform_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "transform_name",
                     "transform_name was not specified but it is required when building DynamicTransform",
                 )
             })?,
             inputs: self.inputs.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "inputs",
                     "inputs was not specified but it is required when building DynamicTransform",
                 )
             })?,
             parameters: self.parameters,
             function_name: self.function_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "function_name",
                     "function_name was not specified but it is required when building DynamicTransform",
                 )
             })?,
             path: self.path.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "path",
                     "path was not specified but it is required when building DynamicTransform",
                 )

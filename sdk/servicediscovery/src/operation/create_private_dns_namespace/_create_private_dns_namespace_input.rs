@@ -160,7 +160,7 @@ impl CreatePrivateDnsNamespaceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_private_dns_namespace::CreatePrivateDnsNamespaceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_private_dns_namespace::CreatePrivateDnsNamespaceInput {
             name: self.name,

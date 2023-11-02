@@ -72,7 +72,7 @@ impl DeleteClusterParameterGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_cluster_parameter_group::DeleteClusterParameterGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_cluster_parameter_group::DeleteClusterParameterGroupInput {
             parameter_group_name: self.parameter_group_name,

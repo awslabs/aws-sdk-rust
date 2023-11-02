@@ -114,7 +114,7 @@ impl DescribeEcsClustersInputBuilder {
     /// Consumes the builder and constructs a [`DescribeEcsClustersInput`](crate::operation::describe_ecs_clusters::DescribeEcsClustersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_ecs_clusters::DescribeEcsClustersInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_ecs_clusters::DescribeEcsClustersInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_ecs_clusters::DescribeEcsClustersInput {
             ecs_cluster_arns: self.ecs_cluster_arns,

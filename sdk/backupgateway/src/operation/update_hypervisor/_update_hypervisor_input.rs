@@ -161,7 +161,7 @@ impl UpdateHypervisorInputBuilder {
     /// Consumes the builder and constructs a [`UpdateHypervisorInput`](crate::operation::update_hypervisor::UpdateHypervisorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_hypervisor::UpdateHypervisorInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_hypervisor::UpdateHypervisorInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_hypervisor::UpdateHypervisorInput {
             hypervisor_arn: self.hypervisor_arn,
             host: self.host,

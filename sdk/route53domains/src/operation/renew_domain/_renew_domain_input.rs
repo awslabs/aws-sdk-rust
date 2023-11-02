@@ -91,7 +91,7 @@ impl RenewDomainInputBuilder {
         &self.current_expiry_year
     }
     /// Consumes the builder and constructs a [`RenewDomainInput`](crate::operation::renew_domain::RenewDomainInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::renew_domain::RenewDomainInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::renew_domain::RenewDomainInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::renew_domain::RenewDomainInput {
             domain_name: self.domain_name,
             duration_in_years: self.duration_in_years,

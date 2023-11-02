@@ -2,7 +2,7 @@
 pub fn ser_row_level_permission_tag_rule(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RowLevelPermissionTagRule,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("TagKey").string(input.tag_key.as_str());
     }

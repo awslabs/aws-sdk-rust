@@ -77,16 +77,16 @@ impl UpdateRowDataBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`row_id`](crate::types::builders::UpdateRowDataBuilder::row_id)
     /// - [`cells_to_update`](crate::types::builders::UpdateRowDataBuilder::cells_to_update)
-    pub fn build(self) -> ::std::result::Result<crate::types::UpdateRowData, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::UpdateRowData, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::UpdateRowData {
             row_id: self.row_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "row_id",
                     "row_id was not specified but it is required when building UpdateRowData",
                 )
             })?,
             cells_to_update: self.cells_to_update.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "cells_to_update",
                     "cells_to_update was not specified but it is required when building UpdateRowData",
                 )

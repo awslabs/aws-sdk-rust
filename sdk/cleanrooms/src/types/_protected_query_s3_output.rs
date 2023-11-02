@@ -46,10 +46,10 @@ impl ProtectedQueryS3OutputBuilder {
     /// Consumes the builder and constructs a [`ProtectedQueryS3Output`](crate::types::ProtectedQueryS3Output).
     /// This method will fail if any of the following fields are not set:
     /// - [`location`](crate::types::builders::ProtectedQueryS3OutputBuilder::location)
-    pub fn build(self) -> ::std::result::Result<crate::types::ProtectedQueryS3Output, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ProtectedQueryS3Output, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ProtectedQueryS3Output {
             location: self.location.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "location",
                     "location was not specified but it is required when building ProtectedQueryS3Output",
                 )

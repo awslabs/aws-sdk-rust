@@ -42,7 +42,7 @@ impl StopPipeInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`StopPipeInput`](crate::operation::stop_pipe::StopPipeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::stop_pipe::StopPipeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_pipe::StopPipeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_pipe::StopPipeInput { name: self.name })
     }
 }

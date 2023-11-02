@@ -2,7 +2,7 @@
 pub fn ser_aws_ec2_security_group_prefix_list_id(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEc2SecurityGroupPrefixListId,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.prefix_list_id {
         object.key("PrefixListId").string(var_1.as_str());
     }

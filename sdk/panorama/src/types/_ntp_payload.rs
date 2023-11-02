@@ -51,10 +51,10 @@ impl NtpPayloadBuilder {
     /// Consumes the builder and constructs a [`NtpPayload`](crate::types::NtpPayload).
     /// This method will fail if any of the following fields are not set:
     /// - [`ntp_servers`](crate::types::builders::NtpPayloadBuilder::ntp_servers)
-    pub fn build(self) -> ::std::result::Result<crate::types::NtpPayload, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::NtpPayload, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::NtpPayload {
             ntp_servers: self.ntp_servers.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "ntp_servers",
                     "ntp_servers was not specified but it is required when building NtpPayload",
                 )

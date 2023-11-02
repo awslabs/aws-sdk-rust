@@ -44,7 +44,7 @@ impl ValidatePipelineInputBuilder {
     /// Consumes the builder and constructs a [`ValidatePipelineInput`](crate::operation::validate_pipeline::ValidatePipelineInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::validate_pipeline::ValidatePipelineInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::validate_pipeline::ValidatePipelineInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::validate_pipeline::ValidatePipelineInput {
             pipeline_configuration_body: self.pipeline_configuration_body,
         })

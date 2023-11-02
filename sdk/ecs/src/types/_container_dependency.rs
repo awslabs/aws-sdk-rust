@@ -106,16 +106,16 @@ impl ContainerDependencyBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`container_name`](crate::types::builders::ContainerDependencyBuilder::container_name)
     /// - [`condition`](crate::types::builders::ContainerDependencyBuilder::condition)
-    pub fn build(self) -> ::std::result::Result<crate::types::ContainerDependency, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ContainerDependency, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ContainerDependency {
             container_name: self.container_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "container_name",
                     "container_name was not specified but it is required when building ContainerDependency",
                 )
             })?,
             condition: self.condition.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "condition",
                     "condition was not specified but it is required when building ContainerDependency",
                 )

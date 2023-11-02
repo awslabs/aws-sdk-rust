@@ -68,10 +68,10 @@ impl DescribeEndpointsOutputBuilder {
     /// - [`endpoints`](crate::operation::describe_endpoints::builders::DescribeEndpointsOutputBuilder::endpoints)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_endpoints::DescribeEndpointsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_endpoints::DescribeEndpointsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_endpoints::DescribeEndpointsOutput {
             endpoints: self.endpoints.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "endpoints",
                     "endpoints was not specified but it is required when building DescribeEndpointsOutput",
                 )

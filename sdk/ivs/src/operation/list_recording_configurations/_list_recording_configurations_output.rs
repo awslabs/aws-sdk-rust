@@ -94,11 +94,11 @@ impl ListRecordingConfigurationsOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_recording_configurations::ListRecordingConfigurationsOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_recording_configurations::ListRecordingConfigurationsOutput {
             recording_configurations: self.recording_configurations.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "recording_configurations",
                     "recording_configurations was not specified but it is required when building ListRecordingConfigurationsOutput",
                 )

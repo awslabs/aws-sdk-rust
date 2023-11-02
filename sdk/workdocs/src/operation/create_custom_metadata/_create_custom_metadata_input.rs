@@ -130,7 +130,7 @@ impl CreateCustomMetadataInputBuilder {
     /// Consumes the builder and constructs a [`CreateCustomMetadataInput`](crate::operation::create_custom_metadata::CreateCustomMetadataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_custom_metadata::CreateCustomMetadataInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_custom_metadata::CreateCustomMetadataInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_custom_metadata::CreateCustomMetadataInput {
             authentication_token: self.authentication_token,

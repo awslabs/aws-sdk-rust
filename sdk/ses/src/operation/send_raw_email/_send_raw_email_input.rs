@@ -333,7 +333,7 @@ impl SendRawEmailInputBuilder {
     /// Consumes the builder and constructs a [`SendRawEmailInput`](crate::operation::send_raw_email::SendRawEmailInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::send_raw_email::SendRawEmailInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::send_raw_email::SendRawEmailInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::send_raw_email::SendRawEmailInput {
             source: self.source,
             destinations: self.destinations,

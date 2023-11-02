@@ -66,7 +66,7 @@ impl GetStreamingSessionInputBuilder {
     /// Consumes the builder and constructs a [`GetStreamingSessionInput`](crate::operation::get_streaming_session::GetStreamingSessionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_streaming_session::GetStreamingSessionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_streaming_session::GetStreamingSessionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_streaming_session::GetStreamingSessionInput {
             session_id: self.session_id,

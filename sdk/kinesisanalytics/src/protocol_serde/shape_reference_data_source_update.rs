@@ -2,7 +2,7 @@
 pub fn ser_reference_data_source_update(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ReferenceDataSourceUpdate,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("ReferenceId").string(input.reference_id.as_str());
     }

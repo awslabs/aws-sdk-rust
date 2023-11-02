@@ -67,7 +67,7 @@ impl GetServiceSyncBlockerSummaryInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_service_sync_blocker_summary::GetServiceSyncBlockerSummaryInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_service_sync_blocker_summary::GetServiceSyncBlockerSummaryInput {
             service_name: self.service_name,

@@ -107,7 +107,7 @@ impl CreateSnapshotFromVolumeRecoveryPointInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_snapshot_from_volume_recovery_point::CreateSnapshotFromVolumeRecoveryPointInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::create_snapshot_from_volume_recovery_point::CreateSnapshotFromVolumeRecoveryPointInput {

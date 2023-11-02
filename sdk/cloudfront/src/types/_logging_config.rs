@@ -116,28 +116,28 @@ impl LoggingConfigBuilder {
     /// - [`include_cookies`](crate::types::builders::LoggingConfigBuilder::include_cookies)
     /// - [`bucket`](crate::types::builders::LoggingConfigBuilder::bucket)
     /// - [`prefix`](crate::types::builders::LoggingConfigBuilder::prefix)
-    pub fn build(self) -> ::std::result::Result<crate::types::LoggingConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::LoggingConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::LoggingConfig {
             enabled: self.enabled.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "enabled",
                     "enabled was not specified but it is required when building LoggingConfig",
                 )
             })?,
             include_cookies: self.include_cookies.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "include_cookies",
                     "include_cookies was not specified but it is required when building LoggingConfig",
                 )
             })?,
             bucket: self.bucket.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "bucket",
                     "bucket was not specified but it is required when building LoggingConfig",
                 )
             })?,
             prefix: self.prefix.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "prefix",
                     "prefix was not specified but it is required when building LoggingConfig",
                 )

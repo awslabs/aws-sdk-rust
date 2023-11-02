@@ -354,7 +354,7 @@ impl CreateCrawlerInputBuilder {
     /// Consumes the builder and constructs a [`CreateCrawlerInput`](crate::operation::create_crawler::CreateCrawlerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_crawler::CreateCrawlerInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_crawler::CreateCrawlerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_crawler::CreateCrawlerInput {
             name: self.name,
             role: self.role,

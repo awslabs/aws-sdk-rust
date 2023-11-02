@@ -66,7 +66,7 @@ impl DetectMetricSetConfigInputBuilder {
     /// Consumes the builder and constructs a [`DetectMetricSetConfigInput`](crate::operation::detect_metric_set_config::DetectMetricSetConfigInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::detect_metric_set_config::DetectMetricSetConfigInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::detect_metric_set_config::DetectMetricSetConfigInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::detect_metric_set_config::DetectMetricSetConfigInput {
             anomaly_detector_arn: self.anomaly_detector_arn,

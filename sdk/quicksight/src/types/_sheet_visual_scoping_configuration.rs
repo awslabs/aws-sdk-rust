@@ -118,16 +118,16 @@ impl SheetVisualScopingConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`sheet_id`](crate::types::builders::SheetVisualScopingConfigurationBuilder::sheet_id)
     /// - [`scope`](crate::types::builders::SheetVisualScopingConfigurationBuilder::scope)
-    pub fn build(self) -> ::std::result::Result<crate::types::SheetVisualScopingConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SheetVisualScopingConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SheetVisualScopingConfiguration {
             sheet_id: self.sheet_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "sheet_id",
                     "sheet_id was not specified but it is required when building SheetVisualScopingConfiguration",
                 )
             })?,
             scope: self.scope.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "scope",
                     "scope was not specified but it is required when building SheetVisualScopingConfiguration",
                 )

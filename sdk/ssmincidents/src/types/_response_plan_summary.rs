@@ -91,16 +91,16 @@ impl ResponsePlanSummaryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::ResponsePlanSummaryBuilder::arn)
     /// - [`name`](crate::types::builders::ResponsePlanSummaryBuilder::name)
-    pub fn build(self) -> ::std::result::Result<crate::types::ResponsePlanSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ResponsePlanSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ResponsePlanSummary {
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building ResponsePlanSummary",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building ResponsePlanSummary",
                 )

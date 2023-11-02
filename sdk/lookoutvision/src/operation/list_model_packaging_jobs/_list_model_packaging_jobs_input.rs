@@ -88,7 +88,7 @@ impl ListModelPackagingJobsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_model_packaging_jobs::ListModelPackagingJobsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_model_packaging_jobs::ListModelPackagingJobsInput {
             project_name: self.project_name,

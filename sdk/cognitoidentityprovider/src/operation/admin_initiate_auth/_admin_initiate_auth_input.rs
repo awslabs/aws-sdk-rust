@@ -432,7 +432,7 @@ impl AdminInitiateAuthInputBuilder {
     /// Consumes the builder and constructs a [`AdminInitiateAuthInput`](crate::operation::admin_initiate_auth::AdminInitiateAuthInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::admin_initiate_auth::AdminInitiateAuthInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::admin_initiate_auth::AdminInitiateAuthInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::admin_initiate_auth::AdminInitiateAuthInput {
             user_pool_id: self.user_pool_id,
             client_id: self.client_id,

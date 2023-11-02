@@ -70,16 +70,16 @@ impl CustomerManagedS3StorageBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`s3_resource_arn`](crate::types::builders::CustomerManagedS3StorageBuilder::s3_resource_arn)
     /// - [`role_arn`](crate::types::builders::CustomerManagedS3StorageBuilder::role_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::CustomerManagedS3Storage, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CustomerManagedS3Storage, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CustomerManagedS3Storage {
             s3_resource_arn: self.s3_resource_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "s3_resource_arn",
                     "s3_resource_arn was not specified but it is required when building CustomerManagedS3Storage",
                 )
             })?,
             role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role_arn",
                     "role_arn was not specified but it is required when building CustomerManagedS3Storage",
                 )

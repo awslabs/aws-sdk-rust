@@ -88,7 +88,7 @@ impl GetWorkflowStepInputBuilder {
     /// Consumes the builder and constructs a [`GetWorkflowStepInput`](crate::operation::get_workflow_step::GetWorkflowStepInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_workflow_step::GetWorkflowStepInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_workflow_step::GetWorkflowStepInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_workflow_step::GetWorkflowStepInput {
             workflow_id: self.workflow_id,
             step_group_id: self.step_group_id,

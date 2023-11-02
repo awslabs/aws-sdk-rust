@@ -50,7 +50,7 @@ where
 pub fn ser_elicitation_code_hook_invocation_setting(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ElicitationCodeHookInvocationSetting,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("enableCodeHookInvocation").boolean(input.enable_code_hook_invocation);
     }

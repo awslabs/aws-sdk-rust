@@ -46,7 +46,7 @@ impl DeleteIpAccessSettingsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_ip_access_settings::DeleteIpAccessSettingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_ip_access_settings::DeleteIpAccessSettingsInput {
             ip_access_settings_arn: self.ip_access_settings_arn,

@@ -95,10 +95,10 @@ impl KinesisVideoStreamConfigBuilder {
     /// Consumes the builder and constructs a [`KinesisVideoStreamConfig`](crate::types::KinesisVideoStreamConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`prefix`](crate::types::builders::KinesisVideoStreamConfigBuilder::prefix)
-    pub fn build(self) -> ::std::result::Result<crate::types::KinesisVideoStreamConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::KinesisVideoStreamConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::KinesisVideoStreamConfig {
             prefix: self.prefix.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "prefix",
                     "prefix was not specified but it is required when building KinesisVideoStreamConfig",
                 )

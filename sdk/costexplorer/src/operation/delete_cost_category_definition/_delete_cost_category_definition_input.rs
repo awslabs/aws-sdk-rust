@@ -46,7 +46,7 @@ impl DeleteCostCategoryDefinitionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_cost_category_definition::DeleteCostCategoryDefinitionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_cost_category_definition::DeleteCostCategoryDefinitionInput {
             cost_category_arn: self.cost_category_arn,

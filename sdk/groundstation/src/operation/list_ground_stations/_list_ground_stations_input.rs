@@ -86,7 +86,8 @@ impl ListGroundStationsInputBuilder {
     /// Consumes the builder and constructs a [`ListGroundStationsInput`](crate::operation::list_ground_stations::ListGroundStationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_ground_stations::ListGroundStationsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_ground_stations::ListGroundStationsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::list_ground_stations::ListGroundStationsInput {
             satellite_id: self.satellite_id,
             max_results: self.max_results,

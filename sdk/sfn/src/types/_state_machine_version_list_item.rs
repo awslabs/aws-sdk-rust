@@ -69,16 +69,16 @@ impl StateMachineVersionListItemBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`state_machine_version_arn`](crate::types::builders::StateMachineVersionListItemBuilder::state_machine_version_arn)
     /// - [`creation_date`](crate::types::builders::StateMachineVersionListItemBuilder::creation_date)
-    pub fn build(self) -> ::std::result::Result<crate::types::StateMachineVersionListItem, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::StateMachineVersionListItem, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::StateMachineVersionListItem {
             state_machine_version_arn: self.state_machine_version_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "state_machine_version_arn",
                     "state_machine_version_arn was not specified but it is required when building StateMachineVersionListItem",
                 )
             })?,
             creation_date: self.creation_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_date",
                     "creation_date was not specified but it is required when building StateMachineVersionListItem",
                 )

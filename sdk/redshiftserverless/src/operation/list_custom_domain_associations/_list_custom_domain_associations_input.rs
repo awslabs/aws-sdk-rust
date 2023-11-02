@@ -108,7 +108,7 @@ impl ListCustomDomainAssociationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_custom_domain_associations::ListCustomDomainAssociationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_custom_domain_associations::ListCustomDomainAssociationsInput {
             next_token: self.next_token,

@@ -85,7 +85,7 @@ impl GetRecordsInputBuilder {
         &self.stream_arn
     }
     /// Consumes the builder and constructs a [`GetRecordsInput`](crate::operation::get_records::GetRecordsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_records::GetRecordsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_records::GetRecordsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_records::GetRecordsInput {
             shard_iterator: self.shard_iterator,
             limit: self.limit,

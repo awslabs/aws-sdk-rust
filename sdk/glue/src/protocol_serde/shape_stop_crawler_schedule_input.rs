@@ -2,7 +2,7 @@
 pub fn ser_stop_crawler_schedule_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::stop_crawler_schedule::StopCrawlerScheduleInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.crawler_name {
         object.key("CrawlerName").string(var_1.as_str());
     }

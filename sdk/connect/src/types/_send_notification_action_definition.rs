@@ -135,23 +135,23 @@ impl SendNotificationActionDefinitionBuilder {
     /// - [`delivery_method`](crate::types::builders::SendNotificationActionDefinitionBuilder::delivery_method)
     /// - [`content`](crate::types::builders::SendNotificationActionDefinitionBuilder::content)
     /// - [`content_type`](crate::types::builders::SendNotificationActionDefinitionBuilder::content_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::SendNotificationActionDefinition, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SendNotificationActionDefinition, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SendNotificationActionDefinition {
             delivery_method: self.delivery_method.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "delivery_method",
                     "delivery_method was not specified but it is required when building SendNotificationActionDefinition",
                 )
             })?,
             subject: self.subject,
             content: self.content.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "content",
                     "content was not specified but it is required when building SendNotificationActionDefinition",
                 )
             })?,
             content_type: self.content_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "content_type",
                     "content_type was not specified but it is required when building SendNotificationActionDefinition",
                 )

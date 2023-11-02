@@ -218,10 +218,10 @@ mod test {
     use crate::client::retries::classifiers::{
         HttpStatusCodeClassifier, ModeledAsRetryableClassifier,
     };
-    use aws_smithy_http::body::SdkBody;
     use aws_smithy_runtime_api::client::interceptors::context::{Error, Input, InterceptorContext};
     use aws_smithy_runtime_api::client::orchestrator::OrchestratorError;
     use aws_smithy_runtime_api::client::retries::classifiers::{ClassifyRetry, RetryAction};
+    use aws_smithy_types::body::SdkBody;
     use aws_smithy_types::retry::{ErrorKind, ProvideErrorKind};
     use std::fmt;
 

@@ -188,16 +188,16 @@ impl ResourceSpecificResultBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`eval_resource_name`](crate::types::builders::ResourceSpecificResultBuilder::eval_resource_name)
     /// - [`eval_resource_decision`](crate::types::builders::ResourceSpecificResultBuilder::eval_resource_decision)
-    pub fn build(self) -> ::std::result::Result<crate::types::ResourceSpecificResult, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ResourceSpecificResult, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ResourceSpecificResult {
             eval_resource_name: self.eval_resource_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "eval_resource_name",
                     "eval_resource_name was not specified but it is required when building ResourceSpecificResult",
                 )
             })?,
             eval_resource_decision: self.eval_resource_decision.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "eval_resource_decision",
                     "eval_resource_decision was not specified but it is required when building ResourceSpecificResult",
                 )

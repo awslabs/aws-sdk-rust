@@ -134,7 +134,7 @@ impl DescribeCapacityProvidersInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_capacity_providers::DescribeCapacityProvidersInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_capacity_providers::DescribeCapacityProvidersInput {
             capacity_providers: self.capacity_providers,

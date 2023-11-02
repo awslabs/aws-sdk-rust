@@ -198,7 +198,7 @@ impl UpdateContentInputBuilder {
     /// Consumes the builder and constructs a [`UpdateContentInput`](crate::operation::update_content::UpdateContentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_content::UpdateContentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_content::UpdateContentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_content::UpdateContentInput {
             knowledge_base_id: self.knowledge_base_id,
             content_id: self.content_id,

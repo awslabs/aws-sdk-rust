@@ -98,17 +98,17 @@ impl DescribeVpcEndpointsOutputBuilder {
     /// - [`vpc_endpoint_errors`](crate::operation::describe_vpc_endpoints::builders::DescribeVpcEndpointsOutputBuilder::vpc_endpoint_errors)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_vpc_endpoints::DescribeVpcEndpointsOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_vpc_endpoints::DescribeVpcEndpointsOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_vpc_endpoints::DescribeVpcEndpointsOutput {
             vpc_endpoints: self.vpc_endpoints.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "vpc_endpoints",
                     "vpc_endpoints was not specified but it is required when building DescribeVpcEndpointsOutput",
                 )
             })?,
             vpc_endpoint_errors: self.vpc_endpoint_errors.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "vpc_endpoint_errors",
                     "vpc_endpoint_errors was not specified but it is required when building DescribeVpcEndpointsOutput",
                 )

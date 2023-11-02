@@ -90,11 +90,11 @@ impl ListAnalyzedResourcesOutputBuilder {
     /// - [`analyzed_resources`](crate::operation::list_analyzed_resources::builders::ListAnalyzedResourcesOutputBuilder::analyzed_resources)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_analyzed_resources::ListAnalyzedResourcesOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_analyzed_resources::ListAnalyzedResourcesOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_analyzed_resources::ListAnalyzedResourcesOutput {
             analyzed_resources: self.analyzed_resources.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "analyzed_resources",
                     "analyzed_resources was not specified but it is required when building ListAnalyzedResourcesOutput",
                 )

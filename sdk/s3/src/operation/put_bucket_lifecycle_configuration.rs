@@ -139,7 +139,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for PutBuck
                         let checksum_algorithm = match checksum_algorithm {
                             Some(algo) => Some(
                                 algo.parse::<::aws_smithy_checksums::ChecksumAlgorithm>()
-                                    .map_err(::aws_smithy_http::operation::error::BuildError::other)?,
+                                    .map_err(::aws_smithy_types::error::operation::BuildError::other)?,
                             ),
                             None => None,
                         };
@@ -206,7 +206,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for PutBucketLif
             fn uri_base(
                 _input: &crate::operation::put_bucket_lifecycle_configuration::PutBucketLifecycleConfigurationInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 use ::std::fmt::Write as _;
                 ::std::write!(output, "/").expect("formatting should succeed");
                 ::std::result::Result::Ok(())
@@ -214,7 +214,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for PutBucketLif
             fn uri_query(
                 _input: &crate::operation::put_bucket_lifecycle_configuration::PutBucketLifecycleConfigurationInput,
                 mut output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 query.push_v("lifecycle");
                 ::std::result::Result::Ok(())
@@ -223,7 +223,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for PutBucketLif
             fn update_http_builder(
                 input: &crate::operation::put_bucket_lifecycle_configuration::PutBucketLifecycleConfigurationInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -235,7 +235,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for PutBucketLif
             builder = _header_serialization_settings.set_default_header(builder, ::http::header::CONTENT_TYPE, "application/xml");
             builder
         };
-        let body = ::aws_smithy_http::body::SdkBody::from(
+        let body = ::aws_smithy_types::body::SdkBody::from(
             crate::protocol_serde::shape_put_bucket_lifecycle_configuration_input::ser_lifecycle_configuration_http_payload(
                 &input.lifecycle_configuration,
             )?,
@@ -284,7 +284,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for PutBucketLife
                     .bucket
                     .clone()
                     .filter(|f| !AsRef::<str>::as_ref(f).trim().is_empty())
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("bucket", "A required field was not set"))?,
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("bucket", "A required field was not set"))?,
             ))
             .build()
             .map_err(|err| {

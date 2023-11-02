@@ -69,10 +69,10 @@ impl UpdateExperimentTemplateStopConditionInputBuilder {
     /// - [`source`](crate::types::builders::UpdateExperimentTemplateStopConditionInputBuilder::source)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::UpdateExperimentTemplateStopConditionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::UpdateExperimentTemplateStopConditionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::UpdateExperimentTemplateStopConditionInput {
             source: self.source.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source",
                     "source was not specified but it is required when building UpdateExperimentTemplateStopConditionInput",
                 )

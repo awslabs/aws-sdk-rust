@@ -136,22 +136,22 @@ impl GovernedCatalogSourceBuilder {
     /// - [`name`](crate::types::builders::GovernedCatalogSourceBuilder::name)
     /// - [`database`](crate::types::builders::GovernedCatalogSourceBuilder::database)
     /// - [`table`](crate::types::builders::GovernedCatalogSourceBuilder::table)
-    pub fn build(self) -> ::std::result::Result<crate::types::GovernedCatalogSource, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::GovernedCatalogSource, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::GovernedCatalogSource {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building GovernedCatalogSource",
                 )
             })?,
             database: self.database.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "database",
                     "database was not specified but it is required when building GovernedCatalogSource",
                 )
             })?,
             table: self.table.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "table",
                     "table was not specified but it is required when building GovernedCatalogSource",
                 )

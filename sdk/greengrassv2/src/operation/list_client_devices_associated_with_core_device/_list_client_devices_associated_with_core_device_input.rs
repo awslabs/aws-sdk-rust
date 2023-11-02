@@ -89,7 +89,7 @@ impl ListClientDevicesAssociatedWithCoreDeviceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_client_devices_associated_with_core_device::ListClientDevicesAssociatedWithCoreDeviceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_client_devices_associated_with_core_device::ListClientDevicesAssociatedWithCoreDeviceInput {

@@ -97,16 +97,16 @@ impl BatchPutGeofenceOutputBuilder {
     /// - [`errors`](crate::operation::batch_put_geofence::builders::BatchPutGeofenceOutputBuilder::errors)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_put_geofence::BatchPutGeofenceOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::batch_put_geofence::BatchPutGeofenceOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::batch_put_geofence::BatchPutGeofenceOutput {
             successes: self.successes.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "successes",
                     "successes was not specified but it is required when building BatchPutGeofenceOutput",
                 )
             })?,
             errors: self.errors.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "errors",
                     "errors was not specified but it is required when building BatchPutGeofenceOutput",
                 )

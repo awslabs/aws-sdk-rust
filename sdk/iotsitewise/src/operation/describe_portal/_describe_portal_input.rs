@@ -44,7 +44,7 @@ impl DescribePortalInputBuilder {
     /// Consumes the builder and constructs a [`DescribePortalInput`](crate::operation::describe_portal::DescribePortalInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_portal::DescribePortalInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_portal::DescribePortalInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_portal::DescribePortalInput { portal_id: self.portal_id })
     }
 }

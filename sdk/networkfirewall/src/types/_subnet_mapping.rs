@@ -67,10 +67,10 @@ impl SubnetMappingBuilder {
     /// Consumes the builder and constructs a [`SubnetMapping`](crate::types::SubnetMapping).
     /// This method will fail if any of the following fields are not set:
     /// - [`subnet_id`](crate::types::builders::SubnetMappingBuilder::subnet_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::SubnetMapping, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SubnetMapping, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SubnetMapping {
             subnet_id: self.subnet_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "subnet_id",
                     "subnet_id was not specified but it is required when building SubnetMapping",
                 )

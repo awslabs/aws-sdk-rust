@@ -87,7 +87,7 @@ impl ListJobsByStatusInputBuilder {
     /// Consumes the builder and constructs a [`ListJobsByStatusInput`](crate::operation::list_jobs_by_status::ListJobsByStatusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_jobs_by_status::ListJobsByStatusInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_jobs_by_status::ListJobsByStatusInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_jobs_by_status::ListJobsByStatusInput {
             status: self.status,
             ascending: self.ascending,

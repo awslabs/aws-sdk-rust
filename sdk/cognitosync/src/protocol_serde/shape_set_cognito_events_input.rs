@@ -2,7 +2,7 @@
 pub fn ser_set_cognito_events_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::set_cognito_events::SetCognitoEventsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.events {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Events").start_object();

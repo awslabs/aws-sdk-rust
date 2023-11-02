@@ -46,7 +46,7 @@ impl DeleteCallAnalyticsJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_call_analytics_job::DeleteCallAnalyticsJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_call_analytics_job::DeleteCallAnalyticsJobInput {
             call_analytics_job_name: self.call_analytics_job_name,

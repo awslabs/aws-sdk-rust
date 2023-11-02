@@ -94,7 +94,7 @@ impl PutAuditEventsInputBuilder {
     /// Consumes the builder and constructs a [`PutAuditEventsInput`](crate::operation::put_audit_events::PutAuditEventsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_audit_events::PutAuditEventsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_audit_events::PutAuditEventsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_audit_events::PutAuditEventsInput {
             audit_events: self.audit_events,
             channel_arn: self.channel_arn,

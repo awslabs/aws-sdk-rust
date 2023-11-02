@@ -71,7 +71,7 @@ impl DeleteFacesInputBuilder {
         &self.face_ids
     }
     /// Consumes the builder and constructs a [`DeleteFacesInput`](crate::operation::delete_faces::DeleteFacesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_faces::DeleteFacesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_faces::DeleteFacesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_faces::DeleteFacesInput {
             collection_id: self.collection_id,
             face_ids: self.face_ids,

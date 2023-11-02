@@ -64,7 +64,7 @@ impl RebootNodeInputBuilder {
         &self.node_id
     }
     /// Consumes the builder and constructs a [`RebootNodeInput`](crate::operation::reboot_node::RebootNodeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::reboot_node::RebootNodeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::reboot_node::RebootNodeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::reboot_node::RebootNodeInput {
             cluster_name: self.cluster_name,
             node_id: self.node_id,

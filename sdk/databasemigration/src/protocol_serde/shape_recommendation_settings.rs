@@ -2,7 +2,7 @@
 pub fn ser_recommendation_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RecommendationSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("InstanceSizingType").string(input.instance_sizing_type.as_str());
     }

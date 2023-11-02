@@ -75,16 +75,16 @@ impl EksSourceBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`eks_cluster_arn`](crate::types::builders::EksSourceBuilder::eks_cluster_arn)
     /// - [`namespaces`](crate::types::builders::EksSourceBuilder::namespaces)
-    pub fn build(self) -> ::std::result::Result<crate::types::EksSource, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::EksSource, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EksSource {
             eks_cluster_arn: self.eks_cluster_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "eks_cluster_arn",
                     "eks_cluster_arn was not specified but it is required when building EksSource",
                 )
             })?,
             namespaces: self.namespaces.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "namespaces",
                     "namespaces was not specified but it is required when building EksSource",
                 )

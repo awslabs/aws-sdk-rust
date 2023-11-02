@@ -452,7 +452,7 @@ impl UpdateNfsFileShareInputBuilder {
     /// Consumes the builder and constructs a [`UpdateNfsFileShareInput`](crate::operation::update_nfs_file_share::UpdateNfsFileShareInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_nfs_file_share::UpdateNfsFileShareInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_nfs_file_share::UpdateNfsFileShareInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_nfs_file_share::UpdateNfsFileShareInput {
             file_share_arn: self.file_share_arn,

@@ -53,7 +53,7 @@ impl BatchDescribeSimulationJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_describe_simulation_job::BatchDescribeSimulationJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::batch_describe_simulation_job::BatchDescribeSimulationJobInput { jobs: self.jobs })
     }

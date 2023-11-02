@@ -2,7 +2,7 @@
 pub fn ser_auto_scaling_group_provider(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AutoScalingGroupProvider,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("autoScalingGroupArn").string(input.auto_scaling_group_arn.as_str());
     }

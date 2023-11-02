@@ -55,10 +55,10 @@ impl CloudWatchDestinationBuilder {
     /// Consumes the builder and constructs a [`CloudWatchDestination`](crate::types::CloudWatchDestination).
     /// This method will fail if any of the following fields are not set:
     /// - [`dimension_configurations`](crate::types::builders::CloudWatchDestinationBuilder::dimension_configurations)
-    pub fn build(self) -> ::std::result::Result<crate::types::CloudWatchDestination, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CloudWatchDestination, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CloudWatchDestination {
             dimension_configurations: self.dimension_configurations.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "dimension_configurations",
                     "dimension_configurations was not specified but it is required when building CloudWatchDestination",
                 )

@@ -88,17 +88,17 @@ impl CreateStateMachineAliasOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_state_machine_alias::CreateStateMachineAliasOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_state_machine_alias::CreateStateMachineAliasOutput {
             state_machine_alias_arn: self.state_machine_alias_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "state_machine_alias_arn",
                     "state_machine_alias_arn was not specified but it is required when building CreateStateMachineAliasOutput",
                 )
             })?,
             creation_date: self.creation_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_date",
                     "creation_date was not specified but it is required when building CreateStateMachineAliasOutput",
                 )

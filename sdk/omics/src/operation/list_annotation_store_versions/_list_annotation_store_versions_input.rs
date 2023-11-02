@@ -109,7 +109,7 @@ impl ListAnnotationStoreVersionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_annotation_store_versions::ListAnnotationStoreVersionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_annotation_store_versions::ListAnnotationStoreVersionsInput {
             name: self.name,

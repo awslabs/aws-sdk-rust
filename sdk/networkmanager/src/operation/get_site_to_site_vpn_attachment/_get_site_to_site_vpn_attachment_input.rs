@@ -46,7 +46,7 @@ impl GetSiteToSiteVpnAttachmentInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_site_to_site_vpn_attachment::GetSiteToSiteVpnAttachmentInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_site_to_site_vpn_attachment::GetSiteToSiteVpnAttachmentInput {
             attachment_id: self.attachment_id,

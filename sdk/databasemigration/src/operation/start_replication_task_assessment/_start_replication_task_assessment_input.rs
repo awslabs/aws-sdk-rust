@@ -47,7 +47,7 @@ impl StartReplicationTaskAssessmentInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_replication_task_assessment::StartReplicationTaskAssessmentInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_replication_task_assessment::StartReplicationTaskAssessmentInput {
             replication_task_arn: self.replication_task_arn,

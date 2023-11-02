@@ -563,7 +563,7 @@ impl RunTaskInputBuilder {
         &self.task_definition
     }
     /// Consumes the builder and constructs a [`RunTaskInput`](crate::operation::run_task::RunTaskInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::run_task::RunTaskInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::run_task::RunTaskInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::run_task::RunTaskInput {
             capacity_provider_strategy: self.capacity_provider_strategy,
             cluster: self.cluster,

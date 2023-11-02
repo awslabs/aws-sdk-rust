@@ -152,28 +152,28 @@ impl AccessKeyBuilder {
     /// - [`access_key_id`](crate::types::builders::AccessKeyBuilder::access_key_id)
     /// - [`status`](crate::types::builders::AccessKeyBuilder::status)
     /// - [`secret_access_key`](crate::types::builders::AccessKeyBuilder::secret_access_key)
-    pub fn build(self) -> ::std::result::Result<crate::types::AccessKey, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AccessKey, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AccessKey {
             user_name: self.user_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "user_name",
                     "user_name was not specified but it is required when building AccessKey",
                 )
             })?,
             access_key_id: self.access_key_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "access_key_id",
                     "access_key_id was not specified but it is required when building AccessKey",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building AccessKey",
                 )
             })?,
             secret_access_key: self.secret_access_key.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "secret_access_key",
                     "secret_access_key was not specified but it is required when building AccessKey",
                 )

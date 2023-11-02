@@ -2,7 +2,7 @@
 pub fn ser_segment_condition(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SegmentCondition,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.segment_id {
         object.key("SegmentId").string(var_1.as_str());
     }

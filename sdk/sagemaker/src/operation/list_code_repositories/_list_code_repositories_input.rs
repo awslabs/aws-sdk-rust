@@ -211,7 +211,7 @@ impl ListCodeRepositoriesInputBuilder {
     /// Consumes the builder and constructs a [`ListCodeRepositoriesInput`](crate::operation::list_code_repositories::ListCodeRepositoriesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_code_repositories::ListCodeRepositoriesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_code_repositories::ListCodeRepositoriesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_code_repositories::ListCodeRepositoriesInput {
             creation_time_after: self.creation_time_after,

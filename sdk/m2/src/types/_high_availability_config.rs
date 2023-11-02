@@ -45,10 +45,10 @@ impl HighAvailabilityConfigBuilder {
     /// Consumes the builder and constructs a [`HighAvailabilityConfig`](crate::types::HighAvailabilityConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`desired_capacity`](crate::types::builders::HighAvailabilityConfigBuilder::desired_capacity)
-    pub fn build(self) -> ::std::result::Result<crate::types::HighAvailabilityConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::HighAvailabilityConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::HighAvailabilityConfig {
             desired_capacity: self.desired_capacity.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "desired_capacity",
                     "desired_capacity was not specified but it is required when building HighAvailabilityConfig",
                 )

@@ -153,7 +153,7 @@ impl ListAcceptedPortfolioSharesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_accepted_portfolio_shares::ListAcceptedPortfolioSharesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_accepted_portfolio_shares::ListAcceptedPortfolioSharesInput {
             accept_language: self.accept_language,

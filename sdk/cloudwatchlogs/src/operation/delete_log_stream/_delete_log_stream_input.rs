@@ -66,7 +66,7 @@ impl DeleteLogStreamInputBuilder {
     /// Consumes the builder and constructs a [`DeleteLogStreamInput`](crate::operation::delete_log_stream::DeleteLogStreamInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_log_stream::DeleteLogStreamInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_log_stream::DeleteLogStreamInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_log_stream::DeleteLogStreamInput {
             log_group_name: self.log_group_name,
             log_stream_name: self.log_stream_name,

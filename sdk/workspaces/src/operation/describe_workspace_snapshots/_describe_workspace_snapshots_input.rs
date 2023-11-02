@@ -46,7 +46,7 @@ impl DescribeWorkspaceSnapshotsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_workspace_snapshots::DescribeWorkspaceSnapshotsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_workspace_snapshots::DescribeWorkspaceSnapshotsInput {
             workspace_id: self.workspace_id,

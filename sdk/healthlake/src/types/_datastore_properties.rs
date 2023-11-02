@@ -245,36 +245,36 @@ impl DatastorePropertiesBuilder {
     /// - [`datastore_status`](crate::types::builders::DatastorePropertiesBuilder::datastore_status)
     /// - [`datastore_type_version`](crate::types::builders::DatastorePropertiesBuilder::datastore_type_version)
     /// - [`datastore_endpoint`](crate::types::builders::DatastorePropertiesBuilder::datastore_endpoint)
-    pub fn build(self) -> ::std::result::Result<crate::types::DatastoreProperties, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DatastoreProperties, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DatastoreProperties {
             datastore_id: self.datastore_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "datastore_id",
                     "datastore_id was not specified but it is required when building DatastoreProperties",
                 )
             })?,
             datastore_arn: self.datastore_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "datastore_arn",
                     "datastore_arn was not specified but it is required when building DatastoreProperties",
                 )
             })?,
             datastore_name: self.datastore_name,
             datastore_status: self.datastore_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "datastore_status",
                     "datastore_status was not specified but it is required when building DatastoreProperties",
                 )
             })?,
             created_at: self.created_at,
             datastore_type_version: self.datastore_type_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "datastore_type_version",
                     "datastore_type_version was not specified but it is required when building DatastoreProperties",
                 )
             })?,
             datastore_endpoint: self.datastore_endpoint.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "datastore_endpoint",
                     "datastore_endpoint was not specified but it is required when building DatastoreProperties",
                 )

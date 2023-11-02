@@ -68,11 +68,11 @@ impl GetIdentityPoliciesOutputBuilder {
     /// - [`policies`](crate::operation::get_identity_policies::builders::GetIdentityPoliciesOutputBuilder::policies)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_identity_policies::GetIdentityPoliciesOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_identity_policies::GetIdentityPoliciesOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_identity_policies::GetIdentityPoliciesOutput {
             policies: self.policies.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "policies",
                     "policies was not specified but it is required when building GetIdentityPoliciesOutput",
                 )

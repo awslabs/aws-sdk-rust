@@ -177,7 +177,7 @@ impl ListVirtualClustersInputBuilder {
     /// Consumes the builder and constructs a [`ListVirtualClustersInput`](crate::operation::list_virtual_clusters::ListVirtualClustersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_virtual_clusters::ListVirtualClustersInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_virtual_clusters::ListVirtualClustersInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_virtual_clusters::ListVirtualClustersInput {
             container_provider_id: self.container_provider_id,

@@ -2,7 +2,7 @@
 pub fn ser_logging_info(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LoggingInfo,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.broker_logs {
         #[allow(unused_mut)]
         let mut object_2 = object.key("brokerLogs").start_object();

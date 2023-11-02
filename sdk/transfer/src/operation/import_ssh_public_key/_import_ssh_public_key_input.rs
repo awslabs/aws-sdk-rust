@@ -93,7 +93,7 @@ impl ImportSshPublicKeyInputBuilder {
     /// Consumes the builder and constructs a [`ImportSshPublicKeyInput`](crate::operation::import_ssh_public_key::ImportSshPublicKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::import_ssh_public_key::ImportSshPublicKeyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::import_ssh_public_key::ImportSshPublicKeyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::import_ssh_public_key::ImportSshPublicKeyInput {
             server_id: self.server_id,

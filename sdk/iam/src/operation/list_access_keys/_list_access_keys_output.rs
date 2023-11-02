@@ -111,10 +111,10 @@ impl ListAccessKeysOutputBuilder {
     /// - [`access_key_metadata`](crate::operation::list_access_keys::builders::ListAccessKeysOutputBuilder::access_key_metadata)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_access_keys::ListAccessKeysOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_access_keys::ListAccessKeysOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_access_keys::ListAccessKeysOutput {
             access_key_metadata: self.access_key_metadata.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "access_key_metadata",
                     "access_key_metadata was not specified but it is required when building ListAccessKeysOutput",
                 )

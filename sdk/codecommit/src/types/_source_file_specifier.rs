@@ -67,10 +67,10 @@ impl SourceFileSpecifierBuilder {
     /// Consumes the builder and constructs a [`SourceFileSpecifier`](crate::types::SourceFileSpecifier).
     /// This method will fail if any of the following fields are not set:
     /// - [`file_path`](crate::types::builders::SourceFileSpecifierBuilder::file_path)
-    pub fn build(self) -> ::std::result::Result<crate::types::SourceFileSpecifier, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SourceFileSpecifier, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SourceFileSpecifier {
             file_path: self.file_path.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "file_path",
                     "file_path was not specified but it is required when building SourceFileSpecifier",
                 )

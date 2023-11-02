@@ -43,7 +43,7 @@ impl GetRestApiInputBuilder {
         &self.rest_api_id
     }
     /// Consumes the builder and constructs a [`GetRestApiInput`](crate::operation::get_rest_api::GetRestApiInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_rest_api::GetRestApiInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_rest_api::GetRestApiInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_rest_api::GetRestApiInput {
             rest_api_id: self.rest_api_id,
         })

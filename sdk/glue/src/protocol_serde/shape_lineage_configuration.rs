@@ -2,7 +2,7 @@
 pub fn ser_lineage_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LineageConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.crawler_lineage_settings {
         object.key("CrawlerLineageSettings").string(var_1.as_str());
     }

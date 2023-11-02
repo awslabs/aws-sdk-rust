@@ -130,7 +130,7 @@ impl UpdateMonitoringInputBuilder {
     /// Consumes the builder and constructs a [`UpdateMonitoringInput`](crate::operation::update_monitoring::UpdateMonitoringInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_monitoring::UpdateMonitoringInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_monitoring::UpdateMonitoringInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_monitoring::UpdateMonitoringInput {
             cluster_arn: self.cluster_arn,
             current_version: self.current_version,

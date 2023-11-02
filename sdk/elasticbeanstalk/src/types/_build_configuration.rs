@@ -158,18 +158,18 @@ impl BuildConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`code_build_service_role`](crate::types::builders::BuildConfigurationBuilder::code_build_service_role)
     /// - [`image`](crate::types::builders::BuildConfigurationBuilder::image)
-    pub fn build(self) -> ::std::result::Result<crate::types::BuildConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::BuildConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::BuildConfiguration {
             artifact_name: self.artifact_name,
             code_build_service_role: self.code_build_service_role.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "code_build_service_role",
                     "code_build_service_role was not specified but it is required when building BuildConfiguration",
                 )
             })?,
             compute_type: self.compute_type,
             image: self.image.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "image",
                     "image was not specified but it is required when building BuildConfiguration",
                 )

@@ -44,7 +44,7 @@ impl GetNetworkSiteInputBuilder {
     /// Consumes the builder and constructs a [`GetNetworkSiteInput`](crate::operation::get_network_site::GetNetworkSiteInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_network_site::GetNetworkSiteInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_network_site::GetNetworkSiteInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_network_site::GetNetworkSiteInput {
             network_site_arn: self.network_site_arn,
         })

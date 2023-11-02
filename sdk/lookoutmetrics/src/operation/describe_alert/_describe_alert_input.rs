@@ -44,7 +44,7 @@ impl DescribeAlertInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAlertInput`](crate::operation::describe_alert::DescribeAlertInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_alert::DescribeAlertInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_alert::DescribeAlertInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_alert::DescribeAlertInput { alert_arn: self.alert_arn })
     }
 }

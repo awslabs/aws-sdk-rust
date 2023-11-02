@@ -139,7 +139,7 @@ impl GetDocumentPathInputBuilder {
     /// Consumes the builder and constructs a [`GetDocumentPathInput`](crate::operation::get_document_path::GetDocumentPathInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_document_path::GetDocumentPathInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_document_path::GetDocumentPathInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_document_path::GetDocumentPathInput {
             authentication_token: self.authentication_token,
             document_id: self.document_id,

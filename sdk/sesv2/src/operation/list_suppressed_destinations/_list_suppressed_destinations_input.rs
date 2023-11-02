@@ -138,7 +138,7 @@ impl ListSuppressedDestinationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_suppressed_destinations::ListSuppressedDestinationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_suppressed_destinations::ListSuppressedDestinationsInput {
             reasons: self.reasons,

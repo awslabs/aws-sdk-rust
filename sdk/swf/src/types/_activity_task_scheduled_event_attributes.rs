@@ -269,11 +269,13 @@ impl ActivityTaskScheduledEventAttributesBuilder {
     /// Consumes the builder and constructs a [`ActivityTaskScheduledEventAttributes`](crate::types::ActivityTaskScheduledEventAttributes).
     /// This method will fail if any of the following fields are not set:
     /// - [`activity_id`](crate::types::builders::ActivityTaskScheduledEventAttributesBuilder::activity_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::ActivityTaskScheduledEventAttributes, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::ActivityTaskScheduledEventAttributes, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ActivityTaskScheduledEventAttributes {
             activity_type: self.activity_type,
             activity_id: self.activity_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "activity_id",
                     "activity_id was not specified but it is required when building ActivityTaskScheduledEventAttributes",
                 )

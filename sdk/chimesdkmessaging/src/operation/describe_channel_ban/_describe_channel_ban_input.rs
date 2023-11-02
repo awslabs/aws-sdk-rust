@@ -88,7 +88,8 @@ impl DescribeChannelBanInputBuilder {
     /// Consumes the builder and constructs a [`DescribeChannelBanInput`](crate::operation::describe_channel_ban::DescribeChannelBanInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_channel_ban::DescribeChannelBanInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_channel_ban::DescribeChannelBanInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::describe_channel_ban::DescribeChannelBanInput {
             channel_arn: self.channel_arn,
             member_arn: self.member_arn,

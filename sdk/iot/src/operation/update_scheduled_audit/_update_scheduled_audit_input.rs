@@ -136,7 +136,7 @@ impl UpdateScheduledAuditInputBuilder {
     /// Consumes the builder and constructs a [`UpdateScheduledAuditInput`](crate::operation::update_scheduled_audit::UpdateScheduledAuditInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_scheduled_audit::UpdateScheduledAuditInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_scheduled_audit::UpdateScheduledAuditInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_scheduled_audit::UpdateScheduledAuditInput {
             frequency: self.frequency,

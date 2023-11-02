@@ -138,7 +138,7 @@ impl CreateSipRuleInputBuilder {
     /// Consumes the builder and constructs a [`CreateSipRuleInput`](crate::operation::create_sip_rule::CreateSipRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_sip_rule::CreateSipRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_sip_rule::CreateSipRuleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_sip_rule::CreateSipRuleInput {
             name: self.name,
             trigger_type: self.trigger_type,

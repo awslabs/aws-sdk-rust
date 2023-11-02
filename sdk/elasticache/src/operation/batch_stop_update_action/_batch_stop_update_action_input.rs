@@ -102,7 +102,7 @@ impl BatchStopUpdateActionInputBuilder {
     /// Consumes the builder and constructs a [`BatchStopUpdateActionInput`](crate::operation::batch_stop_update_action::BatchStopUpdateActionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_stop_update_action::BatchStopUpdateActionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::batch_stop_update_action::BatchStopUpdateActionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::batch_stop_update_action::BatchStopUpdateActionInput {
             replication_group_ids: self.replication_group_ids,

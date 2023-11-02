@@ -44,7 +44,7 @@ impl GetGatewayGroupInputBuilder {
     /// Consumes the builder and constructs a [`GetGatewayGroupInput`](crate::operation::get_gateway_group::GetGatewayGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_gateway_group::GetGatewayGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_gateway_group::GetGatewayGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_gateway_group::GetGatewayGroupInput {
             gateway_group_arn: self.gateway_group_arn,
         })

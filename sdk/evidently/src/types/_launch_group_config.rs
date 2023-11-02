@@ -115,23 +115,23 @@ impl LaunchGroupConfigBuilder {
     /// - [`name`](crate::types::builders::LaunchGroupConfigBuilder::name)
     /// - [`feature`](crate::types::builders::LaunchGroupConfigBuilder::feature)
     /// - [`variation`](crate::types::builders::LaunchGroupConfigBuilder::variation)
-    pub fn build(self) -> ::std::result::Result<crate::types::LaunchGroupConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::LaunchGroupConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::LaunchGroupConfig {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building LaunchGroupConfig",
                 )
             })?,
             description: self.description,
             feature: self.feature.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "feature",
                     "feature was not specified but it is required when building LaunchGroupConfig",
                 )
             })?,
             variation: self.variation.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "variation",
                     "variation was not specified but it is required when building LaunchGroupConfig",
                 )

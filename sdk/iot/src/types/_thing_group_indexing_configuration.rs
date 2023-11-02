@@ -108,10 +108,10 @@ impl ThingGroupIndexingConfigurationBuilder {
     /// Consumes the builder and constructs a [`ThingGroupIndexingConfiguration`](crate::types::ThingGroupIndexingConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`thing_group_indexing_mode`](crate::types::builders::ThingGroupIndexingConfigurationBuilder::thing_group_indexing_mode)
-    pub fn build(self) -> ::std::result::Result<crate::types::ThingGroupIndexingConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ThingGroupIndexingConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ThingGroupIndexingConfiguration {
             thing_group_indexing_mode: self.thing_group_indexing_mode.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "thing_group_indexing_mode",
                     "thing_group_indexing_mode was not specified but it is required when building ThingGroupIndexingConfiguration",
                 )

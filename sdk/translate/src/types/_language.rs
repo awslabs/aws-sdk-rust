@@ -70,16 +70,16 @@ impl LanguageBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`language_name`](crate::types::builders::LanguageBuilder::language_name)
     /// - [`language_code`](crate::types::builders::LanguageBuilder::language_code)
-    pub fn build(self) -> ::std::result::Result<crate::types::Language, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Language, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Language {
             language_name: self.language_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "language_name",
                     "language_name was not specified but it is required when building Language",
                 )
             })?,
             language_code: self.language_code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "language_code",
                     "language_code was not specified but it is required when building Language",
                 )

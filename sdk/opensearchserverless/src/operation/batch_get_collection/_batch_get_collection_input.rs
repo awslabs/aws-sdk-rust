@@ -80,7 +80,8 @@ impl BatchGetCollectionInputBuilder {
     /// Consumes the builder and constructs a [`BatchGetCollectionInput`](crate::operation::batch_get_collection::BatchGetCollectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_get_collection::BatchGetCollectionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::batch_get_collection::BatchGetCollectionInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::batch_get_collection::BatchGetCollectionInput {
             ids: self.ids,
             names: self.names,

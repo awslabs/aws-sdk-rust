@@ -70,16 +70,16 @@ impl BotExportSpecificationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`bot_id`](crate::types::builders::BotExportSpecificationBuilder::bot_id)
     /// - [`bot_version`](crate::types::builders::BotExportSpecificationBuilder::bot_version)
-    pub fn build(self) -> ::std::result::Result<crate::types::BotExportSpecification, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::BotExportSpecification, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::BotExportSpecification {
             bot_id: self.bot_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "bot_id",
                     "bot_id was not specified but it is required when building BotExportSpecification",
                 )
             })?,
             bot_version: self.bot_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "bot_version",
                     "bot_version was not specified but it is required when building BotExportSpecification",
                 )

@@ -104,16 +104,16 @@ impl ExplicitHierarchyBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`hierarchy_id`](crate::types::builders::ExplicitHierarchyBuilder::hierarchy_id)
     /// - [`columns`](crate::types::builders::ExplicitHierarchyBuilder::columns)
-    pub fn build(self) -> ::std::result::Result<crate::types::ExplicitHierarchy, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ExplicitHierarchy, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ExplicitHierarchy {
             hierarchy_id: self.hierarchy_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "hierarchy_id",
                     "hierarchy_id was not specified but it is required when building ExplicitHierarchy",
                 )
             })?,
             columns: self.columns.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "columns",
                     "columns was not specified but it is required when building ExplicitHierarchy",
                 )

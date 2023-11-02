@@ -344,7 +344,7 @@ impl UpdateScheduleInputBuilder {
     /// Consumes the builder and constructs a [`UpdateScheduleInput`](crate::operation::update_schedule::UpdateScheduleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_schedule::UpdateScheduleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_schedule::UpdateScheduleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_schedule::UpdateScheduleInput {
             name: self.name,
             group_name: self.group_name,

@@ -161,28 +161,28 @@ impl StateMachineListItemBuilder {
     /// - [`name`](crate::types::builders::StateMachineListItemBuilder::name)
     /// - [`r#type`](crate::types::builders::StateMachineListItemBuilder::r#type)
     /// - [`creation_date`](crate::types::builders::StateMachineListItemBuilder::creation_date)
-    pub fn build(self) -> ::std::result::Result<crate::types::StateMachineListItem, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::StateMachineListItem, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::StateMachineListItem {
             state_machine_arn: self.state_machine_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "state_machine_arn",
                     "state_machine_arn was not specified but it is required when building StateMachineListItem",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building StateMachineListItem",
                 )
             })?,
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building StateMachineListItem",
                 )
             })?,
             creation_date: self.creation_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_date",
                     "creation_date was not specified but it is required when building StateMachineListItem",
                 )

@@ -89,7 +89,7 @@ impl ListUsersByPermissionGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_users_by_permission_group::ListUsersByPermissionGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_users_by_permission_group::ListUsersByPermissionGroupInput {
             permission_group_id: self.permission_group_id,

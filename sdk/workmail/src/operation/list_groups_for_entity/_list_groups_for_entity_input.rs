@@ -159,7 +159,7 @@ impl ListGroupsForEntityInputBuilder {
     /// Consumes the builder and constructs a [`ListGroupsForEntityInput`](crate::operation::list_groups_for_entity::ListGroupsForEntityInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_groups_for_entity::ListGroupsForEntityInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_groups_for_entity::ListGroupsForEntityInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_groups_for_entity::ListGroupsForEntityInput {
             organization_id: self.organization_id,

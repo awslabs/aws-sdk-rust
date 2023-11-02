@@ -2,7 +2,7 @@
 pub fn ser_gnss(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Gnss,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Payload").string(input.payload.as_str());
     }

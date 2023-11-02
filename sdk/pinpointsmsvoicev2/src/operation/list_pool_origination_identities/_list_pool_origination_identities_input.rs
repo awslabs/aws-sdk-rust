@@ -117,7 +117,7 @@ impl ListPoolOriginationIdentitiesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_pool_origination_identities::ListPoolOriginationIdentitiesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_pool_origination_identities::ListPoolOriginationIdentitiesInput {
             pool_id: self.pool_id,

@@ -85,7 +85,7 @@ impl ListVocabularyFiltersInputBuilder {
     /// Consumes the builder and constructs a [`ListVocabularyFiltersInput`](crate::operation::list_vocabulary_filters::ListVocabularyFiltersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_vocabulary_filters::ListVocabularyFiltersInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_vocabulary_filters::ListVocabularyFiltersInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_vocabulary_filters::ListVocabularyFiltersInput {
             next_token: self.next_token,

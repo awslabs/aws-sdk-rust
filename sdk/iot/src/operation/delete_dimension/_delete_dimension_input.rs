@@ -44,7 +44,7 @@ impl DeleteDimensionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDimensionInput`](crate::operation::delete_dimension::DeleteDimensionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_dimension::DeleteDimensionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_dimension::DeleteDimensionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_dimension::DeleteDimensionInput { name: self.name })
     }
 }

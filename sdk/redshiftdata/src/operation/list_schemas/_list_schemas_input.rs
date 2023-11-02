@@ -210,7 +210,7 @@ impl ListSchemasInputBuilder {
         &self.workgroup_name
     }
     /// Consumes the builder and constructs a [`ListSchemasInput`](crate::operation::list_schemas::ListSchemasInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_schemas::ListSchemasInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_schemas::ListSchemasInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_schemas::ListSchemasInput {
             cluster_identifier: self.cluster_identifier,
             secret_arn: self.secret_arn,

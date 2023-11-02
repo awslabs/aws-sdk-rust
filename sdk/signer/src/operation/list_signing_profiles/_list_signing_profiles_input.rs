@@ -135,7 +135,7 @@ impl ListSigningProfilesInputBuilder {
     /// Consumes the builder and constructs a [`ListSigningProfilesInput`](crate::operation::list_signing_profiles::ListSigningProfilesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_signing_profiles::ListSigningProfilesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_signing_profiles::ListSigningProfilesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_signing_profiles::ListSigningProfilesInput {
             include_canceled: self.include_canceled,

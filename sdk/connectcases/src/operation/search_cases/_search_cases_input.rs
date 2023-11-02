@@ -184,7 +184,7 @@ impl SearchCasesInputBuilder {
         &self.fields
     }
     /// Consumes the builder and constructs a [`SearchCasesInput`](crate::operation::search_cases::SearchCasesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::search_cases::SearchCasesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::search_cases::SearchCasesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_cases::SearchCasesInput {
             domain_id: self.domain_id,
             max_results: self.max_results,

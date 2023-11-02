@@ -132,7 +132,7 @@ impl PutAccountSettingInputBuilder {
     /// Consumes the builder and constructs a [`PutAccountSettingInput`](crate::operation::put_account_setting::PutAccountSettingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_account_setting::PutAccountSettingInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_account_setting::PutAccountSettingInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_account_setting::PutAccountSettingInput {
             name: self.name,
             value: self.value,

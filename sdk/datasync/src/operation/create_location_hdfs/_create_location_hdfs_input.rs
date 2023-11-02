@@ -360,7 +360,8 @@ impl CreateLocationHdfsInputBuilder {
     /// Consumes the builder and constructs a [`CreateLocationHdfsInput`](crate::operation::create_location_hdfs::CreateLocationHdfsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_location_hdfs::CreateLocationHdfsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_location_hdfs::CreateLocationHdfsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_location_hdfs::CreateLocationHdfsInput {
             subdirectory: self.subdirectory,
             name_nodes: self.name_nodes,

@@ -763,7 +763,7 @@ impl UpdateFleetInputBuilder {
         &self.max_sessions_per_instance
     }
     /// Consumes the builder and constructs a [`UpdateFleetInput`](crate::operation::update_fleet::UpdateFleetInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_fleet::UpdateFleetInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_fleet::UpdateFleetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_fleet::UpdateFleetInput {
             image_name: self.image_name,
             image_arn: self.image_arn,

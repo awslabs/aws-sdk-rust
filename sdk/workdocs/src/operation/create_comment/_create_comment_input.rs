@@ -207,7 +207,7 @@ impl CreateCommentInputBuilder {
     /// Consumes the builder and constructs a [`CreateCommentInput`](crate::operation::create_comment::CreateCommentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_comment::CreateCommentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_comment::CreateCommentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_comment::CreateCommentInput {
             authentication_token: self.authentication_token,
             document_id: self.document_id,

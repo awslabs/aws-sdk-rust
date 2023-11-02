@@ -44,7 +44,7 @@ where
 pub fn ser_ephemeral_storage(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EphemeralStorage,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Size").number(
             #[allow(clippy::useless_conversion)]

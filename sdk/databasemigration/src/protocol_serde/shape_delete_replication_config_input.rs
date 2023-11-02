@@ -2,7 +2,7 @@
 pub fn ser_delete_replication_config_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_replication_config::DeleteReplicationConfigInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.replication_config_arn {
         object.key("ReplicationConfigArn").string(var_1.as_str());
     }

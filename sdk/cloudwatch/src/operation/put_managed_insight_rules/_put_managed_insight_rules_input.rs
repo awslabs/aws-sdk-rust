@@ -53,7 +53,7 @@ impl PutManagedInsightRulesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_managed_insight_rules::PutManagedInsightRulesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_managed_insight_rules::PutManagedInsightRulesInput {
             managed_rules: self.managed_rules,

@@ -94,7 +94,7 @@ impl UpdateSchemaMappingInputBuilder {
     /// Consumes the builder and constructs a [`UpdateSchemaMappingInput`](crate::operation::update_schema_mapping::UpdateSchemaMappingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_schema_mapping::UpdateSchemaMappingInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_schema_mapping::UpdateSchemaMappingInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_schema_mapping::UpdateSchemaMappingInput {
             schema_name: self.schema_name,

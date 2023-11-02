@@ -121,7 +121,7 @@ impl UpdateContextInputBuilder {
     /// Consumes the builder and constructs a [`UpdateContextInput`](crate::operation::update_context::UpdateContextInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_context::UpdateContextInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_context::UpdateContextInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_context::UpdateContextInput {
             context_name: self.context_name,
             description: self.description,

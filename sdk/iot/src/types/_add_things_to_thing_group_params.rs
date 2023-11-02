@@ -72,10 +72,10 @@ impl AddThingsToThingGroupParamsBuilder {
     /// Consumes the builder and constructs a [`AddThingsToThingGroupParams`](crate::types::AddThingsToThingGroupParams).
     /// This method will fail if any of the following fields are not set:
     /// - [`thing_group_names`](crate::types::builders::AddThingsToThingGroupParamsBuilder::thing_group_names)
-    pub fn build(self) -> ::std::result::Result<crate::types::AddThingsToThingGroupParams, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AddThingsToThingGroupParams, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AddThingsToThingGroupParams {
             thing_group_names: self.thing_group_names.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "thing_group_names",
                     "thing_group_names was not specified but it is required when building AddThingsToThingGroupParams",
                 )

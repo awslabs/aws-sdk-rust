@@ -113,23 +113,23 @@ impl TimeRangeDrillDownFilterBuilder {
     /// - [`range_minimum`](crate::types::builders::TimeRangeDrillDownFilterBuilder::range_minimum)
     /// - [`range_maximum`](crate::types::builders::TimeRangeDrillDownFilterBuilder::range_maximum)
     /// - [`time_granularity`](crate::types::builders::TimeRangeDrillDownFilterBuilder::time_granularity)
-    pub fn build(self) -> ::std::result::Result<crate::types::TimeRangeDrillDownFilter, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TimeRangeDrillDownFilter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TimeRangeDrillDownFilter {
             column: self.column,
             range_minimum: self.range_minimum.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "range_minimum",
                     "range_minimum was not specified but it is required when building TimeRangeDrillDownFilter",
                 )
             })?,
             range_maximum: self.range_maximum.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "range_maximum",
                     "range_maximum was not specified but it is required when building TimeRangeDrillDownFilter",
                 )
             })?,
             time_granularity: self.time_granularity.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "time_granularity",
                     "time_granularity was not specified but it is required when building TimeRangeDrillDownFilter",
                 )

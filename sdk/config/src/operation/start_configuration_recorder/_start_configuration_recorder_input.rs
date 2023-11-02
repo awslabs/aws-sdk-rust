@@ -47,7 +47,7 @@ impl StartConfigurationRecorderInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_configuration_recorder::StartConfigurationRecorderInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_configuration_recorder::StartConfigurationRecorderInput {
             configuration_recorder_name: self.configuration_recorder_name,

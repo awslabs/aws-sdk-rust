@@ -373,30 +373,30 @@ impl SubscriberResourceBuilder {
     /// - [`subscriber_arn`](crate::types::builders::SubscriberResourceBuilder::subscriber_arn)
     /// - [`subscriber_name`](crate::types::builders::SubscriberResourceBuilder::subscriber_name)
     /// - [`sources`](crate::types::builders::SubscriberResourceBuilder::sources)
-    pub fn build(self) -> ::std::result::Result<crate::types::SubscriberResource, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SubscriberResource, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SubscriberResource {
             subscriber_id: self.subscriber_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "subscriber_id",
                     "subscriber_id was not specified but it is required when building SubscriberResource",
                 )
             })?,
             subscriber_arn: self.subscriber_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "subscriber_arn",
                     "subscriber_arn was not specified but it is required when building SubscriberResource",
                 )
             })?,
             subscriber_identity: self.subscriber_identity,
             subscriber_name: self.subscriber_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "subscriber_name",
                     "subscriber_name was not specified but it is required when building SubscriberResource",
                 )
             })?,
             subscriber_description: self.subscriber_description,
             sources: self.sources.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "sources",
                     "sources was not specified but it is required when building SubscriberResource",
                 )

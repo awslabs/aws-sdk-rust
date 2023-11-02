@@ -66,7 +66,7 @@ impl RegisterElasticIpInputBuilder {
     /// Consumes the builder and constructs a [`RegisterElasticIpInput`](crate::operation::register_elastic_ip::RegisterElasticIpInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::register_elastic_ip::RegisterElasticIpInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::register_elastic_ip::RegisterElasticIpInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::register_elastic_ip::RegisterElasticIpInput {
             elastic_ip: self.elastic_ip,
             stack_id: self.stack_id,

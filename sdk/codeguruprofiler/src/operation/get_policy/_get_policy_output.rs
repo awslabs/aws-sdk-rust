@@ -86,16 +86,16 @@ impl GetPolicyOutputBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`policy`](crate::operation::get_policy::builders::GetPolicyOutputBuilder::policy)
     /// - [`revision_id`](crate::operation::get_policy::builders::GetPolicyOutputBuilder::revision_id)
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_policy::GetPolicyOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_policy::GetPolicyOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_policy::GetPolicyOutput {
             policy: self.policy.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "policy",
                     "policy was not specified but it is required when building GetPolicyOutput",
                 )
             })?,
             revision_id: self.revision_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "revision_id",
                     "revision_id was not specified but it is required when building GetPolicyOutput",
                 )

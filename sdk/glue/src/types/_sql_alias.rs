@@ -70,16 +70,16 @@ impl SqlAliasBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`from`](crate::types::builders::SqlAliasBuilder::from)
     /// - [`alias`](crate::types::builders::SqlAliasBuilder::alias)
-    pub fn build(self) -> ::std::result::Result<crate::types::SqlAlias, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SqlAlias, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SqlAlias {
             from: self.from.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "from",
                     "from was not specified but it is required when building SqlAlias",
                 )
             })?,
             alias: self.alias.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "alias",
                     "alias was not specified but it is required when building SqlAlias",
                 )

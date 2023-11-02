@@ -89,11 +89,11 @@ impl ListFhirDatastoresOutputBuilder {
     /// - [`datastore_properties_list`](crate::operation::list_fhir_datastores::builders::ListFhirDatastoresOutputBuilder::datastore_properties_list)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_fhir_datastores::ListFhirDatastoresOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_fhir_datastores::ListFhirDatastoresOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_fhir_datastores::ListFhirDatastoresOutput {
             datastore_properties_list: self.datastore_properties_list.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "datastore_properties_list",
                     "datastore_properties_list was not specified but it is required when building ListFhirDatastoresOutput",
                 )

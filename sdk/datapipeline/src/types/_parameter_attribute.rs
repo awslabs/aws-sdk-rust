@@ -70,16 +70,16 @@ impl ParameterAttributeBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`key`](crate::types::builders::ParameterAttributeBuilder::key)
     /// - [`string_value`](crate::types::builders::ParameterAttributeBuilder::string_value)
-    pub fn build(self) -> ::std::result::Result<crate::types::ParameterAttribute, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ParameterAttribute, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ParameterAttribute {
             key: self.key.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "key",
                     "key was not specified but it is required when building ParameterAttribute",
                 )
             })?,
             string_value: self.string_value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "string_value",
                     "string_value was not specified but it is required when building ParameterAttribute",
                 )

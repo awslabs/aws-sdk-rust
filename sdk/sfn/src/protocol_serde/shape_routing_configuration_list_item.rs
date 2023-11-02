@@ -2,7 +2,7 @@
 pub fn ser_routing_configuration_list_item(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RoutingConfigurationListItem,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("stateMachineVersionArn").string(input.state_machine_version_arn.as_str());
     }

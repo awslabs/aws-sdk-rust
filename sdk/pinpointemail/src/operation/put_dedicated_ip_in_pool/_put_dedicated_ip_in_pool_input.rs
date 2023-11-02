@@ -67,7 +67,7 @@ impl PutDedicatedIpInPoolInputBuilder {
     /// Consumes the builder and constructs a [`PutDedicatedIpInPoolInput`](crate::operation::put_dedicated_ip_in_pool::PutDedicatedIpInPoolInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_dedicated_ip_in_pool::PutDedicatedIpInPoolInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::put_dedicated_ip_in_pool::PutDedicatedIpInPoolInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::put_dedicated_ip_in_pool::PutDedicatedIpInPoolInput {
             ip: self.ip,

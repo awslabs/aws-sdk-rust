@@ -118,28 +118,28 @@ impl Ibm3624PinOffsetBuilder {
     /// - [`decimalization_table`](crate::types::builders::Ibm3624PinOffsetBuilder::decimalization_table)
     /// - [`pin_validation_data_pad_character`](crate::types::builders::Ibm3624PinOffsetBuilder::pin_validation_data_pad_character)
     /// - [`pin_validation_data`](crate::types::builders::Ibm3624PinOffsetBuilder::pin_validation_data)
-    pub fn build(self) -> ::std::result::Result<crate::types::Ibm3624PinOffset, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Ibm3624PinOffset, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Ibm3624PinOffset {
             encrypted_pin_block: self.encrypted_pin_block.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "encrypted_pin_block",
                     "encrypted_pin_block was not specified but it is required when building Ibm3624PinOffset",
                 )
             })?,
             decimalization_table: self.decimalization_table.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "decimalization_table",
                     "decimalization_table was not specified but it is required when building Ibm3624PinOffset",
                 )
             })?,
             pin_validation_data_pad_character: self.pin_validation_data_pad_character.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "pin_validation_data_pad_character",
                     "pin_validation_data_pad_character was not specified but it is required when building Ibm3624PinOffset",
                 )
             })?,
             pin_validation_data: self.pin_validation_data.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "pin_validation_data",
                     "pin_validation_data was not specified but it is required when building Ibm3624PinOffset",
                 )

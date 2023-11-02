@@ -284,7 +284,7 @@ impl StartChatContactInputBuilder {
     /// Consumes the builder and constructs a [`StartChatContactInput`](crate::operation::start_chat_contact::StartChatContactInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_chat_contact::StartChatContactInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_chat_contact::StartChatContactInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_chat_contact::StartChatContactInput {
             instance_id: self.instance_id,
             contact_flow_id: self.contact_flow_id,

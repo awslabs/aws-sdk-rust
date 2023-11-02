@@ -66,7 +66,7 @@ impl GetDataSourceRunInputBuilder {
     /// Consumes the builder and constructs a [`GetDataSourceRunInput`](crate::operation::get_data_source_run::GetDataSourceRunInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_data_source_run::GetDataSourceRunInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_data_source_run::GetDataSourceRunInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_data_source_run::GetDataSourceRunInput {
             domain_identifier: self.domain_identifier,
             identifier: self.identifier,

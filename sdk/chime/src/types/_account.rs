@@ -236,22 +236,22 @@ impl AccountBuilder {
     /// - [`aws_account_id`](crate::types::builders::AccountBuilder::aws_account_id)
     /// - [`account_id`](crate::types::builders::AccountBuilder::account_id)
     /// - [`name`](crate::types::builders::AccountBuilder::name)
-    pub fn build(self) -> ::std::result::Result<crate::types::Account, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Account, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Account {
             aws_account_id: self.aws_account_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "aws_account_id",
                     "aws_account_id was not specified but it is required when building Account",
                 )
             })?,
             account_id: self.account_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "account_id",
                     "account_id was not specified but it is required when building Account",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building Account",
                 )

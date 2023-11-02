@@ -117,13 +117,13 @@ impl BatchAttachTypedLinkBuilder {
     /// Consumes the builder and constructs a [`BatchAttachTypedLink`](crate::types::BatchAttachTypedLink).
     /// This method will fail if any of the following fields are not set:
     /// - [`attributes`](crate::types::builders::BatchAttachTypedLinkBuilder::attributes)
-    pub fn build(self) -> ::std::result::Result<crate::types::BatchAttachTypedLink, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::BatchAttachTypedLink, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::BatchAttachTypedLink {
             source_object_reference: self.source_object_reference,
             target_object_reference: self.target_object_reference,
             typed_link_facet: self.typed_link_facet,
             attributes: self.attributes.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "attributes",
                     "attributes was not specified but it is required when building BatchAttachTypedLink",
                 )

@@ -227,7 +227,7 @@ impl StartMailboxExportJobInputBuilder {
     /// Consumes the builder and constructs a [`StartMailboxExportJobInput`](crate::operation::start_mailbox_export_job::StartMailboxExportJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_mailbox_export_job::StartMailboxExportJobInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::start_mailbox_export_job::StartMailboxExportJobInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_mailbox_export_job::StartMailboxExportJobInput {
             client_token: self.client_token,

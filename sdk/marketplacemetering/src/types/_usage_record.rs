@@ -149,22 +149,22 @@ impl UsageRecordBuilder {
     /// - [`timestamp`](crate::types::builders::UsageRecordBuilder::timestamp)
     /// - [`customer_identifier`](crate::types::builders::UsageRecordBuilder::customer_identifier)
     /// - [`dimension`](crate::types::builders::UsageRecordBuilder::dimension)
-    pub fn build(self) -> ::std::result::Result<crate::types::UsageRecord, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::UsageRecord, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::UsageRecord {
             timestamp: self.timestamp.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "timestamp",
                     "timestamp was not specified but it is required when building UsageRecord",
                 )
             })?,
             customer_identifier: self.customer_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "customer_identifier",
                     "customer_identifier was not specified but it is required when building UsageRecord",
                 )
             })?,
             dimension: self.dimension.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "dimension",
                     "dimension was not specified but it is required when building UsageRecord",
                 )

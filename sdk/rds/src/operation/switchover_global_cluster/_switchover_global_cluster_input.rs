@@ -88,7 +88,7 @@ impl SwitchoverGlobalClusterInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::switchover_global_cluster::SwitchoverGlobalClusterInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::switchover_global_cluster::SwitchoverGlobalClusterInput {
             global_cluster_identifier: self.global_cluster_identifier,

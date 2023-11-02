@@ -44,7 +44,7 @@ impl DeleteDbProxyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDbProxyInput`](crate::operation::delete_db_proxy::DeleteDbProxyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_db_proxy::DeleteDbProxyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_db_proxy::DeleteDbProxyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_db_proxy::DeleteDbProxyInput {
             db_proxy_name: self.db_proxy_name,
         })

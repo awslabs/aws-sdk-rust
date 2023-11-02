@@ -65,7 +65,7 @@ impl DeletePermissionGroupInputBuilder {
     /// Consumes the builder and constructs a [`DeletePermissionGroupInput`](crate::operation::delete_permission_group::DeletePermissionGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_permission_group::DeletePermissionGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_permission_group::DeletePermissionGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_permission_group::DeletePermissionGroupInput {
             permission_group_id: self.permission_group_id,

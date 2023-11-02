@@ -44,7 +44,7 @@ impl DeleteExperimentInputBuilder {
     /// Consumes the builder and constructs a [`DeleteExperimentInput`](crate::operation::delete_experiment::DeleteExperimentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_experiment::DeleteExperimentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_experiment::DeleteExperimentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_experiment::DeleteExperimentInput {
             experiment_name: self.experiment_name,
         })

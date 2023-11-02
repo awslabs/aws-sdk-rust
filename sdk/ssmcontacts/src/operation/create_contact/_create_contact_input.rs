@@ -159,7 +159,7 @@ impl CreateContactInputBuilder {
     /// Consumes the builder and constructs a [`CreateContactInput`](crate::operation::create_contact::CreateContactInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_contact::CreateContactInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_contact::CreateContactInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_contact::CreateContactInput {
             alias: self.alias,
             display_name: self.display_name,

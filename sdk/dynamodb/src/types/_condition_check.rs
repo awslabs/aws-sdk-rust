@@ -192,22 +192,22 @@ impl ConditionCheckBuilder {
     /// - [`key`](crate::types::builders::ConditionCheckBuilder::key)
     /// - [`table_name`](crate::types::builders::ConditionCheckBuilder::table_name)
     /// - [`condition_expression`](crate::types::builders::ConditionCheckBuilder::condition_expression)
-    pub fn build(self) -> ::std::result::Result<crate::types::ConditionCheck, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ConditionCheck, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ConditionCheck {
             key: self.key.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "key",
                     "key was not specified but it is required when building ConditionCheck",
                 )
             })?,
             table_name: self.table_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "table_name",
                     "table_name was not specified but it is required when building ConditionCheck",
                 )
             })?,
             condition_expression: self.condition_expression.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "condition_expression",
                     "condition_expression was not specified but it is required when building ConditionCheck",
                 )

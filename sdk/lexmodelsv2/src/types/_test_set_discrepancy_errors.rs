@@ -80,16 +80,16 @@ impl TestSetDiscrepancyErrorsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`intent_discrepancies`](crate::types::builders::TestSetDiscrepancyErrorsBuilder::intent_discrepancies)
     /// - [`slot_discrepancies`](crate::types::builders::TestSetDiscrepancyErrorsBuilder::slot_discrepancies)
-    pub fn build(self) -> ::std::result::Result<crate::types::TestSetDiscrepancyErrors, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TestSetDiscrepancyErrors, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TestSetDiscrepancyErrors {
             intent_discrepancies: self.intent_discrepancies.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "intent_discrepancies",
                     "intent_discrepancies was not specified but it is required when building TestSetDiscrepancyErrors",
                 )
             })?,
             slot_discrepancies: self.slot_discrepancies.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "slot_discrepancies",
                     "slot_discrepancies was not specified but it is required when building TestSetDiscrepancyErrors",
                 )

@@ -44,7 +44,7 @@ impl RejectDataShareInputBuilder {
     /// Consumes the builder and constructs a [`RejectDataShareInput`](crate::operation::reject_data_share::RejectDataShareInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::reject_data_share::RejectDataShareInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::reject_data_share::RejectDataShareInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::reject_data_share::RejectDataShareInput {
             data_share_arn: self.data_share_arn,
         })

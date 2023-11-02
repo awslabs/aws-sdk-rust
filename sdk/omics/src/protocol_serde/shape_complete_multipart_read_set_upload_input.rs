@@ -2,7 +2,7 @@
 pub fn ser_complete_multipart_read_set_upload_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUploadInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.parts {
         let mut array_2 = object.key("parts").start_array();
         for item_3 in var_1 {

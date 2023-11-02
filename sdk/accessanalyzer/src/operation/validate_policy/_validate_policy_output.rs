@@ -89,10 +89,10 @@ impl ValidatePolicyOutputBuilder {
     /// - [`findings`](crate::operation::validate_policy::builders::ValidatePolicyOutputBuilder::findings)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::validate_policy::ValidatePolicyOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::validate_policy::ValidatePolicyOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::validate_policy::ValidatePolicyOutput {
             findings: self.findings.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "findings",
                     "findings was not specified but it is required when building ValidatePolicyOutput",
                 )

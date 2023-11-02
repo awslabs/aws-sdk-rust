@@ -49,7 +49,7 @@ impl LogoutInputBuilder {
         &self.access_token
     }
     /// Consumes the builder and constructs a [`LogoutInput`](crate::operation::logout::LogoutInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::logout::LogoutInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::logout::LogoutInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::logout::LogoutInput {
             access_token: self.access_token,
         })

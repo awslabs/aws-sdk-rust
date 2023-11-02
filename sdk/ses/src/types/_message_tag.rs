@@ -111,16 +111,16 @@ impl MessageTagBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::MessageTagBuilder::name)
     /// - [`value`](crate::types::builders::MessageTagBuilder::value)
-    pub fn build(self) -> ::std::result::Result<crate::types::MessageTag, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::MessageTag, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MessageTag {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building MessageTag",
                 )
             })?,
             value: self.value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "value",
                     "value was not specified but it is required when building MessageTag",
                 )

@@ -45,7 +45,7 @@ impl RegisterWebhookWithThirdPartyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_webhook_with_third_party::RegisterWebhookWithThirdPartyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::register_webhook_with_third_party::RegisterWebhookWithThirdPartyInput {
             webhook_name: self.webhook_name,

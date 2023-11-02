@@ -51,7 +51,7 @@ impl DescribeOrganizationalUnitInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_organizational_unit::DescribeOrganizationalUnitInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_organizational_unit::DescribeOrganizationalUnitInput {
             organizational_unit_id: self.organizational_unit_id,

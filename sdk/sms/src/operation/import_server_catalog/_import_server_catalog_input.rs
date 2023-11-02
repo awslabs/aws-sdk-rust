@@ -18,7 +18,7 @@ impl ImportServerCatalogInputBuilder {
     /// Consumes the builder and constructs a [`ImportServerCatalogInput`](crate::operation::import_server_catalog::ImportServerCatalogInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::import_server_catalog::ImportServerCatalogInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::import_server_catalog::ImportServerCatalogInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::import_server_catalog::ImportServerCatalogInput {})
     }

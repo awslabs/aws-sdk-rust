@@ -65,11 +65,11 @@ impl CreateExclusionsPreviewOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_exclusions_preview::CreateExclusionsPreviewOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_exclusions_preview::CreateExclusionsPreviewOutput {
             preview_token: self.preview_token.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "preview_token",
                     "preview_token was not specified but it is required when building CreateExclusionsPreviewOutput",
                 )

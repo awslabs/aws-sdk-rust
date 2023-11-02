@@ -180,7 +180,8 @@ impl ListGroupResourcesInputBuilder {
     /// Consumes the builder and constructs a [`ListGroupResourcesInput`](crate::operation::list_group_resources::ListGroupResourcesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_group_resources::ListGroupResourcesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_group_resources::ListGroupResourcesInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::list_group_resources::ListGroupResourcesInput {
             group_name: self.group_name,
             group: self.group,

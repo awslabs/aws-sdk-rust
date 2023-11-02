@@ -75,10 +75,10 @@ impl HeaderOrderBuilder {
     /// Consumes the builder and constructs a [`HeaderOrder`](crate::types::HeaderOrder).
     /// This method will fail if any of the following fields are not set:
     /// - [`oversize_handling`](crate::types::builders::HeaderOrderBuilder::oversize_handling)
-    pub fn build(self) -> ::std::result::Result<crate::types::HeaderOrder, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::HeaderOrder, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::HeaderOrder {
             oversize_handling: self.oversize_handling.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "oversize_handling",
                     "oversize_handling was not specified but it is required when building HeaderOrder",
                 )

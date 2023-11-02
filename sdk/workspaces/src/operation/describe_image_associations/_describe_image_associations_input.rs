@@ -75,7 +75,7 @@ impl DescribeImageAssociationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_image_associations::DescribeImageAssociationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_image_associations::DescribeImageAssociationsInput {
             image_id: self.image_id,

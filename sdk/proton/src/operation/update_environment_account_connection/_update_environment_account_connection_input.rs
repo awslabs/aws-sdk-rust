@@ -119,7 +119,7 @@ impl UpdateEnvironmentAccountConnectionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_environment_account_connection::UpdateEnvironmentAccountConnectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::update_environment_account_connection::UpdateEnvironmentAccountConnectionInput {

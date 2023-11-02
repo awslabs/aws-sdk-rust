@@ -118,28 +118,28 @@ impl SessionSummaryBuilder {
     /// - [`session_arn`](crate::types::builders::SessionSummaryBuilder::session_arn)
     /// - [`assistant_id`](crate::types::builders::SessionSummaryBuilder::assistant_id)
     /// - [`assistant_arn`](crate::types::builders::SessionSummaryBuilder::assistant_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::SessionSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SessionSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SessionSummary {
             session_id: self.session_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "session_id",
                     "session_id was not specified but it is required when building SessionSummary",
                 )
             })?,
             session_arn: self.session_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "session_arn",
                     "session_arn was not specified but it is required when building SessionSummary",
                 )
             })?,
             assistant_id: self.assistant_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "assistant_id",
                     "assistant_id was not specified but it is required when building SessionSummary",
                 )
             })?,
             assistant_arn: self.assistant_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "assistant_arn",
                     "assistant_arn was not specified but it is required when building SessionSummary",
                 )

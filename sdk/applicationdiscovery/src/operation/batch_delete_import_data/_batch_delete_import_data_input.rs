@@ -72,7 +72,7 @@ impl BatchDeleteImportDataInputBuilder {
     /// Consumes the builder and constructs a [`BatchDeleteImportDataInput`](crate::operation::batch_delete_import_data::BatchDeleteImportDataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_delete_import_data::BatchDeleteImportDataInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::batch_delete_import_data::BatchDeleteImportDataInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::batch_delete_import_data::BatchDeleteImportDataInput {
             import_task_ids: self.import_task_ids,

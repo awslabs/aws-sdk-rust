@@ -255,7 +255,7 @@ impl CreateServiceTemplateVersionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_service_template_version::CreateServiceTemplateVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_service_template_version::CreateServiceTemplateVersionInput {
             client_token: self.client_token,

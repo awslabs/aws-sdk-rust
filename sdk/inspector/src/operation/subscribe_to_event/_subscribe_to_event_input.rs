@@ -88,7 +88,7 @@ impl SubscribeToEventInputBuilder {
     /// Consumes the builder and constructs a [`SubscribeToEventInput`](crate::operation::subscribe_to_event::SubscribeToEventInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::subscribe_to_event::SubscribeToEventInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::subscribe_to_event::SubscribeToEventInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::subscribe_to_event::SubscribeToEventInput {
             resource_arn: self.resource_arn,
             event: self.event,

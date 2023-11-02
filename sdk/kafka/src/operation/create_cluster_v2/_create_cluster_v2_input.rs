@@ -113,7 +113,7 @@ impl CreateClusterV2InputBuilder {
     /// Consumes the builder and constructs a [`CreateClusterV2Input`](crate::operation::create_cluster_v2::CreateClusterV2Input).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_cluster_v2::CreateClusterV2Input, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_cluster_v2::CreateClusterV2Input, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_cluster_v2::CreateClusterV2Input {
             cluster_name: self.cluster_name,
             tags: self.tags,

@@ -42,7 +42,7 @@ where
 pub fn ser_scaling_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ScalingConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.maximum_concurrency {
         object.key("MaximumConcurrency").number(
             #[allow(clippy::useless_conversion)]

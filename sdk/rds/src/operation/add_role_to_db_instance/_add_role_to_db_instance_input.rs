@@ -88,7 +88,7 @@ impl AddRoleToDbInstanceInputBuilder {
     /// Consumes the builder and constructs a [`AddRoleToDbInstanceInput`](crate::operation::add_role_to_db_instance::AddRoleToDbInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::add_role_to_db_instance::AddRoleToDbInstanceInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::add_role_to_db_instance::AddRoleToDbInstanceInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::add_role_to_db_instance::AddRoleToDbInstanceInput {
             db_instance_identifier: self.db_instance_identifier,

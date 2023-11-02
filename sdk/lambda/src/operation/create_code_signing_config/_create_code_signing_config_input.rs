@@ -88,7 +88,7 @@ impl CreateCodeSigningConfigInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_code_signing_config::CreateCodeSigningConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_code_signing_config::CreateCodeSigningConfigInput {
             description: self.description,

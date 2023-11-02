@@ -65,7 +65,7 @@ impl GetBackupPlanInputBuilder {
     /// Consumes the builder and constructs a [`GetBackupPlanInput`](crate::operation::get_backup_plan::GetBackupPlanInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_backup_plan::GetBackupPlanInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_backup_plan::GetBackupPlanInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_backup_plan::GetBackupPlanInput {
             backup_plan_id: self.backup_plan_id,
             version_id: self.version_id,

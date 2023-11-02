@@ -91,16 +91,16 @@ impl SqsActionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`role_arn`](crate::types::builders::SqsActionBuilder::role_arn)
     /// - [`queue_url`](crate::types::builders::SqsActionBuilder::queue_url)
-    pub fn build(self) -> ::std::result::Result<crate::types::SqsAction, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SqsAction, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SqsAction {
             role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role_arn",
                     "role_arn was not specified but it is required when building SqsAction",
                 )
             })?,
             queue_url: self.queue_url.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "queue_url",
                     "queue_url was not specified but it is required when building SqsAction",
                 )

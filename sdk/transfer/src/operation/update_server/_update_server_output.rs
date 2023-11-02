@@ -63,10 +63,10 @@ impl UpdateServerOutputBuilder {
     /// - [`server_id`](crate::operation::update_server::builders::UpdateServerOutputBuilder::server_id)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_server::UpdateServerOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_server::UpdateServerOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_server::UpdateServerOutput {
             server_id: self.server_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "server_id",
                     "server_id was not specified but it is required when building UpdateServerOutput",
                 )

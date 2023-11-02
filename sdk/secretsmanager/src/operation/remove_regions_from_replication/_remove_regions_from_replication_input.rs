@@ -75,7 +75,7 @@ impl RemoveRegionsFromReplicationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_regions_from_replication::RemoveRegionsFromReplicationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::remove_regions_from_replication::RemoveRegionsFromReplicationInput {
             secret_id: self.secret_id,

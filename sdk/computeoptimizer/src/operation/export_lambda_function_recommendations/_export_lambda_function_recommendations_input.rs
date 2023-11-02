@@ -225,7 +225,7 @@ impl ExportLambdaFunctionRecommendationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::export_lambda_function_recommendations::ExportLambdaFunctionRecommendationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::export_lambda_function_recommendations::ExportLambdaFunctionRecommendationsInput {

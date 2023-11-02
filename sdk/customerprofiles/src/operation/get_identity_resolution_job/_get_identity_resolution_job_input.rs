@@ -68,7 +68,7 @@ impl GetIdentityResolutionJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_identity_resolution_job::GetIdentityResolutionJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_identity_resolution_job::GetIdentityResolutionJobInput {
             domain_name: self.domain_name,

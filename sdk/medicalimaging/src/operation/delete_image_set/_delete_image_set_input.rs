@@ -66,7 +66,7 @@ impl DeleteImageSetInputBuilder {
     /// Consumes the builder and constructs a [`DeleteImageSetInput`](crate::operation::delete_image_set::DeleteImageSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_image_set::DeleteImageSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_image_set::DeleteImageSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_image_set::DeleteImageSetInput {
             datastore_id: self.datastore_id,
             image_set_id: self.image_set_id,

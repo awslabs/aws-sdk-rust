@@ -190,10 +190,10 @@ impl EntityDetectorConfigurationBuilder {
     /// Consumes the builder and constructs a [`EntityDetectorConfiguration`](crate::types::EntityDetectorConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`entity_types`](crate::types::builders::EntityDetectorConfigurationBuilder::entity_types)
-    pub fn build(self) -> ::std::result::Result<crate::types::EntityDetectorConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::EntityDetectorConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EntityDetectorConfiguration {
             entity_types: self.entity_types.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "entity_types",
                     "entity_types was not specified but it is required when building EntityDetectorConfiguration",
                 )

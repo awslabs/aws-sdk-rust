@@ -78,7 +78,7 @@ impl RemoveRoleFromInstanceProfileInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_role_from_instance_profile::RemoveRoleFromInstanceProfileInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::remove_role_from_instance_profile::RemoveRoleFromInstanceProfileInput {
             instance_profile_name: self.instance_profile_name,

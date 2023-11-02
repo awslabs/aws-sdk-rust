@@ -86,7 +86,7 @@ impl ListNotebookSessionsInputBuilder {
     /// Consumes the builder and constructs a [`ListNotebookSessionsInput`](crate::operation::list_notebook_sessions::ListNotebookSessionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_notebook_sessions::ListNotebookSessionsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_notebook_sessions::ListNotebookSessionsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_notebook_sessions::ListNotebookSessionsInput {
             notebook_id: self.notebook_id,

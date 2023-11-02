@@ -172,7 +172,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListMetricVa
             fn uri_base(
                 _input: &crate::operation::list_metric_values::ListMetricValuesInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 use ::std::fmt::Write as _;
                 ::std::write!(output, "/metric-values").expect("formatting should succeed");
                 ::std::result::Result::Ok(())
@@ -180,14 +180,14 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListMetricVa
             fn uri_query(
                 _input: &crate::operation::list_metric_values::ListMetricValuesInput,
                 mut output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 let inner_1 = &_input.thing_name;
                 let inner_1 = inner_1
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("thing_name", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("thing_name", "cannot be empty or unset"))?;
                 if inner_1.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "thing_name",
                         "cannot be empty or unset",
                     ));
@@ -196,9 +196,9 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListMetricVa
                 let inner_2 = &_input.metric_name;
                 let inner_2 = inner_2
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("metric_name", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("metric_name", "cannot be empty or unset"))?;
                 if inner_2.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "metric_name",
                         "cannot be empty or unset",
                     ));
@@ -217,7 +217,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListMetricVa
                 let inner_5 = &_input.start_time;
                 let inner_5 = inner_5
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("start_time", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("start_time", "cannot be empty or unset"))?;
                 query.push_kv(
                     "startTime",
                     &::aws_smithy_http::query::fmt_timestamp(inner_5, ::aws_smithy_types::date_time::Format::DateTime)?,
@@ -225,7 +225,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListMetricVa
                 let inner_6 = &_input.end_time;
                 let inner_6 = inner_6
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("end_time", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("end_time", "cannot be empty or unset"))?;
                 query.push_kv(
                     "endTime",
                     &::aws_smithy_http::query::fmt_timestamp(inner_6, ::aws_smithy_types::date_time::Format::DateTime)?,
@@ -246,7 +246,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListMetricVa
             fn update_http_builder(
                 input: &crate::operation::list_metric_values::ListMetricValuesInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -255,7 +255,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListMetricVa
             let mut builder = update_http_builder(&input, ::http::request::Builder::new())?;
             builder
         };
-        let body = ::aws_smithy_http::body::SdkBody::from("");
+        let body = ::aws_smithy_types::body::SdkBody::from("");
 
         ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }

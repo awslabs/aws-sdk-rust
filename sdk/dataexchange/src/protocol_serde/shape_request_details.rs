@@ -2,7 +2,7 @@
 pub fn ser_request_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RequestDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.export_asset_to_signed_url {
         #[allow(unused_mut)]
         let mut object_2 = object.key("ExportAssetToSignedUrl").start_object();

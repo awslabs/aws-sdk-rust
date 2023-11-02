@@ -65,7 +65,7 @@ impl GetResourcePermissionInputBuilder {
     /// Consumes the builder and constructs a [`GetResourcePermissionInput`](crate::operation::get_resource_permission::GetResourcePermissionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_resource_permission::GetResourcePermissionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_resource_permission::GetResourcePermissionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_resource_permission::GetResourcePermissionInput {
             action_type: self.action_type,

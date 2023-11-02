@@ -2,7 +2,7 @@
 pub fn ser_google_drive_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GoogleDriveConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("SecretArn").string(input.secret_arn.as_str());
     }

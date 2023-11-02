@@ -2,7 +2,7 @@
 pub fn ser_report_delivery_channel(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ReportDeliveryChannel,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("S3BucketName").string(input.s3_bucket_name.as_str());
     }

@@ -115,7 +115,7 @@ impl CreateEventStreamInputBuilder {
     /// Consumes the builder and constructs a [`CreateEventStreamInput`](crate::operation::create_event_stream::CreateEventStreamInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_event_stream::CreateEventStreamInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_event_stream::CreateEventStreamInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_event_stream::CreateEventStreamInput {
             domain_name: self.domain_name,
             uri: self.uri,

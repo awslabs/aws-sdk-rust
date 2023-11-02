@@ -109,10 +109,10 @@ impl PropertyValidationExceptionBuilder {
     /// Consumes the builder and constructs a [`PropertyValidationException`](crate::types::error::PropertyValidationException).
     /// This method will fail if any of the following fields are not set:
     /// - [`message`](crate::types::error::builders::PropertyValidationExceptionBuilder::message)
-    pub fn build(self) -> ::std::result::Result<crate::types::error::PropertyValidationException, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::error::PropertyValidationException, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::error::PropertyValidationException {
             message: self.message.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "message",
                     "message was not specified but it is required when building PropertyValidationException",
                 )

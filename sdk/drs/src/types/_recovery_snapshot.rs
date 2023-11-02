@@ -144,22 +144,22 @@ impl RecoverySnapshotBuilder {
     /// - [`snapshot_id`](crate::types::builders::RecoverySnapshotBuilder::snapshot_id)
     /// - [`source_server_id`](crate::types::builders::RecoverySnapshotBuilder::source_server_id)
     /// - [`expected_timestamp`](crate::types::builders::RecoverySnapshotBuilder::expected_timestamp)
-    pub fn build(self) -> ::std::result::Result<crate::types::RecoverySnapshot, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RecoverySnapshot, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RecoverySnapshot {
             snapshot_id: self.snapshot_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "snapshot_id",
                     "snapshot_id was not specified but it is required when building RecoverySnapshot",
                 )
             })?,
             source_server_id: self.source_server_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source_server_id",
                     "source_server_id was not specified but it is required when building RecoverySnapshot",
                 )
             })?,
             expected_timestamp: self.expected_timestamp.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "expected_timestamp",
                     "expected_timestamp was not specified but it is required when building RecoverySnapshot",
                 )

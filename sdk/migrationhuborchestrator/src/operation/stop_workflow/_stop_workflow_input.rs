@@ -42,7 +42,9 @@ impl StopWorkflowInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`StopWorkflowInput`](crate::operation::stop_workflow::StopWorkflowInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::stop_workflow::StopWorkflowInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::stop_workflow::StopWorkflowInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_workflow::StopWorkflowInput { id: self.id })
     }
 }

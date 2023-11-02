@@ -107,8 +107,10 @@ impl ListReadSetExportJobsInputBuilder {
     /// Consumes the builder and constructs a [`ListReadSetExportJobsInput`](crate::operation::list_read_set_export_jobs::ListReadSetExportJobsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_read_set_export_jobs::ListReadSetExportJobsInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::list_read_set_export_jobs::ListReadSetExportJobsInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::list_read_set_export_jobs::ListReadSetExportJobsInput {
             sequence_store_id: self.sequence_store_id,
             max_results: self.max_results,

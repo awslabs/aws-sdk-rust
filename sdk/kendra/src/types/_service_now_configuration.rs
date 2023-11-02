@@ -164,22 +164,22 @@ impl ServiceNowConfigurationBuilder {
     /// - [`host_url`](crate::types::builders::ServiceNowConfigurationBuilder::host_url)
     /// - [`secret_arn`](crate::types::builders::ServiceNowConfigurationBuilder::secret_arn)
     /// - [`service_now_build_version`](crate::types::builders::ServiceNowConfigurationBuilder::service_now_build_version)
-    pub fn build(self) -> ::std::result::Result<crate::types::ServiceNowConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ServiceNowConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ServiceNowConfiguration {
             host_url: self.host_url.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "host_url",
                     "host_url was not specified but it is required when building ServiceNowConfiguration",
                 )
             })?,
             secret_arn: self.secret_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "secret_arn",
                     "secret_arn was not specified but it is required when building ServiceNowConfiguration",
                 )
             })?,
             service_now_build_version: self.service_now_build_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "service_now_build_version",
                     "service_now_build_version was not specified but it is required when building ServiceNowConfiguration",
                 )

@@ -44,7 +44,7 @@ impl StopDiscovererInputBuilder {
     /// Consumes the builder and constructs a [`StopDiscovererInput`](crate::operation::stop_discoverer::StopDiscovererInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_discoverer::StopDiscovererInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::stop_discoverer::StopDiscovererInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_discoverer::StopDiscovererInput {
             discoverer_id: self.discoverer_id,
         })

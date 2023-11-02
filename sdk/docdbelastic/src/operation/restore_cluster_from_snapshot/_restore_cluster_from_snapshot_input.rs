@@ -184,7 +184,7 @@ impl RestoreClusterFromSnapshotInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::restore_cluster_from_snapshot::RestoreClusterFromSnapshotInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::restore_cluster_from_snapshot::RestoreClusterFromSnapshotInput {
             cluster_name: self.cluster_name,

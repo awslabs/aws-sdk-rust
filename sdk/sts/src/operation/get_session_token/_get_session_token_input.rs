@@ -95,7 +95,7 @@ impl GetSessionTokenInputBuilder {
     /// Consumes the builder and constructs a [`GetSessionTokenInput`](crate::operation::get_session_token::GetSessionTokenInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_session_token::GetSessionTokenInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_session_token::GetSessionTokenInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_session_token::GetSessionTokenInput {
             duration_seconds: self.duration_seconds,
             serial_number: self.serial_number,

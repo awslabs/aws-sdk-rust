@@ -72,10 +72,10 @@ impl LiveConnectorSourceConfigurationBuilder {
     /// Consumes the builder and constructs a [`LiveConnectorSourceConfiguration`](crate::types::LiveConnectorSourceConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`source_type`](crate::types::builders::LiveConnectorSourceConfigurationBuilder::source_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::LiveConnectorSourceConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::LiveConnectorSourceConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::LiveConnectorSourceConfiguration {
             source_type: self.source_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source_type",
                     "source_type was not specified but it is required when building LiveConnectorSourceConfiguration",
                 )

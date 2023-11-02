@@ -98,22 +98,22 @@ impl PermissionBuilder {
     /// - [`grantee_id`](crate::types::builders::PermissionBuilder::grantee_id)
     /// - [`grantee_type`](crate::types::builders::PermissionBuilder::grantee_type)
     /// - [`permission_values`](crate::types::builders::PermissionBuilder::permission_values)
-    pub fn build(self) -> ::std::result::Result<crate::types::Permission, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Permission, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Permission {
             grantee_id: self.grantee_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "grantee_id",
                     "grantee_id was not specified but it is required when building Permission",
                 )
             })?,
             grantee_type: self.grantee_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "grantee_type",
                     "grantee_type was not specified but it is required when building Permission",
                 )
             })?,
             permission_values: self.permission_values.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "permission_values",
                     "permission_values was not specified but it is required when building Permission",
                 )

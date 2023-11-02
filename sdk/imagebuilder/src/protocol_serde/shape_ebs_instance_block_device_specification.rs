@@ -2,7 +2,7 @@
 pub fn ser_ebs_instance_block_device_specification(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EbsInstanceBlockDeviceSpecification,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.encrypted {
         object.key("encrypted").boolean(*var_1);
     }

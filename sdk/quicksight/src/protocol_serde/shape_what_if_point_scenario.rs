@@ -2,7 +2,7 @@
 pub fn ser_what_if_point_scenario(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::WhatIfPointScenario,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object
             .key("Date")

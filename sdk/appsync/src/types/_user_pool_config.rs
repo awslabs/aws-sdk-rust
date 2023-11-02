@@ -114,22 +114,22 @@ impl UserPoolConfigBuilder {
     /// - [`user_pool_id`](crate::types::builders::UserPoolConfigBuilder::user_pool_id)
     /// - [`aws_region`](crate::types::builders::UserPoolConfigBuilder::aws_region)
     /// - [`default_action`](crate::types::builders::UserPoolConfigBuilder::default_action)
-    pub fn build(self) -> ::std::result::Result<crate::types::UserPoolConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::UserPoolConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::UserPoolConfig {
             user_pool_id: self.user_pool_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "user_pool_id",
                     "user_pool_id was not specified but it is required when building UserPoolConfig",
                 )
             })?,
             aws_region: self.aws_region.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "aws_region",
                     "aws_region was not specified but it is required when building UserPoolConfig",
                 )
             })?,
             default_action: self.default_action.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "default_action",
                     "default_action was not specified but it is required when building UserPoolConfig",
                 )

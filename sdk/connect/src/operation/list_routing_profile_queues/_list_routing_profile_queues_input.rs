@@ -110,7 +110,7 @@ impl ListRoutingProfileQueuesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_routing_profile_queues::ListRoutingProfileQueuesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_routing_profile_queues::ListRoutingProfileQueuesInput {
             instance_id: self.instance_id,

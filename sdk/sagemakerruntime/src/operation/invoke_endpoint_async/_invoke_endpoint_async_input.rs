@@ -216,7 +216,7 @@ impl InvokeEndpointAsyncInputBuilder {
     /// Consumes the builder and constructs a [`InvokeEndpointAsyncInput`](crate::operation::invoke_endpoint_async::InvokeEndpointAsyncInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::invoke_endpoint_async::InvokeEndpointAsyncInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::invoke_endpoint_async::InvokeEndpointAsyncInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::invoke_endpoint_async::InvokeEndpointAsyncInput {
             endpoint_name: self.endpoint_name,

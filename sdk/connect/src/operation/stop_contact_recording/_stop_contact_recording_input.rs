@@ -88,7 +88,7 @@ impl StopContactRecordingInputBuilder {
     /// Consumes the builder and constructs a [`StopContactRecordingInput`](crate::operation::stop_contact_recording::StopContactRecordingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_contact_recording::StopContactRecordingInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::stop_contact_recording::StopContactRecordingInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::stop_contact_recording::StopContactRecordingInput {
             instance_id: self.instance_id,

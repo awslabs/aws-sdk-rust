@@ -44,7 +44,7 @@ impl GetPolicyStoreInputBuilder {
     /// Consumes the builder and constructs a [`GetPolicyStoreInput`](crate::operation::get_policy_store::GetPolicyStoreInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_policy_store::GetPolicyStoreInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_policy_store::GetPolicyStoreInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_policy_store::GetPolicyStoreInput {
             policy_store_id: self.policy_store_id,
         })

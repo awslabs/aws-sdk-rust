@@ -94,22 +94,22 @@ impl ReadSetBatchErrorBuilder {
     /// - [`id`](crate::types::builders::ReadSetBatchErrorBuilder::id)
     /// - [`code`](crate::types::builders::ReadSetBatchErrorBuilder::code)
     /// - [`message`](crate::types::builders::ReadSetBatchErrorBuilder::message)
-    pub fn build(self) -> ::std::result::Result<crate::types::ReadSetBatchError, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ReadSetBatchError, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ReadSetBatchError {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building ReadSetBatchError",
                 )
             })?,
             code: self.code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "code",
                     "code was not specified but it is required when building ReadSetBatchError",
                 )
             })?,
             message: self.message.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "message",
                     "message was not specified but it is required when building ReadSetBatchError",
                 )

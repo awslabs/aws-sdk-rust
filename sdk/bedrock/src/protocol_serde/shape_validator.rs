@@ -2,7 +2,7 @@
 pub fn ser_validator(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Validator,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("s3Uri").string(input.s3_uri.as_str());
     }

@@ -41,7 +41,7 @@ impl ListTrailsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListTrailsInput`](crate::operation::list_trails::ListTrailsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_trails::ListTrailsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_trails::ListTrailsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_trails::ListTrailsInput { next_token: self.next_token })
     }
 }

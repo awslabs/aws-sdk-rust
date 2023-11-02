@@ -46,10 +46,10 @@ impl JsonMappingParametersBuilder {
     /// Consumes the builder and constructs a [`JsonMappingParameters`](crate::types::JsonMappingParameters).
     /// This method will fail if any of the following fields are not set:
     /// - [`record_row_path`](crate::types::builders::JsonMappingParametersBuilder::record_row_path)
-    pub fn build(self) -> ::std::result::Result<crate::types::JsonMappingParameters, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::JsonMappingParameters, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::JsonMappingParameters {
             record_row_path: self.record_row_path.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "record_row_path",
                     "record_row_path was not specified but it is required when building JsonMappingParameters",
                 )

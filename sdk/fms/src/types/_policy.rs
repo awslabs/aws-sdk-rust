@@ -505,11 +505,11 @@ impl PolicyBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`policy_name`](crate::types::builders::PolicyBuilder::policy_name)
     /// - [`resource_type`](crate::types::builders::PolicyBuilder::resource_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::Policy, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Policy, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Policy {
             policy_id: self.policy_id,
             policy_name: self.policy_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "policy_name",
                     "policy_name was not specified but it is required when building Policy",
                 )
@@ -517,7 +517,7 @@ impl PolicyBuilder {
             policy_update_token: self.policy_update_token,
             security_service_policy_data: self.security_service_policy_data,
             resource_type: self.resource_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_type",
                     "resource_type was not specified but it is required when building Policy",
                 )

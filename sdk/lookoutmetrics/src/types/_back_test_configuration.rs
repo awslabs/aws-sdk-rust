@@ -45,10 +45,10 @@ impl BackTestConfigurationBuilder {
     /// Consumes the builder and constructs a [`BackTestConfiguration`](crate::types::BackTestConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`run_back_test_mode`](crate::types::builders::BackTestConfigurationBuilder::run_back_test_mode)
-    pub fn build(self) -> ::std::result::Result<crate::types::BackTestConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::BackTestConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::BackTestConfiguration {
             run_back_test_mode: self.run_back_test_mode.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "run_back_test_mode",
                     "run_back_test_mode was not specified but it is required when building BackTestConfiguration",
                 )

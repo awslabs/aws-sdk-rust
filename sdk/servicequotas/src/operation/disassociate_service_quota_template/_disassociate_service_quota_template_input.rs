@@ -20,7 +20,7 @@ impl DisassociateServiceQuotaTemplateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_service_quota_template::DisassociateServiceQuotaTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disassociate_service_quota_template::DisassociateServiceQuotaTemplateInput {})
     }

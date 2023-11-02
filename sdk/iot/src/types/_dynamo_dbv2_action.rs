@@ -79,10 +79,10 @@ impl DynamoDBv2ActionBuilder {
     /// Consumes the builder and constructs a [`DynamoDBv2Action`](crate::types::DynamoDBv2Action).
     /// This method will fail if any of the following fields are not set:
     /// - [`role_arn`](crate::types::builders::DynamoDBv2ActionBuilder::role_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::DynamoDBv2Action, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DynamoDBv2Action, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DynamoDBv2Action {
             role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role_arn",
                     "role_arn was not specified but it is required when building DynamoDBv2Action",
                 )

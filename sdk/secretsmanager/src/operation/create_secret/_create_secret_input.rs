@@ -361,7 +361,9 @@ impl CreateSecretInputBuilder {
         &self.force_overwrite_replica_secret
     }
     /// Consumes the builder and constructs a [`CreateSecretInput`](crate::operation::create_secret::CreateSecretInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_secret::CreateSecretInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_secret::CreateSecretInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_secret::CreateSecretInput {
             name: self.name,
             client_request_token: self.client_request_token,

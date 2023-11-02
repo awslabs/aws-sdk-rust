@@ -89,7 +89,7 @@ impl ResetNetworkInterfaceAttributeInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reset_network_interface_attribute::ResetNetworkInterfaceAttributeInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::reset_network_interface_attribute::ResetNetworkInterfaceAttributeInput {
             dry_run: self.dry_run,

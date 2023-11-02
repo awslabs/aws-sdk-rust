@@ -135,12 +135,12 @@ pub fn de_infer_rx_norm_http_response(
 
 pub fn ser_infer_rx_norm_input(
     input: &crate::operation::infer_rx_norm::InferRxNormInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_infer_rx_norm_input::ser_infer_rx_norm_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_infer_rx_norm(

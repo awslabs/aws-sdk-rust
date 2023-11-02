@@ -51,7 +51,7 @@ pub struct RecognizeUtteranceInput {
     /// </ul>
     pub response_content_type: ::std::option::Option<::std::string::String>,
     /// <p>User input in PCM or Opus audio format or text format as described in the <code>requestContentType</code> parameter.</p>
-    pub input_stream: ::aws_smithy_http::byte_stream::ByteStream,
+    pub input_stream: ::aws_smithy_types::byte_stream::ByteStream,
 }
 impl RecognizeUtteranceInput {
     /// <p>The identifier of the bot that should receive the request.</p>
@@ -119,7 +119,7 @@ impl RecognizeUtteranceInput {
         self.response_content_type.as_deref()
     }
     /// <p>User input in PCM or Opus audio format or text format as described in the <code>requestContentType</code> parameter.</p>
-    pub fn input_stream(&self) -> &::aws_smithy_http::byte_stream::ByteStream {
+    pub fn input_stream(&self) -> &::aws_smithy_types::byte_stream::ByteStream {
         &self.input_stream
     }
 }
@@ -157,7 +157,7 @@ pub struct RecognizeUtteranceInputBuilder {
     pub(crate) request_attributes: ::std::option::Option<::std::string::String>,
     pub(crate) request_content_type: ::std::option::Option<::std::string::String>,
     pub(crate) response_content_type: ::std::option::Option<::std::string::String>,
-    pub(crate) input_stream: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
+    pub(crate) input_stream: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>,
 }
 impl RecognizeUtteranceInputBuilder {
     /// <p>The identifier of the bot that should receive the request.</p>
@@ -374,23 +374,23 @@ impl RecognizeUtteranceInputBuilder {
         &self.response_content_type
     }
     /// <p>User input in PCM or Opus audio format or text format as described in the <code>requestContentType</code> parameter.</p>
-    pub fn input_stream(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
+    pub fn input_stream(mut self, input: ::aws_smithy_types::byte_stream::ByteStream) -> Self {
         self.input_stream = ::std::option::Option::Some(input);
         self
     }
     /// <p>User input in PCM or Opus audio format or text format as described in the <code>requestContentType</code> parameter.</p>
-    pub fn set_input_stream(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
+    pub fn set_input_stream(mut self, input: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>) -> Self {
         self.input_stream = input;
         self
     }
     /// <p>User input in PCM or Opus audio format or text format as described in the <code>requestContentType</code> parameter.</p>
-    pub fn get_input_stream(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+    pub fn get_input_stream(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
         &self.input_stream
     }
     /// Consumes the builder and constructs a [`RecognizeUtteranceInput`](crate::operation::recognize_utterance::RecognizeUtteranceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::recognize_utterance::RecognizeUtteranceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::recognize_utterance::RecognizeUtteranceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::recognize_utterance::RecognizeUtteranceInput {
             bot_id: self.bot_id,
             bot_alias_id: self.bot_alias_id,

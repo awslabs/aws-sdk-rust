@@ -128,7 +128,7 @@ impl UpdateLifecyclePolicyInputBuilder {
     /// Consumes the builder and constructs a [`UpdateLifecyclePolicyInput`](crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyInput {
             policy_id: self.policy_id,

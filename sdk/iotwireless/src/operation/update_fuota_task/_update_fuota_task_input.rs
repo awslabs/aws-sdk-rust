@@ -222,7 +222,7 @@ impl UpdateFuotaTaskInputBuilder {
     /// Consumes the builder and constructs a [`UpdateFuotaTaskInput`](crate::operation::update_fuota_task::UpdateFuotaTaskInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_fuota_task::UpdateFuotaTaskInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_fuota_task::UpdateFuotaTaskInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_fuota_task::UpdateFuotaTaskInput {
             id: self.id,
             name: self.name,

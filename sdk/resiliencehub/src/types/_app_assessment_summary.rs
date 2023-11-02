@@ -321,12 +321,12 @@ impl AppAssessmentSummaryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`assessment_status`](crate::types::builders::AppAssessmentSummaryBuilder::assessment_status)
     /// - [`assessment_arn`](crate::types::builders::AppAssessmentSummaryBuilder::assessment_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::AppAssessmentSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AppAssessmentSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AppAssessmentSummary {
             app_arn: self.app_arn,
             app_version: self.app_version,
             assessment_status: self.assessment_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "assessment_status",
                     "assessment_status was not specified but it is required when building AppAssessmentSummary",
                 )
@@ -337,7 +337,7 @@ impl AppAssessmentSummaryBuilder {
             message: self.message,
             assessment_name: self.assessment_name,
             assessment_arn: self.assessment_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "assessment_arn",
                     "assessment_arn was not specified but it is required when building AppAssessmentSummary",
                 )

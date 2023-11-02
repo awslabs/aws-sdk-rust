@@ -44,7 +44,7 @@ impl CreateKeyGroupInputBuilder {
     /// Consumes the builder and constructs a [`CreateKeyGroupInput`](crate::operation::create_key_group::CreateKeyGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_key_group::CreateKeyGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_key_group::CreateKeyGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_key_group::CreateKeyGroupInput {
             key_group_config: self.key_group_config,
         })

@@ -233,7 +233,7 @@ impl ListReservationsInputBuilder {
     /// Consumes the builder and constructs a [`ListReservationsInput`](crate::operation::list_reservations::ListReservationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_reservations::ListReservationsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_reservations::ListReservationsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_reservations::ListReservationsInput {
             channel_class: self.channel_class,
             codec: self.codec,

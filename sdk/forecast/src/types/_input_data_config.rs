@@ -78,10 +78,10 @@ impl InputDataConfigBuilder {
     /// Consumes the builder and constructs a [`InputDataConfig`](crate::types::InputDataConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`dataset_group_arn`](crate::types::builders::InputDataConfigBuilder::dataset_group_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::InputDataConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::InputDataConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::InputDataConfig {
             dataset_group_arn: self.dataset_group_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "dataset_group_arn",
                     "dataset_group_arn was not specified but it is required when building InputDataConfig",
                 )

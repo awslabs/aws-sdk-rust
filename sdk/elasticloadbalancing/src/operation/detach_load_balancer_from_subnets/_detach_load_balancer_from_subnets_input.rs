@@ -76,7 +76,7 @@ impl DetachLoadBalancerFromSubnetsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::detach_load_balancer_from_subnets::DetachLoadBalancerFromSubnetsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::detach_load_balancer_from_subnets::DetachLoadBalancerFromSubnetsInput {
             load_balancer_name: self.load_balancer_name,

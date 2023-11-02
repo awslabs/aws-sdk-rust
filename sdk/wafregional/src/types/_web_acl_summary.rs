@@ -79,16 +79,16 @@ impl WebAclSummaryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`web_acl_id`](crate::types::builders::WebAclSummaryBuilder::web_acl_id)
     /// - [`name`](crate::types::builders::WebAclSummaryBuilder::name)
-    pub fn build(self) -> ::std::result::Result<crate::types::WebAclSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::WebAclSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::WebAclSummary {
             web_acl_id: self.web_acl_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "web_acl_id",
                     "web_acl_id was not specified but it is required when building WebAclSummary",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building WebAclSummary",
                 )

@@ -2,7 +2,7 @@
 pub fn ser_untag_stream_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::untag_stream::UntagStreamInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.stream_arn {
         object.key("StreamARN").string(var_1.as_str());
     }

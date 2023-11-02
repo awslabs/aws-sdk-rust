@@ -56,7 +56,7 @@ impl StopMetricStreamsInputBuilder {
     /// Consumes the builder and constructs a [`StopMetricStreamsInput`](crate::operation::stop_metric_streams::StopMetricStreamsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_metric_streams::StopMetricStreamsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::stop_metric_streams::StopMetricStreamsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_metric_streams::StopMetricStreamsInput { names: self.names })
     }
 }

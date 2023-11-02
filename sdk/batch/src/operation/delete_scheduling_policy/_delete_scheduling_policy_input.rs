@@ -45,8 +45,10 @@ impl DeleteSchedulingPolicyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSchedulingPolicyInput`](crate::operation::delete_scheduling_policy::DeleteSchedulingPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_scheduling_policy::DeleteSchedulingPolicyInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::delete_scheduling_policy::DeleteSchedulingPolicyInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::delete_scheduling_policy::DeleteSchedulingPolicyInput { arn: self.arn })
     }
 }

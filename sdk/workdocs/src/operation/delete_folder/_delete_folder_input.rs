@@ -71,7 +71,9 @@ impl DeleteFolderInputBuilder {
         &self.folder_id
     }
     /// Consumes the builder and constructs a [`DeleteFolderInput`](crate::operation::delete_folder::DeleteFolderInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_folder::DeleteFolderInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_folder::DeleteFolderInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_folder::DeleteFolderInput {
             authentication_token: self.authentication_token,
             folder_id: self.folder_id,

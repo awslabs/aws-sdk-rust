@@ -44,7 +44,7 @@ impl StopHumanLoopInputBuilder {
     /// Consumes the builder and constructs a [`StopHumanLoopInput`](crate::operation::stop_human_loop::StopHumanLoopInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_human_loop::StopHumanLoopInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::stop_human_loop::StopHumanLoopInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_human_loop::StopHumanLoopInput {
             human_loop_name: self.human_loop_name,
         })

@@ -154,23 +154,23 @@ impl AutoTuneStatusBuilder {
     /// - [`creation_date`](crate::types::builders::AutoTuneStatusBuilder::creation_date)
     /// - [`update_date`](crate::types::builders::AutoTuneStatusBuilder::update_date)
     /// - [`state`](crate::types::builders::AutoTuneStatusBuilder::state)
-    pub fn build(self) -> ::std::result::Result<crate::types::AutoTuneStatus, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AutoTuneStatus, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AutoTuneStatus {
             creation_date: self.creation_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_date",
                     "creation_date was not specified but it is required when building AutoTuneStatus",
                 )
             })?,
             update_date: self.update_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "update_date",
                     "update_date was not specified but it is required when building AutoTuneStatus",
                 )
             })?,
             update_version: self.update_version.unwrap_or_default(),
             state: self.state.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "state",
                     "state was not specified but it is required when building AutoTuneStatus",
                 )

@@ -89,7 +89,7 @@ impl RegisterOnPremisesInstanceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_on_premises_instance::RegisterOnPremisesInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::register_on_premises_instance::RegisterOnPremisesInstanceInput {
             instance_name: self.instance_name,

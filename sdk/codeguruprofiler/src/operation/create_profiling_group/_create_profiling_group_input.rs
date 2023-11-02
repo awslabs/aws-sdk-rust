@@ -136,7 +136,7 @@ impl CreateProfilingGroupInputBuilder {
     /// Consumes the builder and constructs a [`CreateProfilingGroupInput`](crate::operation::create_profiling_group::CreateProfilingGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_profiling_group::CreateProfilingGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_profiling_group::CreateProfilingGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_profiling_group::CreateProfilingGroupInput {
             profiling_group_name: self.profiling_group_name,

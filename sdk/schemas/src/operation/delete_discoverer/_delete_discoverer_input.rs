@@ -44,7 +44,7 @@ impl DeleteDiscovererInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDiscovererInput`](crate::operation::delete_discoverer::DeleteDiscovererInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_discoverer::DeleteDiscovererInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_discoverer::DeleteDiscovererInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_discoverer::DeleteDiscovererInput {
             discoverer_id: self.discoverer_id,
         })

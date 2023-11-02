@@ -148,7 +148,7 @@ impl ListLineageGroupsInputBuilder {
     /// Consumes the builder and constructs a [`ListLineageGroupsInput`](crate::operation::list_lineage_groups::ListLineageGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_lineage_groups::ListLineageGroupsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_lineage_groups::ListLineageGroupsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_lineage_groups::ListLineageGroupsInput {
             created_after: self.created_after,
             created_before: self.created_before,

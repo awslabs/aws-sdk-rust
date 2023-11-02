@@ -171,22 +171,22 @@ impl CreateVehicleRequestItemBuilder {
     /// - [`vehicle_name`](crate::types::builders::CreateVehicleRequestItemBuilder::vehicle_name)
     /// - [`model_manifest_arn`](crate::types::builders::CreateVehicleRequestItemBuilder::model_manifest_arn)
     /// - [`decoder_manifest_arn`](crate::types::builders::CreateVehicleRequestItemBuilder::decoder_manifest_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::CreateVehicleRequestItem, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CreateVehicleRequestItem, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CreateVehicleRequestItem {
             vehicle_name: self.vehicle_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "vehicle_name",
                     "vehicle_name was not specified but it is required when building CreateVehicleRequestItem",
                 )
             })?,
             model_manifest_arn: self.model_manifest_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "model_manifest_arn",
                     "model_manifest_arn was not specified but it is required when building CreateVehicleRequestItem",
                 )
             })?,
             decoder_manifest_arn: self.decoder_manifest_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "decoder_manifest_arn",
                     "decoder_manifest_arn was not specified but it is required when building CreateVehicleRequestItem",
                 )

@@ -134,7 +134,7 @@ impl UpdateImageInputBuilder {
         &self.role_arn
     }
     /// Consumes the builder and constructs a [`UpdateImageInput`](crate::operation::update_image::UpdateImageInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_image::UpdateImageInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_image::UpdateImageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_image::UpdateImageInput {
             delete_properties: self.delete_properties,
             description: self.description,

@@ -109,7 +109,7 @@ impl AssociateConnectPeerInputBuilder {
     /// Consumes the builder and constructs a [`AssociateConnectPeerInput`](crate::operation::associate_connect_peer::AssociateConnectPeerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::associate_connect_peer::AssociateConnectPeerInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::associate_connect_peer::AssociateConnectPeerInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::associate_connect_peer::AssociateConnectPeerInput {
             global_network_id: self.global_network_id,

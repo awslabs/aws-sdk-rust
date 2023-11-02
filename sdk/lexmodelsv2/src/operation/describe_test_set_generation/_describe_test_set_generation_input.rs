@@ -46,7 +46,7 @@ impl DescribeTestSetGenerationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_test_set_generation::DescribeTestSetGenerationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_test_set_generation::DescribeTestSetGenerationInput {
             test_set_generation_id: self.test_set_generation_id,

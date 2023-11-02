@@ -45,7 +45,7 @@ impl DeleteDeliveryChannelInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDeliveryChannelInput`](crate::operation::delete_delivery_channel::DeleteDeliveryChannelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_delivery_channel::DeleteDeliveryChannelInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_delivery_channel::DeleteDeliveryChannelInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_delivery_channel::DeleteDeliveryChannelInput {
             delivery_channel_name: self.delivery_channel_name,

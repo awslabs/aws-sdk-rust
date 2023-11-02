@@ -89,10 +89,10 @@ impl ListDashboardsOutputBuilder {
     /// - [`dashboard_summaries`](crate::operation::list_dashboards::builders::ListDashboardsOutputBuilder::dashboard_summaries)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_dashboards::ListDashboardsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_dashboards::ListDashboardsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_dashboards::ListDashboardsOutput {
             dashboard_summaries: self.dashboard_summaries.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "dashboard_summaries",
                     "dashboard_summaries was not specified but it is required when building ListDashboardsOutput",
                 )

@@ -66,10 +66,10 @@ impl AssetStatusBuilder {
     /// Consumes the builder and constructs a [`AssetStatus`](crate::types::AssetStatus).
     /// This method will fail if any of the following fields are not set:
     /// - [`state`](crate::types::builders::AssetStatusBuilder::state)
-    pub fn build(self) -> ::std::result::Result<crate::types::AssetStatus, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AssetStatus, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AssetStatus {
             state: self.state.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "state",
                     "state was not specified but it is required when building AssetStatus",
                 )

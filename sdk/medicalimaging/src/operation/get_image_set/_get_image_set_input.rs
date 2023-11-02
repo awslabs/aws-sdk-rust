@@ -85,7 +85,7 @@ impl GetImageSetInputBuilder {
         &self.version_id
     }
     /// Consumes the builder and constructs a [`GetImageSetInput`](crate::operation::get_image_set::GetImageSetInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_image_set::GetImageSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_image_set::GetImageSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_image_set::GetImageSetInput {
             datastore_id: self.datastore_id,
             image_set_id: self.image_set_id,

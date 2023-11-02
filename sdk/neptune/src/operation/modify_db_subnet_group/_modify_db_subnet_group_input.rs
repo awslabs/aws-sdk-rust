@@ -104,7 +104,7 @@ impl ModifyDbSubnetGroupInputBuilder {
     /// Consumes the builder and constructs a [`ModifyDbSubnetGroupInput`](crate::operation::modify_db_subnet_group::ModifyDbSubnetGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::modify_db_subnet_group::ModifyDbSubnetGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::modify_db_subnet_group::ModifyDbSubnetGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::modify_db_subnet_group::ModifyDbSubnetGroupInput {
             db_subnet_group_name: self.db_subnet_group_name,

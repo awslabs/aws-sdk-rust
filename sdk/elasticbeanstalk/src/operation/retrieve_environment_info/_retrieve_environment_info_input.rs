@@ -109,7 +109,7 @@ impl RetrieveEnvironmentInfoInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::retrieve_environment_info::RetrieveEnvironmentInfoInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::retrieve_environment_info::RetrieveEnvironmentInfoInput {
             environment_id: self.environment_id,

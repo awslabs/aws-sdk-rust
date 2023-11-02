@@ -72,11 +72,11 @@ impl ApplicationPoliciesBuilder {
     /// Consumes the builder and constructs a [`ApplicationPolicies`](crate::types::ApplicationPolicies).
     /// This method will fail if any of the following fields are not set:
     /// - [`policies`](crate::types::builders::ApplicationPoliciesBuilder::policies)
-    pub fn build(self) -> ::std::result::Result<crate::types::ApplicationPolicies, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ApplicationPolicies, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ApplicationPolicies {
             critical: self.critical,
             policies: self.policies.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "policies",
                     "policies was not specified but it is required when building ApplicationPolicies",
                 )

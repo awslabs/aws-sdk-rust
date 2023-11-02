@@ -108,13 +108,13 @@ impl DescribeAccountOverviewOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_account_overview::DescribeAccountOverviewOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_account_overview::DescribeAccountOverviewOutput {
             reactive_insights: self.reactive_insights.unwrap_or_default(),
             proactive_insights: self.proactive_insights.unwrap_or_default(),
             mean_time_to_recover_in_milliseconds: self.mean_time_to_recover_in_milliseconds.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "mean_time_to_recover_in_milliseconds",
                     "mean_time_to_recover_in_milliseconds was not specified but it is required when building DescribeAccountOverviewOutput",
                 )

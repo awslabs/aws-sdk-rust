@@ -2,7 +2,7 @@
 pub fn ser_delete_retention_configuration_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_retention_configuration::DeleteRetentionConfigurationInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.retention_configuration_name {
         object.key("RetentionConfigurationName").string(var_1.as_str());
     }

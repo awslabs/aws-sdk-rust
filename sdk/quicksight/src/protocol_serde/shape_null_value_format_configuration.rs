@@ -2,7 +2,7 @@
 pub fn ser_null_value_format_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::NullValueFormatConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("NullString").string(input.null_string.as_str());
     }

@@ -69,16 +69,16 @@ impl TwitterParametersBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`query`](crate::types::builders::TwitterParametersBuilder::query)
     /// - [`max_rows`](crate::types::builders::TwitterParametersBuilder::max_rows)
-    pub fn build(self) -> ::std::result::Result<crate::types::TwitterParameters, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TwitterParameters, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TwitterParameters {
             query: self.query.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "query",
                     "query was not specified but it is required when building TwitterParameters",
                 )
             })?,
             max_rows: self.max_rows.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "max_rows",
                     "max_rows was not specified but it is required when building TwitterParameters",
                 )

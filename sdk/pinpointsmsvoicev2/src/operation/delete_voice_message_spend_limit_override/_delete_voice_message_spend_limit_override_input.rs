@@ -20,7 +20,7 @@ impl DeleteVoiceMessageSpendLimitOverrideInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_voice_message_spend_limit_override::DeleteVoiceMessageSpendLimitOverrideInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_voice_message_spend_limit_override::DeleteVoiceMessageSpendLimitOverrideInput {})
     }

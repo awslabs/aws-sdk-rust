@@ -2,7 +2,7 @@
 pub fn ser_aws_ecs_cluster_default_capacity_provider_strategy_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEcsClusterDefaultCapacityProviderStrategyDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.base {
         object.key("Base").number(
             #[allow(clippy::useless_conversion)]

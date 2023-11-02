@@ -45,7 +45,7 @@ pub fn de_tiering(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Resu
 pub fn ser_tiering(
     input: &crate::types::Tiering,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     {

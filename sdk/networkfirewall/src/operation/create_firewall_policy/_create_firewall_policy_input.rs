@@ -168,7 +168,7 @@ impl CreateFirewallPolicyInputBuilder {
     /// Consumes the builder and constructs a [`CreateFirewallPolicyInput`](crate::operation::create_firewall_policy::CreateFirewallPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_firewall_policy::CreateFirewallPolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_firewall_policy::CreateFirewallPolicyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_firewall_policy::CreateFirewallPolicyInput {
             firewall_policy_name: self.firewall_policy_name,

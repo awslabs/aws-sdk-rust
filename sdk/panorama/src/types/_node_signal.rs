@@ -69,16 +69,16 @@ impl NodeSignalBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`node_instance_id`](crate::types::builders::NodeSignalBuilder::node_instance_id)
     /// - [`signal`](crate::types::builders::NodeSignalBuilder::signal)
-    pub fn build(self) -> ::std::result::Result<crate::types::NodeSignal, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::NodeSignal, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::NodeSignal {
             node_instance_id: self.node_instance_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "node_instance_id",
                     "node_instance_id was not specified but it is required when building NodeSignal",
                 )
             })?,
             signal: self.signal.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "signal",
                     "signal was not specified but it is required when building NodeSignal",
                 )

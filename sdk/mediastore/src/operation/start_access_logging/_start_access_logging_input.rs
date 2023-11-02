@@ -44,7 +44,8 @@ impl StartAccessLoggingInputBuilder {
     /// Consumes the builder and constructs a [`StartAccessLoggingInput`](crate::operation::start_access_logging::StartAccessLoggingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_access_logging::StartAccessLoggingInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_access_logging::StartAccessLoggingInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::start_access_logging::StartAccessLoggingInput {
             container_name: self.container_name,
         })

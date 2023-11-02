@@ -66,7 +66,7 @@ impl CreateInAppTemplateInputBuilder {
     /// Consumes the builder and constructs a [`CreateInAppTemplateInput`](crate::operation::create_in_app_template::CreateInAppTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_in_app_template::CreateInAppTemplateInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_in_app_template::CreateInAppTemplateInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_in_app_template::CreateInAppTemplateInput {
             in_app_template_request: self.in_app_template_request,

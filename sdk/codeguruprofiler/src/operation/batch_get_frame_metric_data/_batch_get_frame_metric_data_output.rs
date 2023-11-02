@@ -232,41 +232,41 @@ impl BatchGetFrameMetricDataOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_frame_metric_data::BatchGetFrameMetricDataOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::batch_get_frame_metric_data::BatchGetFrameMetricDataOutput {
             start_time: self.start_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "start_time",
                     "start_time was not specified but it is required when building BatchGetFrameMetricDataOutput",
                 )
             })?,
             end_time: self.end_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "end_time",
                     "end_time was not specified but it is required when building BatchGetFrameMetricDataOutput",
                 )
             })?,
             resolution: self.resolution.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resolution",
                     "resolution was not specified but it is required when building BatchGetFrameMetricDataOutput",
                 )
             })?,
             end_times: self.end_times.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "end_times",
                     "end_times was not specified but it is required when building BatchGetFrameMetricDataOutput",
                 )
             })?,
             unprocessed_end_times: self.unprocessed_end_times.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "unprocessed_end_times",
                     "unprocessed_end_times was not specified but it is required when building BatchGetFrameMetricDataOutput",
                 )
             })?,
             frame_metric_data: self.frame_metric_data.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "frame_metric_data",
                     "frame_metric_data was not specified but it is required when building BatchGetFrameMetricDataOutput",
                 )

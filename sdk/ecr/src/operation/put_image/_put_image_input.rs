@@ -148,7 +148,7 @@ impl PutImageInputBuilder {
         &self.image_digest
     }
     /// Consumes the builder and constructs a [`PutImageInput`](crate::operation::put_image::PutImageInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_image::PutImageInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_image::PutImageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_image::PutImageInput {
             registry_id: self.registry_id,
             repository_name: self.repository_name,

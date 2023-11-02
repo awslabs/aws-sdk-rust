@@ -245,7 +245,7 @@ impl CreateFleetMetricInputBuilder {
     /// Consumes the builder and constructs a [`CreateFleetMetricInput`](crate::operation::create_fleet_metric::CreateFleetMetricInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_fleet_metric::CreateFleetMetricInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_fleet_metric::CreateFleetMetricInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_fleet_metric::CreateFleetMetricInput {
             metric_name: self.metric_name,
             query_string: self.query_string,

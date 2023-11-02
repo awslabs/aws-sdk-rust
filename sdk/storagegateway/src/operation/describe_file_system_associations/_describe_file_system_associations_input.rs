@@ -53,7 +53,7 @@ impl DescribeFileSystemAssociationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_file_system_associations::DescribeFileSystemAssociationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_file_system_associations::DescribeFileSystemAssociationsInput {
             file_system_association_arn_list: self.file_system_association_arn_list,

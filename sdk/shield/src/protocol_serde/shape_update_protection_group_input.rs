@@ -2,7 +2,7 @@
 pub fn ser_update_protection_group_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_protection_group::UpdateProtectionGroupInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.protection_group_id {
         object.key("ProtectionGroupId").string(var_1.as_str());
     }

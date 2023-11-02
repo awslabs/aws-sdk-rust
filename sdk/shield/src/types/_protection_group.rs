@@ -188,29 +188,29 @@ impl ProtectionGroupBuilder {
     /// - [`aggregation`](crate::types::builders::ProtectionGroupBuilder::aggregation)
     /// - [`pattern`](crate::types::builders::ProtectionGroupBuilder::pattern)
     /// - [`members`](crate::types::builders::ProtectionGroupBuilder::members)
-    pub fn build(self) -> ::std::result::Result<crate::types::ProtectionGroup, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ProtectionGroup, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ProtectionGroup {
             protection_group_id: self.protection_group_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "protection_group_id",
                     "protection_group_id was not specified but it is required when building ProtectionGroup",
                 )
             })?,
             aggregation: self.aggregation.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "aggregation",
                     "aggregation was not specified but it is required when building ProtectionGroup",
                 )
             })?,
             pattern: self.pattern.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "pattern",
                     "pattern was not specified but it is required when building ProtectionGroup",
                 )
             })?,
             resource_type: self.resource_type,
             members: self.members.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "members",
                     "members was not specified but it is required when building ProtectionGroup",
                 )

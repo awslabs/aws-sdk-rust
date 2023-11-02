@@ -3,7 +3,7 @@
 pub fn ser_classic_load_balancers_config(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::ClassicLoadBalancersConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("ClassicLoadBalancers");
     if let Some(var_2) = &input.classic_load_balancers {

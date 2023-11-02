@@ -43,7 +43,7 @@ impl DescribeIdFormatInputBuilder {
     /// Consumes the builder and constructs a [`DescribeIdFormatInput`](crate::operation::describe_id_format::DescribeIdFormatInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_id_format::DescribeIdFormatInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_id_format::DescribeIdFormatInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_id_format::DescribeIdFormatInput { resource: self.resource })
     }
 }

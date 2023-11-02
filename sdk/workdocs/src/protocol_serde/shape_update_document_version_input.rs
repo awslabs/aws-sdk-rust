@@ -2,7 +2,7 @@
 pub fn ser_update_document_version_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_document_version::UpdateDocumentVersionInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.version_status {
         object.key("VersionStatus").string(var_1.as_str());
     }

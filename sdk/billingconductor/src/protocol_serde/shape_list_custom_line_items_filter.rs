@@ -2,7 +2,7 @@
 pub fn ser_list_custom_line_items_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ListCustomLineItemsFilter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.names {
         let mut array_2 = object.key("Names").start_array();
         for item_3 in var_1 {

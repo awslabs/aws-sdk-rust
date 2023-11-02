@@ -117,7 +117,7 @@ impl PutPermissionInputBuilder {
     /// Consumes the builder and constructs a [`PutPermissionInput`](crate::operation::put_permission::PutPermissionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_permission::PutPermissionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_permission::PutPermissionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_permission::PutPermissionInput {
             profiling_group_name: self.profiling_group_name,
             action_group: self.action_group,

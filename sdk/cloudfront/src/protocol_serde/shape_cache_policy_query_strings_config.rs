@@ -2,7 +2,7 @@
 pub fn ser_cache_policy_query_strings_config(
     input: &crate::types::CachePolicyQueryStringsConfig,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     {

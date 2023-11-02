@@ -437,7 +437,7 @@ impl CreateDevEndpointInputBuilder {
     /// Consumes the builder and constructs a [`CreateDevEndpointInput`](crate::operation::create_dev_endpoint::CreateDevEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_dev_endpoint::CreateDevEndpointInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_dev_endpoint::CreateDevEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_dev_endpoint::CreateDevEndpointInput {
             endpoint_name: self.endpoint_name,
             role_arn: self.role_arn,

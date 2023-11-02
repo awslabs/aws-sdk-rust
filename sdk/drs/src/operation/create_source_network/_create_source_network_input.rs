@@ -125,7 +125,7 @@ impl CreateSourceNetworkInputBuilder {
     /// Consumes the builder and constructs a [`CreateSourceNetworkInput`](crate::operation::create_source_network::CreateSourceNetworkInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_source_network::CreateSourceNetworkInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_source_network::CreateSourceNetworkInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_source_network::CreateSourceNetworkInput {
             vpc_id: self.vpc_id,

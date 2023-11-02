@@ -111,12 +111,12 @@ impl UnsupportedResourceBuilder {
     /// Consumes the builder and constructs a [`UnsupportedResource`](crate::types::UnsupportedResource).
     /// This method will fail if any of the following fields are not set:
     /// - [`resource_type`](crate::types::builders::UnsupportedResourceBuilder::resource_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::UnsupportedResource, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::UnsupportedResource, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::UnsupportedResource {
             logical_resource_id: self.logical_resource_id,
             physical_resource_id: self.physical_resource_id,
             resource_type: self.resource_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_type",
                     "resource_type was not specified but it is required when building UnsupportedResource",
                 )

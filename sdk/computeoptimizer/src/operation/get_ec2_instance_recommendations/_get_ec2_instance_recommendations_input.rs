@@ -189,7 +189,7 @@ impl GetEc2InstanceRecommendationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_ec2_instance_recommendations::GetEc2InstanceRecommendationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_ec2_instance_recommendations::GetEc2InstanceRecommendationsInput {
             instance_arns: self.instance_arns,

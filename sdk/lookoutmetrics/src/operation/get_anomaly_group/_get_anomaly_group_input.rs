@@ -66,7 +66,7 @@ impl GetAnomalyGroupInputBuilder {
     /// Consumes the builder and constructs a [`GetAnomalyGroupInput`](crate::operation::get_anomaly_group::GetAnomalyGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_anomaly_group::GetAnomalyGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_anomaly_group::GetAnomalyGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_anomaly_group::GetAnomalyGroupInput {
             anomaly_group_id: self.anomaly_group_id,
             anomaly_detector_arn: self.anomaly_detector_arn,

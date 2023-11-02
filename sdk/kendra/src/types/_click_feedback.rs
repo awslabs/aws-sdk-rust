@@ -69,16 +69,16 @@ impl ClickFeedbackBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`result_id`](crate::types::builders::ClickFeedbackBuilder::result_id)
     /// - [`click_time`](crate::types::builders::ClickFeedbackBuilder::click_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::ClickFeedback, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ClickFeedback, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ClickFeedback {
             result_id: self.result_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "result_id",
                     "result_id was not specified but it is required when building ClickFeedback",
                 )
             })?,
             click_time: self.click_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "click_time",
                     "click_time was not specified but it is required when building ClickFeedback",
                 )

@@ -76,16 +76,16 @@ impl SipMediaApplicationAlexaSkillConfigurationBuilder {
     /// - [`alexa_skill_ids`](crate::types::builders::SipMediaApplicationAlexaSkillConfigurationBuilder::alexa_skill_ids)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::SipMediaApplicationAlexaSkillConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::SipMediaApplicationAlexaSkillConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SipMediaApplicationAlexaSkillConfiguration {
             alexa_skill_status: self.alexa_skill_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "alexa_skill_status",
                     "alexa_skill_status was not specified but it is required when building SipMediaApplicationAlexaSkillConfiguration",
                 )
             })?,
             alexa_skill_ids: self.alexa_skill_ids.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "alexa_skill_ids",
                     "alexa_skill_ids was not specified but it is required when building SipMediaApplicationAlexaSkillConfiguration",
                 )

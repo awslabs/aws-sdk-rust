@@ -249,16 +249,16 @@ impl FoundationModelDetailsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`model_arn`](crate::types::builders::FoundationModelDetailsBuilder::model_arn)
     /// - [`model_id`](crate::types::builders::FoundationModelDetailsBuilder::model_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::FoundationModelDetails, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::FoundationModelDetails, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FoundationModelDetails {
             model_arn: self.model_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "model_arn",
                     "model_arn was not specified but it is required when building FoundationModelDetails",
                 )
             })?,
             model_id: self.model_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "model_id",
                     "model_id was not specified but it is required when building FoundationModelDetails",
                 )

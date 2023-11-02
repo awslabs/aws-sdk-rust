@@ -114,7 +114,7 @@ impl CreateOrderInputBuilder {
         &self.payment_term
     }
     /// Consumes the builder and constructs a [`CreateOrderInput`](crate::operation::create_order::CreateOrderInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_order::CreateOrderInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_order::CreateOrderInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_order::CreateOrderInput {
             outpost_identifier: self.outpost_identifier,
             line_items: self.line_items,

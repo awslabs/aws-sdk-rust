@@ -112,11 +112,11 @@ impl GetExclusionsPreviewOutputBuilder {
     /// - [`preview_status`](crate::operation::get_exclusions_preview::builders::GetExclusionsPreviewOutputBuilder::preview_status)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_exclusions_preview::GetExclusionsPreviewOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_exclusions_preview::GetExclusionsPreviewOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_exclusions_preview::GetExclusionsPreviewOutput {
             preview_status: self.preview_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "preview_status",
                     "preview_status was not specified but it is required when building GetExclusionsPreviewOutput",
                 )

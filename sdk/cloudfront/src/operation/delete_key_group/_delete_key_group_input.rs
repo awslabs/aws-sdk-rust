@@ -65,7 +65,7 @@ impl DeleteKeyGroupInputBuilder {
     /// Consumes the builder and constructs a [`DeleteKeyGroupInput`](crate::operation::delete_key_group::DeleteKeyGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_key_group::DeleteKeyGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_key_group::DeleteKeyGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_key_group::DeleteKeyGroupInput {
             id: self.id,
             if_match: self.if_match,

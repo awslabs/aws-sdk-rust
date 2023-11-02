@@ -180,7 +180,7 @@ impl PutIntegrationInputBuilder {
     /// Consumes the builder and constructs a [`PutIntegrationInput`](crate::operation::put_integration::PutIntegrationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_integration::PutIntegrationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_integration::PutIntegrationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_integration::PutIntegrationInput {
             domain_name: self.domain_name,
             uri: self.uri,

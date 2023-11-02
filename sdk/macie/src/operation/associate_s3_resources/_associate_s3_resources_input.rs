@@ -72,7 +72,7 @@ impl AssociateS3ResourcesInputBuilder {
     /// Consumes the builder and constructs a [`AssociateS3ResourcesInput`](crate::operation::associate_s3_resources::AssociateS3ResourcesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::associate_s3_resources::AssociateS3ResourcesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::associate_s3_resources::AssociateS3ResourcesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::associate_s3_resources::AssociateS3ResourcesInput {
             member_account_id: self.member_account_id,

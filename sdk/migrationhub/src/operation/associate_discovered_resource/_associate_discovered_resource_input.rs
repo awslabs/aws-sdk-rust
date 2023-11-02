@@ -111,7 +111,7 @@ impl AssociateDiscoveredResourceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_discovered_resource::AssociateDiscoveredResourceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::associate_discovered_resource::AssociateDiscoveredResourceInput {
             progress_update_stream: self.progress_update_stream,

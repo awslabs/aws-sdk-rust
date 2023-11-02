@@ -87,10 +87,10 @@ impl ListTagsOutputBuilder {
     /// Consumes the builder and constructs a [`ListTagsOutput`](crate::operation::list_tags::ListTagsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`tag_list`](crate::operation::list_tags::builders::ListTagsOutputBuilder::tag_list)
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_tags::ListTagsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_tags::ListTagsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_tags::ListTagsOutput {
             tag_list: self.tag_list.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "tag_list",
                     "tag_list was not specified but it is required when building ListTagsOutput",
                 )

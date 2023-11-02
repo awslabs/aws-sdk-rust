@@ -278,35 +278,35 @@ impl GetGlossaryOutputBuilder {
     /// - [`owning_project_id`](crate::operation::get_glossary::builders::GetGlossaryOutputBuilder::owning_project_id)
     /// - [`name`](crate::operation::get_glossary::builders::GetGlossaryOutputBuilder::name)
     /// - [`status`](crate::operation::get_glossary::builders::GetGlossaryOutputBuilder::status)
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_glossary::GetGlossaryOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_glossary::GetGlossaryOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_glossary::GetGlossaryOutput {
             domain_id: self.domain_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "domain_id",
                     "domain_id was not specified but it is required when building GetGlossaryOutput",
                 )
             })?,
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building GetGlossaryOutput",
                 )
             })?,
             owning_project_id: self.owning_project_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "owning_project_id",
                     "owning_project_id was not specified but it is required when building GetGlossaryOutput",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building GetGlossaryOutput",
                 )
             })?,
             description: self.description,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building GetGlossaryOutput",
                 )

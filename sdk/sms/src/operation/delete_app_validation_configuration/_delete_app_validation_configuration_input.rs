@@ -46,7 +46,7 @@ impl DeleteAppValidationConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_app_validation_configuration::DeleteAppValidationConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_app_validation_configuration::DeleteAppValidationConfigurationInput { app_id: self.app_id },

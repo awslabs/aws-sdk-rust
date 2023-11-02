@@ -2,7 +2,7 @@
 pub fn ser_batch_update_cluster_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::batch_update_cluster::BatchUpdateClusterInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.cluster_names {
         let mut array_2 = object.key("ClusterNames").start_array();
         for item_3 in var_1 {

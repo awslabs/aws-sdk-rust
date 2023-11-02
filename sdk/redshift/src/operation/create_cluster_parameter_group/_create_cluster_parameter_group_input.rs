@@ -170,7 +170,7 @@ impl CreateClusterParameterGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_cluster_parameter_group::CreateClusterParameterGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_cluster_parameter_group::CreateClusterParameterGroupInput {
             parameter_group_name: self.parameter_group_name,

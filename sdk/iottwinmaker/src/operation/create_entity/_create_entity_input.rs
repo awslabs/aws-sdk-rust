@@ -184,7 +184,9 @@ impl CreateEntityInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateEntityInput`](crate::operation::create_entity::CreateEntityInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_entity::CreateEntityInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_entity::CreateEntityInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_entity::CreateEntityInput {
             workspace_id: self.workspace_id,
             entity_id: self.entity_id,

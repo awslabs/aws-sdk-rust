@@ -44,7 +44,7 @@ impl DescribeSimulationInputBuilder {
     /// Consumes the builder and constructs a [`DescribeSimulationInput`](crate::operation::describe_simulation::DescribeSimulationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_simulation::DescribeSimulationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_simulation::DescribeSimulationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_simulation::DescribeSimulationInput { simulation: self.simulation })
     }
 }

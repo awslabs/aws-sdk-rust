@@ -64,7 +64,7 @@ impl ListResponsePlansInputBuilder {
     /// Consumes the builder and constructs a [`ListResponsePlansInput`](crate::operation::list_response_plans::ListResponsePlansInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_response_plans::ListResponsePlansInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_response_plans::ListResponsePlansInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_response_plans::ListResponsePlansInput {
             max_results: self.max_results,
             next_token: self.next_token,

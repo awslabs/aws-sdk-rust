@@ -2,7 +2,7 @@
 pub fn ser_create_connection_api_key_auth_request_parameters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CreateConnectionApiKeyAuthRequestParameters,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("ApiKeyName").string(input.api_key_name.as_str());
     }

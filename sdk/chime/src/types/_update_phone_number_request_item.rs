@@ -97,10 +97,10 @@ impl UpdatePhoneNumberRequestItemBuilder {
     /// Consumes the builder and constructs a [`UpdatePhoneNumberRequestItem`](crate::types::UpdatePhoneNumberRequestItem).
     /// This method will fail if any of the following fields are not set:
     /// - [`phone_number_id`](crate::types::builders::UpdatePhoneNumberRequestItemBuilder::phone_number_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::UpdatePhoneNumberRequestItem, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::UpdatePhoneNumberRequestItem, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::UpdatePhoneNumberRequestItem {
             phone_number_id: self.phone_number_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "phone_number_id",
                     "phone_number_id was not specified but it is required when building UpdatePhoneNumberRequestItem",
                 )

@@ -6,8 +6,8 @@
 use aws_sdk_s3::operation::get_object::GetObjectError;
 use aws_sdk_s3::operation::{RequestId, RequestIdExt};
 use aws_sdk_s3::{config::Credentials, config::Region, Client, Config};
-use aws_smithy_http::body::SdkBody;
 use aws_smithy_runtime::client::http::test_util::capture_request;
+use aws_smithy_types::body::SdkBody;
 
 #[tokio::test]
 async fn get_request_id_from_modeled_error() {

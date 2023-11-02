@@ -66,7 +66,7 @@ impl DeleteScalingPlanInputBuilder {
     /// Consumes the builder and constructs a [`DeleteScalingPlanInput`](crate::operation::delete_scaling_plan::DeleteScalingPlanInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_scaling_plan::DeleteScalingPlanInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_scaling_plan::DeleteScalingPlanInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_scaling_plan::DeleteScalingPlanInput {
             scaling_plan_name: self.scaling_plan_name,
             scaling_plan_version: self.scaling_plan_version,

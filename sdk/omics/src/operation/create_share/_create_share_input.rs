@@ -85,7 +85,7 @@ impl CreateShareInputBuilder {
         &self.share_name
     }
     /// Consumes the builder and constructs a [`CreateShareInput`](crate::operation::create_share::CreateShareInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_share::CreateShareInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_share::CreateShareInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_share::CreateShareInput {
             resource_arn: self.resource_arn,
             principal_subscriber: self.principal_subscriber,

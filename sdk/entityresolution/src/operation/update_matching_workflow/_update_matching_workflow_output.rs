@@ -211,24 +211,24 @@ impl UpdateMatchingWorkflowOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_matching_workflow::UpdateMatchingWorkflowOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_matching_workflow::UpdateMatchingWorkflowOutput {
             workflow_name: self.workflow_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "workflow_name",
                     "workflow_name was not specified but it is required when building UpdateMatchingWorkflowOutput",
                 )
             })?,
             description: self.description,
             input_source_config: self.input_source_config.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "input_source_config",
                     "input_source_config was not specified but it is required when building UpdateMatchingWorkflowOutput",
                 )
             })?,
             output_source_config: self.output_source_config.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "output_source_config",
                     "output_source_config was not specified but it is required when building UpdateMatchingWorkflowOutput",
                 )
@@ -236,7 +236,7 @@ impl UpdateMatchingWorkflowOutputBuilder {
             resolution_techniques: self.resolution_techniques,
             incremental_run_config: self.incremental_run_config,
             role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role_arn",
                     "role_arn was not specified but it is required when building UpdateMatchingWorkflowOutput",
                 )

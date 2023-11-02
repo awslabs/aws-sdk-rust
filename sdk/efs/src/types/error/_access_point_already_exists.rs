@@ -129,17 +129,17 @@ impl AccessPointAlreadyExistsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`error_code`](crate::types::error::builders::AccessPointAlreadyExistsBuilder::error_code)
     /// - [`access_point_id`](crate::types::error::builders::AccessPointAlreadyExistsBuilder::access_point_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::error::AccessPointAlreadyExists, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::error::AccessPointAlreadyExists, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::error::AccessPointAlreadyExists {
             error_code: self.error_code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "error_code",
                     "error_code was not specified but it is required when building AccessPointAlreadyExists",
                 )
             })?,
             message: self.message,
             access_point_id: self.access_point_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "access_point_id",
                     "access_point_id was not specified but it is required when building AccessPointAlreadyExists",
                 )

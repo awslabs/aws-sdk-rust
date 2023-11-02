@@ -66,7 +66,7 @@ impl UnshareDirectoryInputBuilder {
     /// Consumes the builder and constructs a [`UnshareDirectoryInput`](crate::operation::unshare_directory::UnshareDirectoryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::unshare_directory::UnshareDirectoryInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::unshare_directory::UnshareDirectoryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::unshare_directory::UnshareDirectoryInput {
             directory_id: self.directory_id,
             unshare_target: self.unshare_target,

@@ -115,7 +115,7 @@ impl CreateSkillGroupInputBuilder {
     /// Consumes the builder and constructs a [`CreateSkillGroupInput`](crate::operation::create_skill_group::CreateSkillGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_skill_group::CreateSkillGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_skill_group::CreateSkillGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_skill_group::CreateSkillGroupInput {
             skill_group_name: self.skill_group_name,
             description: self.description,

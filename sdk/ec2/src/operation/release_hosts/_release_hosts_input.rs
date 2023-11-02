@@ -49,7 +49,9 @@ impl ReleaseHostsInputBuilder {
         &self.host_ids
     }
     /// Consumes the builder and constructs a [`ReleaseHostsInput`](crate::operation::release_hosts::ReleaseHostsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::release_hosts::ReleaseHostsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::release_hosts::ReleaseHostsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::release_hosts::ReleaseHostsInput { host_ids: self.host_ids })
     }
 }

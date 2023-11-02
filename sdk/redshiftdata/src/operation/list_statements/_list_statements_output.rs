@@ -89,10 +89,10 @@ impl ListStatementsOutputBuilder {
     /// - [`statements`](crate::operation::list_statements::builders::ListStatementsOutputBuilder::statements)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_statements::ListStatementsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_statements::ListStatementsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_statements::ListStatementsOutput {
             statements: self.statements.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "statements",
                     "statements was not specified but it is required when building ListStatementsOutput",
                 )

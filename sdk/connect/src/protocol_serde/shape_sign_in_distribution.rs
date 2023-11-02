@@ -2,7 +2,7 @@
 pub fn ser_sign_in_distribution(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SignInDistribution,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Region").string(input.region.as_str());
     }

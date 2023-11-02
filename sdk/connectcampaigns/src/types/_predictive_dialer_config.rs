@@ -66,10 +66,10 @@ impl PredictiveDialerConfigBuilder {
     /// Consumes the builder and constructs a [`PredictiveDialerConfig`](crate::types::PredictiveDialerConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`bandwidth_allocation`](crate::types::builders::PredictiveDialerConfigBuilder::bandwidth_allocation)
-    pub fn build(self) -> ::std::result::Result<crate::types::PredictiveDialerConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PredictiveDialerConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PredictiveDialerConfig {
             bandwidth_allocation: self.bandwidth_allocation.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "bandwidth_allocation",
                     "bandwidth_allocation was not specified but it is required when building PredictiveDialerConfig",
                 )

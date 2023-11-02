@@ -114,7 +114,9 @@ impl ListAccountsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListAccountsInput`](crate::operation::list_accounts::ListAccountsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_accounts::ListAccountsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_accounts::ListAccountsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_accounts::ListAccountsInput {
             name: self.name,
             user_email: self.user_email,

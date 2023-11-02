@@ -120,23 +120,23 @@ impl ExchangeCodeForTokenOutputBuilder {
     /// - [`refresh_token`](crate::operation::exchange_code_for_token::builders::ExchangeCodeForTokenOutputBuilder::refresh_token)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::exchange_code_for_token::ExchangeCodeForTokenOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::exchange_code_for_token::ExchangeCodeForTokenOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::exchange_code_for_token::ExchangeCodeForTokenOutput {
             access_token: self.access_token.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "access_token",
                     "access_token was not specified but it is required when building ExchangeCodeForTokenOutput",
                 )
             })?,
             expires_in: self.expires_in.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "expires_in",
                     "expires_in was not specified but it is required when building ExchangeCodeForTokenOutput",
                 )
             })?,
             refresh_token: self.refresh_token.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "refresh_token",
                     "refresh_token was not specified but it is required when building ExchangeCodeForTokenOutput",
                 )

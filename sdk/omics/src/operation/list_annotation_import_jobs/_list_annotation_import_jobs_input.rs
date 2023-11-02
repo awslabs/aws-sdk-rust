@@ -116,7 +116,7 @@ impl ListAnnotationImportJobsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_annotation_import_jobs::ListAnnotationImportJobsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_annotation_import_jobs::ListAnnotationImportJobsInput {
             max_results: self.max_results,

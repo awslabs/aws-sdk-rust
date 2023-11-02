@@ -69,7 +69,7 @@ impl DeleteLoadBalancerPolicyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_load_balancer_policy::DeleteLoadBalancerPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_load_balancer_policy::DeleteLoadBalancerPolicyInput {
             load_balancer_name: self.load_balancer_name,

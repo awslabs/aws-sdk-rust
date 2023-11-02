@@ -63,10 +63,10 @@ impl CreateQuantumTaskOutputBuilder {
     /// - [`quantum_task_arn`](crate::operation::create_quantum_task::builders::CreateQuantumTaskOutputBuilder::quantum_task_arn)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_quantum_task::CreateQuantumTaskOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_quantum_task::CreateQuantumTaskOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_quantum_task::CreateQuantumTaskOutput {
             quantum_task_arn: self.quantum_task_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "quantum_task_arn",
                     "quantum_task_arn was not specified but it is required when building CreateQuantumTaskOutput",
                 )

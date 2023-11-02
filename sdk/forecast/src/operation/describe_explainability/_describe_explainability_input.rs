@@ -44,7 +44,7 @@ impl DescribeExplainabilityInputBuilder {
     /// Consumes the builder and constructs a [`DescribeExplainabilityInput`](crate::operation::describe_explainability::DescribeExplainabilityInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_explainability::DescribeExplainabilityInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_explainability::DescribeExplainabilityInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_explainability::DescribeExplainabilityInput {
             explainability_arn: self.explainability_arn,

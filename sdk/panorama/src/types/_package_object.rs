@@ -94,22 +94,22 @@ impl PackageObjectBuilder {
     /// - [`name`](crate::types::builders::PackageObjectBuilder::name)
     /// - [`package_version`](crate::types::builders::PackageObjectBuilder::package_version)
     /// - [`patch_version`](crate::types::builders::PackageObjectBuilder::patch_version)
-    pub fn build(self) -> ::std::result::Result<crate::types::PackageObject, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PackageObject, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PackageObject {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building PackageObject",
                 )
             })?,
             package_version: self.package_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "package_version",
                     "package_version was not specified but it is required when building PackageObject",
                 )
             })?,
             patch_version: self.patch_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "patch_version",
                     "patch_version was not specified but it is required when building PackageObject",
                 )

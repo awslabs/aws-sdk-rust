@@ -144,7 +144,7 @@ impl DescribeKeywordsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeKeywordsInput`](crate::operation::describe_keywords::DescribeKeywordsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_keywords::DescribeKeywordsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_keywords::DescribeKeywordsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_keywords::DescribeKeywordsInput {
             origination_identity: self.origination_identity,
             keywords: self.keywords,

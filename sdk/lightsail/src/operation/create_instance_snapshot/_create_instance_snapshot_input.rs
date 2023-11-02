@@ -100,8 +100,10 @@ impl CreateInstanceSnapshotInputBuilder {
     /// Consumes the builder and constructs a [`CreateInstanceSnapshotInput`](crate::operation::create_instance_snapshot::CreateInstanceSnapshotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_instance_snapshot::CreateInstanceSnapshotInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::create_instance_snapshot::CreateInstanceSnapshotInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::create_instance_snapshot::CreateInstanceSnapshotInput {
             instance_snapshot_name: self.instance_snapshot_name,
             instance_name: self.instance_name,

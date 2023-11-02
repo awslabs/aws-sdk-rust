@@ -2,7 +2,7 @@
 pub fn ser_virtual_node_http_connection_pool(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VirtualNodeHttpConnectionPool,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("maxConnections").number(
             #[allow(clippy::useless_conversion)]

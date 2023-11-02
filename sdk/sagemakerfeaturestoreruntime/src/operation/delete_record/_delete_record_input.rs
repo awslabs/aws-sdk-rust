@@ -136,7 +136,9 @@ impl DeleteRecordInputBuilder {
         &self.deletion_mode
     }
     /// Consumes the builder and constructs a [`DeleteRecordInput`](crate::operation::delete_record::DeleteRecordInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_record::DeleteRecordInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_record::DeleteRecordInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_record::DeleteRecordInput {
             feature_group_name: self.feature_group_name,
             record_identifier_value_as_string: self.record_identifier_value_as_string,

@@ -44,7 +44,7 @@ impl DeleteAcceleratorInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAcceleratorInput`](crate::operation::delete_accelerator::DeleteAcceleratorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_accelerator::DeleteAcceleratorInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_accelerator::DeleteAcceleratorInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_accelerator::DeleteAcceleratorInput {
             accelerator_arn: self.accelerator_arn,
         })

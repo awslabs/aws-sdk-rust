@@ -296,7 +296,7 @@ impl GetExperimentResultsInputBuilder {
     /// Consumes the builder and constructs a [`GetExperimentResultsInput`](crate::operation::get_experiment_results::GetExperimentResultsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_experiment_results::GetExperimentResultsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_experiment_results::GetExperimentResultsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_experiment_results::GetExperimentResultsInput {
             project: self.project,

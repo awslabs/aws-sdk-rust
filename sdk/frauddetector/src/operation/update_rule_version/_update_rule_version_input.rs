@@ -179,7 +179,7 @@ impl UpdateRuleVersionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateRuleVersionInput`](crate::operation::update_rule_version::UpdateRuleVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_rule_version::UpdateRuleVersionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_rule_version::UpdateRuleVersionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_rule_version::UpdateRuleVersionInput {
             rule: self.rule,
             description: self.description,

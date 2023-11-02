@@ -176,7 +176,7 @@ impl CreateRunGroupInputBuilder {
     /// Consumes the builder and constructs a [`CreateRunGroupInput`](crate::operation::create_run_group::CreateRunGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_run_group::CreateRunGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_run_group::CreateRunGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_run_group::CreateRunGroupInput {
             name: self.name,
             max_cpus: self.max_cpus,

@@ -72,10 +72,10 @@ impl StopActionBuilder {
     /// Consumes the builder and constructs a [`StopAction`](crate::types::StopAction).
     /// This method will fail if any of the following fields are not set:
     /// - [`scope`](crate::types::builders::StopActionBuilder::scope)
-    pub fn build(self) -> ::std::result::Result<crate::types::StopAction, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::StopAction, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::StopAction {
             scope: self.scope.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "scope",
                     "scope was not specified but it is required when building StopAction",
                 )

@@ -66,7 +66,7 @@ impl CreateSmsTemplateInputBuilder {
     /// Consumes the builder and constructs a [`CreateSmsTemplateInput`](crate::operation::create_sms_template::CreateSmsTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_sms_template::CreateSmsTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_sms_template::CreateSmsTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_sms_template::CreateSmsTemplateInput {
             sms_template_request: self.sms_template_request,
             template_name: self.template_name,

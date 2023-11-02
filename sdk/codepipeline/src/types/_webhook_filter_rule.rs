@@ -67,10 +67,10 @@ impl WebhookFilterRuleBuilder {
     /// Consumes the builder and constructs a [`WebhookFilterRule`](crate::types::WebhookFilterRule).
     /// This method will fail if any of the following fields are not set:
     /// - [`json_path`](crate::types::builders::WebhookFilterRuleBuilder::json_path)
-    pub fn build(self) -> ::std::result::Result<crate::types::WebhookFilterRule, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::WebhookFilterRule, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::WebhookFilterRule {
             json_path: self.json_path.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "json_path",
                     "json_path was not specified but it is required when building WebhookFilterRule",
                 )

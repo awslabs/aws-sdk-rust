@@ -73,7 +73,7 @@ impl AttachTrafficSourcesInputBuilder {
     /// Consumes the builder and constructs a [`AttachTrafficSourcesInput`](crate::operation::attach_traffic_sources::AttachTrafficSourcesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::attach_traffic_sources::AttachTrafficSourcesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::attach_traffic_sources::AttachTrafficSourcesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::attach_traffic_sources::AttachTrafficSourcesInput {
             auto_scaling_group_name: self.auto_scaling_group_name,

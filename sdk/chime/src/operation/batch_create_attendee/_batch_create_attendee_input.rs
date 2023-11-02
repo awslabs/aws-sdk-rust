@@ -73,7 +73,7 @@ impl BatchCreateAttendeeInputBuilder {
     /// Consumes the builder and constructs a [`BatchCreateAttendeeInput`](crate::operation::batch_create_attendee::BatchCreateAttendeeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_create_attendee::BatchCreateAttendeeInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::batch_create_attendee::BatchCreateAttendeeInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::batch_create_attendee::BatchCreateAttendeeInput {
             meeting_id: self.meeting_id,

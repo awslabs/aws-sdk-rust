@@ -2,7 +2,7 @@
 pub fn ser_endpoint_attributes(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EndpointAttributes,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("DeviceToken").string(input.device_token.as_str());
     }

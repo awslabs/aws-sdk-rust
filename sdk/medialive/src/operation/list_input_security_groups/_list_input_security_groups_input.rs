@@ -67,7 +67,7 @@ impl ListInputSecurityGroupsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_input_security_groups::ListInputSecurityGroupsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_input_security_groups::ListInputSecurityGroupsInput {
             max_results: self.max_results,

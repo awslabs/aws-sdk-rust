@@ -111,7 +111,7 @@ impl DescribeNotificationsForBudgetInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_notifications_for_budget::DescribeNotificationsForBudgetInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_notifications_for_budget::DescribeNotificationsForBudgetInput {
             account_id: self.account_id,

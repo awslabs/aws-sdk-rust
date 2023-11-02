@@ -415,7 +415,7 @@ impl CalculateRouteMatrixInputBuilder {
     /// Consumes the builder and constructs a [`CalculateRouteMatrixInput`](crate::operation::calculate_route_matrix::CalculateRouteMatrixInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::calculate_route_matrix::CalculateRouteMatrixInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::calculate_route_matrix::CalculateRouteMatrixInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::calculate_route_matrix::CalculateRouteMatrixInput {
             calculator_name: self.calculator_name,

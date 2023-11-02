@@ -2,7 +2,7 @@
 pub fn ser_user_group_resolution_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UserGroupResolutionConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("UserGroupResolutionMode").string(input.user_group_resolution_mode.as_str());
     }

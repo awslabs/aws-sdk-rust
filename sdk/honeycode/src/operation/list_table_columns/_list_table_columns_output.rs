@@ -110,10 +110,10 @@ impl ListTableColumnsOutputBuilder {
     /// - [`table_columns`](crate::operation::list_table_columns::builders::ListTableColumnsOutputBuilder::table_columns)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_table_columns::ListTableColumnsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_table_columns::ListTableColumnsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_table_columns::ListTableColumnsOutput {
             table_columns: self.table_columns.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "table_columns",
                     "table_columns was not specified but it is required when building ListTableColumnsOutput",
                 )

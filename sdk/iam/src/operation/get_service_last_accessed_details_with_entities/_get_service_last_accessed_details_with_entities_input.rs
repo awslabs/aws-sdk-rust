@@ -121,7 +121,7 @@ impl GetServiceLastAccessedDetailsWithEntitiesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_service_last_accessed_details_with_entities::GetServiceLastAccessedDetailsWithEntitiesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_service_last_accessed_details_with_entities::GetServiceLastAccessedDetailsWithEntitiesInput {

@@ -104,17 +104,17 @@ impl LoggingEnabledBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`target_bucket`](crate::types::builders::LoggingEnabledBuilder::target_bucket)
     /// - [`target_prefix`](crate::types::builders::LoggingEnabledBuilder::target_prefix)
-    pub fn build(self) -> ::std::result::Result<crate::types::LoggingEnabled, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::LoggingEnabled, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::LoggingEnabled {
             target_bucket: self.target_bucket.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "target_bucket",
                     "target_bucket was not specified but it is required when building LoggingEnabled",
                 )
             })?,
             target_grants: self.target_grants,
             target_prefix: self.target_prefix.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "target_prefix",
                     "target_prefix was not specified but it is required when building LoggingEnabled",
                 )

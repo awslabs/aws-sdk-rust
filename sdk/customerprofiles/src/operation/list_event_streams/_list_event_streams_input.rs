@@ -86,7 +86,7 @@ impl ListEventStreamsInputBuilder {
     /// Consumes the builder and constructs a [`ListEventStreamsInput`](crate::operation::list_event_streams::ListEventStreamsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_event_streams::ListEventStreamsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_event_streams::ListEventStreamsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_event_streams::ListEventStreamsInput {
             domain_name: self.domain_name,
             next_token: self.next_token,

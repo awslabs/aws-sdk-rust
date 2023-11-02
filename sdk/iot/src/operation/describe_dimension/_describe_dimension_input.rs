@@ -44,7 +44,7 @@ impl DescribeDimensionInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDimensionInput`](crate::operation::describe_dimension::DescribeDimensionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_dimension::DescribeDimensionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_dimension::DescribeDimensionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_dimension::DescribeDimensionInput { name: self.name })
     }
 }

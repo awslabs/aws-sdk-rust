@@ -107,7 +107,7 @@ impl MergeShardsInputBuilder {
         &self.stream_arn
     }
     /// Consumes the builder and constructs a [`MergeShardsInput`](crate::operation::merge_shards::MergeShardsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::merge_shards::MergeShardsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::merge_shards::MergeShardsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::merge_shards::MergeShardsInput {
             stream_name: self.stream_name,
             shard_to_merge: self.shard_to_merge,

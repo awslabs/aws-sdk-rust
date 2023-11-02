@@ -86,7 +86,7 @@ impl StopAppInputBuilder {
         &self.app
     }
     /// Consumes the builder and constructs a [`StopAppInput`](crate::operation::stop_app::StopAppInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::stop_app::StopAppInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_app::StopAppInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_app::StopAppInput {
             simulation: self.simulation,
             domain: self.domain,

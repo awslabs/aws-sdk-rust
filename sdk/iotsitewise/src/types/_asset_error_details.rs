@@ -93,22 +93,22 @@ impl AssetErrorDetailsBuilder {
     /// - [`asset_id`](crate::types::builders::AssetErrorDetailsBuilder::asset_id)
     /// - [`code`](crate::types::builders::AssetErrorDetailsBuilder::code)
     /// - [`message`](crate::types::builders::AssetErrorDetailsBuilder::message)
-    pub fn build(self) -> ::std::result::Result<crate::types::AssetErrorDetails, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AssetErrorDetails, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AssetErrorDetails {
             asset_id: self.asset_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "asset_id",
                     "asset_id was not specified but it is required when building AssetErrorDetails",
                 )
             })?,
             code: self.code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "code",
                     "code was not specified but it is required when building AssetErrorDetails",
                 )
             })?,
             message: self.message.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "message",
                     "message was not specified but it is required when building AssetErrorDetails",
                 )

@@ -130,7 +130,9 @@ impl ListNetworksInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListNetworksInput`](crate::operation::list_networks::ListNetworksInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_networks::ListNetworksInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_networks::ListNetworksInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_networks::ListNetworksInput {
             name: self.name,
             framework: self.framework,

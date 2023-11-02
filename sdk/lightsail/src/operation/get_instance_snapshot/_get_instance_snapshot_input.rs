@@ -44,7 +44,7 @@ impl GetInstanceSnapshotInputBuilder {
     /// Consumes the builder and constructs a [`GetInstanceSnapshotInput`](crate::operation::get_instance_snapshot::GetInstanceSnapshotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_instance_snapshot::GetInstanceSnapshotInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_instance_snapshot::GetInstanceSnapshotInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_instance_snapshot::GetInstanceSnapshotInput {
             instance_snapshot_name: self.instance_snapshot_name,

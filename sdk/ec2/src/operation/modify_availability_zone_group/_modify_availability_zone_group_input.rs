@@ -89,7 +89,7 @@ impl ModifyAvailabilityZoneGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_availability_zone_group::ModifyAvailabilityZoneGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::modify_availability_zone_group::ModifyAvailabilityZoneGroupInput {
             group_name: self.group_name,

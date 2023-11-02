@@ -107,10 +107,10 @@ impl VdmAttributesBuilder {
     /// Consumes the builder and constructs a [`VdmAttributes`](crate::types::VdmAttributes).
     /// This method will fail if any of the following fields are not set:
     /// - [`vdm_enabled`](crate::types::builders::VdmAttributesBuilder::vdm_enabled)
-    pub fn build(self) -> ::std::result::Result<crate::types::VdmAttributes, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::VdmAttributes, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::VdmAttributes {
             vdm_enabled: self.vdm_enabled.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "vdm_enabled",
                     "vdm_enabled was not specified but it is required when building VdmAttributes",
                 )

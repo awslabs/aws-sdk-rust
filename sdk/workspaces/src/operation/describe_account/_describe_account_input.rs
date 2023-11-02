@@ -18,7 +18,7 @@ impl DescribeAccountInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAccountInput`](crate::operation::describe_account::DescribeAccountInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_account::DescribeAccountInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_account::DescribeAccountInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_account::DescribeAccountInput {})
     }
 }

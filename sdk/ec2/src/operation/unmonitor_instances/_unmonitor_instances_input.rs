@@ -72,7 +72,7 @@ impl UnmonitorInstancesInputBuilder {
     /// Consumes the builder and constructs a [`UnmonitorInstancesInput`](crate::operation::unmonitor_instances::UnmonitorInstancesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::unmonitor_instances::UnmonitorInstancesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::unmonitor_instances::UnmonitorInstancesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::unmonitor_instances::UnmonitorInstancesInput {
             instance_ids: self.instance_ids,
             dry_run: self.dry_run,

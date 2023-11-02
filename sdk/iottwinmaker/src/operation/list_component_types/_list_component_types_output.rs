@@ -134,17 +134,17 @@ impl ListComponentTypesOutputBuilder {
     /// - [`component_type_summaries`](crate::operation::list_component_types::builders::ListComponentTypesOutputBuilder::component_type_summaries)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_component_types::ListComponentTypesOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_component_types::ListComponentTypesOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_component_types::ListComponentTypesOutput {
             workspace_id: self.workspace_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "workspace_id",
                     "workspace_id was not specified but it is required when building ListComponentTypesOutput",
                 )
             })?,
             component_type_summaries: self.component_type_summaries.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "component_type_summaries",
                     "component_type_summaries was not specified but it is required when building ListComponentTypesOutput",
                 )

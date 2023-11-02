@@ -95,7 +95,7 @@ impl CreateCodeRepositoryInputBuilder {
     /// Consumes the builder and constructs a [`CreateCodeRepositoryInput`](crate::operation::create_code_repository::CreateCodeRepositoryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_code_repository::CreateCodeRepositoryInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_code_repository::CreateCodeRepositoryInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_code_repository::CreateCodeRepositoryInput {
             code_repository_name: self.code_repository_name,

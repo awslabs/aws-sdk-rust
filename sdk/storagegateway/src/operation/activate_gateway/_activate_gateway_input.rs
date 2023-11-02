@@ -247,7 +247,7 @@ impl ActivateGatewayInputBuilder {
     /// Consumes the builder and constructs a [`ActivateGatewayInput`](crate::operation::activate_gateway::ActivateGatewayInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::activate_gateway::ActivateGatewayInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::activate_gateway::ActivateGatewayInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::activate_gateway::ActivateGatewayInput {
             activation_key: self.activation_key,
             gateway_name: self.gateway_name,

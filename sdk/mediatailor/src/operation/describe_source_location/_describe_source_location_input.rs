@@ -44,8 +44,10 @@ impl DescribeSourceLocationInputBuilder {
     /// Consumes the builder and constructs a [`DescribeSourceLocationInput`](crate::operation::describe_source_location::DescribeSourceLocationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_source_location::DescribeSourceLocationInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::describe_source_location::DescribeSourceLocationInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::describe_source_location::DescribeSourceLocationInput {
             source_location_name: self.source_location_name,
         })

@@ -46,7 +46,7 @@ impl DeleteStateMachineVersionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_state_machine_version::DeleteStateMachineVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_state_machine_version::DeleteStateMachineVersionInput {
             state_machine_version_arn: self.state_machine_version_arn,

@@ -196,7 +196,7 @@ impl GetPackageVersionReadmeInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_package_version_readme::GetPackageVersionReadmeInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_package_version_readme::GetPackageVersionReadmeInput {
             domain: self.domain,

@@ -150,7 +150,7 @@ impl ListConstraintsForPortfolioInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_constraints_for_portfolio::ListConstraintsForPortfolioInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_constraints_for_portfolio::ListConstraintsForPortfolioInput {
             accept_language: self.accept_language,

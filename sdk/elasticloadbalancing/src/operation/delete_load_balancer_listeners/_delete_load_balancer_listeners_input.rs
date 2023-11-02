@@ -76,7 +76,7 @@ impl DeleteLoadBalancerListenersInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_load_balancer_listeners::DeleteLoadBalancerListenersInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_load_balancer_listeners::DeleteLoadBalancerListenersInput {
             load_balancer_name: self.load_balancer_name,

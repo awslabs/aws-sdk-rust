@@ -2,7 +2,7 @@
 pub fn ser_client_side_timestamps(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ClientSideTimestamps,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("status").string(input.status.as_str());
     }

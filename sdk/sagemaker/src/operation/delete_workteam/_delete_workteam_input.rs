@@ -44,7 +44,7 @@ impl DeleteWorkteamInputBuilder {
     /// Consumes the builder and constructs a [`DeleteWorkteamInput`](crate::operation::delete_workteam::DeleteWorkteamInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_workteam::DeleteWorkteamInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_workteam::DeleteWorkteamInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_workteam::DeleteWorkteamInput {
             workteam_name: self.workteam_name,
         })

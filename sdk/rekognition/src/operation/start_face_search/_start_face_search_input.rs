@@ -150,7 +150,7 @@ impl StartFaceSearchInputBuilder {
     /// Consumes the builder and constructs a [`StartFaceSearchInput`](crate::operation::start_face_search::StartFaceSearchInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_face_search::StartFaceSearchInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_face_search::StartFaceSearchInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_face_search::StartFaceSearchInput {
             video: self.video,
             client_request_token: self.client_request_token,

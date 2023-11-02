@@ -44,7 +44,7 @@ impl GetEventStreamInputBuilder {
     /// Consumes the builder and constructs a [`GetEventStreamInput`](crate::operation::get_event_stream::GetEventStreamInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_event_stream::GetEventStreamInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_event_stream::GetEventStreamInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_event_stream::GetEventStreamInput {
             application_id: self.application_id,
         })

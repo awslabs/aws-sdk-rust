@@ -122,16 +122,16 @@ impl MarketoConnectorProfileCredentialsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`client_id`](crate::types::builders::MarketoConnectorProfileCredentialsBuilder::client_id)
     /// - [`client_secret`](crate::types::builders::MarketoConnectorProfileCredentialsBuilder::client_secret)
-    pub fn build(self) -> ::std::result::Result<crate::types::MarketoConnectorProfileCredentials, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::MarketoConnectorProfileCredentials, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MarketoConnectorProfileCredentials {
             client_id: self.client_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "client_id",
                     "client_id was not specified but it is required when building MarketoConnectorProfileCredentials",
                 )
             })?,
             client_secret: self.client_secret.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "client_secret",
                     "client_secret was not specified but it is required when building MarketoConnectorProfileCredentials",
                 )

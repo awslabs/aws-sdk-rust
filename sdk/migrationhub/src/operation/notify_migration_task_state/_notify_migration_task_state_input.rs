@@ -155,7 +155,7 @@ impl NotifyMigrationTaskStateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::notify_migration_task_state::NotifyMigrationTaskStateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::notify_migration_task_state::NotifyMigrationTaskStateInput {
             progress_update_stream: self.progress_update_stream,

@@ -163,23 +163,23 @@ impl OptionStatusBuilder {
     /// - [`creation_date`](crate::types::builders::OptionStatusBuilder::creation_date)
     /// - [`update_date`](crate::types::builders::OptionStatusBuilder::update_date)
     /// - [`state`](crate::types::builders::OptionStatusBuilder::state)
-    pub fn build(self) -> ::std::result::Result<crate::types::OptionStatus, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::OptionStatus, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::OptionStatus {
             creation_date: self.creation_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_date",
                     "creation_date was not specified but it is required when building OptionStatus",
                 )
             })?,
             update_date: self.update_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "update_date",
                     "update_date was not specified but it is required when building OptionStatus",
                 )
             })?,
             update_version: self.update_version.unwrap_or_default(),
             state: self.state.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "state",
                     "state was not specified but it is required when building OptionStatus",
                 )

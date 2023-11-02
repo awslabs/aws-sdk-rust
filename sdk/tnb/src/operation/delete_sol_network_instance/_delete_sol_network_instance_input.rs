@@ -46,7 +46,7 @@ impl DeleteSolNetworkInstanceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_sol_network_instance::DeleteSolNetworkInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_sol_network_instance::DeleteSolNetworkInstanceInput {
             ns_instance_id: self.ns_instance_id,

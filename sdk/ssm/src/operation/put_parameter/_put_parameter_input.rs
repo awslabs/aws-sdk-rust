@@ -593,7 +593,9 @@ impl PutParameterInputBuilder {
         &self.data_type
     }
     /// Consumes the builder and constructs a [`PutParameterInput`](crate::operation::put_parameter::PutParameterInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_parameter::PutParameterInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::put_parameter::PutParameterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_parameter::PutParameterInput {
             name: self.name,
             description: self.description,

@@ -42,7 +42,7 @@ impl DeleteCrlInputBuilder {
         &self.crl_id
     }
     /// Consumes the builder and constructs a [`DeleteCrlInput`](crate::operation::delete_crl::DeleteCrlInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_crl::DeleteCrlInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_crl::DeleteCrlInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_crl::DeleteCrlInput { crl_id: self.crl_id })
     }
 }

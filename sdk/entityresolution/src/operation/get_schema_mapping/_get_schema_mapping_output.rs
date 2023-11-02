@@ -233,42 +233,42 @@ impl GetSchemaMappingOutputBuilder {
     /// - [`has_workflows`](crate::operation::get_schema_mapping::builders::GetSchemaMappingOutputBuilder::has_workflows)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_schema_mapping::GetSchemaMappingOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_schema_mapping::GetSchemaMappingOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_schema_mapping::GetSchemaMappingOutput {
             schema_name: self.schema_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "schema_name",
                     "schema_name was not specified but it is required when building GetSchemaMappingOutput",
                 )
             })?,
             schema_arn: self.schema_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "schema_arn",
                     "schema_arn was not specified but it is required when building GetSchemaMappingOutput",
                 )
             })?,
             description: self.description,
             mapped_input_fields: self.mapped_input_fields.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "mapped_input_fields",
                     "mapped_input_fields was not specified but it is required when building GetSchemaMappingOutput",
                 )
             })?,
             created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
                     "created_at was not specified but it is required when building GetSchemaMappingOutput",
                 )
             })?,
             updated_at: self.updated_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "updated_at",
                     "updated_at was not specified but it is required when building GetSchemaMappingOutput",
                 )
             })?,
             tags: self.tags,
             has_workflows: self.has_workflows.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "has_workflows",
                     "has_workflows was not specified but it is required when building GetSchemaMappingOutput",
                 )

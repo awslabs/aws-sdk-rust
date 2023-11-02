@@ -64,7 +64,7 @@ impl DeleteViewInputBuilder {
         &self.view_id
     }
     /// Consumes the builder and constructs a [`DeleteViewInput`](crate::operation::delete_view::DeleteViewInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_view::DeleteViewInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_view::DeleteViewInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_view::DeleteViewInput {
             instance_id: self.instance_id,
             view_id: self.view_id,

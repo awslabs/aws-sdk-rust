@@ -142,22 +142,22 @@ impl CostCategorySplitChargeRuleBuilder {
     /// - [`source`](crate::types::builders::CostCategorySplitChargeRuleBuilder::source)
     /// - [`targets`](crate::types::builders::CostCategorySplitChargeRuleBuilder::targets)
     /// - [`method`](crate::types::builders::CostCategorySplitChargeRuleBuilder::method)
-    pub fn build(self) -> ::std::result::Result<crate::types::CostCategorySplitChargeRule, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CostCategorySplitChargeRule, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CostCategorySplitChargeRule {
             source: self.source.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source",
                     "source was not specified but it is required when building CostCategorySplitChargeRule",
                 )
             })?,
             targets: self.targets.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "targets",
                     "targets was not specified but it is required when building CostCategorySplitChargeRule",
                 )
             })?,
             method: self.method.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "method",
                     "method was not specified but it is required when building CostCategorySplitChargeRule",
                 )

@@ -187,28 +187,28 @@ impl AssessmentRunAgentBuilder {
     /// - [`agent_health`](crate::types::builders::AssessmentRunAgentBuilder::agent_health)
     /// - [`agent_health_code`](crate::types::builders::AssessmentRunAgentBuilder::agent_health_code)
     /// - [`telemetry_metadata`](crate::types::builders::AssessmentRunAgentBuilder::telemetry_metadata)
-    pub fn build(self) -> ::std::result::Result<crate::types::AssessmentRunAgent, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AssessmentRunAgent, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AssessmentRunAgent {
             agent_id: self.agent_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "agent_id",
                     "agent_id was not specified but it is required when building AssessmentRunAgent",
                 )
             })?,
             assessment_run_arn: self.assessment_run_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "assessment_run_arn",
                     "assessment_run_arn was not specified but it is required when building AssessmentRunAgent",
                 )
             })?,
             agent_health: self.agent_health.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "agent_health",
                     "agent_health was not specified but it is required when building AssessmentRunAgent",
                 )
             })?,
             agent_health_code: self.agent_health_code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "agent_health_code",
                     "agent_health_code was not specified but it is required when building AssessmentRunAgent",
                 )
@@ -216,7 +216,7 @@ impl AssessmentRunAgentBuilder {
             agent_health_details: self.agent_health_details,
             auto_scaling_group: self.auto_scaling_group,
             telemetry_metadata: self.telemetry_metadata.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "telemetry_metadata",
                     "telemetry_metadata was not specified but it is required when building AssessmentRunAgent",
                 )

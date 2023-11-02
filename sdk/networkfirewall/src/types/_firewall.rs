@@ -305,24 +305,24 @@ impl FirewallBuilder {
     /// - [`vpc_id`](crate::types::builders::FirewallBuilder::vpc_id)
     /// - [`subnet_mappings`](crate::types::builders::FirewallBuilder::subnet_mappings)
     /// - [`firewall_id`](crate::types::builders::FirewallBuilder::firewall_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::Firewall, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Firewall, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Firewall {
             firewall_name: self.firewall_name,
             firewall_arn: self.firewall_arn,
             firewall_policy_arn: self.firewall_policy_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "firewall_policy_arn",
                     "firewall_policy_arn was not specified but it is required when building Firewall",
                 )
             })?,
             vpc_id: self.vpc_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "vpc_id",
                     "vpc_id was not specified but it is required when building Firewall",
                 )
             })?,
             subnet_mappings: self.subnet_mappings.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "subnet_mappings",
                     "subnet_mappings was not specified but it is required when building Firewall",
                 )
@@ -332,7 +332,7 @@ impl FirewallBuilder {
             firewall_policy_change_protection: self.firewall_policy_change_protection.unwrap_or_default(),
             description: self.description,
             firewall_id: self.firewall_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "firewall_id",
                     "firewall_id was not specified but it is required when building Firewall",
                 )

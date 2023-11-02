@@ -43,7 +43,8 @@ impl StopAppReplicationInputBuilder {
     /// Consumes the builder and constructs a [`StopAppReplicationInput`](crate::operation::stop_app_replication::StopAppReplicationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_app_replication::StopAppReplicationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::stop_app_replication::StopAppReplicationInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::stop_app_replication::StopAppReplicationInput { app_id: self.app_id })
     }
 }

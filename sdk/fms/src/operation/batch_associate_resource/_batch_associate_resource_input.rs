@@ -73,8 +73,10 @@ impl BatchAssociateResourceInputBuilder {
     /// Consumes the builder and constructs a [`BatchAssociateResourceInput`](crate::operation::batch_associate_resource::BatchAssociateResourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_associate_resource::BatchAssociateResourceInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::batch_associate_resource::BatchAssociateResourceInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::batch_associate_resource::BatchAssociateResourceInput {
             resource_set_identifier: self.resource_set_identifier,
             items: self.items,

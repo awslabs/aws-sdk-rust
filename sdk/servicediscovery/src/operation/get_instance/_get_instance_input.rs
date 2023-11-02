@@ -64,7 +64,7 @@ impl GetInstanceInputBuilder {
         &self.instance_id
     }
     /// Consumes the builder and constructs a [`GetInstanceInput`](crate::operation::get_instance::GetInstanceInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_instance::GetInstanceInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_instance::GetInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_instance::GetInstanceInput {
             service_id: self.service_id,
             instance_id: self.instance_id,

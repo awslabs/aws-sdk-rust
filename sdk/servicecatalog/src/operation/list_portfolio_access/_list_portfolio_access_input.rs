@@ -148,7 +148,7 @@ impl ListPortfolioAccessInputBuilder {
     /// Consumes the builder and constructs a [`ListPortfolioAccessInput`](crate::operation::list_portfolio_access::ListPortfolioAccessInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_portfolio_access::ListPortfolioAccessInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_portfolio_access::ListPortfolioAccessInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_portfolio_access::ListPortfolioAccessInput {
             accept_language: self.accept_language,

@@ -44,7 +44,7 @@ impl DeletePlaybackKeyPairInputBuilder {
     /// Consumes the builder and constructs a [`DeletePlaybackKeyPairInput`](crate::operation::delete_playback_key_pair::DeletePlaybackKeyPairInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_playback_key_pair::DeletePlaybackKeyPairInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_playback_key_pair::DeletePlaybackKeyPairInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_playback_key_pair::DeletePlaybackKeyPairInput { arn: self.arn })
     }

@@ -149,11 +149,11 @@ impl CalculateRouteMatrixOutputBuilder {
     /// - [`route_matrix`](crate::operation::calculate_route_matrix::builders::CalculateRouteMatrixOutputBuilder::route_matrix)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::calculate_route_matrix::CalculateRouteMatrixOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::calculate_route_matrix::CalculateRouteMatrixOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::calculate_route_matrix::CalculateRouteMatrixOutput {
             route_matrix: self.route_matrix.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "route_matrix",
                     "route_matrix was not specified but it is required when building CalculateRouteMatrixOutput",
                 )

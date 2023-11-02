@@ -175,10 +175,10 @@ impl InputUpdateBuilder {
     /// Consumes the builder and constructs a [`InputUpdate`](crate::types::InputUpdate).
     /// This method will fail if any of the following fields are not set:
     /// - [`input_id`](crate::types::builders::InputUpdateBuilder::input_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::InputUpdate, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::InputUpdate, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::InputUpdate {
             input_id: self.input_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "input_id",
                     "input_id was not specified but it is required when building InputUpdate",
                 )

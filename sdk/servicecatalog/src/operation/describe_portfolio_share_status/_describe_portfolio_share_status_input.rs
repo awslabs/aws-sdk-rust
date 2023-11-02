@@ -46,7 +46,7 @@ impl DescribePortfolioShareStatusInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_portfolio_share_status::DescribePortfolioShareStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_portfolio_share_status::DescribePortfolioShareStatusInput {
             portfolio_share_token: self.portfolio_share_token,

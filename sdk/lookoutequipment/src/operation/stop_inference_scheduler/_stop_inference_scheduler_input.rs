@@ -44,8 +44,10 @@ impl StopInferenceSchedulerInputBuilder {
     /// Consumes the builder and constructs a [`StopInferenceSchedulerInput`](crate::operation::stop_inference_scheduler::StopInferenceSchedulerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_inference_scheduler::StopInferenceSchedulerInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::stop_inference_scheduler::StopInferenceSchedulerInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::stop_inference_scheduler::StopInferenceSchedulerInput {
             inference_scheduler_name: self.inference_scheduler_name,
         })

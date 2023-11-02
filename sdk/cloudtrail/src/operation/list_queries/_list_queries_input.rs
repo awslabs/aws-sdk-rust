@@ -147,7 +147,7 @@ impl ListQueriesInputBuilder {
         &self.query_status
     }
     /// Consumes the builder and constructs a [`ListQueriesInput`](crate::operation::list_queries::ListQueriesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_queries::ListQueriesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_queries::ListQueriesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_queries::ListQueriesInput {
             event_data_store: self.event_data_store,
             next_token: self.next_token,

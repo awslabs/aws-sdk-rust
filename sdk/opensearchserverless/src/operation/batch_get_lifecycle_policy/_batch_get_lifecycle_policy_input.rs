@@ -53,7 +53,7 @@ impl BatchGetLifecyclePolicyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_lifecycle_policy::BatchGetLifecyclePolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::batch_get_lifecycle_policy::BatchGetLifecyclePolicyInput {
             identifiers: self.identifiers,

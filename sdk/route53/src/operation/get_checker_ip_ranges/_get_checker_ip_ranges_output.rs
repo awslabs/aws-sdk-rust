@@ -69,11 +69,11 @@ impl GetCheckerIpRangesOutputBuilder {
     /// - [`checker_ip_ranges`](crate::operation::get_checker_ip_ranges::builders::GetCheckerIpRangesOutputBuilder::checker_ip_ranges)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_checker_ip_ranges::GetCheckerIpRangesOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_checker_ip_ranges::GetCheckerIpRangesOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_checker_ip_ranges::GetCheckerIpRangesOutput {
             checker_ip_ranges: self.checker_ip_ranges.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "checker_ip_ranges",
                     "checker_ip_ranges was not specified but it is required when building GetCheckerIpRangesOutput",
                 )

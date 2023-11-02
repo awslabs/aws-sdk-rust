@@ -86,7 +86,7 @@ impl ListApprovedOriginsInputBuilder {
     /// Consumes the builder and constructs a [`ListApprovedOriginsInput`](crate::operation::list_approved_origins::ListApprovedOriginsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_approved_origins::ListApprovedOriginsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_approved_origins::ListApprovedOriginsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_approved_origins::ListApprovedOriginsInput {
             instance_id: self.instance_id,

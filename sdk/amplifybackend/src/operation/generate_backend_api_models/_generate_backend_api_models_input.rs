@@ -91,7 +91,7 @@ impl GenerateBackendApiModelsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::generate_backend_api_models::GenerateBackendApiModelsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::generate_backend_api_models::GenerateBackendApiModelsInput {
             app_id: self.app_id,

@@ -70,7 +70,7 @@ impl PutVoiceConnectorEmergencyCallingConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_voice_connector_emergency_calling_configuration::PutVoiceConnectorEmergencyCallingConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::put_voice_connector_emergency_calling_configuration::PutVoiceConnectorEmergencyCallingConfigurationInput {

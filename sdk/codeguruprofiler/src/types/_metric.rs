@@ -98,22 +98,22 @@ impl MetricBuilder {
     /// - [`frame_name`](crate::types::builders::MetricBuilder::frame_name)
     /// - [`r#type`](crate::types::builders::MetricBuilder::r#type)
     /// - [`thread_states`](crate::types::builders::MetricBuilder::thread_states)
-    pub fn build(self) -> ::std::result::Result<crate::types::Metric, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Metric, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Metric {
             frame_name: self.frame_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "frame_name",
                     "frame_name was not specified but it is required when building Metric",
                 )
             })?,
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building Metric",
                 )
             })?,
             thread_states: self.thread_states.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "thread_states",
                     "thread_states was not specified but it is required when building Metric",
                 )

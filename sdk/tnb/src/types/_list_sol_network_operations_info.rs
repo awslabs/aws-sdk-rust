@@ -182,34 +182,34 @@ impl ListSolNetworkOperationsInfoBuilder {
     /// - [`operation_state`](crate::types::builders::ListSolNetworkOperationsInfoBuilder::operation_state)
     /// - [`ns_instance_id`](crate::types::builders::ListSolNetworkOperationsInfoBuilder::ns_instance_id)
     /// - [`lcm_operation_type`](crate::types::builders::ListSolNetworkOperationsInfoBuilder::lcm_operation_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::ListSolNetworkOperationsInfo, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ListSolNetworkOperationsInfo, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ListSolNetworkOperationsInfo {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building ListSolNetworkOperationsInfo",
                 )
             })?,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building ListSolNetworkOperationsInfo",
                 )
             })?,
             operation_state: self.operation_state.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "operation_state",
                     "operation_state was not specified but it is required when building ListSolNetworkOperationsInfo",
                 )
             })?,
             ns_instance_id: self.ns_instance_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "ns_instance_id",
                     "ns_instance_id was not specified but it is required when building ListSolNetworkOperationsInfo",
                 )
             })?,
             lcm_operation_type: self.lcm_operation_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "lcm_operation_type",
                     "lcm_operation_type was not specified but it is required when building ListSolNetworkOperationsInfo",
                 )

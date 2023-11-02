@@ -181,10 +181,10 @@ impl Ec2InstanceAggregationResponseBuilder {
     /// Consumes the builder and constructs a [`Ec2InstanceAggregationResponse`](crate::types::Ec2InstanceAggregationResponse).
     /// This method will fail if any of the following fields are not set:
     /// - [`instance_id`](crate::types::builders::Ec2InstanceAggregationResponseBuilder::instance_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::Ec2InstanceAggregationResponse, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Ec2InstanceAggregationResponse, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Ec2InstanceAggregationResponse {
             instance_id: self.instance_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "instance_id",
                     "instance_id was not specified but it is required when building Ec2InstanceAggregationResponse",
                 )

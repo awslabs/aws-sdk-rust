@@ -162,10 +162,10 @@ pub fn de_admin_update_auth_event_feedback_http_response(
 
 pub fn ser_admin_update_auth_event_feedback_input(
     input: &crate::operation::admin_update_auth_event_feedback::AdminUpdateAuthEventFeedbackInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_admin_update_auth_event_feedback_input::ser_admin_update_auth_event_feedback_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

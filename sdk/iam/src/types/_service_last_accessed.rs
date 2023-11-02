@@ -217,17 +217,17 @@ impl ServiceLastAccessedBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`service_name`](crate::types::builders::ServiceLastAccessedBuilder::service_name)
     /// - [`service_namespace`](crate::types::builders::ServiceLastAccessedBuilder::service_namespace)
-    pub fn build(self) -> ::std::result::Result<crate::types::ServiceLastAccessed, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ServiceLastAccessed, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ServiceLastAccessed {
             service_name: self.service_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "service_name",
                     "service_name was not specified but it is required when building ServiceLastAccessed",
                 )
             })?,
             last_authenticated: self.last_authenticated,
             service_namespace: self.service_namespace.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "service_namespace",
                     "service_namespace was not specified but it is required when building ServiceLastAccessed",
                 )

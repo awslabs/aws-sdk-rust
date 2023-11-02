@@ -74,7 +74,7 @@ impl SubmitAttachmentStateChangesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::submit_attachment_state_changes::SubmitAttachmentStateChangesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::submit_attachment_state_changes::SubmitAttachmentStateChangesInput {
             cluster: self.cluster,

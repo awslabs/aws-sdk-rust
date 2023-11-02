@@ -44,7 +44,7 @@ impl DeleteRotationInputBuilder {
     /// Consumes the builder and constructs a [`DeleteRotationInput`](crate::operation::delete_rotation::DeleteRotationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_rotation::DeleteRotationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_rotation::DeleteRotationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_rotation::DeleteRotationInput {
             rotation_id: self.rotation_id,
         })

@@ -69,16 +69,16 @@ impl StatelessRuleGroupReferenceBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`resource_arn`](crate::types::builders::StatelessRuleGroupReferenceBuilder::resource_arn)
     /// - [`priority`](crate::types::builders::StatelessRuleGroupReferenceBuilder::priority)
-    pub fn build(self) -> ::std::result::Result<crate::types::StatelessRuleGroupReference, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::StatelessRuleGroupReference, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::StatelessRuleGroupReference {
             resource_arn: self.resource_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_arn",
                     "resource_arn was not specified but it is required when building StatelessRuleGroupReference",
                 )
             })?,
             priority: self.priority.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "priority",
                     "priority was not specified but it is required when building StatelessRuleGroupReference",
                 )

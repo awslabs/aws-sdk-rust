@@ -87,8 +87,10 @@ impl DescribeVirtualServiceInputBuilder {
     /// Consumes the builder and constructs a [`DescribeVirtualServiceInput`](crate::operation::describe_virtual_service::DescribeVirtualServiceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_virtual_service::DescribeVirtualServiceInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::describe_virtual_service::DescribeVirtualServiceInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::describe_virtual_service::DescribeVirtualServiceInput {
             virtual_service_name: self.virtual_service_name,
             mesh_name: self.mesh_name,

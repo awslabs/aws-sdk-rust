@@ -92,7 +92,7 @@ impl PollForActivityTaskInputBuilder {
     /// Consumes the builder and constructs a [`PollForActivityTaskInput`](crate::operation::poll_for_activity_task::PollForActivityTaskInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::poll_for_activity_task::PollForActivityTaskInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::poll_for_activity_task::PollForActivityTaskInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::poll_for_activity_task::PollForActivityTaskInput {
             domain: self.domain,

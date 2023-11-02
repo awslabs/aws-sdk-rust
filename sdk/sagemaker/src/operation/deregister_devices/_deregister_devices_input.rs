@@ -73,7 +73,7 @@ impl DeregisterDevicesInputBuilder {
     /// Consumes the builder and constructs a [`DeregisterDevicesInput`](crate::operation::deregister_devices::DeregisterDevicesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::deregister_devices::DeregisterDevicesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::deregister_devices::DeregisterDevicesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::deregister_devices::DeregisterDevicesInput {
             device_fleet_name: self.device_fleet_name,
             device_names: self.device_names,

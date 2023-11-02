@@ -139,7 +139,9 @@ impl AttachVolumeInputBuilder {
         &self.disk_id
     }
     /// Consumes the builder and constructs a [`AttachVolumeInput`](crate::operation::attach_volume::AttachVolumeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::attach_volume::AttachVolumeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::attach_volume::AttachVolumeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::attach_volume::AttachVolumeInput {
             gateway_arn: self.gateway_arn,
             target_name: self.target_name,

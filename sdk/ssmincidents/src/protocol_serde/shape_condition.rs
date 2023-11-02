@@ -2,7 +2,7 @@
 pub fn ser_condition(
     object_2: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Condition,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::Condition::Before(inner) => {
             object_2
@@ -20,7 +20,7 @@ pub fn ser_condition(
             crate::protocol_serde::shape_attribute_value_list::ser_attribute_value_list(&mut object_1, inner)?;
             object_1.finish();
         }
-        crate::types::Condition::Unknown => return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant("Condition")),
+        crate::types::Condition::Unknown => return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("Condition")),
     }
     Ok(())
 }

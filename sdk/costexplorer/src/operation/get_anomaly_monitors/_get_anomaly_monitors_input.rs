@@ -93,7 +93,8 @@ impl GetAnomalyMonitorsInputBuilder {
     /// Consumes the builder and constructs a [`GetAnomalyMonitorsInput`](crate::operation::get_anomaly_monitors::GetAnomalyMonitorsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_anomaly_monitors::GetAnomalyMonitorsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_anomaly_monitors::GetAnomalyMonitorsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::get_anomaly_monitors::GetAnomalyMonitorsInput {
             monitor_arn_list: self.monitor_arn_list,
             next_page_token: self.next_page_token,

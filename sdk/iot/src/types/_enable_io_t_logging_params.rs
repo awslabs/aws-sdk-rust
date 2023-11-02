@@ -69,16 +69,16 @@ impl EnableIoTLoggingParamsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`role_arn_for_logging`](crate::types::builders::EnableIoTLoggingParamsBuilder::role_arn_for_logging)
     /// - [`log_level`](crate::types::builders::EnableIoTLoggingParamsBuilder::log_level)
-    pub fn build(self) -> ::std::result::Result<crate::types::EnableIoTLoggingParams, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::EnableIoTLoggingParams, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EnableIoTLoggingParams {
             role_arn_for_logging: self.role_arn_for_logging.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role_arn_for_logging",
                     "role_arn_for_logging was not specified but it is required when building EnableIoTLoggingParams",
                 )
             })?,
             log_level: self.log_level.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "log_level",
                     "log_level was not specified but it is required when building EnableIoTLoggingParams",
                 )

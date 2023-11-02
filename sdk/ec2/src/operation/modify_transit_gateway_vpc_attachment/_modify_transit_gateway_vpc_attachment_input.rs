@@ -146,7 +146,7 @@ impl ModifyTransitGatewayVpcAttachmentInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_transit_gateway_vpc_attachment::ModifyTransitGatewayVpcAttachmentInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::modify_transit_gateway_vpc_attachment::ModifyTransitGatewayVpcAttachmentInput {

@@ -179,7 +179,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for RemoveFacetF
             fn uri_base(
                 _input: &crate::operation::remove_facet_from_object::RemoveFacetFromObjectInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 use ::std::fmt::Write as _;
                 ::std::write!(output, "/amazonclouddirectory/2017-01-11/object/facets/delete").expect("formatting should succeed");
                 ::std::result::Result::Ok(())
@@ -188,7 +188,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for RemoveFacetF
             fn update_http_builder(
                 input: &crate::operation::remove_facet_from_object::RemoveFacetFromObjectInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::protocol_serde::shape_remove_facet_from_object::ser_remove_facet_from_object_headers(input, builder)?;
@@ -198,9 +198,9 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for RemoveFacetF
             builder = _header_serialization_settings.set_default_header(builder, ::http::header::CONTENT_TYPE, "application/json");
             builder
         };
-        let body = ::aws_smithy_http::body::SdkBody::from(crate::protocol_serde::shape_remove_facet_from_object::ser_remove_facet_from_object_input(
-            &input,
-        )?);
+        let body = ::aws_smithy_types::body::SdkBody::from(
+            crate::protocol_serde::shape_remove_facet_from_object::ser_remove_facet_from_object_input(&input)?,
+        );
         if let Some(content_length) = body.content_length() {
             let content_length = content_length.to_string();
             request_builder = _header_serialization_settings.set_default_header(request_builder, ::http::header::CONTENT_LENGTH, &content_length);

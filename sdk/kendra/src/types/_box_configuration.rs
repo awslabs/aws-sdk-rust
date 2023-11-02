@@ -389,16 +389,16 @@ impl BoxConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`enterprise_id`](crate::types::builders::BoxConfigurationBuilder::enterprise_id)
     /// - [`secret_arn`](crate::types::builders::BoxConfigurationBuilder::secret_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::BoxConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::BoxConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::BoxConfiguration {
             enterprise_id: self.enterprise_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "enterprise_id",
                     "enterprise_id was not specified but it is required when building BoxConfiguration",
                 )
             })?,
             secret_arn: self.secret_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "secret_arn",
                     "secret_arn was not specified but it is required when building BoxConfiguration",
                 )

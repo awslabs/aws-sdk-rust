@@ -91,12 +91,12 @@ impl ListServicePipelineOutputsOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_service_pipeline_outputs::ListServicePipelineOutputsOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_service_pipeline_outputs::ListServicePipelineOutputsOutput {
             next_token: self.next_token,
             outputs: self.outputs.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "outputs",
                     "outputs was not specified but it is required when building ListServicePipelineOutputsOutput",
                 )

@@ -67,7 +67,7 @@ impl ExtendLicenseConsumptionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::extend_license_consumption::ExtendLicenseConsumptionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::extend_license_consumption::ExtendLicenseConsumptionInput {
             license_consumption_token: self.license_consumption_token,

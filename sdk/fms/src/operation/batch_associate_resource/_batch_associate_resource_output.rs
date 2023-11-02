@@ -94,17 +94,17 @@ impl BatchAssociateResourceOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_associate_resource::BatchAssociateResourceOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::batch_associate_resource::BatchAssociateResourceOutput {
             resource_set_identifier: self.resource_set_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_set_identifier",
                     "resource_set_identifier was not specified but it is required when building BatchAssociateResourceOutput",
                 )
             })?,
             failed_items: self.failed_items.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "failed_items",
                     "failed_items was not specified but it is required when building BatchAssociateResourceOutput",
                 )

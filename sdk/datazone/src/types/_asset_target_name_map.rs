@@ -70,16 +70,16 @@ impl AssetTargetNameMapBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`asset_id`](crate::types::builders::AssetTargetNameMapBuilder::asset_id)
     /// - [`target_name`](crate::types::builders::AssetTargetNameMapBuilder::target_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::AssetTargetNameMap, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AssetTargetNameMap, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AssetTargetNameMap {
             asset_id: self.asset_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "asset_id",
                     "asset_id was not specified but it is required when building AssetTargetNameMap",
                 )
             })?,
             target_name: self.target_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "target_name",
                     "target_name was not specified but it is required when building AssetTargetNameMap",
                 )

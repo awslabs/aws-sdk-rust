@@ -45,7 +45,7 @@ impl DeleteMountTargetInputBuilder {
     /// Consumes the builder and constructs a [`DeleteMountTargetInput`](crate::operation::delete_mount_target::DeleteMountTargetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_mount_target::DeleteMountTargetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_mount_target::DeleteMountTargetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_mount_target::DeleteMountTargetInput {
             mount_target_id: self.mount_target_id,
         })

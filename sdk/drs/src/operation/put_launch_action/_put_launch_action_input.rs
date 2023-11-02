@@ -272,7 +272,7 @@ impl PutLaunchActionInputBuilder {
     /// Consumes the builder and constructs a [`PutLaunchActionInput`](crate::operation::put_launch_action::PutLaunchActionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_launch_action::PutLaunchActionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_launch_action::PutLaunchActionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_launch_action::PutLaunchActionInput {
             resource_id: self.resource_id,
             action_code: self.action_code,

@@ -67,11 +67,11 @@ impl SegmentBuilder {
     /// Consumes the builder and constructs a [`Segment`](crate::types::Segment).
     /// This method will fail if any of the following fields are not set:
     /// - [`total_segments`](crate::types::builders::SegmentBuilder::total_segments)
-    pub fn build(self) -> ::std::result::Result<crate::types::Segment, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Segment, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Segment {
             segment_number: self.segment_number.unwrap_or_default(),
             total_segments: self.total_segments.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "total_segments",
                     "total_segments was not specified but it is required when building Segment",
                 )

@@ -44,7 +44,7 @@ impl DetachStaticIpInputBuilder {
     /// Consumes the builder and constructs a [`DetachStaticIpInput`](crate::operation::detach_static_ip::DetachStaticIpInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::detach_static_ip::DetachStaticIpInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::detach_static_ip::DetachStaticIpInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::detach_static_ip::DetachStaticIpInput {
             static_ip_name: self.static_ip_name,
         })

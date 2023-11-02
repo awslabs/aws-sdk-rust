@@ -2,7 +2,7 @@
 pub fn ser_pipe_target_state_machine_parameters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PipeTargetStateMachineParameters,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.invocation_type {
         object.key("InvocationType").string(var_1.as_str());
     }

@@ -113,7 +113,7 @@ impl StartSourceNetworkRecoveryInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_source_network_recovery::StartSourceNetworkRecoveryInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_source_network_recovery::StartSourceNetworkRecoveryInput {
             source_networks: self.source_networks,

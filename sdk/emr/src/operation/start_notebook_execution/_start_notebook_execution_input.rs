@@ -297,8 +297,10 @@ impl StartNotebookExecutionInputBuilder {
     /// Consumes the builder and constructs a [`StartNotebookExecutionInput`](crate::operation::start_notebook_execution::StartNotebookExecutionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_notebook_execution::StartNotebookExecutionInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::start_notebook_execution::StartNotebookExecutionInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::start_notebook_execution::StartNotebookExecutionInput {
             editor_id: self.editor_id,
             relative_path: self.relative_path,

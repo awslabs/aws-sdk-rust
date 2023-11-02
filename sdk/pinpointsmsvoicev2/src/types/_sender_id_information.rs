@@ -147,34 +147,34 @@ impl SenderIdInformationBuilder {
     /// - [`iso_country_code`](crate::types::builders::SenderIdInformationBuilder::iso_country_code)
     /// - [`message_types`](crate::types::builders::SenderIdInformationBuilder::message_types)
     /// - [`monthly_leasing_price`](crate::types::builders::SenderIdInformationBuilder::monthly_leasing_price)
-    pub fn build(self) -> ::std::result::Result<crate::types::SenderIdInformation, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SenderIdInformation, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SenderIdInformation {
             sender_id_arn: self.sender_id_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "sender_id_arn",
                     "sender_id_arn was not specified but it is required when building SenderIdInformation",
                 )
             })?,
             sender_id: self.sender_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "sender_id",
                     "sender_id was not specified but it is required when building SenderIdInformation",
                 )
             })?,
             iso_country_code: self.iso_country_code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "iso_country_code",
                     "iso_country_code was not specified but it is required when building SenderIdInformation",
                 )
             })?,
             message_types: self.message_types.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "message_types",
                     "message_types was not specified but it is required when building SenderIdInformation",
                 )
             })?,
             monthly_leasing_price: self.monthly_leasing_price.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "monthly_leasing_price",
                     "monthly_leasing_price was not specified but it is required when building SenderIdInformation",
                 )

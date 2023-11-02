@@ -2,7 +2,7 @@
 pub fn ser_package_origin_restrictions(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PackageOriginRestrictions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("publish").string(input.publish.as_str());
     }

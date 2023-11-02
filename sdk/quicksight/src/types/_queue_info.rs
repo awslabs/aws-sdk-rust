@@ -70,16 +70,16 @@ impl QueueInfoBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`waiting_on_ingestion`](crate::types::builders::QueueInfoBuilder::waiting_on_ingestion)
     /// - [`queued_ingestion`](crate::types::builders::QueueInfoBuilder::queued_ingestion)
-    pub fn build(self) -> ::std::result::Result<crate::types::QueueInfo, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::QueueInfo, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::QueueInfo {
             waiting_on_ingestion: self.waiting_on_ingestion.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "waiting_on_ingestion",
                     "waiting_on_ingestion was not specified but it is required when building QueueInfo",
                 )
             })?,
             queued_ingestion: self.queued_ingestion.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "queued_ingestion",
                     "queued_ingestion was not specified but it is required when building QueueInfo",
                 )

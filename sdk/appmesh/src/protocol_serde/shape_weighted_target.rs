@@ -2,7 +2,7 @@
 pub fn ser_weighted_target(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::WeightedTarget,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("virtualNode").string(input.virtual_node.as_str());
     }

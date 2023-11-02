@@ -90,7 +90,7 @@ impl PutAccessPointPolicyForObjectLambdaInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_access_point_policy_for_object_lambda::PutAccessPointPolicyForObjectLambdaInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::put_access_point_policy_for_object_lambda::PutAccessPointPolicyForObjectLambdaInput {

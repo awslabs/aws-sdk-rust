@@ -44,7 +44,7 @@ impl DeleteKnowledgeBaseInputBuilder {
     /// Consumes the builder and constructs a [`DeleteKnowledgeBaseInput`](crate::operation::delete_knowledge_base::DeleteKnowledgeBaseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_knowledge_base::DeleteKnowledgeBaseInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_knowledge_base::DeleteKnowledgeBaseInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_knowledge_base::DeleteKnowledgeBaseInput {
             knowledge_base_id: self.knowledge_base_id,

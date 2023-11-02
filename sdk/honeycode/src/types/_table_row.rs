@@ -75,16 +75,16 @@ impl TableRowBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`row_id`](crate::types::builders::TableRowBuilder::row_id)
     /// - [`cells`](crate::types::builders::TableRowBuilder::cells)
-    pub fn build(self) -> ::std::result::Result<crate::types::TableRow, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TableRow, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TableRow {
             row_id: self.row_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "row_id",
                     "row_id was not specified but it is required when building TableRow",
                 )
             })?,
             cells: self.cells.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "cells",
                     "cells was not specified but it is required when building TableRow",
                 )

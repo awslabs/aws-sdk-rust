@@ -117,12 +117,12 @@ pub fn de_calculate_route_matrix_http_response(
 
 pub fn ser_calculate_route_matrix_input(
     input: &crate::operation::calculate_route_matrix::CalculateRouteMatrixInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_calculate_route_matrix_input::ser_calculate_route_matrix_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_calculate_route_matrix(

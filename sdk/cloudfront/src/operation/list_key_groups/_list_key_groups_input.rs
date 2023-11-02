@@ -64,7 +64,7 @@ impl ListKeyGroupsInputBuilder {
     /// Consumes the builder and constructs a [`ListKeyGroupsInput`](crate::operation::list_key_groups::ListKeyGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_key_groups::ListKeyGroupsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_key_groups::ListKeyGroupsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_key_groups::ListKeyGroupsInput {
             marker: self.marker,
             max_items: self.max_items,

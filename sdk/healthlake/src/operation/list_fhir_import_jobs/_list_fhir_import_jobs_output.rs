@@ -89,11 +89,11 @@ impl ListFhirImportJobsOutputBuilder {
     /// - [`import_job_properties_list`](crate::operation::list_fhir_import_jobs::builders::ListFhirImportJobsOutputBuilder::import_job_properties_list)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_fhir_import_jobs::ListFhirImportJobsOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_fhir_import_jobs::ListFhirImportJobsOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_fhir_import_jobs::ListFhirImportJobsOutput {
             import_job_properties_list: self.import_job_properties_list.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "import_job_properties_list",
                     "import_job_properties_list was not specified but it is required when building ListFhirImportJobsOutput",
                 )

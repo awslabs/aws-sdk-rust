@@ -68,16 +68,16 @@ impl ResourceConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`compute_type`](crate::types::builders::ResourceConfigurationBuilder::compute_type)
     /// - [`volume_size_in_gb`](crate::types::builders::ResourceConfigurationBuilder::volume_size_in_gb)
-    pub fn build(self) -> ::std::result::Result<crate::types::ResourceConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ResourceConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ResourceConfiguration {
             compute_type: self.compute_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "compute_type",
                     "compute_type was not specified but it is required when building ResourceConfiguration",
                 )
             })?,
             volume_size_in_gb: self.volume_size_in_gb.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "volume_size_in_gb",
                     "volume_size_in_gb was not specified but it is required when building ResourceConfiguration",
                 )

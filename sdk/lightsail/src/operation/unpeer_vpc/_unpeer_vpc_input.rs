@@ -16,7 +16,7 @@ impl UnpeerVpcInput {
 pub struct UnpeerVpcInputBuilder {}
 impl UnpeerVpcInputBuilder {
     /// Consumes the builder and constructs a [`UnpeerVpcInput`](crate::operation::unpeer_vpc::UnpeerVpcInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::unpeer_vpc::UnpeerVpcInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::unpeer_vpc::UnpeerVpcInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::unpeer_vpc::UnpeerVpcInput {})
     }
 }

@@ -134,23 +134,23 @@ impl ConformancePackEvaluationResultBuilder {
     /// - [`compliance_type`](crate::types::builders::ConformancePackEvaluationResultBuilder::compliance_type)
     /// - [`config_rule_invoked_time`](crate::types::builders::ConformancePackEvaluationResultBuilder::config_rule_invoked_time)
     /// - [`result_recorded_time`](crate::types::builders::ConformancePackEvaluationResultBuilder::result_recorded_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::ConformancePackEvaluationResult, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ConformancePackEvaluationResult, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ConformancePackEvaluationResult {
             compliance_type: self.compliance_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "compliance_type",
                     "compliance_type was not specified but it is required when building ConformancePackEvaluationResult",
                 )
             })?,
             evaluation_result_identifier: self.evaluation_result_identifier,
             config_rule_invoked_time: self.config_rule_invoked_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "config_rule_invoked_time",
                     "config_rule_invoked_time was not specified but it is required when building ConformancePackEvaluationResult",
                 )
             })?,
             result_recorded_time: self.result_recorded_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "result_recorded_time",
                     "result_recorded_time was not specified but it is required when building ConformancePackEvaluationResult",
                 )

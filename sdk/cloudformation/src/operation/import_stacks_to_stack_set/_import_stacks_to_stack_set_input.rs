@@ -223,7 +223,7 @@ impl ImportStacksToStackSetInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::import_stacks_to_stack_set::ImportStacksToStackSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::import_stacks_to_stack_set::ImportStacksToStackSetInput {
             stack_set_name: self.stack_set_name,

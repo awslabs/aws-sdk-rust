@@ -2,7 +2,7 @@
 pub fn ser_ancillary_source_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AncillarySourceSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.convert608_to708 {
         object.key("convert608To708").string(var_1.as_str());
     }

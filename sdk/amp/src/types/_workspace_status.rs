@@ -45,10 +45,10 @@ impl WorkspaceStatusBuilder {
     /// Consumes the builder and constructs a [`WorkspaceStatus`](crate::types::WorkspaceStatus).
     /// This method will fail if any of the following fields are not set:
     /// - [`status_code`](crate::types::builders::WorkspaceStatusBuilder::status_code)
-    pub fn build(self) -> ::std::result::Result<crate::types::WorkspaceStatus, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::WorkspaceStatus, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::WorkspaceStatus {
             status_code: self.status_code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status_code",
                     "status_code was not specified but it is required when building WorkspaceStatus",
                 )

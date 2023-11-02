@@ -111,16 +111,16 @@ impl QuantumTaskQueueInfoBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`queue`](crate::types::builders::QuantumTaskQueueInfoBuilder::queue)
     /// - [`position`](crate::types::builders::QuantumTaskQueueInfoBuilder::position)
-    pub fn build(self) -> ::std::result::Result<crate::types::QuantumTaskQueueInfo, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::QuantumTaskQueueInfo, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::QuantumTaskQueueInfo {
             queue: self.queue.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "queue",
                     "queue was not specified but it is required when building QuantumTaskQueueInfo",
                 )
             })?,
             position: self.position.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "position",
                     "position was not specified but it is required when building QuantumTaskQueueInfo",
                 )

@@ -201,7 +201,7 @@ impl DescribeBlueGreenDeploymentsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_blue_green_deployments::DescribeBlueGreenDeploymentsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_blue_green_deployments::DescribeBlueGreenDeploymentsInput {
             blue_green_deployment_identifier: self.blue_green_deployment_identifier,

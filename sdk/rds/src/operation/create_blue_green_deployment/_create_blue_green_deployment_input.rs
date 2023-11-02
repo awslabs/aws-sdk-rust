@@ -242,7 +242,7 @@ impl CreateBlueGreenDeploymentInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentInput {
             blue_green_deployment_name: self.blue_green_deployment_name,

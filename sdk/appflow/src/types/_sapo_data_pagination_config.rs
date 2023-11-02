@@ -45,10 +45,10 @@ impl SapoDataPaginationConfigBuilder {
     /// Consumes the builder and constructs a [`SapoDataPaginationConfig`](crate::types::SapoDataPaginationConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`max_page_size`](crate::types::builders::SapoDataPaginationConfigBuilder::max_page_size)
-    pub fn build(self) -> ::std::result::Result<crate::types::SapoDataPaginationConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SapoDataPaginationConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SapoDataPaginationConfig {
             max_page_size: self.max_page_size.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "max_page_size",
                     "max_page_size was not specified but it is required when building SapoDataPaginationConfig",
                 )

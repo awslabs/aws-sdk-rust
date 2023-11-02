@@ -116,8 +116,10 @@ impl UpdateFindingsFeedbackInputBuilder {
     /// Consumes the builder and constructs a [`UpdateFindingsFeedbackInput`](crate::operation::update_findings_feedback::UpdateFindingsFeedbackInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_findings_feedback::UpdateFindingsFeedbackInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::update_findings_feedback::UpdateFindingsFeedbackInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::update_findings_feedback::UpdateFindingsFeedbackInput {
             detector_id: self.detector_id,
             finding_ids: self.finding_ids,

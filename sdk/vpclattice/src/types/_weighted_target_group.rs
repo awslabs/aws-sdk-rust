@@ -67,10 +67,10 @@ impl WeightedTargetGroupBuilder {
     /// Consumes the builder and constructs a [`WeightedTargetGroup`](crate::types::WeightedTargetGroup).
     /// This method will fail if any of the following fields are not set:
     /// - [`target_group_identifier`](crate::types::builders::WeightedTargetGroupBuilder::target_group_identifier)
-    pub fn build(self) -> ::std::result::Result<crate::types::WeightedTargetGroup, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::WeightedTargetGroup, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::WeightedTargetGroup {
             target_group_identifier: self.target_group_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "target_group_identifier",
                     "target_group_identifier was not specified but it is required when building WeightedTargetGroup",
                 )

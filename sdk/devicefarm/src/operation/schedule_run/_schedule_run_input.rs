@@ -196,7 +196,7 @@ impl ScheduleRunInputBuilder {
         &self.execution_configuration
     }
     /// Consumes the builder and constructs a [`ScheduleRunInput`](crate::operation::schedule_run::ScheduleRunInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::schedule_run::ScheduleRunInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::schedule_run::ScheduleRunInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::schedule_run::ScheduleRunInput {
             project_arn: self.project_arn,
             app_arn: self.app_arn,

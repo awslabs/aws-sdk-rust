@@ -2,7 +2,7 @@
 pub fn ser_batch_start_viewer_session_revocation_viewer_session(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BatchStartViewerSessionRevocationViewerSession,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("channelArn").string(input.channel_arn.as_str());
     }

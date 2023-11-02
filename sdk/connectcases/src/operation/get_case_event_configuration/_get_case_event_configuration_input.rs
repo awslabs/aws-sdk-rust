@@ -46,7 +46,7 @@ impl GetCaseEventConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_case_event_configuration::GetCaseEventConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_case_event_configuration::GetCaseEventConfigurationInput { domain_id: self.domain_id })
     }

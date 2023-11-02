@@ -71,7 +71,7 @@ impl UpdateVtlDeviceTypeInputBuilder {
     /// Consumes the builder and constructs a [`UpdateVtlDeviceTypeInput`](crate::operation::update_vtl_device_type::UpdateVtlDeviceTypeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_vtl_device_type::UpdateVtlDeviceTypeInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_vtl_device_type::UpdateVtlDeviceTypeInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_vtl_device_type::UpdateVtlDeviceTypeInput {
             vtl_device_arn: self.vtl_device_arn,

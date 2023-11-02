@@ -84,16 +84,16 @@ impl CancelQueryOutputBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`query_id`](crate::operation::cancel_query::builders::CancelQueryOutputBuilder::query_id)
     /// - [`query_status`](crate::operation::cancel_query::builders::CancelQueryOutputBuilder::query_status)
-    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_query::CancelQueryOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::cancel_query::CancelQueryOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::cancel_query::CancelQueryOutput {
             query_id: self.query_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "query_id",
                     "query_id was not specified but it is required when building CancelQueryOutput",
                 )
             })?,
             query_status: self.query_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "query_status",
                     "query_status was not specified but it is required when building CancelQueryOutput",
                 )

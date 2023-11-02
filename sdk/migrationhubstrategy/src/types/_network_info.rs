@@ -118,28 +118,28 @@ impl NetworkInfoBuilder {
     /// - [`ip_address`](crate::types::builders::NetworkInfoBuilder::ip_address)
     /// - [`mac_address`](crate::types::builders::NetworkInfoBuilder::mac_address)
     /// - [`net_mask`](crate::types::builders::NetworkInfoBuilder::net_mask)
-    pub fn build(self) -> ::std::result::Result<crate::types::NetworkInfo, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::NetworkInfo, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::NetworkInfo {
             interface_name: self.interface_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "interface_name",
                     "interface_name was not specified but it is required when building NetworkInfo",
                 )
             })?,
             ip_address: self.ip_address.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "ip_address",
                     "ip_address was not specified but it is required when building NetworkInfo",
                 )
             })?,
             mac_address: self.mac_address.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "mac_address",
                     "mac_address was not specified but it is required when building NetworkInfo",
                 )
             })?,
             net_mask: self.net_mask.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "net_mask",
                     "net_mask was not specified but it is required when building NetworkInfo",
                 )

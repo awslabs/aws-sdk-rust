@@ -50,7 +50,7 @@ impl CreateCloudFrontOriginAccessIdentityInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_cloud_front_origin_access_identity::CreateCloudFrontOriginAccessIdentityInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::create_cloud_front_origin_access_identity::CreateCloudFrontOriginAccessIdentityInput {

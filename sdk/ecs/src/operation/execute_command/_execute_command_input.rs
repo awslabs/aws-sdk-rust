@@ -130,7 +130,7 @@ impl ExecuteCommandInputBuilder {
     /// Consumes the builder and constructs a [`ExecuteCommandInput`](crate::operation::execute_command::ExecuteCommandInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::execute_command::ExecuteCommandInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::execute_command::ExecuteCommandInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::execute_command::ExecuteCommandInput {
             cluster: self.cluster,
             container: self.container,

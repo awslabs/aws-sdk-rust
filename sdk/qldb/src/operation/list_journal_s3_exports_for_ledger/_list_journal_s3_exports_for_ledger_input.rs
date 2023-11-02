@@ -88,7 +88,7 @@ impl ListJournalS3ExportsForLedgerInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_journal_s3_exports_for_ledger::ListJournalS3ExportsForLedgerInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_journal_s3_exports_for_ledger::ListJournalS3ExportsForLedgerInput {
             name: self.name,

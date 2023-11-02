@@ -44,7 +44,7 @@ impl DescribeDiscovererInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDiscovererInput`](crate::operation::describe_discoverer::DescribeDiscovererInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_discoverer::DescribeDiscovererInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_discoverer::DescribeDiscovererInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_discoverer::DescribeDiscovererInput {
             discoverer_id: self.discoverer_id,
         })

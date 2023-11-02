@@ -91,11 +91,11 @@ impl DescribePullRequestEventsOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_pull_request_events::DescribePullRequestEventsOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_pull_request_events::DescribePullRequestEventsOutput {
             pull_request_events: self.pull_request_events.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "pull_request_events",
                     "pull_request_events was not specified but it is required when building DescribePullRequestEventsOutput",
                 )

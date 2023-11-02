@@ -63,10 +63,10 @@ impl GetEncryptionKeyOutputBuilder {
     /// - [`kms_key_id`](crate::operation::get_encryption_key::builders::GetEncryptionKeyOutputBuilder::kms_key_id)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_encryption_key::GetEncryptionKeyOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_encryption_key::GetEncryptionKeyOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_encryption_key::GetEncryptionKeyOutput {
             kms_key_id: self.kms_key_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "kms_key_id",
                     "kms_key_id was not specified but it is required when building GetEncryptionKeyOutput",
                 )

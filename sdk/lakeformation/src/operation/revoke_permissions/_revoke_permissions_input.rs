@@ -145,7 +145,7 @@ impl RevokePermissionsInputBuilder {
     /// Consumes the builder and constructs a [`RevokePermissionsInput`](crate::operation::revoke_permissions::RevokePermissionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::revoke_permissions::RevokePermissionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::revoke_permissions::RevokePermissionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::revoke_permissions::RevokePermissionsInput {
             catalog_id: self.catalog_id,
             principal: self.principal,

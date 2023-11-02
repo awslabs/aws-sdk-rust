@@ -46,7 +46,7 @@ impl GetContainerServiceDeploymentsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_container_service_deployments::GetContainerServiceDeploymentsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_container_service_deployments::GetContainerServiceDeploymentsInput {
             service_name: self.service_name,

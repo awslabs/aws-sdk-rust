@@ -125,16 +125,16 @@ impl MetricBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`expression`](crate::types::builders::MetricBuilder::expression)
     /// - [`variables`](crate::types::builders::MetricBuilder::variables)
-    pub fn build(self) -> ::std::result::Result<crate::types::Metric, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Metric, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Metric {
             expression: self.expression.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "expression",
                     "expression was not specified but it is required when building Metric",
                 )
             })?,
             variables: self.variables.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "variables",
                     "variables was not specified but it is required when building Metric",
                 )

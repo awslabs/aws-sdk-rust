@@ -182,7 +182,7 @@ impl CreateAgentInputBuilder {
         &self.security_group_arns
     }
     /// Consumes the builder and constructs a [`CreateAgentInput`](crate::operation::create_agent::CreateAgentInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_agent::CreateAgentInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_agent::CreateAgentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_agent::CreateAgentInput {
             activation_key: self.activation_key,
             agent_name: self.agent_name,

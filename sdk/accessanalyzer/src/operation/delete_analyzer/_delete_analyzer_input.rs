@@ -66,7 +66,7 @@ impl DeleteAnalyzerInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAnalyzerInput`](crate::operation::delete_analyzer::DeleteAnalyzerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_analyzer::DeleteAnalyzerInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_analyzer::DeleteAnalyzerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_analyzer::DeleteAnalyzerInput {
             analyzer_name: self.analyzer_name,
             client_token: self.client_token,

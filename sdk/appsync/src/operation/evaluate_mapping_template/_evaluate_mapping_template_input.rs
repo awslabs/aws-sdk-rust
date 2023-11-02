@@ -68,7 +68,7 @@ impl EvaluateMappingTemplateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::evaluate_mapping_template::EvaluateMappingTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::evaluate_mapping_template::EvaluateMappingTemplateInput {
             template: self.template,

@@ -110,16 +110,16 @@ impl HighlightBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`begin_offset`](crate::types::builders::HighlightBuilder::begin_offset)
     /// - [`end_offset`](crate::types::builders::HighlightBuilder::end_offset)
-    pub fn build(self) -> ::std::result::Result<crate::types::Highlight, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Highlight, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Highlight {
             begin_offset: self.begin_offset.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "begin_offset",
                     "begin_offset was not specified but it is required when building Highlight",
                 )
             })?,
             end_offset: self.end_offset.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "end_offset",
                     "end_offset was not specified but it is required when building Highlight",
                 )

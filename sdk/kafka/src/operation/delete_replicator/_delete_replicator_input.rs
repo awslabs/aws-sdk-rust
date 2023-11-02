@@ -65,7 +65,7 @@ impl DeleteReplicatorInputBuilder {
     /// Consumes the builder and constructs a [`DeleteReplicatorInput`](crate::operation::delete_replicator::DeleteReplicatorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_replicator::DeleteReplicatorInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_replicator::DeleteReplicatorInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_replicator::DeleteReplicatorInput {
             current_version: self.current_version,
             replicator_arn: self.replicator_arn,

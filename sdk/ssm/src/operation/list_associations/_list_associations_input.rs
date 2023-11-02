@@ -103,7 +103,7 @@ impl ListAssociationsInputBuilder {
     /// Consumes the builder and constructs a [`ListAssociationsInput`](crate::operation::list_associations::ListAssociationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_associations::ListAssociationsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_associations::ListAssociationsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_associations::ListAssociationsInput {
             association_filter_list: self.association_filter_list,
             max_results: self.max_results,

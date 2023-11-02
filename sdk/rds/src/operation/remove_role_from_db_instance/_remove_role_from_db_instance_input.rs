@@ -90,7 +90,7 @@ impl RemoveRoleFromDbInstanceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_role_from_db_instance::RemoveRoleFromDbInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::remove_role_from_db_instance::RemoveRoleFromDbInstanceInput {
             db_instance_identifier: self.db_instance_identifier,

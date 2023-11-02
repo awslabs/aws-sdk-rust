@@ -86,7 +86,7 @@ impl UpdateDataIntegrationInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDataIntegrationInput`](crate::operation::update_data_integration::UpdateDataIntegrationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_data_integration::UpdateDataIntegrationInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_data_integration::UpdateDataIntegrationInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_data_integration::UpdateDataIntegrationInput {
             identifier: self.identifier,

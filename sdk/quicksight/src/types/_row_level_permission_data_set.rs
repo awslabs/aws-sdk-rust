@@ -138,17 +138,17 @@ impl RowLevelPermissionDataSetBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::RowLevelPermissionDataSetBuilder::arn)
     /// - [`permission_policy`](crate::types::builders::RowLevelPermissionDataSetBuilder::permission_policy)
-    pub fn build(self) -> ::std::result::Result<crate::types::RowLevelPermissionDataSet, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RowLevelPermissionDataSet, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RowLevelPermissionDataSet {
             namespace: self.namespace,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building RowLevelPermissionDataSet",
                 )
             })?,
             permission_policy: self.permission_policy.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "permission_policy",
                     "permission_policy was not specified but it is required when building RowLevelPermissionDataSet",
                 )

@@ -118,7 +118,7 @@ impl UpdateDocumentVersionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDocumentVersionInput`](crate::operation::update_document_version::UpdateDocumentVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_document_version::UpdateDocumentVersionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_document_version::UpdateDocumentVersionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_document_version::UpdateDocumentVersionInput {
             authentication_token: self.authentication_token,

@@ -51,10 +51,10 @@ impl TaggingBuilder {
     /// Consumes the builder and constructs a [`Tagging`](crate::types::Tagging).
     /// This method will fail if any of the following fields are not set:
     /// - [`tag_set`](crate::types::builders::TaggingBuilder::tag_set)
-    pub fn build(self) -> ::std::result::Result<crate::types::Tagging, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Tagging, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Tagging {
             tag_set: self.tag_set.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "tag_set",
                     "tag_set was not specified but it is required when building Tagging",
                 )

@@ -97,16 +97,16 @@ impl PosixProfileBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`uid`](crate::types::builders::PosixProfileBuilder::uid)
     /// - [`gid`](crate::types::builders::PosixProfileBuilder::gid)
-    pub fn build(self) -> ::std::result::Result<crate::types::PosixProfile, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PosixProfile, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PosixProfile {
             uid: self.uid.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "uid",
                     "uid was not specified but it is required when building PosixProfile",
                 )
             })?,
             gid: self.gid.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "gid",
                     "gid was not specified but it is required when building PosixProfile",
                 )

@@ -124,7 +124,7 @@ impl DescribeDataRepositoryTasksInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_data_repository_tasks::DescribeDataRepositoryTasksInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_data_repository_tasks::DescribeDataRepositoryTasksInput {
             task_ids: self.task_ids,

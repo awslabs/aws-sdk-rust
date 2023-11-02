@@ -44,7 +44,7 @@ impl DescribeTagOptionInputBuilder {
     /// Consumes the builder and constructs a [`DescribeTagOptionInput`](crate::operation::describe_tag_option::DescribeTagOptionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_tag_option::DescribeTagOptionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_tag_option::DescribeTagOptionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_tag_option::DescribeTagOptionInput { id: self.id })
     }
 }

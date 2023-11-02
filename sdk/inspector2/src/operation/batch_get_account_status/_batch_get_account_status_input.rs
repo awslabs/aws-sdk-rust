@@ -51,7 +51,7 @@ impl BatchGetAccountStatusInputBuilder {
     /// Consumes the builder and constructs a [`BatchGetAccountStatusInput`](crate::operation::batch_get_account_status::BatchGetAccountStatusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_get_account_status::BatchGetAccountStatusInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::batch_get_account_status::BatchGetAccountStatusInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::batch_get_account_status::BatchGetAccountStatusInput {
             account_ids: self.account_ids,

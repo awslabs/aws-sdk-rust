@@ -44,7 +44,7 @@ impl DisassociateElasticIpInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateElasticIpInput`](crate::operation::disassociate_elastic_ip::DisassociateElasticIpInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::disassociate_elastic_ip::DisassociateElasticIpInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::disassociate_elastic_ip::DisassociateElasticIpInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::disassociate_elastic_ip::DisassociateElasticIpInput { elastic_ip: self.elastic_ip })
     }

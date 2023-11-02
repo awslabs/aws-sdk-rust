@@ -140,16 +140,16 @@ impl IntegerParameterDeclarationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`parameter_value_type`](crate::types::builders::IntegerParameterDeclarationBuilder::parameter_value_type)
     /// - [`name`](crate::types::builders::IntegerParameterDeclarationBuilder::name)
-    pub fn build(self) -> ::std::result::Result<crate::types::IntegerParameterDeclaration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::IntegerParameterDeclaration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::IntegerParameterDeclaration {
             parameter_value_type: self.parameter_value_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "parameter_value_type",
                     "parameter_value_type was not specified but it is required when building IntegerParameterDeclaration",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building IntegerParameterDeclaration",
                 )

@@ -343,7 +343,7 @@ impl RespondToAuthChallengeInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::respond_to_auth_challenge::RespondToAuthChallengeInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::respond_to_auth_challenge::RespondToAuthChallengeInput {
             client_id: self.client_id,

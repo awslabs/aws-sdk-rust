@@ -622,42 +622,42 @@ impl WorkspaceDescriptionBuilder {
     /// - [`id`](crate::types::builders::WorkspaceDescriptionBuilder::id)
     /// - [`modified`](crate::types::builders::WorkspaceDescriptionBuilder::modified)
     /// - [`status`](crate::types::builders::WorkspaceDescriptionBuilder::status)
-    pub fn build(self) -> ::std::result::Result<crate::types::WorkspaceDescription, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::WorkspaceDescription, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::WorkspaceDescription {
             account_access_type: self.account_access_type,
             created: self.created.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created",
                     "created was not specified but it is required when building WorkspaceDescription",
                 )
             })?,
             data_sources: self.data_sources.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_sources",
                     "data_sources was not specified but it is required when building WorkspaceDescription",
                 )
             })?,
             description: self.description,
             endpoint: self.endpoint.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "endpoint",
                     "endpoint was not specified but it is required when building WorkspaceDescription",
                 )
             })?,
             grafana_version: self.grafana_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "grafana_version",
                     "grafana_version was not specified but it is required when building WorkspaceDescription",
                 )
             })?,
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building WorkspaceDescription",
                 )
             })?,
             modified: self.modified.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "modified",
                     "modified was not specified but it is required when building WorkspaceDescription",
                 )
@@ -669,7 +669,7 @@ impl WorkspaceDescriptionBuilder {
             permission_type: self.permission_type,
             stack_set_name: self.stack_set_name,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building WorkspaceDescription",
                 )

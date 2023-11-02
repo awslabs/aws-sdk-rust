@@ -413,7 +413,7 @@ impl CreateTaskSetInputBuilder {
     /// Consumes the builder and constructs a [`CreateTaskSetInput`](crate::operation::create_task_set::CreateTaskSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_task_set::CreateTaskSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_task_set::CreateTaskSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_task_set::CreateTaskSetInput {
             service: self.service,
             cluster: self.cluster,

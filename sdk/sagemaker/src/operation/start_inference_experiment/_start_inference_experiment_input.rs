@@ -46,7 +46,7 @@ impl StartInferenceExperimentInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_inference_experiment::StartInferenceExperimentInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_inference_experiment::StartInferenceExperimentInput { name: self.name })
     }

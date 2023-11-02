@@ -177,8 +177,10 @@ impl CreateStreamingSessionInputBuilder {
     /// Consumes the builder and constructs a [`CreateStreamingSessionInput`](crate::operation::create_streaming_session::CreateStreamingSessionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_streaming_session::CreateStreamingSessionInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::create_streaming_session::CreateStreamingSessionInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::create_streaming_session::CreateStreamingSessionInput {
             client_token: self.client_token,
             ec2_instance_type: self.ec2_instance_type,

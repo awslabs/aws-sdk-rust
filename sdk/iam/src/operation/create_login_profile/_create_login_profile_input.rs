@@ -106,7 +106,8 @@ impl CreateLoginProfileInputBuilder {
     /// Consumes the builder and constructs a [`CreateLoginProfileInput`](crate::operation::create_login_profile::CreateLoginProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_login_profile::CreateLoginProfileInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_login_profile::CreateLoginProfileInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_login_profile::CreateLoginProfileInput {
             user_name: self.user_name,
             password: self.password,

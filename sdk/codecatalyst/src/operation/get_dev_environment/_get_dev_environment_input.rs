@@ -88,7 +88,7 @@ impl GetDevEnvironmentInputBuilder {
     /// Consumes the builder and constructs a [`GetDevEnvironmentInput`](crate::operation::get_dev_environment::GetDevEnvironmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_dev_environment::GetDevEnvironmentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_dev_environment::GetDevEnvironmentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_dev_environment::GetDevEnvironmentInput {
             space_name: self.space_name,
             project_name: self.project_name,

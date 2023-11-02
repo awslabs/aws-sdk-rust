@@ -67,7 +67,7 @@ impl DeleteAuthorizerInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAuthorizerInput`](crate::operation::delete_authorizer::DeleteAuthorizerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_authorizer::DeleteAuthorizerInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_authorizer::DeleteAuthorizerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_authorizer::DeleteAuthorizerInput {
             rest_api_id: self.rest_api_id,
             authorizer_id: self.authorizer_id,

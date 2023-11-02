@@ -149,7 +149,7 @@ impl CreateLocationNfsInputBuilder {
     /// Consumes the builder and constructs a [`CreateLocationNfsInput`](crate::operation::create_location_nfs::CreateLocationNfsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_location_nfs::CreateLocationNfsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_location_nfs::CreateLocationNfsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_location_nfs::CreateLocationNfsInput {
             subdirectory: self.subdirectory,
             server_hostname: self.server_hostname,

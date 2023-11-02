@@ -66,7 +66,7 @@ impl GetBatchJobExecutionInputBuilder {
     /// Consumes the builder and constructs a [`GetBatchJobExecutionInput`](crate::operation::get_batch_job_execution::GetBatchJobExecutionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_batch_job_execution::GetBatchJobExecutionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_batch_job_execution::GetBatchJobExecutionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_batch_job_execution::GetBatchJobExecutionInput {
             application_id: self.application_id,

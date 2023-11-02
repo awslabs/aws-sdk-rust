@@ -114,7 +114,9 @@ impl WriteRecordsInputBuilder {
         &self.records
     }
     /// Consumes the builder and constructs a [`WriteRecordsInput`](crate::operation::write_records::WriteRecordsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::write_records::WriteRecordsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::write_records::WriteRecordsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::write_records::WriteRecordsInput {
             database_name: self.database_name,
             table_name: self.table_name,

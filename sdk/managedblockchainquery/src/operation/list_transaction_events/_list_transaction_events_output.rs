@@ -89,11 +89,11 @@ impl ListTransactionEventsOutputBuilder {
     /// - [`events`](crate::operation::list_transaction_events::builders::ListTransactionEventsOutputBuilder::events)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_transaction_events::ListTransactionEventsOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_transaction_events::ListTransactionEventsOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_transaction_events::ListTransactionEventsOutput {
             events: self.events.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "events",
                     "events was not specified but it is required when building ListTransactionEventsOutput",
                 )

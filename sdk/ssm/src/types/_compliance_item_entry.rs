@@ -137,18 +137,18 @@ impl ComplianceItemEntryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`severity`](crate::types::builders::ComplianceItemEntryBuilder::severity)
     /// - [`status`](crate::types::builders::ComplianceItemEntryBuilder::status)
-    pub fn build(self) -> ::std::result::Result<crate::types::ComplianceItemEntry, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ComplianceItemEntry, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ComplianceItemEntry {
             id: self.id,
             title: self.title,
             severity: self.severity.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "severity",
                     "severity was not specified but it is required when building ComplianceItemEntry",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building ComplianceItemEntry",
                 )

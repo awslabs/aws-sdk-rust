@@ -109,22 +109,22 @@ impl GenerateMacOutputBuilder {
     /// - [`key_arn`](crate::operation::generate_mac::builders::GenerateMacOutputBuilder::key_arn)
     /// - [`key_check_value`](crate::operation::generate_mac::builders::GenerateMacOutputBuilder::key_check_value)
     /// - [`mac`](crate::operation::generate_mac::builders::GenerateMacOutputBuilder::mac)
-    pub fn build(self) -> ::std::result::Result<crate::operation::generate_mac::GenerateMacOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::generate_mac::GenerateMacOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::generate_mac::GenerateMacOutput {
             key_arn: self.key_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "key_arn",
                     "key_arn was not specified but it is required when building GenerateMacOutput",
                 )
             })?,
             key_check_value: self.key_check_value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "key_check_value",
                     "key_check_value was not specified but it is required when building GenerateMacOutput",
                 )
             })?,
             mac: self.mac.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "mac",
                     "mac was not specified but it is required when building GenerateMacOutput",
                 )

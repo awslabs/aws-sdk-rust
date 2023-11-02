@@ -102,22 +102,22 @@ impl ApplicationCredentialBuilder {
     /// - [`database_name`](crate::types::builders::ApplicationCredentialBuilder::database_name)
     /// - [`credential_type`](crate::types::builders::ApplicationCredentialBuilder::credential_type)
     /// - [`secret_id`](crate::types::builders::ApplicationCredentialBuilder::secret_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::ApplicationCredential, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ApplicationCredential, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ApplicationCredential {
             database_name: self.database_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "database_name",
                     "database_name was not specified but it is required when building ApplicationCredential",
                 )
             })?,
             credential_type: self.credential_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "credential_type",
                     "credential_type was not specified but it is required when building ApplicationCredential",
                 )
             })?,
             secret_id: self.secret_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "secret_id",
                     "secret_id was not specified but it is required when building ApplicationCredential",
                 )

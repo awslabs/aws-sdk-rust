@@ -66,7 +66,7 @@ impl DeleteContactInputBuilder {
     /// Consumes the builder and constructs a [`DeleteContactInput`](crate::operation::delete_contact::DeleteContactInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_contact::DeleteContactInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_contact::DeleteContactInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_contact::DeleteContactInput {
             contact_list_name: self.contact_list_name,
             email_address: self.email_address,

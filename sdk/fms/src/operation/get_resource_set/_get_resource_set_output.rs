@@ -85,11 +85,11 @@ impl GetResourceSetOutputBuilder {
     /// - [`resource_set_arn`](crate::operation::get_resource_set::builders::GetResourceSetOutputBuilder::resource_set_arn)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_resource_set::GetResourceSetOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_resource_set::GetResourceSetOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_resource_set::GetResourceSetOutput {
             resource_set: self.resource_set,
             resource_set_arn: self.resource_set_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_set_arn",
                     "resource_set_arn was not specified but it is required when building GetResourceSetOutput",
                 )

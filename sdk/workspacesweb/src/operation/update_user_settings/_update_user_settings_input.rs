@@ -262,7 +262,8 @@ impl UpdateUserSettingsInputBuilder {
     /// Consumes the builder and constructs a [`UpdateUserSettingsInput`](crate::operation::update_user_settings::UpdateUserSettingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_user_settings::UpdateUserSettingsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_user_settings::UpdateUserSettingsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::update_user_settings::UpdateUserSettingsInput {
             user_settings_arn: self.user_settings_arn,
             copy_allowed: self.copy_allowed,

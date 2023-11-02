@@ -48,7 +48,7 @@ impl DeleteDistributionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDistributionInput`](crate::operation::delete_distribution::DeleteDistributionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_distribution::DeleteDistributionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_distribution::DeleteDistributionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_distribution::DeleteDistributionInput {
             distribution_name: self.distribution_name,
         })

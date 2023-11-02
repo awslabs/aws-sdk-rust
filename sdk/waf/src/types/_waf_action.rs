@@ -74,10 +74,10 @@ impl WafActionBuilder {
     /// Consumes the builder and constructs a [`WafAction`](crate::types::WafAction).
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::WafActionBuilder::r#type)
-    pub fn build(self) -> ::std::result::Result<crate::types::WafAction, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::WafAction, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::WafAction {
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building WafAction",
                 )

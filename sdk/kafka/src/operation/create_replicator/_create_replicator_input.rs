@@ -173,7 +173,7 @@ impl CreateReplicatorInputBuilder {
     /// Consumes the builder and constructs a [`CreateReplicatorInput`](crate::operation::create_replicator::CreateReplicatorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_replicator::CreateReplicatorInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_replicator::CreateReplicatorInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_replicator::CreateReplicatorInput {
             description: self.description,
             kafka_clusters: self.kafka_clusters,

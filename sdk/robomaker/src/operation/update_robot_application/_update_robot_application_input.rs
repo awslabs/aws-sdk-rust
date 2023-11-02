@@ -137,8 +137,10 @@ impl UpdateRobotApplicationInputBuilder {
     /// Consumes the builder and constructs a [`UpdateRobotApplicationInput`](crate::operation::update_robot_application::UpdateRobotApplicationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_robot_application::UpdateRobotApplicationInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::update_robot_application::UpdateRobotApplicationInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::update_robot_application::UpdateRobotApplicationInput {
             application: self.application,
             sources: self.sources,

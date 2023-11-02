@@ -87,10 +87,10 @@ impl ListKeysOutputBuilder {
     /// Consumes the builder and constructs a [`ListKeysOutput`](crate::operation::list_keys::ListKeysOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`entries`](crate::operation::list_keys::builders::ListKeysOutputBuilder::entries)
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_keys::ListKeysOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_keys::ListKeysOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_keys::ListKeysOutput {
             entries: self.entries.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "entries",
                     "entries was not specified but it is required when building ListKeysOutput",
                 )

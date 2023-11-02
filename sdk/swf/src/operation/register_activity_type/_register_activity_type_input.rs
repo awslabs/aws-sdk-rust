@@ -280,7 +280,7 @@ impl RegisterActivityTypeInputBuilder {
     /// Consumes the builder and constructs a [`RegisterActivityTypeInput`](crate::operation::register_activity_type::RegisterActivityTypeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::register_activity_type::RegisterActivityTypeInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::register_activity_type::RegisterActivityTypeInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::register_activity_type::RegisterActivityTypeInput {
             domain: self.domain,

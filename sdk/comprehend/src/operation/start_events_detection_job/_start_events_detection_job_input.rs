@@ -212,7 +212,7 @@ impl StartEventsDetectionJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_events_detection_job::StartEventsDetectionJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_events_detection_job::StartEventsDetectionJobInput {
             input_data_config: self.input_data_config,

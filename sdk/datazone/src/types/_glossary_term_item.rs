@@ -306,28 +306,28 @@ impl GlossaryTermItemBuilder {
     /// - [`id`](crate::types::builders::GlossaryTermItemBuilder::id)
     /// - [`name`](crate::types::builders::GlossaryTermItemBuilder::name)
     /// - [`status`](crate::types::builders::GlossaryTermItemBuilder::status)
-    pub fn build(self) -> ::std::result::Result<crate::types::GlossaryTermItem, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::GlossaryTermItem, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::GlossaryTermItem {
             domain_id: self.domain_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "domain_id",
                     "domain_id was not specified but it is required when building GlossaryTermItem",
                 )
             })?,
             glossary_id: self.glossary_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "glossary_id",
                     "glossary_id was not specified but it is required when building GlossaryTermItem",
                 )
             })?,
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building GlossaryTermItem",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building GlossaryTermItem",
                 )
@@ -336,7 +336,7 @@ impl GlossaryTermItemBuilder {
             long_description: self.long_description,
             term_relations: self.term_relations,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building GlossaryTermItem",
                 )

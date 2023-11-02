@@ -66,7 +66,8 @@ impl GetProviderServiceInputBuilder {
     /// Consumes the builder and constructs a [`GetProviderServiceInput`](crate::operation::get_provider_service::GetProviderServiceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_provider_service::GetProviderServiceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_provider_service::GetProviderServiceInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::get_provider_service::GetProviderServiceInput {
             provider_name: self.provider_name,
             provider_service_name: self.provider_service_name,

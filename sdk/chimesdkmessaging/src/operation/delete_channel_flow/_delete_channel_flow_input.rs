@@ -44,7 +44,7 @@ impl DeleteChannelFlowInputBuilder {
     /// Consumes the builder and constructs a [`DeleteChannelFlowInput`](crate::operation::delete_channel_flow::DeleteChannelFlowInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_channel_flow::DeleteChannelFlowInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_channel_flow::DeleteChannelFlowInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_channel_flow::DeleteChannelFlowInput {
             channel_flow_arn: self.channel_flow_arn,
         })

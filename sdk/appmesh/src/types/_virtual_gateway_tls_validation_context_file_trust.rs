@@ -48,10 +48,10 @@ impl VirtualGatewayTlsValidationContextFileTrustBuilder {
     /// - [`certificate_chain`](crate::types::builders::VirtualGatewayTlsValidationContextFileTrustBuilder::certificate_chain)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::VirtualGatewayTlsValidationContextFileTrust, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::VirtualGatewayTlsValidationContextFileTrust, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::VirtualGatewayTlsValidationContextFileTrust {
             certificate_chain: self.certificate_chain.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "certificate_chain",
                     "certificate_chain was not specified but it is required when building VirtualGatewayTlsValidationContextFileTrust",
                 )

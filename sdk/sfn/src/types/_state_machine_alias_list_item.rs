@@ -69,16 +69,16 @@ impl StateMachineAliasListItemBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`state_machine_alias_arn`](crate::types::builders::StateMachineAliasListItemBuilder::state_machine_alias_arn)
     /// - [`creation_date`](crate::types::builders::StateMachineAliasListItemBuilder::creation_date)
-    pub fn build(self) -> ::std::result::Result<crate::types::StateMachineAliasListItem, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::StateMachineAliasListItem, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::StateMachineAliasListItem {
             state_machine_alias_arn: self.state_machine_alias_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "state_machine_alias_arn",
                     "state_machine_alias_arn was not specified but it is required when building StateMachineAliasListItem",
                 )
             })?,
             creation_date: self.creation_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_date",
                     "creation_date was not specified but it is required when building StateMachineAliasListItem",
                 )

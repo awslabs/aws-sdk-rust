@@ -71,7 +71,7 @@ impl PutItemsInputBuilder {
         &self.items
     }
     /// Consumes the builder and constructs a [`PutItemsInput`](crate::operation::put_items::PutItemsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_items::PutItemsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_items::PutItemsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_items::PutItemsInput {
             dataset_arn: self.dataset_arn,
             items: self.items,

@@ -124,7 +124,7 @@ impl CreateUserGroupInputBuilder {
     /// Consumes the builder and constructs a [`CreateUserGroupInput`](crate::operation::create_user_group::CreateUserGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_user_group::CreateUserGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_user_group::CreateUserGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_user_group::CreateUserGroupInput {
             user_group_id: self.user_group_id,
             engine: self.engine,

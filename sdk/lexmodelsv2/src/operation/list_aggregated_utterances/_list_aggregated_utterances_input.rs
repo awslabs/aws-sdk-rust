@@ -224,7 +224,7 @@ impl ListAggregatedUtterancesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_aggregated_utterances::ListAggregatedUtterancesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_aggregated_utterances::ListAggregatedUtterancesInput {
             bot_id: self.bot_id,

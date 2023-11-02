@@ -115,7 +115,7 @@ impl CreateWorkspaceApiKeyInputBuilder {
     /// Consumes the builder and constructs a [`CreateWorkspaceApiKeyInput`](crate::operation::create_workspace_api_key::CreateWorkspaceApiKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_workspace_api_key::CreateWorkspaceApiKeyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_workspace_api_key::CreateWorkspaceApiKeyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_workspace_api_key::CreateWorkspaceApiKeyInput {
             key_name: self.key_name,

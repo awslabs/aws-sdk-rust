@@ -210,7 +210,9 @@ impl QueryLineageInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`QueryLineageInput`](crate::operation::query_lineage::QueryLineageInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::query_lineage::QueryLineageInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::query_lineage::QueryLineageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::query_lineage::QueryLineageInput {
             start_arns: self.start_arns,
             direction: self.direction,

@@ -67,10 +67,10 @@ impl CustomModelTransformParametersBuilder {
     /// Consumes the builder and constructs a [`CustomModelTransformParameters`](crate::types::CustomModelTransformParameters).
     /// This method will fail if any of the following fields are not set:
     /// - [`source_s3_directory_path`](crate::types::builders::CustomModelTransformParametersBuilder::source_s3_directory_path)
-    pub fn build(self) -> ::std::result::Result<crate::types::CustomModelTransformParameters, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CustomModelTransformParameters, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CustomModelTransformParameters {
             source_s3_directory_path: self.source_s3_directory_path.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source_s3_directory_path",
                     "source_s3_directory_path was not specified but it is required when building CustomModelTransformParameters",
                 )

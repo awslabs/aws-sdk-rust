@@ -88,7 +88,7 @@ impl ModifyCustomDomainAssociationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_custom_domain_association::ModifyCustomDomainAssociationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::modify_custom_domain_association::ModifyCustomDomainAssociationInput {
             custom_domain_name: self.custom_domain_name,

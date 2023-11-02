@@ -157,7 +157,7 @@ impl CreateKxChangesetInputBuilder {
     /// Consumes the builder and constructs a [`CreateKxChangesetInput`](crate::operation::create_kx_changeset::CreateKxChangesetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_kx_changeset::CreateKxChangesetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_kx_changeset::CreateKxChangesetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_kx_changeset::CreateKxChangesetInput {
             environment_id: self.environment_id,
             database_name: self.database_name,

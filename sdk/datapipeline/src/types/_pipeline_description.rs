@@ -149,22 +149,22 @@ impl PipelineDescriptionBuilder {
     /// - [`pipeline_id`](crate::types::builders::PipelineDescriptionBuilder::pipeline_id)
     /// - [`name`](crate::types::builders::PipelineDescriptionBuilder::name)
     /// - [`fields`](crate::types::builders::PipelineDescriptionBuilder::fields)
-    pub fn build(self) -> ::std::result::Result<crate::types::PipelineDescription, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PipelineDescription, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PipelineDescription {
             pipeline_id: self.pipeline_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "pipeline_id",
                     "pipeline_id was not specified but it is required when building PipelineDescription",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building PipelineDescription",
                 )
             })?,
             fields: self.fields.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "fields",
                     "fields was not specified but it is required when building PipelineDescription",
                 )

@@ -89,7 +89,7 @@ impl DeprovisionPublicIpv4PoolCidrInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deprovision_public_ipv4_pool_cidr::DeprovisionPublicIpv4PoolCidrInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::deprovision_public_ipv4_pool_cidr::DeprovisionPublicIpv4PoolCidrInput {
             dry_run: self.dry_run,

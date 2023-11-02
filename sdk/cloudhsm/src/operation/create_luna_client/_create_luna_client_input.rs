@@ -66,7 +66,7 @@ impl CreateLunaClientInputBuilder {
     /// Consumes the builder and constructs a [`CreateLunaClientInput`](crate::operation::create_luna_client::CreateLunaClientInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_luna_client::CreateLunaClientInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_luna_client::CreateLunaClientInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_luna_client::CreateLunaClientInput {
             label: self.label,
             certificate: self.certificate,

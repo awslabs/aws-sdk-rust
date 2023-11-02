@@ -58,7 +58,7 @@ impl UpdateEmergencyContactSettingsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_emergency_contact_settings::UpdateEmergencyContactSettingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_emergency_contact_settings::UpdateEmergencyContactSettingsInput {
             emergency_contact_list: self.emergency_contact_list,

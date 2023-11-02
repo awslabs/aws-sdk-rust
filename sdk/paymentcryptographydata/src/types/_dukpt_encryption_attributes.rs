@@ -146,10 +146,10 @@ impl DukptEncryptionAttributesBuilder {
     /// Consumes the builder and constructs a [`DukptEncryptionAttributes`](crate::types::DukptEncryptionAttributes).
     /// This method will fail if any of the following fields are not set:
     /// - [`key_serial_number`](crate::types::builders::DukptEncryptionAttributesBuilder::key_serial_number)
-    pub fn build(self) -> ::std::result::Result<crate::types::DukptEncryptionAttributes, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DukptEncryptionAttributes, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DukptEncryptionAttributes {
             key_serial_number: self.key_serial_number.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "key_serial_number",
                     "key_serial_number was not specified but it is required when building DukptEncryptionAttributes",
                 )

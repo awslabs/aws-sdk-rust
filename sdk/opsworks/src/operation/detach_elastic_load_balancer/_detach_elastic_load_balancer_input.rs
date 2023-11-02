@@ -68,7 +68,7 @@ impl DetachElasticLoadBalancerInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::detach_elastic_load_balancer::DetachElasticLoadBalancerInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::detach_elastic_load_balancer::DetachElasticLoadBalancerInput {
             elastic_load_balancer_name: self.elastic_load_balancer_name,

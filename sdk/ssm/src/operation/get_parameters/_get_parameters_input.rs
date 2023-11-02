@@ -77,7 +77,7 @@ impl GetParametersInputBuilder {
     /// Consumes the builder and constructs a [`GetParametersInput`](crate::operation::get_parameters::GetParametersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_parameters::GetParametersInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_parameters::GetParametersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_parameters::GetParametersInput {
             names: self.names,
             with_decryption: self.with_decryption,

@@ -2,7 +2,7 @@
 pub fn ser_custom_action_url_operation(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CustomActionUrlOperation,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("URLTemplate").string(input.url_template.as_str());
     }

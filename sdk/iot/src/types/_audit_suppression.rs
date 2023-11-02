@@ -131,10 +131,10 @@ impl AuditSuppressionBuilder {
     /// Consumes the builder and constructs a [`AuditSuppression`](crate::types::AuditSuppression).
     /// This method will fail if any of the following fields are not set:
     /// - [`check_name`](crate::types::builders::AuditSuppressionBuilder::check_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::AuditSuppression, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AuditSuppression, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AuditSuppression {
             check_name: self.check_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "check_name",
                     "check_name was not specified but it is required when building AuditSuppression",
                 )

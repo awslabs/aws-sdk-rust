@@ -2,7 +2,7 @@
 pub fn ser_start_pipeline_reprocessing_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_pipeline_reprocessing::StartPipelineReprocessingInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.channel_messages {
         #[allow(unused_mut)]
         let mut object_2 = object.key("channelMessages").start_object();

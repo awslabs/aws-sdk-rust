@@ -2,7 +2,7 @@
 pub fn ser_aws_ec2_subnet_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEc2SubnetDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.assign_ipv6_address_on_creation {
         object.key("AssignIpv6AddressOnCreation").boolean(*var_1);
     }

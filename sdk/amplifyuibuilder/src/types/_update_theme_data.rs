@@ -122,12 +122,12 @@ impl UpdateThemeDataBuilder {
     /// Consumes the builder and constructs a [`UpdateThemeData`](crate::types::UpdateThemeData).
     /// This method will fail if any of the following fields are not set:
     /// - [`values`](crate::types::builders::UpdateThemeDataBuilder::values)
-    pub fn build(self) -> ::std::result::Result<crate::types::UpdateThemeData, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::UpdateThemeData, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::UpdateThemeData {
             id: self.id,
             name: self.name,
             values: self.values.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "values",
                     "values was not specified but it is required when building UpdateThemeData",
                 )

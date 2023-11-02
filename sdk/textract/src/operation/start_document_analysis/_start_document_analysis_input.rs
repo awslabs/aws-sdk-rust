@@ -220,7 +220,7 @@ impl StartDocumentAnalysisInputBuilder {
     /// Consumes the builder and constructs a [`StartDocumentAnalysisInput`](crate::operation::start_document_analysis::StartDocumentAnalysisInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_document_analysis::StartDocumentAnalysisInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::start_document_analysis::StartDocumentAnalysisInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_document_analysis::StartDocumentAnalysisInput {
             document_location: self.document_location,

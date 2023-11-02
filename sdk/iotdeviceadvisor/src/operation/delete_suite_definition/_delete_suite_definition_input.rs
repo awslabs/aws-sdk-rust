@@ -44,7 +44,7 @@ impl DeleteSuiteDefinitionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSuiteDefinitionInput`](crate::operation::delete_suite_definition::DeleteSuiteDefinitionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_suite_definition::DeleteSuiteDefinitionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_suite_definition::DeleteSuiteDefinitionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_suite_definition::DeleteSuiteDefinitionInput {
             suite_definition_id: self.suite_definition_id,

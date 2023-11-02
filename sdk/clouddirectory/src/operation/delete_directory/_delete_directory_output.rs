@@ -63,10 +63,10 @@ impl DeleteDirectoryOutputBuilder {
     /// - [`directory_arn`](crate::operation::delete_directory::builders::DeleteDirectoryOutputBuilder::directory_arn)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_directory::DeleteDirectoryOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_directory::DeleteDirectoryOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_directory::DeleteDirectoryOutput {
             directory_arn: self.directory_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "directory_arn",
                     "directory_arn was not specified but it is required when building DeleteDirectoryOutput",
                 )

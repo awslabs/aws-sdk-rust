@@ -44,7 +44,7 @@ impl DeleteBrowserSettingsInputBuilder {
     /// Consumes the builder and constructs a [`DeleteBrowserSettingsInput`](crate::operation::delete_browser_settings::DeleteBrowserSettingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_browser_settings::DeleteBrowserSettingsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_browser_settings::DeleteBrowserSettingsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_browser_settings::DeleteBrowserSettingsInput {
             browser_settings_arn: self.browser_settings_arn,

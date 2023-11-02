@@ -44,7 +44,7 @@ impl DeleteReplicationJobInputBuilder {
     /// Consumes the builder and constructs a [`DeleteReplicationJobInput`](crate::operation::delete_replication_job::DeleteReplicationJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_replication_job::DeleteReplicationJobInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_replication_job::DeleteReplicationJobInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_replication_job::DeleteReplicationJobInput {
             replication_job_id: self.replication_job_id,

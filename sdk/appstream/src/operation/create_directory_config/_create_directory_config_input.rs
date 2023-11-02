@@ -115,7 +115,7 @@ impl CreateDirectoryConfigInputBuilder {
     /// Consumes the builder and constructs a [`CreateDirectoryConfigInput`](crate::operation::create_directory_config::CreateDirectoryConfigInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_directory_config::CreateDirectoryConfigInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_directory_config::CreateDirectoryConfigInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_directory_config::CreateDirectoryConfigInput {
             directory_name: self.directory_name,

@@ -77,7 +77,7 @@ impl ResetServiceSpecificCredentialInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reset_service_specific_credential::ResetServiceSpecificCredentialInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::reset_service_specific_credential::ResetServiceSpecificCredentialInput {
             user_name: self.user_name,

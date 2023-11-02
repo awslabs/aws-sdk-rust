@@ -177,7 +177,7 @@ impl CreateLocationS3InputBuilder {
     /// Consumes the builder and constructs a [`CreateLocationS3Input`](crate::operation::create_location_s3::CreateLocationS3Input).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_location_s3::CreateLocationS3Input, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_location_s3::CreateLocationS3Input, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_location_s3::CreateLocationS3Input {
             subdirectory: self.subdirectory,
             s3_bucket_arn: self.s3_bucket_arn,

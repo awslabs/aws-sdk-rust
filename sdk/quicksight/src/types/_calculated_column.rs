@@ -103,22 +103,22 @@ impl CalculatedColumnBuilder {
     /// - [`column_name`](crate::types::builders::CalculatedColumnBuilder::column_name)
     /// - [`column_id`](crate::types::builders::CalculatedColumnBuilder::column_id)
     /// - [`expression`](crate::types::builders::CalculatedColumnBuilder::expression)
-    pub fn build(self) -> ::std::result::Result<crate::types::CalculatedColumn, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CalculatedColumn, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CalculatedColumn {
             column_name: self.column_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "column_name",
                     "column_name was not specified but it is required when building CalculatedColumn",
                 )
             })?,
             column_id: self.column_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "column_id",
                     "column_id was not specified but it is required when building CalculatedColumn",
                 )
             })?,
             expression: self.expression.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "expression",
                     "expression was not specified but it is required when building CalculatedColumn",
                 )

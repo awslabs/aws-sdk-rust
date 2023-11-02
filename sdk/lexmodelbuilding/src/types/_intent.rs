@@ -70,16 +70,16 @@ impl IntentBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`intent_name`](crate::types::builders::IntentBuilder::intent_name)
     /// - [`intent_version`](crate::types::builders::IntentBuilder::intent_version)
-    pub fn build(self) -> ::std::result::Result<crate::types::Intent, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Intent, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Intent {
             intent_name: self.intent_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "intent_name",
                     "intent_name was not specified but it is required when building Intent",
                 )
             })?,
             intent_version: self.intent_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "intent_version",
                     "intent_version was not specified but it is required when building Intent",
                 )

@@ -88,7 +88,7 @@ impl CopyImageSetInputBuilder {
     /// Consumes the builder and constructs a [`CopyImageSetInput`](crate::operation::copy_image_set::CopyImageSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::copy_image_set::CopyImageSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::copy_image_set::CopyImageSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::copy_image_set::CopyImageSetInput {
             datastore_id: self.datastore_id,
             source_image_set_id: self.source_image_set_id,

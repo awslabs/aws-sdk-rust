@@ -2,7 +2,7 @@
 pub fn ser_list_available_managed_rule_groups_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_available_managed_rule_groups::ListAvailableManagedRuleGroupsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.scope {
         object.key("Scope").string(var_1.as_str());
     }

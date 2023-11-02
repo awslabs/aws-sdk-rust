@@ -78,7 +78,7 @@ impl CancelFlowExecutionsInputBuilder {
     /// Consumes the builder and constructs a [`CancelFlowExecutionsInput`](crate::operation::cancel_flow_executions::CancelFlowExecutionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::cancel_flow_executions::CancelFlowExecutionsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::cancel_flow_executions::CancelFlowExecutionsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::cancel_flow_executions::CancelFlowExecutionsInput {
             flow_name: self.flow_name,

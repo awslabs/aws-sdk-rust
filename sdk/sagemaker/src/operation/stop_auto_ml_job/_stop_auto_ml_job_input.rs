@@ -44,7 +44,7 @@ impl StopAutoMlJobInputBuilder {
     /// Consumes the builder and constructs a [`StopAutoMlJobInput`](crate::operation::stop_auto_ml_job::StopAutoMlJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_auto_ml_job::StopAutoMlJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::stop_auto_ml_job::StopAutoMlJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_auto_ml_job::StopAutoMlJobInput {
             auto_ml_job_name: self.auto_ml_job_name,
         })

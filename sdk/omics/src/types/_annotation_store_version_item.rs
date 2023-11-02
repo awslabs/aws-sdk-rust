@@ -282,70 +282,70 @@ impl AnnotationStoreVersionItemBuilder {
     /// - [`update_time`](crate::types::builders::AnnotationStoreVersionItemBuilder::update_time)
     /// - [`status_message`](crate::types::builders::AnnotationStoreVersionItemBuilder::status_message)
     /// - [`version_size_bytes`](crate::types::builders::AnnotationStoreVersionItemBuilder::version_size_bytes)
-    pub fn build(self) -> ::std::result::Result<crate::types::AnnotationStoreVersionItem, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AnnotationStoreVersionItem, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AnnotationStoreVersionItem {
             store_id: self.store_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "store_id",
                     "store_id was not specified but it is required when building AnnotationStoreVersionItem",
                 )
             })?,
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building AnnotationStoreVersionItem",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building AnnotationStoreVersionItem",
                 )
             })?,
             version_arn: self.version_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "version_arn",
                     "version_arn was not specified but it is required when building AnnotationStoreVersionItem",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building AnnotationStoreVersionItem",
                 )
             })?,
             version_name: self.version_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "version_name",
                     "version_name was not specified but it is required when building AnnotationStoreVersionItem",
                 )
             })?,
             description: self.description.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "description",
                     "description was not specified but it is required when building AnnotationStoreVersionItem",
                 )
             })?,
             creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_time",
                     "creation_time was not specified but it is required when building AnnotationStoreVersionItem",
                 )
             })?,
             update_time: self.update_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "update_time",
                     "update_time was not specified but it is required when building AnnotationStoreVersionItem",
                 )
             })?,
             status_message: self.status_message.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status_message",
                     "status_message was not specified but it is required when building AnnotationStoreVersionItem",
                 )
             })?,
             version_size_bytes: self.version_size_bytes.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "version_size_bytes",
                     "version_size_bytes was not specified but it is required when building AnnotationStoreVersionItem",
                 )

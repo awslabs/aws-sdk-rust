@@ -45,7 +45,7 @@ impl DeleteJobQueueInputBuilder {
     /// Consumes the builder and constructs a [`DeleteJobQueueInput`](crate::operation::delete_job_queue::DeleteJobQueueInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_job_queue::DeleteJobQueueInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_job_queue::DeleteJobQueueInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_job_queue::DeleteJobQueueInput { job_queue: self.job_queue })
     }
 }

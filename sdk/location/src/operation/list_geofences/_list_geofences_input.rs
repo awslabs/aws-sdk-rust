@@ -96,7 +96,7 @@ impl ListGeofencesInputBuilder {
     /// Consumes the builder and constructs a [`ListGeofencesInput`](crate::operation::list_geofences::ListGeofencesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_geofences::ListGeofencesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_geofences::ListGeofencesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_geofences::ListGeofencesInput {
             collection_name: self.collection_name,
             next_token: self.next_token,

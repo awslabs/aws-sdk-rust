@@ -136,24 +136,24 @@ impl ResponseOutputItemBuilder {
     /// - [`manifest_name`](crate::types::builders::ResponseOutputItemBuilder::manifest_name)
     /// - [`playback_url`](crate::types::builders::ResponseOutputItemBuilder::playback_url)
     /// - [`source_group`](crate::types::builders::ResponseOutputItemBuilder::source_group)
-    pub fn build(self) -> ::std::result::Result<crate::types::ResponseOutputItem, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ResponseOutputItem, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ResponseOutputItem {
             dash_playlist_settings: self.dash_playlist_settings,
             hls_playlist_settings: self.hls_playlist_settings,
             manifest_name: self.manifest_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "manifest_name",
                     "manifest_name was not specified but it is required when building ResponseOutputItem",
                 )
             })?,
             playback_url: self.playback_url.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "playback_url",
                     "playback_url was not specified but it is required when building ResponseOutputItem",
                 )
             })?,
             source_group: self.source_group.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source_group",
                     "source_group was not specified but it is required when building ResponseOutputItem",
                 )

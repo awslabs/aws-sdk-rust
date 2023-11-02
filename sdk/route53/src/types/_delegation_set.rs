@@ -93,12 +93,12 @@ impl DelegationSetBuilder {
     /// Consumes the builder and constructs a [`DelegationSet`](crate::types::DelegationSet).
     /// This method will fail if any of the following fields are not set:
     /// - [`name_servers`](crate::types::builders::DelegationSetBuilder::name_servers)
-    pub fn build(self) -> ::std::result::Result<crate::types::DelegationSet, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DelegationSet, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DelegationSet {
             id: self.id,
             caller_reference: self.caller_reference,
             name_servers: self.name_servers.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name_servers",
                     "name_servers was not specified but it is required when building DelegationSet",
                 )

@@ -87,10 +87,10 @@ impl ListTargetsOutputBuilder {
     /// Consumes the builder and constructs a [`ListTargetsOutput`](crate::operation::list_targets::ListTargetsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`items`](crate::operation::list_targets::builders::ListTargetsOutputBuilder::items)
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_targets::ListTargetsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_targets::ListTargetsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_targets::ListTargetsOutput {
             items: self.items.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "items",
                     "items was not specified but it is required when building ListTargetsOutput",
                 )

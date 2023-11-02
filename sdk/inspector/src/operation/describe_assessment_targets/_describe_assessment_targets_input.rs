@@ -53,7 +53,7 @@ impl DescribeAssessmentTargetsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_assessment_targets::DescribeAssessmentTargetsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_assessment_targets::DescribeAssessmentTargetsInput {
             assessment_target_arns: self.assessment_target_arns,

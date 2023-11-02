@@ -527,7 +527,7 @@ impl CalculateRouteInputBuilder {
     /// Consumes the builder and constructs a [`CalculateRouteInput`](crate::operation::calculate_route::CalculateRouteInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::calculate_route::CalculateRouteInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::calculate_route::CalculateRouteInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::calculate_route::CalculateRouteInput {
             calculator_name: self.calculator_name,
             departure_position: self.departure_position,

@@ -2,7 +2,7 @@
 pub fn ser_custom_line_item_billing_period_range(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CustomLineItemBillingPeriodRange,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object
             .key("InclusiveStartBillingPeriod")

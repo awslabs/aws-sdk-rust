@@ -145,7 +145,7 @@ impl ModifyCapacityReservationFleetInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_capacity_reservation_fleet::ModifyCapacityReservationFleetInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::modify_capacity_reservation_fleet::ModifyCapacityReservationFleetInput {
             capacity_reservation_fleet_id: self.capacity_reservation_fleet_id,

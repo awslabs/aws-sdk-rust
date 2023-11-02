@@ -158,23 +158,23 @@ impl DescribeAssetPropertyOutputBuilder {
     /// - [`asset_model_id`](crate::operation::describe_asset_property::builders::DescribeAssetPropertyOutputBuilder::asset_model_id)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_asset_property::DescribeAssetPropertyOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_asset_property::DescribeAssetPropertyOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_asset_property::DescribeAssetPropertyOutput {
             asset_id: self.asset_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "asset_id",
                     "asset_id was not specified but it is required when building DescribeAssetPropertyOutput",
                 )
             })?,
             asset_name: self.asset_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "asset_name",
                     "asset_name was not specified but it is required when building DescribeAssetPropertyOutput",
                 )
             })?,
             asset_model_id: self.asset_model_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "asset_model_id",
                     "asset_model_id was not specified but it is required when building DescribeAssetPropertyOutput",
                 )

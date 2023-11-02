@@ -2,7 +2,7 @@
 pub fn ser_put_permissions_boundary_to_permission_set_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_permissions_boundary_to_permission_set::PutPermissionsBoundaryToPermissionSetInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.instance_arn {
         object.key("InstanceArn").string(var_1.as_str());
     }

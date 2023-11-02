@@ -121,7 +121,7 @@ impl UpdateTaskProtectionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateTaskProtectionInput`](crate::operation::update_task_protection::UpdateTaskProtectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_task_protection::UpdateTaskProtectionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_task_protection::UpdateTaskProtectionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_task_protection::UpdateTaskProtectionInput {
             cluster: self.cluster,

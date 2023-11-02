@@ -68,7 +68,7 @@ impl CreateCertificateFromCsrInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_certificate_from_csr::CreateCertificateFromCsrInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_certificate_from_csr::CreateCertificateFromCsrInput {
             certificate_signing_request: self.certificate_signing_request,

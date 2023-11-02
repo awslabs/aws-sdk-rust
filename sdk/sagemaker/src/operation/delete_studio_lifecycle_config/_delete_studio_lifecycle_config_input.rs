@@ -46,7 +46,7 @@ impl DeleteStudioLifecycleConfigInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_studio_lifecycle_config::DeleteStudioLifecycleConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_studio_lifecycle_config::DeleteStudioLifecycleConfigInput {
             studio_lifecycle_config_name: self.studio_lifecycle_config_name,

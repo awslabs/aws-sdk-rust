@@ -426,7 +426,7 @@ impl UpdateLayerInputBuilder {
         &self.lifecycle_event_configuration
     }
     /// Consumes the builder and constructs a [`UpdateLayerInput`](crate::operation::update_layer::UpdateLayerInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_layer::UpdateLayerInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_layer::UpdateLayerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_layer::UpdateLayerInput {
             layer_id: self.layer_id,
             name: self.name,

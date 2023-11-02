@@ -103,7 +103,7 @@ impl DisableFastSnapshotRestoresInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disable_fast_snapshot_restores::DisableFastSnapshotRestoresInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disable_fast_snapshot_restores::DisableFastSnapshotRestoresInput {
             availability_zones: self.availability_zones,

@@ -2,7 +2,7 @@
 pub fn ser_ota_job_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::OtaJobConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("ImageVersion").string(input.image_version.as_str());
     }

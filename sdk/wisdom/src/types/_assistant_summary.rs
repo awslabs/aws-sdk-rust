@@ -240,34 +240,34 @@ impl AssistantSummaryBuilder {
     /// - [`name`](crate::types::builders::AssistantSummaryBuilder::name)
     /// - [`r#type`](crate::types::builders::AssistantSummaryBuilder::r#type)
     /// - [`status`](crate::types::builders::AssistantSummaryBuilder::status)
-    pub fn build(self) -> ::std::result::Result<crate::types::AssistantSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AssistantSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AssistantSummary {
             assistant_id: self.assistant_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "assistant_id",
                     "assistant_id was not specified but it is required when building AssistantSummary",
                 )
             })?,
             assistant_arn: self.assistant_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "assistant_arn",
                     "assistant_arn was not specified but it is required when building AssistantSummary",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building AssistantSummary",
                 )
             })?,
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building AssistantSummary",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building AssistantSummary",
                 )

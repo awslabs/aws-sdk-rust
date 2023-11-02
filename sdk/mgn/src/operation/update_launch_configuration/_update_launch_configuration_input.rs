@@ -280,7 +280,7 @@ impl UpdateLaunchConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_launch_configuration::UpdateLaunchConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_launch_configuration::UpdateLaunchConfigurationInput {
             source_server_id: self.source_server_id,

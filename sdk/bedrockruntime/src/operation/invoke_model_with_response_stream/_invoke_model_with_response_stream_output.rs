@@ -100,17 +100,17 @@ impl InvokeModelWithResponseStreamOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamOutput {
             body: self.body.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "body",
                     "body was not specified but it is required when building InvokeModelWithResponseStreamOutput",
                 )
             })?,
             content_type: self.content_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "content_type",
                     "content_type was not specified but it is required when building InvokeModelWithResponseStreamOutput",
                 )

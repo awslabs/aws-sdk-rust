@@ -2,7 +2,7 @@
 pub fn ser_facet_attribute_reference(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FacetAttributeReference,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("TargetFacetName").string(input.target_facet_name.as_str());
     }

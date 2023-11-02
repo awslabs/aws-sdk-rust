@@ -114,7 +114,7 @@ impl DescribeListenersInputBuilder {
     /// Consumes the builder and constructs a [`DescribeListenersInput`](crate::operation::describe_listeners::DescribeListenersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_listeners::DescribeListenersInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_listeners::DescribeListenersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_listeners::DescribeListenersInput {
             load_balancer_arn: self.load_balancer_arn,
             listener_arns: self.listener_arns,

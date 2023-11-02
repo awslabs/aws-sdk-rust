@@ -44,7 +44,7 @@ impl GetIdMappingWorkflowInputBuilder {
     /// Consumes the builder and constructs a [`GetIdMappingWorkflowInput`](crate::operation::get_id_mapping_workflow::GetIdMappingWorkflowInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_id_mapping_workflow::GetIdMappingWorkflowInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_id_mapping_workflow::GetIdMappingWorkflowInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_id_mapping_workflow::GetIdMappingWorkflowInput {
             workflow_name: self.workflow_name,

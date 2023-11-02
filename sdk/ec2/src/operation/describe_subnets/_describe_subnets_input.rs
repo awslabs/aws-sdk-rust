@@ -313,7 +313,7 @@ impl DescribeSubnetsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeSubnetsInput`](crate::operation::describe_subnets::DescribeSubnetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_subnets::DescribeSubnetsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_subnets::DescribeSubnetsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_subnets::DescribeSubnetsInput {
             filters: self.filters,
             subnet_ids: self.subnet_ids,

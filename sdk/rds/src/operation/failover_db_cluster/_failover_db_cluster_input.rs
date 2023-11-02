@@ -96,7 +96,7 @@ impl FailoverDbClusterInputBuilder {
     /// Consumes the builder and constructs a [`FailoverDbClusterInput`](crate::operation::failover_db_cluster::FailoverDbClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::failover_db_cluster::FailoverDbClusterInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::failover_db_cluster::FailoverDbClusterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::failover_db_cluster::FailoverDbClusterInput {
             db_cluster_identifier: self.db_cluster_identifier,
             target_db_instance_identifier: self.target_db_instance_identifier,

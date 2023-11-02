@@ -44,7 +44,7 @@ impl GetGraphqlApiInputBuilder {
     /// Consumes the builder and constructs a [`GetGraphqlApiInput`](crate::operation::get_graphql_api::GetGraphqlApiInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_graphql_api::GetGraphqlApiInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_graphql_api::GetGraphqlApiInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_graphql_api::GetGraphqlApiInput { api_id: self.api_id })
     }
 }

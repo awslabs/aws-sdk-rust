@@ -44,7 +44,7 @@ impl GetVpcAttachmentInputBuilder {
     /// Consumes the builder and constructs a [`GetVpcAttachmentInput`](crate::operation::get_vpc_attachment::GetVpcAttachmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_vpc_attachment::GetVpcAttachmentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_vpc_attachment::GetVpcAttachmentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_vpc_attachment::GetVpcAttachmentInput {
             attachment_id: self.attachment_id,
         })

@@ -68,16 +68,16 @@ impl CreateRequireCheckInBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`release_after_minutes`](crate::types::builders::CreateRequireCheckInBuilder::release_after_minutes)
     /// - [`enabled`](crate::types::builders::CreateRequireCheckInBuilder::enabled)
-    pub fn build(self) -> ::std::result::Result<crate::types::CreateRequireCheckIn, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CreateRequireCheckIn, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CreateRequireCheckIn {
             release_after_minutes: self.release_after_minutes.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "release_after_minutes",
                     "release_after_minutes was not specified but it is required when building CreateRequireCheckIn",
                 )
             })?,
             enabled: self.enabled.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "enabled",
                     "enabled was not specified but it is required when building CreateRequireCheckIn",
                 )

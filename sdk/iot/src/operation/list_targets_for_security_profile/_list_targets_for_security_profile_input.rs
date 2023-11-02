@@ -88,7 +88,7 @@ impl ListTargetsForSecurityProfileInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_targets_for_security_profile::ListTargetsForSecurityProfileInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_targets_for_security_profile::ListTargetsForSecurityProfileInput {
             security_profile_name: self.security_profile_name,

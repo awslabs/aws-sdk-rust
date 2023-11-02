@@ -111,7 +111,7 @@ impl StartVoiceToneAnalysisTaskInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTaskInput {
             voice_connector_id: self.voice_connector_id,

@@ -202,7 +202,7 @@ impl CreateBusinessReportScheduleInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_business_report_schedule::CreateBusinessReportScheduleInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_business_report_schedule::CreateBusinessReportScheduleInput {
             schedule_name: self.schedule_name,

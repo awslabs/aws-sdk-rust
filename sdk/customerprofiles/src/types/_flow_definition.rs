@@ -176,24 +176,24 @@ impl FlowDefinitionBuilder {
     /// - [`flow_name`](crate::types::builders::FlowDefinitionBuilder::flow_name)
     /// - [`kms_arn`](crate::types::builders::FlowDefinitionBuilder::kms_arn)
     /// - [`tasks`](crate::types::builders::FlowDefinitionBuilder::tasks)
-    pub fn build(self) -> ::std::result::Result<crate::types::FlowDefinition, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::FlowDefinition, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FlowDefinition {
             description: self.description,
             flow_name: self.flow_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "flow_name",
                     "flow_name was not specified but it is required when building FlowDefinition",
                 )
             })?,
             kms_arn: self.kms_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "kms_arn",
                     "kms_arn was not specified but it is required when building FlowDefinition",
                 )
             })?,
             source_flow_config: self.source_flow_config,
             tasks: self.tasks.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "tasks",
                     "tasks was not specified but it is required when building FlowDefinition",
                 )

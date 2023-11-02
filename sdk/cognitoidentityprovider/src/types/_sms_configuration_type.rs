@@ -98,10 +98,10 @@ impl SmsConfigurationTypeBuilder {
     /// Consumes the builder and constructs a [`SmsConfigurationType`](crate::types::SmsConfigurationType).
     /// This method will fail if any of the following fields are not set:
     /// - [`sns_caller_arn`](crate::types::builders::SmsConfigurationTypeBuilder::sns_caller_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::SmsConfigurationType, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SmsConfigurationType, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SmsConfigurationType {
             sns_caller_arn: self.sns_caller_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "sns_caller_arn",
                     "sns_caller_arn was not specified but it is required when building SmsConfigurationType",
                 )

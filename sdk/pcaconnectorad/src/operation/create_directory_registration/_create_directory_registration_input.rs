@@ -94,7 +94,7 @@ impl CreateDirectoryRegistrationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_directory_registration::CreateDirectoryRegistrationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_directory_registration::CreateDirectoryRegistrationInput {
             directory_id: self.directory_id,

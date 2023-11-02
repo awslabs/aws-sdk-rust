@@ -125,22 +125,22 @@ impl VpcConfigurationBuilder {
     /// - [`vpc_id`](crate::types::builders::VpcConfigurationBuilder::vpc_id)
     /// - [`subnet_ids`](crate::types::builders::VpcConfigurationBuilder::subnet_ids)
     /// - [`security_group_ids`](crate::types::builders::VpcConfigurationBuilder::security_group_ids)
-    pub fn build(self) -> ::std::result::Result<crate::types::VpcConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::VpcConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::VpcConfiguration {
             vpc_id: self.vpc_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "vpc_id",
                     "vpc_id was not specified but it is required when building VpcConfiguration",
                 )
             })?,
             subnet_ids: self.subnet_ids.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "subnet_ids",
                     "subnet_ids was not specified but it is required when building VpcConfiguration",
                 )
             })?,
             security_group_ids: self.security_group_ids.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "security_group_ids",
                     "security_group_ids was not specified but it is required when building VpcConfiguration",
                 )

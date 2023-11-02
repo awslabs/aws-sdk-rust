@@ -2,7 +2,7 @@
 pub fn ser_create_cluster_v2_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_cluster_v2::CreateClusterV2Input,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.cluster_name {
         object.key("clusterName").string(var_1.as_str());
     }

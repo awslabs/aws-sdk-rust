@@ -75,7 +75,7 @@ impl ConfigureLogsForChannelInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::configure_logs_for_channel::ConfigureLogsForChannelInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::configure_logs_for_channel::ConfigureLogsForChannelInput {
             channel_name: self.channel_name,

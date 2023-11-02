@@ -136,7 +136,7 @@ impl BatchUpdateTableRowsInputBuilder {
     /// Consumes the builder and constructs a [`BatchUpdateTableRowsInput`](crate::operation::batch_update_table_rows::BatchUpdateTableRowsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_update_table_rows::BatchUpdateTableRowsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::batch_update_table_rows::BatchUpdateTableRowsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::batch_update_table_rows::BatchUpdateTableRowsInput {
             workbook_id: self.workbook_id,

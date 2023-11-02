@@ -130,7 +130,7 @@ impl GetBucketsAggregationInputBuilder {
     /// Consumes the builder and constructs a [`GetBucketsAggregationInput`](crate::operation::get_buckets_aggregation::GetBucketsAggregationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_buckets_aggregation::GetBucketsAggregationInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_buckets_aggregation::GetBucketsAggregationInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_buckets_aggregation::GetBucketsAggregationInput {
             index_name: self.index_name,

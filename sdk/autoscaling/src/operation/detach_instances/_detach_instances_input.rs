@@ -95,7 +95,7 @@ impl DetachInstancesInputBuilder {
     /// Consumes the builder and constructs a [`DetachInstancesInput`](crate::operation::detach_instances::DetachInstancesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::detach_instances::DetachInstancesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::detach_instances::DetachInstancesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::detach_instances::DetachInstancesInput {
             instance_ids: self.instance_ids,
             auto_scaling_group_name: self.auto_scaling_group_name,

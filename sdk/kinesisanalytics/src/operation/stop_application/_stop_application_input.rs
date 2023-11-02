@@ -45,7 +45,7 @@ impl StopApplicationInputBuilder {
     /// Consumes the builder and constructs a [`StopApplicationInput`](crate::operation::stop_application::StopApplicationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_application::StopApplicationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::stop_application::StopApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_application::StopApplicationInput {
             application_name: self.application_name,
         })

@@ -180,18 +180,18 @@ impl CorsRuleBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`allowed_methods`](crate::types::builders::CorsRuleBuilder::allowed_methods)
     /// - [`allowed_origins`](crate::types::builders::CorsRuleBuilder::allowed_origins)
-    pub fn build(self) -> ::std::result::Result<crate::types::CorsRule, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CorsRule, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CorsRule {
             id: self.id,
             allowed_headers: self.allowed_headers,
             allowed_methods: self.allowed_methods.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "allowed_methods",
                     "allowed_methods was not specified but it is required when building CorsRule",
                 )
             })?,
             allowed_origins: self.allowed_origins.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "allowed_origins",
                     "allowed_origins was not specified but it is required when building CorsRule",
                 )

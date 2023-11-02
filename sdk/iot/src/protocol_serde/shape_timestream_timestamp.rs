@@ -51,7 +51,7 @@ where
 pub fn ser_timestream_timestamp(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TimestreamTimestamp,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("value").string(input.value.as_str());
     }

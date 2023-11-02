@@ -132,7 +132,7 @@ impl PutKeywordInputBuilder {
         &self.keyword_action
     }
     /// Consumes the builder and constructs a [`PutKeywordInput`](crate::operation::put_keyword::PutKeywordInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_keyword::PutKeywordInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_keyword::PutKeywordInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_keyword::PutKeywordInput {
             origination_identity: self.origination_identity,
             keyword: self.keyword,

@@ -173,7 +173,7 @@ impl GetSecurityGroupsForVpcInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_security_groups_for_vpc::GetSecurityGroupsForVpcInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_security_groups_for_vpc::GetSecurityGroupsForVpcInput {
             vpc_id: self.vpc_id,

@@ -103,11 +103,11 @@ impl ListVectorEnrichmentJobsOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_vector_enrichment_jobs::ListVectorEnrichmentJobsOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_vector_enrichment_jobs::ListVectorEnrichmentJobsOutput {
             vector_enrichment_job_summaries: self.vector_enrichment_job_summaries.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "vector_enrichment_job_summaries",
                     "vector_enrichment_job_summaries was not specified but it is required when building ListVectorEnrichmentJobsOutput",
                 )

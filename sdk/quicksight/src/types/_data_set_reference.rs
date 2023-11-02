@@ -70,16 +70,16 @@ impl DataSetReferenceBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`data_set_placeholder`](crate::types::builders::DataSetReferenceBuilder::data_set_placeholder)
     /// - [`data_set_arn`](crate::types::builders::DataSetReferenceBuilder::data_set_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::DataSetReference, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DataSetReference, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DataSetReference {
             data_set_placeholder: self.data_set_placeholder.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_set_placeholder",
                     "data_set_placeholder was not specified but it is required when building DataSetReference",
                 )
             })?,
             data_set_arn: self.data_set_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_set_arn",
                     "data_set_arn was not specified but it is required when building DataSetReference",
                 )

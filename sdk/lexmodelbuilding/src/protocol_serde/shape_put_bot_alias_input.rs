@@ -2,7 +2,7 @@
 pub fn ser_put_bot_alias_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_bot_alias::PutBotAliasInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.bot_version {
         object.key("botVersion").string(var_1.as_str());
     }

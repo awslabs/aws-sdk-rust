@@ -63,10 +63,10 @@ impl EnableControlOutputBuilder {
     /// - [`operation_identifier`](crate::operation::enable_control::builders::EnableControlOutputBuilder::operation_identifier)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::enable_control::EnableControlOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::enable_control::EnableControlOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::enable_control::EnableControlOutput {
             operation_identifier: self.operation_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "operation_identifier",
                     "operation_identifier was not specified but it is required when building EnableControlOutput",
                 )

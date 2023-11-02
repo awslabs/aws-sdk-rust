@@ -111,7 +111,7 @@ impl MergeBranchesByFastForwardInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::merge_branches_by_fast_forward::MergeBranchesByFastForwardInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::merge_branches_by_fast_forward::MergeBranchesByFastForwardInput {
             repository_name: self.repository_name,

@@ -93,22 +93,22 @@ impl TrinoParametersBuilder {
     /// - [`host`](crate::types::builders::TrinoParametersBuilder::host)
     /// - [`port`](crate::types::builders::TrinoParametersBuilder::port)
     /// - [`catalog`](crate::types::builders::TrinoParametersBuilder::catalog)
-    pub fn build(self) -> ::std::result::Result<crate::types::TrinoParameters, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TrinoParameters, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TrinoParameters {
             host: self.host.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "host",
                     "host was not specified but it is required when building TrinoParameters",
                 )
             })?,
             port: self.port.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "port",
                     "port was not specified but it is required when building TrinoParameters",
                 )
             })?,
             catalog: self.catalog.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "catalog",
                     "catalog was not specified but it is required when building TrinoParameters",
                 )

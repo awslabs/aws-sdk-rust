@@ -53,10 +53,10 @@ impl FilterOperationBuilder {
     /// Consumes the builder and constructs a [`FilterOperation`](crate::types::FilterOperation).
     /// This method will fail if any of the following fields are not set:
     /// - [`condition_expression`](crate::types::builders::FilterOperationBuilder::condition_expression)
-    pub fn build(self) -> ::std::result::Result<crate::types::FilterOperation, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::FilterOperation, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FilterOperation {
             condition_expression: self.condition_expression.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "condition_expression",
                     "condition_expression was not specified but it is required when building FilterOperation",
                 )

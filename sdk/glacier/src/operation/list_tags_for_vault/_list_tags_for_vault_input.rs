@@ -72,7 +72,7 @@ impl ListTagsForVaultInputBuilder {
     /// Consumes the builder and constructs a [`ListTagsForVaultInput`](crate::operation::list_tags_for_vault::ListTagsForVaultInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_tags_for_vault::ListTagsForVaultInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_tags_for_vault::ListTagsForVaultInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_tags_for_vault::ListTagsForVaultInput {
             account_id: self.account_id,
             vault_name: self.vault_name,

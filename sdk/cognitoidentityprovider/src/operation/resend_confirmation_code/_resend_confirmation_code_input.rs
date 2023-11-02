@@ -221,8 +221,10 @@ impl ResendConfirmationCodeInputBuilder {
     /// Consumes the builder and constructs a [`ResendConfirmationCodeInput`](crate::operation::resend_confirmation_code::ResendConfirmationCodeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::resend_confirmation_code::ResendConfirmationCodeInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::resend_confirmation_code::ResendConfirmationCodeInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::resend_confirmation_code::ResendConfirmationCodeInput {
             client_id: self.client_id,
             secret_hash: self.secret_hash,

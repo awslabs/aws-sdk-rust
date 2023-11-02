@@ -124,7 +124,7 @@ impl CreateEndpointAccessInputBuilder {
     /// Consumes the builder and constructs a [`CreateEndpointAccessInput`](crate::operation::create_endpoint_access::CreateEndpointAccessInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_endpoint_access::CreateEndpointAccessInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_endpoint_access::CreateEndpointAccessInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_endpoint_access::CreateEndpointAccessInput {
             endpoint_name: self.endpoint_name,

@@ -71,7 +71,7 @@ impl ListEnabledProductsForImportInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_enabled_products_for_import::ListEnabledProductsForImportInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_enabled_products_for_import::ListEnabledProductsForImportInput {
             next_token: self.next_token,

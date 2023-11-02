@@ -183,34 +183,34 @@ impl GetRotationOutputBuilder {
     /// - [`contact_ids`](crate::operation::get_rotation::builders::GetRotationOutputBuilder::contact_ids)
     /// - [`start_time`](crate::operation::get_rotation::builders::GetRotationOutputBuilder::start_time)
     /// - [`time_zone_id`](crate::operation::get_rotation::builders::GetRotationOutputBuilder::time_zone_id)
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_rotation::GetRotationOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_rotation::GetRotationOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_rotation::GetRotationOutput {
             rotation_arn: self.rotation_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "rotation_arn",
                     "rotation_arn was not specified but it is required when building GetRotationOutput",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building GetRotationOutput",
                 )
             })?,
             contact_ids: self.contact_ids.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "contact_ids",
                     "contact_ids was not specified but it is required when building GetRotationOutput",
                 )
             })?,
             start_time: self.start_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "start_time",
                     "start_time was not specified but it is required when building GetRotationOutput",
                 )
             })?,
             time_zone_id: self.time_zone_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "time_zone_id",
                     "time_zone_id was not specified but it is required when building GetRotationOutput",
                 )

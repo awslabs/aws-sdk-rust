@@ -108,11 +108,11 @@ impl AggregationSortConfigurationBuilder {
     /// Consumes the builder and constructs a [`AggregationSortConfiguration`](crate::types::AggregationSortConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`sort_direction`](crate::types::builders::AggregationSortConfigurationBuilder::sort_direction)
-    pub fn build(self) -> ::std::result::Result<crate::types::AggregationSortConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AggregationSortConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AggregationSortConfiguration {
             column: self.column,
             sort_direction: self.sort_direction.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "sort_direction",
                     "sort_direction was not specified but it is required when building AggregationSortConfiguration",
                 )

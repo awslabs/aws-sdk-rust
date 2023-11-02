@@ -112,7 +112,7 @@ impl UpdatePlaceIndexInputBuilder {
     /// Consumes the builder and constructs a [`UpdatePlaceIndexInput`](crate::operation::update_place_index::UpdatePlaceIndexInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_place_index::UpdatePlaceIndexInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_place_index::UpdatePlaceIndexInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_place_index::UpdatePlaceIndexInput {
             index_name: self.index_name,
             pricing_plan: self.pricing_plan,

@@ -66,7 +66,7 @@ impl DescribeComputeInputBuilder {
     /// Consumes the builder and constructs a [`DescribeComputeInput`](crate::operation::describe_compute::DescribeComputeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_compute::DescribeComputeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_compute::DescribeComputeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_compute::DescribeComputeInput {
             fleet_id: self.fleet_id,
             compute_name: self.compute_name,

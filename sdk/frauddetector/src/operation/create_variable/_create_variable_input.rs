@@ -186,7 +186,7 @@ impl CreateVariableInputBuilder {
     /// Consumes the builder and constructs a [`CreateVariableInput`](crate::operation::create_variable::CreateVariableInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_variable::CreateVariableInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_variable::CreateVariableInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_variable::CreateVariableInput {
             name: self.name,
             data_type: self.data_type,

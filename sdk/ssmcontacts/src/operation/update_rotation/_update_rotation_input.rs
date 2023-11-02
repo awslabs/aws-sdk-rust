@@ -152,7 +152,7 @@ impl UpdateRotationInputBuilder {
     /// Consumes the builder and constructs a [`UpdateRotationInput`](crate::operation::update_rotation::UpdateRotationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_rotation::UpdateRotationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_rotation::UpdateRotationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_rotation::UpdateRotationInput {
             rotation_id: self.rotation_id,
             contact_ids: self.contact_ids,

@@ -68,7 +68,7 @@ impl DisassociateRecoveryPointFromParentInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_recovery_point_from_parent::DisassociateRecoveryPointFromParentInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::disassociate_recovery_point_from_parent::DisassociateRecoveryPointFromParentInput {

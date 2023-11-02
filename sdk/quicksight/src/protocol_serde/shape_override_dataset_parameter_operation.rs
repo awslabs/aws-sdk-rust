@@ -2,7 +2,7 @@
 pub fn ser_override_dataset_parameter_operation(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::OverrideDatasetParameterOperation,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("ParameterName").string(input.parameter_name.as_str());
     }

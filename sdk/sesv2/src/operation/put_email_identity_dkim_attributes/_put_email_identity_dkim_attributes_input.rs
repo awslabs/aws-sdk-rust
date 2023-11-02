@@ -73,7 +73,7 @@ impl PutEmailIdentityDkimAttributesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_email_identity_dkim_attributes::PutEmailIdentityDkimAttributesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::put_email_identity_dkim_attributes::PutEmailIdentityDkimAttributesInput {

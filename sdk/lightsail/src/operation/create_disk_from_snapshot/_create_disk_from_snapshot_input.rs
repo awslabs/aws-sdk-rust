@@ -342,7 +342,7 @@ impl CreateDiskFromSnapshotInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_disk_from_snapshot::CreateDiskFromSnapshotInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_disk_from_snapshot::CreateDiskFromSnapshotInput {
             disk_name: self.disk_name,

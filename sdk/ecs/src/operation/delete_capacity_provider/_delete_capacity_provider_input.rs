@@ -44,8 +44,10 @@ impl DeleteCapacityProviderInputBuilder {
     /// Consumes the builder and constructs a [`DeleteCapacityProviderInput`](crate::operation::delete_capacity_provider::DeleteCapacityProviderInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_capacity_provider::DeleteCapacityProviderInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::delete_capacity_provider::DeleteCapacityProviderInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::delete_capacity_provider::DeleteCapacityProviderInput {
             capacity_provider: self.capacity_provider,
         })

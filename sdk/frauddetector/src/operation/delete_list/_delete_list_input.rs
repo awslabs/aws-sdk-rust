@@ -42,7 +42,7 @@ impl DeleteListInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`DeleteListInput`](crate::operation::delete_list::DeleteListInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_list::DeleteListInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_list::DeleteListInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_list::DeleteListInput { name: self.name })
     }
 }

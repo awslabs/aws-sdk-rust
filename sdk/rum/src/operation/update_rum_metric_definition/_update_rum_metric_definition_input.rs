@@ -138,7 +138,7 @@ impl UpdateRumMetricDefinitionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_rum_metric_definition::UpdateRumMetricDefinitionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_rum_metric_definition::UpdateRumMetricDefinitionInput {
             app_monitor_name: self.app_monitor_name,

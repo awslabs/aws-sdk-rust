@@ -203,35 +203,35 @@ impl FunctionUrlConfigBuilder {
     /// - [`creation_time`](crate::types::builders::FunctionUrlConfigBuilder::creation_time)
     /// - [`last_modified_time`](crate::types::builders::FunctionUrlConfigBuilder::last_modified_time)
     /// - [`auth_type`](crate::types::builders::FunctionUrlConfigBuilder::auth_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::FunctionUrlConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::FunctionUrlConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FunctionUrlConfig {
             function_url: self.function_url.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "function_url",
                     "function_url was not specified but it is required when building FunctionUrlConfig",
                 )
             })?,
             function_arn: self.function_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "function_arn",
                     "function_arn was not specified but it is required when building FunctionUrlConfig",
                 )
             })?,
             creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_time",
                     "creation_time was not specified but it is required when building FunctionUrlConfig",
                 )
             })?,
             last_modified_time: self.last_modified_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_modified_time",
                     "last_modified_time was not specified but it is required when building FunctionUrlConfig",
                 )
             })?,
             cors: self.cors,
             auth_type: self.auth_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "auth_type",
                     "auth_type was not specified but it is required when building FunctionUrlConfig",
                 )

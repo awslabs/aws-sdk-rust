@@ -51,7 +51,7 @@ impl BatchDisableStandardsInputBuilder {
     /// Consumes the builder and constructs a [`BatchDisableStandardsInput`](crate::operation::batch_disable_standards::BatchDisableStandardsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_disable_standards::BatchDisableStandardsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::batch_disable_standards::BatchDisableStandardsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::batch_disable_standards::BatchDisableStandardsInput {
             standards_subscription_arns: self.standards_subscription_arns,

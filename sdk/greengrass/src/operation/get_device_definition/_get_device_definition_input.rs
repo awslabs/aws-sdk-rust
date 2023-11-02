@@ -44,7 +44,7 @@ impl GetDeviceDefinitionInputBuilder {
     /// Consumes the builder and constructs a [`GetDeviceDefinitionInput`](crate::operation::get_device_definition::GetDeviceDefinitionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_device_definition::GetDeviceDefinitionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_device_definition::GetDeviceDefinitionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_device_definition::GetDeviceDefinitionInput {
             device_definition_id: self.device_definition_id,

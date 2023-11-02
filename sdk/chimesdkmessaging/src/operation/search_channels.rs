@@ -174,7 +174,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for SearchChanne
             fn uri_base(
                 _input: &crate::operation::search_channels::SearchChannelsInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 use ::std::fmt::Write as _;
                 ::std::write!(output, "/channels").expect("formatting should succeed");
                 ::std::result::Result::Ok(())
@@ -182,7 +182,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for SearchChanne
             fn uri_query(
                 _input: &crate::operation::search_channels::SearchChannelsInput,
                 mut output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 query.push_kv("operation", "search");
                 if let ::std::option::Option::Some(inner_1) = &_input.max_results {
@@ -201,7 +201,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for SearchChanne
             fn update_http_builder(
                 input: &crate::operation::search_channels::SearchChannelsInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -212,7 +212,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for SearchChanne
             builder = _header_serialization_settings.set_default_header(builder, ::http::header::CONTENT_TYPE, "application/json");
             builder
         };
-        let body = ::aws_smithy_http::body::SdkBody::from(crate::protocol_serde::shape_search_channels::ser_search_channels_input(&input)?);
+        let body = ::aws_smithy_types::body::SdkBody::from(crate::protocol_serde::shape_search_channels::ser_search_channels_input(&input)?);
         if let Some(content_length) = body.content_length() {
             let content_length = content_length.to_string();
             request_builder = _header_serialization_settings.set_default_header(request_builder, ::http::header::CONTENT_LENGTH, &content_length);

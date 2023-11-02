@@ -106,7 +106,9 @@ impl LookupPolicyInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`LookupPolicyInput`](crate::operation::lookup_policy::LookupPolicyInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::lookup_policy::LookupPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::lookup_policy::LookupPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::lookup_policy::LookupPolicyInput {
             directory_arn: self.directory_arn,
             object_reference: self.object_reference,

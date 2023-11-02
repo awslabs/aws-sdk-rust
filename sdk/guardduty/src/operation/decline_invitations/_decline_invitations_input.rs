@@ -51,7 +51,7 @@ impl DeclineInvitationsInputBuilder {
     /// Consumes the builder and constructs a [`DeclineInvitationsInput`](crate::operation::decline_invitations::DeclineInvitationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::decline_invitations::DeclineInvitationsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::decline_invitations::DeclineInvitationsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::decline_invitations::DeclineInvitationsInput {
             account_ids: self.account_ids,
         })

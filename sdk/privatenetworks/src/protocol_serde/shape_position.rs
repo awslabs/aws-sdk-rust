@@ -2,7 +2,7 @@
 pub fn ser_position(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Position,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.latitude {
         object.key("latitude").number(
             #[allow(clippy::useless_conversion)]

@@ -162,22 +162,22 @@ impl PartitionIndexDescriptorBuilder {
     /// - [`index_name`](crate::types::builders::PartitionIndexDescriptorBuilder::index_name)
     /// - [`keys`](crate::types::builders::PartitionIndexDescriptorBuilder::keys)
     /// - [`index_status`](crate::types::builders::PartitionIndexDescriptorBuilder::index_status)
-    pub fn build(self) -> ::std::result::Result<crate::types::PartitionIndexDescriptor, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PartitionIndexDescriptor, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PartitionIndexDescriptor {
             index_name: self.index_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "index_name",
                     "index_name was not specified but it is required when building PartitionIndexDescriptor",
                 )
             })?,
             keys: self.keys.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "keys",
                     "keys was not specified but it is required when building PartitionIndexDescriptor",
                 )
             })?,
             index_status: self.index_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "index_status",
                     "index_status was not specified but it is required when building PartitionIndexDescriptor",
                 )

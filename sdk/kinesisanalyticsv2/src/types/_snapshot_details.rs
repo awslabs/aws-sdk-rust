@@ -113,22 +113,22 @@ impl SnapshotDetailsBuilder {
     /// - [`snapshot_name`](crate::types::builders::SnapshotDetailsBuilder::snapshot_name)
     /// - [`snapshot_status`](crate::types::builders::SnapshotDetailsBuilder::snapshot_status)
     /// - [`application_version_id`](crate::types::builders::SnapshotDetailsBuilder::application_version_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::SnapshotDetails, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SnapshotDetails, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SnapshotDetails {
             snapshot_name: self.snapshot_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "snapshot_name",
                     "snapshot_name was not specified but it is required when building SnapshotDetails",
                 )
             })?,
             snapshot_status: self.snapshot_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "snapshot_status",
                     "snapshot_status was not specified but it is required when building SnapshotDetails",
                 )
             })?,
             application_version_id: self.application_version_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "application_version_id",
                     "application_version_id was not specified but it is required when building SnapshotDetails",
                 )

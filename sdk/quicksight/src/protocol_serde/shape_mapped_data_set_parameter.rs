@@ -2,7 +2,7 @@
 pub fn ser_mapped_data_set_parameter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MappedDataSetParameter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("DataSetIdentifier").string(input.data_set_identifier.as_str());
     }

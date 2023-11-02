@@ -161,7 +161,7 @@ impl CountOpenWorkflowExecutionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::count_open_workflow_executions::CountOpenWorkflowExecutionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::count_open_workflow_executions::CountOpenWorkflowExecutionsInput {
             domain: self.domain,

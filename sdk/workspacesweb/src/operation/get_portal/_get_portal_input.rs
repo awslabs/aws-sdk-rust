@@ -42,7 +42,7 @@ impl GetPortalInputBuilder {
         &self.portal_arn
     }
     /// Consumes the builder and constructs a [`GetPortalInput`](crate::operation::get_portal::GetPortalInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_portal::GetPortalInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_portal::GetPortalInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_portal::GetPortalInput { portal_arn: self.portal_arn })
     }
 }

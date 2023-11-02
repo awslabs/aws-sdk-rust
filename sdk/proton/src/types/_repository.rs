@@ -138,28 +138,28 @@ impl RepositoryBuilder {
     /// - [`provider`](crate::types::builders::RepositoryBuilder::provider)
     /// - [`name`](crate::types::builders::RepositoryBuilder::name)
     /// - [`connection_arn`](crate::types::builders::RepositoryBuilder::connection_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::Repository, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Repository, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Repository {
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building Repository",
                 )
             })?,
             provider: self.provider.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "provider",
                     "provider was not specified but it is required when building Repository",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building Repository",
                 )
             })?,
             connection_arn: self.connection_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "connection_arn",
                     "connection_arn was not specified but it is required when building Repository",
                 )

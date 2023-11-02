@@ -237,7 +237,7 @@ impl DescribeOptionGroupsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeOptionGroupsInput`](crate::operation::describe_option_groups::DescribeOptionGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_option_groups::DescribeOptionGroupsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_option_groups::DescribeOptionGroupsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_option_groups::DescribeOptionGroupsInput {
             option_group_name: self.option_group_name,

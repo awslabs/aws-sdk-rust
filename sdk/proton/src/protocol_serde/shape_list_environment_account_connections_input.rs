@@ -2,7 +2,7 @@
 pub fn ser_list_environment_account_connections_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_environment_account_connections::ListEnvironmentAccountConnectionsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.requested_by {
         object.key("requestedBy").string(var_1.as_str());
     }

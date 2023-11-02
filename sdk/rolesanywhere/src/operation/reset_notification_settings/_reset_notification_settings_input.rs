@@ -75,7 +75,7 @@ impl ResetNotificationSettingsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reset_notification_settings::ResetNotificationSettingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::reset_notification_settings::ResetNotificationSettingsInput {
             trust_anchor_id: self.trust_anchor_id,

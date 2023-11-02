@@ -169,16 +169,16 @@ impl AwsManagedRulesAcfpRuleSetBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`creation_path`](crate::types::builders::AwsManagedRulesAcfpRuleSetBuilder::creation_path)
     /// - [`registration_page_path`](crate::types::builders::AwsManagedRulesAcfpRuleSetBuilder::registration_page_path)
-    pub fn build(self) -> ::std::result::Result<crate::types::AwsManagedRulesAcfpRuleSet, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AwsManagedRulesAcfpRuleSet, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AwsManagedRulesAcfpRuleSet {
             creation_path: self.creation_path.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_path",
                     "creation_path was not specified but it is required when building AwsManagedRulesAcfpRuleSet",
                 )
             })?,
             registration_page_path: self.registration_page_path.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "registration_page_path",
                     "registration_page_path was not specified but it is required when building AwsManagedRulesAcfpRuleSet",
                 )

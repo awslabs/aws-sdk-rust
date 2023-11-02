@@ -75,10 +75,10 @@ impl SqlQueryDatasetActionBuilder {
     /// Consumes the builder and constructs a [`SqlQueryDatasetAction`](crate::types::SqlQueryDatasetAction).
     /// This method will fail if any of the following fields are not set:
     /// - [`sql_query`](crate::types::builders::SqlQueryDatasetActionBuilder::sql_query)
-    pub fn build(self) -> ::std::result::Result<crate::types::SqlQueryDatasetAction, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SqlQueryDatasetAction, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SqlQueryDatasetAction {
             sql_query: self.sql_query.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "sql_query",
                     "sql_query was not specified but it is required when building SqlQueryDatasetAction",
                 )

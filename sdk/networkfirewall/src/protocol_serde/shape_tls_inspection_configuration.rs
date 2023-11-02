@@ -2,7 +2,7 @@
 pub fn ser_tls_inspection_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TlsInspectionConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.server_certificate_configurations {
         let mut array_2 = object.key("ServerCertificateConfigurations").start_array();
         for item_3 in var_1 {

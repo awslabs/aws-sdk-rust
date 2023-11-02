@@ -90,7 +90,7 @@ impl DisassociateVpcFromHostedZoneInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_vpc_from_hosted_zone::DisassociateVpcFromHostedZoneInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disassociate_vpc_from_hosted_zone::DisassociateVpcFromHostedZoneInput {
             hosted_zone_id: self.hosted_zone_id,

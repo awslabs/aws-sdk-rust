@@ -175,16 +175,16 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetTileReque
             fn uri_base(
                 _input: &crate::operation::get_tile::GetTileInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 use ::std::fmt::Write as _;
                 let input_1 = &_input.z;
                 let input_1 = input_1
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("z", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("z", "cannot be empty or unset"))?;
                 let mut z_encoder = ::aws_smithy_types::primitive::Encoder::from(*input_1);
                 let z = z_encoder.encode();
                 if z.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "z",
                         "cannot be empty or unset",
                     ));
@@ -192,11 +192,11 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetTileReque
                 let input_2 = &_input.x;
                 let input_2 = input_2
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("x", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("x", "cannot be empty or unset"))?;
                 let mut x_encoder = ::aws_smithy_types::primitive::Encoder::from(*input_2);
                 let x = x_encoder.encode();
                 if x.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "x",
                         "cannot be empty or unset",
                     ));
@@ -204,11 +204,11 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetTileReque
                 let input_3 = &_input.y;
                 let input_3 = input_3
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("y", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("y", "cannot be empty or unset"))?;
                 let mut y_encoder = ::aws_smithy_types::primitive::Encoder::from(*input_3);
                 let y = y_encoder.encode();
                 if y.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "y",
                         "cannot be empty or unset",
                     ));
@@ -219,26 +219,26 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetTileReque
             fn uri_query(
                 _input: &crate::operation::get_tile::GetTileInput,
                 mut output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 let inner_4 = &_input.image_assets;
                 let inner_4 = inner_4
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("image_assets", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("image_assets", "cannot be empty or unset"))?;
                 for inner_5 in inner_4 {
                     query.push_kv("ImageAssets", &::aws_smithy_http::query::fmt_string(&inner_5));
                 }
                 let inner_6 = &_input.target;
                 let inner_6 = inner_6
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("target", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("target", "cannot be empty or unset"))?;
                 query.push_kv("Target", &::aws_smithy_http::query::fmt_string(&inner_6));
                 let inner_7 = &_input.arn;
                 let inner_7 = inner_7
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("arn", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "cannot be empty or unset"))?;
                 if inner_7.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "arn",
                         "cannot be empty or unset",
                     ));
@@ -280,7 +280,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetTileReque
             fn update_http_builder(
                 input: &crate::operation::get_tile::GetTileInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -289,7 +289,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetTileReque
             let mut builder = update_http_builder(&input, ::http::request::Builder::new())?;
             builder
         };
-        let body = ::aws_smithy_http::body::SdkBody::from("");
+        let body = ::aws_smithy_types::body::SdkBody::from("");
 
         ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }

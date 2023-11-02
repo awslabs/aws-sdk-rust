@@ -218,7 +218,7 @@ impl DescribeDhcpOptionsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDhcpOptionsInput`](crate::operation::describe_dhcp_options::DescribeDhcpOptionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_dhcp_options::DescribeDhcpOptionsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_dhcp_options::DescribeDhcpOptionsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_dhcp_options::DescribeDhcpOptionsInput {
             dhcp_options_ids: self.dhcp_options_ids,

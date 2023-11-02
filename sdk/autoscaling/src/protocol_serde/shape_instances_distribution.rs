@@ -3,7 +3,7 @@
 pub fn ser_instances_distribution(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::InstancesDistribution,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("OnDemandAllocationStrategy");
     if let Some(var_2) = &input.on_demand_allocation_strategy {

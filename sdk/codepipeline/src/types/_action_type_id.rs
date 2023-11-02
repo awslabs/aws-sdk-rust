@@ -156,28 +156,28 @@ impl ActionTypeIdBuilder {
     /// - [`owner`](crate::types::builders::ActionTypeIdBuilder::owner)
     /// - [`provider`](crate::types::builders::ActionTypeIdBuilder::provider)
     /// - [`version`](crate::types::builders::ActionTypeIdBuilder::version)
-    pub fn build(self) -> ::std::result::Result<crate::types::ActionTypeId, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ActionTypeId, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ActionTypeId {
             category: self.category.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "category",
                     "category was not specified but it is required when building ActionTypeId",
                 )
             })?,
             owner: self.owner.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "owner",
                     "owner was not specified but it is required when building ActionTypeId",
                 )
             })?,
             provider: self.provider.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "provider",
                     "provider was not specified but it is required when building ActionTypeId",
                 )
             })?,
             version: self.version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "version",
                     "version was not specified but it is required when building ActionTypeId",
                 )

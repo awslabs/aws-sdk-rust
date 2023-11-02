@@ -67,7 +67,7 @@ impl UpdateProfilingGroupInputBuilder {
     /// Consumes the builder and constructs a [`UpdateProfilingGroupInput`](crate::operation::update_profiling_group::UpdateProfilingGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_profiling_group::UpdateProfilingGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_profiling_group::UpdateProfilingGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_profiling_group::UpdateProfilingGroupInput {
             profiling_group_name: self.profiling_group_name,

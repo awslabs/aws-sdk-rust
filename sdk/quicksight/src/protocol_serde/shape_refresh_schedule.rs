@@ -2,7 +2,7 @@
 pub fn ser_refresh_schedule(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RefreshSchedule,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("ScheduleId").string(input.schedule_id.as_str());
     }

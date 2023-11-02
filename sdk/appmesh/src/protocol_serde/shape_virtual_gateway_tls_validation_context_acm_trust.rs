@@ -2,7 +2,7 @@
 pub fn ser_virtual_gateway_tls_validation_context_acm_trust(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VirtualGatewayTlsValidationContextAcmTrust,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("certificateAuthorityArns").start_array();
         for item_2 in &input.certificate_authority_arns {

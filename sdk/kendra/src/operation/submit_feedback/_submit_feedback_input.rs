@@ -124,7 +124,7 @@ impl SubmitFeedbackInputBuilder {
     /// Consumes the builder and constructs a [`SubmitFeedbackInput`](crate::operation::submit_feedback::SubmitFeedbackInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::submit_feedback::SubmitFeedbackInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::submit_feedback::SubmitFeedbackInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::submit_feedback::SubmitFeedbackInput {
             index_id: self.index_id,
             query_id: self.query_id,

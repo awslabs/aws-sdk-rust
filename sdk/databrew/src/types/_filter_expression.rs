@@ -74,16 +74,16 @@ impl FilterExpressionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`expression`](crate::types::builders::FilterExpressionBuilder::expression)
     /// - [`values_map`](crate::types::builders::FilterExpressionBuilder::values_map)
-    pub fn build(self) -> ::std::result::Result<crate::types::FilterExpression, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::FilterExpression, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FilterExpression {
             expression: self.expression.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "expression",
                     "expression was not specified but it is required when building FilterExpression",
                 )
             })?,
             values_map: self.values_map.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "values_map",
                     "values_map was not specified but it is required when building FilterExpression",
                 )

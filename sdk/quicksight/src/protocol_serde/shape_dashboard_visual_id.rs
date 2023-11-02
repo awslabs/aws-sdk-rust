@@ -2,7 +2,7 @@
 pub fn ser_dashboard_visual_id(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DashboardVisualId,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("DashboardId").string(input.dashboard_id.as_str());
     }

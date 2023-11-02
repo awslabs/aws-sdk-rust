@@ -42,7 +42,7 @@ pub fn de_storage_class_analysis_data_export(
 pub fn ser_storage_class_analysis_data_export(
     input: &crate::types::StorageClassAnalysisDataExport,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     {

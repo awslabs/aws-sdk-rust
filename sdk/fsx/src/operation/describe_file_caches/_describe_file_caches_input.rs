@@ -93,7 +93,8 @@ impl DescribeFileCachesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeFileCachesInput`](crate::operation::describe_file_caches::DescribeFileCachesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_file_caches::DescribeFileCachesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_file_caches::DescribeFileCachesInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::describe_file_caches::DescribeFileCachesInput {
             file_cache_ids: self.file_cache_ids,
             max_results: self.max_results,

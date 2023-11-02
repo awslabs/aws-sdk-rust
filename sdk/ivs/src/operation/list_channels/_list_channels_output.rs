@@ -89,10 +89,10 @@ impl ListChannelsOutputBuilder {
     /// - [`channels`](crate::operation::list_channels::builders::ListChannelsOutputBuilder::channels)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_channels::ListChannelsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_channels::ListChannelsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_channels::ListChannelsOutput {
             channels: self.channels.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "channels",
                     "channels was not specified but it is required when building ListChannelsOutput",
                 )

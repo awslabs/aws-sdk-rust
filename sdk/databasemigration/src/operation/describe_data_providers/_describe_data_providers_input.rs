@@ -98,7 +98,7 @@ impl DescribeDataProvidersInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDataProvidersInput`](crate::operation::describe_data_providers::DescribeDataProvidersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_data_providers::DescribeDataProvidersInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_data_providers::DescribeDataProvidersInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_data_providers::DescribeDataProvidersInput {
             filters: self.filters,

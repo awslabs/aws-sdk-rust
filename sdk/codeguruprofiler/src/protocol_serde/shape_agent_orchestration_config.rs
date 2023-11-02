@@ -2,7 +2,7 @@
 pub fn ser_agent_orchestration_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AgentOrchestrationConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("profilingEnabled").boolean(input.profiling_enabled);
     }

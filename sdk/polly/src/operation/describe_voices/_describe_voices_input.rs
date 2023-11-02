@@ -106,7 +106,7 @@ impl DescribeVoicesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeVoicesInput`](crate::operation::describe_voices::DescribeVoicesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_voices::DescribeVoicesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_voices::DescribeVoicesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_voices::DescribeVoicesInput {
             engine: self.engine,
             language_code: self.language_code,

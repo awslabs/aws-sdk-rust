@@ -47,7 +47,7 @@ impl DeleteClientCertificateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_client_certificate::DeleteClientCertificateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_client_certificate::DeleteClientCertificateInput {
             client_certificate_id: self.client_certificate_id,

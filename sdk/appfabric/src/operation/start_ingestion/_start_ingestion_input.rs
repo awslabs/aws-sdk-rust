@@ -66,7 +66,7 @@ impl StartIngestionInputBuilder {
     /// Consumes the builder and constructs a [`StartIngestionInput`](crate::operation::start_ingestion::StartIngestionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_ingestion::StartIngestionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_ingestion::StartIngestionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_ingestion::StartIngestionInput {
             ingestion_identifier: self.ingestion_identifier,
             app_bundle_identifier: self.app_bundle_identifier,

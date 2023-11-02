@@ -44,7 +44,7 @@ impl DeleteGcmChannelInputBuilder {
     /// Consumes the builder and constructs a [`DeleteGcmChannelInput`](crate::operation::delete_gcm_channel::DeleteGcmChannelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_gcm_channel::DeleteGcmChannelInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_gcm_channel::DeleteGcmChannelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_gcm_channel::DeleteGcmChannelInput {
             application_id: self.application_id,
         })

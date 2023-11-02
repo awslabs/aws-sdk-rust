@@ -85,7 +85,9 @@ impl UpdateMemberInputBuilder {
         &self.log_publishing_configuration
     }
     /// Consumes the builder and constructs a [`UpdateMemberInput`](crate::operation::update_member::UpdateMemberInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_member::UpdateMemberInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_member::UpdateMemberInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_member::UpdateMemberInput {
             network_id: self.network_id,
             member_id: self.member_id,

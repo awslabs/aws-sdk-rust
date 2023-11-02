@@ -51,7 +51,7 @@ impl ListDataLakesInputBuilder {
     /// Consumes the builder and constructs a [`ListDataLakesInput`](crate::operation::list_data_lakes::ListDataLakesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_data_lakes::ListDataLakesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_data_lakes::ListDataLakesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_data_lakes::ListDataLakesInput { regions: self.regions })
     }
 }

@@ -64,7 +64,9 @@ impl DeletePromptInputBuilder {
         &self.prompt_id
     }
     /// Consumes the builder and constructs a [`DeletePromptInput`](crate::operation::delete_prompt::DeletePromptInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_prompt::DeletePromptInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_prompt::DeletePromptInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_prompt::DeletePromptInput {
             instance_id: self.instance_id,
             prompt_id: self.prompt_id,

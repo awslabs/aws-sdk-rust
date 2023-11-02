@@ -84,7 +84,9 @@ impl ListSpeakersInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListSpeakersInput`](crate::operation::list_speakers::ListSpeakersInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_speakers::ListSpeakersInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_speakers::ListSpeakersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_speakers::ListSpeakersInput {
             domain_id: self.domain_id,
             max_results: self.max_results,

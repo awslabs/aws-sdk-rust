@@ -108,7 +108,7 @@ impl ListProposalVotesInputBuilder {
     /// Consumes the builder and constructs a [`ListProposalVotesInput`](crate::operation::list_proposal_votes::ListProposalVotesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_proposal_votes::ListProposalVotesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_proposal_votes::ListProposalVotesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_proposal_votes::ListProposalVotesInput {
             network_id: self.network_id,
             proposal_id: self.proposal_id,

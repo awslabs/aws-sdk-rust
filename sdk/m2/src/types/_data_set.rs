@@ -132,11 +132,11 @@ impl DataSetBuilder {
     /// Consumes the builder and constructs a [`DataSet`](crate::types::DataSet).
     /// This method will fail if any of the following fields are not set:
     /// - [`dataset_name`](crate::types::builders::DataSetBuilder::dataset_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::DataSet, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DataSet, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DataSet {
             storage_type: self.storage_type,
             dataset_name: self.dataset_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "dataset_name",
                     "dataset_name was not specified but it is required when building DataSet",
                 )

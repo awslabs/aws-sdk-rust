@@ -113,23 +113,23 @@ impl AlertManagerDefinitionDescriptionBuilder {
     /// - [`data`](crate::types::builders::AlertManagerDefinitionDescriptionBuilder::data)
     /// - [`created_at`](crate::types::builders::AlertManagerDefinitionDescriptionBuilder::created_at)
     /// - [`modified_at`](crate::types::builders::AlertManagerDefinitionDescriptionBuilder::modified_at)
-    pub fn build(self) -> ::std::result::Result<crate::types::AlertManagerDefinitionDescription, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AlertManagerDefinitionDescription, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AlertManagerDefinitionDescription {
             status: self.status,
             data: self.data.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data",
                     "data was not specified but it is required when building AlertManagerDefinitionDescription",
                 )
             })?,
             created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
                     "created_at was not specified but it is required when building AlertManagerDefinitionDescription",
                 )
             })?,
             modified_at: self.modified_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "modified_at",
                     "modified_at was not specified but it is required when building AlertManagerDefinitionDescription",
                 )

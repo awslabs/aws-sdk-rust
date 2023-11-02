@@ -500,7 +500,7 @@ impl StartMedicalTranscriptionJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_medical_transcription_job::StartMedicalTranscriptionJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_medical_transcription_job::StartMedicalTranscriptionJobInput {
             medical_transcription_job_name: self.medical_transcription_job_name,

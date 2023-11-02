@@ -122,16 +122,16 @@ impl LambdaVolumeMountBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`source_path`](crate::types::builders::LambdaVolumeMountBuilder::source_path)
     /// - [`destination_path`](crate::types::builders::LambdaVolumeMountBuilder::destination_path)
-    pub fn build(self) -> ::std::result::Result<crate::types::LambdaVolumeMount, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::LambdaVolumeMount, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::LambdaVolumeMount {
             source_path: self.source_path.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source_path",
                     "source_path was not specified but it is required when building LambdaVolumeMount",
                 )
             })?,
             destination_path: self.destination_path.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "destination_path",
                     "destination_path was not specified but it is required when building LambdaVolumeMount",
                 )

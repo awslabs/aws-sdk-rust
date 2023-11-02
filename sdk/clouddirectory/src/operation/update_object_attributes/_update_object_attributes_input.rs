@@ -95,8 +95,10 @@ impl UpdateObjectAttributesInputBuilder {
     /// Consumes the builder and constructs a [`UpdateObjectAttributesInput`](crate::operation::update_object_attributes::UpdateObjectAttributesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_object_attributes::UpdateObjectAttributesInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::update_object_attributes::UpdateObjectAttributesInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::update_object_attributes::UpdateObjectAttributesInput {
             directory_arn: self.directory_arn,
             object_reference: self.object_reference,

@@ -2,7 +2,7 @@
 pub fn ser_key_provider_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::KeyProviderSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.static_key_settings {
         #[allow(unused_mut)]
         let mut object_2 = object.key("staticKeySettings").start_object();

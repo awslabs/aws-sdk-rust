@@ -78,7 +78,7 @@ impl DescribeWorkspaceAssociationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_workspace_associations::DescribeWorkspaceAssociationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_workspace_associations::DescribeWorkspaceAssociationsInput {
             workspace_id: self.workspace_id,

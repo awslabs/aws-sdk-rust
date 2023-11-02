@@ -123,7 +123,7 @@ impl UpdateVpcAttachmentInputBuilder {
     /// Consumes the builder and constructs a [`UpdateVpcAttachmentInput`](crate::operation::update_vpc_attachment::UpdateVpcAttachmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_vpc_attachment::UpdateVpcAttachmentInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_vpc_attachment::UpdateVpcAttachmentInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_vpc_attachment::UpdateVpcAttachmentInput {
             attachment_id: self.attachment_id,

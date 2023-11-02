@@ -66,7 +66,7 @@ impl DeleteReferenceInputBuilder {
     /// Consumes the builder and constructs a [`DeleteReferenceInput`](crate::operation::delete_reference::DeleteReferenceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_reference::DeleteReferenceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_reference::DeleteReferenceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_reference::DeleteReferenceInput {
             id: self.id,
             reference_store_id: self.reference_store_id,

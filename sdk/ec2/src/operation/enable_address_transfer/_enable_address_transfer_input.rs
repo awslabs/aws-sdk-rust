@@ -87,7 +87,7 @@ impl EnableAddressTransferInputBuilder {
     /// Consumes the builder and constructs a [`EnableAddressTransferInput`](crate::operation::enable_address_transfer::EnableAddressTransferInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::enable_address_transfer::EnableAddressTransferInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::enable_address_transfer::EnableAddressTransferInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::enable_address_transfer::EnableAddressTransferInput {
             allocation_id: self.allocation_id,

@@ -170,10 +170,12 @@ impl ServiceQuotaExceededExceptionBuilder {
     /// - [`message`](crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::message)
     /// - [`service_code`](crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::service_code)
     /// - [`quota_code`](crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::quota_code)
-    pub fn build(self) -> ::std::result::Result<crate::types::error::ServiceQuotaExceededException, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::error::ServiceQuotaExceededException, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::error::ServiceQuotaExceededException {
             message: self.message.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "message",
                     "message was not specified but it is required when building ServiceQuotaExceededException",
                 )
@@ -181,13 +183,13 @@ impl ServiceQuotaExceededExceptionBuilder {
             resource_identifier: self.resource_identifier,
             resource_type: self.resource_type,
             service_code: self.service_code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "service_code",
                     "service_code was not specified but it is required when building ServiceQuotaExceededException",
                 )
             })?,
             quota_code: self.quota_code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "quota_code",
                     "quota_code was not specified but it is required when building ServiceQuotaExceededException",
                 )

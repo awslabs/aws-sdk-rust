@@ -46,10 +46,10 @@ impl SparqlDataBuilder {
     /// Consumes the builder and constructs a [`SparqlData`](crate::types::SparqlData).
     /// This method will fail if any of the following fields are not set:
     /// - [`stmt`](crate::types::builders::SparqlDataBuilder::stmt)
-    pub fn build(self) -> ::std::result::Result<crate::types::SparqlData, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SparqlData, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SparqlData {
             stmt: self.stmt.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "stmt",
                     "stmt was not specified but it is required when building SparqlData",
                 )

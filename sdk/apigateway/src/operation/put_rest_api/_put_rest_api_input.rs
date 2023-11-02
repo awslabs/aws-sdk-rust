@@ -134,7 +134,7 @@ impl PutRestApiInputBuilder {
         &self.body
     }
     /// Consumes the builder and constructs a [`PutRestApiInput`](crate::operation::put_rest_api::PutRestApiInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_rest_api::PutRestApiInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_rest_api::PutRestApiInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_rest_api::PutRestApiInput {
             rest_api_id: self.rest_api_id,
             mode: self.mode,

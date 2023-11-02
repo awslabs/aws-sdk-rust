@@ -181,7 +181,7 @@ impl SearchProductsInputBuilder {
     /// Consumes the builder and constructs a [`SearchProductsInput`](crate::operation::search_products::SearchProductsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::search_products::SearchProductsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::search_products::SearchProductsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_products::SearchProductsInput {
             accept_language: self.accept_language,
             filters: self.filters,

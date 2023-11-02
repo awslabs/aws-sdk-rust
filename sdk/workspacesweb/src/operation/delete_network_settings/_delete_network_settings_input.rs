@@ -44,7 +44,7 @@ impl DeleteNetworkSettingsInputBuilder {
     /// Consumes the builder and constructs a [`DeleteNetworkSettingsInput`](crate::operation::delete_network_settings::DeleteNetworkSettingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_network_settings::DeleteNetworkSettingsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_network_settings::DeleteNetworkSettingsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_network_settings::DeleteNetworkSettingsInput {
             network_settings_arn: self.network_settings_arn,

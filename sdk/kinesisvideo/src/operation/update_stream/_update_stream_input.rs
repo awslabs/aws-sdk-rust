@@ -146,7 +146,9 @@ impl UpdateStreamInputBuilder {
         &self.media_type
     }
     /// Consumes the builder and constructs a [`UpdateStreamInput`](crate::operation::update_stream::UpdateStreamInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_stream::UpdateStreamInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_stream::UpdateStreamInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_stream::UpdateStreamInput {
             stream_name: self.stream_name,
             stream_arn: self.stream_arn,

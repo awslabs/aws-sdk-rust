@@ -87,7 +87,7 @@ impl DeleteEvaluationFormInputBuilder {
     /// Consumes the builder and constructs a [`DeleteEvaluationFormInput`](crate::operation::delete_evaluation_form::DeleteEvaluationFormInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_evaluation_form::DeleteEvaluationFormInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_evaluation_form::DeleteEvaluationFormInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_evaluation_form::DeleteEvaluationFormInput {
             instance_id: self.instance_id,

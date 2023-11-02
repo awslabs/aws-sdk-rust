@@ -222,7 +222,7 @@ impl AddIpRoutesInputBuilder {
         &self.update_security_group_for_directory_controllers
     }
     /// Consumes the builder and constructs a [`AddIpRoutesInput`](crate::operation::add_ip_routes::AddIpRoutesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::add_ip_routes::AddIpRoutesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::add_ip_routes::AddIpRoutesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::add_ip_routes::AddIpRoutesInput {
             directory_id: self.directory_id,
             ip_routes: self.ip_routes,

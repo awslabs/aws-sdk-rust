@@ -69,7 +69,7 @@ impl InstallToRemoteAccessSessionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::install_to_remote_access_session::InstallToRemoteAccessSessionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::install_to_remote_access_session::InstallToRemoteAccessSessionInput {
             remote_access_session_arn: self.remote_access_session_arn,

@@ -202,17 +202,17 @@ impl GetRegisterAccountStatusOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_register_account_status::GetRegisterAccountStatusOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_register_account_status::GetRegisterAccountStatusOutput {
             customer_account_id: self.customer_account_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "customer_account_id",
                     "customer_account_id was not specified but it is required when building GetRegisterAccountStatusOutput",
                 )
             })?,
             account_status: self.account_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "account_status",
                     "account_status was not specified but it is required when building GetRegisterAccountStatusOutput",
                 )
@@ -220,13 +220,13 @@ impl GetRegisterAccountStatusOutputBuilder {
             timestream_registration_response: self.timestream_registration_response,
             iam_registration_response: self.iam_registration_response,
             creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_time",
                     "creation_time was not specified but it is required when building GetRegisterAccountStatusOutput",
                 )
             })?,
             last_modification_time: self.last_modification_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_modification_time",
                     "last_modification_time was not specified but it is required when building GetRegisterAccountStatusOutput",
                 )

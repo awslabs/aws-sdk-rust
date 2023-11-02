@@ -63,10 +63,10 @@ impl DeleteThingShadowOutputBuilder {
     /// - [`payload`](crate::operation::delete_thing_shadow::builders::DeleteThingShadowOutputBuilder::payload)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_thing_shadow::DeleteThingShadowOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_thing_shadow::DeleteThingShadowOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_thing_shadow::DeleteThingShadowOutput {
             payload: self.payload.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "payload",
                     "payload was not specified but it is required when building DeleteThingShadowOutput",
                 )

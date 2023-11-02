@@ -53,7 +53,7 @@ where
 pub fn ser_branch_diff_source_code_type(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BranchDiffSourceCodeType,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("SourceBranchName").string(input.source_branch_name.as_str());
     }

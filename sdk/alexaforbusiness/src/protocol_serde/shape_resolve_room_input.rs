@@ -2,7 +2,7 @@
 pub fn ser_resolve_room_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::resolve_room::ResolveRoomInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.user_id {
         object.key("UserId").string(var_1.as_str());
     }

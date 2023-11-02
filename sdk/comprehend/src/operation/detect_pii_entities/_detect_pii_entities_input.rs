@@ -66,7 +66,7 @@ impl DetectPiiEntitiesInputBuilder {
     /// Consumes the builder and constructs a [`DetectPiiEntitiesInput`](crate::operation::detect_pii_entities::DetectPiiEntitiesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::detect_pii_entities::DetectPiiEntitiesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::detect_pii_entities::DetectPiiEntitiesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::detect_pii_entities::DetectPiiEntitiesInput {
             text: self.text,
             language_code: self.language_code,

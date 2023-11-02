@@ -136,7 +136,7 @@ impl CreateCoreNetworkInputBuilder {
     /// Consumes the builder and constructs a [`CreateCoreNetworkInput`](crate::operation::create_core_network::CreateCoreNetworkInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_core_network::CreateCoreNetworkInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_core_network::CreateCoreNetworkInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_core_network::CreateCoreNetworkInput {
             global_network_id: self.global_network_id,
             description: self.description,

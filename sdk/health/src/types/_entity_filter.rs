@@ -209,10 +209,10 @@ impl EntityFilterBuilder {
     /// Consumes the builder and constructs a [`EntityFilter`](crate::types::EntityFilter).
     /// This method will fail if any of the following fields are not set:
     /// - [`event_arns`](crate::types::builders::EntityFilterBuilder::event_arns)
-    pub fn build(self) -> ::std::result::Result<crate::types::EntityFilter, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::EntityFilter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EntityFilter {
             event_arns: self.event_arns.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "event_arns",
                     "event_arns was not specified but it is required when building EntityFilter",
                 )

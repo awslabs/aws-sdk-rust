@@ -118,10 +118,10 @@ impl ImageResponseCardBuilder {
     /// Consumes the builder and constructs a [`ImageResponseCard`](crate::types::ImageResponseCard).
     /// This method will fail if any of the following fields are not set:
     /// - [`title`](crate::types::builders::ImageResponseCardBuilder::title)
-    pub fn build(self) -> ::std::result::Result<crate::types::ImageResponseCard, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ImageResponseCard, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ImageResponseCard {
             title: self.title.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "title",
                     "title was not specified but it is required when building ImageResponseCard",
                 )

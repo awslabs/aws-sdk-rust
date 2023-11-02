@@ -67,11 +67,11 @@ impl ChannelDefinitionBuilder {
     /// Consumes the builder and constructs a [`ChannelDefinition`](crate::types::ChannelDefinition).
     /// This method will fail if any of the following fields are not set:
     /// - [`participant_role`](crate::types::builders::ChannelDefinitionBuilder::participant_role)
-    pub fn build(self) -> ::std::result::Result<crate::types::ChannelDefinition, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ChannelDefinition, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ChannelDefinition {
             channel_id: self.channel_id.unwrap_or_default(),
             participant_role: self.participant_role.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "participant_role",
                     "participant_role was not specified but it is required when building ChannelDefinition",
                 )

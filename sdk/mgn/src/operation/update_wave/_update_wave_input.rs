@@ -105,7 +105,7 @@ impl UpdateWaveInputBuilder {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`UpdateWaveInput`](crate::operation::update_wave::UpdateWaveInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_wave::UpdateWaveInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_wave::UpdateWaveInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_wave::UpdateWaveInput {
             wave_id: self.wave_id,
             name: self.name,

@@ -88,10 +88,10 @@ impl PackageAggregationResponseBuilder {
     /// Consumes the builder and constructs a [`PackageAggregationResponse`](crate::types::PackageAggregationResponse).
     /// This method will fail if any of the following fields are not set:
     /// - [`package_name`](crate::types::builders::PackageAggregationResponseBuilder::package_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::PackageAggregationResponse, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PackageAggregationResponse, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PackageAggregationResponse {
             package_name: self.package_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "package_name",
                     "package_name was not specified but it is required when building PackageAggregationResponse",
                 )

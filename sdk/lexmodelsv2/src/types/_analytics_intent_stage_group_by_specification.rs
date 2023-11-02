@@ -47,10 +47,10 @@ impl AnalyticsIntentStageGroupBySpecificationBuilder {
     /// - [`name`](crate::types::builders::AnalyticsIntentStageGroupBySpecificationBuilder::name)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::AnalyticsIntentStageGroupBySpecification, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::AnalyticsIntentStageGroupBySpecification, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AnalyticsIntentStageGroupBySpecification {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building AnalyticsIntentStageGroupBySpecification",
                 )

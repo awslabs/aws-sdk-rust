@@ -106,7 +106,7 @@ impl GetBuiltinSlotTypesInputBuilder {
     /// Consumes the builder and constructs a [`GetBuiltinSlotTypesInput`](crate::operation::get_builtin_slot_types::GetBuiltinSlotTypesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_builtin_slot_types::GetBuiltinSlotTypesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_builtin_slot_types::GetBuiltinSlotTypesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_builtin_slot_types::GetBuiltinSlotTypesInput {
             locale: self.locale,

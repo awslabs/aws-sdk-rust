@@ -65,7 +65,7 @@ impl CreateParameterGroupInputBuilder {
     /// Consumes the builder and constructs a [`CreateParameterGroupInput`](crate::operation::create_parameter_group::CreateParameterGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_parameter_group::CreateParameterGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_parameter_group::CreateParameterGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_parameter_group::CreateParameterGroupInput {
             parameter_group_name: self.parameter_group_name,

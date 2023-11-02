@@ -82,7 +82,7 @@ impl RemoveAttributesFromFindingsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_attributes_from_findings::RemoveAttributesFromFindingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::remove_attributes_from_findings::RemoveAttributesFromFindingsInput {
             finding_arns: self.finding_arns,

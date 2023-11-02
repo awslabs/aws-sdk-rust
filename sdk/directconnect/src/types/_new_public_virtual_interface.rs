@@ -237,10 +237,10 @@ impl NewPublicVirtualInterfaceBuilder {
     /// Consumes the builder and constructs a [`NewPublicVirtualInterface`](crate::types::NewPublicVirtualInterface).
     /// This method will fail if any of the following fields are not set:
     /// - [`virtual_interface_name`](crate::types::builders::NewPublicVirtualInterfaceBuilder::virtual_interface_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::NewPublicVirtualInterface, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::NewPublicVirtualInterface, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::NewPublicVirtualInterface {
             virtual_interface_name: self.virtual_interface_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "virtual_interface_name",
                     "virtual_interface_name was not specified but it is required when building NewPublicVirtualInterface",
                 )

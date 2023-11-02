@@ -279,7 +279,9 @@ impl CreatePortalInputBuilder {
         &self.alarms
     }
     /// Consumes the builder and constructs a [`CreatePortalInput`](crate::operation::create_portal::CreatePortalInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_portal::CreatePortalInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_portal::CreatePortalInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_portal::CreatePortalInput {
             portal_name: self.portal_name,
             portal_description: self.portal_description,

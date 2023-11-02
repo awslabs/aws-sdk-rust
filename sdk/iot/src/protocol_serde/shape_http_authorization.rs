@@ -38,7 +38,7 @@ where
 pub fn ser_http_authorization(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::HttpAuthorization,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.sigv4 {
         #[allow(unused_mut)]
         let mut object_2 = object.key("sigv4").start_object();

@@ -198,30 +198,30 @@ impl CreateFunctionUrlConfigOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_function_url_config::CreateFunctionUrlConfigOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_function_url_config::CreateFunctionUrlConfigOutput {
             function_url: self.function_url.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "function_url",
                     "function_url was not specified but it is required when building CreateFunctionUrlConfigOutput",
                 )
             })?,
             function_arn: self.function_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "function_arn",
                     "function_arn was not specified but it is required when building CreateFunctionUrlConfigOutput",
                 )
             })?,
             auth_type: self.auth_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "auth_type",
                     "auth_type was not specified but it is required when building CreateFunctionUrlConfigOutput",
                 )
             })?,
             cors: self.cors,
             creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_time",
                     "creation_time was not specified but it is required when building CreateFunctionUrlConfigOutput",
                 )

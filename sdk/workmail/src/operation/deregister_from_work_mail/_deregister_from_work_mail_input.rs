@@ -98,7 +98,7 @@ impl DeregisterFromWorkMailInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_from_work_mail::DeregisterFromWorkMailInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::deregister_from_work_mail::DeregisterFromWorkMailInput {
             organization_id: self.organization_id,

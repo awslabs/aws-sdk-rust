@@ -197,7 +197,7 @@ impl CreateControlInputBuilder {
     /// Consumes the builder and constructs a [`CreateControlInput`](crate::operation::create_control::CreateControlInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_control::CreateControlInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_control::CreateControlInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_control::CreateControlInput {
             name: self.name,
             description: self.description,

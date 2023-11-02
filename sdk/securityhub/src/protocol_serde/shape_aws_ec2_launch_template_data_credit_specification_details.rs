@@ -2,7 +2,7 @@
 pub fn ser_aws_ec2_launch_template_data_credit_specification_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEc2LaunchTemplateDataCreditSpecificationDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.cpu_credits {
         object.key("CpuCredits").string(var_1.as_str());
     }

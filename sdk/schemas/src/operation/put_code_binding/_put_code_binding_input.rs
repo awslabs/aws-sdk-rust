@@ -109,7 +109,7 @@ impl PutCodeBindingInputBuilder {
     /// Consumes the builder and constructs a [`PutCodeBindingInput`](crate::operation::put_code_binding::PutCodeBindingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_code_binding::PutCodeBindingInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_code_binding::PutCodeBindingInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_code_binding::PutCodeBindingInput {
             language: self.language,
             registry_name: self.registry_name,

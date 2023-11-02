@@ -111,7 +111,7 @@ impl RetryStageExecutionInputBuilder {
     /// Consumes the builder and constructs a [`RetryStageExecutionInput`](crate::operation::retry_stage_execution::RetryStageExecutionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::retry_stage_execution::RetryStageExecutionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::retry_stage_execution::RetryStageExecutionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::retry_stage_execution::RetryStageExecutionInput {
             pipeline_name: self.pipeline_name,

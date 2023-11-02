@@ -2,7 +2,7 @@
 pub fn ser_aws_ec2_vpc_peering_connection_status_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEc2VpcPeeringConnectionStatusDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.code {
         object.key("Code").string(var_1.as_str());
     }

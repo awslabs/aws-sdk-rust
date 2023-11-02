@@ -344,17 +344,17 @@ impl DynamoDbActionBuilder {
     /// - [`hash_key_field`](crate::types::builders::DynamoDbActionBuilder::hash_key_field)
     /// - [`hash_key_value`](crate::types::builders::DynamoDbActionBuilder::hash_key_value)
     /// - [`table_name`](crate::types::builders::DynamoDbActionBuilder::table_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::DynamoDbAction, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DynamoDbAction, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DynamoDbAction {
             hash_key_type: self.hash_key_type,
             hash_key_field: self.hash_key_field.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "hash_key_field",
                     "hash_key_field was not specified but it is required when building DynamoDbAction",
                 )
             })?,
             hash_key_value: self.hash_key_value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "hash_key_value",
                     "hash_key_value was not specified but it is required when building DynamoDbAction",
                 )
@@ -365,7 +365,7 @@ impl DynamoDbActionBuilder {
             operation: self.operation,
             payload_field: self.payload_field,
             table_name: self.table_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "table_name",
                     "table_name was not specified but it is required when building DynamoDbAction",
                 )

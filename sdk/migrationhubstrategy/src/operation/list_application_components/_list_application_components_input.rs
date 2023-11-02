@@ -158,7 +158,7 @@ impl ListApplicationComponentsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_application_components::ListApplicationComponentsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_application_components::ListApplicationComponentsInput {
             application_component_criteria: self.application_component_criteria,

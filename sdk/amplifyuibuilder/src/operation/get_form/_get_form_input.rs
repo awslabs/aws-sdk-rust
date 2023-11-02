@@ -86,7 +86,7 @@ impl GetFormInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`GetFormInput`](crate::operation::get_form::GetFormInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_form::GetFormInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_form::GetFormInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_form::GetFormInput {
             app_id: self.app_id,
             environment_name: self.environment_name,

@@ -174,7 +174,7 @@ impl GetCampaignDateRangeKpiInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_campaign_date_range_kpi::GetCampaignDateRangeKpiInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_campaign_date_range_kpi::GetCampaignDateRangeKpiInput {
             application_id: self.application_id,

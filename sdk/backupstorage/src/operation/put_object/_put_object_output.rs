@@ -131,28 +131,28 @@ impl PutObjectOutputBuilder {
     /// - [`inline_chunk_checksum_algorithm`](crate::operation::put_object::builders::PutObjectOutputBuilder::inline_chunk_checksum_algorithm)
     /// - [`object_checksum`](crate::operation::put_object::builders::PutObjectOutputBuilder::object_checksum)
     /// - [`object_checksum_algorithm`](crate::operation::put_object::builders::PutObjectOutputBuilder::object_checksum_algorithm)
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_object::PutObjectOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_object::PutObjectOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_object::PutObjectOutput {
             inline_chunk_checksum: self.inline_chunk_checksum.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "inline_chunk_checksum",
                     "inline_chunk_checksum was not specified but it is required when building PutObjectOutput",
                 )
             })?,
             inline_chunk_checksum_algorithm: self.inline_chunk_checksum_algorithm.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "inline_chunk_checksum_algorithm",
                     "inline_chunk_checksum_algorithm was not specified but it is required when building PutObjectOutput",
                 )
             })?,
             object_checksum: self.object_checksum.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "object_checksum",
                     "object_checksum was not specified but it is required when building PutObjectOutput",
                 )
             })?,
             object_checksum_algorithm: self.object_checksum_algorithm.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "object_checksum_algorithm",
                     "object_checksum_algorithm was not specified but it is required when building PutObjectOutput",
                 )

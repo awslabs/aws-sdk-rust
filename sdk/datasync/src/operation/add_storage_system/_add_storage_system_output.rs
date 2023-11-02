@@ -63,10 +63,10 @@ impl AddStorageSystemOutputBuilder {
     /// - [`storage_system_arn`](crate::operation::add_storage_system::builders::AddStorageSystemOutputBuilder::storage_system_arn)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::add_storage_system::AddStorageSystemOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::add_storage_system::AddStorageSystemOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::add_storage_system::AddStorageSystemOutput {
             storage_system_arn: self.storage_system_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "storage_system_arn",
                     "storage_system_arn was not specified but it is required when building AddStorageSystemOutput",
                 )

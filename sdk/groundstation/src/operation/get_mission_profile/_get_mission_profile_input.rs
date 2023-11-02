@@ -45,7 +45,7 @@ impl GetMissionProfileInputBuilder {
     /// Consumes the builder and constructs a [`GetMissionProfileInput`](crate::operation::get_mission_profile::GetMissionProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_mission_profile::GetMissionProfileInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_mission_profile::GetMissionProfileInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_mission_profile::GetMissionProfileInput {
             mission_profile_id: self.mission_profile_id,
         })

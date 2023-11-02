@@ -106,7 +106,7 @@ impl DescribeComputeEnvironmentsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_compute_environments::DescribeComputeEnvironmentsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_compute_environments::DescribeComputeEnvironmentsInput {
             compute_environments: self.compute_environments,

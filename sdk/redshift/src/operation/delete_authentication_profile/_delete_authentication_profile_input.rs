@@ -46,7 +46,7 @@ impl DeleteAuthenticationProfileInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_authentication_profile::DeleteAuthenticationProfileInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_authentication_profile::DeleteAuthenticationProfileInput {
             authentication_profile_name: self.authentication_profile_name,

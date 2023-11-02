@@ -76,7 +76,7 @@ impl UntagRoleInputBuilder {
         &self.tag_keys
     }
     /// Consumes the builder and constructs a [`UntagRoleInput`](crate::operation::untag_role::UntagRoleInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::untag_role::UntagRoleInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::untag_role::UntagRoleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::untag_role::UntagRoleInput {
             role_name: self.role_name,
             tag_keys: self.tag_keys,

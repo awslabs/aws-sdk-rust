@@ -71,7 +71,7 @@ impl DeleteFileShareInputBuilder {
     /// Consumes the builder and constructs a [`DeleteFileShareInput`](crate::operation::delete_file_share::DeleteFileShareInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_file_share::DeleteFileShareInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_file_share::DeleteFileShareInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_file_share::DeleteFileShareInput {
             file_share_arn: self.file_share_arn,
             force_delete: self.force_delete,

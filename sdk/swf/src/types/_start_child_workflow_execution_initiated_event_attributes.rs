@@ -337,11 +337,11 @@ impl StartChildWorkflowExecutionInitiatedEventAttributesBuilder {
     /// - [`child_policy`](crate::types::builders::StartChildWorkflowExecutionInitiatedEventAttributesBuilder::child_policy)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::StartChildWorkflowExecutionInitiatedEventAttributes, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::types::StartChildWorkflowExecutionInitiatedEventAttributes, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::types::StartChildWorkflowExecutionInitiatedEventAttributes {
             workflow_id: self.workflow_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "workflow_id",
                     "workflow_id was not specified but it is required when building StartChildWorkflowExecutionInitiatedEventAttributes",
                 )
@@ -354,7 +354,7 @@ impl StartChildWorkflowExecutionInitiatedEventAttributesBuilder {
             task_priority: self.task_priority,
             decision_task_completed_event_id: self.decision_task_completed_event_id.unwrap_or_default(),
             child_policy: self.child_policy.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "child_policy",
                     "child_policy was not specified but it is required when building StartChildWorkflowExecutionInitiatedEventAttributes",
                 )

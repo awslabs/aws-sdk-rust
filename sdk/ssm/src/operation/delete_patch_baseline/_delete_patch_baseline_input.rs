@@ -44,7 +44,7 @@ impl DeletePatchBaselineInputBuilder {
     /// Consumes the builder and constructs a [`DeletePatchBaselineInput`](crate::operation::delete_patch_baseline::DeletePatchBaselineInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_patch_baseline::DeletePatchBaselineInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_patch_baseline::DeletePatchBaselineInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_patch_baseline::DeletePatchBaselineInput {
             baseline_id: self.baseline_id,

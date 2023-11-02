@@ -2,7 +2,7 @@
 pub fn ser_json_token_type_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::JsonTokenTypeConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("UserNameAttributeField").string(input.user_name_attribute_field.as_str());
     }

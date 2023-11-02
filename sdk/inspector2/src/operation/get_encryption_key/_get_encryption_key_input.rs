@@ -66,7 +66,7 @@ impl GetEncryptionKeyInputBuilder {
     /// Consumes the builder and constructs a [`GetEncryptionKeyInput`](crate::operation::get_encryption_key::GetEncryptionKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_encryption_key::GetEncryptionKeyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_encryption_key::GetEncryptionKeyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_encryption_key::GetEncryptionKeyInput {
             scan_type: self.scan_type,
             resource_type: self.resource_type,

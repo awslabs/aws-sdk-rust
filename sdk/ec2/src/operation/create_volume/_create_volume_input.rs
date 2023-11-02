@@ -487,7 +487,9 @@ impl CreateVolumeInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateVolumeInput`](crate::operation::create_volume::CreateVolumeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_volume::CreateVolumeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_volume::CreateVolumeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_volume::CreateVolumeInput {
             availability_zone: self.availability_zone,
             encrypted: self.encrypted,

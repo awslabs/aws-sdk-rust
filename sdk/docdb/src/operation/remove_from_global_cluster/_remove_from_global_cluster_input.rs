@@ -69,7 +69,7 @@ impl RemoveFromGlobalClusterInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_from_global_cluster::RemoveFromGlobalClusterInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::remove_from_global_cluster::RemoveFromGlobalClusterInput {
             global_cluster_identifier: self.global_cluster_identifier,

@@ -89,11 +89,11 @@ impl ListPolicyStoresOutputBuilder {
     /// - [`policy_stores`](crate::operation::list_policy_stores::builders::ListPolicyStoresOutputBuilder::policy_stores)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_policy_stores::ListPolicyStoresOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_policy_stores::ListPolicyStoresOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_policy_stores::ListPolicyStoresOutput {
             next_token: self.next_token,
             policy_stores: self.policy_stores.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "policy_stores",
                     "policy_stores was not specified but it is required when building ListPolicyStoresOutput",
                 )

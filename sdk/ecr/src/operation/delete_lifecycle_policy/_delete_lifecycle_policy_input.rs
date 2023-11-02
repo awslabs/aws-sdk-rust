@@ -65,7 +65,7 @@ impl DeleteLifecyclePolicyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteLifecyclePolicyInput`](crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyInput {
             registry_id: self.registry_id,

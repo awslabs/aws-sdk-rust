@@ -94,7 +94,7 @@ impl RemoveTagsFromStreamInputBuilder {
     /// Consumes the builder and constructs a [`RemoveTagsFromStreamInput`](crate::operation::remove_tags_from_stream::RemoveTagsFromStreamInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::remove_tags_from_stream::RemoveTagsFromStreamInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::remove_tags_from_stream::RemoveTagsFromStreamInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::remove_tags_from_stream::RemoveTagsFromStreamInput {
             stream_name: self.stream_name,

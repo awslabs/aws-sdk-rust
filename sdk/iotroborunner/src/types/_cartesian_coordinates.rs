@@ -89,16 +89,16 @@ impl CartesianCoordinatesBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`x`](crate::types::builders::CartesianCoordinatesBuilder::x)
     /// - [`y`](crate::types::builders::CartesianCoordinatesBuilder::y)
-    pub fn build(self) -> ::std::result::Result<crate::types::CartesianCoordinates, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CartesianCoordinates, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CartesianCoordinates {
             x: self.x.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "x",
                     "x was not specified but it is required when building CartesianCoordinates",
                 )
             })?,
             y: self.y.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "y",
                     "y was not specified but it is required when building CartesianCoordinates",
                 )

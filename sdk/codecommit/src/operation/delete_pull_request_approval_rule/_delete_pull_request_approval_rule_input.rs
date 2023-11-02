@@ -68,7 +68,7 @@ impl DeletePullRequestApprovalRuleInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_pull_request_approval_rule::DeletePullRequestApprovalRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_pull_request_approval_rule::DeletePullRequestApprovalRuleInput {
             pull_request_id: self.pull_request_id,

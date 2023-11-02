@@ -87,7 +87,8 @@ impl DeleteStudioMemberInputBuilder {
     /// Consumes the builder and constructs a [`DeleteStudioMemberInput`](crate::operation::delete_studio_member::DeleteStudioMemberInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_studio_member::DeleteStudioMemberInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_studio_member::DeleteStudioMemberInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::delete_studio_member::DeleteStudioMemberInput {
             client_token: self.client_token,
             principal_id: self.principal_id,

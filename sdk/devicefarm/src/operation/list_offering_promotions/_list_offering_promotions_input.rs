@@ -43,8 +43,10 @@ impl ListOfferingPromotionsInputBuilder {
     /// Consumes the builder and constructs a [`ListOfferingPromotionsInput`](crate::operation::list_offering_promotions::ListOfferingPromotionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_offering_promotions::ListOfferingPromotionsInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::list_offering_promotions::ListOfferingPromotionsInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::list_offering_promotions::ListOfferingPromotionsInput { next_token: self.next_token })
     }
 }

@@ -64,7 +64,7 @@ impl PutSchemaInputBuilder {
         &self.definition
     }
     /// Consumes the builder and constructs a [`PutSchemaInput`](crate::operation::put_schema::PutSchemaInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_schema::PutSchemaInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_schema::PutSchemaInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_schema::PutSchemaInput {
             policy_store_id: self.policy_store_id,
             definition: self.definition,

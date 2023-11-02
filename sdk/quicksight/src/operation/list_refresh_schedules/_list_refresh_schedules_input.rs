@@ -66,7 +66,7 @@ impl ListRefreshSchedulesInputBuilder {
     /// Consumes the builder and constructs a [`ListRefreshSchedulesInput`](crate::operation::list_refresh_schedules::ListRefreshSchedulesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_refresh_schedules::ListRefreshSchedulesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_refresh_schedules::ListRefreshSchedulesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_refresh_schedules::ListRefreshSchedulesInput {
             aws_account_id: self.aws_account_id,

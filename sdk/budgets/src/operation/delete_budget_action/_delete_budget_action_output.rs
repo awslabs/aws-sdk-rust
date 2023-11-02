@@ -109,17 +109,17 @@ impl DeleteBudgetActionOutputBuilder {
     /// - [`budget_name`](crate::operation::delete_budget_action::builders::DeleteBudgetActionOutputBuilder::budget_name)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_budget_action::DeleteBudgetActionOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_budget_action::DeleteBudgetActionOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_budget_action::DeleteBudgetActionOutput {
             account_id: self.account_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "account_id",
                     "account_id was not specified but it is required when building DeleteBudgetActionOutput",
                 )
             })?,
             budget_name: self.budget_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "budget_name",
                     "budget_name was not specified but it is required when building DeleteBudgetActionOutput",
                 )

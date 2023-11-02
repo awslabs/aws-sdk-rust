@@ -104,7 +104,7 @@ impl DeleteWorkloadShareInputBuilder {
     /// Consumes the builder and constructs a [`DeleteWorkloadShareInput`](crate::operation::delete_workload_share::DeleteWorkloadShareInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_workload_share::DeleteWorkloadShareInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_workload_share::DeleteWorkloadShareInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_workload_share::DeleteWorkloadShareInput {
             share_id: self.share_id,

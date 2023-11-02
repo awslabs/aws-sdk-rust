@@ -44,7 +44,7 @@ impl DescribeFrameworkInputBuilder {
     /// Consumes the builder and constructs a [`DescribeFrameworkInput`](crate::operation::describe_framework::DescribeFrameworkInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_framework::DescribeFrameworkInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_framework::DescribeFrameworkInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_framework::DescribeFrameworkInput {
             framework_name: self.framework_name,
         })

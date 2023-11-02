@@ -95,11 +95,11 @@ impl TargetTrackingMetricStatBuilder {
     /// Consumes the builder and constructs a [`TargetTrackingMetricStat`](crate::types::TargetTrackingMetricStat).
     /// This method will fail if any of the following fields are not set:
     /// - [`stat`](crate::types::builders::TargetTrackingMetricStatBuilder::stat)
-    pub fn build(self) -> ::std::result::Result<crate::types::TargetTrackingMetricStat, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TargetTrackingMetricStat, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TargetTrackingMetricStat {
             metric: self.metric,
             stat: self.stat.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "stat",
                     "stat was not specified but it is required when building TargetTrackingMetricStat",
                 )

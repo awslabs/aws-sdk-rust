@@ -2,7 +2,7 @@
 pub fn ser_json_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::JsonOptions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.multi_line {
         object.key("MultiLine").boolean(input.multi_line);
     }

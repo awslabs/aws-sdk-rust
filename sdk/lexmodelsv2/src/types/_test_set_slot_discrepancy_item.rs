@@ -94,22 +94,22 @@ impl TestSetSlotDiscrepancyItemBuilder {
     /// - [`intent_name`](crate::types::builders::TestSetSlotDiscrepancyItemBuilder::intent_name)
     /// - [`slot_name`](crate::types::builders::TestSetSlotDiscrepancyItemBuilder::slot_name)
     /// - [`error_message`](crate::types::builders::TestSetSlotDiscrepancyItemBuilder::error_message)
-    pub fn build(self) -> ::std::result::Result<crate::types::TestSetSlotDiscrepancyItem, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TestSetSlotDiscrepancyItem, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TestSetSlotDiscrepancyItem {
             intent_name: self.intent_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "intent_name",
                     "intent_name was not specified but it is required when building TestSetSlotDiscrepancyItem",
                 )
             })?,
             slot_name: self.slot_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "slot_name",
                     "slot_name was not specified but it is required when building TestSetSlotDiscrepancyItem",
                 )
             })?,
             error_message: self.error_message.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "error_message",
                     "error_message was not specified but it is required when building TestSetSlotDiscrepancyItem",
                 )

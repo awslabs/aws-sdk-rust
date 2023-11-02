@@ -140,7 +140,7 @@ impl UpdateDomainContactInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDomainContactInput`](crate::operation::update_domain_contact::UpdateDomainContactInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_domain_contact::UpdateDomainContactInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_domain_contact::UpdateDomainContactInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_domain_contact::UpdateDomainContactInput {
             domain_name: self.domain_name,

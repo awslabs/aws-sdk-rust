@@ -45,10 +45,10 @@ impl DestinationSchemaBuilder {
     /// Consumes the builder and constructs a [`DestinationSchema`](crate::types::DestinationSchema).
     /// This method will fail if any of the following fields are not set:
     /// - [`record_format_type`](crate::types::builders::DestinationSchemaBuilder::record_format_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::DestinationSchema, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DestinationSchema, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DestinationSchema {
             record_format_type: self.record_format_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "record_format_type",
                     "record_format_type was not specified but it is required when building DestinationSchema",
                 )

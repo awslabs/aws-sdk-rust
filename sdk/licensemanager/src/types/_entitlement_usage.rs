@@ -114,23 +114,23 @@ impl EntitlementUsageBuilder {
     /// - [`name`](crate::types::builders::EntitlementUsageBuilder::name)
     /// - [`consumed_value`](crate::types::builders::EntitlementUsageBuilder::consumed_value)
     /// - [`unit`](crate::types::builders::EntitlementUsageBuilder::unit)
-    pub fn build(self) -> ::std::result::Result<crate::types::EntitlementUsage, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::EntitlementUsage, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EntitlementUsage {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building EntitlementUsage",
                 )
             })?,
             consumed_value: self.consumed_value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "consumed_value",
                     "consumed_value was not specified but it is required when building EntitlementUsage",
                 )
             })?,
             max_count: self.max_count,
             unit: self.unit.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "unit",
                     "unit was not specified but it is required when building EntitlementUsage",
                 )

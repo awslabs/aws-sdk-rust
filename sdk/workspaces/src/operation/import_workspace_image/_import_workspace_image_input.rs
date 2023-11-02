@@ -208,7 +208,7 @@ impl ImportWorkspaceImageInputBuilder {
     /// Consumes the builder and constructs a [`ImportWorkspaceImageInput`](crate::operation::import_workspace_image::ImportWorkspaceImageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::import_workspace_image::ImportWorkspaceImageInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::import_workspace_image::ImportWorkspaceImageInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::import_workspace_image::ImportWorkspaceImageInput {
             ec2_image_id: self.ec2_image_id,

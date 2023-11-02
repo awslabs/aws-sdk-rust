@@ -94,22 +94,22 @@ impl ProjectAppConfigResourceBuilder {
     /// - [`application_id`](crate::types::builders::ProjectAppConfigResourceBuilder::application_id)
     /// - [`environment_id`](crate::types::builders::ProjectAppConfigResourceBuilder::environment_id)
     /// - [`configuration_profile_id`](crate::types::builders::ProjectAppConfigResourceBuilder::configuration_profile_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::ProjectAppConfigResource, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ProjectAppConfigResource, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ProjectAppConfigResource {
             application_id: self.application_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "application_id",
                     "application_id was not specified but it is required when building ProjectAppConfigResource",
                 )
             })?,
             environment_id: self.environment_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "environment_id",
                     "environment_id was not specified but it is required when building ProjectAppConfigResource",
                 )
             })?,
             configuration_profile_id: self.configuration_profile_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "configuration_profile_id",
                     "configuration_profile_id was not specified but it is required when building ProjectAppConfigResource",
                 )

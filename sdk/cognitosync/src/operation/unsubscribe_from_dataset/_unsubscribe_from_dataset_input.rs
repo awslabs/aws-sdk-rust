@@ -111,8 +111,10 @@ impl UnsubscribeFromDatasetInputBuilder {
     /// Consumes the builder and constructs a [`UnsubscribeFromDatasetInput`](crate::operation::unsubscribe_from_dataset::UnsubscribeFromDatasetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::unsubscribe_from_dataset::UnsubscribeFromDatasetInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::unsubscribe_from_dataset::UnsubscribeFromDatasetInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::unsubscribe_from_dataset::UnsubscribeFromDatasetInput {
             identity_pool_id: self.identity_pool_id,
             identity_id: self.identity_id,

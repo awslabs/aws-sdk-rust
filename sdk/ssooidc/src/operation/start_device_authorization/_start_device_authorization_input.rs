@@ -90,7 +90,7 @@ impl StartDeviceAuthorizationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_device_authorization::StartDeviceAuthorizationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_device_authorization::StartDeviceAuthorizationInput {
             client_id: self.client_id,

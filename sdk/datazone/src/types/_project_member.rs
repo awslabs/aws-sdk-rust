@@ -67,11 +67,11 @@ impl ProjectMemberBuilder {
     /// Consumes the builder and constructs a [`ProjectMember`](crate::types::ProjectMember).
     /// This method will fail if any of the following fields are not set:
     /// - [`designation`](crate::types::builders::ProjectMemberBuilder::designation)
-    pub fn build(self) -> ::std::result::Result<crate::types::ProjectMember, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ProjectMember, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ProjectMember {
             member_details: self.member_details,
             designation: self.designation.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "designation",
                     "designation was not specified but it is required when building ProjectMember",
                 )

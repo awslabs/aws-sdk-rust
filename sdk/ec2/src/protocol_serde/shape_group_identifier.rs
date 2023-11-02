@@ -43,7 +43,7 @@ pub fn de_group_identifier(
 pub fn ser_group_identifier(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::GroupIdentifier,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_3 = writer.prefix("GroupName");
     if let Some(var_4) = &input.group_name {

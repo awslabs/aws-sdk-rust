@@ -70,16 +70,16 @@ impl ParameterValueBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::ParameterValueBuilder::id)
     /// - [`string_value`](crate::types::builders::ParameterValueBuilder::string_value)
-    pub fn build(self) -> ::std::result::Result<crate::types::ParameterValue, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ParameterValue, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ParameterValue {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building ParameterValue",
                 )
             })?,
             string_value: self.string_value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "string_value",
                     "string_value was not specified but it is required when building ParameterValue",
                 )

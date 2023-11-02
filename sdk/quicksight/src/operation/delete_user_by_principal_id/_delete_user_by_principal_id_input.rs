@@ -91,7 +91,7 @@ impl DeleteUserByPrincipalIdInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalIdInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalIdInput {
             principal_id: self.principal_id,

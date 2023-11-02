@@ -97,7 +97,8 @@ impl GetRoleCredentialsInputBuilder {
     /// Consumes the builder and constructs a [`GetRoleCredentialsInput`](crate::operation::get_role_credentials::GetRoleCredentialsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_role_credentials::GetRoleCredentialsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_role_credentials::GetRoleCredentialsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::get_role_credentials::GetRoleCredentialsInput {
             role_name: self.role_name,
             account_id: self.account_id,

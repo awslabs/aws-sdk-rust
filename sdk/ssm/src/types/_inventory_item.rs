@@ -174,22 +174,22 @@ impl InventoryItemBuilder {
     /// - [`type_name`](crate::types::builders::InventoryItemBuilder::type_name)
     /// - [`schema_version`](crate::types::builders::InventoryItemBuilder::schema_version)
     /// - [`capture_time`](crate::types::builders::InventoryItemBuilder::capture_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::InventoryItem, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::InventoryItem, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::InventoryItem {
             type_name: self.type_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "type_name",
                     "type_name was not specified but it is required when building InventoryItem",
                 )
             })?,
             schema_version: self.schema_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "schema_version",
                     "schema_version was not specified but it is required when building InventoryItem",
                 )
             })?,
             capture_time: self.capture_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "capture_time",
                     "capture_time was not specified but it is required when building InventoryItem",
                 )

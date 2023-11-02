@@ -87,7 +87,7 @@ impl ListExportErrorsInputBuilder {
     /// Consumes the builder and constructs a [`ListExportErrorsInput`](crate::operation::list_export_errors::ListExportErrorsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_export_errors::ListExportErrorsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_export_errors::ListExportErrorsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_export_errors::ListExportErrorsInput {
             export_id: self.export_id,
             max_results: self.max_results,

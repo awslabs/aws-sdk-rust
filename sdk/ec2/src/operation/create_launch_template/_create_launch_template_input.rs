@@ -173,7 +173,7 @@ impl CreateLaunchTemplateInputBuilder {
     /// Consumes the builder and constructs a [`CreateLaunchTemplateInput`](crate::operation::create_launch_template::CreateLaunchTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_launch_template::CreateLaunchTemplateInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_launch_template::CreateLaunchTemplateInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_launch_template::CreateLaunchTemplateInput {
             dry_run: self.dry_run,

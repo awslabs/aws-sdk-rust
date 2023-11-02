@@ -113,17 +113,17 @@ impl ListAccessesOutputBuilder {
     /// - [`accesses`](crate::operation::list_accesses::builders::ListAccessesOutputBuilder::accesses)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_accesses::ListAccessesOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_accesses::ListAccessesOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_accesses::ListAccessesOutput {
             next_token: self.next_token,
             server_id: self.server_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "server_id",
                     "server_id was not specified but it is required when building ListAccessesOutput",
                 )
             })?,
             accesses: self.accesses.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "accesses",
                     "accesses was not specified but it is required when building ListAccessesOutput",
                 )

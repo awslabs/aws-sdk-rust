@@ -256,29 +256,29 @@ impl ScalingPlanBuilder {
     /// - [`scaling_plan_version`](crate::types::builders::ScalingPlanBuilder::scaling_plan_version)
     /// - [`scaling_instructions`](crate::types::builders::ScalingPlanBuilder::scaling_instructions)
     /// - [`status_code`](crate::types::builders::ScalingPlanBuilder::status_code)
-    pub fn build(self) -> ::std::result::Result<crate::types::ScalingPlan, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ScalingPlan, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ScalingPlan {
             scaling_plan_name: self.scaling_plan_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "scaling_plan_name",
                     "scaling_plan_name was not specified but it is required when building ScalingPlan",
                 )
             })?,
             scaling_plan_version: self.scaling_plan_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "scaling_plan_version",
                     "scaling_plan_version was not specified but it is required when building ScalingPlan",
                 )
             })?,
             application_source: self.application_source,
             scaling_instructions: self.scaling_instructions.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "scaling_instructions",
                     "scaling_instructions was not specified but it is required when building ScalingPlan",
                 )
             })?,
             status_code: self.status_code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status_code",
                     "status_code was not specified but it is required when building ScalingPlan",
                 )

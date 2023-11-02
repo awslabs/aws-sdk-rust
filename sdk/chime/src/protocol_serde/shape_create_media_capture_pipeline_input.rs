@@ -2,7 +2,7 @@
 pub fn ser_create_media_capture_pipeline_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_media_capture_pipeline::CreateMediaCapturePipelineInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.chime_sdk_meeting_configuration {
         #[allow(unused_mut)]
         let mut object_2 = object.key("ChimeSdkMeetingConfiguration").start_object();

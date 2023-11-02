@@ -340,7 +340,7 @@ impl GetDistributionMetricDataInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_distribution_metric_data::GetDistributionMetricDataInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_distribution_metric_data::GetDistributionMetricDataInput {
             distribution_name: self.distribution_name,

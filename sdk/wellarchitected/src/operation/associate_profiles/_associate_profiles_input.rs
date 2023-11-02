@@ -73,7 +73,7 @@ impl AssociateProfilesInputBuilder {
     /// Consumes the builder and constructs a [`AssociateProfilesInput`](crate::operation::associate_profiles::AssociateProfilesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::associate_profiles::AssociateProfilesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::associate_profiles::AssociateProfilesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::associate_profiles::AssociateProfilesInput {
             workload_id: self.workload_id,
             profile_arns: self.profile_arns,

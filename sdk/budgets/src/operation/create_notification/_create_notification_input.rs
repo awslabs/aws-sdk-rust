@@ -118,7 +118,7 @@ impl CreateNotificationInputBuilder {
     /// Consumes the builder and constructs a [`CreateNotificationInput`](crate::operation::create_notification::CreateNotificationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_notification::CreateNotificationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_notification::CreateNotificationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_notification::CreateNotificationInput {
             account_id: self.account_id,
             budget_name: self.budget_name,

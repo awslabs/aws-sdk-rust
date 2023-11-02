@@ -92,11 +92,11 @@ impl ListDeliverabilityTestReportsOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_deliverability_test_reports::ListDeliverabilityTestReportsOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_deliverability_test_reports::ListDeliverabilityTestReportsOutput {
             deliverability_test_reports: self.deliverability_test_reports.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "deliverability_test_reports",
                     "deliverability_test_reports was not specified but it is required when building ListDeliverabilityTestReportsOutput",
                 )

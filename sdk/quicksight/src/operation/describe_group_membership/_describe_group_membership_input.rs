@@ -112,7 +112,7 @@ impl DescribeGroupMembershipInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_group_membership::DescribeGroupMembershipInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_group_membership::DescribeGroupMembershipInput {
             member_name: self.member_name,

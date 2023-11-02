@@ -66,7 +66,7 @@ impl DeleteGeoMatchSetInputBuilder {
     /// Consumes the builder and constructs a [`DeleteGeoMatchSetInput`](crate::operation::delete_geo_match_set::DeleteGeoMatchSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_geo_match_set::DeleteGeoMatchSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_geo_match_set::DeleteGeoMatchSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_geo_match_set::DeleteGeoMatchSetInput {
             geo_match_set_id: self.geo_match_set_id,
             change_token: self.change_token,

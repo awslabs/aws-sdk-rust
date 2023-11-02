@@ -86,7 +86,7 @@ impl DescribeJobLogItemsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeJobLogItemsInput`](crate::operation::describe_job_log_items::DescribeJobLogItemsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_job_log_items::DescribeJobLogItemsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_job_log_items::DescribeJobLogItemsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_job_log_items::DescribeJobLogItemsInput {
             job_id: self.job_id,

@@ -44,7 +44,7 @@ impl AllocateStaticIpInputBuilder {
     /// Consumes the builder and constructs a [`AllocateStaticIpInput`](crate::operation::allocate_static_ip::AllocateStaticIpInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::allocate_static_ip::AllocateStaticIpInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::allocate_static_ip::AllocateStaticIpInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::allocate_static_ip::AllocateStaticIpInput {
             static_ip_name: self.static_ip_name,
         })

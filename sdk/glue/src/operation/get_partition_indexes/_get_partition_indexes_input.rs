@@ -108,7 +108,7 @@ impl GetPartitionIndexesInputBuilder {
     /// Consumes the builder and constructs a [`GetPartitionIndexesInput`](crate::operation::get_partition_indexes::GetPartitionIndexesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_partition_indexes::GetPartitionIndexesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_partition_indexes::GetPartitionIndexesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_partition_indexes::GetPartitionIndexesInput {
             catalog_id: self.catalog_id,

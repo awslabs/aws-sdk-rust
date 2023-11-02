@@ -51,10 +51,10 @@ impl PatchRuleGroupBuilder {
     /// Consumes the builder and constructs a [`PatchRuleGroup`](crate::types::PatchRuleGroup).
     /// This method will fail if any of the following fields are not set:
     /// - [`patch_rules`](crate::types::builders::PatchRuleGroupBuilder::patch_rules)
-    pub fn build(self) -> ::std::result::Result<crate::types::PatchRuleGroup, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PatchRuleGroup, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PatchRuleGroup {
             patch_rules: self.patch_rules.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "patch_rules",
                     "patch_rules was not specified but it is required when building PatchRuleGroup",
                 )

@@ -45,7 +45,7 @@ impl CancelContactInputBuilder {
     /// Consumes the builder and constructs a [`CancelContactInput`](crate::operation::cancel_contact::CancelContactInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::cancel_contact::CancelContactInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::cancel_contact::CancelContactInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::cancel_contact::CancelContactInput { contact_id: self.contact_id })
     }
 }

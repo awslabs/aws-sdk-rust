@@ -157,7 +157,7 @@ impl CreateAssetInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateAssetInput`](crate::operation::create_asset::CreateAssetInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_asset::CreateAssetInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_asset::CreateAssetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_asset::CreateAssetInput {
             id: self.id,
             packaging_group_id: self.packaging_group_id,

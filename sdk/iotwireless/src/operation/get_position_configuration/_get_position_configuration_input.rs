@@ -69,7 +69,7 @@ impl GetPositionConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_position_configuration::GetPositionConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_position_configuration::GetPositionConfigurationInput {
             resource_identifier: self.resource_identifier,

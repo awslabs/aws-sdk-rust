@@ -2,7 +2,7 @@
 pub fn ser_script_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ScriptDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.script_s3_location {
         #[allow(unused_mut)]
         let mut object_2 = object.key("ScriptS3Location").start_object();

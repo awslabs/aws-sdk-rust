@@ -87,8 +87,10 @@ impl DescribeVirtualGatewayInputBuilder {
     /// Consumes the builder and constructs a [`DescribeVirtualGatewayInput`](crate::operation::describe_virtual_gateway::DescribeVirtualGatewayInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_virtual_gateway::DescribeVirtualGatewayInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::describe_virtual_gateway::DescribeVirtualGatewayInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::describe_virtual_gateway::DescribeVirtualGatewayInput {
             virtual_gateway_name: self.virtual_gateway_name,
             mesh_name: self.mesh_name,

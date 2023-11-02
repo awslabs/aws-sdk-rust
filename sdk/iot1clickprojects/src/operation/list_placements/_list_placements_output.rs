@@ -89,10 +89,10 @@ impl ListPlacementsOutputBuilder {
     /// - [`placements`](crate::operation::list_placements::builders::ListPlacementsOutputBuilder::placements)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_placements::ListPlacementsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_placements::ListPlacementsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_placements::ListPlacementsOutput {
             placements: self.placements.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "placements",
                     "placements was not specified but it is required when building ListPlacementsOutput",
                 )

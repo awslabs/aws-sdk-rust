@@ -75,10 +75,10 @@ impl ObjectLambdaTransformationConfigurationBuilder {
     /// - [`actions`](crate::types::builders::ObjectLambdaTransformationConfigurationBuilder::actions)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::ObjectLambdaTransformationConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::ObjectLambdaTransformationConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ObjectLambdaTransformationConfiguration {
             actions: self.actions.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "actions",
                     "actions was not specified but it is required when building ObjectLambdaTransformationConfiguration",
                 )

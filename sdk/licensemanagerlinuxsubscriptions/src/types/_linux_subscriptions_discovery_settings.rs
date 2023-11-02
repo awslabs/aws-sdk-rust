@@ -74,16 +74,16 @@ impl LinuxSubscriptionsDiscoverySettingsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`source_regions`](crate::types::builders::LinuxSubscriptionsDiscoverySettingsBuilder::source_regions)
     /// - [`organization_integration`](crate::types::builders::LinuxSubscriptionsDiscoverySettingsBuilder::organization_integration)
-    pub fn build(self) -> ::std::result::Result<crate::types::LinuxSubscriptionsDiscoverySettings, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::LinuxSubscriptionsDiscoverySettings, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::LinuxSubscriptionsDiscoverySettings {
             source_regions: self.source_regions.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source_regions",
                     "source_regions was not specified but it is required when building LinuxSubscriptionsDiscoverySettings",
                 )
             })?,
             organization_integration: self.organization_integration.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "organization_integration",
                     "organization_integration was not specified but it is required when building LinuxSubscriptionsDiscoverySettings",
                 )

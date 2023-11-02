@@ -90,17 +90,17 @@ impl ContentTypeProfileBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`format`](crate::types::builders::ContentTypeProfileBuilder::format)
     /// - [`content_type`](crate::types::builders::ContentTypeProfileBuilder::content_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::ContentTypeProfile, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ContentTypeProfile, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ContentTypeProfile {
             format: self.format.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "format",
                     "format was not specified but it is required when building ContentTypeProfile",
                 )
             })?,
             profile_id: self.profile_id,
             content_type: self.content_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "content_type",
                     "content_type was not specified but it is required when building ContentTypeProfile",
                 )

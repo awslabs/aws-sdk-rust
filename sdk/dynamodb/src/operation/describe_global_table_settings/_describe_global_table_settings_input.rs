@@ -46,7 +46,7 @@ impl DescribeGlobalTableSettingsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_global_table_settings::DescribeGlobalTableSettingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_global_table_settings::DescribeGlobalTableSettingsInput {
             global_table_name: self.global_table_name,

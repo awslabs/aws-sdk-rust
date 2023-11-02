@@ -67,10 +67,10 @@ impl DatetimeRangeBuilder {
     /// Consumes the builder and constructs a [`DatetimeRange`](crate::types::DatetimeRange).
     /// This method will fail if any of the following fields are not set:
     /// - [`begin`](crate::types::builders::DatetimeRangeBuilder::begin)
-    pub fn build(self) -> ::std::result::Result<crate::types::DatetimeRange, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DatetimeRange, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DatetimeRange {
             begin: self.begin.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "begin",
                     "begin was not specified but it is required when building DatetimeRange",
                 )

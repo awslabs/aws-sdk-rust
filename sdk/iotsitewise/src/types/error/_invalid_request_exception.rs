@@ -79,10 +79,10 @@ impl InvalidRequestExceptionBuilder {
     /// Consumes the builder and constructs a [`InvalidRequestException`](crate::types::error::InvalidRequestException).
     /// This method will fail if any of the following fields are not set:
     /// - [`message`](crate::types::error::builders::InvalidRequestExceptionBuilder::message)
-    pub fn build(self) -> ::std::result::Result<crate::types::error::InvalidRequestException, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::error::InvalidRequestException, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::error::InvalidRequestException {
             message: self.message.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "message",
                     "message was not specified but it is required when building InvalidRequestException",
                 )

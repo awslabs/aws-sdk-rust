@@ -2,7 +2,7 @@
 pub fn ser_list_queries_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_queries::ListQueriesInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.event_data_store {
         object.key("EventDataStore").string(var_1.as_str());
     }

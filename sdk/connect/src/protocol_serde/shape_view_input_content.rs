@@ -2,7 +2,7 @@
 pub fn ser_view_input_content(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ViewInputContent,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.template {
         object.key("Template").string(var_1.as_str());
     }

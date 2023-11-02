@@ -64,7 +64,7 @@ impl ListFindingsFiltersInputBuilder {
     /// Consumes the builder and constructs a [`ListFindingsFiltersInput`](crate::operation::list_findings_filters::ListFindingsFiltersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_findings_filters::ListFindingsFiltersInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_findings_filters::ListFindingsFiltersInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_findings_filters::ListFindingsFiltersInput {
             max_results: self.max_results,

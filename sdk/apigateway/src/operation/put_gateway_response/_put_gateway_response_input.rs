@@ -156,7 +156,8 @@ impl PutGatewayResponseInputBuilder {
     /// Consumes the builder and constructs a [`PutGatewayResponseInput`](crate::operation::put_gateway_response::PutGatewayResponseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_gateway_response::PutGatewayResponseInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_gateway_response::PutGatewayResponseInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::put_gateway_response::PutGatewayResponseInput {
             rest_api_id: self.rest_api_id,
             response_type: self.response_type,

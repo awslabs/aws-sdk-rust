@@ -104,16 +104,16 @@ impl PredefinedHierarchyBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`hierarchy_id`](crate::types::builders::PredefinedHierarchyBuilder::hierarchy_id)
     /// - [`columns`](crate::types::builders::PredefinedHierarchyBuilder::columns)
-    pub fn build(self) -> ::std::result::Result<crate::types::PredefinedHierarchy, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PredefinedHierarchy, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PredefinedHierarchy {
             hierarchy_id: self.hierarchy_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "hierarchy_id",
                     "hierarchy_id was not specified but it is required when building PredefinedHierarchy",
                 )
             })?,
             columns: self.columns.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "columns",
                     "columns was not specified but it is required when building PredefinedHierarchy",
                 )

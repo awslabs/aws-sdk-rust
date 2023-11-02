@@ -46,10 +46,10 @@ impl PrimaryBuilder {
     /// Consumes the builder and constructs a [`Primary`](crate::types::Primary).
     /// This method will fail if any of the following fields are not set:
     /// - [`health_check`](crate::types::builders::PrimaryBuilder::health_check)
-    pub fn build(self) -> ::std::result::Result<crate::types::Primary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Primary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Primary {
             health_check: self.health_check.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "health_check",
                     "health_check was not specified but it is required when building Primary",
                 )

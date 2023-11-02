@@ -183,7 +183,8 @@ impl CreateUpdatedImageInputBuilder {
     /// Consumes the builder and constructs a [`CreateUpdatedImageInput`](crate::operation::create_updated_image::CreateUpdatedImageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_updated_image::CreateUpdatedImageInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_updated_image::CreateUpdatedImageInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_updated_image::CreateUpdatedImageInput {
             existing_image_name: self.existing_image_name,
             new_image_name: self.new_image_name,

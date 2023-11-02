@@ -90,7 +90,7 @@ impl GetBotChannelAssociationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_bot_channel_association::GetBotChannelAssociationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_bot_channel_association::GetBotChannelAssociationInput {
             name: self.name,

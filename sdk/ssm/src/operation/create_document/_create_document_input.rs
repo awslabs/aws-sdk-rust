@@ -363,7 +363,7 @@ impl CreateDocumentInputBuilder {
     /// Consumes the builder and constructs a [`CreateDocumentInput`](crate::operation::create_document::CreateDocumentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_document::CreateDocumentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_document::CreateDocumentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_document::CreateDocumentInput {
             content: self.content,
             requires: self.requires,

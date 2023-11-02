@@ -85,7 +85,7 @@ impl StartObjectInputBuilder {
         &self.throw_on_duplicate
     }
     /// Consumes the builder and constructs a [`StartObjectInput`](crate::operation::start_object::StartObjectInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::start_object::StartObjectInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_object::StartObjectInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_object::StartObjectInput {
             backup_job_id: self.backup_job_id,
             object_name: self.object_name,

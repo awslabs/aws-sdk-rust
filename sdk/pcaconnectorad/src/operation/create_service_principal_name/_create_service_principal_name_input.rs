@@ -89,7 +89,7 @@ impl CreateServicePrincipalNameInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_service_principal_name::CreateServicePrincipalNameInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_service_principal_name::CreateServicePrincipalNameInput {
             directory_registration_arn: self.directory_registration_arn,

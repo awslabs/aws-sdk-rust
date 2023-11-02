@@ -45,7 +45,7 @@ impl ShutdownGatewayInputBuilder {
     /// Consumes the builder and constructs a [`ShutdownGatewayInput`](crate::operation::shutdown_gateway::ShutdownGatewayInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::shutdown_gateway::ShutdownGatewayInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::shutdown_gateway::ShutdownGatewayInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::shutdown_gateway::ShutdownGatewayInput {
             gateway_arn: self.gateway_arn,
         })

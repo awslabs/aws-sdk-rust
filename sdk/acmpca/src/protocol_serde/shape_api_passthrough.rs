@@ -2,7 +2,7 @@
 pub fn ser_api_passthrough(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ApiPassthrough,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.extensions {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Extensions").start_object();

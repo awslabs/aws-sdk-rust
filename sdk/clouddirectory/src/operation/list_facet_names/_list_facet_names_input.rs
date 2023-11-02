@@ -86,7 +86,7 @@ impl ListFacetNamesInputBuilder {
     /// Consumes the builder and constructs a [`ListFacetNamesInput`](crate::operation::list_facet_names::ListFacetNamesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_facet_names::ListFacetNamesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_facet_names::ListFacetNamesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_facet_names::ListFacetNamesInput {
             schema_arn: self.schema_arn,
             next_token: self.next_token,

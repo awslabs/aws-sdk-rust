@@ -161,23 +161,23 @@ impl QueryOutputBuilder {
     /// - [`query_id`](crate::operation::query::builders::QueryOutputBuilder::query_id)
     /// - [`rows`](crate::operation::query::builders::QueryOutputBuilder::rows)
     /// - [`column_info`](crate::operation::query::builders::QueryOutputBuilder::column_info)
-    pub fn build(self) -> ::std::result::Result<crate::operation::query::QueryOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::query::QueryOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::query::QueryOutput {
             query_id: self.query_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "query_id",
                     "query_id was not specified but it is required when building QueryOutput",
                 )
             })?,
             next_token: self.next_token,
             rows: self.rows.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "rows",
                     "rows was not specified but it is required when building QueryOutput",
                 )
             })?,
             column_info: self.column_info.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "column_info",
                     "column_info was not specified but it is required when building QueryOutput",
                 )

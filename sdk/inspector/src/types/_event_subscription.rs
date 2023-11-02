@@ -68,16 +68,16 @@ impl EventSubscriptionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`event`](crate::types::builders::EventSubscriptionBuilder::event)
     /// - [`subscribed_at`](crate::types::builders::EventSubscriptionBuilder::subscribed_at)
-    pub fn build(self) -> ::std::result::Result<crate::types::EventSubscription, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::EventSubscription, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EventSubscription {
             event: self.event.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "event",
                     "event was not specified but it is required when building EventSubscription",
                 )
             })?,
             subscribed_at: self.subscribed_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "subscribed_at",
                     "subscribed_at was not specified but it is required when building EventSubscription",
                 )

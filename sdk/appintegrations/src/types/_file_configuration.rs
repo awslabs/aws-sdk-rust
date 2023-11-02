@@ -81,10 +81,10 @@ impl FileConfigurationBuilder {
     /// Consumes the builder and constructs a [`FileConfiguration`](crate::types::FileConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`folders`](crate::types::builders::FileConfigurationBuilder::folders)
-    pub fn build(self) -> ::std::result::Result<crate::types::FileConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::FileConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FileConfiguration {
             folders: self.folders.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "folders",
                     "folders was not specified but it is required when building FileConfiguration",
                 )

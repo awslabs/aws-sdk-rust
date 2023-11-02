@@ -91,16 +91,16 @@ impl ChannelActivityBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::ChannelActivityBuilder::name)
     /// - [`channel_name`](crate::types::builders::ChannelActivityBuilder::channel_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::ChannelActivity, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ChannelActivity, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ChannelActivity {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building ChannelActivity",
                 )
             })?,
             channel_name: self.channel_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "channel_name",
                     "channel_name was not specified but it is required when building ChannelActivity",
                 )

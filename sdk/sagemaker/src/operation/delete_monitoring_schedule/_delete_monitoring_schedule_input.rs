@@ -46,7 +46,7 @@ impl DeleteMonitoringScheduleInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_monitoring_schedule::DeleteMonitoringScheduleInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_monitoring_schedule::DeleteMonitoringScheduleInput {
             monitoring_schedule_name: self.monitoring_schedule_name,

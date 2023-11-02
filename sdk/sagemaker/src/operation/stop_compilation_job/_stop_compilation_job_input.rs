@@ -44,7 +44,8 @@ impl StopCompilationJobInputBuilder {
     /// Consumes the builder and constructs a [`StopCompilationJobInput`](crate::operation::stop_compilation_job::StopCompilationJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_compilation_job::StopCompilationJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::stop_compilation_job::StopCompilationJobInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::stop_compilation_job::StopCompilationJobInput {
             compilation_job_name: self.compilation_job_name,
         })

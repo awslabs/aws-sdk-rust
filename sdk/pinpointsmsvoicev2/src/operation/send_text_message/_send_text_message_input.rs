@@ -279,7 +279,7 @@ impl SendTextMessageInputBuilder {
     /// Consumes the builder and constructs a [`SendTextMessageInput`](crate::operation::send_text_message::SendTextMessageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::send_text_message::SendTextMessageInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::send_text_message::SendTextMessageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::send_text_message::SendTextMessageInput {
             destination_phone_number: self.destination_phone_number,
             origination_identity: self.origination_identity,

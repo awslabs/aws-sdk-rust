@@ -87,10 +87,10 @@ impl ListEventsOutputBuilder {
     /// Consumes the builder and constructs a [`ListEventsOutput`](crate::operation::list_events::ListEventsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`events`](crate::operation::list_events::builders::ListEventsOutputBuilder::events)
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_events::ListEventsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_events::ListEventsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_events::ListEventsOutput {
             events: self.events.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "events",
                     "events was not specified but it is required when building ListEventsOutput",
                 )

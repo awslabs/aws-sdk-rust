@@ -93,7 +93,7 @@ impl CreatePlacementInputBuilder {
     /// Consumes the builder and constructs a [`CreatePlacementInput`](crate::operation::create_placement::CreatePlacementInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_placement::CreatePlacementInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_placement::CreatePlacementInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_placement::CreatePlacementInput {
             placement_name: self.placement_name,
             project_name: self.project_name,

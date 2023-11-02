@@ -2,7 +2,7 @@
 pub fn ser_heat_map_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::HeatMapConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.field_wells {
         #[allow(unused_mut)]
         let mut object_2 = object.key("FieldWells").start_object();

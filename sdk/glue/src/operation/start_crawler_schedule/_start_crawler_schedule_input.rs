@@ -44,7 +44,7 @@ impl StartCrawlerScheduleInputBuilder {
     /// Consumes the builder and constructs a [`StartCrawlerScheduleInput`](crate::operation::start_crawler_schedule::StartCrawlerScheduleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_crawler_schedule::StartCrawlerScheduleInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::start_crawler_schedule::StartCrawlerScheduleInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_crawler_schedule::StartCrawlerScheduleInput {
             crawler_name: self.crawler_name,

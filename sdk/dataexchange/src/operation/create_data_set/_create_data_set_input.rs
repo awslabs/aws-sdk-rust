@@ -115,7 +115,7 @@ impl CreateDataSetInputBuilder {
     /// Consumes the builder and constructs a [`CreateDataSetInput`](crate::operation::create_data_set::CreateDataSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_data_set::CreateDataSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_data_set::CreateDataSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_data_set::CreateDataSetInput {
             asset_type: self.asset_type,
             description: self.description,

@@ -2,7 +2,7 @@
 pub fn ser_private_key_flags_v4(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PrivateKeyFlagsV4,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.exportable_key {
         object.key("ExportableKey").boolean(*var_1);
     }

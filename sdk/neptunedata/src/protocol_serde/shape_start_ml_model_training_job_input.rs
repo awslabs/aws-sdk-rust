@@ -2,7 +2,7 @@
 pub fn ser_start_ml_model_training_job_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_ml_model_training_job::StartMlModelTrainingJobInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.base_processing_instance_type {
         object.key("baseProcessingInstanceType").string(var_1.as_str());
     }

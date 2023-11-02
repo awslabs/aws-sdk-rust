@@ -134,7 +134,7 @@ impl DisassociateSubnetsInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateSubnetsInput`](crate::operation::disassociate_subnets::DisassociateSubnetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::disassociate_subnets::DisassociateSubnetsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::disassociate_subnets::DisassociateSubnetsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::disassociate_subnets::DisassociateSubnetsInput {
             update_token: self.update_token,

@@ -75,10 +75,10 @@ impl FragmentSelectorBuilder {
     /// Consumes the builder and constructs a [`FragmentSelector`](crate::types::FragmentSelector).
     /// This method will fail if any of the following fields are not set:
     /// - [`fragment_selector_type`](crate::types::builders::FragmentSelectorBuilder::fragment_selector_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::FragmentSelector, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::FragmentSelector, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FragmentSelector {
             fragment_selector_type: self.fragment_selector_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "fragment_selector_type",
                     "fragment_selector_type was not specified but it is required when building FragmentSelector",
                 )

@@ -2,7 +2,7 @@
 pub fn ser_health_check_custom_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::HealthCheckCustomConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.failure_threshold {
         object.key("FailureThreshold").number(
             #[allow(clippy::useless_conversion)]

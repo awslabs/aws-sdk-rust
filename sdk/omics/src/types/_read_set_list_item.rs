@@ -352,22 +352,22 @@ impl ReadSetListItemBuilder {
     /// - [`status`](crate::types::builders::ReadSetListItemBuilder::status)
     /// - [`file_type`](crate::types::builders::ReadSetListItemBuilder::file_type)
     /// - [`creation_time`](crate::types::builders::ReadSetListItemBuilder::creation_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::ReadSetListItem, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ReadSetListItem, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ReadSetListItem {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building ReadSetListItem",
                 )
             })?,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building ReadSetListItem",
                 )
             })?,
             sequence_store_id: self.sequence_store_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "sequence_store_id",
                     "sequence_store_id was not specified but it is required when building ReadSetListItem",
                 )
@@ -375,7 +375,7 @@ impl ReadSetListItemBuilder {
             subject_id: self.subject_id,
             sample_id: self.sample_id,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building ReadSetListItem",
                 )
@@ -384,14 +384,14 @@ impl ReadSetListItemBuilder {
             description: self.description,
             reference_arn: self.reference_arn,
             file_type: self.file_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "file_type",
                     "file_type was not specified but it is required when building ReadSetListItem",
                 )
             })?,
             sequence_information: self.sequence_information,
             creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_time",
                     "creation_time was not specified but it is required when building ReadSetListItem",
                 )

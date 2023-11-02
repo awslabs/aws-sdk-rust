@@ -2,7 +2,7 @@
 pub fn ser_vendor_properties(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VendorProperties,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("vendorWorkerId").string(input.vendor_worker_id.as_str());
     }

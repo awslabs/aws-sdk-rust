@@ -44,7 +44,7 @@ impl PhoneNumberValidateInputBuilder {
     /// Consumes the builder and constructs a [`PhoneNumberValidateInput`](crate::operation::phone_number_validate::PhoneNumberValidateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::phone_number_validate::PhoneNumberValidateInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::phone_number_validate::PhoneNumberValidateInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::phone_number_validate::PhoneNumberValidateInput {
             number_validate_request: self.number_validate_request,

@@ -106,7 +106,7 @@ impl ListBonusPaymentsInputBuilder {
     /// Consumes the builder and constructs a [`ListBonusPaymentsInput`](crate::operation::list_bonus_payments::ListBonusPaymentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_bonus_payments::ListBonusPaymentsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_bonus_payments::ListBonusPaymentsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_bonus_payments::ListBonusPaymentsInput {
             hit_id: self.hit_id,
             assignment_id: self.assignment_id,

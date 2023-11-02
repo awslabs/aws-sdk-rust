@@ -66,7 +66,7 @@ impl GetStudioMemberInputBuilder {
     /// Consumes the builder and constructs a [`GetStudioMemberInput`](crate::operation::get_studio_member::GetStudioMemberInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_studio_member::GetStudioMemberInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_studio_member::GetStudioMemberInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_studio_member::GetStudioMemberInput {
             principal_id: self.principal_id,
             studio_id: self.studio_id,

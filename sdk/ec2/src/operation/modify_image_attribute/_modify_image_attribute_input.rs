@@ -352,7 +352,7 @@ impl ModifyImageAttributeInputBuilder {
     /// Consumes the builder and constructs a [`ModifyImageAttributeInput`](crate::operation::modify_image_attribute::ModifyImageAttributeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::modify_image_attribute::ModifyImageAttributeInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::modify_image_attribute::ModifyImageAttributeInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::modify_image_attribute::ModifyImageAttributeInput {
             attribute: self.attribute,

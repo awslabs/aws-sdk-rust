@@ -68,7 +68,7 @@ impl GetPullRequestOverrideStateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_pull_request_override_state::GetPullRequestOverrideStateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_pull_request_override_state::GetPullRequestOverrideStateInput {
             pull_request_id: self.pull_request_id,

@@ -44,7 +44,7 @@ impl GetTrustStoreInputBuilder {
     /// Consumes the builder and constructs a [`GetTrustStoreInput`](crate::operation::get_trust_store::GetTrustStoreInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_trust_store::GetTrustStoreInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_trust_store::GetTrustStoreInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_trust_store::GetTrustStoreInput {
             trust_store_arn: self.trust_store_arn,
         })

@@ -68,11 +68,11 @@ impl ConsentBuilder {
     /// Consumes the builder and constructs a [`Consent`](crate::types::Consent).
     /// This method will fail if any of the following fields are not set:
     /// - [`currency`](crate::types::builders::ConsentBuilder::currency)
-    pub fn build(self) -> ::std::result::Result<crate::types::Consent, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Consent, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Consent {
             max_price: self.max_price.unwrap_or_default(),
             currency: self.currency.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "currency",
                     "currency was not specified but it is required when building Consent",
                 )

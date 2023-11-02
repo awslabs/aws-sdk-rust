@@ -127,7 +127,7 @@ impl ListIndexesInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListIndexesInput`](crate::operation::list_indexes::ListIndexesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_indexes::ListIndexesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_indexes::ListIndexesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_indexes::ListIndexesInput {
             r#type: self.r#type,
             regions: self.regions,

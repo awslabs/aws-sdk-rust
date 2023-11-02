@@ -185,11 +185,11 @@ impl DescribeUserProfileOutputBuilder {
     /// - [`last_modified_timestamp`](crate::operation::describe_user_profile::builders::DescribeUserProfileOutputBuilder::last_modified_timestamp)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_user_profile::DescribeUserProfileOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_user_profile::DescribeUserProfileOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_user_profile::DescribeUserProfileOutput {
             user_arn: self.user_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "user_arn",
                     "user_arn was not specified but it is required when building DescribeUserProfileOutput",
                 )
@@ -198,13 +198,13 @@ impl DescribeUserProfileOutputBuilder {
             email_address: self.email_address,
             ssh_public_key: self.ssh_public_key,
             created_timestamp: self.created_timestamp.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_timestamp",
                     "created_timestamp was not specified but it is required when building DescribeUserProfileOutput",
                 )
             })?,
             last_modified_timestamp: self.last_modified_timestamp.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_modified_timestamp",
                     "last_modified_timestamp was not specified but it is required when building DescribeUserProfileOutput",
                 )

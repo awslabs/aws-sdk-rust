@@ -64,7 +64,7 @@ impl GetRoomInputBuilder {
         &self.room_id
     }
     /// Consumes the builder and constructs a [`GetRoomInput`](crate::operation::get_room::GetRoomInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_room::GetRoomInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_room::GetRoomInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_room::GetRoomInput {
             account_id: self.account_id,
             room_id: self.room_id,

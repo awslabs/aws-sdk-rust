@@ -175,7 +175,7 @@ impl CreateExtensionInputBuilder {
     /// Consumes the builder and constructs a [`CreateExtensionInput`](crate::operation::create_extension::CreateExtensionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_extension::CreateExtensionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_extension::CreateExtensionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_extension::CreateExtensionInput {
             name: self.name,
             description: self.description,

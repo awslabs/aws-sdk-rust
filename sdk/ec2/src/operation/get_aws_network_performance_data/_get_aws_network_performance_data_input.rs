@@ -158,7 +158,7 @@ impl GetAwsNetworkPerformanceDataInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_aws_network_performance_data::GetAwsNetworkPerformanceDataInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_aws_network_performance_data::GetAwsNetworkPerformanceDataInput {
             data_queries: self.data_queries,

@@ -60,7 +60,7 @@ where
 pub fn ser_custom_vocabulary_export_specification(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CustomVocabularyExportSpecification,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("botId").string(input.bot_id.as_str());
     }

@@ -136,16 +136,16 @@ impl VirtualNodeDataBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`mesh_name`](crate::types::builders::VirtualNodeDataBuilder::mesh_name)
     /// - [`virtual_node_name`](crate::types::builders::VirtualNodeDataBuilder::virtual_node_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::VirtualNodeData, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::VirtualNodeData, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::VirtualNodeData {
             mesh_name: self.mesh_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "mesh_name",
                     "mesh_name was not specified but it is required when building VirtualNodeData",
                 )
             })?,
             virtual_node_name: self.virtual_node_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "virtual_node_name",
                     "virtual_node_name was not specified but it is required when building VirtualNodeData",
                 )

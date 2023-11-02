@@ -66,7 +66,7 @@ impl DescribeThesaurusInputBuilder {
     /// Consumes the builder and constructs a [`DescribeThesaurusInput`](crate::operation::describe_thesaurus::DescribeThesaurusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_thesaurus::DescribeThesaurusInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_thesaurus::DescribeThesaurusInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_thesaurus::DescribeThesaurusInput {
             id: self.id,
             index_id: self.index_id,

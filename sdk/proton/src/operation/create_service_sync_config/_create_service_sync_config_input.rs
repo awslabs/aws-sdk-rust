@@ -134,7 +134,7 @@ impl CreateServiceSyncConfigInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_service_sync_config::CreateServiceSyncConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_service_sync_config::CreateServiceSyncConfigInput {
             service_name: self.service_name,

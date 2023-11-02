@@ -141,34 +141,34 @@ impl DevEnvironmentSessionSummaryBuilder {
     /// - [`dev_environment_id`](crate::types::builders::DevEnvironmentSessionSummaryBuilder::dev_environment_id)
     /// - [`started_time`](crate::types::builders::DevEnvironmentSessionSummaryBuilder::started_time)
     /// - [`id`](crate::types::builders::DevEnvironmentSessionSummaryBuilder::id)
-    pub fn build(self) -> ::std::result::Result<crate::types::DevEnvironmentSessionSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DevEnvironmentSessionSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DevEnvironmentSessionSummary {
             space_name: self.space_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "space_name",
                     "space_name was not specified but it is required when building DevEnvironmentSessionSummary",
                 )
             })?,
             project_name: self.project_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "project_name",
                     "project_name was not specified but it is required when building DevEnvironmentSessionSummary",
                 )
             })?,
             dev_environment_id: self.dev_environment_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "dev_environment_id",
                     "dev_environment_id was not specified but it is required when building DevEnvironmentSessionSummary",
                 )
             })?,
             started_time: self.started_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "started_time",
                     "started_time was not specified but it is required when building DevEnvironmentSessionSummary",
                 )
             })?,
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building DevEnvironmentSessionSummary",
                 )

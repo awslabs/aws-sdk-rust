@@ -88,7 +88,7 @@ impl ListTestRecommendationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_test_recommendations::ListTestRecommendationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_test_recommendations::ListTestRecommendationsInput {
             next_token: self.next_token,

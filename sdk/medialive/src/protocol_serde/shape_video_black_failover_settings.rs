@@ -2,7 +2,7 @@
 pub fn ser_video_black_failover_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VideoBlackFailoverSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.black_detect_threshold {
         object.key("blackDetectThreshold").number(
             #[allow(clippy::useless_conversion)]

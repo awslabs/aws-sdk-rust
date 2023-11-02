@@ -66,7 +66,7 @@ impl GetImportJobInputBuilder {
     /// Consumes the builder and constructs a [`GetImportJobInput`](crate::operation::get_import_job::GetImportJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_import_job::GetImportJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_import_job::GetImportJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_import_job::GetImportJobInput {
             application_id: self.application_id,
             job_id: self.job_id,

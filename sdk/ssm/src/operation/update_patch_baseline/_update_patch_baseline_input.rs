@@ -329,7 +329,7 @@ impl UpdatePatchBaselineInputBuilder {
     /// Consumes the builder and constructs a [`UpdatePatchBaselineInput`](crate::operation::update_patch_baseline::UpdatePatchBaselineInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_patch_baseline::UpdatePatchBaselineInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_patch_baseline::UpdatePatchBaselineInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_patch_baseline::UpdatePatchBaselineInput {
             baseline_id: self.baseline_id,

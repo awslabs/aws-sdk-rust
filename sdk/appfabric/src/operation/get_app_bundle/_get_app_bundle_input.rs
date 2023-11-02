@@ -44,7 +44,7 @@ impl GetAppBundleInputBuilder {
     /// Consumes the builder and constructs a [`GetAppBundleInput`](crate::operation::get_app_bundle::GetAppBundleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_app_bundle::GetAppBundleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_app_bundle::GetAppBundleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_app_bundle::GetAppBundleInput {
             app_bundle_identifier: self.app_bundle_identifier,
         })

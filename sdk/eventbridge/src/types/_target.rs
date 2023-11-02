@@ -385,13 +385,16 @@ impl TargetBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::TargetBuilder::id)
     /// - [`arn`](crate::types::builders::TargetBuilder::arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::Target, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Target, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Target {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field("id", "id was not specified but it is required when building Target")
+                ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building Target")
             })?,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field("arn", "arn was not specified but it is required when building Target")
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building Target",
+                )
             })?,
             role_arn: self.role_arn,
             input: self.input,

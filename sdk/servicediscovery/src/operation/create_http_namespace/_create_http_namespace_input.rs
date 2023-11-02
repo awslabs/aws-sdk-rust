@@ -115,7 +115,7 @@ impl CreateHttpNamespaceInputBuilder {
     /// Consumes the builder and constructs a [`CreateHttpNamespaceInput`](crate::operation::create_http_namespace::CreateHttpNamespaceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_http_namespace::CreateHttpNamespaceInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_http_namespace::CreateHttpNamespaceInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_http_namespace::CreateHttpNamespaceInput {
             name: self.name,

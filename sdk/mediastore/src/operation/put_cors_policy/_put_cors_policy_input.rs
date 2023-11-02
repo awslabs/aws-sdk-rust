@@ -73,7 +73,7 @@ impl PutCorsPolicyInputBuilder {
     /// Consumes the builder and constructs a [`PutCorsPolicyInput`](crate::operation::put_cors_policy::PutCorsPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_cors_policy::PutCorsPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_cors_policy::PutCorsPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_cors_policy::PutCorsPolicyInput {
             container_name: self.container_name,
             cors_policy: self.cors_policy,

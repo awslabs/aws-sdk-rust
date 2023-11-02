@@ -67,7 +67,7 @@ impl DefineAnalysisSchemeInputBuilder {
     /// Consumes the builder and constructs a [`DefineAnalysisSchemeInput`](crate::operation::define_analysis_scheme::DefineAnalysisSchemeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::define_analysis_scheme::DefineAnalysisSchemeInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::define_analysis_scheme::DefineAnalysisSchemeInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::define_analysis_scheme::DefineAnalysisSchemeInput {
             domain_name: self.domain_name,

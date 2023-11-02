@@ -2,7 +2,7 @@
 pub fn ser_top_bottom_movers_computation(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TopBottomMoversComputation,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("ComputationId").string(input.computation_id.as_str());
     }

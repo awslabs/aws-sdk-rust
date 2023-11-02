@@ -123,10 +123,10 @@ impl EphemerisMetaDataBuilder {
     /// Consumes the builder and constructs a [`EphemerisMetaData`](crate::types::EphemerisMetaData).
     /// This method will fail if any of the following fields are not set:
     /// - [`source`](crate::types::builders::EphemerisMetaDataBuilder::source)
-    pub fn build(self) -> ::std::result::Result<crate::types::EphemerisMetaData, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::EphemerisMetaData, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EphemerisMetaData {
             source: self.source.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source",
                     "source was not specified but it is required when building EphemerisMetaData",
                 )

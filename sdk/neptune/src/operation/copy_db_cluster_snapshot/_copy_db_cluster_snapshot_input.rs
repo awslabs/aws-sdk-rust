@@ -243,7 +243,7 @@ impl CopyDbClusterSnapshotInputBuilder {
     /// Consumes the builder and constructs a [`CopyDbClusterSnapshotInput`](crate::operation::copy_db_cluster_snapshot::CopyDbClusterSnapshotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::copy_db_cluster_snapshot::CopyDbClusterSnapshotInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::copy_db_cluster_snapshot::CopyDbClusterSnapshotInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::copy_db_cluster_snapshot::CopyDbClusterSnapshotInput {
             source_db_cluster_snapshot_identifier: self.source_db_cluster_snapshot_identifier,

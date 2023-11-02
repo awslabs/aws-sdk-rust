@@ -52,7 +52,7 @@ impl BatchGetApplicationsInputBuilder {
     /// Consumes the builder and constructs a [`BatchGetApplicationsInput`](crate::operation::batch_get_applications::BatchGetApplicationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_get_applications::BatchGetApplicationsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::batch_get_applications::BatchGetApplicationsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::batch_get_applications::BatchGetApplicationsInput {
             application_names: self.application_names,

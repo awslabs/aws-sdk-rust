@@ -91,7 +91,7 @@ impl UpdateResolverConfigInputBuilder {
     /// Consumes the builder and constructs a [`UpdateResolverConfigInput`](crate::operation::update_resolver_config::UpdateResolverConfigInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_resolver_config::UpdateResolverConfigInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_resolver_config::UpdateResolverConfigInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_resolver_config::UpdateResolverConfigInput {
             resource_id: self.resource_id,

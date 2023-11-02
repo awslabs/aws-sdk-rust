@@ -116,7 +116,7 @@ impl ImportKeyPairInputBuilder {
     /// Consumes the builder and constructs a [`ImportKeyPairInput`](crate::operation::import_key_pair::ImportKeyPairInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::import_key_pair::ImportKeyPairInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::import_key_pair::ImportKeyPairInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::import_key_pair::ImportKeyPairInput {
             dry_run: self.dry_run,
             key_name: self.key_name,

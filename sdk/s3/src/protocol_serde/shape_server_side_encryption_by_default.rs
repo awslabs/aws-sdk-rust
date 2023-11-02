@@ -2,7 +2,7 @@
 pub fn ser_server_side_encryption_by_default(
     input: &crate::types::ServerSideEncryptionByDefault,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     {

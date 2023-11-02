@@ -144,7 +144,7 @@ impl AssignIpv6AddressesInputBuilder {
     /// Consumes the builder and constructs a [`AssignIpv6AddressesInput`](crate::operation::assign_ipv6_addresses::AssignIpv6AddressesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::assign_ipv6_addresses::AssignIpv6AddressesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::assign_ipv6_addresses::AssignIpv6AddressesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::assign_ipv6_addresses::AssignIpv6AddressesInput {
             ipv6_address_count: self.ipv6_address_count,

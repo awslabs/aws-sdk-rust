@@ -181,22 +181,22 @@ impl ComponentChildBuilder {
     /// - [`component_type`](crate::types::builders::ComponentChildBuilder::component_type)
     /// - [`name`](crate::types::builders::ComponentChildBuilder::name)
     /// - [`properties`](crate::types::builders::ComponentChildBuilder::properties)
-    pub fn build(self) -> ::std::result::Result<crate::types::ComponentChild, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ComponentChild, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ComponentChild {
             component_type: self.component_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "component_type",
                     "component_type was not specified but it is required when building ComponentChild",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building ComponentChild",
                 )
             })?,
             properties: self.properties.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "properties",
                     "properties was not specified but it is required when building ComponentChild",
                 )

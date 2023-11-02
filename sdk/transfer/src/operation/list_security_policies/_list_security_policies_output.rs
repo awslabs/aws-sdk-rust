@@ -89,12 +89,12 @@ impl ListSecurityPoliciesOutputBuilder {
     /// - [`security_policy_names`](crate::operation::list_security_policies::builders::ListSecurityPoliciesOutputBuilder::security_policy_names)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_security_policies::ListSecurityPoliciesOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_security_policies::ListSecurityPoliciesOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_security_policies::ListSecurityPoliciesOutput {
             next_token: self.next_token,
             security_policy_names: self.security_policy_names.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "security_policy_names",
                     "security_policy_names was not specified but it is required when building ListSecurityPoliciesOutput",
                 )

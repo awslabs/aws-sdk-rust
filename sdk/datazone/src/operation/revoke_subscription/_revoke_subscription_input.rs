@@ -87,7 +87,7 @@ impl RevokeSubscriptionInputBuilder {
     /// Consumes the builder and constructs a [`RevokeSubscriptionInput`](crate::operation::revoke_subscription::RevokeSubscriptionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::revoke_subscription::RevokeSubscriptionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::revoke_subscription::RevokeSubscriptionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::revoke_subscription::RevokeSubscriptionInput {
             domain_identifier: self.domain_identifier,
             identifier: self.identifier,

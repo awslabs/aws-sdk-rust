@@ -55,10 +55,10 @@ impl RequestBodyAssociatedResourceTypeConfigBuilder {
     /// - [`default_size_inspection_limit`](crate::types::builders::RequestBodyAssociatedResourceTypeConfigBuilder::default_size_inspection_limit)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::RequestBodyAssociatedResourceTypeConfig, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::RequestBodyAssociatedResourceTypeConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RequestBodyAssociatedResourceTypeConfig {
             default_size_inspection_limit: self.default_size_inspection_limit.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "default_size_inspection_limit",
                     "default_size_inspection_limit was not specified but it is required when building RequestBodyAssociatedResourceTypeConfig",
                 )

@@ -2,7 +2,7 @@
 pub fn ser_aws_ec2_launch_template_data_instance_market_options_spot_options_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.block_duration_minutes {
         object.key("BlockDurationMinutes").number(
             #[allow(clippy::useless_conversion)]

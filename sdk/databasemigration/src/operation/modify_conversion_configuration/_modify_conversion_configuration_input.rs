@@ -68,7 +68,7 @@ impl ModifyConversionConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_conversion_configuration::ModifyConversionConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::modify_conversion_configuration::ModifyConversionConfigurationInput {
             migration_project_identifier: self.migration_project_identifier,

@@ -2,7 +2,7 @@
 pub fn ser_associate_team_member_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::associate_team_member::AssociateTeamMemberInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.project_id {
         object.key("projectId").string(var_1.as_str());
     }

@@ -165,7 +165,7 @@ impl CreateOutpostResolverInputBuilder {
     /// Consumes the builder and constructs a [`CreateOutpostResolverInput`](crate::operation::create_outpost_resolver::CreateOutpostResolverInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_outpost_resolver::CreateOutpostResolverInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_outpost_resolver::CreateOutpostResolverInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_outpost_resolver::CreateOutpostResolverInput {
             creator_request_id: self.creator_request_id,

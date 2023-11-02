@@ -2,7 +2,7 @@
 pub fn ser_subscription_target_form(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SubscriptionTargetForm,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("formName").string(input.form_name.as_str());
     }

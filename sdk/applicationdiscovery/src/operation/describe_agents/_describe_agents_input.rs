@@ -127,7 +127,7 @@ impl DescribeAgentsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAgentsInput`](crate::operation::describe_agents::DescribeAgentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_agents::DescribeAgentsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_agents::DescribeAgentsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_agents::DescribeAgentsInput {
             agent_ids: self.agent_ids,
             filters: self.filters,

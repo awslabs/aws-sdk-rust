@@ -68,7 +68,7 @@ impl DisassociateDelegationSignerFromDomainInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_delegation_signer_from_domain::DisassociateDelegationSignerFromDomainInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::disassociate_delegation_signer_from_domain::DisassociateDelegationSignerFromDomainInput {

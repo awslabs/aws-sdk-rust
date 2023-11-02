@@ -85,7 +85,7 @@ impl DeleteGrantInputBuilder {
         &self.version
     }
     /// Consumes the builder and constructs a [`DeleteGrantInput`](crate::operation::delete_grant::DeleteGrantInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_grant::DeleteGrantInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_grant::DeleteGrantInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_grant::DeleteGrantInput {
             grant_arn: self.grant_arn,
             status_reason: self.status_reason,

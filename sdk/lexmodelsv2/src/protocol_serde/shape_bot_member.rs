@@ -2,7 +2,7 @@
 pub fn ser_bot_member(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BotMember,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("botMemberId").string(input.bot_member_id.as_str());
     }

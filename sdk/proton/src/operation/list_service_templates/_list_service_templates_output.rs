@@ -89,12 +89,12 @@ impl ListServiceTemplatesOutputBuilder {
     /// - [`templates`](crate::operation::list_service_templates::builders::ListServiceTemplatesOutputBuilder::templates)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_service_templates::ListServiceTemplatesOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_service_templates::ListServiceTemplatesOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_service_templates::ListServiceTemplatesOutput {
             next_token: self.next_token,
             templates: self.templates.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "templates",
                     "templates was not specified but it is required when building ListServiceTemplatesOutput",
                 )

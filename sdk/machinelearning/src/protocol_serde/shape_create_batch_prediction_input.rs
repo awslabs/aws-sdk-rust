@@ -2,7 +2,7 @@
 pub fn ser_create_batch_prediction_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_batch_prediction::CreateBatchPredictionInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.batch_prediction_id {
         object.key("BatchPredictionId").string(var_1.as_str());
     }

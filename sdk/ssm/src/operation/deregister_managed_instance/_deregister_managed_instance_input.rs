@@ -46,7 +46,7 @@ impl DeregisterManagedInstanceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_managed_instance::DeregisterManagedInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::deregister_managed_instance::DeregisterManagedInstanceInput {
             instance_id: self.instance_id,

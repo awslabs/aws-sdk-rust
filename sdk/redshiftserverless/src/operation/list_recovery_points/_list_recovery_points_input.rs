@@ -148,7 +148,8 @@ impl ListRecoveryPointsInputBuilder {
     /// Consumes the builder and constructs a [`ListRecoveryPointsInput`](crate::operation::list_recovery_points::ListRecoveryPointsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_recovery_points::ListRecoveryPointsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_recovery_points::ListRecoveryPointsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::list_recovery_points::ListRecoveryPointsInput {
             next_token: self.next_token,
             max_results: self.max_results,

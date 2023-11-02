@@ -352,7 +352,7 @@ impl CreateProductInputBuilder {
     /// Consumes the builder and constructs a [`CreateProductInput`](crate::operation::create_product::CreateProductInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_product::CreateProductInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_product::CreateProductInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_product::CreateProductInput {
             accept_language: self.accept_language,
             name: self.name,

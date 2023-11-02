@@ -53,7 +53,7 @@ impl BatchDeleteAutomationRulesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_delete_automation_rules::BatchDeleteAutomationRulesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::batch_delete_automation_rules::BatchDeleteAutomationRulesInput {
             automation_rules_arns: self.automation_rules_arns,

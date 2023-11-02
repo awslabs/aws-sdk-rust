@@ -90,7 +90,7 @@ impl DeleteIamPolicyAssignmentInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_iam_policy_assignment::DeleteIamPolicyAssignmentInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_iam_policy_assignment::DeleteIamPolicyAssignmentInput {
             aws_account_id: self.aws_account_id,

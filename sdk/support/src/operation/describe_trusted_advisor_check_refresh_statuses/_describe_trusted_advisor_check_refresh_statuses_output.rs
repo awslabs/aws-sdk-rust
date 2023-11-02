@@ -73,12 +73,12 @@ impl DescribeTrustedAdvisorCheckRefreshStatusesOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_trusted_advisor_check_refresh_statuses::DescribeTrustedAdvisorCheckRefreshStatusesOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_trusted_advisor_check_refresh_statuses::DescribeTrustedAdvisorCheckRefreshStatusesOutput {
                 statuses: self.statuses.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
                         "statuses",
                         "statuses was not specified but it is required when building DescribeTrustedAdvisorCheckRefreshStatusesOutput",
                     )

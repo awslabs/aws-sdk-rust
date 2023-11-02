@@ -2,7 +2,7 @@
 pub fn ser_ingested_events_time_window(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IngestedEventsTimeWindow,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("startTime").string(input.start_time.as_str());
     }

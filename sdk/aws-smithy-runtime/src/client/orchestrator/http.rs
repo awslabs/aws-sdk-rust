@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use aws_smithy_http::body::SdkBody;
 use aws_smithy_runtime_api::client::orchestrator::{HttpResponse, SensitiveOutput};
+use aws_smithy_types::body::SdkBody;
 use aws_smithy_types::config_bag::ConfigBag;
 use bytes::{Buf, Bytes};
 use http_body::Body;

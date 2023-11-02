@@ -871,8 +871,10 @@ impl ModifyReplicationGroupInputBuilder {
     /// Consumes the builder and constructs a [`ModifyReplicationGroupInput`](crate::operation::modify_replication_group::ModifyReplicationGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::modify_replication_group::ModifyReplicationGroupInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::modify_replication_group::ModifyReplicationGroupInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::modify_replication_group::ModifyReplicationGroupInput {
             replication_group_id: self.replication_group_id,
             replication_group_description: self.replication_group_description,

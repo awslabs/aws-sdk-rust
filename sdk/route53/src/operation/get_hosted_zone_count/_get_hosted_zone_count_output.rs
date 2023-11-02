@@ -63,11 +63,11 @@ impl GetHostedZoneCountOutputBuilder {
     /// - [`hosted_zone_count`](crate::operation::get_hosted_zone_count::builders::GetHostedZoneCountOutputBuilder::hosted_zone_count)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_hosted_zone_count::GetHostedZoneCountOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_hosted_zone_count::GetHostedZoneCountOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_hosted_zone_count::GetHostedZoneCountOutput {
             hosted_zone_count: self.hosted_zone_count.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "hosted_zone_count",
                     "hosted_zone_count was not specified but it is required when building GetHostedZoneCountOutput",
                 )

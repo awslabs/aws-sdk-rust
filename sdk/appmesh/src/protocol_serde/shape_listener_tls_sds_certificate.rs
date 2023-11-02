@@ -2,7 +2,7 @@
 pub fn ser_listener_tls_sds_certificate(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ListenerTlsSdsCertificate,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("secretName").string(input.secret_name.as_str());
     }

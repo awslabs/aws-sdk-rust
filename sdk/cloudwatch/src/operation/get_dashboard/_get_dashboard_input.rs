@@ -42,7 +42,9 @@ impl GetDashboardInputBuilder {
         &self.dashboard_name
     }
     /// Consumes the builder and constructs a [`GetDashboardInput`](crate::operation::get_dashboard::GetDashboardInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_dashboard::GetDashboardInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_dashboard::GetDashboardInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_dashboard::GetDashboardInput {
             dashboard_name: self.dashboard_name,
         })

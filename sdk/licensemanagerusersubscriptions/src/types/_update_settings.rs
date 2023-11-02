@@ -101,16 +101,16 @@ impl UpdateSettingsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`add_subnets`](crate::types::builders::UpdateSettingsBuilder::add_subnets)
     /// - [`remove_subnets`](crate::types::builders::UpdateSettingsBuilder::remove_subnets)
-    pub fn build(self) -> ::std::result::Result<crate::types::UpdateSettings, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::UpdateSettings, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::UpdateSettings {
             add_subnets: self.add_subnets.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "add_subnets",
                     "add_subnets was not specified but it is required when building UpdateSettings",
                 )
             })?,
             remove_subnets: self.remove_subnets.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "remove_subnets",
                     "remove_subnets was not specified but it is required when building UpdateSettings",
                 )

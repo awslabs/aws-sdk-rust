@@ -44,7 +44,7 @@ impl GetSmsChannelInputBuilder {
     /// Consumes the builder and constructs a [`GetSmsChannelInput`](crate::operation::get_sms_channel::GetSmsChannelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_sms_channel::GetSmsChannelInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_sms_channel::GetSmsChannelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_sms_channel::GetSmsChannelInput {
             application_id: self.application_id,
         })

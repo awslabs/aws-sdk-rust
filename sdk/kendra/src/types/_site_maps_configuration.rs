@@ -57,10 +57,10 @@ impl SiteMapsConfigurationBuilder {
     /// Consumes the builder and constructs a [`SiteMapsConfiguration`](crate::types::SiteMapsConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`site_maps`](crate::types::builders::SiteMapsConfigurationBuilder::site_maps)
-    pub fn build(self) -> ::std::result::Result<crate::types::SiteMapsConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SiteMapsConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SiteMapsConfiguration {
             site_maps: self.site_maps.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "site_maps",
                     "site_maps was not specified but it is required when building SiteMapsConfiguration",
                 )

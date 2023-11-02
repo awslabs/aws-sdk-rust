@@ -108,7 +108,7 @@ impl StartStreamingSessionInputBuilder {
     /// Consumes the builder and constructs a [`StartStreamingSessionInput`](crate::operation::start_streaming_session::StartStreamingSessionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_streaming_session::StartStreamingSessionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::start_streaming_session::StartStreamingSessionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_streaming_session::StartStreamingSessionInput {
             client_token: self.client_token,

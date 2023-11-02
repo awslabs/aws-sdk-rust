@@ -122,16 +122,17 @@ impl SalesforceCustomKnowledgeArticleTypeConfigurationBuilder {
     /// - [`document_data_field_name`](crate::types::builders::SalesforceCustomKnowledgeArticleTypeConfigurationBuilder::document_data_field_name)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::SalesforceCustomKnowledgeArticleTypeConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::SalesforceCustomKnowledgeArticleTypeConfiguration, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::types::SalesforceCustomKnowledgeArticleTypeConfiguration {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building SalesforceCustomKnowledgeArticleTypeConfiguration",
                 )
             })?,
             document_data_field_name: self.document_data_field_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "document_data_field_name",
                     "document_data_field_name was not specified but it is required when building SalesforceCustomKnowledgeArticleTypeConfiguration",
                 )

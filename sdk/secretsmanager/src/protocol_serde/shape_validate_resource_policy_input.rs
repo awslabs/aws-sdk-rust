@@ -2,7 +2,7 @@
 pub fn ser_validate_resource_policy_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::validate_resource_policy::ValidateResourcePolicyInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.secret_id {
         object.key("SecretId").string(var_1.as_str());
     }

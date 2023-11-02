@@ -156,10 +156,10 @@ impl DataViewDestinationTypeParamsBuilder {
     /// Consumes the builder and constructs a [`DataViewDestinationTypeParams`](crate::types::DataViewDestinationTypeParams).
     /// This method will fail if any of the following fields are not set:
     /// - [`destination_type`](crate::types::builders::DataViewDestinationTypeParamsBuilder::destination_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::DataViewDestinationTypeParams, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DataViewDestinationTypeParams, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DataViewDestinationTypeParams {
             destination_type: self.destination_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "destination_type",
                     "destination_type was not specified but it is required when building DataViewDestinationTypeParams",
                 )

@@ -2,7 +2,7 @@
 pub fn ser_apns_message(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ApnsMessage,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.apns_push_type {
         object.key("APNSPushType").string(var_1.as_str());
     }

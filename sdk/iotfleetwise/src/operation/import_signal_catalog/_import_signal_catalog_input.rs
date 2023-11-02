@@ -115,7 +115,7 @@ impl ImportSignalCatalogInputBuilder {
     /// Consumes the builder and constructs a [`ImportSignalCatalogInput`](crate::operation::import_signal_catalog::ImportSignalCatalogInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::import_signal_catalog::ImportSignalCatalogInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::import_signal_catalog::ImportSignalCatalogInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::import_signal_catalog::ImportSignalCatalogInput {
             name: self.name,

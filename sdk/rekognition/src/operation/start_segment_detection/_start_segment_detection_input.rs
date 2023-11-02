@@ -157,7 +157,7 @@ impl StartSegmentDetectionInputBuilder {
     /// Consumes the builder and constructs a [`StartSegmentDetectionInput`](crate::operation::start_segment_detection::StartSegmentDetectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_segment_detection::StartSegmentDetectionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::start_segment_detection::StartSegmentDetectionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_segment_detection::StartSegmentDetectionInput {
             video: self.video,

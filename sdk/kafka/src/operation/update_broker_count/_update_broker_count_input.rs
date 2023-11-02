@@ -88,7 +88,7 @@ impl UpdateBrokerCountInputBuilder {
     /// Consumes the builder and constructs a [`UpdateBrokerCountInput`](crate::operation::update_broker_count::UpdateBrokerCountInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_broker_count::UpdateBrokerCountInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_broker_count::UpdateBrokerCountInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_broker_count::UpdateBrokerCountInput {
             cluster_arn: self.cluster_arn,
             current_version: self.current_version,

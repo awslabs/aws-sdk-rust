@@ -46,7 +46,7 @@ impl StopVectorEnrichmentJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_vector_enrichment_job::StopVectorEnrichmentJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::stop_vector_enrichment_job::StopVectorEnrichmentJobInput { arn: self.arn })
     }

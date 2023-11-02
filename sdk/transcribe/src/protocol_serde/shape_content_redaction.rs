@@ -2,7 +2,7 @@
 pub fn ser_content_redaction(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ContentRedaction,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("RedactionType").string(input.redaction_type.as_str());
     }

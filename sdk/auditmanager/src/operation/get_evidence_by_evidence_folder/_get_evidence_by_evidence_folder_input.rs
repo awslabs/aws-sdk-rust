@@ -132,7 +132,7 @@ impl GetEvidenceByEvidenceFolderInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_evidence_by_evidence_folder::GetEvidenceByEvidenceFolderInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_evidence_by_evidence_folder::GetEvidenceByEvidenceFolderInput {
             assessment_id: self.assessment_id,

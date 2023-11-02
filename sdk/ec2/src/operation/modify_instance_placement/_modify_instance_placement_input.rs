@@ -208,7 +208,7 @@ impl ModifyInstancePlacementInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_instance_placement::ModifyInstancePlacementInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::modify_instance_placement::ModifyInstancePlacementInput {
             affinity: self.affinity,

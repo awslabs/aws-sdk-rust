@@ -188,7 +188,7 @@ impl ListTrialsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListTrialsInput`](crate::operation::list_trials::ListTrialsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_trials::ListTrialsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_trials::ListTrialsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_trials::ListTrialsInput {
             experiment_name: self.experiment_name,
             trial_component_name: self.trial_component_name,

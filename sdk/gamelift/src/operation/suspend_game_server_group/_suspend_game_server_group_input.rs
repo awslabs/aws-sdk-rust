@@ -75,7 +75,7 @@ impl SuspendGameServerGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::suspend_game_server_group::SuspendGameServerGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::suspend_game_server_group::SuspendGameServerGroupInput {
             game_server_group_name: self.game_server_group_name,

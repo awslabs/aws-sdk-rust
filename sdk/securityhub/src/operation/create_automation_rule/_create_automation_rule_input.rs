@@ -208,7 +208,7 @@ impl CreateAutomationRuleInputBuilder {
     /// Consumes the builder and constructs a [`CreateAutomationRuleInput`](crate::operation::create_automation_rule::CreateAutomationRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_automation_rule::CreateAutomationRuleInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_automation_rule::CreateAutomationRuleInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_automation_rule::CreateAutomationRuleInput {
             tags: self.tags,

@@ -274,17 +274,17 @@ impl EvaluationResultBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`eval_action_name`](crate::types::builders::EvaluationResultBuilder::eval_action_name)
     /// - [`eval_decision`](crate::types::builders::EvaluationResultBuilder::eval_decision)
-    pub fn build(self) -> ::std::result::Result<crate::types::EvaluationResult, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::EvaluationResult, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EvaluationResult {
             eval_action_name: self.eval_action_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "eval_action_name",
                     "eval_action_name was not specified but it is required when building EvaluationResult",
                 )
             })?,
             eval_resource_name: self.eval_resource_name,
             eval_decision: self.eval_decision.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "eval_decision",
                     "eval_decision was not specified but it is required when building EvaluationResult",
                 )

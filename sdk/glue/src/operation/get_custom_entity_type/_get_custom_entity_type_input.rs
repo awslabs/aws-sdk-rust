@@ -44,7 +44,7 @@ impl GetCustomEntityTypeInputBuilder {
     /// Consumes the builder and constructs a [`GetCustomEntityTypeInput`](crate::operation::get_custom_entity_type::GetCustomEntityTypeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_custom_entity_type::GetCustomEntityTypeInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_custom_entity_type::GetCustomEntityTypeInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_custom_entity_type::GetCustomEntityTypeInput { name: self.name })
     }

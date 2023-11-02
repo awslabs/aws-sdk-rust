@@ -66,7 +66,7 @@ impl DeleteRoutingProfileInputBuilder {
     /// Consumes the builder and constructs a [`DeleteRoutingProfileInput`](crate::operation::delete_routing_profile::DeleteRoutingProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_routing_profile::DeleteRoutingProfileInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_routing_profile::DeleteRoutingProfileInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_routing_profile::DeleteRoutingProfileInput {
             instance_id: self.instance_id,

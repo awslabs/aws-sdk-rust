@@ -2,7 +2,7 @@
 pub fn ser_aws_s3_bucket_bucket_lifecycle_configuration_rules_filter_predicate_operands_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.prefix {
         object.key("Prefix").string(var_1.as_str());
     }

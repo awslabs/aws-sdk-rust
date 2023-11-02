@@ -46,7 +46,7 @@ impl UpdateSubscriptionsToEventBridgeInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_subscriptions_to_event_bridge::UpdateSubscriptionsToEventBridgeInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::update_subscriptions_to_event_bridge::UpdateSubscriptionsToEventBridgeInput { force_move: self.force_move },

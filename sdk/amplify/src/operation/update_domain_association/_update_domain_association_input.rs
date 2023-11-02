@@ -169,7 +169,7 @@ impl UpdateDomainAssociationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_domain_association::UpdateDomainAssociationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_domain_association::UpdateDomainAssociationInput {
             app_id: self.app_id,

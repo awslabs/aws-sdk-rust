@@ -69,7 +69,7 @@ impl DisassociateMulticastGroupFromFuotaTaskInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_multicast_group_from_fuota_task::DisassociateMulticastGroupFromFuotaTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::disassociate_multicast_group_from_fuota_task::DisassociateMulticastGroupFromFuotaTaskInput {

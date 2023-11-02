@@ -141,12 +141,12 @@ impl TokenBalanceBuilder {
     /// Consumes the builder and constructs a [`TokenBalance`](crate::types::TokenBalance).
     /// This method will fail if any of the following fields are not set:
     /// - [`balance`](crate::types::builders::TokenBalanceBuilder::balance)
-    pub fn build(self) -> ::std::result::Result<crate::types::TokenBalance, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TokenBalance, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TokenBalance {
             owner_identifier: self.owner_identifier,
             token_identifier: self.token_identifier,
             balance: self.balance.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "balance",
                     "balance was not specified but it is required when building TokenBalance",
                 )

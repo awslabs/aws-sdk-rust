@@ -79,8 +79,8 @@ pub fn de_get_block_public_access_configuration_http_response(
 
 pub fn ser_get_block_public_access_configuration_input(
     _input: &crate::operation::get_block_public_access_configuration::GetBlockPublicAccessConfigurationInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
-    Ok(::aws_smithy_http::body::SdkBody::from("{}"))
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+    Ok(::aws_smithy_types::body::SdkBody::from("{}"))
 }
 
 pub(crate) fn de_get_block_public_access_configuration(

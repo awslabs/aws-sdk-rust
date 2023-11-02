@@ -90,10 +90,10 @@ impl ListArchiveRulesOutputBuilder {
     /// - [`archive_rules`](crate::operation::list_archive_rules::builders::ListArchiveRulesOutputBuilder::archive_rules)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_archive_rules::ListArchiveRulesOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_archive_rules::ListArchiveRulesOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_archive_rules::ListArchiveRulesOutput {
             archive_rules: self.archive_rules.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "archive_rules",
                     "archive_rules was not specified but it is required when building ListArchiveRulesOutput",
                 )

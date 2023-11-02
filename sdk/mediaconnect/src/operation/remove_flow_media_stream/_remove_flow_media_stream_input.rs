@@ -66,7 +66,7 @@ impl RemoveFlowMediaStreamInputBuilder {
     /// Consumes the builder and constructs a [`RemoveFlowMediaStreamInput`](crate::operation::remove_flow_media_stream::RemoveFlowMediaStreamInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::remove_flow_media_stream::RemoveFlowMediaStreamInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::remove_flow_media_stream::RemoveFlowMediaStreamInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::remove_flow_media_stream::RemoveFlowMediaStreamInput {
             flow_arn: self.flow_arn,

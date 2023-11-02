@@ -95,7 +95,7 @@ impl DescribeIndexFieldsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeIndexFieldsInput`](crate::operation::describe_index_fields::DescribeIndexFieldsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_index_fields::DescribeIndexFieldsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_index_fields::DescribeIndexFieldsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_index_fields::DescribeIndexFieldsInput {
             domain_name: self.domain_name,

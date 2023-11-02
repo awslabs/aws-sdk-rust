@@ -66,7 +66,8 @@ impl DeleteTaskTemplateInputBuilder {
     /// Consumes the builder and constructs a [`DeleteTaskTemplateInput`](crate::operation::delete_task_template::DeleteTaskTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_task_template::DeleteTaskTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_task_template::DeleteTaskTemplateInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::delete_task_template::DeleteTaskTemplateInput {
             instance_id: self.instance_id,
             task_template_id: self.task_template_id,

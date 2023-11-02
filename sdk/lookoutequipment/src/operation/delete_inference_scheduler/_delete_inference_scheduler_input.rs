@@ -46,7 +46,7 @@ impl DeleteInferenceSchedulerInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_inference_scheduler::DeleteInferenceSchedulerInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_inference_scheduler::DeleteInferenceSchedulerInput {
             inference_scheduler_name: self.inference_scheduler_name,

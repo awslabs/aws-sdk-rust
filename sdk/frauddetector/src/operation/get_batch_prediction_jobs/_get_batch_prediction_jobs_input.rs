@@ -87,7 +87,7 @@ impl GetBatchPredictionJobsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_batch_prediction_jobs::GetBatchPredictionJobsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_batch_prediction_jobs::GetBatchPredictionJobsInput {
             job_id: self.job_id,

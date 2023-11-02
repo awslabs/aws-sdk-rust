@@ -45,7 +45,7 @@ impl GetStackPolicyInputBuilder {
     /// Consumes the builder and constructs a [`GetStackPolicyInput`](crate::operation::get_stack_policy::GetStackPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_stack_policy::GetStackPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_stack_policy::GetStackPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_stack_policy::GetStackPolicyInput { stack_name: self.stack_name })
     }
 }

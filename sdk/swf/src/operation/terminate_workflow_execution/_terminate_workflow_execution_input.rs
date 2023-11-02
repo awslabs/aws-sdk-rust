@@ -192,7 +192,7 @@ impl TerminateWorkflowExecutionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::terminate_workflow_execution::TerminateWorkflowExecutionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::terminate_workflow_execution::TerminateWorkflowExecutionInput {
             domain: self.domain,

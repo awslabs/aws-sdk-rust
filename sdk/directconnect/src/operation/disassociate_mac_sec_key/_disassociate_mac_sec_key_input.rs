@@ -76,7 +76,7 @@ impl DisassociateMacSecKeyInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateMacSecKeyInput`](crate::operation::disassociate_mac_sec_key::DisassociateMacSecKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::disassociate_mac_sec_key::DisassociateMacSecKeyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::disassociate_mac_sec_key::DisassociateMacSecKeyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::disassociate_mac_sec_key::DisassociateMacSecKeyInput {
             connection_id: self.connection_id,

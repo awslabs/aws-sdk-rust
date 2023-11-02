@@ -47,7 +47,7 @@ impl DeleteRoleInputBuilder {
         &self.role_name
     }
     /// Consumes the builder and constructs a [`DeleteRoleInput`](crate::operation::delete_role::DeleteRoleInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_role::DeleteRoleInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_role::DeleteRoleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_role::DeleteRoleInput { role_name: self.role_name })
     }
 }

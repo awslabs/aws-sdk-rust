@@ -2,7 +2,7 @@
 pub fn ser_geospatial_coordinate_bounds(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GeospatialCoordinateBounds,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("North").number(
             #[allow(clippy::useless_conversion)]

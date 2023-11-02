@@ -2,7 +2,7 @@
 pub fn ser_data_view_destination_type_params(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DataViewDestinationTypeParams,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("destinationType").string(input.destination_type.as_str());
     }

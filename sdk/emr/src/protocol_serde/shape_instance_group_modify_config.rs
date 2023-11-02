@@ -2,7 +2,7 @@
 pub fn ser_instance_group_modify_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::InstanceGroupModifyConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.instance_group_id {
         object.key("InstanceGroupId").string(var_1.as_str());
     }

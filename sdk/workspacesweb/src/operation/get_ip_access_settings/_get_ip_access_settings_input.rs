@@ -44,7 +44,7 @@ impl GetIpAccessSettingsInputBuilder {
     /// Consumes the builder and constructs a [`GetIpAccessSettingsInput`](crate::operation::get_ip_access_settings::GetIpAccessSettingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_ip_access_settings::GetIpAccessSettingsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_ip_access_settings::GetIpAccessSettingsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_ip_access_settings::GetIpAccessSettingsInput {
             ip_access_settings_arn: self.ip_access_settings_arn,

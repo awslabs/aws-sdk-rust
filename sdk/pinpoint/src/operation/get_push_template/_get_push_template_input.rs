@@ -105,7 +105,7 @@ impl GetPushTemplateInputBuilder {
     /// Consumes the builder and constructs a [`GetPushTemplateInput`](crate::operation::get_push_template::GetPushTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_push_template::GetPushTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_push_template::GetPushTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_push_template::GetPushTemplateInput {
             template_name: self.template_name,
             version: self.version,

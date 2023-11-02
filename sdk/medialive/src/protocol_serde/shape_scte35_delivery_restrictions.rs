@@ -2,7 +2,7 @@
 pub fn ser_scte35_delivery_restrictions(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Scte35DeliveryRestrictions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.archive_allowed_flag {
         object.key("archiveAllowedFlag").string(var_1.as_str());
     }

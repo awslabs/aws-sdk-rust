@@ -2,7 +2,7 @@
 pub fn ser_msk_source_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MskSourceConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("MSKClusterARN").string(input.msk_cluster_arn.as_str());
     }

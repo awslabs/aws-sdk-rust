@@ -44,7 +44,7 @@ impl DeleteWhatIfForecastInputBuilder {
     /// Consumes the builder and constructs a [`DeleteWhatIfForecastInput`](crate::operation::delete_what_if_forecast::DeleteWhatIfForecastInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_what_if_forecast::DeleteWhatIfForecastInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_what_if_forecast::DeleteWhatIfForecastInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_what_if_forecast::DeleteWhatIfForecastInput {
             what_if_forecast_arn: self.what_if_forecast_arn,

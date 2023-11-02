@@ -182,15 +182,15 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteWorkfl
             fn uri_base(
                 _input: &crate::operation::delete_workflow_step::DeleteWorkflowStepInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 use ::std::fmt::Write as _;
                 let input_1 = &_input.id;
                 let input_1 = input_1
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("id", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("id", "cannot be empty or unset"))?;
                 let id = ::aws_smithy_http::label::fmt_string(input_1, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if id.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     ));
@@ -201,14 +201,14 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteWorkfl
             fn uri_query(
                 _input: &crate::operation::delete_workflow_step::DeleteWorkflowStepInput,
                 mut output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 let inner_2 = &_input.step_group_id;
                 let inner_2 = inner_2
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("step_group_id", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("step_group_id", "cannot be empty or unset"))?;
                 if inner_2.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "step_group_id",
                         "cannot be empty or unset",
                     ));
@@ -217,9 +217,9 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteWorkfl
                 let inner_3 = &_input.workflow_id;
                 let inner_3 = inner_3
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("workflow_id", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("workflow_id", "cannot be empty or unset"))?;
                 if inner_3.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "workflow_id",
                         "cannot be empty or unset",
                     ));
@@ -231,7 +231,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteWorkfl
             fn update_http_builder(
                 input: &crate::operation::delete_workflow_step::DeleteWorkflowStepInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -240,7 +240,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteWorkfl
             let mut builder = update_http_builder(&input, ::http::request::Builder::new())?;
             builder
         };
-        let body = ::aws_smithy_http::body::SdkBody::from("");
+        let body = ::aws_smithy_types::body::SdkBody::from("");
 
         ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }

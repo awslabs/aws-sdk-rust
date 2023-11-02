@@ -240,7 +240,7 @@ impl RestoreTableFromSnapshotInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::restore_table_from_snapshot::RestoreTableFromSnapshotInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::restore_table_from_snapshot::RestoreTableFromSnapshotInput {
             namespace_name: self.namespace_name,

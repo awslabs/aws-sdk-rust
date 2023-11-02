@@ -2,7 +2,7 @@
 pub fn ser_landsat_cloud_cover_land_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LandsatCloudCoverLandInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("LowerBound").number(
             #[allow(clippy::useless_conversion)]

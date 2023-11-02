@@ -114,7 +114,7 @@ impl CreateBlueprintInputBuilder {
     /// Consumes the builder and constructs a [`CreateBlueprintInput`](crate::operation::create_blueprint::CreateBlueprintInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_blueprint::CreateBlueprintInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_blueprint::CreateBlueprintInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_blueprint::CreateBlueprintInput {
             name: self.name,
             description: self.description,

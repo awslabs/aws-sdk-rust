@@ -292,64 +292,64 @@ impl ContentSummaryBuilder {
     /// - [`content_type`](crate::types::builders::ContentSummaryBuilder::content_type)
     /// - [`status`](crate::types::builders::ContentSummaryBuilder::status)
     /// - [`metadata`](crate::types::builders::ContentSummaryBuilder::metadata)
-    pub fn build(self) -> ::std::result::Result<crate::types::ContentSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ContentSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ContentSummary {
             content_arn: self.content_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "content_arn",
                     "content_arn was not specified but it is required when building ContentSummary",
                 )
             })?,
             content_id: self.content_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "content_id",
                     "content_id was not specified but it is required when building ContentSummary",
                 )
             })?,
             knowledge_base_arn: self.knowledge_base_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "knowledge_base_arn",
                     "knowledge_base_arn was not specified but it is required when building ContentSummary",
                 )
             })?,
             knowledge_base_id: self.knowledge_base_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "knowledge_base_id",
                     "knowledge_base_id was not specified but it is required when building ContentSummary",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building ContentSummary",
                 )
             })?,
             revision_id: self.revision_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "revision_id",
                     "revision_id was not specified but it is required when building ContentSummary",
                 )
             })?,
             title: self.title.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "title",
                     "title was not specified but it is required when building ContentSummary",
                 )
             })?,
             content_type: self.content_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "content_type",
                     "content_type was not specified but it is required when building ContentSummary",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building ContentSummary",
                 )
             })?,
             metadata: self.metadata.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "metadata",
                     "metadata was not specified but it is required when building ContentSummary",
                 )

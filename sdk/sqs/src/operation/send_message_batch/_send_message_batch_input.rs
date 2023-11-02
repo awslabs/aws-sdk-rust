@@ -79,7 +79,7 @@ impl SendMessageBatchInputBuilder {
     /// Consumes the builder and constructs a [`SendMessageBatchInput`](crate::operation::send_message_batch::SendMessageBatchInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::send_message_batch::SendMessageBatchInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::send_message_batch::SendMessageBatchInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::send_message_batch::SendMessageBatchInput {
             queue_url: self.queue_url,
             entries: self.entries,

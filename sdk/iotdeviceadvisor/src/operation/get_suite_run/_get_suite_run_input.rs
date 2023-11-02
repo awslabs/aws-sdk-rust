@@ -64,7 +64,7 @@ impl GetSuiteRunInputBuilder {
         &self.suite_run_id
     }
     /// Consumes the builder and constructs a [`GetSuiteRunInput`](crate::operation::get_suite_run::GetSuiteRunInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_suite_run::GetSuiteRunInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_suite_run::GetSuiteRunInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_suite_run::GetSuiteRunInput {
             suite_definition_id: self.suite_definition_id,
             suite_run_id: self.suite_run_id,

@@ -44,8 +44,10 @@ impl DescribeCodeRepositoryInputBuilder {
     /// Consumes the builder and constructs a [`DescribeCodeRepositoryInput`](crate::operation::describe_code_repository::DescribeCodeRepositoryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_code_repository::DescribeCodeRepositoryInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::describe_code_repository::DescribeCodeRepositoryInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::describe_code_repository::DescribeCodeRepositoryInput {
             code_repository_name: self.code_repository_name,
         })

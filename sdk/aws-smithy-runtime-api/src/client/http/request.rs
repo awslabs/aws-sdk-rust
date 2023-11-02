@@ -5,7 +5,7 @@
 
 //! Http Request Types
 
-use aws_smithy_http::body::SdkBody;
+use aws_smithy_types::body::SdkBody;
 use http as http0;
 use http::header::{InvalidHeaderName, InvalidHeaderValue};
 use http::uri::InvalidUri;
@@ -616,7 +616,7 @@ fn header_value(value: MaybeStatic) -> Result<HeaderValue, HttpError> {
 #[cfg(test)]
 mod test {
     use crate::client::orchestrator::HttpRequest;
-    use aws_smithy_http::body::SdkBody;
+    use aws_smithy_types::body::SdkBody;
     use http::header::{AUTHORIZATION, CONTENT_LENGTH};
     use http::{HeaderValue, Uri};
 

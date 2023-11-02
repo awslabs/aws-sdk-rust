@@ -87,11 +87,11 @@ impl ListStudiosOutputBuilder {
     /// Consumes the builder and constructs a [`ListStudiosOutput`](crate::operation::list_studios::ListStudiosOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`studios`](crate::operation::list_studios::builders::ListStudiosOutputBuilder::studios)
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_studios::ListStudiosOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_studios::ListStudiosOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_studios::ListStudiosOutput {
             next_token: self.next_token,
             studios: self.studios.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "studios",
                     "studios was not specified but it is required when building ListStudiosOutput",
                 )

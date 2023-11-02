@@ -265,34 +265,34 @@ impl OriginEndpointListConfigurationBuilder {
     /// - [`channel_name`](crate::types::builders::OriginEndpointListConfigurationBuilder::channel_name)
     /// - [`origin_endpoint_name`](crate::types::builders::OriginEndpointListConfigurationBuilder::origin_endpoint_name)
     /// - [`container_type`](crate::types::builders::OriginEndpointListConfigurationBuilder::container_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::OriginEndpointListConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::OriginEndpointListConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::OriginEndpointListConfiguration {
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building OriginEndpointListConfiguration",
                 )
             })?,
             channel_group_name: self.channel_group_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "channel_group_name",
                     "channel_group_name was not specified but it is required when building OriginEndpointListConfiguration",
                 )
             })?,
             channel_name: self.channel_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "channel_name",
                     "channel_name was not specified but it is required when building OriginEndpointListConfiguration",
                 )
             })?,
             origin_endpoint_name: self.origin_endpoint_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "origin_endpoint_name",
                     "origin_endpoint_name was not specified but it is required when building OriginEndpointListConfiguration",
                 )
             })?,
             container_type: self.container_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "container_type",
                     "container_type was not specified but it is required when building OriginEndpointListConfiguration",
                 )

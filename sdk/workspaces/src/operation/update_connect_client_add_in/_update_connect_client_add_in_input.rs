@@ -110,7 +110,7 @@ impl UpdateConnectClientAddInInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_connect_client_add_in::UpdateConnectClientAddInInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_connect_client_add_in::UpdateConnectClientAddInInput {
             add_in_id: self.add_in_id,

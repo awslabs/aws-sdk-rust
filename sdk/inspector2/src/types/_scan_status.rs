@@ -193,16 +193,16 @@ impl ScanStatusBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`status_code`](crate::types::builders::ScanStatusBuilder::status_code)
     /// - [`reason`](crate::types::builders::ScanStatusBuilder::reason)
-    pub fn build(self) -> ::std::result::Result<crate::types::ScanStatus, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ScanStatus, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ScanStatus {
             status_code: self.status_code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status_code",
                     "status_code was not specified but it is required when building ScanStatus",
                 )
             })?,
             reason: self.reason.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "reason",
                     "reason was not specified but it is required when building ScanStatus",
                 )

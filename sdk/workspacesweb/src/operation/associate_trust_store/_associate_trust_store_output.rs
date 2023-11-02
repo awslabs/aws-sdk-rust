@@ -87,17 +87,17 @@ impl AssociateTrustStoreOutputBuilder {
     /// - [`trust_store_arn`](crate::operation::associate_trust_store::builders::AssociateTrustStoreOutputBuilder::trust_store_arn)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::associate_trust_store::AssociateTrustStoreOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::associate_trust_store::AssociateTrustStoreOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::associate_trust_store::AssociateTrustStoreOutput {
             portal_arn: self.portal_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "portal_arn",
                     "portal_arn was not specified but it is required when building AssociateTrustStoreOutput",
                 )
             })?,
             trust_store_arn: self.trust_store_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "trust_store_arn",
                     "trust_store_arn was not specified but it is required when building AssociateTrustStoreOutput",
                 )

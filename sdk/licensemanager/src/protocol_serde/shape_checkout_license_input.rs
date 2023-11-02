@@ -2,7 +2,7 @@
 pub fn ser_checkout_license_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::checkout_license::CheckoutLicenseInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.product_sku {
         object.key("ProductSKU").string(var_1.as_str());
     }

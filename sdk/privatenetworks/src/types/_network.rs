@@ -156,23 +156,23 @@ impl NetworkBuilder {
     /// - [`network_arn`](crate::types::builders::NetworkBuilder::network_arn)
     /// - [`network_name`](crate::types::builders::NetworkBuilder::network_name)
     /// - [`status`](crate::types::builders::NetworkBuilder::status)
-    pub fn build(self) -> ::std::result::Result<crate::types::Network, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Network, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Network {
             network_arn: self.network_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "network_arn",
                     "network_arn was not specified but it is required when building Network",
                 )
             })?,
             network_name: self.network_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "network_name",
                     "network_name was not specified but it is required when building Network",
                 )
             })?,
             description: self.description,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building Network",
                 )

@@ -152,7 +152,7 @@ impl ModifyDbSnapshotAttributeInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_db_snapshot_attribute::ModifyDbSnapshotAttributeInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::modify_db_snapshot_attribute::ModifyDbSnapshotAttributeInput {
             db_snapshot_identifier: self.db_snapshot_identifier,

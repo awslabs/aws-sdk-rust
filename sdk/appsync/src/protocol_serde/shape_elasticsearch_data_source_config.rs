@@ -2,7 +2,7 @@
 pub fn ser_elasticsearch_data_source_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ElasticsearchDataSourceConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("endpoint").string(input.endpoint.as_str());
     }

@@ -377,7 +377,7 @@ impl DescribeSavingsPlansOfferingsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_savings_plans_offerings::DescribeSavingsPlansOfferingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_savings_plans_offerings::DescribeSavingsPlansOfferingsInput {
             offering_ids: self.offering_ids,

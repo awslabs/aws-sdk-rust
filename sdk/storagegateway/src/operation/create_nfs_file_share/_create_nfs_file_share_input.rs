@@ -664,7 +664,7 @@ impl CreateNfsFileShareInputBuilder {
     /// Consumes the builder and constructs a [`CreateNfsFileShareInput`](crate::operation::create_nfs_file_share::CreateNfsFileShareInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_nfs_file_share::CreateNfsFileShareInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_nfs_file_share::CreateNfsFileShareInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_nfs_file_share::CreateNfsFileShareInput {
             client_token: self.client_token,

@@ -70,16 +70,16 @@ impl SenderIdAndCountryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`sender_id`](crate::types::builders::SenderIdAndCountryBuilder::sender_id)
     /// - [`iso_country_code`](crate::types::builders::SenderIdAndCountryBuilder::iso_country_code)
-    pub fn build(self) -> ::std::result::Result<crate::types::SenderIdAndCountry, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SenderIdAndCountry, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SenderIdAndCountry {
             sender_id: self.sender_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "sender_id",
                     "sender_id was not specified but it is required when building SenderIdAndCountry",
                 )
             })?,
             iso_country_code: self.iso_country_code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "iso_country_code",
                     "iso_country_code was not specified but it is required when building SenderIdAndCountry",
                 )

@@ -2,7 +2,7 @@
 pub fn ser_transcript_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TranscriptFilter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("TranscriptFilterType").string(input.transcript_filter_type.as_str());
     }

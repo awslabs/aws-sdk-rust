@@ -70,16 +70,16 @@ impl IotEventsDestinationConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`input_name`](crate::types::builders::IotEventsDestinationConfigurationBuilder::input_name)
     /// - [`role_arn`](crate::types::builders::IotEventsDestinationConfigurationBuilder::role_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::IotEventsDestinationConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::IotEventsDestinationConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::IotEventsDestinationConfiguration {
             input_name: self.input_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "input_name",
                     "input_name was not specified but it is required when building IotEventsDestinationConfiguration",
                 )
             })?,
             role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role_arn",
                     "role_arn was not specified but it is required when building IotEventsDestinationConfiguration",
                 )

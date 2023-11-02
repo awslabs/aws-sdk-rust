@@ -129,17 +129,17 @@ impl FileSystemAlreadyExistsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`error_code`](crate::types::error::builders::FileSystemAlreadyExistsBuilder::error_code)
     /// - [`file_system_id`](crate::types::error::builders::FileSystemAlreadyExistsBuilder::file_system_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::error::FileSystemAlreadyExists, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::error::FileSystemAlreadyExists, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::error::FileSystemAlreadyExists {
             error_code: self.error_code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "error_code",
                     "error_code was not specified but it is required when building FileSystemAlreadyExists",
                 )
             })?,
             message: self.message,
             file_system_id: self.file_system_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "file_system_id",
                     "file_system_id was not specified but it is required when building FileSystemAlreadyExists",
                 )

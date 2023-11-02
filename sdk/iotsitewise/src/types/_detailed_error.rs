@@ -69,16 +69,16 @@ impl DetailedErrorBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`code`](crate::types::builders::DetailedErrorBuilder::code)
     /// - [`message`](crate::types::builders::DetailedErrorBuilder::message)
-    pub fn build(self) -> ::std::result::Result<crate::types::DetailedError, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DetailedError, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DetailedError {
             code: self.code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "code",
                     "code was not specified but it is required when building DetailedError",
                 )
             })?,
             message: self.message.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "message",
                     "message was not specified but it is required when building DetailedError",
                 )

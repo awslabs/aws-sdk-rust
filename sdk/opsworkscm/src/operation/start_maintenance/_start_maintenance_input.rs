@@ -93,7 +93,7 @@ impl StartMaintenanceInputBuilder {
     /// Consumes the builder and constructs a [`StartMaintenanceInput`](crate::operation::start_maintenance::StartMaintenanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_maintenance::StartMaintenanceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_maintenance::StartMaintenanceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_maintenance::StartMaintenanceInput {
             server_name: self.server_name,
             engine_attributes: self.engine_attributes,

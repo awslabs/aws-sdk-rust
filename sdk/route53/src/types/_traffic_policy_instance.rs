@@ -335,58 +335,58 @@ impl TrafficPolicyInstanceBuilder {
     /// - [`traffic_policy_id`](crate::types::builders::TrafficPolicyInstanceBuilder::traffic_policy_id)
     /// - [`traffic_policy_version`](crate::types::builders::TrafficPolicyInstanceBuilder::traffic_policy_version)
     /// - [`traffic_policy_type`](crate::types::builders::TrafficPolicyInstanceBuilder::traffic_policy_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::TrafficPolicyInstance, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TrafficPolicyInstance, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TrafficPolicyInstance {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building TrafficPolicyInstance",
                 )
             })?,
             hosted_zone_id: self.hosted_zone_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "hosted_zone_id",
                     "hosted_zone_id was not specified but it is required when building TrafficPolicyInstance",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building TrafficPolicyInstance",
                 )
             })?,
             ttl: self.ttl.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "ttl",
                     "ttl was not specified but it is required when building TrafficPolicyInstance",
                 )
             })?,
             state: self.state.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "state",
                     "state was not specified but it is required when building TrafficPolicyInstance",
                 )
             })?,
             message: self.message.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "message",
                     "message was not specified but it is required when building TrafficPolicyInstance",
                 )
             })?,
             traffic_policy_id: self.traffic_policy_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "traffic_policy_id",
                     "traffic_policy_id was not specified but it is required when building TrafficPolicyInstance",
                 )
             })?,
             traffic_policy_version: self.traffic_policy_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "traffic_policy_version",
                     "traffic_policy_version was not specified but it is required when building TrafficPolicyInstance",
                 )
             })?,
             traffic_policy_type: self.traffic_policy_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "traffic_policy_type",
                     "traffic_policy_type was not specified but it is required when building TrafficPolicyInstance",
                 )

@@ -91,7 +91,7 @@ impl ListProjectAssetsInputBuilder {
     /// Consumes the builder and constructs a [`ListProjectAssetsInput`](crate::operation::list_project_assets::ListProjectAssetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_project_assets::ListProjectAssetsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_project_assets::ListProjectAssetsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_project_assets::ListProjectAssetsInput {
             project_id: self.project_id,
             next_token: self.next_token,

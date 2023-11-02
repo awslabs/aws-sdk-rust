@@ -2,7 +2,7 @@
 pub fn ser_refresh_token_request_body(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RefreshTokenRequestBody,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("token").string(input.token.as_str());
     }

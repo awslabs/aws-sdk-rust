@@ -2,7 +2,7 @@
 pub fn ser_phone_number_quick_connect_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PhoneNumberQuickConnectConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("PhoneNumber").string(input.phone_number.as_str());
     }

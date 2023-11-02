@@ -136,16 +136,16 @@ impl VirtualGatewayDataBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`mesh_name`](crate::types::builders::VirtualGatewayDataBuilder::mesh_name)
     /// - [`virtual_gateway_name`](crate::types::builders::VirtualGatewayDataBuilder::virtual_gateway_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::VirtualGatewayData, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::VirtualGatewayData, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::VirtualGatewayData {
             mesh_name: self.mesh_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "mesh_name",
                     "mesh_name was not specified but it is required when building VirtualGatewayData",
                 )
             })?,
             virtual_gateway_name: self.virtual_gateway_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "virtual_gateway_name",
                     "virtual_gateway_name was not specified but it is required when building VirtualGatewayData",
                 )

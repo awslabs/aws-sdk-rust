@@ -68,7 +68,7 @@ impl AcceptAdministratorInvitationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::accept_administrator_invitation::AcceptAdministratorInvitationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::accept_administrator_invitation::AcceptAdministratorInvitationInput {
             administrator_id: self.administrator_id,

@@ -92,7 +92,7 @@ impl SetInstanceHealthInputBuilder {
     /// Consumes the builder and constructs a [`SetInstanceHealthInput`](crate::operation::set_instance_health::SetInstanceHealthInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::set_instance_health::SetInstanceHealthInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::set_instance_health::SetInstanceHealthInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::set_instance_health::SetInstanceHealthInput {
             instance_id: self.instance_id,
             health_status: self.health_status,

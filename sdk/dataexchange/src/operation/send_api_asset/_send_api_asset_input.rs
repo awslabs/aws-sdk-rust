@@ -219,7 +219,7 @@ impl SendApiAssetInputBuilder {
     /// Consumes the builder and constructs a [`SendApiAssetInput`](crate::operation::send_api_asset::SendApiAssetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::send_api_asset::SendApiAssetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::send_api_asset::SendApiAssetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::send_api_asset::SendApiAssetInput {
             body: self.body,
             query_string_parameters: self.query_string_parameters,

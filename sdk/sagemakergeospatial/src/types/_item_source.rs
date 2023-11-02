@@ -139,10 +139,10 @@ impl ItemSourceBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::ItemSourceBuilder::id)
     /// - [`date_time`](crate::types::builders::ItemSourceBuilder::date_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::ItemSource, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ItemSource, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ItemSource {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building ItemSource",
                 )
@@ -150,7 +150,7 @@ impl ItemSourceBuilder {
             geometry: self.geometry,
             assets: self.assets,
             date_time: self.date_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "date_time",
                     "date_time was not specified but it is required when building ItemSource",
                 )

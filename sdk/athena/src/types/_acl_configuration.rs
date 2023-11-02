@@ -45,10 +45,10 @@ impl AclConfigurationBuilder {
     /// Consumes the builder and constructs a [`AclConfiguration`](crate::types::AclConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`s3_acl_option`](crate::types::builders::AclConfigurationBuilder::s3_acl_option)
-    pub fn build(self) -> ::std::result::Result<crate::types::AclConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AclConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AclConfiguration {
             s3_acl_option: self.s3_acl_option.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "s3_acl_option",
                     "s3_acl_option was not specified but it is required when building AclConfiguration",
                 )

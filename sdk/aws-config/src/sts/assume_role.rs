@@ -349,11 +349,11 @@ mod test {
     use aws_smithy_async::rt::sleep::{SharedAsyncSleep, TokioSleep};
     use aws_smithy_async::test_util::instant_time_and_sleep;
     use aws_smithy_async::time::StaticTimeSource;
-    use aws_smithy_http::body::SdkBody;
     use aws_smithy_runtime::client::http::test_util::{
         capture_request, ReplayEvent, StaticReplayClient,
     };
     use aws_smithy_runtime::test_util::capture_test_logs::capture_test_logs;
+    use aws_smithy_types::body::SdkBody;
     use aws_types::os_shim_internal::Env;
     use aws_types::region::Region;
     use aws_types::SdkConfig;

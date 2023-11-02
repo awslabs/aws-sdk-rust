@@ -42,7 +42,7 @@ impl DeleteFleetInputBuilder {
         &self.fleet_arn
     }
     /// Consumes the builder and constructs a [`DeleteFleetInput`](crate::operation::delete_fleet::DeleteFleetInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_fleet::DeleteFleetInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_fleet::DeleteFleetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_fleet::DeleteFleetInput { fleet_arn: self.fleet_arn })
     }
 }

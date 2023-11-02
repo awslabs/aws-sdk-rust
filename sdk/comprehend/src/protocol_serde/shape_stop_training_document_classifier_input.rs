@@ -2,7 +2,7 @@
 pub fn ser_stop_training_document_classifier_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::stop_training_document_classifier::StopTrainingDocumentClassifierInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.document_classifier_arn {
         object.key("DocumentClassifierArn").string(var_1.as_str());
     }

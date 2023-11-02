@@ -87,7 +87,7 @@ impl UpdateHttpNamespaceInputBuilder {
     /// Consumes the builder and constructs a [`UpdateHttpNamespaceInput`](crate::operation::update_http_namespace::UpdateHttpNamespaceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_http_namespace::UpdateHttpNamespaceInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_http_namespace::UpdateHttpNamespaceInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_http_namespace::UpdateHttpNamespaceInput {
             id: self.id,

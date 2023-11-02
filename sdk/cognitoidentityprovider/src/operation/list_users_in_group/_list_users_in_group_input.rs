@@ -108,7 +108,7 @@ impl ListUsersInGroupInputBuilder {
     /// Consumes the builder and constructs a [`ListUsersInGroupInput`](crate::operation::list_users_in_group::ListUsersInGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_users_in_group::ListUsersInGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_users_in_group::ListUsersInGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_users_in_group::ListUsersInGroupInput {
             user_pool_id: self.user_pool_id,
             group_name: self.group_name,

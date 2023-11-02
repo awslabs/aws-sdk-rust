@@ -151,23 +151,23 @@ impl CreateScanOutputBuilder {
     /// - [`scan_name`](crate::operation::create_scan::builders::CreateScanOutputBuilder::scan_name)
     /// - [`run_id`](crate::operation::create_scan::builders::CreateScanOutputBuilder::run_id)
     /// - [`scan_state`](crate::operation::create_scan::builders::CreateScanOutputBuilder::scan_state)
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_scan::CreateScanOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_scan::CreateScanOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_scan::CreateScanOutput {
             scan_name: self.scan_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "scan_name",
                     "scan_name was not specified but it is required when building CreateScanOutput",
                 )
             })?,
             run_id: self.run_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "run_id",
                     "run_id was not specified but it is required when building CreateScanOutput",
                 )
             })?,
             resource_id: self.resource_id,
             scan_state: self.scan_state.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "scan_state",
                     "scan_state was not specified but it is required when building CreateScanOutput",
                 )

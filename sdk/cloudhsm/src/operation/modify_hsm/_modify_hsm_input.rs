@@ -153,7 +153,7 @@ impl ModifyHsmInputBuilder {
         &self.syslog_ip
     }
     /// Consumes the builder and constructs a [`ModifyHsmInput`](crate::operation::modify_hsm::ModifyHsmInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::modify_hsm::ModifyHsmInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_hsm::ModifyHsmInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::modify_hsm::ModifyHsmInput {
             hsm_arn: self.hsm_arn,
             subnet_id: self.subnet_id,

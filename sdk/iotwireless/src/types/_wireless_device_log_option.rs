@@ -97,16 +97,16 @@ impl WirelessDeviceLogOptionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::WirelessDeviceLogOptionBuilder::r#type)
     /// - [`log_level`](crate::types::builders::WirelessDeviceLogOptionBuilder::log_level)
-    pub fn build(self) -> ::std::result::Result<crate::types::WirelessDeviceLogOption, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::WirelessDeviceLogOption, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::WirelessDeviceLogOption {
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building WirelessDeviceLogOption",
                 )
             })?,
             log_level: self.log_level.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "log_level",
                     "log_level was not specified but it is required when building WirelessDeviceLogOption",
                 )

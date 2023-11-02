@@ -2,7 +2,7 @@
 pub fn ser_merge_branches_by_fast_forward_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::merge_branches_by_fast_forward::MergeBranchesByFastForwardInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.repository_name {
         object.key("repositoryName").string(var_1.as_str());
     }

@@ -110,8 +110,10 @@ impl CreateFolderMembershipInputBuilder {
     /// Consumes the builder and constructs a [`CreateFolderMembershipInput`](crate::operation::create_folder_membership::CreateFolderMembershipInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_folder_membership::CreateFolderMembershipInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::create_folder_membership::CreateFolderMembershipInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::create_folder_membership::CreateFolderMembershipInput {
             aws_account_id: self.aws_account_id,
             folder_id: self.folder_id,

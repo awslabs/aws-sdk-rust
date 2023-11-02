@@ -88,11 +88,11 @@ impl ContinuousDeploymentPolicyConfigBuilder {
     /// Consumes the builder and constructs a [`ContinuousDeploymentPolicyConfig`](crate::types::ContinuousDeploymentPolicyConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`enabled`](crate::types::builders::ContinuousDeploymentPolicyConfigBuilder::enabled)
-    pub fn build(self) -> ::std::result::Result<crate::types::ContinuousDeploymentPolicyConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ContinuousDeploymentPolicyConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ContinuousDeploymentPolicyConfig {
             staging_distribution_dns_names: self.staging_distribution_dns_names,
             enabled: self.enabled.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "enabled",
                     "enabled was not specified but it is required when building ContinuousDeploymentPolicyConfig",
                 )

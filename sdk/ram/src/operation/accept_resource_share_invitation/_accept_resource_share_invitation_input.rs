@@ -77,7 +77,7 @@ impl AcceptResourceShareInvitationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::accept_resource_share_invitation::AcceptResourceShareInvitationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::accept_resource_share_invitation::AcceptResourceShareInvitationInput {
             resource_share_invitation_arn: self.resource_share_invitation_arn,

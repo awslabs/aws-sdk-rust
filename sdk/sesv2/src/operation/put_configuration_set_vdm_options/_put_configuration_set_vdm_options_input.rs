@@ -68,7 +68,7 @@ impl PutConfigurationSetVdmOptionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_configuration_set_vdm_options::PutConfigurationSetVdmOptionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_configuration_set_vdm_options::PutConfigurationSetVdmOptionsInput {
             configuration_set_name: self.configuration_set_name,

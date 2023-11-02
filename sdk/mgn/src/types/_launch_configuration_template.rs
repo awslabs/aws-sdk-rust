@@ -413,10 +413,10 @@ impl LaunchConfigurationTemplateBuilder {
     /// Consumes the builder and constructs a [`LaunchConfigurationTemplate`](crate::types::LaunchConfigurationTemplate).
     /// This method will fail if any of the following fields are not set:
     /// - [`launch_configuration_template_id`](crate::types::builders::LaunchConfigurationTemplateBuilder::launch_configuration_template_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::LaunchConfigurationTemplate, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::LaunchConfigurationTemplate, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::LaunchConfigurationTemplate {
             launch_configuration_template_id: self.launch_configuration_template_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "launch_configuration_template_id",
                     "launch_configuration_template_id was not specified but it is required when building LaunchConfigurationTemplate",
                 )

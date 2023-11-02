@@ -146,7 +146,7 @@ impl UpdateWebAclInputBuilder {
     /// Consumes the builder and constructs a [`UpdateWebAclInput`](crate::operation::update_web_acl::UpdateWebAclInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_web_acl::UpdateWebAclInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_web_acl::UpdateWebAclInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_web_acl::UpdateWebAclInput {
             web_acl_id: self.web_acl_id,
             change_token: self.change_token,

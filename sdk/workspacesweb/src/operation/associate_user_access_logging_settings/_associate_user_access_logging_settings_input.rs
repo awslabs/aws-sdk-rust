@@ -68,7 +68,7 @@ impl AssociateUserAccessLoggingSettingsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_user_access_logging_settings::AssociateUserAccessLoggingSettingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::associate_user_access_logging_settings::AssociateUserAccessLoggingSettingsInput {

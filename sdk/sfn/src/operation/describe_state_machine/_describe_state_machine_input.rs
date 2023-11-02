@@ -49,7 +49,7 @@ impl DescribeStateMachineInputBuilder {
     /// Consumes the builder and constructs a [`DescribeStateMachineInput`](crate::operation::describe_state_machine::DescribeStateMachineInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_state_machine::DescribeStateMachineInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_state_machine::DescribeStateMachineInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_state_machine::DescribeStateMachineInput {
             state_machine_arn: self.state_machine_arn,

@@ -94,7 +94,7 @@ impl CreateDatabaseInputBuilder {
     /// Consumes the builder and constructs a [`CreateDatabaseInput`](crate::operation::create_database::CreateDatabaseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_database::CreateDatabaseInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_database::CreateDatabaseInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_database::CreateDatabaseInput {
             database_name: self.database_name,
             kms_key_id: self.kms_key_id,

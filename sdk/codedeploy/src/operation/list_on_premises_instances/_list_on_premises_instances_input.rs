@@ -116,7 +116,7 @@ impl ListOnPremisesInstancesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_on_premises_instances::ListOnPremisesInstancesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_on_premises_instances::ListOnPremisesInstancesInput {
             registration_status: self.registration_status,

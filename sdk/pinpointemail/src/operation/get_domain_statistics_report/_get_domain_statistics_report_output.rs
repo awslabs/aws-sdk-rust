@@ -93,12 +93,12 @@ impl GetDomainStatisticsReportOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_domain_statistics_report::GetDomainStatisticsReportOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_domain_statistics_report::GetDomainStatisticsReportOutput {
             overall_volume: self.overall_volume,
             daily_volumes: self.daily_volumes.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "daily_volumes",
                     "daily_volumes was not specified but it is required when building GetDomainStatisticsReportOutput",
                 )

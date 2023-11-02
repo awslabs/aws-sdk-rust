@@ -92,7 +92,7 @@ impl AcceptEulasInputBuilder {
         &self.studio_id
     }
     /// Consumes the builder and constructs a [`AcceptEulasInput`](crate::operation::accept_eulas::AcceptEulasInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::accept_eulas::AcceptEulasInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::accept_eulas::AcceptEulasInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::accept_eulas::AcceptEulasInput {
             client_token: self.client_token,
             eula_ids: self.eula_ids,

@@ -74,7 +74,7 @@ impl DescribeSpeakerInputBuilder {
     /// Consumes the builder and constructs a [`DescribeSpeakerInput`](crate::operation::describe_speaker::DescribeSpeakerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_speaker::DescribeSpeakerInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_speaker::DescribeSpeakerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_speaker::DescribeSpeakerInput {
             domain_id: self.domain_id,
             speaker_id: self.speaker_id,

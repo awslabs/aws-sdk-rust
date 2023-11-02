@@ -2,7 +2,7 @@
 pub fn ser_aws_rds_pending_cloud_watch_logs_exports(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsRdsPendingCloudWatchLogsExports,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.log_types_to_enable {
         let mut array_2 = object.key("LogTypesToEnable").start_array();
         for item_3 in var_1 {

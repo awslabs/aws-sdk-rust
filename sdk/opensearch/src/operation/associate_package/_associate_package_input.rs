@@ -67,7 +67,7 @@ impl AssociatePackageInputBuilder {
     /// Consumes the builder and constructs a [`AssociatePackageInput`](crate::operation::associate_package::AssociatePackageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::associate_package::AssociatePackageInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::associate_package::AssociatePackageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::associate_package::AssociatePackageInput {
             package_id: self.package_id,
             domain_name: self.domain_name,

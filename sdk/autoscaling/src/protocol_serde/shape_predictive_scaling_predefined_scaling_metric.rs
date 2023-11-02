@@ -3,7 +3,7 @@
 pub fn ser_predictive_scaling_predefined_scaling_metric(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::PredictiveScalingPredefinedScalingMetric,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("PredefinedMetricType");
     if let Some(var_2) = &input.predefined_metric_type {

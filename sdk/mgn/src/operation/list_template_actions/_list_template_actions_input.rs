@@ -107,7 +107,7 @@ impl ListTemplateActionsInputBuilder {
     /// Consumes the builder and constructs a [`ListTemplateActionsInput`](crate::operation::list_template_actions::ListTemplateActionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_template_actions::ListTemplateActionsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_template_actions::ListTemplateActionsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_template_actions::ListTemplateActionsInput {
             launch_configuration_template_id: self.launch_configuration_template_id,

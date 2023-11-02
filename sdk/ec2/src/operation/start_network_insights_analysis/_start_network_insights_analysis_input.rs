@@ -176,7 +176,7 @@ impl StartNetworkInsightsAnalysisInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_network_insights_analysis::StartNetworkInsightsAnalysisInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_network_insights_analysis::StartNetworkInsightsAnalysisInput {
             network_insights_path_id: self.network_insights_path_id,

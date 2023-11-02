@@ -66,7 +66,7 @@ impl GetMlTaskRunInputBuilder {
     /// Consumes the builder and constructs a [`GetMlTaskRunInput`](crate::operation::get_ml_task_run::GetMlTaskRunInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_ml_task_run::GetMlTaskRunInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_ml_task_run::GetMlTaskRunInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_ml_task_run::GetMlTaskRunInput {
             transform_id: self.transform_id,
             task_run_id: self.task_run_id,

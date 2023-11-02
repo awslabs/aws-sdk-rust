@@ -44,7 +44,7 @@ impl GetUserSettingsInputBuilder {
     /// Consumes the builder and constructs a [`GetUserSettingsInput`](crate::operation::get_user_settings::GetUserSettingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_user_settings::GetUserSettingsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_user_settings::GetUserSettingsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_user_settings::GetUserSettingsInput {
             user_settings_arn: self.user_settings_arn,
         })

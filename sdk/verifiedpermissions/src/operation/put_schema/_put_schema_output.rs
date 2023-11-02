@@ -136,28 +136,28 @@ impl PutSchemaOutputBuilder {
     /// - [`namespaces`](crate::operation::put_schema::builders::PutSchemaOutputBuilder::namespaces)
     /// - [`created_date`](crate::operation::put_schema::builders::PutSchemaOutputBuilder::created_date)
     /// - [`last_updated_date`](crate::operation::put_schema::builders::PutSchemaOutputBuilder::last_updated_date)
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_schema::PutSchemaOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_schema::PutSchemaOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_schema::PutSchemaOutput {
             policy_store_id: self.policy_store_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "policy_store_id",
                     "policy_store_id was not specified but it is required when building PutSchemaOutput",
                 )
             })?,
             namespaces: self.namespaces.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "namespaces",
                     "namespaces was not specified but it is required when building PutSchemaOutput",
                 )
             })?,
             created_date: self.created_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_date",
                     "created_date was not specified but it is required when building PutSchemaOutput",
                 )
             })?,
             last_updated_date: self.last_updated_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_updated_date",
                     "last_updated_date was not specified but it is required when building PutSchemaOutput",
                 )

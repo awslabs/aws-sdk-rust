@@ -2,7 +2,7 @@
 pub fn ser_decimal_places_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DecimalPlacesConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("DecimalPlaces").number(
             #[allow(clippy::useless_conversion)]

@@ -108,7 +108,7 @@ impl CheckDomainAvailabilityInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::check_domain_availability::CheckDomainAvailabilityInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::check_domain_availability::CheckDomainAvailabilityInput {
             domain_name: self.domain_name,

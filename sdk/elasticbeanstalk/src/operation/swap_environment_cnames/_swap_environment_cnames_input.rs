@@ -127,7 +127,7 @@ impl SwapEnvironmentCnamEsInputBuilder {
     /// Consumes the builder and constructs a [`SwapEnvironmentCnamEsInput`](crate::operation::swap_environment_cnames::SwapEnvironmentCnamEsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::swap_environment_cnames::SwapEnvironmentCnamEsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::swap_environment_cnames::SwapEnvironmentCnamEsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::swap_environment_cnames::SwapEnvironmentCnamEsInput {
             source_environment_id: self.source_environment_id,

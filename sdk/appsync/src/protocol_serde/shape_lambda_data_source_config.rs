@@ -2,7 +2,7 @@
 pub fn ser_lambda_data_source_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LambdaDataSourceConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("lambdaFunctionArn").string(input.lambda_function_arn.as_str());
     }

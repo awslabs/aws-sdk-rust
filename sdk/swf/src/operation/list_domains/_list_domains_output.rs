@@ -93,10 +93,10 @@ impl ListDomainsOutputBuilder {
     /// Consumes the builder and constructs a [`ListDomainsOutput`](crate::operation::list_domains::ListDomainsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`domain_infos`](crate::operation::list_domains::builders::ListDomainsOutputBuilder::domain_infos)
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_domains::ListDomainsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_domains::ListDomainsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_domains::ListDomainsOutput {
             domain_infos: self.domain_infos.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "domain_infos",
                     "domain_infos was not specified but it is required when building ListDomainsOutput",
                 )

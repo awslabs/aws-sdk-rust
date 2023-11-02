@@ -44,7 +44,8 @@ impl DeleteCustomPluginInputBuilder {
     /// Consumes the builder and constructs a [`DeleteCustomPluginInput`](crate::operation::delete_custom_plugin::DeleteCustomPluginInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_custom_plugin::DeleteCustomPluginInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_custom_plugin::DeleteCustomPluginInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::delete_custom_plugin::DeleteCustomPluginInput {
             custom_plugin_arn: self.custom_plugin_arn,
         })

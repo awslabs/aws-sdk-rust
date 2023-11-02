@@ -44,7 +44,8 @@ impl DeleteDatasetGroupInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDatasetGroupInput`](crate::operation::delete_dataset_group::DeleteDatasetGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_dataset_group::DeleteDatasetGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_dataset_group::DeleteDatasetGroupInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::delete_dataset_group::DeleteDatasetGroupInput {
             dataset_group_arn: self.dataset_group_arn,
         })

@@ -166,34 +166,34 @@ impl ValidatePolicyFindingBuilder {
     /// - [`issue_code`](crate::types::builders::ValidatePolicyFindingBuilder::issue_code)
     /// - [`learn_more_link`](crate::types::builders::ValidatePolicyFindingBuilder::learn_more_link)
     /// - [`locations`](crate::types::builders::ValidatePolicyFindingBuilder::locations)
-    pub fn build(self) -> ::std::result::Result<crate::types::ValidatePolicyFinding, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ValidatePolicyFinding, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ValidatePolicyFinding {
             finding_details: self.finding_details.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "finding_details",
                     "finding_details was not specified but it is required when building ValidatePolicyFinding",
                 )
             })?,
             finding_type: self.finding_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "finding_type",
                     "finding_type was not specified but it is required when building ValidatePolicyFinding",
                 )
             })?,
             issue_code: self.issue_code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "issue_code",
                     "issue_code was not specified but it is required when building ValidatePolicyFinding",
                 )
             })?,
             learn_more_link: self.learn_more_link.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "learn_more_link",
                     "learn_more_link was not specified but it is required when building ValidatePolicyFinding",
                 )
             })?,
             locations: self.locations.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "locations",
                     "locations was not specified but it is required when building ValidatePolicyFinding",
                 )

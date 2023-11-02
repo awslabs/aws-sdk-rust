@@ -75,11 +75,11 @@ impl MultiMeasureMappingsBuilder {
     /// Consumes the builder and constructs a [`MultiMeasureMappings`](crate::types::MultiMeasureMappings).
     /// This method will fail if any of the following fields are not set:
     /// - [`multi_measure_attribute_mappings`](crate::types::builders::MultiMeasureMappingsBuilder::multi_measure_attribute_mappings)
-    pub fn build(self) -> ::std::result::Result<crate::types::MultiMeasureMappings, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::MultiMeasureMappings, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MultiMeasureMappings {
             target_multi_measure_name: self.target_multi_measure_name,
             multi_measure_attribute_mappings: self.multi_measure_attribute_mappings.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "multi_measure_attribute_mappings",
                     "multi_measure_attribute_mappings was not specified but it is required when building MultiMeasureMappings",
                 )

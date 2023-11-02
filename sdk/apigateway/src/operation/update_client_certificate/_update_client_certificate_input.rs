@@ -76,7 +76,7 @@ impl UpdateClientCertificateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_client_certificate::UpdateClientCertificateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_client_certificate::UpdateClientCertificateInput {
             client_certificate_id: self.client_certificate_id,

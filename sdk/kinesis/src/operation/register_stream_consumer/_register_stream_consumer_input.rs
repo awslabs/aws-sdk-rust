@@ -66,8 +66,10 @@ impl RegisterStreamConsumerInputBuilder {
     /// Consumes the builder and constructs a [`RegisterStreamConsumerInput`](crate::operation::register_stream_consumer::RegisterStreamConsumerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::register_stream_consumer::RegisterStreamConsumerInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::register_stream_consumer::RegisterStreamConsumerInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::register_stream_consumer::RegisterStreamConsumerInput {
             stream_arn: self.stream_arn,
             consumer_name: self.consumer_name,

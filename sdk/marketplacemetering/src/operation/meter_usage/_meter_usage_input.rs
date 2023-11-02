@@ -162,7 +162,7 @@ impl MeterUsageInputBuilder {
         &self.usage_allocations
     }
     /// Consumes the builder and constructs a [`MeterUsageInput`](crate::operation::meter_usage::MeterUsageInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::meter_usage::MeterUsageInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::meter_usage::MeterUsageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::meter_usage::MeterUsageInput {
             product_code: self.product_code,
             timestamp: self.timestamp,

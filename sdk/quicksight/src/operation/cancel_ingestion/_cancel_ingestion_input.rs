@@ -88,7 +88,7 @@ impl CancelIngestionInputBuilder {
     /// Consumes the builder and constructs a [`CancelIngestionInput`](crate::operation::cancel_ingestion::CancelIngestionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::cancel_ingestion::CancelIngestionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::cancel_ingestion::CancelIngestionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::cancel_ingestion::CancelIngestionInput {
             aws_account_id: self.aws_account_id,
             data_set_id: self.data_set_id,

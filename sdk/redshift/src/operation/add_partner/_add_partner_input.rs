@@ -108,7 +108,7 @@ impl AddPartnerInputBuilder {
         &self.partner_name
     }
     /// Consumes the builder and constructs a [`AddPartnerInput`](crate::operation::add_partner::AddPartnerInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::add_partner::AddPartnerInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::add_partner::AddPartnerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::add_partner::AddPartnerInput {
             account_id: self.account_id,
             cluster_identifier: self.cluster_identifier,

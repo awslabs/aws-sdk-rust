@@ -2,7 +2,7 @@
 pub fn ser_esam_signal_processing_notification(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EsamSignalProcessingNotification,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.scc_xml {
         object.key("sccXml").string(var_1.as_str());
     }

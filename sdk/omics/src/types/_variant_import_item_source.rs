@@ -46,10 +46,10 @@ impl VariantImportItemSourceBuilder {
     /// Consumes the builder and constructs a [`VariantImportItemSource`](crate::types::VariantImportItemSource).
     /// This method will fail if any of the following fields are not set:
     /// - [`source`](crate::types::builders::VariantImportItemSourceBuilder::source)
-    pub fn build(self) -> ::std::result::Result<crate::types::VariantImportItemSource, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::VariantImportItemSource, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::VariantImportItemSource {
             source: self.source.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source",
                     "source was not specified but it is required when building VariantImportItemSource",
                 )

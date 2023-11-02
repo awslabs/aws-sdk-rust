@@ -46,7 +46,7 @@ impl DescribeEmailMonitoringConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfigurationInput {

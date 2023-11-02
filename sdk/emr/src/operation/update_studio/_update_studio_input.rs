@@ -134,7 +134,9 @@ impl UpdateStudioInputBuilder {
         &self.default_s3_location
     }
     /// Consumes the builder and constructs a [`UpdateStudioInput`](crate::operation::update_studio::UpdateStudioInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_studio::UpdateStudioInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::update_studio::UpdateStudioInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_studio::UpdateStudioInput {
             studio_id: self.studio_id,
             name: self.name,

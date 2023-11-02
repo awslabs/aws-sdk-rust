@@ -552,7 +552,7 @@ impl CreateStackSetInputBuilder {
     /// Consumes the builder and constructs a [`CreateStackSetInput`](crate::operation::create_stack_set::CreateStackSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_stack_set::CreateStackSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_stack_set::CreateStackSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_stack_set::CreateStackSetInput {
             stack_set_name: self.stack_set_name,
             description: self.description,

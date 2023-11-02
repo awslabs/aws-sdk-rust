@@ -141,7 +141,8 @@ impl CreateVpcConnectorInputBuilder {
     /// Consumes the builder and constructs a [`CreateVpcConnectorInput`](crate::operation::create_vpc_connector::CreateVpcConnectorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_vpc_connector::CreateVpcConnectorInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_vpc_connector::CreateVpcConnectorInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_vpc_connector::CreateVpcConnectorInput {
             vpc_connector_name: self.vpc_connector_name,
             subnets: self.subnets,

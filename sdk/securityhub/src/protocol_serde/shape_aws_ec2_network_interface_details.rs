@@ -2,7 +2,7 @@
 pub fn ser_aws_ec2_network_interface_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEc2NetworkInterfaceDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.attachment {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Attachment").start_object();

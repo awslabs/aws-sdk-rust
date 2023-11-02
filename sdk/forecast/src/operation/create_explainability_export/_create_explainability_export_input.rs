@@ -185,7 +185,7 @@ impl CreateExplainabilityExportInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_explainability_export::CreateExplainabilityExportInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_explainability_export::CreateExplainabilityExportInput {
             explainability_export_name: self.explainability_export_name,

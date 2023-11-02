@@ -2,7 +2,7 @@
 pub fn ser_dimension_field(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DimensionField,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.numerical_dimension_field {
         #[allow(unused_mut)]
         let mut object_2 = object.key("NumericalDimensionField").start_object();

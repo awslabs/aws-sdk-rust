@@ -98,22 +98,22 @@ impl SsmActionDefinitionBuilder {
     /// - [`action_sub_type`](crate::types::builders::SsmActionDefinitionBuilder::action_sub_type)
     /// - [`region`](crate::types::builders::SsmActionDefinitionBuilder::region)
     /// - [`instance_ids`](crate::types::builders::SsmActionDefinitionBuilder::instance_ids)
-    pub fn build(self) -> ::std::result::Result<crate::types::SsmActionDefinition, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SsmActionDefinition, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SsmActionDefinition {
             action_sub_type: self.action_sub_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "action_sub_type",
                     "action_sub_type was not specified but it is required when building SsmActionDefinition",
                 )
             })?,
             region: self.region.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "region",
                     "region was not specified but it is required when building SsmActionDefinition",
                 )
             })?,
             instance_ids: self.instance_ids.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "instance_ids",
                     "instance_ids was not specified but it is required when building SsmActionDefinition",
                 )

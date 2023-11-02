@@ -104,7 +104,7 @@ impl CreateAttendeeInputBuilder {
     /// Consumes the builder and constructs a [`CreateAttendeeInput`](crate::operation::create_attendee::CreateAttendeeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_attendee::CreateAttendeeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_attendee::CreateAttendeeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_attendee::CreateAttendeeInput {
             meeting_id: self.meeting_id,
             external_user_id: self.external_user_id,

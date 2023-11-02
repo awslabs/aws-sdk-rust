@@ -69,16 +69,16 @@ impl FailureDescriptionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::FailureDescriptionBuilder::r#type)
     /// - [`details`](crate::types::builders::FailureDescriptionBuilder::details)
-    pub fn build(self) -> ::std::result::Result<crate::types::FailureDescription, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::FailureDescription, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FailureDescription {
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building FailureDescription",
                 )
             })?,
             details: self.details.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "details",
                     "details was not specified but it is required when building FailureDescription",
                 )

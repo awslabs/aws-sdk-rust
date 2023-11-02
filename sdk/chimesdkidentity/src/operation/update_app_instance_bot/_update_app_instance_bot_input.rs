@@ -119,7 +119,7 @@ impl UpdateAppInstanceBotInputBuilder {
     /// Consumes the builder and constructs a [`UpdateAppInstanceBotInput`](crate::operation::update_app_instance_bot::UpdateAppInstanceBotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_app_instance_bot::UpdateAppInstanceBotInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_app_instance_bot::UpdateAppInstanceBotInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_app_instance_bot::UpdateAppInstanceBotInput {
             app_instance_bot_arn: self.app_instance_bot_arn,

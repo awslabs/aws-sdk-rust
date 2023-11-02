@@ -46,7 +46,7 @@ impl DeleteLoggingConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_logging_configuration::DeleteLoggingConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_logging_configuration::DeleteLoggingConfigurationInput {
             resource_arn: self.resource_arn,

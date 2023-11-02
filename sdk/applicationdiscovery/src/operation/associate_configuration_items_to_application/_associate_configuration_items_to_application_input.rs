@@ -76,7 +76,7 @@ impl AssociateConfigurationItemsToApplicationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationInput {

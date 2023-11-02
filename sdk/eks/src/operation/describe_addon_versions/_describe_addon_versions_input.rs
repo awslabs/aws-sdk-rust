@@ -203,7 +203,7 @@ impl DescribeAddonVersionsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAddonVersionsInput`](crate::operation::describe_addon_versions::DescribeAddonVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_addon_versions::DescribeAddonVersionsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_addon_versions::DescribeAddonVersionsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_addon_versions::DescribeAddonVersionsInput {
             kubernetes_version: self.kubernetes_version,

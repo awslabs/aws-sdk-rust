@@ -66,7 +66,7 @@ impl StopSpeakerSearchTaskInputBuilder {
     /// Consumes the builder and constructs a [`StopSpeakerSearchTaskInput`](crate::operation::stop_speaker_search_task::StopSpeakerSearchTaskInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_speaker_search_task::StopSpeakerSearchTaskInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::stop_speaker_search_task::StopSpeakerSearchTaskInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::stop_speaker_search_task::StopSpeakerSearchTaskInput {
             voice_connector_id: self.voice_connector_id,

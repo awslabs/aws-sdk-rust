@@ -118,28 +118,28 @@ impl MapMatchingConfigBuilder {
     /// - [`y_attribute_name`](crate::types::builders::MapMatchingConfigBuilder::y_attribute_name)
     /// - [`x_attribute_name`](crate::types::builders::MapMatchingConfigBuilder::x_attribute_name)
     /// - [`timestamp_attribute_name`](crate::types::builders::MapMatchingConfigBuilder::timestamp_attribute_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::MapMatchingConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::MapMatchingConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MapMatchingConfig {
             id_attribute_name: self.id_attribute_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id_attribute_name",
                     "id_attribute_name was not specified but it is required when building MapMatchingConfig",
                 )
             })?,
             y_attribute_name: self.y_attribute_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "y_attribute_name",
                     "y_attribute_name was not specified but it is required when building MapMatchingConfig",
                 )
             })?,
             x_attribute_name: self.x_attribute_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "x_attribute_name",
                     "x_attribute_name was not specified but it is required when building MapMatchingConfig",
                 )
             })?,
             timestamp_attribute_name: self.timestamp_attribute_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "timestamp_attribute_name",
                     "timestamp_attribute_name was not specified but it is required when building MapMatchingConfig",
                 )

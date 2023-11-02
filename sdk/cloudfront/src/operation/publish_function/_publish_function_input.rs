@@ -66,7 +66,7 @@ impl PublishFunctionInputBuilder {
     /// Consumes the builder and constructs a [`PublishFunctionInput`](crate::operation::publish_function::PublishFunctionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::publish_function::PublishFunctionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::publish_function::PublishFunctionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::publish_function::PublishFunctionInput {
             name: self.name,
             if_match: self.if_match,

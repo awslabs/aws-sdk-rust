@@ -45,10 +45,10 @@ impl ConnectionSettingsBuilder {
     /// Consumes the builder and constructs a [`ConnectionSettings`](crate::types::ConnectionSettings).
     /// This method will fail if any of the following fields are not set:
     /// - [`idle_timeout`](crate::types::builders::ConnectionSettingsBuilder::idle_timeout)
-    pub fn build(self) -> ::std::result::Result<crate::types::ConnectionSettings, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ConnectionSettings, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ConnectionSettings {
             idle_timeout: self.idle_timeout.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "idle_timeout",
                     "idle_timeout was not specified but it is required when building ConnectionSettings",
                 )

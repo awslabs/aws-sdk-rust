@@ -46,7 +46,7 @@ impl DescribeLifecycleConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_lifecycle_configuration::DescribeLifecycleConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_lifecycle_configuration::DescribeLifecycleConfigurationInput {
             file_system_id: self.file_system_id,

@@ -108,7 +108,7 @@ impl DescribeTemplateInputBuilder {
     /// Consumes the builder and constructs a [`DescribeTemplateInput`](crate::operation::describe_template::DescribeTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_template::DescribeTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_template::DescribeTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_template::DescribeTemplateInput {
             aws_account_id: self.aws_account_id,
             template_id: self.template_id,

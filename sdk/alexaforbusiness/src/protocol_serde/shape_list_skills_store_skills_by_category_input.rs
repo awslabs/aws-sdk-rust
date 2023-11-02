@@ -2,7 +2,7 @@
 pub fn ser_list_skills_store_skills_by_category_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_skills_store_skills_by_category::ListSkillsStoreSkillsByCategoryInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.category_id {
         object.key("CategoryId").number(
             #[allow(clippy::useless_conversion)]

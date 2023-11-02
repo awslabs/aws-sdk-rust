@@ -71,7 +71,7 @@ impl DeleteBucketAccessKeyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteBucketAccessKeyInput`](crate::operation::delete_bucket_access_key::DeleteBucketAccessKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_bucket_access_key::DeleteBucketAccessKeyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_bucket_access_key::DeleteBucketAccessKeyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_bucket_access_key::DeleteBucketAccessKeyInput {
             bucket_name: self.bucket_name,

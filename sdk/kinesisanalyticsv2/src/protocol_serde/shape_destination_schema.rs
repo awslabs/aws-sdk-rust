@@ -2,7 +2,7 @@
 pub fn ser_destination_schema(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DestinationSchema,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("RecordFormatType").string(input.record_format_type.as_str());
     }

@@ -110,7 +110,7 @@ impl StartDataIngestionJobInputBuilder {
     /// Consumes the builder and constructs a [`StartDataIngestionJobInput`](crate::operation::start_data_ingestion_job::StartDataIngestionJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_data_ingestion_job::StartDataIngestionJobInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::start_data_ingestion_job::StartDataIngestionJobInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_data_ingestion_job::StartDataIngestionJobInput {
             dataset_name: self.dataset_name,

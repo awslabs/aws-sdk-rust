@@ -70,16 +70,16 @@ impl CardVerificationValue1Builder {
     /// This method will fail if any of the following fields are not set:
     /// - [`card_expiry_date`](crate::types::builders::CardVerificationValue1Builder::card_expiry_date)
     /// - [`service_code`](crate::types::builders::CardVerificationValue1Builder::service_code)
-    pub fn build(self) -> ::std::result::Result<crate::types::CardVerificationValue1, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CardVerificationValue1, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CardVerificationValue1 {
             card_expiry_date: self.card_expiry_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "card_expiry_date",
                     "card_expiry_date was not specified but it is required when building CardVerificationValue1",
                 )
             })?,
             service_code: self.service_code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "service_code",
                     "service_code was not specified but it is required when building CardVerificationValue1",
                 )

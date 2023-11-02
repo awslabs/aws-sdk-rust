@@ -44,7 +44,7 @@ impl GetVoiceConnectorInputBuilder {
     /// Consumes the builder and constructs a [`GetVoiceConnectorInput`](crate::operation::get_voice_connector::GetVoiceConnectorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_voice_connector::GetVoiceConnectorInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_voice_connector::GetVoiceConnectorInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_voice_connector::GetVoiceConnectorInput {
             voice_connector_id: self.voice_connector_id,
         })

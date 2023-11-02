@@ -63,7 +63,7 @@ impl GrantAccessInputBuilder {
         &self.valid_for_in_minutes
     }
     /// Consumes the builder and constructs a [`GrantAccessInput`](crate::operation::grant_access::GrantAccessInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::grant_access::GrantAccessInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::grant_access::GrantAccessInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::grant_access::GrantAccessInput {
             instance_id: self.instance_id,
             valid_for_in_minutes: self.valid_for_in_minutes,

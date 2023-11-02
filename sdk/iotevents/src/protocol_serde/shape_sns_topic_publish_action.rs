@@ -2,7 +2,7 @@
 pub fn ser_sns_topic_publish_action(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SnsTopicPublishAction,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("targetArn").string(input.target_arn.as_str());
     }

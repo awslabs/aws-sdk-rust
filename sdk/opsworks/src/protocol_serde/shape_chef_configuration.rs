@@ -2,7 +2,7 @@
 pub fn ser_chef_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ChefConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.manage_berkshelf {
         object.key("ManageBerkshelf").boolean(*var_1);
     }

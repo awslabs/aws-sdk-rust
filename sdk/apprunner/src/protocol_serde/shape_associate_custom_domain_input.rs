@@ -2,7 +2,7 @@
 pub fn ser_associate_custom_domain_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::associate_custom_domain::AssociateCustomDomainInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.service_arn {
         object.key("ServiceArn").string(var_1.as_str());
     }

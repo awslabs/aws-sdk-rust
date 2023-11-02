@@ -2,7 +2,7 @@
 pub fn ser_topic_calculated_field(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TopicCalculatedField,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("CalculatedFieldName").string(input.calculated_field_name.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_job_executions_retry_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::JobExecutionsRetryConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("criteriaList").start_array();
         for item_2 in &input.criteria_list {

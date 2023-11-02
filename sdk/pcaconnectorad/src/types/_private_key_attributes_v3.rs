@@ -142,16 +142,16 @@ impl PrivateKeyAttributesV3Builder {
     /// - [`minimal_key_length`](crate::types::builders::PrivateKeyAttributesV3Builder::minimal_key_length)
     /// - [`key_spec`](crate::types::builders::PrivateKeyAttributesV3Builder::key_spec)
     /// - [`algorithm`](crate::types::builders::PrivateKeyAttributesV3Builder::algorithm)
-    pub fn build(self) -> ::std::result::Result<crate::types::PrivateKeyAttributesV3, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PrivateKeyAttributesV3, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PrivateKeyAttributesV3 {
             minimal_key_length: self.minimal_key_length.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "minimal_key_length",
                     "minimal_key_length was not specified but it is required when building PrivateKeyAttributesV3",
                 )
             })?,
             key_spec: self.key_spec.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "key_spec",
                     "key_spec was not specified but it is required when building PrivateKeyAttributesV3",
                 )
@@ -159,7 +159,7 @@ impl PrivateKeyAttributesV3Builder {
             crypto_providers: self.crypto_providers,
             key_usage_property: self.key_usage_property,
             algorithm: self.algorithm.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "algorithm",
                     "algorithm was not specified but it is required when building PrivateKeyAttributesV3",
                 )

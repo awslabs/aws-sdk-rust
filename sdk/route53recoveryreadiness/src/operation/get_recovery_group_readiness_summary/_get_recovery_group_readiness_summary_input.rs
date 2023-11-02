@@ -88,7 +88,7 @@ impl GetRecoveryGroupReadinessSummaryInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_recovery_group_readiness_summary::GetRecoveryGroupReadinessSummaryInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_recovery_group_readiness_summary::GetRecoveryGroupReadinessSummaryInput {

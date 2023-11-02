@@ -68,7 +68,7 @@ impl DeleteVpcPeeringConnectionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnectionInput {
             fleet_id: self.fleet_id,

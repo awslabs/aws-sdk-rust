@@ -83,7 +83,7 @@ impl GetReviewTemplateLensReviewInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_review_template_lens_review::GetReviewTemplateLensReviewInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_review_template_lens_review::GetReviewTemplateLensReviewInput {
             template_arn: self.template_arn,

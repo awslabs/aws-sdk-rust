@@ -2,7 +2,7 @@
 pub fn ser_aws_elb_load_balancer_health_check(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsElbLoadBalancerHealthCheck,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.healthy_threshold {
         object.key("HealthyThreshold").number(
             #[allow(clippy::useless_conversion)]

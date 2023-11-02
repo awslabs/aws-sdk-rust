@@ -160,16 +160,16 @@ impl LogConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`field_log_level`](crate::types::builders::LogConfigBuilder::field_log_level)
     /// - [`cloud_watch_logs_role_arn`](crate::types::builders::LogConfigBuilder::cloud_watch_logs_role_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::LogConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::LogConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::LogConfig {
             field_log_level: self.field_log_level.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "field_log_level",
                     "field_log_level was not specified but it is required when building LogConfig",
                 )
             })?,
             cloud_watch_logs_role_arn: self.cloud_watch_logs_role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "cloud_watch_logs_role_arn",
                     "cloud_watch_logs_role_arn was not specified but it is required when building LogConfig",
                 )

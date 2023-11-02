@@ -26,7 +26,7 @@ pub fn de_storage_class_analysis(
 pub fn ser_storage_class_analysis(
     input: &crate::types::StorageClassAnalysis,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_2) = &input.data_export {

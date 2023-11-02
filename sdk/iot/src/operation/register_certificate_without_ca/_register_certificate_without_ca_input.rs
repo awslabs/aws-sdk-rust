@@ -67,7 +67,7 @@ impl RegisterCertificateWithoutCaInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_certificate_without_ca::RegisterCertificateWithoutCaInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::register_certificate_without_ca::RegisterCertificateWithoutCaInput {
             certificate_pem: self.certificate_pem,

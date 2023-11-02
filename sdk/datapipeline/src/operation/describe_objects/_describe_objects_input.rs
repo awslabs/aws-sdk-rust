@@ -116,7 +116,7 @@ impl DescribeObjectsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeObjectsInput`](crate::operation::describe_objects::DescribeObjectsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_objects::DescribeObjectsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_objects::DescribeObjectsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_objects::DescribeObjectsInput {
             pipeline_id: self.pipeline_id,
             object_ids: self.object_ids,

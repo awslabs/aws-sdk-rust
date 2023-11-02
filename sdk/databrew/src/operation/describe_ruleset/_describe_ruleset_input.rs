@@ -44,7 +44,7 @@ impl DescribeRulesetInputBuilder {
     /// Consumes the builder and constructs a [`DescribeRulesetInput`](crate::operation::describe_ruleset::DescribeRulesetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_ruleset::DescribeRulesetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_ruleset::DescribeRulesetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_ruleset::DescribeRulesetInput { name: self.name })
     }
 }

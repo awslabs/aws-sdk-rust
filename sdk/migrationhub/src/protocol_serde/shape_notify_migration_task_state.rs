@@ -183,10 +183,10 @@ pub fn de_notify_migration_task_state_http_response(
 
 pub fn ser_notify_migration_task_state_input(
     input: &crate::operation::notify_migration_task_state::NotifyMigrationTaskStateInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_notify_migration_task_state_input::ser_notify_migration_task_state_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

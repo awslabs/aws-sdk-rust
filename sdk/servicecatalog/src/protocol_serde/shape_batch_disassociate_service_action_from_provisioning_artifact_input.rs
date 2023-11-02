@@ -2,7 +2,7 @@
 pub fn ser_batch_disassociate_service_action_from_provisioning_artifact_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::batch_disassociate_service_action_from_provisioning_artifact::BatchDisassociateServiceActionFromProvisioningArtifactInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.service_action_associations {
         let mut array_2 = object.key("ServiceActionAssociations").start_array();
         for item_3 in var_1 {

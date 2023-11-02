@@ -2,7 +2,7 @@
 pub fn ser_algorithm_validation_profile(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AlgorithmValidationProfile,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.profile_name {
         object.key("ProfileName").string(var_1.as_str());
     }

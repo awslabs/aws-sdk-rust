@@ -43,7 +43,7 @@ impl UpdateMyUserProfileInputBuilder {
     /// Consumes the builder and constructs a [`UpdateMyUserProfileInput`](crate::operation::update_my_user_profile::UpdateMyUserProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_my_user_profile::UpdateMyUserProfileInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_my_user_profile::UpdateMyUserProfileInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_my_user_profile::UpdateMyUserProfileInput {
             ssh_public_key: self.ssh_public_key,

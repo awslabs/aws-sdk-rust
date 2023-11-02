@@ -2,7 +2,7 @@
 pub fn ser_archive_container_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ArchiveContainerSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.m2ts_settings {
         #[allow(unused_mut)]
         let mut object_2 = object.key("m2tsSettings").start_object();

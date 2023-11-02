@@ -64,7 +64,7 @@ impl ListScheduledAuditsInputBuilder {
     /// Consumes the builder and constructs a [`ListScheduledAuditsInput`](crate::operation::list_scheduled_audits::ListScheduledAuditsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_scheduled_audits::ListScheduledAuditsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_scheduled_audits::ListScheduledAuditsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_scheduled_audits::ListScheduledAuditsInput {
             next_token: self.next_token,

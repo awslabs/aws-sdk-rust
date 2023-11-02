@@ -66,7 +66,7 @@ impl FailoverShardInputBuilder {
     /// Consumes the builder and constructs a [`FailoverShardInput`](crate::operation::failover_shard::FailoverShardInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::failover_shard::FailoverShardInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::failover_shard::FailoverShardInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::failover_shard::FailoverShardInput {
             cluster_name: self.cluster_name,
             shard_name: self.shard_name,

@@ -2,7 +2,7 @@
 pub fn ser_voice_connector_item(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VoiceConnectorItem,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("VoiceConnectorId").string(input.voice_connector_id.as_str());
     }

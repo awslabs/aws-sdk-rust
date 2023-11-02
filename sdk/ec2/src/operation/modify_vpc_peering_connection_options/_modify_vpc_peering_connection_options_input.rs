@@ -109,7 +109,7 @@ impl ModifyVpcPeeringConnectionOptionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_vpc_peering_connection_options::ModifyVpcPeeringConnectionOptionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::modify_vpc_peering_connection_options::ModifyVpcPeeringConnectionOptionsInput {

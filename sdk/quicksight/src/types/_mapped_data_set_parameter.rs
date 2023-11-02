@@ -70,16 +70,16 @@ impl MappedDataSetParameterBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`data_set_identifier`](crate::types::builders::MappedDataSetParameterBuilder::data_set_identifier)
     /// - [`data_set_parameter_name`](crate::types::builders::MappedDataSetParameterBuilder::data_set_parameter_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::MappedDataSetParameter, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::MappedDataSetParameter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MappedDataSetParameter {
             data_set_identifier: self.data_set_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_set_identifier",
                     "data_set_identifier was not specified but it is required when building MappedDataSetParameter",
                 )
             })?,
             data_set_parameter_name: self.data_set_parameter_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_set_parameter_name",
                     "data_set_parameter_name was not specified but it is required when building MappedDataSetParameter",
                 )

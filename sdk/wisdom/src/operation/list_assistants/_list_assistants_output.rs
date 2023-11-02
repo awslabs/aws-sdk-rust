@@ -89,10 +89,10 @@ impl ListAssistantsOutputBuilder {
     /// - [`assistant_summaries`](crate::operation::list_assistants::builders::ListAssistantsOutputBuilder::assistant_summaries)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_assistants::ListAssistantsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_assistants::ListAssistantsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_assistants::ListAssistantsOutput {
             assistant_summaries: self.assistant_summaries.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "assistant_summaries",
                     "assistant_summaries was not specified but it is required when building ListAssistantsOutput",
                 )

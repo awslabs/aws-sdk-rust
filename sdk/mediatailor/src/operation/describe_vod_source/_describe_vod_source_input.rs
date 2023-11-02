@@ -66,7 +66,7 @@ impl DescribeVodSourceInputBuilder {
     /// Consumes the builder and constructs a [`DescribeVodSourceInput`](crate::operation::describe_vod_source::DescribeVodSourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_vod_source::DescribeVodSourceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_vod_source::DescribeVodSourceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_vod_source::DescribeVodSourceInput {
             source_location_name: self.source_location_name,
             vod_source_name: self.vod_source_name,

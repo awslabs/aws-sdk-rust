@@ -2,7 +2,7 @@
 pub fn ser_resource_limits(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ResourceLimits,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.max_number_of_training_jobs {
         object.key("MaxNumberOfTrainingJobs").number(
             #[allow(clippy::useless_conversion)]

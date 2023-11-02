@@ -94,22 +94,22 @@ impl MavenReferenceBuilder {
     /// - [`group_id`](crate::types::builders::MavenReferenceBuilder::group_id)
     /// - [`artifact_id`](crate::types::builders::MavenReferenceBuilder::artifact_id)
     /// - [`version`](crate::types::builders::MavenReferenceBuilder::version)
-    pub fn build(self) -> ::std::result::Result<crate::types::MavenReference, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::MavenReference, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MavenReference {
             group_id: self.group_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "group_id",
                     "group_id was not specified but it is required when building MavenReference",
                 )
             })?,
             artifact_id: self.artifact_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "artifact_id",
                     "artifact_id was not specified but it is required when building MavenReference",
                 )
             })?,
             version: self.version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "version",
                     "version was not specified but it is required when building MavenReference",
                 )

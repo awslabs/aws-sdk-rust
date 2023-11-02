@@ -233,7 +233,7 @@ impl GetContainerServiceMetricDataInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_container_service_metric_data::GetContainerServiceMetricDataInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_container_service_metric_data::GetContainerServiceMetricDataInput {
             service_name: self.service_name,

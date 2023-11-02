@@ -2,7 +2,7 @@
 pub fn ser_ml_user_data_encryption(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MlUserDataEncryption,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("MlUserDataEncryptionMode").string(input.ml_user_data_encryption_mode.as_str());
     }

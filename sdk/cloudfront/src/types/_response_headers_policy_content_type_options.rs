@@ -48,10 +48,10 @@ impl ResponseHeadersPolicyContentTypeOptionsBuilder {
     /// - [`r#override`](crate::types::builders::ResponseHeadersPolicyContentTypeOptionsBuilder::r#override)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::ResponseHeadersPolicyContentTypeOptions, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::ResponseHeadersPolicyContentTypeOptions, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ResponseHeadersPolicyContentTypeOptions {
             r#override: self.r#override.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#override",
                     "r#override was not specified but it is required when building ResponseHeadersPolicyContentTypeOptions",
                 )

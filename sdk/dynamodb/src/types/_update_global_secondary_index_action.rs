@@ -73,10 +73,10 @@ impl UpdateGlobalSecondaryIndexActionBuilder {
     /// Consumes the builder and constructs a [`UpdateGlobalSecondaryIndexAction`](crate::types::UpdateGlobalSecondaryIndexAction).
     /// This method will fail if any of the following fields are not set:
     /// - [`index_name`](crate::types::builders::UpdateGlobalSecondaryIndexActionBuilder::index_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::UpdateGlobalSecondaryIndexAction, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::UpdateGlobalSecondaryIndexAction, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::UpdateGlobalSecondaryIndexAction {
             index_name: self.index_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "index_name",
                     "index_name was not specified but it is required when building UpdateGlobalSecondaryIndexAction",
                 )

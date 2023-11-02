@@ -308,7 +308,7 @@ mod tests {
     use crate::client::runtime_components::RuntimeComponentsBuilder;
     use crate::client::runtime_plugin::{Order, SharedRuntimePlugin};
     use crate::shared::IntoShared;
-    use aws_smithy_http::body::SdkBody;
+    use aws_smithy_types::body::SdkBody;
     use aws_smithy_types::config_bag::ConfigBag;
     use http::HeaderValue;
     use std::borrow::Cow;

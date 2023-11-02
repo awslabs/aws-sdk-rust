@@ -143,7 +143,7 @@ impl CreateDevicePoolInputBuilder {
     /// Consumes the builder and constructs a [`CreateDevicePoolInput`](crate::operation::create_device_pool::CreateDevicePoolInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_device_pool::CreateDevicePoolInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_device_pool::CreateDevicePoolInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_device_pool::CreateDevicePoolInput {
             project_arn: self.project_arn,
             name: self.name,

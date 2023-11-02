@@ -159,22 +159,22 @@ impl EngineTranscribeMedicalSettingsBuilder {
     /// - [`language_code`](crate::types::builders::EngineTranscribeMedicalSettingsBuilder::language_code)
     /// - [`specialty`](crate::types::builders::EngineTranscribeMedicalSettingsBuilder::specialty)
     /// - [`r#type`](crate::types::builders::EngineTranscribeMedicalSettingsBuilder::r#type)
-    pub fn build(self) -> ::std::result::Result<crate::types::EngineTranscribeMedicalSettings, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::EngineTranscribeMedicalSettings, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EngineTranscribeMedicalSettings {
             language_code: self.language_code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "language_code",
                     "language_code was not specified but it is required when building EngineTranscribeMedicalSettings",
                 )
             })?,
             specialty: self.specialty.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "specialty",
                     "specialty was not specified but it is required when building EngineTranscribeMedicalSettings",
                 )
             })?,
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building EngineTranscribeMedicalSettings",
                 )

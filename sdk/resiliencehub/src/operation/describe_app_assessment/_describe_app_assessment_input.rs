@@ -44,7 +44,7 @@ impl DescribeAppAssessmentInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAppAssessmentInput`](crate::operation::describe_app_assessment::DescribeAppAssessmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_app_assessment::DescribeAppAssessmentInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_app_assessment::DescribeAppAssessmentInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_app_assessment::DescribeAppAssessmentInput {
             assessment_arn: self.assessment_arn,

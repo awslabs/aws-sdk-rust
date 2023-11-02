@@ -132,11 +132,11 @@ impl S3ManifestOutputLocationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`bucket`](crate::types::builders::S3ManifestOutputLocationBuilder::bucket)
     /// - [`manifest_format`](crate::types::builders::S3ManifestOutputLocationBuilder::manifest_format)
-    pub fn build(self) -> ::std::result::Result<crate::types::S3ManifestOutputLocation, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::S3ManifestOutputLocation, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::S3ManifestOutputLocation {
             expected_manifest_bucket_owner: self.expected_manifest_bucket_owner,
             bucket: self.bucket.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "bucket",
                     "bucket was not specified but it is required when building S3ManifestOutputLocation",
                 )
@@ -144,7 +144,7 @@ impl S3ManifestOutputLocationBuilder {
             manifest_prefix: self.manifest_prefix,
             manifest_encryption: self.manifest_encryption,
             manifest_format: self.manifest_format.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "manifest_format",
                     "manifest_format was not specified but it is required when building S3ManifestOutputLocation",
                 )

@@ -107,7 +107,7 @@ impl ListVirtualServicesInputBuilder {
     /// Consumes the builder and constructs a [`ListVirtualServicesInput`](crate::operation::list_virtual_services::ListVirtualServicesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_virtual_services::ListVirtualServicesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_virtual_services::ListVirtualServicesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_virtual_services::ListVirtualServicesInput {
             mesh_name: self.mesh_name,

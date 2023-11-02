@@ -63,10 +63,10 @@ impl CreateExperienceOutputBuilder {
     /// - [`id`](crate::operation::create_experience::builders::CreateExperienceOutputBuilder::id)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_experience::CreateExperienceOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_experience::CreateExperienceOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_experience::CreateExperienceOutput {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building CreateExperienceOutput",
                 )

@@ -2,7 +2,7 @@
 pub fn ser_report_context(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ReportContext,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("licenseConfigurationArns").start_array();
         for item_2 in &input.license_configuration_arns {

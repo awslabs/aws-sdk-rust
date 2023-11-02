@@ -184,11 +184,11 @@ impl GrpcRetryPolicyBuilder {
     /// Consumes the builder and constructs a [`GrpcRetryPolicy`](crate::types::GrpcRetryPolicy).
     /// This method will fail if any of the following fields are not set:
     /// - [`max_retries`](crate::types::builders::GrpcRetryPolicyBuilder::max_retries)
-    pub fn build(self) -> ::std::result::Result<crate::types::GrpcRetryPolicy, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::GrpcRetryPolicy, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::GrpcRetryPolicy {
             per_retry_timeout: self.per_retry_timeout,
             max_retries: self.max_retries.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "max_retries",
                     "max_retries was not specified but it is required when building GrpcRetryPolicy",
                 )

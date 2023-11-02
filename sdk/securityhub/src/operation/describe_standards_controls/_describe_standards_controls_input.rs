@@ -93,7 +93,7 @@ impl DescribeStandardsControlsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_standards_controls::DescribeStandardsControlsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_standards_controls::DescribeStandardsControlsInput {
             standards_subscription_arn: self.standards_subscription_arn,

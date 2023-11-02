@@ -44,7 +44,7 @@ impl PutRegistryPolicyInputBuilder {
     /// Consumes the builder and constructs a [`PutRegistryPolicyInput`](crate::operation::put_registry_policy::PutRegistryPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_registry_policy::PutRegistryPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_registry_policy::PutRegistryPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_registry_policy::PutRegistryPolicyInput {
             policy_text: self.policy_text,
         })

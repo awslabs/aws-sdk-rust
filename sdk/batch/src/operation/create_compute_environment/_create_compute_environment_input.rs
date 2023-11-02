@@ -266,7 +266,7 @@ impl CreateComputeEnvironmentInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_compute_environment::CreateComputeEnvironmentInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_compute_environment::CreateComputeEnvironmentInput {
             compute_environment_name: self.compute_environment_name,

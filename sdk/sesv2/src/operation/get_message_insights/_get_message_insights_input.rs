@@ -45,7 +45,8 @@ impl GetMessageInsightsInputBuilder {
     /// Consumes the builder and constructs a [`GetMessageInsightsInput`](crate::operation::get_message_insights::GetMessageInsightsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_message_insights::GetMessageInsightsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_message_insights::GetMessageInsightsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::get_message_insights::GetMessageInsightsInput { message_id: self.message_id })
     }
 }

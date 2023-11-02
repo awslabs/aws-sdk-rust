@@ -513,7 +513,7 @@ impl CreateInstanceInputBuilder {
     /// Consumes the builder and constructs a [`CreateInstanceInput`](crate::operation::create_instance::CreateInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_instance::CreateInstanceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_instance::CreateInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_instance::CreateInstanceInput {
             stack_id: self.stack_id,
             layer_ids: self.layer_ids,

@@ -64,7 +64,7 @@ impl GetRunTaskInputBuilder {
         &self.task_id
     }
     /// Consumes the builder and constructs a [`GetRunTaskInput`](crate::operation::get_run_task::GetRunTaskInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_run_task::GetRunTaskInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_run_task::GetRunTaskInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_run_task::GetRunTaskInput {
             id: self.id,
             task_id: self.task_id,

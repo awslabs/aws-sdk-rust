@@ -65,7 +65,7 @@ impl MarkAsArchivedInputBuilder {
     /// Consumes the builder and constructs a [`MarkAsArchivedInput`](crate::operation::mark_as_archived::MarkAsArchivedInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::mark_as_archived::MarkAsArchivedInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::mark_as_archived::MarkAsArchivedInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::mark_as_archived::MarkAsArchivedInput {
             source_server_id: self.source_server_id,
             account_id: self.account_id,

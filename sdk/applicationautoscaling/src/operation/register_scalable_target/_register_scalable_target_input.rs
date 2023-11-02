@@ -534,8 +534,10 @@ impl RegisterScalableTargetInputBuilder {
     /// Consumes the builder and constructs a [`RegisterScalableTargetInput`](crate::operation::register_scalable_target::RegisterScalableTargetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::register_scalable_target::RegisterScalableTargetInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::register_scalable_target::RegisterScalableTargetInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::register_scalable_target::RegisterScalableTargetInput {
             service_namespace: self.service_namespace,
             resource_id: self.resource_id,

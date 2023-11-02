@@ -46,10 +46,10 @@ impl KinesisStreamsInputBuilder {
     /// Consumes the builder and constructs a [`KinesisStreamsInput`](crate::types::KinesisStreamsInput).
     /// This method will fail if any of the following fields are not set:
     /// - [`resource_arn`](crate::types::builders::KinesisStreamsInputBuilder::resource_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::KinesisStreamsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::KinesisStreamsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::KinesisStreamsInput {
             resource_arn: self.resource_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_arn",
                     "resource_arn was not specified but it is required when building KinesisStreamsInput",
                 )

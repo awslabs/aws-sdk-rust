@@ -161,34 +161,34 @@ impl SceneSummaryBuilder {
     /// - [`arn`](crate::types::builders::SceneSummaryBuilder::arn)
     /// - [`creation_date_time`](crate::types::builders::SceneSummaryBuilder::creation_date_time)
     /// - [`update_date_time`](crate::types::builders::SceneSummaryBuilder::update_date_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::SceneSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SceneSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SceneSummary {
             scene_id: self.scene_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "scene_id",
                     "scene_id was not specified but it is required when building SceneSummary",
                 )
             })?,
             content_location: self.content_location.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "content_location",
                     "content_location was not specified but it is required when building SceneSummary",
                 )
             })?,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building SceneSummary",
                 )
             })?,
             creation_date_time: self.creation_date_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_date_time",
                     "creation_date_time was not specified but it is required when building SceneSummary",
                 )
             })?,
             update_date_time: self.update_date_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "update_date_time",
                     "update_date_time was not specified but it is required when building SceneSummary",
                 )

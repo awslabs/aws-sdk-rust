@@ -114,7 +114,7 @@ impl DescribeSslPoliciesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeSslPoliciesInput`](crate::operation::describe_ssl_policies::DescribeSslPoliciesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_ssl_policies::DescribeSslPoliciesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_ssl_policies::DescribeSslPoliciesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_ssl_policies::DescribeSslPoliciesInput {
             names: self.names,

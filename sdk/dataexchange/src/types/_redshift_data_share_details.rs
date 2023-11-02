@@ -154,16 +154,16 @@ impl RedshiftDataShareDetailsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::RedshiftDataShareDetailsBuilder::arn)
     /// - [`database`](crate::types::builders::RedshiftDataShareDetailsBuilder::database)
-    pub fn build(self) -> ::std::result::Result<crate::types::RedshiftDataShareDetails, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RedshiftDataShareDetails, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RedshiftDataShareDetails {
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building RedshiftDataShareDetails",
                 )
             })?,
             database: self.database.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "database",
                     "database was not specified but it is required when building RedshiftDataShareDetails",
                 )

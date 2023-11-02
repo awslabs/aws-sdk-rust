@@ -64,7 +64,7 @@ impl ListDimensionsInputBuilder {
     /// Consumes the builder and constructs a [`ListDimensionsInput`](crate::operation::list_dimensions::ListDimensionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_dimensions::ListDimensionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_dimensions::ListDimensionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_dimensions::ListDimensionsInput {
             next_token: self.next_token,
             max_results: self.max_results,

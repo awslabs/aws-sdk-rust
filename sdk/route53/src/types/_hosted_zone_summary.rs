@@ -92,16 +92,16 @@ impl HostedZoneSummaryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`hosted_zone_id`](crate::types::builders::HostedZoneSummaryBuilder::hosted_zone_id)
     /// - [`name`](crate::types::builders::HostedZoneSummaryBuilder::name)
-    pub fn build(self) -> ::std::result::Result<crate::types::HostedZoneSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::HostedZoneSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::HostedZoneSummary {
             hosted_zone_id: self.hosted_zone_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "hosted_zone_id",
                     "hosted_zone_id was not specified but it is required when building HostedZoneSummary",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building HostedZoneSummary",
                 )

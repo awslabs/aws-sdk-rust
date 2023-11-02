@@ -95,7 +95,7 @@ impl UpdateVodSourceInputBuilder {
     /// Consumes the builder and constructs a [`UpdateVodSourceInput`](crate::operation::update_vod_source::UpdateVodSourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_vod_source::UpdateVodSourceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_vod_source::UpdateVodSourceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_vod_source::UpdateVodSourceInput {
             http_package_configurations: self.http_package_configurations,
             source_location_name: self.source_location_name,

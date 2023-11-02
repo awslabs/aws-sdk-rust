@@ -70,16 +70,16 @@ impl BatchGetViewErrorBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`view_arn`](crate::types::builders::BatchGetViewErrorBuilder::view_arn)
     /// - [`error_message`](crate::types::builders::BatchGetViewErrorBuilder::error_message)
-    pub fn build(self) -> ::std::result::Result<crate::types::BatchGetViewError, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::BatchGetViewError, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::BatchGetViewError {
             view_arn: self.view_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "view_arn",
                     "view_arn was not specified but it is required when building BatchGetViewError",
                 )
             })?,
             error_message: self.error_message.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "error_message",
                     "error_message was not specified but it is required when building BatchGetViewError",
                 )

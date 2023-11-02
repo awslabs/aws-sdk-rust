@@ -67,7 +67,7 @@ impl DeleteAnalysisSchemeInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAnalysisSchemeInput`](crate::operation::delete_analysis_scheme::DeleteAnalysisSchemeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_analysis_scheme::DeleteAnalysisSchemeInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_analysis_scheme::DeleteAnalysisSchemeInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_analysis_scheme::DeleteAnalysisSchemeInput {
             domain_name: self.domain_name,

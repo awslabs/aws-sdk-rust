@@ -160,23 +160,23 @@ impl S3DestinationConfigurationBuilder {
     /// - [`bucket`](crate::types::builders::S3DestinationConfigurationBuilder::bucket)
     /// - [`key`](crate::types::builders::S3DestinationConfigurationBuilder::key)
     /// - [`role_arn`](crate::types::builders::S3DestinationConfigurationBuilder::role_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::S3DestinationConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::S3DestinationConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::S3DestinationConfiguration {
             bucket: self.bucket.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "bucket",
                     "bucket was not specified but it is required when building S3DestinationConfiguration",
                 )
             })?,
             key: self.key.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "key",
                     "key was not specified but it is required when building S3DestinationConfiguration",
                 )
             })?,
             glue_configuration: self.glue_configuration,
             role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role_arn",
                     "role_arn was not specified but it is required when building S3DestinationConfiguration",
                 )

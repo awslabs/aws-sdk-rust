@@ -91,7 +91,7 @@ impl UpdateRouteCalculatorInputBuilder {
     /// Consumes the builder and constructs a [`UpdateRouteCalculatorInput`](crate::operation::update_route_calculator::UpdateRouteCalculatorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_route_calculator::UpdateRouteCalculatorInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_route_calculator::UpdateRouteCalculatorInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_route_calculator::UpdateRouteCalculatorInput {
             calculator_name: self.calculator_name,

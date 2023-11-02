@@ -90,7 +90,7 @@ impl DescribeStackSetInputBuilder {
     /// Consumes the builder and constructs a [`DescribeStackSetInput`](crate::operation::describe_stack_set::DescribeStackSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_stack_set::DescribeStackSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_stack_set::DescribeStackSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_stack_set::DescribeStackSetInput {
             stack_set_name: self.stack_set_name,
             call_as: self.call_as,

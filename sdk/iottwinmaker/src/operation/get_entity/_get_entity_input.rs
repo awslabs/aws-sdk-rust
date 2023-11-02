@@ -64,7 +64,7 @@ impl GetEntityInputBuilder {
         &self.entity_id
     }
     /// Consumes the builder and constructs a [`GetEntityInput`](crate::operation::get_entity::GetEntityInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_entity::GetEntityInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_entity::GetEntityInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_entity::GetEntityInput {
             workspace_id: self.workspace_id,
             entity_id: self.entity_id,

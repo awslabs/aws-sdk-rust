@@ -111,7 +111,7 @@ impl UpdateBackendAuthInputBuilder {
     /// Consumes the builder and constructs a [`UpdateBackendAuthInput`](crate::operation::update_backend_auth::UpdateBackendAuthInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_backend_auth::UpdateBackendAuthInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_backend_auth::UpdateBackendAuthInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_backend_auth::UpdateBackendAuthInput {
             app_id: self.app_id,
             backend_environment_name: self.backend_environment_name,

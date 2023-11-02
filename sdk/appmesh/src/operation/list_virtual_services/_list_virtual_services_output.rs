@@ -89,11 +89,11 @@ impl ListVirtualServicesOutputBuilder {
     /// - [`virtual_services`](crate::operation::list_virtual_services::builders::ListVirtualServicesOutputBuilder::virtual_services)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_virtual_services::ListVirtualServicesOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_virtual_services::ListVirtualServicesOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_virtual_services::ListVirtualServicesOutput {
             virtual_services: self.virtual_services.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "virtual_services",
                     "virtual_services was not specified but it is required when building ListVirtualServicesOutput",
                 )

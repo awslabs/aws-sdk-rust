@@ -139,7 +139,7 @@ impl CreateBulkImportJobInputBuilder {
     /// Consumes the builder and constructs a [`CreateBulkImportJobInput`](crate::operation::create_bulk_import_job::CreateBulkImportJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_bulk_import_job::CreateBulkImportJobInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_bulk_import_job::CreateBulkImportJobInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_bulk_import_job::CreateBulkImportJobInput {
             job_name: self.job_name,

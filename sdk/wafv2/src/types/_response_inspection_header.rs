@@ -121,22 +121,22 @@ impl ResponseInspectionHeaderBuilder {
     /// - [`name`](crate::types::builders::ResponseInspectionHeaderBuilder::name)
     /// - [`success_values`](crate::types::builders::ResponseInspectionHeaderBuilder::success_values)
     /// - [`failure_values`](crate::types::builders::ResponseInspectionHeaderBuilder::failure_values)
-    pub fn build(self) -> ::std::result::Result<crate::types::ResponseInspectionHeader, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ResponseInspectionHeader, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ResponseInspectionHeader {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building ResponseInspectionHeader",
                 )
             })?,
             success_values: self.success_values.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "success_values",
                     "success_values was not specified but it is required when building ResponseInspectionHeader",
                 )
             })?,
             failure_values: self.failure_values.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "failure_values",
                     "failure_values was not specified but it is required when building ResponseInspectionHeader",
                 )

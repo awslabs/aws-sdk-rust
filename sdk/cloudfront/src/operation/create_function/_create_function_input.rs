@@ -97,7 +97,7 @@ impl CreateFunctionInputBuilder {
     /// Consumes the builder and constructs a [`CreateFunctionInput`](crate::operation::create_function::CreateFunctionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_function::CreateFunctionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_function::CreateFunctionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_function::CreateFunctionInput {
             name: self.name,
             function_config: self.function_config,

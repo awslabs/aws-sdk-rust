@@ -92,7 +92,7 @@ impl AssociateCustomDomainInputBuilder {
     /// Consumes the builder and constructs a [`AssociateCustomDomainInput`](crate::operation::associate_custom_domain::AssociateCustomDomainInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::associate_custom_domain::AssociateCustomDomainInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::associate_custom_domain::AssociateCustomDomainInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::associate_custom_domain::AssociateCustomDomainInput {
             service_arn: self.service_arn,

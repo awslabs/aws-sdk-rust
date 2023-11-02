@@ -25,11 +25,8 @@
 #![allow(clippy::derive_partial_eq_without_eq)]
 #![cfg_attr(docsrs, feature(doc_cfg))]
 
-//TODO(runtimeCratesVersioningCleanup): Re-point those who use the following reexports to
-// directly depend on `aws_smithy_types` and remove the reexports below.
-pub use aws_smithy_types::body;
-pub use aws_smithy_types::byte_stream;
-
+pub mod body;
+pub mod byte_stream;
 pub mod endpoint;
 // Marked as `doc(hidden)` because a type in the module is used both by this crate and by the code
 // generator, but not by external users. Also, by the module being `doc(hidden)` instead of it being

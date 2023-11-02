@@ -66,7 +66,7 @@ impl EvaluateSessionInputBuilder {
     /// Consumes the builder and constructs a [`EvaluateSessionInput`](crate::operation::evaluate_session::EvaluateSessionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::evaluate_session::EvaluateSessionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::evaluate_session::EvaluateSessionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::evaluate_session::EvaluateSessionInput {
             domain_id: self.domain_id,
             session_name_or_id: self.session_name_or_id,

@@ -86,7 +86,9 @@ impl CreateLayoutInputBuilder {
         &self.content
     }
     /// Consumes the builder and constructs a [`CreateLayoutInput`](crate::operation::create_layout::CreateLayoutInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_layout::CreateLayoutInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_layout::CreateLayoutInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_layout::CreateLayoutInput {
             domain_id: self.domain_id,
             name: self.name,

@@ -53,7 +53,7 @@ impl ValidateSecurityProfileBehaviorsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::validate_security_profile_behaviors::ValidateSecurityProfileBehaviorsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::validate_security_profile_behaviors::ValidateSecurityProfileBehaviorsInput { behaviors: self.behaviors },

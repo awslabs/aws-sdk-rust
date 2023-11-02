@@ -195,7 +195,7 @@ impl CreateLocationEfsInputBuilder {
     /// Consumes the builder and constructs a [`CreateLocationEfsInput`](crate::operation::create_location_efs::CreateLocationEfsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_location_efs::CreateLocationEfsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_location_efs::CreateLocationEfsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_location_efs::CreateLocationEfsInput {
             subdirectory: self.subdirectory,
             efs_filesystem_arn: self.efs_filesystem_arn,

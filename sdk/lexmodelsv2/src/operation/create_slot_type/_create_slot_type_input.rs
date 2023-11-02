@@ -274,7 +274,7 @@ impl CreateSlotTypeInputBuilder {
     /// Consumes the builder and constructs a [`CreateSlotTypeInput`](crate::operation::create_slot_type::CreateSlotTypeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_slot_type::CreateSlotTypeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_slot_type::CreateSlotTypeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_slot_type::CreateSlotTypeInput {
             slot_type_name: self.slot_type_name,
             description: self.description,

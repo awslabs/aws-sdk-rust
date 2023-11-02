@@ -74,16 +74,16 @@ impl GeoMatchSetSummaryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`geo_match_set_id`](crate::types::builders::GeoMatchSetSummaryBuilder::geo_match_set_id)
     /// - [`name`](crate::types::builders::GeoMatchSetSummaryBuilder::name)
-    pub fn build(self) -> ::std::result::Result<crate::types::GeoMatchSetSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::GeoMatchSetSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::GeoMatchSetSummary {
             geo_match_set_id: self.geo_match_set_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "geo_match_set_id",
                     "geo_match_set_id was not specified but it is required when building GeoMatchSetSummary",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building GeoMatchSetSummary",
                 )

@@ -310,16 +310,16 @@ impl ContactInformationBuilder {
     /// - [`postal_code`](crate::types::builders::ContactInformationBuilder::postal_code)
     /// - [`country_code`](crate::types::builders::ContactInformationBuilder::country_code)
     /// - [`phone_number`](crate::types::builders::ContactInformationBuilder::phone_number)
-    pub fn build(self) -> ::std::result::Result<crate::types::ContactInformation, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ContactInformation, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ContactInformation {
             full_name: self.full_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "full_name",
                     "full_name was not specified but it is required when building ContactInformation",
                 )
             })?,
             address_line1: self.address_line1.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "address_line1",
                     "address_line1 was not specified but it is required when building ContactInformation",
                 )
@@ -327,7 +327,7 @@ impl ContactInformationBuilder {
             address_line2: self.address_line2,
             address_line3: self.address_line3,
             city: self.city.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "city",
                     "city was not specified but it is required when building ContactInformation",
                 )
@@ -335,19 +335,19 @@ impl ContactInformationBuilder {
             state_or_region: self.state_or_region,
             district_or_county: self.district_or_county,
             postal_code: self.postal_code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "postal_code",
                     "postal_code was not specified but it is required when building ContactInformation",
                 )
             })?,
             country_code: self.country_code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "country_code",
                     "country_code was not specified but it is required when building ContactInformation",
                 )
             })?,
             phone_number: self.phone_number.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "phone_number",
                     "phone_number was not specified but it is required when building ContactInformation",
                 )

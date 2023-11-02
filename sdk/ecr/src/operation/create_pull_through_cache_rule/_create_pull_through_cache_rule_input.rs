@@ -89,7 +89,7 @@ impl CreatePullThroughCacheRuleInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_pull_through_cache_rule::CreatePullThroughCacheRuleInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_pull_through_cache_rule::CreatePullThroughCacheRuleInput {
             ecr_repository_prefix: self.ecr_repository_prefix,

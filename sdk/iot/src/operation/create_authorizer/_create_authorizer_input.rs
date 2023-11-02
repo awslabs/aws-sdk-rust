@@ -238,7 +238,7 @@ impl CreateAuthorizerInputBuilder {
     /// Consumes the builder and constructs a [`CreateAuthorizerInput`](crate::operation::create_authorizer::CreateAuthorizerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_authorizer::CreateAuthorizerInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_authorizer::CreateAuthorizerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_authorizer::CreateAuthorizerInput {
             authorizer_name: self.authorizer_name,
             authorizer_function_arn: self.authorizer_function_arn,

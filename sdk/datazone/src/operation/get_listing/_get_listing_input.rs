@@ -85,7 +85,7 @@ impl GetListingInputBuilder {
         &self.listing_revision
     }
     /// Consumes the builder and constructs a [`GetListingInput`](crate::operation::get_listing::GetListingInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_listing::GetListingInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_listing::GetListingInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_listing::GetListingInput {
             domain_identifier: self.domain_identifier,
             identifier: self.identifier,

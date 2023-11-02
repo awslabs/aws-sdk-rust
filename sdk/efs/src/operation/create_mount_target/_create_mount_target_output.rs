@@ -261,29 +261,29 @@ impl CreateMountTargetOutputBuilder {
     /// - [`life_cycle_state`](crate::operation::create_mount_target::builders::CreateMountTargetOutputBuilder::life_cycle_state)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_mount_target::CreateMountTargetOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_mount_target::CreateMountTargetOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_mount_target::CreateMountTargetOutput {
             owner_id: self.owner_id,
             mount_target_id: self.mount_target_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "mount_target_id",
                     "mount_target_id was not specified but it is required when building CreateMountTargetOutput",
                 )
             })?,
             file_system_id: self.file_system_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "file_system_id",
                     "file_system_id was not specified but it is required when building CreateMountTargetOutput",
                 )
             })?,
             subnet_id: self.subnet_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "subnet_id",
                     "subnet_id was not specified but it is required when building CreateMountTargetOutput",
                 )
             })?,
             life_cycle_state: self.life_cycle_state.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "life_cycle_state",
                     "life_cycle_state was not specified but it is required when building CreateMountTargetOutput",
                 )

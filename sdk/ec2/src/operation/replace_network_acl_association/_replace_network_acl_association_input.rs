@@ -89,7 +89,7 @@ impl ReplaceNetworkAclAssociationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::replace_network_acl_association::ReplaceNetworkAclAssociationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::replace_network_acl_association::ReplaceNetworkAclAssociationInput {
             association_id: self.association_id,

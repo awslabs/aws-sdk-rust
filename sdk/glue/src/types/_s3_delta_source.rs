@@ -159,16 +159,16 @@ impl S3DeltaSourceBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::S3DeltaSourceBuilder::name)
     /// - [`paths`](crate::types::builders::S3DeltaSourceBuilder::paths)
-    pub fn build(self) -> ::std::result::Result<crate::types::S3DeltaSource, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::S3DeltaSource, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::S3DeltaSource {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building S3DeltaSource",
                 )
             })?,
             paths: self.paths.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "paths",
                     "paths was not specified but it is required when building S3DeltaSource",
                 )

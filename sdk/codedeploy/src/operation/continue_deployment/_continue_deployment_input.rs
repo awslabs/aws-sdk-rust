@@ -64,7 +64,7 @@ impl ContinueDeploymentInputBuilder {
     /// Consumes the builder and constructs a [`ContinueDeploymentInput`](crate::operation::continue_deployment::ContinueDeploymentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::continue_deployment::ContinueDeploymentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::continue_deployment::ContinueDeploymentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::continue_deployment::ContinueDeploymentInput {
             deployment_id: self.deployment_id,
             deployment_wait_type: self.deployment_wait_type,

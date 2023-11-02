@@ -187,46 +187,46 @@ impl ResourceMetadataBuilder {
     /// - [`last_updated_at`](crate::types::builders::ResourceMetadataBuilder::last_updated_at)
     /// - [`mesh_owner`](crate::types::builders::ResourceMetadataBuilder::mesh_owner)
     /// - [`resource_owner`](crate::types::builders::ResourceMetadataBuilder::resource_owner)
-    pub fn build(self) -> ::std::result::Result<crate::types::ResourceMetadata, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ResourceMetadata, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ResourceMetadata {
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building ResourceMetadata",
                 )
             })?,
             version: self.version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "version",
                     "version was not specified but it is required when building ResourceMetadata",
                 )
             })?,
             uid: self.uid.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "uid",
                     "uid was not specified but it is required when building ResourceMetadata",
                 )
             })?,
             created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
                     "created_at was not specified but it is required when building ResourceMetadata",
                 )
             })?,
             last_updated_at: self.last_updated_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_updated_at",
                     "last_updated_at was not specified but it is required when building ResourceMetadata",
                 )
             })?,
             mesh_owner: self.mesh_owner.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "mesh_owner",
                     "mesh_owner was not specified but it is required when building ResourceMetadata",
                 )
             })?,
             resource_owner: self.resource_owner.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_owner",
                     "resource_owner was not specified but it is required when building ResourceMetadata",
                 )

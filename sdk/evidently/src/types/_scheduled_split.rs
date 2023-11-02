@@ -116,10 +116,10 @@ impl ScheduledSplitBuilder {
     /// Consumes the builder and constructs a [`ScheduledSplit`](crate::types::ScheduledSplit).
     /// This method will fail if any of the following fields are not set:
     /// - [`start_time`](crate::types::builders::ScheduledSplitBuilder::start_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::ScheduledSplit, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ScheduledSplit, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ScheduledSplit {
             start_time: self.start_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "start_time",
                     "start_time was not specified but it is required when building ScheduledSplit",
                 )

@@ -209,7 +209,7 @@ impl ListImagesInputBuilder {
         &self.sort_order
     }
     /// Consumes the builder and constructs a [`ListImagesInput`](crate::operation::list_images::ListImagesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_images::ListImagesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_images::ListImagesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_images::ListImagesInput {
             creation_time_after: self.creation_time_after,
             creation_time_before: self.creation_time_before,

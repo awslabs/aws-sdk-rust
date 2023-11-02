@@ -98,7 +98,7 @@ impl CreateConditionalForwarderInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_conditional_forwarder::CreateConditionalForwarderInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_conditional_forwarder::CreateConditionalForwarderInput {
             directory_id: self.directory_id,

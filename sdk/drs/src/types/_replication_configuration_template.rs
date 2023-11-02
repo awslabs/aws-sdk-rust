@@ -442,10 +442,10 @@ impl ReplicationConfigurationTemplateBuilder {
     /// Consumes the builder and constructs a [`ReplicationConfigurationTemplate`](crate::types::ReplicationConfigurationTemplate).
     /// This method will fail if any of the following fields are not set:
     /// - [`replication_configuration_template_id`](crate::types::builders::ReplicationConfigurationTemplateBuilder::replication_configuration_template_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::ReplicationConfigurationTemplate, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ReplicationConfigurationTemplate, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ReplicationConfigurationTemplate {
             replication_configuration_template_id: self.replication_configuration_template_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "replication_configuration_template_id",
                     "replication_configuration_template_id was not specified but it is required when building ReplicationConfigurationTemplate",
                 )

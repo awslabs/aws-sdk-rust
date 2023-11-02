@@ -118,17 +118,17 @@ impl FieldLevelEncryptionListBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`max_items`](crate::types::builders::FieldLevelEncryptionListBuilder::max_items)
     /// - [`quantity`](crate::types::builders::FieldLevelEncryptionListBuilder::quantity)
-    pub fn build(self) -> ::std::result::Result<crate::types::FieldLevelEncryptionList, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::FieldLevelEncryptionList, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FieldLevelEncryptionList {
             next_marker: self.next_marker,
             max_items: self.max_items.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "max_items",
                     "max_items was not specified but it is required when building FieldLevelEncryptionList",
                 )
             })?,
             quantity: self.quantity.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "quantity",
                     "quantity was not specified but it is required when building FieldLevelEncryptionList",
                 )

@@ -111,10 +111,10 @@ impl DescribeObjectsOutputBuilder {
     /// - [`pipeline_objects`](crate::operation::describe_objects::builders::DescribeObjectsOutputBuilder::pipeline_objects)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_objects::DescribeObjectsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_objects::DescribeObjectsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_objects::DescribeObjectsOutput {
             pipeline_objects: self.pipeline_objects.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "pipeline_objects",
                     "pipeline_objects was not specified but it is required when building DescribeObjectsOutput",
                 )

@@ -53,7 +53,7 @@ where
 pub fn ser_relative_aggregation_duration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RelativeAggregationDuration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("timeDimension").string(input.time_dimension.as_str());
     }

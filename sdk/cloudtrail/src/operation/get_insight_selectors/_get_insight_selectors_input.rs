@@ -89,7 +89,7 @@ impl GetInsightSelectorsInputBuilder {
     /// Consumes the builder and constructs a [`GetInsightSelectorsInput`](crate::operation::get_insight_selectors::GetInsightSelectorsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_insight_selectors::GetInsightSelectorsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_insight_selectors::GetInsightSelectorsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_insight_selectors::GetInsightSelectorsInput { trail_name: self.trail_name })
     }

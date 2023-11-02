@@ -44,7 +44,7 @@ impl GetVariantImportJobInputBuilder {
     /// Consumes the builder and constructs a [`GetVariantImportJobInput`](crate::operation::get_variant_import_job::GetVariantImportJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_variant_import_job::GetVariantImportJobInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_variant_import_job::GetVariantImportJobInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_variant_import_job::GetVariantImportJobInput { job_id: self.job_id })
     }

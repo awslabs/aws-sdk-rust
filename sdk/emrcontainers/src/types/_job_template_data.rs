@@ -180,16 +180,16 @@ impl JobTemplateDataBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`execution_role_arn`](crate::types::builders::JobTemplateDataBuilder::execution_role_arn)
     /// - [`release_label`](crate::types::builders::JobTemplateDataBuilder::release_label)
-    pub fn build(self) -> ::std::result::Result<crate::types::JobTemplateData, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::JobTemplateData, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::JobTemplateData {
             execution_role_arn: self.execution_role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "execution_role_arn",
                     "execution_role_arn was not specified but it is required when building JobTemplateData",
                 )
             })?,
             release_label: self.release_label.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "release_label",
                     "release_label was not specified but it is required when building JobTemplateData",
                 )

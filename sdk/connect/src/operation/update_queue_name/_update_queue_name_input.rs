@@ -108,7 +108,7 @@ impl UpdateQueueNameInputBuilder {
     /// Consumes the builder and constructs a [`UpdateQueueNameInput`](crate::operation::update_queue_name::UpdateQueueNameInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_queue_name::UpdateQueueNameInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_queue_name::UpdateQueueNameInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_queue_name::UpdateQueueNameInput {
             instance_id: self.instance_id,
             queue_id: self.queue_id,

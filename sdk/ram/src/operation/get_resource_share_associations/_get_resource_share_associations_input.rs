@@ -210,7 +210,7 @@ impl GetResourceShareAssociationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_resource_share_associations::GetResourceShareAssociationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_resource_share_associations::GetResourceShareAssociationsInput {
             association_type: self.association_type,

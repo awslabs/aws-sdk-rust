@@ -2,7 +2,7 @@
 pub fn ser_scroll_bar_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ScrollBarOptions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.visibility {
         object.key("Visibility").string(var_1.as_str());
     }

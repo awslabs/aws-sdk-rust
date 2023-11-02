@@ -118,28 +118,28 @@ impl VmwareToAwsTagMappingBuilder {
     /// - [`vmware_tag_name`](crate::types::builders::VmwareToAwsTagMappingBuilder::vmware_tag_name)
     /// - [`aws_tag_key`](crate::types::builders::VmwareToAwsTagMappingBuilder::aws_tag_key)
     /// - [`aws_tag_value`](crate::types::builders::VmwareToAwsTagMappingBuilder::aws_tag_value)
-    pub fn build(self) -> ::std::result::Result<crate::types::VmwareToAwsTagMapping, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::VmwareToAwsTagMapping, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::VmwareToAwsTagMapping {
             vmware_category: self.vmware_category.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "vmware_category",
                     "vmware_category was not specified but it is required when building VmwareToAwsTagMapping",
                 )
             })?,
             vmware_tag_name: self.vmware_tag_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "vmware_tag_name",
                     "vmware_tag_name was not specified but it is required when building VmwareToAwsTagMapping",
                 )
             })?,
             aws_tag_key: self.aws_tag_key.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "aws_tag_key",
                     "aws_tag_key was not specified but it is required when building VmwareToAwsTagMapping",
                 )
             })?,
             aws_tag_value: self.aws_tag_value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "aws_tag_value",
                     "aws_tag_value was not specified but it is required when building VmwareToAwsTagMapping",
                 )

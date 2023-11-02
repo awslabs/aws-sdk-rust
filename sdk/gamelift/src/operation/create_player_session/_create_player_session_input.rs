@@ -87,7 +87,7 @@ impl CreatePlayerSessionInputBuilder {
     /// Consumes the builder and constructs a [`CreatePlayerSessionInput`](crate::operation::create_player_session::CreatePlayerSessionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_player_session::CreatePlayerSessionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_player_session::CreatePlayerSessionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_player_session::CreatePlayerSessionInput {
             game_session_id: self.game_session_id,

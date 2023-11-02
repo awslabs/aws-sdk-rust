@@ -110,10 +110,10 @@ impl BodySectionConfigurationBuilder {
     /// Consumes the builder and constructs a [`BodySectionConfiguration`](crate::types::BodySectionConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`section_id`](crate::types::builders::BodySectionConfigurationBuilder::section_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::BodySectionConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::BodySectionConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::BodySectionConfiguration {
             section_id: self.section_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "section_id",
                     "section_id was not specified but it is required when building BodySectionConfiguration",
                 )

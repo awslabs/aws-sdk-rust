@@ -89,10 +89,10 @@ impl ListGeofencesOutputBuilder {
     /// - [`entries`](crate::operation::list_geofences::builders::ListGeofencesOutputBuilder::entries)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_geofences::ListGeofencesOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_geofences::ListGeofencesOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_geofences::ListGeofencesOutput {
             entries: self.entries.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "entries",
                     "entries was not specified but it is required when building ListGeofencesOutput",
                 )

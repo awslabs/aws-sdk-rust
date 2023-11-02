@@ -126,7 +126,7 @@ impl SendAutomationSignalInputBuilder {
     /// Consumes the builder and constructs a [`SendAutomationSignalInput`](crate::operation::send_automation_signal::SendAutomationSignalInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::send_automation_signal::SendAutomationSignalInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::send_automation_signal::SendAutomationSignalInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::send_automation_signal::SendAutomationSignalInput {
             automation_execution_id: self.automation_execution_id,

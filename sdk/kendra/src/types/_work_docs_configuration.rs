@@ -186,10 +186,10 @@ impl WorkDocsConfigurationBuilder {
     /// Consumes the builder and constructs a [`WorkDocsConfiguration`](crate::types::WorkDocsConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`organization_id`](crate::types::builders::WorkDocsConfigurationBuilder::organization_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::WorkDocsConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::WorkDocsConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::WorkDocsConfiguration {
             organization_id: self.organization_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "organization_id",
                     "organization_id was not specified but it is required when building WorkDocsConfiguration",
                 )

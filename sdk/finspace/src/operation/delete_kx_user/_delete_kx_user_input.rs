@@ -66,7 +66,7 @@ impl DeleteKxUserInputBuilder {
     /// Consumes the builder and constructs a [`DeleteKxUserInput`](crate::operation::delete_kx_user::DeleteKxUserInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_kx_user::DeleteKxUserInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_kx_user::DeleteKxUserInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_kx_user::DeleteKxUserInput {
             user_name: self.user_name,
             environment_id: self.environment_id,

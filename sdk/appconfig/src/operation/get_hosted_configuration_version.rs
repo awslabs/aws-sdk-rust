@@ -180,26 +180,26 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetHostedCon
             fn uri_base(
                 _input: &crate::operation::get_hosted_configuration_version::GetHostedConfigurationVersionInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 use ::std::fmt::Write as _;
                 let input_1 = &_input.application_id;
                 let input_1 = input_1
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("application_id", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("application_id", "cannot be empty or unset"))?;
                 let application_id = ::aws_smithy_http::label::fmt_string(input_1, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if application_id.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "application_id",
                         "cannot be empty or unset",
                     ));
                 }
                 let input_2 = &_input.configuration_profile_id;
                 let input_2 = input_2.as_ref().ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field("configuration_profile_id", "cannot be empty or unset")
+                    ::aws_smithy_types::error::operation::BuildError::missing_field("configuration_profile_id", "cannot be empty or unset")
                 })?;
                 let configuration_profile_id = ::aws_smithy_http::label::fmt_string(input_2, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if configuration_profile_id.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "configuration_profile_id",
                         "cannot be empty or unset",
                     ));
@@ -207,11 +207,11 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetHostedCon
                 let input_3 = &_input.version_number;
                 let input_3 = input_3
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("version_number", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("version_number", "cannot be empty or unset"))?;
                 let mut version_number_encoder = ::aws_smithy_types::primitive::Encoder::from(*input_3);
                 let version_number = version_number_encoder.encode();
                 if version_number.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "version_number",
                         "cannot be empty or unset",
                     ));
@@ -230,7 +230,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetHostedCon
             fn update_http_builder(
                 input: &crate::operation::get_hosted_configuration_version::GetHostedConfigurationVersionInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 ::std::result::Result::Ok(builder.method("GET").uri(uri))
@@ -238,7 +238,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetHostedCon
             let mut builder = update_http_builder(&input, ::http::request::Builder::new())?;
             builder
         };
-        let body = ::aws_smithy_http::body::SdkBody::from("");
+        let body = ::aws_smithy_types::body::SdkBody::from("");
 
         ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }

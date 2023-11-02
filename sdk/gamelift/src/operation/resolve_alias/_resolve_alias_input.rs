@@ -42,7 +42,9 @@ impl ResolveAliasInputBuilder {
         &self.alias_id
     }
     /// Consumes the builder and constructs a [`ResolveAliasInput`](crate::operation::resolve_alias::ResolveAliasInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::resolve_alias::ResolveAliasInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::resolve_alias::ResolveAliasInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::resolve_alias::ResolveAliasInput { alias_id: self.alias_id })
     }
 }

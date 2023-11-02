@@ -130,7 +130,7 @@ impl ListDeviceEventsInputBuilder {
     /// Consumes the builder and constructs a [`ListDeviceEventsInput`](crate::operation::list_device_events::ListDeviceEventsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_device_events::ListDeviceEventsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_device_events::ListDeviceEventsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_device_events::ListDeviceEventsInput {
             device_id: self.device_id,
             from_time_stamp: self.from_time_stamp,

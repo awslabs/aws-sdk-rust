@@ -369,7 +369,7 @@ impl RequestSpotInstancesInputBuilder {
     /// Consumes the builder and constructs a [`RequestSpotInstancesInput`](crate::operation::request_spot_instances::RequestSpotInstancesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::request_spot_instances::RequestSpotInstancesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::request_spot_instances::RequestSpotInstancesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::request_spot_instances::RequestSpotInstancesInput {
             availability_zone_group: self.availability_zone_group,

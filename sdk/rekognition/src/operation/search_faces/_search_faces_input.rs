@@ -106,7 +106,7 @@ impl SearchFacesInputBuilder {
         &self.face_match_threshold
     }
     /// Consumes the builder and constructs a [`SearchFacesInput`](crate::operation::search_faces::SearchFacesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::search_faces::SearchFacesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::search_faces::SearchFacesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_faces::SearchFacesInput {
             collection_id: self.collection_id,
             face_id: self.face_id,

@@ -151,10 +151,12 @@ impl CustomConnectorDestinationPropertiesBuilder {
     /// Consumes the builder and constructs a [`CustomConnectorDestinationProperties`](crate::types::CustomConnectorDestinationProperties).
     /// This method will fail if any of the following fields are not set:
     /// - [`entity_name`](crate::types::builders::CustomConnectorDestinationPropertiesBuilder::entity_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::CustomConnectorDestinationProperties, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::types::CustomConnectorDestinationProperties, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CustomConnectorDestinationProperties {
             entity_name: self.entity_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "entity_name",
                     "entity_name was not specified but it is required when building CustomConnectorDestinationProperties",
                 )

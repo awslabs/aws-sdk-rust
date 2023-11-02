@@ -68,7 +68,7 @@ impl StopVoiceToneAnalysisTaskInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_voice_tone_analysis_task::StopVoiceToneAnalysisTaskInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::stop_voice_tone_analysis_task::StopVoiceToneAnalysisTaskInput {
             voice_connector_id: self.voice_connector_id,

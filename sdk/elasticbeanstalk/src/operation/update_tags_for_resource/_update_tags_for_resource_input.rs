@@ -117,7 +117,7 @@ impl UpdateTagsForResourceInputBuilder {
     /// Consumes the builder and constructs a [`UpdateTagsForResourceInput`](crate::operation::update_tags_for_resource::UpdateTagsForResourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_tags_for_resource::UpdateTagsForResourceInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_tags_for_resource::UpdateTagsForResourceInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_tags_for_resource::UpdateTagsForResourceInput {
             resource_arn: self.resource_arn,

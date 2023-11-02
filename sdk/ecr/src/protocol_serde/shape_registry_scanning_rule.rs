@@ -2,7 +2,7 @@
 pub fn ser_registry_scanning_rule(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RegistryScanningRule,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("scanFrequency").string(input.scan_frequency.as_str());
     }

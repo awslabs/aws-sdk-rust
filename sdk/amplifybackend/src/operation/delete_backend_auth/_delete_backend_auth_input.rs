@@ -89,7 +89,7 @@ impl DeleteBackendAuthInputBuilder {
     /// Consumes the builder and constructs a [`DeleteBackendAuthInput`](crate::operation::delete_backend_auth::DeleteBackendAuthInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_backend_auth::DeleteBackendAuthInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_backend_auth::DeleteBackendAuthInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_backend_auth::DeleteBackendAuthInput {
             app_id: self.app_id,
             backend_environment_name: self.backend_environment_name,

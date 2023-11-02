@@ -158,7 +158,7 @@ impl QuerySchemaVersionMetadataInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::query_schema_version_metadata::QuerySchemaVersionMetadataInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::query_schema_version_metadata::QuerySchemaVersionMetadataInput {
             schema_id: self.schema_id,

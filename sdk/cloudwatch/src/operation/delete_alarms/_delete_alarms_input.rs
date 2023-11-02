@@ -49,7 +49,9 @@ impl DeleteAlarmsInputBuilder {
         &self.alarm_names
     }
     /// Consumes the builder and constructs a [`DeleteAlarmsInput`](crate::operation::delete_alarms::DeleteAlarmsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_alarms::DeleteAlarmsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::delete_alarms::DeleteAlarmsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_alarms::DeleteAlarmsInput {
             alarm_names: self.alarm_names,
         })

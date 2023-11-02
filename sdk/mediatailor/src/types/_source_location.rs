@@ -238,11 +238,11 @@ impl SourceLocationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::SourceLocationBuilder::arn)
     /// - [`source_location_name`](crate::types::builders::SourceLocationBuilder::source_location_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::SourceLocation, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SourceLocation, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SourceLocation {
             access_configuration: self.access_configuration,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building SourceLocation",
                 )
@@ -253,7 +253,7 @@ impl SourceLocationBuilder {
             last_modified_time: self.last_modified_time,
             segment_delivery_configurations: self.segment_delivery_configurations,
             source_location_name: self.source_location_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source_location_name",
                     "source_location_name was not specified but it is required when building SourceLocation",
                 )

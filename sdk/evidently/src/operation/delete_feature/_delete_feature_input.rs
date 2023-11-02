@@ -66,7 +66,7 @@ impl DeleteFeatureInputBuilder {
     /// Consumes the builder and constructs a [`DeleteFeatureInput`](crate::operation::delete_feature::DeleteFeatureInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_feature::DeleteFeatureInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_feature::DeleteFeatureInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_feature::DeleteFeatureInput {
             project: self.project,
             feature: self.feature,

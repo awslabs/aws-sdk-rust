@@ -100,7 +100,7 @@ impl GetBlueprintsInputBuilder {
     /// Consumes the builder and constructs a [`GetBlueprintsInput`](crate::operation::get_blueprints::GetBlueprintsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_blueprints::GetBlueprintsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_blueprints::GetBlueprintsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_blueprints::GetBlueprintsInput {
             include_inactive: self.include_inactive,
             page_token: self.page_token,

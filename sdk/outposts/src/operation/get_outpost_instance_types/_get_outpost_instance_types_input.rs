@@ -88,7 +88,7 @@ impl GetOutpostInstanceTypesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_outpost_instance_types::GetOutpostInstanceTypesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_outpost_instance_types::GetOutpostInstanceTypesInput {
             outpost_id: self.outpost_id,

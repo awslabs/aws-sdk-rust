@@ -109,7 +109,7 @@ impl GetAutoMergingPreviewInputBuilder {
     /// Consumes the builder and constructs a [`GetAutoMergingPreviewInput`](crate::operation::get_auto_merging_preview::GetAutoMergingPreviewInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_auto_merging_preview::GetAutoMergingPreviewInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_auto_merging_preview::GetAutoMergingPreviewInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_auto_merging_preview::GetAutoMergingPreviewInput {
             domain_name: self.domain_name,

@@ -154,7 +154,7 @@ impl CreateDiskInputBuilder {
         &self.add_ons
     }
     /// Consumes the builder and constructs a [`CreateDiskInput`](crate::operation::create_disk::CreateDiskInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_disk::CreateDiskInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_disk::CreateDiskInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_disk::CreateDiskInput {
             disk_name: self.disk_name,
             availability_zone: self.availability_zone,

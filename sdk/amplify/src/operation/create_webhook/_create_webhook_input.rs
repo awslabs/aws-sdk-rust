@@ -88,7 +88,7 @@ impl CreateWebhookInputBuilder {
     /// Consumes the builder and constructs a [`CreateWebhookInput`](crate::operation::create_webhook::CreateWebhookInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_webhook::CreateWebhookInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_webhook::CreateWebhookInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_webhook::CreateWebhookInput {
             app_id: self.app_id,
             branch_name: self.branch_name,

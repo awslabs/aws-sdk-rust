@@ -99,7 +99,7 @@ impl AddTagsToVaultInputBuilder {
     /// Consumes the builder and constructs a [`AddTagsToVaultInput`](crate::operation::add_tags_to_vault::AddTagsToVaultInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::add_tags_to_vault::AddTagsToVaultInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::add_tags_to_vault::AddTagsToVaultInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::add_tags_to_vault::AddTagsToVaultInput {
             account_id: self.account_id,
             vault_name: self.vault_name,

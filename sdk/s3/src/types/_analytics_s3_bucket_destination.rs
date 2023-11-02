@@ -121,17 +121,17 @@ impl AnalyticsS3BucketDestinationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`format`](crate::types::builders::AnalyticsS3BucketDestinationBuilder::format)
     /// - [`bucket`](crate::types::builders::AnalyticsS3BucketDestinationBuilder::bucket)
-    pub fn build(self) -> ::std::result::Result<crate::types::AnalyticsS3BucketDestination, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AnalyticsS3BucketDestination, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AnalyticsS3BucketDestination {
             format: self.format.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "format",
                     "format was not specified but it is required when building AnalyticsS3BucketDestination",
                 )
             })?,
             bucket_account_id: self.bucket_account_id,
             bucket: self.bucket.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "bucket",
                     "bucket was not specified but it is required when building AnalyticsS3BucketDestination",
                 )

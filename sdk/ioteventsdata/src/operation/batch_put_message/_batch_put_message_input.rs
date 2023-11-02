@@ -51,7 +51,7 @@ impl BatchPutMessageInputBuilder {
     /// Consumes the builder and constructs a [`BatchPutMessageInput`](crate::operation::batch_put_message::BatchPutMessageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_put_message::BatchPutMessageInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::batch_put_message::BatchPutMessageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::batch_put_message::BatchPutMessageInput { messages: self.messages })
     }
 }

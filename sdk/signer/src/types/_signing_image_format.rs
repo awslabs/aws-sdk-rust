@@ -74,16 +74,16 @@ impl SigningImageFormatBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`supported_formats`](crate::types::builders::SigningImageFormatBuilder::supported_formats)
     /// - [`default_format`](crate::types::builders::SigningImageFormatBuilder::default_format)
-    pub fn build(self) -> ::std::result::Result<crate::types::SigningImageFormat, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SigningImageFormat, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SigningImageFormat {
             supported_formats: self.supported_formats.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "supported_formats",
                     "supported_formats was not specified but it is required when building SigningImageFormat",
                 )
             })?,
             default_format: self.default_format.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "default_format",
                     "default_format was not specified but it is required when building SigningImageFormat",
                 )

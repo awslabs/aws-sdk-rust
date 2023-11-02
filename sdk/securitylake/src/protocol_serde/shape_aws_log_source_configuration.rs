@@ -2,7 +2,7 @@
 pub fn ser_aws_log_source_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsLogSourceConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.accounts {
         let mut array_2 = object.key("accounts").start_array();
         for item_3 in var_1 {

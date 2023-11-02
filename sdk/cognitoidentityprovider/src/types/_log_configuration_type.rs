@@ -89,16 +89,16 @@ impl LogConfigurationTypeBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`log_level`](crate::types::builders::LogConfigurationTypeBuilder::log_level)
     /// - [`event_source`](crate::types::builders::LogConfigurationTypeBuilder::event_source)
-    pub fn build(self) -> ::std::result::Result<crate::types::LogConfigurationType, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::LogConfigurationType, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::LogConfigurationType {
             log_level: self.log_level.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "log_level",
                     "log_level was not specified but it is required when building LogConfigurationType",
                 )
             })?,
             event_source: self.event_source.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "event_source",
                     "event_source was not specified but it is required when building LogConfigurationType",
                 )

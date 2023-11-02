@@ -75,16 +75,16 @@ impl RateLimitHeaderBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::RateLimitHeaderBuilder::name)
     /// - [`text_transformations`](crate::types::builders::RateLimitHeaderBuilder::text_transformations)
-    pub fn build(self) -> ::std::result::Result<crate::types::RateLimitHeader, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RateLimitHeader, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RateLimitHeader {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building RateLimitHeader",
                 )
             })?,
             text_transformations: self.text_transformations.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "text_transformations",
                     "text_transformations was not specified but it is required when building RateLimitHeader",
                 )

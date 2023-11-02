@@ -2,7 +2,7 @@
 pub fn ser_new_custom_vocabulary_item(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::NewCustomVocabularyItem,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("phrase").string(input.phrase.as_str());
     }

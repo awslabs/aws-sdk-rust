@@ -66,7 +66,8 @@ impl GetWirelessGatewayInputBuilder {
     /// Consumes the builder and constructs a [`GetWirelessGatewayInput`](crate::operation::get_wireless_gateway::GetWirelessGatewayInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_wireless_gateway::GetWirelessGatewayInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_wireless_gateway::GetWirelessGatewayInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::get_wireless_gateway::GetWirelessGatewayInput {
             identifier: self.identifier,
             identifier_type: self.identifier_type,

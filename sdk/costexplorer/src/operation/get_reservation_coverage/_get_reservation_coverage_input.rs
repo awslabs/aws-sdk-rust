@@ -443,8 +443,10 @@ impl GetReservationCoverageInputBuilder {
     /// Consumes the builder and constructs a [`GetReservationCoverageInput`](crate::operation::get_reservation_coverage::GetReservationCoverageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_reservation_coverage::GetReservationCoverageInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::get_reservation_coverage::GetReservationCoverageInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::get_reservation_coverage::GetReservationCoverageInput {
             time_period: self.time_period,
             group_by: self.group_by,

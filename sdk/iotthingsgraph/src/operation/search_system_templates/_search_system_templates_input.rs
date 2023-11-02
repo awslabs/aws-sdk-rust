@@ -93,7 +93,7 @@ impl SearchSystemTemplatesInputBuilder {
     /// Consumes the builder and constructs a [`SearchSystemTemplatesInput`](crate::operation::search_system_templates::SearchSystemTemplatesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::search_system_templates::SearchSystemTemplatesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::search_system_templates::SearchSystemTemplatesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::search_system_templates::SearchSystemTemplatesInput {
             filters: self.filters,

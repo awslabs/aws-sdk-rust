@@ -88,17 +88,17 @@ impl PublishStateMachineVersionOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::publish_state_machine_version::PublishStateMachineVersionOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::publish_state_machine_version::PublishStateMachineVersionOutput {
             creation_date: self.creation_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_date",
                     "creation_date was not specified but it is required when building PublishStateMachineVersionOutput",
                 )
             })?,
             state_machine_version_arn: self.state_machine_version_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "state_machine_version_arn",
                     "state_machine_version_arn was not specified but it is required when building PublishStateMachineVersionOutput",
                 )

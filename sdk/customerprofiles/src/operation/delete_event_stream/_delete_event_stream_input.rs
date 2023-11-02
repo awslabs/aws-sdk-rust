@@ -66,7 +66,7 @@ impl DeleteEventStreamInputBuilder {
     /// Consumes the builder and constructs a [`DeleteEventStreamInput`](crate::operation::delete_event_stream::DeleteEventStreamInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_event_stream::DeleteEventStreamInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_event_stream::DeleteEventStreamInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_event_stream::DeleteEventStreamInput {
             domain_name: self.domain_name,
             event_stream_name: self.event_stream_name,

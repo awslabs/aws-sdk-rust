@@ -93,22 +93,22 @@ impl ConditionBuilder {
     /// - [`condition_type`](crate::types::builders::ConditionBuilder::condition_type)
     /// - [`condition_key`](crate::types::builders::ConditionBuilder::condition_key)
     /// - [`condition_value`](crate::types::builders::ConditionBuilder::condition_value)
-    pub fn build(self) -> ::std::result::Result<crate::types::Condition, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Condition, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Condition {
             condition_type: self.condition_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "condition_type",
                     "condition_type was not specified but it is required when building Condition",
                 )
             })?,
             condition_key: self.condition_key.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "condition_key",
                     "condition_key was not specified but it is required when building Condition",
                 )
             })?,
             condition_value: self.condition_value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "condition_value",
                     "condition_value was not specified but it is required when building Condition",
                 )

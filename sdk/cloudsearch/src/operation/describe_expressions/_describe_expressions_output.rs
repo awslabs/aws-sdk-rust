@@ -69,11 +69,11 @@ impl DescribeExpressionsOutputBuilder {
     /// - [`expressions`](crate::operation::describe_expressions::builders::DescribeExpressionsOutputBuilder::expressions)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_expressions::DescribeExpressionsOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_expressions::DescribeExpressionsOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_expressions::DescribeExpressionsOutput {
             expressions: self.expressions.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "expressions",
                     "expressions was not specified but it is required when building DescribeExpressionsOutput",
                 )

@@ -66,7 +66,7 @@ impl DescribeVocabularyInputBuilder {
     /// Consumes the builder and constructs a [`DescribeVocabularyInput`](crate::operation::describe_vocabulary::DescribeVocabularyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_vocabulary::DescribeVocabularyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_vocabulary::DescribeVocabularyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_vocabulary::DescribeVocabularyInput {
             instance_id: self.instance_id,
             vocabulary_id: self.vocabulary_id,

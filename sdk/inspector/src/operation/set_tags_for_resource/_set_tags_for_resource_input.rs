@@ -73,7 +73,7 @@ impl SetTagsForResourceInputBuilder {
     /// Consumes the builder and constructs a [`SetTagsForResourceInput`](crate::operation::set_tags_for_resource::SetTagsForResourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::set_tags_for_resource::SetTagsForResourceInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::set_tags_for_resource::SetTagsForResourceInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::set_tags_for_resource::SetTagsForResourceInput {
             resource_arn: self.resource_arn,

@@ -342,7 +342,7 @@ impl PutAccessControlRuleInputBuilder {
     /// Consumes the builder and constructs a [`PutAccessControlRuleInput`](crate::operation::put_access_control_rule::PutAccessControlRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_access_control_rule::PutAccessControlRuleInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::put_access_control_rule::PutAccessControlRuleInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::put_access_control_rule::PutAccessControlRuleInput {
             name: self.name,

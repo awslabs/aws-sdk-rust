@@ -99,7 +99,7 @@ impl StartMatchmakingInputBuilder {
     /// Consumes the builder and constructs a [`StartMatchmakingInput`](crate::operation::start_matchmaking::StartMatchmakingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_matchmaking::StartMatchmakingInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_matchmaking::StartMatchmakingInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_matchmaking::StartMatchmakingInput {
             ticket_id: self.ticket_id,
             configuration_name: self.configuration_name,

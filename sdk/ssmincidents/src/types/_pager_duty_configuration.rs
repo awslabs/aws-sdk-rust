@@ -92,16 +92,16 @@ impl PagerDutyConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::PagerDutyConfigurationBuilder::name)
     /// - [`secret_id`](crate::types::builders::PagerDutyConfigurationBuilder::secret_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::PagerDutyConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PagerDutyConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PagerDutyConfiguration {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building PagerDutyConfiguration",
                 )
             })?,
             secret_id: self.secret_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "secret_id",
                     "secret_id was not specified but it is required when building PagerDutyConfiguration",
                 )

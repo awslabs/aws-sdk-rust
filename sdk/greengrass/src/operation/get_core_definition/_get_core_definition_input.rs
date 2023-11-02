@@ -44,7 +44,7 @@ impl GetCoreDefinitionInputBuilder {
     /// Consumes the builder and constructs a [`GetCoreDefinitionInput`](crate::operation::get_core_definition::GetCoreDefinitionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_core_definition::GetCoreDefinitionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_core_definition::GetCoreDefinitionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_core_definition::GetCoreDefinitionInput {
             core_definition_id: self.core_definition_id,
         })

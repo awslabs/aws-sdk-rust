@@ -332,22 +332,22 @@ impl ImpactedLocationBuilder {
     /// - [`as_number`](crate::types::builders::ImpactedLocationBuilder::as_number)
     /// - [`country`](crate::types::builders::ImpactedLocationBuilder::country)
     /// - [`status`](crate::types::builders::ImpactedLocationBuilder::status)
-    pub fn build(self) -> ::std::result::Result<crate::types::ImpactedLocation, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ImpactedLocation, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ImpactedLocation {
             as_name: self.as_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "as_name",
                     "as_name was not specified but it is required when building ImpactedLocation",
                 )
             })?,
             as_number: self.as_number.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "as_number",
                     "as_number was not specified but it is required when building ImpactedLocation",
                 )
             })?,
             country: self.country.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "country",
                     "country was not specified but it is required when building ImpactedLocation",
                 )
@@ -361,7 +361,7 @@ impl ImpactedLocationBuilder {
             subdivision_code: self.subdivision_code,
             service_location: self.service_location,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building ImpactedLocation",
                 )

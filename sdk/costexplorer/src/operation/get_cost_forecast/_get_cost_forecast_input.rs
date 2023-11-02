@@ -300,7 +300,7 @@ impl GetCostForecastInputBuilder {
     /// Consumes the builder and constructs a [`GetCostForecastInput`](crate::operation::get_cost_forecast::GetCostForecastInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_cost_forecast::GetCostForecastInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_cost_forecast::GetCostForecastInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_cost_forecast::GetCostForecastInput {
             time_period: self.time_period,
             metric: self.metric,

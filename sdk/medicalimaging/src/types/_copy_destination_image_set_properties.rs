@@ -175,16 +175,16 @@ impl CopyDestinationImageSetPropertiesBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`image_set_id`](crate::types::builders::CopyDestinationImageSetPropertiesBuilder::image_set_id)
     /// - [`latest_version_id`](crate::types::builders::CopyDestinationImageSetPropertiesBuilder::latest_version_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::CopyDestinationImageSetProperties, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CopyDestinationImageSetProperties, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CopyDestinationImageSetProperties {
             image_set_id: self.image_set_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "image_set_id",
                     "image_set_id was not specified but it is required when building CopyDestinationImageSetProperties",
                 )
             })?,
             latest_version_id: self.latest_version_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "latest_version_id",
                     "latest_version_id was not specified but it is required when building CopyDestinationImageSetProperties",
                 )

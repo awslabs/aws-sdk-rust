@@ -87,17 +87,17 @@ impl CreateTimelineEventOutputBuilder {
     /// - [`event_id`](crate::operation::create_timeline_event::builders::CreateTimelineEventOutputBuilder::event_id)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_timeline_event::CreateTimelineEventOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_timeline_event::CreateTimelineEventOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_timeline_event::CreateTimelineEventOutput {
             incident_record_arn: self.incident_record_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "incident_record_arn",
                     "incident_record_arn was not specified but it is required when building CreateTimelineEventOutput",
                 )
             })?,
             event_id: self.event_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "event_id",
                     "event_id was not specified but it is required when building CreateTimelineEventOutput",
                 )

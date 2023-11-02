@@ -88,7 +88,7 @@ impl DetachVpnGatewayInputBuilder {
     /// Consumes the builder and constructs a [`DetachVpnGatewayInput`](crate::operation::detach_vpn_gateway::DetachVpnGatewayInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::detach_vpn_gateway::DetachVpnGatewayInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::detach_vpn_gateway::DetachVpnGatewayInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::detach_vpn_gateway::DetachVpnGatewayInput {
             vpc_id: self.vpc_id,
             vpn_gateway_id: self.vpn_gateway_id,

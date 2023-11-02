@@ -122,7 +122,7 @@ impl CreateVodSourceInputBuilder {
     /// Consumes the builder and constructs a [`CreateVodSourceInput`](crate::operation::create_vod_source::CreateVodSourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_vod_source::CreateVodSourceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_vod_source::CreateVodSourceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_vod_source::CreateVodSourceInput {
             http_package_configurations: self.http_package_configurations,
             source_location_name: self.source_location_name,

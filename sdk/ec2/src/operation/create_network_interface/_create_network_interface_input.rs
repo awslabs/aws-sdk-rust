@@ -478,8 +478,10 @@ impl CreateNetworkInterfaceInputBuilder {
     /// Consumes the builder and constructs a [`CreateNetworkInterfaceInput`](crate::operation::create_network_interface::CreateNetworkInterfaceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_network_interface::CreateNetworkInterfaceInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::create_network_interface::CreateNetworkInterfaceInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::create_network_interface::CreateNetworkInterfaceInput {
             description: self.description,
             dry_run: self.dry_run,

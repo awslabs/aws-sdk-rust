@@ -139,17 +139,17 @@ impl RotationShiftBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`start_time`](crate::types::builders::RotationShiftBuilder::start_time)
     /// - [`end_time`](crate::types::builders::RotationShiftBuilder::end_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::RotationShift, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RotationShift, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RotationShift {
             contact_ids: self.contact_ids,
             start_time: self.start_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "start_time",
                     "start_time was not specified but it is required when building RotationShift",
                 )
             })?,
             end_time: self.end_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "end_time",
                     "end_time was not specified but it is required when building RotationShift",
                 )

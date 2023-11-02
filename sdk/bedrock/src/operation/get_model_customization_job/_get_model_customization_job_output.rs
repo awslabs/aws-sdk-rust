@@ -503,23 +503,23 @@ impl GetModelCustomizationJobOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_model_customization_job::GetModelCustomizationJobOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_model_customization_job::GetModelCustomizationJobOutput {
             job_arn: self.job_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "job_arn",
                     "job_arn was not specified but it is required when building GetModelCustomizationJobOutput",
                 )
             })?,
             job_name: self.job_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "job_name",
                     "job_name was not specified but it is required when building GetModelCustomizationJobOutput",
                 )
             })?,
             output_model_name: self.output_model_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "output_model_name",
                     "output_model_name was not specified but it is required when building GetModelCustomizationJobOutput",
                 )
@@ -527,7 +527,7 @@ impl GetModelCustomizationJobOutputBuilder {
             output_model_arn: self.output_model_arn,
             client_request_token: self.client_request_token,
             role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role_arn",
                     "role_arn was not specified but it is required when building GetModelCustomizationJobOutput",
                 )
@@ -535,7 +535,7 @@ impl GetModelCustomizationJobOutputBuilder {
             status: self.status,
             failure_message: self.failure_message,
             creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_time",
                     "creation_time was not specified but it is required when building GetModelCustomizationJobOutput",
                 )
@@ -543,13 +543,13 @@ impl GetModelCustomizationJobOutputBuilder {
             last_modified_time: self.last_modified_time,
             end_time: self.end_time,
             base_model_arn: self.base_model_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "base_model_arn",
                     "base_model_arn was not specified but it is required when building GetModelCustomizationJobOutput",
                 )
             })?,
             hyper_parameters: self.hyper_parameters.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "hyper_parameters",
                     "hyper_parameters was not specified but it is required when building GetModelCustomizationJobOutput",
                 )

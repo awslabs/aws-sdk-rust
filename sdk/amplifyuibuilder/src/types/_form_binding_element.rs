@@ -70,16 +70,16 @@ impl FormBindingElementBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`element`](crate::types::builders::FormBindingElementBuilder::element)
     /// - [`property`](crate::types::builders::FormBindingElementBuilder::property)
-    pub fn build(self) -> ::std::result::Result<crate::types::FormBindingElement, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::FormBindingElement, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FormBindingElement {
             element: self.element.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "element",
                     "element was not specified but it is required when building FormBindingElement",
                 )
             })?,
             property: self.property.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "property",
                     "property was not specified but it is required when building FormBindingElement",
                 )

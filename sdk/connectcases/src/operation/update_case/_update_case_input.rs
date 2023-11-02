@@ -93,7 +93,7 @@ impl UpdateCaseInputBuilder {
         &self.fields
     }
     /// Consumes the builder and constructs a [`UpdateCaseInput`](crate::operation::update_case::UpdateCaseInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_case::UpdateCaseInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_case::UpdateCaseInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_case::UpdateCaseInput {
             domain_id: self.domain_id,
             case_id: self.case_id,

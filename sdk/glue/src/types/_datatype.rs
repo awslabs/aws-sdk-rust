@@ -70,13 +70,16 @@ impl DatatypeBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::DatatypeBuilder::id)
     /// - [`label`](crate::types::builders::DatatypeBuilder::label)
-    pub fn build(self) -> ::std::result::Result<crate::types::Datatype, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Datatype, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Datatype {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field("id", "id was not specified but it is required when building Datatype")
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building Datatype",
+                )
             })?,
             label: self.label.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "label",
                     "label was not specified but it is required when building Datatype",
                 )

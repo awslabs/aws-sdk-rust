@@ -318,7 +318,7 @@ impl StartTextTranslationJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_text_translation_job::StartTextTranslationJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_text_translation_job::StartTextTranslationJobInput {
             job_name: self.job_name,

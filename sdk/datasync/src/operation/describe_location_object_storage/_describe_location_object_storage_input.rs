@@ -47,7 +47,7 @@ impl DescribeLocationObjectStorageInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_location_object_storage::DescribeLocationObjectStorageInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_location_object_storage::DescribeLocationObjectStorageInput {
             location_arn: self.location_arn,

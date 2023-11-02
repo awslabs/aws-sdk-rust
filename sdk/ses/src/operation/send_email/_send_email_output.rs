@@ -62,10 +62,10 @@ impl SendEmailOutputBuilder {
     /// Consumes the builder and constructs a [`SendEmailOutput`](crate::operation::send_email::SendEmailOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`message_id`](crate::operation::send_email::builders::SendEmailOutputBuilder::message_id)
-    pub fn build(self) -> ::std::result::Result<crate::operation::send_email::SendEmailOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::send_email::SendEmailOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::send_email::SendEmailOutput {
             message_id: self.message_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "message_id",
                     "message_id was not specified but it is required when building SendEmailOutput",
                 )

@@ -71,7 +71,7 @@ impl BatchWriteInputBuilder {
         &self.operations
     }
     /// Consumes the builder and constructs a [`BatchWriteInput`](crate::operation::batch_write::BatchWriteInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::batch_write::BatchWriteInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_write::BatchWriteInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::batch_write::BatchWriteInput {
             directory_arn: self.directory_arn,
             operations: self.operations,

@@ -87,7 +87,7 @@ impl ListProvisioningArtifactsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_provisioning_artifacts::ListProvisioningArtifactsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_provisioning_artifacts::ListProvisioningArtifactsInput {
             accept_language: self.accept_language,

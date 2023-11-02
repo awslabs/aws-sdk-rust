@@ -85,7 +85,7 @@ impl DeleteKeyPairInputBuilder {
     /// Consumes the builder and constructs a [`DeleteKeyPairInput`](crate::operation::delete_key_pair::DeleteKeyPairInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_key_pair::DeleteKeyPairInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_key_pair::DeleteKeyPairInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_key_pair::DeleteKeyPairInput {
             key_name: self.key_name,
             key_pair_id: self.key_pair_id,

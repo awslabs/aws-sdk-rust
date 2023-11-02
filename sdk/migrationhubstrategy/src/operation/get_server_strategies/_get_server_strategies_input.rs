@@ -44,7 +44,7 @@ impl GetServerStrategiesInputBuilder {
     /// Consumes the builder and constructs a [`GetServerStrategiesInput`](crate::operation::get_server_strategies::GetServerStrategiesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_server_strategies::GetServerStrategiesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_server_strategies::GetServerStrategiesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_server_strategies::GetServerStrategiesInput { server_id: self.server_id })
     }

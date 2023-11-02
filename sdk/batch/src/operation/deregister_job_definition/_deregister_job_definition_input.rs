@@ -46,7 +46,7 @@ impl DeregisterJobDefinitionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_job_definition::DeregisterJobDefinitionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::deregister_job_definition::DeregisterJobDefinitionInput {
             job_definition: self.job_definition,

@@ -68,16 +68,16 @@ impl FailedItemDetailsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`failure_code`](crate::types::builders::FailedItemDetailsBuilder::failure_code)
     /// - [`retryable`](crate::types::builders::FailedItemDetailsBuilder::retryable)
-    pub fn build(self) -> ::std::result::Result<crate::types::FailedItemDetails, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::FailedItemDetails, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FailedItemDetails {
             failure_code: self.failure_code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "failure_code",
                     "failure_code was not specified but it is required when building FailedItemDetails",
                 )
             })?,
             retryable: self.retryable.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "retryable",
                     "retryable was not specified but it is required when building FailedItemDetails",
                 )

@@ -66,7 +66,8 @@ impl DescribeDataSourceInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDataSourceInput`](crate::operation::describe_data_source::DescribeDataSourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_data_source::DescribeDataSourceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_data_source::DescribeDataSourceInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::describe_data_source::DescribeDataSourceInput {
             aws_account_id: self.aws_account_id,
             data_source_id: self.data_source_id,

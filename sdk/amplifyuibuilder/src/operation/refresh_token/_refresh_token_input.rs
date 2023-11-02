@@ -64,7 +64,9 @@ impl RefreshTokenInputBuilder {
         &self.refresh_token_body
     }
     /// Consumes the builder and constructs a [`RefreshTokenInput`](crate::operation::refresh_token::RefreshTokenInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::refresh_token::RefreshTokenInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::refresh_token::RefreshTokenInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::refresh_token::RefreshTokenInput {
             provider: self.provider,
             refresh_token_body: self.refresh_token_body,

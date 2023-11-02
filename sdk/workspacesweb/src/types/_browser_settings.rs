@@ -105,10 +105,10 @@ impl BrowserSettingsBuilder {
     /// Consumes the builder and constructs a [`BrowserSettings`](crate::types::BrowserSettings).
     /// This method will fail if any of the following fields are not set:
     /// - [`browser_settings_arn`](crate::types::builders::BrowserSettingsBuilder::browser_settings_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::BrowserSettings, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::BrowserSettings, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::BrowserSettings {
             browser_settings_arn: self.browser_settings_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "browser_settings_arn",
                     "browser_settings_arn was not specified but it is required when building BrowserSettings",
                 )

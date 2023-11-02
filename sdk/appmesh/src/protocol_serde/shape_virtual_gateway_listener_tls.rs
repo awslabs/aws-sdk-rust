@@ -2,7 +2,7 @@
 pub fn ser_virtual_gateway_listener_tls(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VirtualGatewayListenerTls,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("mode").string(input.mode.as_str());
     }

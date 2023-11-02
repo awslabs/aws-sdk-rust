@@ -289,7 +289,7 @@ impl CreateTapesInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateTapesInput`](crate::operation::create_tapes::CreateTapesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_tapes::CreateTapesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_tapes::CreateTapesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_tapes::CreateTapesInput {
             gateway_arn: self.gateway_arn,
             tape_size_in_bytes: self.tape_size_in_bytes,

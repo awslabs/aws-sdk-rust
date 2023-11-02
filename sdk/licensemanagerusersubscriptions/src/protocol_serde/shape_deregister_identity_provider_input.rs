@@ -2,7 +2,7 @@
 pub fn ser_deregister_identity_provider_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::deregister_identity_provider::DeregisterIdentityProviderInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.identity_provider {
         #[allow(unused_mut)]
         let mut object_2 = object.key("IdentityProvider").start_object();

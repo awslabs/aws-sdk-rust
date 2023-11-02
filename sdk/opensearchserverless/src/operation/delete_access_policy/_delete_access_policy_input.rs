@@ -87,7 +87,8 @@ impl DeleteAccessPolicyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAccessPolicyInput`](crate::operation::delete_access_policy::DeleteAccessPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_access_policy::DeleteAccessPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_access_policy::DeleteAccessPolicyInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::delete_access_policy::DeleteAccessPolicyInput {
             r#type: self.r#type,
             name: self.name,

@@ -89,7 +89,7 @@ impl DescribeFpgaImageAttributeInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_fpga_image_attribute::DescribeFpgaImageAttributeInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_fpga_image_attribute::DescribeFpgaImageAttributeInput {
             dry_run: self.dry_run,

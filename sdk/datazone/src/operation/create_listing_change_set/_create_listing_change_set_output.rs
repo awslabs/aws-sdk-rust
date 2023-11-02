@@ -112,23 +112,23 @@ impl CreateListingChangeSetOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_listing_change_set::CreateListingChangeSetOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_listing_change_set::CreateListingChangeSetOutput {
             listing_id: self.listing_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "listing_id",
                     "listing_id was not specified but it is required when building CreateListingChangeSetOutput",
                 )
             })?,
             listing_revision: self.listing_revision.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "listing_revision",
                     "listing_revision was not specified but it is required when building CreateListingChangeSetOutput",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building CreateListingChangeSetOutput",
                 )

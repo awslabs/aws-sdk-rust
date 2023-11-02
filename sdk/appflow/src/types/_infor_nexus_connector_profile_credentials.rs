@@ -130,28 +130,28 @@ impl InforNexusConnectorProfileCredentialsBuilder {
     /// - [`datakey`](crate::types::builders::InforNexusConnectorProfileCredentialsBuilder::datakey)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::InforNexusConnectorProfileCredentials, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::InforNexusConnectorProfileCredentials, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::InforNexusConnectorProfileCredentials {
             access_key_id: self.access_key_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "access_key_id",
                     "access_key_id was not specified but it is required when building InforNexusConnectorProfileCredentials",
                 )
             })?,
             user_id: self.user_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "user_id",
                     "user_id was not specified but it is required when building InforNexusConnectorProfileCredentials",
                 )
             })?,
             secret_access_key: self.secret_access_key.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "secret_access_key",
                     "secret_access_key was not specified but it is required when building InforNexusConnectorProfileCredentials",
                 )
             })?,
             datakey: self.datakey.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "datakey",
                     "datakey was not specified but it is required when building InforNexusConnectorProfileCredentials",
                 )

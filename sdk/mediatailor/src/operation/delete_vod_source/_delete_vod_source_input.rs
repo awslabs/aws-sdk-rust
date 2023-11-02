@@ -66,7 +66,7 @@ impl DeleteVodSourceInputBuilder {
     /// Consumes the builder and constructs a [`DeleteVodSourceInput`](crate::operation::delete_vod_source::DeleteVodSourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_vod_source::DeleteVodSourceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_vod_source::DeleteVodSourceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_vod_source::DeleteVodSourceInput {
             source_location_name: self.source_location_name,
             vod_source_name: self.vod_source_name,

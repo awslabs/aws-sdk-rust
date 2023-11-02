@@ -95,7 +95,7 @@ impl StopModelInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`StopModelInput`](crate::operation::stop_model::StopModelInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::stop_model::StopModelInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_model::StopModelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_model::StopModelInput {
             project_name: self.project_name,
             model_version: self.model_version,

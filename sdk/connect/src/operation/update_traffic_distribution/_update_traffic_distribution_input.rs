@@ -109,7 +109,7 @@ impl UpdateTrafficDistributionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_traffic_distribution::UpdateTrafficDistributionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_traffic_distribution::UpdateTrafficDistributionInput {
             id: self.id,

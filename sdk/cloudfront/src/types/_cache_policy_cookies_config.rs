@@ -96,10 +96,10 @@ impl CachePolicyCookiesConfigBuilder {
     /// Consumes the builder and constructs a [`CachePolicyCookiesConfig`](crate::types::CachePolicyCookiesConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`cookie_behavior`](crate::types::builders::CachePolicyCookiesConfigBuilder::cookie_behavior)
-    pub fn build(self) -> ::std::result::Result<crate::types::CachePolicyCookiesConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CachePolicyCookiesConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CachePolicyCookiesConfig {
             cookie_behavior: self.cookie_behavior.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "cookie_behavior",
                     "cookie_behavior was not specified but it is required when building CachePolicyCookiesConfig",
                 )

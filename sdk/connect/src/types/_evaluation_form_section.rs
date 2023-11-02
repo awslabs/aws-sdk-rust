@@ -141,23 +141,23 @@ impl EvaluationFormSectionBuilder {
     /// - [`title`](crate::types::builders::EvaluationFormSectionBuilder::title)
     /// - [`ref_id`](crate::types::builders::EvaluationFormSectionBuilder::ref_id)
     /// - [`items`](crate::types::builders::EvaluationFormSectionBuilder::items)
-    pub fn build(self) -> ::std::result::Result<crate::types::EvaluationFormSection, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::EvaluationFormSection, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EvaluationFormSection {
             title: self.title.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "title",
                     "title was not specified but it is required when building EvaluationFormSection",
                 )
             })?,
             ref_id: self.ref_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "ref_id",
                     "ref_id was not specified but it is required when building EvaluationFormSection",
                 )
             })?,
             instructions: self.instructions,
             items: self.items.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "items",
                     "items was not specified but it is required when building EvaluationFormSection",
                 )

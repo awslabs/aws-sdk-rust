@@ -69,16 +69,16 @@ impl SocketAddressBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::SocketAddressBuilder::name)
     /// - [`port`](crate::types::builders::SocketAddressBuilder::port)
-    pub fn build(self) -> ::std::result::Result<crate::types::SocketAddress, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SocketAddress, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SocketAddress {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building SocketAddress",
                 )
             })?,
             port: self.port.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "port",
                     "port was not specified but it is required when building SocketAddress",
                 )

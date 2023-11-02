@@ -148,7 +148,7 @@ impl ListWhatIfAnalysesInputBuilder {
     /// Consumes the builder and constructs a [`ListWhatIfAnalysesInput`](crate::operation::list_what_if_analyses::ListWhatIfAnalysesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_what_if_analyses::ListWhatIfAnalysesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_what_if_analyses::ListWhatIfAnalysesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_what_if_analyses::ListWhatIfAnalysesInput {
             next_token: self.next_token,

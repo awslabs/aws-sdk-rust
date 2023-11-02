@@ -102,7 +102,7 @@ impl CreateDataLakeInputBuilder {
     /// Consumes the builder and constructs a [`CreateDataLakeInput`](crate::operation::create_data_lake::CreateDataLakeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_data_lake::CreateDataLakeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_data_lake::CreateDataLakeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_data_lake::CreateDataLakeInput {
             configurations: self.configurations,
             meta_store_manager_role_arn: self.meta_store_manager_role_arn,

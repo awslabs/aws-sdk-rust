@@ -114,22 +114,22 @@ impl MessageBuilder {
     /// - [`message_id`](crate::types::builders::MessageBuilder::message_id)
     /// - [`input_name`](crate::types::builders::MessageBuilder::input_name)
     /// - [`payload`](crate::types::builders::MessageBuilder::payload)
-    pub fn build(self) -> ::std::result::Result<crate::types::Message, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Message, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Message {
             message_id: self.message_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "message_id",
                     "message_id was not specified but it is required when building Message",
                 )
             })?,
             input_name: self.input_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "input_name",
                     "input_name was not specified but it is required when building Message",
                 )
             })?,
             payload: self.payload.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "payload",
                     "payload was not specified but it is required when building Message",
                 )

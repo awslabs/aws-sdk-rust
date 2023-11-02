@@ -101,11 +101,11 @@ impl ListContactEvaluationsOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_contact_evaluations::ListContactEvaluationsOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_contact_evaluations::ListContactEvaluationsOutput {
             evaluation_summary_list: self.evaluation_summary_list.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "evaluation_summary_list",
                     "evaluation_summary_list was not specified but it is required when building ListContactEvaluationsOutput",
                 )

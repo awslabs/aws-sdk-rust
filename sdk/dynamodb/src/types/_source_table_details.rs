@@ -248,16 +248,16 @@ impl SourceTableDetailsBuilder {
     /// - [`table_id`](crate::types::builders::SourceTableDetailsBuilder::table_id)
     /// - [`key_schema`](crate::types::builders::SourceTableDetailsBuilder::key_schema)
     /// - [`table_creation_date_time`](crate::types::builders::SourceTableDetailsBuilder::table_creation_date_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::SourceTableDetails, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SourceTableDetails, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SourceTableDetails {
             table_name: self.table_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "table_name",
                     "table_name was not specified but it is required when building SourceTableDetails",
                 )
             })?,
             table_id: self.table_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "table_id",
                     "table_id was not specified but it is required when building SourceTableDetails",
                 )
@@ -265,13 +265,13 @@ impl SourceTableDetailsBuilder {
             table_arn: self.table_arn,
             table_size_bytes: self.table_size_bytes,
             key_schema: self.key_schema.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "key_schema",
                     "key_schema was not specified but it is required when building SourceTableDetails",
                 )
             })?,
             table_creation_date_time: self.table_creation_date_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "table_creation_date_time",
                     "table_creation_date_time was not specified but it is required when building SourceTableDetails",
                 )

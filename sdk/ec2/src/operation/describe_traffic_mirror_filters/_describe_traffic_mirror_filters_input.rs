@@ -165,7 +165,7 @@ impl DescribeTrafficMirrorFiltersInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_traffic_mirror_filters::DescribeTrafficMirrorFiltersInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_traffic_mirror_filters::DescribeTrafficMirrorFiltersInput {
             traffic_mirror_filter_ids: self.traffic_mirror_filter_ids,

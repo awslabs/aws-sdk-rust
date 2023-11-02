@@ -53,10 +53,10 @@ impl TranslationPinDataIsoFormat034Builder {
     /// Consumes the builder and constructs a [`TranslationPinDataIsoFormat034`](crate::types::TranslationPinDataIsoFormat034).
     /// This method will fail if any of the following fields are not set:
     /// - [`primary_account_number`](crate::types::builders::TranslationPinDataIsoFormat034Builder::primary_account_number)
-    pub fn build(self) -> ::std::result::Result<crate::types::TranslationPinDataIsoFormat034, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TranslationPinDataIsoFormat034, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TranslationPinDataIsoFormat034 {
             primary_account_number: self.primary_account_number.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "primary_account_number",
                     "primary_account_number was not specified but it is required when building TranslationPinDataIsoFormat034",
                 )

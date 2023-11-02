@@ -95,7 +95,7 @@ impl UpdatePricingPlanInputBuilder {
     /// Consumes the builder and constructs a [`UpdatePricingPlanInput`](crate::operation::update_pricing_plan::UpdatePricingPlanInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_pricing_plan::UpdatePricingPlanInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_pricing_plan::UpdatePricingPlanInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_pricing_plan::UpdatePricingPlanInput {
             arn: self.arn,
             name: self.name,

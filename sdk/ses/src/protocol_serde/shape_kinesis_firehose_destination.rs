@@ -3,7 +3,7 @@
 pub fn ser_kinesis_firehose_destination(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::KinesisFirehoseDestination,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("IAMRoleARN");
     {

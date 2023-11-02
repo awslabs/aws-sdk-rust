@@ -2,7 +2,7 @@
 pub fn ser_create_experiment_template_target_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CreateExperimentTemplateTargetInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("resourceType").string(input.resource_type.as_str());
     }

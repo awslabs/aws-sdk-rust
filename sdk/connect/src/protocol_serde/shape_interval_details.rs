@@ -2,7 +2,7 @@
 pub fn ser_interval_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IntervalDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.time_zone {
         object.key("TimeZone").string(var_1.as_str());
     }

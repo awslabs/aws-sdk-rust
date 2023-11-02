@@ -53,7 +53,7 @@ impl BatchGetAutomationRulesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_get_automation_rules::BatchGetAutomationRulesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::batch_get_automation_rules::BatchGetAutomationRulesInput {
             automation_rules_arns: self.automation_rules_arns,

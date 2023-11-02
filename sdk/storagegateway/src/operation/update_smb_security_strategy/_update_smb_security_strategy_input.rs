@@ -83,7 +83,7 @@ impl UpdateSmbSecurityStrategyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_smb_security_strategy::UpdateSmbSecurityStrategyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_smb_security_strategy::UpdateSmbSecurityStrategyInput {
             gateway_arn: self.gateway_arn,

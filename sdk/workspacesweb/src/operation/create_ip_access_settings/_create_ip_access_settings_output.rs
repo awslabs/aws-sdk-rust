@@ -65,11 +65,11 @@ impl CreateIpAccessSettingsOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_ip_access_settings::CreateIpAccessSettingsOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_ip_access_settings::CreateIpAccessSettingsOutput {
             ip_access_settings_arn: self.ip_access_settings_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "ip_access_settings_arn",
                     "ip_access_settings_arn was not specified but it is required when building CreateIpAccessSettingsOutput",
                 )

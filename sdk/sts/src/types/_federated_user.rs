@@ -70,16 +70,16 @@ impl FederatedUserBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`federated_user_id`](crate::types::builders::FederatedUserBuilder::federated_user_id)
     /// - [`arn`](crate::types::builders::FederatedUserBuilder::arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::FederatedUser, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::FederatedUser, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FederatedUser {
             federated_user_id: self.federated_user_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "federated_user_id",
                     "federated_user_id was not specified but it is required when building FederatedUser",
                 )
             })?,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building FederatedUser",
                 )

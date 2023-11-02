@@ -65,8 +65,10 @@ impl DeleteConnectorProfileInputBuilder {
     /// Consumes the builder and constructs a [`DeleteConnectorProfileInput`](crate::operation::delete_connector_profile::DeleteConnectorProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_connector_profile::DeleteConnectorProfileInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::delete_connector_profile::DeleteConnectorProfileInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::delete_connector_profile::DeleteConnectorProfileInput {
             connector_profile_name: self.connector_profile_name,
             force_delete: self.force_delete,

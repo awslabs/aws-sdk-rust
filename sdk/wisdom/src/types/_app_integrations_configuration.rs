@@ -150,10 +150,10 @@ impl AppIntegrationsConfigurationBuilder {
     /// Consumes the builder and constructs a [`AppIntegrationsConfiguration`](crate::types::AppIntegrationsConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`app_integration_arn`](crate::types::builders::AppIntegrationsConfigurationBuilder::app_integration_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::AppIntegrationsConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AppIntegrationsConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AppIntegrationsConfiguration {
             app_integration_arn: self.app_integration_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "app_integration_arn",
                     "app_integration_arn was not specified but it is required when building AppIntegrationsConfiguration",
                 )

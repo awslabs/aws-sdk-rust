@@ -171,7 +171,7 @@ impl DescribeSessionsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeSessionsInput`](crate::operation::describe_sessions::DescribeSessionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_sessions::DescribeSessionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_sessions::DescribeSessionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_sessions::DescribeSessionsInput {
             stack_name: self.stack_name,
             fleet_name: self.fleet_name,

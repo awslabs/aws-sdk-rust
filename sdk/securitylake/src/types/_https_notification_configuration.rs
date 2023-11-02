@@ -133,10 +133,10 @@ impl HttpsNotificationConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`endpoint`](crate::types::builders::HttpsNotificationConfigurationBuilder::endpoint)
     /// - [`target_role_arn`](crate::types::builders::HttpsNotificationConfigurationBuilder::target_role_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::HttpsNotificationConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::HttpsNotificationConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::HttpsNotificationConfiguration {
             endpoint: self.endpoint.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "endpoint",
                     "endpoint was not specified but it is required when building HttpsNotificationConfiguration",
                 )
@@ -145,7 +145,7 @@ impl HttpsNotificationConfigurationBuilder {
             authorization_api_key_value: self.authorization_api_key_value,
             http_method: self.http_method,
             target_role_arn: self.target_role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "target_role_arn",
                     "target_role_arn was not specified but it is required when building HttpsNotificationConfiguration",
                 )

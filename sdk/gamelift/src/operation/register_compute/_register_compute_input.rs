@@ -150,7 +150,7 @@ impl RegisterComputeInputBuilder {
     /// Consumes the builder and constructs a [`RegisterComputeInput`](crate::operation::register_compute::RegisterComputeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::register_compute::RegisterComputeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::register_compute::RegisterComputeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::register_compute::RegisterComputeInput {
             fleet_id: self.fleet_id,
             compute_name: self.compute_name,

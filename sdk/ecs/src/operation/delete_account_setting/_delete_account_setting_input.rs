@@ -65,7 +65,7 @@ impl DeleteAccountSettingInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAccountSettingInput`](crate::operation::delete_account_setting::DeleteAccountSettingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_account_setting::DeleteAccountSettingInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_account_setting::DeleteAccountSettingInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_account_setting::DeleteAccountSettingInput {
             name: self.name,

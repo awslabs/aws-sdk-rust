@@ -46,7 +46,7 @@ impl RemoveApplicationInstanceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_application_instance::RemoveApplicationInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::remove_application_instance::RemoveApplicationInstanceInput {
             application_instance_id: self.application_instance_id,

@@ -75,16 +75,16 @@ impl RuleBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`rule_name`](crate::types::builders::RuleBuilder::rule_name)
     /// - [`matching_keys`](crate::types::builders::RuleBuilder::matching_keys)
-    pub fn build(self) -> ::std::result::Result<crate::types::Rule, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Rule, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Rule {
             rule_name: self.rule_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "rule_name",
                     "rule_name was not specified but it is required when building Rule",
                 )
             })?,
             matching_keys: self.matching_keys.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "matching_keys",
                     "matching_keys was not specified but it is required when building Rule",
                 )

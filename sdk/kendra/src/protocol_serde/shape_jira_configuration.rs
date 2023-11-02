@@ -2,7 +2,7 @@
 pub fn ser_jira_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::JiraConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("JiraAccountUrl").string(input.jira_account_url.as_str());
     }

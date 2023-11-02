@@ -65,7 +65,7 @@ impl UpdateContainerAgentInputBuilder {
     /// Consumes the builder and constructs a [`UpdateContainerAgentInput`](crate::operation::update_container_agent::UpdateContainerAgentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_container_agent::UpdateContainerAgentInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_container_agent::UpdateContainerAgentInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_container_agent::UpdateContainerAgentInput {
             cluster: self.cluster,

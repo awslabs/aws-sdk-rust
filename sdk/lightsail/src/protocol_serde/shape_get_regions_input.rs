@@ -2,7 +2,7 @@
 pub fn ser_get_regions_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_regions::GetRegionsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.include_availability_zones {
         object.key("includeAvailabilityZones").boolean(*var_1);
     }

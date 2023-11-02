@@ -114,17 +114,17 @@ impl CreateConnectionOAuthRequestParametersBuilder {
     /// - [`http_method`](crate::types::builders::CreateConnectionOAuthRequestParametersBuilder::http_method)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::CreateConnectionOAuthRequestParameters, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::CreateConnectionOAuthRequestParameters, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CreateConnectionOAuthRequestParameters {
             client_parameters: self.client_parameters,
             authorization_endpoint: self.authorization_endpoint.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "authorization_endpoint",
                     "authorization_endpoint was not specified but it is required when building CreateConnectionOAuthRequestParameters",
                 )
             })?,
             http_method: self.http_method.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "http_method",
                     "http_method was not specified but it is required when building CreateConnectionOAuthRequestParameters",
                 )

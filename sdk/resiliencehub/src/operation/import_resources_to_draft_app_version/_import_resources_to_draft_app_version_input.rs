@@ -154,7 +154,7 @@ impl ImportResourcesToDraftAppVersionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::import_resources_to_draft_app_version::ImportResourcesToDraftAppVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::import_resources_to_draft_app_version::ImportResourcesToDraftAppVersionInput {

@@ -165,7 +165,7 @@ impl CreateLinkInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateLinkInput`](crate::operation::create_link::CreateLinkInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_link::CreateLinkInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_link::CreateLinkInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_link::CreateLinkInput {
             label_template: self.label_template,
             resource_types: self.resource_types,

@@ -73,7 +73,7 @@ impl ModifyInstanceGroupsInputBuilder {
     /// Consumes the builder and constructs a [`ModifyInstanceGroupsInput`](crate::operation::modify_instance_groups::ModifyInstanceGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::modify_instance_groups::ModifyInstanceGroupsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::modify_instance_groups::ModifyInstanceGroupsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::modify_instance_groups::ModifyInstanceGroupsInput {
             cluster_id: self.cluster_id,

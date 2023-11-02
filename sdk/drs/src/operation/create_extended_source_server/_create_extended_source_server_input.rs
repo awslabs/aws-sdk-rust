@@ -81,7 +81,7 @@ impl CreateExtendedSourceServerInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_extended_source_server::CreateExtendedSourceServerInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_extended_source_server::CreateExtendedSourceServerInput {
             source_server_arn: self.source_server_arn,

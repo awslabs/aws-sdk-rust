@@ -237,7 +237,7 @@ impl CreateTapeWithBarcodeInputBuilder {
     /// Consumes the builder and constructs a [`CreateTapeWithBarcodeInput`](crate::operation::create_tape_with_barcode::CreateTapeWithBarcodeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_tape_with_barcode::CreateTapeWithBarcodeInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_tape_with_barcode::CreateTapeWithBarcodeInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_tape_with_barcode::CreateTapeWithBarcodeInput {
             gateway_arn: self.gateway_arn,

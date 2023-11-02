@@ -2,7 +2,7 @@
 pub fn ser_credential(
     object_5: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Credential,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::Credential::Oauth2Credential(inner) => {
             #[allow(unused_mut)]
@@ -16,7 +16,7 @@ pub fn ser_credential(
             crate::protocol_serde::shape_api_key_credential::ser_api_key_credential(&mut object_2, inner)?;
             object_2.finish();
         }
-        crate::types::Credential::Unknown => return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant("Credential")),
+        crate::types::Credential::Unknown => return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("Credential")),
     }
     Ok(())
 }

@@ -66,7 +66,7 @@ impl GetProtectedQueryInputBuilder {
     /// Consumes the builder and constructs a [`GetProtectedQueryInput`](crate::operation::get_protected_query::GetProtectedQueryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_protected_query::GetProtectedQueryInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_protected_query::GetProtectedQueryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_protected_query::GetProtectedQueryInput {
             membership_identifier: self.membership_identifier,
             protected_query_identifier: self.protected_query_identifier,

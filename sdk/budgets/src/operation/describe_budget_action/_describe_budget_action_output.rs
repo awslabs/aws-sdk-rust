@@ -109,17 +109,17 @@ impl DescribeBudgetActionOutputBuilder {
     /// - [`budget_name`](crate::operation::describe_budget_action::builders::DescribeBudgetActionOutputBuilder::budget_name)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_budget_action::DescribeBudgetActionOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_budget_action::DescribeBudgetActionOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_budget_action::DescribeBudgetActionOutput {
             account_id: self.account_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "account_id",
                     "account_id was not specified but it is required when building DescribeBudgetActionOutput",
                 )
             })?,
             budget_name: self.budget_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "budget_name",
                     "budget_name was not specified but it is required when building DescribeBudgetActionOutput",
                 )

@@ -147,29 +147,29 @@ impl EvaluationBuilder {
     /// - [`compliance_resource_id`](crate::types::builders::EvaluationBuilder::compliance_resource_id)
     /// - [`compliance_type`](crate::types::builders::EvaluationBuilder::compliance_type)
     /// - [`ordering_timestamp`](crate::types::builders::EvaluationBuilder::ordering_timestamp)
-    pub fn build(self) -> ::std::result::Result<crate::types::Evaluation, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Evaluation, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Evaluation {
             compliance_resource_type: self.compliance_resource_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "compliance_resource_type",
                     "compliance_resource_type was not specified but it is required when building Evaluation",
                 )
             })?,
             compliance_resource_id: self.compliance_resource_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "compliance_resource_id",
                     "compliance_resource_id was not specified but it is required when building Evaluation",
                 )
             })?,
             compliance_type: self.compliance_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "compliance_type",
                     "compliance_type was not specified but it is required when building Evaluation",
                 )
             })?,
             annotation: self.annotation,
             ordering_timestamp: self.ordering_timestamp.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "ordering_timestamp",
                     "ordering_timestamp was not specified but it is required when building Evaluation",
                 )

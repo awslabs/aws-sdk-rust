@@ -109,10 +109,10 @@ impl DestinationFlowConfigBuilder {
     /// Consumes the builder and constructs a [`DestinationFlowConfig`](crate::types::DestinationFlowConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`connector_type`](crate::types::builders::DestinationFlowConfigBuilder::connector_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::DestinationFlowConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DestinationFlowConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DestinationFlowConfig {
             connector_type: self.connector_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "connector_type",
                     "connector_type was not specified but it is required when building DestinationFlowConfig",
                 )

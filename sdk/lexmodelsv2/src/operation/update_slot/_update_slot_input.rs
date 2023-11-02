@@ -284,7 +284,7 @@ impl UpdateSlotInputBuilder {
         &self.sub_slot_setting
     }
     /// Consumes the builder and constructs a [`UpdateSlotInput`](crate::operation::update_slot::UpdateSlotInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_slot::UpdateSlotInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_slot::UpdateSlotInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_slot::UpdateSlotInput {
             slot_id: self.slot_id,
             slot_name: self.slot_name,

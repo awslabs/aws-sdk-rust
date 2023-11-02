@@ -113,7 +113,7 @@ impl ListLensReviewsInputBuilder {
     /// Consumes the builder and constructs a [`ListLensReviewsInput`](crate::operation::list_lens_reviews::ListLensReviewsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_lens_reviews::ListLensReviewsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_lens_reviews::ListLensReviewsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_lens_reviews::ListLensReviewsInput {
             workload_id: self.workload_id,
             milestone_number: self.milestone_number,

@@ -51,8 +51,10 @@ impl CreateAssociationBatchInputBuilder {
     /// Consumes the builder and constructs a [`CreateAssociationBatchInput`](crate::operation::create_association_batch::CreateAssociationBatchInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_association_batch::CreateAssociationBatchInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::create_association_batch::CreateAssociationBatchInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::create_association_batch::CreateAssociationBatchInput { entries: self.entries })
     }
 }

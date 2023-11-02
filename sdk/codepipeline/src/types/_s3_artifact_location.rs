@@ -70,16 +70,16 @@ impl S3ArtifactLocationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`bucket_name`](crate::types::builders::S3ArtifactLocationBuilder::bucket_name)
     /// - [`object_key`](crate::types::builders::S3ArtifactLocationBuilder::object_key)
-    pub fn build(self) -> ::std::result::Result<crate::types::S3ArtifactLocation, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::S3ArtifactLocation, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::S3ArtifactLocation {
             bucket_name: self.bucket_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "bucket_name",
                     "bucket_name was not specified but it is required when building S3ArtifactLocation",
                 )
             })?,
             object_key: self.object_key.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "object_key",
                     "object_key was not specified but it is required when building S3ArtifactLocation",
                 )

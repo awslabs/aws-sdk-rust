@@ -124,7 +124,7 @@ impl ModifyClusterIamRolesInputBuilder {
     /// Consumes the builder and constructs a [`ModifyClusterIamRolesInput`](crate::operation::modify_cluster_iam_roles::ModifyClusterIamRolesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::modify_cluster_iam_roles::ModifyClusterIamRolesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::modify_cluster_iam_roles::ModifyClusterIamRolesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::modify_cluster_iam_roles::ModifyClusterIamRolesInput {
             cluster_identifier: self.cluster_identifier,

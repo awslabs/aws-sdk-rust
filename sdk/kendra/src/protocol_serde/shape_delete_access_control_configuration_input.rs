@@ -2,7 +2,7 @@
 pub fn ser_delete_access_control_configuration_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_access_control_configuration::DeleteAccessControlConfigurationInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.index_id {
         object.key("IndexId").string(var_1.as_str());
     }

@@ -107,7 +107,7 @@ impl ListProxySessionsInputBuilder {
     /// Consumes the builder and constructs a [`ListProxySessionsInput`](crate::operation::list_proxy_sessions::ListProxySessionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_proxy_sessions::ListProxySessionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_proxy_sessions::ListProxySessionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_proxy_sessions::ListProxySessionsInput {
             voice_connector_id: self.voice_connector_id,
             status: self.status,

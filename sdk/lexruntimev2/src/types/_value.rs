@@ -96,11 +96,11 @@ impl ValueBuilder {
     /// Consumes the builder and constructs a [`Value`](crate::types::Value).
     /// This method will fail if any of the following fields are not set:
     /// - [`interpreted_value`](crate::types::builders::ValueBuilder::interpreted_value)
-    pub fn build(self) -> ::std::result::Result<crate::types::Value, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Value, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Value {
             original_value: self.original_value,
             interpreted_value: self.interpreted_value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "interpreted_value",
                     "interpreted_value was not specified but it is required when building Value",
                 )

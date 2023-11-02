@@ -46,10 +46,10 @@ impl PublishFindingToSnsParamsBuilder {
     /// Consumes the builder and constructs a [`PublishFindingToSnsParams`](crate::types::PublishFindingToSnsParams).
     /// This method will fail if any of the following fields are not set:
     /// - [`topic_arn`](crate::types::builders::PublishFindingToSnsParamsBuilder::topic_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::PublishFindingToSnsParams, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PublishFindingToSnsParams, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PublishFindingToSnsParams {
             topic_arn: self.topic_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "topic_arn",
                     "topic_arn was not specified but it is required when building PublishFindingToSnsParams",
                 )

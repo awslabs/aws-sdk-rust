@@ -93,7 +93,7 @@ impl ImportFirewallDomainsInputBuilder {
     /// Consumes the builder and constructs a [`ImportFirewallDomainsInput`](crate::operation::import_firewall_domains::ImportFirewallDomainsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::import_firewall_domains::ImportFirewallDomainsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::import_firewall_domains::ImportFirewallDomainsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::import_firewall_domains::ImportFirewallDomainsInput {
             firewall_domain_list_id: self.firewall_domain_list_id,

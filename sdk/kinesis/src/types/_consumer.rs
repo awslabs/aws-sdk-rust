@@ -121,28 +121,28 @@ impl ConsumerBuilder {
     /// - [`consumer_arn`](crate::types::builders::ConsumerBuilder::consumer_arn)
     /// - [`consumer_status`](crate::types::builders::ConsumerBuilder::consumer_status)
     /// - [`consumer_creation_timestamp`](crate::types::builders::ConsumerBuilder::consumer_creation_timestamp)
-    pub fn build(self) -> ::std::result::Result<crate::types::Consumer, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Consumer, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Consumer {
             consumer_name: self.consumer_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "consumer_name",
                     "consumer_name was not specified but it is required when building Consumer",
                 )
             })?,
             consumer_arn: self.consumer_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "consumer_arn",
                     "consumer_arn was not specified but it is required when building Consumer",
                 )
             })?,
             consumer_status: self.consumer_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "consumer_status",
                     "consumer_status was not specified but it is required when building Consumer",
                 )
             })?,
             consumer_creation_timestamp: self.consumer_creation_timestamp.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "consumer_creation_timestamp",
                     "consumer_creation_timestamp was not specified but it is required when building Consumer",
                 )

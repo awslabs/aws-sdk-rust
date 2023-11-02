@@ -90,7 +90,7 @@ impl ListVaultsInputBuilder {
         &self.limit
     }
     /// Consumes the builder and constructs a [`ListVaultsInput`](crate::operation::list_vaults::ListVaultsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_vaults::ListVaultsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_vaults::ListVaultsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_vaults::ListVaultsInput {
             account_id: self.account_id,
             marker: self.marker,

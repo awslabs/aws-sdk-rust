@@ -46,7 +46,7 @@ impl GetDataProtectionPolicyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_data_protection_policy::GetDataProtectionPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_data_protection_policy::GetDataProtectionPolicyInput {
             log_group_identifier: self.log_group_identifier,

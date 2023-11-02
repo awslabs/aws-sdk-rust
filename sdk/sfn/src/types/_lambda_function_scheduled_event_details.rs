@@ -141,10 +141,10 @@ impl LambdaFunctionScheduledEventDetailsBuilder {
     /// Consumes the builder and constructs a [`LambdaFunctionScheduledEventDetails`](crate::types::LambdaFunctionScheduledEventDetails).
     /// This method will fail if any of the following fields are not set:
     /// - [`resource`](crate::types::builders::LambdaFunctionScheduledEventDetailsBuilder::resource)
-    pub fn build(self) -> ::std::result::Result<crate::types::LambdaFunctionScheduledEventDetails, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::LambdaFunctionScheduledEventDetails, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::LambdaFunctionScheduledEventDetails {
             resource: self.resource.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource",
                     "resource was not specified but it is required when building LambdaFunctionScheduledEventDetails",
                 )

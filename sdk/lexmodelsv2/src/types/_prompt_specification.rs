@@ -152,16 +152,16 @@ impl PromptSpecificationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`message_groups`](crate::types::builders::PromptSpecificationBuilder::message_groups)
     /// - [`max_retries`](crate::types::builders::PromptSpecificationBuilder::max_retries)
-    pub fn build(self) -> ::std::result::Result<crate::types::PromptSpecification, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PromptSpecification, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PromptSpecification {
             message_groups: self.message_groups.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "message_groups",
                     "message_groups was not specified but it is required when building PromptSpecification",
                 )
             })?,
             max_retries: self.max_retries.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "max_retries",
                     "max_retries was not specified but it is required when building PromptSpecification",
                 )

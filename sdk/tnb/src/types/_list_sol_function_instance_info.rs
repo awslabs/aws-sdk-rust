@@ -211,35 +211,35 @@ impl ListSolFunctionInstanceInfoBuilder {
     /// - [`ns_instance_id`](crate::types::builders::ListSolFunctionInstanceInfoBuilder::ns_instance_id)
     /// - [`vnf_pkg_id`](crate::types::builders::ListSolFunctionInstanceInfoBuilder::vnf_pkg_id)
     /// - [`instantiation_state`](crate::types::builders::ListSolFunctionInstanceInfoBuilder::instantiation_state)
-    pub fn build(self) -> ::std::result::Result<crate::types::ListSolFunctionInstanceInfo, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ListSolFunctionInstanceInfo, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ListSolFunctionInstanceInfo {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building ListSolFunctionInstanceInfo",
                 )
             })?,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building ListSolFunctionInstanceInfo",
                 )
             })?,
             ns_instance_id: self.ns_instance_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "ns_instance_id",
                     "ns_instance_id was not specified but it is required when building ListSolFunctionInstanceInfo",
                 )
             })?,
             vnf_pkg_id: self.vnf_pkg_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "vnf_pkg_id",
                     "vnf_pkg_id was not specified but it is required when building ListSolFunctionInstanceInfo",
                 )
             })?,
             vnf_pkg_name: self.vnf_pkg_name,
             instantiation_state: self.instantiation_state.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "instantiation_state",
                     "instantiation_state was not specified but it is required when building ListSolFunctionInstanceInfo",
                 )

@@ -51,7 +51,7 @@ impl BatchResetAlarmInputBuilder {
     /// Consumes the builder and constructs a [`BatchResetAlarmInput`](crate::operation::batch_reset_alarm::BatchResetAlarmInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_reset_alarm::BatchResetAlarmInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::batch_reset_alarm::BatchResetAlarmInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::batch_reset_alarm::BatchResetAlarmInput {
             reset_action_requests: self.reset_action_requests,
         })

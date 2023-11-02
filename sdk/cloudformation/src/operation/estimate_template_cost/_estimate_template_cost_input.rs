@@ -104,7 +104,7 @@ impl EstimateTemplateCostInputBuilder {
     /// Consumes the builder and constructs a [`EstimateTemplateCostInput`](crate::operation::estimate_template_cost::EstimateTemplateCostInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::estimate_template_cost::EstimateTemplateCostInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::estimate_template_cost::EstimateTemplateCostInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::estimate_template_cost::EstimateTemplateCostInput {
             template_body: self.template_body,

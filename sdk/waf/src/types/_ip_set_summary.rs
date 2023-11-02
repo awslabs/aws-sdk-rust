@@ -74,16 +74,16 @@ impl IpSetSummaryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`ip_set_id`](crate::types::builders::IpSetSummaryBuilder::ip_set_id)
     /// - [`name`](crate::types::builders::IpSetSummaryBuilder::name)
-    pub fn build(self) -> ::std::result::Result<crate::types::IpSetSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::IpSetSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::IpSetSummary {
             ip_set_id: self.ip_set_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "ip_set_id",
                     "ip_set_id was not specified but it is required when building IpSetSummary",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building IpSetSummary",
                 )

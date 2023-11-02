@@ -95,22 +95,22 @@ impl BatchGetAssetPropertyValueHistoryErrorEntryBuilder {
     /// - [`entry_id`](crate::types::builders::BatchGetAssetPropertyValueHistoryErrorEntryBuilder::entry_id)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::BatchGetAssetPropertyValueHistoryErrorEntry, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::BatchGetAssetPropertyValueHistoryErrorEntry, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::BatchGetAssetPropertyValueHistoryErrorEntry {
             error_code: self.error_code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "error_code",
                     "error_code was not specified but it is required when building BatchGetAssetPropertyValueHistoryErrorEntry",
                 )
             })?,
             error_message: self.error_message.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "error_message",
                     "error_message was not specified but it is required when building BatchGetAssetPropertyValueHistoryErrorEntry",
                 )
             })?,
             entry_id: self.entry_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "entry_id",
                     "entry_id was not specified but it is required when building BatchGetAssetPropertyValueHistoryErrorEntry",
                 )

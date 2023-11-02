@@ -86,7 +86,7 @@ impl GetCanaryRunsInputBuilder {
     /// Consumes the builder and constructs a [`GetCanaryRunsInput`](crate::operation::get_canary_runs::GetCanaryRunsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_canary_runs::GetCanaryRunsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_canary_runs::GetCanaryRunsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_canary_runs::GetCanaryRunsInput {
             name: self.name,
             next_token: self.next_token,

@@ -45,7 +45,7 @@ impl DeleteReservationInputBuilder {
     /// Consumes the builder and constructs a [`DeleteReservationInput`](crate::operation::delete_reservation::DeleteReservationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_reservation::DeleteReservationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_reservation::DeleteReservationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_reservation::DeleteReservationInput {
             reservation_id: self.reservation_id,
         })

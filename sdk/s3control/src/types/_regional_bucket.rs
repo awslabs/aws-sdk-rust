@@ -133,10 +133,10 @@ impl RegionalBucketBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`bucket`](crate::types::builders::RegionalBucketBuilder::bucket)
     /// - [`creation_date`](crate::types::builders::RegionalBucketBuilder::creation_date)
-    pub fn build(self) -> ::std::result::Result<crate::types::RegionalBucket, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RegionalBucket, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RegionalBucket {
             bucket: self.bucket.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "bucket",
                     "bucket was not specified but it is required when building RegionalBucket",
                 )
@@ -144,7 +144,7 @@ impl RegionalBucketBuilder {
             bucket_arn: self.bucket_arn,
             public_access_block_enabled: self.public_access_block_enabled.unwrap_or_default(),
             creation_date: self.creation_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_date",
                     "creation_date was not specified but it is required when building RegionalBucket",
                 )

@@ -71,7 +71,9 @@ impl PutInventoryInputBuilder {
         &self.items
     }
     /// Consumes the builder and constructs a [`PutInventoryInput`](crate::operation::put_inventory::PutInventoryInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_inventory::PutInventoryInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::put_inventory::PutInventoryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_inventory::PutInventoryInput {
             instance_id: self.instance_id,
             items: self.items,

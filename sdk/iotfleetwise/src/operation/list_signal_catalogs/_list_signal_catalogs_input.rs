@@ -69,7 +69,8 @@ impl ListSignalCatalogsInputBuilder {
     /// Consumes the builder and constructs a [`ListSignalCatalogsInput`](crate::operation::list_signal_catalogs::ListSignalCatalogsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_signal_catalogs::ListSignalCatalogsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_signal_catalogs::ListSignalCatalogsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::list_signal_catalogs::ListSignalCatalogsInput {
             next_token: self.next_token,
             max_results: self.max_results,

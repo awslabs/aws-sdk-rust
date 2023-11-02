@@ -2,7 +2,7 @@
 pub fn ser_invoked_by(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::InvokedBy,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("StandardMessages").string(input.standard_messages.as_str());
     }

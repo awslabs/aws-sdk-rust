@@ -107,7 +107,7 @@ impl SplitShardInputBuilder {
         &self.stream_arn
     }
     /// Consumes the builder and constructs a [`SplitShardInput`](crate::operation::split_shard::SplitShardInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::split_shard::SplitShardInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::split_shard::SplitShardInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::split_shard::SplitShardInput {
             stream_name: self.stream_name,
             shard_to_split: self.shard_to_split,

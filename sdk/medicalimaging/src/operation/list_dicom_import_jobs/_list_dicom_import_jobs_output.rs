@@ -89,11 +89,11 @@ impl ListDicomImportJobsOutputBuilder {
     /// - [`job_summaries`](crate::operation::list_dicom_import_jobs::builders::ListDicomImportJobsOutputBuilder::job_summaries)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_dicom_import_jobs::ListDicomImportJobsOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_dicom_import_jobs::ListDicomImportJobsOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_dicom_import_jobs::ListDicomImportJobsOutput {
             job_summaries: self.job_summaries.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "job_summaries",
                     "job_summaries was not specified but it is required when building ListDicomImportJobsOutput",
                 )

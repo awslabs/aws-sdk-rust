@@ -77,7 +77,7 @@ impl CreateGlobalNetworkInputBuilder {
     /// Consumes the builder and constructs a [`CreateGlobalNetworkInput`](crate::operation::create_global_network::CreateGlobalNetworkInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_global_network::CreateGlobalNetworkInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_global_network::CreateGlobalNetworkInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_global_network::CreateGlobalNetworkInput {
             description: self.description,

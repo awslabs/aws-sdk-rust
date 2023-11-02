@@ -88,7 +88,7 @@ impl StartLifecyclePolicyPreviewInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_lifecycle_policy_preview::StartLifecyclePolicyPreviewInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_lifecycle_policy_preview::StartLifecyclePolicyPreviewInput {
             registry_id: self.registry_id,

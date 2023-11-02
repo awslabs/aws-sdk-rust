@@ -131,7 +131,7 @@ impl PutInsightRuleInputBuilder {
     /// Consumes the builder and constructs a [`PutInsightRuleInput`](crate::operation::put_insight_rule::PutInsightRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_insight_rule::PutInsightRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_insight_rule::PutInsightRuleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_insight_rule::PutInsightRuleInput {
             rule_name: self.rule_name,
             rule_state: self.rule_state,

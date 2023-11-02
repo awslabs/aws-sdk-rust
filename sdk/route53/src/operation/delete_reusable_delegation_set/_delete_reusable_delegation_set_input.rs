@@ -47,7 +47,7 @@ impl DeleteReusableDelegationSetInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_reusable_delegation_set::DeleteReusableDelegationSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_reusable_delegation_set::DeleteReusableDelegationSetInput { id: self.id })
     }

@@ -48,7 +48,7 @@ impl RejectInboundCrossClusterSearchConnectionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reject_inbound_cross_cluster_search_connection::RejectInboundCrossClusterSearchConnectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::reject_inbound_cross_cluster_search_connection::RejectInboundCrossClusterSearchConnectionInput {

@@ -52,7 +52,7 @@ impl BatchGetDeploymentsInputBuilder {
     /// Consumes the builder and constructs a [`BatchGetDeploymentsInput`](crate::operation::batch_get_deployments::BatchGetDeploymentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_get_deployments::BatchGetDeploymentsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::batch_get_deployments::BatchGetDeploymentsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::batch_get_deployments::BatchGetDeploymentsInput {
             deployment_ids: self.deployment_ids,

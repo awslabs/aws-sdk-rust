@@ -2,7 +2,7 @@
 pub fn ser_modify_cluster_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::modify_cluster::ModifyClusterInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.backup_retention_policy {
         #[allow(unused_mut)]
         let mut object_2 = object.key("BackupRetentionPolicy").start_object();

@@ -86,7 +86,7 @@ impl ListDocumentVersionsInputBuilder {
     /// Consumes the builder and constructs a [`ListDocumentVersionsInput`](crate::operation::list_document_versions::ListDocumentVersionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_document_versions::ListDocumentVersionsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_document_versions::ListDocumentVersionsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_document_versions::ListDocumentVersionsInput {
             name: self.name,

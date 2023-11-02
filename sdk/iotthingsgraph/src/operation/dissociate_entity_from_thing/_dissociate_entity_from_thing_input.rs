@@ -68,7 +68,7 @@ impl DissociateEntityFromThingInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::dissociate_entity_from_thing::DissociateEntityFromThingInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::dissociate_entity_from_thing::DissociateEntityFromThingInput {
             thing_name: self.thing_name,

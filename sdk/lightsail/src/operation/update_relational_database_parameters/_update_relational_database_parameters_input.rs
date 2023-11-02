@@ -75,7 +75,7 @@ impl UpdateRelationalDatabaseParametersInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_relational_database_parameters::UpdateRelationalDatabaseParametersInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::update_relational_database_parameters::UpdateRelationalDatabaseParametersInput {

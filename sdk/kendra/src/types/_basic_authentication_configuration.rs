@@ -108,22 +108,22 @@ impl BasicAuthenticationConfigurationBuilder {
     /// - [`host`](crate::types::builders::BasicAuthenticationConfigurationBuilder::host)
     /// - [`port`](crate::types::builders::BasicAuthenticationConfigurationBuilder::port)
     /// - [`credentials`](crate::types::builders::BasicAuthenticationConfigurationBuilder::credentials)
-    pub fn build(self) -> ::std::result::Result<crate::types::BasicAuthenticationConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::BasicAuthenticationConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::BasicAuthenticationConfiguration {
             host: self.host.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "host",
                     "host was not specified but it is required when building BasicAuthenticationConfiguration",
                 )
             })?,
             port: self.port.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "port",
                     "port was not specified but it is required when building BasicAuthenticationConfiguration",
                 )
             })?,
             credentials: self.credentials.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "credentials",
                     "credentials was not specified but it is required when building BasicAuthenticationConfiguration",
                 )

@@ -95,7 +95,7 @@ impl GetUtterancesViewInputBuilder {
     /// Consumes the builder and constructs a [`GetUtterancesViewInput`](crate::operation::get_utterances_view::GetUtterancesViewInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_utterances_view::GetUtterancesViewInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_utterances_view::GetUtterancesViewInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_utterances_view::GetUtterancesViewInput {
             bot_name: self.bot_name,
             bot_versions: self.bot_versions,

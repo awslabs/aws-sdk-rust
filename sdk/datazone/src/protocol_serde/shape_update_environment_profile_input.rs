@@ -2,7 +2,7 @@
 pub fn ser_update_environment_profile_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_environment_profile::UpdateEnvironmentProfileInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.aws_account_id {
         object.key("awsAccountId").string(var_1.as_str());
     }

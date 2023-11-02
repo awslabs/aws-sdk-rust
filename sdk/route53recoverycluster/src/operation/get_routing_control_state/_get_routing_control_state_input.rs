@@ -46,7 +46,7 @@ impl GetRoutingControlStateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_routing_control_state::GetRoutingControlStateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_routing_control_state::GetRoutingControlStateInput {
             routing_control_arn: self.routing_control_arn,

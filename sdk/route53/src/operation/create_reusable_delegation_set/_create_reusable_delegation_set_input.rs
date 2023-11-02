@@ -67,7 +67,7 @@ impl CreateReusableDelegationSetInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_reusable_delegation_set::CreateReusableDelegationSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_reusable_delegation_set::CreateReusableDelegationSetInput {
             caller_reference: self.caller_reference,

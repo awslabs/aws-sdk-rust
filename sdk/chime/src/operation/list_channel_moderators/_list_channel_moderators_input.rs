@@ -117,7 +117,7 @@ impl ListChannelModeratorsInputBuilder {
     /// Consumes the builder and constructs a [`ListChannelModeratorsInput`](crate::operation::list_channel_moderators::ListChannelModeratorsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_channel_moderators::ListChannelModeratorsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_channel_moderators::ListChannelModeratorsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_channel_moderators::ListChannelModeratorsInput {
             channel_arn: self.channel_arn,

@@ -131,7 +131,7 @@ impl SelectAggregateResourceConfigInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::select_aggregate_resource_config::SelectAggregateResourceConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::select_aggregate_resource_config::SelectAggregateResourceConfigInput {
             expression: self.expression,

@@ -68,16 +68,16 @@ impl LteLocalIdBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`pci`](crate::types::builders::LteLocalIdBuilder::pci)
     /// - [`earfcn`](crate::types::builders::LteLocalIdBuilder::earfcn)
-    pub fn build(self) -> ::std::result::Result<crate::types::LteLocalId, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::LteLocalId, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::LteLocalId {
             pci: self.pci.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "pci",
                     "pci was not specified but it is required when building LteLocalId",
                 )
             })?,
             earfcn: self.earfcn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "earfcn",
                     "earfcn was not specified but it is required when building LteLocalId",
                 )

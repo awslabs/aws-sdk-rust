@@ -108,7 +108,7 @@ impl ListObjectParentPathsInputBuilder {
     /// Consumes the builder and constructs a [`ListObjectParentPathsInput`](crate::operation::list_object_parent_paths::ListObjectParentPathsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_object_parent_paths::ListObjectParentPathsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_object_parent_paths::ListObjectParentPathsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_object_parent_paths::ListObjectParentPathsInput {
             directory_arn: self.directory_arn,

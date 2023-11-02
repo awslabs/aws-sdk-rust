@@ -77,11 +77,11 @@ impl CopyActionBuilder {
     /// Consumes the builder and constructs a [`CopyAction`](crate::types::CopyAction).
     /// This method will fail if any of the following fields are not set:
     /// - [`destination_backup_vault_arn`](crate::types::builders::CopyActionBuilder::destination_backup_vault_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::CopyAction, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CopyAction, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CopyAction {
             lifecycle: self.lifecycle,
             destination_backup_vault_arn: self.destination_backup_vault_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "destination_backup_vault_arn",
                     "destination_backup_vault_arn was not specified but it is required when building CopyAction",
                 )

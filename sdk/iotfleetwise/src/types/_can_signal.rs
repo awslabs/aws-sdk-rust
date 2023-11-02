@@ -204,20 +204,20 @@ impl CanSignalBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`offset`](crate::types::builders::CanSignalBuilder::offset)
     /// - [`factor`](crate::types::builders::CanSignalBuilder::factor)
-    pub fn build(self) -> ::std::result::Result<crate::types::CanSignal, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CanSignal, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CanSignal {
             message_id: self.message_id.unwrap_or_default(),
             is_big_endian: self.is_big_endian.unwrap_or_default(),
             is_signed: self.is_signed.unwrap_or_default(),
             start_bit: self.start_bit.unwrap_or_default(),
             offset: self.offset.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "offset",
                     "offset was not specified but it is required when building CanSignal",
                 )
             })?,
             factor: self.factor.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "factor",
                     "factor was not specified but it is required when building CanSignal",
                 )

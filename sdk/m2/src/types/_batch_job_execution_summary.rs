@@ -242,16 +242,16 @@ impl BatchJobExecutionSummaryBuilder {
     /// - [`application_id`](crate::types::builders::BatchJobExecutionSummaryBuilder::application_id)
     /// - [`status`](crate::types::builders::BatchJobExecutionSummaryBuilder::status)
     /// - [`start_time`](crate::types::builders::BatchJobExecutionSummaryBuilder::start_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::BatchJobExecutionSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::BatchJobExecutionSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::BatchJobExecutionSummary {
             execution_id: self.execution_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "execution_id",
                     "execution_id was not specified but it is required when building BatchJobExecutionSummary",
                 )
             })?,
             application_id: self.application_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "application_id",
                     "application_id was not specified but it is required when building BatchJobExecutionSummary",
                 )
@@ -260,13 +260,13 @@ impl BatchJobExecutionSummaryBuilder {
             job_name: self.job_name,
             job_type: self.job_type,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building BatchJobExecutionSummary",
                 )
             })?,
             start_time: self.start_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "start_time",
                     "start_time was not specified but it is required when building BatchJobExecutionSummary",
                 )

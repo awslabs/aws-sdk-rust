@@ -2,7 +2,7 @@
 pub fn ser_mutation_action_set_state_parameter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MutationActionSetStateParameter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("componentName").string(input.component_name.as_str());
     }

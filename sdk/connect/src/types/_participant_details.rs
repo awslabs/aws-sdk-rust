@@ -46,10 +46,10 @@ impl ParticipantDetailsBuilder {
     /// Consumes the builder and constructs a [`ParticipantDetails`](crate::types::ParticipantDetails).
     /// This method will fail if any of the following fields are not set:
     /// - [`display_name`](crate::types::builders::ParticipantDetailsBuilder::display_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::ParticipantDetails, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ParticipantDetails, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ParticipantDetails {
             display_name: self.display_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "display_name",
                     "display_name was not specified but it is required when building ParticipantDetails",
                 )

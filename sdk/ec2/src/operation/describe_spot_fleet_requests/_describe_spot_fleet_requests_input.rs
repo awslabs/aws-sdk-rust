@@ -117,7 +117,7 @@ impl DescribeSpotFleetRequestsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_spot_fleet_requests::DescribeSpotFleetRequestsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_spot_fleet_requests::DescribeSpotFleetRequestsInput {
             dry_run: self.dry_run,

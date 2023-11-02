@@ -118,28 +118,28 @@ impl DynamicCardVerificationCodeBuilder {
     /// - [`pan_sequence_number`](crate::types::builders::DynamicCardVerificationCodeBuilder::pan_sequence_number)
     /// - [`application_transaction_counter`](crate::types::builders::DynamicCardVerificationCodeBuilder::application_transaction_counter)
     /// - [`track_data`](crate::types::builders::DynamicCardVerificationCodeBuilder::track_data)
-    pub fn build(self) -> ::std::result::Result<crate::types::DynamicCardVerificationCode, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DynamicCardVerificationCode, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DynamicCardVerificationCode {
             unpredictable_number: self.unpredictable_number.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "unpredictable_number",
                     "unpredictable_number was not specified but it is required when building DynamicCardVerificationCode",
                 )
             })?,
             pan_sequence_number: self.pan_sequence_number.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "pan_sequence_number",
                     "pan_sequence_number was not specified but it is required when building DynamicCardVerificationCode",
                 )
             })?,
             application_transaction_counter: self.application_transaction_counter.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "application_transaction_counter",
                     "application_transaction_counter was not specified but it is required when building DynamicCardVerificationCode",
                 )
             })?,
             track_data: self.track_data.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "track_data",
                     "track_data was not specified but it is required when building DynamicCardVerificationCode",
                 )

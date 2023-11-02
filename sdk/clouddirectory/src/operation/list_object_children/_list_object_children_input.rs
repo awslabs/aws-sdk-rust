@@ -129,7 +129,8 @@ impl ListObjectChildrenInputBuilder {
     /// Consumes the builder and constructs a [`ListObjectChildrenInput`](crate::operation::list_object_children::ListObjectChildrenInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_object_children::ListObjectChildrenInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_object_children::ListObjectChildrenInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::list_object_children::ListObjectChildrenInput {
             directory_arn: self.directory_arn,
             object_reference: self.object_reference,

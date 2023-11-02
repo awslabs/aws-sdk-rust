@@ -95,10 +95,10 @@ impl EnableOutputBuilder {
     /// Consumes the builder and constructs a [`EnableOutput`](crate::operation::enable::EnableOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`accounts`](crate::operation::enable::builders::EnableOutputBuilder::accounts)
-    pub fn build(self) -> ::std::result::Result<crate::operation::enable::EnableOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::enable::EnableOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::enable::EnableOutput {
             accounts: self.accounts.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "accounts",
                     "accounts was not specified but it is required when building EnableOutput",
                 )

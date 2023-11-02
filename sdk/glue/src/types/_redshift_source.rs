@@ -136,22 +136,22 @@ impl RedshiftSourceBuilder {
     /// - [`name`](crate::types::builders::RedshiftSourceBuilder::name)
     /// - [`database`](crate::types::builders::RedshiftSourceBuilder::database)
     /// - [`table`](crate::types::builders::RedshiftSourceBuilder::table)
-    pub fn build(self) -> ::std::result::Result<crate::types::RedshiftSource, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RedshiftSource, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RedshiftSource {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building RedshiftSource",
                 )
             })?,
             database: self.database.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "database",
                     "database was not specified but it is required when building RedshiftSource",
                 )
             })?,
             table: self.table.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "table",
                     "table was not specified but it is required when building RedshiftSource",
                 )

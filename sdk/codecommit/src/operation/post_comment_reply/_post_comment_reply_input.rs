@@ -87,7 +87,7 @@ impl PostCommentReplyInputBuilder {
     /// Consumes the builder and constructs a [`PostCommentReplyInput`](crate::operation::post_comment_reply::PostCommentReplyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::post_comment_reply::PostCommentReplyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::post_comment_reply::PostCommentReplyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::post_comment_reply::PostCommentReplyInput {
             in_reply_to: self.in_reply_to,
             client_request_token: self.client_request_token,

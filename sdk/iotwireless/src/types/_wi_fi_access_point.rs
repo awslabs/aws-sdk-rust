@@ -69,16 +69,16 @@ impl WiFiAccessPointBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`mac_address`](crate::types::builders::WiFiAccessPointBuilder::mac_address)
     /// - [`rss`](crate::types::builders::WiFiAccessPointBuilder::rss)
-    pub fn build(self) -> ::std::result::Result<crate::types::WiFiAccessPoint, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::WiFiAccessPoint, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::WiFiAccessPoint {
             mac_address: self.mac_address.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "mac_address",
                     "mac_address was not specified but it is required when building WiFiAccessPoint",
                 )
             })?,
             rss: self.rss.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "rss",
                     "rss was not specified but it is required when building WiFiAccessPoint",
                 )

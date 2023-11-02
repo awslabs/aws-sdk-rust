@@ -219,17 +219,17 @@ impl DescribeRuleGroupMetadataOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_rule_group_metadata::DescribeRuleGroupMetadataOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_rule_group_metadata::DescribeRuleGroupMetadataOutput {
             rule_group_arn: self.rule_group_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "rule_group_arn",
                     "rule_group_arn was not specified but it is required when building DescribeRuleGroupMetadataOutput",
                 )
             })?,
             rule_group_name: self.rule_group_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "rule_group_name",
                     "rule_group_name was not specified but it is required when building DescribeRuleGroupMetadataOutput",
                 )

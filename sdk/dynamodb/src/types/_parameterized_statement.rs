@@ -104,10 +104,10 @@ impl ParameterizedStatementBuilder {
     /// Consumes the builder and constructs a [`ParameterizedStatement`](crate::types::ParameterizedStatement).
     /// This method will fail if any of the following fields are not set:
     /// - [`statement`](crate::types::builders::ParameterizedStatementBuilder::statement)
-    pub fn build(self) -> ::std::result::Result<crate::types::ParameterizedStatement, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ParameterizedStatement, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ParameterizedStatement {
             statement: self.statement.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "statement",
                     "statement was not specified but it is required when building ParameterizedStatement",
                 )

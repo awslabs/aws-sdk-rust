@@ -98,22 +98,22 @@ impl ComponentRecommendationBuilder {
     /// - [`app_component_name`](crate::types::builders::ComponentRecommendationBuilder::app_component_name)
     /// - [`recommendation_status`](crate::types::builders::ComponentRecommendationBuilder::recommendation_status)
     /// - [`config_recommendations`](crate::types::builders::ComponentRecommendationBuilder::config_recommendations)
-    pub fn build(self) -> ::std::result::Result<crate::types::ComponentRecommendation, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ComponentRecommendation, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ComponentRecommendation {
             app_component_name: self.app_component_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "app_component_name",
                     "app_component_name was not specified but it is required when building ComponentRecommendation",
                 )
             })?,
             recommendation_status: self.recommendation_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "recommendation_status",
                     "recommendation_status was not specified but it is required when building ComponentRecommendation",
                 )
             })?,
             config_recommendations: self.config_recommendations.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "config_recommendations",
                     "config_recommendations was not specified but it is required when building ComponentRecommendation",
                 )

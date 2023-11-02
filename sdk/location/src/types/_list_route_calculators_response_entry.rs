@@ -226,35 +226,35 @@ impl ListRouteCalculatorsResponseEntryBuilder {
     /// - [`data_source`](crate::types::builders::ListRouteCalculatorsResponseEntryBuilder::data_source)
     /// - [`create_time`](crate::types::builders::ListRouteCalculatorsResponseEntryBuilder::create_time)
     /// - [`update_time`](crate::types::builders::ListRouteCalculatorsResponseEntryBuilder::update_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::ListRouteCalculatorsResponseEntry, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ListRouteCalculatorsResponseEntry, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ListRouteCalculatorsResponseEntry {
             calculator_name: self.calculator_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "calculator_name",
                     "calculator_name was not specified but it is required when building ListRouteCalculatorsResponseEntry",
                 )
             })?,
             description: self.description.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "description",
                     "description was not specified but it is required when building ListRouteCalculatorsResponseEntry",
                 )
             })?,
             data_source: self.data_source.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_source",
                     "data_source was not specified but it is required when building ListRouteCalculatorsResponseEntry",
                 )
             })?,
             pricing_plan: self.pricing_plan,
             create_time: self.create_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "create_time",
                     "create_time was not specified but it is required when building ListRouteCalculatorsResponseEntry",
                 )
             })?,
             update_time: self.update_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "update_time",
                     "update_time was not specified but it is required when building ListRouteCalculatorsResponseEntry",
                 )

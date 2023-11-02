@@ -158,8 +158,8 @@ pub fn de_enable_all_features_http_response(
 
 pub fn ser_enable_all_features_input(
     _input: &crate::operation::enable_all_features::EnableAllFeaturesInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
-    Ok(::aws_smithy_http::body::SdkBody::from("{}"))
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+    Ok(::aws_smithy_types::body::SdkBody::from("{}"))
 }
 
 pub(crate) fn de_enable_all_features(

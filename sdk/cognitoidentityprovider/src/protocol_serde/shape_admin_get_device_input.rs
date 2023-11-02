@@ -2,7 +2,7 @@
 pub fn ser_admin_get_device_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::admin_get_device::AdminGetDeviceInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.device_key {
         object.key("DeviceKey").string(var_1.as_str());
     }

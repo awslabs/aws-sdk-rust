@@ -312,7 +312,7 @@ impl StartRestoreJobInputBuilder {
     /// Consumes the builder and constructs a [`StartRestoreJobInput`](crate::operation::start_restore_job::StartRestoreJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_restore_job::StartRestoreJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_restore_job::StartRestoreJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_restore_job::StartRestoreJobInput {
             recovery_point_arn: self.recovery_point_arn,
             metadata: self.metadata,

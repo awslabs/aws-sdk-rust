@@ -318,16 +318,16 @@ impl EffectiveDeploymentBuilder {
     /// - [`core_device_execution_status`](crate::types::builders::EffectiveDeploymentBuilder::core_device_execution_status)
     /// - [`creation_timestamp`](crate::types::builders::EffectiveDeploymentBuilder::creation_timestamp)
     /// - [`modified_timestamp`](crate::types::builders::EffectiveDeploymentBuilder::modified_timestamp)
-    pub fn build(self) -> ::std::result::Result<crate::types::EffectiveDeployment, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::EffectiveDeployment, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EffectiveDeployment {
             deployment_id: self.deployment_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "deployment_id",
                     "deployment_id was not specified but it is required when building EffectiveDeployment",
                 )
             })?,
             deployment_name: self.deployment_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "deployment_name",
                     "deployment_name was not specified but it is required when building EffectiveDeployment",
                 )
@@ -336,26 +336,26 @@ impl EffectiveDeploymentBuilder {
             iot_job_arn: self.iot_job_arn,
             description: self.description,
             target_arn: self.target_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "target_arn",
                     "target_arn was not specified but it is required when building EffectiveDeployment",
                 )
             })?,
             core_device_execution_status: self.core_device_execution_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "core_device_execution_status",
                     "core_device_execution_status was not specified but it is required when building EffectiveDeployment",
                 )
             })?,
             reason: self.reason,
             creation_timestamp: self.creation_timestamp.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_timestamp",
                     "creation_timestamp was not specified but it is required when building EffectiveDeployment",
                 )
             })?,
             modified_timestamp: self.modified_timestamp.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "modified_timestamp",
                     "modified_timestamp was not specified but it is required when building EffectiveDeployment",
                 )

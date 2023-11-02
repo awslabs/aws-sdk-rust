@@ -65,7 +65,7 @@ impl EnableVolumeIoInputBuilder {
     /// Consumes the builder and constructs a [`EnableVolumeIoInput`](crate::operation::enable_volume_io::EnableVolumeIoInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::enable_volume_io::EnableVolumeIoInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::enable_volume_io::EnableVolumeIoInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::enable_volume_io::EnableVolumeIoInput {
             dry_run: self.dry_run,
             volume_id: self.volume_id,

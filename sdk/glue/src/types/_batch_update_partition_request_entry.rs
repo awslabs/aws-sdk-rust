@@ -73,10 +73,10 @@ impl BatchUpdatePartitionRequestEntryBuilder {
     /// Consumes the builder and constructs a [`BatchUpdatePartitionRequestEntry`](crate::types::BatchUpdatePartitionRequestEntry).
     /// This method will fail if any of the following fields are not set:
     /// - [`partition_value_list`](crate::types::builders::BatchUpdatePartitionRequestEntryBuilder::partition_value_list)
-    pub fn build(self) -> ::std::result::Result<crate::types::BatchUpdatePartitionRequestEntry, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::BatchUpdatePartitionRequestEntry, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::BatchUpdatePartitionRequestEntry {
             partition_value_list: self.partition_value_list.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "partition_value_list",
                     "partition_value_list was not specified but it is required when building BatchUpdatePartitionRequestEntry",
                 )

@@ -46,10 +46,10 @@ impl GeospatialHeatmapDataColorBuilder {
     /// Consumes the builder and constructs a [`GeospatialHeatmapDataColor`](crate::types::GeospatialHeatmapDataColor).
     /// This method will fail if any of the following fields are not set:
     /// - [`color`](crate::types::builders::GeospatialHeatmapDataColorBuilder::color)
-    pub fn build(self) -> ::std::result::Result<crate::types::GeospatialHeatmapDataColor, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::GeospatialHeatmapDataColor, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::GeospatialHeatmapDataColor {
             color: self.color.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "color",
                     "color was not specified but it is required when building GeospatialHeatmapDataColor",
                 )

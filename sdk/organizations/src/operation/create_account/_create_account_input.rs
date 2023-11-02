@@ -258,7 +258,7 @@ impl CreateAccountInputBuilder {
     /// Consumes the builder and constructs a [`CreateAccountInput`](crate::operation::create_account::CreateAccountInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_account::CreateAccountInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_account::CreateAccountInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_account::CreateAccountInput {
             email: self.email,
             account_name: self.account_name,

@@ -88,7 +88,7 @@ impl ListAssociatedApprovalRuleTemplatesForRepositoryInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_associated_approval_rule_templates_for_repository::ListAssociatedApprovalRuleTemplatesForRepositoryInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_associated_approval_rule_templates_for_repository::ListAssociatedApprovalRuleTemplatesForRepositoryInput {

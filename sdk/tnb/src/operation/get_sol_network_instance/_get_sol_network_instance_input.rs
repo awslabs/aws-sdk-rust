@@ -44,7 +44,7 @@ impl GetSolNetworkInstanceInputBuilder {
     /// Consumes the builder and constructs a [`GetSolNetworkInstanceInput`](crate::operation::get_sol_network_instance::GetSolNetworkInstanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_sol_network_instance::GetSolNetworkInstanceInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_sol_network_instance::GetSolNetworkInstanceInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_sol_network_instance::GetSolNetworkInstanceInput {
             ns_instance_id: self.ns_instance_id,

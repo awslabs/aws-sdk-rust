@@ -45,7 +45,7 @@ impl ResumeClusterInputBuilder {
     /// Consumes the builder and constructs a [`ResumeClusterInput`](crate::operation::resume_cluster::ResumeClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::resume_cluster::ResumeClusterInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::resume_cluster::ResumeClusterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::resume_cluster::ResumeClusterInput {
             cluster_identifier: self.cluster_identifier,
         })

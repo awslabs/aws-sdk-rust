@@ -44,7 +44,7 @@ impl DescribeAttackInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAttackInput`](crate::operation::describe_attack::DescribeAttackInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_attack::DescribeAttackInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_attack::DescribeAttackInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_attack::DescribeAttackInput { attack_id: self.attack_id })
     }
 }

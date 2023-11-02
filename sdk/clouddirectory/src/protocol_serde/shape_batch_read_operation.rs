@@ -2,7 +2,7 @@
 pub fn ser_batch_read_operation(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BatchReadOperation,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.list_object_attributes {
         #[allow(unused_mut)]
         let mut object_2 = object.key("ListObjectAttributes").start_object();

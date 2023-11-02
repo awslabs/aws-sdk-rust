@@ -73,10 +73,10 @@ impl RoutingConfigurationListItemBuilder {
     /// Consumes the builder and constructs a [`RoutingConfigurationListItem`](crate::types::RoutingConfigurationListItem).
     /// This method will fail if any of the following fields are not set:
     /// - [`state_machine_version_arn`](crate::types::builders::RoutingConfigurationListItemBuilder::state_machine_version_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::RoutingConfigurationListItem, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RoutingConfigurationListItem, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RoutingConfigurationListItem {
             state_machine_version_arn: self.state_machine_version_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "state_machine_version_arn",
                     "state_machine_version_arn was not specified but it is required when building RoutingConfigurationListItem",
                 )

@@ -66,7 +66,7 @@ impl PutExternalEvaluationInputBuilder {
     /// Consumes the builder and constructs a [`PutExternalEvaluationInput`](crate::operation::put_external_evaluation::PutExternalEvaluationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_external_evaluation::PutExternalEvaluationInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::put_external_evaluation::PutExternalEvaluationInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::put_external_evaluation::PutExternalEvaluationInput {
             config_rule_name: self.config_rule_name,

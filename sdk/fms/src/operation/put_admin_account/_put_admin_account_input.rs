@@ -65,7 +65,7 @@ impl PutAdminAccountInputBuilder {
     /// Consumes the builder and constructs a [`PutAdminAccountInput`](crate::operation::put_admin_account::PutAdminAccountInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_admin_account::PutAdminAccountInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_admin_account::PutAdminAccountInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_admin_account::PutAdminAccountInput {
             admin_account: self.admin_account,
             admin_scope: self.admin_scope,

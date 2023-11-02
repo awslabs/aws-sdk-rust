@@ -18,7 +18,7 @@ impl InitializeServiceInputBuilder {
     /// Consumes the builder and constructs a [`InitializeServiceInput`](crate::operation::initialize_service::InitializeServiceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::initialize_service::InitializeServiceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::initialize_service::InitializeServiceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::initialize_service::InitializeServiceInput {})
     }
 }

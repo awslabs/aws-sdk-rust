@@ -345,82 +345,82 @@ impl ClusterBuilder {
     /// - [`subnet_ids`](crate::types::builders::ClusterBuilder::subnet_ids)
     /// - [`preferred_maintenance_window`](crate::types::builders::ClusterBuilder::preferred_maintenance_window)
     /// - [`kms_key_id`](crate::types::builders::ClusterBuilder::kms_key_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::Cluster, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Cluster, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Cluster {
             cluster_name: self.cluster_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "cluster_name",
                     "cluster_name was not specified but it is required when building Cluster",
                 )
             })?,
             cluster_arn: self.cluster_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "cluster_arn",
                     "cluster_arn was not specified but it is required when building Cluster",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building Cluster",
                 )
             })?,
             cluster_endpoint: self.cluster_endpoint.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "cluster_endpoint",
                     "cluster_endpoint was not specified but it is required when building Cluster",
                 )
             })?,
             create_time: self.create_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "create_time",
                     "create_time was not specified but it is required when building Cluster",
                 )
             })?,
             admin_user_name: self.admin_user_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "admin_user_name",
                     "admin_user_name was not specified but it is required when building Cluster",
                 )
             })?,
             auth_type: self.auth_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "auth_type",
                     "auth_type was not specified but it is required when building Cluster",
                 )
             })?,
             shard_capacity: self.shard_capacity.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "shard_capacity",
                     "shard_capacity was not specified but it is required when building Cluster",
                 )
             })?,
             shard_count: self.shard_count.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "shard_count",
                     "shard_count was not specified but it is required when building Cluster",
                 )
             })?,
             vpc_security_group_ids: self.vpc_security_group_ids.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "vpc_security_group_ids",
                     "vpc_security_group_ids was not specified but it is required when building Cluster",
                 )
             })?,
             subnet_ids: self.subnet_ids.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "subnet_ids",
                     "subnet_ids was not specified but it is required when building Cluster",
                 )
             })?,
             preferred_maintenance_window: self.preferred_maintenance_window.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "preferred_maintenance_window",
                     "preferred_maintenance_window was not specified but it is required when building Cluster",
                 )
             })?,
             kms_key_id: self.kms_key_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "kms_key_id",
                     "kms_key_id was not specified but it is required when building Cluster",
                 )

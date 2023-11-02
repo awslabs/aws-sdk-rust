@@ -49,7 +49,7 @@ where
 pub fn ser_iot_site_wise_action(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IotSiteWiseAction,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("putAssetPropertyValueEntries").start_array();
         for item_2 in &input.put_asset_property_value_entries {

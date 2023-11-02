@@ -2,7 +2,7 @@
 pub fn ser_create_attendee_request_item(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CreateAttendeeRequestItem,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("ExternalUserId").string(input.external_user_id.as_str());
     }

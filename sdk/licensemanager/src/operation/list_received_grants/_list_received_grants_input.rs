@@ -157,7 +157,8 @@ impl ListReceivedGrantsInputBuilder {
     /// Consumes the builder and constructs a [`ListReceivedGrantsInput`](crate::operation::list_received_grants::ListReceivedGrantsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_received_grants::ListReceivedGrantsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_received_grants::ListReceivedGrantsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::list_received_grants::ListReceivedGrantsInput {
             grant_arns: self.grant_arns,
             filters: self.filters,

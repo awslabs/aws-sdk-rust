@@ -119,7 +119,7 @@ impl UpgradeReviewTemplateLensReviewInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::upgrade_review_template_lens_review::UpgradeReviewTemplateLensReviewInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::upgrade_review_template_lens_review::UpgradeReviewTemplateLensReviewInput {

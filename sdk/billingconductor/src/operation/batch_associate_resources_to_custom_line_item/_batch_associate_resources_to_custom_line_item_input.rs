@@ -97,7 +97,7 @@ impl BatchAssociateResourcesToCustomLineItemInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_associate_resources_to_custom_line_item::BatchAssociateResourcesToCustomLineItemInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::batch_associate_resources_to_custom_line_item::BatchAssociateResourcesToCustomLineItemInput {

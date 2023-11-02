@@ -149,7 +149,7 @@ impl UpdateRunGroupInputBuilder {
     /// Consumes the builder and constructs a [`UpdateRunGroupInput`](crate::operation::update_run_group::UpdateRunGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_run_group::UpdateRunGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_run_group::UpdateRunGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_run_group::UpdateRunGroupInput {
             id: self.id,
             name: self.name,

@@ -108,7 +108,7 @@ impl DescribeJobExecutionInputBuilder {
     /// Consumes the builder and constructs a [`DescribeJobExecutionInput`](crate::operation::describe_job_execution::DescribeJobExecutionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_job_execution::DescribeJobExecutionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_job_execution::DescribeJobExecutionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_job_execution::DescribeJobExecutionInput {
             job_id: self.job_id,

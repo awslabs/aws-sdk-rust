@@ -266,16 +266,16 @@ impl ActivatedRuleBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`priority`](crate::types::builders::ActivatedRuleBuilder::priority)
     /// - [`rule_id`](crate::types::builders::ActivatedRuleBuilder::rule_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::ActivatedRule, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ActivatedRule, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ActivatedRule {
             priority: self.priority.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "priority",
                     "priority was not specified but it is required when building ActivatedRule",
                 )
             })?,
             rule_id: self.rule_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "rule_id",
                     "rule_id was not specified but it is required when building ActivatedRule",
                 )

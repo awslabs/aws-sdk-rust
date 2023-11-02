@@ -141,34 +141,34 @@ impl ConnectionConfigurationBuilder {
     /// - [`database_name`](crate::types::builders::ConnectionConfigurationBuilder::database_name)
     /// - [`table_name`](crate::types::builders::ConnectionConfigurationBuilder::table_name)
     /// - [`secret_arn`](crate::types::builders::ConnectionConfigurationBuilder::secret_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::ConnectionConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ConnectionConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ConnectionConfiguration {
             database_host: self.database_host.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "database_host",
                     "database_host was not specified but it is required when building ConnectionConfiguration",
                 )
             })?,
             database_port: self.database_port.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "database_port",
                     "database_port was not specified but it is required when building ConnectionConfiguration",
                 )
             })?,
             database_name: self.database_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "database_name",
                     "database_name was not specified but it is required when building ConnectionConfiguration",
                 )
             })?,
             table_name: self.table_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "table_name",
                     "table_name was not specified but it is required when building ConnectionConfiguration",
                 )
             })?,
             secret_arn: self.secret_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "secret_arn",
                     "secret_arn was not specified but it is required when building ConnectionConfiguration",
                 )

@@ -74,7 +74,7 @@ impl ResolveComponentCandidatesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::resolve_component_candidates::ResolveComponentCandidatesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::resolve_component_candidates::ResolveComponentCandidatesInput {
             platform: self.platform,

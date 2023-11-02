@@ -2,7 +2,7 @@
 pub fn ser_analysis_definition(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AnalysisDefinition,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("DataSetIdentifierDeclarations").start_array();
         for item_2 in &input.data_set_identifier_declarations {

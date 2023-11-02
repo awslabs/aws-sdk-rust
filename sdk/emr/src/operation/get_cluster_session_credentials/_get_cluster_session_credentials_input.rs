@@ -68,7 +68,7 @@ impl GetClusterSessionCredentialsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_cluster_session_credentials::GetClusterSessionCredentialsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_cluster_session_credentials::GetClusterSessionCredentialsInput {
             cluster_id: self.cluster_id,

@@ -56,7 +56,7 @@ impl UpdateCostAllocationTagsStatusInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_cost_allocation_tags_status::UpdateCostAllocationTagsStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::update_cost_allocation_tags_status::UpdateCostAllocationTagsStatusInput {

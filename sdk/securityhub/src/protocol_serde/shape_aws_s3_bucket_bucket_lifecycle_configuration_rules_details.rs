@@ -2,7 +2,7 @@
 pub fn ser_aws_s3_bucket_bucket_lifecycle_configuration_rules_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsS3BucketBucketLifecycleConfigurationRulesDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.abort_incomplete_multipart_upload {
         #[allow(unused_mut)]
         let mut object_2 = object.key("AbortIncompleteMultipartUpload").start_object();

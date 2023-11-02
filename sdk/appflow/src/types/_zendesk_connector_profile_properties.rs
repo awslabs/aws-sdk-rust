@@ -46,10 +46,10 @@ impl ZendeskConnectorProfilePropertiesBuilder {
     /// Consumes the builder and constructs a [`ZendeskConnectorProfileProperties`](crate::types::ZendeskConnectorProfileProperties).
     /// This method will fail if any of the following fields are not set:
     /// - [`instance_url`](crate::types::builders::ZendeskConnectorProfilePropertiesBuilder::instance_url)
-    pub fn build(self) -> ::std::result::Result<crate::types::ZendeskConnectorProfileProperties, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ZendeskConnectorProfileProperties, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ZendeskConnectorProfileProperties {
             instance_url: self.instance_url.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "instance_url",
                     "instance_url was not specified but it is required when building ZendeskConnectorProfileProperties",
                 )

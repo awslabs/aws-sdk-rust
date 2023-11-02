@@ -91,8 +91,10 @@ impl ListHostedZonesByNameInputBuilder {
     /// Consumes the builder and constructs a [`ListHostedZonesByNameInput`](crate::operation::list_hosted_zones_by_name::ListHostedZonesByNameInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_hosted_zones_by_name::ListHostedZonesByNameInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::list_hosted_zones_by_name::ListHostedZonesByNameInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::list_hosted_zones_by_name::ListHostedZonesByNameInput {
             dns_name: self.dns_name,
             hosted_zone_id: self.hosted_zone_id,

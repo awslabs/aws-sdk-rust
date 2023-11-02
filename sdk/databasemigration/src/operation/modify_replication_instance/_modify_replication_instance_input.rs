@@ -351,7 +351,7 @@ impl ModifyReplicationInstanceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_replication_instance::ModifyReplicationInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::modify_replication_instance::ModifyReplicationInstanceInput {
             replication_instance_arn: self.replication_instance_arn,

@@ -94,11 +94,11 @@ impl ListWorldGenerationJobsOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_world_generation_jobs::ListWorldGenerationJobsOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_world_generation_jobs::ListWorldGenerationJobsOutput {
             world_generation_job_summaries: self.world_generation_job_summaries.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "world_generation_job_summaries",
                     "world_generation_job_summaries was not specified but it is required when building ListWorldGenerationJobsOutput",
                 )

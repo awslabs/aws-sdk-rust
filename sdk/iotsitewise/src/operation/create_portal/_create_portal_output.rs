@@ -162,29 +162,29 @@ impl CreatePortalOutputBuilder {
     /// - [`sso_application_id`](crate::operation::create_portal::builders::CreatePortalOutputBuilder::sso_application_id)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_portal::CreatePortalOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_portal::CreatePortalOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_portal::CreatePortalOutput {
             portal_id: self.portal_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "portal_id",
                     "portal_id was not specified but it is required when building CreatePortalOutput",
                 )
             })?,
             portal_arn: self.portal_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "portal_arn",
                     "portal_arn was not specified but it is required when building CreatePortalOutput",
                 )
             })?,
             portal_start_url: self.portal_start_url.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "portal_start_url",
                     "portal_start_url was not specified but it is required when building CreatePortalOutput",
                 )
             })?,
             portal_status: self.portal_status,
             sso_application_id: self.sso_application_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "sso_application_id",
                     "sso_application_id was not specified but it is required when building CreatePortalOutput",
                 )

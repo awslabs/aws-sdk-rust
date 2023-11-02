@@ -93,7 +93,7 @@ impl AttachCertificateToDistributionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::attach_certificate_to_distribution::AttachCertificateToDistributionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::attach_certificate_to_distribution::AttachCertificateToDistributionInput {

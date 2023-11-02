@@ -119,7 +119,7 @@ impl AdminListDevicesInputBuilder {
     /// Consumes the builder and constructs a [`AdminListDevicesInput`](crate::operation::admin_list_devices::AdminListDevicesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::admin_list_devices::AdminListDevicesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::admin_list_devices::AdminListDevicesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::admin_list_devices::AdminListDevicesInput {
             user_pool_id: self.user_pool_id,
             username: self.username,

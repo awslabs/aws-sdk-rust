@@ -531,19 +531,22 @@ impl WebAclBuilder {
     /// - [`name`](crate::types::builders::WebAclBuilder::name)
     /// - [`id`](crate::types::builders::WebAclBuilder::id)
     /// - [`arn`](crate::types::builders::WebAclBuilder::arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::WebAcl, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::WebAcl, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::WebAcl {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building WebAcl",
                 )
             })?,
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field("id", "id was not specified but it is required when building WebAcl")
+                ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building WebAcl")
             })?,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field("arn", "arn was not specified but it is required when building WebAcl")
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "arn",
+                    "arn was not specified but it is required when building WebAcl",
+                )
             })?,
             default_action: self.default_action,
             description: self.description,

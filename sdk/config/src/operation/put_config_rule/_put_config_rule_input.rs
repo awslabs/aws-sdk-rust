@@ -73,7 +73,7 @@ impl PutConfigRuleInputBuilder {
     /// Consumes the builder and constructs a [`PutConfigRuleInput`](crate::operation::put_config_rule::PutConfigRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_config_rule::PutConfigRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_config_rule::PutConfigRuleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_config_rule::PutConfigRuleInput {
             config_rule: self.config_rule,
             tags: self.tags,

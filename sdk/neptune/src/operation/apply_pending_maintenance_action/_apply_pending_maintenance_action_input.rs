@@ -125,7 +125,7 @@ impl ApplyPendingMaintenanceActionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::apply_pending_maintenance_action::ApplyPendingMaintenanceActionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::apply_pending_maintenance_action::ApplyPendingMaintenanceActionInput {
             resource_identifier: self.resource_identifier,

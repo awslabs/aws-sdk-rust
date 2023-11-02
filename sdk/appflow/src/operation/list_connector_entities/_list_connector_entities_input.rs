@@ -148,7 +148,7 @@ impl ListConnectorEntitiesInputBuilder {
     /// Consumes the builder and constructs a [`ListConnectorEntitiesInput`](crate::operation::list_connector_entities::ListConnectorEntitiesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_connector_entities::ListConnectorEntitiesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_connector_entities::ListConnectorEntitiesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_connector_entities::ListConnectorEntitiesInput {
             connector_profile_name: self.connector_profile_name,

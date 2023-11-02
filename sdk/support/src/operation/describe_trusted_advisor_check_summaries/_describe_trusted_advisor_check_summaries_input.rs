@@ -53,7 +53,7 @@ impl DescribeTrustedAdvisorCheckSummariesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_trusted_advisor_check_summaries::DescribeTrustedAdvisorCheckSummariesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_trusted_advisor_check_summaries::DescribeTrustedAdvisorCheckSummariesInput { check_ids: self.check_ids },

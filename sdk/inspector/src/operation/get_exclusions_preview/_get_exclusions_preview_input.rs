@@ -129,7 +129,7 @@ impl GetExclusionsPreviewInputBuilder {
     /// Consumes the builder and constructs a [`GetExclusionsPreviewInput`](crate::operation::get_exclusions_preview::GetExclusionsPreviewInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_exclusions_preview::GetExclusionsPreviewInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_exclusions_preview::GetExclusionsPreviewInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_exclusions_preview::GetExclusionsPreviewInput {
             assessment_template_arn: self.assessment_template_arn,

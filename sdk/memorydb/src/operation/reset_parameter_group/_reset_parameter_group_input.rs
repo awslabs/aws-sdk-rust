@@ -94,7 +94,7 @@ impl ResetParameterGroupInputBuilder {
     /// Consumes the builder and constructs a [`ResetParameterGroupInput`](crate::operation::reset_parameter_group::ResetParameterGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::reset_parameter_group::ResetParameterGroupInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::reset_parameter_group::ResetParameterGroupInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::reset_parameter_group::ResetParameterGroupInput {
             parameter_group_name: self.parameter_group_name,

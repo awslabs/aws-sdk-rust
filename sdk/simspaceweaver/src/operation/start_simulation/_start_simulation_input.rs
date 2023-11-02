@@ -237,7 +237,7 @@ impl StartSimulationInputBuilder {
     /// Consumes the builder and constructs a [`StartSimulationInput`](crate::operation::start_simulation::StartSimulationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_simulation::StartSimulationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_simulation::StartSimulationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_simulation::StartSimulationInput {
             client_token: self.client_token,
             name: self.name,

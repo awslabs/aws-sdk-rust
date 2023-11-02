@@ -93,22 +93,22 @@ impl TimeSeriesConditionBuilder {
     /// - [`attribute_name`](crate::types::builders::TimeSeriesConditionBuilder::attribute_name)
     /// - [`attribute_value`](crate::types::builders::TimeSeriesConditionBuilder::attribute_value)
     /// - [`condition`](crate::types::builders::TimeSeriesConditionBuilder::condition)
-    pub fn build(self) -> ::std::result::Result<crate::types::TimeSeriesCondition, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TimeSeriesCondition, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TimeSeriesCondition {
             attribute_name: self.attribute_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "attribute_name",
                     "attribute_name was not specified but it is required when building TimeSeriesCondition",
                 )
             })?,
             attribute_value: self.attribute_value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "attribute_value",
                     "attribute_value was not specified but it is required when building TimeSeriesCondition",
                 )
             })?,
             condition: self.condition.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "condition",
                     "condition was not specified but it is required when building TimeSeriesCondition",
                 )

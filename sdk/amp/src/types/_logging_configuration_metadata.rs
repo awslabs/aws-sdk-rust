@@ -138,29 +138,29 @@ impl LoggingConfigurationMetadataBuilder {
     /// - [`log_group_arn`](crate::types::builders::LoggingConfigurationMetadataBuilder::log_group_arn)
     /// - [`created_at`](crate::types::builders::LoggingConfigurationMetadataBuilder::created_at)
     /// - [`modified_at`](crate::types::builders::LoggingConfigurationMetadataBuilder::modified_at)
-    pub fn build(self) -> ::std::result::Result<crate::types::LoggingConfigurationMetadata, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::LoggingConfigurationMetadata, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::LoggingConfigurationMetadata {
             status: self.status,
             workspace: self.workspace.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "workspace",
                     "workspace was not specified but it is required when building LoggingConfigurationMetadata",
                 )
             })?,
             log_group_arn: self.log_group_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "log_group_arn",
                     "log_group_arn was not specified but it is required when building LoggingConfigurationMetadata",
                 )
             })?,
             created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
                     "created_at was not specified but it is required when building LoggingConfigurationMetadata",
                 )
             })?,
             modified_at: self.modified_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "modified_at",
                     "modified_at was not specified but it is required when building LoggingConfigurationMetadata",
                 )

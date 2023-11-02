@@ -99,17 +99,17 @@ impl ProductInformationFilterBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`product_information_filter_name`](crate::types::builders::ProductInformationFilterBuilder::product_information_filter_name)
     /// - [`product_information_filter_comparator`](crate::types::builders::ProductInformationFilterBuilder::product_information_filter_comparator)
-    pub fn build(self) -> ::std::result::Result<crate::types::ProductInformationFilter, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ProductInformationFilter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ProductInformationFilter {
             product_information_filter_name: self.product_information_filter_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "product_information_filter_name",
                     "product_information_filter_name was not specified but it is required when building ProductInformationFilter",
                 )
             })?,
             product_information_filter_value: self.product_information_filter_value,
             product_information_filter_comparator: self.product_information_filter_comparator.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "product_information_filter_comparator",
                     "product_information_filter_comparator was not specified but it is required when building ProductInformationFilter",
                 )

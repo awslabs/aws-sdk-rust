@@ -42,7 +42,7 @@ impl DeleteShareInputBuilder {
         &self.share_id
     }
     /// Consumes the builder and constructs a [`DeleteShareInput`](crate::operation::delete_share::DeleteShareInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_share::DeleteShareInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_share::DeleteShareInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_share::DeleteShareInput { share_id: self.share_id })
     }
 }

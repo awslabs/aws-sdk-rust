@@ -115,7 +115,7 @@ impl UpdateArchiveRuleInputBuilder {
     /// Consumes the builder and constructs a [`UpdateArchiveRuleInput`](crate::operation::update_archive_rule::UpdateArchiveRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_archive_rule::UpdateArchiveRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_archive_rule::UpdateArchiveRuleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_archive_rule::UpdateArchiveRuleInput {
             analyzer_name: self.analyzer_name,
             rule_name: self.rule_name,

@@ -296,34 +296,34 @@ impl ListSolNetworkPackageInfoBuilder {
     /// - [`nsd_onboarding_state`](crate::types::builders::ListSolNetworkPackageInfoBuilder::nsd_onboarding_state)
     /// - [`nsd_operational_state`](crate::types::builders::ListSolNetworkPackageInfoBuilder::nsd_operational_state)
     /// - [`nsd_usage_state`](crate::types::builders::ListSolNetworkPackageInfoBuilder::nsd_usage_state)
-    pub fn build(self) -> ::std::result::Result<crate::types::ListSolNetworkPackageInfo, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ListSolNetworkPackageInfo, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ListSolNetworkPackageInfo {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building ListSolNetworkPackageInfo",
                 )
             })?,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building ListSolNetworkPackageInfo",
                 )
             })?,
             nsd_onboarding_state: self.nsd_onboarding_state.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "nsd_onboarding_state",
                     "nsd_onboarding_state was not specified but it is required when building ListSolNetworkPackageInfo",
                 )
             })?,
             nsd_operational_state: self.nsd_operational_state.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "nsd_operational_state",
                     "nsd_operational_state was not specified but it is required when building ListSolNetworkPackageInfo",
                 )
             })?,
             nsd_usage_state: self.nsd_usage_state.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "nsd_usage_state",
                     "nsd_usage_state was not specified but it is required when building ListSolNetworkPackageInfo",
                 )

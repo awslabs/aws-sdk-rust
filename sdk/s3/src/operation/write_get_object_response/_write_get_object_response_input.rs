@@ -7,7 +7,7 @@ pub struct WriteGetObjectResponseInput {
     /// <p>A single use encrypted token that maps <code>WriteGetObjectResponse</code> to the end user <code>GetObject</code> request.</p>
     pub request_token: ::std::option::Option<::std::string::String>,
     /// <p>The object data.</p>
-    pub body: ::aws_smithy_http::byte_stream::ByteStream,
+    pub body: ::aws_smithy_types::byte_stream::ByteStream,
     /// <p>The integer status code for an HTTP response of a corresponding <code>GetObject</code> request. The following is a list of status codes.</p>
     /// <ul>
     /// <li> <p> <code>200 - OK</code> </p> </li>
@@ -119,7 +119,7 @@ impl WriteGetObjectResponseInput {
         self.request_token.as_deref()
     }
     /// <p>The object data.</p>
-    pub fn body(&self) -> &::aws_smithy_http::byte_stream::ByteStream {
+    pub fn body(&self) -> &::aws_smithy_types::byte_stream::ByteStream {
         &self.body
     }
     /// <p>The integer status code for an HTTP response of a corresponding <code>GetObject</code> request. The following is a list of status codes.</p>
@@ -356,7 +356,7 @@ impl WriteGetObjectResponseInput {
 pub struct WriteGetObjectResponseInputBuilder {
     pub(crate) request_route: ::std::option::Option<::std::string::String>,
     pub(crate) request_token: ::std::option::Option<::std::string::String>,
-    pub(crate) body: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
+    pub(crate) body: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>,
     pub(crate) status_code: ::std::option::Option<i32>,
     pub(crate) error_code: ::std::option::Option<::std::string::String>,
     pub(crate) error_message: ::std::option::Option<::std::string::String>,
@@ -427,17 +427,17 @@ impl WriteGetObjectResponseInputBuilder {
         &self.request_token
     }
     /// <p>The object data.</p>
-    pub fn body(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
+    pub fn body(mut self, input: ::aws_smithy_types::byte_stream::ByteStream) -> Self {
         self.body = ::std::option::Option::Some(input);
         self
     }
     /// <p>The object data.</p>
-    pub fn set_body(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
+    pub fn set_body(mut self, input: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>) -> Self {
         self.body = input;
         self
     }
     /// <p>The object data.</p>
-    pub fn get_body(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+    pub fn get_body(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
         &self.body
     }
     /// <p>The integer status code for an HTTP response of a corresponding <code>GetObject</code> request. The following is a list of status codes.</p>
@@ -1047,7 +1047,7 @@ impl WriteGetObjectResponseInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::write_get_object_response::WriteGetObjectResponseInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::write_get_object_response::WriteGetObjectResponseInput {
             request_route: self.request_route,

@@ -64,7 +64,7 @@ impl ListSuiteDefinitionsInputBuilder {
     /// Consumes the builder and constructs a [`ListSuiteDefinitionsInput`](crate::operation::list_suite_definitions::ListSuiteDefinitionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_suite_definitions::ListSuiteDefinitionsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_suite_definitions::ListSuiteDefinitionsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_suite_definitions::ListSuiteDefinitionsInput {
             max_results: self.max_results,

@@ -46,7 +46,7 @@ impl DescribeDomainConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_domain_configuration::DescribeDomainConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_domain_configuration::DescribeDomainConfigurationInput {
             domain_configuration_name: self.domain_configuration_name,

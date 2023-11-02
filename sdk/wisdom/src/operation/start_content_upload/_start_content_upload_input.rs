@@ -66,7 +66,8 @@ impl StartContentUploadInputBuilder {
     /// Consumes the builder and constructs a [`StartContentUploadInput`](crate::operation::start_content_upload::StartContentUploadInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_content_upload::StartContentUploadInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_content_upload::StartContentUploadInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::start_content_upload::StartContentUploadInput {
             knowledge_base_id: self.knowledge_base_id,
             content_type: self.content_type,

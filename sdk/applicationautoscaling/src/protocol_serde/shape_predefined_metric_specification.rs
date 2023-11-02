@@ -2,7 +2,7 @@
 pub fn ser_predefined_metric_specification(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PredefinedMetricSpecification,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("PredefinedMetricType").string(input.predefined_metric_type.as_str());
     }

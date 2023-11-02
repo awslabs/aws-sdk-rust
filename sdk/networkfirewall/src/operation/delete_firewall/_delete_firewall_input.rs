@@ -74,7 +74,7 @@ impl DeleteFirewallInputBuilder {
     /// Consumes the builder and constructs a [`DeleteFirewallInput`](crate::operation::delete_firewall::DeleteFirewallInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_firewall::DeleteFirewallInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_firewall::DeleteFirewallInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_firewall::DeleteFirewallInput {
             firewall_name: self.firewall_name,
             firewall_arn: self.firewall_arn,

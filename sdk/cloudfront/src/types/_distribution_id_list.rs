@@ -165,29 +165,29 @@ impl DistributionIdListBuilder {
     /// - [`max_items`](crate::types::builders::DistributionIdListBuilder::max_items)
     /// - [`is_truncated`](crate::types::builders::DistributionIdListBuilder::is_truncated)
     /// - [`quantity`](crate::types::builders::DistributionIdListBuilder::quantity)
-    pub fn build(self) -> ::std::result::Result<crate::types::DistributionIdList, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DistributionIdList, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DistributionIdList {
             marker: self.marker.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "marker",
                     "marker was not specified but it is required when building DistributionIdList",
                 )
             })?,
             next_marker: self.next_marker,
             max_items: self.max_items.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "max_items",
                     "max_items was not specified but it is required when building DistributionIdList",
                 )
             })?,
             is_truncated: self.is_truncated.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "is_truncated",
                     "is_truncated was not specified but it is required when building DistributionIdList",
                 )
             })?,
             quantity: self.quantity.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "quantity",
                     "quantity was not specified but it is required when building DistributionIdList",
                 )

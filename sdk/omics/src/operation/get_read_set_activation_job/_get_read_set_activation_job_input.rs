@@ -68,7 +68,7 @@ impl GetReadSetActivationJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_read_set_activation_job::GetReadSetActivationJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_read_set_activation_job::GetReadSetActivationJobInput {
             id: self.id,

@@ -70,16 +70,16 @@ impl WorkflowExecutionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`workflow_id`](crate::types::builders::WorkflowExecutionBuilder::workflow_id)
     /// - [`run_id`](crate::types::builders::WorkflowExecutionBuilder::run_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::WorkflowExecution, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::WorkflowExecution, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::WorkflowExecution {
             workflow_id: self.workflow_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "workflow_id",
                     "workflow_id was not specified but it is required when building WorkflowExecution",
                 )
             })?,
             run_id: self.run_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "run_id",
                     "run_id was not specified but it is required when building WorkflowExecution",
                 )

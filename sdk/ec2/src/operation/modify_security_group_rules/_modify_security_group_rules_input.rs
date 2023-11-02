@@ -96,7 +96,7 @@ impl ModifySecurityGroupRulesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_security_group_rules::ModifySecurityGroupRulesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::modify_security_group_rules::ModifySecurityGroupRulesInput {
             group_id: self.group_id,

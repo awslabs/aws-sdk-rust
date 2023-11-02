@@ -73,7 +73,7 @@ impl DeactivateUserInputBuilder {
     /// Consumes the builder and constructs a [`DeactivateUserInput`](crate::operation::deactivate_user::DeactivateUserInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::deactivate_user::DeactivateUserInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::deactivate_user::DeactivateUserInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::deactivate_user::DeactivateUserInput {
             user_id: self.user_id,
             authentication_token: self.authentication_token,

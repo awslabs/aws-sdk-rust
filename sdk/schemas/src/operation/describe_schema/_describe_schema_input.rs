@@ -87,7 +87,7 @@ impl DescribeSchemaInputBuilder {
     /// Consumes the builder and constructs a [`DescribeSchemaInput`](crate::operation::describe_schema::DescribeSchemaInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_schema::DescribeSchemaInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_schema::DescribeSchemaInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_schema::DescribeSchemaInput {
             registry_name: self.registry_name,
             schema_name: self.schema_name,

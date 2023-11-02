@@ -87,7 +87,7 @@ impl UpdateClusterVersionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateClusterVersionInput`](crate::operation::update_cluster_version::UpdateClusterVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_cluster_version::UpdateClusterVersionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_cluster_version::UpdateClusterVersionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_cluster_version::UpdateClusterVersionInput {
             name: self.name,

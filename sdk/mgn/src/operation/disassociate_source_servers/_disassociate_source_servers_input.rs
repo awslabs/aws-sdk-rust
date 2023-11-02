@@ -96,7 +96,7 @@ impl DisassociateSourceServersInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_source_servers::DisassociateSourceServersInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disassociate_source_servers::DisassociateSourceServersInput {
             application_id: self.application_id,

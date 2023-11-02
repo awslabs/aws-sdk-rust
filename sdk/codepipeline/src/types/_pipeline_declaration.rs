@@ -320,16 +320,16 @@ impl PipelineDeclarationBuilder {
     /// - [`name`](crate::types::builders::PipelineDeclarationBuilder::name)
     /// - [`role_arn`](crate::types::builders::PipelineDeclarationBuilder::role_arn)
     /// - [`stages`](crate::types::builders::PipelineDeclarationBuilder::stages)
-    pub fn build(self) -> ::std::result::Result<crate::types::PipelineDeclaration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PipelineDeclaration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PipelineDeclaration {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building PipelineDeclaration",
                 )
             })?,
             role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role_arn",
                     "role_arn was not specified but it is required when building PipelineDeclaration",
                 )
@@ -337,7 +337,7 @@ impl PipelineDeclarationBuilder {
             artifact_store: self.artifact_store,
             artifact_stores: self.artifact_stores,
             stages: self.stages.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "stages",
                     "stages was not specified but it is required when building PipelineDeclaration",
                 )

@@ -76,7 +76,7 @@ impl GetQuantumTaskInputBuilder {
     /// Consumes the builder and constructs a [`GetQuantumTaskInput`](crate::operation::get_quantum_task::GetQuantumTaskInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_quantum_task::GetQuantumTaskInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_quantum_task::GetQuantumTaskInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_quantum_task::GetQuantumTaskInput {
             quantum_task_arn: self.quantum_task_arn,
             additional_attribute_names: self.additional_attribute_names,

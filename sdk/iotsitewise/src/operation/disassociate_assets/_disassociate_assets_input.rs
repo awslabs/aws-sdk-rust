@@ -109,7 +109,7 @@ impl DisassociateAssetsInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateAssetsInput`](crate::operation::disassociate_assets::DisassociateAssetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::disassociate_assets::DisassociateAssetsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::disassociate_assets::DisassociateAssetsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::disassociate_assets::DisassociateAssetsInput {
             asset_id: self.asset_id,
             hierarchy_id: self.hierarchy_id,

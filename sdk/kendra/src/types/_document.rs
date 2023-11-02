@@ -261,10 +261,13 @@ impl DocumentBuilder {
     /// Consumes the builder and constructs a [`Document`](crate::types::Document).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::DocumentBuilder::id)
-    pub fn build(self) -> ::std::result::Result<crate::types::Document, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Document, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Document {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field("id", "id was not specified but it is required when building Document")
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building Document",
+                )
             })?,
             title: self.title,
             blob: self.blob,

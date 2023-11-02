@@ -91,11 +91,11 @@ impl ListAccessPreviewFindingsOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_access_preview_findings::ListAccessPreviewFindingsOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_access_preview_findings::ListAccessPreviewFindingsOutput {
             findings: self.findings.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "findings",
                     "findings was not specified but it is required when building ListAccessPreviewFindingsOutput",
                 )

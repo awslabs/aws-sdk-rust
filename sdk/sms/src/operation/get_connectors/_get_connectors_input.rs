@@ -64,7 +64,7 @@ impl GetConnectorsInputBuilder {
     /// Consumes the builder and constructs a [`GetConnectorsInput`](crate::operation::get_connectors::GetConnectorsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_connectors::GetConnectorsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_connectors::GetConnectorsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_connectors::GetConnectorsInput {
             next_token: self.next_token,
             max_results: self.max_results,

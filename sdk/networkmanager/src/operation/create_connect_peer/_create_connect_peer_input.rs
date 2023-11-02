@@ -208,7 +208,7 @@ impl CreateConnectPeerInputBuilder {
     /// Consumes the builder and constructs a [`CreateConnectPeerInput`](crate::operation::create_connect_peer::CreateConnectPeerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_connect_peer::CreateConnectPeerInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_connect_peer::CreateConnectPeerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_connect_peer::CreateConnectPeerInput {
             connect_attachment_id: self.connect_attachment_id,
             core_network_address: self.core_network_address,

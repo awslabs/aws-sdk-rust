@@ -72,11 +72,11 @@ impl DestinationConfigBuilder {
     /// Consumes the builder and constructs a [`DestinationConfig`](crate::types::DestinationConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`services`](crate::types::builders::DestinationConfigBuilder::services)
-    pub fn build(self) -> ::std::result::Result<crate::types::DestinationConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DestinationConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DestinationConfig {
             thing_name: self.thing_name,
             services: self.services.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "services",
                     "services was not specified but it is required when building DestinationConfig",
                 )

@@ -139,7 +139,7 @@ impl CreateVoiceProfileDomainInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_voice_profile_domain::CreateVoiceProfileDomainInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_voice_profile_domain::CreateVoiceProfileDomainInput {
             name: self.name,

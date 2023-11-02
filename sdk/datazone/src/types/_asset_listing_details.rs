@@ -69,16 +69,16 @@ impl AssetListingDetailsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`listing_id`](crate::types::builders::AssetListingDetailsBuilder::listing_id)
     /// - [`listing_status`](crate::types::builders::AssetListingDetailsBuilder::listing_status)
-    pub fn build(self) -> ::std::result::Result<crate::types::AssetListingDetails, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AssetListingDetails, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AssetListingDetails {
             listing_id: self.listing_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "listing_id",
                     "listing_id was not specified but it is required when building AssetListingDetails",
                 )
             })?,
             listing_status: self.listing_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "listing_status",
                     "listing_status was not specified but it is required when building AssetListingDetails",
                 )

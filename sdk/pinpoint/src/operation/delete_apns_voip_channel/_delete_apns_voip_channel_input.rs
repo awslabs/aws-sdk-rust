@@ -44,7 +44,7 @@ impl DeleteApnsVoipChannelInputBuilder {
     /// Consumes the builder and constructs a [`DeleteApnsVoipChannelInput`](crate::operation::delete_apns_voip_channel::DeleteApnsVoipChannelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_apns_voip_channel::DeleteApnsVoipChannelInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_apns_voip_channel::DeleteApnsVoipChannelInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_apns_voip_channel::DeleteApnsVoipChannelInput {
             application_id: self.application_id,

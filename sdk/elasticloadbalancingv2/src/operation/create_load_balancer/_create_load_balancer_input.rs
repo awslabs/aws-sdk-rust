@@ -314,7 +314,8 @@ impl CreateLoadBalancerInputBuilder {
     /// Consumes the builder and constructs a [`CreateLoadBalancerInput`](crate::operation::create_load_balancer::CreateLoadBalancerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_load_balancer::CreateLoadBalancerInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_load_balancer::CreateLoadBalancerInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::create_load_balancer::CreateLoadBalancerInput {
             name: self.name,
             subnets: self.subnets,

@@ -92,7 +92,7 @@ impl CreateRevisionInputBuilder {
     /// Consumes the builder and constructs a [`CreateRevisionInput`](crate::operation::create_revision::CreateRevisionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_revision::CreateRevisionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_revision::CreateRevisionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_revision::CreateRevisionInput {
             comment: self.comment,
             data_set_id: self.data_set_id,

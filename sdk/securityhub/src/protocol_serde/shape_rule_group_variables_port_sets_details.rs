@@ -2,7 +2,7 @@
 pub fn ser_rule_group_variables_port_sets_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RuleGroupVariablesPortSetsDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.definition {
         let mut array_2 = object.key("Definition").start_array();
         for item_3 in var_1 {

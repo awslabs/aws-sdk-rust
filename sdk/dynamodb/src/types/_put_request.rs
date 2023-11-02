@@ -53,10 +53,10 @@ impl PutRequestBuilder {
     /// Consumes the builder and constructs a [`PutRequest`](crate::types::PutRequest).
     /// This method will fail if any of the following fields are not set:
     /// - [`item`](crate::types::builders::PutRequestBuilder::item)
-    pub fn build(self) -> ::std::result::Result<crate::types::PutRequest, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PutRequest, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PutRequest {
             item: self.item.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "item",
                     "item was not specified but it is required when building PutRequest",
                 )

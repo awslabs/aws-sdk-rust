@@ -164,7 +164,7 @@ impl ModifyHostsInputBuilder {
         &self.host_maintenance
     }
     /// Consumes the builder and constructs a [`ModifyHostsInput`](crate::operation::modify_hosts::ModifyHostsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::modify_hosts::ModifyHostsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_hosts::ModifyHostsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::modify_hosts::ModifyHostsInput {
             auto_placement: self.auto_placement,
             host_ids: self.host_ids,

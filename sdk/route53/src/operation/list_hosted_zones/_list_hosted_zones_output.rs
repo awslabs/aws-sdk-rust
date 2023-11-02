@@ -163,16 +163,16 @@ impl ListHostedZonesOutputBuilder {
     /// - [`max_items`](crate::operation::list_hosted_zones::builders::ListHostedZonesOutputBuilder::max_items)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_hosted_zones::ListHostedZonesOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_hosted_zones::ListHostedZonesOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_hosted_zones::ListHostedZonesOutput {
             hosted_zones: self.hosted_zones.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "hosted_zones",
                     "hosted_zones was not specified but it is required when building ListHostedZonesOutput",
                 )
             })?,
             marker: self.marker.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "marker",
                     "marker was not specified but it is required when building ListHostedZonesOutput",
                 )
@@ -180,7 +180,7 @@ impl ListHostedZonesOutputBuilder {
             is_truncated: self.is_truncated.unwrap_or_default(),
             next_marker: self.next_marker,
             max_items: self.max_items.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "max_items",
                     "max_items was not specified but it is required when building ListHostedZonesOutput",
                 )

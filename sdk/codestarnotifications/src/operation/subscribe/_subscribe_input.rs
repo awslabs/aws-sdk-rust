@@ -85,7 +85,7 @@ impl SubscribeInputBuilder {
         &self.client_request_token
     }
     /// Consumes the builder and constructs a [`SubscribeInput`](crate::operation::subscribe::SubscribeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::subscribe::SubscribeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::subscribe::SubscribeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::subscribe::SubscribeInput {
             arn: self.arn,
             target: self.target,

@@ -44,7 +44,7 @@ impl GetApnsSandboxChannelInputBuilder {
     /// Consumes the builder and constructs a [`GetApnsSandboxChannelInput`](crate::operation::get_apns_sandbox_channel::GetApnsSandboxChannelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_apns_sandbox_channel::GetApnsSandboxChannelInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_apns_sandbox_channel::GetApnsSandboxChannelInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_apns_sandbox_channel::GetApnsSandboxChannelInput {
             application_id: self.application_id,

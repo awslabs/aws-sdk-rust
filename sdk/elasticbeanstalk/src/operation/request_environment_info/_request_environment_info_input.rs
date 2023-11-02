@@ -107,8 +107,10 @@ impl RequestEnvironmentInfoInputBuilder {
     /// Consumes the builder and constructs a [`RequestEnvironmentInfoInput`](crate::operation::request_environment_info::RequestEnvironmentInfoInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::request_environment_info::RequestEnvironmentInfoInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::request_environment_info::RequestEnvironmentInfoInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::request_environment_info::RequestEnvironmentInfoInput {
             environment_id: self.environment_id,
             environment_name: self.environment_name,

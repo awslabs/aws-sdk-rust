@@ -102,7 +102,7 @@ impl UnassignIpv6AddressesInputBuilder {
     /// Consumes the builder and constructs a [`UnassignIpv6AddressesInput`](crate::operation::unassign_ipv6_addresses::UnassignIpv6AddressesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::unassign_ipv6_addresses::UnassignIpv6AddressesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::unassign_ipv6_addresses::UnassignIpv6AddressesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::unassign_ipv6_addresses::UnassignIpv6AddressesInput {
             ipv6_addresses: self.ipv6_addresses,

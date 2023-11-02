@@ -133,22 +133,22 @@ impl LteNmrObjBuilder {
     /// - [`pci`](crate::types::builders::LteNmrObjBuilder::pci)
     /// - [`earfcn`](crate::types::builders::LteNmrObjBuilder::earfcn)
     /// - [`eutran_cid`](crate::types::builders::LteNmrObjBuilder::eutran_cid)
-    pub fn build(self) -> ::std::result::Result<crate::types::LteNmrObj, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::LteNmrObj, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::LteNmrObj {
             pci: self.pci.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "pci",
                     "pci was not specified but it is required when building LteNmrObj",
                 )
             })?,
             earfcn: self.earfcn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "earfcn",
                     "earfcn was not specified but it is required when building LteNmrObj",
                 )
             })?,
             eutran_cid: self.eutran_cid.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "eutran_cid",
                     "eutran_cid was not specified but it is required when building LteNmrObj",
                 )

@@ -70,7 +70,7 @@ impl GetLogRecordInputBuilder {
     /// Consumes the builder and constructs a [`GetLogRecordInput`](crate::operation::get_log_record::GetLogRecordInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_log_record::GetLogRecordInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_log_record::GetLogRecordInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_log_record::GetLogRecordInput {
             log_record_pointer: self.log_record_pointer,
             unmask: self.unmask,

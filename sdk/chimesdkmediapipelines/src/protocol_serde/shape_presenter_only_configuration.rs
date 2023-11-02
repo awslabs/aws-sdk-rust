@@ -2,7 +2,7 @@
 pub fn ser_presenter_only_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PresenterOnlyConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.presenter_position {
         object.key("PresenterPosition").string(var_1.as_str());
     }

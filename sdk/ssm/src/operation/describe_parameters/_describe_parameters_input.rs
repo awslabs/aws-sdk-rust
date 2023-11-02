@@ -122,7 +122,7 @@ impl DescribeParametersInputBuilder {
     /// Consumes the builder and constructs a [`DescribeParametersInput`](crate::operation::describe_parameters::DescribeParametersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_parameters::DescribeParametersInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_parameters::DescribeParametersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_parameters::DescribeParametersInput {
             filters: self.filters,
             parameter_filters: self.parameter_filters,

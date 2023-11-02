@@ -462,23 +462,23 @@ impl ByteMatchTupleBuilder {
     /// - [`target_string`](crate::types::builders::ByteMatchTupleBuilder::target_string)
     /// - [`text_transformation`](crate::types::builders::ByteMatchTupleBuilder::text_transformation)
     /// - [`positional_constraint`](crate::types::builders::ByteMatchTupleBuilder::positional_constraint)
-    pub fn build(self) -> ::std::result::Result<crate::types::ByteMatchTuple, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ByteMatchTuple, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ByteMatchTuple {
             field_to_match: self.field_to_match,
             target_string: self.target_string.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "target_string",
                     "target_string was not specified but it is required when building ByteMatchTuple",
                 )
             })?,
             text_transformation: self.text_transformation.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "text_transformation",
                     "text_transformation was not specified but it is required when building ByteMatchTuple",
                 )
             })?,
             positional_constraint: self.positional_constraint.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "positional_constraint",
                     "positional_constraint was not specified but it is required when building ByteMatchTuple",
                 )

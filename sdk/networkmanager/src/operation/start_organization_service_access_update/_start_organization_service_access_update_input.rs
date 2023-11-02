@@ -46,7 +46,7 @@ impl StartOrganizationServiceAccessUpdateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_organization_service_access_update::StartOrganizationServiceAccessUpdateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::start_organization_service_access_update::StartOrganizationServiceAccessUpdateInput { action: self.action },

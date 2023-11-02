@@ -136,7 +136,7 @@ impl ListPerformanceAnalysisReportsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_performance_analysis_reports::ListPerformanceAnalysisReportsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_performance_analysis_reports::ListPerformanceAnalysisReportsInput {
             service_type: self.service_type,

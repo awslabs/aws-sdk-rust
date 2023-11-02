@@ -174,7 +174,7 @@ impl DescribeStorageSystemResourceMetricsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_storage_system_resource_metrics::DescribeStorageSystemResourceMetricsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_storage_system_resource_metrics::DescribeStorageSystemResourceMetricsInput {

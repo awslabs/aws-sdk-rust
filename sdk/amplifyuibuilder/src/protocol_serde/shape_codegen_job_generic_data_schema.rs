@@ -2,7 +2,7 @@
 pub fn ser_codegen_job_generic_data_schema(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CodegenJobGenericDataSchema,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("dataSourceType").string(input.data_source_type.as_str());
     }

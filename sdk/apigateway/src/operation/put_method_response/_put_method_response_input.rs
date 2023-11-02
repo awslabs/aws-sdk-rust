@@ -172,7 +172,7 @@ impl PutMethodResponseInputBuilder {
     /// Consumes the builder and constructs a [`PutMethodResponseInput`](crate::operation::put_method_response::PutMethodResponseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_method_response::PutMethodResponseInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_method_response::PutMethodResponseInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_method_response::PutMethodResponseInput {
             rest_api_id: self.rest_api_id,
             resource_id: self.resource_id,

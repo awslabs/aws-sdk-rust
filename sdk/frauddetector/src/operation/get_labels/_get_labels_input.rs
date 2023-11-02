@@ -83,7 +83,7 @@ impl GetLabelsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`GetLabelsInput`](crate::operation::get_labels::GetLabelsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_labels::GetLabelsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_labels::GetLabelsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_labels::GetLabelsInput {
             name: self.name,
             next_token: self.next_token,

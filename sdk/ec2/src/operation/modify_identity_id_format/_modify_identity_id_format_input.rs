@@ -95,7 +95,7 @@ impl ModifyIdentityIdFormatInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_identity_id_format::ModifyIdentityIdFormatInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::modify_identity_id_format::ModifyIdentityIdFormatInput {
             principal_arn: self.principal_arn,

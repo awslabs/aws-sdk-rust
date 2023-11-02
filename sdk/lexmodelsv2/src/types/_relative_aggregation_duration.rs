@@ -99,16 +99,16 @@ impl RelativeAggregationDurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`time_dimension`](crate::types::builders::RelativeAggregationDurationBuilder::time_dimension)
     /// - [`time_value`](crate::types::builders::RelativeAggregationDurationBuilder::time_value)
-    pub fn build(self) -> ::std::result::Result<crate::types::RelativeAggregationDuration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RelativeAggregationDuration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RelativeAggregationDuration {
             time_dimension: self.time_dimension.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "time_dimension",
                     "time_dimension was not specified but it is required when building RelativeAggregationDuration",
                 )
             })?,
             time_value: self.time_value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "time_value",
                     "time_value was not specified but it is required when building RelativeAggregationDuration",
                 )

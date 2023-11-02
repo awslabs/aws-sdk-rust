@@ -117,7 +117,7 @@ impl AddProfileKeyInputBuilder {
     /// Consumes the builder and constructs a [`AddProfileKeyInput`](crate::operation::add_profile_key::AddProfileKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::add_profile_key::AddProfileKeyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::add_profile_key::AddProfileKeyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::add_profile_key::AddProfileKeyInput {
             profile_id: self.profile_id,
             key_name: self.key_name,

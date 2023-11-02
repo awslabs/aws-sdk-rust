@@ -174,16 +174,16 @@ impl QualificationRequirementBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`qualification_type_id`](crate::types::builders::QualificationRequirementBuilder::qualification_type_id)
     /// - [`comparator`](crate::types::builders::QualificationRequirementBuilder::comparator)
-    pub fn build(self) -> ::std::result::Result<crate::types::QualificationRequirement, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::QualificationRequirement, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::QualificationRequirement {
             qualification_type_id: self.qualification_type_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "qualification_type_id",
                     "qualification_type_id was not specified but it is required when building QualificationRequirement",
                 )
             })?,
             comparator: self.comparator.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "comparator",
                     "comparator was not specified but it is required when building QualificationRequirement",
                 )

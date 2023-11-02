@@ -2,7 +2,7 @@
 pub fn ser_import_crl_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::import_crl::ImportCrlInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.crl_data {
         object.key("crlData").string_unchecked(&::aws_smithy_types::base64::encode(var_1));
     }

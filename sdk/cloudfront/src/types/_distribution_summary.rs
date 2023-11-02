@@ -513,34 +513,34 @@ impl DistributionSummaryBuilder {
     /// - [`http_version`](crate::types::builders::DistributionSummaryBuilder::http_version)
     /// - [`is_ipv6_enabled`](crate::types::builders::DistributionSummaryBuilder::is_ipv6_enabled)
     /// - [`staging`](crate::types::builders::DistributionSummaryBuilder::staging)
-    pub fn build(self) -> ::std::result::Result<crate::types::DistributionSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DistributionSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DistributionSummary {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building DistributionSummary",
                 )
             })?,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building DistributionSummary",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building DistributionSummary",
                 )
             })?,
             last_modified_time: self.last_modified_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_modified_time",
                     "last_modified_time was not specified but it is required when building DistributionSummary",
                 )
             })?,
             domain_name: self.domain_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "domain_name",
                     "domain_name was not specified but it is required when building DistributionSummary",
                 )
@@ -552,19 +552,19 @@ impl DistributionSummaryBuilder {
             cache_behaviors: self.cache_behaviors,
             custom_error_responses: self.custom_error_responses,
             comment: self.comment.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "comment",
                     "comment was not specified but it is required when building DistributionSummary",
                 )
             })?,
             price_class: self.price_class.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "price_class",
                     "price_class was not specified but it is required when building DistributionSummary",
                 )
             })?,
             enabled: self.enabled.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "enabled",
                     "enabled was not specified but it is required when building DistributionSummary",
                 )
@@ -572,26 +572,26 @@ impl DistributionSummaryBuilder {
             viewer_certificate: self.viewer_certificate,
             restrictions: self.restrictions,
             web_acl_id: self.web_acl_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "web_acl_id",
                     "web_acl_id was not specified but it is required when building DistributionSummary",
                 )
             })?,
             http_version: self.http_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "http_version",
                     "http_version was not specified but it is required when building DistributionSummary",
                 )
             })?,
             is_ipv6_enabled: self.is_ipv6_enabled.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "is_ipv6_enabled",
                     "is_ipv6_enabled was not specified but it is required when building DistributionSummary",
                 )
             })?,
             alias_icp_recordals: self.alias_icp_recordals,
             staging: self.staging.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "staging",
                     "staging was not specified but it is required when building DistributionSummary",
                 )

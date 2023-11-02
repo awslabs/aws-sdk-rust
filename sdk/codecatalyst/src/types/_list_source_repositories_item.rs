@@ -137,29 +137,29 @@ impl ListSourceRepositoriesItemBuilder {
     /// - [`name`](crate::types::builders::ListSourceRepositoriesItemBuilder::name)
     /// - [`last_updated_time`](crate::types::builders::ListSourceRepositoriesItemBuilder::last_updated_time)
     /// - [`created_time`](crate::types::builders::ListSourceRepositoriesItemBuilder::created_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::ListSourceRepositoriesItem, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ListSourceRepositoriesItem, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ListSourceRepositoriesItem {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building ListSourceRepositoriesItem",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building ListSourceRepositoriesItem",
                 )
             })?,
             description: self.description,
             last_updated_time: self.last_updated_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_updated_time",
                     "last_updated_time was not specified but it is required when building ListSourceRepositoriesItem",
                 )
             })?,
             created_time: self.created_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_time",
                     "created_time was not specified but it is required when building ListSourceRepositoriesItem",
                 )

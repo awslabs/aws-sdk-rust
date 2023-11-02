@@ -66,7 +66,7 @@ impl CancelBundleTaskInputBuilder {
     /// Consumes the builder and constructs a [`CancelBundleTaskInput`](crate::operation::cancel_bundle_task::CancelBundleTaskInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::cancel_bundle_task::CancelBundleTaskInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::cancel_bundle_task::CancelBundleTaskInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::cancel_bundle_task::CancelBundleTaskInput {
             bundle_id: self.bundle_id,
             dry_run: self.dry_run,

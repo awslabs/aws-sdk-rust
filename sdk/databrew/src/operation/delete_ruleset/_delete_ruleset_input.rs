@@ -44,7 +44,7 @@ impl DeleteRulesetInputBuilder {
     /// Consumes the builder and constructs a [`DeleteRulesetInput`](crate::operation::delete_ruleset::DeleteRulesetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_ruleset::DeleteRulesetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_ruleset::DeleteRulesetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_ruleset::DeleteRulesetInput { name: self.name })
     }
 }

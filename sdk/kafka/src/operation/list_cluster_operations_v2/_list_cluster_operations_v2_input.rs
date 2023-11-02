@@ -88,7 +88,7 @@ impl ListClusterOperationsV2InputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_cluster_operations_v2::ListClusterOperationsV2Input,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_cluster_operations_v2::ListClusterOperationsV2Input {
             cluster_arn: self.cluster_arn,

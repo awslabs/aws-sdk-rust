@@ -44,7 +44,7 @@ impl GetVariantStoreInputBuilder {
     /// Consumes the builder and constructs a [`GetVariantStoreInput`](crate::operation::get_variant_store::GetVariantStoreInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_variant_store::GetVariantStoreInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_variant_store::GetVariantStoreInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_variant_store::GetVariantStoreInput { name: self.name })
     }
 }

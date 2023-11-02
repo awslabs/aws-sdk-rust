@@ -104,22 +104,22 @@ impl ApplyMappingBuilder {
     /// - [`name`](crate::types::builders::ApplyMappingBuilder::name)
     /// - [`inputs`](crate::types::builders::ApplyMappingBuilder::inputs)
     /// - [`mapping`](crate::types::builders::ApplyMappingBuilder::mapping)
-    pub fn build(self) -> ::std::result::Result<crate::types::ApplyMapping, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ApplyMapping, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ApplyMapping {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building ApplyMapping",
                 )
             })?,
             inputs: self.inputs.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "inputs",
                     "inputs was not specified but it is required when building ApplyMapping",
                 )
             })?,
             mapping: self.mapping.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "mapping",
                     "mapping was not specified but it is required when building ApplyMapping",
                 )

@@ -245,34 +245,34 @@ impl CalculateRouteSummaryBuilder {
     /// - [`distance`](crate::types::builders::CalculateRouteSummaryBuilder::distance)
     /// - [`duration_seconds`](crate::types::builders::CalculateRouteSummaryBuilder::duration_seconds)
     /// - [`distance_unit`](crate::types::builders::CalculateRouteSummaryBuilder::distance_unit)
-    pub fn build(self) -> ::std::result::Result<crate::types::CalculateRouteSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CalculateRouteSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CalculateRouteSummary {
             route_b_box: self.route_b_box.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "route_b_box",
                     "route_b_box was not specified but it is required when building CalculateRouteSummary",
                 )
             })?,
             data_source: self.data_source.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_source",
                     "data_source was not specified but it is required when building CalculateRouteSummary",
                 )
             })?,
             distance: self.distance.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "distance",
                     "distance was not specified but it is required when building CalculateRouteSummary",
                 )
             })?,
             duration_seconds: self.duration_seconds.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "duration_seconds",
                     "duration_seconds was not specified but it is required when building CalculateRouteSummary",
                 )
             })?,
             distance_unit: self.distance_unit.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "distance_unit",
                     "distance_unit was not specified but it is required when building CalculateRouteSummary",
                 )

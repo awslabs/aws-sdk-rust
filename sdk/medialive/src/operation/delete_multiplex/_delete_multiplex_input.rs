@@ -45,7 +45,7 @@ impl DeleteMultiplexInputBuilder {
     /// Consumes the builder and constructs a [`DeleteMultiplexInput`](crate::operation::delete_multiplex::DeleteMultiplexInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_multiplex::DeleteMultiplexInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_multiplex::DeleteMultiplexInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_multiplex::DeleteMultiplexInput {
             multiplex_id: self.multiplex_id,
         })

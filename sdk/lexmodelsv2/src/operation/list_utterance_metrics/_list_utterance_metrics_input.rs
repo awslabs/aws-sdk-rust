@@ -315,7 +315,7 @@ impl ListUtteranceMetricsInputBuilder {
     /// Consumes the builder and constructs a [`ListUtteranceMetricsInput`](crate::operation::list_utterance_metrics::ListUtteranceMetricsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_utterance_metrics::ListUtteranceMetricsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_utterance_metrics::ListUtteranceMetricsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_utterance_metrics::ListUtteranceMetricsInput {
             bot_id: self.bot_id,

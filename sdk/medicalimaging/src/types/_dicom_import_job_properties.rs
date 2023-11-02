@@ -252,34 +252,34 @@ impl DicomImportJobPropertiesBuilder {
     /// - [`data_access_role_arn`](crate::types::builders::DicomImportJobPropertiesBuilder::data_access_role_arn)
     /// - [`input_s3_uri`](crate::types::builders::DicomImportJobPropertiesBuilder::input_s3_uri)
     /// - [`output_s3_uri`](crate::types::builders::DicomImportJobPropertiesBuilder::output_s3_uri)
-    pub fn build(self) -> ::std::result::Result<crate::types::DicomImportJobProperties, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DicomImportJobProperties, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DicomImportJobProperties {
             job_id: self.job_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "job_id",
                     "job_id was not specified but it is required when building DicomImportJobProperties",
                 )
             })?,
             job_name: self.job_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "job_name",
                     "job_name was not specified but it is required when building DicomImportJobProperties",
                 )
             })?,
             job_status: self.job_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "job_status",
                     "job_status was not specified but it is required when building DicomImportJobProperties",
                 )
             })?,
             datastore_id: self.datastore_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "datastore_id",
                     "datastore_id was not specified but it is required when building DicomImportJobProperties",
                 )
             })?,
             data_access_role_arn: self.data_access_role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_access_role_arn",
                     "data_access_role_arn was not specified but it is required when building DicomImportJobProperties",
                 )
@@ -287,13 +287,13 @@ impl DicomImportJobPropertiesBuilder {
             ended_at: self.ended_at,
             submitted_at: self.submitted_at,
             input_s3_uri: self.input_s3_uri.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "input_s3_uri",
                     "input_s3_uri was not specified but it is required when building DicomImportJobProperties",
                 )
             })?,
             output_s3_uri: self.output_s3_uri.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "output_s3_uri",
                     "output_s3_uri was not specified but it is required when building DicomImportJobProperties",
                 )

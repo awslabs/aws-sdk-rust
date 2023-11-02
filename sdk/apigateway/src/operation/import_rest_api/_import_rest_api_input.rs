@@ -108,7 +108,7 @@ impl ImportRestApiInputBuilder {
     /// Consumes the builder and constructs a [`ImportRestApiInput`](crate::operation::import_rest_api::ImportRestApiInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::import_rest_api::ImportRestApiInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::import_rest_api::ImportRestApiInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::import_rest_api::ImportRestApiInput {
             fail_on_warnings: self.fail_on_warnings,
             parameters: self.parameters,

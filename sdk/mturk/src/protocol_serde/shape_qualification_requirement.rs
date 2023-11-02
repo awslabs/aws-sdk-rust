@@ -2,7 +2,7 @@
 pub fn ser_qualification_requirement(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::QualificationRequirement,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("QualificationTypeId").string(input.qualification_type_id.as_str());
     }

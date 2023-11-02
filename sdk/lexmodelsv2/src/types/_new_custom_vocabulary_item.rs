@@ -88,10 +88,10 @@ impl NewCustomVocabularyItemBuilder {
     /// Consumes the builder and constructs a [`NewCustomVocabularyItem`](crate::types::NewCustomVocabularyItem).
     /// This method will fail if any of the following fields are not set:
     /// - [`phrase`](crate::types::builders::NewCustomVocabularyItemBuilder::phrase)
-    pub fn build(self) -> ::std::result::Result<crate::types::NewCustomVocabularyItem, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::NewCustomVocabularyItem, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::NewCustomVocabularyItem {
             phrase: self.phrase.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "phrase",
                     "phrase was not specified but it is required when building NewCustomVocabularyItem",
                 )

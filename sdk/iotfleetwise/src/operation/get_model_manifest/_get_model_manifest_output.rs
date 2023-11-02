@@ -196,16 +196,16 @@ impl GetModelManifestOutputBuilder {
     /// - [`last_modification_time`](crate::operation::get_model_manifest::builders::GetModelManifestOutputBuilder::last_modification_time)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_model_manifest::GetModelManifestOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_model_manifest::GetModelManifestOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_model_manifest::GetModelManifestOutput {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building GetModelManifestOutput",
                 )
             })?,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building GetModelManifestOutput",
                 )
@@ -214,13 +214,13 @@ impl GetModelManifestOutputBuilder {
             signal_catalog_arn: self.signal_catalog_arn,
             status: self.status,
             creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_time",
                     "creation_time was not specified but it is required when building GetModelManifestOutput",
                 )
             })?,
             last_modification_time: self.last_modification_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_modification_time",
                     "last_modification_time was not specified but it is required when building GetModelManifestOutput",
                 )

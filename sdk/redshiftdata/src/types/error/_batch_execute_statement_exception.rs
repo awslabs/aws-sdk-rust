@@ -107,16 +107,16 @@ impl BatchExecuteStatementExceptionBuilder {
     /// - [`statement_id`](crate::types::error::builders::BatchExecuteStatementExceptionBuilder::statement_id)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::error::BatchExecuteStatementException, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::error::BatchExecuteStatementException, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::error::BatchExecuteStatementException {
             message: self.message.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "message",
                     "message was not specified but it is required when building BatchExecuteStatementException",
                 )
             })?,
             statement_id: self.statement_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "statement_id",
                     "statement_id was not specified but it is required when building BatchExecuteStatementException",
                 )

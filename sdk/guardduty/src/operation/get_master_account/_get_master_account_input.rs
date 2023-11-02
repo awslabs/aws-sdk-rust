@@ -45,7 +45,7 @@ impl GetMasterAccountInputBuilder {
     /// Consumes the builder and constructs a [`GetMasterAccountInput`](crate::operation::get_master_account::GetMasterAccountInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_master_account::GetMasterAccountInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_master_account::GetMasterAccountInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_master_account::GetMasterAccountInput {
             detector_id: self.detector_id,
         })

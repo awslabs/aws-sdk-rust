@@ -75,16 +75,16 @@ impl UntagColumnOperationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`column_name`](crate::types::builders::UntagColumnOperationBuilder::column_name)
     /// - [`tag_names`](crate::types::builders::UntagColumnOperationBuilder::tag_names)
-    pub fn build(self) -> ::std::result::Result<crate::types::UntagColumnOperation, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::UntagColumnOperation, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::UntagColumnOperation {
             column_name: self.column_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "column_name",
                     "column_name was not specified but it is required when building UntagColumnOperation",
                 )
             })?,
             tag_names: self.tag_names.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "tag_names",
                     "tag_names was not specified but it is required when building UntagColumnOperation",
                 )

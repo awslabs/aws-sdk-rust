@@ -44,7 +44,7 @@ impl DescribePredictorInputBuilder {
     /// Consumes the builder and constructs a [`DescribePredictorInput`](crate::operation::describe_predictor::DescribePredictorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_predictor::DescribePredictorInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_predictor::DescribePredictorInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_predictor::DescribePredictorInput {
             predictor_arn: self.predictor_arn,
         })

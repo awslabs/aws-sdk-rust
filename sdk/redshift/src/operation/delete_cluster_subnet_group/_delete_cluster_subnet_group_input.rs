@@ -47,7 +47,7 @@ impl DeleteClusterSubnetGroupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_cluster_subnet_group::DeleteClusterSubnetGroupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_cluster_subnet_group::DeleteClusterSubnetGroupInput {
             cluster_subnet_group_name: self.cluster_subnet_group_name,

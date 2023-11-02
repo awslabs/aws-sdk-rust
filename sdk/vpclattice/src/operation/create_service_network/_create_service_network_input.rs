@@ -133,7 +133,7 @@ impl CreateServiceNetworkInputBuilder {
     /// Consumes the builder and constructs a [`CreateServiceNetworkInput`](crate::operation::create_service_network::CreateServiceNetworkInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_service_network::CreateServiceNetworkInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_service_network::CreateServiceNetworkInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_service_network::CreateServiceNetworkInput {
             client_token: self.client_token,

@@ -107,7 +107,7 @@ where
 pub fn ser_dynamo_db_action(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DynamoDbAction,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("tableName").string(input.table_name.as_str());
     }

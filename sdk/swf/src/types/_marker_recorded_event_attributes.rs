@@ -89,10 +89,10 @@ impl MarkerRecordedEventAttributesBuilder {
     /// Consumes the builder and constructs a [`MarkerRecordedEventAttributes`](crate::types::MarkerRecordedEventAttributes).
     /// This method will fail if any of the following fields are not set:
     /// - [`marker_name`](crate::types::builders::MarkerRecordedEventAttributesBuilder::marker_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::MarkerRecordedEventAttributes, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::MarkerRecordedEventAttributes, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MarkerRecordedEventAttributes {
             marker_name: self.marker_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "marker_name",
                     "marker_name was not specified but it is required when building MarkerRecordedEventAttributes",
                 )

@@ -89,7 +89,7 @@ impl DeleteRumMetricsDestinationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_rum_metrics_destination::DeleteRumMetricsDestinationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_rum_metrics_destination::DeleteRumMetricsDestinationInput {
             app_monitor_name: self.app_monitor_name,

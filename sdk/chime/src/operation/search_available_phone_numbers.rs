@@ -174,7 +174,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for SearchAvaila
             fn uri_base(
                 _input: &crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 use ::std::fmt::Write as _;
                 ::std::write!(output, "/search").expect("formatting should succeed");
                 ::std::result::Result::Ok(())
@@ -182,7 +182,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for SearchAvaila
             fn uri_query(
                 _input: &crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersInput,
                 mut output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 query.push_kv("type", "phone-numbers");
                 if let ::std::option::Option::Some(inner_1) = &_input.area_code {
@@ -231,7 +231,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for SearchAvaila
             fn update_http_builder(
                 input: &crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -240,7 +240,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for SearchAvaila
             let mut builder = update_http_builder(&input, ::http::request::Builder::new())?;
             builder
         };
-        let body = ::aws_smithy_http::body::SdkBody::from("");
+        let body = ::aws_smithy_types::body::SdkBody::from("");
 
         ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }

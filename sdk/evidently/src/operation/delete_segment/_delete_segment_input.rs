@@ -44,7 +44,7 @@ impl DeleteSegmentInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSegmentInput`](crate::operation::delete_segment::DeleteSegmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_segment::DeleteSegmentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_segment::DeleteSegmentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_segment::DeleteSegmentInput { segment: self.segment })
     }
 }

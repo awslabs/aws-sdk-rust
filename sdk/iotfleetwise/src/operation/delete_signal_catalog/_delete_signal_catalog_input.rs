@@ -44,7 +44,7 @@ impl DeleteSignalCatalogInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSignalCatalogInput`](crate::operation::delete_signal_catalog::DeleteSignalCatalogInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_signal_catalog::DeleteSignalCatalogInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_signal_catalog::DeleteSignalCatalogInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_signal_catalog::DeleteSignalCatalogInput { name: self.name })
     }

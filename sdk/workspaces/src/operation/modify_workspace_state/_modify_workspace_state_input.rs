@@ -66,7 +66,7 @@ impl ModifyWorkspaceStateInputBuilder {
     /// Consumes the builder and constructs a [`ModifyWorkspaceStateInput`](crate::operation::modify_workspace_state::ModifyWorkspaceStateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::modify_workspace_state::ModifyWorkspaceStateInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::modify_workspace_state::ModifyWorkspaceStateInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::modify_workspace_state::ModifyWorkspaceStateInput {
             workspace_id: self.workspace_id,

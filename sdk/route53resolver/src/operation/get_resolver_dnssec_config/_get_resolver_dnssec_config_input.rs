@@ -46,7 +46,7 @@ impl GetResolverDnssecConfigInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_resolver_dnssec_config::GetResolverDnssecConfigInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_resolver_dnssec_config::GetResolverDnssecConfigInput {
             resource_id: self.resource_id,

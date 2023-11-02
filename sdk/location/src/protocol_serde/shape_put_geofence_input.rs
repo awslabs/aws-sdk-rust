@@ -2,7 +2,7 @@
 pub fn ser_put_geofence_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_geofence::PutGeofenceInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.geofence_properties {
         #[allow(unused_mut)]
         let mut object_2 = object.key("GeofenceProperties").start_object();

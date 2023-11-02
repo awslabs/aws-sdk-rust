@@ -46,7 +46,7 @@ impl DeleteSolNetworkPackageInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_sol_network_package::DeleteSolNetworkPackageInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_sol_network_package::DeleteSolNetworkPackageInput {
             nsd_info_id: self.nsd_info_id,

@@ -2,7 +2,7 @@
 pub fn ser_zeppelin_application_configuration_update(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ZeppelinApplicationConfigurationUpdate,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.monitoring_configuration_update {
         #[allow(unused_mut)]
         let mut object_2 = object.key("MonitoringConfigurationUpdate").start_object();

@@ -46,7 +46,7 @@ impl PutReplicationConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_replication_configuration::PutReplicationConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_replication_configuration::PutReplicationConfigurationInput {
             replication_configuration: self.replication_configuration,

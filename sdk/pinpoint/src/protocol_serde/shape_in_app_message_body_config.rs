@@ -2,7 +2,7 @@
 pub fn ser_in_app_message_body_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::InAppMessageBodyConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.alignment {
         object.key("Alignment").string(var_1.as_str());
     }

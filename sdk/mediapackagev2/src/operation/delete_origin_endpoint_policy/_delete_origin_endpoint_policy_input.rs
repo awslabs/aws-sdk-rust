@@ -90,7 +90,7 @@ impl DeleteOriginEndpointPolicyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_origin_endpoint_policy::DeleteOriginEndpointPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_origin_endpoint_policy::DeleteOriginEndpointPolicyInput {
             channel_group_name: self.channel_group_name,

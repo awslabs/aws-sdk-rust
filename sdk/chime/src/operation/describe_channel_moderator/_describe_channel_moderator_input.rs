@@ -89,7 +89,7 @@ impl DescribeChannelModeratorInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_channel_moderator::DescribeChannelModeratorInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_channel_moderator::DescribeChannelModeratorInput {
             channel_arn: self.channel_arn,

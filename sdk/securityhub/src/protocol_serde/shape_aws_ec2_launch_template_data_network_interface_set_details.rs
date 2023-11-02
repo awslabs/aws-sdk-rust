@@ -2,7 +2,7 @@
 pub fn ser_aws_ec2_launch_template_data_network_interface_set_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.associate_carrier_ip_address {
         object.key("AssociateCarrierIpAddress").boolean(*var_1);
     }

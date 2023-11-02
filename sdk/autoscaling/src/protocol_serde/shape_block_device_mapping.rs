@@ -3,7 +3,7 @@
 pub fn ser_block_device_mapping(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::BlockDeviceMapping,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("VirtualName");
     if let Some(var_2) = &input.virtual_name {

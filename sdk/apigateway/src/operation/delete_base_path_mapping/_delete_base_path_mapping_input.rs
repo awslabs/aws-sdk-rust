@@ -72,7 +72,7 @@ impl DeleteBasePathMappingInputBuilder {
     /// Consumes the builder and constructs a [`DeleteBasePathMappingInput`](crate::operation::delete_base_path_mapping::DeleteBasePathMappingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_base_path_mapping::DeleteBasePathMappingInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_base_path_mapping::DeleteBasePathMappingInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_base_path_mapping::DeleteBasePathMappingInput {
             domain_name: self.domain_name,

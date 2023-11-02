@@ -95,7 +95,7 @@ impl DecryptDataInputBuilder {
         &self.decryption_attributes
     }
     /// Consumes the builder and constructs a [`DecryptDataInput`](crate::operation::decrypt_data::DecryptDataInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::decrypt_data::DecryptDataInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::decrypt_data::DecryptDataInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::decrypt_data::DecryptDataInput {
             key_identifier: self.key_identifier,
             cipher_text: self.cipher_text,

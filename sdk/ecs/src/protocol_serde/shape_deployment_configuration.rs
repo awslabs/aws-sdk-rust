@@ -2,7 +2,7 @@
 pub fn ser_deployment_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DeploymentConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.deployment_circuit_breaker {
         #[allow(unused_mut)]
         let mut object_2 = object.key("deploymentCircuitBreaker").start_object();

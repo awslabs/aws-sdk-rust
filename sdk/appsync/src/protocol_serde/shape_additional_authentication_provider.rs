@@ -2,7 +2,7 @@
 pub fn ser_additional_authentication_provider(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AdditionalAuthenticationProvider,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.authentication_type {
         object.key("authenticationType").string(var_1.as_str());
     }

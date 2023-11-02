@@ -88,16 +88,16 @@ impl UtteranceDataSortByBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::UtteranceDataSortByBuilder::name)
     /// - [`order`](crate::types::builders::UtteranceDataSortByBuilder::order)
-    pub fn build(self) -> ::std::result::Result<crate::types::UtteranceDataSortBy, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::UtteranceDataSortBy, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::UtteranceDataSortBy {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building UtteranceDataSortBy",
                 )
             })?,
             order: self.order.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "order",
                     "order was not specified but it is required when building UtteranceDataSortBy",
                 )

@@ -2,7 +2,7 @@
 pub fn ser_id_mapping_workflow_input_source(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IdMappingWorkflowInputSource,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("inputSourceARN").string(input.input_source_arn.as_str());
     }

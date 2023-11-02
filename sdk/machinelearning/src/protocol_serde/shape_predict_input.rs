@@ -2,7 +2,7 @@
 pub fn ser_predict_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::predict::PredictInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.ml_model_id {
         object.key("MLModelId").string(var_1.as_str());
     }

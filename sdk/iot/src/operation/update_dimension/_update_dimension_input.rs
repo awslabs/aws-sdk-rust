@@ -73,7 +73,7 @@ impl UpdateDimensionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDimensionInput`](crate::operation::update_dimension::UpdateDimensionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_dimension::UpdateDimensionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_dimension::UpdateDimensionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_dimension::UpdateDimensionInput {
             name: self.name,
             string_values: self.string_values,

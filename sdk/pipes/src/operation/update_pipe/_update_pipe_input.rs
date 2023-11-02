@@ -226,7 +226,7 @@ impl UpdatePipeInputBuilder {
         &self.role_arn
     }
     /// Consumes the builder and constructs a [`UpdatePipeInput`](crate::operation::update_pipe::UpdatePipeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::update_pipe::UpdatePipeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_pipe::UpdatePipeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_pipe::UpdatePipeInput {
             name: self.name,
             description: self.description,

@@ -129,7 +129,7 @@ impl ListStageDevicesInputBuilder {
     /// Consumes the builder and constructs a [`ListStageDevicesInput`](crate::operation::list_stage_devices::ListStageDevicesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_stage_devices::ListStageDevicesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_stage_devices::ListStageDevicesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_stage_devices::ListStageDevicesInput {
             next_token: self.next_token,
             max_results: self.max_results,

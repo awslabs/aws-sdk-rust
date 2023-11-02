@@ -125,7 +125,7 @@ impl ListModelsInputBuilder {
         &self.dataset_name_begins_with
     }
     /// Consumes the builder and constructs a [`ListModelsInput`](crate::operation::list_models::ListModelsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_models::ListModelsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_models::ListModelsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_models::ListModelsInput {
             next_token: self.next_token,
             max_results: self.max_results,

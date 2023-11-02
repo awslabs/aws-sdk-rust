@@ -2,7 +2,7 @@
 pub fn ser_bias(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Bias,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.report {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Report").start_object();

@@ -141,34 +141,34 @@ impl ServiceSyncConfigBuilder {
     /// - [`repository_name`](crate::types::builders::ServiceSyncConfigBuilder::repository_name)
     /// - [`branch`](crate::types::builders::ServiceSyncConfigBuilder::branch)
     /// - [`file_path`](crate::types::builders::ServiceSyncConfigBuilder::file_path)
-    pub fn build(self) -> ::std::result::Result<crate::types::ServiceSyncConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ServiceSyncConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ServiceSyncConfig {
             service_name: self.service_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "service_name",
                     "service_name was not specified but it is required when building ServiceSyncConfig",
                 )
             })?,
             repository_provider: self.repository_provider.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "repository_provider",
                     "repository_provider was not specified but it is required when building ServiceSyncConfig",
                 )
             })?,
             repository_name: self.repository_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "repository_name",
                     "repository_name was not specified but it is required when building ServiceSyncConfig",
                 )
             })?,
             branch: self.branch.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "branch",
                     "branch was not specified but it is required when building ServiceSyncConfig",
                 )
             })?,
             file_path: self.file_path.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "file_path",
                     "file_path was not specified but it is required when building ServiceSyncConfig",
                 )

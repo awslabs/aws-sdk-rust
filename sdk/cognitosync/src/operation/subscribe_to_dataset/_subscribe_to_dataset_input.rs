@@ -111,7 +111,8 @@ impl SubscribeToDatasetInputBuilder {
     /// Consumes the builder and constructs a [`SubscribeToDatasetInput`](crate::operation::subscribe_to_dataset::SubscribeToDatasetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::subscribe_to_dataset::SubscribeToDatasetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::subscribe_to_dataset::SubscribeToDatasetInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::subscribe_to_dataset::SubscribeToDatasetInput {
             identity_pool_id: self.identity_pool_id,
             identity_id: self.identity_id,

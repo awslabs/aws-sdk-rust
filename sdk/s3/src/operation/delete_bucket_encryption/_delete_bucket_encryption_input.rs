@@ -65,8 +65,10 @@ impl DeleteBucketEncryptionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteBucketEncryptionInput`](crate::operation::delete_bucket_encryption::DeleteBucketEncryptionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_bucket_encryption::DeleteBucketEncryptionInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::delete_bucket_encryption::DeleteBucketEncryptionInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::delete_bucket_encryption::DeleteBucketEncryptionInput {
             bucket: self.bucket,
             expected_bucket_owner: self.expected_bucket_owner,

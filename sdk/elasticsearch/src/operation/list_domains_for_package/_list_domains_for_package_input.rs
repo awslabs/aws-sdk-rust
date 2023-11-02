@@ -87,7 +87,7 @@ impl ListDomainsForPackageInputBuilder {
     /// Consumes the builder and constructs a [`ListDomainsForPackageInput`](crate::operation::list_domains_for_package::ListDomainsForPackageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_domains_for_package::ListDomainsForPackageInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_domains_for_package::ListDomainsForPackageInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_domains_for_package::ListDomainsForPackageInput {
             package_id: self.package_id,

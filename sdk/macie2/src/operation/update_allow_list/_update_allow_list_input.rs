@@ -114,7 +114,7 @@ impl UpdateAllowListInputBuilder {
     /// Consumes the builder and constructs a [`UpdateAllowListInput`](crate::operation::update_allow_list::UpdateAllowListInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_allow_list::UpdateAllowListInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_allow_list::UpdateAllowListInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_allow_list::UpdateAllowListInput {
             criteria: self.criteria,
             description: self.description,

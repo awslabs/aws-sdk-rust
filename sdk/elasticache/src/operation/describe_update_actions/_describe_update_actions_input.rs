@@ -264,7 +264,7 @@ impl DescribeUpdateActionsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeUpdateActionsInput`](crate::operation::describe_update_actions::DescribeUpdateActionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_update_actions::DescribeUpdateActionsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_update_actions::DescribeUpdateActionsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_update_actions::DescribeUpdateActionsInput {
             service_update_name: self.service_update_name,

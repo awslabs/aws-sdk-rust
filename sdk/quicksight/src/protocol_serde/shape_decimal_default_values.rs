@@ -2,7 +2,7 @@
 pub fn ser_decimal_default_values(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DecimalDefaultValues,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.dynamic_value {
         #[allow(unused_mut)]
         let mut object_2 = object.key("DynamicValue").start_object();

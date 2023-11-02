@@ -42,7 +42,7 @@ impl StopFleetInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`StopFleetInput`](crate::operation::stop_fleet::StopFleetInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::stop_fleet::StopFleetInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_fleet::StopFleetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_fleet::StopFleetInput { name: self.name })
     }
 }

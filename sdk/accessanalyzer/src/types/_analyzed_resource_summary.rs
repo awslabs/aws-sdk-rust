@@ -93,22 +93,22 @@ impl AnalyzedResourceSummaryBuilder {
     /// - [`resource_arn`](crate::types::builders::AnalyzedResourceSummaryBuilder::resource_arn)
     /// - [`resource_owner_account`](crate::types::builders::AnalyzedResourceSummaryBuilder::resource_owner_account)
     /// - [`resource_type`](crate::types::builders::AnalyzedResourceSummaryBuilder::resource_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::AnalyzedResourceSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AnalyzedResourceSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AnalyzedResourceSummary {
             resource_arn: self.resource_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_arn",
                     "resource_arn was not specified but it is required when building AnalyzedResourceSummary",
                 )
             })?,
             resource_owner_account: self.resource_owner_account.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_owner_account",
                     "resource_owner_account was not specified but it is required when building AnalyzedResourceSummary",
                 )
             })?,
             resource_type: self.resource_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_type",
                     "resource_type was not specified but it is required when building AnalyzedResourceSummary",
                 )

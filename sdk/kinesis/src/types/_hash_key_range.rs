@@ -70,16 +70,16 @@ impl HashKeyRangeBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`starting_hash_key`](crate::types::builders::HashKeyRangeBuilder::starting_hash_key)
     /// - [`ending_hash_key`](crate::types::builders::HashKeyRangeBuilder::ending_hash_key)
-    pub fn build(self) -> ::std::result::Result<crate::types::HashKeyRange, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::HashKeyRange, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::HashKeyRange {
             starting_hash_key: self.starting_hash_key.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "starting_hash_key",
                     "starting_hash_key was not specified but it is required when building HashKeyRange",
                 )
             })?,
             ending_hash_key: self.ending_hash_key.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "ending_hash_key",
                     "ending_hash_key was not specified but it is required when building HashKeyRange",
                 )

@@ -62,7 +62,9 @@ impl ListSubjectsInputBuilder {
         &self.page_size
     }
     /// Consumes the builder and constructs a [`ListSubjectsInput`](crate::operation::list_subjects::ListSubjectsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_subjects::ListSubjectsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_subjects::ListSubjectsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_subjects::ListSubjectsInput {
             next_token: self.next_token,
             page_size: self.page_size,

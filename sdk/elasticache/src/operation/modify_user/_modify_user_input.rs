@@ -155,7 +155,7 @@ impl ModifyUserInputBuilder {
         &self.authentication_mode
     }
     /// Consumes the builder and constructs a [`ModifyUserInput`](crate::operation::modify_user::ModifyUserInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::modify_user::ModifyUserInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_user::ModifyUserInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::modify_user::ModifyUserInput {
             user_id: self.user_id,
             access_string: self.access_string,

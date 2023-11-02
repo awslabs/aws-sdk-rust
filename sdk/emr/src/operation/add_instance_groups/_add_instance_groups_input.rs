@@ -74,7 +74,7 @@ impl AddInstanceGroupsInputBuilder {
     /// Consumes the builder and constructs a [`AddInstanceGroupsInput`](crate::operation::add_instance_groups::AddInstanceGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::add_instance_groups::AddInstanceGroupsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::add_instance_groups::AddInstanceGroupsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::add_instance_groups::AddInstanceGroupsInput {
             instance_groups: self.instance_groups,
             job_flow_id: self.job_flow_id,

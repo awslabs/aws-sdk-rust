@@ -179,7 +179,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for HeadBucketRe
             fn uri_base(
                 _input: &crate::operation::head_bucket::HeadBucketInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 use ::std::fmt::Write as _;
                 ::std::write!(output, "/").expect("formatting should succeed");
                 ::std::result::Result::Ok(())
@@ -188,7 +188,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for HeadBucketRe
             fn update_http_builder(
                 input: &crate::operation::head_bucket::HeadBucketInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::protocol_serde::shape_head_bucket::ser_head_bucket_headers(input, builder)?;
@@ -197,7 +197,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for HeadBucketRe
             let mut builder = update_http_builder(&input, ::http::request::Builder::new())?;
             builder
         };
-        let body = ::aws_smithy_http::body::SdkBody::from("");
+        let body = ::aws_smithy_types::body::SdkBody::from("");
 
         ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
@@ -239,7 +239,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for HeadBucketEnd
                     .bucket
                     .clone()
                     .filter(|f| !AsRef::<str>::as_ref(f).trim().is_empty())
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("bucket", "A required field was not set"))?,
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("bucket", "A required field was not set"))?,
             ))
             .build()
             .map_err(|err| {
@@ -269,7 +269,7 @@ mod head_bucket_request_test {
             )
             .header("x-amz-request-id", "GRZ6BZ468DF52F2E")
             .status(404)
-            .body(::aws_smithy_http::body::SdkBody::from(""))
+            .body(::aws_smithy_types::body::SdkBody::from(""))
             .unwrap();
         use ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin;
         use ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse;
@@ -283,7 +283,7 @@ mod head_bucket_request_test {
         let parsed = de.deserialize_streaming(&mut http_response);
         let parsed = parsed.unwrap_or_else(|| {
             let http_response =
-                http_response.map(|body| ::aws_smithy_http::body::SdkBody::from(::bytes::Bytes::copy_from_slice(body.bytes().unwrap())));
+                http_response.map(|body| ::aws_smithy_types::body::SdkBody::from(::bytes::Bytes::copy_from_slice(body.bytes().unwrap())));
             de.deserialize_nonstreaming(&http_response)
         });
         let parsed = parsed.expect_err("should be error response");

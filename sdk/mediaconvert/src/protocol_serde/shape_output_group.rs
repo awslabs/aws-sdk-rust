@@ -2,7 +2,7 @@
 pub fn ser_output_group(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::OutputGroup,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.automated_encoding_settings {
         #[allow(unused_mut)]
         let mut object_2 = object.key("automatedEncodingSettings").start_object();

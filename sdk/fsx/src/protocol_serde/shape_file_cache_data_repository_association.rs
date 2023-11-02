@@ -2,7 +2,7 @@
 pub fn ser_file_cache_data_repository_association(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FileCacheDataRepositoryAssociation,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.file_cache_path {
         object.key("FileCachePath").string(var_1.as_str());
     }

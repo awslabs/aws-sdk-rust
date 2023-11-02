@@ -100,7 +100,7 @@ impl DeactivateTypeInputBuilder {
     /// Consumes the builder and constructs a [`DeactivateTypeInput`](crate::operation::deactivate_type::DeactivateTypeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::deactivate_type::DeactivateTypeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::deactivate_type::DeactivateTypeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::deactivate_type::DeactivateTypeInput {
             type_name: self.type_name,
             r#type: self.r#type,

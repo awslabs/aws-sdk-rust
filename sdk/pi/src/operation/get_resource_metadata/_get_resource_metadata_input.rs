@@ -66,7 +66,7 @@ impl GetResourceMetadataInputBuilder {
     /// Consumes the builder and constructs a [`GetResourceMetadataInput`](crate::operation::get_resource_metadata::GetResourceMetadataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_resource_metadata::GetResourceMetadataInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_resource_metadata::GetResourceMetadataInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_resource_metadata::GetResourceMetadataInput {
             service_type: self.service_type,

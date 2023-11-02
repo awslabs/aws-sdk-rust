@@ -107,7 +107,7 @@ impl CopyImageInputBuilder {
         &self.destination_image_description
     }
     /// Consumes the builder and constructs a [`CopyImageInput`](crate::operation::copy_image::CopyImageInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::copy_image::CopyImageInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::copy_image::CopyImageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::copy_image::CopyImageInput {
             source_image_name: self.source_image_name,
             destination_image_name: self.destination_image_name,

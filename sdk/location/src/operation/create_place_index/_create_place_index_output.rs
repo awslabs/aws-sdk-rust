@@ -125,22 +125,22 @@ impl CreatePlaceIndexOutputBuilder {
     /// - [`create_time`](crate::operation::create_place_index::builders::CreatePlaceIndexOutputBuilder::create_time)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_place_index::CreatePlaceIndexOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_place_index::CreatePlaceIndexOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_place_index::CreatePlaceIndexOutput {
             index_name: self.index_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "index_name",
                     "index_name was not specified but it is required when building CreatePlaceIndexOutput",
                 )
             })?,
             index_arn: self.index_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "index_arn",
                     "index_arn was not specified but it is required when building CreatePlaceIndexOutput",
                 )
             })?,
             create_time: self.create_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "create_time",
                     "create_time was not specified but it is required when building CreatePlaceIndexOutput",
                 )

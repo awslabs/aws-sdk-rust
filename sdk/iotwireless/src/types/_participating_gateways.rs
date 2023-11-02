@@ -97,22 +97,22 @@ impl ParticipatingGatewaysBuilder {
     /// - [`downlink_mode`](crate::types::builders::ParticipatingGatewaysBuilder::downlink_mode)
     /// - [`gateway_list`](crate::types::builders::ParticipatingGatewaysBuilder::gateway_list)
     /// - [`transmission_interval`](crate::types::builders::ParticipatingGatewaysBuilder::transmission_interval)
-    pub fn build(self) -> ::std::result::Result<crate::types::ParticipatingGateways, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ParticipatingGateways, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ParticipatingGateways {
             downlink_mode: self.downlink_mode.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "downlink_mode",
                     "downlink_mode was not specified but it is required when building ParticipatingGateways",
                 )
             })?,
             gateway_list: self.gateway_list.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "gateway_list",
                     "gateway_list was not specified but it is required when building ParticipatingGateways",
                 )
             })?,
             transmission_interval: self.transmission_interval.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "transmission_interval",
                     "transmission_interval was not specified but it is required when building ParticipatingGateways",
                 )

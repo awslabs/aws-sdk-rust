@@ -94,22 +94,22 @@ impl SigV4AuthorizationBuilder {
     /// - [`signing_region`](crate::types::builders::SigV4AuthorizationBuilder::signing_region)
     /// - [`service_name`](crate::types::builders::SigV4AuthorizationBuilder::service_name)
     /// - [`role_arn`](crate::types::builders::SigV4AuthorizationBuilder::role_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::SigV4Authorization, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SigV4Authorization, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SigV4Authorization {
             signing_region: self.signing_region.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "signing_region",
                     "signing_region was not specified but it is required when building SigV4Authorization",
                 )
             })?,
             service_name: self.service_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "service_name",
                     "service_name was not specified but it is required when building SigV4Authorization",
                 )
             })?,
             role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role_arn",
                     "role_arn was not specified but it is required when building SigV4Authorization",
                 )

@@ -97,22 +97,22 @@ impl BotLocaleFilterBuilder {
     /// - [`name`](crate::types::builders::BotLocaleFilterBuilder::name)
     /// - [`values`](crate::types::builders::BotLocaleFilterBuilder::values)
     /// - [`operator`](crate::types::builders::BotLocaleFilterBuilder::operator)
-    pub fn build(self) -> ::std::result::Result<crate::types::BotLocaleFilter, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::BotLocaleFilter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::BotLocaleFilter {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building BotLocaleFilter",
                 )
             })?,
             values: self.values.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "values",
                     "values was not specified but it is required when building BotLocaleFilter",
                 )
             })?,
             operator: self.operator.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "operator",
                     "operator was not specified but it is required when building BotLocaleFilter",
                 )

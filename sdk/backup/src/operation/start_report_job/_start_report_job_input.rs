@@ -65,7 +65,7 @@ impl StartReportJobInputBuilder {
     /// Consumes the builder and constructs a [`StartReportJobInput`](crate::operation::start_report_job::StartReportJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_report_job::StartReportJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_report_job::StartReportJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_report_job::StartReportJobInput {
             report_plan_name: self.report_plan_name,
             idempotency_token: self.idempotency_token,

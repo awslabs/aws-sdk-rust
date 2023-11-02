@@ -2,7 +2,7 @@
 pub fn ser_batch_detach_typed_link(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BatchDetachTypedLink,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.typed_link_specifier {
         #[allow(unused_mut)]
         let mut object_2 = object.key("TypedLinkSpecifier").start_object();

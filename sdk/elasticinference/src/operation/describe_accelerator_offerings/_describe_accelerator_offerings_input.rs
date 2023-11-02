@@ -75,7 +75,7 @@ impl DescribeAcceleratorOfferingsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_accelerator_offerings::DescribeAcceleratorOfferingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_accelerator_offerings::DescribeAcceleratorOfferingsInput {
             location_type: self.location_type,

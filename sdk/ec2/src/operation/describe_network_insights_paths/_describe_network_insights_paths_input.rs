@@ -210,7 +210,7 @@ impl DescribeNetworkInsightsPathsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_network_insights_paths::DescribeNetworkInsightsPathsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_network_insights_paths::DescribeNetworkInsightsPathsInput {
             network_insights_path_ids: self.network_insights_path_ids,

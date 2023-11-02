@@ -107,7 +107,7 @@ impl SetIdentityPoolRolesInputBuilder {
     /// Consumes the builder and constructs a [`SetIdentityPoolRolesInput`](crate::operation::set_identity_pool_roles::SetIdentityPoolRolesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::set_identity_pool_roles::SetIdentityPoolRolesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::set_identity_pool_roles::SetIdentityPoolRolesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::set_identity_pool_roles::SetIdentityPoolRolesInput {
             identity_pool_id: self.identity_pool_id,

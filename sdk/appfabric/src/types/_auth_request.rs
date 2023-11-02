@@ -78,16 +78,16 @@ impl AuthRequestBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`redirect_uri`](crate::types::builders::AuthRequestBuilder::redirect_uri)
     /// - [`code`](crate::types::builders::AuthRequestBuilder::code)
-    pub fn build(self) -> ::std::result::Result<crate::types::AuthRequest, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AuthRequest, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AuthRequest {
             redirect_uri: self.redirect_uri.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "redirect_uri",
                     "redirect_uri was not specified but it is required when building AuthRequest",
                 )
             })?,
             code: self.code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "code",
                     "code was not specified but it is required when building AuthRequest",
                 )

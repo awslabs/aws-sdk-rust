@@ -112,16 +112,16 @@ impl NetworkInterfaceBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`interface_id`](crate::types::builders::NetworkInterfaceBuilder::interface_id)
     /// - [`r#type`](crate::types::builders::NetworkInterfaceBuilder::r#type)
-    pub fn build(self) -> ::std::result::Result<crate::types::NetworkInterface, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::NetworkInterface, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::NetworkInterface {
             interface_id: self.interface_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "interface_id",
                     "interface_id was not specified but it is required when building NetworkInterface",
                 )
             })?,
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building NetworkInterface",
                 )

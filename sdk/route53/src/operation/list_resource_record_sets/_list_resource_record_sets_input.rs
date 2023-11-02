@@ -196,7 +196,7 @@ impl ListResourceRecordSetsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_resource_record_sets::ListResourceRecordSetsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_resource_record_sets::ListResourceRecordSetsInput {
             hosted_zone_id: self.hosted_zone_id,

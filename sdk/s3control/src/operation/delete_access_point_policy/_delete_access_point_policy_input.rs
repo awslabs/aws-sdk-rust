@@ -128,7 +128,7 @@ impl DeleteAccessPointPolicyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_access_point_policy::DeleteAccessPointPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_access_point_policy::DeleteAccessPointPolicyInput {
             account_id: self.account_id,

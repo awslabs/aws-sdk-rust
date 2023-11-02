@@ -150,7 +150,7 @@ impl InviteAccountToOrganizationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::invite_account_to_organization::InviteAccountToOrganizationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::invite_account_to_organization::InviteAccountToOrganizationInput {
             target: self.target,

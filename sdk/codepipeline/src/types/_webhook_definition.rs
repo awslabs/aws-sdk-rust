@@ -193,34 +193,34 @@ impl WebhookDefinitionBuilder {
     /// - [`target_action`](crate::types::builders::WebhookDefinitionBuilder::target_action)
     /// - [`filters`](crate::types::builders::WebhookDefinitionBuilder::filters)
     /// - [`authentication`](crate::types::builders::WebhookDefinitionBuilder::authentication)
-    pub fn build(self) -> ::std::result::Result<crate::types::WebhookDefinition, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::WebhookDefinition, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::WebhookDefinition {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building WebhookDefinition",
                 )
             })?,
             target_pipeline: self.target_pipeline.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "target_pipeline",
                     "target_pipeline was not specified but it is required when building WebhookDefinition",
                 )
             })?,
             target_action: self.target_action.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "target_action",
                     "target_action was not specified but it is required when building WebhookDefinition",
                 )
             })?,
             filters: self.filters.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "filters",
                     "filters was not specified but it is required when building WebhookDefinition",
                 )
             })?,
             authentication: self.authentication.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "authentication",
                     "authentication was not specified but it is required when building WebhookDefinition",
                 )

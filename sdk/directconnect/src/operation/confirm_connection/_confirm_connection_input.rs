@@ -44,7 +44,7 @@ impl ConfirmConnectionInputBuilder {
     /// Consumes the builder and constructs a [`ConfirmConnectionInput`](crate::operation::confirm_connection::ConfirmConnectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::confirm_connection::ConfirmConnectionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::confirm_connection::ConfirmConnectionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::confirm_connection::ConfirmConnectionInput {
             connection_id: self.connection_id,
         })

@@ -115,22 +115,22 @@ impl ParameterTextFieldControlBuilder {
     /// - [`parameter_control_id`](crate::types::builders::ParameterTextFieldControlBuilder::parameter_control_id)
     /// - [`title`](crate::types::builders::ParameterTextFieldControlBuilder::title)
     /// - [`source_parameter_name`](crate::types::builders::ParameterTextFieldControlBuilder::source_parameter_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::ParameterTextFieldControl, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ParameterTextFieldControl, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ParameterTextFieldControl {
             parameter_control_id: self.parameter_control_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "parameter_control_id",
                     "parameter_control_id was not specified but it is required when building ParameterTextFieldControl",
                 )
             })?,
             title: self.title.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "title",
                     "title was not specified but it is required when building ParameterTextFieldControl",
                 )
             })?,
             source_parameter_name: self.source_parameter_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source_parameter_name",
                     "source_parameter_name was not specified but it is required when building ParameterTextFieldControl",
                 )

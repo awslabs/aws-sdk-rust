@@ -194,10 +194,10 @@ impl CrlConfigurationBuilder {
     /// Consumes the builder and constructs a [`CrlConfiguration`](crate::types::CrlConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`enabled`](crate::types::builders::CrlConfigurationBuilder::enabled)
-    pub fn build(self) -> ::std::result::Result<crate::types::CrlConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CrlConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CrlConfiguration {
             enabled: self.enabled.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "enabled",
                     "enabled was not specified but it is required when building CrlConfiguration",
                 )

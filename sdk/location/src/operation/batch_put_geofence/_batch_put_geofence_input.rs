@@ -73,7 +73,7 @@ impl BatchPutGeofenceInputBuilder {
     /// Consumes the builder and constructs a [`BatchPutGeofenceInput`](crate::operation::batch_put_geofence::BatchPutGeofenceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_put_geofence::BatchPutGeofenceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::batch_put_geofence::BatchPutGeofenceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::batch_put_geofence::BatchPutGeofenceInput {
             collection_name: self.collection_name,
             entries: self.entries,

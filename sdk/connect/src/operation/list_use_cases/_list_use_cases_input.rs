@@ -109,7 +109,7 @@ impl ListUseCasesInputBuilder {
     /// Consumes the builder and constructs a [`ListUseCasesInput`](crate::operation::list_use_cases::ListUseCasesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_use_cases::ListUseCasesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_use_cases::ListUseCasesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_use_cases::ListUseCasesInput {
             instance_id: self.instance_id,
             integration_association_id: self.integration_association_id,

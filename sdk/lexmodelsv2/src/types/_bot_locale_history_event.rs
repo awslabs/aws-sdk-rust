@@ -69,16 +69,16 @@ impl BotLocaleHistoryEventBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`event`](crate::types::builders::BotLocaleHistoryEventBuilder::event)
     /// - [`event_date`](crate::types::builders::BotLocaleHistoryEventBuilder::event_date)
-    pub fn build(self) -> ::std::result::Result<crate::types::BotLocaleHistoryEvent, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::BotLocaleHistoryEvent, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::BotLocaleHistoryEvent {
             event: self.event.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "event",
                     "event was not specified but it is required when building BotLocaleHistoryEvent",
                 )
             })?,
             event_date: self.event_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "event_date",
                     "event_date was not specified but it is required when building BotLocaleHistoryEvent",
                 )

@@ -65,11 +65,11 @@ impl ProvideAnomalyFeedbackOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::provide_anomaly_feedback::ProvideAnomalyFeedbackOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::provide_anomaly_feedback::ProvideAnomalyFeedbackOutput {
             anomaly_id: self.anomaly_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "anomaly_id",
                     "anomaly_id was not specified but it is required when building ProvideAnomalyFeedbackOutput",
                 )

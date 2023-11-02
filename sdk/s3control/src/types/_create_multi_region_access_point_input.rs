@@ -101,17 +101,17 @@ impl CreateMultiRegionAccessPointInputBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::CreateMultiRegionAccessPointInputBuilder::name)
     /// - [`regions`](crate::types::builders::CreateMultiRegionAccessPointInputBuilder::regions)
-    pub fn build(self) -> ::std::result::Result<crate::types::CreateMultiRegionAccessPointInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CreateMultiRegionAccessPointInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CreateMultiRegionAccessPointInput {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building CreateMultiRegionAccessPointInput",
                 )
             })?,
             public_access_block: self.public_access_block,
             regions: self.regions.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "regions",
                     "regions was not specified but it is required when building CreateMultiRegionAccessPointInput",
                 )

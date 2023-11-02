@@ -44,7 +44,7 @@ impl DeleteConformancePackInputBuilder {
     /// Consumes the builder and constructs a [`DeleteConformancePackInput`](crate::operation::delete_conformance_pack::DeleteConformancePackInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_conformance_pack::DeleteConformancePackInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_conformance_pack::DeleteConformancePackInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_conformance_pack::DeleteConformancePackInput {
             conformance_pack_name: self.conformance_pack_name,

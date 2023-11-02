@@ -46,7 +46,7 @@ impl StopSentimentDetectionJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_sentiment_detection_job::StopSentimentDetectionJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::stop_sentiment_detection_job::StopSentimentDetectionJobInput { job_id: self.job_id })
     }

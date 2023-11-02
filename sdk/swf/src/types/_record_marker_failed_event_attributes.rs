@@ -101,16 +101,16 @@ impl RecordMarkerFailedEventAttributesBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`marker_name`](crate::types::builders::RecordMarkerFailedEventAttributesBuilder::marker_name)
     /// - [`cause`](crate::types::builders::RecordMarkerFailedEventAttributesBuilder::cause)
-    pub fn build(self) -> ::std::result::Result<crate::types::RecordMarkerFailedEventAttributes, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RecordMarkerFailedEventAttributes, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RecordMarkerFailedEventAttributes {
             marker_name: self.marker_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "marker_name",
                     "marker_name was not specified but it is required when building RecordMarkerFailedEventAttributes",
                 )
             })?,
             cause: self.cause.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "cause",
                     "cause was not specified but it is required when building RecordMarkerFailedEventAttributes",
                 )

@@ -46,7 +46,7 @@ impl DescribeMonitoringScheduleInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_monitoring_schedule::DescribeMonitoringScheduleInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_monitoring_schedule::DescribeMonitoringScheduleInput {
             monitoring_schedule_name: self.monitoring_schedule_name,

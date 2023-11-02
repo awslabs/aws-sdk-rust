@@ -94,7 +94,7 @@ impl CreateBotInputBuilder {
         &self.domain
     }
     /// Consumes the builder and constructs a [`CreateBotInput`](crate::operation::create_bot::CreateBotInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_bot::CreateBotInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_bot::CreateBotInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_bot::CreateBotInput {
             account_id: self.account_id,
             display_name: self.display_name,

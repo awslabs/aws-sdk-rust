@@ -121,7 +121,7 @@ impl UpdateArtifactInputBuilder {
     /// Consumes the builder and constructs a [`UpdateArtifactInput`](crate::operation::update_artifact::UpdateArtifactInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_artifact::UpdateArtifactInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_artifact::UpdateArtifactInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_artifact::UpdateArtifactInput {
             artifact_arn: self.artifact_arn,
             artifact_name: self.artifact_name,

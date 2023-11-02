@@ -279,7 +279,7 @@ impl IssueCertificateInputBuilder {
     /// Consumes the builder and constructs a [`IssueCertificateInput`](crate::operation::issue_certificate::IssueCertificateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::issue_certificate::IssueCertificateInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::issue_certificate::IssueCertificateInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::issue_certificate::IssueCertificateInput {
             api_passthrough: self.api_passthrough,
             certificate_authority_arn: self.certificate_authority_arn,

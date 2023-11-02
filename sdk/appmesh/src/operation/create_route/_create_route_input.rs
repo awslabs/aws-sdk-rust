@@ -179,7 +179,7 @@ impl CreateRouteInputBuilder {
         &self.mesh_owner
     }
     /// Consumes the builder and constructs a [`CreateRouteInput`](crate::operation::create_route::CreateRouteInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_route::CreateRouteInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_route::CreateRouteInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_route::CreateRouteInput {
             route_name: self.route_name,
             mesh_name: self.mesh_name,

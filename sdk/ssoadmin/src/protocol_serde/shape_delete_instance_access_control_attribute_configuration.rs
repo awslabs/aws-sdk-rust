@@ -140,10 +140,10 @@ pub fn de_delete_instance_access_control_attribute_configuration_http_response(
 
 pub fn ser_delete_instance_access_control_attribute_configuration_input(
     input: &crate::operation::delete_instance_access_control_attribute_configuration::DeleteInstanceAccessControlAttributeConfigurationInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_delete_instance_access_control_attribute_configuration_input::ser_delete_instance_access_control_attribute_configuration_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

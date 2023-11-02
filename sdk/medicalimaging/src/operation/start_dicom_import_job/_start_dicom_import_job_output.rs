@@ -133,29 +133,29 @@ impl StartDicomImportJobOutputBuilder {
     /// - [`submitted_at`](crate::operation::start_dicom_import_job::builders::StartDicomImportJobOutputBuilder::submitted_at)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_dicom_import_job::StartDicomImportJobOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::start_dicom_import_job::StartDicomImportJobOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_dicom_import_job::StartDicomImportJobOutput {
             datastore_id: self.datastore_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "datastore_id",
                     "datastore_id was not specified but it is required when building StartDicomImportJobOutput",
                 )
             })?,
             job_id: self.job_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "job_id",
                     "job_id was not specified but it is required when building StartDicomImportJobOutput",
                 )
             })?,
             job_status: self.job_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "job_status",
                     "job_status was not specified but it is required when building StartDicomImportJobOutput",
                 )
             })?,
             submitted_at: self.submitted_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "submitted_at",
                     "submitted_at was not specified but it is required when building StartDicomImportJobOutput",
                 )

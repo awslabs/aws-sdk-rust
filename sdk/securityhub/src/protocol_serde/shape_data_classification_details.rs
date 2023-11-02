@@ -2,7 +2,7 @@
 pub fn ser_data_classification_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DataClassificationDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.detailed_results_location {
         object.key("DetailedResultsLocation").string(var_1.as_str());
     }

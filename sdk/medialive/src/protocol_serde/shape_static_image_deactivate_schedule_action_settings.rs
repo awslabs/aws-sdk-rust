@@ -2,7 +2,7 @@
 pub fn ser_static_image_deactivate_schedule_action_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::StaticImageDeactivateScheduleActionSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.fade_out {
         object.key("fadeOut").number(
             #[allow(clippy::useless_conversion)]

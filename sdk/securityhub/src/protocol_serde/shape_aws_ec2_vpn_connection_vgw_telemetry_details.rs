@@ -2,7 +2,7 @@
 pub fn ser_aws_ec2_vpn_connection_vgw_telemetry_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEc2VpnConnectionVgwTelemetryDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.accepted_route_count {
         object.key("AcceptedRouteCount").number(
             #[allow(clippy::useless_conversion)]

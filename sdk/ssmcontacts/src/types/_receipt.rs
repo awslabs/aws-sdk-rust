@@ -110,18 +110,18 @@ impl ReceiptBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`receipt_type`](crate::types::builders::ReceiptBuilder::receipt_type)
     /// - [`receipt_time`](crate::types::builders::ReceiptBuilder::receipt_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::Receipt, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Receipt, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Receipt {
             contact_channel_arn: self.contact_channel_arn,
             receipt_type: self.receipt_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "receipt_type",
                     "receipt_type was not specified but it is required when building Receipt",
                 )
             })?,
             receipt_info: self.receipt_info,
             receipt_time: self.receipt_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "receipt_time",
                     "receipt_time was not specified but it is required when building Receipt",
                 )

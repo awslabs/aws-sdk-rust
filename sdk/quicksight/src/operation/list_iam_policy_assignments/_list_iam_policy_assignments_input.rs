@@ -131,7 +131,7 @@ impl ListIamPolicyAssignmentsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_iam_policy_assignments::ListIamPolicyAssignmentsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_iam_policy_assignments::ListIamPolicyAssignmentsInput {
             aws_account_id: self.aws_account_id,

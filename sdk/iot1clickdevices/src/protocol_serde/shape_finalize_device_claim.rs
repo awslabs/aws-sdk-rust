@@ -121,12 +121,12 @@ pub fn de_finalize_device_claim_http_response(
 
 pub fn ser_finalize_device_claim_input(
     input: &crate::operation::finalize_device_claim::FinalizeDeviceClaimInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_finalize_device_claim_input::ser_finalize_device_claim_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_finalize_device_claim(

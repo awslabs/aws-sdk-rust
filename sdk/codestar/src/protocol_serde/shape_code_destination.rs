@@ -2,7 +2,7 @@
 pub fn ser_code_destination(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CodeDestination,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.code_commit {
         #[allow(unused_mut)]
         let mut object_2 = object.key("codeCommit").start_object();

@@ -103,11 +103,11 @@ impl ListEarthObservationJobsOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_earth_observation_jobs::ListEarthObservationJobsOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_earth_observation_jobs::ListEarthObservationJobsOutput {
             earth_observation_job_summaries: self.earth_observation_job_summaries.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "earth_observation_job_summaries",
                     "earth_observation_job_summaries was not specified but it is required when building ListEarthObservationJobsOutput",
                 )

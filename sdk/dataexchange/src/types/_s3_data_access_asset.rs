@@ -175,10 +175,10 @@ impl S3DataAccessAssetBuilder {
     /// Consumes the builder and constructs a [`S3DataAccessAsset`](crate::types::S3DataAccessAsset).
     /// This method will fail if any of the following fields are not set:
     /// - [`bucket`](crate::types::builders::S3DataAccessAssetBuilder::bucket)
-    pub fn build(self) -> ::std::result::Result<crate::types::S3DataAccessAsset, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::S3DataAccessAsset, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::S3DataAccessAsset {
             bucket: self.bucket.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "bucket",
                     "bucket was not specified but it is required when building S3DataAccessAsset",
                 )

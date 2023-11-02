@@ -119,7 +119,9 @@ impl CreateRecipeInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateRecipeInput`](crate::operation::create_recipe::CreateRecipeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_recipe::CreateRecipeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_recipe::CreateRecipeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_recipe::CreateRecipeInput {
             description: self.description,
             name: self.name,

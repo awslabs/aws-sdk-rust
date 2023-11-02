@@ -19,7 +19,8 @@ impl GetDirectoryLimitsInputBuilder {
     /// Consumes the builder and constructs a [`GetDirectoryLimitsInput`](crate::operation::get_directory_limits::GetDirectoryLimitsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_directory_limits::GetDirectoryLimitsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_directory_limits::GetDirectoryLimitsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::get_directory_limits::GetDirectoryLimitsInput {})
     }
 }

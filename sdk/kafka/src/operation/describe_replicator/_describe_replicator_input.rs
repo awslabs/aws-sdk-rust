@@ -44,7 +44,7 @@ impl DescribeReplicatorInputBuilder {
     /// Consumes the builder and constructs a [`DescribeReplicatorInput`](crate::operation::describe_replicator::DescribeReplicatorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_replicator::DescribeReplicatorInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_replicator::DescribeReplicatorInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_replicator::DescribeReplicatorInput {
             replicator_arn: self.replicator_arn,
         })

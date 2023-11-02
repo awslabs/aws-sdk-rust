@@ -94,7 +94,7 @@ impl CreateRouteTableInputBuilder {
     /// Consumes the builder and constructs a [`CreateRouteTableInput`](crate::operation::create_route_table::CreateRouteTableInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_route_table::CreateRouteTableInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_route_table::CreateRouteTableInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_route_table::CreateRouteTableInput {
             dry_run: self.dry_run,
             vpc_id: self.vpc_id,

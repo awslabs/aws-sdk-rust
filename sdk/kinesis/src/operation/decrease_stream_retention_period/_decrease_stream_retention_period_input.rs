@@ -89,7 +89,7 @@ impl DecreaseStreamRetentionPeriodInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::decrease_stream_retention_period::DecreaseStreamRetentionPeriodInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::decrease_stream_retention_period::DecreaseStreamRetentionPeriodInput {
             stream_name: self.stream_name,

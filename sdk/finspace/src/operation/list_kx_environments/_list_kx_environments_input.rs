@@ -64,7 +64,8 @@ impl ListKxEnvironmentsInputBuilder {
     /// Consumes the builder and constructs a [`ListKxEnvironmentsInput`](crate::operation::list_kx_environments::ListKxEnvironmentsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_kx_environments::ListKxEnvironmentsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_kx_environments::ListKxEnvironmentsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::list_kx_environments::ListKxEnvironmentsInput {
             next_token: self.next_token,
             max_results: self.max_results,

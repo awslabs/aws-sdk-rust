@@ -66,7 +66,7 @@ impl DisassociateLicenseInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateLicenseInput`](crate::operation::disassociate_license::DisassociateLicenseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::disassociate_license::DisassociateLicenseInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::disassociate_license::DisassociateLicenseInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::disassociate_license::DisassociateLicenseInput {
             workspace_id: self.workspace_id,

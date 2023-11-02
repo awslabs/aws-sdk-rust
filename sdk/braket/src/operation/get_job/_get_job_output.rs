@@ -508,29 +508,29 @@ impl GetJobOutputBuilder {
     /// - [`role_arn`](crate::operation::get_job::builders::GetJobOutputBuilder::role_arn)
     /// - [`job_name`](crate::operation::get_job::builders::GetJobOutputBuilder::job_name)
     /// - [`created_at`](crate::operation::get_job::builders::GetJobOutputBuilder::created_at)
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_job::GetJobOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_job::GetJobOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_job::GetJobOutput {
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building GetJobOutput",
                 )
             })?,
             job_arn: self.job_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "job_arn",
                     "job_arn was not specified but it is required when building GetJobOutput",
                 )
             })?,
             role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role_arn",
                     "role_arn was not specified but it is required when building GetJobOutput",
                 )
             })?,
             failure_reason: self.failure_reason,
             job_name: self.job_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "job_name",
                     "job_name was not specified but it is required when building GetJobOutput",
                 )
@@ -543,7 +543,7 @@ impl GetJobOutputBuilder {
             algorithm_specification: self.algorithm_specification,
             instance_config: self.instance_config,
             created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
                     "created_at was not specified but it is required when building GetJobOutput",
                 )

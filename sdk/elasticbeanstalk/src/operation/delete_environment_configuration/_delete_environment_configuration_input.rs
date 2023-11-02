@@ -69,7 +69,7 @@ impl DeleteEnvironmentConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_environment_configuration::DeleteEnvironmentConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_environment_configuration::DeleteEnvironmentConfigurationInput {
             application_name: self.application_name,

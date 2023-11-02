@@ -179,7 +179,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ResolveAppVe
             fn uri_base(
                 _input: &crate::operation::resolve_app_version_resources::ResolveAppVersionResourcesInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 use ::std::fmt::Write as _;
                 ::std::write!(output, "/resolve-app-version-resources").expect("formatting should succeed");
                 ::std::result::Result::Ok(())
@@ -188,7 +188,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ResolveAppVe
             fn update_http_builder(
                 input: &crate::operation::resolve_app_version_resources::ResolveAppVersionResourcesInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 ::std::result::Result::Ok(builder.method("POST").uri(uri))
@@ -197,7 +197,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ResolveAppVe
             builder = _header_serialization_settings.set_default_header(builder, ::http::header::CONTENT_TYPE, "application/json");
             builder
         };
-        let body = ::aws_smithy_http::body::SdkBody::from(
+        let body = ::aws_smithy_types::body::SdkBody::from(
             crate::protocol_serde::shape_resolve_app_version_resources::ser_resolve_app_version_resources_input(&input)?,
         );
         if let Some(content_length) = body.content_length() {

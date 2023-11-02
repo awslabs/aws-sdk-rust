@@ -98,7 +98,7 @@ impl AbortDocumentVersionUploadInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::abort_document_version_upload::AbortDocumentVersionUploadInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::abort_document_version_upload::AbortDocumentVersionUploadInput {
             authentication_token: self.authentication_token,

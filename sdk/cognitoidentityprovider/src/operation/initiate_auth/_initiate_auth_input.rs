@@ -407,7 +407,9 @@ impl InitiateAuthInputBuilder {
         &self.user_context_data
     }
     /// Consumes the builder and constructs a [`InitiateAuthInput`](crate::operation::initiate_auth::InitiateAuthInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::initiate_auth::InitiateAuthInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::initiate_auth::InitiateAuthInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::initiate_auth::InitiateAuthInput {
             auth_flow: self.auth_flow,
             auth_parameters: self.auth_parameters,

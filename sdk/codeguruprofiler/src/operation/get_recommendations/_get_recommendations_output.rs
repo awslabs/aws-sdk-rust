@@ -168,34 +168,35 @@ impl GetRecommendationsOutputBuilder {
     /// - [`anomalies`](crate::operation::get_recommendations::builders::GetRecommendationsOutputBuilder::anomalies)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_recommendations::GetRecommendationsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_recommendations::GetRecommendationsOutput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::get_recommendations::GetRecommendationsOutput {
             profiling_group_name: self.profiling_group_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "profiling_group_name",
                     "profiling_group_name was not specified but it is required when building GetRecommendationsOutput",
                 )
             })?,
             profile_start_time: self.profile_start_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "profile_start_time",
                     "profile_start_time was not specified but it is required when building GetRecommendationsOutput",
                 )
             })?,
             profile_end_time: self.profile_end_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "profile_end_time",
                     "profile_end_time was not specified but it is required when building GetRecommendationsOutput",
                 )
             })?,
             recommendations: self.recommendations.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "recommendations",
                     "recommendations was not specified but it is required when building GetRecommendationsOutput",
                 )
             })?,
             anomalies: self.anomalies.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "anomalies",
                     "anomalies was not specified but it is required when building GetRecommendationsOutput",
                 )

@@ -66,7 +66,7 @@ impl DeleteVpnConnectionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteVpnConnectionInput`](crate::operation::delete_vpn_connection::DeleteVpnConnectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_vpn_connection::DeleteVpnConnectionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_vpn_connection::DeleteVpnConnectionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_vpn_connection::DeleteVpnConnectionInput {
             vpn_connection_id: self.vpn_connection_id,

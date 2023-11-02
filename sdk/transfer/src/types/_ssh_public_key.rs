@@ -98,22 +98,22 @@ impl SshPublicKeyBuilder {
     /// - [`date_imported`](crate::types::builders::SshPublicKeyBuilder::date_imported)
     /// - [`ssh_public_key_body`](crate::types::builders::SshPublicKeyBuilder::ssh_public_key_body)
     /// - [`ssh_public_key_id`](crate::types::builders::SshPublicKeyBuilder::ssh_public_key_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::SshPublicKey, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SshPublicKey, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SshPublicKey {
             date_imported: self.date_imported.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "date_imported",
                     "date_imported was not specified but it is required when building SshPublicKey",
                 )
             })?,
             ssh_public_key_body: self.ssh_public_key_body.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "ssh_public_key_body",
                     "ssh_public_key_body was not specified but it is required when building SshPublicKey",
                 )
             })?,
             ssh_public_key_id: self.ssh_public_key_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "ssh_public_key_id",
                     "ssh_public_key_id was not specified but it is required when building SshPublicKey",
                 )

@@ -103,22 +103,22 @@ impl SuperuserParametersBuilder {
     /// - [`email_address`](crate::types::builders::SuperuserParametersBuilder::email_address)
     /// - [`first_name`](crate::types::builders::SuperuserParametersBuilder::first_name)
     /// - [`last_name`](crate::types::builders::SuperuserParametersBuilder::last_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::SuperuserParameters, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SuperuserParameters, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SuperuserParameters {
             email_address: self.email_address.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "email_address",
                     "email_address was not specified but it is required when building SuperuserParameters",
                 )
             })?,
             first_name: self.first_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "first_name",
                     "first_name was not specified but it is required when building SuperuserParameters",
                 )
             })?,
             last_name: self.last_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_name",
                     "last_name was not specified but it is required when building SuperuserParameters",
                 )

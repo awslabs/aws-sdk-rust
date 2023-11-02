@@ -111,7 +111,7 @@ impl SendDataToWirelessDeviceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::send_data_to_wireless_device::SendDataToWirelessDeviceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::send_data_to_wireless_device::SendDataToWirelessDeviceInput {
             id: self.id,

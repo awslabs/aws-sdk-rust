@@ -351,7 +351,9 @@ impl ReplicateKeyInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`ReplicateKeyInput`](crate::operation::replicate_key::ReplicateKeyInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::replicate_key::ReplicateKeyInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::replicate_key::ReplicateKeyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::replicate_key::ReplicateKeyInput {
             key_id: self.key_id,
             replica_region: self.replica_region,

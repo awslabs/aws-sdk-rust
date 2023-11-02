@@ -112,23 +112,23 @@ impl CreatePresignedNotebookUrlOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_presigned_notebook_url::CreatePresignedNotebookUrlOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_presigned_notebook_url::CreatePresignedNotebookUrlOutput {
             notebook_url: self.notebook_url.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "notebook_url",
                     "notebook_url was not specified but it is required when building CreatePresignedNotebookUrlOutput",
                 )
             })?,
             auth_token: self.auth_token.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "auth_token",
                     "auth_token was not specified but it is required when building CreatePresignedNotebookUrlOutput",
                 )
             })?,
             auth_token_expiration_time: self.auth_token_expiration_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "auth_token_expiration_time",
                     "auth_token_expiration_time was not specified but it is required when building CreatePresignedNotebookUrlOutput",
                 )

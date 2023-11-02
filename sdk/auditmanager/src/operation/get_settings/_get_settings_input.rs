@@ -42,7 +42,7 @@ impl GetSettingsInputBuilder {
         &self.attribute
     }
     /// Consumes the builder and constructs a [`GetSettingsInput`](crate::operation::get_settings::GetSettingsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_settings::GetSettingsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_settings::GetSettingsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_settings::GetSettingsInput { attribute: self.attribute })
     }
 }

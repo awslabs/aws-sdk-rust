@@ -44,7 +44,7 @@ impl DeleteInsightInputBuilder {
     /// Consumes the builder and constructs a [`DeleteInsightInput`](crate::operation::delete_insight::DeleteInsightInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_insight::DeleteInsightInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_insight::DeleteInsightInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_insight::DeleteInsightInput { id: self.id })
     }
 }

@@ -66,7 +66,7 @@ impl UnshareApplicationInputBuilder {
     /// Consumes the builder and constructs a [`UnshareApplicationInput`](crate::operation::unshare_application::UnshareApplicationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::unshare_application::UnshareApplicationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::unshare_application::UnshareApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::unshare_application::UnshareApplicationInput {
             application_id: self.application_id,
             organization_id: self.organization_id,

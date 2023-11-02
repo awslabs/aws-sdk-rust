@@ -2,7 +2,7 @@
 pub fn ser_put_app_instance_streaming_configurations_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_app_instance_streaming_configurations::PutAppInstanceStreamingConfigurationsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.app_instance_streaming_configurations {
         let mut array_2 = object.key("AppInstanceStreamingConfigurations").start_array();
         for item_3 in var_1 {

@@ -88,7 +88,7 @@ impl GetParticipantInputBuilder {
     /// Consumes the builder and constructs a [`GetParticipantInput`](crate::operation::get_participant::GetParticipantInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_participant::GetParticipantInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_participant::GetParticipantInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_participant::GetParticipantInput {
             stage_arn: self.stage_arn,
             session_id: self.session_id,

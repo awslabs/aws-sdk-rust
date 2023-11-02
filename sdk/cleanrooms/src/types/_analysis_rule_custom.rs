@@ -80,10 +80,10 @@ impl AnalysisRuleCustomBuilder {
     /// Consumes the builder and constructs a [`AnalysisRuleCustom`](crate::types::AnalysisRuleCustom).
     /// This method will fail if any of the following fields are not set:
     /// - [`allowed_analyses`](crate::types::builders::AnalysisRuleCustomBuilder::allowed_analyses)
-    pub fn build(self) -> ::std::result::Result<crate::types::AnalysisRuleCustom, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AnalysisRuleCustom, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AnalysisRuleCustom {
             allowed_analyses: self.allowed_analyses.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "allowed_analyses",
                     "allowed_analyses was not specified but it is required when building AnalysisRuleCustom",
                 )

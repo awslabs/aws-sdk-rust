@@ -403,7 +403,7 @@ impl QueryInputBuilder {
         &self.collapse_configuration
     }
     /// Consumes the builder and constructs a [`QueryInput`](crate::operation::query::QueryInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::query::QueryInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::query::QueryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::query::QueryInput {
             index_id: self.index_id,
             query_text: self.query_text,

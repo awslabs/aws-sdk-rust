@@ -46,7 +46,7 @@ impl DescribeMetricAttributionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_metric_attribution::DescribeMetricAttributionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_metric_attribution::DescribeMetricAttributionInput {
             metric_attribution_arn: self.metric_attribution_arn,

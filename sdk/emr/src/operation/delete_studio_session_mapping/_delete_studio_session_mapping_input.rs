@@ -110,7 +110,7 @@ impl DeleteStudioSessionMappingInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_studio_session_mapping::DeleteStudioSessionMappingInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_studio_session_mapping::DeleteStudioSessionMappingInput {
             studio_id: self.studio_id,

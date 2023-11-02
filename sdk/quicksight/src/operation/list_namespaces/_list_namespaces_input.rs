@@ -86,7 +86,7 @@ impl ListNamespacesInputBuilder {
     /// Consumes the builder and constructs a [`ListNamespacesInput`](crate::operation::list_namespaces::ListNamespacesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_namespaces::ListNamespacesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_namespaces::ListNamespacesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_namespaces::ListNamespacesInput {
             aws_account_id: self.aws_account_id,
             next_token: self.next_token,

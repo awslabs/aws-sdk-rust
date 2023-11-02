@@ -118,24 +118,24 @@ impl AddDraftAppVersionResourceMappingsOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_draft_app_version_resource_mappings::AddDraftAppVersionResourceMappingsOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::add_draft_app_version_resource_mappings::AddDraftAppVersionResourceMappingsOutput {
                 app_arn: self.app_arn.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
                         "app_arn",
                         "app_arn was not specified but it is required when building AddDraftAppVersionResourceMappingsOutput",
                     )
                 })?,
                 app_version: self.app_version.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
                         "app_version",
                         "app_version was not specified but it is required when building AddDraftAppVersionResourceMappingsOutput",
                     )
                 })?,
                 resource_mappings: self.resource_mappings.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
                         "resource_mappings",
                         "resource_mappings was not specified but it is required when building AddDraftAppVersionResourceMappingsOutput",
                     )

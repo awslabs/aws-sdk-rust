@@ -2,7 +2,7 @@
 pub fn ser_vmware_to_aws_tag_mapping(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VmwareToAwsTagMapping,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("VmwareCategory").string(input.vmware_category.as_str());
     }

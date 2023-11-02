@@ -91,13 +91,13 @@ impl ListComponentProvisionedResourcesOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_component_provisioned_resources::ListComponentProvisionedResourcesOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_component_provisioned_resources::ListComponentProvisionedResourcesOutput {
                 next_token: self.next_token,
                 provisioned_resources: self.provisioned_resources.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
                         "provisioned_resources",
                         "provisioned_resources was not specified but it is required when building ListComponentProvisionedResourcesOutput",
                     )

@@ -2,7 +2,7 @@
 pub fn ser_delete_conformance_pack_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_conformance_pack::DeleteConformancePackInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.conformance_pack_name {
         object.key("ConformancePackName").string(var_1.as_str());
     }

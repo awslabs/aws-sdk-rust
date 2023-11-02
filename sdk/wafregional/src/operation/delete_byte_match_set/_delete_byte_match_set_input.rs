@@ -66,7 +66,7 @@ impl DeleteByteMatchSetInputBuilder {
     /// Consumes the builder and constructs a [`DeleteByteMatchSetInput`](crate::operation::delete_byte_match_set::DeleteByteMatchSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_byte_match_set::DeleteByteMatchSetInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_byte_match_set::DeleteByteMatchSetInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_byte_match_set::DeleteByteMatchSetInput {
             byte_match_set_id: self.byte_match_set_id,

@@ -44,7 +44,7 @@ impl ExportNotebookInputBuilder {
     /// Consumes the builder and constructs a [`ExportNotebookInput`](crate::operation::export_notebook::ExportNotebookInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::export_notebook::ExportNotebookInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::export_notebook::ExportNotebookInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::export_notebook::ExportNotebookInput {
             notebook_id: self.notebook_id,
         })

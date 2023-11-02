@@ -290,17 +290,17 @@ impl RegexMatchTupleBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`text_transformation`](crate::types::builders::RegexMatchTupleBuilder::text_transformation)
     /// - [`regex_pattern_set_id`](crate::types::builders::RegexMatchTupleBuilder::regex_pattern_set_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::RegexMatchTuple, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RegexMatchTuple, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RegexMatchTuple {
             field_to_match: self.field_to_match,
             text_transformation: self.text_transformation.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "text_transformation",
                     "text_transformation was not specified but it is required when building RegexMatchTuple",
                 )
             })?,
             regex_pattern_set_id: self.regex_pattern_set_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "regex_pattern_set_id",
                     "regex_pattern_set_id was not specified but it is required when building RegexMatchTuple",
                 )

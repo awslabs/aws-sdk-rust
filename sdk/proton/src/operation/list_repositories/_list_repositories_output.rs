@@ -89,11 +89,11 @@ impl ListRepositoriesOutputBuilder {
     /// - [`repositories`](crate::operation::list_repositories::builders::ListRepositoriesOutputBuilder::repositories)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_repositories::ListRepositoriesOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_repositories::ListRepositoriesOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_repositories::ListRepositoriesOutput {
             next_token: self.next_token,
             repositories: self.repositories.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "repositories",
                     "repositories was not specified but it is required when building ListRepositoriesOutput",
                 )

@@ -163,22 +163,22 @@ impl SessionDataBuilder {
     /// - [`session_arn`](crate::types::builders::SessionDataBuilder::session_arn)
     /// - [`session_id`](crate::types::builders::SessionDataBuilder::session_id)
     /// - [`name`](crate::types::builders::SessionDataBuilder::name)
-    pub fn build(self) -> ::std::result::Result<crate::types::SessionData, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SessionData, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SessionData {
             session_arn: self.session_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "session_arn",
                     "session_arn was not specified but it is required when building SessionData",
                 )
             })?,
             session_id: self.session_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "session_id",
                     "session_id was not specified but it is required when building SessionData",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building SessionData",
                 )

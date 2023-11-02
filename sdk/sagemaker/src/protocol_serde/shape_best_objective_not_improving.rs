@@ -2,7 +2,7 @@
 pub fn ser_best_objective_not_improving(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BestObjectiveNotImproving,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.max_number_of_training_jobs_not_improving {
         object.key("MaxNumberOfTrainingJobsNotImproving").number(
             #[allow(clippy::useless_conversion)]

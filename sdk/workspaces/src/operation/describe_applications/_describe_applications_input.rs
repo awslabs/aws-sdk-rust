@@ -193,7 +193,7 @@ impl DescribeApplicationsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeApplicationsInput`](crate::operation::describe_applications::DescribeApplicationsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_applications::DescribeApplicationsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_applications::DescribeApplicationsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_applications::DescribeApplicationsInput {
             application_ids: self.application_ids,

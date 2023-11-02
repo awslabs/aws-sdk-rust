@@ -86,7 +86,7 @@ impl ListMonitoringAlertsInputBuilder {
     /// Consumes the builder and constructs a [`ListMonitoringAlertsInput`](crate::operation::list_monitoring_alerts::ListMonitoringAlertsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_monitoring_alerts::ListMonitoringAlertsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_monitoring_alerts::ListMonitoringAlertsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_monitoring_alerts::ListMonitoringAlertsInput {
             monitoring_schedule_name: self.monitoring_schedule_name,

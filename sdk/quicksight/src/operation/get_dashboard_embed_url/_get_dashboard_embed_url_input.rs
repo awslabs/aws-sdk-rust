@@ -273,7 +273,7 @@ impl GetDashboardEmbedUrlInputBuilder {
     /// Consumes the builder and constructs a [`GetDashboardEmbedUrlInput`](crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlInput {
             aws_account_id: self.aws_account_id,

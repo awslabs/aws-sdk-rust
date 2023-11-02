@@ -89,7 +89,7 @@ impl RegisterIdentityProviderInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_identity_provider::RegisterIdentityProviderInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::register_identity_provider::RegisterIdentityProviderInput {
             identity_provider: self.identity_provider,

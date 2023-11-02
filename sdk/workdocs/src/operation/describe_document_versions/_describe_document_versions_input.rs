@@ -163,7 +163,7 @@ impl DescribeDocumentVersionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_document_versions::DescribeDocumentVersionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_document_versions::DescribeDocumentVersionsInput {
             authentication_token: self.authentication_token,

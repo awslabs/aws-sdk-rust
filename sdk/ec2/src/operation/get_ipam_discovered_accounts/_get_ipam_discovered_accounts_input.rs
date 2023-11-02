@@ -160,7 +160,7 @@ impl GetIpamDiscoveredAccountsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccountsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccountsInput {
             dry_run: self.dry_run,

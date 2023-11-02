@@ -252,7 +252,7 @@ impl CreateHyperParameterTuningJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_hyper_parameter_tuning_job::CreateHyperParameterTuningJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_hyper_parameter_tuning_job::CreateHyperParameterTuningJobInput {
             hyper_parameter_tuning_job_name: self.hyper_parameter_tuning_job_name,

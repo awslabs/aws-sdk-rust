@@ -143,7 +143,9 @@ impl ListCommandsInputBuilder {
         &self.filters
     }
     /// Consumes the builder and constructs a [`ListCommandsInput`](crate::operation::list_commands::ListCommandsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_commands::ListCommandsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_commands::ListCommandsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_commands::ListCommandsInput {
             command_id: self.command_id,
             instance_id: self.instance_id,

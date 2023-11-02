@@ -192,7 +192,7 @@ impl CreateWorkspaceBundleInputBuilder {
     /// Consumes the builder and constructs a [`CreateWorkspaceBundleInput`](crate::operation::create_workspace_bundle::CreateWorkspaceBundleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_workspace_bundle::CreateWorkspaceBundleInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_workspace_bundle::CreateWorkspaceBundleInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_workspace_bundle::CreateWorkspaceBundleInput {
             bundle_name: self.bundle_name,

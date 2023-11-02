@@ -68,7 +68,7 @@ impl GetAccessPointPolicyStatusInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_access_point_policy_status::GetAccessPointPolicyStatusInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_access_point_policy_status::GetAccessPointPolicyStatusInput {
             account_id: self.account_id,

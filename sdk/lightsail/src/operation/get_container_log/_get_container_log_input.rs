@@ -255,7 +255,7 @@ impl GetContainerLogInputBuilder {
     /// Consumes the builder and constructs a [`GetContainerLogInput`](crate::operation::get_container_log::GetContainerLogInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_container_log::GetContainerLogInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_container_log::GetContainerLogInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_container_log::GetContainerLogInput {
             service_name: self.service_name,
             container_name: self.container_name,

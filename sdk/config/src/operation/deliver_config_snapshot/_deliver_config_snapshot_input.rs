@@ -45,7 +45,7 @@ impl DeliverConfigSnapshotInputBuilder {
     /// Consumes the builder and constructs a [`DeliverConfigSnapshotInput`](crate::operation::deliver_config_snapshot::DeliverConfigSnapshotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::deliver_config_snapshot::DeliverConfigSnapshotInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::deliver_config_snapshot::DeliverConfigSnapshotInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::deliver_config_snapshot::DeliverConfigSnapshotInput {
             delivery_channel_name: self.delivery_channel_name,

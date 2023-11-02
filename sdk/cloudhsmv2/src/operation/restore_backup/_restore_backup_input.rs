@@ -44,7 +44,7 @@ impl RestoreBackupInputBuilder {
     /// Consumes the builder and constructs a [`RestoreBackupInput`](crate::operation::restore_backup::RestoreBackupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::restore_backup::RestoreBackupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::restore_backup::RestoreBackupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::restore_backup::RestoreBackupInput { backup_id: self.backup_id })
     }
 }

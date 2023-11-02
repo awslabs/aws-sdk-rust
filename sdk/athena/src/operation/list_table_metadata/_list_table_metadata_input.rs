@@ -129,7 +129,7 @@ impl ListTableMetadataInputBuilder {
     /// Consumes the builder and constructs a [`ListTableMetadataInput`](crate::operation::list_table_metadata::ListTableMetadataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_table_metadata::ListTableMetadataInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_table_metadata::ListTableMetadataInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_table_metadata::ListTableMetadataInput {
             catalog_name: self.catalog_name,
             database_name: self.database_name,

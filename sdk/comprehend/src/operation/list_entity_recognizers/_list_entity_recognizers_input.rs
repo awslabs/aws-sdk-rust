@@ -85,7 +85,7 @@ impl ListEntityRecognizersInputBuilder {
     /// Consumes the builder and constructs a [`ListEntityRecognizersInput`](crate::operation::list_entity_recognizers::ListEntityRecognizersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_entity_recognizers::ListEntityRecognizersInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_entity_recognizers::ListEntityRecognizersInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_entity_recognizers::ListEntityRecognizersInput {
             filter: self.filter,

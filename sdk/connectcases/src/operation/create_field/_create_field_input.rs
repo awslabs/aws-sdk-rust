@@ -107,7 +107,7 @@ impl CreateFieldInputBuilder {
         &self.description
     }
     /// Consumes the builder and constructs a [`CreateFieldInput`](crate::operation::create_field::CreateFieldInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_field::CreateFieldInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_field::CreateFieldInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_field::CreateFieldInput {
             domain_id: self.domain_id,
             name: self.name,

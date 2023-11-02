@@ -89,7 +89,7 @@ impl DisassociateTransitGatewayRouteTableInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_transit_gateway_route_table::DisassociateTransitGatewayRouteTableInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::disassociate_transit_gateway_route_table::DisassociateTransitGatewayRouteTableInput {

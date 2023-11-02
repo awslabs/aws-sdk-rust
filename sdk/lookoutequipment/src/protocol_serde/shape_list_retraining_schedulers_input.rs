@@ -2,7 +2,7 @@
 pub fn ser_list_retraining_schedulers_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_retraining_schedulers::ListRetrainingSchedulersInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.model_name_begins_with {
         object.key("ModelNameBeginsWith").string(var_1.as_str());
     }

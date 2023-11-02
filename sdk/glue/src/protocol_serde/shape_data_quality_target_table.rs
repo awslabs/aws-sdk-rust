@@ -2,7 +2,7 @@
 pub fn ser_data_quality_target_table(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DataQualityTargetTable,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("TableName").string(input.table_name.as_str());
     }

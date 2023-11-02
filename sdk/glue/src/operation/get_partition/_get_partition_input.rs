@@ -114,7 +114,9 @@ impl GetPartitionInputBuilder {
         &self.partition_values
     }
     /// Consumes the builder and constructs a [`GetPartitionInput`](crate::operation::get_partition::GetPartitionInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_partition::GetPartitionInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_partition::GetPartitionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_partition::GetPartitionInput {
             catalog_id: self.catalog_id,
             database_name: self.database_name,

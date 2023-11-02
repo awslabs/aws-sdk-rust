@@ -2,7 +2,7 @@
 pub fn ser_list_model_bias_job_definitions_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_model_bias_job_definitions::ListModelBiasJobDefinitionsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.endpoint_name {
         object.key("EndpointName").string(var_1.as_str());
     }

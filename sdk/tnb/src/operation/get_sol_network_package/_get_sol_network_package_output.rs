@@ -329,59 +329,59 @@ impl GetSolNetworkPackageOutputBuilder {
     /// - [`vnf_pkg_ids`](crate::operation::get_sol_network_package::builders::GetSolNetworkPackageOutputBuilder::vnf_pkg_ids)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_sol_network_package::GetSolNetworkPackageOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_sol_network_package::GetSolNetworkPackageOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_sol_network_package::GetSolNetworkPackageOutput {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building GetSolNetworkPackageOutput",
                 )
             })?,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building GetSolNetworkPackageOutput",
                 )
             })?,
             nsd_onboarding_state: self.nsd_onboarding_state.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "nsd_onboarding_state",
                     "nsd_onboarding_state was not specified but it is required when building GetSolNetworkPackageOutput",
                 )
             })?,
             nsd_operational_state: self.nsd_operational_state.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "nsd_operational_state",
                     "nsd_operational_state was not specified but it is required when building GetSolNetworkPackageOutput",
                 )
             })?,
             nsd_usage_state: self.nsd_usage_state.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "nsd_usage_state",
                     "nsd_usage_state was not specified but it is required when building GetSolNetworkPackageOutput",
                 )
             })?,
             nsd_id: self.nsd_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "nsd_id",
                     "nsd_id was not specified but it is required when building GetSolNetworkPackageOutput",
                 )
             })?,
             nsd_name: self.nsd_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "nsd_name",
                     "nsd_name was not specified but it is required when building GetSolNetworkPackageOutput",
                 )
             })?,
             nsd_version: self.nsd_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "nsd_version",
                     "nsd_version was not specified but it is required when building GetSolNetworkPackageOutput",
                 )
             })?,
             vnf_pkg_ids: self.vnf_pkg_ids.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "vnf_pkg_ids",
                     "vnf_pkg_ids was not specified but it is required when building GetSolNetworkPackageOutput",
                 )

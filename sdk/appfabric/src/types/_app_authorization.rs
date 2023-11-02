@@ -290,47 +290,47 @@ impl AppAuthorizationBuilder {
     /// - [`status`](crate::types::builders::AppAuthorizationBuilder::status)
     /// - [`created_at`](crate::types::builders::AppAuthorizationBuilder::created_at)
     /// - [`updated_at`](crate::types::builders::AppAuthorizationBuilder::updated_at)
-    pub fn build(self) -> ::std::result::Result<crate::types::AppAuthorization, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AppAuthorization, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AppAuthorization {
             app_authorization_arn: self.app_authorization_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "app_authorization_arn",
                     "app_authorization_arn was not specified but it is required when building AppAuthorization",
                 )
             })?,
             app_bundle_arn: self.app_bundle_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "app_bundle_arn",
                     "app_bundle_arn was not specified but it is required when building AppAuthorization",
                 )
             })?,
             app: self.app.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "app",
                     "app was not specified but it is required when building AppAuthorization",
                 )
             })?,
             tenant: self.tenant,
             auth_type: self.auth_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "auth_type",
                     "auth_type was not specified but it is required when building AppAuthorization",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building AppAuthorization",
                 )
             })?,
             created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
                     "created_at was not specified but it is required when building AppAuthorization",
                 )
             })?,
             updated_at: self.updated_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "updated_at",
                     "updated_at was not specified but it is required when building AppAuthorization",
                 )

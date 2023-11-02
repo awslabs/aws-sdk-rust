@@ -79,7 +79,7 @@ impl BatchStartInputBuilder {
         &self.multiplex_ids
     }
     /// Consumes the builder and constructs a [`BatchStartInput`](crate::operation::batch_start::BatchStartInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::batch_start::BatchStartInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::batch_start::BatchStartInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::batch_start::BatchStartInput {
             channel_ids: self.channel_ids,
             multiplex_ids: self.multiplex_ids,

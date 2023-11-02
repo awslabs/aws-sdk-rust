@@ -181,7 +181,7 @@ impl CreateDestinationInputBuilder {
     /// Consumes the builder and constructs a [`CreateDestinationInput`](crate::operation::create_destination::CreateDestinationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_destination::CreateDestinationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_destination::CreateDestinationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_destination::CreateDestinationInput {
             name: self.name,
             expression_type: self.expression_type,

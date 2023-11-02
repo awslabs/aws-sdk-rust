@@ -42,7 +42,7 @@ impl GetKeyInputBuilder {
         &self.key_identifier
     }
     /// Consumes the builder and constructs a [`GetKeyInput`](crate::operation::get_key::GetKeyInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_key::GetKeyInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_key::GetKeyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_key::GetKeyInput {
             key_identifier: self.key_identifier,
         })

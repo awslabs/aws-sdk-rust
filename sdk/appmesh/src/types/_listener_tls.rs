@@ -113,10 +113,10 @@ impl ListenerTlsBuilder {
     /// Consumes the builder and constructs a [`ListenerTls`](crate::types::ListenerTls).
     /// This method will fail if any of the following fields are not set:
     /// - [`mode`](crate::types::builders::ListenerTlsBuilder::mode)
-    pub fn build(self) -> ::std::result::Result<crate::types::ListenerTls, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ListenerTls, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ListenerTls {
             mode: self.mode.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "mode",
                     "mode was not specified but it is required when building ListenerTls",
                 )

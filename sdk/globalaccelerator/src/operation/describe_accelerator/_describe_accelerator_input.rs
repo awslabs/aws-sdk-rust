@@ -44,7 +44,7 @@ impl DescribeAcceleratorInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAcceleratorInput`](crate::operation::describe_accelerator::DescribeAcceleratorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_accelerator::DescribeAcceleratorInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_accelerator::DescribeAcceleratorInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_accelerator::DescribeAcceleratorInput {
             accelerator_arn: self.accelerator_arn,

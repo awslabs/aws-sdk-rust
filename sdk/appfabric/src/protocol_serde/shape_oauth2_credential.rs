@@ -2,7 +2,7 @@
 pub fn ser_oauth2_credential(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Oauth2Credential,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("clientId").string(input.client_id.as_str());
     }

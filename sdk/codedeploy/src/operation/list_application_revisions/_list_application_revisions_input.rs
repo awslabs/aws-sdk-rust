@@ -263,7 +263,7 @@ impl ListApplicationRevisionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_application_revisions::ListApplicationRevisionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_application_revisions::ListApplicationRevisionsInput {
             application_name: self.application_name,

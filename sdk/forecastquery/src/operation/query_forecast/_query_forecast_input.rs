@@ -144,7 +144,7 @@ impl QueryForecastInputBuilder {
     /// Consumes the builder and constructs a [`QueryForecastInput`](crate::operation::query_forecast::QueryForecastInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::query_forecast::QueryForecastInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::query_forecast::QueryForecastInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::query_forecast::QueryForecastInput {
             forecast_arn: self.forecast_arn,
             start_date: self.start_date,

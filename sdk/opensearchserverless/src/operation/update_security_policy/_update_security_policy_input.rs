@@ -151,7 +151,7 @@ impl UpdateSecurityPolicyInputBuilder {
     /// Consumes the builder and constructs a [`UpdateSecurityPolicyInput`](crate::operation::update_security_policy::UpdateSecurityPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_security_policy::UpdateSecurityPolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_security_policy::UpdateSecurityPolicyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_security_policy::UpdateSecurityPolicyInput {
             r#type: self.r#type,

@@ -44,7 +44,7 @@ impl GetResourceDefinitionInputBuilder {
     /// Consumes the builder and constructs a [`GetResourceDefinitionInput`](crate::operation::get_resource_definition::GetResourceDefinitionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_resource_definition::GetResourceDefinitionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_resource_definition::GetResourceDefinitionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_resource_definition::GetResourceDefinitionInput {
             resource_definition_id: self.resource_definition_id,

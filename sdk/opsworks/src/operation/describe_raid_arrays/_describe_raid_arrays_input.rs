@@ -93,7 +93,8 @@ impl DescribeRaidArraysInputBuilder {
     /// Consumes the builder and constructs a [`DescribeRaidArraysInput`](crate::operation::describe_raid_arrays::DescribeRaidArraysInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_raid_arrays::DescribeRaidArraysInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_raid_arrays::DescribeRaidArraysInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::describe_raid_arrays::DescribeRaidArraysInput {
             instance_id: self.instance_id,
             stack_id: self.stack_id,

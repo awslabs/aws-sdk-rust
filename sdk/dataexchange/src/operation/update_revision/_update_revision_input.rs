@@ -108,7 +108,7 @@ impl UpdateRevisionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateRevisionInput`](crate::operation::update_revision::UpdateRevisionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_revision::UpdateRevisionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_revision::UpdateRevisionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_revision::UpdateRevisionInput {
             comment: self.comment,
             data_set_id: self.data_set_id,

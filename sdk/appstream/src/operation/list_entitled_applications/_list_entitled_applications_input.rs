@@ -110,7 +110,7 @@ impl ListEntitledApplicationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_entitled_applications::ListEntitledApplicationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_entitled_applications::ListEntitledApplicationsInput {
             stack_name: self.stack_name,

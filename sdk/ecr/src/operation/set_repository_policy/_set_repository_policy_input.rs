@@ -108,7 +108,7 @@ impl SetRepositoryPolicyInputBuilder {
     /// Consumes the builder and constructs a [`SetRepositoryPolicyInput`](crate::operation::set_repository_policy::SetRepositoryPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::set_repository_policy::SetRepositoryPolicyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::set_repository_policy::SetRepositoryPolicyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::set_repository_policy::SetRepositoryPolicyInput {
             registry_id: self.registry_id,

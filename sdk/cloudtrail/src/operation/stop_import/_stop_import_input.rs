@@ -42,7 +42,7 @@ impl StopImportInputBuilder {
         &self.import_id
     }
     /// Consumes the builder and constructs a [`StopImportInput`](crate::operation::stop_import::StopImportInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::stop_import::StopImportInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_import::StopImportInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_import::StopImportInput { import_id: self.import_id })
     }
 }

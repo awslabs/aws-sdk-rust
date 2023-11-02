@@ -67,7 +67,7 @@ impl AcknowledgeJobInputBuilder {
     /// Consumes the builder and constructs a [`AcknowledgeJobInput`](crate::operation::acknowledge_job::AcknowledgeJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::acknowledge_job::AcknowledgeJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::acknowledge_job::AcknowledgeJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::acknowledge_job::AcknowledgeJobInput {
             job_id: self.job_id,
             nonce: self.nonce,

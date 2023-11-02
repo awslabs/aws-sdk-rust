@@ -311,12 +311,12 @@ impl WorkflowExecutionContinuedAsNewEventAttributesBuilder {
     /// - [`child_policy`](crate::types::builders::WorkflowExecutionContinuedAsNewEventAttributesBuilder::child_policy)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::WorkflowExecutionContinuedAsNewEventAttributes, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::WorkflowExecutionContinuedAsNewEventAttributes, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::WorkflowExecutionContinuedAsNewEventAttributes {
             input: self.input,
             decision_task_completed_event_id: self.decision_task_completed_event_id.unwrap_or_default(),
             new_execution_run_id: self.new_execution_run_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "new_execution_run_id",
                     "new_execution_run_id was not specified but it is required when building WorkflowExecutionContinuedAsNewEventAttributes",
                 )
@@ -326,7 +326,7 @@ impl WorkflowExecutionContinuedAsNewEventAttributesBuilder {
             task_priority: self.task_priority,
             task_start_to_close_timeout: self.task_start_to_close_timeout,
             child_policy: self.child_policy.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "child_policy",
                     "child_policy was not specified but it is required when building WorkflowExecutionContinuedAsNewEventAttributes",
                 )

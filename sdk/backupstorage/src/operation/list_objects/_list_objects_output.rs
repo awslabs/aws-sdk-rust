@@ -87,10 +87,10 @@ impl ListObjectsOutputBuilder {
     /// Consumes the builder and constructs a [`ListObjectsOutput`](crate::operation::list_objects::ListObjectsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`object_list`](crate::operation::list_objects::builders::ListObjectsOutputBuilder::object_list)
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_objects::ListObjectsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_objects::ListObjectsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_objects::ListObjectsOutput {
             object_list: self.object_list.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "object_list",
                     "object_list was not specified but it is required when building ListObjectsOutput",
                 )

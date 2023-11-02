@@ -65,7 +65,7 @@ impl GetMfaDeviceInputBuilder {
     /// Consumes the builder and constructs a [`GetMfaDeviceInput`](crate::operation::get_mfa_device::GetMfaDeviceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_mfa_device::GetMfaDeviceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_mfa_device::GetMfaDeviceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_mfa_device::GetMfaDeviceInput {
             serial_number: self.serial_number,
             user_name: self.user_name,

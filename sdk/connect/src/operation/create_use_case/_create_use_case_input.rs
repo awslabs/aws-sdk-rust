@@ -115,7 +115,7 @@ impl CreateUseCaseInputBuilder {
     /// Consumes the builder and constructs a [`CreateUseCaseInput`](crate::operation::create_use_case::CreateUseCaseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_use_case::CreateUseCaseInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_use_case::CreateUseCaseInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_use_case::CreateUseCaseInput {
             instance_id: self.instance_id,
             integration_association_id: self.integration_association_id,

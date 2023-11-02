@@ -2,7 +2,7 @@
 pub fn ser_user_pool_add_ons_type(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UserPoolAddOnsType,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("AdvancedSecurityMode").string(input.advanced_security_mode.as_str());
     }

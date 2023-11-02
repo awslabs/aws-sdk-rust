@@ -53,7 +53,7 @@ impl BatchAssociateUserStackInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_associate_user_stack::BatchAssociateUserStackInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::batch_associate_user_stack::BatchAssociateUserStackInput {
             user_stack_associations: self.user_stack_associations,

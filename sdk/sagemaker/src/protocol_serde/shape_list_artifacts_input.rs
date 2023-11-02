@@ -2,7 +2,7 @@
 pub fn ser_list_artifacts_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_artifacts::ListArtifactsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.source_uri {
         object.key("SourceUri").string(var_1.as_str());
     }

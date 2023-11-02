@@ -133,7 +133,7 @@ impl SuspendProcessesInputBuilder {
     /// Consumes the builder and constructs a [`SuspendProcessesInput`](crate::operation::suspend_processes::SuspendProcessesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::suspend_processes::SuspendProcessesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::suspend_processes::SuspendProcessesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::suspend_processes::SuspendProcessesInput {
             auto_scaling_group_name: self.auto_scaling_group_name,
             scaling_processes: self.scaling_processes,

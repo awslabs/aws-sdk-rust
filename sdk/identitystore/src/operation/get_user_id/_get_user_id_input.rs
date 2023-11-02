@@ -64,7 +64,7 @@ impl GetUserIdInputBuilder {
         &self.alternate_identifier
     }
     /// Consumes the builder and constructs a [`GetUserIdInput`](crate::operation::get_user_id::GetUserIdInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_user_id::GetUserIdInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_user_id::GetUserIdInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_user_id::GetUserIdInput {
             identity_store_id: self.identity_store_id,
             alternate_identifier: self.alternate_identifier,

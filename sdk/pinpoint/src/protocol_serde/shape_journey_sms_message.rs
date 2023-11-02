@@ -2,7 +2,7 @@
 pub fn ser_journey_sms_message(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::JourneySmsMessage,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.message_type {
         object.key("MessageType").string(var_1.as_str());
     }

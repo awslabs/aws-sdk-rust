@@ -109,22 +109,22 @@ impl PutFileOutputBuilder {
     /// - [`commit_id`](crate::operation::put_file::builders::PutFileOutputBuilder::commit_id)
     /// - [`blob_id`](crate::operation::put_file::builders::PutFileOutputBuilder::blob_id)
     /// - [`tree_id`](crate::operation::put_file::builders::PutFileOutputBuilder::tree_id)
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_file::PutFileOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_file::PutFileOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_file::PutFileOutput {
             commit_id: self.commit_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "commit_id",
                     "commit_id was not specified but it is required when building PutFileOutput",
                 )
             })?,
             blob_id: self.blob_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "blob_id",
                     "blob_id was not specified but it is required when building PutFileOutput",
                 )
             })?,
             tree_id: self.tree_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "tree_id",
                     "tree_id was not specified but it is required when building PutFileOutput",
                 )

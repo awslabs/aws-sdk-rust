@@ -32,7 +32,7 @@ pub fn de_inventory_schedule(
 pub fn ser_inventory_schedule(
     input: &crate::types::InventorySchedule,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     {

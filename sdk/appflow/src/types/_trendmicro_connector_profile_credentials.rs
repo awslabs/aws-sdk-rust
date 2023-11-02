@@ -55,10 +55,10 @@ impl TrendmicroConnectorProfileCredentialsBuilder {
     /// - [`api_secret_key`](crate::types::builders::TrendmicroConnectorProfileCredentialsBuilder::api_secret_key)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::TrendmicroConnectorProfileCredentials, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::TrendmicroConnectorProfileCredentials, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TrendmicroConnectorProfileCredentials {
             api_secret_key: self.api_secret_key.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "api_secret_key",
                     "api_secret_key was not specified but it is required when building TrendmicroConnectorProfileCredentials",
                 )

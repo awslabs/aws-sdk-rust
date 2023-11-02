@@ -157,23 +157,23 @@ impl NamedQueryBuilder {
     /// - [`name`](crate::types::builders::NamedQueryBuilder::name)
     /// - [`database`](crate::types::builders::NamedQueryBuilder::database)
     /// - [`query_string`](crate::types::builders::NamedQueryBuilder::query_string)
-    pub fn build(self) -> ::std::result::Result<crate::types::NamedQuery, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::NamedQuery, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::NamedQuery {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building NamedQuery",
                 )
             })?,
             description: self.description,
             database: self.database.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "database",
                     "database was not specified but it is required when building NamedQuery",
                 )
             })?,
             query_string: self.query_string.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "query_string",
                     "query_string was not specified but it is required when building NamedQuery",
                 )

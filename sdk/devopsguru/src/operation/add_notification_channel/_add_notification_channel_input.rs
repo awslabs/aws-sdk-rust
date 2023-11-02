@@ -44,8 +44,10 @@ impl AddNotificationChannelInputBuilder {
     /// Consumes the builder and constructs a [`AddNotificationChannelInput`](crate::operation::add_notification_channel::AddNotificationChannelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::add_notification_channel::AddNotificationChannelInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::add_notification_channel::AddNotificationChannelInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::add_notification_channel::AddNotificationChannelInput { config: self.config })
     }
 }

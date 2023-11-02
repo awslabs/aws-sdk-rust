@@ -138,7 +138,7 @@ impl ListServiceQuotasInputBuilder {
     /// Consumes the builder and constructs a [`ListServiceQuotasInput`](crate::operation::list_service_quotas::ListServiceQuotasInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_service_quotas::ListServiceQuotasInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_service_quotas::ListServiceQuotasInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_service_quotas::ListServiceQuotasInput {
             service_code: self.service_code,
             next_token: self.next_token,

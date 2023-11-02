@@ -42,7 +42,7 @@ impl DeleteLagInputBuilder {
         &self.lag_id
     }
     /// Consumes the builder and constructs a [`DeleteLagInput`](crate::operation::delete_lag::DeleteLagInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_lag::DeleteLagInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_lag::DeleteLagInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_lag::DeleteLagInput { lag_id: self.lag_id })
     }
 }

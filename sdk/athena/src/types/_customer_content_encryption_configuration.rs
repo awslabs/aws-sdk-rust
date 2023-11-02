@@ -48,10 +48,10 @@ impl CustomerContentEncryptionConfigurationBuilder {
     /// - [`kms_key`](crate::types::builders::CustomerContentEncryptionConfigurationBuilder::kms_key)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::CustomerContentEncryptionConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::CustomerContentEncryptionConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CustomerContentEncryptionConfiguration {
             kms_key: self.kms_key.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "kms_key",
                     "kms_key was not specified but it is required when building CustomerContentEncryptionConfiguration",
                 )

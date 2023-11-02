@@ -69,7 +69,7 @@ impl SetIdentityDkimEnabledInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabledInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabledInput {
             identity: self.identity,

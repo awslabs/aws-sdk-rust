@@ -65,7 +65,7 @@ impl DeleteSessionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSessionInput`](crate::operation::delete_session::DeleteSessionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_session::DeleteSessionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_session::DeleteSessionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_session::DeleteSessionInput {
             id: self.id,
             request_origin: self.request_origin,

@@ -109,7 +109,7 @@ impl ListContactFlowModulesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_contact_flow_modules::ListContactFlowModulesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_contact_flow_modules::ListContactFlowModulesInput {
             instance_id: self.instance_id,

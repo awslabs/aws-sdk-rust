@@ -119,7 +119,7 @@ impl CreateVpcIngressConnectionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_vpc_ingress_connection::CreateVpcIngressConnectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_vpc_ingress_connection::CreateVpcIngressConnectionInput {
             service_arn: self.service_arn,

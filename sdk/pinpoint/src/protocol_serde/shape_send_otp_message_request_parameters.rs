@@ -2,7 +2,7 @@
 pub fn ser_send_otp_message_request_parameters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SendOtpMessageRequestParameters,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.allowed_attempts {
         object.key("AllowedAttempts").number(
             #[allow(clippy::useless_conversion)]

@@ -173,7 +173,7 @@ impl ListFirewallRulesInputBuilder {
     /// Consumes the builder and constructs a [`ListFirewallRulesInput`](crate::operation::list_firewall_rules::ListFirewallRulesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_firewall_rules::ListFirewallRulesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_firewall_rules::ListFirewallRulesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_firewall_rules::ListFirewallRulesInput {
             firewall_rule_group_id: self.firewall_rule_group_id,
             priority: self.priority,

@@ -106,7 +106,7 @@ impl ListConnectionsInputBuilder {
     /// Consumes the builder and constructs a [`ListConnectionsInput`](crate::operation::list_connections::ListConnectionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_connections::ListConnectionsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_connections::ListConnectionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_connections::ListConnectionsInput {
             provider_type_filter: self.provider_type_filter,
             host_arn_filter: self.host_arn_filter,

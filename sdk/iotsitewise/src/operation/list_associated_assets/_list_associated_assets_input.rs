@@ -163,7 +163,7 @@ impl ListAssociatedAssetsInputBuilder {
     /// Consumes the builder and constructs a [`ListAssociatedAssetsInput`](crate::operation::list_associated_assets::ListAssociatedAssetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_associated_assets::ListAssociatedAssetsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_associated_assets::ListAssociatedAssetsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_associated_assets::ListAssociatedAssetsInput {
             asset_id: self.asset_id,

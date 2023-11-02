@@ -379,29 +379,29 @@ impl ScheduledQueryDescriptionBuilder {
     /// - [`name`](crate::types::builders::ScheduledQueryDescriptionBuilder::name)
     /// - [`query_string`](crate::types::builders::ScheduledQueryDescriptionBuilder::query_string)
     /// - [`state`](crate::types::builders::ScheduledQueryDescriptionBuilder::state)
-    pub fn build(self) -> ::std::result::Result<crate::types::ScheduledQueryDescription, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ScheduledQueryDescription, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ScheduledQueryDescription {
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building ScheduledQueryDescription",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building ScheduledQueryDescription",
                 )
             })?,
             query_string: self.query_string.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "query_string",
                     "query_string was not specified but it is required when building ScheduledQueryDescription",
                 )
             })?,
             creation_time: self.creation_time,
             state: self.state.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "state",
                     "state was not specified but it is required when building ScheduledQueryDescription",
                 )

@@ -65,7 +65,7 @@ impl ListTagsOfResourceInputBuilder {
     /// Consumes the builder and constructs a [`ListTagsOfResourceInput`](crate::operation::list_tags_of_resource::ListTagsOfResourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_tags_of_resource::ListTagsOfResourceInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_tags_of_resource::ListTagsOfResourceInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_tags_of_resource::ListTagsOfResourceInput {
             resource_arn: self.resource_arn,

@@ -220,29 +220,29 @@ impl UpdateImageSetMetadataOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_image_set_metadata::UpdateImageSetMetadataOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_image_set_metadata::UpdateImageSetMetadataOutput {
             datastore_id: self.datastore_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "datastore_id",
                     "datastore_id was not specified but it is required when building UpdateImageSetMetadataOutput",
                 )
             })?,
             image_set_id: self.image_set_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "image_set_id",
                     "image_set_id was not specified but it is required when building UpdateImageSetMetadataOutput",
                 )
             })?,
             latest_version_id: self.latest_version_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "latest_version_id",
                     "latest_version_id was not specified but it is required when building UpdateImageSetMetadataOutput",
                 )
             })?,
             image_set_state: self.image_set_state.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "image_set_state",
                     "image_set_state was not specified but it is required when building UpdateImageSetMetadataOutput",
                 )

@@ -75,7 +75,7 @@ impl GetSystemTemplateInputBuilder {
     /// Consumes the builder and constructs a [`GetSystemTemplateInput`](crate::operation::get_system_template::GetSystemTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_system_template::GetSystemTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_system_template::GetSystemTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_system_template::GetSystemTemplateInput {
             id: self.id,
             revision_number: self.revision_number,

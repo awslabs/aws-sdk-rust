@@ -253,7 +253,7 @@ impl UpdateMonitorInputBuilder {
     /// Consumes the builder and constructs a [`UpdateMonitorInput`](crate::operation::update_monitor::UpdateMonitorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_monitor::UpdateMonitorInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_monitor::UpdateMonitorInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_monitor::UpdateMonitorInput {
             monitor_name: self.monitor_name,
             resources_to_add: self.resources_to_add,

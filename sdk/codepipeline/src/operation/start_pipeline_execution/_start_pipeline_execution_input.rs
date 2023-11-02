@@ -95,8 +95,10 @@ impl StartPipelineExecutionInputBuilder {
     /// Consumes the builder and constructs a [`StartPipelineExecutionInput`](crate::operation::start_pipeline_execution::StartPipelineExecutionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_pipeline_execution::StartPipelineExecutionInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::start_pipeline_execution::StartPipelineExecutionInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::start_pipeline_execution::StartPipelineExecutionInput {
             name: self.name,
             variables: self.variables,

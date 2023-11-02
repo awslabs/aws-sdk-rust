@@ -68,7 +68,7 @@ impl AssociateConnectionWithLagInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_connection_with_lag::AssociateConnectionWithLagInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::associate_connection_with_lag::AssociateConnectionWithLagInput {
             connection_id: self.connection_id,

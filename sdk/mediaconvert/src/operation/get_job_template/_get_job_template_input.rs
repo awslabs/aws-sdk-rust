@@ -44,7 +44,7 @@ impl GetJobTemplateInputBuilder {
     /// Consumes the builder and constructs a [`GetJobTemplateInput`](crate::operation::get_job_template::GetJobTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_job_template::GetJobTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_job_template::GetJobTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_job_template::GetJobTemplateInput { name: self.name })
     }
 }

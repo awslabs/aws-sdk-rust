@@ -206,28 +206,28 @@ impl SapoDataConnectorProfilePropertiesBuilder {
     /// - [`application_service_path`](crate::types::builders::SapoDataConnectorProfilePropertiesBuilder::application_service_path)
     /// - [`port_number`](crate::types::builders::SapoDataConnectorProfilePropertiesBuilder::port_number)
     /// - [`client_number`](crate::types::builders::SapoDataConnectorProfilePropertiesBuilder::client_number)
-    pub fn build(self) -> ::std::result::Result<crate::types::SapoDataConnectorProfileProperties, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SapoDataConnectorProfileProperties, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SapoDataConnectorProfileProperties {
             application_host_url: self.application_host_url.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "application_host_url",
                     "application_host_url was not specified but it is required when building SapoDataConnectorProfileProperties",
                 )
             })?,
             application_service_path: self.application_service_path.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "application_service_path",
                     "application_service_path was not specified but it is required when building SapoDataConnectorProfileProperties",
                 )
             })?,
             port_number: self.port_number.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "port_number",
                     "port_number was not specified but it is required when building SapoDataConnectorProfileProperties",
                 )
             })?,
             client_number: self.client_number.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "client_number",
                     "client_number was not specified but it is required when building SapoDataConnectorProfileProperties",
                 )

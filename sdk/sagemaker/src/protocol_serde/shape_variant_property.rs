@@ -2,7 +2,7 @@
 pub fn ser_variant_property(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VariantProperty,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.variant_property_type {
         object.key("VariantPropertyType").string(var_1.as_str());
     }

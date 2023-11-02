@@ -2,7 +2,7 @@
 pub fn ser_list_rotation_overrides_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_rotation_overrides::ListRotationOverridesInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.rotation_id {
         object.key("RotationId").string(var_1.as_str());
     }

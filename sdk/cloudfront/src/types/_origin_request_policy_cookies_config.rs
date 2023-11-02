@@ -96,10 +96,10 @@ impl OriginRequestPolicyCookiesConfigBuilder {
     /// Consumes the builder and constructs a [`OriginRequestPolicyCookiesConfig`](crate::types::OriginRequestPolicyCookiesConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`cookie_behavior`](crate::types::builders::OriginRequestPolicyCookiesConfigBuilder::cookie_behavior)
-    pub fn build(self) -> ::std::result::Result<crate::types::OriginRequestPolicyCookiesConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::OriginRequestPolicyCookiesConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::OriginRequestPolicyCookiesConfig {
             cookie_behavior: self.cookie_behavior.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "cookie_behavior",
                     "cookie_behavior was not specified but it is required when building OriginRequestPolicyCookiesConfig",
                 )

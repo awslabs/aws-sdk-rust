@@ -63,7 +63,7 @@ impl GetScanInputBuilder {
         &self.run_id
     }
     /// Consumes the builder and constructs a [`GetScanInput`](crate::operation::get_scan::GetScanInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_scan::GetScanInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_scan::GetScanInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_scan::GetScanInput {
             scan_name: self.scan_name,
             run_id: self.run_id,

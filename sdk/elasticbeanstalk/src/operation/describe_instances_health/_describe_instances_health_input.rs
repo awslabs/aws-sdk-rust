@@ -117,7 +117,7 @@ impl DescribeInstancesHealthInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_instances_health::DescribeInstancesHealthInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_instances_health::DescribeInstancesHealthInput {
             environment_name: self.environment_name,

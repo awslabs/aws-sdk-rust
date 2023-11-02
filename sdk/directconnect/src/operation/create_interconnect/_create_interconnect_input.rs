@@ -159,7 +159,7 @@ impl CreateInterconnectInputBuilder {
     /// Consumes the builder and constructs a [`CreateInterconnectInput`](crate::operation::create_interconnect::CreateInterconnectInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_interconnect::CreateInterconnectInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_interconnect::CreateInterconnectInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_interconnect::CreateInterconnectInput {
             interconnect_name: self.interconnect_name,
             bandwidth: self.bandwidth,

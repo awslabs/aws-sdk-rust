@@ -86,7 +86,7 @@ impl DeleteOtaUpdateInputBuilder {
     /// Consumes the builder and constructs a [`DeleteOtaUpdateInput`](crate::operation::delete_ota_update::DeleteOtaUpdateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_ota_update::DeleteOtaUpdateInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_ota_update::DeleteOtaUpdateInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_ota_update::DeleteOtaUpdateInput {
             ota_update_id: self.ota_update_id,
             delete_stream: self.delete_stream,

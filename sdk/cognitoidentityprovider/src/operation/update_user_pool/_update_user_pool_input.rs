@@ -489,7 +489,7 @@ impl UpdateUserPoolInputBuilder {
     /// Consumes the builder and constructs a [`UpdateUserPoolInput`](crate::operation::update_user_pool::UpdateUserPoolInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_user_pool::UpdateUserPoolInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_user_pool::UpdateUserPoolInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_user_pool::UpdateUserPoolInput {
             user_pool_id: self.user_pool_id,
             policies: self.policies,

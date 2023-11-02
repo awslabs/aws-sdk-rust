@@ -68,7 +68,7 @@ impl DeleteAccessPointPolicyForObjectLambdaInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_access_point_policy_for_object_lambda::DeleteAccessPointPolicyForObjectLambdaInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_access_point_policy_for_object_lambda::DeleteAccessPointPolicyForObjectLambdaInput {

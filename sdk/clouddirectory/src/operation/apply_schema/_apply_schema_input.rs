@@ -64,7 +64,7 @@ impl ApplySchemaInputBuilder {
         &self.directory_arn
     }
     /// Consumes the builder and constructs a [`ApplySchemaInput`](crate::operation::apply_schema::ApplySchemaInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::apply_schema::ApplySchemaInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::apply_schema::ApplySchemaInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::apply_schema::ApplySchemaInput {
             published_schema_arn: self.published_schema_arn,
             directory_arn: self.directory_arn,

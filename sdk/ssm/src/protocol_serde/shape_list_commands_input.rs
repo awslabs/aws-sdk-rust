@@ -2,7 +2,7 @@
 pub fn ser_list_commands_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_commands::ListCommandsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.command_id {
         object.key("CommandId").string(var_1.as_str());
     }

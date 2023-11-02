@@ -427,7 +427,7 @@ impl CreateFileSystemFromBackupInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_file_system_from_backup::CreateFileSystemFromBackupInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_file_system_from_backup::CreateFileSystemFromBackupInput {
             backup_id: self.backup_id,

@@ -63,11 +63,11 @@ impl CreateContactChannelOutputBuilder {
     /// - [`contact_channel_arn`](crate::operation::create_contact_channel::builders::CreateContactChannelOutputBuilder::contact_channel_arn)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_contact_channel::CreateContactChannelOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_contact_channel::CreateContactChannelOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_contact_channel::CreateContactChannelOutput {
             contact_channel_arn: self.contact_channel_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "contact_channel_arn",
                     "contact_channel_arn was not specified but it is required when building CreateContactChannelOutput",
                 )

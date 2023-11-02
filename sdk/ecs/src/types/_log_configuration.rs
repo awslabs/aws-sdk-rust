@@ -139,10 +139,10 @@ impl LogConfigurationBuilder {
     /// Consumes the builder and constructs a [`LogConfiguration`](crate::types::LogConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`log_driver`](crate::types::builders::LogConfigurationBuilder::log_driver)
-    pub fn build(self) -> ::std::result::Result<crate::types::LogConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::LogConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::LogConfiguration {
             log_driver: self.log_driver.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "log_driver",
                     "log_driver was not specified but it is required when building LogConfiguration",
                 )

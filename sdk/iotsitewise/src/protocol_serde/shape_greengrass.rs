@@ -2,7 +2,7 @@
 pub fn ser_greengrass(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Greengrass,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("groupArn").string(input.group_arn.as_str());
     }

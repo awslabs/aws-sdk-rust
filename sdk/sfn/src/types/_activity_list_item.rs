@@ -138,22 +138,22 @@ impl ActivityListItemBuilder {
     /// - [`activity_arn`](crate::types::builders::ActivityListItemBuilder::activity_arn)
     /// - [`name`](crate::types::builders::ActivityListItemBuilder::name)
     /// - [`creation_date`](crate::types::builders::ActivityListItemBuilder::creation_date)
-    pub fn build(self) -> ::std::result::Result<crate::types::ActivityListItem, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ActivityListItem, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ActivityListItem {
             activity_arn: self.activity_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "activity_arn",
                     "activity_arn was not specified but it is required when building ActivityListItem",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building ActivityListItem",
                 )
             })?,
             creation_date: self.creation_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_date",
                     "creation_date was not specified but it is required when building ActivityListItem",
                 )

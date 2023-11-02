@@ -104,7 +104,7 @@ impl AcceptReservedInstancesExchangeQuoteInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::accept_reserved_instances_exchange_quote::AcceptReservedInstancesExchangeQuoteInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::accept_reserved_instances_exchange_quote::AcceptReservedInstancesExchangeQuoteInput {

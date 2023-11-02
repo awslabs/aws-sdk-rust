@@ -186,10 +186,10 @@ impl ListedHostKeyBuilder {
     /// Consumes the builder and constructs a [`ListedHostKey`](crate::types::ListedHostKey).
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::ListedHostKeyBuilder::arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::ListedHostKey, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ListedHostKey, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ListedHostKey {
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building ListedHostKey",
                 )

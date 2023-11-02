@@ -77,11 +77,11 @@ impl ProvisioningHookBuilder {
     /// Consumes the builder and constructs a [`ProvisioningHook`](crate::types::ProvisioningHook).
     /// This method will fail if any of the following fields are not set:
     /// - [`target_arn`](crate::types::builders::ProvisioningHookBuilder::target_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::ProvisioningHook, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ProvisioningHook, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ProvisioningHook {
             payload_version: self.payload_version,
             target_arn: self.target_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "target_arn",
                     "target_arn was not specified but it is required when building ProvisioningHook",
                 )

@@ -2,7 +2,7 @@
 pub fn ser_discover_instances_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::discover_instances::DiscoverInstancesInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.namespace_name {
         object.key("NamespaceName").string(var_1.as_str());
     }

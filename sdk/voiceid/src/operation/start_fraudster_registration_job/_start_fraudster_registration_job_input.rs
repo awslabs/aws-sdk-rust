@@ -188,7 +188,7 @@ impl StartFraudsterRegistrationJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_fraudster_registration_job::StartFraudsterRegistrationJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_fraudster_registration_job::StartFraudsterRegistrationJobInput {
             client_token: self.client_token,

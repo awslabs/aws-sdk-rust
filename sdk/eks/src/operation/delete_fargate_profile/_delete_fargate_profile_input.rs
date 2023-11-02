@@ -66,7 +66,7 @@ impl DeleteFargateProfileInputBuilder {
     /// Consumes the builder and constructs a [`DeleteFargateProfileInput`](crate::operation::delete_fargate_profile::DeleteFargateProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_fargate_profile::DeleteFargateProfileInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_fargate_profile::DeleteFargateProfileInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_fargate_profile::DeleteFargateProfileInput {
             cluster_name: self.cluster_name,

@@ -74,7 +74,8 @@ impl ReportTaskProgressInputBuilder {
     /// Consumes the builder and constructs a [`ReportTaskProgressInput`](crate::operation::report_task_progress::ReportTaskProgressInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::report_task_progress::ReportTaskProgressInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::report_task_progress::ReportTaskProgressInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::report_task_progress::ReportTaskProgressInput {
             task_id: self.task_id,
             fields: self.fields,

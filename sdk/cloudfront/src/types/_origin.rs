@@ -296,13 +296,13 @@ impl OriginBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::OriginBuilder::id)
     /// - [`domain_name`](crate::types::builders::OriginBuilder::domain_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::Origin, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Origin, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Origin {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field("id", "id was not specified but it is required when building Origin")
+                ::aws_smithy_types::error::operation::BuildError::missing_field("id", "id was not specified but it is required when building Origin")
             })?,
             domain_name: self.domain_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "domain_name",
                     "domain_name was not specified but it is required when building Origin",
                 )

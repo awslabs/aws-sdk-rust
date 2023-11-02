@@ -227,10 +227,10 @@ impl AnomalyBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`anomaly_id`](crate::types::builders::AnomalyBuilder::anomaly_id)
     /// - [`monitor_arn`](crate::types::builders::AnomalyBuilder::monitor_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::Anomaly, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Anomaly, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Anomaly {
             anomaly_id: self.anomaly_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "anomaly_id",
                     "anomaly_id was not specified but it is required when building Anomaly",
                 )
@@ -242,7 +242,7 @@ impl AnomalyBuilder {
             anomaly_score: self.anomaly_score,
             impact: self.impact,
             monitor_arn: self.monitor_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "monitor_arn",
                     "monitor_arn was not specified but it is required when building Anomaly",
                 )

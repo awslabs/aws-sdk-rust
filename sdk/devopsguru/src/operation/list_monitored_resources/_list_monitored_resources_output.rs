@@ -94,11 +94,11 @@ impl ListMonitoredResourcesOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_monitored_resources::ListMonitoredResourcesOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_monitored_resources::ListMonitoredResourcesOutput {
             monitored_resource_identifiers: self.monitored_resource_identifiers.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "monitored_resource_identifiers",
                     "monitored_resource_identifiers was not specified but it is required when building ListMonitoredResourcesOutput",
                 )

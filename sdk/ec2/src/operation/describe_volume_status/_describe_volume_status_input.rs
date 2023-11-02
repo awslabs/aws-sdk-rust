@@ -218,7 +218,7 @@ impl DescribeVolumeStatusInputBuilder {
     /// Consumes the builder and constructs a [`DescribeVolumeStatusInput`](crate::operation::describe_volume_status::DescribeVolumeStatusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_volume_status::DescribeVolumeStatusInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_volume_status::DescribeVolumeStatusInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_volume_status::DescribeVolumeStatusInput {
             filters: self.filters,

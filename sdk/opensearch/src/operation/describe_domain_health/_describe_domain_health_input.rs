@@ -45,7 +45,7 @@ impl DescribeDomainHealthInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDomainHealthInput`](crate::operation::describe_domain_health::DescribeDomainHealthInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_domain_health::DescribeDomainHealthInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_domain_health::DescribeDomainHealthInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_domain_health::DescribeDomainHealthInput {
             domain_name: self.domain_name,

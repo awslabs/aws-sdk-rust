@@ -5,8 +5,8 @@
 
 //! Types for [error](SdkError) responses.
 
-use crate::body::SdkBody;
 use crate::connection::ConnectionMetadata;
+use aws_smithy_types::body::SdkBody;
 use aws_smithy_types::error::metadata::{ProvideErrorMetadata, EMPTY_ERROR_METADATA};
 use aws_smithy_types::error::ErrorMetadata;
 use aws_smithy_types::retry::ErrorKind;

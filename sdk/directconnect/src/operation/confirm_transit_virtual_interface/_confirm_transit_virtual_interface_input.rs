@@ -68,7 +68,7 @@ impl ConfirmTransitVirtualInterfaceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::confirm_transit_virtual_interface::ConfirmTransitVirtualInterfaceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::confirm_transit_virtual_interface::ConfirmTransitVirtualInterfaceInput {
             virtual_interface_id: self.virtual_interface_id,

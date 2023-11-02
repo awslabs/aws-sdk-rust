@@ -2,7 +2,7 @@
 pub fn ser_aws_cloud_formation_stack_drift_information_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsCloudFormationStackDriftInformationDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.stack_drift_status {
         object.key("StackDriftStatus").string(var_1.as_str());
     }

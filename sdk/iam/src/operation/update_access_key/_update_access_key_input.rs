@@ -97,7 +97,7 @@ impl UpdateAccessKeyInputBuilder {
     /// Consumes the builder and constructs a [`UpdateAccessKeyInput`](crate::operation::update_access_key::UpdateAccessKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_access_key::UpdateAccessKeyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_access_key::UpdateAccessKeyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_access_key::UpdateAccessKeyInput {
             user_name: self.user_name,
             access_key_id: self.access_key_id,

@@ -294,7 +294,7 @@ impl SignInputBuilder {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`SignInput`](crate::operation::sign::SignInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::sign::SignInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::sign::SignInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::sign::SignInput {
             key_id: self.key_id,
             message: self.message,

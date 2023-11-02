@@ -113,11 +113,11 @@ impl ListSigningCertificatesOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_signing_certificates::ListSigningCertificatesOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_signing_certificates::ListSigningCertificatesOutput {
             certificates: self.certificates.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "certificates",
                     "certificates was not specified but it is required when building ListSigningCertificatesOutput",
                 )

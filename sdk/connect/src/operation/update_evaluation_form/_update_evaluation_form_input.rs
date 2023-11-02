@@ -223,7 +223,7 @@ impl UpdateEvaluationFormInputBuilder {
     /// Consumes the builder and constructs a [`UpdateEvaluationFormInput`](crate::operation::update_evaluation_form::UpdateEvaluationFormInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_evaluation_form::UpdateEvaluationFormInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_evaluation_form::UpdateEvaluationFormInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_evaluation_form::UpdateEvaluationFormInput {
             instance_id: self.instance_id,

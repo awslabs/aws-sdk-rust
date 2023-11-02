@@ -182,15 +182,15 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for CompleteMult
             fn uri_base(
                 _input: &crate::operation::complete_multipart_upload::CompleteMultipartUploadInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 use ::std::fmt::Write as _;
                 let input_1 = &_input.key;
                 let input_1 = input_1
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("key", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("key", "cannot be empty or unset"))?;
                 let key = ::aws_smithy_http::label::fmt_string(input_1, ::aws_smithy_http::label::EncodingStrategy::Greedy);
                 if key.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "key",
                         "cannot be empty or unset",
                     ));
@@ -201,15 +201,15 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for CompleteMult
             fn uri_query(
                 _input: &crate::operation::complete_multipart_upload::CompleteMultipartUploadInput,
                 mut output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 query.push_kv("x-id", "CompleteMultipartUpload");
                 let inner_2 = &_input.upload_id;
                 let inner_2 = inner_2
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("upload_id", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("upload_id", "cannot be empty or unset"))?;
                 if inner_2.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "upload_id",
                         "cannot be empty or unset",
                     ));
@@ -221,7 +221,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for CompleteMult
             fn update_http_builder(
                 input: &crate::operation::complete_multipart_upload::CompleteMultipartUploadInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -232,7 +232,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for CompleteMult
             builder = _header_serialization_settings.set_default_header(builder, ::http::header::CONTENT_TYPE, "application/xml");
             builder
         };
-        let body = ::aws_smithy_http::body::SdkBody::from(
+        let body = ::aws_smithy_types::body::SdkBody::from(
             crate::protocol_serde::shape_complete_multipart_upload_input::ser_multipart_upload_http_payload(&input.multipart_upload)?,
         );
         if let Some(content_length) = body.content_length() {
@@ -279,7 +279,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CompleteMulti
                     .bucket
                     .clone()
                     .filter(|f| !AsRef::<str>::as_ref(f).trim().is_empty())
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("bucket", "A required field was not set"))?,
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("bucket", "A required field was not set"))?,
             ))
             .build()
             .map_err(|err| {

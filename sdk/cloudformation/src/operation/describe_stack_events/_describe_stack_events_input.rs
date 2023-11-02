@@ -90,7 +90,7 @@ impl DescribeStackEventsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeStackEventsInput`](crate::operation::describe_stack_events::DescribeStackEventsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_stack_events::DescribeStackEventsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_stack_events::DescribeStackEventsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_stack_events::DescribeStackEventsInput {
             stack_name: self.stack_name,

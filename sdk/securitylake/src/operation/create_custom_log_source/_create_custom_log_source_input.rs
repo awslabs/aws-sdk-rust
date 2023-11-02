@@ -270,7 +270,7 @@ impl CreateCustomLogSourceInputBuilder {
     /// Consumes the builder and constructs a [`CreateCustomLogSourceInput`](crate::operation::create_custom_log_source::CreateCustomLogSourceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_custom_log_source::CreateCustomLogSourceInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_custom_log_source::CreateCustomLogSourceInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_custom_log_source::CreateCustomLogSourceInput {
             source_name: self.source_name,

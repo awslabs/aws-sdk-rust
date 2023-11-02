@@ -2,7 +2,7 @@
 pub fn ser_update_phone_number_request_item(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UpdatePhoneNumberRequestItem,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("PhoneNumberId").string(input.phone_number_id.as_str());
     }

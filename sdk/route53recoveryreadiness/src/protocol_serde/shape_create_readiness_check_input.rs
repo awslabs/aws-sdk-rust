@@ -2,7 +2,7 @@
 pub fn ser_create_readiness_check_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_readiness_check::CreateReadinessCheckInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.readiness_check_name {
         object.key("readinessCheckName").string(var_1.as_str());
     }

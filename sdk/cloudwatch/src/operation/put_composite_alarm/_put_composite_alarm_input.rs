@@ -417,7 +417,7 @@ impl PutCompositeAlarmInputBuilder {
     /// Consumes the builder and constructs a [`PutCompositeAlarmInput`](crate::operation::put_composite_alarm::PutCompositeAlarmInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_composite_alarm::PutCompositeAlarmInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_composite_alarm::PutCompositeAlarmInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_composite_alarm::PutCompositeAlarmInput {
             actions_enabled: self.actions_enabled,
             alarm_actions: self.alarm_actions,

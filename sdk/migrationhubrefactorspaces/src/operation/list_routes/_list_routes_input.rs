@@ -106,7 +106,7 @@ impl ListRoutesInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListRoutesInput`](crate::operation::list_routes::ListRoutesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_routes::ListRoutesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_routes::ListRoutesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_routes::ListRoutesInput {
             environment_identifier: self.environment_identifier,
             application_identifier: self.application_identifier,

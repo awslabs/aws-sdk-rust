@@ -87,7 +87,7 @@ impl GetRequestValidatorsInputBuilder {
     /// Consumes the builder and constructs a [`GetRequestValidatorsInput`](crate::operation::get_request_validators::GetRequestValidatorsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_request_validators::GetRequestValidatorsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_request_validators::GetRequestValidatorsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_request_validators::GetRequestValidatorsInput {
             rest_api_id: self.rest_api_id,

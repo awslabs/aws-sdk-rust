@@ -539,7 +539,7 @@ impl DeleteItemInputBuilder {
         &self.return_values_on_condition_check_failure
     }
     /// Consumes the builder and constructs a [`DeleteItemInput`](crate::operation::delete_item::DeleteItemInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_item::DeleteItemInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_item::DeleteItemInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_item::DeleteItemInput {
             table_name: self.table_name,
             key: self.key,

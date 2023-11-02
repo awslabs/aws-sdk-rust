@@ -239,22 +239,22 @@ impl TransactionEventBuilder {
     /// - [`network`](crate::types::builders::TransactionEventBuilder::network)
     /// - [`transaction_hash`](crate::types::builders::TransactionEventBuilder::transaction_hash)
     /// - [`event_type`](crate::types::builders::TransactionEventBuilder::event_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::TransactionEvent, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TransactionEvent, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TransactionEvent {
             network: self.network.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "network",
                     "network was not specified but it is required when building TransactionEvent",
                 )
             })?,
             transaction_hash: self.transaction_hash.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "transaction_hash",
                     "transaction_hash was not specified but it is required when building TransactionEvent",
                 )
             })?,
             event_type: self.event_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "event_type",
                     "event_type was not specified but it is required when building TransactionEvent",
                 )

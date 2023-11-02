@@ -150,11 +150,11 @@ impl InstanceStorageConfigBuilder {
     /// Consumes the builder and constructs a [`InstanceStorageConfig`](crate::types::InstanceStorageConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`storage_type`](crate::types::builders::InstanceStorageConfigBuilder::storage_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::InstanceStorageConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::InstanceStorageConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::InstanceStorageConfig {
             association_id: self.association_id,
             storage_type: self.storage_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "storage_type",
                     "storage_type was not specified but it is required when building InstanceStorageConfig",
                 )

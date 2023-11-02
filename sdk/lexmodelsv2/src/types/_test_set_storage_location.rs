@@ -91,16 +91,16 @@ impl TestSetStorageLocationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`s3_bucket_name`](crate::types::builders::TestSetStorageLocationBuilder::s3_bucket_name)
     /// - [`s3_path`](crate::types::builders::TestSetStorageLocationBuilder::s3_path)
-    pub fn build(self) -> ::std::result::Result<crate::types::TestSetStorageLocation, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TestSetStorageLocation, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TestSetStorageLocation {
             s3_bucket_name: self.s3_bucket_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "s3_bucket_name",
                     "s3_bucket_name was not specified but it is required when building TestSetStorageLocation",
                 )
             })?,
             s3_path: self.s3_path.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "s3_path",
                     "s3_path was not specified but it is required when building TestSetStorageLocation",
                 )

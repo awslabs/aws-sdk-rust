@@ -86,7 +86,7 @@ impl StartFailbackLaunchInputBuilder {
     /// Consumes the builder and constructs a [`StartFailbackLaunchInput`](crate::operation::start_failback_launch::StartFailbackLaunchInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_failback_launch::StartFailbackLaunchInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::start_failback_launch::StartFailbackLaunchInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_failback_launch::StartFailbackLaunchInput {
             recovery_instance_ids: self.recovery_instance_ids,

@@ -76,10 +76,10 @@ impl SheetElementRenderingRuleBuilder {
     /// Consumes the builder and constructs a [`SheetElementRenderingRule`](crate::types::SheetElementRenderingRule).
     /// This method will fail if any of the following fields are not set:
     /// - [`expression`](crate::types::builders::SheetElementRenderingRuleBuilder::expression)
-    pub fn build(self) -> ::std::result::Result<crate::types::SheetElementRenderingRule, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SheetElementRenderingRule, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SheetElementRenderingRule {
             expression: self.expression.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "expression",
                     "expression was not specified but it is required when building SheetElementRenderingRule",
                 )

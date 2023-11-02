@@ -178,7 +178,7 @@ impl GetProvisionedProductOutputsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_provisioned_product_outputs::GetProvisionedProductOutputsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_provisioned_product_outputs::GetProvisionedProductOutputsInput {
             accept_language: self.accept_language,

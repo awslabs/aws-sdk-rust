@@ -72,7 +72,7 @@ impl GetCalendarStateInputBuilder {
     /// Consumes the builder and constructs a [`GetCalendarStateInput`](crate::operation::get_calendar_state::GetCalendarStateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_calendar_state::GetCalendarStateInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_calendar_state::GetCalendarStateInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_calendar_state::GetCalendarStateInput {
             calendar_names: self.calendar_names,
             at_time: self.at_time,

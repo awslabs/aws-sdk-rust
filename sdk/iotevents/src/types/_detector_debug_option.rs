@@ -67,10 +67,10 @@ impl DetectorDebugOptionBuilder {
     /// Consumes the builder and constructs a [`DetectorDebugOption`](crate::types::DetectorDebugOption).
     /// This method will fail if any of the following fields are not set:
     /// - [`detector_model_name`](crate::types::builders::DetectorDebugOptionBuilder::detector_model_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::DetectorDebugOption, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DetectorDebugOption, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DetectorDebugOption {
             detector_model_name: self.detector_model_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "detector_model_name",
                     "detector_model_name was not specified but it is required when building DetectorDebugOption",
                 )

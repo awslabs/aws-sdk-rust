@@ -44,7 +44,7 @@ impl GetOtaUpdateInputBuilder {
     /// Consumes the builder and constructs a [`GetOtaUpdateInput`](crate::operation::get_ota_update::GetOtaUpdateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_ota_update::GetOtaUpdateInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_ota_update::GetOtaUpdateInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_ota_update::GetOtaUpdateInput {
             ota_update_id: self.ota_update_id,
         })

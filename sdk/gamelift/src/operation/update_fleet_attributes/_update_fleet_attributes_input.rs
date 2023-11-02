@@ -198,7 +198,7 @@ impl UpdateFleetAttributesInputBuilder {
     /// Consumes the builder and constructs a [`UpdateFleetAttributesInput`](crate::operation::update_fleet_attributes::UpdateFleetAttributesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_fleet_attributes::UpdateFleetAttributesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_fleet_attributes::UpdateFleetAttributesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_fleet_attributes::UpdateFleetAttributesInput {
             fleet_id: self.fleet_id,

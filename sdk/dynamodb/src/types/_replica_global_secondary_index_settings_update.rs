@@ -93,10 +93,10 @@ impl ReplicaGlobalSecondaryIndexSettingsUpdateBuilder {
     /// - [`index_name`](crate::types::builders::ReplicaGlobalSecondaryIndexSettingsUpdateBuilder::index_name)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::ReplicaGlobalSecondaryIndexSettingsUpdate, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::ReplicaGlobalSecondaryIndexSettingsUpdate, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ReplicaGlobalSecondaryIndexSettingsUpdate {
             index_name: self.index_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "index_name",
                     "index_name was not specified but it is required when building ReplicaGlobalSecondaryIndexSettingsUpdate",
                 )

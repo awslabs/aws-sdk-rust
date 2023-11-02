@@ -252,7 +252,7 @@ impl UpdateFileSystemInputBuilder {
     /// Consumes the builder and constructs a [`UpdateFileSystemInput`](crate::operation::update_file_system::UpdateFileSystemInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_file_system::UpdateFileSystemInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_file_system::UpdateFileSystemInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_file_system::UpdateFileSystemInput {
             file_system_id: self.file_system_id,
             client_request_token: self.client_request_token,

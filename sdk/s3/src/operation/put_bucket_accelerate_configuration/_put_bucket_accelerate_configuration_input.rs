@@ -115,7 +115,7 @@ impl PutBucketAccelerateConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_bucket_accelerate_configuration::PutBucketAccelerateConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::put_bucket_accelerate_configuration::PutBucketAccelerateConfigurationInput {

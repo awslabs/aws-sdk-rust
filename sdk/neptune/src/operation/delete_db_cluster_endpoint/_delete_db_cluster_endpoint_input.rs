@@ -46,7 +46,7 @@ impl DeleteDbClusterEndpointInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_db_cluster_endpoint::DeleteDbClusterEndpointInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_db_cluster_endpoint::DeleteDbClusterEndpointInput {
             db_cluster_endpoint_identifier: self.db_cluster_endpoint_identifier,

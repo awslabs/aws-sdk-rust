@@ -42,7 +42,9 @@ impl RemoveRegionInputBuilder {
         &self.directory_id
     }
     /// Consumes the builder and constructs a [`RemoveRegionInput`](crate::operation::remove_region::RemoveRegionInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::remove_region::RemoveRegionInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::remove_region::RemoveRegionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::remove_region::RemoveRegionInput {
             directory_id: self.directory_id,
         })

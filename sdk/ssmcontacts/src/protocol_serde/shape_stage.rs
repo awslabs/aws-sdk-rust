@@ -2,7 +2,7 @@
 pub fn ser_stage(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Stage,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("DurationInMinutes").number(
             #[allow(clippy::useless_conversion)]

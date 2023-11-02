@@ -107,7 +107,7 @@ impl ListReadSetsInputBuilder {
     /// Consumes the builder and constructs a [`ListReadSetsInput`](crate::operation::list_read_sets::ListReadSetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_read_sets::ListReadSetsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_read_sets::ListReadSetsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_read_sets::ListReadSetsInput {
             sequence_store_id: self.sequence_store_id,
             max_results: self.max_results,

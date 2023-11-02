@@ -64,7 +64,7 @@ impl GenerateChangeSetInputBuilder {
     /// Consumes the builder and constructs a [`GenerateChangeSetInput`](crate::operation::generate_change_set::GenerateChangeSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::generate_change_set::GenerateChangeSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::generate_change_set::GenerateChangeSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::generate_change_set::GenerateChangeSetInput {
             app_id: self.app_id,
             changeset_format: self.changeset_format,

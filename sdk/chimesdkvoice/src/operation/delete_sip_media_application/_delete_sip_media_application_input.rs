@@ -46,7 +46,7 @@ impl DeleteSipMediaApplicationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_sip_media_application::DeleteSipMediaApplicationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_sip_media_application::DeleteSipMediaApplicationInput {
             sip_media_application_id: self.sip_media_application_id,

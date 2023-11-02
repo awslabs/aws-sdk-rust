@@ -2,7 +2,7 @@
 pub fn ser_create_contact_method_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_contact_method::CreateContactMethodInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.protocol {
         object.key("protocol").string(var_1.as_str());
     }

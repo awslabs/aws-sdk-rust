@@ -136,7 +136,7 @@ impl UpdateSubscriberInputBuilder {
     /// Consumes the builder and constructs a [`UpdateSubscriberInput`](crate::operation::update_subscriber::UpdateSubscriberInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_subscriber::UpdateSubscriberInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_subscriber::UpdateSubscriberInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_subscriber::UpdateSubscriberInput {
             subscriber_id: self.subscriber_id,
             subscriber_identity: self.subscriber_identity,

@@ -92,16 +92,16 @@ impl MskSourceConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`msk_cluster_arn`](crate::types::builders::MskSourceConfigurationBuilder::msk_cluster_arn)
     /// - [`topic_name`](crate::types::builders::MskSourceConfigurationBuilder::topic_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::MskSourceConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::MskSourceConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MskSourceConfiguration {
             msk_cluster_arn: self.msk_cluster_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "msk_cluster_arn",
                     "msk_cluster_arn was not specified but it is required when building MskSourceConfiguration",
                 )
             })?,
             topic_name: self.topic_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "topic_name",
                     "topic_name was not specified but it is required when building MskSourceConfiguration",
                 )

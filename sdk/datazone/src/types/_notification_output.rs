@@ -298,54 +298,54 @@ impl NotificationOutputBuilder {
     /// - [`action_link`](crate::types::builders::NotificationOutputBuilder::action_link)
     /// - [`creation_timestamp`](crate::types::builders::NotificationOutputBuilder::creation_timestamp)
     /// - [`last_updated_timestamp`](crate::types::builders::NotificationOutputBuilder::last_updated_timestamp)
-    pub fn build(self) -> ::std::result::Result<crate::types::NotificationOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::NotificationOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::NotificationOutput {
             identifier: self.identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "identifier",
                     "identifier was not specified but it is required when building NotificationOutput",
                 )
             })?,
             domain_identifier: self.domain_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "domain_identifier",
                     "domain_identifier was not specified but it is required when building NotificationOutput",
                 )
             })?,
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building NotificationOutput",
                 )
             })?,
             topic: self.topic,
             title: self.title.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "title",
                     "title was not specified but it is required when building NotificationOutput",
                 )
             })?,
             message: self.message.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "message",
                     "message was not specified but it is required when building NotificationOutput",
                 )
             })?,
             status: self.status,
             action_link: self.action_link.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "action_link",
                     "action_link was not specified but it is required when building NotificationOutput",
                 )
             })?,
             creation_timestamp: self.creation_timestamp.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_timestamp",
                     "creation_timestamp was not specified but it is required when building NotificationOutput",
                 )
             })?,
             last_updated_timestamp: self.last_updated_timestamp.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_updated_timestamp",
                     "last_updated_timestamp was not specified but it is required when building NotificationOutput",
                 )

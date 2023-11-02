@@ -2,7 +2,7 @@
 pub fn ser_new_assertion_rule(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::NewAssertionRule,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.asserted_controls {
         let mut array_2 = object.key("AssertedControls").start_array();
         for item_3 in var_1 {

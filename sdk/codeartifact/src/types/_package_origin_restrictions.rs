@@ -68,16 +68,16 @@ impl PackageOriginRestrictionsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`publish`](crate::types::builders::PackageOriginRestrictionsBuilder::publish)
     /// - [`upstream`](crate::types::builders::PackageOriginRestrictionsBuilder::upstream)
-    pub fn build(self) -> ::std::result::Result<crate::types::PackageOriginRestrictions, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PackageOriginRestrictions, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PackageOriginRestrictions {
             publish: self.publish.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "publish",
                     "publish was not specified but it is required when building PackageOriginRestrictions",
                 )
             })?,
             upstream: self.upstream.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "upstream",
                     "upstream was not specified but it is required when building PackageOriginRestrictions",
                 )

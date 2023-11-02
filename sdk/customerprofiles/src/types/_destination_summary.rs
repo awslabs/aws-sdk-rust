@@ -90,16 +90,16 @@ impl DestinationSummaryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`uri`](crate::types::builders::DestinationSummaryBuilder::uri)
     /// - [`status`](crate::types::builders::DestinationSummaryBuilder::status)
-    pub fn build(self) -> ::std::result::Result<crate::types::DestinationSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DestinationSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DestinationSummary {
             uri: self.uri.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "uri",
                     "uri was not specified but it is required when building DestinationSummary",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building DestinationSummary",
                 )

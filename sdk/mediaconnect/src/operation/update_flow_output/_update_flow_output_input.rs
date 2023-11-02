@@ -403,7 +403,7 @@ impl UpdateFlowOutputInputBuilder {
     /// Consumes the builder and constructs a [`UpdateFlowOutputInput`](crate::operation::update_flow_output::UpdateFlowOutputInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_flow_output::UpdateFlowOutputInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_flow_output::UpdateFlowOutputInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_flow_output::UpdateFlowOutputInput {
             cidr_allow_list: self.cidr_allow_list,
             description: self.description,

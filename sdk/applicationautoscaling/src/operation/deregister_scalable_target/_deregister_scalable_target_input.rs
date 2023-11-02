@@ -300,7 +300,7 @@ impl DeregisterScalableTargetInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deregister_scalable_target::DeregisterScalableTargetInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::deregister_scalable_target::DeregisterScalableTargetInput {
             service_namespace: self.service_namespace,

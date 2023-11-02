@@ -205,7 +205,7 @@ impl CreateContentInputBuilder {
     /// Consumes the builder and constructs a [`CreateContentInput`](crate::operation::create_content::CreateContentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_content::CreateContentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_content::CreateContentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_content::CreateContentInput {
             knowledge_base_id: self.knowledge_base_id,
             name: self.name,

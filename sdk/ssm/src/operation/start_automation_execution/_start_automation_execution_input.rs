@@ -383,7 +383,7 @@ impl StartAutomationExecutionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_automation_execution::StartAutomationExecutionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_automation_execution::StartAutomationExecutionInput {
             document_name: self.document_name,

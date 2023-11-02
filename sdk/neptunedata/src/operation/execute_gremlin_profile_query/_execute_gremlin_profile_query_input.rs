@@ -130,7 +130,7 @@ impl ExecuteGremlinProfileQueryInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::execute_gremlin_profile_query::ExecuteGremlinProfileQueryInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::execute_gremlin_profile_query::ExecuteGremlinProfileQueryInput {
             gremlin_query: self.gremlin_query,

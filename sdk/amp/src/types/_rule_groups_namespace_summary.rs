@@ -165,29 +165,29 @@ impl RuleGroupsNamespaceSummaryBuilder {
     /// - [`name`](crate::types::builders::RuleGroupsNamespaceSummaryBuilder::name)
     /// - [`created_at`](crate::types::builders::RuleGroupsNamespaceSummaryBuilder::created_at)
     /// - [`modified_at`](crate::types::builders::RuleGroupsNamespaceSummaryBuilder::modified_at)
-    pub fn build(self) -> ::std::result::Result<crate::types::RuleGroupsNamespaceSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RuleGroupsNamespaceSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RuleGroupsNamespaceSummary {
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building RuleGroupsNamespaceSummary",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building RuleGroupsNamespaceSummary",
                 )
             })?,
             status: self.status,
             created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
                     "created_at was not specified but it is required when building RuleGroupsNamespaceSummary",
                 )
             })?,
             modified_at: self.modified_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "modified_at",
                     "modified_at was not specified but it is required when building RuleGroupsNamespaceSummary",
                 )

@@ -2,7 +2,7 @@
 pub fn ser_grid_layout_screen_canvas_size_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GridLayoutScreenCanvasSizeOptions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("ResizeOption").string(input.resize_option.as_str());
     }

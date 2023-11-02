@@ -70,16 +70,16 @@ impl GeoMatchParamsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`country`](crate::types::builders::GeoMatchParamsBuilder::country)
     /// - [`area_code`](crate::types::builders::GeoMatchParamsBuilder::area_code)
-    pub fn build(self) -> ::std::result::Result<crate::types::GeoMatchParams, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::GeoMatchParams, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::GeoMatchParams {
             country: self.country.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "country",
                     "country was not specified but it is required when building GeoMatchParams",
                 )
             })?,
             area_code: self.area_code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "area_code",
                     "area_code was not specified but it is required when building GeoMatchParams",
                 )

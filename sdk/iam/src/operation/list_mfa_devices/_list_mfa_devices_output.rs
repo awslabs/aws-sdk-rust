@@ -111,10 +111,10 @@ impl ListMfaDevicesOutputBuilder {
     /// - [`mfa_devices`](crate::operation::list_mfa_devices::builders::ListMfaDevicesOutputBuilder::mfa_devices)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_mfa_devices::ListMfaDevicesOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_mfa_devices::ListMfaDevicesOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_mfa_devices::ListMfaDevicesOutput {
             mfa_devices: self.mfa_devices.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "mfa_devices",
                     "mfa_devices was not specified but it is required when building ListMfaDevicesOutput",
                 )

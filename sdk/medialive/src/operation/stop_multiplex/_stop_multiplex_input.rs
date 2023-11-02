@@ -45,7 +45,7 @@ impl StopMultiplexInputBuilder {
     /// Consumes the builder and constructs a [`StopMultiplexInput`](crate::operation::stop_multiplex::StopMultiplexInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_multiplex::StopMultiplexInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::stop_multiplex::StopMultiplexInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_multiplex::StopMultiplexInput {
             multiplex_id: self.multiplex_id,
         })

@@ -2,7 +2,7 @@
 pub fn ser_f_sx_windows_file_server_authorization_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FSxWindowsFileServerAuthorizationConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("credentialsParameter").string(input.credentials_parameter.as_str());
     }

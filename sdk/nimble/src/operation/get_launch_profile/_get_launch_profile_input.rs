@@ -66,7 +66,7 @@ impl GetLaunchProfileInputBuilder {
     /// Consumes the builder and constructs a [`GetLaunchProfileInput`](crate::operation::get_launch_profile::GetLaunchProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_launch_profile::GetLaunchProfileInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_launch_profile::GetLaunchProfileInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_launch_profile::GetLaunchProfileInput {
             launch_profile_id: self.launch_profile_id,
             studio_id: self.studio_id,

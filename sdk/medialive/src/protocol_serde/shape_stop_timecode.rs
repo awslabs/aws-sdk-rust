@@ -2,7 +2,7 @@
 pub fn ser_stop_timecode(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::StopTimecode,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.last_frame_clipping_behavior {
         object.key("lastFrameClippingBehavior").string(var_1.as_str());
     }

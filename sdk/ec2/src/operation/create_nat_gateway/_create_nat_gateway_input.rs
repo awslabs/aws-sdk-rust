@@ -262,7 +262,7 @@ impl CreateNatGatewayInputBuilder {
     /// Consumes the builder and constructs a [`CreateNatGatewayInput`](crate::operation::create_nat_gateway::CreateNatGatewayInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_nat_gateway::CreateNatGatewayInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_nat_gateway::CreateNatGatewayInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_nat_gateway::CreateNatGatewayInput {
             allocation_id: self.allocation_id,
             client_token: self.client_token,

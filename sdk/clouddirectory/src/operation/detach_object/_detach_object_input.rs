@@ -86,7 +86,9 @@ impl DetachObjectInputBuilder {
         &self.link_name
     }
     /// Consumes the builder and constructs a [`DetachObjectInput`](crate::operation::detach_object::DetachObjectInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::detach_object::DetachObjectInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::detach_object::DetachObjectInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::detach_object::DetachObjectInput {
             directory_arn: self.directory_arn,
             parent_reference: self.parent_reference,

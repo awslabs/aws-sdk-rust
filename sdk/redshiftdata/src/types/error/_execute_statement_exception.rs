@@ -105,16 +105,16 @@ impl ExecuteStatementExceptionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`message`](crate::types::error::builders::ExecuteStatementExceptionBuilder::message)
     /// - [`statement_id`](crate::types::error::builders::ExecuteStatementExceptionBuilder::statement_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::error::ExecuteStatementException, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::error::ExecuteStatementException, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::error::ExecuteStatementException {
             message: self.message.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "message",
                     "message was not specified but it is required when building ExecuteStatementException",
                 )
             })?,
             statement_id: self.statement_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "statement_id",
                     "statement_id was not specified but it is required when building ExecuteStatementException",
                 )

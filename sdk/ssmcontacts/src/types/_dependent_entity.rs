@@ -76,16 +76,16 @@ impl DependentEntityBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`relation_type`](crate::types::builders::DependentEntityBuilder::relation_type)
     /// - [`dependent_resource_ids`](crate::types::builders::DependentEntityBuilder::dependent_resource_ids)
-    pub fn build(self) -> ::std::result::Result<crate::types::DependentEntity, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DependentEntity, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DependentEntity {
             relation_type: self.relation_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "relation_type",
                     "relation_type was not specified but it is required when building DependentEntity",
                 )
             })?,
             dependent_resource_ids: self.dependent_resource_ids.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "dependent_resource_ids",
                     "dependent_resource_ids was not specified but it is required when building DependentEntity",
                 )

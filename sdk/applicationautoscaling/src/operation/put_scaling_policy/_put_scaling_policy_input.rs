@@ -421,7 +421,7 @@ impl PutScalingPolicyInputBuilder {
     /// Consumes the builder and constructs a [`PutScalingPolicyInput`](crate::operation::put_scaling_policy::PutScalingPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_scaling_policy::PutScalingPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::put_scaling_policy::PutScalingPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_scaling_policy::PutScalingPolicyInput {
             policy_name: self.policy_name,
             service_namespace: self.service_namespace,

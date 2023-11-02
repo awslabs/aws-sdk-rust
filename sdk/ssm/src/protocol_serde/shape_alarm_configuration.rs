@@ -2,7 +2,7 @@
 pub fn ser_alarm_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AlarmConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.ignore_poll_alarm_failure {
         object.key("IgnorePollAlarmFailure").boolean(input.ignore_poll_alarm_failure);
     }

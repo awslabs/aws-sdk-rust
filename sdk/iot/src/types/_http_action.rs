@@ -117,10 +117,10 @@ impl HttpActionBuilder {
     /// Consumes the builder and constructs a [`HttpAction`](crate::types::HttpAction).
     /// This method will fail if any of the following fields are not set:
     /// - [`url`](crate::types::builders::HttpActionBuilder::url)
-    pub fn build(self) -> ::std::result::Result<crate::types::HttpAction, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::HttpAction, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::HttpAction {
             url: self.url.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "url",
                     "url was not specified but it is required when building HttpAction",
                 )

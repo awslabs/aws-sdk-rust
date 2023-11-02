@@ -44,7 +44,7 @@ impl GetAssessmentInputBuilder {
     /// Consumes the builder and constructs a [`GetAssessmentInput`](crate::operation::get_assessment::GetAssessmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_assessment::GetAssessmentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_assessment::GetAssessmentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_assessment::GetAssessmentInput {
             assessment_id: self.assessment_id,
         })

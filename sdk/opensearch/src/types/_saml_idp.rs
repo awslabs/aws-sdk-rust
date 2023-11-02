@@ -70,16 +70,16 @@ impl SamlIdpBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`metadata_content`](crate::types::builders::SamlIdpBuilder::metadata_content)
     /// - [`entity_id`](crate::types::builders::SamlIdpBuilder::entity_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::SamlIdp, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SamlIdp, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SamlIdp {
             metadata_content: self.metadata_content.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "metadata_content",
                     "metadata_content was not specified but it is required when building SamlIdp",
                 )
             })?,
             entity_id: self.entity_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "entity_id",
                     "entity_id was not specified but it is required when building SamlIdp",
                 )

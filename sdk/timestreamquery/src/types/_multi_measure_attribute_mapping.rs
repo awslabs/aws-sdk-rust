@@ -90,17 +90,17 @@ impl MultiMeasureAttributeMappingBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`source_column`](crate::types::builders::MultiMeasureAttributeMappingBuilder::source_column)
     /// - [`measure_value_type`](crate::types::builders::MultiMeasureAttributeMappingBuilder::measure_value_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::MultiMeasureAttributeMapping, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::MultiMeasureAttributeMapping, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MultiMeasureAttributeMapping {
             source_column: self.source_column.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source_column",
                     "source_column was not specified but it is required when building MultiMeasureAttributeMapping",
                 )
             })?,
             target_multi_measure_attribute_name: self.target_multi_measure_attribute_name,
             measure_value_type: self.measure_value_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "measure_value_type",
                     "measure_value_type was not specified but it is required when building MultiMeasureAttributeMapping",
                 )

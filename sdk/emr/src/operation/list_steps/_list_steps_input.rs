@@ -122,7 +122,7 @@ impl ListStepsInputBuilder {
         &self.marker
     }
     /// Consumes the builder and constructs a [`ListStepsInput`](crate::operation::list_steps::ListStepsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_steps::ListStepsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_steps::ListStepsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_steps::ListStepsInput {
             cluster_id: self.cluster_id,
             step_states: self.step_states,

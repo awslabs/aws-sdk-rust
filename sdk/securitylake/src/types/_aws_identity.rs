@@ -70,16 +70,16 @@ impl AwsIdentityBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`principal`](crate::types::builders::AwsIdentityBuilder::principal)
     /// - [`external_id`](crate::types::builders::AwsIdentityBuilder::external_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::AwsIdentity, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AwsIdentity, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AwsIdentity {
             principal: self.principal.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "principal",
                     "principal was not specified but it is required when building AwsIdentity",
                 )
             })?,
             external_id: self.external_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "external_id",
                     "external_id was not specified but it is required when building AwsIdentity",
                 )

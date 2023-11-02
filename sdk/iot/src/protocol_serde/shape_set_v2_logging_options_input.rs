@@ -2,7 +2,7 @@
 pub fn ser_set_v2_logging_options_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::set_v2_logging_options::SetV2LoggingOptionsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.default_log_level {
         object.key("defaultLogLevel").string(var_1.as_str());
     }

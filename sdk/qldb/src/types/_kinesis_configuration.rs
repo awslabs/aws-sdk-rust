@@ -82,10 +82,10 @@ impl KinesisConfigurationBuilder {
     /// Consumes the builder and constructs a [`KinesisConfiguration`](crate::types::KinesisConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`stream_arn`](crate::types::builders::KinesisConfigurationBuilder::stream_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::KinesisConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::KinesisConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::KinesisConfiguration {
             stream_arn: self.stream_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "stream_arn",
                     "stream_arn was not specified but it is required when building KinesisConfiguration",
                 )

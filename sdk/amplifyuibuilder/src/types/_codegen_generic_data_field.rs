@@ -159,34 +159,34 @@ impl CodegenGenericDataFieldBuilder {
     /// - [`required`](crate::types::builders::CodegenGenericDataFieldBuilder::required)
     /// - [`read_only`](crate::types::builders::CodegenGenericDataFieldBuilder::read_only)
     /// - [`is_array`](crate::types::builders::CodegenGenericDataFieldBuilder::is_array)
-    pub fn build(self) -> ::std::result::Result<crate::types::CodegenGenericDataField, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CodegenGenericDataField, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CodegenGenericDataField {
             data_type: self.data_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_type",
                     "data_type was not specified but it is required when building CodegenGenericDataField",
                 )
             })?,
             data_type_value: self.data_type_value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_type_value",
                     "data_type_value was not specified but it is required when building CodegenGenericDataField",
                 )
             })?,
             required: self.required.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "required",
                     "required was not specified but it is required when building CodegenGenericDataField",
                 )
             })?,
             read_only: self.read_only.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "read_only",
                     "read_only was not specified but it is required when building CodegenGenericDataField",
                 )
             })?,
             is_array: self.is_array.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "is_array",
                     "is_array was not specified but it is required when building CodegenGenericDataField",
                 )

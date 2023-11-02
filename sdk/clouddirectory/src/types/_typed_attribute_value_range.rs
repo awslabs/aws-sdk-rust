@@ -110,17 +110,17 @@ impl TypedAttributeValueRangeBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`start_mode`](crate::types::builders::TypedAttributeValueRangeBuilder::start_mode)
     /// - [`end_mode`](crate::types::builders::TypedAttributeValueRangeBuilder::end_mode)
-    pub fn build(self) -> ::std::result::Result<crate::types::TypedAttributeValueRange, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TypedAttributeValueRange, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TypedAttributeValueRange {
             start_mode: self.start_mode.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "start_mode",
                     "start_mode was not specified but it is required when building TypedAttributeValueRange",
                 )
             })?,
             start_value: self.start_value,
             end_mode: self.end_mode.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "end_mode",
                     "end_mode was not specified but it is required when building TypedAttributeValueRange",
                 )

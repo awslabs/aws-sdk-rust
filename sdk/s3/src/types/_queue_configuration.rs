@@ -117,17 +117,17 @@ impl QueueConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`queue_arn`](crate::types::builders::QueueConfigurationBuilder::queue_arn)
     /// - [`events`](crate::types::builders::QueueConfigurationBuilder::events)
-    pub fn build(self) -> ::std::result::Result<crate::types::QueueConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::QueueConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::QueueConfiguration {
             id: self.id,
             queue_arn: self.queue_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "queue_arn",
                     "queue_arn was not specified but it is required when building QueueConfiguration",
                 )
             })?,
             events: self.events.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "events",
                     "events was not specified but it is required when building QueueConfiguration",
                 )

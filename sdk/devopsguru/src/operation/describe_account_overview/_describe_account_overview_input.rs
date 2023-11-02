@@ -67,7 +67,7 @@ impl DescribeAccountOverviewInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_account_overview::DescribeAccountOverviewInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_account_overview::DescribeAccountOverviewInput {
             from_time: self.from_time,

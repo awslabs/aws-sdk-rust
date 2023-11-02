@@ -2,7 +2,7 @@
 pub fn ser_aws_ecs_service_placement_constraints_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEcsServicePlacementConstraintsDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.expression {
         object.key("Expression").string(var_1.as_str());
     }

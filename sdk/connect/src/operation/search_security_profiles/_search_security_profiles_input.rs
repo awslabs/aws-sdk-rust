@@ -148,8 +148,10 @@ impl SearchSecurityProfilesInputBuilder {
     /// Consumes the builder and constructs a [`SearchSecurityProfilesInput`](crate::operation::search_security_profiles::SearchSecurityProfilesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::search_security_profiles::SearchSecurityProfilesInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::search_security_profiles::SearchSecurityProfilesInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::search_security_profiles::SearchSecurityProfilesInput {
             instance_id: self.instance_id,
             next_token: self.next_token,

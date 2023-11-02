@@ -161,34 +161,34 @@ impl ExportReadSetJobDetailBuilder {
     /// - [`destination`](crate::types::builders::ExportReadSetJobDetailBuilder::destination)
     /// - [`status`](crate::types::builders::ExportReadSetJobDetailBuilder::status)
     /// - [`creation_time`](crate::types::builders::ExportReadSetJobDetailBuilder::creation_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::ExportReadSetJobDetail, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ExportReadSetJobDetail, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ExportReadSetJobDetail {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building ExportReadSetJobDetail",
                 )
             })?,
             sequence_store_id: self.sequence_store_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "sequence_store_id",
                     "sequence_store_id was not specified but it is required when building ExportReadSetJobDetail",
                 )
             })?,
             destination: self.destination.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "destination",
                     "destination was not specified but it is required when building ExportReadSetJobDetail",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building ExportReadSetJobDetail",
                 )
             })?,
             creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_time",
                     "creation_time was not specified but it is required when building ExportReadSetJobDetail",
                 )

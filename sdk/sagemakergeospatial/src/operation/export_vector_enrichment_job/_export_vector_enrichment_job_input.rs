@@ -111,7 +111,7 @@ impl ExportVectorEnrichmentJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::export_vector_enrichment_job::ExportVectorEnrichmentJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::export_vector_enrichment_job::ExportVectorEnrichmentJobInput {
             arn: self.arn,

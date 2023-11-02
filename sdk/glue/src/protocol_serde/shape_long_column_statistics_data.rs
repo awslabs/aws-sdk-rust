@@ -2,7 +2,7 @@
 pub fn ser_long_column_statistics_data(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LongColumnStatisticsData,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.minimum_value != 0 {
         object.key("MinimumValue").number(
             #[allow(clippy::useless_conversion)]

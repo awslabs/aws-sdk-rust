@@ -75,16 +75,16 @@ impl SettingsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`subnets`](crate::types::builders::SettingsBuilder::subnets)
     /// - [`security_group_id`](crate::types::builders::SettingsBuilder::security_group_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::Settings, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Settings, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Settings {
             subnets: self.subnets.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "subnets",
                     "subnets was not specified but it is required when building Settings",
                 )
             })?,
             security_group_id: self.security_group_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "security_group_id",
                     "security_group_id was not specified but it is required when building Settings",
                 )

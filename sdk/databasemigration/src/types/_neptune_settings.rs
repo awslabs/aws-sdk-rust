@@ -175,17 +175,17 @@ impl NeptuneSettingsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`s3_bucket_name`](crate::types::builders::NeptuneSettingsBuilder::s3_bucket_name)
     /// - [`s3_bucket_folder`](crate::types::builders::NeptuneSettingsBuilder::s3_bucket_folder)
-    pub fn build(self) -> ::std::result::Result<crate::types::NeptuneSettings, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::NeptuneSettings, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::NeptuneSettings {
             service_access_role_arn: self.service_access_role_arn,
             s3_bucket_name: self.s3_bucket_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "s3_bucket_name",
                     "s3_bucket_name was not specified but it is required when building NeptuneSettings",
                 )
             })?,
             s3_bucket_folder: self.s3_bucket_folder.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "s3_bucket_folder",
                     "s3_bucket_folder was not specified but it is required when building NeptuneSettings",
                 )

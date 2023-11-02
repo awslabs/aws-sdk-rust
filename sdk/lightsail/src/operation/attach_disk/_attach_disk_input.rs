@@ -117,7 +117,7 @@ impl AttachDiskInputBuilder {
         &self.auto_mounting
     }
     /// Consumes the builder and constructs a [`AttachDiskInput`](crate::operation::attach_disk::AttachDiskInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::attach_disk::AttachDiskInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::attach_disk::AttachDiskInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::attach_disk::AttachDiskInput {
             disk_name: self.disk_name,
             instance_name: self.instance_name,

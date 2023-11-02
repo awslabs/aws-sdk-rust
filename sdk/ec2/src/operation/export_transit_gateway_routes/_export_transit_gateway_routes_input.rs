@@ -173,7 +173,7 @@ impl ExportTransitGatewayRoutesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::export_transit_gateway_routes::ExportTransitGatewayRoutesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::export_transit_gateway_routes::ExportTransitGatewayRoutesInput {
             transit_gateway_route_table_id: self.transit_gateway_route_table_id,

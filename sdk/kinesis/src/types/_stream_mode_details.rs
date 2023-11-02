@@ -45,10 +45,10 @@ impl StreamModeDetailsBuilder {
     /// Consumes the builder and constructs a [`StreamModeDetails`](crate::types::StreamModeDetails).
     /// This method will fail if any of the following fields are not set:
     /// - [`stream_mode`](crate::types::builders::StreamModeDetailsBuilder::stream_mode)
-    pub fn build(self) -> ::std::result::Result<crate::types::StreamModeDetails, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::StreamModeDetails, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::StreamModeDetails {
             stream_mode: self.stream_mode.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "stream_mode",
                     "stream_mode was not specified but it is required when building StreamModeDetails",
                 )

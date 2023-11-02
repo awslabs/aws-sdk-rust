@@ -160,7 +160,7 @@ impl ValidatePolicyInputBuilder {
     /// Consumes the builder and constructs a [`ValidatePolicyInput`](crate::operation::validate_policy::ValidatePolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::validate_policy::ValidatePolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::validate_policy::ValidatePolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::validate_policy::ValidatePolicyInput {
             locale: self.locale,
             max_results: self.max_results,

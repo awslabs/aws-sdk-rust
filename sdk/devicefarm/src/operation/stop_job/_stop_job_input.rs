@@ -42,7 +42,7 @@ impl StopJobInputBuilder {
         &self.arn
     }
     /// Consumes the builder and constructs a [`StopJobInput`](crate::operation::stop_job::StopJobInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::stop_job::StopJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_job::StopJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_job::StopJobInput { arn: self.arn })
     }
 }

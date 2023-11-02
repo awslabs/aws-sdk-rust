@@ -93,7 +93,7 @@ impl TagAttendeeInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`TagAttendeeInput`](crate::operation::tag_attendee::TagAttendeeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::tag_attendee::TagAttendeeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::tag_attendee::TagAttendeeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::tag_attendee::TagAttendeeInput {
             meeting_id: self.meeting_id,
             attendee_id: self.attendee_id,

@@ -46,7 +46,7 @@ impl EnableOrganizationAdminAccountInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::enable_organization_admin_account::EnableOrganizationAdminAccountInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::enable_organization_admin_account::EnableOrganizationAdminAccountInput {
             account_id: self.account_id,

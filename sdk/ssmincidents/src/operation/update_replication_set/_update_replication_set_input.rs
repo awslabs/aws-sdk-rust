@@ -94,7 +94,7 @@ impl UpdateReplicationSetInputBuilder {
     /// Consumes the builder and constructs a [`UpdateReplicationSetInput`](crate::operation::update_replication_set::UpdateReplicationSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_replication_set::UpdateReplicationSetInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_replication_set::UpdateReplicationSetInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_replication_set::UpdateReplicationSetInput {
             arn: self.arn,

@@ -2,7 +2,7 @@
 pub fn ser_update_monitoring_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_monitoring::UpdateMonitoringInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.current_version {
         object.key("currentVersion").string(var_1.as_str());
     }

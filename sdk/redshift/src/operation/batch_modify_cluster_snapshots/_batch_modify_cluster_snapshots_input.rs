@@ -105,7 +105,7 @@ impl BatchModifyClusterSnapshotsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_modify_cluster_snapshots::BatchModifyClusterSnapshotsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::batch_modify_cluster_snapshots::BatchModifyClusterSnapshotsInput {
             snapshot_identifier_list: self.snapshot_identifier_list,

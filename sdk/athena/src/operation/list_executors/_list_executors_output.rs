@@ -113,10 +113,10 @@ impl ListExecutorsOutputBuilder {
     /// - [`session_id`](crate::operation::list_executors::builders::ListExecutorsOutputBuilder::session_id)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_executors::ListExecutorsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_executors::ListExecutorsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_executors::ListExecutorsOutput {
             session_id: self.session_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "session_id",
                     "session_id was not specified but it is required when building ListExecutorsOutput",
                 )

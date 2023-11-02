@@ -2,7 +2,7 @@
 pub fn ser_period_to_date_computation(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PeriodToDateComputation,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("ComputationId").string(input.computation_id.as_str());
     }

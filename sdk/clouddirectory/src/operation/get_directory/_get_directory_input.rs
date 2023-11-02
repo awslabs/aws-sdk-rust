@@ -42,7 +42,9 @@ impl GetDirectoryInputBuilder {
         &self.directory_arn
     }
     /// Consumes the builder and constructs a [`GetDirectoryInput`](crate::operation::get_directory::GetDirectoryInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_directory::GetDirectoryInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_directory::GetDirectoryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_directory::GetDirectoryInput {
             directory_arn: self.directory_arn,
         })

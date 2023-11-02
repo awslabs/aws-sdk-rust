@@ -97,17 +97,17 @@ impl HookConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`lambda_arn`](crate::types::builders::HookConfigurationBuilder::lambda_arn)
     /// - [`s3_bucket`](crate::types::builders::HookConfigurationBuilder::s3_bucket)
-    pub fn build(self) -> ::std::result::Result<crate::types::HookConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::HookConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::HookConfiguration {
             invocation_condition: self.invocation_condition,
             lambda_arn: self.lambda_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "lambda_arn",
                     "lambda_arn was not specified but it is required when building HookConfiguration",
                 )
             })?,
             s3_bucket: self.s3_bucket.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "s3_bucket",
                     "s3_bucket was not specified but it is required when building HookConfiguration",
                 )

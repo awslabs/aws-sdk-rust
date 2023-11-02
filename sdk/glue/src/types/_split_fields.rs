@@ -104,22 +104,22 @@ impl SplitFieldsBuilder {
     /// - [`name`](crate::types::builders::SplitFieldsBuilder::name)
     /// - [`inputs`](crate::types::builders::SplitFieldsBuilder::inputs)
     /// - [`paths`](crate::types::builders::SplitFieldsBuilder::paths)
-    pub fn build(self) -> ::std::result::Result<crate::types::SplitFields, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SplitFields, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SplitFields {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building SplitFields",
                 )
             })?,
             inputs: self.inputs.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "inputs",
                     "inputs was not specified but it is required when building SplitFields",
                 )
             })?,
             paths: self.paths.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "paths",
                     "paths was not specified but it is required when building SplitFields",
                 )

@@ -95,10 +95,10 @@ impl ListActivityTypesOutputBuilder {
     /// - [`type_infos`](crate::operation::list_activity_types::builders::ListActivityTypesOutputBuilder::type_infos)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_activity_types::ListActivityTypesOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_activity_types::ListActivityTypesOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_activity_types::ListActivityTypesOutput {
             type_infos: self.type_infos.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "type_infos",
                     "type_infos was not specified but it is required when building ListActivityTypesOutput",
                 )

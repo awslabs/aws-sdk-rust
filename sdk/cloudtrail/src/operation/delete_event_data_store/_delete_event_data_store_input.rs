@@ -44,7 +44,7 @@ impl DeleteEventDataStoreInputBuilder {
     /// Consumes the builder and constructs a [`DeleteEventDataStoreInput`](crate::operation::delete_event_data_store::DeleteEventDataStoreInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_event_data_store::DeleteEventDataStoreInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_event_data_store::DeleteEventDataStoreInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_event_data_store::DeleteEventDataStoreInput {
             event_data_store: self.event_data_store,

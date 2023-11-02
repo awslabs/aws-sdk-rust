@@ -2,7 +2,7 @@
 pub fn ser_view_off_nadir_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ViewOffNadirInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("LowerBound").number(
             #[allow(clippy::useless_conversion)]

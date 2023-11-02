@@ -266,38 +266,38 @@ impl DescribePackageVersionOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_package_version::DescribePackageVersionOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_package_version::DescribePackageVersionOutput {
             owner_account: self.owner_account,
             package_id: self.package_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "package_id",
                     "package_id was not specified but it is required when building DescribePackageVersionOutput",
                 )
             })?,
             package_arn: self.package_arn,
             package_name: self.package_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "package_name",
                     "package_name was not specified but it is required when building DescribePackageVersionOutput",
                 )
             })?,
             package_version: self.package_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "package_version",
                     "package_version was not specified but it is required when building DescribePackageVersionOutput",
                 )
             })?,
             patch_version: self.patch_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "patch_version",
                     "patch_version was not specified but it is required when building DescribePackageVersionOutput",
                 )
             })?,
             is_latest_patch: self.is_latest_patch.unwrap_or_default(),
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building DescribePackageVersionOutput",
                 )

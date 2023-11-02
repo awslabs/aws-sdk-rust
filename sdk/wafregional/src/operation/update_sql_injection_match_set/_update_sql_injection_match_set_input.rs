@@ -123,7 +123,7 @@ impl UpdateSqlInjectionMatchSetInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_sql_injection_match_set::UpdateSqlInjectionMatchSetInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_sql_injection_match_set::UpdateSqlInjectionMatchSetInput {
             sql_injection_match_set_id: self.sql_injection_match_set_id,

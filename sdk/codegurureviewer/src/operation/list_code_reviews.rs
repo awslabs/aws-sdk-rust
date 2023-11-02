@@ -173,7 +173,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListCodeRevi
             fn uri_base(
                 _input: &crate::operation::list_code_reviews::ListCodeReviewsInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 use ::std::fmt::Write as _;
                 ::std::write!(output, "/codereviews").expect("formatting should succeed");
                 ::std::result::Result::Ok(())
@@ -181,7 +181,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListCodeRevi
             fn uri_query(
                 _input: &crate::operation::list_code_reviews::ListCodeReviewsInput,
                 mut output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_1) = &_input.provider_types {
                     {
@@ -207,7 +207,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListCodeRevi
                 let inner_7 = &_input.r#type;
                 let inner_7 = inner_7
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("r#type", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "cannot be empty or unset"))?;
                 query.push_kv("Type", &::aws_smithy_http::query::fmt_string(&inner_7));
                 if let ::std::option::Option::Some(inner_8) = &_input.max_results {
                     if *inner_8 != 0 {
@@ -225,7 +225,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListCodeRevi
             fn update_http_builder(
                 input: &crate::operation::list_code_reviews::ListCodeReviewsInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -234,7 +234,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListCodeRevi
             let mut builder = update_http_builder(&input, ::http::request::Builder::new())?;
             builder
         };
-        let body = ::aws_smithy_http::body::SdkBody::from("");
+        let body = ::aws_smithy_types::body::SdkBody::from("");
 
         ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }

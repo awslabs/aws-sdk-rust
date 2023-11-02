@@ -46,7 +46,7 @@ impl GetReplicationConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_replication_configuration::GetReplicationConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_replication_configuration::GetReplicationConfigurationInput {
             source_server_id: self.source_server_id,

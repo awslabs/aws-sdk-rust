@@ -46,7 +46,7 @@ impl DescribeContinuousBackupsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_continuous_backups::DescribeContinuousBackupsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_continuous_backups::DescribeContinuousBackupsInput { table_name: self.table_name })
     }

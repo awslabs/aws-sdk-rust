@@ -140,16 +140,16 @@ impl ListStreamsOutputBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`stream_names`](crate::operation::list_streams::builders::ListStreamsOutputBuilder::stream_names)
     /// - [`has_more_streams`](crate::operation::list_streams::builders::ListStreamsOutputBuilder::has_more_streams)
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_streams::ListStreamsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_streams::ListStreamsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_streams::ListStreamsOutput {
             stream_names: self.stream_names.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "stream_names",
                     "stream_names was not specified but it is required when building ListStreamsOutput",
                 )
             })?,
             has_more_streams: self.has_more_streams.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "has_more_streams",
                     "has_more_streams was not specified but it is required when building ListStreamsOutput",
                 )

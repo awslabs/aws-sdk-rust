@@ -44,7 +44,7 @@ impl DescribeSolutionInputBuilder {
     /// Consumes the builder and constructs a [`DescribeSolutionInput`](crate::operation::describe_solution::DescribeSolutionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_solution::DescribeSolutionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_solution::DescribeSolutionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_solution::DescribeSolutionInput {
             solution_arn: self.solution_arn,
         })

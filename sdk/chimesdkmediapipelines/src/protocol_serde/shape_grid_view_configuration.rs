@@ -2,7 +2,7 @@
 pub fn ser_grid_view_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GridViewConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("ContentShareLayout").string(input.content_share_layout.as_str());
     }

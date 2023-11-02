@@ -2,7 +2,7 @@
 pub fn ser_launch_template_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LaunchTemplateConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("launchTemplateId").string(input.launch_template_id.as_str());
     }

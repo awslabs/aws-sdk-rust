@@ -44,7 +44,7 @@ impl StartKeyUsageInputBuilder {
     /// Consumes the builder and constructs a [`StartKeyUsageInput`](crate::operation::start_key_usage::StartKeyUsageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_key_usage::StartKeyUsageInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_key_usage::StartKeyUsageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_key_usage::StartKeyUsageInput {
             key_identifier: self.key_identifier,
         })

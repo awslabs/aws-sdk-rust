@@ -2,7 +2,7 @@
 pub fn ser_batch_execute_statement_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::batch_execute_statement::BatchExecuteStatementInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.database {
         object.key("database").string(var_1.as_str());
     }

@@ -438,23 +438,23 @@ impl DescribeAppVersionTemplateOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_app_version_template::DescribeAppVersionTemplateOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_app_version_template::DescribeAppVersionTemplateOutput {
             app_arn: self.app_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "app_arn",
                     "app_arn was not specified but it is required when building DescribeAppVersionTemplateOutput",
                 )
             })?,
             app_version: self.app_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "app_version",
                     "app_version was not specified but it is required when building DescribeAppVersionTemplateOutput",
                 )
             })?,
             app_template_body: self.app_template_body.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "app_template_body",
                     "app_template_body was not specified but it is required when building DescribeAppVersionTemplateOutput",
                 )

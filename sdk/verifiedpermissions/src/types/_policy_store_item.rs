@@ -94,22 +94,22 @@ impl PolicyStoreItemBuilder {
     /// - [`policy_store_id`](crate::types::builders::PolicyStoreItemBuilder::policy_store_id)
     /// - [`arn`](crate::types::builders::PolicyStoreItemBuilder::arn)
     /// - [`created_date`](crate::types::builders::PolicyStoreItemBuilder::created_date)
-    pub fn build(self) -> ::std::result::Result<crate::types::PolicyStoreItem, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PolicyStoreItem, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PolicyStoreItem {
             policy_store_id: self.policy_store_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "policy_store_id",
                     "policy_store_id was not specified but it is required when building PolicyStoreItem",
                 )
             })?,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building PolicyStoreItem",
                 )
             })?,
             created_date: self.created_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_date",
                     "created_date was not specified but it is required when building PolicyStoreItem",
                 )

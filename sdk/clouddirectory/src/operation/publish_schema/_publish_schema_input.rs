@@ -108,7 +108,7 @@ impl PublishSchemaInputBuilder {
     /// Consumes the builder and constructs a [`PublishSchemaInput`](crate::operation::publish_schema::PublishSchemaInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::publish_schema::PublishSchemaInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::publish_schema::PublishSchemaInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::publish_schema::PublishSchemaInput {
             development_schema_arn: self.development_schema_arn,
             version: self.version,

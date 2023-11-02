@@ -2,7 +2,7 @@
 pub fn ser_aggregate_resource_identifier(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AggregateResourceIdentifier,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("SourceAccountId").string(input.source_account_id.as_str());
     }

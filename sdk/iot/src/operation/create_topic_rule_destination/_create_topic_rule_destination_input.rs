@@ -46,7 +46,7 @@ impl CreateTopicRuleDestinationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_topic_rule_destination::CreateTopicRuleDestinationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_topic_rule_destination::CreateTopicRuleDestinationInput {
             destination_configuration: self.destination_configuration,

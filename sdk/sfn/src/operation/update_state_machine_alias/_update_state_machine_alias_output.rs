@@ -64,11 +64,11 @@ impl UpdateStateMachineAliasOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_state_machine_alias::UpdateStateMachineAliasOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_state_machine_alias::UpdateStateMachineAliasOutput {
             update_date: self.update_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "update_date",
                     "update_date was not specified but it is required when building UpdateStateMachineAliasOutput",
                 )

@@ -142,7 +142,7 @@ impl ImportLensInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`ImportLensInput`](crate::operation::import_lens::ImportLensInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::import_lens::ImportLensInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::import_lens::ImportLensInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::import_lens::ImportLensInput {
             lens_alias: self.lens_alias,
             json_string: self.json_string,

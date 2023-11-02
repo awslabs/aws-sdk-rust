@@ -110,17 +110,17 @@ impl SlotResolutionTestResultItemCountsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`total_result_count`](crate::types::builders::SlotResolutionTestResultItemCountsBuilder::total_result_count)
     /// - [`slot_match_result_counts`](crate::types::builders::SlotResolutionTestResultItemCountsBuilder::slot_match_result_counts)
-    pub fn build(self) -> ::std::result::Result<crate::types::SlotResolutionTestResultItemCounts, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SlotResolutionTestResultItemCounts, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SlotResolutionTestResultItemCounts {
             total_result_count: self.total_result_count.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "total_result_count",
                     "total_result_count was not specified but it is required when building SlotResolutionTestResultItemCounts",
                 )
             })?,
             speech_transcription_result_counts: self.speech_transcription_result_counts,
             slot_match_result_counts: self.slot_match_result_counts.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "slot_match_result_counts",
                     "slot_match_result_counts was not specified but it is required when building SlotResolutionTestResultItemCounts",
                 )

@@ -398,23 +398,23 @@ impl SlackConfigurationBuilder {
     /// - [`secret_arn`](crate::types::builders::SlackConfigurationBuilder::secret_arn)
     /// - [`slack_entity_list`](crate::types::builders::SlackConfigurationBuilder::slack_entity_list)
     /// - [`since_crawl_date`](crate::types::builders::SlackConfigurationBuilder::since_crawl_date)
-    pub fn build(self) -> ::std::result::Result<crate::types::SlackConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SlackConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SlackConfiguration {
             team_id: self.team_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "team_id",
                     "team_id was not specified but it is required when building SlackConfiguration",
                 )
             })?,
             secret_arn: self.secret_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "secret_arn",
                     "secret_arn was not specified but it is required when building SlackConfiguration",
                 )
             })?,
             vpc_configuration: self.vpc_configuration,
             slack_entity_list: self.slack_entity_list.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "slack_entity_list",
                     "slack_entity_list was not specified but it is required when building SlackConfiguration",
                 )
@@ -423,7 +423,7 @@ impl SlackConfigurationBuilder {
             crawl_bot_message: self.crawl_bot_message.unwrap_or_default(),
             exclude_archived: self.exclude_archived.unwrap_or_default(),
             since_crawl_date: self.since_crawl_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "since_crawl_date",
                     "since_crawl_date was not specified but it is required when building SlackConfiguration",
                 )

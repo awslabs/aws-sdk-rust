@@ -51,10 +51,10 @@ impl SubjectAlternativeNameMatchersBuilder {
     /// Consumes the builder and constructs a [`SubjectAlternativeNameMatchers`](crate::types::SubjectAlternativeNameMatchers).
     /// This method will fail if any of the following fields are not set:
     /// - [`exact`](crate::types::builders::SubjectAlternativeNameMatchersBuilder::exact)
-    pub fn build(self) -> ::std::result::Result<crate::types::SubjectAlternativeNameMatchers, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SubjectAlternativeNameMatchers, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SubjectAlternativeNameMatchers {
             exact: self.exact.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "exact",
                     "exact was not specified but it is required when building SubjectAlternativeNameMatchers",
                 )

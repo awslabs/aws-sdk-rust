@@ -276,20 +276,20 @@ impl ConfigRecommendationBuilder {
     /// - [`optimization_type`](crate::types::builders::ConfigRecommendationBuilder::optimization_type)
     /// - [`name`](crate::types::builders::ConfigRecommendationBuilder::name)
     /// - [`reference_id`](crate::types::builders::ConfigRecommendationBuilder::reference_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::ConfigRecommendation, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ConfigRecommendation, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ConfigRecommendation {
             cost: self.cost,
             app_component_name: self.app_component_name,
             compliance: self.compliance,
             recommendation_compliance: self.recommendation_compliance,
             optimization_type: self.optimization_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "optimization_type",
                     "optimization_type was not specified but it is required when building ConfigRecommendation",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building ConfigRecommendation",
                 )
@@ -298,7 +298,7 @@ impl ConfigRecommendationBuilder {
             suggested_changes: self.suggested_changes,
             ha_architecture: self.ha_architecture,
             reference_id: self.reference_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "reference_id",
                     "reference_id was not specified but it is required when building ConfigRecommendation",
                 )

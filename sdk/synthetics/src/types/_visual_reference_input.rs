@@ -76,11 +76,11 @@ impl VisualReferenceInputBuilder {
     /// Consumes the builder and constructs a [`VisualReferenceInput`](crate::types::VisualReferenceInput).
     /// This method will fail if any of the following fields are not set:
     /// - [`base_canary_run_id`](crate::types::builders::VisualReferenceInputBuilder::base_canary_run_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::VisualReferenceInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::VisualReferenceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::VisualReferenceInput {
             base_screenshots: self.base_screenshots,
             base_canary_run_id: self.base_canary_run_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "base_canary_run_id",
                     "base_canary_run_id was not specified but it is required when building VisualReferenceInput",
                 )

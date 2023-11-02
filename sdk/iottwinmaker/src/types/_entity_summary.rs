@@ -225,22 +225,22 @@ impl EntitySummaryBuilder {
     /// - [`arn`](crate::types::builders::EntitySummaryBuilder::arn)
     /// - [`creation_date_time`](crate::types::builders::EntitySummaryBuilder::creation_date_time)
     /// - [`update_date_time`](crate::types::builders::EntitySummaryBuilder::update_date_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::EntitySummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::EntitySummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EntitySummary {
             entity_id: self.entity_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "entity_id",
                     "entity_id was not specified but it is required when building EntitySummary",
                 )
             })?,
             entity_name: self.entity_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "entity_name",
                     "entity_name was not specified but it is required when building EntitySummary",
                 )
             })?,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building EntitySummary",
                 )
@@ -250,13 +250,13 @@ impl EntitySummaryBuilder {
             description: self.description,
             has_child_entities: self.has_child_entities,
             creation_date_time: self.creation_date_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_date_time",
                     "creation_date_time was not specified but it is required when building EntitySummary",
                 )
             })?,
             update_date_time: self.update_date_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "update_date_time",
                     "update_date_time was not specified but it is required when building EntitySummary",
                 )

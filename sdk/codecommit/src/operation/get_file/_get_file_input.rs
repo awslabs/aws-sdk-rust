@@ -85,7 +85,7 @@ impl GetFileInputBuilder {
         &self.file_path
     }
     /// Consumes the builder and constructs a [`GetFileInput`](crate::operation::get_file::GetFileInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_file::GetFileInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_file::GetFileInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_file::GetFileInput {
             repository_name: self.repository_name,
             commit_specifier: self.commit_specifier,

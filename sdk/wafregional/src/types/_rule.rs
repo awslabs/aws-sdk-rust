@@ -131,10 +131,10 @@ impl RuleBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`rule_id`](crate::types::builders::RuleBuilder::rule_id)
     /// - [`predicates`](crate::types::builders::RuleBuilder::predicates)
-    pub fn build(self) -> ::std::result::Result<crate::types::Rule, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Rule, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Rule {
             rule_id: self.rule_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "rule_id",
                     "rule_id was not specified but it is required when building Rule",
                 )
@@ -142,7 +142,7 @@ impl RuleBuilder {
             name: self.name,
             metric_name: self.metric_name,
             predicates: self.predicates.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "predicates",
                     "predicates was not specified but it is required when building Rule",
                 )

@@ -112,7 +112,7 @@ impl ModifyEbsDefaultKmsKeyIdInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_ebs_default_kms_key_id::ModifyEbsDefaultKmsKeyIdInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::modify_ebs_default_kms_key_id::ModifyEbsDefaultKmsKeyIdInput {
             kms_key_id: self.kms_key_id,

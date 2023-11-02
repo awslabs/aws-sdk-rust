@@ -88,7 +88,7 @@ impl ListConfigurationRevisionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_configuration_revisions::ListConfigurationRevisionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_configuration_revisions::ListConfigurationRevisionsInput {
             configuration_id: self.configuration_id,

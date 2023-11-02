@@ -2,7 +2,7 @@
 pub fn ser_xavc_hd_profile_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::XavcHdProfileSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.bitrate_class {
         object.key("bitrateClass").string(var_1.as_str());
     }

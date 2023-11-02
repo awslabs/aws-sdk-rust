@@ -194,35 +194,35 @@ impl RasterDataCollectionMetadataBuilder {
     /// - [`r#type`](crate::types::builders::RasterDataCollectionMetadataBuilder::r#type)
     /// - [`description`](crate::types::builders::RasterDataCollectionMetadataBuilder::description)
     /// - [`supported_filters`](crate::types::builders::RasterDataCollectionMetadataBuilder::supported_filters)
-    pub fn build(self) -> ::std::result::Result<crate::types::RasterDataCollectionMetadata, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RasterDataCollectionMetadata, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RasterDataCollectionMetadata {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building RasterDataCollectionMetadata",
                 )
             })?,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building RasterDataCollectionMetadata",
                 )
             })?,
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building RasterDataCollectionMetadata",
                 )
             })?,
             description: self.description.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "description",
                     "description was not specified but it is required when building RasterDataCollectionMetadata",
                 )
             })?,
             description_page_url: self.description_page_url,
             supported_filters: self.supported_filters.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "supported_filters",
                     "supported_filters was not specified but it is required when building RasterDataCollectionMetadata",
                 )

@@ -81,10 +81,10 @@ impl MediaCapturePipelineSourceConfigurationBuilder {
     /// - [`media_pipeline_arn`](crate::types::builders::MediaCapturePipelineSourceConfigurationBuilder::media_pipeline_arn)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::MediaCapturePipelineSourceConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::MediaCapturePipelineSourceConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MediaCapturePipelineSourceConfiguration {
             media_pipeline_arn: self.media_pipeline_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "media_pipeline_arn",
                     "media_pipeline_arn was not specified but it is required when building MediaCapturePipelineSourceConfiguration",
                 )

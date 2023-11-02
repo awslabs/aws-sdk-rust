@@ -2,7 +2,7 @@
 pub fn ser_event_reference(
     object_6: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EventReference,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::EventReference::Resource(inner) => {
             object_6.key("resource").string(inner.as_str());
@@ -11,7 +11,9 @@ pub fn ser_event_reference(
             object_6.key("relatedItemId").string(inner.as_str());
         }
         crate::types::EventReference::Unknown => {
-            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant("EventReference"))
+            return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
+                "EventReference",
+            ))
         }
     }
     Ok(())
@@ -30,12 +32,17 @@ where
             match tokens.next().transpose()? {
                 Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                 Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                    let key = key.to_unescaped()?;
+                    if key == "__type" {
+                        ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                        continue;
+                    }
                     if variant.is_some() {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
                             "encountered mixed variants in union",
                         ));
                     }
-                    variant = match key.to_unescaped()?.as_ref() {
+                    variant = match key.as_ref() {
                         "resource" => Some(crate::types::EventReference::Resource(
                             ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                 .map(|s| s.to_unescaped().map(|u| u.into_owned()))

@@ -135,14 +135,14 @@ impl PutAssetPropertyValueEntryBuilder {
     /// Consumes the builder and constructs a [`PutAssetPropertyValueEntry`](crate::types::PutAssetPropertyValueEntry).
     /// This method will fail if any of the following fields are not set:
     /// - [`property_values`](crate::types::builders::PutAssetPropertyValueEntryBuilder::property_values)
-    pub fn build(self) -> ::std::result::Result<crate::types::PutAssetPropertyValueEntry, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PutAssetPropertyValueEntry, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PutAssetPropertyValueEntry {
             entry_id: self.entry_id,
             asset_id: self.asset_id,
             property_id: self.property_id,
             property_alias: self.property_alias,
             property_values: self.property_values.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "property_values",
                     "property_values was not specified but it is required when building PutAssetPropertyValueEntry",
                 )

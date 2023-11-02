@@ -2,7 +2,7 @@
 pub fn ser_caption_selector_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CaptionSelectorSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.ancillary_source_settings {
         #[allow(unused_mut)]
         let mut object_2 = object.key("ancillarySourceSettings").start_object();

@@ -68,16 +68,16 @@ impl ClassificationTypeBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`one_time`](crate::types::builders::ClassificationTypeBuilder::one_time)
     /// - [`continuous`](crate::types::builders::ClassificationTypeBuilder::continuous)
-    pub fn build(self) -> ::std::result::Result<crate::types::ClassificationType, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ClassificationType, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ClassificationType {
             one_time: self.one_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "one_time",
                     "one_time was not specified but it is required when building ClassificationType",
                 )
             })?,
             continuous: self.continuous.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "continuous",
                     "continuous was not specified but it is required when building ClassificationType",
                 )

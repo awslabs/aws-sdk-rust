@@ -91,12 +91,12 @@ impl ListTestRecommendationsOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_test_recommendations::ListTestRecommendationsOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_test_recommendations::ListTestRecommendationsOutput {
             next_token: self.next_token,
             test_recommendations: self.test_recommendations.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "test_recommendations",
                     "test_recommendations was not specified but it is required when building ListTestRecommendationsOutput",
                 )

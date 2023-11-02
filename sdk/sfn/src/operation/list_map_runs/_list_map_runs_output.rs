@@ -87,10 +87,12 @@ impl ListMapRunsOutputBuilder {
     /// Consumes the builder and constructs a [`ListMapRunsOutput`](crate::operation::list_map_runs::ListMapRunsOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`map_runs`](crate::operation::list_map_runs::builders::ListMapRunsOutputBuilder::map_runs)
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_map_runs::ListMapRunsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_map_runs::ListMapRunsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_map_runs::ListMapRunsOutput {
             map_runs: self.map_runs.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "map_runs",
                     "map_runs was not specified but it is required when building ListMapRunsOutput",
                 )

@@ -75,11 +75,11 @@ impl TrustStoreBuilder {
     /// Consumes the builder and constructs a [`TrustStore`](crate::types::TrustStore).
     /// This method will fail if any of the following fields are not set:
     /// - [`trust_store_arn`](crate::types::builders::TrustStoreBuilder::trust_store_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::TrustStore, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TrustStore, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TrustStore {
             associated_portal_arns: self.associated_portal_arns,
             trust_store_arn: self.trust_store_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "trust_store_arn",
                     "trust_store_arn was not specified but it is required when building TrustStore",
                 )

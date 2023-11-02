@@ -65,7 +65,7 @@ impl FinalizeCutoverInputBuilder {
     /// Consumes the builder and constructs a [`FinalizeCutoverInput`](crate::operation::finalize_cutover::FinalizeCutoverInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::finalize_cutover::FinalizeCutoverInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::finalize_cutover::FinalizeCutoverInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::finalize_cutover::FinalizeCutoverInput {
             source_server_id: self.source_server_id,
             account_id: self.account_id,

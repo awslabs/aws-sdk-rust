@@ -78,16 +78,16 @@ impl EntityBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`entity_type`](crate::types::builders::EntityBuilder::entity_type)
     /// - [`entity_id`](crate::types::builders::EntityBuilder::entity_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::Entity, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Entity, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Entity {
             entity_type: self.entity_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "entity_type",
                     "entity_type was not specified but it is required when building Entity",
                 )
             })?,
             entity_id: self.entity_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "entity_id",
                     "entity_id was not specified but it is required when building Entity",
                 )

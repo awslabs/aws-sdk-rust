@@ -177,7 +177,7 @@ impl TestDnsAnswerInputBuilder {
     /// Consumes the builder and constructs a [`TestDnsAnswerInput`](crate::operation::test_dns_answer::TestDnsAnswerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::test_dns_answer::TestDnsAnswerInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::test_dns_answer::TestDnsAnswerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::test_dns_answer::TestDnsAnswerInput {
             hosted_zone_id: self.hosted_zone_id,
             record_name: self.record_name,

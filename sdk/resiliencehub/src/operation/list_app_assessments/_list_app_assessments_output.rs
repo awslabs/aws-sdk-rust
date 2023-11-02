@@ -89,12 +89,12 @@ impl ListAppAssessmentsOutputBuilder {
     /// - [`assessment_summaries`](crate::operation::list_app_assessments::builders::ListAppAssessmentsOutputBuilder::assessment_summaries)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_app_assessments::ListAppAssessmentsOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_app_assessments::ListAppAssessmentsOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_app_assessments::ListAppAssessmentsOutput {
             next_token: self.next_token,
             assessment_summaries: self.assessment_summaries.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "assessment_summaries",
                     "assessment_summaries was not specified but it is required when building ListAppAssessmentsOutput",
                 )

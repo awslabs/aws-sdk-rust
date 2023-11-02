@@ -66,8 +66,10 @@ impl DeleteAppAuthorizationInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAppAuthorizationInput`](crate::operation::delete_app_authorization::DeleteAppAuthorizationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_app_authorization::DeleteAppAuthorizationInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::delete_app_authorization::DeleteAppAuthorizationInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::delete_app_authorization::DeleteAppAuthorizationInput {
             app_bundle_identifier: self.app_bundle_identifier,
             app_authorization_identifier: self.app_authorization_identifier,

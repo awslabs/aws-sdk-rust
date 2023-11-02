@@ -156,23 +156,23 @@ impl ResourceDataSyncS3DestinationBuilder {
     /// - [`bucket_name`](crate::types::builders::ResourceDataSyncS3DestinationBuilder::bucket_name)
     /// - [`sync_format`](crate::types::builders::ResourceDataSyncS3DestinationBuilder::sync_format)
     /// - [`region`](crate::types::builders::ResourceDataSyncS3DestinationBuilder::region)
-    pub fn build(self) -> ::std::result::Result<crate::types::ResourceDataSyncS3Destination, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ResourceDataSyncS3Destination, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ResourceDataSyncS3Destination {
             bucket_name: self.bucket_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "bucket_name",
                     "bucket_name was not specified but it is required when building ResourceDataSyncS3Destination",
                 )
             })?,
             prefix: self.prefix,
             sync_format: self.sync_format.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "sync_format",
                     "sync_format was not specified but it is required when building ResourceDataSyncS3Destination",
                 )
             })?,
             region: self.region.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "region",
                     "region was not specified but it is required when building ResourceDataSyncS3Destination",
                 )

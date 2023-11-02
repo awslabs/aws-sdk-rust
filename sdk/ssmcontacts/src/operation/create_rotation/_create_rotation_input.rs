@@ -203,7 +203,7 @@ impl CreateRotationInputBuilder {
     /// Consumes the builder and constructs a [`CreateRotationInput`](crate::operation::create_rotation::CreateRotationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_rotation::CreateRotationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_rotation::CreateRotationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_rotation::CreateRotationInput {
             name: self.name,
             contact_ids: self.contact_ids,

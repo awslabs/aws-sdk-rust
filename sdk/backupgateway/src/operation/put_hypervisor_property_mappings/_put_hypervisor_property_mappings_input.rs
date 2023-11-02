@@ -97,7 +97,7 @@ impl PutHypervisorPropertyMappingsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_hypervisor_property_mappings::PutHypervisorPropertyMappingsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_hypervisor_property_mappings::PutHypervisorPropertyMappingsInput {
             hypervisor_arn: self.hypervisor_arn,

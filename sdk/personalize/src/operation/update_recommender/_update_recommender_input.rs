@@ -66,7 +66,7 @@ impl UpdateRecommenderInputBuilder {
     /// Consumes the builder and constructs a [`UpdateRecommenderInput`](crate::operation::update_recommender::UpdateRecommenderInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_recommender::UpdateRecommenderInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_recommender::UpdateRecommenderInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_recommender::UpdateRecommenderInput {
             recommender_arn: self.recommender_arn,
             recommender_config: self.recommender_config,

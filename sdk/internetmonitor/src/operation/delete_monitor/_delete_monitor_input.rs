@@ -44,7 +44,7 @@ impl DeleteMonitorInputBuilder {
     /// Consumes the builder and constructs a [`DeleteMonitorInput`](crate::operation::delete_monitor::DeleteMonitorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_monitor::DeleteMonitorInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_monitor::DeleteMonitorInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_monitor::DeleteMonitorInput {
             monitor_name: self.monitor_name,
         })

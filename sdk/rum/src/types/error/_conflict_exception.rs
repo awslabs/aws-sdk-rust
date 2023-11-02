@@ -126,16 +126,16 @@ impl ConflictExceptionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`message`](crate::types::error::builders::ConflictExceptionBuilder::message)
     /// - [`resource_name`](crate::types::error::builders::ConflictExceptionBuilder::resource_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::error::ConflictException, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::error::ConflictException, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::error::ConflictException {
             message: self.message.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "message",
                     "message was not specified but it is required when building ConflictException",
                 )
             })?,
             resource_name: self.resource_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_name",
                     "resource_name was not specified but it is required when building ConflictException",
                 )

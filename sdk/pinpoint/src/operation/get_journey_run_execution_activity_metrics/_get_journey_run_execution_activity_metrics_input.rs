@@ -154,7 +154,7 @@ impl GetJourneyRunExecutionActivityMetricsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_journey_run_execution_activity_metrics::GetJourneyRunExecutionActivityMetricsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::get_journey_run_execution_activity_metrics::GetJourneyRunExecutionActivityMetricsInput {

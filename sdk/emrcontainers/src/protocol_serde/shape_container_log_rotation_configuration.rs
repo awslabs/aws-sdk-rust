@@ -2,7 +2,7 @@
 pub fn ser_container_log_rotation_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ContainerLogRotationConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("rotationSize").string(input.rotation_size.as_str());
     }

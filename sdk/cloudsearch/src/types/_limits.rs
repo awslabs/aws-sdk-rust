@@ -67,16 +67,16 @@ impl LimitsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`maximum_replication_count`](crate::types::builders::LimitsBuilder::maximum_replication_count)
     /// - [`maximum_partition_count`](crate::types::builders::LimitsBuilder::maximum_partition_count)
-    pub fn build(self) -> ::std::result::Result<crate::types::Limits, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Limits, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Limits {
             maximum_replication_count: self.maximum_replication_count.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "maximum_replication_count",
                     "maximum_replication_count was not specified but it is required when building Limits",
                 )
             })?,
             maximum_partition_count: self.maximum_partition_count.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "maximum_partition_count",
                     "maximum_partition_count was not specified but it is required when building Limits",
                 )

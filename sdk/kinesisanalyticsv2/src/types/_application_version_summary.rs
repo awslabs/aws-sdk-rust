@@ -68,16 +68,16 @@ impl ApplicationVersionSummaryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`application_version_id`](crate::types::builders::ApplicationVersionSummaryBuilder::application_version_id)
     /// - [`application_status`](crate::types::builders::ApplicationVersionSummaryBuilder::application_status)
-    pub fn build(self) -> ::std::result::Result<crate::types::ApplicationVersionSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ApplicationVersionSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ApplicationVersionSummary {
             application_version_id: self.application_version_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "application_version_id",
                     "application_version_id was not specified but it is required when building ApplicationVersionSummary",
                 )
             })?,
             application_status: self.application_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "application_status",
                     "application_status was not specified but it is required when building ApplicationVersionSummary",
                 )

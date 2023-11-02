@@ -183,15 +183,15 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ValidateSolF
             fn uri_base(
                 _input: &crate::operation::validate_sol_function_package_content::ValidateSolFunctionPackageContentInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 use ::std::fmt::Write as _;
                 let input_1 = &_input.vnf_pkg_id;
                 let input_1 = input_1
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("vnf_pkg_id", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("vnf_pkg_id", "cannot be empty or unset"))?;
                 let vnf_pkg_id = ::aws_smithy_http::label::fmt_string(input_1, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if vnf_pkg_id.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "vnf_pkg_id",
                         "cannot be empty or unset",
                     ));
@@ -208,7 +208,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ValidateSolF
             fn update_http_builder(
                 input: &crate::operation::validate_sol_function_package_content::ValidateSolFunctionPackageContentInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::protocol_serde::shape_validate_sol_function_package_content::ser_validate_sol_function_package_content_headers(
@@ -220,7 +220,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ValidateSolF
             builder = _header_serialization_settings.set_default_header(builder, ::http::header::CONTENT_TYPE, "application/octet-stream");
             builder
         };
-        let body = ::aws_smithy_http::body::SdkBody::from(
+        let body = ::aws_smithy_types::body::SdkBody::from(
             crate::protocol_serde::shape_validate_sol_function_package_content_input::ser_file_http_payload(input.file)?,
         );
         if let Some(content_length) = body.content_length() {

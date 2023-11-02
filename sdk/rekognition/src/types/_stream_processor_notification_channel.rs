@@ -48,10 +48,10 @@ impl StreamProcessorNotificationChannelBuilder {
     /// Consumes the builder and constructs a [`StreamProcessorNotificationChannel`](crate::types::StreamProcessorNotificationChannel).
     /// This method will fail if any of the following fields are not set:
     /// - [`sns_topic_arn`](crate::types::builders::StreamProcessorNotificationChannelBuilder::sns_topic_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::StreamProcessorNotificationChannel, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::StreamProcessorNotificationChannel, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::StreamProcessorNotificationChannel {
             sns_topic_arn: self.sns_topic_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "sns_topic_arn",
                     "sns_topic_arn was not specified but it is required when building StreamProcessorNotificationChannel",
                 )

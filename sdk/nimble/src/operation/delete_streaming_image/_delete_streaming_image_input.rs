@@ -87,7 +87,7 @@ impl DeleteStreamingImageInputBuilder {
     /// Consumes the builder and constructs a [`DeleteStreamingImageInput`](crate::operation::delete_streaming_image::DeleteStreamingImageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_streaming_image::DeleteStreamingImageInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_streaming_image::DeleteStreamingImageInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_streaming_image::DeleteStreamingImageInput {
             client_token: self.client_token,

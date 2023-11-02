@@ -44,7 +44,7 @@ impl DescribeFilterInputBuilder {
     /// Consumes the builder and constructs a [`DescribeFilterInput`](crate::operation::describe_filter::DescribeFilterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_filter::DescribeFilterInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_filter::DescribeFilterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_filter::DescribeFilterInput { filter_arn: self.filter_arn })
     }
 }

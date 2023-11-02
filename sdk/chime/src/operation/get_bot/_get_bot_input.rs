@@ -64,7 +64,7 @@ impl GetBotInputBuilder {
         &self.bot_id
     }
     /// Consumes the builder and constructs a [`GetBotInput`](crate::operation::get_bot::GetBotInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_bot::GetBotInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_bot::GetBotInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_bot::GetBotInput {
             account_id: self.account_id,
             bot_id: self.bot_id,

@@ -64,7 +64,9 @@ impl DescribeViewInputBuilder {
         &self.connection_token
     }
     /// Consumes the builder and constructs a [`DescribeViewInput`](crate::operation::describe_view::DescribeViewInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::describe_view::DescribeViewInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::describe_view::DescribeViewInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_view::DescribeViewInput {
             view_token: self.view_token,
             connection_token: self.connection_token,

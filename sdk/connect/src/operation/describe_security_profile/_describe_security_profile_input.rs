@@ -68,7 +68,7 @@ impl DescribeSecurityProfileInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_security_profile::DescribeSecurityProfileInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_security_profile::DescribeSecurityProfileInput {
             security_profile_id: self.security_profile_id,

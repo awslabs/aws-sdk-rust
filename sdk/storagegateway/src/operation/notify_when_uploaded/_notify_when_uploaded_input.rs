@@ -44,7 +44,8 @@ impl NotifyWhenUploadedInputBuilder {
     /// Consumes the builder and constructs a [`NotifyWhenUploadedInput`](crate::operation::notify_when_uploaded::NotifyWhenUploadedInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::notify_when_uploaded::NotifyWhenUploadedInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::notify_when_uploaded::NotifyWhenUploadedInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::notify_when_uploaded::NotifyWhenUploadedInput {
             file_share_arn: self.file_share_arn,
         })

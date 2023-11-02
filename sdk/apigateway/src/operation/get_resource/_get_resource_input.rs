@@ -94,7 +94,7 @@ impl GetResourceInputBuilder {
         &self.embed
     }
     /// Consumes the builder and constructs a [`GetResourceInput`](crate::operation::get_resource::GetResourceInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_resource::GetResourceInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_resource::GetResourceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_resource::GetResourceInput {
             rest_api_id: self.rest_api_id,
             resource_id: self.resource_id,

@@ -113,7 +113,7 @@ impl RemoveAttributesInputBuilder {
     /// Consumes the builder and constructs a [`RemoveAttributesInput`](crate::operation::remove_attributes::RemoveAttributesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::remove_attributes::RemoveAttributesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::remove_attributes::RemoveAttributesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::remove_attributes::RemoveAttributesInput {
             application_id: self.application_id,
             attribute_type: self.attribute_type,

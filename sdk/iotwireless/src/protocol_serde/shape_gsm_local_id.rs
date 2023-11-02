@@ -2,7 +2,7 @@
 pub fn ser_gsm_local_id(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GsmLocalId,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Bsic").number(
             #[allow(clippy::useless_conversion)]

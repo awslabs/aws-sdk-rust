@@ -208,11 +208,11 @@ impl ConditionBuilder {
     /// Consumes the builder and constructs a [`Condition`](crate::types::Condition).
     /// This method will fail if any of the following fields are not set:
     /// - [`comparison_operator`](crate::types::builders::ConditionBuilder::comparison_operator)
-    pub fn build(self) -> ::std::result::Result<crate::types::Condition, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Condition, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Condition {
             attribute_value_list: self.attribute_value_list,
             comparison_operator: self.comparison_operator.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "comparison_operator",
                     "comparison_operator was not specified but it is required when building Condition",
                 )

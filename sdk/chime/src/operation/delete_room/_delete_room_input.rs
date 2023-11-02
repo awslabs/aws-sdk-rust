@@ -64,7 +64,7 @@ impl DeleteRoomInputBuilder {
         &self.room_id
     }
     /// Consumes the builder and constructs a [`DeleteRoomInput`](crate::operation::delete_room::DeleteRoomInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_room::DeleteRoomInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_room::DeleteRoomInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_room::DeleteRoomInput {
             account_id: self.account_id,
             room_id: self.room_id,

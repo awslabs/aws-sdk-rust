@@ -90,10 +90,10 @@ impl ListAnalyzersOutputBuilder {
     /// - [`analyzers`](crate::operation::list_analyzers::builders::ListAnalyzersOutputBuilder::analyzers)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_analyzers::ListAnalyzersOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_analyzers::ListAnalyzersOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_analyzers::ListAnalyzersOutput {
             analyzers: self.analyzers.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "analyzers",
                     "analyzers was not specified but it is required when building ListAnalyzersOutput",
                 )

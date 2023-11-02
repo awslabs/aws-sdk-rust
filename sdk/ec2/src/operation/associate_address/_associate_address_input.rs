@@ -174,7 +174,7 @@ impl AssociateAddressInputBuilder {
     /// Consumes the builder and constructs a [`AssociateAddressInput`](crate::operation::associate_address::AssociateAddressInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::associate_address::AssociateAddressInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::associate_address::AssociateAddressInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::associate_address::AssociateAddressInput {
             allocation_id: self.allocation_id,
             instance_id: self.instance_id,

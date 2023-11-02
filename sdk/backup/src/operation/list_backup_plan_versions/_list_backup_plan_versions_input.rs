@@ -88,7 +88,7 @@ impl ListBackupPlanVersionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_backup_plan_versions::ListBackupPlanVersionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_backup_plan_versions::ListBackupPlanVersionsInput {
             backup_plan_id: self.backup_plan_id,

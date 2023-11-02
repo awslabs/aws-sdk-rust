@@ -90,7 +90,7 @@ impl GetServiceTemplateVersionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_service_template_version::GetServiceTemplateVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_service_template_version::GetServiceTemplateVersionInput {
             template_name: self.template_name,

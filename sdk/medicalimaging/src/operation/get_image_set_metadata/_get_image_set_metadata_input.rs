@@ -87,7 +87,7 @@ impl GetImageSetMetadataInputBuilder {
     /// Consumes the builder and constructs a [`GetImageSetMetadataInput`](crate::operation::get_image_set_metadata::GetImageSetMetadataInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_image_set_metadata::GetImageSetMetadataInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_image_set_metadata::GetImageSetMetadataInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_image_set_metadata::GetImageSetMetadataInput {
             datastore_id: self.datastore_id,

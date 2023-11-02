@@ -94,22 +94,22 @@ impl ServiceActionAssociationBuilder {
     /// - [`service_action_id`](crate::types::builders::ServiceActionAssociationBuilder::service_action_id)
     /// - [`product_id`](crate::types::builders::ServiceActionAssociationBuilder::product_id)
     /// - [`provisioning_artifact_id`](crate::types::builders::ServiceActionAssociationBuilder::provisioning_artifact_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::ServiceActionAssociation, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ServiceActionAssociation, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ServiceActionAssociation {
             service_action_id: self.service_action_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "service_action_id",
                     "service_action_id was not specified but it is required when building ServiceActionAssociation",
                 )
             })?,
             product_id: self.product_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "product_id",
                     "product_id was not specified but it is required when building ServiceActionAssociation",
                 )
             })?,
             provisioning_artifact_id: self.provisioning_artifact_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "provisioning_artifact_id",
                     "provisioning_artifact_id was not specified but it is required when building ServiceActionAssociation",
                 )

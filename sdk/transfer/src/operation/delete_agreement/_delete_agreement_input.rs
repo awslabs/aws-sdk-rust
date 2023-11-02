@@ -66,7 +66,7 @@ impl DeleteAgreementInputBuilder {
     /// Consumes the builder and constructs a [`DeleteAgreementInput`](crate::operation::delete_agreement::DeleteAgreementInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_agreement::DeleteAgreementInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_agreement::DeleteAgreementInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_agreement::DeleteAgreementInput {
             agreement_id: self.agreement_id,
             server_id: self.server_id,

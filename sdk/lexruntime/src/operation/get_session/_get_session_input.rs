@@ -112,7 +112,7 @@ impl GetSessionInputBuilder {
         &self.checkpoint_label_filter
     }
     /// Consumes the builder and constructs a [`GetSessionInput`](crate::operation::get_session::GetSessionInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_session::GetSessionInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_session::GetSessionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_session::GetSessionInput {
             bot_name: self.bot_name,
             bot_alias: self.bot_alias,

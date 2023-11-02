@@ -51,7 +51,8 @@ impl DeleteInsightRulesInputBuilder {
     /// Consumes the builder and constructs a [`DeleteInsightRulesInput`](crate::operation::delete_insight_rules::DeleteInsightRulesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_insight_rules::DeleteInsightRulesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_insight_rules::DeleteInsightRulesInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::delete_insight_rules::DeleteInsightRulesInput { rule_names: self.rule_names })
     }
 }

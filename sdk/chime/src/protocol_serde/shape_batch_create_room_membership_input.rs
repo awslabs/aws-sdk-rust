@@ -2,7 +2,7 @@
 pub fn ser_batch_create_room_membership_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::batch_create_room_membership::BatchCreateRoomMembershipInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.membership_item_list {
         let mut array_2 = object.key("MembershipItemList").start_array();
         for item_3 in var_1 {

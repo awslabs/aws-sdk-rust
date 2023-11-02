@@ -90,16 +90,16 @@ impl InstanceOnboardingJobStatusBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`connect_instance_id`](crate::types::builders::InstanceOnboardingJobStatusBuilder::connect_instance_id)
     /// - [`status`](crate::types::builders::InstanceOnboardingJobStatusBuilder::status)
-    pub fn build(self) -> ::std::result::Result<crate::types::InstanceOnboardingJobStatus, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::InstanceOnboardingJobStatus, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::InstanceOnboardingJobStatus {
             connect_instance_id: self.connect_instance_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "connect_instance_id",
                     "connect_instance_id was not specified but it is required when building InstanceOnboardingJobStatus",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building InstanceOnboardingJobStatus",
                 )

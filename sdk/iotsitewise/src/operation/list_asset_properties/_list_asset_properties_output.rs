@@ -89,11 +89,11 @@ impl ListAssetPropertiesOutputBuilder {
     /// - [`asset_property_summaries`](crate::operation::list_asset_properties::builders::ListAssetPropertiesOutputBuilder::asset_property_summaries)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_asset_properties::ListAssetPropertiesOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_asset_properties::ListAssetPropertiesOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_asset_properties::ListAssetPropertiesOutput {
             asset_property_summaries: self.asset_property_summaries.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "asset_property_summaries",
                     "asset_property_summaries was not specified but it is required when building ListAssetPropertiesOutput",
                 )

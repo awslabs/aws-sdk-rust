@@ -97,16 +97,16 @@ impl OnPremiseConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`host_url`](crate::types::builders::OnPremiseConfigurationBuilder::host_url)
     /// - [`organization_name`](crate::types::builders::OnPremiseConfigurationBuilder::organization_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::OnPremiseConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::OnPremiseConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::OnPremiseConfiguration {
             host_url: self.host_url.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "host_url",
                     "host_url was not specified but it is required when building OnPremiseConfiguration",
                 )
             })?,
             organization_name: self.organization_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "organization_name",
                     "organization_name was not specified but it is required when building OnPremiseConfiguration",
                 )

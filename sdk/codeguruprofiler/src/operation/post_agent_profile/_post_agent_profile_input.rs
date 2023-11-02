@@ -130,7 +130,7 @@ impl PostAgentProfileInputBuilder {
     /// Consumes the builder and constructs a [`PostAgentProfileInput`](crate::operation::post_agent_profile::PostAgentProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::post_agent_profile::PostAgentProfileInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::post_agent_profile::PostAgentProfileInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::post_agent_profile::PostAgentProfileInput {
             profiling_group_name: self.profiling_group_name,
             agent_profile: self.agent_profile,

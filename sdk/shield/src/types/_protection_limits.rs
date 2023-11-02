@@ -51,10 +51,10 @@ impl ProtectionLimitsBuilder {
     /// Consumes the builder and constructs a [`ProtectionLimits`](crate::types::ProtectionLimits).
     /// This method will fail if any of the following fields are not set:
     /// - [`protected_resource_type_limits`](crate::types::builders::ProtectionLimitsBuilder::protected_resource_type_limits)
-    pub fn build(self) -> ::std::result::Result<crate::types::ProtectionLimits, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ProtectionLimits, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ProtectionLimits {
             protected_resource_type_limits: self.protected_resource_type_limits.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "protected_resource_type_limits",
                     "protected_resource_type_limits was not specified but it is required when building ProtectionLimits",
                 )

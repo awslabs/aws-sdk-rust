@@ -222,7 +222,7 @@ impl SearchProfilesInputBuilder {
     /// Consumes the builder and constructs a [`SearchProfilesInput`](crate::operation::search_profiles::SearchProfilesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::search_profiles::SearchProfilesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::search_profiles::SearchProfilesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_profiles::SearchProfilesInput {
             next_token: self.next_token,
             max_results: self.max_results,

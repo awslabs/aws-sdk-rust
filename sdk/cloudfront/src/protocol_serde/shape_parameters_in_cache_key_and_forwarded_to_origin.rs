@@ -2,7 +2,7 @@
 pub fn ser_parameters_in_cache_key_and_forwarded_to_origin(
     input: &crate::types::ParametersInCacheKeyAndForwardedToOrigin,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     {

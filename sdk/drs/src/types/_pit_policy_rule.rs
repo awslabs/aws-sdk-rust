@@ -131,11 +131,11 @@ impl PitPolicyRuleBuilder {
     /// Consumes the builder and constructs a [`PitPolicyRule`](crate::types::PitPolicyRule).
     /// This method will fail if any of the following fields are not set:
     /// - [`units`](crate::types::builders::PitPolicyRuleBuilder::units)
-    pub fn build(self) -> ::std::result::Result<crate::types::PitPolicyRule, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PitPolicyRule, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PitPolicyRule {
             rule_id: self.rule_id.unwrap_or_default(),
             units: self.units.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "units",
                     "units was not specified but it is required when building PitPolicyRule",
                 )

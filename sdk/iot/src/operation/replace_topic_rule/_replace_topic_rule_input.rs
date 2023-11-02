@@ -67,7 +67,7 @@ impl ReplaceTopicRuleInputBuilder {
     /// Consumes the builder and constructs a [`ReplaceTopicRuleInput`](crate::operation::replace_topic_rule::ReplaceTopicRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::replace_topic_rule::ReplaceTopicRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::replace_topic_rule::ReplaceTopicRuleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::replace_topic_rule::ReplaceTopicRuleInput {
             rule_name: self.rule_name,
             topic_rule_payload: self.topic_rule_payload,

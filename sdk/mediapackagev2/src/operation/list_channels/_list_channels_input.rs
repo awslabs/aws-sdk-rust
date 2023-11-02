@@ -84,7 +84,9 @@ impl ListChannelsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListChannelsInput`](crate::operation::list_channels::ListChannelsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_channels::ListChannelsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_channels::ListChannelsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_channels::ListChannelsInput {
             channel_group_name: self.channel_group_name,
             max_results: self.max_results,

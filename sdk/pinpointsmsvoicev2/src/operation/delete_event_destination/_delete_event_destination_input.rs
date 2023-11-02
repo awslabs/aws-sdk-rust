@@ -66,8 +66,10 @@ impl DeleteEventDestinationInputBuilder {
     /// Consumes the builder and constructs a [`DeleteEventDestinationInput`](crate::operation::delete_event_destination::DeleteEventDestinationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_event_destination::DeleteEventDestinationInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::delete_event_destination::DeleteEventDestinationInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::delete_event_destination::DeleteEventDestinationInput {
             configuration_set_name: self.configuration_set_name,
             event_destination_name: self.event_destination_name,

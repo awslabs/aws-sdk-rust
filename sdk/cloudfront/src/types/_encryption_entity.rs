@@ -92,16 +92,16 @@ impl EncryptionEntityBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`public_key_id`](crate::types::builders::EncryptionEntityBuilder::public_key_id)
     /// - [`provider_id`](crate::types::builders::EncryptionEntityBuilder::provider_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::EncryptionEntity, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::EncryptionEntity, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EncryptionEntity {
             public_key_id: self.public_key_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "public_key_id",
                     "public_key_id was not specified but it is required when building EncryptionEntity",
                 )
             })?,
             provider_id: self.provider_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "provider_id",
                     "provider_id was not specified but it is required when building EncryptionEntity",
                 )

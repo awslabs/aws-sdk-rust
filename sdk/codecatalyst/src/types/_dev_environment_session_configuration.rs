@@ -69,10 +69,10 @@ impl DevEnvironmentSessionConfigurationBuilder {
     /// Consumes the builder and constructs a [`DevEnvironmentSessionConfiguration`](crate::types::DevEnvironmentSessionConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`session_type`](crate::types::builders::DevEnvironmentSessionConfigurationBuilder::session_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::DevEnvironmentSessionConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DevEnvironmentSessionConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DevEnvironmentSessionConfiguration {
             session_type: self.session_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "session_type",
                     "session_type was not specified but it is required when building DevEnvironmentSessionConfiguration",
                 )

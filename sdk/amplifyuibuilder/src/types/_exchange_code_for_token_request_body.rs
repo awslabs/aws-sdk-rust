@@ -100,16 +100,16 @@ impl ExchangeCodeForTokenRequestBodyBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`code`](crate::types::builders::ExchangeCodeForTokenRequestBodyBuilder::code)
     /// - [`redirect_uri`](crate::types::builders::ExchangeCodeForTokenRequestBodyBuilder::redirect_uri)
-    pub fn build(self) -> ::std::result::Result<crate::types::ExchangeCodeForTokenRequestBody, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ExchangeCodeForTokenRequestBody, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ExchangeCodeForTokenRequestBody {
             code: self.code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "code",
                     "code was not specified but it is required when building ExchangeCodeForTokenRequestBody",
                 )
             })?,
             redirect_uri: self.redirect_uri.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "redirect_uri",
                     "redirect_uri was not specified but it is required when building ExchangeCodeForTokenRequestBody",
                 )

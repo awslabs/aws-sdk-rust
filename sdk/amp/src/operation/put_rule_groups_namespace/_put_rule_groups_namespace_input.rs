@@ -112,7 +112,7 @@ impl PutRuleGroupsNamespaceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_rule_groups_namespace::PutRuleGroupsNamespaceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_rule_groups_namespace::PutRuleGroupsNamespaceInput {
             workspace_id: self.workspace_id,

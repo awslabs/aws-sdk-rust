@@ -161,7 +161,7 @@ impl StartAppInputBuilder {
         &self.launch_overrides
     }
     /// Consumes the builder and constructs a [`StartAppInput`](crate::operation::start_app::StartAppInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::start_app::StartAppInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_app::StartAppInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_app::StartAppInput {
             client_token: self.client_token,
             simulation: self.simulation,

@@ -2,7 +2,7 @@
 pub fn ser_related_ops_item(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RelatedOpsItem,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("OpsItemId").string(input.ops_item_id.as_str());
     }

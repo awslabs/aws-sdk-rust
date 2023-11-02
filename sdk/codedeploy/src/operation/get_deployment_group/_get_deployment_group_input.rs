@@ -67,7 +67,8 @@ impl GetDeploymentGroupInputBuilder {
     /// Consumes the builder and constructs a [`GetDeploymentGroupInput`](crate::operation::get_deployment_group::GetDeploymentGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_deployment_group::GetDeploymentGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_deployment_group::GetDeploymentGroupInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::get_deployment_group::GetDeploymentGroupInput {
             application_name: self.application_name,
             deployment_group_name: self.deployment_group_name,

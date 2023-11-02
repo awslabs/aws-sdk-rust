@@ -111,7 +111,7 @@ impl AssociateOriginationIdentityInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_origination_identity::AssociateOriginationIdentityInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::associate_origination_identity::AssociateOriginationIdentityInput {
             pool_id: self.pool_id,

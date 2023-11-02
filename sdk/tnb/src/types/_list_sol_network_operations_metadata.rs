@@ -69,16 +69,16 @@ impl ListSolNetworkOperationsMetadataBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`created_at`](crate::types::builders::ListSolNetworkOperationsMetadataBuilder::created_at)
     /// - [`last_modified`](crate::types::builders::ListSolNetworkOperationsMetadataBuilder::last_modified)
-    pub fn build(self) -> ::std::result::Result<crate::types::ListSolNetworkOperationsMetadata, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ListSolNetworkOperationsMetadata, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ListSolNetworkOperationsMetadata {
             created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
                     "created_at was not specified but it is required when building ListSolNetworkOperationsMetadata",
                 )
             })?,
             last_modified: self.last_modified.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_modified",
                     "last_modified was not specified but it is required when building ListSolNetworkOperationsMetadata",
                 )

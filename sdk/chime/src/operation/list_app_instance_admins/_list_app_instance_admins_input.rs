@@ -95,7 +95,7 @@ impl ListAppInstanceAdminsInputBuilder {
     /// Consumes the builder and constructs a [`ListAppInstanceAdminsInput`](crate::operation::list_app_instance_admins::ListAppInstanceAdminsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_app_instance_admins::ListAppInstanceAdminsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_app_instance_admins::ListAppInstanceAdminsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_app_instance_admins::ListAppInstanceAdminsInput {
             app_instance_arn: self.app_instance_arn,

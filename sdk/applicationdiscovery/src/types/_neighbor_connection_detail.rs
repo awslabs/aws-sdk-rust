@@ -134,16 +134,16 @@ impl NeighborConnectionDetailBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`source_server_id`](crate::types::builders::NeighborConnectionDetailBuilder::source_server_id)
     /// - [`destination_server_id`](crate::types::builders::NeighborConnectionDetailBuilder::destination_server_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::NeighborConnectionDetail, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::NeighborConnectionDetail, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::NeighborConnectionDetail {
             source_server_id: self.source_server_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source_server_id",
                     "source_server_id was not specified but it is required when building NeighborConnectionDetail",
                 )
             })?,
             destination_server_id: self.destination_server_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "destination_server_id",
                     "destination_server_id was not specified but it is required when building NeighborConnectionDetail",
                 )

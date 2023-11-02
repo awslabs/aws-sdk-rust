@@ -2,7 +2,7 @@
 pub fn ser_workflow_step_automation_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::WorkflowStepAutomationConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.script_location_s3_bucket {
         object.key("scriptLocationS3Bucket").string(var_1.as_str());
     }

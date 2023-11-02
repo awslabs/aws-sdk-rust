@@ -92,7 +92,7 @@ impl DeleteServiceQuotaIncreaseRequestFromTemplateInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_service_quota_increase_request_from_template::DeleteServiceQuotaIncreaseRequestFromTemplateInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_service_quota_increase_request_from_template::DeleteServiceQuotaIncreaseRequestFromTemplateInput {

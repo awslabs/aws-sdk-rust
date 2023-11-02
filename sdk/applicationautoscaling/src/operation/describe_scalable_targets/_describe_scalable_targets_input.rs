@@ -353,7 +353,7 @@ impl DescribeScalableTargetsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_scalable_targets::DescribeScalableTargetsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_scalable_targets::DescribeScalableTargetsInput {
             service_namespace: self.service_namespace,

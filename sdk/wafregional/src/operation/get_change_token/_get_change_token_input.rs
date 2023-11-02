@@ -18,7 +18,7 @@ impl GetChangeTokenInputBuilder {
     /// Consumes the builder and constructs a [`GetChangeTokenInput`](crate::operation::get_change_token::GetChangeTokenInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_change_token::GetChangeTokenInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_change_token::GetChangeTokenInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_change_token::GetChangeTokenInput {})
     }
 }

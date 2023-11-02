@@ -38,7 +38,7 @@ where
 pub fn ser_data_privacy(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DataPrivacy,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("childDirected").boolean(input.child_directed);
     }

@@ -219,7 +219,7 @@ impl RegisterAppInstanceUserEndpointInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointInput {

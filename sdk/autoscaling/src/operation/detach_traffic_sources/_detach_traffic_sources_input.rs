@@ -73,7 +73,7 @@ impl DetachTrafficSourcesInputBuilder {
     /// Consumes the builder and constructs a [`DetachTrafficSourcesInput`](crate::operation::detach_traffic_sources::DetachTrafficSourcesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::detach_traffic_sources::DetachTrafficSourcesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::detach_traffic_sources::DetachTrafficSourcesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::detach_traffic_sources::DetachTrafficSourcesInput {
             auto_scaling_group_name: self.auto_scaling_group_name,

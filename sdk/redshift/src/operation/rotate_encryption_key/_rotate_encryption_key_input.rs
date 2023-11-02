@@ -50,7 +50,7 @@ impl RotateEncryptionKeyInputBuilder {
     /// Consumes the builder and constructs a [`RotateEncryptionKeyInput`](crate::operation::rotate_encryption_key::RotateEncryptionKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::rotate_encryption_key::RotateEncryptionKeyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::rotate_encryption_key::RotateEncryptionKeyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::rotate_encryption_key::RotateEncryptionKeyInput {
             cluster_identifier: self.cluster_identifier,

@@ -44,7 +44,7 @@ impl DeleteSafetyRuleInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSafetyRuleInput`](crate::operation::delete_safety_rule::DeleteSafetyRuleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_safety_rule::DeleteSafetyRuleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_safety_rule::DeleteSafetyRuleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_safety_rule::DeleteSafetyRuleInput {
             safety_rule_arn: self.safety_rule_arn,
         })

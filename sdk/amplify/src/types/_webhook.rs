@@ -188,46 +188,46 @@ impl WebhookBuilder {
     /// - [`description`](crate::types::builders::WebhookBuilder::description)
     /// - [`create_time`](crate::types::builders::WebhookBuilder::create_time)
     /// - [`update_time`](crate::types::builders::WebhookBuilder::update_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::Webhook, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Webhook, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Webhook {
             webhook_arn: self.webhook_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "webhook_arn",
                     "webhook_arn was not specified but it is required when building Webhook",
                 )
             })?,
             webhook_id: self.webhook_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "webhook_id",
                     "webhook_id was not specified but it is required when building Webhook",
                 )
             })?,
             webhook_url: self.webhook_url.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "webhook_url",
                     "webhook_url was not specified but it is required when building Webhook",
                 )
             })?,
             branch_name: self.branch_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "branch_name",
                     "branch_name was not specified but it is required when building Webhook",
                 )
             })?,
             description: self.description.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "description",
                     "description was not specified but it is required when building Webhook",
                 )
             })?,
             create_time: self.create_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "create_time",
                     "create_time was not specified but it is required when building Webhook",
                 )
             })?,
             update_time: self.update_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "update_time",
                     "update_time was not specified but it is required when building Webhook",
                 )

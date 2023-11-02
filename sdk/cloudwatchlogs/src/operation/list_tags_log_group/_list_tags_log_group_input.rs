@@ -45,7 +45,7 @@ impl ListTagsLogGroupInputBuilder {
     /// Consumes the builder and constructs a [`ListTagsLogGroupInput`](crate::operation::list_tags_log_group::ListTagsLogGroupInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_tags_log_group::ListTagsLogGroupInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_tags_log_group::ListTagsLogGroupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_tags_log_group::ListTagsLogGroupInput {
             log_group_name: self.log_group_name,
         })

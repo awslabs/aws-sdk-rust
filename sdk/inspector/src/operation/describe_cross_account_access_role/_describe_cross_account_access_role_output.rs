@@ -111,24 +111,24 @@ impl DescribeCrossAccountAccessRoleOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_cross_account_access_role::DescribeCrossAccountAccessRoleOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_cross_account_access_role::DescribeCrossAccountAccessRoleOutput {
                 role_arn: self.role_arn.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
                         "role_arn",
                         "role_arn was not specified but it is required when building DescribeCrossAccountAccessRoleOutput",
                     )
                 })?,
                 valid: self.valid.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
                         "valid",
                         "valid was not specified but it is required when building DescribeCrossAccountAccessRoleOutput",
                     )
                 })?,
                 registered_at: self.registered_at.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
                         "registered_at",
                         "registered_at was not specified but it is required when building DescribeCrossAccountAccessRoleOutput",
                     )

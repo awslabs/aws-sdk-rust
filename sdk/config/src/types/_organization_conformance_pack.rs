@@ -216,16 +216,16 @@ impl OrganizationConformancePackBuilder {
     /// - [`organization_conformance_pack_name`](crate::types::builders::OrganizationConformancePackBuilder::organization_conformance_pack_name)
     /// - [`organization_conformance_pack_arn`](crate::types::builders::OrganizationConformancePackBuilder::organization_conformance_pack_arn)
     /// - [`last_update_time`](crate::types::builders::OrganizationConformancePackBuilder::last_update_time)
-    pub fn build(self) -> ::std::result::Result<crate::types::OrganizationConformancePack, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::OrganizationConformancePack, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::OrganizationConformancePack {
             organization_conformance_pack_name: self.organization_conformance_pack_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "organization_conformance_pack_name",
                     "organization_conformance_pack_name was not specified but it is required when building OrganizationConformancePack",
                 )
             })?,
             organization_conformance_pack_arn: self.organization_conformance_pack_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "organization_conformance_pack_arn",
                     "organization_conformance_pack_arn was not specified but it is required when building OrganizationConformancePack",
                 )
@@ -235,7 +235,7 @@ impl OrganizationConformancePackBuilder {
             conformance_pack_input_parameters: self.conformance_pack_input_parameters,
             excluded_accounts: self.excluded_accounts,
             last_update_time: self.last_update_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_update_time",
                     "last_update_time was not specified but it is required when building OrganizationConformancePack",
                 )

@@ -195,7 +195,7 @@ impl CopyBackupInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CopyBackupInput`](crate::operation::copy_backup::CopyBackupInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::copy_backup::CopyBackupInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::copy_backup::CopyBackupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::copy_backup::CopyBackupInput {
             client_request_token: self.client_request_token,
             source_backup_id: self.source_backup_id,

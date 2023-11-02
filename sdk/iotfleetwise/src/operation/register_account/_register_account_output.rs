@@ -151,10 +151,10 @@ impl RegisterAccountOutputBuilder {
     /// - [`last_modification_time`](crate::operation::register_account::builders::RegisterAccountOutputBuilder::last_modification_time)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::register_account::RegisterAccountOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::register_account::RegisterAccountOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::register_account::RegisterAccountOutput {
             register_account_status: self.register_account_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "register_account_status",
                     "register_account_status was not specified but it is required when building RegisterAccountOutput",
                 )
@@ -162,13 +162,13 @@ impl RegisterAccountOutputBuilder {
             timestream_resources: self.timestream_resources,
             iam_resources: self.iam_resources,
             creation_time: self.creation_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_time",
                     "creation_time was not specified but it is required when building RegisterAccountOutput",
                 )
             })?,
             last_modification_time: self.last_modification_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_modification_time",
                     "last_modification_time was not specified but it is required when building RegisterAccountOutput",
                 )

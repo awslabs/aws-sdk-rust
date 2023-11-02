@@ -66,7 +66,8 @@ impl GetStudioComponentInputBuilder {
     /// Consumes the builder and constructs a [`GetStudioComponentInput`](crate::operation::get_studio_component::GetStudioComponentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_studio_component::GetStudioComponentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_studio_component::GetStudioComponentInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::get_studio_component::GetStudioComponentInput {
             studio_component_id: self.studio_component_id,
             studio_id: self.studio_id,

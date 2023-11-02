@@ -66,8 +66,10 @@ impl DisassociateTeamMemberInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateTeamMemberInput`](crate::operation::disassociate_team_member::DisassociateTeamMemberInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::disassociate_team_member::DisassociateTeamMemberInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_team_member::DisassociateTeamMemberInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::disassociate_team_member::DisassociateTeamMemberInput {
             project_id: self.project_id,
             user_arn: self.user_arn,

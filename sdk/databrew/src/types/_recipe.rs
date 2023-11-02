@@ -337,7 +337,7 @@ impl RecipeBuilder {
     /// Consumes the builder and constructs a [`Recipe`](crate::types::Recipe).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::RecipeBuilder::name)
-    pub fn build(self) -> ::std::result::Result<crate::types::Recipe, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Recipe, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Recipe {
             created_by: self.created_by,
             create_date: self.create_date,
@@ -348,7 +348,7 @@ impl RecipeBuilder {
             published_date: self.published_date,
             description: self.description,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building Recipe",
                 )

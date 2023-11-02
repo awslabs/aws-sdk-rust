@@ -112,7 +112,7 @@ impl DescribeCreateCaseOptionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_create_case_options::DescribeCreateCaseOptionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_create_case_options::DescribeCreateCaseOptionsInput {
             issue_type: self.issue_type,

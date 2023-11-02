@@ -144,8 +144,10 @@ impl ListLinuxSubscriptionsInputBuilder {
     /// Consumes the builder and constructs a [`ListLinuxSubscriptionsInput`](crate::operation::list_linux_subscriptions::ListLinuxSubscriptionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_linux_subscriptions::ListLinuxSubscriptionsInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::list_linux_subscriptions::ListLinuxSubscriptionsInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::list_linux_subscriptions::ListLinuxSubscriptionsInput {
             filters: self.filters,
             max_results: self.max_results,

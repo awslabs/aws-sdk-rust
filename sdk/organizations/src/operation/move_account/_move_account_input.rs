@@ -141,7 +141,7 @@ impl MoveAccountInputBuilder {
         &self.destination_parent_id
     }
     /// Consumes the builder and constructs a [`MoveAccountInput`](crate::operation::move_account::MoveAccountInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::move_account::MoveAccountInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::move_account::MoveAccountInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::move_account::MoveAccountInput {
             account_id: self.account_id,
             source_parent_id: self.source_parent_id,

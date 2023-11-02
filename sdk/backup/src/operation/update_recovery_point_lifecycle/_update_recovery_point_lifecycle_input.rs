@@ -94,7 +94,7 @@ impl UpdateRecoveryPointLifecycleInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_recovery_point_lifecycle::UpdateRecoveryPointLifecycleInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_recovery_point_lifecycle::UpdateRecoveryPointLifecycleInput {
             backup_vault_name: self.backup_vault_name,

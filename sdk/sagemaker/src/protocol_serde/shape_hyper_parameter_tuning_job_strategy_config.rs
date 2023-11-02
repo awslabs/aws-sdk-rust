@@ -2,7 +2,7 @@
 pub fn ser_hyper_parameter_tuning_job_strategy_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::HyperParameterTuningJobStrategyConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.hyperband_strategy_config {
         #[allow(unused_mut)]
         let mut object_2 = object.key("HyperbandStrategyConfig").start_object();

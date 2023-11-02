@@ -2,7 +2,7 @@
 pub fn ser_transition(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Transition,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.duration_millis != 0 {
         object.key("DurationMillis").number(
             #[allow(clippy::useless_conversion)]

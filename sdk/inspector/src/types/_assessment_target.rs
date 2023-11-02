@@ -137,29 +137,29 @@ impl AssessmentTargetBuilder {
     /// - [`name`](crate::types::builders::AssessmentTargetBuilder::name)
     /// - [`created_at`](crate::types::builders::AssessmentTargetBuilder::created_at)
     /// - [`updated_at`](crate::types::builders::AssessmentTargetBuilder::updated_at)
-    pub fn build(self) -> ::std::result::Result<crate::types::AssessmentTarget, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AssessmentTarget, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AssessmentTarget {
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building AssessmentTarget",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building AssessmentTarget",
                 )
             })?,
             resource_group_arn: self.resource_group_arn,
             created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
                     "created_at was not specified but it is required when building AssessmentTarget",
                 )
             })?,
             updated_at: self.updated_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "updated_at",
                     "updated_at was not specified but it is required when building AssessmentTarget",
                 )

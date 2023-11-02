@@ -51,10 +51,10 @@ impl BatchPutPropertyErrorEntryBuilder {
     /// Consumes the builder and constructs a [`BatchPutPropertyErrorEntry`](crate::types::BatchPutPropertyErrorEntry).
     /// This method will fail if any of the following fields are not set:
     /// - [`errors`](crate::types::builders::BatchPutPropertyErrorEntryBuilder::errors)
-    pub fn build(self) -> ::std::result::Result<crate::types::BatchPutPropertyErrorEntry, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::BatchPutPropertyErrorEntry, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::BatchPutPropertyErrorEntry {
             errors: self.errors.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "errors",
                     "errors was not specified but it is required when building BatchPutPropertyErrorEntry",
                 )

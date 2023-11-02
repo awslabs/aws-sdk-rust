@@ -36,7 +36,7 @@ pub fn de_inventory_encryption(
 pub fn ser_inventory_encryption(
     input: &crate::types::InventoryEncryption,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(_var_3) = &input.sses3 {

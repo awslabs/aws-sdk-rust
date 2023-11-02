@@ -46,7 +46,9 @@ impl GetInstancesInputBuilder {
         &self.page_token
     }
     /// Consumes the builder and constructs a [`GetInstancesInput`](crate::operation::get_instances::GetInstancesInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_instances::GetInstancesInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::get_instances::GetInstancesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_instances::GetInstancesInput { page_token: self.page_token })
     }
 }

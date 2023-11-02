@@ -67,10 +67,10 @@ impl MetricDimensionBuilder {
     /// Consumes the builder and constructs a [`MetricDimension`](crate::types::MetricDimension).
     /// This method will fail if any of the following fields are not set:
     /// - [`dimension_name`](crate::types::builders::MetricDimensionBuilder::dimension_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::MetricDimension, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::MetricDimension, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MetricDimension {
             dimension_name: self.dimension_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "dimension_name",
                     "dimension_name was not specified but it is required when building MetricDimension",
                 )

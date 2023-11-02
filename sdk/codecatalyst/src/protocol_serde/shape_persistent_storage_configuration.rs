@@ -2,7 +2,7 @@
 pub fn ser_persistent_storage_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PersistentStorageConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("sizeInGiB").number(
             #[allow(clippy::useless_conversion)]

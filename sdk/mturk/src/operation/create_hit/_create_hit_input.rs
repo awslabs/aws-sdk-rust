@@ -412,7 +412,7 @@ impl CreateHitInputBuilder {
         &self.hit_layout_parameters
     }
     /// Consumes the builder and constructs a [`CreateHitInput`](crate::operation::create_hit::CreateHitInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_hit::CreateHitInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_hit::CreateHitInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_hit::CreateHitInput {
             max_assignments: self.max_assignments,
             auto_approval_delay_in_seconds: self.auto_approval_delay_in_seconds,

@@ -109,10 +109,10 @@ impl VendorPropertiesBuilder {
     /// Consumes the builder and constructs a [`VendorProperties`](crate::types::VendorProperties).
     /// This method will fail if any of the following fields are not set:
     /// - [`vendor_worker_id`](crate::types::builders::VendorPropertiesBuilder::vendor_worker_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::VendorProperties, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::VendorProperties, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::VendorProperties {
             vendor_worker_id: self.vendor_worker_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "vendor_worker_id",
                     "vendor_worker_id was not specified but it is required when building VendorProperties",
                 )

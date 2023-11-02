@@ -92,7 +92,7 @@ impl CreateLfTagInputBuilder {
         &self.tag_values
     }
     /// Consumes the builder and constructs a [`CreateLfTagInput`](crate::operation::create_lf_tag::CreateLfTagInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_lf_tag::CreateLfTagInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_lf_tag::CreateLfTagInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_lf_tag::CreateLfTagInput {
             catalog_id: self.catalog_id,
             tag_key: self.tag_key,

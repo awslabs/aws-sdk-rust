@@ -87,7 +87,7 @@ impl GetUserProfileInputBuilder {
     /// Consumes the builder and constructs a [`GetUserProfileInput`](crate::operation::get_user_profile::GetUserProfileInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_user_profile::GetUserProfileInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_user_profile::GetUserProfileInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_user_profile::GetUserProfileInput {
             domain_identifier: self.domain_identifier,
             user_identifier: self.user_identifier,

@@ -118,28 +118,28 @@ impl DynamicCardVerificationValueBuilder {
     /// - [`card_expiry_date`](crate::types::builders::DynamicCardVerificationValueBuilder::card_expiry_date)
     /// - [`service_code`](crate::types::builders::DynamicCardVerificationValueBuilder::service_code)
     /// - [`application_transaction_counter`](crate::types::builders::DynamicCardVerificationValueBuilder::application_transaction_counter)
-    pub fn build(self) -> ::std::result::Result<crate::types::DynamicCardVerificationValue, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DynamicCardVerificationValue, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DynamicCardVerificationValue {
             pan_sequence_number: self.pan_sequence_number.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "pan_sequence_number",
                     "pan_sequence_number was not specified but it is required when building DynamicCardVerificationValue",
                 )
             })?,
             card_expiry_date: self.card_expiry_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "card_expiry_date",
                     "card_expiry_date was not specified but it is required when building DynamicCardVerificationValue",
                 )
             })?,
             service_code: self.service_code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "service_code",
                     "service_code was not specified but it is required when building DynamicCardVerificationValue",
                 )
             })?,
             application_transaction_counter: self.application_transaction_counter.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "application_transaction_counter",
                     "application_transaction_counter was not specified but it is required when building DynamicCardVerificationValue",
                 )

@@ -93,7 +93,9 @@ impl CreateFolderInputBuilder {
         &self.parent_folder_id
     }
     /// Consumes the builder and constructs a [`CreateFolderInput`](crate::operation::create_folder::CreateFolderInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_folder::CreateFolderInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_folder::CreateFolderInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_folder::CreateFolderInput {
             authentication_token: self.authentication_token,
             name: self.name,

@@ -133,28 +133,28 @@ impl RenameFieldBuilder {
     /// - [`inputs`](crate::types::builders::RenameFieldBuilder::inputs)
     /// - [`source_path`](crate::types::builders::RenameFieldBuilder::source_path)
     /// - [`target_path`](crate::types::builders::RenameFieldBuilder::target_path)
-    pub fn build(self) -> ::std::result::Result<crate::types::RenameField, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RenameField, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RenameField {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building RenameField",
                 )
             })?,
             inputs: self.inputs.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "inputs",
                     "inputs was not specified but it is required when building RenameField",
                 )
             })?,
             source_path: self.source_path.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source_path",
                     "source_path was not specified but it is required when building RenameField",
                 )
             })?,
             target_path: self.target_path.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "target_path",
                     "target_path was not specified but it is required when building RenameField",
                 )

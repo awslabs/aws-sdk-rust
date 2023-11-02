@@ -197,7 +197,7 @@ impl UpdateVpcConnectionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateVpcConnectionInput`](crate::operation::update_vpc_connection::UpdateVpcConnectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_vpc_connection::UpdateVpcConnectionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_vpc_connection::UpdateVpcConnectionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_vpc_connection::UpdateVpcConnectionInput {
             aws_account_id: self.aws_account_id,

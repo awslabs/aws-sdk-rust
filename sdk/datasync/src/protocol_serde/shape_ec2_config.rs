@@ -2,7 +2,7 @@
 pub fn ser_ec2_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Ec2Config,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("SubnetArn").string(input.subnet_arn.as_str());
     }

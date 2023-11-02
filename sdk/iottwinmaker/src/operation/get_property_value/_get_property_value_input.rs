@@ -225,7 +225,7 @@ impl GetPropertyValueInputBuilder {
     /// Consumes the builder and constructs a [`GetPropertyValueInput`](crate::operation::get_property_value::GetPropertyValueInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_property_value::GetPropertyValueInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_property_value::GetPropertyValueInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_property_value::GetPropertyValueInput {
             component_name: self.component_name,
             component_type_id: self.component_type_id,

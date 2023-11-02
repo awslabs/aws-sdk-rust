@@ -42,7 +42,7 @@ where
 pub fn ser_heterogeneous(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Heterogeneous,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("targetDatabaseEngine").start_array();
         for item_2 in &input.target_database_engine {

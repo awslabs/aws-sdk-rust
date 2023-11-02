@@ -241,18 +241,18 @@ impl AmazonOpenSearchServerlessDestinationConfigurationBuilder {
     /// - [`index_name`](crate::types::builders::AmazonOpenSearchServerlessDestinationConfigurationBuilder::index_name)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::AmazonOpenSearchServerlessDestinationConfiguration, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::types::AmazonOpenSearchServerlessDestinationConfiguration, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::types::AmazonOpenSearchServerlessDestinationConfiguration {
             role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role_arn",
                     "role_arn was not specified but it is required when building AmazonOpenSearchServerlessDestinationConfiguration",
                 )
             })?,
             collection_endpoint: self.collection_endpoint,
             index_name: self.index_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "index_name",
                     "index_name was not specified but it is required when building AmazonOpenSearchServerlessDestinationConfiguration",
                 )

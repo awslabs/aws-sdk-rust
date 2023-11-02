@@ -114,7 +114,7 @@ impl PutDetectorInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`PutDetectorInput`](crate::operation::put_detector::PutDetectorInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_detector::PutDetectorInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_detector::PutDetectorInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_detector::PutDetectorInput {
             detector_id: self.detector_id,
             description: self.description,

@@ -2,7 +2,7 @@
 pub fn ser_put_container_recipe_policy_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_container_recipe_policy::PutContainerRecipePolicyInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.container_recipe_arn {
         object.key("containerRecipeArn").string(var_1.as_str());
     }

@@ -68,16 +68,16 @@ impl ModuleLoggingConfigurationInputBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`enabled`](crate::types::builders::ModuleLoggingConfigurationInputBuilder::enabled)
     /// - [`log_level`](crate::types::builders::ModuleLoggingConfigurationInputBuilder::log_level)
-    pub fn build(self) -> ::std::result::Result<crate::types::ModuleLoggingConfigurationInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ModuleLoggingConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ModuleLoggingConfigurationInput {
             enabled: self.enabled.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "enabled",
                     "enabled was not specified but it is required when building ModuleLoggingConfigurationInput",
                 )
             })?,
             log_level: self.log_level.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "log_level",
                     "log_level was not specified but it is required when building ModuleLoggingConfigurationInput",
                 )

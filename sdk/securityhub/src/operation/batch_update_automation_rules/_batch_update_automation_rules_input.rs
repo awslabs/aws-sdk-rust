@@ -58,7 +58,7 @@ impl BatchUpdateAutomationRulesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_update_automation_rules::BatchUpdateAutomationRulesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::batch_update_automation_rules::BatchUpdateAutomationRulesInput {
             update_automation_rules_request_items: self.update_automation_rules_request_items,

@@ -89,11 +89,11 @@ impl SearchVulnerabilitiesOutputBuilder {
     /// - [`vulnerabilities`](crate::operation::search_vulnerabilities::builders::SearchVulnerabilitiesOutputBuilder::vulnerabilities)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::search_vulnerabilities::SearchVulnerabilitiesOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::search_vulnerabilities::SearchVulnerabilitiesOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::search_vulnerabilities::SearchVulnerabilitiesOutput {
             vulnerabilities: self.vulnerabilities.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "vulnerabilities",
                     "vulnerabilities was not specified but it is required when building SearchVulnerabilitiesOutput",
                 )

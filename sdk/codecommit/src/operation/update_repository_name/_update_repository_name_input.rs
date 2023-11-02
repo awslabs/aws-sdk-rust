@@ -67,7 +67,7 @@ impl UpdateRepositoryNameInputBuilder {
     /// Consumes the builder and constructs a [`UpdateRepositoryNameInput`](crate::operation::update_repository_name::UpdateRepositoryNameInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_repository_name::UpdateRepositoryNameInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_repository_name::UpdateRepositoryNameInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_repository_name::UpdateRepositoryNameInput {
             old_name: self.old_name,

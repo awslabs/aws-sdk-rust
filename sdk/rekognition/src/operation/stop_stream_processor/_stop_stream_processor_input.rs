@@ -44,7 +44,7 @@ impl StopStreamProcessorInputBuilder {
     /// Consumes the builder and constructs a [`StopStreamProcessorInput`](crate::operation::stop_stream_processor::StopStreamProcessorInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_stream_processor::StopStreamProcessorInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::stop_stream_processor::StopStreamProcessorInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::stop_stream_processor::StopStreamProcessorInput { name: self.name })
     }

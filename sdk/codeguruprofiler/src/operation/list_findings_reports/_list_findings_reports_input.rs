@@ -162,7 +162,7 @@ impl ListFindingsReportsInputBuilder {
     /// Consumes the builder and constructs a [`ListFindingsReportsInput`](crate::operation::list_findings_reports::ListFindingsReportsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_findings_reports::ListFindingsReportsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_findings_reports::ListFindingsReportsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_findings_reports::ListFindingsReportsInput {
             profiling_group_name: self.profiling_group_name,

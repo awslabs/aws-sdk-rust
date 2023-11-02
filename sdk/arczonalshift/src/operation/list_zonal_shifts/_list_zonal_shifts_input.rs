@@ -115,7 +115,7 @@ impl ListZonalShiftsInputBuilder {
     /// Consumes the builder and constructs a [`ListZonalShiftsInput`](crate::operation::list_zonal_shifts::ListZonalShiftsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_zonal_shifts::ListZonalShiftsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_zonal_shifts::ListZonalShiftsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_zonal_shifts::ListZonalShiftsInput {
             next_token: self.next_token,
             status: self.status,

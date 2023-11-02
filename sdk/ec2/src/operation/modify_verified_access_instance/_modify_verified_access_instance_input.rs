@@ -109,7 +109,7 @@ impl ModifyVerifiedAccessInstanceInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_verified_access_instance::ModifyVerifiedAccessInstanceInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::modify_verified_access_instance::ModifyVerifiedAccessInstanceInput {
             verified_access_instance_id: self.verified_access_instance_id,

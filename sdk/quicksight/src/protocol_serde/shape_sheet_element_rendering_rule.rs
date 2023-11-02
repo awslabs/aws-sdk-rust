@@ -2,7 +2,7 @@
 pub fn ser_sheet_element_rendering_rule(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SheetElementRenderingRule,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Expression").string(input.expression.as_str());
     }

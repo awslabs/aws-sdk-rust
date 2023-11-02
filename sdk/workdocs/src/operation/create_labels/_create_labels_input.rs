@@ -101,7 +101,9 @@ impl CreateLabelsInputBuilder {
         &self.authentication_token
     }
     /// Consumes the builder and constructs a [`CreateLabelsInput`](crate::operation::create_labels::CreateLabelsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_labels::CreateLabelsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_labels::CreateLabelsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_labels::CreateLabelsInput {
             resource_id: self.resource_id,
             labels: self.labels,

@@ -63,10 +63,10 @@ impl StartFileTransferOutputBuilder {
     /// - [`transfer_id`](crate::operation::start_file_transfer::builders::StartFileTransferOutputBuilder::transfer_id)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_file_transfer::StartFileTransferOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_file_transfer::StartFileTransferOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_file_transfer::StartFileTransferOutput {
             transfer_id: self.transfer_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "transfer_id",
                     "transfer_id was not specified but it is required when building StartFileTransferOutput",
                 )

@@ -351,40 +351,40 @@ impl GetMonitorOutputBuilder {
     /// - [`status`](crate::operation::get_monitor::builders::GetMonitorOutputBuilder::status)
     /// - [`created_at`](crate::operation::get_monitor::builders::GetMonitorOutputBuilder::created_at)
     /// - [`modified_at`](crate::operation::get_monitor::builders::GetMonitorOutputBuilder::modified_at)
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_monitor::GetMonitorOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_monitor::GetMonitorOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_monitor::GetMonitorOutput {
             monitor_name: self.monitor_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "monitor_name",
                     "monitor_name was not specified but it is required when building GetMonitorOutput",
                 )
             })?,
             monitor_arn: self.monitor_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "monitor_arn",
                     "monitor_arn was not specified but it is required when building GetMonitorOutput",
                 )
             })?,
             resources: self.resources.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resources",
                     "resources was not specified but it is required when building GetMonitorOutput",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building GetMonitorOutput",
                 )
             })?,
             created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
                     "created_at was not specified but it is required when building GetMonitorOutput",
                 )
             })?,
             modified_at: self.modified_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "modified_at",
                     "modified_at was not specified but it is required when building GetMonitorOutput",
                 )

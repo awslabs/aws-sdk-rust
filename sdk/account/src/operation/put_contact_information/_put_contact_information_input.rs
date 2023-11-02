@@ -80,7 +80,7 @@ impl PutContactInformationInputBuilder {
     /// Consumes the builder and constructs a [`PutContactInformationInput`](crate::operation::put_contact_information::PutContactInformationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_contact_information::PutContactInformationInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::put_contact_information::PutContactInformationInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::put_contact_information::PutContactInformationInput {
             contact_information: self.contact_information,

@@ -133,29 +133,29 @@ impl UpdateIdentitySourceOutputBuilder {
     /// - [`policy_store_id`](crate::operation::update_identity_source::builders::UpdateIdentitySourceOutputBuilder::policy_store_id)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_identity_source::UpdateIdentitySourceOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_identity_source::UpdateIdentitySourceOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_identity_source::UpdateIdentitySourceOutput {
             created_date: self.created_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_date",
                     "created_date was not specified but it is required when building UpdateIdentitySourceOutput",
                 )
             })?,
             identity_source_id: self.identity_source_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "identity_source_id",
                     "identity_source_id was not specified but it is required when building UpdateIdentitySourceOutput",
                 )
             })?,
             last_updated_date: self.last_updated_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_updated_date",
                     "last_updated_date was not specified but it is required when building UpdateIdentitySourceOutput",
                 )
             })?,
             policy_store_id: self.policy_store_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "policy_store_id",
                     "policy_store_id was not specified but it is required when building UpdateIdentitySourceOutput",
                 )

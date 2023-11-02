@@ -194,7 +194,7 @@ impl UpdateEnvironmentProfileInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_environment_profile::UpdateEnvironmentProfileInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_environment_profile::UpdateEnvironmentProfileInput {
             domain_identifier: self.domain_identifier,

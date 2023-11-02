@@ -6,8 +6,8 @@
 use aws_credential_types::provider::SharedCredentialsProvider;
 use aws_credential_types::Credentials;
 use aws_sdk_s3::Client;
-use aws_smithy_http::body::SdkBody;
 use aws_smithy_runtime::client::http::test_util::infallible_client_fn;
+use aws_smithy_types::body::SdkBody;
 use aws_smithy_types::error::metadata::ProvideErrorMetadata;
 use aws_types::region::Region;
 use aws_types::SdkConfig;

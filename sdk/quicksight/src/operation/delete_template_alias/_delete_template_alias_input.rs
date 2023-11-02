@@ -88,7 +88,7 @@ impl DeleteTemplateAliasInputBuilder {
     /// Consumes the builder and constructs a [`DeleteTemplateAliasInput`](crate::operation::delete_template_alias::DeleteTemplateAliasInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_template_alias::DeleteTemplateAliasInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_template_alias::DeleteTemplateAliasInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_template_alias::DeleteTemplateAliasInput {
             aws_account_id: self.aws_account_id,

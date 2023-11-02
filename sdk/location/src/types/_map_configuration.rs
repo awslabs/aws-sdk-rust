@@ -257,10 +257,10 @@ impl MapConfigurationBuilder {
     /// Consumes the builder and constructs a [`MapConfiguration`](crate::types::MapConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`style`](crate::types::builders::MapConfigurationBuilder::style)
-    pub fn build(self) -> ::std::result::Result<crate::types::MapConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::MapConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MapConfiguration {
             style: self.style.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "style",
                     "style was not specified but it is required when building MapConfiguration",
                 )

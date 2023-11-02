@@ -74,7 +74,7 @@ impl ReorderReceiptRuleSetInputBuilder {
     /// Consumes the builder and constructs a [`ReorderReceiptRuleSetInput`](crate::operation::reorder_receipt_rule_set::ReorderReceiptRuleSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::reorder_receipt_rule_set::ReorderReceiptRuleSetInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::reorder_receipt_rule_set::ReorderReceiptRuleSetInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::reorder_receipt_rule_set::ReorderReceiptRuleSetInput {
             rule_set_name: self.rule_set_name,

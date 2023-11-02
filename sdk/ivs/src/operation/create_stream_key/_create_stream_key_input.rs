@@ -71,7 +71,7 @@ impl CreateStreamKeyInputBuilder {
     /// Consumes the builder and constructs a [`CreateStreamKeyInput`](crate::operation::create_stream_key::CreateStreamKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_stream_key::CreateStreamKeyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_stream_key::CreateStreamKeyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_stream_key::CreateStreamKeyInput {
             channel_arn: self.channel_arn,
             tags: self.tags,

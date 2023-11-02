@@ -2,7 +2,7 @@
 pub fn ser_lambda_code_hook(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LambdaCodeHook,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("lambdaARN").string(input.lambda_arn.as_str());
     }

@@ -93,22 +93,22 @@ impl HttpPackageConfigurationBuilder {
     /// - [`path`](crate::types::builders::HttpPackageConfigurationBuilder::path)
     /// - [`source_group`](crate::types::builders::HttpPackageConfigurationBuilder::source_group)
     /// - [`r#type`](crate::types::builders::HttpPackageConfigurationBuilder::r#type)
-    pub fn build(self) -> ::std::result::Result<crate::types::HttpPackageConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::HttpPackageConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::HttpPackageConfiguration {
             path: self.path.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "path",
                     "path was not specified but it is required when building HttpPackageConfiguration",
                 )
             })?,
             source_group: self.source_group.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source_group",
                     "source_group was not specified but it is required when building HttpPackageConfiguration",
                 )
             })?,
             r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "r#type",
                     "r#type was not specified but it is required when building HttpPackageConfiguration",
                 )

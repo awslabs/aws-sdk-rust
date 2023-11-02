@@ -181,28 +181,28 @@ impl SparkConnectorSourceBuilder {
     /// - [`connection_name`](crate::types::builders::SparkConnectorSourceBuilder::connection_name)
     /// - [`connector_name`](crate::types::builders::SparkConnectorSourceBuilder::connector_name)
     /// - [`connection_type`](crate::types::builders::SparkConnectorSourceBuilder::connection_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::SparkConnectorSource, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::SparkConnectorSource, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SparkConnectorSource {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building SparkConnectorSource",
                 )
             })?,
             connection_name: self.connection_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "connection_name",
                     "connection_name was not specified but it is required when building SparkConnectorSource",
                 )
             })?,
             connector_name: self.connector_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "connector_name",
                     "connector_name was not specified but it is required when building SparkConnectorSource",
                 )
             })?,
             connection_type: self.connection_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "connection_type",
                     "connection_type was not specified but it is required when building SparkConnectorSource",
                 )

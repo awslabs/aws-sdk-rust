@@ -74,7 +74,7 @@ impl UpdateUsagePlanInputBuilder {
     /// Consumes the builder and constructs a [`UpdateUsagePlanInput`](crate::operation::update_usage_plan::UpdateUsagePlanInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_usage_plan::UpdateUsagePlanInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_usage_plan::UpdateUsagePlanInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_usage_plan::UpdateUsagePlanInput {
             usage_plan_id: self.usage_plan_id,
             patch_operations: self.patch_operations,

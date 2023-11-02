@@ -2,7 +2,7 @@
 pub fn ser_dq_stop_job_on_failure_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DqStopJobOnFailureOptions,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.stop_job_on_failure_timing {
         object.key("StopJobOnFailureTiming").string(var_1.as_str());
     }

@@ -44,7 +44,7 @@ impl GetAssociatedRoleInputBuilder {
     /// Consumes the builder and constructs a [`GetAssociatedRoleInput`](crate::operation::get_associated_role::GetAssociatedRoleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_associated_role::GetAssociatedRoleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_associated_role::GetAssociatedRoleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_associated_role::GetAssociatedRoleInput { group_id: self.group_id })
     }
 }

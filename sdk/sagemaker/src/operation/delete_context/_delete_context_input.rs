@@ -44,7 +44,7 @@ impl DeleteContextInputBuilder {
     /// Consumes the builder and constructs a [`DeleteContextInput`](crate::operation::delete_context::DeleteContextInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_context::DeleteContextInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_context::DeleteContextInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_context::DeleteContextInput {
             context_name: self.context_name,
         })

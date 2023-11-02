@@ -85,7 +85,7 @@ impl ListDataSetsInputBuilder {
     /// Consumes the builder and constructs a [`ListDataSetsInput`](crate::operation::list_data_sets::ListDataSetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_data_sets::ListDataSetsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_data_sets::ListDataSetsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_data_sets::ListDataSetsInput {
             max_results: self.max_results,
             next_token: self.next_token,

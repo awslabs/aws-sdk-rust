@@ -2,7 +2,7 @@
 pub fn ser_discovery_server_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DiscoveryServerConfiguration,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("ServerHostname").string(input.server_hostname.as_str());
     }

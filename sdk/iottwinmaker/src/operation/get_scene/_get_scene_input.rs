@@ -64,7 +64,7 @@ impl GetSceneInputBuilder {
         &self.scene_id
     }
     /// Consumes the builder and constructs a [`GetSceneInput`](crate::operation::get_scene::GetSceneInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_scene::GetSceneInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_scene::GetSceneInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_scene::GetSceneInput {
             workspace_id: self.workspace_id,
             scene_id: self.scene_id,

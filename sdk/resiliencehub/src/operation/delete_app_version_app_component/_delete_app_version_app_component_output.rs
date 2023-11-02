@@ -110,17 +110,17 @@ impl DeleteAppVersionAppComponentOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_app_version_app_component::DeleteAppVersionAppComponentOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_app_version_app_component::DeleteAppVersionAppComponentOutput {
             app_arn: self.app_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "app_arn",
                     "app_arn was not specified but it is required when building DeleteAppVersionAppComponentOutput",
                 )
             })?,
             app_version: self.app_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "app_version",
                     "app_version was not specified but it is required when building DeleteAppVersionAppComponentOutput",
                 )

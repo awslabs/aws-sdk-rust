@@ -131,7 +131,7 @@ impl ListAuditMitigationActionsExecutionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_audit_mitigation_actions_executions::ListAuditMitigationActionsExecutionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::list_audit_mitigation_actions_executions::ListAuditMitigationActionsExecutionsInput {

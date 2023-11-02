@@ -65,11 +65,11 @@ impl GetSourceRepositoryCloneUrlsOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_source_repository_clone_urls::GetSourceRepositoryCloneUrlsOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_source_repository_clone_urls::GetSourceRepositoryCloneUrlsOutput {
             https: self.https.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "https",
                     "https was not specified but it is required when building GetSourceRepositoryCloneUrlsOutput",
                 )

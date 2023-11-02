@@ -117,7 +117,7 @@ impl ListRegionalBucketsInputBuilder {
     /// Consumes the builder and constructs a [`ListRegionalBucketsInput`](crate::operation::list_regional_buckets::ListRegionalBucketsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_regional_buckets::ListRegionalBucketsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_regional_buckets::ListRegionalBucketsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_regional_buckets::ListRegionalBucketsInput {
             account_id: self.account_id,

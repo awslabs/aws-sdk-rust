@@ -173,29 +173,29 @@ impl VisualCustomActionBuilder {
     /// - [`name`](crate::types::builders::VisualCustomActionBuilder::name)
     /// - [`trigger`](crate::types::builders::VisualCustomActionBuilder::trigger)
     /// - [`action_operations`](crate::types::builders::VisualCustomActionBuilder::action_operations)
-    pub fn build(self) -> ::std::result::Result<crate::types::VisualCustomAction, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::VisualCustomAction, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::VisualCustomAction {
             custom_action_id: self.custom_action_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "custom_action_id",
                     "custom_action_id was not specified but it is required when building VisualCustomAction",
                 )
             })?,
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building VisualCustomAction",
                 )
             })?,
             status: self.status,
             trigger: self.trigger.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "trigger",
                     "trigger was not specified but it is required when building VisualCustomAction",
                 )
             })?,
             action_operations: self.action_operations.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "action_operations",
                     "action_operations was not specified but it is required when building VisualCustomAction",
                 )

@@ -114,7 +114,7 @@ impl SetAlarmStateInputBuilder {
     /// Consumes the builder and constructs a [`SetAlarmStateInput`](crate::operation::set_alarm_state::SetAlarmStateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::set_alarm_state::SetAlarmStateInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::set_alarm_state::SetAlarmStateInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::set_alarm_state::SetAlarmStateInput {
             alarm_name: self.alarm_name,
             state_value: self.state_value,

@@ -104,22 +104,22 @@ impl TypedLinkFacetBuilder {
     /// - [`name`](crate::types::builders::TypedLinkFacetBuilder::name)
     /// - [`attributes`](crate::types::builders::TypedLinkFacetBuilder::attributes)
     /// - [`identity_attribute_order`](crate::types::builders::TypedLinkFacetBuilder::identity_attribute_order)
-    pub fn build(self) -> ::std::result::Result<crate::types::TypedLinkFacet, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TypedLinkFacet, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TypedLinkFacet {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building TypedLinkFacet",
                 )
             })?,
             attributes: self.attributes.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "attributes",
                     "attributes was not specified but it is required when building TypedLinkFacet",
                 )
             })?,
             identity_attribute_order: self.identity_attribute_order.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "identity_attribute_order",
                     "identity_attribute_order was not specified but it is required when building TypedLinkFacet",
                 )

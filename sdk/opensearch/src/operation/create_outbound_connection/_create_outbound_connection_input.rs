@@ -133,7 +133,7 @@ impl CreateOutboundConnectionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_outbound_connection::CreateOutboundConnectionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_outbound_connection::CreateOutboundConnectionInput {
             local_domain_info: self.local_domain_info,

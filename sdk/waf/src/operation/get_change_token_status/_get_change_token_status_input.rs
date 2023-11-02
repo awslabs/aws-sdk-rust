@@ -44,7 +44,7 @@ impl GetChangeTokenStatusInputBuilder {
     /// Consumes the builder and constructs a [`GetChangeTokenStatusInput`](crate::operation::get_change_token_status::GetChangeTokenStatusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_change_token_status::GetChangeTokenStatusInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_change_token_status::GetChangeTokenStatusInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_change_token_status::GetChangeTokenStatusInput {
             change_token: self.change_token,

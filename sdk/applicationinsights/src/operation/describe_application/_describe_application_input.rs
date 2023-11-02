@@ -65,7 +65,7 @@ impl DescribeApplicationInputBuilder {
     /// Consumes the builder and constructs a [`DescribeApplicationInput`](crate::operation::describe_application::DescribeApplicationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_application::DescribeApplicationInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_application::DescribeApplicationInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_application::DescribeApplicationInput {
             resource_group_name: self.resource_group_name,

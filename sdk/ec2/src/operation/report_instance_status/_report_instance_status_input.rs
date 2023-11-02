@@ -241,7 +241,7 @@ impl ReportInstanceStatusInputBuilder {
     /// Consumes the builder and constructs a [`ReportInstanceStatusInput`](crate::operation::report_instance_status::ReportInstanceStatusInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::report_instance_status::ReportInstanceStatusInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::report_instance_status::ReportInstanceStatusInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::report_instance_status::ReportInstanceStatusInput {
             description: self.description,

@@ -2,7 +2,7 @@
 pub fn ser_related_item_type_filter(
     object_4: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RelatedItemTypeFilter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::RelatedItemTypeFilter::Contact(inner) => {
             #[allow(unused_mut)]
@@ -17,7 +17,7 @@ pub fn ser_related_item_type_filter(
             object_2.finish();
         }
         crate::types::RelatedItemTypeFilter::Unknown => {
-            return Err(::aws_smithy_http::operation::error::SerializationError::unknown_variant(
+            return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "RelatedItemTypeFilter",
             ))
         }

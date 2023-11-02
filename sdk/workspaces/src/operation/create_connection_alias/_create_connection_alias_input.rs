@@ -83,7 +83,7 @@ impl CreateConnectionAliasInputBuilder {
     /// Consumes the builder and constructs a [`CreateConnectionAliasInput`](crate::operation::create_connection_alias::CreateConnectionAliasInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_connection_alias::CreateConnectionAliasInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_connection_alias::CreateConnectionAliasInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_connection_alias::CreateConnectionAliasInput {
             connection_string: self.connection_string,

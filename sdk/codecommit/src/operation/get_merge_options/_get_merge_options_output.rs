@@ -140,28 +140,28 @@ impl GetMergeOptionsOutputBuilder {
     /// - [`base_commit_id`](crate::operation::get_merge_options::builders::GetMergeOptionsOutputBuilder::base_commit_id)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_merge_options::GetMergeOptionsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_merge_options::GetMergeOptionsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_merge_options::GetMergeOptionsOutput {
             merge_options: self.merge_options.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "merge_options",
                     "merge_options was not specified but it is required when building GetMergeOptionsOutput",
                 )
             })?,
             source_commit_id: self.source_commit_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source_commit_id",
                     "source_commit_id was not specified but it is required when building GetMergeOptionsOutput",
                 )
             })?,
             destination_commit_id: self.destination_commit_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "destination_commit_id",
                     "destination_commit_id was not specified but it is required when building GetMergeOptionsOutput",
                 )
             })?,
             base_commit_id: self.base_commit_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "base_commit_id",
                     "base_commit_id was not specified but it is required when building GetMergeOptionsOutput",
                 )

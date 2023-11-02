@@ -88,10 +88,10 @@ impl DocumentSuggesterOptionsBuilder {
     /// Consumes the builder and constructs a [`DocumentSuggesterOptions`](crate::types::DocumentSuggesterOptions).
     /// This method will fail if any of the following fields are not set:
     /// - [`source_field`](crate::types::builders::DocumentSuggesterOptionsBuilder::source_field)
-    pub fn build(self) -> ::std::result::Result<crate::types::DocumentSuggesterOptions, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DocumentSuggesterOptions, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DocumentSuggesterOptions {
             source_field: self.source_field.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "source_field",
                     "source_field was not specified but it is required when building DocumentSuggesterOptions",
                 )

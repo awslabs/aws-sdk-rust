@@ -65,7 +65,8 @@ impl StartAssessmentRunInputBuilder {
     /// Consumes the builder and constructs a [`StartAssessmentRunInput`](crate::operation::start_assessment_run::StartAssessmentRunInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_assessment_run::StartAssessmentRunInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_assessment_run::StartAssessmentRunInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::start_assessment_run::StartAssessmentRunInput {
             assessment_template_arn: self.assessment_template_arn,
             assessment_run_name: self.assessment_run_name,

@@ -2,7 +2,7 @@
 pub fn ser_listing_revision_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ListingRevisionInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("identifier").string(input.identifier.as_str());
     }

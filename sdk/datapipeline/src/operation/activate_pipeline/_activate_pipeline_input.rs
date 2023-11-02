@@ -95,7 +95,7 @@ impl ActivatePipelineInputBuilder {
     /// Consumes the builder and constructs a [`ActivatePipelineInput`](crate::operation::activate_pipeline::ActivatePipelineInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::activate_pipeline::ActivatePipelineInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::activate_pipeline::ActivatePipelineInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::activate_pipeline::ActivatePipelineInput {
             pipeline_id: self.pipeline_id,
             parameter_values: self.parameter_values,

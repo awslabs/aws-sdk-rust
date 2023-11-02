@@ -65,7 +65,7 @@ impl DescribeRecipeInputBuilder {
     /// Consumes the builder and constructs a [`DescribeRecipeInput`](crate::operation::describe_recipe::DescribeRecipeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_recipe::DescribeRecipeInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_recipe::DescribeRecipeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_recipe::DescribeRecipeInput {
             name: self.name,
             recipe_version: self.recipe_version,

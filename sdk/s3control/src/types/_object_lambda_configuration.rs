@@ -130,10 +130,10 @@ impl ObjectLambdaConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`supporting_access_point`](crate::types::builders::ObjectLambdaConfigurationBuilder::supporting_access_point)
     /// - [`transformation_configurations`](crate::types::builders::ObjectLambdaConfigurationBuilder::transformation_configurations)
-    pub fn build(self) -> ::std::result::Result<crate::types::ObjectLambdaConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ObjectLambdaConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ObjectLambdaConfiguration {
             supporting_access_point: self.supporting_access_point.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "supporting_access_point",
                     "supporting_access_point was not specified but it is required when building ObjectLambdaConfiguration",
                 )
@@ -141,7 +141,7 @@ impl ObjectLambdaConfigurationBuilder {
             cloud_watch_metrics_enabled: self.cloud_watch_metrics_enabled.unwrap_or_default(),
             allowed_features: self.allowed_features,
             transformation_configurations: self.transformation_configurations.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "transformation_configurations",
                     "transformation_configurations was not specified but it is required when building ObjectLambdaConfiguration",
                 )

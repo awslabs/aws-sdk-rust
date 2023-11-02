@@ -93,7 +93,7 @@ impl ListFirewallsInputBuilder {
     /// Consumes the builder and constructs a [`ListFirewallsInput`](crate::operation::list_firewalls::ListFirewallsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_firewalls::ListFirewallsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_firewalls::ListFirewallsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_firewalls::ListFirewallsInput {
             next_token: self.next_token,
             vpc_ids: self.vpc_ids,

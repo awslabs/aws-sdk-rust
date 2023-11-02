@@ -104,7 +104,7 @@ impl GetBlockInputBuilder {
         &self.digest_tip_address
     }
     /// Consumes the builder and constructs a [`GetBlockInput`](crate::operation::get_block::GetBlockInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_block::GetBlockInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_block::GetBlockInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_block::GetBlockInput {
             name: self.name,
             block_address: self.block_address,

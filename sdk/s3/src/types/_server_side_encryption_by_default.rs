@@ -124,10 +124,10 @@ impl ServerSideEncryptionByDefaultBuilder {
     /// Consumes the builder and constructs a [`ServerSideEncryptionByDefault`](crate::types::ServerSideEncryptionByDefault).
     /// This method will fail if any of the following fields are not set:
     /// - [`sse_algorithm`](crate::types::builders::ServerSideEncryptionByDefaultBuilder::sse_algorithm)
-    pub fn build(self) -> ::std::result::Result<crate::types::ServerSideEncryptionByDefault, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ServerSideEncryptionByDefault, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ServerSideEncryptionByDefault {
             sse_algorithm: self.sse_algorithm.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "sse_algorithm",
                     "sse_algorithm was not specified but it is required when building ServerSideEncryptionByDefault",
                 )

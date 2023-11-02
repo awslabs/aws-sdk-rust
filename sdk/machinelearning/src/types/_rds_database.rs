@@ -70,16 +70,16 @@ impl RdsDatabaseBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`instance_identifier`](crate::types::builders::RdsDatabaseBuilder::instance_identifier)
     /// - [`database_name`](crate::types::builders::RdsDatabaseBuilder::database_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::RdsDatabase, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RdsDatabase, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RdsDatabase {
             instance_identifier: self.instance_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "instance_identifier",
                     "instance_identifier was not specified but it is required when building RdsDatabase",
                 )
             })?,
             database_name: self.database_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "database_name",
                     "database_name was not specified but it is required when building RdsDatabase",
                 )

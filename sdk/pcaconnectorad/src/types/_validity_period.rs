@@ -68,16 +68,16 @@ impl ValidityPeriodBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`period_type`](crate::types::builders::ValidityPeriodBuilder::period_type)
     /// - [`period`](crate::types::builders::ValidityPeriodBuilder::period)
-    pub fn build(self) -> ::std::result::Result<crate::types::ValidityPeriod, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ValidityPeriod, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ValidityPeriod {
             period_type: self.period_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "period_type",
                     "period_type was not specified but it is required when building ValidityPeriod",
                 )
             })?,
             period: self.period.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "period",
                     "period was not specified but it is required when building ValidityPeriod",
                 )

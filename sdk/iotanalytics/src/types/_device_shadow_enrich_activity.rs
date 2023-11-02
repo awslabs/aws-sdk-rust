@@ -139,28 +139,28 @@ impl DeviceShadowEnrichActivityBuilder {
     /// - [`attribute`](crate::types::builders::DeviceShadowEnrichActivityBuilder::attribute)
     /// - [`thing_name`](crate::types::builders::DeviceShadowEnrichActivityBuilder::thing_name)
     /// - [`role_arn`](crate::types::builders::DeviceShadowEnrichActivityBuilder::role_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::DeviceShadowEnrichActivity, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DeviceShadowEnrichActivity, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DeviceShadowEnrichActivity {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building DeviceShadowEnrichActivity",
                 )
             })?,
             attribute: self.attribute.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "attribute",
                     "attribute was not specified but it is required when building DeviceShadowEnrichActivity",
                 )
             })?,
             thing_name: self.thing_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "thing_name",
                     "thing_name was not specified but it is required when building DeviceShadowEnrichActivity",
                 )
             })?,
             role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role_arn",
                     "role_arn was not specified but it is required when building DeviceShadowEnrichActivity",
                 )

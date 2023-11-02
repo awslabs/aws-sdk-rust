@@ -523,59 +523,59 @@ impl EnvironmentBuilder {
     /// - [`template_major_version`](crate::types::builders::EnvironmentBuilder::template_major_version)
     /// - [`template_minor_version`](crate::types::builders::EnvironmentBuilder::template_minor_version)
     /// - [`deployment_status`](crate::types::builders::EnvironmentBuilder::deployment_status)
-    pub fn build(self) -> ::std::result::Result<crate::types::Environment, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Environment, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Environment {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building Environment",
                 )
             })?,
             description: self.description,
             created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
                     "created_at was not specified but it is required when building Environment",
                 )
             })?,
             last_deployment_attempted_at: self.last_deployment_attempted_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_deployment_attempted_at",
                     "last_deployment_attempted_at was not specified but it is required when building Environment",
                 )
             })?,
             last_deployment_succeeded_at: self.last_deployment_succeeded_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "last_deployment_succeeded_at",
                     "last_deployment_succeeded_at was not specified but it is required when building Environment",
                 )
             })?,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building Environment",
                 )
             })?,
             template_name: self.template_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "template_name",
                     "template_name was not specified but it is required when building Environment",
                 )
             })?,
             template_major_version: self.template_major_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "template_major_version",
                     "template_major_version was not specified but it is required when building Environment",
                 )
             })?,
             template_minor_version: self.template_minor_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "template_minor_version",
                     "template_minor_version was not specified but it is required when building Environment",
                 )
             })?,
             deployment_status: self.deployment_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "deployment_status",
                     "deployment_status was not specified but it is required when building Environment",
                 )

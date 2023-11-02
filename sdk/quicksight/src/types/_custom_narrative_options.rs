@@ -46,10 +46,10 @@ impl CustomNarrativeOptionsBuilder {
     /// Consumes the builder and constructs a [`CustomNarrativeOptions`](crate::types::CustomNarrativeOptions).
     /// This method will fail if any of the following fields are not set:
     /// - [`narrative`](crate::types::builders::CustomNarrativeOptionsBuilder::narrative)
-    pub fn build(self) -> ::std::result::Result<crate::types::CustomNarrativeOptions, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CustomNarrativeOptions, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CustomNarrativeOptions {
             narrative: self.narrative.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "narrative",
                     "narrative was not specified but it is required when building CustomNarrativeOptions",
                 )

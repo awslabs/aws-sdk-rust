@@ -66,7 +66,7 @@ impl UpdateApnsVoipChannelInputBuilder {
     /// Consumes the builder and constructs a [`UpdateApnsVoipChannelInput`](crate::operation::update_apns_voip_channel::UpdateApnsVoipChannelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_apns_voip_channel::UpdateApnsVoipChannelInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_apns_voip_channel::UpdateApnsVoipChannelInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_apns_voip_channel::UpdateApnsVoipChannelInput {
             apns_voip_channel_request: self.apns_voip_channel_request,

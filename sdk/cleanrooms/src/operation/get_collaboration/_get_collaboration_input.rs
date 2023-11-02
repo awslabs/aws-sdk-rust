@@ -44,7 +44,7 @@ impl GetCollaborationInputBuilder {
     /// Consumes the builder and constructs a [`GetCollaborationInput`](crate::operation::get_collaboration::GetCollaborationInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_collaboration::GetCollaborationInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_collaboration::GetCollaborationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_collaboration::GetCollaborationInput {
             collaboration_identifier: self.collaboration_identifier,
         })

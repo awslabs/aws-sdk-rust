@@ -105,7 +105,7 @@ impl GetVoiceTemplateInputBuilder {
     /// Consumes the builder and constructs a [`GetVoiceTemplateInput`](crate::operation::get_voice_template::GetVoiceTemplateInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_voice_template::GetVoiceTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_voice_template::GetVoiceTemplateInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_voice_template::GetVoiceTemplateInput {
             template_name: self.template_name,
             version: self.version,

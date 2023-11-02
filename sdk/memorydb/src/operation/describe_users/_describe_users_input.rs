@@ -114,7 +114,7 @@ impl DescribeUsersInputBuilder {
     /// Consumes the builder and constructs a [`DescribeUsersInput`](crate::operation::describe_users::DescribeUsersInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_users::DescribeUsersInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_users::DescribeUsersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_users::DescribeUsersInput {
             user_name: self.user_name,
             filters: self.filters,

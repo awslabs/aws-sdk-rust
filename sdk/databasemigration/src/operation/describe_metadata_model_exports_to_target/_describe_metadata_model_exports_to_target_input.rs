@@ -122,7 +122,7 @@ impl DescribeMetadataModelExportsToTargetInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_metadata_model_exports_to_target::DescribeMetadataModelExportsToTargetInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_metadata_model_exports_to_target::DescribeMetadataModelExportsToTargetInput {

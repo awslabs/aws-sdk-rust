@@ -55,7 +55,7 @@ pub fn de_geo_location(
 pub fn ser_geo_location(
     input: &crate::types::GeoLocation,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_4) = &input.continent_code {

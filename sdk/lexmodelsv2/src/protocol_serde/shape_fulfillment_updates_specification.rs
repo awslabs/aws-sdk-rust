@@ -61,7 +61,7 @@ where
 pub fn ser_fulfillment_updates_specification(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FulfillmentUpdatesSpecification,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("active").boolean(input.active);
     }

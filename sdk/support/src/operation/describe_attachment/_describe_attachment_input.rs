@@ -44,7 +44,7 @@ impl DescribeAttachmentInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAttachmentInput`](crate::operation::describe_attachment::DescribeAttachmentInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_attachment::DescribeAttachmentInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_attachment::DescribeAttachmentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_attachment::DescribeAttachmentInput {
             attachment_id: self.attachment_id,
         })

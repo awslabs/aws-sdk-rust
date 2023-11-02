@@ -100,7 +100,7 @@ impl DescribeParameterGroupsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_parameter_groups::DescribeParameterGroupsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_parameter_groups::DescribeParameterGroupsInput {
             parameter_group_names: self.parameter_group_names,

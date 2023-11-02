@@ -326,17 +326,17 @@ impl FirewallPolicyBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`stateless_default_actions`](crate::types::builders::FirewallPolicyBuilder::stateless_default_actions)
     /// - [`stateless_fragment_default_actions`](crate::types::builders::FirewallPolicyBuilder::stateless_fragment_default_actions)
-    pub fn build(self) -> ::std::result::Result<crate::types::FirewallPolicy, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::FirewallPolicy, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FirewallPolicy {
             stateless_rule_group_references: self.stateless_rule_group_references,
             stateless_default_actions: self.stateless_default_actions.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "stateless_default_actions",
                     "stateless_default_actions was not specified but it is required when building FirewallPolicy",
                 )
             })?,
             stateless_fragment_default_actions: self.stateless_fragment_default_actions.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "stateless_fragment_default_actions",
                     "stateless_fragment_default_actions was not specified but it is required when building FirewallPolicy",
                 )

@@ -87,10 +87,10 @@ impl ListSchemasOutputBuilder {
     /// Consumes the builder and constructs a [`ListSchemasOutput`](crate::operation::list_schemas::ListSchemasOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`schema_summaries`](crate::operation::list_schemas::builders::ListSchemasOutputBuilder::schema_summaries)
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_schemas::ListSchemasOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::list_schemas::ListSchemasOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_schemas::ListSchemasOutput {
             schema_summaries: self.schema_summaries.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "schema_summaries",
                     "schema_summaries was not specified but it is required when building ListSchemasOutput",
                 )

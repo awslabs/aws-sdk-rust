@@ -138,7 +138,8 @@ impl CopyWorkspaceImageInputBuilder {
     /// Consumes the builder and constructs a [`CopyWorkspaceImageInput`](crate::operation::copy_workspace_image::CopyWorkspaceImageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::copy_workspace_image::CopyWorkspaceImageInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::copy_workspace_image::CopyWorkspaceImageInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::copy_workspace_image::CopyWorkspaceImageInput {
             name: self.name,
             description: self.description,

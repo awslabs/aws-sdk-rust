@@ -79,16 +79,16 @@ impl StageExecutionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`pipeline_execution_id`](crate::types::builders::StageExecutionBuilder::pipeline_execution_id)
     /// - [`status`](crate::types::builders::StageExecutionBuilder::status)
-    pub fn build(self) -> ::std::result::Result<crate::types::StageExecution, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::StageExecution, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::StageExecution {
             pipeline_execution_id: self.pipeline_execution_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "pipeline_execution_id",
                     "pipeline_execution_id was not specified but it is required when building StageExecution",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building StageExecution",
                 )

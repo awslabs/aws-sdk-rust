@@ -88,7 +88,7 @@ impl DeleteRouteResponseInputBuilder {
     /// Consumes the builder and constructs a [`DeleteRouteResponseInput`](crate::operation::delete_route_response::DeleteRouteResponseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_route_response::DeleteRouteResponseInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_route_response::DeleteRouteResponseInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_route_response::DeleteRouteResponseInput {
             api_id: self.api_id,

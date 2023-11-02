@@ -2,7 +2,7 @@
 pub fn ser_stream_processor_output(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::StreamProcessorOutput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.kinesis_data_stream {
         #[allow(unused_mut)]
         let mut object_2 = object.key("KinesisDataStream").start_object();

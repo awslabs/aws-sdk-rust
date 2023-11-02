@@ -105,10 +105,10 @@ impl TcpFlagFieldBuilder {
     /// Consumes the builder and constructs a [`TcpFlagField`](crate::types::TcpFlagField).
     /// This method will fail if any of the following fields are not set:
     /// - [`flags`](crate::types::builders::TcpFlagFieldBuilder::flags)
-    pub fn build(self) -> ::std::result::Result<crate::types::TcpFlagField, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::TcpFlagField, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TcpFlagField {
             flags: self.flags.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "flags",
                     "flags was not specified but it is required when building TcpFlagField",
                 )

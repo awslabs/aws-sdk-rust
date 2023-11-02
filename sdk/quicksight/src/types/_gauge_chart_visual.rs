@@ -160,10 +160,10 @@ impl GaugeChartVisualBuilder {
     /// Consumes the builder and constructs a [`GaugeChartVisual`](crate::types::GaugeChartVisual).
     /// This method will fail if any of the following fields are not set:
     /// - [`visual_id`](crate::types::builders::GaugeChartVisualBuilder::visual_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::GaugeChartVisual, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::GaugeChartVisual, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::GaugeChartVisual {
             visual_id: self.visual_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "visual_id",
                     "visual_id was not specified but it is required when building GaugeChartVisual",
                 )

@@ -44,7 +44,8 @@ impl DeleteUserSettingsInputBuilder {
     /// Consumes the builder and constructs a [`DeleteUserSettingsInput`](crate::operation::delete_user_settings::DeleteUserSettingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_user_settings::DeleteUserSettingsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_user_settings::DeleteUserSettingsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::delete_user_settings::DeleteUserSettingsInput {
             user_settings_arn: self.user_settings_arn,
         })

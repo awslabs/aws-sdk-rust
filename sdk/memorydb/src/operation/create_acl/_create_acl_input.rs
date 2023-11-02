@@ -100,7 +100,7 @@ impl CreateAclInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateAclInput`](crate::operation::create_acl::CreateAclInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_acl::CreateAclInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_acl::CreateAclInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_acl::CreateAclInput {
             acl_name: self.acl_name,
             user_names: self.user_names,

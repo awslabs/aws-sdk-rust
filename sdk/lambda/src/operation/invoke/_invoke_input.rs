@@ -224,7 +224,7 @@ impl InvokeInputBuilder {
         &self.qualifier
     }
     /// Consumes the builder and constructs a [`InvokeInput`](crate::operation::invoke::InvokeInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::invoke::InvokeInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::invoke::InvokeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::invoke::InvokeInput {
             function_name: self.function_name,
             invocation_type: self.invocation_type,

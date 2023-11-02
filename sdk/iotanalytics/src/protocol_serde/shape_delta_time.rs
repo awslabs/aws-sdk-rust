@@ -2,7 +2,7 @@
 pub fn ser_delta_time(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DeltaTime,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("offsetSeconds").number(
             #[allow(clippy::useless_conversion)]

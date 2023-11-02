@@ -2,7 +2,7 @@
 pub fn ser_aws_backup_backup_plan_backup_plan_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsBackupBackupPlanBackupPlanDetails,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.backup_plan_name {
         object.key("BackupPlanName").string(var_1.as_str());
     }

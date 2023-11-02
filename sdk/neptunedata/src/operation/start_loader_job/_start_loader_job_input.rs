@@ -614,7 +614,7 @@ impl StartLoaderJobInputBuilder {
     /// Consumes the builder and constructs a [`StartLoaderJobInput`](crate::operation::start_loader_job::StartLoaderJobInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_loader_job::StartLoaderJobInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_loader_job::StartLoaderJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_loader_job::StartLoaderJobInput {
             source: self.source,
             format: self.format,

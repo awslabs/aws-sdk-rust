@@ -89,11 +89,11 @@ impl ListAccessPoliciesOutputBuilder {
     /// - [`access_policy_summaries`](crate::operation::list_access_policies::builders::ListAccessPoliciesOutputBuilder::access_policy_summaries)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_access_policies::ListAccessPoliciesOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_access_policies::ListAccessPoliciesOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_access_policies::ListAccessPoliciesOutput {
             access_policy_summaries: self.access_policy_summaries.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "access_policy_summaries",
                     "access_policy_summaries was not specified but it is required when building ListAccessPoliciesOutput",
                 )

@@ -113,23 +113,23 @@ impl DomainSummaryBuilder {
     /// - [`domain_name`](crate::types::builders::DomainSummaryBuilder::domain_name)
     /// - [`created_time`](crate::types::builders::DomainSummaryBuilder::created_time)
     /// - [`domain_status`](crate::types::builders::DomainSummaryBuilder::domain_status)
-    pub fn build(self) -> ::std::result::Result<crate::types::DomainSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DomainSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DomainSummary {
             domain_name: self.domain_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "domain_name",
                     "domain_name was not specified but it is required when building DomainSummary",
                 )
             })?,
             display_name: self.display_name,
             created_time: self.created_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_time",
                     "created_time was not specified but it is required when building DomainSummary",
                 )
             })?,
             domain_status: self.domain_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "domain_status",
                     "domain_status was not specified but it is required when building DomainSummary",
                 )

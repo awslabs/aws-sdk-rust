@@ -73,7 +73,7 @@ impl ImportDecoderManifestInputBuilder {
     /// Consumes the builder and constructs a [`ImportDecoderManifestInput`](crate::operation::import_decoder_manifest::ImportDecoderManifestInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::import_decoder_manifest::ImportDecoderManifestInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::import_decoder_manifest::ImportDecoderManifestInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::import_decoder_manifest::ImportDecoderManifestInput {
             name: self.name,

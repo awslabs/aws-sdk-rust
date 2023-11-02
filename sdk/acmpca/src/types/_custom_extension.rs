@@ -108,16 +108,16 @@ impl CustomExtensionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`object_identifier`](crate::types::builders::CustomExtensionBuilder::object_identifier)
     /// - [`value`](crate::types::builders::CustomExtensionBuilder::value)
-    pub fn build(self) -> ::std::result::Result<crate::types::CustomExtension, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::CustomExtension, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CustomExtension {
             object_identifier: self.object_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "object_identifier",
                     "object_identifier was not specified but it is required when building CustomExtension",
                 )
             })?,
             value: self.value.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "value",
                     "value was not specified but it is required when building CustomExtension",
                 )

@@ -144,7 +144,7 @@ impl CreateAnalyzerInputBuilder {
     /// Consumes the builder and constructs a [`CreateAnalyzerInput`](crate::operation::create_analyzer::CreateAnalyzerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_analyzer::CreateAnalyzerInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_analyzer::CreateAnalyzerInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_analyzer::CreateAnalyzerInput {
             analyzer_name: self.analyzer_name,
             r#type: self.r#type,

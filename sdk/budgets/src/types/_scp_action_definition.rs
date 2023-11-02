@@ -75,16 +75,16 @@ impl ScpActionDefinitionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`policy_id`](crate::types::builders::ScpActionDefinitionBuilder::policy_id)
     /// - [`target_ids`](crate::types::builders::ScpActionDefinitionBuilder::target_ids)
-    pub fn build(self) -> ::std::result::Result<crate::types::ScpActionDefinition, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ScpActionDefinition, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ScpActionDefinition {
             policy_id: self.policy_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "policy_id",
                     "policy_id was not specified but it is required when building ScpActionDefinition",
                 )
             })?,
             target_ids: self.target_ids.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "target_ids",
                     "target_ids was not specified but it is required when building ScpActionDefinition",
                 )

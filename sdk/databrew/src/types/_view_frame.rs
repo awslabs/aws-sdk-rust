@@ -158,10 +158,10 @@ impl ViewFrameBuilder {
     /// Consumes the builder and constructs a [`ViewFrame`](crate::types::ViewFrame).
     /// This method will fail if any of the following fields are not set:
     /// - [`start_column_index`](crate::types::builders::ViewFrameBuilder::start_column_index)
-    pub fn build(self) -> ::std::result::Result<crate::types::ViewFrame, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ViewFrame, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ViewFrame {
             start_column_index: self.start_column_index.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "start_column_index",
                     "start_column_index was not specified but it is required when building ViewFrame",
                 )

@@ -41,7 +41,7 @@ pub fn de_metrics_configuration(
 pub fn ser_metrics_configuration(
     input: &crate::types::MetricsConfiguration,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     {

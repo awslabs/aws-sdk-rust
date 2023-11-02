@@ -77,16 +77,16 @@ impl DataLakeAutoEnableNewAccountConfigurationBuilder {
     /// - [`sources`](crate::types::builders::DataLakeAutoEnableNewAccountConfigurationBuilder::sources)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::DataLakeAutoEnableNewAccountConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::DataLakeAutoEnableNewAccountConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DataLakeAutoEnableNewAccountConfiguration {
             region: self.region.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "region",
                     "region was not specified but it is required when building DataLakeAutoEnableNewAccountConfiguration",
                 )
             })?,
             sources: self.sources.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "sources",
                     "sources was not specified but it is required when building DataLakeAutoEnableNewAccountConfiguration",
                 )

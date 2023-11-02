@@ -44,7 +44,7 @@ impl DeleteDirectoryInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDirectoryInput`](crate::operation::delete_directory::DeleteDirectoryInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_directory::DeleteDirectoryInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_directory::DeleteDirectoryInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_directory::DeleteDirectoryInput {
             directory_arn: self.directory_arn,
         })

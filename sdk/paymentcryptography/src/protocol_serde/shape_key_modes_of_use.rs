@@ -2,7 +2,7 @@
 pub fn ser_key_modes_of_use(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::KeyModesOfUse,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.encrypt {
         object.key("Encrypt").boolean(input.encrypt);
     }

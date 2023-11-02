@@ -249,7 +249,7 @@ impl UpdateDevEndpointInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDevEndpointInput`](crate::operation::update_dev_endpoint::UpdateDevEndpointInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_dev_endpoint::UpdateDevEndpointInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_dev_endpoint::UpdateDevEndpointInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_dev_endpoint::UpdateDevEndpointInput {
             endpoint_name: self.endpoint_name,
             public_key: self.public_key,

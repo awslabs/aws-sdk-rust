@@ -66,7 +66,7 @@ impl GetSecurityPolicyInputBuilder {
     /// Consumes the builder and constructs a [`GetSecurityPolicyInput`](crate::operation::get_security_policy::GetSecurityPolicyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_security_policy::GetSecurityPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_security_policy::GetSecurityPolicyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_security_policy::GetSecurityPolicyInput {
             r#type: self.r#type,
             name: self.name,

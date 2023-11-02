@@ -119,7 +119,7 @@ impl ListDeploymentTargetsInputBuilder {
     /// Consumes the builder and constructs a [`ListDeploymentTargetsInput`](crate::operation::list_deployment_targets::ListDeploymentTargetsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_deployment_targets::ListDeploymentTargetsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_deployment_targets::ListDeploymentTargetsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_deployment_targets::ListDeploymentTargetsInput {
             deployment_id: self.deployment_id,

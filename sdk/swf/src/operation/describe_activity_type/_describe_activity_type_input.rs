@@ -66,7 +66,7 @@ impl DescribeActivityTypeInputBuilder {
     /// Consumes the builder and constructs a [`DescribeActivityTypeInput`](crate::operation::describe_activity_type::DescribeActivityTypeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_activity_type::DescribeActivityTypeInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_activity_type::DescribeActivityTypeInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_activity_type::DescribeActivityTypeInput {
             domain: self.domain,

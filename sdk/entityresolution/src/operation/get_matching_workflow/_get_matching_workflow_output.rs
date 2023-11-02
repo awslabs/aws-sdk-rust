@@ -306,50 +306,50 @@ impl GetMatchingWorkflowOutputBuilder {
     /// - [`role_arn`](crate::operation::get_matching_workflow::builders::GetMatchingWorkflowOutputBuilder::role_arn)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_matching_workflow::GetMatchingWorkflowOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_matching_workflow::GetMatchingWorkflowOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_matching_workflow::GetMatchingWorkflowOutput {
             workflow_name: self.workflow_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "workflow_name",
                     "workflow_name was not specified but it is required when building GetMatchingWorkflowOutput",
                 )
             })?,
             workflow_arn: self.workflow_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "workflow_arn",
                     "workflow_arn was not specified but it is required when building GetMatchingWorkflowOutput",
                 )
             })?,
             description: self.description,
             input_source_config: self.input_source_config.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "input_source_config",
                     "input_source_config was not specified but it is required when building GetMatchingWorkflowOutput",
                 )
             })?,
             output_source_config: self.output_source_config.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "output_source_config",
                     "output_source_config was not specified but it is required when building GetMatchingWorkflowOutput",
                 )
             })?,
             resolution_techniques: self.resolution_techniques,
             created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
                     "created_at was not specified but it is required when building GetMatchingWorkflowOutput",
                 )
             })?,
             updated_at: self.updated_at.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "updated_at",
                     "updated_at was not specified but it is required when building GetMatchingWorkflowOutput",
                 )
             })?,
             incremental_run_config: self.incremental_run_config,
             role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role_arn",
                     "role_arn was not specified but it is required when building GetMatchingWorkflowOutput",
                 )

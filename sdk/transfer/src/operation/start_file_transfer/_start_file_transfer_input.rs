@@ -154,7 +154,7 @@ impl StartFileTransferInputBuilder {
     /// Consumes the builder and constructs a [`StartFileTransferInput`](crate::operation::start_file_transfer::StartFileTransferInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_file_transfer::StartFileTransferInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_file_transfer::StartFileTransferInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_file_transfer::StartFileTransferInput {
             connector_id: self.connector_id,
             send_file_paths: self.send_file_paths,

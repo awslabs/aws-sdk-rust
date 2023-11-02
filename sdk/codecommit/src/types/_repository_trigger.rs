@@ -171,16 +171,16 @@ impl RepositoryTriggerBuilder {
     /// - [`name`](crate::types::builders::RepositoryTriggerBuilder::name)
     /// - [`destination_arn`](crate::types::builders::RepositoryTriggerBuilder::destination_arn)
     /// - [`events`](crate::types::builders::RepositoryTriggerBuilder::events)
-    pub fn build(self) -> ::std::result::Result<crate::types::RepositoryTrigger, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RepositoryTrigger, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RepositoryTrigger {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building RepositoryTrigger",
                 )
             })?,
             destination_arn: self.destination_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "destination_arn",
                     "destination_arn was not specified but it is required when building RepositoryTrigger",
                 )
@@ -188,7 +188,7 @@ impl RepositoryTriggerBuilder {
             custom_data: self.custom_data,
             branches: self.branches,
             events: self.events.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "events",
                     "events was not specified but it is required when building RepositoryTrigger",
                 )

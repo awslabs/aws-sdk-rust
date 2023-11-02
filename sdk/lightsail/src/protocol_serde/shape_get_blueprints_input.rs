@@ -2,7 +2,7 @@
 pub fn ser_get_blueprints_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_blueprints::GetBlueprintsInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.include_inactive {
         object.key("includeInactive").boolean(*var_1);
     }

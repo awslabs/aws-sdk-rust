@@ -70,16 +70,16 @@ impl UpdateIpAddressBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`ip_id`](crate::types::builders::UpdateIpAddressBuilder::ip_id)
     /// - [`ipv6`](crate::types::builders::UpdateIpAddressBuilder::ipv6)
-    pub fn build(self) -> ::std::result::Result<crate::types::UpdateIpAddress, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::UpdateIpAddress, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::UpdateIpAddress {
             ip_id: self.ip_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "ip_id",
                     "ip_id was not specified but it is required when building UpdateIpAddress",
                 )
             })?,
             ipv6: self.ipv6.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "ipv6",
                     "ipv6 was not specified but it is required when building UpdateIpAddress",
                 )

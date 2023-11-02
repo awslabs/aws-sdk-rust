@@ -86,16 +86,16 @@ impl StartExecutionOutputBuilder {
     /// - [`start_date`](crate::operation::start_execution::builders::StartExecutionOutputBuilder::start_date)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_execution::StartExecutionOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::start_execution::StartExecutionOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_execution::StartExecutionOutput {
             execution_arn: self.execution_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "execution_arn",
                     "execution_arn was not specified but it is required when building StartExecutionOutput",
                 )
             })?,
             start_date: self.start_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "start_date",
                     "start_date was not specified but it is required when building StartExecutionOutput",
                 )

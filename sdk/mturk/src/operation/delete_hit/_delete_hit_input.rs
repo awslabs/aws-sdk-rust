@@ -42,7 +42,7 @@ impl DeleteHitInputBuilder {
         &self.hit_id
     }
     /// Consumes the builder and constructs a [`DeleteHitInput`](crate::operation::delete_hit::DeleteHitInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_hit::DeleteHitInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_hit::DeleteHitInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_hit::DeleteHitInput { hit_id: self.hit_id })
     }
 }

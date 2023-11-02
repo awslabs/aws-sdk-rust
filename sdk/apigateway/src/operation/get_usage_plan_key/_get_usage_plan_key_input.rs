@@ -67,7 +67,7 @@ impl GetUsagePlanKeyInputBuilder {
     /// Consumes the builder and constructs a [`GetUsagePlanKeyInput`](crate::operation::get_usage_plan_key::GetUsagePlanKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_usage_plan_key::GetUsagePlanKeyInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_usage_plan_key::GetUsagePlanKeyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_usage_plan_key::GetUsagePlanKeyInput {
             usage_plan_id: self.usage_plan_id,
             key_id: self.key_id,

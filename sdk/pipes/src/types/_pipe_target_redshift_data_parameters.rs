@@ -171,11 +171,11 @@ impl PipeTargetRedshiftDataParametersBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`database`](crate::types::builders::PipeTargetRedshiftDataParametersBuilder::database)
     /// - [`sqls`](crate::types::builders::PipeTargetRedshiftDataParametersBuilder::sqls)
-    pub fn build(self) -> ::std::result::Result<crate::types::PipeTargetRedshiftDataParameters, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PipeTargetRedshiftDataParameters, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PipeTargetRedshiftDataParameters {
             secret_manager_arn: self.secret_manager_arn,
             database: self.database.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "database",
                     "database was not specified but it is required when building PipeTargetRedshiftDataParameters",
                 )
@@ -184,7 +184,7 @@ impl PipeTargetRedshiftDataParametersBuilder {
             statement_name: self.statement_name,
             with_event: self.with_event.unwrap_or_default(),
             sqls: self.sqls.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "sqls",
                     "sqls was not specified but it is required when building PipeTargetRedshiftDataParameters",
                 )

@@ -113,7 +113,7 @@ impl CreateDatastoreInputBuilder {
     /// Consumes the builder and constructs a [`CreateDatastoreInput`](crate::operation::create_datastore::CreateDatastoreInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_datastore::CreateDatastoreInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_datastore::CreateDatastoreInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_datastore::CreateDatastoreInput {
             datastore_name: self.datastore_name,
             client_token: self.client_token,

@@ -140,7 +140,7 @@ impl ListVectorEnrichmentJobsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_vector_enrichment_jobs::ListVectorEnrichmentJobsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_vector_enrichment_jobs::ListVectorEnrichmentJobsInput {
             status_equals: self.status_equals,

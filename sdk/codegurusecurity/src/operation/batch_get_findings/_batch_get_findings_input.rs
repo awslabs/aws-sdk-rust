@@ -51,7 +51,7 @@ impl BatchGetFindingsInputBuilder {
     /// Consumes the builder and constructs a [`BatchGetFindingsInput`](crate::operation::batch_get_findings::BatchGetFindingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_get_findings::BatchGetFindingsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::batch_get_findings::BatchGetFindingsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::batch_get_findings::BatchGetFindingsInput {
             finding_identifiers: self.finding_identifiers,
         })

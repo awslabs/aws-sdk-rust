@@ -92,10 +92,10 @@ impl IotTopicPublishActionBuilder {
     /// Consumes the builder and constructs a [`IotTopicPublishAction`](crate::types::IotTopicPublishAction).
     /// This method will fail if any of the following fields are not set:
     /// - [`mqtt_topic`](crate::types::builders::IotTopicPublishActionBuilder::mqtt_topic)
-    pub fn build(self) -> ::std::result::Result<crate::types::IotTopicPublishAction, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::IotTopicPublishAction, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::IotTopicPublishAction {
             mqtt_topic: self.mqtt_topic.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "mqtt_topic",
                     "mqtt_topic was not specified but it is required when building IotTopicPublishAction",
                 )

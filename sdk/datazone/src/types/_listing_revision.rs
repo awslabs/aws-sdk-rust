@@ -70,16 +70,16 @@ impl ListingRevisionBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::ListingRevisionBuilder::id)
     /// - [`revision`](crate::types::builders::ListingRevisionBuilder::revision)
-    pub fn build(self) -> ::std::result::Result<crate::types::ListingRevision, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ListingRevision, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ListingRevision {
             id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "id",
                     "id was not specified but it is required when building ListingRevision",
                 )
             })?,
             revision: self.revision.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "revision",
                     "revision was not specified but it is required when building ListingRevision",
                 )

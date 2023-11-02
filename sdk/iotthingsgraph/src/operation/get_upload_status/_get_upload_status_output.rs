@@ -201,16 +201,16 @@ impl GetUploadStatusOutputBuilder {
     /// - [`created_date`](crate::operation::get_upload_status::builders::GetUploadStatusOutputBuilder::created_date)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_upload_status::GetUploadStatusOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_upload_status::GetUploadStatusOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_upload_status::GetUploadStatusOutput {
             upload_id: self.upload_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "upload_id",
                     "upload_id was not specified but it is required when building GetUploadStatusOutput",
                 )
             })?,
             upload_status: self.upload_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "upload_status",
                     "upload_status was not specified but it is required when building GetUploadStatusOutput",
                 )
@@ -220,7 +220,7 @@ impl GetUploadStatusOutputBuilder {
             namespace_version: self.namespace_version,
             failure_reason: self.failure_reason,
             created_date: self.created_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_date",
                     "created_date was not specified but it is required when building GetUploadStatusOutput",
                 )

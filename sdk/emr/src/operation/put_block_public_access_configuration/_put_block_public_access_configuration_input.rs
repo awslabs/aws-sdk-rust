@@ -56,7 +56,7 @@ impl PutBlockPublicAccessConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_block_public_access_configuration::PutBlockPublicAccessConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::put_block_public_access_configuration::PutBlockPublicAccessConfigurationInput {

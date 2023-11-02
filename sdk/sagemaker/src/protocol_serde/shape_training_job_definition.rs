@@ -2,7 +2,7 @@
 pub fn ser_training_job_definition(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TrainingJobDefinition,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.training_input_mode {
         object.key("TrainingInputMode").string(var_1.as_str());
     }

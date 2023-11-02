@@ -92,16 +92,16 @@ impl MutationActionSetStateParameterBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`component_name`](crate::types::builders::MutationActionSetStateParameterBuilder::component_name)
     /// - [`property`](crate::types::builders::MutationActionSetStateParameterBuilder::property)
-    pub fn build(self) -> ::std::result::Result<crate::types::MutationActionSetStateParameter, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::MutationActionSetStateParameter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MutationActionSetStateParameter {
             component_name: self.component_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "component_name",
                     "component_name was not specified but it is required when building MutationActionSetStateParameter",
                 )
             })?,
             property: self.property.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "property",
                     "property was not specified but it is required when building MutationActionSetStateParameter",
                 )

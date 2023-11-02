@@ -42,7 +42,7 @@ impl GetSpaceInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`GetSpaceInput`](crate::operation::get_space::GetSpaceInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_space::GetSpaceInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_space::GetSpaceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_space::GetSpaceInput { name: self.name })
     }
 }

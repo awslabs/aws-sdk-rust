@@ -90,7 +90,7 @@ impl UpdateDashboardPublishedVersionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_dashboard_published_version::UpdateDashboardPublishedVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::update_dashboard_published_version::UpdateDashboardPublishedVersionInput {

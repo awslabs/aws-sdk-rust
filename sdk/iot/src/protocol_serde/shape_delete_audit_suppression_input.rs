@@ -2,7 +2,7 @@
 pub fn ser_delete_audit_suppression_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_audit_suppression::DeleteAuditSuppressionInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.check_name {
         object.key("checkName").string(var_1.as_str());
     }

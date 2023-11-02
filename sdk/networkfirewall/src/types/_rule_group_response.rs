@@ -348,22 +348,22 @@ impl RuleGroupResponseBuilder {
     /// - [`rule_group_arn`](crate::types::builders::RuleGroupResponseBuilder::rule_group_arn)
     /// - [`rule_group_name`](crate::types::builders::RuleGroupResponseBuilder::rule_group_name)
     /// - [`rule_group_id`](crate::types::builders::RuleGroupResponseBuilder::rule_group_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::RuleGroupResponse, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::RuleGroupResponse, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::RuleGroupResponse {
             rule_group_arn: self.rule_group_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "rule_group_arn",
                     "rule_group_arn was not specified but it is required when building RuleGroupResponse",
                 )
             })?,
             rule_group_name: self.rule_group_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "rule_group_name",
                     "rule_group_name was not specified but it is required when building RuleGroupResponse",
                 )
             })?,
             rule_group_id: self.rule_group_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "rule_group_id",
                     "rule_group_id was not specified but it is required when building RuleGroupResponse",
                 )

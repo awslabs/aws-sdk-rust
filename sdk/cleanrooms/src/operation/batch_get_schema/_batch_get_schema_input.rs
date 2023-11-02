@@ -73,7 +73,7 @@ impl BatchGetSchemaInputBuilder {
     /// Consumes the builder and constructs a [`BatchGetSchemaInput`](crate::operation::batch_get_schema::BatchGetSchemaInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_get_schema::BatchGetSchemaInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::batch_get_schema::BatchGetSchemaInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::batch_get_schema::BatchGetSchemaInput {
             collaboration_identifier: self.collaboration_identifier,
             names: self.names,

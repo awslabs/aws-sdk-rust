@@ -152,12 +152,12 @@ pub fn de_channel_flow_callback_http_response(
 
 pub fn ser_channel_flow_callback_input(
     input: &crate::operation::channel_flow_callback::ChannelFlowCallbackInput,
-) -> Result<::aws_smithy_http::body::SdkBody, ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_channel_flow_callback_input::ser_channel_flow_callback_input(&mut object, input)?;
     object.finish();
-    Ok(::aws_smithy_http::body::SdkBody::from(out))
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_channel_flow_callback(

@@ -92,16 +92,16 @@ impl DeploymentApplicationConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`application`](crate::types::builders::DeploymentApplicationConfigBuilder::application)
     /// - [`application_version`](crate::types::builders::DeploymentApplicationConfigBuilder::application_version)
-    pub fn build(self) -> ::std::result::Result<crate::types::DeploymentApplicationConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DeploymentApplicationConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DeploymentApplicationConfig {
             application: self.application.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "application",
                     "application was not specified but it is required when building DeploymentApplicationConfig",
                 )
             })?,
             application_version: self.application_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "application_version",
                     "application_version was not specified but it is required when building DeploymentApplicationConfig",
                 )

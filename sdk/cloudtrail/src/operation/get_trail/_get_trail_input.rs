@@ -42,7 +42,7 @@ impl GetTrailInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`GetTrailInput`](crate::operation::get_trail::GetTrailInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_trail::GetTrailInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_trail::GetTrailInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_trail::GetTrailInput { name: self.name })
     }
 }

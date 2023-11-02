@@ -111,10 +111,10 @@ impl WorkflowExecutionSignaledEventAttributesBuilder {
     /// - [`signal_name`](crate::types::builders::WorkflowExecutionSignaledEventAttributesBuilder::signal_name)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::WorkflowExecutionSignaledEventAttributes, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::WorkflowExecutionSignaledEventAttributes, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::WorkflowExecutionSignaledEventAttributes {
             signal_name: self.signal_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "signal_name",
                     "signal_name was not specified but it is required when building WorkflowExecutionSignaledEventAttributes",
                 )

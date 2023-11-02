@@ -43,7 +43,7 @@ impl GetWorkloadInputBuilder {
         &self.workload_id
     }
     /// Consumes the builder and constructs a [`GetWorkloadInput`](crate::operation::get_workload::GetWorkloadInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_workload::GetWorkloadInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_workload::GetWorkloadInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_workload::GetWorkloadInput {
             workload_id: self.workload_id,
         })

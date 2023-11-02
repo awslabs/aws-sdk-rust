@@ -83,7 +83,7 @@ impl PutDataProtectionPolicyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_data_protection_policy::PutDataProtectionPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_data_protection_policy::PutDataProtectionPolicyInput {
             resource_arn: self.resource_arn,

@@ -86,7 +86,7 @@ impl ListRelatedItemsInputBuilder {
     /// Consumes the builder and constructs a [`ListRelatedItemsInput`](crate::operation::list_related_items::ListRelatedItemsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_related_items::ListRelatedItemsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_related_items::ListRelatedItemsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_related_items::ListRelatedItemsInput {
             incident_record_arn: self.incident_record_arn,
             max_results: self.max_results,

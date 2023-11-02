@@ -103,22 +103,22 @@ impl AwsSessionCredentialsBuilder {
     /// - [`access_key_id`](crate::types::builders::AwsSessionCredentialsBuilder::access_key_id)
     /// - [`secret_access_key`](crate::types::builders::AwsSessionCredentialsBuilder::secret_access_key)
     /// - [`session_token`](crate::types::builders::AwsSessionCredentialsBuilder::session_token)
-    pub fn build(self) -> ::std::result::Result<crate::types::AwsSessionCredentials, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AwsSessionCredentials, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AwsSessionCredentials {
             access_key_id: self.access_key_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "access_key_id",
                     "access_key_id was not specified but it is required when building AwsSessionCredentials",
                 )
             })?,
             secret_access_key: self.secret_access_key.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "secret_access_key",
                     "secret_access_key was not specified but it is required when building AwsSessionCredentials",
                 )
             })?,
             session_token: self.session_token.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "session_token",
                     "session_token was not specified but it is required when building AwsSessionCredentials",
                 )

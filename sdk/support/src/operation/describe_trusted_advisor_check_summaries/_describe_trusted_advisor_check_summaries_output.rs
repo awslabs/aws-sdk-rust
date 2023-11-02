@@ -71,12 +71,12 @@ impl DescribeTrustedAdvisorCheckSummariesOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_trusted_advisor_check_summaries::DescribeTrustedAdvisorCheckSummariesOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_trusted_advisor_check_summaries::DescribeTrustedAdvisorCheckSummariesOutput {
                 summaries: self.summaries.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                    ::aws_smithy_types::error::operation::BuildError::missing_field(
                         "summaries",
                         "summaries was not specified but it is required when building DescribeTrustedAdvisorCheckSummariesOutput",
                     )

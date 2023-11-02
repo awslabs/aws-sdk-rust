@@ -152,10 +152,10 @@ impl InferSnomedctOutputBuilder {
     /// - [`entities`](crate::operation::infer_snomedct::builders::InferSnomedctOutputBuilder::entities)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::infer_snomedct::InferSnomedctOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::infer_snomedct::InferSnomedctOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::infer_snomedct::InferSnomedctOutput {
             entities: self.entities.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "entities",
                     "entities was not specified but it is required when building InferSnomedctOutput",
                 )

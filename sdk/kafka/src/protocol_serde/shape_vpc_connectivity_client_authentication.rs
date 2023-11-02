@@ -2,7 +2,7 @@
 pub fn ser_vpc_connectivity_client_authentication(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VpcConnectivityClientAuthentication,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.sasl {
         #[allow(unused_mut)]
         let mut object_2 = object.key("sasl").start_object();

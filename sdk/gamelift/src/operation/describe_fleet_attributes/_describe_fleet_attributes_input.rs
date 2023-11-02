@@ -95,7 +95,7 @@ impl DescribeFleetAttributesInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_fleet_attributes::DescribeFleetAttributesInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_fleet_attributes::DescribeFleetAttributesInput {
             fleet_ids: self.fleet_ids,

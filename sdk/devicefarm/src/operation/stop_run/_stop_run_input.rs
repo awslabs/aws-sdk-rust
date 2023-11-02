@@ -43,7 +43,7 @@ impl StopRunInputBuilder {
         &self.arn
     }
     /// Consumes the builder and constructs a [`StopRunInput`](crate::operation::stop_run::StopRunInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::stop_run::StopRunInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::stop_run::StopRunInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_run::StopRunInput { arn: self.arn })
     }
 }

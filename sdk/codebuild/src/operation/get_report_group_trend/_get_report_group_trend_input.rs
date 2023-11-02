@@ -452,7 +452,7 @@ impl GetReportGroupTrendInputBuilder {
     /// Consumes the builder and constructs a [`GetReportGroupTrendInput`](crate::operation::get_report_group_trend::GetReportGroupTrendInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_report_group_trend::GetReportGroupTrendInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_report_group_trend::GetReportGroupTrendInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_report_group_trend::GetReportGroupTrendInput {
             report_group_arn: self.report_group_arn,

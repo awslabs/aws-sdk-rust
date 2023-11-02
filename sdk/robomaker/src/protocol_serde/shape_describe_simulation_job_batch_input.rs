@@ -2,7 +2,7 @@
 pub fn ser_describe_simulation_job_batch_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_simulation_job_batch::DescribeSimulationJobBatchInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.batch {
         object.key("batch").string(var_1.as_str());
     }

@@ -45,10 +45,10 @@ impl InputParallelismUpdateBuilder {
     /// Consumes the builder and constructs a [`InputParallelismUpdate`](crate::types::InputParallelismUpdate).
     /// This method will fail if any of the following fields are not set:
     /// - [`count_update`](crate::types::builders::InputParallelismUpdateBuilder::count_update)
-    pub fn build(self) -> ::std::result::Result<crate::types::InputParallelismUpdate, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::InputParallelismUpdate, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::InputParallelismUpdate {
             count_update: self.count_update.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "count_update",
                     "count_update was not specified but it is required when building InputParallelismUpdate",
                 )

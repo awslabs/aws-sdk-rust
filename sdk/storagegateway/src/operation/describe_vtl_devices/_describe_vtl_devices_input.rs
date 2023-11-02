@@ -126,7 +126,8 @@ impl DescribeVtlDevicesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeVtlDevicesInput`](crate::operation::describe_vtl_devices::DescribeVtlDevicesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_vtl_devices::DescribeVtlDevicesInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_vtl_devices::DescribeVtlDevicesInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::describe_vtl_devices::DescribeVtlDevicesInput {
             gateway_arn: self.gateway_arn,
             vtl_device_arns: self.vtl_device_arns,

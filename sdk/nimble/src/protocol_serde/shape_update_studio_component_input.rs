@@ -2,7 +2,7 @@
 pub fn ser_update_studio_component_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_studio_component::UpdateStudioComponentInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.configuration {
         #[allow(unused_mut)]
         let mut object_2 = object.key("configuration").start_object();

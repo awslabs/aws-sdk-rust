@@ -162,17 +162,17 @@ impl UploadReadSetPartFluentBuilder {
         self.inner.get_part_number()
     }
     /// <p> The read set data to upload for a part. </p>
-    pub fn payload(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
+    pub fn payload(mut self, input: ::aws_smithy_types::byte_stream::ByteStream) -> Self {
         self.inner = self.inner.payload(input);
         self
     }
     /// <p> The read set data to upload for a part. </p>
-    pub fn set_payload(mut self, input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>) -> Self {
+    pub fn set_payload(mut self, input: ::std::option::Option<::aws_smithy_types::byte_stream::ByteStream>) -> Self {
         self.inner = self.inner.set_payload(input);
         self
     }
     /// <p> The read set data to upload for a part. </p>
-    pub fn get_payload(&self) -> &::std::option::Option<::aws_smithy_http::byte_stream::ByteStream> {
+    pub fn get_payload(&self) -> &::std::option::Option<::aws_smithy_types::byte_stream::ByteStream> {
         self.inner.get_payload()
     }
 }

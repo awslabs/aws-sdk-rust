@@ -66,7 +66,7 @@ impl DeleteJobTaggingInputBuilder {
     /// Consumes the builder and constructs a [`DeleteJobTaggingInput`](crate::operation::delete_job_tagging::DeleteJobTaggingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_job_tagging::DeleteJobTaggingInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_job_tagging::DeleteJobTaggingInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_job_tagging::DeleteJobTaggingInput {
             account_id: self.account_id,
             job_id: self.job_id,

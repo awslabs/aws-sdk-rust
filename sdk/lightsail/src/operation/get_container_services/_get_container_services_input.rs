@@ -48,7 +48,7 @@ impl GetContainerServicesInputBuilder {
     /// Consumes the builder and constructs a [`GetContainerServicesInput`](crate::operation::get_container_services::GetContainerServicesInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_container_services::GetContainerServicesInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_container_services::GetContainerServicesInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_container_services::GetContainerServicesInput {
             service_name: self.service_name,

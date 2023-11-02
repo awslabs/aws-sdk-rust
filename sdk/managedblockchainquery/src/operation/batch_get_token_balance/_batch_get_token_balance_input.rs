@@ -54,7 +54,7 @@ impl BatchGetTokenBalanceInputBuilder {
     /// Consumes the builder and constructs a [`BatchGetTokenBalanceInput`](crate::operation::batch_get_token_balance::BatchGetTokenBalanceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::batch_get_token_balance::BatchGetTokenBalanceInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::batch_get_token_balance::BatchGetTokenBalanceInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::batch_get_token_balance::BatchGetTokenBalanceInput {
             get_token_balance_inputs: self.get_token_balance_inputs,

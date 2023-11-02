@@ -66,7 +66,7 @@ impl DeleteKeySigningKeyInputBuilder {
     /// Consumes the builder and constructs a [`DeleteKeySigningKeyInput`](crate::operation::delete_key_signing_key::DeleteKeySigningKeyInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_key_signing_key::DeleteKeySigningKeyInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_key_signing_key::DeleteKeySigningKeyInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_key_signing_key::DeleteKeySigningKeyInput {
             hosted_zone_id: self.hosted_zone_id,

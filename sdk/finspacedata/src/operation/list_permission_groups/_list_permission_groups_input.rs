@@ -65,7 +65,7 @@ impl ListPermissionGroupsInputBuilder {
     /// Consumes the builder and constructs a [`ListPermissionGroupsInput`](crate::operation::list_permission_groups::ListPermissionGroupsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_permission_groups::ListPermissionGroupsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_permission_groups::ListPermissionGroupsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_permission_groups::ListPermissionGroupsInput {
             next_token: self.next_token,

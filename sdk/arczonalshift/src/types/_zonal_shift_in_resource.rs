@@ -197,46 +197,46 @@ impl ZonalShiftInResourceBuilder {
     /// - [`expiry_time`](crate::types::builders::ZonalShiftInResourceBuilder::expiry_time)
     /// - [`start_time`](crate::types::builders::ZonalShiftInResourceBuilder::start_time)
     /// - [`comment`](crate::types::builders::ZonalShiftInResourceBuilder::comment)
-    pub fn build(self) -> ::std::result::Result<crate::types::ZonalShiftInResource, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ZonalShiftInResource, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ZonalShiftInResource {
             applied_status: self.applied_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "applied_status",
                     "applied_status was not specified but it is required when building ZonalShiftInResource",
                 )
             })?,
             zonal_shift_id: self.zonal_shift_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "zonal_shift_id",
                     "zonal_shift_id was not specified but it is required when building ZonalShiftInResource",
                 )
             })?,
             resource_identifier: self.resource_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "resource_identifier",
                     "resource_identifier was not specified but it is required when building ZonalShiftInResource",
                 )
             })?,
             away_from: self.away_from.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "away_from",
                     "away_from was not specified but it is required when building ZonalShiftInResource",
                 )
             })?,
             expiry_time: self.expiry_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "expiry_time",
                     "expiry_time was not specified but it is required when building ZonalShiftInResource",
                 )
             })?,
             start_time: self.start_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "start_time",
                     "start_time was not specified but it is required when building ZonalShiftInResource",
                 )
             })?,
             comment: self.comment.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "comment",
                     "comment was not specified but it is required when building ZonalShiftInResource",
                 )

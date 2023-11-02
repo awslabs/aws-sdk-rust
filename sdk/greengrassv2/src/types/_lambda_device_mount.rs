@@ -98,10 +98,10 @@ impl LambdaDeviceMountBuilder {
     /// Consumes the builder and constructs a [`LambdaDeviceMount`](crate::types::LambdaDeviceMount).
     /// This method will fail if any of the following fields are not set:
     /// - [`path`](crate::types::builders::LambdaDeviceMountBuilder::path)
-    pub fn build(self) -> ::std::result::Result<crate::types::LambdaDeviceMount, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::LambdaDeviceMount, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::LambdaDeviceMount {
             path: self.path.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "path",
                     "path was not specified but it is required when building LambdaDeviceMount",
                 )

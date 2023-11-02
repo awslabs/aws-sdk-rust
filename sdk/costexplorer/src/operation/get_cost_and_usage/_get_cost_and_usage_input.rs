@@ -206,7 +206,7 @@ impl GetCostAndUsageInputBuilder {
     /// Consumes the builder and constructs a [`GetCostAndUsageInput`](crate::operation::get_cost_and_usage::GetCostAndUsageInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_cost_and_usage::GetCostAndUsageInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_cost_and_usage::GetCostAndUsageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_cost_and_usage::GetCostAndUsageInput {
             time_period: self.time_period,
             granularity: self.granularity,

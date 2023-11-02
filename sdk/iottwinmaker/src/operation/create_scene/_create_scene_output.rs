@@ -84,16 +84,16 @@ impl CreateSceneOutputBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::operation::create_scene::builders::CreateSceneOutputBuilder::arn)
     /// - [`creation_date_time`](crate::operation::create_scene::builders::CreateSceneOutputBuilder::creation_date_time)
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_scene::CreateSceneOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_scene::CreateSceneOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_scene::CreateSceneOutput {
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building CreateSceneOutput",
                 )
             })?,
             creation_date_time: self.creation_date_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_date_time",
                     "creation_date_time was not specified but it is required when building CreateSceneOutput",
                 )

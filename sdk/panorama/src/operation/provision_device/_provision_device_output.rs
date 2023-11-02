@@ -149,17 +149,17 @@ impl ProvisionDeviceOutputBuilder {
     /// - [`status`](crate::operation::provision_device::builders::ProvisionDeviceOutputBuilder::status)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::provision_device::ProvisionDeviceOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::provision_device::ProvisionDeviceOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::provision_device::ProvisionDeviceOutput {
             device_id: self.device_id,
             arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
                     "arn was not specified but it is required when building ProvisionDeviceOutput",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building ProvisionDeviceOutput",
                 )

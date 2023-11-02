@@ -45,7 +45,7 @@ impl StopReplicationTaskInputBuilder {
     /// Consumes the builder and constructs a [`StopReplicationTaskInput`](crate::operation::stop_replication_task::StopReplicationTaskInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_replication_task::StopReplicationTaskInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::stop_replication_task::StopReplicationTaskInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::stop_replication_task::StopReplicationTaskInput {
             replication_task_arn: self.replication_task_arn,

@@ -2,7 +2,7 @@
 pub fn ser_start_model_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_model::StartModelInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.max_inference_units {
         object.key("MaxInferenceUnits").number(
             #[allow(clippy::useless_conversion)]

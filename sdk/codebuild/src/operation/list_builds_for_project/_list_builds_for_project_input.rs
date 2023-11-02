@@ -116,7 +116,7 @@ impl ListBuildsForProjectInputBuilder {
     /// Consumes the builder and constructs a [`ListBuildsForProjectInput`](crate::operation::list_builds_for_project::ListBuildsForProjectInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_builds_for_project::ListBuildsForProjectInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_builds_for_project::ListBuildsForProjectInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_builds_for_project::ListBuildsForProjectInput {
             project_name: self.project_name,

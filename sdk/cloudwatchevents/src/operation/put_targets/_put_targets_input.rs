@@ -92,7 +92,7 @@ impl PutTargetsInputBuilder {
         &self.targets
     }
     /// Consumes the builder and constructs a [`PutTargetsInput`](crate::operation::put_targets::PutTargetsInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::put_targets::PutTargetsInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_targets::PutTargetsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_targets::PutTargetsInput {
             rule: self.rule,
             event_bus_name: self.event_bus_name,

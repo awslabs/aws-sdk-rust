@@ -110,10 +110,10 @@ impl BouncedRecipientInfoBuilder {
     /// Consumes the builder and constructs a [`BouncedRecipientInfo`](crate::types::BouncedRecipientInfo).
     /// This method will fail if any of the following fields are not set:
     /// - [`recipient`](crate::types::builders::BouncedRecipientInfoBuilder::recipient)
-    pub fn build(self) -> ::std::result::Result<crate::types::BouncedRecipientInfo, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::BouncedRecipientInfo, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::BouncedRecipientInfo {
             recipient: self.recipient.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "recipient",
                     "recipient was not specified but it is required when building BouncedRecipientInfo",
                 )

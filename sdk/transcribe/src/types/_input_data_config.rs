@@ -112,17 +112,17 @@ impl InputDataConfigBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`s3_uri`](crate::types::builders::InputDataConfigBuilder::s3_uri)
     /// - [`data_access_role_arn`](crate::types::builders::InputDataConfigBuilder::data_access_role_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::InputDataConfig, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::InputDataConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::InputDataConfig {
             s3_uri: self.s3_uri.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "s3_uri",
                     "s3_uri was not specified but it is required when building InputDataConfig",
                 )
             })?,
             tuning_data_s3_uri: self.tuning_data_s3_uri,
             data_access_role_arn: self.data_access_role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_access_role_arn",
                     "data_access_role_arn was not specified but it is required when building InputDataConfig",
                 )

@@ -2,7 +2,7 @@
 pub fn ser_pipe_source_managed_streaming_kafka_parameters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PipeSourceManagedStreamingKafkaParameters,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("TopicName").string(input.topic_name.as_str());
     }

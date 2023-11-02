@@ -174,15 +174,15 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetDashboard
             fn uri_base(
                 _input: &crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlInput,
                 output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 use ::std::fmt::Write as _;
                 let input_1 = &_input.aws_account_id;
                 let input_1 = input_1
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("aws_account_id", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("aws_account_id", "cannot be empty or unset"))?;
                 let aws_account_id = ::aws_smithy_http::label::fmt_string(input_1, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if aws_account_id.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "aws_account_id",
                         "cannot be empty or unset",
                     ));
@@ -190,10 +190,10 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetDashboard
                 let input_2 = &_input.dashboard_id;
                 let input_2 = input_2
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("dashboard_id", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("dashboard_id", "cannot be empty or unset"))?;
                 let dashboard_id = ::aws_smithy_http::label::fmt_string(input_2, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if dashboard_id.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
                         "dashboard_id",
                         "cannot be empty or unset",
                     ));
@@ -210,12 +210,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetDashboard
             fn uri_query(
                 _input: &crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlInput,
                 mut output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 let inner_3 = &_input.identity_type;
                 let inner_3 = inner_3
                     .as_ref()
-                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("identity_type", "cannot be empty or unset"))?;
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("identity_type", "cannot be empty or unset"))?;
                 query.push_kv("creds-type", &::aws_smithy_http::query::fmt_string(&inner_3));
                 if let ::std::option::Option::Some(inner_4) = &_input.session_lifetime_in_minutes {
                     if *inner_4 != 0 {
@@ -263,7 +263,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetDashboard
             fn update_http_builder(
                 input: &crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlInput,
                 builder: ::http::request::Builder,
-            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
+            ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -272,7 +272,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetDashboard
             let mut builder = update_http_builder(&input, ::http::request::Builder::new())?;
             builder
         };
-        let body = ::aws_smithy_http::body::SdkBody::from("");
+        let body = ::aws_smithy_types::body::SdkBody::from("");
 
         ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }

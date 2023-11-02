@@ -94,7 +94,7 @@ impl CreateAppImageConfigInputBuilder {
     /// Consumes the builder and constructs a [`CreateAppImageConfigInput`](crate::operation::create_app_image_config::CreateAppImageConfigInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_app_image_config::CreateAppImageConfigInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_app_image_config::CreateAppImageConfigInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_app_image_config::CreateAppImageConfigInput {
             app_image_config_name: self.app_image_config_name,

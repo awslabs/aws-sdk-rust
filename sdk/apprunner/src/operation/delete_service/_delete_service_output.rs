@@ -85,11 +85,11 @@ impl DeleteServiceOutputBuilder {
     /// - [`operation_id`](crate::operation::delete_service::builders::DeleteServiceOutputBuilder::operation_id)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_service::DeleteServiceOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_service::DeleteServiceOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_service::DeleteServiceOutput {
             service: self.service,
             operation_id: self.operation_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "operation_id",
                     "operation_id was not specified but it is required when building DeleteServiceOutput",
                 )

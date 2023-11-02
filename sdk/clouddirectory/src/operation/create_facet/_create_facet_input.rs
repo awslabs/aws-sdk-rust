@@ -195,7 +195,7 @@ impl CreateFacetInputBuilder {
         &self.facet_style
     }
     /// Consumes the builder and constructs a [`CreateFacetInput`](crate::operation::create_facet::CreateFacetInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_facet::CreateFacetInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_facet::CreateFacetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_facet::CreateFacetInput {
             schema_arn: self.schema_arn,
             name: self.name,

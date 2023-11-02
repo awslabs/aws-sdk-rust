@@ -110,7 +110,7 @@ impl StartSchemaExtensionInputBuilder {
     /// Consumes the builder and constructs a [`StartSchemaExtensionInput`](crate::operation::start_schema_extension::StartSchemaExtensionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::start_schema_extension::StartSchemaExtensionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::start_schema_extension::StartSchemaExtensionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_schema_extension::StartSchemaExtensionInput {
             directory_id: self.directory_id,

@@ -65,7 +65,7 @@ impl DeleteExtensionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteExtensionInput`](crate::operation::delete_extension::DeleteExtensionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_extension::DeleteExtensionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_extension::DeleteExtensionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_extension::DeleteExtensionInput {
             extension_identifier: self.extension_identifier,
             version_number: self.version_number,

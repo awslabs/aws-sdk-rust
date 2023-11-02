@@ -193,7 +193,7 @@ impl UpdateAlarmModelInputBuilder {
     /// Consumes the builder and constructs a [`UpdateAlarmModelInput`](crate::operation::update_alarm_model::UpdateAlarmModelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_alarm_model::UpdateAlarmModelInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_alarm_model::UpdateAlarmModelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_alarm_model::UpdateAlarmModelInput {
             alarm_model_name: self.alarm_model_name,
             alarm_model_description: self.alarm_model_description,

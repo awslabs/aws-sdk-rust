@@ -175,7 +175,7 @@ impl StartRxNormInferenceJobInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_rx_norm_inference_job::StartRxNormInferenceJobInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_rx_norm_inference_job::StartRxNormInferenceJobInput {
             input_data_config: self.input_data_config,

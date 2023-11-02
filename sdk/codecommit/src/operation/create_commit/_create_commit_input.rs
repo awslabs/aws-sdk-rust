@@ -256,7 +256,9 @@ impl CreateCommitInputBuilder {
         &self.set_file_modes
     }
     /// Consumes the builder and constructs a [`CreateCommitInput`](crate::operation::create_commit::CreateCommitInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::create_commit::CreateCommitInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::create_commit::CreateCommitInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_commit::CreateCommitInput {
             repository_name: self.repository_name,
             branch_name: self.branch_name,

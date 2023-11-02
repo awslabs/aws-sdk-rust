@@ -97,22 +97,22 @@ impl OpsItemFilterBuilder {
     /// - [`key`](crate::types::builders::OpsItemFilterBuilder::key)
     /// - [`values`](crate::types::builders::OpsItemFilterBuilder::values)
     /// - [`operator`](crate::types::builders::OpsItemFilterBuilder::operator)
-    pub fn build(self) -> ::std::result::Result<crate::types::OpsItemFilter, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::OpsItemFilter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::OpsItemFilter {
             key: self.key.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "key",
                     "key was not specified but it is required when building OpsItemFilter",
                 )
             })?,
             values: self.values.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "values",
                     "values was not specified but it is required when building OpsItemFilter",
                 )
             })?,
             operator: self.operator.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "operator",
                     "operator was not specified but it is required when building OpsItemFilter",
                 )

@@ -133,10 +133,10 @@ impl JsonClassifierBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::JsonClassifierBuilder::name)
     /// - [`json_path`](crate::types::builders::JsonClassifierBuilder::json_path)
-    pub fn build(self) -> ::std::result::Result<crate::types::JsonClassifier, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::JsonClassifier, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::JsonClassifier {
             name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
                     "name was not specified but it is required when building JsonClassifier",
                 )
@@ -145,7 +145,7 @@ impl JsonClassifierBuilder {
             last_updated: self.last_updated,
             version: self.version.unwrap_or_default(),
             json_path: self.json_path.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "json_path",
                     "json_path was not specified but it is required when building JsonClassifier",
                 )

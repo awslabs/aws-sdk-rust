@@ -241,7 +241,7 @@ impl ExportEc2InstanceRecommendationsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::export_ec2_instance_recommendations::ExportEc2InstanceRecommendationsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(
             crate::operation::export_ec2_instance_recommendations::ExportEc2InstanceRecommendationsInput {

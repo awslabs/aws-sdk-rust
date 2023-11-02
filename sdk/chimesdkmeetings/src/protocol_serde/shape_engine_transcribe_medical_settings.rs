@@ -2,7 +2,7 @@
 pub fn ser_engine_transcribe_medical_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EngineTranscribeMedicalSettings,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("LanguageCode").string(input.language_code.as_str());
     }

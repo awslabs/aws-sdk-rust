@@ -86,7 +86,7 @@ impl ModifyVolumeAttributeInputBuilder {
     /// Consumes the builder and constructs a [`ModifyVolumeAttributeInput`](crate::operation::modify_volume_attribute::ModifyVolumeAttributeInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::modify_volume_attribute::ModifyVolumeAttributeInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::modify_volume_attribute::ModifyVolumeAttributeInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::modify_volume_attribute::ModifyVolumeAttributeInput {
             auto_enable_io: self.auto_enable_io,

@@ -68,16 +68,16 @@ impl EoCloudCoverInputBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`lower_bound`](crate::types::builders::EoCloudCoverInputBuilder::lower_bound)
     /// - [`upper_bound`](crate::types::builders::EoCloudCoverInputBuilder::upper_bound)
-    pub fn build(self) -> ::std::result::Result<crate::types::EoCloudCoverInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::EoCloudCoverInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EoCloudCoverInput {
             lower_bound: self.lower_bound.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "lower_bound",
                     "lower_bound was not specified but it is required when building EoCloudCoverInput",
                 )
             })?,
             upper_bound: self.upper_bound.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "upper_bound",
                     "upper_bound was not specified but it is required when building EoCloudCoverInput",
                 )

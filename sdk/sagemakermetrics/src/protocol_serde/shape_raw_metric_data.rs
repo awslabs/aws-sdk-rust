@@ -2,7 +2,7 @@
 pub fn ser_raw_metric_data(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RawMetricData,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.metric_name {
         object.key("MetricName").string(var_1.as_str());
     }

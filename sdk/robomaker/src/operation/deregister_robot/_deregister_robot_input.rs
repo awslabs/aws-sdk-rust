@@ -69,7 +69,7 @@ impl DeregisterRobotInputBuilder {
     /// Consumes the builder and constructs a [`DeregisterRobotInput`](crate::operation::deregister_robot::DeregisterRobotInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::deregister_robot::DeregisterRobotInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::deregister_robot::DeregisterRobotInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::deregister_robot::DeregisterRobotInput {
             fleet: self.fleet,
             robot: self.robot,

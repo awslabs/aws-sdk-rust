@@ -333,14 +333,14 @@ impl ResourceMappingBuilder {
     /// Consumes the builder and constructs a [`ResourceMapping`](crate::types::ResourceMapping).
     /// This method will fail if any of the following fields are not set:
     /// - [`mapping_type`](crate::types::builders::ResourceMappingBuilder::mapping_type)
-    pub fn build(self) -> ::std::result::Result<crate::types::ResourceMapping, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ResourceMapping, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ResourceMapping {
             resource_name: self.resource_name,
             logical_stack_name: self.logical_stack_name,
             app_registry_app_name: self.app_registry_app_name,
             resource_group_name: self.resource_group_name,
             mapping_type: self.mapping_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "mapping_type",
                     "mapping_type was not specified but it is required when building ResourceMapping",
                 )

@@ -46,10 +46,10 @@ impl FirehoseDestinationConfigurationBuilder {
     /// Consumes the builder and constructs a [`FirehoseDestinationConfiguration`](crate::types::FirehoseDestinationConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`delivery_stream_name`](crate::types::builders::FirehoseDestinationConfigurationBuilder::delivery_stream_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::FirehoseDestinationConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::FirehoseDestinationConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FirehoseDestinationConfiguration {
             delivery_stream_name: self.delivery_stream_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "delivery_stream_name",
                     "delivery_stream_name was not specified but it is required when building FirehoseDestinationConfiguration",
                 )

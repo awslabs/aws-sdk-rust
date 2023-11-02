@@ -44,7 +44,7 @@ impl DescribeScriptInputBuilder {
     /// Consumes the builder and constructs a [`DescribeScriptInput`](crate::operation::describe_script::DescribeScriptInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_script::DescribeScriptInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::describe_script::DescribeScriptInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_script::DescribeScriptInput { script_id: self.script_id })
     }
 }

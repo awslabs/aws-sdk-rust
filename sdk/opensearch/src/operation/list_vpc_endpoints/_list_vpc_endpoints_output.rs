@@ -92,16 +92,16 @@ impl ListVpcEndpointsOutputBuilder {
     /// - [`next_token`](crate::operation::list_vpc_endpoints::builders::ListVpcEndpointsOutputBuilder::next_token)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_vpc_endpoints::ListVpcEndpointsOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::list_vpc_endpoints::ListVpcEndpointsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_vpc_endpoints::ListVpcEndpointsOutput {
             vpc_endpoint_summary_list: self.vpc_endpoint_summary_list.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "vpc_endpoint_summary_list",
                     "vpc_endpoint_summary_list was not specified but it is required when building ListVpcEndpointsOutput",
                 )
             })?,
             next_token: self.next_token.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "next_token",
                     "next_token was not specified but it is required when building ListVpcEndpointsOutput",
                 )

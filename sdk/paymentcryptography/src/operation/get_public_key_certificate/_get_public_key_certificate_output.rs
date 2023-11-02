@@ -98,17 +98,17 @@ impl GetPublicKeyCertificateOutputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_public_key_certificate::GetPublicKeyCertificateOutput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_public_key_certificate::GetPublicKeyCertificateOutput {
             key_certificate: self.key_certificate.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "key_certificate",
                     "key_certificate was not specified but it is required when building GetPublicKeyCertificateOutput",
                 )
             })?,
             key_certificate_chain: self.key_certificate_chain.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "key_certificate_chain",
                     "key_certificate_chain was not specified but it is required when building GetPublicKeyCertificateOutput",
                 )

@@ -144,34 +144,34 @@ impl PlacementDescriptionBuilder {
     /// - [`attributes`](crate::types::builders::PlacementDescriptionBuilder::attributes)
     /// - [`created_date`](crate::types::builders::PlacementDescriptionBuilder::created_date)
     /// - [`updated_date`](crate::types::builders::PlacementDescriptionBuilder::updated_date)
-    pub fn build(self) -> ::std::result::Result<crate::types::PlacementDescription, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PlacementDescription, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PlacementDescription {
             project_name: self.project_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "project_name",
                     "project_name was not specified but it is required when building PlacementDescription",
                 )
             })?,
             placement_name: self.placement_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "placement_name",
                     "placement_name was not specified but it is required when building PlacementDescription",
                 )
             })?,
             attributes: self.attributes.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "attributes",
                     "attributes was not specified but it is required when building PlacementDescription",
                 )
             })?,
             created_date: self.created_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_date",
                     "created_date was not specified but it is required when building PlacementDescription",
                 )
             })?,
             updated_date: self.updated_date.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "updated_date",
                     "updated_date was not specified but it is required when building PlacementDescription",
                 )

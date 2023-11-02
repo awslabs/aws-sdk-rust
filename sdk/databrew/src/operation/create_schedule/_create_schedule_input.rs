@@ -122,7 +122,7 @@ impl CreateScheduleInputBuilder {
     /// Consumes the builder and constructs a [`CreateScheduleInput`](crate::operation::create_schedule::CreateScheduleInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_schedule::CreateScheduleInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_schedule::CreateScheduleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_schedule::CreateScheduleInput {
             job_names: self.job_names,
             cron_expression: self.cron_expression,

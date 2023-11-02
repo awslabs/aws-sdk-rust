@@ -2,7 +2,7 @@
 pub fn ser_create_long_term_pricing_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_long_term_pricing::CreateLongTermPricingInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.long_term_pricing_type {
         object.key("LongTermPricingType").string(var_1.as_str());
     }

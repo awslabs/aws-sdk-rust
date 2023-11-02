@@ -258,7 +258,7 @@ impl ListHubContentVersionsInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_hub_content_versions::ListHubContentVersionsInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_hub_content_versions::ListHubContentVersionsInput {
             hub_name: self.hub_name,

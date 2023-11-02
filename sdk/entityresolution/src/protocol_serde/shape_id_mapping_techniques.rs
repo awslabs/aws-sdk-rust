@@ -48,7 +48,7 @@ where
 pub fn ser_id_mapping_techniques(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IdMappingTechniques,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("idMappingType").string(input.id_mapping_type.as_str());
     }

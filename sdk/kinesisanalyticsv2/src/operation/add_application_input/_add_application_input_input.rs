@@ -88,7 +88,7 @@ impl AddApplicationInputInputBuilder {
     /// Consumes the builder and constructs a [`AddApplicationInputInput`](crate::operation::add_application_input::AddApplicationInputInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::add_application_input::AddApplicationInputInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::add_application_input::AddApplicationInputInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::add_application_input::AddApplicationInputInput {
             application_name: self.application_name,

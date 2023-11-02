@@ -87,7 +87,8 @@ impl UpdateRelatedItemsInputBuilder {
     /// Consumes the builder and constructs a [`UpdateRelatedItemsInput`](crate::operation::update_related_items::UpdateRelatedItemsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_related_items::UpdateRelatedItemsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::update_related_items::UpdateRelatedItemsInput, ::aws_smithy_types::error::operation::BuildError>
+    {
         ::std::result::Result::Ok(crate::operation::update_related_items::UpdateRelatedItemsInput {
             client_token: self.client_token,
             incident_record_arn: self.incident_record_arn,

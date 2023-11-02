@@ -66,8 +66,10 @@ impl DescribeResourceServerInputBuilder {
     /// Consumes the builder and constructs a [`DescribeResourceServerInput`](crate::operation::describe_resource_server::DescribeResourceServerInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_resource_server::DescribeResourceServerInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::describe_resource_server::DescribeResourceServerInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::describe_resource_server::DescribeResourceServerInput {
             user_pool_id: self.user_pool_id,
             identifier: self.identifier,

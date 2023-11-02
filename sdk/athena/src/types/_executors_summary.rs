@@ -181,10 +181,10 @@ impl ExecutorsSummaryBuilder {
     /// Consumes the builder and constructs a [`ExecutorsSummary`](crate::types::ExecutorsSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`executor_id`](crate::types::builders::ExecutorsSummaryBuilder::executor_id)
-    pub fn build(self) -> ::std::result::Result<crate::types::ExecutorsSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ExecutorsSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ExecutorsSummary {
             executor_id: self.executor_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "executor_id",
                     "executor_id was not specified but it is required when building ExecutorsSummary",
                 )

@@ -70,16 +70,16 @@ impl ColumnIdentifierBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`data_set_identifier`](crate::types::builders::ColumnIdentifierBuilder::data_set_identifier)
     /// - [`column_name`](crate::types::builders::ColumnIdentifierBuilder::column_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::ColumnIdentifier, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ColumnIdentifier, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ColumnIdentifier {
             data_set_identifier: self.data_set_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_set_identifier",
                     "data_set_identifier was not specified but it is required when building ColumnIdentifier",
                 )
             })?,
             column_name: self.column_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "column_name",
                     "column_name was not specified but it is required when building ColumnIdentifier",
                 )

@@ -87,7 +87,7 @@ impl ConfigureLogsInputBuilder {
     /// Consumes the builder and constructs a [`ConfigureLogsInput`](crate::operation::configure_logs::ConfigureLogsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::configure_logs::ConfigureLogsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::configure_logs::ConfigureLogsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::configure_logs::ConfigureLogsInput {
             egress_access_logs: self.egress_access_logs,
             id: self.id,

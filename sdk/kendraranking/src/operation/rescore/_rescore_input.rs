@@ -93,7 +93,7 @@ impl RescoreInputBuilder {
         &self.documents
     }
     /// Consumes the builder and constructs a [`RescoreInput`](crate::operation::rescore::RescoreInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::rescore::RescoreInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::rescore::RescoreInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::rescore::RescoreInput {
             rescore_execution_plan_id: self.rescore_execution_plan_id,
             search_query: self.search_query,

@@ -150,7 +150,7 @@ impl PrivateKeyFlagsV4Builder {
     /// Consumes the builder and constructs a [`PrivateKeyFlagsV4`](crate::types::PrivateKeyFlagsV4).
     /// This method will fail if any of the following fields are not set:
     /// - [`client_version`](crate::types::builders::PrivateKeyFlagsV4Builder::client_version)
-    pub fn build(self) -> ::std::result::Result<crate::types::PrivateKeyFlagsV4, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::PrivateKeyFlagsV4, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PrivateKeyFlagsV4 {
             exportable_key: self.exportable_key,
             strong_key_protection_required: self.strong_key_protection_required,
@@ -158,7 +158,7 @@ impl PrivateKeyFlagsV4Builder {
             require_same_key_renewal: self.require_same_key_renewal,
             use_legacy_provider: self.use_legacy_provider,
             client_version: self.client_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "client_version",
                     "client_version was not specified but it is required when building PrivateKeyFlagsV4",
                 )

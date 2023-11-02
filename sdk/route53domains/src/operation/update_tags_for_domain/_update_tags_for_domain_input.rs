@@ -74,7 +74,7 @@ impl UpdateTagsForDomainInputBuilder {
     /// Consumes the builder and constructs a [`UpdateTagsForDomainInput`](crate::operation::update_tags_for_domain::UpdateTagsForDomainInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_tags_for_domain::UpdateTagsForDomainInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_tags_for_domain::UpdateTagsForDomainInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_tags_for_domain::UpdateTagsForDomainInput {
             domain_name: self.domain_name,

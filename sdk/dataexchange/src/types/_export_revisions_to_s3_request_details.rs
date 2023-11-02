@@ -96,17 +96,17 @@ impl ExportRevisionsToS3RequestDetailsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`data_set_id`](crate::types::builders::ExportRevisionsToS3RequestDetailsBuilder::data_set_id)
     /// - [`revision_destinations`](crate::types::builders::ExportRevisionsToS3RequestDetailsBuilder::revision_destinations)
-    pub fn build(self) -> ::std::result::Result<crate::types::ExportRevisionsToS3RequestDetails, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::ExportRevisionsToS3RequestDetails, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ExportRevisionsToS3RequestDetails {
             data_set_id: self.data_set_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_set_id",
                     "data_set_id was not specified but it is required when building ExportRevisionsToS3RequestDetails",
                 )
             })?,
             encryption: self.encryption,
             revision_destinations: self.revision_destinations.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "revision_destinations",
                     "revision_destinations was not specified but it is required when building ExportRevisionsToS3RequestDetails",
                 )

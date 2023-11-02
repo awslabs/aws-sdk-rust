@@ -162,10 +162,10 @@ impl AttributeTypesSelectorBuilder {
     /// Consumes the builder and constructs a [`AttributeTypesSelector`](crate::types::AttributeTypesSelector).
     /// This method will fail if any of the following fields are not set:
     /// - [`attribute_matching_model`](crate::types::builders::AttributeTypesSelectorBuilder::attribute_matching_model)
-    pub fn build(self) -> ::std::result::Result<crate::types::AttributeTypesSelector, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::AttributeTypesSelector, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AttributeTypesSelector {
             attribute_matching_model: self.attribute_matching_model.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "attribute_matching_model",
                     "attribute_matching_model was not specified but it is required when building AttributeTypesSelector",
                 )

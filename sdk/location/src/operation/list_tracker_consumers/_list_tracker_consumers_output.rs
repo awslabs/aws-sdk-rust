@@ -89,11 +89,11 @@ impl ListTrackerConsumersOutputBuilder {
     /// - [`consumer_arns`](crate::operation::list_tracker_consumers::builders::ListTrackerConsumersOutputBuilder::consumer_arns)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::list_tracker_consumers::ListTrackerConsumersOutput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::list_tracker_consumers::ListTrackerConsumersOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_tracker_consumers::ListTrackerConsumersOutput {
             consumer_arns: self.consumer_arns.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "consumer_arns",
                     "consumer_arns was not specified but it is required when building ListTrackerConsumersOutput",
                 )

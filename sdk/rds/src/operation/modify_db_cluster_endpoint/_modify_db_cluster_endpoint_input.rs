@@ -125,7 +125,7 @@ impl ModifyDbClusterEndpointInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_db_cluster_endpoint::ModifyDbClusterEndpointInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::modify_db_cluster_endpoint::ModifyDbClusterEndpointInput {
             db_cluster_endpoint_identifier: self.db_cluster_endpoint_identifier,

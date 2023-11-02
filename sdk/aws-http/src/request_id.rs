@@ -94,7 +94,7 @@ fn extract_request_id(headers: &HeaderMap<HeaderValue>) -> Option<&str> {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use aws_smithy_http::body::SdkBody;
+    use aws_smithy_types::body::SdkBody;
     use http::Response;
 
     #[test]

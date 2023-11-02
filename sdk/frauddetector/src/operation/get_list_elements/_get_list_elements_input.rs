@@ -86,7 +86,7 @@ impl GetListElementsInputBuilder {
     /// Consumes the builder and constructs a [`GetListElementsInput`](crate::operation::get_list_elements::GetListElementsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_list_elements::GetListElementsInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_list_elements::GetListElementsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_list_elements::GetListElementsInput {
             name: self.name,
             next_token: self.next_token,

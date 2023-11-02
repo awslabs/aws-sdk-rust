@@ -2,7 +2,7 @@
 pub fn ser_id3_insertion(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Id3Insertion,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.id3 {
         object.key("id3").string(var_1.as_str());
     }

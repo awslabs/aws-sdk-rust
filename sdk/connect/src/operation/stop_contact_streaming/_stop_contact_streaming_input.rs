@@ -88,7 +88,7 @@ impl StopContactStreamingInputBuilder {
     /// Consumes the builder and constructs a [`StopContactStreamingInput`](crate::operation::stop_contact_streaming::StopContactStreamingInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::stop_contact_streaming::StopContactStreamingInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::stop_contact_streaming::StopContactStreamingInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::stop_contact_streaming::StopContactStreamingInput {
             instance_id: self.instance_id,

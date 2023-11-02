@@ -115,7 +115,7 @@ impl CreateVirtualClusterInputBuilder {
     /// Consumes the builder and constructs a [`CreateVirtualClusterInput`](crate::operation::create_virtual_cluster::CreateVirtualClusterInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_virtual_cluster::CreateVirtualClusterInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::create_virtual_cluster::CreateVirtualClusterInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_virtual_cluster::CreateVirtualClusterInput {
             name: self.name,

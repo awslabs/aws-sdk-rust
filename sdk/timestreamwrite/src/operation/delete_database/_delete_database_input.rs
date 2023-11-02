@@ -44,7 +44,7 @@ impl DeleteDatabaseInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDatabaseInput`](crate::operation::delete_database::DeleteDatabaseInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_database::DeleteDatabaseInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_database::DeleteDatabaseInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_database::DeleteDatabaseInput {
             database_name: self.database_name,
         })

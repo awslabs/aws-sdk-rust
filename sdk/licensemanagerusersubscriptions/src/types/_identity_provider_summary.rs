@@ -135,18 +135,18 @@ impl IdentityProviderSummaryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`product`](crate::types::builders::IdentityProviderSummaryBuilder::product)
     /// - [`status`](crate::types::builders::IdentityProviderSummaryBuilder::status)
-    pub fn build(self) -> ::std::result::Result<crate::types::IdentityProviderSummary, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::IdentityProviderSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::IdentityProviderSummary {
             identity_provider: self.identity_provider,
             settings: self.settings,
             product: self.product.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "product",
                     "product was not specified but it is required when building IdentityProviderSummary",
                 )
             })?,
             status: self.status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building IdentityProviderSummary",
                 )

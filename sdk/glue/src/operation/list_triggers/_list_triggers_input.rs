@@ -110,7 +110,9 @@ impl ListTriggersInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`ListTriggersInput`](crate::operation::list_triggers::ListTriggersInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::list_triggers::ListTriggersInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> ::std::result::Result<crate::operation::list_triggers::ListTriggersInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_triggers::ListTriggersInput {
             next_token: self.next_token,
             dependent_job_name: self.dependent_job_name,

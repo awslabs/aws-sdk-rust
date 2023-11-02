@@ -153,7 +153,7 @@ impl CreatePricingPlanInputBuilder {
     /// Consumes the builder and constructs a [`CreatePricingPlanInput`](crate::operation::create_pricing_plan::CreatePricingPlanInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::create_pricing_plan::CreatePricingPlanInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::create_pricing_plan::CreatePricingPlanInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_pricing_plan::CreatePricingPlanInput {
             client_token: self.client_token,
             name: self.name,

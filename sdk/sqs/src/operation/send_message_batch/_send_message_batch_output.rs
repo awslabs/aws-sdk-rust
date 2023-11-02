@@ -98,16 +98,16 @@ impl SendMessageBatchOutputBuilder {
     /// - [`failed`](crate::operation::send_message_batch::builders::SendMessageBatchOutputBuilder::failed)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::send_message_batch::SendMessageBatchOutput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::send_message_batch::SendMessageBatchOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::send_message_batch::SendMessageBatchOutput {
             successful: self.successful.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "successful",
                     "successful was not specified but it is required when building SendMessageBatchOutput",
                 )
             })?,
             failed: self.failed.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "failed",
                     "failed was not specified but it is required when building SendMessageBatchOutput",
                 )

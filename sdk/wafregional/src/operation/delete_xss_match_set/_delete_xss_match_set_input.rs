@@ -67,7 +67,7 @@ impl DeleteXssMatchSetInputBuilder {
     /// Consumes the builder and constructs a [`DeleteXssMatchSetInput`](crate::operation::delete_xss_match_set::DeleteXssMatchSetInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_xss_match_set::DeleteXssMatchSetInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_xss_match_set::DeleteXssMatchSetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_xss_match_set::DeleteXssMatchSetInput {
             xss_match_set_id: self.xss_match_set_id,
             change_token: self.change_token,

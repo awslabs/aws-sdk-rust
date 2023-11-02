@@ -120,7 +120,7 @@ impl CreateLoadBalancerPolicyInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyInput {
             load_balancer_name: self.load_balancer_name,

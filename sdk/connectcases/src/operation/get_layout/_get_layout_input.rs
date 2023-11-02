@@ -64,7 +64,7 @@ impl GetLayoutInputBuilder {
         &self.layout_id
     }
     /// Consumes the builder and constructs a [`GetLayoutInput`](crate::operation::get_layout::GetLayoutInput).
-    pub fn build(self) -> ::std::result::Result<crate::operation::get_layout::GetLayoutInput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_layout::GetLayoutInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_layout::GetLayoutInput {
             domain_id: self.domain_id,
             layout_id: self.layout_id,

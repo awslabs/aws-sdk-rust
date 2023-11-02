@@ -70,16 +70,16 @@ impl DateIntervalBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`start`](crate::types::builders::DateIntervalBuilder::start)
     /// - [`end`](crate::types::builders::DateIntervalBuilder::end)
-    pub fn build(self) -> ::std::result::Result<crate::types::DateInterval, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::DateInterval, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DateInterval {
             start: self.start.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "start",
                     "start was not specified but it is required when building DateInterval",
                 )
             })?,
             end: self.end.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "end",
                     "end was not specified but it is required when building DateInterval",
                 )

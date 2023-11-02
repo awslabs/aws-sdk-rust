@@ -44,7 +44,7 @@ impl DeletePolicyStoreInputBuilder {
     /// Consumes the builder and constructs a [`DeletePolicyStoreInput`](crate::operation::delete_policy_store::DeletePolicyStoreInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_policy_store::DeletePolicyStoreInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::delete_policy_store::DeletePolicyStoreInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_policy_store::DeletePolicyStoreInput {
             policy_store_id: self.policy_store_id,
         })

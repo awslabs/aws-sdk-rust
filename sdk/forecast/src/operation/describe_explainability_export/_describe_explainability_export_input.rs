@@ -46,7 +46,7 @@ impl DescribeExplainabilityExportInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_explainability_export::DescribeExplainabilityExportInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_explainability_export::DescribeExplainabilityExportInput {
             explainability_export_arn: self.explainability_export_arn,

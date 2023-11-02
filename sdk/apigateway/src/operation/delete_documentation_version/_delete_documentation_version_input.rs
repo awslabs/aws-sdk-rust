@@ -69,7 +69,7 @@ impl DeleteDocumentationVersionInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_documentation_version::DeleteDocumentationVersionInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_documentation_version::DeleteDocumentationVersionInput {
             rest_api_id: self.rest_api_id,

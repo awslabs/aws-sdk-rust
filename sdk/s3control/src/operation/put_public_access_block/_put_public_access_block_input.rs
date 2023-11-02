@@ -66,7 +66,7 @@ impl PutPublicAccessBlockInputBuilder {
     /// Consumes the builder and constructs a [`PutPublicAccessBlockInput`](crate::operation::put_public_access_block::PutPublicAccessBlockInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::put_public_access_block::PutPublicAccessBlockInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::put_public_access_block::PutPublicAccessBlockInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::put_public_access_block::PutPublicAccessBlockInput {
             public_access_block_configuration: self.public_access_block_configuration,

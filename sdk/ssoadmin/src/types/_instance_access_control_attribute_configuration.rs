@@ -53,10 +53,10 @@ impl InstanceAccessControlAttributeConfigurationBuilder {
     /// - [`access_control_attributes`](crate::types::builders::InstanceAccessControlAttributeConfigurationBuilder::access_control_attributes)
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::types::InstanceAccessControlAttributeConfiguration, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::types::InstanceAccessControlAttributeConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::InstanceAccessControlAttributeConfiguration {
             access_control_attributes: self.access_control_attributes.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "access_control_attributes",
                     "access_control_attributes was not specified but it is required when building InstanceAccessControlAttributeConfiguration",
                 )

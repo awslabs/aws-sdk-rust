@@ -86,7 +86,7 @@ impl GetTextDetectionInputBuilder {
     /// Consumes the builder and constructs a [`GetTextDetectionInput`](crate::operation::get_text_detection::GetTextDetectionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_text_detection::GetTextDetectionInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::get_text_detection::GetTextDetectionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_text_detection::GetTextDetectionInput {
             job_id: self.job_id,
             max_results: self.max_results,

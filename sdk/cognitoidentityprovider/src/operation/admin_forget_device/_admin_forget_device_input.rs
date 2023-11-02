@@ -98,7 +98,7 @@ impl AdminForgetDeviceInputBuilder {
     /// Consumes the builder and constructs a [`AdminForgetDeviceInput`](crate::operation::admin_forget_device::AdminForgetDeviceInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::admin_forget_device::AdminForgetDeviceInput, ::aws_smithy_http::operation::error::BuildError> {
+    ) -> ::std::result::Result<crate::operation::admin_forget_device::AdminForgetDeviceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::admin_forget_device::AdminForgetDeviceInput {
             user_pool_id: self.user_pool_id,
             username: self.username,

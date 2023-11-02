@@ -2,7 +2,7 @@
 pub fn ser_list_aws_default_service_quotas_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_aws_default_service_quotas::ListAwsDefaultServiceQuotasInput,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.service_code {
         object.key("ServiceCode").string(var_1.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_credential_pair(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CredentialPair,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Username").string(input.username.as_str());
     }

@@ -124,8 +124,10 @@ impl UpdateTopicPermissionsInputBuilder {
     /// Consumes the builder and constructs a [`UpdateTopicPermissionsInput`](crate::operation::update_topic_permissions::UpdateTopicPermissionsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_topic_permissions::UpdateTopicPermissionsInput, ::aws_smithy_http::operation::error::BuildError>
-    {
+    ) -> ::std::result::Result<
+        crate::operation::update_topic_permissions::UpdateTopicPermissionsInput,
+        ::aws_smithy_types::error::operation::BuildError,
+    > {
         ::std::result::Result::Ok(crate::operation::update_topic_permissions::UpdateTopicPermissionsInput {
             aws_account_id: self.aws_account_id,
             topic_id: self.topic_id,

@@ -44,7 +44,7 @@ impl DescribeLanguageModelInputBuilder {
     /// Consumes the builder and constructs a [`DescribeLanguageModelInput`](crate::operation::describe_language_model::DescribeLanguageModelInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::describe_language_model::DescribeLanguageModelInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::describe_language_model::DescribeLanguageModelInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_language_model::DescribeLanguageModelInput { model_name: self.model_name })
     }

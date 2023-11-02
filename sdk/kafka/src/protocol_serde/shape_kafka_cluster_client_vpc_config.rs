@@ -2,7 +2,7 @@
 pub fn ser_kafka_cluster_client_vpc_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::KafkaClusterClientVpcConfig,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.security_group_ids {
         let mut array_2 = object.key("securityGroupIds").start_array();
         for item_3 in var_1 {

@@ -105,7 +105,7 @@ impl AdminSetUserSettingsInputBuilder {
     /// Consumes the builder and constructs a [`AdminSetUserSettingsInput`](crate::operation::admin_set_user_settings::AdminSetUserSettingsInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::admin_set_user_settings::AdminSetUserSettingsInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::admin_set_user_settings::AdminSetUserSettingsInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::admin_set_user_settings::AdminSetUserSettingsInput {
             user_pool_id: self.user_pool_id,

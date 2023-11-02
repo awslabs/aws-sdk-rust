@@ -45,7 +45,7 @@ impl GetDistributionConfigInputBuilder {
     /// Consumes the builder and constructs a [`GetDistributionConfigInput`](crate::operation::get_distribution_config::GetDistributionConfigInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::get_distribution_config::GetDistributionConfigInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::get_distribution_config::GetDistributionConfigInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_distribution_config::GetDistributionConfigInput { id: self.id })
     }

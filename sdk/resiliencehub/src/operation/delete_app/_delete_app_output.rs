@@ -61,10 +61,10 @@ impl DeleteAppOutputBuilder {
     /// Consumes the builder and constructs a [`DeleteAppOutput`](crate::operation::delete_app::DeleteAppOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`app_arn`](crate::operation::delete_app::builders::DeleteAppOutputBuilder::app_arn)
-    pub fn build(self) -> ::std::result::Result<crate::operation::delete_app::DeleteAppOutput, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_app::DeleteAppOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_app::DeleteAppOutput {
             app_arn: self.app_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "app_arn",
                     "app_arn was not specified but it is required when building DeleteAppOutput",
                 )

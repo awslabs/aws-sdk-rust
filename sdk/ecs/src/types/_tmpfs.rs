@@ -102,10 +102,10 @@ impl TmpfsBuilder {
     /// Consumes the builder and constructs a [`Tmpfs`](crate::types::Tmpfs).
     /// This method will fail if any of the following fields are not set:
     /// - [`container_path`](crate::types::builders::TmpfsBuilder::container_path)
-    pub fn build(self) -> ::std::result::Result<crate::types::Tmpfs, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::Tmpfs, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Tmpfs {
             container_path: self.container_path.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "container_path",
                     "container_path was not specified but it is required when building Tmpfs",
                 )

@@ -120,16 +120,16 @@ impl LoggingOptionsBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`role_arn`](crate::types::builders::LoggingOptionsBuilder::role_arn)
     /// - [`level`](crate::types::builders::LoggingOptionsBuilder::level)
-    pub fn build(self) -> ::std::result::Result<crate::types::LoggingOptions, ::aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> ::std::result::Result<crate::types::LoggingOptions, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::LoggingOptions {
             role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "role_arn",
                     "role_arn was not specified but it is required when building LoggingOptions",
                 )
             })?,
             level: self.level.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "level",
                     "level was not specified but it is required when building LoggingOptions",
                 )

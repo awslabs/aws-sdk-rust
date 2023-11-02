@@ -44,7 +44,7 @@ impl DeleteVcenterClientInputBuilder {
     /// Consumes the builder and constructs a [`DeleteVcenterClientInput`](crate::operation::delete_vcenter_client::DeleteVcenterClientInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::delete_vcenter_client::DeleteVcenterClientInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::delete_vcenter_client::DeleteVcenterClientInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_vcenter_client::DeleteVcenterClientInput {
             vcenter_client_id: self.vcenter_client_id,

@@ -94,7 +94,7 @@ impl LabelParameterVersionInputBuilder {
     /// Consumes the builder and constructs a [`LabelParameterVersionInput`](crate::operation::label_parameter_version::LabelParameterVersionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::label_parameter_version::LabelParameterVersionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::label_parameter_version::LabelParameterVersionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::label_parameter_version::LabelParameterVersionInput {
             name: self.name,

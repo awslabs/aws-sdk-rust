@@ -65,7 +65,7 @@ impl UpdateCoreDefinitionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateCoreDefinitionInput`](crate::operation::update_core_definition::UpdateCoreDefinitionInput).
     pub fn build(
         self,
-    ) -> ::std::result::Result<crate::operation::update_core_definition::UpdateCoreDefinitionInput, ::aws_smithy_http::operation::error::BuildError>
+    ) -> ::std::result::Result<crate::operation::update_core_definition::UpdateCoreDefinitionInput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_core_definition::UpdateCoreDefinitionInput {
             core_definition_id: self.core_definition_id,

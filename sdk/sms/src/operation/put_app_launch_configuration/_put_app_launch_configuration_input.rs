@@ -119,7 +119,7 @@ impl PutAppLaunchConfigurationInputBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_app_launch_configuration::PutAppLaunchConfigurationInput,
-        ::aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_app_launch_configuration::PutAppLaunchConfigurationInput {
             app_id: self.app_id,

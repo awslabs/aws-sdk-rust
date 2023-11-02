@@ -2,7 +2,7 @@
 pub fn ser_filled_map_conditional_formatting(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FilledMapConditionalFormatting,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("ConditionalFormattingOptions").start_array();
         for item_2 in &input.conditional_formatting_options {

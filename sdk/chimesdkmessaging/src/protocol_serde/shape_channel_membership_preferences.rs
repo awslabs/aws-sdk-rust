@@ -40,7 +40,7 @@ where
 pub fn ser_channel_membership_preferences(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ChannelMembershipPreferences,
-) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
+) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.push_notifications {
         #[allow(unused_mut)]
         let mut object_2 = object.key("PushNotifications").start_object();
